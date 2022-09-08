@@ -1,0 +1,23 @@
+{
+  "name": "a11ywebapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LDAWG-a11y/a11yWebApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LDAWG-a11y/a11yWebApp/issues"
+  },
+  "homepage": "https://github.com/LDAWG-a11y/a11yWebApp#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2"
+  }
+}
