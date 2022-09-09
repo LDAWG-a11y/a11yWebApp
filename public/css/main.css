@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @charset "UTF-8";
 body:before {
   background-color: #fcf8e3;
@@ -44,6 +43,47 @@ body:before {
   }
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+main {
+  display: block;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
 body:before {
   background-color: #fcf8e3;
   border-bottom: 1px solid #fbeed5;
@@ -219,25 +259,4 @@ body:before {
   body:before {
     content: "xxl ≥ 1440px (90em)";
   }
-=======
-p {
-  position: relative;
-  top: 1rem;
-  margin: 0 1rem;
-  border-radius: 1rem;
-  padding: 1rem 0;
-  text-align: center;
-  background-color: aliceblue;
-}
-
-h1 {
-  flex-basis: 1;
-  position: relative;
-  top: 1rem;
-  margin: 0 1rem;
-  border-radius: 1rem;
-  padding: 1rem 0;
-  text-align: center;
-  background-color: green;
->>>>>>> 544847b (node modules)
 }
