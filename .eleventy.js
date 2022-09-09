@@ -1,4 +1,7 @@
 module.exports = eleventyConfig => {
+  const postcss = require("postcss");
+  const autoprefixer = require("autoprefixer");
+
   eleventyConfig.addWatchTarget('./src/sass');
   eleventyConfig.addPassthroughCopy('./src/css');
   // eleventyConfig.addPassthroughCopy('./src/js');
