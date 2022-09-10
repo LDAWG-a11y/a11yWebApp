@@ -24,7 +24,7 @@
   {% include "_header.njk" %}
   <main class="main" tabindex="-1" id="main">
     <h1>
-    {% if not home %}
+    {% if page.url !== "/" %}
       {{ title }}
     {% else %}
       Some catchy welcome message
