@@ -1,0 +1,19 @@
+<a class="skip-link" href="#main">Jump to content</a>
+<header class="header">
+  <img src="" alt="{{ site.siteName }} logo" class="header__logo">
+  <nav class="main-nav">
+    <ul class="main-nav__list">
+      {% for item in navLinks %}
+        {% if item.mainNav == true %}
+        <li class="navigation__item">
+          <a class="navigation__link"
+          href="{{ item.url }}"
+          {% if item.url === page.url %}
+            aria-current="page"
+          {% endif %}>{{ item.text }}</a>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+</header>

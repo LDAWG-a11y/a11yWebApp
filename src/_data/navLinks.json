@@ -1,0 +1,10 @@
+[
+  {"text": "Home", "url": "/", "mainNav": true},
+  {"text": "About", "url": "/about/", "mainNav": true},
+  {"text": "Guides", "url": "/guides/", "mainNav": true},
+  {"text": "FAQs", "url": "/faqs/", "mainNav": true},
+  {"text": "Accessibility", "url": "/accessibility/"},
+  {"text": "Privacy Policy", "url": "/privacy/"},
+  {"text": "Sitemap", "url": "/sitemap/"},
+  {"text": "Changelog", "url": "/changelog/"}
+]
