@@ -1,13 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
-  <title>{{ title }}</title>
+  <title>{% if not home %} {{ title }} | {{ site.siteName }} {% else %} {{ site.siteName }} | {{ title }} {% endif %}</title>
+  TODO Colour scheme, descriptions, favicon and order etc
+  <!-- <meta name="color-scheme" content="dark light"> -->
+  <meta name="description" content="{% if not home %} {{ summary }} | Site purpose etc {% endif %}">
+  <meta property="og:description" content="{% if not home %} {{ summary }} Site purpose etc {% endif %}">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- <meta name="theme-color" content="#FF00FF"> -->
+  <script type="module">
+    document.documentElement.classList.remove('no-js');
+    document.documentElement.classList.add('js');
+  </script>
 </head>
 <body>
+  <main>
+    <h1>
+    {% if not home %}
+      {{ title }}
+    {% else %}
+      Some catchy welcome message
+    {% endif %}
+    </h1>
   {{ content | safe }}
+  </main>
 </body>
 </html>
