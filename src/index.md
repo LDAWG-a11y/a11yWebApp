@@ -1,5 +1,6 @@
 ---
 layout: base.njk
-title: home
+title: Home
+home: true
 ---
 Test
