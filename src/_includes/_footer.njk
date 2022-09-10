@@ -1,3 +1,15 @@
 <footer class="footer">
-  Footer
+  <h2 class="footer__heading">Site links</h2>
+  <ul class="footer__list">
+    {% for item in navLinks %}
+      <li class="footer__item">
+        <a class="footer__link" href="{{ item.url }}"
+            {% if item.url === page.url %}
+            aria-current="page"
+            {% endif %}
+        >{{ item.text }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
 </footer>
