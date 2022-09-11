@@ -43,6 +43,11 @@ button {
   cursor: pointer;
 }
 
+a:focus,
+button:focus {
+  outline: 3px dotted transparent;
+}
+
 // @media (prefers-reduced-motion: reduce) {
 //   @include motion-off();
 // }
