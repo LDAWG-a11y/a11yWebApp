@@ -1,0 +1,38 @@
+$--color-text: --color-text;
+$--color-bg: --color-bg;
+$--color-primary: --color-primary;
+$--color-secondary: --color-secondary;
+$--color-accent: --color-accent;
+$--color-interactive: --color-interactive;
+
+$theme-map-light: (
+  $--color-text: #1f1f1f,
+  $--color-bg: #f6f6f6,
+  $--color-primary: #9400d3,
+  $--color-secondary: #695e93,
+  $--color-accent: #4a94a8,
+  $--color-interactive: #b200fd,
+);
+
+$theme-map-dark: (
+  $--color-text: #c6c6c6,
+  $--color-bg: #1c1c1c,
+  $--color-primary: green,
+  $--color-secondary: red,
+  $--color-accent: #df356d,
+  $--color-interactive: #0fc6c7,
+);
+
+@mixin spread-map($map: ()) {
+  @each $key, $value in $map {
+      #{$key}: $value;
+  }
+}
+
+:root:not([data-theme="dark"]) {
+  @include spread-map($theme-map-light);
+}
+
+:root[data-theme="dark"] {
+  @include spread-map($theme-map-dark);
+}
