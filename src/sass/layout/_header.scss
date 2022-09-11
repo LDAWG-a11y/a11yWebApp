@@ -24,12 +24,12 @@
 }
 
 .main-nav__list {
+  list-style-type: none;
 
   @include mq.mq($from:xs) {
     display: flex;
     justify-content: space-around;
     margin-top: $space-sm;
-    list-style-type: none;
   }
 
   @include mq.mq($from:xs) {

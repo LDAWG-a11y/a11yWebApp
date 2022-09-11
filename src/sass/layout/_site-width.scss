@@ -1,0 +1,13 @@
+@use '../vendors/mq';
+
+.header,
+.main,
+.footer {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 0 $space-xs;
+
+  @include mq.mq($from:md) {
+    padding: 0 $space-lg;
+  }
+}
