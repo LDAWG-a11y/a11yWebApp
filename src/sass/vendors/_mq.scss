@@ -11,6 +11,7 @@
 /// @type Map
 /// @link https://github.com/sass-mq/sass-mq#seeing-the-currently-active-breakpoint Full documentation and examples
 $breakpoints: (
+  xxs: 320px,
   xs: 420px,
   sm: 600px,
   md: 768px,
@@ -30,7 +31,7 @@ $breakpoints: (
 ///
 ///
 /// @type map
-$show-breakpoints: (xs, sm, md, lg, xl, xxl) !default;
+$show-breakpoints: (xxs, xs, sm, md, lg, xl, xxl) !default;
 
 /// Customize the media type (for example: `@media screen` or `@media print`)
 /// By default sass-mq uses an "all" media type (`@media all and …`)
