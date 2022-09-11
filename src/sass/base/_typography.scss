@@ -1,1 +1,87 @@
 @use '../vendors/mq';
+
+/* oswald-600 - latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  src: local(''),
+       url('../fonts/oswald-v49-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/oswald-v49-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: swap;
+}
+
+html {
+  font-size: 1em;
+}
+
+body {
+  font-size: $default-paragraph-size;
+  line-height: $default-line-height;
+  font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+  color: var(--color-text);
+
+  @include mq.mq($from:lg) {
+    font-size: $large-paragraph-size;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: $heading-line-height;
+  letter-spacing: .0125rem;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3.5rem;
+
+  @include mq.mq($from:lg) {
+    font-size: 4rem;
+  }
+}
+
+h2 {
+  font-size: 2.25rem;
+
+  @include mq.mq($from:lg) {
+    font-size: 2.5rem;
+  }
+}
+
+h3 {
+  font-size: 2rem;
+
+  @include mq.mq($from:lg) {
+    font-size: 2.25rem;
+  }
+}
+
+h4 {
+  font-size: 1.75rem;
+
+  @include mq.mq($from:lg) {
+    font-size: 2rem;
+  }
+}
+
+h5 {
+  font-size: 1.5rem;
+
+  @include mq.mq($from:lg) {
+    font-size: 1.75rem;
+  }
+}
+
+h6 {
+  font-size: 1.35rem;
+
+  @include mq.mq($from:lg) {
+    font-size: 1.5rem;
+  }
+}

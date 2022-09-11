@@ -150,6 +150,96 @@ body:before {
     content: "xxl ≥ 1440px (90em)";
   }
 }
+/* oswald-600 - latin */
+@font-face {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/oswald-v49-latin-600.woff2") format("woff2"), url("../fonts/oswald-v49-latin-600.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: swap;
+}
+html {
+  font-size: 1em;
+}
+
+body {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+  color: var(--color-text);
+}
+@media (min-width: 64em) {
+  body {
+    font-size: 1.25rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+  letter-spacing: 0.0125rem;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+@media (min-width: 64em) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+@media (min-width: 64em) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+h3 {
+  font-size: 2rem;
+}
+@media (min-width: 64em) {
+  h3 {
+    font-size: 2.25rem;
+  }
+}
+
+h4 {
+  font-size: 1.75rem;
+}
+@media (min-width: 64em) {
+  h4 {
+    font-size: 2rem;
+  }
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+@media (min-width: 64em) {
+  h5 {
+    font-size: 1.75rem;
+  }
+}
+
+h6 {
+  font-size: 1.35rem;
+}
+@media (min-width: 64em) {
+  h6 {
+    font-size: 1.5rem;
+  }
+}
+
 body:before {
   background-color: #fcf8e3;
   border-bottom: 1px solid #fbeed5;
