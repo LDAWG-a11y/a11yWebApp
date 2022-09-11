@@ -43,6 +43,24 @@ body:before {
   }
 }
 
+:root:not([data-theme=dark]) {
+  --color-text: #1f1f1f;
+  --color-bg: #f6f6f6;
+  --color-primary: #9400d3;
+  --color-secondary: #695e93;
+  --color-accent: #4a94a8;
+  --color-interactive: #b200fd;
+}
+
+:root[data-theme=dark] {
+  --color-text: #c6c6c6;
+  --color-bg: #1c1c1c;
+  --color-primary: green;
+  --color-secondary: red;
+  --color-accent: #df356d;
+  --color-interactive: #0fc6c7;
+}
+
 *,
 *::before,
 *::after {
@@ -82,6 +100,10 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+button {
+  cursor: pointer;
 }
 
 body:before {
