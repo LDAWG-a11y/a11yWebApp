@@ -558,3 +558,24 @@ body:before {
     content: "xxl ≥ 1440px (90em)";
   }
 }
+.skip-link {
+  position: absolute;
+  left: 0;
+  padding: 0.5rem 0.75rem;
+  width: auto;
+  height: auto;
+  background: var(--color-interactive);
+  color: var(--color-bg);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 3px;
+  transition: top 250ms ease-in;
+  z-index: 1;
+}
+
+.skip-link:not(:active):not(:focus) {
+  top: -3rem;
+}
+
+.skip-link:focus {
+  top: 0;
+}
