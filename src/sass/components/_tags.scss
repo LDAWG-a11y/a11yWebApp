@@ -16,7 +16,7 @@
   border: 2px solid var(--color-interactive);
   border-radius: $radius-md;
   padding: $space-xxs $space-xs;
-  line-height: $default-line-height / 1.5;
+  line-height: calc($default-line-height / 1.5);
   text-decoration: none;
   color: var(--color-interactive);
 

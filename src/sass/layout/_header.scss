@@ -3,8 +3,7 @@
 .header {
   height: 35rem;
   background: var(--color-primary);
-  background: linear-gradient(315deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  background: linear-gradient(252deg, var(--color-primary) 0%, var(--color-secondary) 82%); 
+  background: linear-gradient(252deg, var(--color-primary) 0%, var(--color-secondary) 82%);
   clip-path: polygon(0 0, 100% 0, 99% 95%, 0% 100%);
 
   @include mq.mq($from:md) {
