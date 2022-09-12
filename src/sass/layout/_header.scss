@@ -74,6 +74,7 @@
   position: relative;
   text-decoration: none;
   padding: $space-xxs $space-sm;
+  font-weight: 600;
   color: var(--color-interactive);
   transition: $default-transition;
 
@@ -133,10 +134,9 @@
 
 .header__welcome-text {
   position: relative;
-  margin-top: 6rem;
+  margin-top: $space-largest;
   text-align: center;
   color: var(--color-bg);
-
   transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 
   &::before {
@@ -150,7 +150,7 @@
   }
 
   @include mq.mq($from:md) {
-    margin: 6rem auto 0;
+    margin: $space-largest auto 0;
     width: clamp(15rem, 18rem, 20rem);
   }
 
