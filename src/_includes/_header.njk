@@ -16,9 +16,12 @@
       {% endfor %}
     </ul>
   </nav>
-  {% if page.url == '/'%}
-    <h1 id="h1" class="header__welcome-text">
+ 
+  <h1 id="h1" class="header__welcome-text" tabindex="-1">
+    {% if page.url !== "/" %}
+      {{ title }}
+    {% else %}
       Some catchy welcome message
+    {% endif %}
     </h1>
-  {% endif %}
 </header>

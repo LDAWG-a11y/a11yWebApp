@@ -1,27 +1,34 @@
 @use '../vendors/mq';
 
 .header {
-  padding-top: $space-xxs;
+  height: 35rem;
   background: var(--color-primary);
-  height: 90vw;
-  background: linear-gradient(315deg, var(--color-primary) 0%, var(--color-secondary) 100%); 
-  clip-path: polygon(100% 0%, 0% 0% , 0% 52.04%, 1% 52.03%, 2% 52.01%, 3% 51.97%, 4% 51.91%, 5% 51.84%, 6% 51.76%, 7% 51.66%, 8% 51.55%, 9% 51.42%, 10% 51.28%, 11% 51.13%, 12% 50.96%, 13% 50.78%, 14% 50.58%, 15% 50.38%, 16% 50.16%, 17% 49.93%, 18% 49.69%, 19% 49.44%, 20% 49.18%, 21% 48.92%, 22% 48.64%, 23% 48.36%, 24% 48.07%, 25% 47.77%, 26% 47.47%, 27% 47.16%, 28% 46.85%, 29% 46.53%, 30% 46.21%, 31% 45.89%, 32% 45.57%, 33% 45.24%, 34% 44.92%, 35% 44.60%, 36% 44.28%, 37% 43.96%, 38% 43.64%, 39% 43.33%, 40% 43.02%, 41% 42.72%, 42% 42.42%, 43% 42.13%, 44% 41.85%, 45% 41.57%, 46% 41.31%, 47% 41.05%, 48% 40.80%, 49% 40.56%, 50% 40.33%, 51% 40.12%, 52% 39.91%, 53% 39.72%, 54% 39.54%, 55% 39.37%, 56% 39.21%, 57% 39.07%, 58% 38.94%, 59% 38.83%, 60% 38.73%, 61% 38.65%, 62% 38.58%, 63% 38.53%, 64% 38.49%, 65% 38.47%, 66% 38.46%, 67% 38.47%, 68% 38.49%, 69% 38.53%, 70% 38.59%, 71% 38.66%, 72% 38.74%, 73% 38.84%, 74% 38.95%, 75% 39.08%, 76% 39.22%, 77% 39.38%, 78% 39.54%, 79% 39.73%, 80% 39.92%, 81% 40.13%, 82% 40.34%, 83% 40.57%, 84% 40.81%, 85% 41.06%, 86% 41.32%, 87% 41.59%, 88% 41.87%, 89% 42.15%, 90% 42.44%, 91% 42.74%, 92% 43.04%, 93% 43.35%, 94% 43.66%, 95% 43.98%, 96% 44.30%, 97% 44.62%, 98% 44.94%, 99% 45.26%, 100% 45.58%);
+  background: linear-gradient(315deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  background: linear-gradient(252deg, var(--color-primary) 0%, var(--color-secondary) 82%); 
+  clip-path: polygon(0 0, 100% 0, 99% 95%, 0% 100%);
 
-  
-  @include mq.mq($from:sm) {
+  @include mq.mq($from:md) {
     padding-top: $space-xl;
+    height: 40rem;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
   }
 }
 
 .main-nav {
   background: var(--color-bg);
+  padding-bottom: $space-md;
 
-  @include mq.mq($from:sm) {
+  @include mq.mq($from:xs) {
+    background: none
+  }
+
+  @include mq.mq($from:md) {
     display: flex;
     justify-content: space-between;
     margin: 0 $space-lg;
     border-radius: $radius-xxl;
     padding: $space-xs $space-xxl;
+    background: var(--color-bg);
   }
 }
 
@@ -30,7 +37,7 @@
   transform: translate(-50%);
   font-size: 0;
 
-  @include mq.mq($from:sm) {
+  @include mq.mq($from:md) {
     margin-left: 0;
     transform: none;
   }
@@ -42,22 +49,23 @@
   @include mq.mq($from:xs) {
     display: flex;
     justify-content: space-around;
-    margin-top: $space-sm;
+    margin: $space-sm $space-xs 0;
+    border-radius: $radius-md;
+    padding: $space-sm 0;
+    background: var(--color-bg);
   }
 
-  @include mq.mq($from:xs) {
+  @include mq.mq($from:md) {
     justify-content: end;
-  }
-
-  @include mq.mq($from:sm) {
     margin-top: 0;
+    padding: $space-xxs 0;
   }
 }
 
 .main-nav__item {
   position: relative;
 
-  @include mq.mq($until:xs) {
+  @include mq.mq($until:md) {
     margin-bottom: .125rem;
   }
 }
@@ -70,6 +78,10 @@
   transition: $default-transition;
 
   @include mq.mq($from:xs) {
+    padding: $space-sm $space-sm;
+  }
+
+  @include mq.mq($from:md) {
     display: inline-block;
     padding: $space-xs $space-sm;
   }
@@ -88,12 +100,18 @@
 
       @include mq.mq($from:xs) {
         top: unset;
-        bottom: $space-xxs;
+        bottom: $space-xs;
+        transform: none;
         left: $space-sm;
         width: calc(100% - #{$space-lg});
         border: 0;
         border-bottom: 4px solid var(--color-interactive);
         transition: border-bottom-color 250ms ease-in;
+      }
+
+      @include mq.mq($from:md) {
+        bottom: $space-xxs;
+        transform: translateY(-50%);
       }
     }
   }
@@ -114,17 +132,32 @@
 }
 
 .header__welcome-text {
-  margin: $space-xxs 0 0;
-  padding-bottom: $space-lg;
+  position: relative;
+  margin-top: 6rem;
   text-align: center;
   color: var(--color-bg);
 
-  @include mq.mq($from:sm) {
-    margin: $space-lg auto 0;
-    padding-bottom: $space-xxl;
-    width: clamp(15rem, 18rem, 20rem);
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 
-    // temp
-    padding-bottom: 30rem;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -$space-md;
+    left: 0;
+    width: 0;
+    border-bottom: 4px solid var(--color-bg);
+    transition: width 250ms ease-in;
+  }
+
+  @include mq.mq($from:md) {
+    margin: 6rem auto 0;
+    width: clamp(15rem, 18rem, 20rem);
+  }
+
+  &:focus-visible {
+
+    &::before {
+      width: 100%;
+    }
   }
 }
