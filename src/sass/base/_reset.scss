@@ -44,7 +44,8 @@ button {
 }
 
 a:focus,
-button:focus {
+button:focus,
+h1:focus {
   outline: 3px dotted transparent;
 }
 

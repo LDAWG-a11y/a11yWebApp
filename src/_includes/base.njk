@@ -23,12 +23,7 @@
 <body>
   {% include "_header.njk" %}
   <main class="main">
-    <h1 tabindex="-1" id="h1">
-    {% if page.url !== "/" %}
-      {{ title }}
-    {% endif %}
-    </h1>
-  {{ content | safe }}
+    {{ content | safe }}
   </main>
   {% include "_footer.njk" %}
 </body>
