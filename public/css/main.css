@@ -361,7 +361,6 @@ body:before {
 .header {
   height: 35rem;
   background: var(--color-primary);
-  background: linear-gradient(315deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   background: linear-gradient(252deg, var(--color-primary) 0%, var(--color-secondary) 82%);
   clip-path: polygon(0 0, 100% 0, 99% 95%, 0% 100%);
 }
@@ -571,6 +570,76 @@ body:before {
     content: "xxl ≥ 1440px (90em)";
   }
 }
+.footer {
+  margin-top: 6rem;
+  position: relative;
+  background: var(--color-primary);
+  background: linear-gradient(252deg, var(--color-primary) 0%, var(--color-secondary) 82%);
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+}
+.footer::before {
+  content: "";
+  position: absolute;
+  height: calc(100% - 16px);
+  width: calc(100% - 16px);
+  top: 8px;
+  left: 8px;
+  background-color: white;
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+}
+@media (min-width: 48em) {
+  .footer::before {
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+@media (min-width: 48em) {
+  .footer {
+    margin: 6rem 0 0;
+    display: flex;
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+.footer__panel--secondary,
+.footer__panel--primary {
+  position: relative;
+  flex: 1;
+  padding: 2.5rem 1.5rem;
+  z-index: 2;
+}
+@media (min-width: 48em) {
+  .footer__panel--secondary,
+.footer__panel--primary {
+    padding: 6rem 4rem;
+  }
+}
+
+.footer__list {
+  margin-left: 1rem;
+}
+
+.footer__list-item::marker {
+  color: var(--color-accent-2);
+}
+
+.footer__link,
+.footer__link:visited {
+  margin: -2px -3px;
+  padding: 2px 3px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: inherit;
+  color: var(--color-interactive);
+}
+.footer__link:focus, .footer__link:hover,
+.footer__link:visited:focus,
+.footer__link:visited:hover {
+  background-color: var(--color-interactive);
+  color: var(--color-bg);
+}
+
 body:before {
   background-color: #fcf8e3;
   border-bottom: 1px solid #fbeed5;

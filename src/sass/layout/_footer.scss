@@ -1,4 +1,84 @@
 @use '../vendors/mq';
 
 .footer {
+  margin-top: $space-largest;
+  position: relative;
+  background: var(--color-primary);
+  background: linear-gradient(252deg, var(--color-primary) 0%, var(--color-secondary) 82%);
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: calc(100% - 16px);
+    width: calc(100% - 16px);
+    top: 8px;
+    left: 8px;
+    background-color: white;
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+
+    @include mq.mq($from:md) {
+      clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+    }
+  }
+
+  @include mq.mq($from:md) {
+    margin: $space-largest 0 0;
+    display: flex;
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+.footer__panel--secondary,
+.footer__panel--primary {
+  position: relative;
+  flex: 1;
+  padding: $space-xxl $space-lg;
+  z-index: 2;
+
+  @include mq.mq($from:md) {
+    padding: $space-largest $space-xxxxl;
+  }
+}
+
+.footer__panel--primary {
+
+}
+
+.footer__panel--secondary {
+
+}
+
+.footer__list {
+  margin-left: $space-md;
+
+  
+}
+
+.footer__list-item {
+  &::marker {
+    color: var(--color-accent-2);
+  }
+}
+
+.footer__link,
+.footer__link:visited {
+  margin: -2px -3px;
+  padding: 2px 3px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: inherit;
+  color: var(--color-interactive);
+
+  &:focus,
+  &:hover {
+    background-color: var(--color-interactive);
+    color: var(--color-bg);
+  }
+}
+
+.footer__help-text {
+  
 }
