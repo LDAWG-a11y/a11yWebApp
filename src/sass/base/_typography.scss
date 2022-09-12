@@ -71,22 +71,14 @@ h2 {
 }
 
 h3 {
-  font-size: 2rem;
-
-  @include mq.mq($from:lg) {
-    font-size: 2.25rem;
-  }
-}
-
-h4 {
-  font-size: 1.75rem;
+  font-size: 1.75remrem;
 
   @include mq.mq($from:lg) {
     font-size: 2rem;
   }
 }
 
-h5 {
+h4 {
   font-size: 1.5rem;
 
   @include mq.mq($from:lg) {
@@ -94,11 +86,19 @@ h5 {
   }
 }
 
-h6 {
-  font-size: 1.35rem;
+h5 {
+  font-size: 1.3rem;
 
   @include mq.mq($from:lg) {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+}
+
+h6 {
+  font-size: 1.25rem;
+
+  @include mq.mq($from:lg) {
+    font-size: 1.35rem;
   }
 }
 
@@ -136,4 +136,8 @@ ul:not([class]) {
       color: var(--color-accent-2);
     }
   }
+}
+
+%small-text {
+  font-size: 1rem;
 }

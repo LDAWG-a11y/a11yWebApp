@@ -1,23 +1,21 @@
 @use '../vendors/mq';
 
-.intro-panel {
+.latest-articles {
   margin-top: $space-xxxxl;
-  padding: $space-sm;
-  border: 2px solid var(--color-accent);
-  border-radius: $radius-md;
+  padding: 0;
 
   @include mq.mq($from:md) {
     margin: $space-largest $space-lg 0;
     border-width: 3px;
     border-radius: $radius-lg;
-    padding: $space-xl $space-lg;
+    padding: $space-md 0;
   }
 }
 
-.intro-panel__heading {
+.latest-articles__heading {
   
 }
 
-.intro-panel__text {
-  
+.latest-articles__intro {
+  margin-bottom: $space-xl;
 }
