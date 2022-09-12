@@ -3,6 +3,7 @@ $--color-bg: --color-bg;
 $--color-primary: --color-primary;
 $--color-secondary: --color-secondary;
 $--color-accent: --color-accent;
+$--color-accent-2: --color-accent-2;
 $--color-interactive: --color-interactive;
 
 $theme-map-light: (
@@ -10,7 +11,9 @@ $theme-map-light: (
   $--color-bg: #fdfdfd,
   $--color-primary: #9400d3,
   $--color-secondary: #695e93,
-  $--color-accent: #4a94a8,
+  // $--color-accent: #4a94a8,
+  $--color-accent: #e88433,
+  $--color-accent-2: #e75225,
   $--color-interactive: #b200fd,
 );
 
@@ -20,6 +23,7 @@ $theme-map-dark: (
   $--color-primary: green,
   $--color-secondary: red,
   $--color-accent: #df356d,
+  $--color-accent-2: #df356d,
   $--color-interactive: #0fc6c7,
 );
 
