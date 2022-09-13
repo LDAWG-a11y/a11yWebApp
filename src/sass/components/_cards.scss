@@ -30,6 +30,7 @@
 
 .card__link {
   @include focus-indicator;
+  @extend %underline;
 
   margin: -3px;
   padding: 3px;
@@ -54,9 +55,10 @@
 
 .card__author-link {
   @include focus-indicator;
+  @extend %underline;
 
-  margin: -3px;
-  padding: 3px;
+  margin: -4px -3px;
+  padding: 4px 3px;
   font-weight: 600;
   color: var(--color-interactive);
 }

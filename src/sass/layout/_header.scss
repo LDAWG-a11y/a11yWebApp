@@ -1,14 +1,14 @@
 @use '../vendors/mq';
 
 .header {
-  height: 35rem;
+  height: auto;
   background: var(--color-primary);
-  background: linear-gradient(252deg, var(--color-primary) 0%, var(--color-secondary) 82%);
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
   clip-path: polygon(0 0, 100% 0, 99% 95%, 0% 100%);
 
   @include mq.mq($from:md) {
     padding-top: $space-xl;
-    height: 40rem;
+    height: auto;
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
   }
 }
@@ -133,7 +133,7 @@
 
 .header__welcome-text {
   position: relative;
-  margin-top: $space-largest;
+  margin-top: $space-bigger;
   text-align: center;
   color: var(--color-bg);
   transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
@@ -141,21 +141,23 @@
   &::before {
     content: "";
     position: absolute;
-    bottom: -$space-md;
-    left: 0;
+    bottom: calc(#{$space-biggest} - 6px);
+    left: 50%;
     width: 0;
     border-bottom: 4px solid var(--color-bg);
-    transition: width 250ms ease-in;
+    transition: width 250ms 150ms ease-in, left 250ms 150ms ease-in;
   }
 
   @include mq.mq($from:md) {
-    margin: $space-largest auto 0;
+    margin: $space-bigger auto 0;
     width: clamp(15rem, 18rem, 20rem);
   }
 
   &:focus-visible {
+    outline: transparent;
 
     &::before {
+      left: 0;
       width: 100%;
     }
   }

@@ -16,6 +16,7 @@ html {
 }
 
 body {
+  position: relative;
   font-size: $default-paragraph-size;
   line-height: $default-line-height;
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
@@ -40,7 +41,9 @@ h6 {
 }
 
 h1 {
+  position: relative;
   font-size: 3.5rem;
+  padding-bottom: $space-biggest;
 
   @include mq.mq($from:lg) {
     font-size: 4rem;
@@ -110,17 +113,18 @@ p {
   }
 }
 
+a {
+  text-decoration-skip-ink: all;
+}
+
 a:not([class]),
 a:not([class]):visited {
   @include focus-indicator;
+  @extend %underline;
 
-  margin: -2px -3px;
-  padding: 2px 3px;
+  margin: -3px -3px;
+  padding: 3px 3px;
   font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  text-decoration-thickness: 2px;
-  text-decoration-color: inherit;
   color: var(--color-interactive);
 }
 
