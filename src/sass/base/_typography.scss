@@ -74,7 +74,8 @@ h2 {
 }
 
 h3 {
-  font-size: 1.75remrem;
+  margin-bottom: $space-md;
+  font-size: 1.75rem;
 
   @include mq.mq($from:lg) {
     font-size: 2rem;
@@ -129,7 +130,7 @@ a:not([class]):visited {
 }
 
 ul:not([class]) {
-  margin: $space-lg $space-md $space-xxs;
+  margin: $space-lg $space-md;
 
   & > li {
     &::marker {
