@@ -5,15 +5,12 @@
 @import 'abstracts/functions';
 @import 'abstracts/placeholders';
 @import 'abstracts/mixins';
-@import 'abstracts/animations';
-@import 'abstracts/helpers';
 
 @import 'base/reset';
 @import 'base/typography';
 
 @import 'layout/header';
 @import 'layout/footer';
-@import 'layout/site-width';
 @import 'layout/latest-articles';
 
 @import 'components/skip-link';

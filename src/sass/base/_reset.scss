@@ -1,3 +1,5 @@
+@use '../vendors/mq';
+
 *,
 *::before,
 *::after {
@@ -12,6 +14,14 @@ html {
 
 body {
   min-height: 100vh;
+  max-width: $site-width;
+  margin: 0 auto;
+  padding: 0 $space-xs;
+  background: var(--color-bg);
+
+  @include mq.mq($from:md) {
+    padding: 0 $space-lg;
+  }
 }
 
 main {

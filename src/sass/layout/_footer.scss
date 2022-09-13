@@ -50,19 +50,17 @@
 }
 
 .footer__list {
-  margin-left: $space-md;
-
-  
+  list-style: none;
 }
 
 .footer__list-item {
-  &::marker {
-    color: var(--color-accent-2);
-  }
 }
 
 .footer__link,
 .footer__link:visited {
+  @include focus-indicator;
+
+  position: relative;
   margin: -2px -3px;
   padding: 2px 3px;
   font-weight: 600;
@@ -72,10 +70,19 @@
   text-decoration-color: inherit;
   color: var(--color-interactive);
 
-  &:focus,
-  &:hover {
-    background-color: var(--color-interactive);
-    color: var(--color-bg);
+  &[aria-current="page"] {
+    &::before {
+      content: "";
+      position: absolute;
+      right: -$space-sm;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 5px 10px 5px 0;
+      border-color: transparent var(--color-interactive) transparent transparent;
+    }
   }
 }
 
