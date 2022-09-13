@@ -1060,6 +1060,6 @@ body:before {
   border: 2px solid var(--color-bg);
   border-radius: 8px;
 }
-.tag__link:focus::before {
+.tag__link:focus-visible::before {
   border-color: var(--color-interactive);
 }

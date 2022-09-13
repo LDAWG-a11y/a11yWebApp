@@ -20,7 +20,7 @@
       border-radius: $radius-lg;
     }
 
-    &:focus {
+    &:focus-visible {
       &::before {
         border-color: var(--color-interactive);
       }
