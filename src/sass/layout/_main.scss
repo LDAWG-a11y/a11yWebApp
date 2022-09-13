@@ -1,0 +1,8 @@
+@use '../vendors/mq';
+
+.main {
+
+  @include mq.mq($from:lg) {
+    padding: 0 $space-md;
+  }
+}

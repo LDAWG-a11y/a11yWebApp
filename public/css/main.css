@@ -308,7 +308,8 @@ h2::before {
 }
 
 h3 {
-  font-size: 1.75remrem;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
 }
 @media (min-width: 64em) {
   h3 {
@@ -370,7 +371,7 @@ a:not([class]):visited:hover {
 }
 
 ul:not([class]) {
-  margin: 1.5rem 1rem 0.25rem;
+  margin: 1.5rem 1rem;
 }
 ul:not([class]) > li::marker {
   color: var(--color-accent-2);
@@ -429,7 +430,63 @@ body:before {
     content: "xxl ≥ 1440px (90em)";
   }
 }
+@media (min-width: 64em) {
+  .main {
+    padding: 0 1rem;
+  }
+}
+
+body:before {
+  background-color: #fcf8e3;
+  border-bottom: 1px solid #fbeed5;
+  border-left: 1px solid #fbeed5;
+  color: #c09853;
+  font: small-caption;
+  padding: 3px 6px;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}
+
+@media (min-width: 20em) {
+  body:before {
+    content: "xxs ≥ 320px (20em)";
+  }
+}
+@media (min-width: 26.25em) {
+  body:before {
+    content: "xs ≥ 420px (26.25em)";
+  }
+}
+@media (min-width: 37.5em) {
+  body:before {
+    content: "sm ≥ 600px (37.5em)";
+  }
+}
+@media (min-width: 48em) {
+  body:before {
+    content: "md ≥ 768px (48em)";
+  }
+}
+@media (min-width: 64em) {
+  body:before {
+    content: "lg ≥ 1024px (64em)";
+  }
+}
+@media (min-width: 75em) {
+  body:before {
+    content: "xl ≥ 1200px (75em)";
+  }
+}
+@media (min-width: 90em) {
+  body:before {
+    content: "xxl ≥ 1440px (90em)";
+  }
+}
 .header {
+  margin-bottom: 4rem;
   height: auto;
   background: var(--color-primary);
   background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
@@ -437,6 +494,7 @@ body:before {
 }
 @media (min-width: 48em) {
   .header {
+    margin-bottom: 6rem;
     padding-top: 2rem;
     height: auto;
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
@@ -790,7 +848,7 @@ body:before {
 }
 @media (min-width: 48em) {
   .latest-articles {
-    margin: 6rem 1.5rem 0;
+    margin: 6rem 0 0;
     border-width: 3px;
     border-radius: 8px;
     padding: 1rem 0;
@@ -926,14 +984,12 @@ body:before {
   }
 }
 .intro-panel {
-  margin-top: 4rem;
   padding: 0.75rem;
   border: 2px solid var(--color-accent);
   border-radius: 6px;
 }
 @media (min-width: 48em) {
   .intro-panel {
-    margin: 6rem 1.5rem 0;
     border-width: 3px;
     border-radius: 8px;
     padding: 2rem 1.5rem;
