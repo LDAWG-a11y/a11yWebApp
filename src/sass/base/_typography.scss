@@ -112,6 +112,8 @@ p {
 
 a:not([class]),
 a:not([class]):visited {
+  @include focus-indicator;
+
   margin: -2px -3px;
   padding: 2px 3px;
   font-weight: 600;
@@ -120,12 +122,6 @@ a:not([class]):visited {
   text-decoration-thickness: 2px;
   text-decoration-color: inherit;
   color: var(--color-interactive);
-
-  &:focus,
-  &:hover {
-    background-color: var(--color-interactive);
-    color: var(--color-bg);
-  }
 }
 
 ul:not([class]) {

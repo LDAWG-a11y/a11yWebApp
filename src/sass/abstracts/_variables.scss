@@ -1,3 +1,4 @@
+$site-width: 100rem;
 $default-line-height: 1.5;
 $heading-line-height: 1;
 $default-paragraph-size: 1.125rem;
@@ -22,4 +23,4 @@ $radius-xl: 10px;
 $radius-xxl: 2.5rem;
 $radius-pill: 50%;
 
-$default-transition: background 250ms ease-in, color 250ms ease-in;
+$default-transition: all 250ms ease-in, color 250ms ease-in;
