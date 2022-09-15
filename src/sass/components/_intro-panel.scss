@@ -1,12 +1,13 @@
 @use '../vendors/mq';
 
 .intro-panel {
+  margin-bottom: $space-xxxxl;
   padding: $space-sm;
   border: 2px solid var(--color-accent);
   border-radius: $radius-md;
 
   @include mq.mq($from:md) {
-    // margin: 0 $space-lg;
+    margin-bottom: $space-bigger;
     border-width: 3px;
     border-radius: $radius-lg;
     padding: $space-xl $space-lg;

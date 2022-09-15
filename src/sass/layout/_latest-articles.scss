@@ -1,11 +1,10 @@
 @use '../vendors/mq';
 
 .latest-articles {
-  margin-top: $space-xxxxl;
+  margin: 0;
   padding: 0;
 
   @include mq.mq($from:md) {
-    margin: $space-bigger 0 0;
     border-width: 3px;
     border-radius: $radius-lg;
     padding: $space-md 0;

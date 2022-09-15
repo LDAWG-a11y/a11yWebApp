@@ -1,0 +1,113 @@
+.accordion {
+  display: block;
+
+  .no-js & {
+
+  }
+  
+  .has-js & {
+    max-width: 60rem;
+    margin-bottom: $space-xs;
+  }
+
+  &[data-open="true"] {
+    + .accordion__panel {
+      height: auto;
+      // transition: height 250ms ease-in-out;
+      animation: show 250ms ease-in-out;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  &[data-open="false"] {
+    + .accordion__panel {
+      height: 0;
+      // transition: height 250ms ease-in-out;
+      animation: hide 250ms ease-in-out;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.accordion__btn {
+  position: relative;
+  border: 2px solid var(--color-interactive);
+  border-radius: $radius-xs;
+  padding: $space-xs $space-xxl $space-xs $space-sm;
+  width: 100%;
+  font-size: $large-text;
+  text-align: left;
+  color: var(--color-interactive);
+  background: var(--color-bg);
+  transition: all 250ms ease-in-out;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: var(--color-interactive);
+    transition: background 250ms ease-in-out, transform 250ms ease-in-out, opacity 200ms ease-in-out;
+    transform-origin: top;
+  }
+
+  &::before {
+    top: 50%;
+    right: 18px;
+    width: 4px;
+    height: 18px;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    top: 50%;
+    right: 11px;
+    width: 18px;
+    height: 4px;
+    transform: translateY(-50%);
+  }
+
+  &[aria-expanded="false"] {
+    opacity: 1;
+  }
+
+  &[aria-expanded="true"] {
+    &::before {
+      transform: rotate(90deg) translateY(-50%);
+    }
+
+    &::after {
+      opacity: 0;
+      transform: rotate(180deg) translateY(-50%);
+    }
+  }
+
+  &:focus,
+  &:hover {
+    background-color: var(--color-interactive);
+    color: var(--color-bg);
+
+    &::before,
+    &::after {
+      background-color: var(--color-bg);
+    }
+  }
+
+  &:focus-visible {
+    box-shadow: 0px 0px 0px 2px var(--color-bg),0px 0px 0px 4px var(--color-interactive);
+  }
+}
+
+.accordion__panel {
+
+  .no-js & {
+
+  }
+
+  .has-js & {
+    overflow: hidden;
+    padding: 0 $space-xs 0;
+    max-width: 60rem;
+    height: 0;
+    visibility: hidden;
+  }
+}

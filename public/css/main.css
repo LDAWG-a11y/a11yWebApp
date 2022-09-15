@@ -51,11 +51,11 @@ body:before {
 :root:not([data-theme=dark]) {
   --color-text: #1f1f1f;
   --color-bg: #fdfdfd;
-  --color-primary: #7f00ff;
-  --color-secondary: #bd00b6;
-  --color-accent: #f72585;
-  --color-accent-2: #7209b7;
-  --color-interactive: #006ADB;
+  --color-primary: #702A8C;
+  --color-secondary: #BF2669;
+  --color-accent: #FF194D;
+  --color-accent-2: #FF7326;
+  --color-interactive: #8A2BE2;
 }
 
 :root[data-theme=dark] {
@@ -77,6 +77,28 @@ a:not([class]):visited {
   text-decoration-color: inherit;
 }
 
+@keyframes hide {
+  0% {
+    visibility: visible;
+  }
+  99% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+@keyframes show {
+  0% {
+    visibility: hidden;
+  }
+  1% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible;
+  }
+}
 body:before {
   background-color: #fcf8e3;
   border-bottom: 1px solid #fbeed5;
@@ -290,7 +312,7 @@ h2 {
   font-size: 2.25rem;
   margin-bottom: 1.5rem;
 }
-h2::before {
+h2:not(.accordion)::before {
   content: "";
   position: absolute;
   bottom: -0.75rem;
@@ -843,12 +865,11 @@ body:before {
   }
 }
 .latest-articles {
-  margin-top: 4rem;
+  margin: 0;
   padding: 0;
 }
 @media (min-width: 48em) {
   .latest-articles {
-    margin: 6rem 0 0;
     border-width: 3px;
     border-radius: 8px;
     padding: 1rem 0;
@@ -984,12 +1005,14 @@ body:before {
   }
 }
 .intro-panel {
+  margin-bottom: 4rem;
   padding: 0.75rem;
   border: 2px solid var(--color-accent);
   border-radius: 6px;
 }
 @media (min-width: 48em) {
   .intro-panel {
+    margin-bottom: 6rem;
     border-width: 3px;
     border-radius: 8px;
     padding: 2rem 1.5rem;
@@ -1147,4 +1170,84 @@ body:before {
 }
 .tag__link:focus-visible::before {
   border-color: var(--color-interactive);
+}
+
+.accordion {
+  display: block;
+}
+.has-js .accordion {
+  max-width: 60rem;
+  margin-bottom: 0.5rem;
+}
+.accordion[data-open=true] + .accordion__panel {
+  height: auto;
+  animation: show 250ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+.accordion[data-open=false] + .accordion__panel {
+  height: 0;
+  animation: hide 250ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.accordion__btn {
+  position: relative;
+  border: 2px solid var(--color-interactive);
+  border-radius: 2px;
+  padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+  width: 100%;
+  font-size: 1.5rem;
+  text-align: left;
+  color: var(--color-interactive);
+  background: var(--color-bg);
+  transition: all 250ms ease-in-out;
+}
+.accordion__btn::before, .accordion__btn::after {
+  content: "";
+  position: absolute;
+  background-color: var(--color-interactive);
+  transition: background 250ms ease-in-out, transform 250ms ease-in-out, opacity 200ms ease-in-out;
+  transform-origin: top;
+}
+.accordion__btn::before {
+  top: 50%;
+  right: 18px;
+  width: 4px;
+  height: 18px;
+  transform: translateY(-50%);
+}
+.accordion__btn::after {
+  top: 50%;
+  right: 11px;
+  width: 18px;
+  height: 4px;
+  transform: translateY(-50%);
+}
+.accordion__btn[aria-expanded=false] {
+  opacity: 1;
+}
+.accordion__btn[aria-expanded=true]::before {
+  transform: rotate(90deg) translateY(-50%);
+}
+.accordion__btn[aria-expanded=true]::after {
+  opacity: 0;
+  transform: rotate(180deg) translateY(-50%);
+}
+.accordion__btn:focus, .accordion__btn:hover {
+  background-color: var(--color-interactive);
+  color: var(--color-bg);
+}
+.accordion__btn:focus::before, .accordion__btn:focus::after, .accordion__btn:hover::before, .accordion__btn:hover::after {
+  background-color: var(--color-bg);
+}
+.accordion__btn:focus-visible {
+  box-shadow: 0px 0px 0px 2px var(--color-bg), 0px 0px 0px 4px var(--color-interactive);
+}
+
+.has-js .accordion__panel {
+  overflow: hidden;
+  padding: 0 0.5rem 0;
+  max-width: 60rem;
+  height: 0;
+  visibility: hidden;
 }
