@@ -5,6 +5,7 @@
 @import 'abstracts/functions';
 @import 'abstracts/placeholders';
 @import 'abstracts/mixins';
+@import 'abstracts/animations';
 
 @import 'base/reset';
 @import 'base/typography';
@@ -18,3 +19,4 @@
 @import 'components/intro-panel';
 @import 'components/cards';
 @import 'components/tags';
+@import 'components/accordion';

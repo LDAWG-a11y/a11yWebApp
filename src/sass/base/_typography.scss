@@ -56,16 +56,19 @@ h2 {
   font-size: 2.25rem;
   margin-bottom: $space-lg;
 
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: -$space-sm;
-    left: 0;
-    border-radius: $radius-md;
-    height: 5px;
-    width: 100%;
-    background: linear-gradient(111.3deg, var(--color-accent-2) 9.6%, var(--color-accent) 93.6%);
+  &:not(.accordion) {
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -$space-sm;
+      left: 0;
+      border-radius: $radius-md;
+      height: 5px;
+      width: 100%;
+      background: linear-gradient(111.3deg, var(--color-accent-2) 9.6%, var(--color-accent) 93.6%);
+    }
   }
+  
 
   @include mq.mq($from:lg) {
     margin-bottom: $space-xl;
