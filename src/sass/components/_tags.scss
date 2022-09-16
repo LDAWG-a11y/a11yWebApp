@@ -4,12 +4,25 @@
   display: flex;
   flex-wrap: wrap;
   gap: $space-xs;
+  background-color: var(--color-bg--light)
 }
 
 .tag__item {
   @extend %small-text;
 
   display: inline-flex;
+  font-weight: 600;
+}
+
+.tag__item--inert {
+  @extend %smallest-text;
+
+  line-height: 1.4;
+  border-radius: $radius-md;
+  padding: $space-xxs $space-xs;
+  font-weight: 500;
+  background-color: var(--color-accent);
+  color: var(--color-text)
 }
 
 .tag__link {
@@ -21,4 +34,35 @@
   line-height: calc($default-line-height / 1.5);
   text-decoration: none;
   color: var(--color-interactive);
+
+  &.tag__link--has-count {
+    padding-right: 2rem;
+  }
+
+  &:hover,
+  &:focus-visible {
+    .tag__count {
+      background-color: var(--color-bg--light);
+      color: var(--color-interactive)
+    }
+  }
+}
+
+.tag__count {
+  @extend %smallest-text;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  margin-left: $space-xxs;
+  border-radius: 0 $radius-sm $radius-sm 0;
+  height: 100%;
+  width: 1.75rem;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.7;
+  background-color: var(--color-interactive);
+  color: var(--color-bg--light);
+  transition: background 250ms ease-in-out, color 250ms ease-in-out;
 }

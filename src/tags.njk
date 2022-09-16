@@ -1,0 +1,42 @@
+---
+title: "Tagged “{{ tag }}”"
+pagination:
+  data: collections
+  size: 1
+  filter: ['all', 'tagList', 'latest', 'guides']
+  alias: tag
+permalink: /tags/{{ tag | slugify }}/
+layout: base.njk
+eleventyComputed:
+  title: Guides Tagged with “{{ tag }}”
+  summary: "All digital accessibility guides from the our website tagged with “{{ tag }}”"
+---
+
+<h2>Showing {{ collections[ tag ].length }} results for {{ tag }}</h2>
+<ul class="cards">
+  {% set taglist = collections[ tag ] %}
+  {% for guide in taglist | reverse %}
+    <li class="card__item">
+      <article>
+        <h3 class="card__title"><a href="{{ guide.url }}" class="card__link">{{ guide.data.title }}</a></h3>
+        <p class="card__summary">{{ guide.data.summary }}</p>
+        <div class="tags">
+          {%- for tag in guide.data.tags| filterTagList %}
+          {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
+          {%- if tagUrl != page.url  %}
+            <span class="tag__item">
+                <a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a>
+            </span>
+          {%- else %}
+            <span class="tag__item tag__item--inert" aria-current="page">
+              {{ tag }}
+            </span>
+          {%- endif %}
+          {%- endfor %}
+         </div>
+        <span class="card__author-name"><a href="#" class="card__author-link">Joe Bloggs</a></span>
+        <span class="card__date">{{ guide.data.date | readableDate }}</span>
+      </article>
+    </li>
+  {%- endfor %}
+</ul>

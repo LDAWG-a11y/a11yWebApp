@@ -1,6 +1,7 @@
 ---
 layout: base.njk
 title: Home
+home: true
 summary: some description for google
 ---
 <div class="intro-panel">
@@ -19,33 +20,21 @@ summary: some description for google
   <h2 class="latest-articles__heading">Latest guides</h2>
   <p class="latest-articles__intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique libero ipsum, id tincidunt urna malesuada et. Vestibulum vel lacus non magna placerat pharetra ut non dui. Vivamus molestie nunc diam. Nulla auctor.</p>
   <ul class="cards">
+  {%- for guide in collections.latest %}
     <li class="card__item">
-      <h3 class="card__title"><a href="#" class="card__link">Article 1</a></h3>
-      <p class="card__summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat vehicula mauris, laoreet eleifend neque feugiat non. Nulla a sem.</p>
-      <div class="tags">
-        <span class="tag__item"><a href="#" class="tag__link">WCAG</a></span>
-      </div>
-      <span class="card__author-name"><a href="#" class="card__author-link">Joe Bloggs</a></span>
-      <span class="card__date">Friday 17th Sep, 2022</span>
+      <article>
+        <h3 class="card__title"><a href="{{ guide.url }}" class="card__link">{{ guide.data.title }}</a></h3>
+        <p class="card__summary">{{ guide.data.summary }}</p>
+        <div class="tags">
+          {%- for tag in guide.data.tags | filterTagList %}
+          {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
+            <span class="tag__item"><a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a></span>
+          {%- endfor %}
+         </div>
+        <span class="card__author-name"><a href="#" class="card__author-link">Joe Bloggs</a></span>
+        <span class="card__date">{{ guide.data.date | readableDate }}</span>
+      </article>
     </li>
-    <li class="card__item">
-      <h3 class="card__title"><a href="#" class="card__link">Article 2</a></h3>
-      <p class="card__summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat vehicula mauris, laoreet eleifend neque feugiat non. Nulla a sem.</p>
-      <div class="tags">
-        <span class="tag__item"><a href="#" class="tag__link">HTML</a></span>
-      </div>
-      <span class="card__author-name"><a href="#" class="card__author-link">Jane Bloggs</a></span>
-      <span class="card__date">Thursday 16th Sep, 2022</span>
-    </li>
-    <li class="card__item">
-     <h3 class="card__title"><a href="#" class="card__link">Article 3</a></h3>
-      <p class="card__summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat vehicula mauris, laoreet eleifend neque feugiat non. Nulla a sem.</p>
-      <div class="tags">
-        <span class="tag__item"><a href="#" class="tag__link">Alt Text</a></span>
-        <span class="tag__item"><a href="#" class="tag__link">Best Practice</a></span>
-      </div>
-      <span class="card__author-name"><a href="#" class="card__author-link">Jenny Bloggs</a></span>
-      <span class="card__date">Wednesday 15th Sep, 2022</span>
-    </li>
-  </ul>
+  {%- endfor %}
+</ul>
 </div>

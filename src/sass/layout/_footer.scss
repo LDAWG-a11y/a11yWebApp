@@ -15,7 +15,7 @@
     width: calc(100% - 16px);
     top: 8px;
     left: 8px;
-    background-color: white;
+    background-color: var(--color-bg--light);
     clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
 
     @include mq.mq($from:md) {
@@ -52,6 +52,15 @@
 
 .footer__panel--secondary {
   
+}
+
+.footer__heading {
+  margin-bottom: $space-md;
+  font-size: 1.75rem;
+
+  @include mq.mq($from:md) {
+    font-size: 2rem;
+  }
 }
 
 .footer__list {

@@ -5,11 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
-  <title>{% if not home %} {{ title }} | {{ site.siteName }} {% else %} {{ site.siteName }} | {{ title }} {% endif %}</title>
+  <title>{%- if not home %} {{ title }} | {{ site.siteName }} {%- else %} {{ site.siteName }} | {{ title }} {%- endif %}</title>
   <!-- TODO Colour scheme, descriptions, favicon and order etc -->
   <!-- <meta name="color-scheme" content="dark light"> -->
-  <meta name="description" content="{% if not home %} {{ summary }} | Site purpose etc {% endif %}">
-  <meta property="og:description" content="{% if not home %} {{ summary }} Site purpose etc {% endif %}">
+  <meta name="description" content="{%- if not home %} {{ summary }} | Site purpose etc {%- endif %}">
+  <meta property="og:description" content="{%- if not home %} {{ summary }} Site purpose etc {%- endif %}">
   <meta property="og:locale" content="en_GB">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -21,11 +21,11 @@
   </script>
 </head>
 <body>
-  {% include "_header.njk" %}
+  {%- include "_header.njk" %}
   <main class="main">
     {{ content | safe }}
   </main>
-  {% include "_footer.njk" %}
+  {%- include "_footer.njk" %}
   <script src="/js/main.js"></script>
 </body>
 </html>
