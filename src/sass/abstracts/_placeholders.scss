@@ -4,3 +4,21 @@
   text-decoration-thickness: 3px;
   text-decoration-color: inherit;
 }
+
+%visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+%small-text {
+  font-size: 1.125rem;
+}
+
+%smallest-text {
+  font-size: 1rem;
+}

@@ -1,0 +1,19 @@
+<nav class="pagination" aria-labelledby="guidesPagination">
+  <h2 class="pagination__heading" id="guidesPagination">Page {{ pagination.pageNumber + 1 }} of {{ pagination.pageLinks.length }}</h2>
+  <div class="pagination__items-wrapper">
+    {% if pagination.previousPageLink %}
+      <a class="pagination__item" href="{{ pagination.href.first }}">First</a>
+      <a class="pagination__item" href="{{ pagination.href.previous }}">Prev</a>
+    {% else %}
+      <span class="pagination__item pagination__item--inert" {%- if page.url == pagination.href.first %} aria-current="page"{%- endif %}>First</span>
+      <span class="pagination__item pagination__item--inert">Prev</span>
+    {% endif %}
+    {% if pagination.nextPageLink %}
+      <a class="pagination__item" href="{{ pagination.href.next}}">Next</a>
+      <a class="pagination__item" href="{{ pagination.href.last}}">Last</a>
+    {% else %}
+      <span class="pagination__item pagination__item--inert">Next</span>
+      <span class="pagination__item pagination__item--inert" {%- if page.url == pagination.href.last %} aria-current="page"{%- endif %}>Last</span>
+    {% endif %}
+  </div>
+</nav>

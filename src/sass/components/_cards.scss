@@ -5,18 +5,19 @@
 }
 
 .card__item {
-  border: 2px solid var(--color-accent);
+  border: 1px solid var(--color-accent);
   border-radius: $radius-md;
   padding: $space-sm;
+  max-width: 70rem;
+  background-color: var(--color-bg--light);
 
   &:not(:last-of-type) {
     margin-bottom: $space-lg;
   }
 
   @include mq.mq($from:md) {
-    border-width: 3px;
     border-radius: $radius-lg;
-    padding: $space-xl $space-lg;
+    padding: $space-sm $space-lg $space-md;
   }
 }
 

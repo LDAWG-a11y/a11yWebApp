@@ -1,30 +1,36 @@
 $--color-text: --color-text;
 $--color-bg: --color-bg;
+$--color-bg--light: --color-bg--light;
 $--color-primary: --color-primary;
 $--color-secondary: --color-secondary;
 $--color-accent: --color-accent;
 $--color-accent-2: --color-accent-2;
 $--color-interactive: --color-interactive;
+$--color-inactive: --color-inactive;
 
 $theme-map-light: (
   $--color-text: #1f1f1f,
   $--color-bg: #fdfdfd,
+  $--color-bg--light: #fffaf0,
   $--color-primary: #702A8C,
   $--color-secondary: #BF2669,
-  $--color-accent: #FF194D,
-  $--color-accent-2: #FF7326,
+  $--color-accent: #ffd6b5,
+  $--color-accent-2: #e86620,
   // $--color-interactive: #006ADB,
   $--color-interactive: #8A2BE2,
+  $--color-inactive: #b4b3b3,
 );
 
 $theme-map-dark: (
   $--color-text: #c6c6c6,
   $--color-bg: #1c1c1c,
+  $--color-bg--light: #f8eeff,
   $--color-primary: green,
   $--color-secondary: red,
-  $--color-accent: #df356d,
+  $--color-accent: #ab2fc7,
   $--color-accent-2: #df356d,
   $--color-interactive: #0fc6c7,
+  $--color-inactive: grey,
 );
 
 @mixin spread-map($map: ()) {

@@ -38,7 +38,7 @@
   font-size: $large-text;
   text-align: left;
   color: var(--color-interactive);
-  background: var(--color-bg);
+  background: var(--color-bg--light);
   transition: all 250ms ease-in-out;
 
   &::before,

@@ -3,25 +3,25 @@
   <nav class="main-nav">
     <img class="header__logo" src="https://via.placeholder.com/260x40/FFFFFF/9400D3?text=The+Brandname" alt="{{ site.siteName }} logo" class="header__logo">
     <ul class="main-nav__list">
-      {% for item in navLinks %}
-        {% if item.mainNav == true %}
+      {%- for item in navLinks %}
+        {%- if item.mainNav == true %}
         <li class="main-nav__item">
           <a class="main-nav__link"
           href="{{ item.url }}"
-          {% if item.url === page.url %}
+          {%- if item.url === page.url %}
             aria-current="page"
-          {% endif %}>{{ item.text }}</a>
+          {%- endif %}>{{ item.text }}</a>
         </li>
-        {% endif %}
-      {% endfor %}
+        {%- endif %}
+      {%- endfor %}
     </ul>
   </nav>
  
   <h1 id="h1" class="header__welcome-text" tabindex="-1">
-    {% if page.url !== "/" %}
+    {%- if page.url !== "/" %}
       {{ title }}
-    {% else %}
+    {%- else %}
       Some catchy welcome message
-    {% endif %}
+    {%- endif %}
   </h1>
 </header>
