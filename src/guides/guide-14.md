@@ -1,8 +1,8 @@
 ---
 title: "The fourteenth guide"
 summary: "A super useful guide about doing that thing that makes the other thing accessible to everybody"
-author: "Joe Bloggs"
 date: 2022-09-15
+author: jbloggs
 tags:
   - Screen reader
   - Android

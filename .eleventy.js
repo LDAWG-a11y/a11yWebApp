@@ -38,6 +38,18 @@ module.exports = eleventyConfig => {
       .slice(0, 3);
   });
 
+eleventyConfig.addFilter("getAuthor", (authors,label) => {
+	let author = authors.filter(a => a.key === label)[0];
+	return author;
+});
+
+eleventyConfig.addFilter("getGuidesByAuthor", (guides, author) => {
+	return guides.filter(a => a.data.author === author);
+});
+
+eleventyConfig.addFilter('toJson', JSON.stringify);
+eleventyConfig.addFilter('fromJson', JSON.parse);
+
   eleventyConfig.addFilter("debugger", (...args) => {
     console.log(...args)
     debugger;

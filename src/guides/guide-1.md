@@ -1,13 +1,12 @@
 ---
 title: "The first guide"
 summary: "A super useful guide about doing that thing that makes the other thing accessible to everybody"
-author: "Joe Bloggs"
+author: tmctestface
 date: 2022-09-02
 tags:
   - HTML
   - WCAG
 ---
-
 ## The heading 2
 
 
