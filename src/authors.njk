@@ -1,0 +1,103 @@
+---
+layout: base.njk
+filter:
+- all
+- nav
+- tagList
+pagination:
+   data: authors
+   size: 1
+   alias: author
+permalink: "/authors/{{author.key}}/"
+eleventyComputed:
+   title: "All guides written by {{author.name}}"
+   summary: "All accessibility guides written by “{{ author }}”"
+---
+
+<div class="author-bio">
+  <h2 class="author-bio__title">About {{ author.name.split(' ')[0] }}</h2>
+  {% if author.img %}
+    <img class="author-bio__img" height="128px" width="128px" src="{{ author.img.url }}" alt="{{ author.img.alt }}">
+  {% endif %}
+  {% if author.bio %}
+    <p class="author-bio__intro">{{ author.bio }}</p>
+  {% endif %}
+  <dl class="author-bio__meta">
+    {% if author.title %}
+      <div class="author-bio__items-wrapper">
+        <dt class="author-bio__term">Position: </dt>
+        <dd class="author-bio__description">{{ author.title }}</dd>
+      </div>
+    {% endif %}
+    {% if author.org %}
+      <div class="author-bio__items-wrapper">
+        <dt class="author-bio__term">Organisation: </dt>
+        <dd class="author-bio__description">{{ author.org }}</dd>
+      </div>
+    {% endif %}
+    {% if author.contacts %}
+      {% if author.contacts.email %}
+        <div class="author-bio__items-wrapper">
+          <dt class="author-bio__term">{%- include './svg/email.svg' %}</dt>
+          <dd class="author-bio__description">
+            <a href="{{ author.contacts.email }}" class="author-bio__link">{{ author.contacts.email }}</a>
+          </dd>
+        </div>
+      {% endif %}
+      {% if author.contacts.twitter %}
+        <div class="author-bio__items-wrapper">
+          <dt class="author-bio__term">{%- include './svg/twitter.svg' %}</dt>
+          <dd class="author-bio__description">
+            <a href="{{ author.contacts.twitter.url }}" class="author-bio__link">{{ author.contacts.twitter.text }}</a>
+          </dd>
+        </div>
+      {% endif %}
+      {% if author.contacts.linkedin %}
+        <div class="author-bio__items-wrapper">
+          <dt class="author-bio__term">{%- include './svg/linkedin.svg' %}</dt>
+          <dd class="author-bio__description">
+            <a href="{{ author.contacts.linkedin.url }}" class="author-bio__link">{{ author.contacts.linkedin.text }}</a>
+          </dd>
+        </div>
+      {% endif %}
+      {% if author.contacts.website %}
+        <div class="author-bio__items-wrapper">
+          <dt class="author-bio__term">{%- include './svg/website.svg' %}</dt>
+          <dd class="author-bio__description">
+            <a href="{{ author.contacts.website.url }}" class="author-bio__link">{{ author.contacts.website.text }}</a>
+          </dd>
+        </div>
+      {% endif %}
+    {% endif %}
+  </dl>
+</div>
+
+{% set posts = collections.guides | getGuidesByAuthor(author.key) %}
+<h2>Showing {{ posts.length }} guides</h2>
+<ul class="cards">
+  {% for post in posts %}
+    <li class="card__item">
+      <article>
+        <h3 class="card__title"><a href="{{ post.url }}" class="card__link">{{ post.data.title }}</a></h3>
+        <p class="card__summary">{{ post.data.summary }}</p>
+        <div class="tags">
+          {%- for tag in post.data.tags | filterTagList %}
+          {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
+          {%- if tagUrl != page.url  %}
+            <span class="tag__item">
+                <a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a>
+            </span>
+          {%- else %}
+            <span class="tag__item tag__item--inert" aria-current="page">
+              {{ tag }}
+            </span>
+          {%- endif %}
+          {%- endfor %}
+        </div>
+        <span class="card__author-name">{{ author.name }}</span>
+        <span class="card__date">{{ post.data.date | readableDate }}</span>
+      </article>
+    </li>
+{% endfor %}
+</ul>
+  

@@ -1,5 +1,4 @@
 ---
-title: "Tagged “{{ tag }}”"
 pagination:
   data: collections
   size: 1
@@ -12,7 +11,7 @@ eleventyComputed:
   summary: "All digital accessibility guides from the our website tagged with “{{ tag }}”"
 ---
 
-<h2>Showing {{ collections[ tag ].length }} results for {{ tag }}</h2>
+<h2>Showing {{ collections[ tag ].length }} result{%- if collections[ tag ].length > 1%}s{% endif %} for {{ tag }}</h2>
 <ul class="cards">
   {% set taglist = collections[ tag ] %}
   {% for guide in taglist | reverse %}
@@ -21,7 +20,7 @@ eleventyComputed:
         <h3 class="card__title"><a href="{{ guide.url }}" class="card__link">{{ guide.data.title }}</a></h3>
         <p class="card__summary">{{ guide.data.summary }}</p>
         <div class="tags">
-          {%- for tag in guide.data.tags| filterTagList %}
+          {%- for tag in guide.data.tags | filterTagList %}
           {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
           {%- if tagUrl != page.url  %}
             <span class="tag__item">

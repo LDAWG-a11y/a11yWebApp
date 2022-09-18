@@ -41,7 +41,7 @@ eleventyComputed:
             </span>
           {%- endfor %}
          </div>
-        <span class="card__author-name"><a href="#" class="card__author-link">Joe Bloggs</a></span>
+        <a href="/authors/{{ guideAuthor.key }}" class="card__author-link">{{ guide.data.author }}</a>
         <span class="card__date">{{ guide.data.date | readableDate }}</span>
       </article>
     </li>

@@ -26,6 +26,12 @@ body {
   @include mq.mq($from:lg) {
     font-size: $large-paragraph-size;
   }
+
+  &:not(a) {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+  }
 }
 
 h1,
@@ -123,7 +129,8 @@ p {
 }
 
 a {
-  text-decoration-skip-ink: all;
+  text-decoration-skip-ink: auto;
+  word-break: break-word;
 }
 
 a:not([class]),
