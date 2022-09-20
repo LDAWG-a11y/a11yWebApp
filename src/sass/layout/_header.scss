@@ -5,7 +5,11 @@
   height: auto;
   background: var(--color-primary);
   background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
-  clip-path: polygon(0 0, 100% 0, 99% 95%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+
+  @include mq.mq($from:md) {
+    clip-path: polygon(0 0, 100% 0, 100% 97.5%, 0% 100%);
+  }
 
   @include mq.mq($from:md) {
     margin-bottom: $space-bigger;

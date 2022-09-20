@@ -1,9 +1,10 @@
+@use '../vendors/mq';
+
 .pagination {
  display: flex;
  flex-direction: column;
  align-items: center;
  margin-top: $space-xxxl;
- max-width: 70rem;
 }
 
 .pagination__heading {
@@ -13,18 +14,22 @@
 }
 
 .pagination__items-wrapper {
-  list-style: none;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: $space-xs;
+
+  @include mq.mq($from:sm) {
+    flex-wrap: nowrap;
+  }
 }
 
 .pagination__item {
   display: inline-flex;
   height: 2.75rem;
+  width: auto;
 }
 
 .pagination__item,
@@ -37,12 +42,16 @@
     display: block;
     border: 2px solid var(--color-interactive);
     border-radius: $radius-sm;
-    padding: $space-sm;
+    padding: $space-xs;
     text-align: center;
     font-weight: 600;
-    line-height: 1;
+    line-height: 1.3;
     text-decoration: none;
     color: var(--color-interactive);
+  }
+
+  @include mq.mq($from:sm) {
+    padding: $space-sm;
   }
 }
 
@@ -51,5 +60,6 @@
   padding: $space-sm;
   text-align: center;
   line-height: 1;
-  background-color: var(--color-inactive);
+  background-color: var(--color-accent);
+  color: var(--color-inactive);
 }
