@@ -5,8 +5,8 @@
   position: relative;
   padding: $space-xxxxl 0 $space-xxl;
   background: var(--color-primary);
-  background: linear-gradient(252deg, var(--color-primary) 0%, var(--color-secondary) 82%);
-  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  clip-path: polygon(0 2.5%, 100% 0, 100% 100%, 0% 100%);
 
   &::before {
     content: "";
@@ -16,11 +16,19 @@
     top: 8px;
     left: 8px;
     background-color: var(--color-bg--light);
-    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 2.5%, 100% 0, 100% 100%, 0% 100%);
+
+    @include mq.mq($from:sm) {
+      clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+    }
 
     @include mq.mq($from:md) {
       clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
     }
+  }
+
+  @include mq.mq($from:sm) {
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
   }
 
   @include mq.mq($from:md) {
