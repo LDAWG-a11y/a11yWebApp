@@ -3,6 +3,10 @@ layout: base.njk
 title: Home
 home: true
 summary: some description for google
+pagination:
+  data: authors
+  size: 1
+  alias: author
 ---
 <div class="intro-panel">
   <h2 class="intro-panel__heading">Who we are</h2>
@@ -31,7 +35,7 @@ summary: some description for google
             <span class="tag__item"><a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a></span>
           {%- endfor %}
          </div>
-        <span class="card__author-name"><a href="#" class="card__author-link">Joe Bloggs</a></span>
+        <span class="card__author-name"><a href="/authors/{{ author.key }}" class="card__author-link">{{ author.name }}</a></span>
         <span class="card__date">{{ guide.data.date | readableDate }}</span>
       </article>
     </li>
