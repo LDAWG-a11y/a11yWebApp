@@ -1,0 +1,5 @@
+{
+  "layout": "base.njk",
+  "tags": "faqs",
+  "permalink": false
+}
