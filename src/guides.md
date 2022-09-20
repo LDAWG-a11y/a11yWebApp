@@ -27,7 +27,6 @@ eleventyComputed:
 </div>
 
 <h2 id="h2" tabindex="-1">Showing {{ (pagination.pageNumber * pagination.size) + 1 }} to {%- if pagination.nextPageLink %} {{ (pagination.pageNumber * pagination.size) + pagination.size }} {%- else %} {{ collections.guides.length }} {%- endif %} of {{ collections.guides.length }} results</h2>
-
 <ul class="cards">
   {%- for guide in helpGuides %}
     <li class="card__item">
@@ -41,7 +40,8 @@ eleventyComputed:
             </span>
           {%- endfor %}
          </div>
-        <a href="/authors/{{ guideAuthor.key }}" class="card__author-link">{{ guide.data.author }}</a>
+         {% set guideAuthor = authors | getAuthor(guide.data.author) %}
+        <a href="/authors/{{ guideAuthor.key }}" class="card__author-link">{{ guideAuthor.name }}</a>
         <span class="card__date">{{ guide.data.date | readableDate }}</span>
       </article>
     </li>

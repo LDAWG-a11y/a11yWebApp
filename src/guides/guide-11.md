@@ -2,7 +2,7 @@
 title: "The eleventh guide"
 summary: "A super useful guide about doing that thing that makes the other thing accessible to everybody"
 date: 2022-09-12
-authors: jbloggs
+author: jbloggs
 tags:
   - JavaScript
   - ARIA

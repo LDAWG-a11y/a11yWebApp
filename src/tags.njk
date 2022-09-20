@@ -21,19 +21,20 @@ eleventyComputed:
         <p class="card__summary">{{ guide.data.summary }}</p>
         <div class="tags">
           {%- for tag in guide.data.tags | filterTagList %}
-          {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
-          {%- if tagUrl != page.url  %}
-            <span class="tag__item">
-                <a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a>
-            </span>
-          {%- else %}
-            <span class="tag__item tag__item--inert" aria-current="page">
-              {{ tag }}
-            </span>
-          {%- endif %}
+            {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
+            {%- if tagUrl != page.url  %}
+              <span class="tag__item">
+                  <a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a>
+              </span>
+            {%- else %}
+              <span class="tag__item tag__item--inert" aria-current="page">
+                {{ tag }}
+              </span>
+            {%- endif %}
           {%- endfor %}
+          {% set guideAuthor = authors | getAuthor(guide.data.author) %}
          </div>
-        <span class="card__author-name"><a href="#" class="card__author-link">Joe Bloggs</a></span>
+        <span class="card__author-name"><a href="/authors/{{ guideAuthor.key }}" class="card__author-link">{{ guideAuthor.name }}</a></span>
         <span class="card__date">{{ guide.data.date | readableDate }}</span>
       </article>
     </li>
