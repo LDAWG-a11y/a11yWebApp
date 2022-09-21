@@ -76,8 +76,19 @@
 }
 
 .footer__list-item {
+
+  @include mq.mq($from:xs) {
+    display: inline-block;
+    margin-bottom: $space-xs;
+  }
+
+  @include mq.mq($from:md) {
+    display: block;
+    margin-bottom: $space-xs;
+  }
+  
   &:not(:last-of-type) {
-    margin-bottom: $space-xxs;
+    padding-right: $space-xl;
   }
 }
   
