@@ -10,7 +10,7 @@
   background-color: var(--color-bg--light);
 
   @include mq.mq($from:md) {
-    padding: $space-xxxxl $space-lg $space-xl;
+    padding: $space-xs $space-lg $space-xl;
     border-radius: $radius-lg;
   }
 
@@ -20,17 +20,30 @@
     position: absolute;
   }
 
-  &::before {
-    top: -2px;
-    right: 50%;
-    bottom: -2px;
-    width: 8.3rem;
-    height: 8.3rem;
-    margin-top: -4.25rem;
-    background-color: var(--color-primary);
-    border-radius: $radius-pill;
-    transform: translateX(50%);
-    z-index: -1;
+  &.author-bio--with-image {
+    &::before {
+      top: -2px;
+      right: 50%;
+      bottom: -2px;
+      width: 8.3rem;
+      height: 8.3rem;
+      margin-top: -4.25rem;
+      background-color: var(--color-primary);
+      border-radius: $radius-pill;
+      transform: translateX(50%);
+      z-index: -1;
+
+      @include mq.mq($from:md) {
+        height: 10.3rem;
+        width: 10.3rem;
+        right: calc($space-xl - 0.15rem);
+        transform: translateX(0);
+      }
+    }
+  }
+  
+  &:not(.author-bio--with-image) {
+    padding-top: $space-md;
   }
 
   &::after {
@@ -46,6 +59,10 @@
 
 .author-bio__title {
   margin-top: $space-lg;
+
+  @include mq.mq($from:md) {
+    max-width: calc(100% - 11rem);
+  }
 }
 
 .author-bio__img {
@@ -59,6 +76,13 @@
   margin-top: -4.25rem;
   border-radius: $radius-pill;
   background-color: var(--color-bg--light);
+
+  @include mq.mq($from:md) {
+    height: 10rem;
+    width: 10rem;
+    right: $space-xl;
+    transform: translateX(0);
+  }
 }
 
 .author-bio__intro {

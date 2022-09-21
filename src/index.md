@@ -3,10 +3,6 @@ layout: base.njk
 title: Home
 home: true
 summary: some description for google
-pagination:
-  data: authors
-  size: 1
-  alias: author
 ---
 <div class="intro-panel">
   <h2 class="intro-panel__heading">Who we are</h2>

@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/main.css">
-  <title> The Third guide | Some catchy site name</title>
+  <title> The Third guide | Make Things Accessible</title>
   <!-- TODO Colour scheme, descriptions, favicon and order etc -->
   <!-- <meta name="color-scheme" content="dark light"> -->
   <meta name="description" content=" A super useful guide about doing that thing that makes the other thing accessible to everybody | Site purpose etc">
@@ -14,6 +14,7 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:card" content="summary_large_image">
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
   <!-- <meta name="theme-color" content="#FF00FF"> -->
   <script type="module">
     document.documentElement.classList.remove('no-js');
@@ -23,7 +24,7 @@
 <body><a class="skip-link" href="#h1">Jump to content</a>
 <header class="header">
   <nav class="main-nav">
-    <img class="header__logo" src="https://via.placeholder.com/260x40/FFFFFF/9400D3?text=The+Brandname" alt="Some catchy site name logo" class="header__logo">
+    <img class="header__logo" src="/img/temp-logo.png" alt="Make Things Accessible logo" class="header__logo">
     <ul class="main-nav__list">
         <li class="main-nav__item">
           <a class="main-nav__link"
@@ -49,7 +50,32 @@
   </h1>
 </header>
   <main class="main">
-    <h2>The heading 2</h2>
+    <div class="guide__info-panel">
+      <div class="guide__author">
+        
+        <strong>By: </strong>
+        <a href="/authors/tmctestface">Testy McTestface</a>
+      </div>
+      <div class="guide__date">
+        <strong>Posted: </strong>Sun, 4 Sept 2022
+      </div>
+      <strong class="guide__label">Tagged with: </strong>
+      <div class="tags">
+        
+        
+        <span class="tag__item">
+          <a href="/tags/screen-reader/" class="tag__link">Screen reader</a>
+        </span>
+        
+        
+        <span class="tag__item">
+          <a href="/tags/nvda/" class="tag__link">NVDA</a>
+        </span>
+        
+      </div>      
+    </div>
+    <article>
+      <h2>The heading 2</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue nec sapien ac convallis. Phasellus tincidunt, sem vitae viverra egestas, lacus ligula vestibulum lectus, ac lacinia lacus erat non augue. Nam ornare metus eu urna tincidunt, et convallis metus dictum. Integer lacus felis, hendrerit at pulvinar sed, efficitur sit amet neque. Duis a augue ornare nibh finibus mattis eu et lacus. Nullam congue elit nulla, sit amet gravida eros condimentum ut. Duis sagittis vulputate tempus. Praesent elementum velit a sem semper ultrices. Ut interdum iaculis eros sit amet ullamcorper. Donec at eleifend quam.</p>
 <ul>
 <li>Item 1</li>
@@ -59,6 +85,55 @@
 </ul>
 <p><img src="/img/test.jpeg" alt="This is the alt"></p>
 
+    </article>
+    
+    <div class="author-bio author-bio--with-image">
+  <h2 class="author-bio__title">About Testy</h2>
+    <img class="author-bio__img" height="128px" width="128px" src="/img/profilePics/testy.png" alt="it&#39;s me innit?">
+    <p class="author-bio__intro">I test fings and that, innit fam? I been doing dem test fings for many years n I am proper good at it</p>
+  <dl class="author-bio__meta">
+      <div class="author-bio__items-wrapper">
+        <dt class="author-bio__term">Position: </dt>
+        <dd class="author-bio__description">Chief Tester</dd>
+      </div>
+      <div class="author-bio__items-wrapper">
+        <dt class="author-bio__term">Organisation: </dt>
+        <dd class="author-bio__description">Da Test company</dd>
+      </div>
+        <div class="author-bio__items-wrapper">
+          <dt class="author-bio__term"><svg focusable="false" aria-label="email:" width="24px" height="24px" viewBox="0 0 24 24">
+  <path fill="currentColor" d="m20 8-8 5-8-5V6l8 5 8-5m0-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Z"/>
+</svg></dt>
+          <dd class="author-bio__description">
+            <a href="bigmantester@gmail.com" class="author-bio__link">bigmantester@gmail.com</a>
+          </dd>
+        </div>
+        <div class="author-bio__items-wrapper">
+          <dt class="author-bio__term"><svg focusable="false" aria-label="Twitter: " xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"  viewBox="0 0 24 24">
+  <path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 0 0 1.88-2.38c-.83.5-1.75.85-2.72 1.05a4.28 4.28 0 0 0-7.32 3.91A12.2 12.2 0 0 1 3 4.79a4.24 4.24 0 0 0 1.33 5.71c-.71 0-1.37-.2-1.95-.5v.03a4.3 4.3 0 0 0 3.44 4.21 4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06A12.14 12.14 0 0 0 8.12 21C16 21 20.33 14.46 20.33 8.79l-.01-.56A8.57 8.57 0 0 0 22.46 6Z"/>
+</svg></dt>
+          <dd class="author-bio__description">
+            <a href="https://twitter.com/home" class="author-bio__link">@BigManTest</a>
+          </dd>
+        </div>
+        <div class="author-bio__items-wrapper">
+          <dt class="author-bio__term"><svg focusable="false" aria-label="LinkedIn:" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"  viewBox="0 0 24 24">
+  <path fill="currentColor" fill-rule="evenodd" d="M1 2.84A1.84 1.84 0 0 1 2.84 1h18.32A1.84 1.84 0 0 1 23 2.84v18.32A1.84 1.84 0 0 1 21.16 23H2.84A1.84 1.84 0 0 1 1 21.16V2.84Zm8.7 6.55h2.99v1.5c.43-.87 1.53-1.64 3.18-1.64 3.17 0 3.92 1.71 3.92 4.86v5.82h-3.2v-5.1c0-1.8-.44-2.8-1.53-2.8-1.51 0-2.14 1.08-2.14 2.8v5.1H9.7V9.39Zm-5.5 10.4h3.22V9.25H4.2v10.54ZM7.88 5.81a2.06 2.06 0 1 1-4.12 0 2.06 2.06 0 0 1 4.13 0Z" clip-rule="evenodd"/>
+</svg></dt>
+          <dd class="author-bio__description">
+            <a href="linkedin.com/in/testymctestface1" class="author-bio__link">Ma Linked in</a>
+          </dd>
+        </div>
+        <div class="author-bio__items-wrapper">
+          <dt class="author-bio__term"><svg focusable="false" aria-label="Website:" width="24px" height="24px" viewBox="0 0 24 24">
+  <path fill="currentColor" d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66a13.27 13.27 0 0 1 0-4h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82A13.56 13.56 0 0 1 12 19.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44 17.23 17.23 0 0 0 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2A8.24 8.24 0 0 1 4 12c0-.69.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82A13.62 13.62 0 0 1 12 4.03M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56A7.99 7.99 0 0 1 18.92 8M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/>
+</svg></dt>
+          <dd class="author-bio__description">
+            <a href="https://shattereddisk.github.io/rickroll/rickroll.mp4" class="author-bio__link">My banging website</a>
+          </dd>
+        </div>
+  </dl>
+</div>
   </main><footer class="footer">
   <div class="footer__panel--primary">
     <h2 class="footer__heading">Site links</h2>
@@ -116,5 +191,6 @@
   </div>
 </footer>
   <script src="/js/main.js"></script>
+  <script src="/js/guide.js"></script>
 </body>
 </html>

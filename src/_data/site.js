@@ -1,5 +1,5 @@
 module.exports = {
-  'siteName': 'Some catchy site name',
+  'siteName': 'Make Things Accessible',
   'version': '1.0',
   'year': new Date().getFullYear()
 };
