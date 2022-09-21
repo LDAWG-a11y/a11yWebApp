@@ -837,8 +837,20 @@ body:before {
   list-style: none;
 }
 
+@media (min-width: 26.25em) {
+  .footer__list-item {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+}
+@media (min-width: 48em) {
+  .footer__list-item {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+}
 .footer__list-item:not(:last-of-type) {
-  margin-bottom: 0.25rem;
+  padding-right: 2rem;
 }
 
 .footer__link,
