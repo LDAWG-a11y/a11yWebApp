@@ -14,13 +14,22 @@ eleventyComputed:
 ---
 
 <div class="intro-panel">
-  <h2 class="intro-panel__heading">Search by tag</h2>
-  <a class="skip-tags" href="#h2">Skip {{ collections.tagList.length }} tags</a>
+  <h2 class="intro-panel__heading">Filter by tag</h2>
+  <a class="skip-tags" href="#h2">Skip filters</a>
   <div class="tags">
     {%- for tag in collections.tagList %}
       <span class="tag__item">
       {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
-      <a class="tag__link tag__link--has-count" href="{{ tagUrl | url }}" class="post-tag">{{ tag }}<span class="tag__count" aria-label="{{ collections[tag].length }} guide{%- if collections[tag].length > 1 %}s{%- endif %}">{{ collections[tag].length }}</span></a>
+      <a class="tag__link tag__link--has-count" href="{{ tagUrl | url }}">{{ tag }}<span class="tag__count" aria-label="{{ collections[tag].length }} guide{%- if collections[tag].length > 1 %}s{%- endif %}">{{ collections[tag].length }}</span></a>
+      </span>
+    {%- endfor %}
+  </div>
+  <h2 class="intro-panel__heading">Filter by author</h2>
+  <div class="tags">
+    {%- for author in authors %}
+      <span class="tag__item">
+        {% set posts = collections.guides | getGuidesByAuthor(author.key) %}
+      <a class="tag__link tag__link--has-count" href="/authors/{{ author.key }}">{{ author.name }}<span class="tag__count" aria-label="{{ posts.length }} guide{%- if posts.length > 1 %}s{%- endif %}">{{ posts.length }}</span></a>
       </span>
     {%- endfor %}
   </div>

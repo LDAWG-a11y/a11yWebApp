@@ -16,7 +16,6 @@ eleventyComputed:
 {% set posts = collections.guides | getGuidesByAuthor(author.key) %}
 {%- include "_bio.njk" %}
 
-
 <h2>Showing {{ posts.length }} guides</h2>
 <ul class="cards">
   {% for post in posts %}
