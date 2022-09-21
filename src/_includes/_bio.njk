@@ -1,0 +1,57 @@
+<div class="author-bio {%- if author.img %} author-bio--with-image{%- endif %}">
+  <h2 class="author-bio__title">About {{ author.name.split(' ')[0] }}</h2>
+  {%- if author.img %}
+    <img class="author-bio__img" height="128px" width="128px" src="{{ author.img.url }}" alt="{%- if author.img.alt %}{{ author.img.alt }}{%- else %}Profile picture of {{ author.name }}{%- endif %}">
+  {%- endif %}
+  {%- if author.bio %}
+    <p class="author-bio__intro">{{ author.bio }}</p>
+  {%- endif %}
+  <dl class="author-bio__meta">
+    {%- if author.title %}
+      <div class="author-bio__items-wrapper">
+        <dt class="author-bio__term">Position: </dt>
+        <dd class="author-bio__description">{{ author.title }}</dd>
+      </div>
+    {%- endif %}
+    {%- if author.org %}
+      <div class="author-bio__items-wrapper">
+        <dt class="author-bio__term">Organisation: </dt>
+        <dd class="author-bio__description">{{ author.org }}</dd>
+      </div>
+    {%- endif %}
+    {%- if author.contacts %}
+      {%- if author.contacts.email %}
+        <div class="author-bio__items-wrapper">
+          <dt class="author-bio__term">{%- include '../svg/email.svg' %}</dt>
+          <dd class="author-bio__description">
+            <a href="{{ author.contacts.email }}" class="author-bio__link">{{ author.contacts.email }}</a>
+          </dd>
+        </div>
+      {%- endif %}
+      {%- if author.contacts.twitter %}
+        <div class="author-bio__items-wrapper">
+          <dt class="author-bio__term">{%- include '../svg/twitter.svg' %}</dt>
+          <dd class="author-bio__description">
+            <a href="{{ author.contacts.twitter.url }}" class="author-bio__link">{{ author.contacts.twitter.text }}</a>
+          </dd>
+        </div>
+      {%- endif %}
+      {%- if author.contacts.linkedin %}
+        <div class="author-bio__items-wrapper">
+          <dt class="author-bio__term">{%- include '../svg/linkedin.svg' %}</dt>
+          <dd class="author-bio__description">
+            <a href="{{ author.contacts.linkedin.url }}" class="author-bio__link">{{ author.contacts.linkedin.text }}</a>
+          </dd>
+        </div>
+      {%- endif %}
+      {%- if author.contacts.website %}
+        <div class="author-bio__items-wrapper">
+          <dt class="author-bio__term">{%- include '../svg/website.svg' %}</dt>
+          <dd class="author-bio__description">
+            <a href="{{ author.contacts.website.url }}" class="author-bio__link">{{ author.contacts.website.text }}</a>
+          </dd>
+        </div>
+      {%- endif %}
+    {%- endif %}
+  </dl>
+</div>

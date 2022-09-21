@@ -1,0 +1,34 @@
+{%- include "_head.njk" %}
+<body>
+  {%- include "_header.njk" %}
+  <main class="main">
+    <div class="guide__info-panel">
+      <div class="guide__author">
+        {% set guideAuthor = authors | getAuthor(author) %}
+        <strong>By: </strong>
+        <a href="/authors/{{ guideAuthor.key }}">{{ guideAuthor.name }}</a>
+      </div>
+      <div class="guide__date">
+        <strong>Posted: </strong>{{ date | readableDate }}
+      </div>
+      <strong class="guide__label">Tagged with: </strong>
+      <div class="tags">
+        {% for tag in tags | filterTagList %}
+        {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+        <span class="tag__item">
+          <a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a>
+        </span>
+        {% endfor %}
+      </div>      
+    </div>
+    <article>
+      {{ content | safe }}
+    </article>
+    {% set author = guideAuthor %}
+    {% include "_bio.njk" %}
+  </main>
+  {%- include "_footer.njk" %}
+  <script src="/js/main.js"></script>
+  <script src="/js/guide.js"></script>
+</body>
+</html>

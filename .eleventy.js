@@ -3,6 +3,8 @@ module.exports = eleventyConfig => {
   const autoprefixer = require("autoprefixer");
   const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
   const { DateTime } = require("luxon");
+  const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+  const Image = require("@11ty/eleventy-img");
 
   eleventyConfig.addWatchTarget('./src/sass');
   eleventyConfig.addPassthroughCopy('./src/css');
@@ -11,10 +13,31 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('./src/fonts');
   eleventyConfig.addPassthroughCopy('./src/svg');
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addLiquidShortcode("image", imageShortcode);
+  eleventyConfig.addJavaScriptFunction("image", imageShortcode);
 
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY);
   });
+
+  async function imageShortcode(src, alt, sizes) {
+    let metadata = await Image(src, {
+      widths: [300, 600],
+      formats: ["avif", "jpeg"]
+    });
+  
+    let imageAttributes = {
+      alt,
+      sizes,
+      loading: "lazy",
+      decoding: "async",
+    };
+  
+    return Image.generateHTML(metadata, imageAttributes);
+  }
+
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   function filterTagList(tags) {
     return (tags || []).filter(tag => ["guide", "guides"].indexOf(tag) === -1);

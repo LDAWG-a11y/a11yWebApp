@@ -1,0 +1,48 @@
+@use '../vendors/mq';
+
+.guide__info-panel {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: $space-xxxl;
+  padding: $space-sm;
+
+  & > .tags {
+    padding-top: 0;
+    background: none;
+    justify-content: center;
+  }
+}
+
+.guide__label {
+  padding-bottom: $space-xs;
+}
+
+iframe[src*="youtube.com"],
+iframe[src*="codepen.io"] {
+  margin-bottom: $space-xxxl;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: 60rem;
+}
+
+code[class][class*="language-"],
+pre[class][class*="language-"] {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+pre[class][class*="language-"] {
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: $space-xxl;
+  font-size: $default-paragraph-size;
+  font-size: inherit;
+}
+
+img:not([class]),
+pre,
+ul, {
+    margin-bottom: $space-xxxl;
+  }
