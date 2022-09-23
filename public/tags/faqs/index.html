@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/main.css">
   <title> Guides Tagged with “faqs” | Make Things Accessible</title>
-  <!-- TODO Colour scheme, descriptions, favicon and order etc -->
-  <!-- <meta name="color-scheme" content="dark light"> -->
-  <meta name="description" content=" All digital accessibility guides from the our website tagged with “faqs” | Site purpose etc">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#702A8C">
+  <!-- TODO description for home page -->
+  <meta name="description" content=" All digital accessibility guides from the our website tagged with “faqs”">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="color-scheme" content="dark light">
+  <script>
+    const themeSetter = window.localStorage.getItem('theme');
+			if (typeof themeSetter === 'string') {
+				document.documentElement.setAttribute('data-theme', themeSetter);
+			}
+  </script>
+  <script type="module">
+    document.documentElement.classList.remove('no-js');
+    document.documentElement.classList.add('has-js');
+  </script>
+  <link rel="stylesheet" href="/css/main.css">
   <meta property="og:description" content=" All digital accessibility guides from the our website tagged with “faqs” Site purpose etc">
   <meta property="og:locale" content="en_GB">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:card" content="summary_large_image">
-  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
-  <!-- <meta name="theme-color" content="#FF00FF"> -->
-  <script type="module">
-    document.documentElement.classList.remove('no-js');
-    document.documentElement.classList.add('has-js');
-  </script>
 </head>
+
+
 <body><a class="skip-link" href="#h1">Skip navigation</a>
 <header class="header">
+  <button class="header__themes-btn" id="themeTrigger" aria-expanded="false" aria-controls="#themePanel" hidden>Themes</button>
+  <div class="header__themes-panel" id="themePanel" hidden>
+    <fieldset class="header__themes-fieldset">
+      <legend class="header__themes-legend">Theme preference</legend>
+      <button class="header__themes-btn--light" aria-pressed="false">Light</button>
+      <button class="header__themes-btn--system" aria-pressed="false">System</button>
+      <button class="header__themes-btn--dark" aria-pressed="false">Dark</button>
+    </fieldset>
+  </div>
   <nav class="main-nav">
     <img class="header__logo" src="/img/temp-logo.png" alt="Make Things Accessible logo" class="header__logo">
     <ul class="main-nav__list">
@@ -170,6 +186,11 @@
           </a>
         </li>
         <li class="footer__list-item">
+          <a class="footer__link" href="/glossary/"
+          >Glossary
+          </a>
+        </li>
+        <li class="footer__list-item">
           <a class="footer__link" href="/privacy/"
           >Privacy Policy
           </a>
@@ -177,11 +198,6 @@
         <li class="footer__list-item">
           <a class="footer__link" href="/sitemap/"
           >Sitemap
-          </a>
-        </li>
-        <li class="footer__list-item">
-          <a class="footer__link" href="/changelog/"
-          >Changelog
           </a>
         </li>
     </ul>
@@ -197,5 +213,6 @@
   </div>
 </footer>
   <script src="/js/main.js"></script>
+  <script src="/js/theme-switcher.js"></script>
 </body>
 </html>

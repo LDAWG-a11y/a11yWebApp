@@ -2,13 +2,15 @@
 
 .header {
   margin-bottom: $space-xxxxl;
+  padding: $space-xxxl $space-xs 0;
   height: auto;
   background: var(--color-primary);
   background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
-  clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 97.5%, 0% 100%);
+  
 
-  @include mq.mq($from:md) {
-    clip-path: polygon(0 0, 100% 0, 100% 97.5%, 0% 100%);
+  @include mq.mq($from:sm) {
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);    
   }
 
   @include mq.mq($from:md) {
@@ -16,15 +18,226 @@
     padding-top: $space-xl;
     height: auto;
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+
+    .has-js & {
+      padding-top: $space-xxxl;
+    }
+  }
+}
+
+button[class^="header__themes-btn"] {
+  @extend %button-inverted-colour;
+
+  [data-theme="dark"] & {
+    @include dark-theme-adjust-light-btn;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @include dark-theme-adjust-light-btn;
+  }
+
+  .no-js & {
+    display: none;
+  }
+}
+
+.header__themes-btn {
+  position: absolute;
+  top: $space-xs;
+  right: $space-md;
+  padding: $space-xxs $space-xl $space-xxs $space-sm;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+
+  &::before {
+    right: $space-xs;
+    height: 1.2rem;
+    width: 1.2rem;
+    border: 1px solid var(--color-interactive);
+    border-radius: $radius-pill;
+    background: linear-gradient(to left, var(--color-bg) 50%, var(--color-interactive) 50%);
+    transition: transform 250ms ease-in-out;
+  }
+
+  &::after {
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border: 2px solid transparent;
+    border-radius: $radius-lg;
+    transition: border-color 250ms ease-in-out;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-interactive);
+    color: var(--color-bg);
+
+    &::before {
+      border-color: var(--color-bg);
+      transform: rotate(180deg);
+    }
+  }
+
+  &:focus-visible {
+    &::after {
+      border-color: var(--color-bg);
+    }
+  }
+
+  &[aria-expanded="true"] {
+    + .header__themes-panel {
+      animation: show 250ms ease-in-out;
+      animation-fill-mode: forwards;
+      height: 15rem;
+
+      @include mq.mq($from:xs) {
+        height: 9rem;
+      }
+
+      @include mq.mq($from:md) {
+        height: 6.5rem;
+      }
+    }
+  }
+
+  @include mq.mq($from:md) {
+    top: $space-xs;
+    right: $space-md;
+    transform: translateX(-50%);
+  }
+}
+
+.header__themes-panel {
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  height: 0;
+  transition: height 250ms ease-in-out;
+  animation: hide 250ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.header__themes-fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: $space-xxxl;
+  border: none;
+  padding: $space-xs 0 $space-md;
+  gap: $space-sm;
+
+  @include mq.mq($from:xs) {
+    flex-wrap: nowrap;
+    justify-content: center;
+    flex-direction: row;
+    gap: 0 $space-lg;
+    
+  }
+
+  @include mq.mq($from:md) {
+    margin-top: 0;
+  }
+}
+
+.header__themes-legend {
+  
+  color: var(--color-bg);
+
+  [data-theme="dark"] & {
+    color: var(--color-text);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--color-text);
+  }
+
+  @include mq.mq($from:xs) {
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.header__themes-btn--light,
+.header__themes-btn--system,
+.header__themes-btn--dark {
+  @extend %smallest-text;
+
+  position: relative;
+  padding: $space-xs $space-sm;
+  width: fit-content;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+
+  &::before {
+    transition: background-color 250ms ease-in-out;
+  }
+
+  &::after {
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border: 2px solid transparent;
+    border-radius: $radius-lg;
+    transition: border-color 250ms ease-in-out;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-interactive);
+    color: var(--color-bg);
+  }
+
+  &:focus-visible {
+    &::after {
+      border-color: var(--color-bg);
+    }
+  }
+
+  &[aria-pressed="true"] {
+    &::before {
+      bottom: 3px;
+      left: $space-xs;
+      width: calc(100% - #{$space-md});
+      height: 3px;
+      background-color: var(--color-interactive);
+    }
+
+    &:hover,
+    &:focus-visible {
+      &::before {
+        background-color: var(--color-bg);
+      }
+    }
   }
 }
 
 .main-nav {
+  border-radius: $radius-sm;
   background: var(--color-bg);
-  padding-bottom: $space-md;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--color-bg--light);
+  }
 
   @include mq.mq($from:xs) {
-    background: none
+    background-color: var(--color-bg--light);
+  }
+
+  @include mq.mq($from:xs) {
+    padding-bottom: $space-md;
+    background: none;
   }
 
   @include mq.mq($from:md) {
@@ -38,9 +251,13 @@
 }
 
 .header__logo {
-  margin-left: 50%;
+  margin: 0 0 $space-sm 50%;
   transform: translate(-50%);
   font-size: 0;
+
+  @include mq.mq($from:xs) {
+    margin-bottom: 0;
+  }
 
   @include mq.mq($from:md) {
     margin-left: 0;
@@ -50,6 +267,12 @@
 
 .main-nav__list {
   list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+
+  @include mq.mq($until:xxs) {
+    flex-wrap: wrap;
+  }
 
   @include mq.mq($from:xs) {
     display: flex;
@@ -78,7 +301,7 @@
 .main-nav__link {
   position: relative;
   text-decoration: none;
-  padding: $space-xxs $space-sm;
+  padding: $space-xxs $space-xxs;
   font-weight: 600;
   color: var(--color-interactive);
   transition: $default-transition;
@@ -157,6 +380,14 @@
   @include mq.mq($from:md) {
     margin: $space-bigger auto 0;
     width: clamp(18rem, 22rem, 25rem);
+  }
+
+  [data-theme="dark"] & {
+    color: var(--color-text);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--color-text);
   }
 
   &:focus-visible {

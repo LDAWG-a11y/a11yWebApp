@@ -27,3 +27,20 @@
     }
   }
 }
+
+@mixin dark-theme-adjust-light-btn {
+  border-color: var(--color-text);
+  background-color: var(--color-bg--light);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-interactive);
+    border-color: var(--color-bg);
+  }
+
+  &:focus-visible {
+    &::after {
+      border-color: var(--color-text);
+    }
+  }
+}

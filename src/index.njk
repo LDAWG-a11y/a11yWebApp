@@ -31,7 +31,8 @@ summary: some description for google
             <span class="tag__item"><a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a></span>
           {%- endfor %}
          </div>
-        <span class="card__author-name"><a href="/authors/{{ author.key }}" class="card__author-link">{{ author.name }}</a></span>
+         <!-- {% set guideAuthor = authors | getAuthor(guide.data.author) %} -->
+        <span class="card__author-name"><a href="/authors/{{ guideAuthor.key }}" class="card__author-link">{{ guideAuthor.name }}</a></span>
         <span class="card__date">{{ guide.data.date | readableDate }}</span>
       </article>
     </li>

@@ -15,6 +15,14 @@
     margin-bottom: $space-lg;
   }
 
+  @media (prefers-color-scheme: dark) {
+    border: 2px solid var(--color-inactive);
+  }
+
+  @include mq.mq($from:xs) {
+    border: 2px solid var(--color-inactive);
+  }
+
   @include mq.mq($from:md) {
     border-radius: $radius-lg;
     padding: $space-sm $space-lg $space-md;

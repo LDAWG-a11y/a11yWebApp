@@ -10,13 +10,13 @@ accordions.forEach( (accordion, idx) => {
   accordion.setAttribute('data-open', false);
 
   accBtn.addEventListener('click', () => {
-    if (accBtn.ariaExpanded == 'false') {
-      accBtn.ariaExpanded = 'true';
+    if (accBtn.getAttribute('aria-expanded') == 'false') {
+      accBtn.setAttribute('aria-expanded', 'true');
       accordion.setAttribute('data-open', "true");
       // const panelHeight = accPanel.getAttribute('data-height');
       // accPanel.setAttribute('style', `height: ${panelHeight}rem`);
     } else {
-      accBtn.ariaExpanded = 'false';
+      accBtn.setAttribute('aria-expanded', 'false');
       accordion.setAttribute('data-open', false);
       // accPanel.setAttribute('style', 'height: 0');
     }
@@ -36,3 +36,59 @@ accordions.forEach( (accordion, idx) => {
 
 // window.addEventListener('resize', resizeAccordions);
 // window.onresize = resizeAccordions;
+
+document.querySelector('#themeTrigger').addEventListener('click', () => {
+  let btn = document.querySelector('#themeTrigger');
+  btn.getAttribute('aria-expanded') == 'false' ? btn.setAttribute('aria-expanded', 'true') : btn.setAttribute('aria-expanded', 'false')
+});
+
+const themeBtnLight = document.querySelector('.header__themes-btn--light');
+const themeBtnSystem = document.querySelector('.header__themes-btn--system');
+const themeBtnDark = document.querySelector('.header__themes-btn--dark');
+
+themeBtnLight.addEventListener('click', (e) => {
+  setTheme('light');
+});
+
+themeBtnSystem.addEventListener('click', (e) => {
+  e.preventDefault();
+  setTheme(false);
+});
+
+themeBtnDark.addEventListener('click', (e) => {
+  setTheme('dark');
+});
+
+const setTheme = (theme) => {
+  
+  if (theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    window.localStorage.setItem('theme', theme);
+
+    if (theme == 'light') {
+      themeBtnLight.setAttribute('aria-pressed', true);
+      themeBtnDark.setAttribute('aria-pressed', false);
+    } else if (theme == 'dark') {
+      themeBtnLight.setAttribute('aria-pressed', false);
+      themeBtnDark.setAttribute('aria-pressed', true);
+    }
+    themeBtnSystem.setAttribute('aria-pressed', false);
+  }
+  
+  else {
+    document.documentElement.removeAttribute('data-theme');
+    window.localStorage.removeItem('theme');
+    themeBtnLight.setAttribute('aria-pressed', false);
+    themeBtnSystem.setAttribute('aria-pressed', true);
+    themeBtnDark.setAttribute('aria-pressed', false);
+  }
+}
+
+window.onload = () => {
+  const themeAttr = document.documentElement.getAttribute('data-theme');
+  if (themeAttr) {
+    setTheme(themeAttr)
+  } else {
+    themeBtnSystem.setAttribute('aria-pressed', true);
+  }
+}

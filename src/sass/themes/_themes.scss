@@ -21,15 +21,15 @@ $theme-map-light: (
 );
 
 $theme-map-dark: (
-  $--color-text: #c6c6c6,
-  $--color-bg: #1c1c1c,
-  $--color-bg--light: #f8eeff,
-  $--color-primary: green,
-  $--color-secondary: red,
-  $--color-accent: #ab2fc7,
-  $--color-accent-2: #df356d,
-  $--color-interactive: #0fc6c7,
-  $--color-inactive: grey,
+  $--color-text: #D9D9D9,
+  $--color-bg: #252525,
+  $--color-bg--light: #2d2d2d,
+  $--color-primary: #783592,
+  $--color-secondary: #ae1557,
+  $--color-accent: #d0dfd7,
+  $--color-accent-2: #d9668c,
+  $--color-interactive: #C079E6,
+  $--color-inactive: #4a4a4a,
 );
 
 @mixin spread-map($map: ()) {
@@ -38,10 +38,23 @@ $theme-map-dark: (
   }
 }
 
-:root:not([data-theme="dark"]) {
+:root, 
+:root[data-theme="light"] {
   @include spread-map($theme-map-light);
 }
 
 :root[data-theme="dark"] {
   @include spread-map($theme-map-dark);
+}
+
+:root {
+  @media (prefers-color-scheme: light) {
+    @include spread-map($theme-map-light);
+  }
+}
+
+:root {
+  @media (prefers-color-scheme: dark) {
+    @include spread-map($theme-map-dark);
+  }
 }
