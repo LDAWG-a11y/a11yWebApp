@@ -3,3 +3,13 @@ layout: base.njk
 title: Glossary of terms
 summary: some description for google
 ---
+
+<h2>Glossary of commonly used terms and abbreviations</h2>
+{%- for item in terms | sort(attribute="term") %}
+<dl class="glossary__list">
+  <div class="glossary__item-wrapper">
+    <dt class="glossary__term"><strong>{{ item.term }}</strong></dt>
+    <dd class="glossary__definition">{{ item.definition }}</dd>
+  </div>
+</dl>
+{%- endfor %}

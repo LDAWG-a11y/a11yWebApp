@@ -4,7 +4,7 @@ title: All Guides
 summary: some description for google
 templateEngineOverride: njk
 pagination:
-  size: 6
+  size: 10
   data: collections.guides
   alias: helpGuides
   reverse: true
@@ -35,27 +35,29 @@ eleventyComputed:
   </div>
 </div>
 
-<h2 id="h2" tabindex="-1">Showing {{ (pagination.pageNumber * pagination.size) + 1 }} to {%- if pagination.nextPageLink %} {{ (pagination.pageNumber * pagination.size) + pagination.size }} {%- else %} {{ collections.guides.length }} {%- endif %} of {{ collections.guides.length }} results</h2>
-<ul class="cards">
-  {%- for guide in helpGuides %}
-    <li class="card__item">
-      <article>
-        <h3 class="card__title"><a href="{{ guide.url }}" class="card__link">{{ guide.data.title }}</a></h3>
-        <p class="card__summary">{{ guide.data.summary }}</p>
-        <div class="tags">
-          {%- for tag in guide.data.tags | filterTagList %}
-            <span class="tag__item tag__item--inert">
-             {{ tag }}
-            </span>
-          {%- endfor %}
-         </div>
-         {% set guideAuthor = authors | getAuthor(guide.data.author) %}
-        <a href="/authors/{{ guideAuthor.key }}" class="card__author-link">{{ guideAuthor.name }}</a>
-        <span class="card__date">{{ guide.data.date | readableDate }}</span>
-      </article>
-    </li>
-  {%- endfor %}
-</ul>
+<div class="cards__wrapper">
+  <h2 id="h2" tabindex="-1">Showing {{ (pagination.pageNumber * pagination.size) + 1 }} to {%- if pagination.nextPageLink %} {{ (pagination.pageNumber * pagination.size) + pagination.size }} {%- else %} {{ collections.guides.length }} {%- endif %} of {{ collections.guides.length }} results</h2>
+  <ul class="cards">
+    {%- for guide in helpGuides %}
+      <li class="card__item">
+        <article>
+          <h3 class="card__title"><a href="{{ guide.url }}" class="card__link">{{ guide.data.title }}</a></h3>
+          <p class="card__summary">{{ guide.data.summary }}</p>
+          <div class="tags">
+            {%- for tag in guide.data.tags | filterTagList %}
+              <span class="tag__item tag__item--inert">
+              {{ tag }}
+              </span>
+            {%- endfor %}
+          </div>
+          {% set guideAuthor = authors | getAuthor(guide.data.author) %}
+          <a href="/authors/{{ guideAuthor.key }}" class="card__author-link">{{ guideAuthor.name }}</a>
+          <span class="card__date">{{ guide.data.date | readableDate }}</span>
+        </article>
+      </li>
+    {%- endfor %}
+  </ul>
+</div>
 {%- if pagination.pageLinks.length > 1 %}
   {%- include "_pagination.njk" %}
 {%- endif %}

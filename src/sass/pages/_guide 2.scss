@@ -1,0 +1,33 @@
+@use '../vendors/mq';
+
+.guide__info-panel {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: $space-xxxl;
+  padding: $space-sm;
+
+  & > .tags {
+    padding-top: 0;
+    background: none;
+    justify-content: center;
+  }
+}
+
+.guide__label {
+  padding-bottom: $space-xs;
+}
+
+iframe[src*="youtube.com"],
+iframe[src*="codepen.io"] {
+  margin-bottom: $space-xxxl;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: 60rem;
+}
+
+img,
+pre,
+ul, {
+    margin-bottom: $space-xxxl;
+  }

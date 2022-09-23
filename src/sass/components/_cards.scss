@@ -1,5 +1,17 @@
 @use '../vendors/mq';
 
+.cards__wrapper {
+  margin: 0 auto;
+  max-width: 75rem;
+}
+
+.card__item {
+  .cards__wrapper & {
+    margin: 0 auto $space-lg;
+    max-width: 75rem;
+  }
+}
+
 .cards {
   list-style: none;
 }

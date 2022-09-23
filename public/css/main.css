@@ -925,6 +925,16 @@ ul:not([class]) > li::marker {
   margin-top: 2rem;
 }
 
+.cards__wrapper {
+  margin: 0 auto;
+  max-width: 75rem;
+}
+
+.cards__wrapper .card__item {
+  margin: 0 auto 1.5rem;
+  max-width: 75rem;
+}
+
 .cards {
   list-style: none;
 }
@@ -1457,6 +1467,45 @@ ul:not([class]) {
 
 .faqs__intro {
   margin-bottom: 2rem;
+}
+
+.glossary__list {
+  padding-top: 1.5rem;
+}
+
+.glossary__item-wrapper {
+  position: relative;
+  padding-bottom: 2rem;
+}
+.glossary__item-wrapper::before {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 0.75rem;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-accent);
+}
+@media (min-width: 48em) {
+  .glossary__item-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
+
+@media (min-width: 48em) {
+  .glossary__term {
+    width: 15%;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .glossary__definition {
+    width: 85%;
+  }
 }
 
 code[class*=language-],
