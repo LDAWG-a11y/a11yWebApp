@@ -16,31 +16,33 @@ eleventyComputed:
 {% set posts = collections.guides | getGuidesByAuthor(author.key) %}
 {%- include "_bio.njk" %}
 
-<h2>Showing {{ posts.length }} guides</h2>
-<ul class="cards">
-  {% for post in posts %}
-    <li class="card__item">
-      <article>
-        <h3 class="card__title"><a href="{{ post.url }}" class="card__link">{{ post.data.title }}</a></h3>
-        <p class="card__summary">{{ post.data.summary }}</p>
-        <div class="tags">
-          {%- for tag in post.data.tags | filterTagList %}
-          {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
-          {%- if tagUrl != page.url  %}
-            <span class="tag__item">
-                <a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a>
-            </span>
-          {%- else %}
-            <span class="tag__item tag__item--inert" aria-current="page">
-              {{ tag }}
-            </span>
-          {%- endif %}
-          {%- endfor %}
-        </div>
-        <span class="card__author-name">{{ author.name }}</span>
-        <span class="card__date">{{ post.data.date | readableDate }}</span>
-      </article>
-    </li>
-{% endfor %}
-</ul>
+<div class="cards__wrapper">
+  <h2>Showing {{ posts.length }} guides</h2>
+  <ul class="cards">
+    {% for post in posts | reverse %}
+      <li class="card__item">
+        <article>
+          <h3 class="card__title"><a href="{{ post.url }}" class="card__link">{{ post.data.title }}</a></h3>
+          <p class="card__summary">{{ post.data.summary }}</p>
+          <div class="tags">
+            {%- for tag in post.data.tags | filterTagList %}
+            {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
+            {%- if tagUrl != page.url  %}
+              <span class="tag__item">
+                  <a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a>
+              </span>
+            {%- else %}
+              <span class="tag__item tag__item--inert" aria-current="page">
+                {{ tag }}
+              </span>
+            {%- endif %}
+            {%- endfor %}
+          </div>
+          <span class="card__author-name">{{ author.name }}</span>
+          <span class="card__date">{{ post.data.date | readableDate }}</span>
+        </article>
+      </li>
+  {% endfor %}
+  </ul>
+</div>
   

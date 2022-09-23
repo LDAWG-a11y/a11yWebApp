@@ -1,0 +1,48 @@
+@use '../vendors/mq';
+
+.glossary__list {
+  padding-top: $space-lg;
+}
+
+.glossary__item-wrapper {
+  position: relative;
+  padding-bottom: $space-xl;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: $space-sm;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-accent);
+  }
+
+  @include mq.mq($from:md) {
+    display: flex;
+    flex-wrap:wrap;
+    width:100%;
+  }  
+}
+
+
+
+.glossary__term {
+
+  @include mq.mq($from:md) {
+    width: 15%;
+    padding-right: $space-lg;
+  }
+}
+
+.glossary__definition {
+  @include mq.mq($from:md) {
+    width: 85%;
+  }
+}
+
+// @include mq.mq($from:xs) {
+
+// }
+
