@@ -1,7 +1,6 @@
 module.exports = eleventyConfig => {
   const postcss = require("postcss");
   const autoprefixer = require("autoprefixer");
-  const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
   const { DateTime } = require("luxon");
   const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
   const Image = require("@11ty/eleventy-img");
@@ -12,7 +11,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('./src/img');
   eleventyConfig.addPassthroughCopy('./src/fonts');
   eleventyConfig.addPassthroughCopy('./src/svg');
-  eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);

@@ -303,5 +303,5 @@ $media-type: all !default;
 }
 
 @if list.length($show-breakpoints) > 0 {
-  @include show-breakpoints;
+  // @include show-breakpoints;
 }
