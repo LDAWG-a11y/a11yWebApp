@@ -1,69 +1,71 @@
 @use '../vendors/mq';
 
-.guide__info-panel {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin-bottom: $space-xxxl;
-  padding: $space-sm;
-
-  & > .tags {
+.guide {
+  .guide__info-panel {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: $space-xxxl;
+    padding: $space-sm;
+  
+    & > .tags {
+      padding-top: 0;
+      background: none;
+      justify-content: center;
+    }
+  }
+  
+  .guide__label {
+    padding-bottom: $space-xs;
+  }
+  
+  iframe[src*="youtube.com"],
+  iframe[src*="codepen.io"] {
+    display: block;
+    margin: 0 auto $space-xxxl;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    max-width: 60rem;
+  }
+  .code__label {
+    display: block;
+    margin: 0 auto;
     padding-top: 0;
-    background: none;
-    justify-content: center;
+    width: 100%;
+    max-width: 60rem;
   }
-}
-
-.guide__label {
-  padding-bottom: $space-xs;
-}
-
-iframe[src*="youtube.com"],
-iframe[src*="codepen.io"] {
-  display: block;
-  margin: 0 auto $space-xxxl;
-  aspect-ratio: 16 / 9;
-  width: 100%;
-  max-width: 60rem;
-}
-.code__label {
-  display: block;
-  margin: 0 auto;
-  padding-top: 0;
-  width: 100%;
-  max-width: 60rem;
-}
-
-code[class][class*="language-"],
-pre[class][class*="language-"] {
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
-  word-break: break-word;
-}
-
-pre[class][class*="language-"] {
-  margin: 0 auto $space-xxl;
-  padding-top: 0;
-  width: 100%;
-  max-width: 60rem;
-  font-size: $default-paragraph-size;
-  font-size: inherit;
-
-  @media (prefers-color-scheme: dark) {
-    border: 2px solid var(--color-inactive);
+  
+  code[class][class*="language-"],
+  pre[class][class*="language-"] {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
-
-  @include mq.mq($from:xs) {
-    border: 2px solid var(--color-inactive);
+  
+  pre[class][class*="language-"] {
+    margin: 0 auto $space-xxl;
+    padding-top: 0;
+    width: 100%;
+    max-width: 60rem;
+    font-size: $default-paragraph-size;
+    font-size: inherit;
+  
+    @media (prefers-color-scheme: dark) {
+      border: 2px solid var(--color-inactive);
+    }
+  
+    @include mq.mq($from:xs) {
+      border: 2px solid var(--color-inactive);
+    }
+  
+    &:last-of-type {
+      margin-bottom: $space-xxxl;
+    }
   }
-
-  &:last-of-type {
-    margin-bottom: $space-xxxl;
+  
+  img:not([class]),
+  pre,
+  ul:not([class]), {
+      margin-bottom: $space-xxxl;
   }
-}
-
-img:not([class]),
-pre,
-ul:not([class]), {
-    margin-bottom: $space-xxxl;
 }
