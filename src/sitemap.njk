@@ -11,11 +11,13 @@ summary: some description for google
       {% if item.url != page.url %}
         <li><a href="{{ item.url }}">{{ item.text }} page</a></li>
         {% if item.text == 'Guides' %}
-          <ul class="sitemap__list--nested">
-            {% for guide in collections.guides | reverse %}
-              <li><a href="{{ guide.url }}">{{ guide.data.title }}</a></li>
-            {% endfor %}
-          </ul>
+          <li>
+            <ul class="sitemap__list--nested">
+              {% for guide in collections.guides | reverse %}
+                <li><a href="{{ guide.url }}">{{ guide.data.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
         {% endif %}
       {% else %}
       <li aria-current="page">{{ item.text }} page</li>
