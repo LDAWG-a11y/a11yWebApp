@@ -126,7 +126,7 @@ html {
 
 body {
   min-height: 100vh;
-  max-width: 100rem;
+  max-width: 95rem;
   margin: 0 auto;
   padding: 0 0.5rem;
   background: var(--color-bg);
