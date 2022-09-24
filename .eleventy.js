@@ -12,6 +12,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('./src/fonts');
   eleventyConfig.addPassthroughCopy('./src/svg');
   eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`)
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
