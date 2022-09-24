@@ -1,3 +1,5 @@
+@use '../vendors/mq';
+
 @mixin focus-indicator($is_button: false) {
   transition: $default-transition;
 
@@ -42,5 +44,17 @@
     &::after {
       border-color: var(--color-text);
     }
+  }
+}
+
+@mixin font-size {
+  font-size: $default-paragraph-size;
+
+  @include mq.mq($from:lg) {
+    font-size: $large-paragraph-size;
+  }
+
+  @include mq.mq($from:xl) {
+    font-size: $x-large-paragraph-size;
   }
 }

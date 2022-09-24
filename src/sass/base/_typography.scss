@@ -16,16 +16,14 @@ html {
 }
 
 body {
+  @include font-size;
+  
   position: relative;
   font-size: $default-paragraph-size;
   line-height: $default-line-height;
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
   color: var(--color-text);
   text-rendering: optimizeLegibility;
-
-  @include mq.mq($from:lg) {
-    font-size: $large-paragraph-size;
-  }
 
   &:not(a) {
     overflow-wrap: break-word;
