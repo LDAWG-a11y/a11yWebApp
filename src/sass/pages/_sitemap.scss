@@ -1,0 +1,21 @@
+.sitemap__text {
+  margin-bottom: $space-lg;
+}
+
+.sitemap__list,
+.sitemap__list--nested {
+
+  & > li {
+    &::marker {
+      color: var(--color-accent-2);
+    }
+  }
+}
+
+.sitemap__list {
+  margin-left: $space-lg;
+}
+
+.sitemap__list--nested {
+  margin: $space-xs 0 $space-xs $space-lg;
+}

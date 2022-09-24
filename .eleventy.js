@@ -66,12 +66,9 @@ module.exports = eleventyConfig => {
     return author;
   });
 
-eleventyConfig.addFilter("getGuidesByAuthor", (guides, author) => {
-	return guides.filter(a => a.data.author === author);
-});
-
-eleventyConfig.addFilter('toJson', JSON.stringify);
-eleventyConfig.addFilter('fromJson', JSON.parse);
+  eleventyConfig.addFilter("getGuidesByAuthor", (guides, author) => {
+    return guides.filter(a => a.data.author === author);
+  });
 
   eleventyConfig.addFilter("debugger", (...args) => {
     console.log(...args)

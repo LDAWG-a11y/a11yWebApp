@@ -1,0 +1,25 @@
+---
+layout: base.njk
+title: Sitemap
+summary: some description for google
+---
+<div class="intro-panel">
+  <h2>Sitemap navigation for pages and guides</h2>
+  <p class="sitemap__text">Guides are displayed by most recent entry first.</p>
+  <ul class="sitemap__list">
+    {% for item in navLinks | sort(attribute="text") %}
+      {% if item.url != page.url %}
+        <li><a href="{{ item.url }}">{{ item.text }} page</a></li>
+        {% if item.text == 'Guides' %}
+          <ul class="sitemap__list--nested">
+            {% for guide in collections.guides | reverse %}
+              <li><a href="{{ guide.url }}">{{ guide.data.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% else %}
+      <li aria-current="page">{{ item.text }} page</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
