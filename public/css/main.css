@@ -743,7 +743,7 @@ ul:not([class]) > li::marker {
 .footer {
   margin-top: 6rem;
   position: relative;
-  padding: 4rem 0 2.5rem;
+  padding: 4rem 0 0.75rem;
   background: var(--color-primary);
   background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
   clip-path: polygon(0 2.5%, 100% 0, 100% 100%, 0% 100%);
@@ -776,8 +776,9 @@ ul:not([class]) > li::marker {
 @media (min-width: 48em) {
   .footer {
     display: flex;
+    flex-wrap: wrap;
     margin: 6rem 0 0;
-    padding: 6rem 0 3rem;
+    padding: 6rem 0 0.75rem;
     clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
   }
 }
@@ -860,6 +861,24 @@ ul:not([class]) > li::marker {
   border-style: solid;
   border-width: 5px 10px 5px 0;
   border-color: transparent var(--color-interactive) transparent transparent;
+}
+
+.footer__colophon {
+  position: relative;
+  margin-top: 3rem;
+  padding: 0 0.75rem;
+  text-align: center;
+  z-index: 2;
+}
+@media (min-width: 48em) {
+  .footer__colophon {
+    flex-basis: 100%;
+  }
+}
+.footer__colophon .footer__date,
+.footer__colophon .footer__credit {
+  display: inline-block;
+  margin-bottom: 0.75rem;
 }
 
 .latest-articles {

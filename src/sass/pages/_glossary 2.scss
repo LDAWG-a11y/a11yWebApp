@@ -1,7 +1,6 @@
 @use '../vendors/mq';
 
 .glossary__list {
-  padding-top: $space-lg;
 }
 
 .glossary__item-wrapper {
@@ -25,6 +24,8 @@
     width:100%;
   }  
 }
+
+
 
 .glossary__term {
 
