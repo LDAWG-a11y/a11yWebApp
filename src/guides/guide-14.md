@@ -21,6 +21,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue nec sapien a
 - Item 3
 - Item 4
 
+<blockquote>If you want to hide content from mobile and tablet users as well as assistive tech users and keyboard only users, use the title attribute.</blockquote>
+
 ![This is the alt](/img/test.jpeg)
 
 <iframe scrolling="no" title="Embed test" src="https://codepen.io/Daz079/embed/QWrMbeE?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
