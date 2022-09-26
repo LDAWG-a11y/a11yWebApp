@@ -1375,7 +1375,6 @@ ul:not([class]) > li::marker {
 }
 
 .author-bio__term {
-  margin-right: 1rem;
   font-weight: 600;
 }
 .author-bio__term > svg {
@@ -1385,6 +1384,11 @@ ul:not([class]) > li::marker {
 }
 .author-bio__term > svg > path {
   fill: var(--color-accent-2);
+}
+@media (min-width: 37.5em) {
+  .author-bio__term {
+    margin-right: 1rem;
+  }
 }
 
 .author-bio__link {
