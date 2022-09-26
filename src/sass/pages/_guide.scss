@@ -1,19 +1,20 @@
 @use '../vendors/mq';
 
-.guide {
-  .guide__info-panel {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: $space-xxxl;
-    padding: $space-sm;
-  
-    & > .tags {
-      padding-top: 0;
-      background: none;
-      justify-content: center;
-    }
+.guide__info-panel {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: $space-xxxl;
+  padding: $space-sm;
+
+  & > .tags {
+    padding-top: 0;
+    background: var(--color-bg);
+    justify-content: center;
   }
+}
+
+.guide {
   
   .guide__label {
     padding-bottom: $space-xs;
@@ -27,6 +28,7 @@
     width: 100%;
     max-width: 60rem;
   }
+
   .code__label {
     display: block;
     margin: 0 auto;
@@ -67,5 +69,26 @@
   pre,
   ul:not([class]), {
       margin-bottom: $space-xxxl;
+  }
+
+  blockquote {
+    position: relative;
+    margin: 0 $space-xs $space-xxl $space-xs;
+    padding: $space-xs $space-xs $space-xs $space-lg;
+    max-width: 50rem;
+    background-color: var(--color-bg--light);
+    font-size: 115%;
+    font-style: italic;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 6px;
+      background: var(--color-primary);
+      background: linear-gradient(to top, var(--color-primary), var(--color-secondary));
+    }
   }
 }
