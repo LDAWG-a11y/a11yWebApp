@@ -24,12 +24,6 @@ body {
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
   color: var(--color-text);
   text-rendering: optimizeLegibility;
-
-  &:not(a) {
-    overflow-wrap: break-word;
-    word-break: break-word;
-    hyphens: auto;
-  }
 }
 
 h1,

@@ -198,11 +198,6 @@ body {
     font-size: 1.375rem;
   }
 }
-body:not(a) {
-  overflow-wrap: break-word;
-  word-break: break-word;
-  hyphens: auto;
-}
 
 h1,
 h2,
