@@ -64,7 +64,21 @@
       margin-bottom: $space-xxxl;
     }
   }
+
+  picture {
+    display: block;
+    width: 100%;
+
+    > img {
+      // margin: 0 auto;
+      border: 2px solid var(--color-inactive);
+      border-radius: $radius-sm;
+      max-width: 100%;
+      height: auto;
+    }
+  }
   
+  picture,
   img:not([class]),
   pre,
   ul:not([class]), {

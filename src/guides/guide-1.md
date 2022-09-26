@@ -17,4 +17,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue nec sapien a
 - Item 3
 - Item 4
 
-![This is the alt](/img/test.jpeg)
+![This is the alt](./src/img/test.jpeg)
