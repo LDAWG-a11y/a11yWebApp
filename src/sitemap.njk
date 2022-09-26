@@ -7,21 +7,21 @@ summary: some description for google
   <h2>Sitemap navigation for pages and guides</h2>
   <p class="sitemap__text">Guides are displayed by most recent entry first.</p>
   <ul class="sitemap__list">
-    {% for item in navLinks | sort(attribute="text") %}
+    {%- for item in navLinks | sort(attribute="text") %}
       {% if item.url != page.url %}
-        <li><a href="{{ item.url }}">{{ item.text }} page</a></li>
-        {% if item.text == 'Guides' %}
-          <li>
+        <li><a href="{{ item.url }}">{{ item.text }} page</a>
+        {%- if item.text == 'Guides' %}
             <ul class="sitemap__list--nested">
-              {% for guide in collections.guides | reverse %}
+              {%- for guide in collections.guides | reverse %}
                 <li><a href="{{ guide.url }}">{{ guide.data.title }}</a></li>
-              {% endfor %}
+              {%- endfor %}
             </ul>
+        {%- else %}
           </li>
-        {% endif %}
+        {%- endif %}
       {% else %}
       <li aria-current="page">{{ item.text }} page</li>
-      {% endif %}
-    {% endfor %}
+      {%- endif %}
+    {%- endfor %}
   </ul>
 </div>
