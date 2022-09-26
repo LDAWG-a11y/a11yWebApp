@@ -2,20 +2,26 @@
   <h2 class="pagination__heading" id="guidesPagination">Page {{ pagination.pageNumber + 1 }} of {{ pagination.pageLinks.length }}</h2>
   <div class="pagination__items-wrapper">
     {% if pagination.previousPageLink %}
-      <a class="pagination__item" href="{{ pagination.href.first }}">First</a>
-      <a class="pagination__item" href="{{ pagination.href.previous }}">Prev</a>
+      {% if pagination.pages.length > 2 %}
+        <a class="pagination__item" href="{{ pagination.href.first }}">First</a>
+      {% endif %}
+        <a class="pagination__item" href="{{ pagination.href.previous }}">Prev</a>
     {% else %}
-      <span class="pagination__item pagination__item--inert" {%- if page.url == pagination.href.first %} aria-current="page"{%- endif %}>First</span>
-      <span class="pagination__item pagination__item--inert">Prev</span>
+      {% if pagination.pages.length > 2 %}
+        <span class="pagination__item pagination__item--inert" {%- if page.url == pagination.href.first %} aria-current="page"{%- endif %}>First</span>
+      {% endif %}
+      <span class="pagination__item pagination__item--inert" {%- if page.url == pagination.href.first %} aria-current="page"{%- endif %}>Prev</span>
     {% endif %}
     {% if pagination.nextPageLink %}
       <a class="pagination__item" href="{{ pagination.href.next}}">Next</a>
-      <a class="pagination__item" href="{{ pagination.href.last}}">Last</a>
-    {% else %}
-      {% if pagination.pageLinks.length > 2 %}
-        <span class="pagination__item pagination__item--inert">Next</span>
+      {% if pagination.pages.length > 2 %}
+        <a class="pagination__item" href="{{ pagination.href.last}}">Last</a>
       {% endif %}
-      <span class="pagination__item pagination__item--inert" {%- if page.url == pagination.href.last %} aria-current="page"{%- endif %}>Last</span>
+    {% else %}
+      <span class="pagination__item pagination__item--inert" {%- if page.url == pagination.href.last %} aria-current="page"{%- endif %}>Next</span>
+      {% if pagination.pages.length > 2 %}
+        <span class="pagination__item pagination__item--inert" {%- if page.url == pagination.href.last %} aria-current="page"{%- endif %}>Last</span>
+      {% endif %}
     {% endif %}
   </div>
 </nav>
