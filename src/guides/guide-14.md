@@ -23,7 +23,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue nec sapien a
 
 <blockquote>If you want to hide content from mobile and tablet users as well as assistive tech users and keyboard only users, use the title attribute.</blockquote>
 
-![This is the alt](/img/test.jpeg)
+![This is the alt](./src/img/test.jpeg)
+
+![This is the alt](./src/img/test-small.png)
+
+![This is the alt](./src/img/test-medium.png)
 
 <iframe scrolling="no" title="Embed test" src="https://codepen.io/Daz079/embed/QWrMbeE?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/Daz079/pen/QWrMbeE">

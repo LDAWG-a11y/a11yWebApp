@@ -1478,6 +1478,17 @@ ul:not([class]) > li::marker {
 .guide pre[class][class*=language-]:last-of-type {
   margin-bottom: 3rem;
 }
+.guide picture {
+  display: block;
+  width: 100%;
+}
+.guide picture > img {
+  border: 2px solid var(--color-inactive);
+  border-radius: 4px;
+  max-width: 100%;
+  height: auto;
+}
+.guide picture,
 .guide img:not([class]),
 .guide pre,
 .guide ul:not([class]) {

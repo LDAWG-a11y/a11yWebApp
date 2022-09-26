@@ -1,41 +1,45 @@
+const markdownIt = require('markdown-it');
+const markdownItEleventyImg = require("markdown-it-eleventy-img");
+const postcss = require("postcss");
+const autoprefixer = require("autoprefixer");
+
 module.exports = eleventyConfig => {
-  const postcss = require("postcss");
-  const autoprefixer = require("autoprefixer");
   const { DateTime } = require("luxon");
   const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-  const Image = require("@11ty/eleventy-img");
 
   eleventyConfig.addWatchTarget('./src/sass');
   eleventyConfig.addPassthroughCopy('./src/css');
   eleventyConfig.addPassthroughCopy('./src/js');
   eleventyConfig.addPassthroughCopy('./src/img');
   eleventyConfig.addPassthroughCopy('./src/fonts');
-  eleventyConfig.addPassthroughCopy('./src/svg');
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`)
-  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
-  eleventyConfig.addLiquidShortcode("image", imageShortcode);
-  eleventyConfig.addJavaScriptFunction("image", imageShortcode);
+
+  const markdownItEleventyImgConfig = {
+    imgOptions: {
+      widths: [1200, 800, 400],
+      outputDir: "./public/img/",
+      formats: ["avif", "webp", "jpeg", "png"]
+    },
+    globalAttributes: {
+      class: "guide__image",
+      decoding: "async",
+      loading: "lazy",
+      sizes: "100vw"
+    }
+  }
+
+  let mdLib = markdownIt({
+    html: true,
+    breaks: true,
+    linkify: true
+  }).use(markdownItEleventyImg, markdownItEleventyImgConfig)
+
+  eleventyConfig.setLibrary("md", mdLib);
 
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY);
   });
-
-  async function imageShortcode(src, alt, sizes) {
-    let metadata = await Image(src, {
-      widths: [300, 600],
-      formats: ["avif", "jpeg"]
-    });
-  
-    let imageAttributes = {
-      alt,
-      sizes,
-      loading: "lazy",
-      decoding: "async",
-    };
-  
-    return Image.generateHTML(metadata, imageAttributes);
-  }
 
   eleventyConfig.addPlugin(syntaxHighlight);
 
@@ -69,11 +73,6 @@ module.exports = eleventyConfig => {
   eleventyConfig.addFilter("getGuidesByAuthor", (guides, author) => {
     return guides.filter(a => a.data.author === author);
   });
-
-  eleventyConfig.addFilter("debugger", (...args) => {
-    console.log(...args)
-    debugger;
-  })
 
   return {
     templateFormats: ["md", "njk"],
