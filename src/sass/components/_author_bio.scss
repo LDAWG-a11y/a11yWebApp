@@ -110,7 +110,6 @@
 }
 
 .author-bio__term {
-  margin-right: $space-md;
   font-weight: 600;
 
   > svg  {
@@ -121,7 +120,10 @@
     > path {
       fill: var(--color-accent-2);
     }
-    
+  }
+
+  @include mq.mq($from:sm) {
+    margin-right: $space-md;
   }
 }
 
