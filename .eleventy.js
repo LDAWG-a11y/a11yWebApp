@@ -44,7 +44,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPlugin(syntaxHighlight);
 
   function filterTagList(tags) {
-    return (tags || []).filter(tag => ["guide", "guides"].indexOf(tag) === -1);
+    return (tags || []).filter(tag => ["guide", "guides", "faqs"].indexOf(tag) === -1);
   }
 
   eleventyConfig.addFilter("filterTagList", filterTagList)

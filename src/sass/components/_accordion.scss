@@ -39,7 +39,7 @@
   text-align: left;
   color: var(--color-interactive);
   background: var(--color-bg--light);
-  transition: all 250ms ease-in-out;
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 
   &::before,
   &::after {
@@ -48,6 +48,10 @@
     background-color: var(--color-interactive);
     transition: background 250ms ease-in-out, transform 250ms ease-in-out, opacity 200ms ease-in-out;
     transform-origin: top;
+
+    @media (forced-colors: active) {
+      background-color: ButtonText;
+    }
   }
 
   &::before {
@@ -89,6 +93,10 @@
     &::before,
     &::after {
       background-color: var(--color-bg);
+
+      @media (forced-colors: active) {
+        background-color: ButtonText;
+      }
     }
   }
 

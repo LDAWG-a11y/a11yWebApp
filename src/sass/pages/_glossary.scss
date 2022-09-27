@@ -17,6 +17,10 @@
     width: 100%;
     height: 2px;
     background: var(--color-accent);
+
+    @media (forced-colors: active) {
+      background-color: CanvasText;
+    }
   }
 
   @include mq.mq($from:md) {
@@ -27,20 +31,18 @@
 }
 
 .glossary__term {
+  overflow-wrap: break-word;
+  hyphens: auto;
 
   @include mq.mq($from:md) {
-    width: 15%;
-    padding-right: $space-lg;
+    width: 20%;
   }
 }
 
 .glossary__definition {
   @include mq.mq($from:md) {
-    width: 85%;
+    padding-left: $space-lg;
+    width: 80%;
   }
 }
-
-// @include mq.mq($from:xs) {
-
-// }
 

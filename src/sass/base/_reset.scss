@@ -50,6 +50,14 @@ button {
 
 a:focus,
 button:focus,
-h1:focus {
+a:hover,
+button:hover,
+h1:focus-visible {
   outline: 3px dotted transparent;
+  outline-offset: 2px;
+  // transition: outline-color 0.01ms ease-in-out !important;
+
+  @media (forced-colors: active) {
+    transition: all 0.01ms ease-in-out;
+  }
 }
