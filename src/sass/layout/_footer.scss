@@ -99,6 +99,7 @@
   @extend %underline;
 
   position: relative;
+  display: inline-block;
   margin: 0 -3px;
   padding: 6px 3px;
   line-height: $large-line-height;
@@ -117,6 +118,10 @@
       border-style: solid;
       border-width: 5px 10px 5px 0;
       border-color: transparent var(--color-interactive) transparent transparent;
+
+      @media (forced-colors: active) {
+        border-radius: $radius-pill;
+      }
     }
   }
 }
@@ -140,5 +145,13 @@
   .footer__credit {
     display: inline-block;
     margin-bottom: $space-sm;
+  }
+
+  .footer__credit {
+    display: inline-flex;
+
+    > a {
+      margin-left: $space-xxs;
+    }
   }
 }

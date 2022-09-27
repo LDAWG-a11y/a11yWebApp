@@ -1,7 +1,7 @@
 @use '../vendors/mq';
 
 @mixin focus-indicator($is_button: false) {
-  transition: $default-transition;
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 
   &:focus,
   &:hover {
@@ -20,6 +20,10 @@
       left: -6px;
       border: 2px solid transparent;
       border-radius: $radius-lg;
+
+      @media (forced-colors: active) {
+        display: none;
+      }
     }
 
     &:focus-visible {

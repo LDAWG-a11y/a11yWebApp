@@ -61,6 +61,10 @@ button[class^="header__themes-btn"] {
     border-radius: $radius-pill;
     background: linear-gradient(to left, var(--color-bg) 50%, var(--color-interactive) 50%);
     transition: transform 250ms ease-in-out;
+
+    @media (forced-colors: active) {
+      display: none;
+    }
   }
 
   &::after {
@@ -71,6 +75,10 @@ button[class^="header__themes-btn"] {
     border: 2px solid transparent;
     border-radius: $radius-lg;
     transition: border-color 250ms ease-in-out;
+
+    @media (forced-colors: active) {
+      display: none;
+    }
   }
 
   &:hover,
@@ -96,7 +104,7 @@ button[class^="header__themes-btn"] {
       animation-fill-mode: forwards;
       height: 15rem;
 
-      @include mq.mq($from:xs) {
+      @include mq.mq($from:xxs) {
         height: 9rem;
       }
 
@@ -104,6 +112,10 @@ button[class^="header__themes-btn"] {
         height: 6.5rem;
       }
     }
+  }
+
+  @media (forced-colors: active) {
+    padding-right: $space-sm;
   }
 
   @include mq.mq($from:md) {
@@ -133,12 +145,11 @@ button[class^="header__themes-btn"] {
   padding: $space-xs 0 $space-md;
   gap: $space-sm;
 
-  @include mq.mq($from:xs) {
+  @include mq.mq($from:xxs) {
     flex-wrap: nowrap;
     justify-content: center;
     flex-direction: row;
     gap: 0 $space-lg;
-    
   }
 
   @include mq.mq($from:md) {
@@ -147,7 +158,6 @@ button[class^="header__themes-btn"] {
 }
 
 .header__themes-legend {
-  
   color: var(--color-bg);
 
   [data-theme="dark"] & {
@@ -177,6 +187,10 @@ button[class^="header__themes-btn"] {
   &::after {
     content: "";
     position: absolute;
+
+    @media (forced-colors: active) {
+      display: none;
+    }
   }
 
   &::before {
@@ -229,6 +243,14 @@ button[class^="header__themes-btn"] {
 
   @media (prefers-color-scheme: dark) {
     background-color: var(--color-bg--light);
+  }
+
+  &[data-theme="dark"] {
+    background-color: var(--color-bg--light);
+  }
+
+  @include mq.mq($from:xxs) {
+    padding-bottom: $space-xxs;
   }
 
   @include mq.mq($from:xs) {
@@ -304,7 +326,7 @@ button[class^="header__themes-btn"] {
   padding: $space-xxs $space-xxs;
   font-weight: 600;
   color: var(--color-interactive);
-  transition: $default-transition;
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 
   @include mq.mq($from:xs) {
     padding: $space-sm $space-sm;
@@ -319,7 +341,7 @@ button[class^="header__themes-btn"] {
     &::before {
       content: "";
       position: absolute;
-      left: $space-xxs;
+      left: -$space-xxs;
       top: 50%;
       transform: translateY(-50%);
       border-style: solid;
@@ -327,15 +349,30 @@ button[class^="header__themes-btn"] {
       border-color: transparent transparent transparent var(--color-interactive);
       transition: border-left-color 250ms ease-in;
 
-      @include mq.mq($from:xs) {
+      @media (forced-colors: active) {
+        border-radius: $radius-pill;
+      }
+
+      @include mq.mq($from:xxs) {
         top: unset;
-        bottom: $space-xs;
+        bottom: 1px;
         transform: none;
-        left: $space-sm;
-        width: calc(100% - #{$space-lg});
+        left: $space-xxs;
+        width: calc(100% - #{$space-xs});
+        border-radius: 0;
         border: 0;
         border-bottom: 4px solid var(--color-interactive);
         transition: border-bottom-color 250ms ease-in;
+
+        @media (forced-colors: active) {
+          border-radius: 0;
+        }
+      }
+
+      @include mq.mq($from:xs) {
+        bottom: $space-xs;
+        left: $space-sm;
+        width: calc(100% - #{$space-lg});
       }
 
       @include mq.mq($from:md) {
@@ -347,13 +384,13 @@ button[class^="header__themes-btn"] {
 
   &:focus,
   &:hover {
-    background: var(--color-interactive);
+    background-color: var(--color-interactive);
     color: var(--color-bg); 
 
     &::before {
       border-left-color: var(--color-bg);
 
-      @include mq.mq($from:xs) {
+      @include mq.mq($from:xxs) {
         border-bottom-color: var(--color-bg);
       }
     }

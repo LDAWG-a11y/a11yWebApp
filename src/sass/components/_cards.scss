@@ -17,7 +17,7 @@
 }
 
 .card__item {
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--color-accent-2);
   border-radius: $radius-md;
   padding: $space-sm;
   max-width: 70rem;
@@ -31,8 +31,12 @@
     border: 2px solid var(--color-inactive);
   }
 
-  @include mq.mq($from:xs) {
+  &[data-theme="dark"] {
     border: 2px solid var(--color-inactive);
+  }
+
+  @include mq.mq($from:xs) {
+    border: 2px solid var(--color-accent-2);
   }
 
   @include mq.mq($from:md) {

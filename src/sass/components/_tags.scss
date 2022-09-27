@@ -43,7 +43,7 @@
   &:focus-visible {
     .tag__count {
       background-color: var(--color-bg--light);
-      color: var(--color-interactive)
+      color: var(--color-interactive);
     }
   }
 }
@@ -65,4 +65,8 @@
   background-color: var(--color-interactive);
   color: var(--color-bg--light);
   transition: background 250ms ease-in-out, color 250ms ease-in-out;
+
+  @media (forced-colors: active) {
+    border-left: 2px solid LinkText;
+  }
 }
