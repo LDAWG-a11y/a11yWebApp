@@ -1,13 +1,14 @@
 ---
-title: "The fourteenth guide"
-summary: "A super useful guide about doing that thing that makes the other thing accessible to everybody"
-date: 2022-09-15
+title: The fourteenth guide
+summary: A super useful guide about doing that thing that makes the other thing
+  accessible to everybody
 author: jbloggs
+date: 2022-09-15
 tags:
-  - Screen reader
   - Android
   - iOS
   - MacOS
+  - Screen reader
   - Windows
 ---
 

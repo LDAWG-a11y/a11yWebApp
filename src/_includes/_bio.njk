@@ -1,7 +1,7 @@
 <div class="author-bio {%- if author.img %} author-bio--with-image{%- endif %}">
   <h2 class="author-bio__title">About {{ author.name.split(' ')[0] }}</h2>
   {%- if author.img %}
-    <img class="author-bio__img" height="128" width="128" src="{{ author.img.url }}" alt="{%- if author.img.alt %}{{ author.img.alt }}{%- else %}Profile picture of {{ author.name }}{%- endif %}">
+    <img class="author-bio__img" height="128" width="128" src="{{ author.img }}" alt="Profile picture of {{ author.name }}">
   {%- endif %}
   {%- if author.bio %}
     <p class="author-bio__intro">{{ author.bio }}</p>
@@ -19,39 +19,37 @@
         <dd class="author-bio__description">{{ author.org }}</dd>
       </div>
     {%- endif %}
-    {%- if author.contacts %}
-      {%- if author.contacts.email %}
+      {%- if author.email %}
         <div class="author-bio__items-wrapper">
-          <dt class="author-bio__term">{%- include '../svg/email.svg' %}</dt>
+          <dt class="author-bio__term">{% include '../svg/email.svg' %}</dt>
           <dd class="author-bio__description">
-            <a href="{{ author.contacts.email }}" class="author-bio__link">{{ author.contacts.email }}</a>
+            <a href="mailto:{{ author.email }}" class="author-bio__link">{{ author.email }}</a>
           </dd>
         </div>
       {%- endif %}
-      {%- if author.contacts.twitter %}
+      {%- if author.twitter %}
         <div class="author-bio__items-wrapper">
-          <dt class="author-bio__term">{%- include '../svg/twitter.svg' %}</dt>
+          <dt class="author-bio__term">{% include '../svg/twitter.svg' %}</dt>
           <dd class="author-bio__description">
-            <a href="{{ author.contacts.twitter.url }}" class="author-bio__link">{{ author.contacts.twitter.text }}</a>
+            <a href="https://twitter.com/{{ author.twitter }}" class="author-bio__link">@{{ author.twitter }}</a>
           </dd>
         </div>
       {%- endif %}
-      {%- if author.contacts.linkedin %}
+      {%- if author.linkedin %}
         <div class="author-bio__items-wrapper">
-          <dt class="author-bio__term">{%- include '../svg/linkedin.svg' %}</dt>
+          <dt class="author-bio__term">{% include '../svg/linkedin.svg' %}</dt>
           <dd class="author-bio__description">
-            <a href="{{ author.contacts.linkedin.url }}" class="author-bio__link">{{ author.contacts.linkedin.text }}</a>
+            <a href="{{ author.linkedin }}" class="author-bio__link">{{ author.linkedin }}</a>
           </dd>
         </div>
       {%- endif %}
-      {%- if author.contacts.website %}
+      {%- if author.website %}
         <div class="author-bio__items-wrapper">
-          <dt class="author-bio__term">{%- include '../svg/website.svg' %}</dt>
+          <dt class="author-bio__term">{% include '../svg/website.svg' %}</dt>
           <dd class="author-bio__description">
-            <a href="{{ author.contacts.website.url }}" class="author-bio__link">{{ author.contacts.website.text }}</a>
+            <a href="{{ author.website }}" class="author-bio__link">{{ author.website }}</a>
           </dd>
         </div>
       {%- endif %}
-    {%- endif %}
   </dl>
 </div>

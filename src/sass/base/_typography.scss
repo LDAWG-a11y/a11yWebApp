@@ -26,6 +26,10 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+kbd {
+  font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+}
+
 h1,
 h2,
 h3,
@@ -151,3 +155,4 @@ ul:not([class]) {
     }
   }
 }
+

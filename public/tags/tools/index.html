@@ -28,7 +28,8 @@
 </head>
 
 
-<body><a class="skip-link" href="#h1">Skip navigation</a>
+<body>
+  <a class="skip-link" href="#h1">Skip navigation</a>
 <header class="header">
   <button class="header__themes-btn" id="themeTrigger" aria-expanded="false" aria-controls="themePanel" hidden>Themes</button>
   <div class="header__themes-panel" id="themePanel" hidden>
@@ -71,20 +72,19 @@
   <h2>Showing 3 results for Tools</h2>
   <ul class="cards">
     
-    
       <li class="card__item">
         <article>
           <h3 class="card__title"><a href="/guides/the-tenth-guide/" class="card__link">The tenth guide</a></h3>
           <p class="card__summary">A super useful guide about doing that thing that makes the other thing accessible to everybody</p>
-          <div class="tags">
-                <span class="tag__item">
+          <ul class="tags" aria-label="Tags">
+                <li class="tag__item">
                     <a href="/tags/testing/" class="tag__link">Testing</a>
-                </span>
-                <span class="tag__item tag__item--inert" aria-current="page">
+                </li>
+                <li class="tag__item tag__item--inert" aria-current="page">
                   Tools
-                </span>
+                </li>
             
-          </div>
+          </ul>
           <span class="card__author-name"><a href="/authors/jbloggs" class="card__author-link">Joe Bloggs</a></span>
           <span class="card__date">Sun, 11 Sept 2022</span>
         </article>
@@ -93,15 +93,15 @@
         <article>
           <h3 class="card__title"><a href="/guides/the-ninth-guide/" class="card__link">The ninth guide</a></h3>
           <p class="card__summary">A super useful guide about doing that thing that makes the other thing accessible to everybody</p>
-          <div class="tags">
-                <span class="tag__item">
+          <ul class="tags" aria-label="Tags">
+                <li class="tag__item">
                     <a href="/tags/wave/" class="tag__link">WAVE</a>
-                </span>
-                <span class="tag__item tag__item--inert" aria-current="page">
+                </li>
+                <li class="tag__item tag__item--inert" aria-current="page">
                   Tools
-                </span>
+                </li>
             
-          </div>
+          </ul>
           <span class="card__author-name"><a href="/authors/jbloggs" class="card__author-link">Joe Bloggs</a></span>
           <span class="card__date">Sat, 10 Sept 2022</span>
         </article>
@@ -110,22 +110,23 @@
         <article>
           <h3 class="card__title"><a href="/guides/the-eighth-guide/" class="card__link">The eighth guide</a></h3>
           <p class="card__summary">A super useful guide about doing that thing that makes the other thing accessible to everybody</p>
-          <div class="tags">
-                <span class="tag__item">
+          <ul class="tags" aria-label="Tags">
+                <li class="tag__item">
                     <a href="/tags/axe/" class="tag__link">AXE</a>
-                </span>
-                <span class="tag__item tag__item--inert" aria-current="page">
+                </li>
+                <li class="tag__item tag__item--inert" aria-current="page">
                   Tools
-                </span>
+                </li>
             
-          </div>
+          </ul>
           <span class="card__author-name"><a href="/authors/jbloggs" class="card__author-link">Joe Bloggs</a></span>
           <span class="card__date">Fri, 9 Sept 2022</span>
         </article>
       </li>
   </ul>
 </div>
-  </main><footer class="footer">
+  </main>
+  <footer class="footer">
   <div class="footer__panel--primary">
     <h2 class="footer__heading">Site links</h2>
     <ul class="footer__list">
@@ -169,6 +170,11 @@
           >Sitemap
           </a>
         </li>
+        <li class="footer__list-item">
+          <a class="footer__link" href="/admin"
+          >Admin
+          </a>
+        </li>
     </ul>
   </div>
   <div class="footer__panel--secondary">
@@ -186,6 +192,5 @@
   </div>
 </footer>
   <script src="/js/main.js"></script>
-  <script src="/js/theme-switcher.js"></script>
 </body>
 </html>

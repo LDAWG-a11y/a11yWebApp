@@ -245,7 +245,7 @@ button[class^="header__themes-btn"] {
     background-color: var(--color-bg--light);
   }
 
-  &[data-theme="dark"] {
+  [data-theme="dark"] & {
     background-color: var(--color-bg--light);
   }
 

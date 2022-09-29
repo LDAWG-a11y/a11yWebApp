@@ -1,11 +1,12 @@
 ---
-title: "The fifth guide"
-summary: "A super useful guide about doing that thing that makes the other thing accessible to everybody"
-date: 2022-09-06
+title: The fifth guide
+summary: A super useful guide about doing that thing that makes the other thing
+  accessible to everybody
 author: jbloggs
+date: 2022-09-06
 tags:
-  - HTML
   - Alt Text
+  - HTML
   - Images
   - WCAG
 ---

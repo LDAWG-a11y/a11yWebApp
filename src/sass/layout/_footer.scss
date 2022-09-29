@@ -85,7 +85,7 @@
 
   @include mq.mq($from:md) {
     display: block;
-    margin-bottom: $space-xs;
+    margin-bottom: 0;
   }
   
   &:not(:last-of-type) {
@@ -101,7 +101,7 @@
   position: relative;
   display: inline-block;
   margin: 0 -3px;
-  padding: 6px 3px;
+  padding: $space-xxs $space-xs;
   line-height: $large-line-height;
   font-weight: 600;
   color: var(--color-interactive);

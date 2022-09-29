@@ -9,30 +9,31 @@ pagination:
   alias: helpGuides
   reverse: true
 eleventyComputed:
-  title: All guides Page {%- if page.url != pagination.href.first %} {{ pagination.pageNumber + 1 }} of {{ pagination.pageLinks.length }} {% endif%}
+  title: All guides Page {%- if page.url != pagination.href.first %} {{ pagination.pageNumber + 1 }} of {{ pagination.pageLinks.length }} {%- endif%}
   summary: "All digital accessibility guides from our website tagged with “{{ tag }}”"
 ---
-
 <div class="intro-panel">
   <h2 class="intro-panel__heading">Filter by tag</h2>
   <a class="skip-tags" href="#h2">Skip filters</a>
-  <div class="tags">
+  <ul class="tags tags__all">
     {%- for tag in collections.tagList %}
-      <span class="tag__item">
-      {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
-      <a class="tag__link tag__link--has-count" href="{{ tagUrl | url }}">{{ tag }}<span class="tag__count">{{ collections[tag].length }}<span class="visually-hidden"> guide{%- if collections[tag].length > 1 %}s{%- endif %}</span></span></a>
-      </span>
+      <li class="tag__item">
+        {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
+        <a class="tag__link tag__link--has-count" href="{{ tagUrl | url }}">{{ tag }}<span class="tag__count">{{ collections[tag].length }}<span class="visually-hidden"> guide{%- if collections[tag].length > 1 %}s{%- endif %}</span></span></a>
+      </li>
     {%- endfor %}
-  </div>
-  <h2 class="intro-panel__heading">Filter by author</h2>
-  <div class="tags">
-    {%- for author in authors %}
-      <span class="tag__item">
+    </ul>
+    <h2 class="intro-panel__heading">Filter by author</h2>
+    <ul class="tags tags__all">
+      {%- for author in collections.writers %}
         {% set posts = collections.guides | getGuidesByAuthor(author.key) %}
-      <a class="tag__link tag__link--has-count" href="/authors/{{ author.key }}">{{ author.name }}<span class="tag__count">{{ posts.length }}<span class="visually-hidden"> guide{%- if posts.length > 1 %}s{%- endif %}</span></span></a>
-      </span>
-    {%- endfor %}
-  </div>
+        {%- if posts.length %}
+          <li class="tag__item">
+            <a class="tag__link tag__link--has-count" href="/authors/{{ author.key }}">{{ author.name }}<span class="tag__count">{{ posts.length }}<span class="visually-hidden"> guide{%- if posts.length > 1 %}s{%- endif %}</span></span></a>
+          </li>
+        {%- endif %}
+      {%- endfor %}
+    </ul>
 </div>
 
 <div class="cards__wrapper">
@@ -43,14 +44,14 @@ eleventyComputed:
         <article>
           <h3 class="card__title"><a href="{{ guide.url }}" class="card__link">{{ guide.data.title }}</a></h3>
           <p class="card__summary">{{ guide.data.summary }}</p>
-          <div class="tags">
+          <ul class="tags" aria-label="Tags">
             {%- for tag in guide.data.tags | filterTagList %}
-              <span class="tag__item tag__item--inert">
+              <li class="tag__item tag__item--inert">
               {{ tag }}
-              </span>
+              </li>
             {%- endfor %}
-          </div>
-          {% set guideAuthor = authors | getAuthor(guide.data.author) %}
+          </ul>
+          {% set guideAuthor = collections.writers | getAuthor(guide.data.author) %}
           <a href="/authors/{{ guideAuthor.key }}" class="card__author-link">{{ guideAuthor.name }}</a>
           <span class="card__date">{{ guide.data.date | readableDate }}</span>
         </article>
@@ -59,5 +60,5 @@ eleventyComputed:
   </ul>
 </div>
 {%- if pagination.pageLinks.length > 1 %}
-  {%- include "_pagination.njk" %}
+  {% include "_pagination.njk" %}
 {%- endif %}

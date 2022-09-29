@@ -5,44 +5,45 @@ filter:
 - nav
 - tagList
 pagination:
-   data: authors
+   data: collections.writers
    size: 1
    alias: author
-permalink: "/authors/{{author.key}}/"
+permalink: "/authors/{{ author.key }}/"
 eleventyComputed:
-   title: "All guides written by {{author.name}}"
+   title: "All guides written by {{ author.name }}"
    summary: "All accessibility guides written by “{{ author }}”"
 ---
 {% set posts = collections.guides | getGuidesByAuthor(author.key) %}
-{%- include "_bio.njk" %}
-
-<div class="cards__wrapper">
-  <h2>Showing {{ posts.length }} guides</h2>
-  <ul class="cards">
-    {% for post in posts | reverse %}
-      <li class="card__item">
-        <article>
-          <h3 class="card__title"><a href="{{ post.url }}" class="card__link">{{ post.data.title }}</a></h3>
-          <p class="card__summary">{{ post.data.summary }}</p>
-          <div class="tags">
-            {%- for tag in post.data.tags | filterTagList %}
-            {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
-            {%- if tagUrl != page.url  %}
-              <span class="tag__item">
-                  <a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a>
-              </span>
-            {%- else %}
-              <span class="tag__item tag__item--inert" aria-current="page">
-                {{ tag }}
-              </span>
-            {%- endif %}
-            {%- endfor %}
-          </div>
-          <span class="card__author-name">{{ author.name }}</span>
-          <span class="card__date">{{ post.data.date | readableDate }}</span>
-        </article>
-      </li>
-  {% endfor %}
-  </ul>
-</div>
+{%- if posts.authors.length %}
+  {% include "_bio.njk" %}
+  <div class="cards__wrapper">
+    <h2>Showing {{ posts.length }} guide{%- if posts.length > 1 %}s{%- endif %}</h2>
+    <ul class="cards">
+      {%- for post in posts | reverse %}
+        <li class="card__item">
+          <article>
+            <h3 class="card__title"><a href="{{ post.url }}" class="card__link">{{ post.data.title }}</a></h3>
+            <p class="card__summary">{{ post.data.summary }}</p>
+            <ul class="tags" aria-label="Tags">
+              {%- for tag in post.data.tags | filterTagList %}
+                {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
+                {%- if tagUrl != page.url  %}
+                  <li class="tag__item">
+                      <a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a>
+                  </li>
+                {%- else %}
+                  <li class="tag__item tag__item--inert" aria-current="page">
+                    {{ tag }}
+                  </li>
+                {%- endif %}
+              {%- endfor %}
+              </ul>
+            <span class="card__author-name">{{ author.name }}</span>
+            <span class="card__date">{{ post.data.date | readableDate }}</span>
+          </article>
+        </li>
+    {%- endfor %}
+    </ul>
+  </div>
+{%- endif %}
   
