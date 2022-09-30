@@ -20,14 +20,13 @@
     document.documentElement.classList.add('has-js');
   </script>
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
   <meta property="og:description" content=" some description for google Site purpose etc">
   <meta property="og:locale" content="en_GB">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:card" content="summary_large_image">
 </head>
-
-
 <body>
   <a class="skip-link" href="#h1">Skip navigation</a>
 <header class="header">
@@ -41,7 +40,7 @@
     </fieldset>
   </div>
   <nav class="main-nav">
-    <img class="header__logo" src="/img/temp-logo.png" alt="Make Things Accessible logo" class="header__logo">
+    <div class="header__logo" role="img" aria-label="Make Things Accessible logo"></div>
     <ul class="main-nav__list">
         <li class="main-nav__item">
           <a class="main-nav__link"
@@ -72,6 +71,10 @@
 <h2>Frequently asked accessibility questions</h2>
 <p class="faqs__intro">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus diam erat, ultrices aliquet velit fermentum ac. Sed sagittis nisi at ornare condimentum. Vivamus sodales lobortis libero eget varius. Etiam vel tincidunt nulla. Integer nec tortor dapibus, aliquam massa vel, accumsan eros. Maecenas sit amet ipsum fermentum, porta est et, consectetur elit. Vivamus consectetur urna id mauris ultricies rhoncus. Nulla nec iaculis metus. Morbi semper bibendum neque, non lacinia magna vestibulum sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur leo ligula, dictum vel justo a, ornare imperdiet nisi. Nunc volutpat sagittis cursus. Donec volutpat suscipit nisl, a feugiat ipsum venenatis at.</p>
+    <h3 class="accordion">How do I do that</h3>
+    <div class="accordion__panel"><p>Like this</p>
+<p><kbd>Enter</kbd></p>
+</div>
     <h3 class="accordion">Now it&#39;s working?</h3>
     <div class="accordion__panel"><p>Yep</p>
 </div>

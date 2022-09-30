@@ -10,7 +10,7 @@
     </fieldset>
   </div>
   <nav class="main-nav">
-    <img class="header__logo" src="/img/temp-logo.png" alt="{{ site.siteName }} logo" class="header__logo">
+    <div class="header__logo" role="img" aria-label="{{ site.siteName }} logo"></div>
     <ul class="main-nav__list">
       {%- for item in navLinks %}
         {%- if item.mainNav == true %}
@@ -30,7 +30,7 @@
     {%- if page.url !== "/" %}
       {{ title }}
     {%- else %}
-      Some catchy welcome message
+      {{ site.siteName }}
     {%- endif %}
   </h1>
 </header>

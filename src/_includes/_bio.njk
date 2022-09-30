@@ -1,10 +1,10 @@
 <div class="author-bio {%- if author.img %} author-bio--with-image{%- endif %}">
   <h2 class="author-bio__title">About {{ author.name.split(' ')[0] }}</h2>
   {%- if author.img %}
-    <img class="author-bio__img" height="128" width="128" src="{{ author.img }}" alt="Profile picture of {{ author.name }}">
+    <img class="author-bio__img" height="128" width="128" src="{{ author.img.slice(4) }}" alt="Profile picture of {{ author.name }}">
   {%- endif %}
   {%- if author.bio %}
-    <p class="author-bio__intro">{{ author.bio }}</p>
+    <div class="author-bio__intro">{{ author.bio | safe }}</div>
   {%- endif %}
   <dl class="author-bio__meta">
     {%- if author.title %}
@@ -39,7 +39,7 @@
         <div class="author-bio__items-wrapper">
           <dt class="author-bio__term">{% include '../svg/linkedin.svg' %}</dt>
           <dd class="author-bio__description">
-            <a href="{{ author.linkedin }}" class="author-bio__link">{{ author.linkedin }}</a>
+            <a href="{{ author.linkedin }}" class="author-bio__link">{{ author.linkedin.slice(24) }}</a>
           </dd>
         </div>
       {%- endif %}

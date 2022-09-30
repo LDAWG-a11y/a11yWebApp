@@ -23,6 +23,13 @@ accordions.forEach( (accordion, idx) => {
   });
 })
 
+accordions.forEach(accordion => {
+  const accPanel = accordion.nextElementSibling;
+  if (!accPanel.nextElementSibling || !accPanel.nextElementSibling.hasAttribute('data-open')) {
+    accPanel.setAttribute('data-last', '');
+  }
+})
+
 // TODO calculation to animate is a little off and doesn't work correctly when font-sizing is changed
 
 // const resizeAccordions = () => {

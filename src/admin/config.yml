@@ -4,6 +4,7 @@ backend:
 local_backend:
   url: http://localhost:8082/api/v1
 media_folder: "src/img"
+publish_mode: editorial_workflow
 public_folder: "./src/img"
 collections:
   - name: "guides"
@@ -16,14 +17,14 @@ collections:
       - { label: "Summary", name: "summary", widget: "string", hint: "This is displayed on the Guide card, it is also used for the page description, for SEO purposes" }
       - { label: "Author", name: "author", widget: "relation", collection: "authors", value_field: "key", display_fields: [ "name" ], search_fields: [ "name" ], default: "Anonymous", hint: "New authors need to be created before a guide can be attributed to them "}
       - { label: "Date", name: "date", widget: "date", format: 'YYYY-MM-DD', hint: "This should probably not be changed"}
-      - { label: "Tags", name: "tags", widget: "list", hint: "Tags are case sensitive, so html and HTML are not the same tag, so please ensure you have checked a tag exists, before creating a new one, as a typo or case mismatch will cause a system error", summary: "{{fields.tag}}", field: { label: "Tag", name: "tag", widget: "string" }}
+      - { label: "Tags", name: "tags", widget: "list", hint: "Tags are case sensitive, so html and HTML are not the same tag, so please ensure you have checked a tag exists, before creating a new one, as a typo or case mismatch will cause a system error", default: Untagged, summary: "{{fields.tag}}", field: { label: "Tag", name: "tag", widget: "string" }}
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "authors"
     label: "Authors"
     create: true
     delete: true
     format: json
-    identifier_field: key
+    identifier_field: name
     folder: "/src/_data/contributors"
     fields:
       - { label: "Username", name: "key", widget: "string", hint: "This is not displayed anywhere but the URL, it needs to be unique and can only contain alphanumeric characters, e.g: jBloggs1" }
@@ -31,10 +32,10 @@ collections:
       - { label: "Job Title", name: "title", widget: "string", required: false }
       - { label: "Organisation", name: "org", widget: "string", required: false }
       - { label: "Bio", name: "bio", widget: "text", hint: "Tell the world a bit about yourself" }
-      - { label: "Profile picture", name: "img", widget: "image", required: false, hint: "This image needs to be square and it should be quite small, about 192px * 192px" }
+      - { label: "Profile picture", media_folder: "/src/img", name: "img", widget: "image", required: false, hint: "This image needs to be square and it should be quite small, about 192px * 192px" }
       - { label: "Twitter handle", name: "twitter", widget: "string", required: false, hint: "This only requires your username, do not add the full URL, this is done automatically, eg: jbloggs1 is all that is required" }
       - { label: Email, name: "email", widget: "string", required: false }
-      - { label: "LinkedIn", name: "linkedn", widget: "string", required: false }
+      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
       - { label: "Website", name: "website", widget: "string", required: false, hint: "Example: www.yoursite.com" }
       - { label: "Tags", name: "tags", default: "contributors", widget: "hidden" }
   - name: "faqs"

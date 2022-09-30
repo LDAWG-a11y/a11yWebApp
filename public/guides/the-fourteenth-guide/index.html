@@ -20,14 +20,13 @@
     document.documentElement.classList.add('has-js');
   </script>
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
   <meta property="og:description" content=" A super useful guide about doing that thing that makes the other thing accessible to everybody Site purpose etc">
   <meta property="og:locale" content="en_GB">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:card" content="summary_large_image">
 </head>
-
-
 <body>
   <a class="skip-link" href="#h1">Skip navigation</a>
 <header class="header">
@@ -41,7 +40,7 @@
     </fieldset>
   </div>
   <nav class="main-nav">
-    <img class="header__logo" src="/img/temp-logo.png" alt="Make Things Accessible logo" class="header__logo">
+    <div class="header__logo" role="img" aria-label="Make Things Accessible logo"></div>
     <ul class="main-nav__list">
         <li class="main-nav__item">
           <a class="main-nav__link"
@@ -77,28 +76,28 @@
         <strong>Posted: </strong>Thu, 15 Sept 2022
       </div>
       <strong class="guide__label">Tagged with: </strong>
-      <div class="tags">
+      <ul class="tags tags__all">
         
-        <span class="tag__item">
+        <li class="tag__item">
           <a href="/tags/android/" class="tag__link">Android</a>
-        </span>
+        </li>
         
-        <span class="tag__item">
+        <li class="tag__item">
           <a href="/tags/ios/" class="tag__link">iOS</a>
-        </span>
+        </li>
         
-        <span class="tag__item">
+        <li class="tag__item">
           <a href="/tags/macos/" class="tag__link">MacOS</a>
-        </span>
+        </li>
         
-        <span class="tag__item">
+        <li class="tag__item">
           <a href="/tags/screen-reader/" class="tag__link">Screen reader</a>
-        </span>
+        </li>
         
-        <span class="tag__item">
+        <li class="tag__item">
           <a href="/tags/windows/" class="tag__link">Windows</a>
-        </span>
-      </div>      
+        </li>
+      </ul>      
     </div>
     <article class="cms">
       <h2>The heading 2</h2>
@@ -110,9 +109,9 @@
 <li>Item 4</li>
 </ul>
 <blockquote>If you want to hide content from mobile and tablet users as well as assistive tech users and keyboard only users, use the title attribute.</blockquote>
-<p><picture><source type="image/avif" srcset="/img/Kltq4OgDVJ-400.avif 400w, /img/Kltq4OgDVJ-800.avif 800w, /img/Kltq4OgDVJ-1200.avif 1200w" sizes="100vw"><source type="image/webp" srcset="/img/Kltq4OgDVJ-400.webp 400w, /img/Kltq4OgDVJ-800.webp 800w, /img/Kltq4OgDVJ-1200.webp 1200w" sizes="100vw"><source type="image/jpeg" srcset="/img/Kltq4OgDVJ-400.jpeg 400w, /img/Kltq4OgDVJ-800.jpeg 800w, /img/Kltq4OgDVJ-1200.jpeg 1200w" sizes="100vw"><source type="image/png" srcset="/img/Kltq4OgDVJ-400.png 400w, /img/Kltq4OgDVJ-800.png 800w, /img/Kltq4OgDVJ-1200.png 1200w" sizes="100vw"><img class="guide__image" decoding="async" loading="lazy" alt="This is the alt" src="/img/Kltq4OgDVJ-400.jpeg" width="1200" height="675"></picture></p>
-<p><picture><source type="image/avif" srcset="/img/mPOUoMFE_f-400.avif 400w" sizes="100vw"><source type="image/webp" srcset="/img/mPOUoMFE_f-400.webp 400w" sizes="100vw"><source type="image/png" srcset="/img/mPOUoMFE_f-400.png 400w" sizes="100vw"><img class="guide__image" decoding="async" loading="lazy" alt="This is the alt" src="/img/mPOUoMFE_f-400.jpeg" width="400" height="119"></picture></p>
-<p><picture><source type="image/avif" srcset="/img/C5P5wHB_Ri-400.avif 400w, /img/C5P5wHB_Ri-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="/img/C5P5wHB_Ri-400.webp 400w, /img/C5P5wHB_Ri-800.webp 800w" sizes="100vw"><source type="image/jpeg" srcset="/img/C5P5wHB_Ri-400.jpeg 400w, /img/C5P5wHB_Ri-800.jpeg 800w" sizes="100vw"><source type="image/png" srcset="/img/C5P5wHB_Ri-400.png 400w, /img/C5P5wHB_Ri-800.png 800w" sizes="100vw"><img class="guide__image" decoding="async" loading="lazy" alt="This is the alt" src="/img/C5P5wHB_Ri-400.jpeg" width="800" height="345"></picture></p>
+<p><picture><source type="image/webp" srcset="/img/Kltq4OgDVJ-300.webp 300w, /img/Kltq4OgDVJ-600.webp 600w, /img/Kltq4OgDVJ-900.webp 900w, /img/Kltq4OgDVJ-1200.webp 1200w" sizes="100vw"><source type="image/png" srcset="/img/Kltq4OgDVJ-300.png 300w, /img/Kltq4OgDVJ-600.png 600w, /img/Kltq4OgDVJ-900.png 900w, /img/Kltq4OgDVJ-1200.png 1200w" sizes="100vw"><img class="guide__image" decoding="async" loading="lazy" alt="This is the alt" src="/img/Kltq4OgDVJ-300.png" width="1200" height="675"></picture></p>
+<p><picture><source type="image/webp" srcset="/img/mPOUoMFE_f-300.webp 300w, /img/mPOUoMFE_f-600.webp 600w" sizes="100vw"><source type="image/png" srcset="/img/mPOUoMFE_f-300.png 300w, /img/mPOUoMFE_f-600.png 600w" sizes="100vw"><img class="guide__image" decoding="async" loading="lazy" alt="This is the alt" src="/img/mPOUoMFE_f-300.png" width="600" height="179"></picture></p>
+<p><picture><source type="image/webp" srcset="/img/C5P5wHB_Ri-300.webp 300w, /img/C5P5wHB_Ri-600.webp 600w" sizes="100vw"><source type="image/png" srcset="/img/C5P5wHB_Ri-300.png 300w, /img/C5P5wHB_Ri-600.png 600w" sizes="100vw"><img class="guide__image" decoding="async" loading="lazy" alt="This is the alt" src="/img/C5P5wHB_Ri-300.png" width="600" height="258"></picture></p>
 <iframe scrolling="no" title="Embed test" src="https://codepen.io/Daz079/embed/QWrMbeE?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/Daz079/pen/QWrMbeE">
   Embed test</a> by Darren Lee (<a href="https://codepen.io/Daz079">@Daz079</a>)
@@ -127,8 +126,8 @@
     
     <div class="author-bio author-bio--with-image">
   <h2 class="author-bio__title">About Joe</h2>
-    <img class="author-bio__img" height="128" width="128" src="/img/joe.png" alt="Profile picture of Joe Bloggs">
-    <p class="author-bio__intro">I am a very experienced remediator of PDFs, I am passionate about fixing documents that are saved in a file format that should really be reserved for printing. I also take great pleasure in knowing I only having one tool available, that I can actually fix the accessibility issues in, and for that, it requires me to pay extra for a pro license. I don&#39;t mind though, as I am a pro and I am at my happiest when remediating PDFs that could really have been webpages. I have authored 7 books on the history of PDFs and I am the head of the PDF appreciation society, in Cumbria. I also like cricket!</p>
+    <img class="author-bio__img" height="128" width="128" src="/joe.png" alt="Profile picture of Joe Bloggs">
+    <div class="author-bio__intro">I am a very experienced remediator of PDFs, I am passionate about fixing documents that are saved in a file format that should really be reserved for printing. I also take great pleasure in knowing I only having one tool available, that I can actually fix the accessibility issues in, and for that, it requires me to pay extra for a pro license. I don't mind though, as I am a pro and I am at my happiest when remediating PDFs that could really have been webpages. I have authored 7 books on the history of PDFs and I am the head of the PDF appreciation society, in Cumbria. I also like cricket!</div>
   <dl class="author-bio__meta">
       <div class="author-bio__items-wrapper">
         <dt class="author-bio__term">Position: </dt>
@@ -159,7 +158,7 @@
   <path fill="currentColor" fill-rule="evenodd" d="M1 2.84A1.84 1.84 0 0 1 2.84 1h18.32A1.84 1.84 0 0 1 23 2.84v18.32A1.84 1.84 0 0 1 21.16 23H2.84A1.84 1.84 0 0 1 1 21.16V2.84Zm8.7 6.55h2.99v1.5c.43-.87 1.53-1.64 3.18-1.64 3.17 0 3.92 1.71 3.92 4.86v5.82h-3.2v-5.1c0-1.8-.44-2.8-1.53-2.8-1.51 0-2.14 1.08-2.14 2.8v5.1H9.7V9.39Zm-5.5 10.4h3.22V9.25H4.2v10.54ZM7.88 5.81a2.06 2.06 0 1 1-4.12 0 2.06 2.06 0 0 1 4.13 0Z" clip-rule="evenodd"/>
 </svg></dt>
           <dd class="author-bio__description">
-            <a href="linkedin.com/in/jbloggs21" class="author-bio__link">linkedin.com/in/jbloggs21</a>
+            <a href="linkedin.com/in/jbloggs21" class="author-bio__link">1</a>
           </dd>
         </div>
         <div class="author-bio__items-wrapper">
