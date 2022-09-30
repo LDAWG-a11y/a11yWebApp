@@ -118,4 +118,8 @@
     height: 0;
     visibility: hidden;
   }
+
+  &[data-last] {
+    margin-bottom: $space-xxxl;
+  }
 }

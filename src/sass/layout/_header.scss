@@ -242,11 +242,11 @@ button[class^="header__themes-btn"] {
   background: var(--color-bg);
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--color-bg--light);
+    background-color: var(--color-bg);
   }
 
   [data-theme="dark"] & {
-    background-color: var(--color-bg--light);
+    background-color: var(--color-bg);
   }
 
   @include mq.mq($from:xxs) {
@@ -254,12 +254,7 @@ button[class^="header__themes-btn"] {
   }
 
   @include mq.mq($from:xs) {
-    background-color: var(--color-bg--light);
-  }
-
-  @include mq.mq($from:xs) {
-    padding-bottom: $space-md;
-    background: none;
+    padding-bottom: $space-xs;
   }
 
   @include mq.mq($from:md) {
@@ -273,17 +268,40 @@ button[class^="header__themes-btn"] {
 }
 
 .header__logo {
-  margin: 0 0 $space-sm 50%;
-  transform: translate(-50%);
-  font-size: 0;
+  display: inline-block;
+  margin: $space-xs 0;
+  height: 1.25rem;
+  width: 100%;
+  background: url(/img/logo--light.png) center / cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @media (prefers-color-scheme: dark) {
+    background-image: url(/img/logo--dark.png);
+  }
+
+  [data-theme="dark"] & {
+    background-image: url(/img/logo--dark.png);
+  }
+
+  @include mq.mq($from:xxs) {
+    height: 2.25rem;
+  }
 
   @include mq.mq($from:xs) {
-    margin-bottom: 0;
+    margin: $space-sm 0 0 0;
   }
 
   @include mq.mq($from:md) {
-    margin-left: 0;
-    transform: none;
+    margin-top: $space-xs;
+    width: 11.5rem;
+    background-position: left;
+  }
+
+  @include mq.mq($from:lg) {
+    margin-top: 0;
+    height: 3.25rem;
+    width: 20rem;
   }
 }
 
@@ -299,10 +317,8 @@ button[class^="header__themes-btn"] {
   @include mq.mq($from:xs) {
     display: flex;
     justify-content: space-around;
-    margin: $space-sm $space-xs 0;
-    border-radius: $radius-md;
+    margin: 0 $space-xs 0;
     padding: $space-sm 0;
-    background: var(--color-bg);
   }
 
   @include mq.mq($from:md) {

@@ -12,14 +12,14 @@
         <strong>Posted: </strong>{{ date | readableDate }}
       </div>
       <strong class="guide__label">Tagged with: </strong>
-      <div class="tags">
+      <ul class="tags tags__all">
         {%- for tag in tags | filterTagList %}
         {% set tagUrl %}/tags/{{ tag | slug }}/{%- endset %}
-        <span class="tag__item">
+        <li class="tag__item">
           <a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a>
-        </span>
+        </li>
         {%- endfor %}
-      </div>      
+      </ul>      
     </div>
     <article class="cms">
       {{ content | safe }}

@@ -44,48 +44,34 @@ $theme-map-dark: (
 :root, 
 :root[data-theme="light"] {
   @include spread-map($theme-map-light);
-
-  ::selection {
-    background-color: #997FC3;
-  }
-
-  h1::selection {
-    background-color: var(--color-bg--light);
-    color: var(--color-primary);
-  }
-
-  a::selection,
-  button::selection {
-    color: var(--color-highlight);
-  }
 }
 
 :root[data-theme="dark"] {
   @include spread-map($theme-map-dark);
 
-  ::selection:not(pre > *):not(code) {
-    background-color: var(--color-primary);
+  ::selection {
+    background-color: #8ba7d9;
+    color: black;
   }
 
   h1::selection {
-    background-color: var(--color-bg--light);
-    color: #AD90CB;
-  }
-
-  a::selection,
-  button::selection {
-    color: var(--color-highlight);
-  }
-}
-
-:root {
-  @media (prefers-color-scheme: light) {
-    @include spread-map($theme-map-light);
+    background-color: var(--color-text);
+    color: var(--color-primary);
   }
 }
 
 :root {
   @media (prefers-color-scheme: dark) {
     @include spread-map($theme-map-dark);
+
+    ::selection {
+      background-color: #8ba7d9;
+      color: black;
+    }
+  
+    h1::selection {
+      background-color: var(--color-text);
+      color: var(--color-primary);
+    }
   }
 }

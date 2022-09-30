@@ -61,21 +61,6 @@ body:before {
   --color-inactive: #595959;
   --color-highlight: #030189;
 }
-:root ::selection,
-:root[data-theme=light] ::selection {
-  background-color: #997FC3;
-}
-:root h1::selection,
-:root[data-theme=light] h1::selection {
-  background-color: var(--color-bg--light);
-  color: var(--color-primary);
-}
-:root a::selection,
-:root button::selection,
-:root[data-theme=light] a::selection,
-:root[data-theme=light] button::selection {
-  color: var(--color-highlight);
-}
 
 :root[data-theme=dark] {
   --color-text: #D9D9D9;
@@ -89,31 +74,13 @@ body:before {
   --color-inactive: #4a4a4a;
   --color-highlight: #6ebc9f;
 }
-:root[data-theme=dark] ::selection:not(pre > *):not(code) {
-  background-color: var(--color-primary);
+:root[data-theme=dark] ::selection {
+  background-color: #8ba7d9;
+  color: black;
 }
 :root[data-theme=dark] h1::selection {
-  background-color: var(--color-bg--light);
-  color: #AD90CB;
-}
-:root[data-theme=dark] a::selection,
-:root[data-theme=dark] button::selection {
-  color: var(--color-highlight);
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-text: #1f1f1f;
-    --color-bg: #fdfdfd;
-    --color-bg--light: #fffaf0;
-    --color-primary: #702A8C;
-    --color-secondary: #BF2669;
-    --color-accent: #ffd6b5;
-    --color-accent-2: #e86620;
-    --color-interactive: #8A2BE2;
-    --color-inactive: #595959;
-    --color-highlight: #030189;
-  }
+  background-color: var(--color-text);
+  color: var(--color-primary);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -128,6 +95,14 @@ body:before {
     --color-interactive: #C079E6;
     --color-inactive: #4a4a4a;
     --color-highlight: #6ebc9f;
+  }
+  :root ::selection {
+    background-color: #8ba7d9;
+    color: black;
+  }
+  :root h1::selection {
+    background-color: var(--color-text);
+    color: var(--color-primary);
   }
 }
 
@@ -458,7 +433,7 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.25;
+  line-height: 1.5;
   letter-spacing: 0.0125rem;
   font-family: "Oswald", sans-serif;
   font-weight: 700;
@@ -950,11 +925,11 @@ body:before {
 }
 @media (prefers-color-scheme: dark) {
   .main-nav {
-    background-color: var(--color-bg--light);
+    background-color: var(--color-bg);
   }
 }
 [data-theme=dark] .main-nav {
-  background-color: var(--color-bg--light);
+  background-color: var(--color-bg);
 }
 @media (min-width: 20em) {
   .main-nav {
@@ -963,13 +938,7 @@ body:before {
 }
 @media (min-width: 26.25em) {
   .main-nav {
-    background-color: var(--color-bg--light);
-  }
-}
-@media (min-width: 26.25em) {
-  .main-nav {
-    padding-bottom: 1rem;
-    background: none;
+    padding-bottom: 0.5rem;
   }
 }
 @media (min-width: 48em) {
@@ -984,19 +953,44 @@ body:before {
 }
 
 .header__logo {
-  margin: 0 0 0.75rem 50%;
-  transform: translate(-50%);
-  font-size: 0;
+  display: inline-block;
+  margin: 0.5rem 0;
+  height: 1.25rem;
+  width: 100%;
+  background: url(/img/logo--light.png) center/cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media (prefers-color-scheme: dark) {
+  .header__logo {
+    background-image: url(/img/logo--dark.png);
+  }
+}
+[data-theme=dark] .header__logo {
+  background-image: url(/img/logo--dark.png);
+}
+@media (min-width: 20em) {
+  .header__logo {
+    height: 2.25rem;
+  }
 }
 @media (min-width: 26.25em) {
   .header__logo {
-    margin-bottom: 0;
+    margin: 0.75rem 0 0 0;
   }
 }
 @media (min-width: 48em) {
   .header__logo {
-    margin-left: 0;
-    transform: none;
+    margin-top: 0.5rem;
+    width: 11.5rem;
+    background-position: left;
+  }
+}
+@media (min-width: 64em) {
+  .header__logo {
+    margin-top: 0;
+    height: 3.25rem;
+    width: 20rem;
   }
 }
 
@@ -1014,10 +1008,8 @@ body:before {
   .main-nav__list {
     display: flex;
     justify-content: space-around;
-    margin: 0.75rem 0.5rem 0;
-    border-radius: 6px;
+    margin: 0 0.5rem 0;
     padding: 0.75rem 0;
-    background: var(--color-bg);
   }
 }
 @media (min-width: 48em) {
@@ -1896,6 +1888,9 @@ body:before {
   max-width: 60rem;
   height: 0;
   visibility: hidden;
+}
+.accordion__panel[data-last] {
+  margin-bottom: 3rem;
 }
 
 body:before {

@@ -20,14 +20,13 @@
     document.documentElement.classList.add('has-js');
   </script>
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
   <meta property="og:description" content="">
   <meta property="og:locale" content="en_GB">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:card" content="summary_large_image">
 </head>
-
-
 <body>
   <a class="skip-link" href="#h1">Skip navigation</a>
 <header class="header">
@@ -41,7 +40,7 @@
     </fieldset>
   </div>
   <nav class="main-nav">
-    <img class="header__logo" src="/img/temp-logo.png" alt="Make Things Accessible logo" class="header__logo">
+    <div class="header__logo" role="img" aria-label="Make Things Accessible logo"></div>
     <ul class="main-nav__list">
         <li class="main-nav__item">
           <a class="main-nav__link"
@@ -64,7 +63,7 @@
   </nav>
  
   <h1 id="h1" class="header__welcome-text" tabindex="-1">
-      Some catchy welcome message
+      Make Things Accessible
   </h1>
 </header>
   <main class="main">
@@ -86,40 +85,38 @@
   <ul class="cards">
       <li class="card__item">
         <article>
-          <h3 class="card__title"><a href="/guides/last-test-for-new-author/" class="card__link">Last test for new author</a></h3>
-          <p class="card__summary">Just testing again</p>
+          <h3 class="card__title"><a href="/guides/test-steve/" class="card__link">Test Steve</a></h3>
+          <p class="card__summary">Test</p>
+          <ul class="tags" aria-label="Tags">
+              <li class="tag__item"><a href="/tags/javascript/" class="tag__link">JavaScript</a></li>
+          </ul>
+          
+          <span class="card__author-name"><a href="/authors/swilkinson" class="card__author-link">Steve Wilkinson</a></span>
+          <span class="card__date">Fri, 30 Sept 2022</span>
+        </article>
+      </li>
+      <li class="card__item">
+        <article>
+          <h3 class="card__title"><a href="/guides/test-george/" class="card__link">Test George</a></h3>
+          <p class="card__summary">Testing</p>
           <ul class="tags" aria-label="Tags">
               <li class="tag__item"><a href="/tags/css/" class="tag__link">CSS</a></li>
-              <li class="tag__item"><a href="/tags/javascript/" class="tag__link">JavaScript</a></li>
-              <li class="tag__item"><a href="/tags/html/" class="tag__link">HTML</a></li>
           </ul>
           
-          <span class="card__author-name"><a href="/authors/mright" class="card__author-link">May Wright</a></span>
-          <span class="card__date">Thu, 29 Sept 2022</span>
+          <span class="card__author-name"><a href="/authors/grhodes" class="card__author-link">George Rhodes</a></span>
+          <span class="card__date">Fri, 30 Sept 2022</span>
         </article>
       </li>
       <li class="card__item">
         <article>
-          <h3 class="card__title"><a href="/guides/test-new-author/" class="card__link">Test new author</a></h3>
-          <p class="card__summary">is it good?</p>
+          <h3 class="card__title"><a href="/guides/test-darren/" class="card__link">Test Darren</a></h3>
+          <p class="card__summary">Testing</p>
           <ul class="tags" aria-label="Tags">
               <li class="tag__item"><a href="/tags/html/" class="tag__link">HTML</a></li>
           </ul>
           
-          <span class="card__author-name"><a href="/authors/sposts" class="card__author-link">Seymour Posts</a></span>
-          <span class="card__date">Wed, 28 Sept 2022</span>
-        </article>
-      </li>
-      <li class="card__item">
-        <article>
-          <h3 class="card__title"><a href="/guides/test-author/" class="card__link">test author</a></h3>
-          <p class="card__summary">sme stuff</p>
-          <ul class="tags" aria-label="Tags">
-              <li class="tag__item"><a href="/tags/html/" class="tag__link">HTML</a></li>
-          </ul>
-          
-          <span class="card__author-name"><a href="/authors/jbloggs" class="card__author-link">Joe Bloggs</a></span>
-          <span class="card__date">Wed, 28 Sept 2022</span>
+          <span class="card__author-name"><a href="/authors/dlee" class="card__author-link">Darren Lee</a></span>
+          <span class="card__date">Fri, 30 Sept 2022</span>
         </article>
       </li>
 </ul>

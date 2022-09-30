@@ -20,14 +20,13 @@
     document.documentElement.classList.add('has-js');
   </script>
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
   <meta property="og:description" content=" some description for google Site purpose etc">
   <meta property="og:locale" content="en_GB">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:card" content="summary_large_image">
 </head>
-
-
 <body>
   <a class="skip-link" href="#h1">Skip navigation</a>
 <header class="header">
@@ -41,7 +40,7 @@
     </fieldset>
   </div>
   <nav class="main-nav">
-    <img class="header__logo" src="/img/temp-logo.png" alt="Make Things Accessible logo" class="header__logo">
+    <div class="header__logo" role="img" aria-label="Make Things Accessible logo"></div>
     <ul class="main-nav__list">
         <li class="main-nav__item">
           <a class="main-nav__link"
@@ -73,6 +72,13 @@
     <div class="glossary__item-wrapper">
       <dt class="glossary__term"><strong>ARIA</strong></dt>
       <dd class="glossary__definition"><p>For assistive tech.</p>
+</dd>
+    </div>
+  </dl>
+  <dl class="glossary__list">
+    <div class="glossary__item-wrapper">
+      <dt class="glossary__term"><strong>ARIA</strong></dt>
+      <dd class="glossary__definition"><p>Accessible Rich Internet Applications and blah blah blah</p>
 </dd>
     </div>
   </dl>
