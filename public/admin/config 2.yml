@@ -1,0 +1,73 @@
+backend:
+  name: git-gateway
+  branch: main
+local_backend:
+  url: http://localhost:8082/api/v1
+media_folder: "src/img"
+public_folder: "./src/img"
+collections:
+  - name: "guides"
+    label: "Guides"
+    folder: "./src/guides"
+    create: true
+    delete: true
+    fields:
+      - { label: "Title", name: "title", widget: "string", hint: "Try to keep this short and meaningful" }
+      - { label: "Summary", name: "summary", widget: "string", hint: "This is displayed on the Guide card, it is also used for the page description, for SEO purposes"}
+      - { label: "Author", name: "author", widget: "relation", collection: "authors", value_field: "key", display_fields: [ "name" ], search_fields: [ "name" ], default: "Anonymous" }
+      - { label: "Date", name: "date", widget: "date", format: 'YYYY-MM-DD', hint: "This should probably not be changed"}
+      - { label: "Tags", name: "tags", widget: "list", hint: "Tags are case sensitive, so html and HTML are not the same tag, so please ensure you have checked a tag exists, before creating a new one", summary: "{{fields.tag}}", field: { label: "Tag", name: "tag", widget: "string" }}
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "authors"
+    label: "Authors"
+    create: true
+    format: json
+    identifier_field: key
+    folder: "/src/_data/contributors"
+    fields:
+      - { label: "Username", name: "key", widget: "string", hint: "This is not displayed anywhere but the URL, it needs to be unique and can only contain alphanumeric characters, e.g: jBloggs1" }
+      - { label: "Name", name: name, widget: string, hint: "Your full name"}
+      - { label: "Job Title", name: "title", widget: "string", required: false }
+      - { label: "Organisation", name: "org", widget: "string", required: false }
+      - { label: "Bio", name: "bio", widget: "text", hint: "Tell the world about yourself" }
+      - { label: "Profile picture", name: "img", widget: "image", required: false, hint: "This needs to be square" }
+      - { label: "Twitter handle", name: "twitter", widget: "string", required: false, hint: "This only needs to be your username, do not add the full URL, eg: jbloggs1 is all that is required" }
+      - { label: "Tags", name: "tags", default: "contributors", widget: "hidden" }
+      - { label: Email, name: "email", widget: "string", required: false }
+      - { label: "LinkedIn", name: "linkedn", widget: "string", required: false }
+      - { label: "Website", name: "website", widget: "string", required: false, hint: "Example: www.yoursite.com" }
+  - name: "faqs"
+    label: "FAQs"
+    folder: "/src/faqs"
+    create: true
+    delete: true
+    fields:
+      - { label: "Question", name: "title", widget: "string" }
+      - { label: "Answer", name: "body", widget: "markdown" }
+      - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "date" }
+      - { label: "Tags", name: "tags", default: "faqs", widget: "hidden" }
+      - { label: "Permalink", name: "permalink", default: false, widget: "hidden" }
+  - name: "terms"
+    label: "Glossary"
+    folder: "/src/terms"
+    create: true
+    delete: true      
+    fields:
+      - { label: Term, name: title, widget: "string" }
+      - { label: Definition, name: body, widget: "string" }
+      - { label: "Permalink", name: "permalink", default: false, widget: "hidden" }
+      - { label: "Tags", name: "tags", default: "terms", widget: "hidden" }
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Accessibility Statement"
+        name: "accessibility"
+        file: "/src/accessibility.md"
+        fields:
+          - {label: Body, name: body, widget: markdown}
+      - label: "About Page"
+        file: "/src/about.md"
+        name: "about"
+        fields:
+          - {label: Body, name: body, widget: markdown}
+  

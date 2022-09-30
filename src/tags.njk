@@ -12,29 +12,29 @@ eleventyComputed:
 ---
 
 <div class="cards__wrapper">
-  <h2>Showing {{ collections[ tag ].length }} result{%- if collections[ tag ].length > 1%}s{% endif %} for {{ tag }}</h2>
+  <h2>Showing {{ collections[ tag ].length }} result{%- if collections[ tag ].length > 1%}s{%- endif %} for {{ tag }}</h2>
   <ul class="cards">
     {% set taglist = collections[ tag ] %}
-    {% for guide in taglist | reverse %}
+    {%- for guide in taglist | reverse %}
       <li class="card__item">
         <article>
           <h3 class="card__title"><a href="{{ guide.url }}" class="card__link">{{ guide.data.title }}</a></h3>
           <p class="card__summary">{{ guide.data.summary }}</p>
-          <div class="tags">
+          <ul class="tags" aria-label="Tags">
             {%- for tag in guide.data.tags | filterTagList %}
               {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
               {%- if tagUrl != page.url  %}
-                <span class="tag__item">
+                <li class="tag__item">
                     <a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a>
-                </span>
+                </li>
               {%- else %}
-                <span class="tag__item tag__item--inert" aria-current="page">
+                <li class="tag__item tag__item--inert" aria-current="page">
                   {{ tag }}
-                </span>
+                </li>
               {%- endif %}
             {%- endfor %}
-            {% set guideAuthor = authors | getAuthor(guide.data.author) %}
-          </div>
+            {% set guideAuthor = collections.writers | getAuthor(guide.data.author) %}
+          </ul>
           <span class="card__author-name"><a href="/authors/{{ guideAuthor.key }}" class="card__author-link">{{ guideAuthor.name }}</a></span>
           <span class="card__date">{{ guide.data.date | readableDate }}</span>
         </article>

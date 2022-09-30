@@ -8,7 +8,7 @@ summary: some description for google
   <p class="sitemap__text">Guides are displayed by most recent entry first.</p>
   <ul class="sitemap__list">
     {%- for item in navLinks | sort(attribute="text") %}
-      {% if item.url != page.url %}
+      {%- if item.url != page.url %}
         <li><a href="{{ item.url }}">{{ item.text }} page</a>
         {%- if item.text == 'Guides' %}
             <ul class="sitemap__list--nested">
@@ -19,7 +19,7 @@ summary: some description for google
         {%- else %}
           </li>
         {%- endif %}
-      {% else %}
+      {%- else %}
       <li aria-current="page">{{ item.text }} page</li>
       {%- endif %}
     {%- endfor %}

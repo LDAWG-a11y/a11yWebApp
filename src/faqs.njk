@@ -4,6 +4,7 @@ title: Frequently Asked Questions
 summary: some description for google
 pagination:
   data: collections.faqs
+  filter: ['all', 'tagList', 'latest', 'guides', 'terms']
   size: 20
   alias: accordions
   reverse: true
@@ -13,10 +14,13 @@ pagination:
 <p class="faqs__intro">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus diam erat, ultrices aliquet velit fermentum ac. Sed sagittis nisi at ornare condimentum. Vivamus sodales lobortis libero eget varius. Etiam vel tincidunt nulla. Integer nec tortor dapibus, aliquam massa vel, accumsan eros. Maecenas sit amet ipsum fermentum, porta est et, consectetur elit. Vivamus consectetur urna id mauris ultricies rhoncus. Nulla nec iaculis metus. Morbi semper bibendum neque, non lacinia magna vestibulum sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur leo ligula, dictum vel justo a, ornare imperdiet nisi. Nunc volutpat sagittis cursus. Donec volutpat suscipit nisl, a feugiat ipsum venenatis at.</p>
 
-{% for faq in accordions | reverse %}
-  {{ faq.templateContent | safe }}
-{% endfor %}
+{%- for faq in accordions %}
+  {%- if faq.data.title %}
+    <h3 class="accordion">{{ faq.data.title }}</h3>
+    <div class="accordion__panel">{{ faq.templateContent | safe }}</div>
+  {%- endif %}
+{%- endfor %}
 
 {%- if pagination.pageLinks.length > 1 %}
-  {%- include "_pagination.njk" %}
+  {% include "_pagination.njk" %}
 {%- endif %}

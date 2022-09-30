@@ -7,6 +7,7 @@ $--color-accent: --color-accent;
 $--color-accent-2: --color-accent-2;
 $--color-interactive: --color-interactive;
 $--color-inactive: --color-inactive;
+$--color-highlight: --color-highlight;
 
 $theme-map-light: (
   $--color-text: #1f1f1f,
@@ -18,6 +19,7 @@ $theme-map-light: (
   $--color-accent-2: #e86620,
   $--color-interactive: #8A2BE2,
   $--color-inactive: #595959,
+  $--color-highlight: #030189,
 );
 
 $theme-map-dark: (
@@ -30,6 +32,7 @@ $theme-map-dark: (
   $--color-accent-2: #db9238,
   $--color-interactive: #C079E6,
   $--color-inactive: #4a4a4a,
+  $--color-highlight: #6ebc9f,
 );
 
 @mixin spread-map($map: ()) {
@@ -41,10 +44,38 @@ $theme-map-dark: (
 :root, 
 :root[data-theme="light"] {
   @include spread-map($theme-map-light);
+
+  ::selection {
+    background-color: #997FC3;
+  }
+
+  h1::selection {
+    background-color: var(--color-bg--light);
+    color: var(--color-primary);
+  }
+
+  a::selection,
+  button::selection {
+    color: var(--color-highlight);
+  }
 }
 
 :root[data-theme="dark"] {
   @include spread-map($theme-map-dark);
+
+  ::selection:not(pre > *):not(code) {
+    background-color: var(--color-primary);
+  }
+
+  h1::selection {
+    background-color: var(--color-bg--light);
+    color: #AD90CB;
+  }
+
+  a::selection,
+  button::selection {
+    color: var(--color-highlight);
+  }
 }
 
 :root {

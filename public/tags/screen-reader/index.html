@@ -28,7 +28,8 @@
 </head>
 
 
-<body><a class="skip-link" href="#h1">Skip navigation</a>
+<body>
+  <a class="skip-link" href="#h1">Skip navigation</a>
 <header class="header">
   <button class="header__themes-btn" id="themeTrigger" aria-expanded="false" aria-controls="themePanel" hidden>Themes</button>
   <div class="header__themes-panel" id="themePanel" hidden>
@@ -71,29 +72,28 @@
   <h2>Showing 2 results for Screen reader</h2>
   <ul class="cards">
     
-    
       <li class="card__item">
         <article>
           <h3 class="card__title"><a href="/guides/the-fourteenth-guide/" class="card__link">The fourteenth guide</a></h3>
           <p class="card__summary">A super useful guide about doing that thing that makes the other thing accessible to everybody</p>
-          <div class="tags">
-                <span class="tag__item tag__item--inert" aria-current="page">
-                  Screen reader
-                </span>
-                <span class="tag__item">
+          <ul class="tags" aria-label="Tags">
+                <li class="tag__item">
                     <a href="/tags/android/" class="tag__link">Android</a>
-                </span>
-                <span class="tag__item">
+                </li>
+                <li class="tag__item">
                     <a href="/tags/ios/" class="tag__link">iOS</a>
-                </span>
-                <span class="tag__item">
+                </li>
+                <li class="tag__item">
                     <a href="/tags/macos/" class="tag__link">MacOS</a>
-                </span>
-                <span class="tag__item">
+                </li>
+                <li class="tag__item tag__item--inert" aria-current="page">
+                  Screen reader
+                </li>
+                <li class="tag__item">
                     <a href="/tags/windows/" class="tag__link">Windows</a>
-                </span>
+                </li>
             
-          </div>
+          </ul>
           <span class="card__author-name"><a href="/authors/jbloggs" class="card__author-link">Joe Bloggs</a></span>
           <span class="card__date">Thu, 15 Sept 2022</span>
         </article>
@@ -102,22 +102,23 @@
         <article>
           <h3 class="card__title"><a href="/guides/the-third-guide/" class="card__link">The Third guide</a></h3>
           <p class="card__summary">A super useful guide about doing that thing that makes the other thing accessible to everybody</p>
-          <div class="tags">
-                <span class="tag__item tag__item--inert" aria-current="page">
+          <ul class="tags" aria-label="Tags">
+                <li class="tag__item tag__item--inert" aria-current="page">
                   Screen reader
-                </span>
-                <span class="tag__item">
+                </li>
+                <li class="tag__item">
                     <a href="/tags/nvda/" class="tag__link">NVDA</a>
-                </span>
+                </li>
             
-          </div>
+          </ul>
           <span class="card__author-name"><a href="/authors/tmctestface" class="card__author-link">Testy McTestface</a></span>
           <span class="card__date">Sun, 4 Sept 2022</span>
         </article>
       </li>
   </ul>
 </div>
-  </main><footer class="footer">
+  </main>
+  <footer class="footer">
   <div class="footer__panel--primary">
     <h2 class="footer__heading">Site links</h2>
     <ul class="footer__list">
@@ -161,6 +162,11 @@
           >Sitemap
           </a>
         </li>
+        <li class="footer__list-item">
+          <a class="footer__link" href="/admin"
+          >Admin
+          </a>
+        </li>
     </ul>
   </div>
   <div class="footer__panel--secondary">
@@ -178,6 +184,5 @@
   </div>
 </footer>
   <script src="/js/main.js"></script>
-  <script src="/js/theme-switcher.js"></script>
 </body>
 </html>

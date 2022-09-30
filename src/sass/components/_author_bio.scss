@@ -2,7 +2,7 @@
 
 .author-bio {
   position: relative;
-  margin: $space-biggest auto $space-xxxxl;
+  margin: $space-bigger auto $space-xxxxl;
   border: 2px solid var(--color-primary);
   border-radius: $radius-md;
   padding: $space-xxxxl $space-sm $space-xl;
@@ -47,7 +47,7 @@
   }
 
   &::after {
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     border-radius: 0 0 $radius-md $radius-md;
     width: 100%;

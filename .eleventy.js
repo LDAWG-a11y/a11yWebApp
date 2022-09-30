@@ -1,7 +1,9 @@
 const markdownIt = require('markdown-it');
 const markdownItEleventyImg = require("markdown-it-eleventy-img");
+const Image = require("@11ty/eleventy-img");
 const postcss = require("postcss");
 const autoprefixer = require("autoprefixer");
+const fs = require('graceful-fs');
 
 module.exports = eleventyConfig => {
   const { DateTime } = require("luxon");
@@ -11,15 +13,18 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('./src/css');
   eleventyConfig.addPassthroughCopy('./src/js');
   eleventyConfig.addPassthroughCopy('./src/img');
+  eleventyConfig.addPassthroughCopy('./src/svg');
   eleventyConfig.addPassthroughCopy('./src/fonts');
+  eleventyConfig.addPassthroughCopy("./src/admin");
   eleventyConfig.addPlugin(syntaxHighlight);
-  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`)
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   const markdownItEleventyImgConfig = {
     imgOptions: {
-      widths: [1200, 800, 400],
+      widths: [1200, 900, 600, 300],
+      urlPath: "/img/",
       outputDir: "./public/img/",
-      formats: ["avif", "webp", "jpeg", "png"]
+      formats: ["webp", "png"]
     },
     globalAttributes: {
       class: "guide__image",
@@ -36,15 +41,14 @@ module.exports = eleventyConfig => {
   }).use(markdownItEleventyImg, markdownItEleventyImgConfig)
 
   eleventyConfig.setLibrary("md", mdLib);
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY);
   });
 
-  eleventyConfig.addPlugin(syntaxHighlight);
-
   function filterTagList(tags) {
-    return (tags || []).filter(tag => ["guide", "guides", "faqs"].indexOf(tag) === -1);
+    return (tags || []).filter(tag => ["guide", "guides", "faqs", "terms"].indexOf(tag) === -1);
   }
 
   eleventyConfig.addFilter("filterTagList", filterTagList)
@@ -57,6 +61,16 @@ module.exports = eleventyConfig => {
 
     return filterTagList([...tagSet].sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'})));
   });
+
+  eleventyConfig.addCollection("glossarySorted", (collectionApi) =>
+  collectionApi.getFilteredByGlob("src/terms/*.md").sort((a, b) => {
+      if (a.data.title < b.data.title) return -1;
+      else if (a.data.title > b.data.title) return 1;
+      else return 0;
+    })
+  );  
+
+  eleventyConfig.addCollection("writers", author => Object.values(author.items[0].data.contributors));
 
   eleventyConfig.addCollection("latest", collection => {
     return collection

@@ -1,11 +1,13 @@
-{%- include "_head.njk" %}
+{% include "_head.njk" %}
 <body>
-  {%- include "_header.njk" %}
-  <main class="main">
+  {% include "_header.njk" %}
+  <main class="main {%- if '/accessibility' in page.url or '/about' in page.url %} cms{%- endif %}">
     {{ content | safe }}
   </main>
-  {%- include "_footer.njk" %}
+  {%- if path == "home" %}
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  {%- endif %}
+  {% include "_footer.njk" %}
   <script src="/js/main.js"></script>
-  <script src="/js/theme-switcher.js"></script>
 </body>
 </html>

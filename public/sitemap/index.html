@@ -28,7 +28,8 @@
 </head>
 
 
-<body><a class="skip-link" href="#h1">Skip navigation</a>
+<body>
+  <a class="skip-link" href="#h1">Skip navigation</a>
 <header class="header">
   <button class="header__themes-btn" id="themeTrigger" aria-expanded="false" aria-controls="themePanel" hidden>Themes</button>
   <div class="header__themes-panel" id="themePanel" hidden>
@@ -70,25 +71,24 @@
   <h2>Sitemap navigation for pages and guides</h2>
   <p class="sitemap__text">Guides are displayed by most recent entry first.</p>
   <ul class="sitemap__list">
-      
         <li><a href="/about/">About page</a>
           </li>
-      
-      
         <li><a href="/accessibility/">Accessibility page</a>
           </li>
-      
-      
+        <li><a href="/admin">Admin page</a>
+          </li>
         <li><a href="/faqs/">FAQs page</a>
           </li>
-      
-      
         <li><a href="/glossary/">Glossary page</a>
           </li>
-      
-      
         <li><a href="/guides/">Guides page</a>
             <ul class="sitemap__list--nested">
+                <li><a href="/guides/last-test-for-new-author/">Last test for new author</a></li>
+                <li><a href="/guides/test-new-author/">Test new author</a></li>
+                <li><a href="/guides/test-author/">test author</a></li>
+                <li><a href="/guides/show-george-and-steve/">Show George and Steve</a></li>
+                <li><a href="/guides/the-fifteenth-guide-netlify-cms/">The fifteenth guide - Netlify CMS</a></li>
+                <li><a href="/guides/test-the-tags-with-spaces/">Test the tags with spaces</a></li>
                 <li><a href="/guides/the-fourteenth-guide/">The fourteenth guide</a></li>
                 <li><a href="/guides/the-thirteenth-guide/">The thirteenth guide</a></li>
                 <li><a href="/guides/the-twelfth-guide/">The twelfth guide</a></li>
@@ -104,20 +104,15 @@
                 <li><a href="/guides/the-second-guide/">The second guide</a></li>
                 <li><a href="/guides/the-first-guide/">The first guide</a></li>
             </ul>
-      
-      
         <li><a href="/">Home page</a>
           </li>
-      
-      
         <li><a href="/privacy/">Privacy Policy page</a>
           </li>
-      
-      
       <li aria-current="page">Sitemap page</li>
   </ul>
 </div>
-  </main><footer class="footer">
+  </main>
+  <footer class="footer">
   <div class="footer__panel--primary">
     <h2 class="footer__heading">Site links</h2>
     <ul class="footer__list">
@@ -162,6 +157,11 @@
           >Sitemap
           </a>
         </li>
+        <li class="footer__list-item">
+          <a class="footer__link" href="/admin"
+          >Admin
+          </a>
+        </li>
     </ul>
   </div>
   <div class="footer__panel--secondary">
@@ -179,6 +179,5 @@
   </div>
 </footer>
   <script src="/js/main.js"></script>
-  <script src="/js/theme-switcher.js"></script>
 </body>
 </html>
