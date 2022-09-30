@@ -276,6 +276,10 @@ button[class^="header__themes-btn"] {
   background-size: contain;
   background-repeat: no-repeat;
 
+  [data-theme="light"] & {
+    background-image: url(/img/logo--light.png);
+  }
+
   @media (prefers-color-scheme: dark) {
     background-image: url(/img/logo--dark.png);
   }
