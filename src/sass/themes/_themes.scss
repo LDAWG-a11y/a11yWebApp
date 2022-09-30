@@ -44,6 +44,10 @@ $theme-map-dark: (
 :root, 
 :root[data-theme="light"] {
   @include spread-map($theme-map-light);
+
+  ::-moz-selection {
+    background-color: #9bb2da;
+  }   
 }
 
 :root[data-theme="dark"] {

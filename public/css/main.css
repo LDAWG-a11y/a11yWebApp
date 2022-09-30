@@ -61,6 +61,10 @@ body:before {
   --color-inactive: #595959;
   --color-highlight: #030189;
 }
+:root ::-moz-selection,
+:root[data-theme=light] ::-moz-selection {
+  background-color: #9bb2da;
+}
 
 :root[data-theme=dark] {
   --color-text: #D9D9D9;
@@ -960,6 +964,9 @@ body:before {
   background: url(/img/logo--light.png) center/cover;
   background-size: contain;
   background-repeat: no-repeat;
+}
+[data-theme=light] .header__logo {
+  background-image: url(/img/logo--light.png);
 }
 @media (prefers-color-scheme: dark) {
   .header__logo {
