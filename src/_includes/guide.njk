@@ -25,7 +25,9 @@
       {{ content | safe }}
     </article>
     {% set author = guideAuthor %}
-    {% include "_bio.njk" %}
+    {% if author != 'Admin' %}
+      {% include "_bio.njk" %}
+    {% endif %}
   </main>
   {% include "_footer.njk" %}
   <script src="/js/main.js"></script>
