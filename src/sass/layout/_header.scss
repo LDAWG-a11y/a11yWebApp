@@ -168,9 +168,8 @@ button[class^="header__themes-btn"] {
     color: var(--color-text);
   }
 
-  @include mq.mq($from:xs) {
-    margin-left: 50%;
-    transform: translateX(-50%);
+  @include mq.mq($from:xxs) {
+    text-align: center;
   }
 }
 
@@ -272,20 +271,20 @@ button[class^="header__themes-btn"] {
   margin: $space-xs 0;
   height: 1.25rem;
   width: 100%;
-  background: url(/img/logo--light.png) center / cover;
+  background: url(/img/logo__sm--light.png) center / cover;
   background-size: contain;
   background-repeat: no-repeat;
 
   [data-theme="light"] & {
-    background-image: url(/img/logo--light.png);
+    background-image: url(/img/logo__sm--light.png);
   }
 
   @media (prefers-color-scheme: dark) {
-    background-image: url(/img/logo--dark.png);
+    background-image: url(/img/logo__sm--dark.png);
   }
 
   [data-theme="dark"] & {
-    background-image: url(/img/logo--dark.png);
+    background-image: url(/img/logo__sm--dark.png);
   }
 
   @include mq.mq($from:xxs) {
@@ -306,6 +305,19 @@ button[class^="header__themes-btn"] {
     margin-top: 0;
     height: 3.25rem;
     width: 20rem;
+    background-image: url(/img/logo--light.png);
+
+    [data-theme="light"] & {
+      background-image: url(/img/logo--light.png);
+    }
+  
+    @media (prefers-color-scheme: dark) {
+      background-image: url(/img/logo--dark.png);
+    }
+  
+    [data-theme="dark"] & {
+      background-image: url(/img/logo--dark.png);
+    }
   }
 }
 

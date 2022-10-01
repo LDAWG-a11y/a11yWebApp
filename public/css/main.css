@@ -846,10 +846,9 @@ body:before {
     color: var(--color-text);
   }
 }
-@media (min-width: 26.25em) {
+@media (min-width: 20em) {
   .header__themes-legend {
-    margin-left: 50%;
-    transform: translateX(-50%);
+    text-align: center;
   }
 }
 
@@ -961,20 +960,20 @@ body:before {
   margin: 0.5rem 0;
   height: 1.25rem;
   width: 100%;
-  background: url(/img/logo--light.png) center/cover;
+  background: url(/img/logo__sm--light.png) center/cover;
   background-size: contain;
   background-repeat: no-repeat;
 }
 [data-theme=light] .header__logo {
-  background-image: url(/img/logo--light.png);
+  background-image: url(/img/logo__sm--light.png);
 }
 @media (prefers-color-scheme: dark) {
   .header__logo {
-    background-image: url(/img/logo--dark.png);
+    background-image: url(/img/logo__sm--dark.png);
   }
 }
 [data-theme=dark] .header__logo {
-  background-image: url(/img/logo--dark.png);
+  background-image: url(/img/logo__sm--dark.png);
 }
 @media (min-width: 20em) {
   .header__logo {
@@ -998,6 +997,20 @@ body:before {
     margin-top: 0;
     height: 3.25rem;
     width: 20rem;
+    background-image: url(/img/logo--light.png);
+  }
+  [data-theme=light] .header__logo {
+    background-image: url(/img/logo--light.png);
+  }
+}
+@media (min-width: 64em) and (prefers-color-scheme: dark) {
+  .header__logo {
+    background-image: url(/img/logo--dark.png);
+  }
+}
+@media (min-width: 64em) {
+  [data-theme=dark] .header__logo {
+    background-image: url(/img/logo--dark.png);
   }
 }
 
