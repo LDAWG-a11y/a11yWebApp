@@ -1,9 +1,7 @@
 const markdownIt = require('markdown-it');
 const markdownItEleventyImg = require("markdown-it-eleventy-img");
 const Image = require("@11ty/eleventy-img");
-const postcss = require("postcss");
-const autoprefixer = require("autoprefixer");
-const fs = require('graceful-fs');
+const htmlmin = require("html-minifier");
 
 module.exports = eleventyConfig => {
   const { DateTime } = require("luxon");
@@ -86,6 +84,18 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.addFilter("getGuidesByAuthor", (guides, author) => {
     return guides.filter(a => a.data.author === author);
+  });
+
+  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+    if( outputPath && outputPath.endsWith(".html") ) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true
+      });
+      return minified;
+    }
+    return content;
   });
 
   return {
