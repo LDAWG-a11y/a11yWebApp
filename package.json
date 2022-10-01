@@ -8,9 +8,9 @@
     "build:sass": "sass --no-source-map src/sass:public/css",
     "watch:eleventy": "eleventy --serve",
     "build:eleventy": "eleventy",
-    "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
+    "postbuild": "lightningcss --minify --targets '> 0.25%, not IE 11' public/css/*.css -o public/css/*.css",
     "start": "npm-run-all build:sass --parallel watch:*",
-    "build": "npm-run-all build:*"
+    "build": "npm-run-all build:sass build:eleventy"
   },
   "repository": {
     "type": "git",
@@ -25,22 +25,19 @@
   "homepage": "https://github.com/LDAWG-a11y/a11yWebApp#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
-    "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
-    "autoprefixer": "^10.4.8",
-    "cssnano": "^5.1.13",
     "markdown-it-eleventy-img": "^0.8.1",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.16",
-    "postcss-cli": "^10.0.0"
+    "npm-run-all": "^4.1.5"
   },
   "dependencies": {
     "@11ty/eleventy-img": "^2.0.1",
-    "json-concat": "^0.0.1",
+    "html-minifier": "^4.0.0",
+    "lightningcss-cli": "^1.16.0",
     "sass": "^1.54.9"
   },
   "browserslist": [
-    "> 0.1%",
+    "last 3 versions",
+    "> 0.5%",
     "not dead"
   ]
 }
