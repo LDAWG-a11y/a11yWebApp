@@ -11,7 +11,7 @@ pagination:
 permalink: "/authors/{{ author.key }}/"
 eleventyComputed:
    title: "All guides written by {{ author.name }}"
-   summary: "All accessibility guides written by “{{ author }}”"
+   summary: "View all digital accessibility learning resources and guides, on this platform written by {{ author.name }}"
 ---
 {% set posts = collections.guides | getGuidesByAuthor(author.key) %}
 {% if author.name != 'Admin' %}

@@ -10,7 +10,7 @@ pagination:
   reverse: true
 eleventyComputed:
   title: All guides Page {%- if page.url != pagination.href.first %} {{ pagination.pageNumber + 1 }} of {{ pagination.pageLinks.length }} {%- endif%}
-  summary: "All digital accessibility guides from our website tagged with “{{ tag }}”"
+  summary: "View all useful digital accessibility guides from our website by all of our contributors, covering inclusive design, web development, documentation & social media"
 ---
 <div class="intro-panel">
   <h2 class="intro-panel__heading">Filter by tag</h2>
