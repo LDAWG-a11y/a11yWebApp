@@ -1,0 +1,40 @@
+---
+permalink: '/sitemap.xml'
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for item in navLinks | sort(attribute="text") %}
+  {%- if item.url != '/admin' %}
+    <url>
+      <loc>{{ site.siteUrl }}{{ item.url }}</loc>
+      <lastmod>{{ page.date.toISOString() }}</lastmod>
+    </url>
+  {%- endif %}
+{%- endfor %}
+{%- for guide in collections.guides | reverse %}
+  <url>
+    <loc>{{ site.siteUrl }}{{ guide.url }}</loc>
+    <lastmod>{{ page.date.toISOString() }}</lastmod>
+  </url>
+{%- endfor %}
+{%- for tag in collections.tagList %}
+{%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
+{{ tag | log }}
+  <url>
+    <loc>{{ site.siteUrl }}{{ tagUrl }}</loc>
+    <lastmod>{{ page.date.toISOString() }}</lastmod>
+  </url>
+{%- endfor %}
+{%- for author in collections.writers %}
+  {%- set posts = collections.guides | getGuidesByAuthor(author.key) %}
+  {%- if posts.length %}
+    <url>
+      <loc>{{ site.siteUrl }}/authors/{{ author.key }}</loc>
+      <lastmod>{{ page.date.toISOString() }}</lastmod>
+    </url>
+  {%- endif %}
+{%- endfor %}
+  </urlset>
+
+  
