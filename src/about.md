@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: About Us
-summary: some description for google
+summary: The Make Things Accessible website is operated by a number of London-based universities, sharing our knowledge on delivering accessible experiences for all
 ---
 ## Our mission
 

@@ -20,7 +20,6 @@ eleventyExcludeFromCollections: true
 {%- endfor %}
 {%- for tag in collections.tagList %}
 {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
-{{ tag | log }}
   <url>
     <loc>{{ site.siteUrl }}{{ tagUrl }}</loc>
     <lastmod>{{ page.date.toISOString() }}</lastmod>
