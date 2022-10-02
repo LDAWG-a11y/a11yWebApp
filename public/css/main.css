@@ -1909,6 +1909,9 @@ body:before {
   height: 0;
   visibility: hidden;
 }
+.accordion__panel > *:last-child {
+  margin-bottom: 2.5rem;
+}
 .accordion__panel[data-last] {
   margin-bottom: 3rem;
 }
