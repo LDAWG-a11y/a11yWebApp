@@ -119,6 +119,10 @@
     visibility: hidden;
   }
 
+  > *:last-child {
+    margin-bottom: $space-xxl;
+  }
+
   &[data-last] {
     margin-bottom: $space-xxxl;
   }
