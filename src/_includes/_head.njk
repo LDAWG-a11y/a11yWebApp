@@ -26,7 +26,14 @@
   <meta property="og:description" content="{%- if not home %}{{ summary }}{%- else %}A repository of guidance & resources for organisations & individuals aiming to improve digital accessibility, through web development, documents and other digital media{%- endif %}">
   <meta property='og:url' content="{{ site.siteUrl }}/{{ title | slug }}" />
   <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="{{ site.siteName }}">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="{{ site.siteUrl }}/img/social-logo.jpg">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:site" content="Make Things Accessible">
+  <meta property="twitter:description" content="{%- if not home %}{{ title }} | {{ site.siteName }} {%- else %}{{ site.siteName }} | {{ title }} {%- endif %}">
+  <meta name="twitter:image:src" content="/img/social-logo.jpg">
+  <!-- TODO need to test when live, won't need both -->
+  <meta name="twitter:image" content="/img/social-logo.jpg">
+  <meta property="twitter:image:alt" content="Make Things Accessible logo">
 </head>
