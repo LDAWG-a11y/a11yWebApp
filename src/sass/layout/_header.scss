@@ -158,10 +158,16 @@ button[class^="header__themes-btn"] {
 }
 
 .header__themes-legend {
+  display: block;
+  width: 100%;
   color: var(--color-bg);
 
   [data-theme="dark"] & {
     color: var(--color-text);
+  }
+
+  [data-theme="light"] & {
+    color: var(--color-bg);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -453,6 +459,10 @@ button[class^="header__themes-btn"] {
 
   [data-theme="dark"] & {
     color: var(--color-text);
+  }
+
+  [data-theme="light"] & {
+    color: var(--color-bg);
   }
 
   @media (prefers-color-scheme: dark) {
