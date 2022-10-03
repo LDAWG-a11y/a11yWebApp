@@ -2751,6 +2751,10 @@ body:before {
     content: "xxl ≥ 1440px (90em)";
   }
 }
+.glossary__intro {
+  margin-bottom: 3rem;
+}
+
 .glossary__list {
   padding-top: 1.5rem;
 }

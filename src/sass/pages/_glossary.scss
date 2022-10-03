@@ -1,5 +1,9 @@
 @use '../vendors/mq';
 
+.glossary__intro {
+  margin-bottom: $space-xxxl;
+}
+
 .glossary__list {
   padding-top: $space-lg;
 }
