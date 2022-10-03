@@ -3,7 +3,6 @@ backend:
   branch: main
 local_backend: true
 media_folder: "src/img"
-publish_mode: editorial_workflow
 public_folder: "./src/img"
 collections:
   - name: "guides"
