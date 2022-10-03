@@ -836,10 +836,15 @@ body:before {
 }
 
 .header__themes-legend {
+  display: block;
+  width: 100%;
   color: var(--color-bg);
 }
 [data-theme=dark] .header__themes-legend {
   color: var(--color-text);
+}
+[data-theme=light] .header__themes-legend {
+  color: var(--color-bg);
 }
 @media (prefers-color-scheme: dark) {
   .header__themes-legend {
@@ -1152,6 +1157,9 @@ body:before {
 }
 [data-theme=dark] .header__welcome-text {
   color: var(--color-text);
+}
+[data-theme=light] .header__welcome-text {
+  color: var(--color-bg);
 }
 @media (prefers-color-scheme: dark) {
   .header__welcome-text {
