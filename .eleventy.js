@@ -20,7 +20,7 @@ module.exports = eleventyConfig => {
   const markdownItEleventyImgConfig = {
     imgOptions: {
       widths: [1200, 900, 600, 300],
-      urlPath: "/img/",
+      urlPath: "./src/img/",
       outputDir: "./public/img/",
       formats: ["webp", "png"]
     },
