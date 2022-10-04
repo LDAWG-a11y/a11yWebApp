@@ -8,4 +8,4 @@ tags:
 ---
 T﻿est
 
-![test]()
+![test](/src/img/social-logo.jpg)
