@@ -2,7 +2,7 @@
 title: Test editor
 summary: A super useful guide about doing that thing that makes the other thing
   accessible to everybody
-author: jbloggs
+author: dlee
 date: 2022-09-15
 tags:
   - Android
