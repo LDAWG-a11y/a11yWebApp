@@ -8,4 +8,4 @@ tags:
 ---
 Testing testing
 
-![](src/img/Screenshot-1.png)
+![yeah](src/img/logo--light.png)
