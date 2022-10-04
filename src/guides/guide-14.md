@@ -22,7 +22,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue nec sapien a
 
 <blockquote>If you want to hide content from mobile and tablet users as well as assistive tech users and keyboard only users, use the title attribute.</blockquote>
 
-![test](../src/img/screenshot-2022-10-04-at-10.41.38.png)
+![test](./src/img/screenshot-2022-10-04-at-10.41.38.png)
 
 > t﻿esting a blockquote
 
