@@ -9,7 +9,7 @@ collections:
     label: "Guides"
     folder: "/src/guides"
     media_folder: "/src/guides/images/"
-    public_folder: "../src/guidess/images"
+    public_folder: "../src/guides/images"
     create: true
     delete: true
     fields:
