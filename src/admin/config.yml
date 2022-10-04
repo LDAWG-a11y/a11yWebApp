@@ -17,11 +17,10 @@ collections:
       - { label: "Author", name: "author", widget: "relation", collection: "authors", value_field: "key", display_fields: [ "name" ], search_fields: [ "name" ], default: "Anonymous", hint: "New authors need to be created before a guide can be attributed to them "}
       - { label: "Date", name: "date", widget: "date", format: 'YYYY-MM-DD', hint: "This should probably not be changed"}
       - { label: "Tags", name: "tags", widget: "list", hint: "Tags are case sensitive, so html and HTML are not the same tag, so please ensure you have checked a tag exists, before creating a new one, as a typo or case mismatch will cause a system error", default: Untagged, summary: "{{fields.tag}}", field: { label: "Tag", name: "tag", widget: "string" }}
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Page content", name: "body", widget: "markdown" }
   - name: "authors"
     label: "Authors"
     create: true
-    delete: true
     format: json
     identifier_field: name
     folder: "/src/_data/contributors"
@@ -65,9 +64,9 @@ collections:
         name: "accessibility"
         file: "/src/accessibility.md"
         fields:
-          - { label: Body, name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
+          - { label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
       - label: "About Page"
         file: "/src/about.md"
         name: "about"
         fields:
-          - {label: Body, name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
+          - {label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
