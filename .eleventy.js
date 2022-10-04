@@ -10,8 +10,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addWatchTarget('./src/sass');
   eleventyConfig.addPassthroughCopy('./src/css');
   eleventyConfig.addPassthroughCopy('./src/js');
-  eleventyConfig.addPassthroughCopy('./src/img');
-  eleventyConfig.addPassthroughCopy('./src/guide_images');
+  eleventyConfig.addPassthroughCopy('img');
   eleventyConfig.addPassthroughCopy('./src/svg');
   eleventyConfig.addPassthroughCopy('./src/fonts');
   eleventyConfig.addPassthroughCopy("./src/admin");
