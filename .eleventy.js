@@ -17,28 +17,28 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
-  const markdownItEleventyImgConfig = {
-    imgOptions: {
-      widths: [1200, 900, 600, 300],
-      urlPath: "/guides/images/",
-      outputDir: "./public/img/",
-      formats: ["webp", "png"]
-    },
-    globalAttributes: {
-      class: "guide__image",
-      decoding: "async",
-      loading: "lazy",
-      sizes: "100vw"
-    }
-  }
+  // const markdownItEleventyImgConfig = {
+  //   imgOptions: {
+  //     widths: [1200, 900, 600, 300],
+  //     urlPath: "/guides/images/",
+  //     outputDir: "./public/img/",
+  //     formats: ["webp", "png"]
+  //   },
+  //   globalAttributes: {
+  //     class: "guide__image",
+  //     decoding: "async",
+  //     loading: "lazy",
+  //     sizes: "100vw"
+  //   }
+  // }
 
-  let mdLib = markdownIt({
-    html: true,
-    breaks: true,
-    linkify: true
-  }).use(markdownItEleventyImg, markdownItEleventyImgConfig)
+  // let mdLib = markdownIt({
+  //   html: true,
+  //   breaks: true,
+  //   linkify: true
+  // }).use(markdownItEleventyImg, markdownItEleventyImgConfig)
 
-  eleventyConfig.setLibrary("md", mdLib);
+  // eleventyConfig.setLibrary("md", mdLib);
   eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.addFilter("readableDate", dateObj => {

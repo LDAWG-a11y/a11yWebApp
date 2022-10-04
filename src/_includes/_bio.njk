@@ -31,7 +31,7 @@
         <div class="author-bio__items-wrapper">
           <dt class="author-bio__term">{% include '../svg/twitter.svg' %}</dt>
           <dd class="author-bio__description">
-            <a href="https://twitter.com/{{ author.twitter }}" class="author-bio__link">@{{ author.twitter.slice(20) }}</a>
+            <a href="{{ author.twitter }}" class="author-bio__link">@{{ author.twitter.slice(20) }}</a>
           </dd>
         </div>
       {%- endif %}
