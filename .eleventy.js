@@ -11,7 +11,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('./src/css');
   eleventyConfig.addPassthroughCopy('./src/js');
   eleventyConfig.addPassthroughCopy('./src/img');
-  eleventyConfig.addPassthroughCopy('./src/guides/images');
+  eleventyConfig.addPassthroughCopy('./src/guide_images');
   eleventyConfig.addPassthroughCopy('./src/svg');
   eleventyConfig.addPassthroughCopy('./src/fonts');
   eleventyConfig.addPassthroughCopy("./src/admin");
@@ -21,8 +21,8 @@ module.exports = eleventyConfig => {
   const markdownItEleventyImgConfig = {
     imgOptions: {
       widths: [1200, 900, 600, 300],
-      urlPath: "/guides/images/",
-      outputDir: "./public/guides/images/",
+      urlPath: "/guide_images/",
+      outputDir: "./public/guide_images/",
       formats: ["webp", "png"]
     },
     globalAttributes: {
