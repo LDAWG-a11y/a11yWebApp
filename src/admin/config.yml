@@ -3,13 +3,11 @@ backend:
   branch: main
   repo: LDAWG-a11y/a11yWebApp
 media_folder: "src/img"
-public_folder: "/img/"
+public_folder: "/img"
 collections:
   - name: "guides"
     label: "Guides"
     folder: "/src/guides"
-    media_folder: "/src/guide_images/"
-    public_folder: "../src/guide_images/"
     create: true
     delete: true
     fields:
