@@ -22,7 +22,7 @@ module.exports = eleventyConfig => {
     imgOptions: {
       widths: [1200, 900, 600, 300],
       urlPath: "/guides/images/",
-      outputDir: "./public/img/",
+      outputDir: "./guides/images/",
       formats: ["webp", "png"]
     },
     globalAttributes: {
