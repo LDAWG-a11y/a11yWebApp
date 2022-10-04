@@ -2,5 +2,6 @@
   "tags": "contributors",
   "key": "jsmith",
   "name": "John Smith",
-  "bio": "Test"
+  "bio": "Test",
+  "img": "/src/img/joe.png"
 }
