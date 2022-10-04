@@ -6,6 +6,10 @@ date: 2022-10-04
 tags:
   - HTML
 ---
+
+
 Whatever
 
-![Test](./src/img/screenshot-2022-10-04-at-10.41.38.png)
+![Test](/src/img/screenshot-2022-10-04-at-10.41.38.png)
+
+![](/src/img/screenshot-2022-09-29-at-13.41.12.png)
