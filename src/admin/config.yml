@@ -1,9 +1,8 @@
 backend:
   name: git-gateway
   branch: main
-local_backend: true
+  repo: LDAWG-a11y/a11yWebApp
 media_folder: "src/img"
-public_folder: "./src/img"
 collections:
   - name: "guides"
     label: "Guides"
