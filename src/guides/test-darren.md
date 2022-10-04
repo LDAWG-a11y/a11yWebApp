@@ -8,4 +8,4 @@ tags:
 ---
 Testing
 
-![testing](/src/guides/images/Screenshot 2022-10-04 at 09.45.11.png)
+![test](/src/guides/images/Screenshot-1.png)
