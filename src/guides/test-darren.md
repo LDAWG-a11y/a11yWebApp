@@ -9,3 +9,5 @@ tags:
 ![](./src/guide_images/Screenshot-1.png)
 
 Testing testing
+
+![](../src/guide_images/Screenshot-1.png)
