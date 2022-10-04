@@ -9,5 +9,3 @@ tags:
 ![](./src/guides/images/Screenshot-1.png)
 
 Testing testing
-
-![](../src/guides/images/Screenshot-1.png)
