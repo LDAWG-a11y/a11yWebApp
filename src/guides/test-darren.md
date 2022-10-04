@@ -8,4 +8,4 @@ tags:
 ---
 Testing
 
-![test](/src/guides/images/Screenshot-1.png)
+![test](/guides/images/Screenshot-1.png)
