@@ -8,4 +8,4 @@ tags:
 ---
 Whatever
 
-![](/src/img/screenshot-2022-10-04-at-10.41.38.png)
+![](./src/img/screenshot-2022-10-04-at-10.41.38.png)
