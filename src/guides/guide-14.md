@@ -1,5 +1,5 @@
 ---
-title: The fourteenth guide
+title: Test editor
 summary: A super useful guide about doing that thing that makes the other thing
   accessible to everybody
 author: jbloggs
