@@ -7,5 +7,3 @@ tags:
   - HTML
 ---
 Testing testing
-
-![]()
