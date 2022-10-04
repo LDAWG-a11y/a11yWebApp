@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main
   repo: LDAWG-a11y/a11yWebApp
-media_folder: "src/img"
+media_folder: "./src/img"
 public_folder: "/img"
 collections:
   - name: "guides"
