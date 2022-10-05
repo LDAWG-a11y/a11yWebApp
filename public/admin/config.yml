@@ -9,7 +9,7 @@ collections:
     label: "Guides"
     folder: "/src/guides"
     media_folder: "/src/guideImg"
-    public_folder: "/src/guideImg"
+    public_folder: "src/guideImg"
     create: true
     delete: true
     fields:
@@ -26,7 +26,7 @@ collections:
     identifier_field: name
     folder: "/src/_data/contributors"
     media_folder: "/src/profileImg"
-    public_folder: "/profileImg"
+    public_folder: "src/profileImg"
     fields:
       - { label: "Username", name: "key", widget: "string", hint: "This is not displayed anywhere but the URL, it needs to be unique and can only contain alphanumeric characters, e.g: jBloggs1" }
       - { label: "Name", name: name, widget: string, hint: "Your full name"}
