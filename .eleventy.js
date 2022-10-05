@@ -9,19 +9,21 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.addWatchTarget('./src/sass');
   eleventyConfig.addPassthroughCopy('./src/css');
-  eleventyConfig.addPassthroughCopy('./src/js');
-  eleventyConfig.addPassthroughCopy('img');
-  eleventyConfig.addPassthroughCopy('./src/svg');
-  eleventyConfig.addPassthroughCopy('./src/fonts');
-  eleventyConfig.addPassthroughCopy("./src/admin");
+  eleventyConfig.addPassthroughCopy('src/js');
+  eleventyConfig.addPassthroughCopy('src/img');
+  eleventyConfig.addPassthroughCopy('src/profileImg');
+  eleventyConfig.addPassthroughCopy('src/guideImg');
+  eleventyConfig.addPassthroughCopy('src/svg');
+  eleventyConfig.addPassthroughCopy('src/fonts');
+  eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   const markdownItEleventyImgConfig = {
     imgOptions: {
       widths: [1200, 900, 600, 300],
-      urlPath: "/guide_images/",
-      outputDir: "./public/guide_images/",
+      urlPath: "/guideImg/",
+      outputDir: "./public/guideImg/",
       formats: ["webp", "png"]
     },
     globalAttributes: {
