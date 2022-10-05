@@ -33,7 +33,7 @@ collections:
       - { label: "Job Title", name: "title", widget: "string", required: false }
       - { label: "Organisation", name: "org", widget: "string", required: false }
       - { label: "Bio", name: "bio", widget: "text", hint: "Tell the world a bit about yourself" }
-      - { label: "Profile picture", media_folder: "/src/img", name: "img", widget: "image", required: false, hint: "This image needs to be square and it should be quite small, about 192px * 192px" }
+      - { label: "Profile picture", media_folder: "/src/profileImg", name: "img", widget: "image", required: false, hint: "This image needs to be square and it should be quite small, about 192px * 192px" }
       - { label: "Twitter handle", name: "twitter", widget: "string", required: false, hint: "Please paste in your full Twitter URL" }
       - { label: Email, name: "email", widget: "string", required: false }
       - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
