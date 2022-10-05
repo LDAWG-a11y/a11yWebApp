@@ -7,5 +7,3 @@ tags:
   - HTML
 ---
 Testing testing
-
-![alt](src/guideImg/Screenshot-1.png)
