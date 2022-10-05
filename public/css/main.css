@@ -83,7 +83,7 @@ a:not([class]):visited {
   font-size: 1.125rem;
 }
 
-.tag__count, .tag__item--inert, .header__themes-btn--light,
+.tag__count, .tag__item--inert, .footer__colophon, .header__themes-btn--light,
 .header__themes-btn--system,
 .header__themes-btn--dark {
   font-size: 1rem;
@@ -1378,7 +1378,7 @@ ul:not([class]) > li::marker {
   visibility: hidden;
 }
 .accordion__panel > *:last-child {
-  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 .accordion__panel[data-last] {
   margin-bottom: 3rem;

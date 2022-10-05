@@ -1,10 +1,11 @@
 const accordions = document.querySelectorAll('.accordion');
+// const rootFont = parseInt(window.getComputedStyle(document.getElementsByTagName('html')[0]).getPropertyValue('font-size'));
 
 accordions.forEach( (accordion, idx) => {
   const accTitle = accordion.innerText;
   const accPanel = accordion.nextElementSibling;
   accPanel.id = `accPanel-${idx + 1}`
-  // accPanel.setAttribute('data-height', `${accPanel.scrollHeight / 16 + 1}`);
+  // accPanel.setAttribute('data-height', `${accPanel.scrollHeight / rootFont}`);
   accordion.innerHTML = `<button class="accordion__btn" aria-controls="accPanel-${idx + 1}" aria-expanded="false">${accTitle}</button>`;
   let accBtn = accordion.firstElementChild;
   accordion.setAttribute('data-open', false);
@@ -13,8 +14,7 @@ accordions.forEach( (accordion, idx) => {
     if (accBtn.getAttribute('aria-expanded') == 'false') {
       accBtn.setAttribute('aria-expanded', 'true');
       accordion.setAttribute('data-open', "true");
-      // const panelHeight = accPanel.getAttribute('data-height');
-      // accPanel.setAttribute('style', `height: ${panelHeight}rem`);
+      // accPanel.setAttribute('style', `height: ${accPanel.getAttribute('data-height')}rem`);
     } else {
       accBtn.setAttribute('aria-expanded', 'false');
       accordion.setAttribute('data-open', false);
@@ -23,20 +23,19 @@ accordions.forEach( (accordion, idx) => {
   });
 })
 
-accordions.forEach(accordion => {
-  const accPanel = accordion.nextElementSibling;
-  if (!accPanel.nextElementSibling || !accPanel.nextElementSibling.hasAttribute('data-open')) {
-    accPanel.setAttribute('data-last', '');
-  }
-})
+// accordions.forEach(accordion => {
+//   const accPanel = accordion.nextElementSibling;
+//   if (!accPanel.nextElementSibling || !accPanel.nextElementSibling.hasAttribute('data-open')) {
+//     accPanel.setAttribute('data-last', '');
+//   }
+// })
 
 // TODO calculation to animate is a little off and doesn't work correctly when font-sizing is changed
 
 // const resizeAccordions = () => {
 //   document.querySelectorAll('.accordion__panel').forEach(panel => {
-//     panel.setAttribute('data-height', `${panel.scrollHeight / 16 + 1}`);
 //     if (panel.previousElementSibling.getAttribute('data-open') == 'true') {
-//       panel.setAttribute('style', `height: ${panel.scrollHeight}rem`);
+//       panel.setAttribute('style', `height: ${panel.scrollHeight / rootFont}rem`);
 //     }
 //   })
 // }

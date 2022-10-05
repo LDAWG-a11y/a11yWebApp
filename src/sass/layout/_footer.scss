@@ -131,6 +131,8 @@
 }
 
 .footer__colophon {
+  @extend %smallest-text;
+  
   position: relative;
   margin-top: $space-xxxl;
   padding: 0 $space-sm;
