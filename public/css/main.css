@@ -203,7 +203,7 @@ h1:focus-visible {
   font-family: "Oswald";
   font-style: normal;
   font-weight: 600;
-  src: local(""), url("../fonts/oswald-v49-latin-600.woff2") format("woff2"), url("../fonts/oswald-v49-latin-600.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local(""), url("/fonts/oswald-v49-latin-600.woff2") format("woff2"), url("/fonts/oswald-v49-latin-600.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   font-display: block;
 }
 html {
@@ -670,20 +670,20 @@ ul:not([class]) > li::marker {
   margin: 0.5rem 0;
   height: 1.25rem;
   width: 100%;
-  background: url(/img/logo__sm--light.png) center/cover;
+  background: url(img/logo__sm--light.png) center/cover;
   background-size: contain;
   background-repeat: no-repeat;
 }
 [data-theme=light] .header__logo {
-  background-image: url(/img/logo__sm--light.png);
+  background-image: url(img/logo__sm--light.png);
 }
 @media (prefers-color-scheme: dark) {
   .header__logo {
-    background-image: url(/img/logo__sm--dark.png);
+    background-image: url(img/logo__sm--dark.png);
   }
 }
 [data-theme=dark] .header__logo {
-  background-image: url(/img/logo__sm--dark.png);
+  background-image: url(img/logo__sm--dark.png);
 }
 @media (min-width: 20em) {
   .header__logo {
