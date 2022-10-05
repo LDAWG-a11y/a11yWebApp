@@ -9,7 +9,7 @@ pagination:
   alias: helpGuides
   reverse: true
 eleventyComputed:
-  title: All guides Page {%- if page.url != pagination.href.first %} {{ pagination.pageNumber + 1 }} of {{ pagination.pageLinks.length }} {%- endif%}
+  title: All guides {%- if page.url != pagination.href.first %} page {{ pagination.pageNumber + 1 }} of {{ pagination.pageLinks.length }} {%- endif%}
   summary: "View all useful digital accessibility guides from our website by all of our contributors, covering inclusive design, web development, documentation & social media"
 ---
 <div class="intro-panel">

@@ -670,20 +670,20 @@ ul:not([class]) > li::marker {
   margin: 0.5rem 0;
   height: 1.25rem;
   width: 100%;
-  background: url(img/logo__sm--light.png) center/cover;
+  background: url(/img/logo__sm--light.png) center/cover;
   background-size: contain;
   background-repeat: no-repeat;
 }
 [data-theme=light] .header__logo {
-  background-image: url(img/logo__sm--light.png);
+  background-image: url(/img/logo__sm--light.png);
 }
 @media (prefers-color-scheme: dark) {
   .header__logo {
-    background-image: url(img/logo__sm--dark.png);
+    background-image: url(/img/logo__sm--dark.png);
   }
 }
 [data-theme=dark] .header__logo {
-  background-image: url(img/logo__sm--dark.png);
+  background-image: url(/img/logo__sm--dark.png);
 }
 @media (min-width: 20em) {
   .header__logo {
