@@ -21,17 +21,17 @@
   </script>
   <link rel="preload" href="/fonts/oswald-v49-latin-600.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
-  <link rel=" shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
   <meta property="og:title" content="{%- if not home %}{{ title }} | {{ site.siteName }} {%- else %}{{ site.siteName }} | {{ title }} {%- endif %}">
   <meta property="og:description" content="{%- if not home %}{{ summary }}{%- else %}A repository of guidance & resources for organisations & individuals aiming to improve digital accessibility, through web development, documents and other digital media{%- endif %}">
-  <meta property='og:url' content="{{ site.siteUrl }}/{{ title | slug }}" />
+  <meta property='og:url' content="{{ site.siteUrl }}{{ page.url }}" />
   <meta property="og:locale" content="en_GB">
   <meta property="og:site_name" content="{{ site.siteName }}">
   <meta property="og:type" content="website">
   <meta property="og:image" content="{{ site.siteUrl }}/img/social-logo.jpg">
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:site" content="Make Things Accessible">
-  <meta property="twitter:description" content="{%- if not home %}{{ title }} | {{ site.siteName }} {%- else %}{{ site.siteName }} | {{ title }} {%- endif %}">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- <meta name="twitter:site" content="Make Things Accessible"> -->
+  <meta name="twitter:description" content="{%- if not home %}{{ title }} | {{ site.siteName }} {%- else %}{{ site.siteName }} | {{ title }} {%- endif %}">
   <meta name="twitter:image" content="{{ site.siteUrl }}/img/social-logo.jpg">
-  <meta property="twitter:image:alt" content="Make Things Accessible logo">
+  <meta name="twitter:image:alt" content="Make Things Accessible logo">
 </head>
