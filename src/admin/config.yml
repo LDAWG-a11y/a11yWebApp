@@ -56,8 +56,9 @@ collections:
     create: true
     delete: true      
     fields:
-      - { label: Term, name: title, widget: "string", hint: "Initialism, Acronym, technical term etc" }
-      - { label: Definition, name: body, widget: "text" }
+      - { label: "Term", name: "title", widget: "string", hint: "Initialism, Acronym, technical term etc" }
+      - { label: "Acronym?", name: "acronym", widget: "boolean", default: false, hint: "Toggle to true if this is an acronym" }
+      - { label: "Definition", name: "body", widget: "text" }
       - { label: "Permalink", name: "permalink", default: false, widget: "hidden" }
       - { label: "Tags", name: "tags", default: "terms", widget: "hidden" }
   - name: "pages"
