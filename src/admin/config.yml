@@ -26,7 +26,7 @@ collections:
     identifier_field: name
     folder: "/src/_data/contributors"
     media_folder: "/src/profileImg"
-    public_folder: "/src/profileImg"
+    public_folder: "/profileImg"
     fields:
       - { label: "Username", name: "key", widget: "string", hint: "This is not displayed anywhere but the URL, it needs to be unique and can only contain alphanumeric characters, e.g: jBloggs1" }
       - { label: "Name", name: name, widget: string, hint: "Your full name"}
