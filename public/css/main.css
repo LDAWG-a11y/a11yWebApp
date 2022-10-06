@@ -245,7 +245,6 @@ h6 {
   font-family: "Oswald", sans-serif;
   font-weight: 700;
   overflow-wrap: break-word;
-  hyphens: auto;
 }
 @media (forced-colors: active) {
   h1,
@@ -260,8 +259,13 @@ h6 {
 
 h1 {
   position: relative;
-  font-size: 3.5rem;
+  font-size: 3rem;
   padding-bottom: 10rem;
+}
+@media (min-width: 37.5em) {
+  h1 {
+    font-size: 3.5rem;
+  }
 }
 @media (min-width: 64em) {
   h1 {
@@ -544,6 +548,7 @@ ul:not([class]) > li::marker {
   display: block;
   width: 100%;
   color: var(--color-bg);
+  font-size: 1.1875rem;
 }
 [data-theme=dark] .header__themes-legend {
   color: var(--color-text);

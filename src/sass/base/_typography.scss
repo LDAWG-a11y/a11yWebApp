@@ -41,7 +41,6 @@ h6 {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   overflow-wrap: break-word;
-  hyphens: auto;
 
   @media (forced-colors: active) {
     line-height: 1.5;
@@ -50,8 +49,12 @@ h6 {
 
 h1 {
   position: relative;
-  font-size: 3.5rem;
+  font-size: 3rem;
   padding-bottom: $space-biggest;
+
+  @include mq.mq($from:sm) {
+    font-size: 3.5rem;;
+  }
 
   @include mq.mq($from:lg) {
     font-size: 4rem;

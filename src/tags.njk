@@ -16,29 +16,7 @@ eleventyComputed:
   <ul class="cards">
     {% set taglist = collections[ tag ] %}
     {%- for guide in taglist | reverse %}
-      <li class="card__item">
-        <article>
-          <h3 class="card__title"><a href="{{ guide.url }}" class="card__link">{{ guide.data.title }}</a></h3>
-          <p class="card__summary">{{ guide.data.summary }}</p>
-          <ul class="tags" aria-label="Tags">
-            {%- for tag in guide.data.tags | filterTagList %}
-              {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
-              {%- if tagUrl != page.url  %}
-                <li class="tag__item">
-                    <a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a>
-                </li>
-              {%- else %}
-                <li class="tag__item tag__item--inert" aria-current="page">
-                  {{ tag }}
-                </li>
-              {%- endif %}
-            {%- endfor %}
-            {% set guideAuthor = collections.writers | getAuthor(guide.data.author) %}
-          </ul>
-          <span class="card__author-name"><a href="/authors/{{ guideAuthor.key }}" class="card__author-link">{{ guideAuthor.name }}</a></span>
-          <span class="card__date">{{ guide.data.date | readableDate }}</span>
-        </article>
-      </li>
+      {% include "_card.njk" %}
     {%- endfor %}
   </ul>
 </div>

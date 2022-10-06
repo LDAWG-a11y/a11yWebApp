@@ -1,0 +1,29 @@
+<li class="card__item">
+  <article>
+    <h3 class="card__title"><a href="{{ guide.url }}" class="card__link">{{ guide.data.title }}</a></h3>
+    <p class="card__summary">{{ guide.data.summary }}</p>
+    <ul class="tags" aria-label="Tags">
+      {%- for tag in guide.data.tags | filterTagList %}
+        {%- if page.url == '/guides/' %}
+          <li class="tag__item tag__item--inert">
+            {{ tag }}
+          </li>
+        {%- else %}
+          {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
+          {%- if tagUrl != page.url  %}
+            <li class="tag__item">
+                <a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a>
+            </li>
+          {%- else %}
+            <li class="tag__item tag__item--inert" aria-current="page">
+              {{ tag }}
+            </li>
+          {%- endif %}
+        {%- endif %}
+      {%- endfor %}
+    </ul>
+    {% set guideAuthor = collections.writers | getAuthor(guide.data.author) %}
+    <a href="/authors/{{ guideAuthor.key }}" class="card__author-link">{{ guideAuthor.name }}</a>
+    <span class="card__date">{{ guide.data.date | readableDate }}</span>
+  </article>
+</li>  

@@ -1,4 +1,0 @@
-sitemap: {{site.siteUrl}}/sitemap.xml
-
-User-agent: *
-Disallow:
