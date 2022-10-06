@@ -47,7 +47,7 @@ Do not miss ranks out because this can be confusing eg. make sure that `<h3>` is
       <h4>This is something even less important</h4>
 ```
 
-The headings should be organsised as follows:
+The headings should be organised as follows:
 
 ```
 <h1>These are HTML headings</h1>
