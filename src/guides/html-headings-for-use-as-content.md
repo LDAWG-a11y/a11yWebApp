@@ -41,7 +41,7 @@ Try to only use one `<h1>` on a page but make sure that there is an `<h1>`.
 
 Do not miss ranks out because this can be confusing eg. make sure that `<h3>` is not followed directly by an `<h4>`:
 
-```
+```html
 <h1>These are HTML headings</h1>
     <h3>This is something less important</h3>
       <h4>This is something even less important</h4>
@@ -49,7 +49,7 @@ Do not miss ranks out because this can be confusing eg. make sure that `<h3>` is
 
 The headings should be organised as follows:
 
-```
+```html
 <h1>These are HTML headings</h1>
   <h2>This is something less important</h2>
     <h3>This is something even less important</h3>
@@ -57,7 +57,7 @@ The headings should be organised as follows:
 
 It is okay to go from an `<h3>` to an `<h2>` when starting a new section:
 
-```
+```html
 <h1>HTML</h1>
   <h2>Tables</h2>
     <p>…</p>
@@ -79,7 +79,7 @@ Use headings for labelling regions on the page, by associating the heading with 
 
 ### Main heading before page navigation
 
-```
+```html
 <h1>Make things accessible</h1>
   <h2>Navigation</h2>
     <h3>Home</h3>
@@ -101,7 +101,7 @@ Use headings for labelling regions on the page, by associating the heading with 
 
 ### Main heading after page navigation
 
-```
+```html
 <h2>Navigation</h2>
   <h3>Home</h3>
   <h3>Guides</h3>
