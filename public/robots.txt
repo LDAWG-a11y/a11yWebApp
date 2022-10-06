@@ -1,0 +1,6 @@
+
+sitemap: https://www.makethingsaccessible.com/sitemap.xml
+
+User-agent: * 
+Allow /
+Disallow:

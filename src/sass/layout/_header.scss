@@ -161,6 +161,7 @@ button[class^="header__themes-btn"] {
   display: block;
   width: 100%;
   color: var(--color-bg);
+  font-size: $medium-paragraph-size;
 
   [data-theme="dark"] & {
     color: var(--color-text);

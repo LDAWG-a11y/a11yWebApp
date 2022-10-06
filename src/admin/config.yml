@@ -44,6 +44,8 @@ collections:
     folder: "/src/faqs"
     create: true
     delete: true
+    media_folder: "/src/faqImg"
+    public_folder: "/faqImg"
     fields:
       - { label: "Question", name: "title", widget: "string", hint: "The title is displayed in an accordion button"}
       - { label: "Answer", name: "body", widget: "markdown" }

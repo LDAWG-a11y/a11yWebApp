@@ -17,24 +17,10 @@ summary: some description for google
   <h2 class="latest-articles__heading">Latest guides</h2>
   <p class="latest-articles__intro">Our latest 3 digital accessibility guides are displayed in this section, this will be updated each time we produce a new guide, alternatively, you can view all guides by selecting "Guides" in the main navigation or the footer area.</p>
   <ul class="cards">
-  {%- if collections.latest.length %}
-    {%- for guide in collections.latest %}
-      <li class="card__item">
-        <article>
-          <h3 class="card__title"><a href="{{ guide.url }}" class="card__link">{{ guide.data.title }}</a></h3>
-          <p class="card__summary">{{ guide.data.summary }}</p>
-          <ul class="tags" aria-label="Tags">
-            {%- for tag in guide.data.tags | filterTagList %}
-            {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
-              <li class="tag__item"><a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a></li>
-            {%- endfor %}
-          </ul>
-          {% set guideAuthor = collections.writers | getAuthor(guide.data.author) %}
-          <span class="card__author-name"><a href="/authors/{{ guideAuthor.key }}" class="card__author-link">{{ guideAuthor.name }}</a></span>
-          <span class="card__date">{{ guide.data.date | readableDate }}</span>
-        </article>
-      </li>
-    {%- endfor %}
-  {%- endif %}
-</ul>
+    {%- if collections.latest.length %}
+      {%- for guide in collections.latest %}
+      {% include "_card.njk" %}
+      {%- endfor %}
+    {%- endif %}
+  </ul>
 </div>
