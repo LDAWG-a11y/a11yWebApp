@@ -40,3 +40,7 @@ Where `<h1>` has the greatest importance and `<h6>` has the least and browsers u
 Try to only use one `<h1>` on a page but make sure that there is an `<h1>`.
 
 Do not miss ranks out because this can be confusing eg. make sure that `<h3>` is not followed directly by an `<h4>`:
+
+`<h1>`These are HTML headings`</h1>`
+`<h3>`This is something less important`</h3>`
+`<h4>`This is something even less important`</h4>`
