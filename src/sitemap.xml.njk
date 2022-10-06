@@ -2,38 +2,31 @@
 permalink: '/sitemap.xml'
 eleventyExcludeFromCollections: true
 ---
-<?xml version="1.0" encoding="utf-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{%- for item in navLinks | sort(attribute="text") %}
-  {%- if item.url != '/admin' %}
+ 
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for page in collections.guides %}
     <url>
-      <loc>{{ site.siteUrl }}{{ item.url }}</loc>
+      <loc>{{ site.siteUrl }}{{ page.url | url }}</loc>
       <lastmod>{{ page.date.toISOString() }}</lastmod>
     </url>
-  {%- endif %}
-{%- endfor %}
-{%- for guide in collections.guides | reverse %}
-  <url>
-    <loc>{{ site.siteUrl }}{{ guide.url }}</loc>
-    <lastmod>{{ page.date.toISOString() }}</lastmod>
-  </url>
-{%- endfor %}
-{%- for tag in collections.tagList %}
-{%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
-  <url>
-    <loc>{{ site.siteUrl }}{{ tagUrl }}</loc>
-    <lastmod>{{ page.date.toISOString() }}</lastmod>
-  </url>
-{%- endfor %}
-{%- for author in collections.writers %}
-  {%- set posts = collections.guides | getGuidesByAuthor(author.key) %}
-  {%- if posts.length %}
+  {% endfor %}
+  {%- for item in navLinks | sort(attribute="text") %}
+    {%- if item.text != 'Sitemap' %}
+      {%- if item.text != 'Admin' %}
+      <url>
+        <loc>{{ site.siteUrl }}{{ item.url }}</loc>
+        <lastmod>{{ page.date.toISOString() }}</lastmod>
+      </url>
+      {%- endif %}
+    {%- endif %}
+  {%- endfor %}
+  {%- for tag in collections.tagList %}
+  {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
     <url>
-      <loc>{{ site.siteUrl }}/authors/{{ author.key }}</loc>
+      <loc>{{ site.siteUrl }}{{ tagUrl }}</loc>
       <lastmod>{{ page.date.toISOString() }}</lastmod>
     </url>
-  {%- endif %}
-{%- endfor %}
-  </urlset>
+  {%- endfor %}
+</urlset>
 
   

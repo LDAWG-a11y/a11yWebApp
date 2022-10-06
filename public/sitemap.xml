@@ -1,93 +1,88 @@
-<?xml version="1.0" encoding="utf-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+ 
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
     <url>
-      <loc>https://www.makethingsaccessible.com/about/</loc>
+      <loc>https://www.makethingsaccessible.com/guides/test-darren/</loc>
+      <lastmod>2022-09-30T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/test-george/</loc>
+      <lastmod>2022-09-30T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/test-ben/</loc>
+      <lastmod>2022-10-02T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/html-headings-for-use-as-content/</loc>
+      <lastmod>2022-10-06T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/nvda-s-verbosity-settings/</loc>
+      <lastmod>2022-10-06T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/psbar-monitoring-and-enforcement-process/</loc>
+      <lastmod>2022-10-06T00:00:00.000Z</lastmod>
+    </url>
+  
+      <url>
+        <loc>https://www.makethingsaccessible.com/about/</loc>
+        <lastmod>2022-10-02T14:18:05.942Z</lastmod>
+      </url>
+      <url>
+        <loc>https://www.makethingsaccessible.com/accessibility/</loc>
+        <lastmod>2022-10-02T14:18:05.942Z</lastmod>
+      </url>
+      <url>
+        <loc>https://www.makethingsaccessible.com/faqs/</loc>
+        <lastmod>2022-10-02T14:18:05.942Z</lastmod>
+      </url>
+      <url>
+        <loc>https://www.makethingsaccessible.com/glossary/</loc>
+        <lastmod>2022-10-02T14:18:05.942Z</lastmod>
+      </url>
+      <url>
+        <loc>https://www.makethingsaccessible.com/guides/</loc>
+        <lastmod>2022-10-02T14:18:05.942Z</lastmod>
+      </url>
+      <url>
+        <loc>https://www.makethingsaccessible.com/</loc>
+        <lastmod>2022-10-02T14:18:05.942Z</lastmod>
+      </url>
+      <url>
+        <loc>https://www.makethingsaccessible.com/privacy/</loc>
+        <lastmod>2022-10-02T14:18:05.942Z</lastmod>
+      </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/css/</loc>
       <lastmod>2022-10-02T14:18:05.942Z</lastmod>
     </url>
     <url>
-      <loc>https://www.makethingsaccessible.com/accessibility/</loc>
+      <loc>https://www.makethingsaccessible.com/tags/enforcement/</loc>
       <lastmod>2022-10-02T14:18:05.942Z</lastmod>
     </url>
     <url>
-      <loc>https://www.makethingsaccessible.com/faqs/</loc>
+      <loc>https://www.makethingsaccessible.com/tags/html/</loc>
       <lastmod>2022-10-02T14:18:05.942Z</lastmod>
     </url>
     <url>
-      <loc>https://www.makethingsaccessible.com/glossary/</loc>
+      <loc>https://www.makethingsaccessible.com/tags/monitoring/</loc>
       <lastmod>2022-10-02T14:18:05.942Z</lastmod>
     </url>
     <url>
-      <loc>https://www.makethingsaccessible.com/guides/</loc>
+      <loc>https://www.makethingsaccessible.com/tags/nvda/</loc>
       <lastmod>2022-10-02T14:18:05.942Z</lastmod>
     </url>
     <url>
-      <loc>https://www.makethingsaccessible.com/</loc>
+      <loc>https://www.makethingsaccessible.com/tags/psbar/</loc>
       <lastmod>2022-10-02T14:18:05.942Z</lastmod>
     </url>
-    <url>
-      <loc>https://www.makethingsaccessible.com/privacy/</loc>
-      <lastmod>2022-10-02T14:18:05.942Z</lastmod>
-    </url>
-    <url>
-      <loc>https://www.makethingsaccessible.com/sitemapNav/</loc>
-      <lastmod>2022-10-02T14:18:05.942Z</lastmod>
-    </url>
-  <url>
-    <loc>https://www.makethingsaccessible.com/guides/psbar-monitoring-and-enforcement-process/</loc>
-    <lastmod>2022-10-02T14:18:05.942Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.makethingsaccessible.com/guides/html-headings-for-use-as-content/</loc>
-    <lastmod>2022-10-02T14:18:05.942Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.makethingsaccessible.com/guides/test-ben/</loc>
-    <lastmod>2022-10-02T14:18:05.942Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.makethingsaccessible.com/guides/test-george/</loc>
-    <lastmod>2022-10-02T14:18:05.942Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.makethingsaccessible.com/guides/test-darren/</loc>
-    <lastmod>2022-10-02T14:18:05.942Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.makethingsaccessible.com/tags/css/</loc>
-    <lastmod>2022-10-02T14:18:05.942Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.makethingsaccessible.com/tags/enforcement/</loc>
-    <lastmod>2022-10-02T14:18:05.942Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.makethingsaccessible.com/tags/html/</loc>
-    <lastmod>2022-10-02T14:18:05.942Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.makethingsaccessible.com/tags/monitoring/</loc>
-    <lastmod>2022-10-02T14:18:05.942Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.makethingsaccessible.com/tags/psbar/</loc>
-    <lastmod>2022-10-02T14:18:05.942Z</lastmod>
-  </url>
-    <url>
-      <loc>https://www.makethingsaccessible.com/authors/bwatson</loc>
-      <lastmod>2022-10-02T14:18:05.942Z</lastmod>
-    </url>
-    <url>
-      <loc>https://www.makethingsaccessible.com/authors/dlee</loc>
-      <lastmod>2022-10-02T14:18:05.942Z</lastmod>
-    </url>
-    <url>
-      <loc>https://www.makethingsaccessible.com/authors/grhodes</loc>
-      <lastmod>2022-10-02T14:18:05.942Z</lastmod>
-    </url>
-    <url>
-      <loc>https://www.makethingsaccessible.com/authors/swilkinson</loc>
-      <lastmod>2022-10-02T14:18:05.942Z</lastmod>
-    </url>
-  </urlset>
+</urlset>
 
   

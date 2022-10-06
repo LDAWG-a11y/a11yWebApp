@@ -65,9 +65,22 @@
   
   picture,
   img:not([class]),
-  pre,
-  ul:not([class]), {
-      margin-bottom: $space-xxxl;
+  pre {
+    margin-bottom: $space-xxxl;
+  }
+
+  ul {
+    margin-bottom: $space-xxxl;
+  }
+
+  ul > li > ul {
+    margin-bottom: 0;
+    margin-left: $space-lg;
+  }
+
+  ul > li > ul > li > ul {
+    margin-bottom: 0;
+    margin-left: $space-xxl;
   }
 
   p {
