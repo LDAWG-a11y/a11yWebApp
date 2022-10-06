@@ -455,7 +455,7 @@ button[class^="header__themes-btn"] {
 
   @include mq.mq($from:md) {
     margin: $space-bigger auto 0;
-    width: clamp(18rem, 22rem, 25rem);
+    width: clamp(18rem, 26rem, 30rem);
   }
 
   [data-theme="dark"] & {

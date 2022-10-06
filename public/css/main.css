@@ -13,7 +13,7 @@
 }
 :root ::-moz-selection,
 :root[data-theme=light] ::-moz-selection {
-  background-color: #9bb2da;
+  background-color: rgba(139, 168, 217, 0.7058823529);
 }
 
 :root[data-theme=dark] {
@@ -29,7 +29,7 @@
   --color-highlight: #6ebc9f;
 }
 :root[data-theme=dark] ::selection {
-  background-color: #8ba7d9;
+  background-color: rgba(139, 168, 217, 0.7058823529);
   color: black;
 }
 :root[data-theme=dark] h1::selection {
@@ -51,7 +51,7 @@
     --color-highlight: #6ebc9f;
   }
   :root ::selection {
-    background-color: #8ba7d9;
+    background-color: rgba(139, 168, 217, 0.7058823529);
     color: black;
   }
   :root h1::selection {
@@ -246,21 +246,17 @@ h6 {
   font-weight: 700;
   overflow-wrap: break-word;
 }
-@media (forced-colors: active) {
-  h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    line-height: 1.5;
-  }
-}
 
 h1 {
   position: relative;
   font-size: 3rem;
   padding-bottom: 10rem;
+  line-height: 1.25;
+}
+@media (forced-colors: active) {
+  h1 {
+    line-height: 1.5;
+  }
 }
 @media (min-width: 37.5em) {
   h1 {
@@ -862,7 +858,7 @@ ul:not([class]) > li::marker {
 @media (min-width: 48em) {
   .header__welcome-text {
     margin: 6rem auto 0;
-    width: 22rem;
+    width: 26rem;
   }
 }
 [data-theme=dark] .header__welcome-text {
