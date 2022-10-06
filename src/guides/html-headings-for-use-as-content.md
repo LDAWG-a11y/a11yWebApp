@@ -26,7 +26,7 @@ Headings are not used for stylistic formatting such as making text BIG or bold.
 
 ## Heading ranks
 
-Headings are ranked from 1 to 6:
+### Headings are ranked from 1 to 6
 
 * `<h1>`
 * `<h2>`
@@ -47,7 +47,7 @@ Do not miss ranks out because this can be confusing eg. make sure that `<h3>` is
       <h4>This is something even less important</h4>
 ```
 
-It should be:
+The headings should be organsised as follows:
 
 ```
 <h1>These are HTML headings</h1>
