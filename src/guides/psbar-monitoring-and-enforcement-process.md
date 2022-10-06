@@ -10,21 +10,6 @@ tags:
   - Monitoring
   - Enforcement
 ---
-## Contents
-
-* What are the Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility Regulations 2018?
-* How are the regulations monitored?
-* Why have I been monitored?
-* How are GDS testing my website?
-* What you need to do
-* * Just received the letter
-  * Timelines
-  * Responding
-  * Further testing
-  * Disproportionate burden claims
-  * Remedial work
-* What happens next?
-
 ## How the monitoring works
 
 The Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility Regulations 2018 (PSBAR) are managed by three levels of monitoring and enforcement.
