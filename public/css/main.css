@@ -364,8 +364,19 @@ a:not([class]):visited:hover {
 }
 
 ul:not([class]) {
-  padding-inline-start: 0;
+  margin-bottom: 3rem;
 }
+
+ul:not([class]) > li > ul {
+  margin-bottom: 0;
+  margin-left: 1.5rem;
+}
+
+ul:not([class]) > li > ul > li > ul {
+  margin-bottom: 0;
+  margin-left: 2.5rem;
+}
+
 ul:not([class]) > li::marker {
   color: var(--color-accent-2);
 }

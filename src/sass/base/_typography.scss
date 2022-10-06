@@ -151,7 +151,20 @@ a:not([class]):visited {
 }
 
 ul:not([class]) {
-  padding-inline-start: 0;
+  margin-bottom: $space-xxxl;
+}
+
+ul:not([class]) > li > ul {
+  margin-bottom: 0;
+  margin-left: $space-lg;
+}
+
+ul:not([class]) > li > ul > li > ul {
+  margin-bottom: 0;
+  margin-left: $space-xxl;
+}
+
+ul:not([class]) {
 
   & > li {
     &::marker {
