@@ -1,4 +1,5 @@
 ---
+date: Last Modified
 layout: base.njk
 title: Accessibility Statement
 summary: The Make Things Accessible website's accessibility statement was

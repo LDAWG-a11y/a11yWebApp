@@ -13,7 +13,7 @@ summary: The sitemap navigation provides a list of all main pages and all digita
           <li><a href="{{ item.url }}">{{ item.text }} page</a>
           {%- if item.text == 'Guides' %}
               <ul class="sitemap__list--nested">
-                {%- for guide in collections.guides %}
+                {%- for guide in collections.guides | reverse %}
                   <li><a href="{{ guide.url }}">{{ guide.data.title }}</a></li>
                 {%- endfor %}
               </ul>
