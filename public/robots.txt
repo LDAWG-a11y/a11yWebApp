@@ -2,5 +2,5 @@
 sitemap: https://www.makethingsaccessible.com/sitemap.xml
 
 User-agent: * 
-Allow /
+Allow: /
 Disallow:

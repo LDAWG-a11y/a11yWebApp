@@ -46,7 +46,7 @@ $theme-map-dark: (
   @include spread-map($theme-map-light);
 
   ::-moz-selection {
-    background-color: #9bb2da;
+    background-color: #8ba8d9b4;
   }   
 }
 
@@ -54,7 +54,7 @@ $theme-map-dark: (
   @include spread-map($theme-map-dark);
 
   ::selection {
-    background-color: #8ba7d9;
+    background-color: #8ba8d9b4;
     color: black;
   }
 
@@ -69,7 +69,7 @@ $theme-map-dark: (
     @include spread-map($theme-map-dark);
 
     ::selection {
-      background-color: #8ba7d9;
+      background-color: #8ba8d9b4;
       color: black;
     }
   
