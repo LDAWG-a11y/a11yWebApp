@@ -1788,15 +1788,13 @@ ul:not([class]) > li::marker {
   margin-bottom: 3rem;
 }
 .cms ul {
-  margin-bottom: 3rem;
+  margin: 0 0 3rem 1.5rem;
 }
 .cms ul > li > ul {
-  margin-bottom: 0;
-  margin-left: 1.5rem;
+  margin: 0 0 0 1rem;
 }
 .cms ul > li > ul > li > ul {
-  margin-bottom: 0;
-  margin-left: 2.5rem;
+  margin: 0 0 0 1rem;
 }
 .cms p {
   margin-bottom: 1rem;

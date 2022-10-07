@@ -70,17 +70,15 @@
   }
 
   ul {
-    margin-bottom: $space-xxxl;
+    margin: 0 0 $space-xxxl $space-lg;
   }
 
   ul > li > ul {
-    margin-bottom: 0;
-    margin-left: $space-lg;
+    margin: 0 0 0 $space-md;
   }
 
   ul > li > ul > li > ul {
-    margin-bottom: 0;
-    margin-left: $space-xxl;
+    margin: 0 0 0 $space-md;
   }
 
   p {
