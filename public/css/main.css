@@ -365,6 +365,7 @@ a:not([class]):visited:hover {
 
 ul:not([class]) {
   margin-bottom: 3rem;
+  margin-left: 1.5rem;
 }
 
 ul:not([class]) > li > ul {
@@ -1787,6 +1788,10 @@ ul:not([class]) > li::marker {
 .cms pre {
   margin-bottom: 3rem;
 }
+.cms ul p,
+.cms ul li p {
+  margin-bottom: 0.75rem;
+}
 .cms ul {
   margin: 0 0 3rem 1.5rem;
 }
@@ -1804,7 +1809,29 @@ ul:not([class]) > li::marker {
     margin-bottom: 1.5rem;
   }
 }
-.cms blockquote {
+.cms ol {
+  margin: 0 0 3rem 2rem;
+}
+.cms ol > * {
+  padding-bottom: 0.25rem;
+}
+.cms table {
+  display: block;
+  border-collapse: collapse;
+  margin-bottom: 3rem;
+  overflow-x: auto;
+}
+.cms th,
+.cms td {
+  border: 1px solid var(--color-accent-2);
+  padding: 0.75rem;
+}
+.cms caption {
+  text-align: left;
+  font-weight: 600;
+  padding-bottom: 0.25rem;
+}
+.cms blockquote:not(.twitter-tweet) {
   position: relative;
   margin: 0 0.5rem 2.5rem 0.5rem;
   padding: 0.5rem 0.5rem 0.5rem 1.5rem;
@@ -1813,7 +1840,7 @@ ul:not([class]) > li::marker {
   font-size: 115%;
   font-style: italic;
 }
-.cms blockquote::before {
+.cms blockquote:not(.twitter-tweet)::before {
   content: "";
   position: absolute;
   left: 0;
@@ -1885,6 +1912,7 @@ ul:not([class]) > li::marker {
 .glossary__term {
   overflow-wrap: break-word;
   hyphens: auto;
+  font-weight: bold;
 }
 @media (min-width: 48em) {
   .glossary__term {

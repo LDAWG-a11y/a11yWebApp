@@ -69,6 +69,11 @@
     margin-bottom: $space-xxxl;
   }
 
+  ul p,
+  ul li p {
+    margin-bottom: $space-sm;
+  }
+
   ul {
     margin: 0 0 $space-xxxl $space-lg;
   }
@@ -89,7 +94,34 @@
     }
   }
 
-  blockquote {
+  ol {
+    margin: 0 0 $space-xxxl $space-xl;
+  }
+
+  ol > * {
+    padding-bottom: $space-xxs;
+  }
+
+  table {
+    display: block;
+    border-collapse: collapse;
+    margin-bottom: $space-xxxl;
+    overflow-x: auto;
+  }
+
+  th,
+  td {
+    border: 1px solid var(--color-accent-2);
+    padding: $space-sm;
+  }
+
+  caption {
+    text-align: left;
+    font-weight: 600;
+    padding-bottom: $space-xxs;
+  }
+
+  blockquote:not(.twitter-tweet) {
     position: relative;
     margin: 0 $space-xs $space-xxl $space-xs;
     padding: $space-xs $space-xs $space-xs $space-lg;
