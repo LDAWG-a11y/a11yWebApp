@@ -310,6 +310,7 @@ h3 {
 }
 
 h4 {
+  margin-bottom: 1rem;
   font-size: 1.5rem;
 }
 @media (min-width: 64em) {
@@ -319,6 +320,7 @@ h4 {
 }
 
 h5 {
+  margin-bottom: 1rem;
   font-size: 1.3rem;
 }
 @media (min-width: 64em) {
@@ -328,6 +330,7 @@ h5 {
 }
 
 h6 {
+  margin-bottom: 1rem;
   font-size: 1.25rem;
 }
 @media (min-width: 64em) {
@@ -1738,10 +1741,7 @@ ul:not([class]) > li::marker {
 }
 .cms .code__label {
   display: block;
-  margin: 0 auto;
   padding-top: 0;
-  width: 100%;
-  max-width: 60rem;
 }
 .cms code[class][class*=language-],
 .cms pre[class][class*=language-] {
@@ -1750,10 +1750,10 @@ ul:not([class]) > li::marker {
   word-break: break-word;
 }
 .cms pre[class][class*=language-] {
-  margin: 0 auto 2.5rem;
+  margin-bottom: 2.5rem;
   padding-top: 0;
   width: 100%;
-  max-width: 60rem;
+  max-width: 65rem;
   font-size: 1.125rem;
   font-size: inherit;
 }

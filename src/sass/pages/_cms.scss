@@ -13,10 +13,7 @@
 
   .code__label {
     display: block;
-    margin: 0 auto;
     padding-top: 0;
-    width: 100%;
-    max-width: 60rem;
   }
   
   code[class][class*="language-"],
@@ -27,10 +24,10 @@
   }
   
   pre[class][class*="language-"] {
-    margin: 0 auto $space-xxl;
+    margin-bottom:  $space-xxl;
     padding-top: 0;
     width: 100%;
-    max-width: 60rem;
+    max-width: 65rem;
     font-size: $default-paragraph-size;
     font-size: inherit;
   

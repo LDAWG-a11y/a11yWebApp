@@ -11,7 +11,7 @@ codeBlocks.forEach(block => {
 
 const toggleTabStopOnTable = () => {
   tables.forEach((table, idx) => {
-    if (table.scrollWidth > (document.documentElement.clientWidth - 16)) {
+    if (table.scrollWidth > window.innerWidth) {
       table.setAttribute('tabindex', '0');
       if (table.querySelector('caption')) {
         table.querySelector('caption').id = `caption-${idx + 1}`;
@@ -29,6 +29,8 @@ const toggleTabStopOnTable = () => {
     }
   })
 }
+
+
 
 window.addEventListener('resize', toggleTabStopOnTable);
 window.onresize = toggleTabStopOnTable;

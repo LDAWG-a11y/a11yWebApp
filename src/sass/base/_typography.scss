@@ -103,6 +103,7 @@ h3 {
 }
 
 h4 {
+  margin-bottom: $space-md;
   font-size: 1.5rem;
 
   @include mq.mq($from:lg) {
@@ -111,6 +112,7 @@ h4 {
 }
 
 h5 {
+  margin-bottom: $space-md;
   font-size: 1.3rem;
 
   @include mq.mq($from:lg) {
@@ -119,6 +121,7 @@ h5 {
 }
 
 h6 {
+  margin-bottom: $space-md;
   font-size: 1.25rem;
 
   @include mq.mq($from:lg) {
