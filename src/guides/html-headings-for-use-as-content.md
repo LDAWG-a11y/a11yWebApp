@@ -7,6 +7,7 @@ author: swilkinson
 date: 2022-10-06
 tags:
   - HTML
+  - Heading
 ---
 ## Introduction to content headings
 
