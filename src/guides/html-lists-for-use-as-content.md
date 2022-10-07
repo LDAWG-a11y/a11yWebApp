@@ -655,11 +655,6 @@ If we have a unordered list like this
 </ul>
 ```
 
-<ul>
-  <li><a href="/">Home</a></li>
-  <li><a href="/about/">About</a></li>
-  <li><a href="/guides/">Guides</a></li>
-  <li><a href="/faqs/">FAQs</a></li>
-</ul>
+![Unordered list without css to style the list into a menu](src/guideImg/navig-no-css.png)
 
 We can use CSS styling to produce a navigation menu that looks like this
