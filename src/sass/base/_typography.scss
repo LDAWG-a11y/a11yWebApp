@@ -152,6 +152,7 @@ a:not([class]):visited {
 
 ul:not([class]) {
   margin-bottom: $space-xxxl;
+  margin-left: $space-lg;
 }
 
 ul:not([class]) > li > ul {

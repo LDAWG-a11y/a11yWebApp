@@ -37,6 +37,7 @@
 .glossary__term {
   overflow-wrap: break-word;
   hyphens: auto;
+  font-weight: bold;
 
   @include mq.mq($from:md) {
     width: 20%;
