@@ -62,18 +62,20 @@ Unordered lists start with a `<UL>` and end with a `</UL>` and each list item st
 
 Which looks like this:
 
-1. Sir Terry Pratchett
-2. Douglas Adams
-3. J.R.R Tolkien
-4. Arthur Ransome
-5. Isaac Asimov
-6. Robert E. Howard
-7. Arthur C. Clarke
-8. Michael Moorcock
-9. Sir Arthur Conan Doyle
-10. Agatha Christie
-11. Brian Aldiss
-12. Philip Pullman
+<ol>
+    <li>Sir Terry Pratchett</li>
+    <li>Douglas Adams</li>
+    <li>J.R.R Tolkien</li>
+    <li>Arthur Ransome</li>
+    <li>Isaac Asimov</li>
+    <li>Robert E. Howard</li>
+    <li>Arthur C. Clarke</li>
+    <li>Michael Moorcock</li>
+    <li>Sir Arthur Conan Doyle</li>
+    <li>Agatha Christie</li>
+    <li>Brian Aldiss</li>
+    <li>Philip Pullman</li>  
+</ol>
 
 ### The Type attribute
 
@@ -81,6 +83,7 @@ The Type attribute is deprecated and an explanation of using style sheets is sho
 
 Note: Unless the type of the list number matters such as legal or technical documents where items are referenced by their number or letter, use the CSS list-style-type property instead such as lists with 1., 1.1, and 1.1.1 numbers.
 The Type attribute is used to define the style of the ordering:
+
 <table>
 	<caption>Split of marks across course</caption>
 	<tr>		
