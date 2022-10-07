@@ -19,7 +19,7 @@ collections:
       - { label: "Author", name: "author", widget: "relation", collection: "authors", value_field: "key", display_fields: [ "name" ], search_fields: [ "name" ], default: "Anonymous", hint: "New authors need to be created before a guide can be attributed to them "}
       - { label: "Date", name: "date", widget: "datetime", format: 'YYYY-MM-DD', hint: "Only change this if you update your guide"}
       - { label: "Tags", name: "tags", widget: "list", hint: "Tags are case sensitive, so html and HTML are not the same tag, so please ensure you have checked a tag exists, before creating a new one, as a typo or case mismatch will cause a system error", default: Untagged, summary: "{{fields.tag}}", field: { label: "Tag", name: "tag", widget: "string" }}
-      - { label: "Include files", name: "file", widget: "file", required: false, media_folder: "/src/docs", public_folder: "docs", media_library: {config: {multiple: true}} }
+      - { label: "Include files", name: "file", widget: "file", required: false, media_folder: "/src/docs", public_folder: "/docs", media_library: {config: {multiple: true}} }
       - { label: "Page content", name: "body", widget: "markdown" }
   - name: "authors"
     label: "Authors"
@@ -53,7 +53,7 @@ collections:
       - { label: "Answer", name: "body", widget: "markdown" }
       - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should not be changed" }
       - { label: "Tags", name: "tags", default: "faqs", widget: "hidden" }
-      - { label: "Include files", name: "file", widget: "file", required: false, media_folder: "/src/docs", public_folder: "docs", media_library: {config: {multiple: true}} }
+      - { label: "Include files", name: "file", widget: "file", required: false, media_folder: "/src/docs", public_folder: "/docs", media_library: {config: {multiple: true}} }
       - { label: "Permalink", name: "permalink", default: false, widget: "hidden" }
   - name: "terms"
     label: "Glossary"
