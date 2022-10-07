@@ -123,3 +123,73 @@ Note: Unless the type of the list number matters such as legal or technical docu
 
 * [D﻿eveloper Mozilla Ordered List](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol) (external website)
 * [D﻿eveloper Mozilla List Style Type](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type) (external website)
+
+#### type="1"
+
+```html
+<ol type="1">
+  	<li>Sir Terry Pratchett</li>
+  	<li>Douglas Adams</li>
+  	<li>J.R.R Tolkien</li>
+ 	<li>Arthur Ransome</li>
+  	<li>Isaac Asimov</li>
+  	<li>Robert E. Howard</li>
+  	<li>Arthur C. Clarke</li>
+  	<li>Michael Moorcock</li>
+ 	<li>Sir Arthur Conan Doyle</li> 
+</ol>
+
+```
+
+<ol type="1">
+  	<li>Sir Terry Pratchett</li>
+  	<li>Douglas Adams</li>
+  	<li>J.R.R Tolkien</li>
+ 	<li>Arthur Ransome</li>
+  	<li>Isaac Asimov</li>
+  	<li>Robert E. Howard</li>
+  	<li>Arthur C. Clarke</li>
+  	<li>Michael Moorcock</li>
+ 	<li>Sir Arthur Conan Doyle</li> 
+</ol>
+
+#### arabic numbers
+
+```html
+<style>
+	ol.withroman { list-style-type: decimal }
+</style>
+<ol class="withroman">
+	<li>Sir Terry Pratchett</li>
+	<li>Douglas Adams</li>
+	<li>J.R.R Tolkien</li>
+	<li>Arthur Ransome</li>
+	<li>Isaac Asimov</li>
+	<li>Robert E. Howard</li>
+	<li>Arthur C. Clarke</li>
+	<li>Michael Moorcock</li>
+	<li>Sir Arthur Conan Doyle</li>
+	<li>Agatha Christie</li>
+	<li>Brian Aldiss</li>
+	<li>Philip Pullman</li>  
+</ol>
+```
+
+<style>
+	ol.withroman { list-style-type: decimal }
+</style>
+
+<ol class="withroman">
+	<li>Sir Terry Pratchett</li>
+	<li>Douglas Adams</li>
+	<li>J.R.R Tolkien</li>
+	<li>Arthur Ransome</li>
+	<li>Isaac Asimov</li>
+	<li>Robert E. Howard</li>
+	<li>Arthur C. Clarke</li>
+	<li>Michael Moorcock</li>
+	<li>Sir Arthur Conan Doyle</li>
+	<li>Agatha Christie</li>
+	<li>Brian Aldiss</li>
+	<li>Philip Pullman</li>  
+</ol>
