@@ -640,3 +640,25 @@ This is set using the following `style="list-style-type:square;"`
   	<li>Michael Moorcock</li>
  	<li>Sir Arthur Conan Doyle</li> 
 </ul>
+
+### Using CSS to produce horizontal lists
+
+If we have a unordered list like this
+
+```html
+<ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/about/">About</a></li>
+  <li><a href="/guides/">Guides</a></li>
+  <li><a href="/faqs/">FAQs</a></li>
+</ul>
+```
+
+<ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/about/">About</a></li>
+  <li><a href="/guides/">Guides</a></li>
+  <li><a href="/faqs/">FAQs</a></li>
+</ul>
+
+We can use CSS styling to produce a navigation menu that looks like this
