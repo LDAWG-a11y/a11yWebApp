@@ -191,3 +191,430 @@ Note: Unless the type of the list number matters such as legal or technical docu
 	<li>Brian Aldiss</li>
 	<li>Philip Pullman</li>  
 </ol>
+
+#### type="A"
+
+```html
+<ol type="A">
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
+</ol>
+```
+
+<ol type="A">
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
+</ol>
+
+#### upper-alpha
+
+```html
+<style>
+	ol.withroman { list-style-type: upper-alpha }
+</style>
+<ol class="withroman">
+	<li>Sir Terry Pratchett</li>
+	<li>Douglas Adams</li>
+	<li>J.R.R Tolkien</li>
+	<li>Arthur Ransome</li>
+	<li>Isaac Asimov</li>
+	<li>Robert E. Howard</li>
+	<li>Arthur C. Clarke</li>
+	<li>Michael Moorcock</li>
+	<li>Sir Arthur Conan Doyle</li> 
+</ol>
+```
+
+<style>
+	ol.withroman { list-style-type: upper-alpha }
+</style>
+
+<ol class="withroman">
+	<li>Sir Terry Pratchett</li>
+	<li>Douglas Adams</li>
+	<li>J.R.R Tolkien</li>
+	<li>Arthur Ransome</li>
+	<li>Isaac Asimov</li>
+	<li>Robert E. Howard</li>
+	<li>Arthur C. Clarke</li>
+	<li>Michael Moorcock</li>
+	<li>Sir Arthur Conan Doyle</li> 
+</ol>
+
+#### type="a"
+
+```html
+<ol type="a">
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
+</ol>
+```
+
+<ol type="a">
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
+</ol>
+
+#### lower-alpha
+
+```html
+<style>
+    ol.withroman { list-style-type: lower-alpha }
+</style>
+<ol class="withroman">
+  	<li>Sir Terry Pratchett</li>
+  	<li>Douglas Adams</li>
+  	<li>J.R.R Tolkien</li>
+  	<li>Arthur Ransome</li>
+  	<li>Isaac Asimov</li>
+  	<li>Robert E. Howard</li>
+  	<li>Arthur C. Clarke</li>
+  	<li>Michael Moorcock</li>
+ 	 <li>Sir Arthur Conan Doyle</li> 
+</ol>
+```
+
+<style>
+ol.withroman { list-style-type: lower-alpha }
+</style>
+
+<ol class="withroman">
+  	<li>Sir Terry Pratchett</li>
+  	<li>Douglas Adams</li>
+  	<li>J.R.R Tolkien</li>
+  	<li>Arthur Ransome</li>
+  	<li>Isaac Asimov</li>
+  	<li>Robert E. Howard</li>
+  	<li>Arthur C. Clarke</li>
+  	<li>Michael Moorcock</li>
+ 	 <li>Sir Arthur Conan Doyle</li> 
+</ol>
+
+#### type="I"
+
+```html
+<ol type="I">
+  	<li>Sir Terry Pratchett</li>
+  	<li>Douglas Adams</li>
+ 	 <li>J.R.R Tolkien</li>
+  	<li>Arthur Ransome</li>
+  	<li>Isaac Asimov</li>
+  	<li>Robert E. Howard</li>
+  	<li>Arthur C. Clarke</li>
+ 	 <li>Michael Moorcock</li>
+ 	 <li>Sir Arthur Conan Doyle</li> 
+</ol>
+```
+
+<ol type="I">
+  	<li>Sir Terry Pratchett</li>
+  	<li>Douglas Adams</li>
+ 	 <li>J.R.R Tolkien</li>
+  	<li>Arthur Ransome</li>
+  	<li>Isaac Asimov</li>
+  	<li>Robert E. Howard</li>
+  	<li>Arthur C. Clarke</li>
+ 	 <li>Michael Moorcock</li>
+ 	 <li>Sir Arthur Conan Doyle</li> 
+</ol>
+
+#### upper-roman
+
+```html
+<style>
+    ol.withroman { list-style-type: upper-roman }
+</style>
+<ol class="withroman">
+  	<li>Sir Terry Pratchett</li>
+  	<li>Douglas Adams</li>
+  	<li>J.R.R Tolkien</li>
+  	<li>Arthur Ransome</li>
+  	<li>Isaac Asimov</li>
+  	<li>Robert E. Howard</li>
+  	<li>Arthur C. Clarke</li>
+  	<li>Michael Moorcock</li>
+ 	 <li>Sir Arthur Conan Doyle</li> 
+</ol>
+```
+
+<style>
+    ol.withroman { list-style-type: upper-roman }
+</style>
+
+<ol class="withroman">
+  	<li>Sir Terry Pratchett</li>
+  	<li>Douglas Adams</li>
+  	<li>J.R.R Tolkien</li>
+  	<li>Arthur Ransome</li>
+  	<li>Isaac Asimov</li>
+  	<li>Robert E. Howard</li>
+  	<li>Arthur C. Clarke</li>
+  	<li>Michael Moorcock</li>
+ 	 <li>Sir Arthur Conan Doyle</li> 
+</ol>
+
+#### type="i"
+
+```html
+<ol type="i">
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
+</ol>
+```
+
+<ol type="i">
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
+</ol>
+
+#### lower-roman
+
+```
+<style>
+    ol.withroman { list-style-type: lower-roman }
+</style>
+<ol class="withroman">
+	<li>Sir Terry Pratchett</li>
+	<li>Douglas Adams</li>
+	<li>J.R.R Tolkien</li>
+	<li>Arthur Ransome</li>
+	<li>Isaac Asimov</li>
+	<li>Robert E. Howard</li>
+	<li>Arthur C. Clarke</li>
+	<li>Michael Moorcock</li>
+	<li>Sir Arthur Conan Doyle</li>  
+</ol> 
+```
+
+<style>
+    ol.withroman { list-style-type: lower-roman }
+</style>
+
+<ol class="withroman">
+	<li>Sir Terry Pratchett</li>
+	<li>Douglas Adams</li>
+	<li>J.R.R Tolkien</li>
+	<li>Arthur Ransome</li>
+	<li>Isaac Asimov</li>
+	<li>Robert E. Howard</li>
+	<li>Arthur C. Clarke</li>
+	<li>Michael Moorcock</li>
+	<li>Sir Arthur Conan Doyle</li>  
+</ol> 
+
+#### Start attribute
+
+Using the start attribute allows you to start the list from a number larger than 1 so start="10" in the code
+
+```html
+<ol start="10">
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li>
+  <li>Agatha Christie</li>
+  <li>Brian Aldiss</li>
+  <li>Philip Pullman</li>  
+</ol>
+```
+
+<ol start="10">
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li>
+  <li>Agatha Christie</li>
+  <li>Brian Aldiss</li>
+  <li>Philip Pullman</li>  
+</ol>
+
+## List items
+
+Within the list item `<LI>` HTML can be used such as` <LI><STRONG>`Ford`</STRONG>` Prefect`</LI>`
+
+## Nested Lists
+
+Nested lists are lists nested within another list.
+
+```html
+<ul>
+  <li>Fast Escorts
+  <ul>
+      <li>Mexico</li>
+      <li>RS1600</li>
+      <li>RS1800</li>
+      <li>RS2000</li>
+      <li>RS2000 Droop Snoot</li>
+    </ul>
+  </li>
+  <li>Fast Capri’s
+    <ul>
+      <li>1600GT</li>
+      <li>1.6S</li>
+      <li>2000GT</li>
+      <li>2.0S</li>
+      <li>RS2600</li>
+      <li>2.8i</li>
+      <li>2.8 Turbo</li>
+      <li>280</li>
+      <li>Tickford Turbo</li>
+      <li>3000GT</li>
+      <li>3.0S</li>
+      <li>RS3100</li>
+    </ul>
+  </li>
+</ul>
+```
+
+<ul>
+  <li>Fast Escorts
+  <ul>
+      <li>Mexico</li>
+      <li>RS1600</li>
+      <li>RS1800</li>
+      <li>RS2000</li>
+      <li>RS2000 Droop Snoot</li>
+    </ul>
+  </li>
+  <li>Fast Capri’s
+    <ul>
+      <li>1600GT</li>
+      <li>1.6S</li>
+      <li>2000GT</li>
+      <li>2.0S</li>
+      <li>RS2600</li>
+      <li>2.8i</li>
+      <li>2.8 Turbo</li>
+      <li>280</li>
+      <li>Tickford Turbo</li>
+      <li>3000GT</li>
+      <li>3.0S</li>
+      <li>RS3100</li>
+    </ul>
+  </li>
+</ul>
+
+## Description Lists
+
+Description lists are lists which consist of terms and their descriptions such as 
+
+```html
+<dl>
+ 	<dt>Ford Escort RS Mexico</dt>
+<dd>- Fast Ford</dd>
+	<dt> Ford Escort Popular</dt>
+	<dd>- Slow Ford</dd>
+</dl>
+
+```
+
+<dl>
+ 	<dt>Ford Escort RS Mexico</dt>
+<dd>- Fast Ford</dd>
+	<dt> Ford Escort Popular</dt>
+	<dd>- Slow Ford</dd>
+</dl>
+
+w﻿here the following html tags are used:
+
+<﻿ul>
+
+<﻿li>`<dl>` - description list</li> 
+
+<﻿li>`<dt>` -  term (name)</li>
+
+<﻿li>`<dd>` - description of term</li>
+
+<﻿/ul>
+
+## Styling Lists
+
+The list-style-type CSS property is used to change the style of the bullet points.
+
+### list-style-type CSS property
+
+<table>
+	<caption>list-style-type</caption>
+	<thead>
+		<tr>
+			<th scope="col">Value</th>
+			<th scope="col">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row">disc</th>
+			<td>List item marker is set to a bullet (default)</td>
+		</tr>
+		<tr>
+			<th scope="row">circle</th>
+			<td>List item marker is set to a circle</td>
+		</tr>
+		<tr>
+			<th scope="row">square</th>
+			<td>List item marker is set to a square</td>
+		</tr>
+		<tr>
+			<th scope="row">none</th>
+			<td>List items will not be marked</td>
+		</tr>
+	</tbody>
+</table>
+
+This is set using the following 
+
+```html
+<ul style="list-style-type:disc;">
+```
