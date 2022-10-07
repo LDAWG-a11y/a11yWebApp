@@ -658,3 +658,31 @@ If we have a unordered list like this
 ![Unordered list without css to style the list into a menu](src/guideImg/navig-no-css.png)
 
 We can use CSS styling to produce a navigation menu that looks like this
+
+```
+<style>
+	.main-nav__list {
+		list-style-type: none;
+		display: flex;
+		justify-content: space-evenly;
+		background-color: blue;		
+	}
+
+	.main-nav__item {
+		position: relative;		
+	}
+
+	.main-nav__link {
+		position: relative;					
+		color: white;
+	}
+</style>
+<ul class="main-nav__list">
+	<li class="main-nav__item"><a class="main-nav__link" href="/">Home</a></li>
+	<li class="main-nav__item"><a class="main-nav__link" href="/about/">About</a></li>
+	<li class="main-nav__item"><a class="main-nav__link" href="/guides/">Guides</a></li>
+	<li class="main-nav__item"><a class="main-nav__link" href="/faqs/">FAQs</a></li>
+</ul>
+```
+
+![Unordered list styles with CSS to appear as a menu](src/guideImg/navig-css.png)
