@@ -613,7 +613,7 @@ The list-style-type CSS property is used to change the style of the bullet point
 	</tbody>
 </table>
 
-This is set using the following 
+This is set using the following `style="list-style-type:square;"`
 
 ```html
 <ul style="list-style-type:square;">
