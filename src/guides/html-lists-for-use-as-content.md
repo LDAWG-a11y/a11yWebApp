@@ -411,7 +411,7 @@ ol.withroman { list-style-type: lower-alpha }
 
 #### lower-roman
 
-```
+```html
 <style>
     ol.withroman { list-style-type: lower-roman }
 </style>
