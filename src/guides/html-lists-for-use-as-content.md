@@ -659,7 +659,7 @@ If we have a unordered list like this
 
 We can use CSS styling to produce a navigation menu that looks like this
 
-```
+```html
 <style>
 	.main-nav__list {
 		list-style-type: none;
@@ -686,3 +686,79 @@ We can use CSS styling to produce a navigation menu that looks like this
 ```
 
 ![Unordered list styles with CSS to appear as a menu](src/guideImg/navig-css.png)
+
+### Using CSS to produce lists with 1.1.1 numbers
+
+```html
+<style>
+ol {
+	counter-reset: item;
+	list-style-type: none;
+}
+
+li::before {
+	content: counters(item, ".") ". ";
+	counter-increment: item;
+}
+</style>
+<ol>
+	  <li>Ford
+		<ol>
+		  <li>Escort
+			<ol>
+				<li>Mexico</li>
+				<li>RS1600</li>				
+			</ol>
+		  </li>
+		  <li>Capri</li>
+		</ol>
+	</li>
+	  <li>Opel
+		<ol>
+		  <li>Manta</li>		  
+		</ol>
+	  </li>
+</ol>
+
+```
+
+<style>
+ol {
+	counter-reset: item;
+	list-style-type: none;
+}
+
+li::before {
+	content: counters(item, ".") ". ";
+	counter-increment: item;
+}
+</style>
+
+<ol>
+	  <li>Ford
+		<ol>
+		  <li>Escort
+			<ol>
+				<li>Mexico</li>
+				<li>RS1600</li>				
+			</ol>
+		  </li>
+		  <li>Capri</li>
+		</ol>
+	</li>
+	  <li>Opel
+		<ol>
+		  <li>Manta</li>		  
+		</ol>
+	  </li>
+</ol>
+
+## Wrapping up
+
+Hopefully this guide has helped you to understand a bit more of using HTML lists for content. 
+
+### Useful links
+
+* [W﻿3C Lists](https://www.w3.org/TR/html4/struct/lists.html) (external link)
+* [D﻿eveloper Mozilla Ordered Lists](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol) (external link)
+* [W﻿3Schools HTML Lists](https://www.w3schools.com/html/html_lists.asp) (external link)
