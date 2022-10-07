@@ -77,6 +77,8 @@ Which looks like this:
     <li>Philip Pullman</li>  
 </ol>
 
+
+
 ### The Type attribute
 
 The Type attribute is deprecated and an explanation of using style sheets is shown after this. Type examples are shown as you many come across examples of this in old HTML code
