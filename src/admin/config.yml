@@ -79,3 +79,14 @@ collections:
         name: "about"
         fields:
           - {label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
+        - label: "Privacy policy"
+        name: "privacy"
+        file: "/src/privacy.md"
+        fields:
+          - { label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
+        - label: "Home"
+        name: "home"
+        file: "/src/index.md"
+        fields:
+          - { label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
+          
