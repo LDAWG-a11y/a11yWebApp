@@ -60,8 +60,6 @@ Unordered lists start with a `<UL>` and end with a `</UL>` and each list item st
 </ol>
 ```
 
-Which looks like this:
-
 <ol>
     <li>Sir Terry Pratchett</li>
     <li>Douglas Adams</li>
