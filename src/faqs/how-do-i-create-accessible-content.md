@@ -1,9 +1,11 @@
 ---
 title: How do I create accessible content?
-date: 2022-10-02
+date: 2022-10-07
 tags: faqs
 permalink: false
 ---
-We have produced a range of guidance to help and support colleagues. There are excellent guides and videos available from Microsoft, Adobe and LinkedIn Learning. Please see the resources section and choose the guidance related to the types of content you produce.    
+Specific guidance depends on what content you are trying to make accessible but there are always things you can do to be more inclusive with your content.
 
-Please follow guidance when creating content or updating documents, view the ‘[Key Accessibility Tip](http://vle.westminster.ac.uk/accessibility/#/lessons/iz0Q7ZKt3CZAKu2hlng4VYlq8n_TvBqZ)s’ section of [Accessibility guidance](http://vle.westminster.ac.uk/accessibility/?mc_cid=91af8ee21c&mc_eid=%5bUNIQID%5d#/%23/) and the [4 steps to more accessible content ](http://blog.westminster.ac.uk/blackboardhelp/accessibility/)to help you with this.
+We have produced a range of [guidance to help and support accessible content creation](https://www.makethingsaccessible.com/tags/content) including Microsoft Office documents, PDFs, images and graphics, maps, videos and more.
+
+There are also excellent guides and videos available from Microsoft, Adobe and LinkedIn Learning.
