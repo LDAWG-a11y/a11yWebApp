@@ -20,60 +20,60 @@ We use lists to display lists of information whether they are ordered, unordered
 
 ## DIR and MENU should not be used
 
-`DIR` elements were used for creating multicolumn directory lists and the `MENU` element was for single column menu lists but are now deprecated. Use `UL` instead.
+`dir` elements were used for creating multicolumn directory lists and the `menu` element was for single column menu lists but are now deprecated. Use `ul` instead.
 
 ## Unordered Lists
 
-Unordered lists `<UL>` are lists that do not have any order and display with a bullet point such as:
+Unordered lists `<ul>` are lists that do not have any order and display with a bullet point such as:
 
 * Ford Prefect
 * Austin Healy
 * Morris Oxford
 * Jowett Jupiter
 
-Unordered lists start with a `<UL>` and end with a `</UL>` and each list item starts with a `<LI>` and ends with a `</LI>` for example:
+Unordered lists start with a `<ul>` and end with a `</ul>` and each list item starts with a `<li>` and ends with a `</li>` for example:
 
 ```html
-<UL>
-	<LI>Ford Prefect</LI>
-    <LI>Austin Healy</LI>
-    <LI>Morris Oxford</LI>
-    <LI>Jowett Jupiter</LI>
-</UL>
+<ul>
+  <li>Ford Prefect</li>
+  <li>Austin Healy</li>
+  <li>Morris Oxford</li>
+  <li>Jowett Jupiter</li>
+</ul>
 ```
 
 ## Ordered Lists
 
 ```html
 <ol>
-    <li>Sir Terry Pratchett</li>
-    <li>Douglas Adams</li>
-    <li>J.R.R Tolkien</li>
-    <li>Arthur Ransome</li>
-    <li>Isaac Asimov</li>
-    <li>Robert E. Howard</li>
-    <li>Arthur C. Clarke</li>
-    <li>Michael Moorcock</li>
-    <li>Sir Arthur Conan Doyle</li>
-    <li>Agatha Christie</li>
-    <li>Brian Aldiss</li>
-    <li>Philip Pullman</li>  
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li>
+  <li>Agatha Christie</li>
+  <li>Brian Aldiss</li>
+  <li>Philip Pullman</li>  
 </ol>
 ```
 
 <ol>
-    <li>Sir Terry Pratchett</li>
-    <li>Douglas Adams</li>
-    <li>J.R.R Tolkien</li>
-    <li>Arthur Ransome</li>
-    <li>Isaac Asimov</li>
-    <li>Robert E. Howard</li>
-    <li>Arthur C. Clarke</li>
-    <li>Michael Moorcock</li>
-    <li>Sir Arthur Conan Doyle</li>
-    <li>Agatha Christie</li>
-    <li>Brian Aldiss</li>
-    <li>Philip Pullman</li>  
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li>
+  <li>Agatha Christie</li>
+  <li>Brian Aldiss</li>
+  <li>Philip Pullman</li>  
 </ol>
 
 ### The Type attribute
@@ -127,58 +127,55 @@ Note: Unless the type of the list number matters such as legal or technical docu
 
 ```html
 <ol type="1">
-  	<li>Sir Terry Pratchett</li>
-  	<li>Douglas Adams</li>
-  	<li>J.R.R Tolkien</li>
- 	<li>Arthur Ransome</li>
-  	<li>Isaac Asimov</li>
-  	<li>Robert E. Howard</li>
-  	<li>Arthur C. Clarke</li>
-  	<li>Michael Moorcock</li>
- 	<li>Sir Arthur Conan Doyle</li> 
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
 </ol>
 
 ```
 
 <ol type="1">
-  	<li>Sir Terry Pratchett</li>
-  	<li>Douglas Adams</li>
-  	<li>J.R.R Tolkien</li>
- 	<li>Arthur Ransome</li>
-  	<li>Isaac Asimov</li>
-  	<li>Robert E. Howard</li>
-  	<li>Arthur C. Clarke</li>
-  	<li>Michael Moorcock</li>
- 	<li>Sir Arthur Conan Doyle</li> 
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
 </ol>
 
 #### arabic numbers
 
 ```html
 <style>
-	ol.withroman { list-style-type: decimal }
+  ol.decimal { list-style-type: decimal }
 </style>
-<ol class="withroman">
-	<li>Sir Terry Pratchett</li>
-	<li>Douglas Adams</li>
-	<li>J.R.R Tolkien</li>
-	<li>Arthur Ransome</li>
-	<li>Isaac Asimov</li>
-	<li>Robert E. Howard</li>
-	<li>Arthur C. Clarke</li>
-	<li>Michael Moorcock</li>
-	<li>Sir Arthur Conan Doyle</li>
-	<li>Agatha Christie</li>
-	<li>Brian Aldiss</li>
-	<li>Philip Pullman</li>  
+
+<ol class="decimal">
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li>
+  <li>Agatha Christie</li>
+  <li>Brian Aldiss</li>
+  <li>Philip Pullman</li>  
 </ol>
 ```
 
-<style>
-	ol.withroman { list-style-type: decimal }
-</style>
-
-<ol class="withroman">
+<ol class="decimal">
 	<li>Sir Terry Pratchett</li>
 	<li>Douglas Adams</li>
 	<li>J.R.R Tolkien</li>
@@ -210,24 +207,6 @@ Note: Unless the type of the list number matters such as legal or technical docu
 ```
 
 <ol type="A">
-  <li>Sir Terry Pratchett</li>
-  <li>Douglas Adams</li>
-  <li>J.R.R Tolkien</li>
-  <li>Arthur Ransome</li>
-  <li>Isaac Asimov</li>
-  <li>Robert E. Howard</li>
-  <li>Arthur C. Clarke</li>
-  <li>Michael Moorcock</li>
-  <li>Sir Arthur Conan Doyle</li> 
-</ol>
-
-#### upper-alpha
-
-```html
-<style>
-	ol.withroman { list-style-type: upper-alpha }
-</style>
-<ol class="withroman">
 	<li>Sir Terry Pratchett</li>
 	<li>Douglas Adams</li>
 	<li>J.R.R Tolkien</li>
@@ -238,13 +217,28 @@ Note: Unless the type of the list number matters such as legal or technical docu
 	<li>Michael Moorcock</li>
 	<li>Sir Arthur Conan Doyle</li> 
 </ol>
-```
 
+#### upper-alpha
+
+```html
 <style>
-	ol.withroman { list-style-type: upper-alpha }
+  ol.upper-alpha { list-style-type: upper-alpha }
 </style>
 
-<ol class="withroman">
+<ol class="upper-alpha">
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
+</ol>
+```
+
+<ol class="upper-alpha">
 	<li>Sir Terry Pratchett</li>
 	<li>Douglas Adams</li>
 	<li>J.R.R Tolkien</li>
@@ -273,6 +267,25 @@ Note: Unless the type of the list number matters such as legal or technical docu
 ```
 
 <ol type="a">
+	<li>Sir Terry Pratchett</li>
+	<li>Douglas Adams</li>
+	<li>J.R.R Tolkien</li>
+	<li>Arthur Ransome</li>
+	<li>Isaac Asimov</li>
+	<li>Robert E. Howard</li>
+	<li>Arthur C. Clarke</li>
+	<li>Michael Moorcock</li>
+	<li>Sir Arthur Conan Doyle</li> 
+</ol>
+
+#### lower-alpha
+
+```html
+<style>
+  ol.lower-alpha { list-style-type: lower-alpha }
+</style>
+
+<ol class="lower-alpha">
   <li>Sir Terry Pratchett</li>
   <li>Douglas Adams</li>
   <li>J.R.R Tolkien</li>
@@ -283,103 +296,78 @@ Note: Unless the type of the list number matters such as legal or technical docu
   <li>Michael Moorcock</li>
   <li>Sir Arthur Conan Doyle</li> 
 </ol>
-
-#### lower-alpha
-
-```html
-<style>
-    ol.withroman { list-style-type: lower-alpha }
-</style>
-<ol class="withroman">
-  	<li>Sir Terry Pratchett</li>
-  	<li>Douglas Adams</li>
-  	<li>J.R.R Tolkien</li>
-  	<li>Arthur Ransome</li>
-  	<li>Isaac Asimov</li>
-  	<li>Robert E. Howard</li>
-  	<li>Arthur C. Clarke</li>
-  	<li>Michael Moorcock</li>
- 	 <li>Sir Arthur Conan Doyle</li> 
-</ol>
 ```
 
-<style>
-ol.withroman { list-style-type: lower-alpha }
-</style>
-
-<ol class="withroman">
-  	<li>Sir Terry Pratchett</li>
-  	<li>Douglas Adams</li>
-  	<li>J.R.R Tolkien</li>
-  	<li>Arthur Ransome</li>
-  	<li>Isaac Asimov</li>
-  	<li>Robert E. Howard</li>
-  	<li>Arthur C. Clarke</li>
-  	<li>Michael Moorcock</li>
- 	 <li>Sir Arthur Conan Doyle</li> 
+<ol class="lower-alpha">
+	<li>Sir Terry Pratchett</li>
+	<li>Douglas Adams</li>
+	<li>J.R.R Tolkien</li>
+	<li>Arthur Ransome</li>
+	<li>Isaac Asimov</li>
+	<li>Robert E. Howard</li>
+	<li>Arthur C. Clarke</li>
+	<li>Michael Moorcock</li>
+	<li>Sir Arthur Conan Doyle</li> 
 </ol>
 
 #### type="I"
 
 ```html
 <ol type="I">
-  	<li>Sir Terry Pratchett</li>
-  	<li>Douglas Adams</li>
- 	 <li>J.R.R Tolkien</li>
-  	<li>Arthur Ransome</li>
-  	<li>Isaac Asimov</li>
-  	<li>Robert E. Howard</li>
-  	<li>Arthur C. Clarke</li>
- 	 <li>Michael Moorcock</li>
- 	 <li>Sir Arthur Conan Doyle</li> 
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
 </ol>
 ```
 
 <ol type="I">
-  	<li>Sir Terry Pratchett</li>
-  	<li>Douglas Adams</li>
- 	 <li>J.R.R Tolkien</li>
-  	<li>Arthur Ransome</li>
-  	<li>Isaac Asimov</li>
-  	<li>Robert E. Howard</li>
-  	<li>Arthur C. Clarke</li>
- 	 <li>Michael Moorcock</li>
- 	 <li>Sir Arthur Conan Doyle</li> 
+	<li>Sir Terry Pratchett</li>
+	<li>Douglas Adams</li>
+	<li>J.R.R Tolkien</li>
+	<li>Arthur Ransome</li>
+	<li>Isaac Asimov</li>
+	<li>Robert E. Howard</li>
+	<li>Arthur C. Clarke</li>
+	<li>Michael Moorcock</li>
+	<li>Sir Arthur Conan Doyle</li> 
 </ol>
 
 #### upper-roman
 
 ```html
 <style>
-    ol.withroman { list-style-type: upper-roman }
+  ol.upper-roman { list-style-type: upper-roman }
 </style>
-<ol class="withroman">
-  	<li>Sir Terry Pratchett</li>
-  	<li>Douglas Adams</li>
-  	<li>J.R.R Tolkien</li>
-  	<li>Arthur Ransome</li>
-  	<li>Isaac Asimov</li>
-  	<li>Robert E. Howard</li>
-  	<li>Arthur C. Clarke</li>
-  	<li>Michael Moorcock</li>
- 	 <li>Sir Arthur Conan Doyle</li> 
+
+<ol class="upper-roman">
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
 </ol>
 ```
 
-<style>
-    ol.withroman { list-style-type: upper-roman }
-</style>
-
-<ol class="withroman">
-  	<li>Sir Terry Pratchett</li>
-  	<li>Douglas Adams</li>
-  	<li>J.R.R Tolkien</li>
-  	<li>Arthur Ransome</li>
-  	<li>Isaac Asimov</li>
-  	<li>Robert E. Howard</li>
-  	<li>Arthur C. Clarke</li>
-  	<li>Michael Moorcock</li>
- 	 <li>Sir Arthur Conan Doyle</li> 
+<ol class="upper-roman">
+	<li>Sir Terry Pratchett</li>
+	<li>Douglas Adams</li>
+	<li>J.R.R Tolkien</li>
+	<li>Arthur Ransome</li>
+	<li>Isaac Asimov</li>
+	<li>Robert E. Howard</li>
+	<li>Arthur C. Clarke</li>
+	<li>Michael Moorcock</li>
+	<li>Sir Arthur Conan Doyle</li> 
 </ol>
 
 #### type="i"
@@ -399,24 +387,6 @@ ol.withroman { list-style-type: lower-alpha }
 ```
 
 <ol type="i">
-  <li>Sir Terry Pratchett</li>
-  <li>Douglas Adams</li>
-  <li>J.R.R Tolkien</li>
-  <li>Arthur Ransome</li>
-  <li>Isaac Asimov</li>
-  <li>Robert E. Howard</li>
-  <li>Arthur C. Clarke</li>
-  <li>Michael Moorcock</li>
-  <li>Sir Arthur Conan Doyle</li> 
-</ol>
-
-#### lower-roman
-
-```html
-<style>
-    ol.withroman { list-style-type: lower-roman }
-</style>
-<ol class="withroman">
 	<li>Sir Terry Pratchett</li>
 	<li>Douglas Adams</li>
 	<li>J.R.R Tolkien</li>
@@ -425,15 +395,30 @@ ol.withroman { list-style-type: lower-alpha }
 	<li>Robert E. Howard</li>
 	<li>Arthur C. Clarke</li>
 	<li>Michael Moorcock</li>
-	<li>Sir Arthur Conan Doyle</li>  
+	<li>Sir Arthur Conan Doyle</li> 
+</ol>
+
+#### lower-roman
+
+```html
+<style>
+  ol.lower-roman { list-style-type: lower-roman }
+</style>
+
+<ol class="lower-roman">
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li>  
 </ol> 
 ```
 
-<style>
-    ol.withroman { list-style-type: lower-roman }
-</style>
-
-<ol class="withroman">
+<ol class="lower-roman">
 	<li>Sir Terry Pratchett</li>
 	<li>Douglas Adams</li>
 	<li>J.R.R Tolkien</li>
@@ -467,18 +452,18 @@ Using the start attribute allows you to start the list from a number larger than
 ```
 
 <ol start="10">
-  <li>Sir Terry Pratchett</li>
-  <li>Douglas Adams</li>
-  <li>J.R.R Tolkien</li>
-  <li>Arthur Ransome</li>
-  <li>Isaac Asimov</li>
-  <li>Robert E. Howard</li>
-  <li>Arthur C. Clarke</li>
-  <li>Michael Moorcock</li>
-  <li>Sir Arthur Conan Doyle</li>
-  <li>Agatha Christie</li>
-  <li>Brian Aldiss</li>
-  <li>Philip Pullman</li>  
+	<li>Sir Terry Pratchett</li>
+	<li>Douglas Adams</li>
+	<li>J.R.R Tolkien</li>
+	<li>Arthur Ransome</li>
+	<li>Isaac Asimov</li>
+	<li>Robert E. Howard</li>
+	<li>Arthur C. Clarke</li>
+	<li>Michael Moorcock</li>
+	<li>Sir Arthur Conan Doyle</li>
+	<li>Agatha Christie</li>
+	<li>Brian Aldiss</li>
+	<li>Philip Pullman</li>  
 </ol>
 
 ## List items
@@ -492,7 +477,7 @@ Nested lists are lists nested within another list.
 ```html
 <ul>
   <li>Fast Escorts
-  <ul>
+    <ul>
       <li>Mexico</li>
       <li>RS1600</li>
       <li>RS1800</li>
@@ -521,13 +506,13 @@ Nested lists are lists nested within another list.
 
 <ul>
   <li>Fast Escorts
-  <ul>
-      <li>Mexico</li>
-      <li>RS1600</li>
-      <li>RS1800</li>
-      <li>RS2000</li>
-      <li>RS2000 Droop Snoot</li>
-    </ul>
+		<ul>
+			<li>Mexico</li>
+			<li>RS1600</li>
+			<li>RS1800</li>
+			<li>RS2000</li>
+			<li>RS2000 Droop Snoot</li>
+		</ul>
   </li>
   <li>Fast Capri’s
     <ul>
@@ -553,32 +538,29 @@ Description lists are lists which consist of terms and their descriptions such a
 
 ```html
 <dl>
- 	<dt>Ford Escort RS Mexico</dt>
-<dd>- Fast Ford</dd>
-	<dt> Ford Escort Popular</dt>
-	<dd>- Slow Ford</dd>
+  <dt>Ford Escort RS Mexico</dt>
+  <dd>Fast Ford</dd>
+  <dt>Ford Escort Popular</dt>
+  <dd>Slow Ford</dd>
 </dl>
 
 ```
 
 <dl>
- 	<dt>Ford Escort RS Mexico</dt>
-<dd>- Fast Ford</dd>
-	<dt> Ford Escort Popular</dt>
-	<dd>- Slow Ford</dd>
+ 	<dt>Ford Escort RS Mexico </dt>
+	<dd>Fast Ford</dd>
+	<dt>Ford Escort Popular </dt>
+	<dd>Slow Ford</dd>
 </dl>
 
-w﻿here the following html tags are used:
+The definition of description list tags are outlined below:
 
-<﻿ul>
 
-<﻿li>`<dl>` - description list</li> 
+`<dl>` - description list
 
-<﻿li>`<dt>` -  term (name)</li>
+`<dt>` -  term (name)
 
-<﻿li>`<dd>` - description of term</li>
-
-<﻿/ul>
+`<dd>` - description of term
 
 ## Styling Lists
 
@@ -618,28 +600,28 @@ This is set using the following `style="list-style-type:square;"`
 
 ```html
 <ul style="list-style-type:square;">
-    <li>Sir Terry Pratchett</li>
-  	<li>Douglas Adams</li>
-  	<li>J.R.R Tolkien</li>
- 	<li>Arthur Ransome</li>
-  	<li>Isaac Asimov</li>
-  	<li>Robert E. Howard</li>
-  	<li>Arthur C. Clarke</li>
-  	<li>Michael Moorcock</li>
- 	<li>Sir Arthur Conan Doyle</li> 
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
 </ul>
 ```
 
 <ul style="list-style-type:square;">
-    <li>Sir Terry Pratchett</li>
-  	<li>Douglas Adams</li>
-  	<li>J.R.R Tolkien</li>
- 	<li>Arthur Ransome</li>
-  	<li>Isaac Asimov</li>
-  	<li>Robert E. Howard</li>
-  	<li>Arthur C. Clarke</li>
-  	<li>Michael Moorcock</li>
- 	<li>Sir Arthur Conan Doyle</li> 
+	<li>Sir Terry Pratchett</li>
+	<li>Douglas Adams</li>
+	<li>J.R.R Tolkien</li>
+	<li>Arthur Ransome</li>
+	<li>Isaac Asimov</li>
+	<li>Robert E. Howard</li>
+	<li>Arthur C. Clarke</li>
+	<li>Michael Moorcock</li>
+	<li>Sir Arthur Conan Doyle</li> 
 </ul>
 
 ### Using CSS to produce horizontal lists
@@ -648,10 +630,18 @@ If we have a unordered list like this
 
 ```html
 <ul>
-  <li><a href="/">Home</a></li>
-  <li><a href="/about/">About</a></li>
-  <li><a href="/guides/">Guides</a></li>
-  <li><a href="/faqs/">FAQs</a></li>
+  <li>
+    <a href="/">Home</a>
+  </li>
+  <li>
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/guides/">Guides</a>
+  </li>
+  <li>
+    <a href="/faqs/">FAQs</a>
+  </li>
 </ul>
 ```
 
@@ -661,27 +651,26 @@ We can use CSS styling to produce a navigation menu that looks like this
 
 ```html
 <style>
-	.main-nav__list {
-		list-style-type: none;
-		display: flex;
-		justify-content: space-evenly;
-		background-color: blue;		
-	}
-
-	.main-nav__item {
-		position: relative;		
-	}
-
-	.main-nav__link {
-		position: relative;					
-		color: white;
-	}
+  .main-nav__list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;	
+  }
 </style>
+
 <ul class="main-nav__list">
-	<li class="main-nav__item"><a class="main-nav__link" href="/">Home</a></li>
-	<li class="main-nav__item"><a class="main-nav__link" href="/about/">About</a></li>
-	<li class="main-nav__item"><a class="main-nav__link" href="/guides/">Guides</a></li>
-	<li class="main-nav__item"><a class="main-nav__link" href="/faqs/">FAQs</a></li>
+  <li class="main-nav__item">
+    <a href="/">Home</a>
+  </li>
+  <li class="main-nav__item">
+    <a href="/about/">About</a>
+  </li>
+  <li class="main-nav__item">
+    <a href="/guides/">Guides</a>
+  </li>
+  <li class="main-nav__item">
+    <a href="/faqs/">FAQs</a>
+  </li>
 </ul>
 ```
 
@@ -691,66 +680,48 @@ We can use CSS styling to produce a navigation menu that looks like this
 
 ```html
 <style>
-ol {
-	counter-reset: item;
-	list-style-type: none;
-}
-
-li::before {
-	content: counters(item, ".") ". ";
-	counter-increment: item;
-}
+  ::marker {
+	  content: counters(list-item,'.') '.';
+  }
 </style>
-<ol>
-	  <li>Ford
-		<ol>
-		  <li>Escort
-			<ol>
-				<li>Mexico</li>
-				<li>RS1600</li>				
-			</ol>
-		  </li>
-		  <li>Capri</li>
-		</ol>
-	</li>
-	  <li>Opel
-		<ol>
-		  <li>Manta</li>		  
-		</ol>
-	  </li>
-</ol>
 
+<ol class="multilevel">
+  <li>Ford
+    <ol>
+      <li>Escort
+        <ol>
+          <li>Mexico</li>
+          <li>RS1600</li>				
+        </ol>
+      </li>
+      <li>Capri</li>
+    </ol>
+  </li>
+  <li>Opel
+    <ol>
+      <li>Manta</li>		  
+    </ol>
+  </li>
+</ol>
 ```
 
-<style>
-ol {
-	counter-reset: item;
-	list-style-type: none;
-}
-
-li::before {
-	content: counters(item, ".") ". ";
-	counter-increment: item;
-}
-</style>
-
-<ol>
-	  <li>Ford
-		<ol>
-		  <li>Escort
-			<ol>
-				<li>Mexico</li>
-				<li>RS1600</li>				
-			</ol>
-		  </li>
-		  <li>Capri</li>
-		</ol>
-	</li>
-	  <li>Opel
-		<ol>
-		  <li>Manta</li>		  
-		</ol>
-	  </li>
+ <ol class="multilevel">
+  <li>Ford
+    <ol>
+      <li>Escort
+        <ol>
+          <li>Mexico</li>
+          <li>RS1600</li>				
+        </ol>
+      </li>
+      <li>Capri</li>
+    </ol>
+  </li>
+  <li>Opel
+    <ol>
+      <li>Manta</li>		  
+    </ol>
+  </li>
 </ol>
 
 ## Wrapping up

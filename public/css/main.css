@@ -1804,6 +1804,33 @@ ul:not([class]) > li::marker {
 .cms ol > li > ol > li > ol {
   margin: 0 0 0 1rem;
 }
+.cms ol.decimal {
+  list-style-type: decimal;
+}
+.cms ol.upper-alpha {
+  list-style-type: upper-alpha;
+}
+.cms ol.lower-alpha {
+  list-style-type: lower-alpha;
+}
+.cms ol.lower-roman {
+  list-style-type: lower-roman;
+}
+.cms ol.upper-roman {
+  list-style-type: upper-roman;
+}
+.cms .multilevel {
+  counter-reset: item;
+}
+.cms .multilevel ol {
+  margin-left: 1.5rem;
+}
+.cms .multilevel li {
+  padding-left: 0.75rem;
+}
+.cms .multilevel ::marker {
+  content: counters(list-item, ".") ".";
+}
 .cms p {
   margin-bottom: 1rem;
 }
@@ -1851,6 +1878,9 @@ ul:not([class]) > li::marker {
   display: flex;
   flex-flow: row wrap;
   margin-bottom: 2.5rem;
+}
+.cms dl > dt {
+  font-weight: 600;
 }
 .cms dl > dd {
   flex-basis: 70%;
