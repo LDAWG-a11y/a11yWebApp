@@ -1792,13 +1792,16 @@ ul:not([class]) > li::marker {
 .cms ul li p {
   margin-bottom: 0.75rem;
 }
-.cms ul {
+.cms ul,
+.cms ol {
   margin: 0 0 3rem 1.5rem;
 }
-.cms ul > li > ul {
+.cms ul > li > ul,
+.cms ol > li > ol {
   margin: 0 0 0 1rem;
 }
-.cms ul > li > ul > li > ul {
+.cms ul > li > ul > li > ul,
+.cms ol > li > ol > li > ol {
   margin: 0 0 0 1rem;
 }
 .cms p {
@@ -1808,12 +1811,6 @@ ul:not([class]) > li::marker {
   .cms p {
     margin-bottom: 1.5rem;
   }
-}
-.cms ol {
-  margin: 0 0 3rem 2rem;
-}
-.cms ol > * {
-  padding-bottom: 0.25rem;
 }
 .cms table {
   display: block;
@@ -1849,6 +1846,14 @@ ul:not([class]) > li::marker {
   width: 6px;
   background: var(--color-primary);
   background: linear-gradient(to top, var(--color-primary), var(--color-secondary));
+}
+.cms dl {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 2.5rem;
+}
+.cms dl > dd {
+  flex-basis: 70%;
 }
 .cms kbd {
   margin: 0 2px;

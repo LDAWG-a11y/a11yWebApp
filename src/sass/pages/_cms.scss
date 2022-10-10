@@ -71,15 +71,18 @@
     margin-bottom: $space-sm;
   }
 
-  ul {
+  ul,
+  ol {
     margin: 0 0 $space-xxxl $space-lg;
   }
 
-  ul > li > ul {
+  ul > li > ul,
+  ol > li > ol {
     margin: 0 0 0 $space-md;
   }
 
-  ul > li > ul > li > ul {
+  ul > li > ul > li > ul,
+  ol > li > ol > li > ol {
     margin: 0 0 0 $space-md;
   }
 
@@ -89,14 +92,6 @@
     @include mq.mq($from:md) {
       margin-bottom: $space-lg;
     }
-  }
-
-  ol {
-    margin: 0 0 $space-xxxl $space-xl;
-  }
-
-  ol > * {
-    padding-bottom: $space-xxs;
   }
 
   table {
@@ -136,6 +131,19 @@
       width: 6px;
       background: var(--color-primary);
       background: linear-gradient(to top, var(--color-primary), var(--color-secondary));
+    }
+  }
+
+  dl {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: $space-xxl;
+
+    > dt {
+    }
+
+    > dd {
+      flex-basis: 70%;
     }
   }
 
