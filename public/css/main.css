@@ -1792,8 +1792,10 @@ ul:not([class]) > li::marker {
 .cms ul li p {
   margin-bottom: 0.75rem;
 }
-.cms ul,
 .cms ol {
+  margin: 0 0 3rem calc(2.5rem + 3px);
+}
+.cms ul {
   margin: 0 0 3rem 1.5rem;
 }
 .cms ul > li > ul,
@@ -1821,6 +1823,7 @@ ul:not([class]) > li::marker {
 }
 .cms .multilevel {
   counter-reset: item;
+  margin-left: 1rem;
 }
 .cms .multilevel ol {
   margin-left: 1.5rem;

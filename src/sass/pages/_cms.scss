@@ -71,8 +71,11 @@
     margin-bottom: $space-sm;
   }
 
-  ul,
   ol {
+    margin: 0 0 $space-xxxl calc($space-xxl + 3px);
+  }
+
+  ul {
     margin: 0 0 $space-xxxl $space-lg;
   }
 
@@ -108,6 +111,7 @@
 
   .multilevel {
     counter-reset: item;
+    margin-left: $space-md;
 
     ol {
       margin-left: $space-lg;
@@ -121,8 +125,6 @@
       content: counters(list-item,'.') '.';
     }
   }
-  
-  
 
   p {
     margin-bottom: $space-md;
