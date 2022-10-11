@@ -545,9 +545,9 @@ Description lists are lists which consist of terms and their descriptions such a
 ```
 
 <dl>
-  <dt>Ford Escort RS Mexico </dt>
+  <dt>Ford Escort RS Mexico</dt>
   <dd>Fast Ford</dd>
-  <dt>Ford Escort Popular </dt>
+  <dt>Ford Escort Popular</dt>
   <dd>Slow Ford</dd>
 </dl>
 
