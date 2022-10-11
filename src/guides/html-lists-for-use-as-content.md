@@ -679,6 +679,17 @@ We can use CSS styling to produce a navigation menu that looks like this
 
 ![Unordered list styles with CSS to appear as a menu](src/guideImg/navig-css.png)
 
+#### Safari and VoiceOver
+
+VoiceOver users have requested that things that do not look like lists to visual users, do not get read out as a list to screen reader users. This means that if you style a list with `list-style: none;` then VoiceOver does not read out "List of X items".
+
+If you wish to force VoiceOver to read out "List of X items" then you will need to add a `<ul role="list">` will mean that VoiceOver will read out "List of X items".
+
+This is not a recommendation and there are different views on whether VoiceOver should work this way, and whether VoiceOver should be forced to read a list by adding `<ul role="list">`.
+
+* Scott O'Hara on [lists and Safari](https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html) (external link)
+* Smashing Magazine - [adding roles that duplicate](https://www.smashingmagazine.com/2022/09/wai-aria-guide/#adding-roles-that-duplicate-html) (external link)
+
 ### Using CSS to produce lists with 1.1.1 numbers
 
 ```css
