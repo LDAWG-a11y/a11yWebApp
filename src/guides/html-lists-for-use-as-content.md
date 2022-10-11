@@ -175,18 +175,18 @@ ol.decimal { list-style-type: decimal }
 ```
 
 <ol class="decimal">
-	<li>Sir Terry Pratchett</li>
-	<li>Douglas Adams</li>
-	<li>J.R.R Tolkien</li>
-	<li>Arthur Ransome</li>
-	<li>Isaac Asimov</li>
-	<li>Robert E. Howard</li>
-	<li>Arthur C. Clarke</li>
-	<li>Michael Moorcock</li>
-	<li>Sir Arthur Conan Doyle</li>
-	<li>Agatha Christie</li>
-	<li>Brian Aldiss</li>
-	<li>Philip Pullman</li>  
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li>
+  <li>Agatha Christie</li>
+  <li>Brian Aldiss</li>
+  <li>Philip Pullman</li>  
 </ol>
 
 #### type="A"
@@ -206,15 +206,15 @@ ol.decimal { list-style-type: decimal }
 ```
 
 <ol type="A">
-	<li>Sir Terry Pratchett</li>
-	<li>Douglas Adams</li>
-	<li>J.R.R Tolkien</li>
-	<li>Arthur Ransome</li>
-	<li>Isaac Asimov</li>
-	<li>Robert E. Howard</li>
-	<li>Arthur C. Clarke</li>
-	<li>Michael Moorcock</li>
-	<li>Sir Arthur Conan Doyle</li> 
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
 </ol>
 
 #### upper-alpha
@@ -238,15 +238,15 @@ ol.upper-alpha { list-style-type: upper-alpha }
 ```
 
 <ol class="upper-alpha">
-	<li>Sir Terry Pratchett</li>
-	<li>Douglas Adams</li>
-	<li>J.R.R Tolkien</li>
-	<li>Arthur Ransome</li>
-	<li>Isaac Asimov</li>
-	<li>Robert E. Howard</li>
-	<li>Arthur C. Clarke</li>
-	<li>Michael Moorcock</li>
-	<li>Sir Arthur Conan Doyle</li> 
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
 </ol>
 
 #### type="a"
@@ -266,15 +266,15 @@ ol.upper-alpha { list-style-type: upper-alpha }
 ```
 
 <ol type="a">
-	<li>Sir Terry Pratchett</li>
-	<li>Douglas Adams</li>
-	<li>J.R.R Tolkien</li>
-	<li>Arthur Ransome</li>
-	<li>Isaac Asimov</li>
-	<li>Robert E. Howard</li>
-	<li>Arthur C. Clarke</li>
-	<li>Michael Moorcock</li>
-	<li>Sir Arthur Conan Doyle</li> 
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
 </ol>
 
 #### lower-alpha
@@ -298,15 +298,15 @@ ol.lower-alpha { list-style-type: lower-alpha }
 ```
 
 <ol class="lower-alpha">
-	<li>Sir Terry Pratchett</li>
-	<li>Douglas Adams</li>
-	<li>J.R.R Tolkien</li>
-	<li>Arthur Ransome</li>
-	<li>Isaac Asimov</li>
-	<li>Robert E. Howard</li>
-	<li>Arthur C. Clarke</li>
-	<li>Michael Moorcock</li>
-	<li>Sir Arthur Conan Doyle</li> 
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
 </ol>
 
 #### type="I"
@@ -326,15 +326,15 @@ ol.lower-alpha { list-style-type: lower-alpha }
 ```
 
 <ol type="I">
-	<li>Sir Terry Pratchett</li>
-	<li>Douglas Adams</li>
-	<li>J.R.R Tolkien</li>
-	<li>Arthur Ransome</li>
-	<li>Isaac Asimov</li>
-	<li>Robert E. Howard</li>
-	<li>Arthur C. Clarke</li>
-	<li>Michael Moorcock</li>
-	<li>Sir Arthur Conan Doyle</li> 
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
 </ol>
 
 #### upper-roman
@@ -358,15 +358,15 @@ ol.upper-roman { list-style-type: upper-roman }
 ```
 
 <ol class="upper-roman">
-	<li>Sir Terry Pratchett</li>
-	<li>Douglas Adams</li>
-	<li>J.R.R Tolkien</li>
-	<li>Arthur Ransome</li>
-	<li>Isaac Asimov</li>
-	<li>Robert E. Howard</li>
-	<li>Arthur C. Clarke</li>
-	<li>Michael Moorcock</li>
-	<li>Sir Arthur Conan Doyle</li> 
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
 </ol>
 
 #### type="i"
@@ -386,15 +386,15 @@ ol.upper-roman { list-style-type: upper-roman }
 ```
 
 <ol type="i">
-	<li>Sir Terry Pratchett</li>
-	<li>Douglas Adams</li>
-	<li>J.R.R Tolkien</li>
-	<li>Arthur Ransome</li>
-	<li>Isaac Asimov</li>
-	<li>Robert E. Howard</li>
-	<li>Arthur C. Clarke</li>
-	<li>Michael Moorcock</li>
-	<li>Sir Arthur Conan Doyle</li> 
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
 </ol>
 
 #### lower-roman
@@ -418,15 +418,15 @@ ol.lower-roman { list-style-type: lower-roman }
 ```
 
 <ol class="lower-roman">
-	<li>Sir Terry Pratchett</li>
-	<li>Douglas Adams</li>
-	<li>J.R.R Tolkien</li>
-	<li>Arthur Ransome</li>
-	<li>Isaac Asimov</li>
-	<li>Robert E. Howard</li>
-	<li>Arthur C. Clarke</li>
-	<li>Michael Moorcock</li>
-	<li>Sir Arthur Conan Doyle</li>  
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li>  
 </ol> 
 
 #### Start attribute
@@ -451,18 +451,18 @@ Using the start attribute allows you to start the list from a number larger than
 ```
 
 <ol start="10">
-	<li>Sir Terry Pratchett</li>
-	<li>Douglas Adams</li>
-	<li>J.R.R Tolkien</li>
-	<li>Arthur Ransome</li>
-	<li>Isaac Asimov</li>
-	<li>Robert E. Howard</li>
-	<li>Arthur C. Clarke</li>
-	<li>Michael Moorcock</li>
-	<li>Sir Arthur Conan Doyle</li>
-	<li>Agatha Christie</li>
-	<li>Brian Aldiss</li>
-	<li>Philip Pullman</li>  
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li>
+  <li>Agatha Christie</li>
+  <li>Brian Aldiss</li>
+  <li>Philip Pullman</li>  
 </ol>
 
 ## List items
@@ -505,13 +505,13 @@ Nested lists are lists nested within another list.
 
 <ul>
   <li>Fast Escorts
-		<ul>
-			<li>Mexico</li>
-			<li>RS1600</li>
-			<li>RS1800</li>
-			<li>RS2000</li>
-			<li>RS2000 Droop Snoot</li>
-		</ul>
+    <ul>
+      <li>Mexico</li>
+      <li>RS1600</li>
+      <li>RS1800</li>
+      <li>RS2000</li>
+      <li>RS2000 Droop Snoot</li>
+    </ul>
   </li>
   <li>Fast Capri’s
     <ul>
@@ -545,10 +545,10 @@ Description lists are lists which consist of terms and their descriptions such a
 ```
 
 <dl>
- 	<dt>Ford Escort RS Mexico </dt>
-	<dd>Fast Ford</dd>
-	<dt>Ford Escort Popular </dt>
-	<dd>Slow Ford</dd>
+  <dt>Ford Escort RS Mexico </dt>
+  <dd>Fast Ford</dd>
+  <dt>Ford Escort Popular </dt>
+  <dd>Slow Ford</dd>
 </dl>
 
 The definition of description list tags are outlined below:
@@ -566,31 +566,31 @@ The list-style-type CSS property is used to change the style of the bullet point
 ### list-style-type CSS property
 
 <table>
-	<caption>list-style-type</caption>
-	<thead>
-		<tr>
-			<th scope="col">Value</th>
-			<th scope="col">Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<th scope="row">disc</th>
-			<td>List item marker is set to a bullet (default)</td>
-		</tr>
-		<tr>
-			<th scope="row">circle</th>
-			<td>List item marker is set to a circle</td>
-		</tr>
-		<tr>
-			<th scope="row">square</th>
-			<td>List item marker is set to a square</td>
-		</tr>
-		<tr>
-			<th scope="row">none</th>
-			<td>List items will not be marked</td>
-		</tr>
-	</tbody>
+  <caption>list-style-type</caption>
+  <thead>
+    <tr>
+      <th scope="col">Value</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">disc</th>
+      <td>List item marker is set to a bullet (default)</td>
+    </tr>
+    <tr>
+      <th scope="row">circle</th>
+        <td>List item marker is set to a circle</td>
+      </tr>
+    <tr>
+      <th scope="row">square</th>
+      <td>List item marker is set to a square</td>
+    </tr>
+    <tr>
+      <th scope="row">none</th>
+      <td>List items will not be marked</td>
+    </tr>
+  </tbody>
 </table>
 
 This is set using the following `style="list-style-type:square;"`
@@ -616,15 +616,15 @@ ul.square {
 ```
 
 <ul style="list-style-type:square;">
-	<li>Sir Terry Pratchett</li>
-	<li>Douglas Adams</li>
-	<li>J.R.R Tolkien</li>
-	<li>Arthur Ransome</li>
-	<li>Isaac Asimov</li>
-	<li>Robert E. Howard</li>
-	<li>Arthur C. Clarke</li>
-	<li>Michael Moorcock</li>
-	<li>Sir Arthur Conan Doyle</li> 
+  <li>Sir Terry Pratchett</li>
+  <li>Douglas Adams</li>
+  <li>J.R.R Tolkien</li>
+  <li>Arthur Ransome</li>
+  <li>Isaac Asimov</li>
+  <li>Robert E. Howard</li>
+  <li>Arthur C. Clarke</li>
+  <li>Michael Moorcock</li>
+  <li>Sir Arthur Conan Doyle</li> 
 </ul>
 
 ### Using CSS to produce horizontal lists
@@ -684,7 +684,7 @@ We can use CSS styling to produce a navigation menu that looks like this
 ```css
 ol {
   counter-reset: items;
-l. ist-style: none;
+  list-style: none;
 }
 
 li {
