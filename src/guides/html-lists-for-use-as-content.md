@@ -595,8 +595,14 @@ The list-style-type CSS property is used to change the style of the bullet point
 
 This is set using the following `style="list-style-type:square;"`
 
+```css
+ul.square {
+  list-style-type:square;
+}
+```
+
 ```html
-<ul style="list-style-type:square;">
+<ul class="square">
   <li>Sir Terry Pratchett</li>
   <li>Douglas Adams</li>
   <li>J.R.R Tolkien</li>
