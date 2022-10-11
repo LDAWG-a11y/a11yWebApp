@@ -654,10 +654,10 @@ We can use CSS styling to produce a navigation menu that looks like this
 
 ```css
 .main-nav__list {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-evenly;	
-  }
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;	
+}
 ```
 
 ```html
@@ -682,9 +682,19 @@ We can use CSS styling to produce a navigation menu that looks like this
 ### Using CSS to produce lists with 1.1.1 numbers
 
 ```css
- ::marker {
-	  content: counters(list-item,'.') '.';
-  }
+ol {
+  counter-reset: items;
+l. ist-style: none;
+}
+
+li {
+  counter-increment: items;
+  list-style: none;
+}
+
+li::before {
+  content: counters(items, ".") ". ";
+}
 ```
 
 ```html
