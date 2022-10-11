@@ -26,6 +26,11 @@
       <lastmod>2022-10-07T00:00:00.000Z</lastmod>
     </url>
   
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/a-new-test/</loc>
+      <lastmod>2022-10-10T00:00:00.000Z</lastmod>
+    </url>
+  
       <url>
         <loc>https://www.makethingsaccessible.com/about/</loc>
         <lastmod>2022-10-06T22:17:15.692Z</lastmod>
@@ -83,7 +88,15 @@
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
+      <loc>https://www.makethingsaccessible.com/tags/nvda/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
       <loc>https://www.makethingsaccessible.com/tags/psbar/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/screen-reader/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
 </urlset>

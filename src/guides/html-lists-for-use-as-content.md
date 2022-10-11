@@ -413,8 +413,8 @@ ol.lower-roman { list-style-type: lower-roman }
   <li>Robert E. Howard</li>
   <li>Arthur C. Clarke</li>
   <li>Michael Moorcock</li>
-  <li>Sir Arthur Conan Doyle</li>  
-</ol> 
+  <li>Sir Arthur Conan Doyle</li>
+</ol>
 ```
 
 <ol class="lower-roman">
@@ -426,8 +426,8 @@ ol.lower-roman { list-style-type: lower-roman }
 	<li>Robert E. Howard</li>
 	<li>Arthur C. Clarke</li>
 	<li>Michael Moorcock</li>
-	<li>Sir Arthur Conan Doyle</li>  
-</ol> 
+	<li>Sir Arthur Conan Doyle</li>
+</ol>
 
 #### Start attribute
 
@@ -446,7 +446,7 @@ Using the start attribute allows you to start the list from a number larger than
   <li>Sir Arthur Conan Doyle</li>
   <li>Agatha Christie</li>
   <li>Brian Aldiss</li>
-  <li>Philip Pullman</li>  
+  <li>Philip Pullman</li>
 </ol>
 ```
 
@@ -462,12 +462,12 @@ Using the start attribute allows you to start the list from a number larger than
 	<li>Sir Arthur Conan Doyle</li>
 	<li>Agatha Christie</li>
 	<li>Brian Aldiss</li>
-	<li>Philip Pullman</li>  
+	<li>Philip Pullman</li>
 </ol>
 
 ## List items
 
-Within the list item `<LI>` HTML can be used such as`<LI><STRONG>`Ford`</STRONG>` Prefect`</LI>`
+Within the list item `<li>` HTML can be used such as`<li><strong>`Ford`</strong>` Prefect`</li>`
 
 ## Nested Lists
 
