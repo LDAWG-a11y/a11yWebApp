@@ -137,7 +137,6 @@ Note: Unless the type of the list number matters such as legal or technical docu
   <li>Michael Moorcock</li>
   <li>Sir Arthur Conan Doyle</li> 
 </ol>
-
 ```
 
 <ol type="1">
@@ -154,11 +153,11 @@ Note: Unless the type of the list number matters such as legal or technical docu
 
 #### arabic numbers
 
-```html
-<style>
-  ol.decimal { list-style-type: decimal }
-</style>
+```css
+ol.decimal { list-style-type: decimal }
+```
 
+```html
 <ol class="decimal">
   <li>Sir Terry Pratchett</li>
   <li>Douglas Adams</li>
@@ -220,11 +219,11 @@ Note: Unless the type of the list number matters such as legal or technical docu
 
 #### upper-alpha
 
-```html
-<style>
-  ol.upper-alpha { list-style-type: upper-alpha }
-</style>
+```css
+ol.upper-alpha { list-style-type: upper-alpha }
+```
 
+```html
 <ol class="upper-alpha">
   <li>Sir Terry Pratchett</li>
   <li>Douglas Adams</li>
@@ -280,11 +279,11 @@ Note: Unless the type of the list number matters such as legal or technical docu
 
 #### lower-alpha
 
-```html
-<style>
-  ol.lower-alpha { list-style-type: lower-alpha }
-</style>
+```css
+ol.lower-alpha { list-style-type: lower-alpha }
+```
 
+```html
 <ol class="lower-alpha">
   <li>Sir Terry Pratchett</li>
   <li>Douglas Adams</li>
@@ -340,11 +339,11 @@ Note: Unless the type of the list number matters such as legal or technical docu
 
 #### upper-roman
 
-```html
-<style>
-  ol.upper-roman { list-style-type: upper-roman }
-</style>
+```css
+ol.upper-roman { list-style-type: upper-roman }
+```
 
+```html
 <ol class="upper-roman">
   <li>Sir Terry Pratchett</li>
   <li>Douglas Adams</li>
@@ -400,11 +399,11 @@ Note: Unless the type of the list number matters such as legal or technical docu
 
 #### lower-roman
 
-```html
-<style>
-  ol.lower-roman { list-style-type: lower-roman }
-</style>
+```css
+ol.lower-roman { list-style-type: lower-roman }
+```
 
+```html
 <ol class="lower-roman">
   <li>Sir Terry Pratchett</li>
   <li>Douglas Adams</li>
@@ -468,7 +467,7 @@ Using the start attribute allows you to start the list from a number larger than
 
 ## List items
 
-Within the list item `<LI>` HTML can be used such as` <LI><STRONG>`Ford`</STRONG>` Prefect`</LI>`
+Within the list item `<LI>` HTML can be used such as`<LI><STRONG>`Ford`</STRONG>` Prefect`</LI>`
 
 ## Nested Lists
 
@@ -543,7 +542,6 @@ Description lists are lists which consist of terms and their descriptions such a
   <dt>Ford Escort Popular</dt>
   <dd>Slow Ford</dd>
 </dl>
-
 ```
 
 <dl>
@@ -554,7 +552,6 @@ Description lists are lists which consist of terms and their descriptions such a
 </dl>
 
 The definition of description list tags are outlined below:
-
 
 `<dl>` - description list
 
@@ -598,8 +595,14 @@ The list-style-type CSS property is used to change the style of the bullet point
 
 This is set using the following `style="list-style-type:square;"`
 
+```css
+ul.square {
+  list-style-type:square;
+}
+```
+
 ```html
-<ul style="list-style-type:square;">
+<ul class="square">
   <li>Sir Terry Pratchett</li>
   <li>Douglas Adams</li>
   <li>J.R.R Tolkien</li>
@@ -649,15 +652,15 @@ If we have a unordered list like this
 
 We can use CSS styling to produce a navigation menu that looks like this
 
-```html
-<style>
-  .main-nav__list {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-evenly;	
-  }
-</style>
+```css
+.main-nav__list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;	
+}
+```
 
+```html
 <ul class="main-nav__list">
   <li class="main-nav__item">
     <a href="/">Home</a>
@@ -678,23 +681,23 @@ We can use CSS styling to produce a navigation menu that looks like this
 
 ### Using CSS to produce lists with 1.1.1 numbers
 
+```css
+ol {
+  counter-reset: items;
+l. ist-style: none;
+}
+
+li {
+  counter-increment: items;
+  list-style: none;
+}
+
+li::before {
+  content: counters(items, ".") ". ";
+}
+```
+
 ```html
-<style>
-  ol {
-    counter-reset: items;
-    list-style: none;
-  }
-
-  li {
-    counter-increment: items;
-    list-style: none;
-  }
-
-  li::before {
-    content: counters(items, ".") ". ";
-  }
-</style>
-
 <ol class="multilevel">
   <li>Ford
     <ol>
