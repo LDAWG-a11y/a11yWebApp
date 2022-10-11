@@ -680,8 +680,18 @@ We can use CSS styling to produce a navigation menu that looks like this
 
 ```html
 <style>
-  ::marker {
-	  content: counters(list-item,'.') '.';
+  ol {
+    counter-reset: items;
+    list-style: none;
+  }
+
+  li {
+    counter-increment: items;
+    list-style: none;
+  }
+
+  li::before {
+    content: counters(items, ".") ". ";
   }
 </style>
 

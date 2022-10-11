@@ -1822,17 +1822,19 @@ ul:not([class]) > li::marker {
   list-style-type: upper-roman;
 }
 .cms .multilevel {
-  counter-reset: item;
-  margin-left: 1rem;
+  margin-left: 0;
 }
 .cms .multilevel ol {
-  margin-left: 1.5rem;
+  counter-reset: items;
+  list-style: none;
 }
 .cms .multilevel li {
+  counter-increment: items;
   padding-left: 0.75rem;
+  list-style: none;
 }
-.cms .multilevel ::marker {
-  content: counters(list-item, ".") ".";
+.cms .multilevel li::before {
+  content: counters(items, ".") ". ";
 }
 .cms p {
   margin-bottom: 1rem;
@@ -1883,6 +1885,7 @@ ul:not([class]) > li::marker {
   margin-bottom: 2.5rem;
 }
 .cms dl > dt {
+  padding-right: 1rem;
   font-weight: 600;
 }
 .cms dl > dd {

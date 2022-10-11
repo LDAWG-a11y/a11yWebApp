@@ -110,19 +110,21 @@
   }
 
   .multilevel {
-    counter-reset: item;
-    margin-left: $space-md;
+    margin-left: 0;
 
     ol {
-      margin-left: $space-lg;
+      counter-reset: items;
+      list-style: none;
     }
 
     li {
+      counter-increment: items;
       padding-left: $space-sm;
+      list-style: none;
     }
-
-    ::marker {
-      content: counters(list-item,'.') '.';
+    
+    li::before {
+       content: counters(items, ".") ". ";
     }
   }
 
@@ -180,6 +182,7 @@
     margin-bottom: $space-xxl;
 
     > dt {
+      padding-right: $space-md;
       font-weight: 600;
     }
 
