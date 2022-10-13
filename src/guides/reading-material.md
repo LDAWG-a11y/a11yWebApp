@@ -29,7 +29,7 @@ Haben Girma
 
 Ellen Clifford
 
-### [Form Design Patters](https://www.smashingmagazine.com/printed-books/form-design-patterns/)
+### [Form Design Patterns](https://www.smashingmagazine.com/printed-books/form-design-patterns/)
 
 Adam Silver
 
