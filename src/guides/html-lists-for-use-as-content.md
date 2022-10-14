@@ -7,8 +7,7 @@ author: swilkinson
 date: 2022-10-07
 tags:
   - HTML
-  - List
-  - Menu
+  - Lists
 ---
 ## Introduction to content lists
 
