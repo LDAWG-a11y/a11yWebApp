@@ -1757,10 +1757,6 @@ ul:not([class]) > li::marker {
   overflow-wrap: break-word;
   word-break: break-word;
 }
-code:not(pre .cms) {
-  background-color: var(--color-accent);
-  padding: 0 2px;
-}
 .cms pre[class][class*=language-] {
   margin-bottom: 2.5rem;
   padding: 0.75rem;
@@ -2031,9 +2027,11 @@ pre[class*=language-] {
 }
 
 /* Inline code */
-:not(pre) > code[class*=language-] {
-  padding: 0.1em;
-  border-radius: 0.3em;
+:not(pre) > code[class*=language-],
+:not(pre) > code {
+  padding: 0 2px;
+  background-color: var(--color-accent);
+  border-radius: 0.2em;
   white-space: normal;
 }
 
