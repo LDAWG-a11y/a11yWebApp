@@ -22,6 +22,11 @@
     overflow-wrap: break-word;
     word-break: break-word;
   }
+
+  code:not(pre &) {
+    background-color: var(--color-accent);
+    padding: 0 2px;
+  }
   
   pre[class][class*="language-"] {
     margin-bottom:  $space-xxl;
