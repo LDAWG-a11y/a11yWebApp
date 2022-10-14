@@ -18,12 +18,12 @@ There are intentionally some not so good examples on this page, they are there f
 
 it's always important to discuss the pet hate of every accessibility professional ever, the links vs buttons battle. A huge part of being an accessibility professional is saying "This link should be a button" or "this button should be a link" until you retire.
 
-Buttons and links are inherently different, it's as simple as "a link goes somewhere, a button does something". A button can be activated with both the <kbd>space</kbd> and <kbd>return</kbd> whereas a link can only be activated with <kbd>return</kbd> for keyboard users.
+Buttons and links are inherently different, it's as simple as "a link goes somewhere, a button does something". A button can be activated with both the <kbd>Space</kbd> and <kbd>Return</kbd> whereas a link can only be activated with <kbd>return</kbd> for keyboard users.
 
 When screen reader or keyboard users encounter a button, they have 2 primary expectations:
 
 * It will do something (the button's label should make it clear what that is)
-* It will do that thing if they press <kbd>space</kbd> or <kbd>return</kbd>
+* It will do that thing if they press <kbd>Space</kbd> or <kbd>Return</kbd>
 
 Conversely, if they encounter a link, they expect it will navigate to a new page, new site or to a section on the current page.
 
