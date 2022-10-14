@@ -29,6 +29,13 @@
   }
 }
 
+.accordion--large {
+  
+  .has-js & {
+    max-width: 70rem;
+  }
+}
+
 .accordion__btn {
   position: relative;
   border: 2px solid var(--color-interactive);
@@ -125,5 +132,12 @@
 
   &[data-last] {
     margin-bottom: $space-xxxl;
+  }
+}
+
+.accordion__panel--large {
+
+  .has-js & {
+    max-width: 70rem;
   }
 }

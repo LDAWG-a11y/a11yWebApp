@@ -7,7 +7,7 @@
   --color-secondary: #BF2669;
   --color-accent: #ffd6b5;
   --color-accent-2: #e86620;
-  --color-interactive: #8A2BE2;
+  --color-interactive: #923AE4;
   --color-inactive: #595959;
   --color-highlight: #030189;
 }
@@ -221,12 +221,12 @@ body {
 }
 @media (min-width: 64em) {
   body {
-    font-size: 1.25rem;
+    font-size: 1.375rem;
   }
 }
 @media (min-width: 75em) {
   body {
-    font-size: 1.375rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -559,7 +559,7 @@ ul:not([class]) > li::marker {
   display: block;
   width: 100%;
   color: var(--color-bg);
-  font-size: 1.1875rem;
+  font-size: 1.25rem;
 }
 [data-theme=dark] .header__themes-legend {
   color: var(--color-text);
@@ -1322,6 +1322,10 @@ ul:not([class]) > li::marker {
   animation-fill-mode: forwards;
 }
 
+.has-js .accordion--large {
+  max-width: 70rem;
+}
+
 .accordion__btn {
   position: relative;
   border: 2px solid var(--color-interactive);
@@ -1398,6 +1402,10 @@ ul:not([class]) > li::marker {
 }
 .accordion__panel[data-last] {
   margin-bottom: 3rem;
+}
+
+.has-js .accordion__panel--large {
+  max-width: 70rem;
 }
 
 .pagination {
@@ -1748,6 +1756,10 @@ ul:not([class]) > li::marker {
   white-space: pre-wrap;
   overflow-wrap: break-word;
   word-break: break-word;
+}
+code:not(pre .cms) {
+  background-color: var(--color-accent);
+  padding: 0 2px;
 }
 .cms pre[class][class*=language-] {
   margin-bottom: 2.5rem;

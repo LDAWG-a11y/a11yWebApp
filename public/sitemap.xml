@@ -21,6 +21,16 @@
       <lastmod>2022-10-13T00:00:00.000Z</lastmod>
     </url>
   
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/creating-accessible-links/</loc>
+      <lastmod>2022-10-14T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/html-tables-for-use-as-content/</loc>
+      <lastmod>2022-10-14T00:00:00.000Z</lastmod>
+    </url>
+  
       <url>
         <loc>https://www.makethingsaccessible.com/about/</loc>
         <lastmod>2022-10-06T22:17:15.692Z</lastmod>
@@ -50,11 +60,15 @@
         <lastmod>2022-10-06T22:17:15.692Z</lastmod>
       </url>
     <url>
+      <loc>https://www.makethingsaccessible.com/tags/best-practice/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
       <loc>https://www.makethingsaccessible.com/tags/enforcement/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
-      <loc>https://www.makethingsaccessible.com/tags/heading/</loc>
+      <loc>https://www.makethingsaccessible.com/tags/headings/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
@@ -62,11 +76,11 @@
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
-      <loc>https://www.makethingsaccessible.com/tags/list/</loc>
+      <loc>https://www.makethingsaccessible.com/tags/links/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
-      <loc>https://www.makethingsaccessible.com/tags/menu/</loc>
+      <loc>https://www.makethingsaccessible.com/tags/lists/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
@@ -79,6 +93,10 @@
     </url>
     <url>
       <loc>https://www.makethingsaccessible.com/tags/resource/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/tables/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
 </urlset>
