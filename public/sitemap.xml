@@ -2,16 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
-      <loc>https://www.makethingsaccessible.com/guides/test-ben/</loc>
-      <lastmod>2022-10-02T00:00:00.000Z</lastmod>
-    </url>
-  
-    <url>
-      <loc>https://www.makethingsaccessible.com/guides/test-darren/</loc>
-      <lastmod>2022-10-02T00:00:00.000Z</lastmod>
-    </url>
-  
-    <url>
       <loc>https://www.makethingsaccessible.com/guides/html-headings-for-use-as-content/</loc>
       <lastmod>2022-10-06T00:00:00.000Z</lastmod>
     </url>
@@ -27,8 +17,8 @@
     </url>
   
     <url>
-      <loc>https://www.makethingsaccessible.com/guides/a-new-test/</loc>
-      <lastmod>2022-10-10T00:00:00.000Z</lastmod>
+      <loc>https://www.makethingsaccessible.com/guides/reading-material/</loc>
+      <lastmod>2022-10-13T00:00:00.000Z</lastmod>
     </url>
   
       <url>
@@ -60,10 +50,6 @@
         <lastmod>2022-10-06T22:17:15.692Z</lastmod>
       </url>
     <url>
-      <loc>https://www.makethingsaccessible.com/tags/css/</loc>
-      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
-    </url>
-    <url>
       <loc>https://www.makethingsaccessible.com/tags/enforcement/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
@@ -88,15 +74,11 @@
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
-      <loc>https://www.makethingsaccessible.com/tags/nvda/</loc>
-      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
-    </url>
-    <url>
       <loc>https://www.makethingsaccessible.com/tags/psbar/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
-      <loc>https://www.makethingsaccessible.com/tags/screen-reader/</loc>
+      <loc>https://www.makethingsaccessible.com/tags/resource/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
 </urlset>

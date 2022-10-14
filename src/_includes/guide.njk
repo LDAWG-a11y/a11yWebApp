@@ -9,17 +9,18 @@
         <a href="/authors/{{ guideAuthor.key }}">{{ guideAuthor.name }}</a>
       </div>
       <div class="guide__date">
-        <strong>Posted: </strong>{{ date | readableDate }}
+        <strong>Posted: </strong><time datetime="{{ date.toISOString() }}">{{ date | readableDate }}</time>
       </div>
       <strong class="guide__label">Tagged with: </strong>
-      <ul class="tags tags__all">
+      {% set tagCount = tags | filterTagList | length %}
+      <{% if tagCount > 1 %}ul{% else %}div{% endif %} class="tags tags__all">
         {%- for tag in tags | filterTagList %}
         {% set tagUrl %}/tags/{{ tag | slug }}/{%- endset %}
-        <li class="tag__item">
+        <{% if tagCount > 1 %}li{% else %}span{% endif %} class="tag__item">
           <a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a>
-        </li>
+        </{% if tagCount > 1 %}li{% else %}span{% endif %}>
         {%- endfor %}
-      </ul>      
+      </{% if tagCount > 1 %}ul{% else %}div{% endif %} class="tags tags__all">      
     </div>
     <article class="cms">
       {{ content | safe }}

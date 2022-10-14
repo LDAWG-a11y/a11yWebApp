@@ -16,11 +16,11 @@ home: true
 <div class="latest-articles">
   <h2 class="latest-articles__heading">Latest guides</h2>
   <p class="latest-articles__intro">Our latest 3 digital accessibility guides are displayed in this section, this will be updated each time we produce a new guide, alternatively, you can view all guides by selecting "Guides" in the main navigation or the footer area.</p>
-  <ul class="cards">
+  <div class="cards">
     {%- if collections.latest.length %}
       {%- for guide in collections.latest %}
       {% include "_card.njk" %}
       {%- endfor %}
     {%- endif %}
-  </ul>
+  </div>
 </div>
