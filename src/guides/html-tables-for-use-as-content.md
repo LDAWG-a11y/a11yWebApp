@@ -27,4 +27,4 @@ We do not use tables for the layout of content.
 
 ## Accessible tables that scrolls horizontally on mobile
 
-To make an accessible table that will scroll horizontally on a mobile, you need to put your <table> element inside a
+To make an accessible table that will scroll horizontally on a mobile, you need to put your `<table>` element inside a
