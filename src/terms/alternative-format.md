@@ -1,5 +1,5 @@
 ---
-title: Alternative format
+title: Alt format
 acronym: false
 permalink: false
 tags: terms
