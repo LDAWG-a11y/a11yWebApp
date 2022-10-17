@@ -1345,11 +1345,11 @@ Screen reader support for `scope="rowgroup"` has historically been worse than su
 Hopefully this guide has helped you to understand a bit more of using HTML tables for content. It can be hard especially when the tables are really complicated, and there is an element of author discretion, but ultimately the summary is:
 
 * Use simple tables (split complicated tables into multiple simpler tables)
-* Use the <caption> elements to add the caption at the top of the table
-* Use <th> elements to mark-up row and column headings
-* Add the attribute scope=”col” to column headers and scope=”row” to row headers
+* Use the `<caption>` elements to add the caption at the top of the table
+* Use `<th>` elements to mark-up row and column headings
+* Add the attribute `scope=”col”` to column headers and `scope=”row”` to row headers
 * Minimise the amount of white space between columns. Large amounts of white space cause problems for screen magnifier users
-* Remember that the headings must have the proper scope of column or row designated to be voiced by a screen reader, it is not enough just to be designated as a TH
+* Remember that the headings must have the proper scope of column or row designated to be voiced by a screen reader, it is not enough just to be designated as a `TH`
 * Ideally, don’t hide any cell borders. Certainly, don’t hide the horizontal cell borders because people rely on them for orientation when scrolling horizontally, especially if they are using screen magnification
 * Consider using alternate background colours for alternate rows. Again, this helps with horizontal scrolling
 * If you want the data table to be sortable, you can make the column headers clickable. However, it requires significant accessibility knowledge to do this. Many implementations of this have accessibility issues, so don’t just copy another design
