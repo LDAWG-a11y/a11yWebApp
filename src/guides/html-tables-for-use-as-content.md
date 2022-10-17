@@ -524,11 +524,11 @@ Using id and headers attributes to associate data cells with header cells in dat
     <tr>
       <th id="nr">Number of Rooms</td>
       <th id="nd1" headers="nd">Weekly</td>
-      <th id="nd2" headers="nd">Monthly*</td>
+      <th id="nd2" headers="nd">Monthly</td>
       <th id="tws1" headers="tws">Weekly</td>
-      <th id="tws2" headers="tws">Monthly*</td>
+      <th id="tws2" headers="tws">Monthly</td>
       <th id="med1" headers="med">Weekly</td>
-      <th id="med2" headers="med">Monthly*</td>
+      <th id="med2" headers="med">Monthly</td>
 	</tr>
 	<tr>
       <td headers="nr">Shared Accommodation</td>
@@ -593,11 +593,11 @@ Using id and headers attributes to associate data cells with header cells in dat
     <tr>
       <th id="nr">Number of Rooms</td>
       <th id="nd1" headers="nd">Weekly</td>
-      <th id="nd2" headers="nd">Monthly*</td>
+      <th id="nd2" headers="nd">Monthly</td>
       <th id="tws1" headers="tws">Weekly</td>
-      <th id="tws2" headers="tws">Monthly*</td>
+      <th id="tws2" headers="tws">Monthly</td>
       <th id="med1" headers="med">Weekly</td>
-      <th id="med2" headers="med">Monthly*</td>
+      <th id="med2" headers="med">Monthly</td>
 	</tr>
 	<tr>
       <td headers="nr">Shared Accommodation</td>
