@@ -69,11 +69,7 @@ When we have a table:
 
 With headings marked as normal `td` cells and `<strong>` tags across the top row as Service, March 2021, April 2021, May 2021; and down the first column as Black Refuse, Recycling.
 
-![Table with headings along the top row and down the left column with arrows pointing to each heading](src/guideImg/thumbnail_image002.png "Table with headings along the top row and down the left column")
-
 To make tables more accessible, we edit the HTML and add `scope=”col”` to each `th` (table header), or a `th scope="row"` to the first cell of a row rather than a `td` where those cells are headings. This allows accessibility tools to understand which column or row a cell belongs to. 
-
-![Table with th scope added to headings along the top row and down the left column with arrows pointing to each heading](src/guideImg/thumbnail_image003.png "Table with th scope added to headings along the top row and down the left column")
 
 So, a table like this:
 
