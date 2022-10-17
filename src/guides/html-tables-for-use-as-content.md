@@ -647,3 +647,524 @@ Using id and headers attributes to associate data cells with header cells in dat
   </tbody>
 </table>
 ```
+
+### Making a table with Total Expenditure more accessible
+
+
+
+```
+<table>
+  <caption>Budgets</caption>
+  <thead>
+    <tr>
+      <td colspan="2"> </td>
+      <th scope="col">Details</th>
+      <th scope="col">Expenditure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" scope="rowgroup">Budget area</th>
+      <th scope="row">Software</th>
+      <td>Purchase of new licenses</td>
+      <td>£300.00</td>
+    </tr>
+    <tr>
+      <th scope="row">Advertising</th>
+      <td>Newspaper and social media</td>
+      <td>£200.00</td>
+    </tr>
+    <tr>
+      <th scope="row">General expenses</th>
+      <td>Refreshments, car parking, travel</td>
+      <td>£500.00</td>
+    </tr> 
+    <tr>
+      <th rowspan="1" colspan="3" scope="rowgroup">Total Expenditure</th>
+      <td>£1000.00</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+So that the table looks like this
+
+<table>
+  <caption>Budgets</caption>
+  <thead>
+    <tr>
+      <td colspan="2"> </td>
+      <th scope="col">Details</th>
+      <th scope="col">Expenditure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" scope="rowgroup">Budget area</th>
+      <th scope="row">Software</th>
+      <td>Purchase of new licenses</td>
+      <td>£300.00</td>
+    </tr>
+    <tr>
+      <th scope="row">Advertising</th>
+      <td>Newspaper and social media</td>
+      <td>£200.00</td>
+    </tr>
+    <tr>
+      <th scope="row">General expenses</th>
+      <td>Refreshments, car parking, travel</td>
+      <td>£500.00</td>
+    </tr> 
+    <tr>
+      <th rowspan="1" colspan="3" scope="rowgroup">Total Expenditure</th>
+      <td>£1000.00</td>
+    </tr>
+  </tbody>
+</table>
+
+#### Note
+
+Screen reader support for `scope="rowgroup"` has historically been worse than support for `scope="colgroup"`, so for maximum accessibility, especially in terms of backward compatibility, it is best to orient the table in a configuration that allows `scope="colgroup"`, and which does not require `scope="rowgroup"`.
+
+## Practice tables
+
+### Simple table
+
+```html
+<p>Classical music events</p>
+<table>
+  <tr>
+    <td><strong>Date</strong></td>
+	<td><strong>Event</strong></td>
+	<td><strong>Venue</strong></td>
+  </tr>
+  <tr>
+    <td>11 February</td>
+	<td>Waltz with Schubert</td>
+	<td>Hall</td>
+  </tr>	
+  <tr>
+    <td>23 March</td>
+	<td>Waltz with Strauss</td>
+	<td>Cafe</td>
+  </tr>	
+  <tr>
+    <td>15 April</td>
+	<td>Waltz with Chopin</td>
+	<td>Hall</td>
+  </tr>	
+</table>
+
+```
+
+<p>Classical music events</p>
+<table>
+  <tr>
+    <td><strong>Date</strong></td>
+	<td><strong>Event</strong></td>
+	<td><strong>Venue</strong></td>
+  </tr>
+  <tr>
+    <td>11 February</td>
+	<td>Waltz with Schubert</td>
+	<td>Hall</td>
+  </tr>	
+  <tr>
+    <td>23 March</td>
+	<td>Waltz with Strauss</td>
+	<td>Cafe</td>
+  </tr>	
+  <tr>
+    <td>15 April</td>
+	<td>Waltz with Chopin</td>
+	<td>Hall</td>
+  </tr>	
+</table>
+
+### Table header cells top row and first column
+
+```html
+<p>Opening times</p>
+<table>
+  <tr>
+    <td></td>
+    <td><strong>Monday</strong></td>
+    <td><strong>Tuesday</strong></td>
+    <td><strong>Wednesday</strong></td>
+    <td><strong>Thursday</strong></td>
+    <td><strong>Friday</strong></td>
+    <td><strong>Saturday</strong></td>
+    <td><strong>Sunday</strong></td>
+  </tr>
+  <tr>
+    <td><strong>09:00 - 13:00</strong></td>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Closed</td>
+  </tr> 
+  <tr>
+    <td><strong>14:00 - 17:00</strong></td>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Closed</td>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Closed</td>
+  </tr>
+</table>
+```
+
+<p>Opening times</p>
+<table>
+  <tr>
+    <td></td>
+    <td><strong>Monday</strong></td>
+    <td><strong>Tuesday</strong></td>
+    <td><strong>Wednesday</strong></td>
+    <td><strong>Thursday</strong></td>
+    <td><strong>Friday</strong></td>
+    <td><strong>Saturday</strong></td>
+    <td><strong>Sunday</strong></td>
+  </tr>
+  <tr>
+    <td><strong>09:00 - 13:00</strong></td>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Closed</td>
+  </tr> 
+  <tr>
+    <td><strong>14:00 - 17:00</strong></td>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Closed</td>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Closed</td>
+  </tr>
+</table>
+
+### Ambigous data table
+
+```html
+<p>People and locations</p>
+<table>
+  <tr>
+    <td><strong>Last Name</strong></td>
+    <td><strong>First Name</strong></td>
+    <td><strong>City</strong></td>
+  </tr>
+  <tr>
+    <td>Smith</td>
+    <td>Phoenix</td>
+    <td>Barnstaple</td>
+  </tr>
+  <tr>
+    <td>London</td>
+    <td>Jack</td>
+    <td>San Francisco</td>
+  </tr>
+  <tr>
+    <td>Johns</td>
+    <td>Bristol</td>
+    <td>Leeds</td>
+  </tr>
+</table>
+
+```
+
+<p>People and locations</p>
+<table>
+  <tr>
+    <td><strong>Last Name</strong></td>
+    <td><strong>First Name</strong></td>
+    <td><strong>City</strong></td>
+  </tr>
+  <tr>
+    <td>Smith</td>
+    <td>Phoenix</td>
+    <td>Barnstaple</td>
+  </tr>
+  <tr>
+    <td>London</td>
+    <td>Jack</td>
+    <td>San Francisco</td>
+  </tr>
+  <tr>
+    <td>Johns</td>
+    <td>Bristol</td>
+    <td>Leeds</td>
+  </tr>
+</table>
+
+### Two tier headers
+
+```html
+<p>Rock and Metal sales</p>
+<table>
+  <tr>
+    <td rowspan="2"></td>
+    <td colspan="2">Rock</td>
+    <td colspan="2">Metal</td>
+  </tr>
+  <tr>
+    <td>Singles</td>
+    <td>Albums</td>
+    <td>Singles</td>
+    <td>Albums</td>
+  </tr>
+  <tr>
+    <td>inIllustrias</td>
+    <td>40,000</td>
+    <td>60,000</td>
+    <td>200,000</td>
+    <td>70,000</td>
+  </tr>
+  <tr>
+    <td>Those Bloomin' Covids</td>
+    <td>60,000</td>
+    <td>55,000</td>
+    <td>199,000</td>
+    <td>71,000</td>
+  </tr>
+</table>
+```
+
+<p>Rock and Metal sales</p>
+<table>
+  <tr>
+    <td rowspan="2"></td>
+    <td colspan="2">Rock</td>
+    <td colspan="2">Metal</td>
+  </tr>
+  <tr>
+    <td>Singles</td>
+    <td>Albums</td>
+    <td>Singles</td>
+    <td>Albums</td>
+  </tr>
+  <tr>
+    <td>inIllustrias</td>
+    <td>40,000</td>
+    <td>60,000</td>
+    <td>200,000</td>
+    <td>70,000</td>
+  </tr>
+  <tr>
+    <td>Those Bloomin' Covids</td>
+    <td>60,000</td>
+    <td>55,000</td>
+    <td>199,000</td>
+    <td>71,000</td>
+  </tr>
+</table>
+
+### Complicated table
+
+```html
+<p>Split of marks across course</p>
+<table>
+  <tr>
+    <td colspan="3"><strong>Projects</strong></td>
+    <td rowspan="2"><strong>Homework</strong></td>
+    <td colspan="3"><strong>Exams</strong></td>
+  </tr>
+  <tr>
+    <td><strong>1</strong></td>
+    <td><strong>2</strong></td>
+    <td><strong>Final</strong></td>
+    <td><strong>1</strong></td>
+    <td><strong>2</strong></td>
+    <td><strong>Final</strong></td>
+  </tr>
+  <tr>
+    <td>14%</td>
+    <td>19%</td>
+    <td>17%</td>
+    <td>16%</td>
+    <td>9%</td>
+    <td>16%</td>
+    <td>11%</td>
+   </tr>
+</table>
+
+```
+
+<p>Split of marks across course</p>
+<table>
+  <tr>
+    <td colspan="3"><strong>Projects</strong></td>
+    <td rowspan="2"><strong>Homework</strong></td>
+    <td colspan="3"><strong>Exams</strong></td>
+  </tr>
+  <tr>
+    <td><strong>1</strong></td>
+    <td><strong>2</strong></td>
+    <td><strong>Final</strong></td>
+    <td><strong>1</strong></td>
+    <td><strong>2</strong></td>
+    <td><strong>Final</strong></td>
+  </tr>
+  <tr>
+    <td>14%</td>
+    <td>19%</td>
+    <td>17%</td>
+    <td>16%</td>
+    <td>9%</td>
+    <td>16%</td>
+    <td>11%</td>
+   </tr>
+</table>
+
+## Practice tables answers
+
+### Simple table
+
+```html
+<table>
+  <caption>Classical music events</caption>
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Event</th>
+      <th scope="col">Venue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>11 February</td>
+      <td>Waltz with Schubert</td>
+      <td>Main Hall</td>
+    </tr>
+    <tr>
+      <td>23 March</td>
+      <td>Waltz with Strauss</td>
+      <td>Strauss Hall</td>
+    </tr>
+    <tr>
+      <td>15 April</td>
+      <td>Waltz with Chopin</td>
+      <td>Main Hall</td>
+    </tr>
+  </tbody>
+</table>
+
+```
+
+<table>
+  <caption>Classical music events</caption>
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Event</th>
+      <th scope="col">Venue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>11 February</td>
+      <td>Waltz with Schubert</td>
+      <td>Main Hall</td>
+    </tr>
+    <tr>
+      <td>23 March</td>
+      <td>Waltz with Strauss</td>
+      <td>Strauss Hall</td>
+    </tr>
+    <tr>
+      <td>15 April</td>
+      <td>Waltz with Chopin</td>
+      <td>Main Hall</td>
+    </tr>
+  </tbody>
+</table>
+
+### Table header cells top row and first column
+
+```html
+<table>
+  <caption>Opening times</caption>
+  <thead>
+    <tr>
+      <td></td>
+      <th scope="col">Monday</th>
+      <th scope="col">Tuesday</th>
+      <th scope="col">Wednesday</th>
+      <th scope="col">Thursday</th>
+      <th scope="col">Friday</th>
+      <th scope="col">Saturday</th>
+      <th scope="col">Sunday</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">09:00 - 13:00</th>
+      <td>Open</td>
+      <td>Open</td>
+      <td>Open</td>
+      <td>Open</td>
+      <td>Open</td>
+      <td>Open</td>
+      <td>Closed</td>
+    </tr> 
+    <tr>
+      <th scope="row">14:00 - 17:00</th>
+      <td>Open</td>
+      <td>Open</td>
+      <td>Closed</td>
+      <td>Open</td>
+      <td>Open</td>
+      <td>Open</td>
+      <td>Closed</td>
+    </tr>
+  </tbody>
+</table>
+
+```
+
+<table>
+  <caption>Opening times</caption>
+  <thead>
+    <tr>
+      <td></td>
+      <th scope="col">Monday</th>
+      <th scope="col">Tuesday</th>
+      <th scope="col">Wednesday</th>
+      <th scope="col">Thursday</th>
+      <th scope="col">Friday</th>
+      <th scope="col">Saturday</th>
+      <th scope="col">Sunday</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">09:00 - 13:00</th>
+      <td>Open</td>
+      <td>Open</td>
+      <td>Open</td>
+      <td>Open</td>
+      <td>Open</td>
+      <td>Open</td>
+      <td>Closed</td>
+    </tr> 
+    <tr>
+      <th scope="row">14:00 - 17:00</th>
+      <td>Open</td>
+      <td>Open</td>
+      <td>Closed</td>
+      <td>Open</td>
+      <td>Open</td>
+      <td>Open</td>
+      <td>Closed</td>
+    </tr>
+  </tbody>
+</table>
