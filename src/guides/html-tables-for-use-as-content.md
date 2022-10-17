@@ -40,7 +40,34 @@ where `“mycaption”` references the `<caption id="mycaption">` that should be
 
 Scope allows accessibility tools to understand which column or row a cell belongs to giving a better understanding of the information for those who are not able to see the table.
 
-When we have a table with headings such as:
+When we have a table: 
+
+<table>
+  <thead>
+    <tr>
+      <td><strong>Service</strong></td>
+      <td><strong>March 2021</strong></td>
+      <td><strong>April 2021</strong></td>
+      <td><strong>May 2021</strong></td>
+	</tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Black refuse</strong></td>
+      <td>Wed 06, Wed 17, Wed 31</td>
+      <td>Wed 14, Wed 28</td>
+      <td>Wed 12, Wed 26</td>
+	</tr>
+	<tr>
+      <td><strong>Recycling</strong></td>
+      <td>Mon 01, Mon 08, Mon 15, Mon 22, Mon 29</td>
+      <td>Tue 06, Mon 12, Mon 19, Mon 26</td>
+      <td>Tue 04, Mon 10, Mon 17, Mon 24</td>
+	</tr>
+  </tbody>
+</table>
+
+With headings marked as normal `td` cells and `<strong>` tags across the top row as Service, March 2021, April 2021, May 2021; and down the first column as Black Refuse, Recycling.
 
 ![Table with headings along the top row and down the left column with arrows pointing to each heading](src/guideImg/thumbnail_image002.png "Table with headings along the top row and down the left column")
 
