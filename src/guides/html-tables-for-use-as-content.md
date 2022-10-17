@@ -531,7 +531,7 @@ Using id and headers attributes to associate data cells with header cells in dat
       <th id="med2" headers="med">Monthly*</td>
 	</tr>
 	<tr>
-      <td headers="nr">Shared Accommodation\*\*</td>
+      <td headers="nr">Shared Accommodation</td>
       <td headers="nd nd1">£69.04</td>
       <td headers="nd nd2">£300.00</td>
       <td headers="tws tws1">£84.50</td>
@@ -600,7 +600,7 @@ Using id and headers attributes to associate data cells with header cells in dat
       <th id="med2" headers="med">Monthly*</td>
 	</tr>
 	<tr>
-      <td headers="nr">Shared Accommodation**</td>
+      <td headers="nr">Shared Accommodation</td>
       <td headers="nd nd1">£69.04</td>
       <td headers="nd nd2">£300.00</td>
       <td headers="tws tws1">£84.50</td>
