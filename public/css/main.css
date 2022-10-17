@@ -2034,6 +2034,16 @@ pre[class*=language-] {
   border-radius: 0.2em;
   white-space: normal;
 }
+@media (prefers-color-scheme: dark) {
+  :not(pre) > code[class*=language-],
+:not(pre) > code {
+    background-color: var(--color-inactive);
+  }
+}
+[data-theme=dark] :not(pre) > code[class*=language-],
+[data-theme=dark] :not(pre) > code {
+  background-color: var(--color-inactive);
+}
 
 .token.comment,
 .token.prolog,
