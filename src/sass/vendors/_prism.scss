@@ -40,6 +40,14 @@ pre[class*="language-"] {
 	background-color: var(--color-accent);
 	border-radius: 0.2em;
 	white-space: normal;
+
+	@media (prefers-color-scheme: dark) {
+    background-color: var(--color-inactive);
+  }
+
+  [data-theme="dark"] & {
+    background-color: var(--color-inactive);
+  }
 }
 
 .token.comment,
