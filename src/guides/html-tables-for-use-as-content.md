@@ -336,7 +336,6 @@ The table will be read out by a screen reader as follows:
     </tr>
   </tbody>
 </table>
-
 ```
 
 #### scope="rowgroup" applied to column group headers
@@ -445,11 +444,206 @@ The table will be read out by a screen reader as follows:
     </tr>  
   </tbody>
 </table>
-
 ```
 
 ##### Note
 
 Screen reader support for `scope="rowgroup"` has historically been worse than support for `scope="colgroup"`, so for maximum accessibility, especially in terms of backward compatibility, it is best to orient the table in a configuration that allows `scope="colgroup"`, and which does not require `scope="rowgroup"`.
 
-If you open the example file in Notepad (or text editor of your choice) and copy and paste the code into the code view `<>` of the `BodyText`, and amend it then you will start with the right type of table.
+If you open the example file in Notepad (or text editor of your choice) and copy and paste the code into the code view `<>` of the `BodyText`, and amend it then you will start with the right type of table. 
+
+### A table with multiple rows of headers
+
+Using id and headers attributes to associate data cells with header cells in data tables
+
+<table>
+  <tr>
+    <th rowspan="2" id="h">Homework</th>
+    <th colspan="3" id="e">Exams</th>
+    <th colspan="3" id="p">Projects</th>
+  </tr>
+  <tr>
+    <th id="e1" headers="e">1</th>
+    <th id="e2" headers="e">2</th>
+    <th id="ef" headers="e">Final</th>
+    <th id="p1" headers="p">1</th>
+    <th id="p2" headers="p">2</th>
+    <th id="pf" headers="p">Final</th>
+  </tr>
+  <tr>
+    <td headers="h">14%</td>
+    <td headers="e e1">16%</td>
+    <td headers="e e2">17%</td>
+    <td headers="e ef">19%</td>
+    <td headers="p p1">9%</td>
+    <td headers="p p2">11%</td>
+    <td headers="p pf">16%</td>
+  </tr>
+</table>   
+
+```html
+<table>
+  <tr>
+    <th rowspan="2" id="h">Homework</th>
+    <th colspan="3" id="e">Exams</th>
+    <th colspan="3" id="p">Projects</th>
+  </tr>
+  <tr>
+    <th id="e1" headers="e">1</th>
+    <th id="e2" headers="e">2</th>
+    <th id="ef" headers="e">Final</th>
+    <th id="p1" headers="p">1</th>
+    <th id="p2" headers="p">2</th>
+    <th id="pf" headers="p">Final</th>
+  </tr>
+  <tr>
+    <td headers="h">14%</td>
+    <td headers="e e1">16%</td>
+    <td headers="e e2">17%</td>
+    <td headers="e ef">19%</td>
+    <td headers="p p1">9%</td>
+    <td headers="p p2">11%</td>
+    <td headers="p pf">16%</td>
+  </tr>
+</table>   
+```
+
+### Another complicated table
+
+<table>
+  <caption>Current LHA rates for the year starting April 2021</caption>
+  <thead>
+    <tr>
+      <td> </td>
+      <th colspan="2" id="nd">North Devon</th>
+      <th colspan="2" id="tws">Taunton and West Somerset</th>
+      <th colspan="2" id="med">Mid and East Devon</th>
+	</tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="nr">Number of Rooms</td>
+      <th id="nd1" headers="nd">Weekly</td>
+      <th id="nd2" headers="nd">Monthly*</td>
+      <th id="tws1" headers="tws">Weekly</td>
+      <th id="tws2" headers="tws">Monthly*</td>
+      <th id="med1" headers="med">Weekly</td>
+      <th id="med2" headers="med">Monthly*</td>
+	</tr>
+	<tr>
+      <td headers="nr">Shared Accommodation\*\*</td>
+      <td headers="nd nd1">£69.04</td>
+      <td headers="nd nd2">£300.00</td>
+      <td headers="tws tws1">£84.50</td>
+      <td headers="tws tws2">£367.17</td>
+      <td headers="med med1">£84.50</td>
+      <td headers="med med2">£367.17</td>
+	</tr>
+	<tr>
+      <td headers="nr">1 bed need</td>
+      <td headers="nd nd1">£97.81</td>
+      <td headers="nd nd2">£425.01</td>
+      <td headers="tws tws1">£103.56</td>
+      <td headers="tws tws2">£449.99</td>
+      <td headers="med med1">£103.56</td>
+      <td headers="med med2">£449.99</td>
+	</tr>
+	<tr>
+      <td headers="nr">2 bed need</td>
+      <td headers="nd nd1">£126.58</td>
+      <td headers="nd nd2">£550.02</td>
+      <td headers="tws tws1">£136.93</td>
+      <td headers="tws tws2">£594.99</td>
+      <td headers="med med1">£136.93</td>
+      <td headers="med med2">£594.99</td>
+	</tr>
+    <tr>
+      <td headers="nr">3 bed need</td>
+      <td headers="nd nd1">£149.59</td>
+      <td headers="nd nd2">£650.00</td>
+      <td headers="tws tws1">£164.55</td>
+      <td headers="tws tws2">£715.01</td>
+      <td headers="med med1">£166.85</td>
+      <td headers="med med2">£725.00</td>
+    </tr>
+	<tr>
+      <td headers="nr">4 bed need</td>
+      <td headers="nd nd1">£182.96</td>
+      <td headers="nd nd2">£795.00</td>
+      <td headers="tws tws1">£207.12</td>
+      <td headers="tws tws2">£899.99</td>
+      <td headers="med med1">£207.12</td>
+      <td headers="med med2">£899.99</td>
+	</tr>
+  </tbody>
+</table>
+
+```html
+<table>
+  <caption>Current LHA rates for the year starting April 2021</caption>
+  <thead>
+    <tr>
+      <td> </td>
+      <th colspan="2" id="nd">North Devon</th>
+      <th colspan="2" id="tws">Taunton and West Somerset</th>
+      <th colspan="2" id="med">Mid and East Devon</th>
+	</tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="nr">Number of Rooms</td>
+      <th id="nd1" headers="nd">Weekly</td>
+      <th id="nd2" headers="nd">Monthly*</td>
+      <th id="tws1" headers="tws">Weekly</td>
+      <th id="tws2" headers="tws">Monthly*</td>
+      <th id="med1" headers="med">Weekly</td>
+      <th id="med2" headers="med">Monthly*</td>
+	</tr>
+	<tr>
+      <td headers="nr">Shared Accommodation**</td>
+      <td headers="nd nd1">£69.04</td>
+      <td headers="nd nd2">£300.00</td>
+      <td headers="tws tws1">£84.50</td>
+      <td headers="tws tws2">£367.17</td>
+      <td headers="med med1">£84.50</td>
+      <td headers="med med2">£367.17</td>
+	</tr>
+	<tr>
+      <td headers="nr">1 bed need</td>
+      <td headers="nd nd1">£97.81</td>
+      <td headers="nd nd2">£425.01</td>
+      <td headers="tws tws1">£103.56</td>
+      <td headers="tws tws2">£449.99</td>
+      <td headers="med med1">£103.56</td>
+      <td headers="med med2">£449.99</td>
+	</tr>
+	<tr>
+      <td headers="nr">2 bed need</td>
+      <td headers="nd nd1">£126.58</td>
+      <td headers="nd nd2">£550.02</td>
+      <td headers="tws tws1">£136.93</td>
+      <td headers="tws tws2">£594.99</td>
+      <td headers="med med1">£136.93</td>
+      <td headers="med med2">£594.99</td>
+	</tr>
+    <tr>
+      <td headers="nr">3 bed need</td>
+      <td headers="nd nd1">£149.59</td>
+      <td headers="nd nd2">£650.00</td>
+      <td headers="tws tws1">£164.55</td>
+      <td headers="tws tws2">£715.01</td>
+      <td headers="med med1">£166.85</td>
+      <td headers="med med2">£725.00</td>
+    </tr>
+	<tr>
+      <td headers="nr">4 bed need</td>
+      <td headers="nd nd1">£182.96</td>
+      <td headers="nd nd2">£795.00</td>
+      <td headers="tws tws1">£207.12</td>
+      <td headers="tws tws2">£899.99</td>
+      <td headers="med med1">£207.12</td>
+      <td headers="med med2">£899.99</td>
+	</tr>
+  </tbody>
+</table>
+```
