@@ -50,7 +50,7 @@ To make tables more accessible, we edit the HTML and add `scope=”col”` to ea
 
 So, a table like this:
 
-```
+```html
 <table>
   <thead>
     <tr>
@@ -120,7 +120,7 @@ will be read out by a screen reader as follows:
 
 his table becomes:
 
-```
+```html
 <table>
   <caption>Bin collections</caption>
   <thead>
@@ -245,7 +245,7 @@ The table will be read out by a screen reader as follows:
   </tbody>
 </table>
 
-```
+```html
 <table>
   <caption> Table with colgroup </caption>
   <thead>
@@ -350,7 +350,7 @@ The table will be read out by a screen reader as follows:
   </tbody>
 </table>
 
-```
+```html
 <table>
   <caption> Table with rowgroup </caption>
   <thead>
