@@ -52,6 +52,15 @@ const themeBtnLight = document.querySelector('.header__themes-btn--light');
 const themeBtnSystem = document.querySelector('.header__themes-btn--system');
 const themeBtnDark = document.querySelector('.header__themes-btn--dark');
 
+document.querySelector('.header').addEventListener('keyup', (e) => {
+  if (e.key == "Escape" && document.querySelector('#themeTrigger').getAttribute('aria-expanded') == 'true' && !document.querySelector('.main-nav__list').contains(document.activeElement)) {
+    if (document.querySelector('#themePanel').contains(document.activeElement)) {
+      document.querySelector('#themeTrigger').focus();
+    }
+    document.querySelector('#themeTrigger').setAttribute('aria-expanded', 'false')
+  }
+});
+
 themeBtnLight.addEventListener('click', (e) => {
   setTheme('light');
 });
