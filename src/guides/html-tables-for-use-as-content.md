@@ -67,7 +67,27 @@ When we have a table:
   </tbody>
 </table>
 
-With headings marked as normal `td` cells and `<strong>` tags across the top row as Service, March 2021, April 2021, May 2021; and down the first column as Black Refuse, Recycling.
+With headings marked as normal `td` cells and `<strong>` tags across the top row as Service, March 2021, April 2021, May 2021
+
+```html
+<tr>
+  <td><strong>Service</strong></td>
+  <td><strong>March 2021</strong></td>
+  <td><strong>April 2021</strong></td>
+  <td><strong>May 2021</strong></td>
+</tr>
+```
+
+and down the first column as Black Refuse, Recycling
+
+```
+<tr>
+  <td><strong>Black refuse</strong></td>
+</tr>
+<tr>
+  <td><strong>Recycling</strong></td>
+</tr>
+```
 
 To make tables more accessible, we edit the HTML and add `scope=”col”` to each `th` (table header), or a `th scope="row"` to the first cell of a row rather than a `td` where those cells are headings. This allows accessibility tools to understand which column or row a cell belongs to. 
 
