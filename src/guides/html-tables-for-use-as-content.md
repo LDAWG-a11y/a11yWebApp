@@ -32,7 +32,7 @@ To make an accessible table that will scroll horizontally on a mobile, you need 
 
 where `“mycaption”` references the `<caption id="mycaption">` that should be inside the table. The tabindex satisfies WCAG Success Criteria 2.1.1 Keyboard, and the aria-labelledby satisfies 4.1.2 Name, Role, Value. For the CSS, apply overflow: auto to the table, and don’t forget to apply a focus style.
 
-* [Under-engineered responsive tables](https://adrianroselli.com/2020/11/under-engineered-responsive-tables.html) (Adrian Roselli)
+* [Under-engineered responsive tables](https://adrianroselli.com/2020/11/under-engineered-responsive-tables.html) (Adrian Roselli) (external website)
 
 ## Adding scope to tables
 
@@ -650,8 +650,6 @@ Using id and headers attributes to associate data cells with header cells in dat
 
 ### Making a table with Total Expenditure more accessible
 
-
-
 ```
 <table>
   <caption>Budgets</caption>
@@ -754,7 +752,6 @@ Screen reader support for `scope="rowgroup"` has historically been worse than su
 	<td>Hall</td>
   </tr>	
 </table>
-
 ```
 
 <p>Classical music events</p>
@@ -879,7 +876,6 @@ Screen reader support for `scope="rowgroup"` has historically been worse than su
     <td>Leeds</td>
   </tr>
 </table>
-
 ```
 
 <p>People and locations</p>
@@ -996,7 +992,6 @@ Screen reader support for `scope="rowgroup"` has historically been worse than su
     <td>11%</td>
    </tr>
 </table>
-
 ```
 
 <p>Split of marks across course</p>
@@ -1057,7 +1052,6 @@ Screen reader support for `scope="rowgroup"` has historically been worse than su
     </tr>
   </tbody>
 </table>
-
 ```
 
 <table>
@@ -1128,7 +1122,6 @@ Screen reader support for `scope="rowgroup"` has historically been worse than su
     </tr>
   </tbody>
 </table>
-
 ```
 
 <table>
@@ -1168,3 +1161,200 @@ Screen reader support for `scope="rowgroup"` has historically been worse than su
     </tr>
   </tbody>
 </table>
+
+### Ambigous data table
+
+```html
+<table>
+  <caption>People and locations</caption>
+  <thead>
+    <tr>
+      <th scope="col">Last Name</th>
+      <th scope="col">First Name</th>
+      <th scope="col">City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Smith</td>
+      <td>Phoenix</td>
+      <td>Barnstaple</td>
+    </tr>
+    <tr>
+      <td>London</td>
+      <td>Jack</td>
+      <td>San Francisco</td>
+    </tr>
+    <tr>
+      <td>Johns</td>
+      <td>Bristol</td>
+      <td>Leeds</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+<table>
+  <caption>People and locations</caption>
+  <thead>
+    <tr>
+      <th scope="col">Last Name</th>
+      <th scope="col">First Name</th>
+      <th scope="col">City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Smith</td>
+      <td>Phoenix</td>
+      <td>Barnstaple</td>
+    </tr>
+    <tr>
+      <td>London</td>
+      <td>Jack</td>
+      <td>San Francisco</td>
+    </tr>
+    <tr>
+      <td>Johns</td>
+      <td>Bristol</td>
+      <td>Leeds</td>
+    </tr>
+  </tbody>
+</table>
+
+### Two tier headers
+
+```html
+<table>
+  <caption>Rock and Metal sales</caption>
+  <tr>
+    <td rowspan="2"></td>
+    <th colspan="2" scope="colgroup">Rock</th>
+    <th colspan="2" scope="colgroup">Metal</th>
+  </tr>
+  <tr>
+    <th scope="col">Singles</th>
+    <th scope="col">Albums</th>
+    <th scope="col">Singles</th>
+    <th scope="col">Albums</th>
+  </tr>
+  <tr>
+    <th scope="row">inIllustrias</th>
+    <td>40,000</td>
+    <td>60,000</td>
+    <td>200,000</td>
+    <td>70,000</td>
+  </tr>
+  <tr>
+    <th scope="row">Those Bloomin' Covids</th>
+    <td>60,000</td>
+    <td>55,000</td>
+    <td>199,000</td>
+    <td>71,000</td>
+  </tr>
+</table>
+```
+
+<table>
+  <caption>Rock and Metal sales</caption>
+  <tr>
+    <td rowspan="2"></td>
+    <th colspan="2" scope="colgroup">Rock</th>
+    <th colspan="2" scope="colgroup">Metal</th>
+  </tr>
+  <tr>
+    <th scope="col">Singles</th>
+    <th scope="col">Albums</th>
+    <th scope="col">Singles</th>
+    <th scope="col">Albums</th>
+  </tr>
+  <tr>
+    <th scope="row">inIllustrias</th>
+    <td>40,000</td>
+    <td>60,000</td>
+    <td>200,000</td>
+    <td>70,000</td>
+  </tr>
+  <tr>
+    <th scope="row">Those Bloomin' Covids</th>
+    <td>60,000</td>
+    <td>55,000</td>
+    <td>199,000</td>
+    <td>71,000</td>
+  </tr>
+</table>
+
+### Complicated table
+
+```html
+<table>
+  <caption>Split of marks across course</caption>
+  <tr>
+    <th colspan="3" id="p">Projects</th>
+    <th rowspan="2" id="h">Homework</th>
+    <th colspan="3" id="e">Exams</th>
+  </tr>
+  <tr>
+    <th id="e1" headers="e">1</th>
+    <th id="e2" headers="e">2</th>
+    <th id="ef" headers="e">Final</th>
+    <th id="p1" headers="p">1</th>
+    <th id="p2" headers="p">2</th>
+    <th id="pf" headers="p">Final</th>
+  </tr>
+  <tr>
+    <td headers="e e1">14%</td>
+    <td headers="e e2">19%</td>
+    <td headers="e ef">17%</td>
+    <td headers="h">16%</td>
+    <td headers="p p1">9%</td>
+    <td headers="p p2">16%</td>
+    <td headers="p pf">11%</td>
+  </tr>
+</table>
+```
+
+<table>
+  <caption>Split of marks across course</caption>
+  <tr>
+    <th colspan="3" id="p">Projects</th>
+    <th rowspan="2" id="h">Homework</th>
+    <th colspan="3" id="e">Exams</th>
+  </tr>
+  <tr>
+    <th id="e1" headers="e">1</th>
+    <th id="e2" headers="e">2</th>
+    <th id="ef" headers="e">Final</th>
+    <th id="p1" headers="p">1</th>
+    <th id="p2" headers="p">2</th>
+    <th id="pf" headers="p">Final</th>
+  </tr>
+  <tr>
+    <td headers="e e1">14%</td>
+    <td headers="e e2">19%</td>
+    <td headers="e ef">17%</td>
+    <td headers="h">16%</td>
+    <td headers="p p1">9%</td>
+    <td headers="p p2">16%</td>
+    <td headers="p pf">11%</td>
+  </tr>
+</table>
+
+## Wrapping up
+
+Hopefully this guide has helped you to understand a bit more of using HTML tables for content. It can be hard especially when the tables are really complicated, and there is an element of author discretion, but ultimately the summary is:
+
+* Use simple tables (split complicated tables into multiple simpler tables)
+* Use the <caption> elements to add the caption at the top of the table
+* Use <th> elements to mark-up row and column headings
+* Add the attribute scope=”col” to column headers and scope=”row” to row headers
+* Minimise the amount of white space between columns. Large amounts of white space cause problems for screen magnifier users
+* Remember that the headings must have the proper scope of column or row designated to be voiced by a screen reader, it is not enough just to be designated as a TH
+* Ideally, don’t hide any cell borders. Certainly, don’t hide the horizontal cell borders because people rely on them for orientation when scrolling horizontally, especially if they are using screen magnification
+* Consider using alternate background colours for alternate rows. Again, this helps with horizontal scrolling
+* If you want the data table to be sortable, you can make the column headers clickable. However, it requires significant accessibility knowledge to do this. Many implementations of this have accessibility issues, so don’t just copy another design
+* Avoid abbreviations such as Qty instead of Quantity. This often happens with headings for columns that only contain a few characters. If the visual text must be abbreviated, use hidden text such as the “clip” technique to make the full word(s) available to assistive technologies
+
+## Useful links
+
+* [W3C HTML tables tutorial](https://www.w3.org/WAI/tutorials/tables/) (external website)
