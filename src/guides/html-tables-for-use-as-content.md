@@ -447,3 +447,9 @@ The table will be read out by a screen reader as follows:
 </table>
 
 ```
+
+##### Note
+
+Screen reader support for `scope="rowgroup"` has historically been worse than support for `scope="colgroup"`, so for maximum accessibility, especially in terms of backward compatibility, it is best to orient the table in a configuration that allows `scope="colgroup"`, and which does not require `scope="rowgroup"`.
+
+If you open the example file in Notepad (or text editor of your choice) and copy and paste the code into the code view `<>` of the `BodyText`, and amend it then you will start with the right type of table.
