@@ -650,7 +650,7 @@ Using id and headers attributes to associate data cells with header cells in dat
 
 ### Making a table with Total Expenditure more accessible
 
-```
+```html
 <table>
   <caption>Budgets</caption>
   <thead>
