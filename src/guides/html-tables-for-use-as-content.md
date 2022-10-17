@@ -80,7 +80,7 @@ With headings marked as normal `td` cells and `<strong>` tags across the top row
 
 and down the first column as Black Refuse, Recycling
 
-```
+```html
 <tr>
   <td><strong>Black refuse</strong></td>
 </tr>
