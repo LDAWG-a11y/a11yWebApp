@@ -118,7 +118,7 @@ will be read out by a screen reader as follows:
 * Column three Tue 06, Mon 12, Mon 19, Mon 26
 * Column four Tue 04, Mon 10, Mon 17, Mon 24
 
-his table becomes:
+This table becomes:
 
 ```html
 <table>
