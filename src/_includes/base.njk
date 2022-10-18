@@ -4,11 +4,11 @@
   <main class="main {%- if '/accessibility' in page.url or '/about' in page.url %} cms{%- endif %}">
     {{ content | safe }}
   </main>
-  {%- if path == "home" %}
-    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  {%- endif %}
   {% include "_footer.njk" %}
   <script src="/js/main.js"></script>
+  {%- if page.url == "/faqs/" %}
+    <script src="/js/faqs.js"></script>
+  {%- endif %}
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {

@@ -20,7 +20,7 @@
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
 
     .has-js & {
-      padding-top: $space-xxxl;
+      padding-top: $space-xxxxl;
     }
   }
 }
@@ -43,7 +43,7 @@ button[class^="header__themes-btn"] {
 
 .header__themes-btn {
   position: absolute;
-  top: $space-xs;
+  top: $space-sm;
   right: $space-md;
   padding: $space-xxs $space-xl $space-xxs $space-sm;
 
@@ -119,9 +119,13 @@ button[class^="header__themes-btn"] {
   }
 
   @include mq.mq($from:md) {
-    top: $space-xs;
-    right: $space-md;
+    top: calc($space-lg - .125rem);
+    right: $space-lg;
     transform: translateX(-50%);
+  }
+
+  @include mq.mq($from:lg) {
+    top: $space-md;
   }
 }
 
