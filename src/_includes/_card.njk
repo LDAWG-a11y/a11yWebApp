@@ -1,7 +1,7 @@
 {%- if page.url != '/' %}<li class="card__item">{%- endif %}
-  <article {%- if page.url == '/' %} class="card__item" {%- endif %} itemscope itemtype="http://schema.org/HowTo">
-    <h3 class="card__title" itemprop="name"><a href="{{ guide.url }}" class="card__link">{{ guide.data.title }}</a></h3>
-    <p class="card__summary" itemprop="description">{{ guide.data.summary }}</p>
+  <article {%- if page.url == '/' %} class="card__item" {%- endif %}>
+    <h3 class="card__title"><a href="{{ guide.url }}" class="card__link">{{ guide.data.title }}</a></h3>
+    <p class="card__summary">{{ guide.data.summary }}</p>
     <ul class="tags" aria-label="Tagged with:">
       {%- for tag in guide.data.tags | filterTagList %}
         {%- if page.url == '/guides/' %}
@@ -23,7 +23,7 @@
       {%- endfor %}
     </ul>
     {% set guideAuthor = collections.writers | getAuthor(guide.data.author) %}
-    <a href="/authors/{{ guideAuthor.key }}" class="card__author-link" itemprop="author">{{ guideAuthor.name }}</a>
-    <time class="card__date" datetime="datePublished" itemprop="{{ guide.data.date.toISOString() }}">{{ guide.data.date | readableDate }}</time>
+    <a href="/authors/{{ guideAuthor.key }}" class="card__author-link">{{ guideAuthor.name }}</a>
+    <time class="card__date" datetime="{{ guide.data.date.toISOString() }}">{{ guide.data.date | readableDate }}</time>
   </article>
 {%- if page.url != '/' %}</li>{%- endif %} 
