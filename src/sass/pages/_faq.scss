@@ -3,3 +3,86 @@
 .faqs__intro {
   margin-bottom: $space_xl;
 }
+
+.faqs__toggle-container {
+
+  .has-js & {
+    display: flex;
+    justify-content: flex-end;
+    gap: $space-md;
+    margin-bottom: $space-xs;
+    max-width: 60rem;
+  }
+}
+
+.faqs__toggle--expand-all,
+.faqs__toggle--collapse-all {
+  @extend %small-text;
+
+  position: relative;
+  border: 2px solid var(--color-interactive);
+  border-radius: $radius-sm;
+  padding: 0 $space-xs;
+  font-weight: 600;
+  background-color: var(--color-bg--light);
+  color: var(--color-interactive);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    bottom: -6px;
+    left: -6px;
+    border: 2px solid transparent;
+    border-radius: $radius-lg;
+    transition: border-color 250ms ease-in-out;
+
+    @media (forced-colors: active) {
+      display: none;
+    }
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-interactive);
+    color: var(--color-bg);
+  }
+
+  &:focus-visible {
+    &::before {
+      border-color: var(--color-interactive);
+    }
+  }
+
+  &[aria-pressed="true"] {
+    border: none;
+    background-color: var(--color-bg);
+    color: var(--color-inactive);
+
+    [data-theme="dark"] & {
+      color: #959595;
+    }
+  
+    @media (prefers-color-scheme: dark) {
+      color: #959595;
+    }
+
+    &::before {
+      display: none;
+    }
+
+    &:focus-visible {
+      background-color: var(--color-inactive);
+      color: var(--color-bg);
+
+      [data-theme="dark"] & {
+        background-color: #959595;
+      }
+    
+      @media (prefers-color-scheme: dark) {
+        background-color: #959595;
+      }
+    }
+  }
+}
