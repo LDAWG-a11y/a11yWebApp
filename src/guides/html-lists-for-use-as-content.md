@@ -8,6 +8,7 @@ date: 2022-10-07
 tags:
   - HTML
   - Lists
+isGuide: true
 ---
 ## Introduction to content lists
 

@@ -9,6 +9,7 @@ tags:
   - HTML
   - Tables
 file: /docs/thumbnail_image003.png
+isGuide: true
 ---
 ## Introduction to content tables
 

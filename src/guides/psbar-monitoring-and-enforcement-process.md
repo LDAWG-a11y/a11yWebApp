@@ -9,6 +9,7 @@ tags:
   - PSBAR
   - Monitoring
   - Enforcement
+isGuide: true
 ---
 ## How the monitoring works
 
