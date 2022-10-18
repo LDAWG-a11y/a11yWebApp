@@ -1,5 +1,5 @@
 {% include "_head.njk" %}
-<body>
+<body {%- if page.url == '/faqs/' %} itemscope itemtype="https://schema.org/FAQPage" {%- endif %}>
   {% include "_header.njk" %}
   <main class="main {%- if '/accessibility' in page.url or '/about' in page.url %} cms{%- endif %}">
     {{ content | safe }}

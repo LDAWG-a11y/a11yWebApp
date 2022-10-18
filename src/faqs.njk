@@ -16,8 +16,8 @@ pagination:
 <p class="faqs__intro">We've put together some of our FAQs here, it may be a useful place to start, especially if you're just starting out on this journey, if you are just starting out, welcome to the digital accessibility community.</p>
 {%- for faq in accordions %}
   {%- if faq.data.title %}
-    <h3 class="accordion">{{ faq.data.title }}</h3>
-    <div class="accordion__panel">{{ faq.templateContent | safe }}</div>
+    <h3 class="accordion" itemscope itemprop="mainEntity name" itemtype="https://schema.org/Question">{{ faq.data.title }}</h3>
+    <div class="accordion__panel" itemprop="acceptedAnswer text" itemtype="https://schema.org/Answer">{{ faq.templateContent | safe }}</div>
   {%- endif %}
 {%- endfor %}
 

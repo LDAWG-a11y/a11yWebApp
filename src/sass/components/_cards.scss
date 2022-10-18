@@ -67,8 +67,7 @@
 }
 
 .card__author-name {
-  @extend %small-text;
-
+  
   &::after {
     content: "|";
     padding-left: $space-xs;
@@ -80,6 +79,7 @@
 
 .card__author-link {
   @include focus-indicator;
+  @extend %small-text;
   @extend %underline;
 
   margin: -4px -3px;
