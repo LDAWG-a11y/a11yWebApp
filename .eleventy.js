@@ -90,6 +90,11 @@ module.exports = eleventyConfig => {
     return guides.filter(a => a.data.author === author);
   });
 
+  eleventyConfig.addFilter("answer", (faq) => {
+    const content = faq.replace(/(<([^>]+)>)/gi, "");
+    return content.substr(0, content.lastIndexOf(" ", 300)) + "...";
+  });
+
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
     if( outputPath && outputPath.endsWith(".html") ) {
       let minified = htmlmin.minify(content, {

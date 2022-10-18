@@ -47,14 +47,31 @@
         },
         "datePublished": "{{ date.toISOString() }}"
       }
-    {%- else %}
+    {%- elseif page.url != '/faqs/' %}
       {
         "@context": "http://schema.org",
-        "@type": "{%- if page.url == '/about/' %}AboutPage{%- elseif page.url == '/faqs/' %}FAQPage{%- else %}Website{%- endif %}",
+        "@type": "{%- if page.url == '/about/' %}AboutPage{%- else %}Website{%- endif %}",
         "name": "{{ title }}",
-        "description": "{{ summary }}"
+        "description": "{%- if not home %}{{ summary }}{%- else %}A repository of guidance & resources for organisations & individuals aiming to improve digital accessibility, through web development, documents and other digital media{%- endif %}",
         "url": "{{ site.siteUrl }}"
       }
+    {%- else %}
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+      {%- for faq in collections.faqs %}
+        {
+          "@type": "Question",
+          "name": "{{ faq.data.title }}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{{ faq.templateContent | safe | answer }}"
+          }
+        }{%- if not loop.last %},{% endif %}
+      {%- endfor %}
+      ]
+    }
     {%- endif %}
   </script>
   {%- if home %}
