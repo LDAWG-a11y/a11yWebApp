@@ -79,7 +79,7 @@ a:not([class]):visited {
   width: 1px;
 }
 
-.tag__item, .card__date, .card__author-name {
+.tag__item, .card__date, .card__author-link {
   font-size: 1.125rem;
 }
 
