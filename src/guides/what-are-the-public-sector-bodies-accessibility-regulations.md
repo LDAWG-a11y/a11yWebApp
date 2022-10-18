@@ -10,6 +10,7 @@ date: 2022-10-16
 tags:
   - PSBAR
   - Regulations
+isGuide: true
 ---
 ## Introduction
 
