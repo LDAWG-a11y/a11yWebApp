@@ -37,7 +37,7 @@ Every accessibility professional will have a toolkit, usually a folder full of b
 
 There's a couple of considerations to be aware of before we delve into the tools:
 
-* Some of these tools reside in the "Dev Tools", when we reference "Dev Tools", we're referring to the browsers' code inspectors, where we can view all of the HTML, CSS and much more for the current page. To access the Dev Tools, you can right-click anywhere on the page and selecting **Inspect** or **Inspect Element**, alternatively, you can just press the <kbd>F12</kbd> key and it will open up (depending on your keyboard, you may need to press the <kbd>function</kbd> or <kbd>fn</kbd> key, along with <kbd>F12</kbd>).
+* Some of these tools reside in the "DevTools", when we reference "DevTools", we're referring to the browsers' code inspectors, where we can view all of the HTML, CSS and much more for the current page. To access the DevTools, you can right-click anywhere on the page and selecting **Inspect** or **Inspect Element**, alternatively, you can just press the <kbd>F12</kbd> key and it will open up (depending on your keyboard, you may need to press the <kbd>function</kbd> or <kbd>fn</kbd> key, along with <kbd>F12</kbd>).
 * It’s also worth noting that Semi-automated tools won’t test content that is hidden in the DOM, as an example, if you had a page with a modal, you’d need to test the page with the modal closed and then again with it open and this applies to all disclosure type widgets. We often run tools on a page that has interactive widgets and it can at times look quite positive, not too many errors, nothing difficult to resolve for the developers. When we click a button to show a date picker, modal, accordion, navigation etc, this interactive content is exposed to both the DOM and the accessibility tree, the previously hidden elements often expose a litany of accessibility issues.
 
 ### Axe browser extension
@@ -58,7 +58,7 @@ I ran this test against Wikipedia, as I needed to demonstrate on a website and w
 
 #### Interpreting the test results
 
-So, we have several panels of interest, after we click the **Scan ALL my page** button, it may be necessary to either drag the DevTools up to be able to see those panels or alternatively you can detach the DevTools from the browser window, by clicking the 3 vertical dots (Customise and control DevTools button) and then in the **Dock side** options select **undock into a separate window** (visually represented by 2 rectangles 1 overlaying the other), choose whichever option works best for you.
+So, we have several panels of interest, after we click the **Scan ALL my page** button, it may be necessary to either drag the DevTools up to be able to see those panels or alternatively you can detach the DevTools from the browser window, by clicking the 3 vertical dots (**Customise and control DevTools** button) and then in the **Dock side** options select **undock into a separate window** (visually represented by 2 rectangles 1 overlaying the other), choose whichever option works best for you.
 
 * The first panel we encounter is the **Total issues** panel, within this panel it will inform us how many actual issues and/or potential issues it has detected, as well as the severity of those issues
 * The second panel we encounter is the **All issues** panel, which is essentially a summary of issue type
