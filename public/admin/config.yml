@@ -17,7 +17,7 @@ collections:
       - { label: "Title", name: "title", widget: "string", hint: "Try to keep this short and meaningful" }
       - { label: "Summary", name: "summary", widget: "string", hint: "This is displayed on the Guide card, it is also used for the page description, for SEO purposes" }
       - { label: "Author", name: "author", widget: "relation", collection: "authors", value_field: "key", display_fields: [ "name" ], search_fields: [ "name" ], default: "Anonymous", hint: "New authors need to be created before a guide can be attributed to them "}
-      - { label: "Date", name: "date", widget: "datetime", format: 'YYYY-MM-DD', hint: "Only change this if you update your guide"}
+      - { label: "Date", name: "date", widget: "datetime", format: 'YYYY-MM-DD', hint: "Change this only if you update your guide"}
       - { label: "Table of Contents (TOC)", name: "toc", widget: "boolean", default: false, hint: "Only add a TOC if there 4 or more heading 2s" }
       - { label: "Tags", name: "tags", widget: "list", hint: "Tags are case sensitive, so html and HTML are not the same tag, so please ensure you have checked a tag exists, before creating a new one, as a typo or case mismatch will cause a system error", default: Untagged, summary: "{{fields.tag}}", field: { label: "Tag", name: "tag", widget: "string" }}
       - { label: "Include files", name: "file", widget: "file", required: false, media_folder: "/src/docs", public_folder: "/docs", media_library: {config: {multiple: true}} }
@@ -53,7 +53,7 @@ collections:
     fields:
       - { label: "Question", name: "title", widget: "string", hint: "The title is displayed in an accordion button"}
       - { label: "Answer", name: "body", widget: "markdown" }
-      - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should not be changed" }
+      - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
       - { label: "Tags", name: "tags", default: "faqs", widget: "hidden" }
       - { label: "Include files", name: "file", widget: "file", required: false, media_folder: "/src/docs", public_folder: "/docs", media_library: {config: {multiple: true}} }
       - { label: "Permalink", name: "permalink", default: false, widget: "hidden" }
@@ -67,6 +67,7 @@ collections:
       - { label: "Acronym?", name: "acronym", widget: "boolean", default: false, hint: "Toggle to true if this is an acronym" }
       - { label: "Definition", name: "body", widget: "text" }
       - { label: "Permalink", name: "permalink", default: false, widget: "hidden" }
+      - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if you add a new item" }
       - { label: "Tags", name: "tags", default: "terms", widget: "hidden" }
   - name: "pages"
     label: "Pages"
@@ -76,17 +77,20 @@ collections:
         file: "/src/accessibility.md"
         fields:
           - { label: "Table of Contents (TOC)", name: "toc", widget: "boolean", default: false, hint: "Only add a TOC if there 4 or more heading 2s" }
+          - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
           - { label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
       - label: "About Page"
         file: "/src/about.md"
         name: "about"
         fields:
+          - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
           - {label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
       - label: "Privacy policy"
         name: "privacy"
         file: "/src/privacy.md"
         fields:
           - { label: "Table of Contents (TOC)", name: "toc", widget: "boolean", default: false, hint: "Only add a TOC if there 4 or more heading 2s" }
+          - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
           - { label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
       - label: "Home"
         name: "home"

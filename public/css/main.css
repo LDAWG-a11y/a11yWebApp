@@ -2130,6 +2130,35 @@ ul:not([class]) > li::marker {
   height: 100%;
   border-color: var(--color-interactive);
 }
+:not([data-theme=dark]) .glossary__item-wrapper:focus-within::before {
+  top: -2px;
+  height: calc(100% + 4px);
+}
+@media (prefers-color-scheme: dark) {
+  .glossary__item-wrapper:focus-within::before {
+    top: 0;
+    height: 100%;
+  }
+}
+[data-theme=dark] .glossary__item-wrapper:focus-within::before {
+  top: 0;
+  height: 100%;
+}
+.glossary__item-wrapper:focus-within:first-of-type::before, .glossary__item-wrapper:focus-within:last-of-type::before {
+  top: 0;
+  height: 100%;
+}
+:not([data-theme=dark]) .glossary__item-wrapper:focus-within:first-of-type::before, :not([data-theme=dark]) .glossary__item-wrapper:focus-within:last-of-type::before {
+  height: calc(100% + 2px);
+}
+@media (prefers-color-scheme: dark) {
+  .glossary__item-wrapper:focus-within:first-of-type::before, .glossary__item-wrapper:focus-within:last-of-type::before {
+    height: 100%;
+  }
+}
+[data-theme=dark] .glossary__item-wrapper:focus-within:first-of-type::before, [data-theme=dark] .glossary__item-wrapper:focus-within:last-of-type::before {
+  height: 100%;
+}
 .glossary__item-wrapper:last-of-type {
   border-bottom: none;
 }

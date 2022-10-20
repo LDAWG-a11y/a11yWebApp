@@ -36,6 +36,41 @@
     &::before {
       height: 100%;
       border-color: var(--color-interactive);
+
+      :not([data-theme="dark"]) & {
+        top: -2px;
+        height: calc(100% + 4px);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        top: 0;
+        height: 100%;
+      }
+    
+      [data-theme="dark"] & {
+        top: 0;
+        height: 100%;
+      }
+    }
+
+    &:first-of-type,
+    &:last-of-type {
+      &::before {
+        top: 0;
+        height: 100%;
+
+        :not([data-theme="dark"]) & {
+          height: calc(100% + 2px);
+        }
+
+        @media (prefers-color-scheme: dark) {
+          height: 100%;
+        }
+      
+        [data-theme="dark"] & {
+          height: 100%;
+        }
+      }
     }
   }
 
