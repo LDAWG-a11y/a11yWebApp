@@ -16,18 +16,25 @@
   &::before {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 0;
     border: 4px solid transparent;
-    transform: translateY(-50%);
     height: 0;
   }
 
   &:focus-within {
     background-color: var(--color-accent);
 
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--color-inactive);
+    }
+  
+    [data-theme="dark"] & {
+      background-color: var(--color-inactive);
+    }
+
     &::before {
-      height: calc(100% + 4px);
+      height: 100%;
       border-color: var(--color-interactive);
     }
   }
@@ -48,7 +55,6 @@
   hyphens: auto;
   font-weight: bold;
   outline: 3px solid transparent;
-  // pointer-events: none;
 
   @include mq.mq($from:md) {
     width: 20%;
