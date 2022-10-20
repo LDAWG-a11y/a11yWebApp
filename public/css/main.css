@@ -1711,6 +1711,34 @@ ul:not([class]) > li::marker {
   fill: var(--color-interactive);
 }
 
+.cms__toc {
+  margin: 0 0 4rem 0;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-bg--light);
+  border: 1px solid var(--color-primary);
+  border-radius: 6px;
+}
+.cms__toc h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.cms__toc ol {
+  list-style-position: inside;
+}
+.cms__toc li::marker {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+@media (min-width: 64em) {
+  .cms__toc li::marker {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 75em) {
+  .cms__toc li::marker {
+    font-size: 1.675rem;
+  }
+}
 .skip-tags {
   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
   position: absolute;
@@ -1745,6 +1773,11 @@ ul:not([class]) > li::marker {
   padding-bottom: 0.5rem;
 }
 
+.cms {
+  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 .cms iframe[src*="youtube.com"],
 .cms iframe[src*="codepen.io"] {
   display: block;
@@ -1806,7 +1839,7 @@ ul:not([class]) > li::marker {
 .cms ul li p {
   margin-bottom: 0.75rem;
 }
-.cms ol {
+.cms ol:not(.cms__toc > ol) {
   margin: 0 0 3rem calc(2.5rem + 3px);
 }
 .cms ul {
@@ -1924,6 +1957,56 @@ ul:not([class]) > li::marker {
   border-color: var(--color-text);
   box-shadow: 3px 2px 0px 1px rgba(255, 255, 255, 0.5);
 }
+.cms h2:not(.accordion):not(.cms__toc > h2) {
+  display: inline-block;
+  margin-bottom: 0;
+}
+.cms .cms__anchor-wrapper {
+  display: grid;
+  grid-template-columns: minmax(auto, max-content) min-content;
+  align-items: stretch;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 64em) {
+  .cms .cms__anchor-wrapper {
+    margin-bottom: 2rem;
+  }
+}
+.cms .cms__anchor {
+  position: relative;
+  bottom: 0;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+  transform: translateY(50%);
+}
+.cms .cms__anchor::before {
+  box-sizing: content-box;
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  height: 2rem;
+  width: 2rem;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background-color: var(--color-bg);
+  transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
+}
+.cms .cms__anchor svg {
+  fill: var(--color-interactive);
+  transform: rotate(-45deg);
+  bottom: 0;
+  transition: fill 250ms ease-in-out;
+}
+.cms .cms__anchor:hover::before, .cms .cms__anchor:focus-visible::before {
+  background-color: var(--color-interactive);
+  border-color: var(--color-interactive);
+}
+.cms .cms__anchor:hover svg, .cms .cms__anchor:focus-visible svg {
+  fill: var(--color-bg);
+}
 
 .faqs__intro {
   margin-bottom: 2rem;
@@ -2021,22 +2104,27 @@ ul:not([class]) > li::marker {
 
 .glossary__item-wrapper {
   position: relative;
-  padding-bottom: 2rem;
+  padding: 1rem 0.75rem;
+  border-bottom: 2px solid var(--color-accent);
 }
 .glossary__item-wrapper::before {
   content: "";
   position: absolute;
-  display: block;
-  bottom: 0.75rem;
+  top: 50%;
   left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--color-accent);
+  border: 4px solid transparent;
+  transform: translateY(-50%);
+  height: 0;
 }
-@media (forced-colors: active) {
-  .glossary__item-wrapper::before {
-    background-color: CanvasText;
-  }
+.glossary__item-wrapper:focus-within {
+  background-color: var(--color-accent);
+}
+.glossary__item-wrapper:focus-within::before {
+  height: calc(100% + 4px);
+  border-color: var(--color-interactive);
+}
+.glossary__item-wrapper:last-of-type {
+  border-bottom: none;
 }
 @media (min-width: 48em) {
   .glossary__item-wrapper {
@@ -2050,6 +2138,7 @@ ul:not([class]) > li::marker {
   overflow-wrap: break-word;
   hyphens: auto;
   font-weight: bold;
+  outline: 3px solid transparent;
 }
 @media (min-width: 48em) {
   .glossary__term {

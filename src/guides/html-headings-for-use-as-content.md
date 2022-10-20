@@ -9,6 +9,7 @@ tags:
   - HTML
   - Headings
 isGuide: true
+toc: true
 ---
 ## Introduction to content headings
 

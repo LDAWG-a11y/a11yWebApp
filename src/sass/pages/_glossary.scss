@@ -10,21 +10,30 @@
 
 .glossary__item-wrapper {
   position: relative;
-  padding-bottom: $space-xl;
-
+  padding: $space-md $space-sm;
+  border-bottom: 2px solid var(--color-accent);
+  
   &::before {
     content: "";
     position: absolute;
-    display: block;
-    bottom: $space-sm;
+    top: 50%;
     left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--color-accent);
+    border: 4px solid transparent;
+    transform: translateY(-50%);
+    height: 0;
+  }
 
-    @media (forced-colors: active) {
-      background-color: CanvasText;
+  &:focus-within {
+    background-color: var(--color-accent);
+
+    &::before {
+      height: calc(100% + 4px);
+      border-color: var(--color-interactive);
     }
+  }
+
+  &:last-of-type {
+    border-bottom: none;
   }
 
   @include mq.mq($from:md) {
@@ -38,6 +47,8 @@
   overflow-wrap: break-word;
   hyphens: auto;
   font-weight: bold;
+  outline: 3px solid transparent;
+  // pointer-events: none;
 
   @include mq.mq($from:md) {
     width: 20%;

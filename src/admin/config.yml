@@ -22,6 +22,7 @@ collections:
       - { label: "Include files", name: "file", widget: "file", required: false, media_folder: "/src/docs", public_folder: "/docs", media_library: {config: {multiple: true}} }
       - { label: "Page content", name: "body", widget: "markdown" }
       - { label: "isGuide", name: "isGuide", default: true, widget: "hidden" }
+      - { label: "Table of Contents (TOC)", name: "toc", widget: "boolean", default: false, hint: "Only add a TOC if there 4 or more heading 2s" }
   - name: "authors"
     label: "Authors"
     create: true
@@ -74,6 +75,7 @@ collections:
         name: "accessibility"
         file: "/src/accessibility.md"
         fields:
+          - { label: "Table of Contents (TOC)", name: "toc", widget: "boolean", default: false, hint: "Only add a TOC if there 4 or more heading 2s" }
           - { label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
       - label: "About Page"
         file: "/src/about.md"
@@ -84,6 +86,7 @@ collections:
         name: "privacy"
         file: "/src/privacy.md"
         fields:
+          - { label: "Table of Contents (TOC)", name: "toc", widget: "boolean", default: false, hint: "Only add a TOC if there 4 or more heading 2s" }
           - { label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
       - label: "Home"
         name: "home"

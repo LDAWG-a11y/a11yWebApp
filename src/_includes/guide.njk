@@ -22,6 +22,12 @@
         {%- endfor %}
       </{% if tagCount > 1 %}ul{% else %}div{% endif %} class="tags tags__all">      
     </div>
+    {% if toc %}
+      <nav class="cms__toc" aria-label="Table of contents">
+        <h2>Table of contents</h2>
+        {{ content | toc | safe }}
+      </nav>
+    {% endif %}
     <article class="cms">
       {{ content | safe }}
     </article>
