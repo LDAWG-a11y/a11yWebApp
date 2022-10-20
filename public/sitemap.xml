@@ -36,6 +36,11 @@
       <lastmod>2022-10-17T00:00:00.000Z</lastmod>
     </url>
   
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/semi-automated-accessibility-testing-tools/</loc>
+      <lastmod>2022-10-19T00:00:00.000Z</lastmod>
+    </url>
+  
       <url>
         <loc>https://www.makethingsaccessible.com/about/</loc>
         <lastmod>2022-10-06T22:17:15.692Z</lastmod>
@@ -64,6 +69,10 @@
         <loc>https://www.makethingsaccessible.com/privacy/</loc>
         <lastmod>2022-10-06T22:17:15.692Z</lastmod>
       </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/automated/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
     <url>
       <loc>https://www.makethingsaccessible.com/tags/best-practice/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
@@ -106,6 +115,14 @@
     </url>
     <url>
       <loc>https://www.makethingsaccessible.com/tags/tables/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/testing/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/tools/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
 </urlset>

@@ -10,6 +10,7 @@ tags:
   - Tools
   - Automated
 isGuide: true
+toc: true
 ---
 ## Semi-automated testing intro
 
@@ -17,7 +18,7 @@ In this article we are going to learn how to use semi-automated tools on webpage
 
 **Aside:** It’s also recommended to follow long on a laptop or desktop (MacOS, Windows or Linux) as installing extensions isn’t always possible on tablets and phones.
 
-## What is Semi-automated testing?
+### What is Semi-automated testing?
 
 Where digital accessibility is concerned, semi-automated testing is the use of third-party tools to check for any detectable accessibility issues on webpages (usually 1 page at a time, hence why it is semi-automated). These tools can provide a vital first line of defence against many common accessibility issues, such as:
 
@@ -31,7 +32,7 @@ Where digital accessibility is concerned, semi-automated testing is the use of t
 
 The list above is by no means exhaustive, but they are some of the most common issues detected. It’s also worth noting that these tools are not perfect, no tool can completely test a page, in fact, automated or semi-automated tools typically only pick up around 40% of known accessibility issues, but they are a invaluable tools and it’s great practice to familiarise yourself with them and check your pages or sites to get a basic overview of the accessibility.
 
-## Tell me about the tools
+### Tell me about the tools
 
 Every accessibility professional will have a toolkit, usually a folder full of bookmarks, several browser extensions and some bookmarklets that test specific things, these will naturally differ between individuals, so this list is again not exhaustive.
 
@@ -40,11 +41,11 @@ There's a couple of considerations to be aware of before we delve into the tools
 * Some of these tools reside in the "DevTools", when we reference "DevTools", we're referring to the browsers' code inspectors, where we can view all of the HTML, CSS and much more for the current page. To access the DevTools, you can right-click anywhere on the page and selecting **Inspect** or **Inspect Element**, alternatively, you can just press the <kbd>F12</kbd> key and it will open up (depending on your keyboard, you may need to press the <kbd>function</kbd> or <kbd>fn</kbd> key, along with <kbd>F12</kbd>).
 * It’s also worth noting that Semi-automated tools won’t test content that is hidden in the DOM, as an example, if you had a page with a modal, you’d need to test the page with the modal closed and then again with it open and this applies to all disclosure type widgets. We often run tools on a page that has interactive widgets and it can at times look quite positive, not too many errors, nothing difficult to resolve for the developers. When we click a button to show a date picker, modal, accordion, navigation etc, this interactive content is exposed to both the DOM and the accessibility tree, the previously hidden elements often expose a litany of accessibility issues.
 
-### Axe browser extension
+## Axe browser extension
 
 Axe is available on Chrome, Firefox and Edge; sadly it’s unavailable on Safari. Axe is a free browser extension that can run a series of tests on a single page at a time. 
 
-#### How to use Axe
+### How to use Axe
 
 [Visit the Axe browser extension page](https://www.deque.com/axe/browser-extensions/), where there are links for each of the previously mentioned browsers. Simply visit that page in the browser you want to use Axe with and click the **Install free \[your browser]** extension, which will then navigate to the extensions store for that particular browser, once there, click the **add to \[your browser]** button and follow any on-screen prompts. 
 
@@ -56,7 +57,7 @@ Within the **Let’s get started** panel, the option we need to concern ourselve
 
 I ran this test against Wikipedia, as I needed to demonstrate on a website and we won't find any issues on this one, Wikipedia is public enough and well known enough to be a suitable example. Disclaimer, we are not here to test Wikipedia, we’re just demonstrating using the tools.
 
-#### Interpreting the test results
+### Interpreting the test results
 
 So, we have several panels of interest, after we click the **Scan ALL my page** button, it may be necessary to either drag the DevTools up to be able to see those panels or alternatively you can detach the DevTools from the browser window, by clicking the 3 vertical dots (**Customise and control DevTools** button) and then in the **Dock side** options select **undock into a separate window** (visually represented by 2 rectangles 1 overlaying the other), choose whichever option works best for you.
 
@@ -70,7 +71,7 @@ In the **All Issues** panel, our issues are grouped by issue type and adjacent t
 
 If we click that issue, the content of the **Issue description** panel changes to reflect that particular issue, it’s important to note it is only showing the first issue of that type, don’t worry though, we can cycle through any further issues of the same type.
 
-#### Finding the issue
+### Finding the issue
 
 At the top of the **Issue description** panel, there are some handy tools that help to quickly locate the issue, both on the page or in the source code:
 
@@ -87,7 +88,7 @@ Automated and semi-automated tools are perfectly imperfect, they can’t second 
 
 Axe provides a useful set of tests to enable you to identify issues on webpages. Always remember to test the page as it first displays, then locate any accordions, modals, tabbed interfaces, disclosure menus or indeed anything else that changes the presentation and/ or functionality of the page and test with each open and it’s likely you will discover additional issues.
 
-### WAVE browser extension
+## WAVE browser extension
 
 Wave is available for Chrome, Firefox and Edge and again, not Safari. [Visit the WAVE page](https://wave.webaim.org/extension/) and locate the link for your chosen browser’s extension store and follow any prompts to install it.
 
@@ -95,7 +96,7 @@ The WAVE extension works a little differently, in that it doesn’t require you 
 
 The only thing we need to do here, is click the button and the WAVE interface opens up.
 
-#### Interpreting the test results
+### Interpreting the test results
 
 The WAVE interface usually appears on the left of the screen, although this may change dependant on viewport size, resolution or zoom settings.
 
@@ -116,7 +117,7 @@ The **Structure** tab displays the structural content of the page such as headin
 
 Finally, there is the **Contrast** tab, which contains WebAIM’s Color Contrast Checker and allows for a foreground and background colour’s hex values to be input and it will calculate the contrast between those values. If there are any automatically detected errors, there will be a **Very low contrast \[issue number]** image for each. This can be clicked with a mouse/finger, which will scroll the offending item into view, this element sadly isn’t keyboard focusable, so keyboard users would need to tab into the main page and locate it manually, which may be quite difficult on larger pages, with lots of issues.
 
-### Arc Toolkit
+## Arc Toolkit
 
 Arc is only available with Chrome, although it can be downloaded to other Chromium-based browsers, I added it to MS Edge using this process:
 
@@ -135,14 +136,14 @@ I would recommend detaching the DevTools, using the Undock button, which can be 
 
 There are 2 panes in The ARC interface, the **Summary** panel, which is typically on the left and the **Information** panel, which is typically on the right.
 
-#### Run tests
+### Run tests
 
 In the **Summary** panel, there are 2 buttons of interest **Run tests** and **More tools**:
 
 * **Run tests** will test the page against ARC’s rulesets to identify all the issues it can detect
 * **Other tools** contains some useful tools for running some otherwise manual tests
 
-#### Other tools
+### Other tools
 
 The 4 useful tools here are:
 
@@ -151,7 +152,7 @@ The 4 useful tools here are:
 * **Check Text Spacing** (Necessary to meet WCAG 1.4.12 Text Spacing), all text on the page should visibly increase its size, Line Height, Letter Spacing, Word Spacing and Paragraph Spacing
 * Check Page Reflow (Necessary to meet WCAG 1.4.10 Reflow), this will set the browser width to 1280px and set zoom to 400%, which replicates a 320px viewport width. At this viewport, there should be no loss of content or functionality and the page should not scroll in 2 directions (there are some exceptions that can scroll in 2 directions, such as maps, complex data tables, complex images etc, but not the whole page)
 
-### Lighthouse
+## Lighthouse
 
 No installation is necessary for Lighthouse, it’s built right into Chromium-based browsers, Chrome, Edge, Brave etc. It can be accessed within the DevTools panel, by right-clicking anywhere on the page and selecting **Inspect** or by pressing <kbd>F12</kbd>.
 
@@ -167,7 +168,7 @@ Below the score, there are accordion components, which when expanded will provid
 
 **Aside:** I tend to find that having Axe installed conflicts with page performance scores on Lighthouse, so if you're going for hundreds across the board in Lighthouse, it may be useful to test in Incognito Mode, in another persona or disable other extensions).
 
-### Accessibility Insights
+## Microsoft Accessibility Insights
 
 Accessibility Insights, by Microsoft is available on Chromium-based browsers, such as Chrome, Edge and Brave. Additionally, there are Android and Windows versions, which can be used to test non-web applications, although this guide will focus on the web version.
 
@@ -187,7 +188,7 @@ The **Color** option will desaturate the page, removing all colour, which helps 
 
 The **Fast Pass** option, contains a selection of the tools explained above, it’s very useful, but for brevity, I won’t go into details, as those tools exist in the other options and have already been explained.
 
-### IBM Equal Access
+## IBM Equal Access
 
 The Equal Access checker, resides in the DevTools after it has been installed and is available for Chromium-based browsers, as well as Firefox, Safari still gets no love from the vendors though. Toward the bottom of the following page, there are links to install from your browser vendor’s web store (remember, you can install Chrome extensions on Edge and Brave). Follow the usual process to install the plugin and then open up your DevTools by pressing <kbd>F12</kbd> or right-clicking and choosing **Inspect**, in this instance, the tab you should locate, within the DevTools is named **Accessibility Assessment**.
 
@@ -195,7 +196,7 @@ There are 2 panels for the Equal Access checker, the first being the **Scan** pa
 
 In the **Scan** panel, click the **Scan** button and wait a moment for the tests to complete. The **Scan** panel is now populated with issues and recommendations, each one against a WCAG success criteria and they are expandable accordions, which when opened will list each **Issue**, **Recommendation** and **Needs Review** item. These can be clicked and the **Summary** pane will provide you with further details on why it is an issue and tips on resolving it. It also shows the element location, but there is no nifty button that will scroll it into view or open the **Elements** panel and highlight the code for you.
 
-### HTML Validator
+## HTML Validator
 
 Finally, the HTML validator, perhaps the most important tool in any Developer’s or Accessibility Practitioner’s toolkit. Many accessibility issues are related to poorly formed HTML, such as missing required child tags, duplicate IDs, incorrect nesting, lack of semantics or ARIA alternatives and much more. If a page is well structured, uses the correct tag for the job and uses HTML to the spec, this goes a very long way towards creating accessible interfaces, sure we can introduce new issues with CSS, JavaScript or even ARIA, but if we get that foundation right and then add the other technologies to enhance the page, whilst considering the effects of our design, development or content choices on all users, we can open up our web apps to a wider range of people. 
 

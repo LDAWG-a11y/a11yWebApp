@@ -10,6 +10,7 @@ tags:
   - Monitoring
   - Enforcement
 isGuide: true
+toc: true
 ---
 ## How the monitoring works
 

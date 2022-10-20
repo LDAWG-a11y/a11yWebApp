@@ -9,6 +9,7 @@ tags:
   - HTML
   - Lists
 isGuide: true
+toc: true
 ---
 ## Introduction to content lists
 

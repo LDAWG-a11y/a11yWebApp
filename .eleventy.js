@@ -1,7 +1,11 @@
-const markdownIt = require('markdown-it');
+
 const markdownItEleventyImg = require("markdown-it-eleventy-img");
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
 const Image = require("@11ty/eleventy-img");
 const htmlmin = require("html-minifier");
+const slugify = require("slugify");
+const pluginTOC = require('eleventy-plugin-toc');
 
 module.exports = eleventyConfig => {
   const { DateTime } = require("luxon");
@@ -19,6 +23,10 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('src/fonts');
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(pluginTOC, {
+    tags: ['h2', 'h3'],
+    wrapper: ''
+  })
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   const markdownItEleventyImgConfig = {
@@ -36,11 +44,46 @@ module.exports = eleventyConfig => {
     }
   }
 
+  const linkAfterHeader = markdownItAnchor.permalink.linkAfterHeader({
+    class: "cms__anchor",
+    symbol: `<svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="4 14 40 20"><path d="M22.5 34H14q-4.2 0-7-3t-3-7q0-4.2 3-7t7-3h8.5v3H14q-2.9 0-5 2-2 2.1-2 5t2 5q2.1 2 5 2h8.5Zm-6.3-8.5v-3h15.6v3Zm9.3 8.5v-3H34q2.9 0 5-2 2-2.1 2-5t-2-5q-2.1-2-5-2h-8.5v-3H34q4.2 0 7 3t3 7q0 4.2-3 7t-7 3Z"></path></svg>`,
+    style: "aria-labelledby",
+  });
+  
+  const mdAnchorOpts = {
+    level: [2],
+    slugify: (str) =>
+      slugify(str, {
+        lower: true,
+        strict: true,
+        remove: /["]/g,
+      }),
+    permalink(slug, opts, state, idx) {
+      state.tokens.splice(
+        idx,
+        0,
+        Object.assign(new state.Token("div_open", "div", 1), {
+          attrs: [['class', 'cms__anchor-wrapper']],
+          block: true,
+        })
+      );
+  
+      state.tokens.splice(
+        idx + 4,
+        0,
+        Object.assign(new state.Token("div_close", "div", -1), {
+          block: true,
+        })
+      );
+      linkAfterHeader(slug, opts, state, idx + 1);
+    },
+  };
+
   let mdLib = markdownIt({
     html: true,
     breaks: true,
     linkify: true
-  }).use(markdownItEleventyImg, markdownItEleventyImgConfig)
+  }).use(markdownItEleventyImg, markdownItEleventyImgConfig).use(markdownItAnchor, mdAnchorOpts)
 
   eleventyConfig.setLibrary("md", mdLib);
   eleventyConfig.addPlugin(syntaxHighlight);

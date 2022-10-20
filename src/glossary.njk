@@ -17,7 +17,7 @@ eleventyExcludeFromCollections: true
   <dl class="glossary__list">
     {%- for item in descList  %}
       <div class="glossary__item-wrapper">
-        <dt class="glossary__term">{%- if item.data.acronym %}<abbr>{%- endif %}{{ item.data.title }}{%- if item.data.acronym %}</abbr>{%- endif %}</dt>
+        <dt class="glossary__term" id="{{ item.data.title | slugify }}" tabindex="-1">{%- if item.data.acronym %}<abbr>{%- endif %}{{ item.data.title }}{%- if item.data.acronym %}</abbr>{%- endif %}</dt>
         <dd class="glossary__definition">{{ item.templateContent | safe  }}</dd>
       </div>
     {%- endfor %}
