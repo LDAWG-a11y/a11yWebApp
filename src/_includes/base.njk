@@ -4,8 +4,8 @@
   <main class="main {%- if '/accessibility' in page.url or '/about' in page.url or '/privacy' in page.url %} cms{%- endif %}">
     {% if '/accessibility' in page.url or '/privacy' in page.url %}
       {% if toc %}
-        <nav class="cms__toc" aria-label="Table of contents">
-          <h2>Table of contents</h2>
+        <nav class="cms__toc" aria-labelledby="toc-heading">
+          <h2 id="toc-heading">Table of contents</h2>
           {{ content | toc | safe }}
         </nav>
       {% endif %}
