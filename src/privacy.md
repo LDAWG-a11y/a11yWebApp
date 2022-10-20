@@ -27,7 +27,7 @@ Where our website links to external resources or websites, these may add their o
 
 ## Personal information
 
-Make Things Accessible does not collect personal information apart from that offered through users directly contacting us through[ email ](mailto:info@makethingsaccessible.com)or social media channels. All contact information that does not lead to ongoing engagement will be removed at the end of our retention period to comply with the Data Protection Act and General Data Protection Regulations. At no point is any personal information provided to Make Things Accessible shared with third parties or used for any other purpose (such as promotional emails).
+Make Things Accessible does not collect personal information apart from that offered through users directly contacting us through [email](mailto:info@makethingsaccessible.com) or social media channels. All contact information that does not lead to ongoing engagement will be removed at the end of our retention period to comply with the Data Protection Act and General Data Protection Regulations. At no point is any personal information provided to Make Things Accessible shared with third parties or used for any other purpose (such as promotional emails).
 
 ## Cookies
 
