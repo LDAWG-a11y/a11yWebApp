@@ -18,11 +18,11 @@ collections:
       - { label: "Summary", name: "summary", widget: "string", hint: "This is displayed on the Guide card, it is also used for the page description, for SEO purposes" }
       - { label: "Author", name: "author", widget: "relation", collection: "authors", value_field: "key", display_fields: [ "name" ], search_fields: [ "name" ], default: "Anonymous", hint: "New authors need to be created before a guide can be attributed to them "}
       - { label: "Date", name: "date", widget: "datetime", format: 'YYYY-MM-DD', hint: "Only change this if you update your guide"}
+      - { label: "Table of Contents (TOC)", name: "toc", widget: "boolean", default: false, hint: "Only add a TOC if there 4 or more heading 2s" }
       - { label: "Tags", name: "tags", widget: "list", hint: "Tags are case sensitive, so html and HTML are not the same tag, so please ensure you have checked a tag exists, before creating a new one, as a typo or case mismatch will cause a system error", default: Untagged, summary: "{{fields.tag}}", field: { label: "Tag", name: "tag", widget: "string" }}
       - { label: "Include files", name: "file", widget: "file", required: false, media_folder: "/src/docs", public_folder: "/docs", media_library: {config: {multiple: true}} }
       - { label: "Page content", name: "body", widget: "markdown" }
       - { label: "isGuide", name: "isGuide", default: true, widget: "hidden" }
-      - { label: "Table of Contents (TOC)", name: "toc", widget: "boolean", default: false, hint: "Only add a TOC if there 4 or more heading 2s" }
   - name: "authors"
     label: "Authors"
     create: true
