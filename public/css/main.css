@@ -2110,17 +2110,24 @@ ul:not([class]) > li::marker {
 .glossary__item-wrapper::before {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 0;
   border: 4px solid transparent;
-  transform: translateY(-50%);
   height: 0;
 }
 .glossary__item-wrapper:focus-within {
   background-color: var(--color-accent);
 }
+@media (prefers-color-scheme: dark) {
+  .glossary__item-wrapper:focus-within {
+    background-color: var(--color-inactive);
+  }
+}
+[data-theme=dark] .glossary__item-wrapper:focus-within {
+  background-color: var(--color-inactive);
+}
 .glossary__item-wrapper:focus-within::before {
-  height: calc(100% + 4px);
+  height: 100%;
   border-color: var(--color-interactive);
 }
 .glossary__item-wrapper:last-of-type {
