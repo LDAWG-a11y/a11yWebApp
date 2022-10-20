@@ -20,7 +20,7 @@ These require websites and apps created or owned by public sector organisations 
 
 These regulations don’t just cover public facing websites, they also apply to documents that can be downloaded, mobile apps, intranets, and extranets so this can have wide ranging implications for large organisations such as councils, government agencies and universities.
 
-**NOTE: We use the term [“Systems”](https://www.makethingsaccessible.com/glossary/#:~:text=out%20to%20them-,Systems,-When%20we%20say) to describe the type of platforms that require accessibility action.**
+**NOTE: We use the term [“Systems”](/glossary#systems) to describe the type of platforms that require accessibility action.**
 
 The regulations do not include a clear definition of what is meant by “public sector” but if you receive public funding then you may be required to comply with these regulations. This includes Higher and Further Education institutions. Further explanation of organisations that come under the regulations is given in the PSBAR scope section.
 
