@@ -51,6 +51,8 @@ Axe is available on Chrome, Firefox and Edge; sadly it’s unavailable on Safari
 
 Axe resides in your DevTools, so once you have those open, we will need to click on the correct tab, within the DevTools (the position of this will be different than the following image, as I have moved it to to the left, so it is always easy to find for me.
 
+![The Axe DevTools tab, highlighted within Chrome's DevTools panel](src/guideImg/dl-automated-tools-axe-1.png)
+
 Once we open the **Axe** tab, we are presented with the Axe interface in which there are 2 primary panels. There is the **Let’s get started** panel and the **Start an Intelligent Guided Test** panel. We don’t need to worry about the latter, that’s the paid version, which teaches you how to manually test those elements that tools alone cannot test.
 
 Within the **Let’s get started** panel, the option we need to concern ourselves with is the **Scan ALL my page** button. This does exactly what it indicates it will do and it performs an analysis on the current page.
