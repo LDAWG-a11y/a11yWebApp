@@ -55,6 +55,8 @@ Axe resides in your DevTools, so once you have those open, we will need to click
 
 Once we open the **Axe** tab, we are presented with the Axe interface in which there are 2 primary panels. There is the **Let’s get started** panel and the **Start an Intelligent Guided Test** panel. We don’t need to worry about the latter, that’s the paid version, which teaches you how to manually test those elements that tools alone cannot test.
 
+![The Let's get started panel highlighted, within Axe DevTools](src/guideImg/dl-automated-tools-axe-panel-2.png)
+
 Within the **Let’s get started** panel, the option we need to concern ourselves with is the **Scan ALL my page** button. This does exactly what it indicates it will do and it performs an analysis on the current page.
 
 I ran this test against Wikipedia, as I needed to demonstrate on a website and we won't find any issues on this one, Wikipedia is public enough and well known enough to be a suitable example. Disclaimer, we are not here to test Wikipedia, we’re just demonstrating using the tools.
@@ -68,6 +70,8 @@ So, we have several panels of interest, after we click the **Scan ALL my page** 
 * The final panel is the **Issue Description** panel, which provides details about each detected issue
 
 The free version does not allow us to test against a specific level of WCAG, for instance, many people will be most interested in meeting the AA standard (which is the minimum legal requirement in many countries or sectors), which means satisfying both level A and level AA requirements, the free version tests against A, AA and even AAA. So, in reality, some of the errors we get may not be actual failures against the level we’re aiming for, but it's important to note that legal conformance does not necessarily mean accessible, WCAG compliance is the floor, not the ceiling, so aim high, your users deserve it.
+
+![The test results of a Wikipedia page, after running Axe, showing 159 issues, on a page about computer accessibility, sigh.](src/guideImg/dl-automated-tools-axe-result.png)
 
 In the **All Issues** panel, our issues are grouped by issue type and adjacent to the issue type is the number of issues for that particular issue type. As an example, the panel says **Links must have discernible text 2** which means 2 link elements on that page have no accessible name.
 
@@ -96,7 +100,11 @@ Wave is available for Chrome, Firefox and Edge and again, not Safari. [Visit the
 
 The WAVE extension works a little differently, in that it doesn’t require you to use the DevTools, it has a handy button in your extensions bar (usually at the top of your browser). The button’s name is WAVE and it is visually represented as a grey circle with a white letter “W” inside. Alternatively, right clicking anywhere on the page will display a context menu, selecting **Wave this page** will also run the WAVE tool.
 
+![Screenshot of the location of the WAVE extension icon button, in Chrome's extensions bar](src/guideImg/dl-automated-tools-wave-icon.png)
+
 The only thing we need to do here, is click the button and the WAVE interface opens up.
+
+![Screenshot of WAVE's interface open on a page, the issues panel is highlighted.](src/guideImg/dl-automated-tools-wave-panel-1.png)
 
 ### Interpreting the test results
 
