@@ -170,7 +170,7 @@ No installation is necessary for Lighthouse, it’s built right into Chromium-ba
 
 Lighthouse will be one of the tabs at the top of the DevTools panel, clicking that will tab display the Lighthouse interface.
 
-![Screenshot of the Lighthouse interface, in Chrome's DevTools, the Lighthouse tab is highlighted and there is an arrow pointing at the "Analyze page load" button](src/guideImg/dl-automated-tools-lighthouse-panel-1.png)
+![Screenshot of the Lighthouse interface, in Chrome's DevTools, the Lighthouse tab is highlighted and there is an arrow pointing at the Analyze page load button](src/guideImg/dl-automated-tools-lighthouse-panel-1.png)
 
 There are a number of options we can test against, including Best practices, SEO, Performance, Progressive Web Apps & Accessibility, I’m just going to focus on accessibility in this guide, but if I were developing a site, I would definitely test against Performance, SEO and Best Practices, as performance definitely does link to accessibility, as people with disabilities are a marginalised group and more likely to experience socio-economic related poverty, which means they may not be able to afford the latest and greatest tech, so a page that takes 15 seconds to become interactive on an iPhone 14 Pro Max over a 5G connection may be completely unusable for a user accessing on an old low-powered smart phone, using only 3G.
 
