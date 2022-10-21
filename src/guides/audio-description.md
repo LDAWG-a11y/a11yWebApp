@@ -21,20 +21,8 @@ With other content such as marketing videos etc, our approach would be very simi
 
 ## Meetings and events
 
-Lastly, physical descriptions in meetings/events can sometimes be appropriate. For example, it can be very helpful to make context really clear. This could be a white lecturer giving a class on a novel about Apartheid and wanting to acknowledge that their opinion comes from their lived experience of whiteness when there might be blind people in the audience (physical or virtual) then this can't be assumed/taken for granted so it is best to be verbalised. [See this VocalEyes resource.](https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fvocaleyes.co.uk%2Fservices%2Fresources%2Fself-description-for-inclusive-meetings%2F&data=05%7C01%7Cb-watson%40ucl.ac.uk%7Caa4a8e3e22b04bdb4eb908da78904ca7%7C1faf88fea9984c5b93c9210a11d9a5c2%7C0%7C0%7C637954858403081797%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=868jhR8YFBlaPWpSMsKO83s7%2FVpAZdHwMQjnZPV0nfY%3D&reserved=0)\
-\
-Laboratory experiments
+Lastly, physical descriptions in meetings/events can sometimes be appropriate. For example, it can be very helpful to make context really clear. This could be a white lecturer giving a class on a novel about Apartheid and wanting to acknowledge that their opinion comes from their lived experience of whiteness when there might be blind people in the audience (physical or virtual) then this can't be assumed/taken for granted so it is best to be verbalised. [See this VocalEyes resource.](https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fvocaleyes.co.uk%2Fservices%2Fresources%2Fself-description-for-inclusive-meetings%2F&data=05%7C01%7Cb-watson%40ucl.ac.uk%7Caa4a8e3e22b04bdb4eb908da78904ca7%7C1faf88fea9984c5b93c9210a11d9a5c2%7C0%7C0%7C637954858403081797%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=868jhR8YFBlaPWpSMsKO83s7%2FVpAZdHwMQjnZPV0nfY%3D&reserved=0)
 
+## Laboratory experiments case study
 
-
-
-
-
-
-
-
-a
-
-
-
-aa
+Dr Stefano Biagini from the University of Kent provides an [audio description of a laboratory experiement: Stopping the reaction and precipitation of the polystyrene. ](https://kent.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=294f1f05-9285-4591-9e74-ac7801400988)
