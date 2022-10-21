@@ -25,4 +25,4 @@ Physical descriptions in meetings/events can sometimes be appropriate. For exam
 
 ## Laboratory experiments case study
 
-Dr Stefano Biagini from the University of Kent provides an [audio description of a laboratory experiement: Stopping the reaction and precipitation of the polystyrene. ](https://kent.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=294f1f05-9285-4591-9e74-ac7801400988)
+Dr Stefano Biagini from the University of Kent provides an [audio description of a laboratory experiement: Stopping the reaction and precipitation of the polystyrene.](https://kent.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=294f1f05-9285-4591-9e74-ac7801400988)
