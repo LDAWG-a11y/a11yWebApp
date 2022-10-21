@@ -170,6 +170,8 @@ No installation is necessary for Lighthouse, it’s built right into Chromium-ba
 
 Lighthouse will be one of the tabs at the top of the DevTools panel, clicking that will tab display the Lighthouse interface.
 
+![Screenshot of the Lighthouse interface, in Chrome's DevTools, the Lighthouse tab is highlighted and there is an arrow pointing at the "Analyze page load" button](src/guideImg/dl-automated-tools-lighthouse-panel-1.png)
+
 There are a number of options we can test against, including Best practices, SEO, Performance, Progressive Web Apps & Accessibility, I’m just going to focus on accessibility in this guide, but if I were developing a site, I would definitely test against Performance, SEO and Best Practices, as performance definitely does link to accessibility, as people with disabilities are a marginalised group and more likely to experience socio-economic related poverty, which means they may not be able to afford the latest and greatest tech, so a page that takes 15 seconds to become interactive on an iPhone 14 Pro Max over a 5G connection may be completely unusable for a user accessing on an old low-powered smart phone, using only 3G.
 
 It is possible to run Lighthouse on a simulated 3G mobile, I would recommend testing on both Desktop and Mobile, as it is interesting to compare the difference in issues on various viewports. So click the **Analyze page load** button and wait for Lighthouse to Evaluate the page.
@@ -177,6 +179,8 @@ It is possible to run Lighthouse on a simulated 3G mobile, I would recommend tes
 After the test has ran, a score will be given against each category, as this guide is only focusing on the Accessibility category, I see a score of 88 out of 100 on the Wikipedia page. Which to the uninitiated may seem fairly good, as a point of interest, Lighthouse actually uses Axe’s engine (Axe Core) to perform the tests, but it doesn’t use the latest version of Axe Core and in any instance, I can see it has missed quite a few issues that the other tools detected, as I have been testing the same page each time.
 
 Below the score, there are accordion components, which when expanded will provide information on elements that fail the tests and issues to manually check. You can click the element identifier, which is situated next to the thumbnail image and it will open up the Elements panel and take you to that exact line of code.
+
+![Screenshot of Lighthouse's test result, for just Accessibility, displaying a score of 88](src/guideImg/dl-automated-tools-lighthouse-result.png)
 
 **Aside:** I tend to find that having Axe installed conflicts with page performance scores on Lighthouse, so if you're going for hundreds across the board in Lighthouse, it may be useful to test in Incognito Mode, in another persona or disable other extensions).
 
@@ -186,15 +190,21 @@ Accessibility Insights, by Microsoft is available on Chromium-based browsers, su
 
 Navigate to the [Accessibility Insights page](https://accessibilityinsights.io/) and click the **Get Accessibility Insights** link and then click the **Add to \[your browser]** link, which will take you to the web store, where you can then add the extension. Go through the prompts to allow access and then the extension should have an **Accessibility Insights for web** button in the extensions bar of your browser (visually represented by a white magnifying glass on a navy-blue background).
 
+![Screenshot of the Accessibility Insights icon button, in Chrome's extension bar](src/guideImg/dl-automated-tools-access-insights-iconbutton.png)
+
 Clicking the **Accessibility Insights** button will give us 3 main options, within it's Launchpad panel:
 
 * **Fast pass**, which runs 3 common tests, for Automated Checks, Tab Stops and Needs Review
 * **Assessment**, which can guide you through both the manual and semi-automated testing processes
 * **Ad-hoc Tools**, which offer 6 quick tools for Automated Checks, Colour Contrast, Heading structure, Landmarks, Tab Stops and Needs Review
 
+![Screenshot of the Launchpad in Accessibility Insights](src/guideImg/dl-automated-tools-accessibility-insights-launchpad.png)
+
 The **Assessment** option explains each step and considerations for testing against WCAG manually and can provide invaluable information to detect many issues that cannot be detected without human review. Going through each of the checkpoints and marking Pass or Fail after testing each element will give an overall result and help to understand much of the testing process.
 
 **Ad-hoc Tools** is super useful, as it overlays the webpage with outlines for structural elements, such as headings and landmarks, which makes it easier to understand the page’s composition and identify where improvements could be made. Additionally, it can help identify text that is styled to look like a heading but not marked up as such. **Tab Stops** is incredibly useful, as it tracks and enumerates focus throughout the page, when keyboard focus moves around in an unexpected order, that does not match the visual order, this becomes frustrating and confusing for users, as content is accessed out-of-sorts and does not meet their expectations. I tend to screenshot problem areas, for my reports, so the team tasked with remediation can also see the problem, in addition to the text I supply which explains the issue.
+
+![Screenshot of Accessibility Insight's Ad-Hoc Tools panel](src/guideImg/dl-automated-tools-access-insights-adhoc-tools.png)
 
 The **Color** option will desaturate the page, removing all colour, which helps to identify those elements that were relying on colour alone to communicate information, common occurrences may be the border of an input turning red if there's a validation error, with no supporting error text or icon, when colour is removed from the page, it no longer communicates anything and this is the experience some users face, when interfaces use colour alone as a means of communicating errors, successes and other important information.
 
@@ -206,6 +216,8 @@ The Equal Access checker, resides in the DevTools after it has been installed an
 
 There are 2 panels for the Equal Access checker, the first being the **Scan** panel, where you can scan the page and get an overview of the results and the second being the **Summary** panel, which will provide further details about a specific issue.
 
+![Screenshot of IBM's Equal Access open within Chrome's DevTools, there Accessibility Assessment for the tool is highlighted with an arrow pointing to the Scan button](src/guideImg/dl-automated-tools-ibm-access-panel.png)
+
 In the **Scan** panel, click the **Scan** button and wait a moment for the tests to complete. The **Scan** panel is now populated with issues and recommendations, each one against a WCAG success criteria and they are expandable accordions, which when opened will list each **Issue**, **Recommendation** and **Needs Review** item. These can be clicked and the **Summary** pane will provide you with further details on why it is an issue and tips on resolving it. It also shows the element location, but there is no nifty button that will scroll it into view or open the **Elements** panel and highlight the code for you.
 
 ## HTML Validator
@@ -216,6 +228,8 @@ Finally, the HTML validator, perhaps the most important tool in any Developer’
 * The [Web Developer extension for Chrome](https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) can also send the DOM to the validator
 
 Or, [if you access the Validator](https://validator.w3.org/) itself, there are options to **Validate by URI**, **Validate by File upload** or **Validate by Direct Input** (paste the page source into the validator, if you choose this approach, it may be easier to right click, select **View page source** and then copy the entire contents of your newly opened browser tab and paste into the validator's **Direct input** input).
+
+![Screenshot of the HTML validator, displaying the 3 tabs for testing a page, Validate by URI, Validate by File Upload and Validate by Direct Input](src/guideImg/dl-automated-tools-html-validator.png)
 
 There are some errors that don’t affect accessibility, but for any developer interested in accessibility, standards, performance or SEO, the aim should always be no errors detected.
 
