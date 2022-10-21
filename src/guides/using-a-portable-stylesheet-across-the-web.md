@@ -114,7 +114,7 @@ details:focus {
 }
 ```
 
-So let's break that down, notice that each line except the last is separated by a comma, that allows us to list many selectors and apply whatever we put in the curly brackets to all of them, it'll break if you miss a comma though.
+So let's break that down, notice that each line except the last is separated by a comma, that allows us to list many selectors and apply whatever we put in the curly brackets to all of them, it'll break if you miss a comma though, also don't put a comma on the very last item, as again, it will break as it is expecting some other selector to follow.
 
 1. Setting `a:focus` will apply a focus style to links, which use the `<a>` or anchor element
 2. Setting `button:focus` will apply a focus style to buttons, which use the `<button> ` element
