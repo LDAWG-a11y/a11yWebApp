@@ -51,15 +51,15 @@ There are also some general considerations that apply:
 
   * Who assigns the resources necessary;
   * Who provides the knowledge required to implement standards.
-* Software may be accessible to different subsets of users, screen reader [users](<>) vs magnification users;
+* Software may be accessible to different subsets of users, screen reader users vs magnification users;
 * Sometimes something perceived to be an accessibility issue is an issue with fluency with assistive technology and students should be provided with opportunities to familiarize themselves with technology;
 * Timeliness is important.
 
-  * Provide materials [in](<>) time;
+  * Provide materials in time;
   * Consider assignment timings;
   * Where students may need training, provide knowledge in time.
 
-The issues and remedies identified apply across sectors and not just to universities. An institution wide approach is [needed since](<>) consistency helps support accessibility.
+The issues and remedies identified apply across sectors and not just to universities. An institution wide approach is needed since consistency helps support accessibility.
 
 In general, it cannot be the sole responsibility of the student to ensure that they can access materials.
 
@@ -80,7 +80,7 @@ Content, materials, and practices should be:
 
 We add a STEMM focus: **All users can access and interact with STEMM content where necessary using assistive technologies.**
 
-Sample guidance for non-STEMM content in general can be found in [a number of](<>) places, for example on [UCL’s accessibility website.](https://www.ucl.ac.uk/isd/services/accessibility-disability-it/accessibility-guidelines-and-resources)
+Sample guidance for non-STEMM content in general can be found in a number of places, for example on [UCL’s accessibility website.](https://www.ucl.ac.uk/isd/services/accessibility-disability-it/accessibility-guidelines-and-resources)
 
 The following topics are specific to STEMM, and we set out the standard where possible with links to help in meeting it.
 
@@ -94,8 +94,8 @@ The following topics are specific to STEMM, and we set out the standard where po
 * Maps
 * Coding
 
-# General Links
+## General Links
 
-* [Improving the accessibility of Science, Technology, Engineering, Mathematics and Medicin](https://liveuclac-my.sharepoint.com/:w:/g/personal/ccaebwa_ucl_ac_uk/EWUV_Pn73D9Ktp-IQK8JjG0BIapzhNmRfocEF1VwYkBl6A?e=PGK54u)
+* [Improving the accessibility of Science, Technology, Engineering, Mathematics and Medicine](https://liveuclac-my.sharepoint.com/:w:/g/personal/ccaebwa_ucl_ac_uk/EWUV_Pn73D9Ktp-IQK8JjG0BIapzhNmRfocEF1VwYkBl6A?e=PGK54u)
 * [JISC Maths Accessibility Special Interest Group](https://github.com/A11yMaths/AccessibilityResources/wiki/Resources-by-University)
 * [Bheard New Technologies](https://bheardu.net/new-technologies/)
