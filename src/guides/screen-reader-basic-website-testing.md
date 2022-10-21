@@ -40,9 +40,15 @@ Please Note: It is advisable to enable Focus visual cues to allow sighted users 
 
 Focus mode is already turned on in JAWS, on a webpage you will see the red box around the focal point as demonstrated below.
 
+![Image of the Focus box that JAWS puts around an element.](src/guideImg/jaws-focus-box.jpg)
+
+
+
 ### Narrator
 
 Focus mode is already turned on in Narrator. When the application starts you should see a coloured box like in the below image.
+
+![image of the Focus box around an element with Narrator](src/guideImg/narrator-focus-box.jpg)
 
 ### NVDA
 
@@ -57,6 +63,8 @@ Go to preferences, then Settings and press enter.
 Arrow down to Vision, then press tab until you get to Enable Highlighting, and press spacebar to select the option.
 
 Tab to the OK button and press enter.
+
+![Image of the focus box with NVDA ](src/guideImg/nvda-focus-box.jpg)
 
 ## Testing using specific keystrokes
 
@@ -260,7 +268,7 @@ B Next button
 
 ## Full keystroke list.
 
-NVDA: 
+NVDA: [Full NVDA Keystroke list](https://www.nvaccess.org/files/nvdaTracAttachments/455/keycommands%20with%20laptop%20keyboard%20layout.html)
 
 JAWS: [Full JAWS Keystroke list](https://www.freedomscientific.com/training/jaws/hotkeys/)
 
