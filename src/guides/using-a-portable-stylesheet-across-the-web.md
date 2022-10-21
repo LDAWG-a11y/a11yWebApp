@@ -57,7 +57,7 @@ At this point, you may need to pin Stylus to your extensions bar (move on if the
 
 ### The Stylus interface
 
- Within the Stylus interface, there is an **Add style** panel, which should be situated on the left, before the code editor, within that panel, there is a Write new style\*\* button, click this, but before doing so, ensure the adjacent checkbox **asUsercss** is unchecked, we don't need to worry about that.
+ Within the Stylus interface, there is an **Add style** panel, which should be situated on the left, before the code editor, within that panel, there is a **Write new style** button, click this, but before doing so, ensure the adjacent checkbox **asUsercss** is unchecked, we don't need to worry about that.
 
 ![The Stylus interface, with the Write new style button highlighted](src/guideImg/dl-stylus-create-new-btn.png)
 
@@ -69,7 +69,7 @@ Don't worry about any of those other options, they're not important for what we 
 
 ## Why do some sites have no focus indicator?
 
-I know that many users rely on a good visual focus indicator so they can see where they have tabbed to on a webpage, I also know that many sites completely remove them, as the developers, designers or other stakeholders thing they look unsightly or don't match the site's design. This is hostile towards many users that rely upon them, as without them navigation is pretty much impossible.
+I know that many users rely on a good visual focus indicator so they can see where they have tabbed to on a webpage, I also know that many sites completely remove them, as the developers, designers or other stakeholders think they look unsightly or don't match the site's design. This is hostile towards many users that rely upon them, as without them navigation is pretty much impossible.
 
 Not all designers and developers do this, there are some good folks out there, some I have worked with, who would never do this, but, sadly they're a minority.
 
@@ -109,8 +109,8 @@ input:focus,
 [contenteditable]:focus,
 iframe:focus,
 details:focus {
-  outline: 3px solid rebeccapurple;
-  outline-offset: 2px;
+  outline: 3px solid rebeccapurple !important;
+  outline-offset: 2px !important;
 }
 ```
 
@@ -128,6 +128,7 @@ So let's break that down, notice that each line except the last is separated by 
 
    1. `outline: 3px solid red;` that gives us a 3 pixel solid purple line around all of those elements
    2. `outline-offset: 2px;`, that gives us a little space between the element that is focused and the focus indicator we created above, this is often useful, as it won't obscure the text within the element, it may overlay other surrounding text though
+   3. Also, i added `!important;` to each, just to make sure our style beats theirs, always. It should always win due to the browser's and CSS's rules, but it doesn't hurt to add it
 
 ### Can I change any of this?
 
@@ -141,7 +142,7 @@ I have provided a `solid` outline (the outline style), you can change value to o
 
 The colour can be set to anything that you want as long as it is valid value, CSS has many inbuilt named colours, it can also use hex codes, RGB and many others, to select a colour that works for you, this [MDN resource is great,](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color) the colour I have chosen [rebeccapurple is a special colour in CSS, you can read why here.](https://meyerweb.com/eric/thoughts/2014/06/19/rebeccapurple/) 
 
-Finally, the `outline-offset`, this isn't necessary at all, I added that in to give you more control, if you don't want it, you can delete the whole line, alternatively, you can adjust the value to your liking, it can take negative and positive numbers. If you add a negative number, do so like this `-2px `that will inset the focus ring, it will appear inside the element and if you want more space, you just change the number to something of your choosing, remember, no space between the number and **px**.
+Finally, the `outline-offset`, this isn't necessary at all, I added that in to give you more control, if you don't want it, you can delete the whole line, alternatively, you can adjust the value to your liking, it can take negative and positive numbers. If you add a negative number, do so like this `-2px` that will inset the focus ring, it will appear inside the element and if you want more space, you just change the number to something of your choosing, remember, no space between the number and **px**.
 
 Also, remember that the position of the colon and semi-colon are important. In my example, note the colon is immediately after the property like so `outline:` and at the end of the value we have a semi-colon, like so: `rebeccapurple;`.
 
