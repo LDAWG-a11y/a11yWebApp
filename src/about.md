@@ -19,10 +19,15 @@ W﻿e will be regularly updating the website with new articles and hopefully mor
 ### Our partners
 
 * University of Westminster
-* U﻿CL
+* University College London (U﻿CL)
 * Imperial College London
 * City, University of London
 * Birkbeck University of London
+* London School of Economics
+* London Metropolitan University
+* Queen Mary University London
+* SOAS University of London
+* Bloomsbury Learning Exchange
 
 ### Getting involved
 
