@@ -67,4 +67,80 @@ The options should have now changed, at the top there should be an empty input, 
 
 Don't worry about any of those other options, they're not important for what we are doing, they just format the code, but ultimately, you're just going to be copy and pasting, so there is no need to worry.
 
+## Why do some sites have no focus indicator?
+
+I know that many users rely on a good visual focus indicator so they can see where they have tabbed to on a webpage, I also know that many sites completely remove them, as the developers, designers or other stakeholders thing they look unsightly or don't match the site's design. This is hostile towards many users that rely upon them, as without them navigation is pretty much impossible.
+
+Not all designers and developers do this, there are some good folks out there, some I have worked with, who would never do this, but, sadly they're a minority.
+
+### How do developers remove the browser's default focus indicator?
+
+The following code example shows how they do it, but this should never be done, so I am only showing it for illustrative purposes:
+
+```css
+*:focus {
+  outline: none !important;
+}
+```
+
+This 1 little style declaration can do so much harm and make websites unusable, that's literally all it takes. I'll break that down, if you're interested:
+
+1. The asterisk * symbol, is the CSS universal selector, it means apply the following style to absolutely everything
+2. The \`:focus\` pseudo selector, which follows the asterisk, without a space, means apply the following style only when an element (the selector) receives focus, by combining the asterisk and \`:focus\` we're saying when anything on this page receives focus, apply the style that is between the curly brackets
+3. The \`outline\` property is what browsers use to add a focus ring or dotted lines around the elements we can tab to 
+4. The \`none\` value, does exactly what it says on the tin, it removes that indicator completely
+5. Finally, the \`!important\` keyword, adds to what's called specificity in CSS, it gives the preceding rule more importance and it will override most other declarations, so in essence, it's a brute force trick
+6. So, in just three lines of CSS, we're essentially saying "I don't care who uses my site, if they use a keyboard etc and focus on absolutely anything, don't show them where there focus is, no matter what" and that awful practice is typically why you may struggle to track focus across a website
+
+### Can we override it?
+
+You bet we can, but sadly it takes third party extensions (unless using Safari), but, even though the developers have used \`!important\`, that's no match for what we are going to add, as we have more specificity by using a portable stylesheet.
+
 ## Creating our custom focus style
+
+Much the same I did with the anti-user CSS above, I'm just going to write the style and then explain what it is doing in text afterwards.
+
+```css
+a:focus,
+button:focus,
+select:focus,
+input:focus,
+[tabindex]:focus,
+[contenteditable]:focus,
+iframe:focus,
+details:focus {
+  outline: 3px solid rebeccapurple;
+  outline-offset: 2px;
+}
+```
+
+So let's break that down, notice that each line except the last is separated by a comma, that allows us to list many selectors and apply whatever we put in the curly brackets to all of them, it'll break if you miss a comma though.
+
+1. \`a:focus\` this will apply a focus style to links, which use the `<a>` or anchor element
+2. \`button:focus\` this will apply a focus style to buttons, which use the `<button>`  element
+3. \`select:focus\` this will apply a focus style to the dropdown inputs you often encounter, which use the `<select>`  element
+4. \`input:focus\` his will apply a focus style to text inputs, checkboxes, radios etc, which use the `<input>`  element
+5. \`\[tabindex]:focus\`, when developers create interactive elements, they should be making it keyboard accessible and adding in \`tabindex="0"\` to the element as an attribute, we target attributes in CSS with the square brackets\[], so we can target that with CSS, we're going a little brute force and just using \[tabindex] here, as there could be other values
+6. \`\[contenteditable]:focus\`, oftentimes we encounter inputs that do not use the default HTML inputs, which is fine if done correctly, but awful when they're not, to make an element that is not an input editable, we would add the \`contenteditable\` attribute, so we can target that in CSS, by using the square brackets
+7. \`iframe:focus\`, you may see Twitter or YouTube embeds on a website or indeed many others, an iFrame receives focus, as it is technically a part of another website embedded into another, we can apply focus indicators to iframes, which use the `<iframe>` element
+8. \`details:focus\` HTML has a native accordion, called details and summary, the details being the trigger and the summary being the panel that will display the additional information when that trigger is clicked, we can apply a focus to details which use the `<details>` element
+9. The style declaration, so we want something that we can see, so i have done the following:
+
+   1. \`outline: 3px solid red\` that gives us a 3 pixel solid purple line around all of those elements
+   2. \`outline-offset: 2px\`, that gives us a little space between the element that is focused and the focus indicator we created above, this is often useful, as it won't obscure the text within the element, it may overlay other surrounding text though
+
+### Can I change any of this?
+
+Of course you can, i'm going to show you how, right now.
+
+I have chosen to use the \`outline:\` property as it doesn't take up any space, it surrounds an element, but won't move it to accommodate a border. 
+
+If you want a thinner or thicker outline (the outline width), just change the \`3px\` value to something that works for you, ensure there are no spaces though.
+
+I have provided a \`solid\` outline (the outline style), you can change value to other styles, some examples being: \`dotted\`, \`double\`, \`ridge\`, \`groove' or \`dashed`. it's important that the value is spelled correctly, as otherwise it won't work and don't delete the spaces between the width, style and colour
+
+The colour can be set to anything that you want as long as it is valid value, CSS has many inbuilt named colours, it can also use hex codes, RGB and many others, to select a colour that works for you, this [MDN resource is great,](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color) the colour I have chosen [rebeccapurple is a special colour in CSS, you can read why here.](https://meyerweb.com/eric/thoughts/2014/06/19/rebeccapurple/) 
+
+Finally, the \`outline-offset\`, this isn't necessary at all, I added that in to give you more control, if you don't want it, you can delete the whole line, alternatively, you can adjust the value to your liking, it can take negative and positive numbers. If you add a negative number, do so like this \`-2px\` that will inset the focus ring, it will appear inside the element and if you want more space, you just change the number to something of your choosing, remember, no space between the number and \*\*px\*\*
+
+## Adding our custom focus style to Stylus
