@@ -1,13 +1,15 @@
 ---
 title: Creating accessible links
-summary: Learn to create accessible links, in documents, websites and other digital media platforms that are clear, understandable and perceivable to users
+summary: Learn to create accessible links, in documents, websites and other
+  digital media platforms that are clear, understandable and perceivable to
+  users
 author: dlee
 date: 2022-10-17
+toc: true
 tags:
   - Links
   - Best practice
 isGuide: true
-toc: false
 ---
 
 ## Links intro
