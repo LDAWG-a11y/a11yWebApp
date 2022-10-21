@@ -1,6 +1,6 @@
 ---
 title: Audio description
-summary: A basic guide to some of the key principles of audio description.
+summary: A basic guide to audio description.
 author: bwatson
 date: 2022-10-21
 toc: false
