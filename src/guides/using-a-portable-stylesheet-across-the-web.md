@@ -65,7 +65,7 @@ The options should have now changed, at the top there should be an empty input, 
 
 ![The filename input in the Stylus Styles panel](src/guideImg/dl-portable-styles-stylus-filename.png)
 
-Don't worry about any of those other options, they're not important for what we are doing, they just format the code, but ultimately, you're just going to be copy and pasting, so there is no need to worry.
+Don't worry about any of those other options, they're not important for what we are doing, they just format the code, but ultimately, you're just going to be copy and pasting, so there is no need to worry, keep that open in another tab, browser window or whatever, as we'll be adding some code very soon.
 
 ## Why do some sites have no focus indicator?
 
@@ -116,14 +116,14 @@ details:focus {
 
 So let's break that down, notice that each line except the last is separated by a comma, that allows us to list many selectors and apply whatever we put in the curly brackets to all of them, it'll break if you miss a comma though.
 
-1. \`a:focus\` this will apply a focus style to links, which use the `<a>` or anchor element
-2. \`button:focus\` this will apply a focus style to buttons, which use the `<button>`  element
-3. \`select:focus\` this will apply a focus style to the dropdown inputs you often encounter, which use the `<select>`  element
-4. \`input:focus\` his will apply a focus style to text inputs, checkboxes, radios etc, which use the `<input>`  element
-5. \`\[tabindex]:focus\`, when developers create interactive elements, they should be making it keyboard accessible and adding in \`tabindex="0"\` to the element as an attribute, we target attributes in CSS with the square brackets\[], so we can target that with CSS, we're going a little brute force and just using \[tabindex] here, as there could be other values
-6. \`\[contenteditable]:focus\`, oftentimes we encounter inputs that do not use the default HTML inputs, which is fine if done correctly, but awful when they're not, to make an element that is not an input editable, we would add the \`contenteditable\` attribute, so we can target that in CSS, by using the square brackets
-7. \`iframe:focus\`, you may see Twitter or YouTube embeds on a website or indeed many others, an iFrame receives focus, as it is technically a part of another website embedded into another, we can apply focus indicators to iframes, which use the `<iframe>` element
-8. \`details:focus\` HTML has a native accordion, called details and summary, the details being the trigger and the summary being the panel that will display the additional information when that trigger is clicked, we can apply a focus to details which use the `<details>` element
+1. Setting \`a:focus\` will apply a focus style to links, which use the `<a>` or anchor element
+2. Setting \`button:focus\` will apply a focus style to buttons, which use the `<button>`  element
+3. Setting \`select:focus\` will apply a focus style to the dropdown inputs you often encounter, which use the `<select>`  element
+4. Setting \`input:focus\` will apply a focus style to text inputs, checkboxes, radios etc, which use the `<input>`  element
+5. Setting \`\[tabindex]:focus\`, for custom elements that can receive keyboard focus, as developers should be making these elements keyboard accessible and adding in \`tabindex="0"\` to the element as an attribute, we target attributes in CSS with the square brackets\[], so we can target that with CSS, we're going a little brute force and just using \[tabindex] here, as there could be other values
+6. Setting \`\[contenteditable]:focus\`, for when we encounter inputs that do not use the default HTML inputs, which is fine if done correctly, but awful when they're not, to make an element that is not an input editable, we would add the \`contenteditable\` attribute, so we can target that in CSS, by using the square brackets
+7. Setting \`iframe:focus\`, you may see Twitter or YouTube embeds on a website or indeed many others, an iFrame receives focus, as it is technically a part of another website embedded into another, we can apply focus indicators to iframes, which use the `<iframe>` element
+8. Setting \`details:focus\` for the native HTML accordion-type element, called `<details>\` which is paired with a \`<summary>\` element, the details being the trigger and the \`<summary>\` being the panel that will display the additional information when that trigger is clicked, we can apply a focus to details which use the \`<details>` element
 9. The style declaration, so we want something that we can see, so i have done the following:
 
    1. \`outline: 3px solid red\` that gives us a 3 pixel solid purple line around all of those elements
@@ -144,3 +144,17 @@ The colour can be set to anything that you want as long as it is valid value, CS
 Finally, the \`outline-offset\`, this isn't necessary at all, I added that in to give you more control, if you don't want it, you can delete the whole line, alternatively, you can adjust the value to your liking, it can take negative and positive numbers. If you add a negative number, do so like this \`-2px\` that will inset the focus ring, it will appear inside the element and if you want more space, you just change the number to something of your choosing, remember, no space between the number and \*\*px\*\*
 
 ## Adding our custom focus style to Stylus
+
+You can add this to your Stylus stylesheet, by following these steps:
+
+When we created a new stylesheet, I called mine \*\*My stylesheet\*\*, you may have named yours differently, locate that
+
+From the code I provided (definitely not the first bit of code that removed all styles, the bit in the preceding section), copy that code and paste it into the big \*\*Code\*\* panel in Stylus
+
+If you want to make any changes to the values, go ahead, taking note of the advice I provided if you aren't comfortable with CSS.
+
+Now click the \*\*Save\*\* button in the \*\*Add style\*\* panel, it's important you save it.
+
+![The stylus interface with our CSS style pasted in to the code editor](src/guideImg/dl-portable-stylesheet-added-css.png)
+
+That's it, we now have a basic stylesheet we can use across the web, there are a couple of considerations though. If an element has not been coded in such a way that it can receive keyboard focus, our style won't apply. Also, it may be useful for you to have more than one, simply create another and give it a different name. I say this as if you visit some sites that are dark and some that are light, your focus indicator may not be great on one of them. So perhaps create a ••My focus dark\*\* and a \*\*My focus light\*\*, where you adjust the colours accordingly.
