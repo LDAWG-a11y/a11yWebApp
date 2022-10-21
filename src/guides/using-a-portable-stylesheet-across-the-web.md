@@ -5,7 +5,7 @@ summary: Most websites are inaccessible, this creating barriers to users, this
   useful to keyboard or low-vision users
 author: dlee
 date: 2022-10-21
-toc: false
+toc: true
 tags:
   - CSS
   - Focus indicators
