@@ -2,7 +2,7 @@
 title: Screen Reader - Basic Website Testing
 summary: A look at how to test websites using a Screen Reader with the most
   common functions.
-author: admin
+author: mpateman
 date: 2022-10-21
 toc: false
 isGuide: true
