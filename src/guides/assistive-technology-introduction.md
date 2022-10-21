@@ -8,8 +8,6 @@ date: 2022-10-21
 toc: false
 isGuide: true
 ---
-# Assistive technology and productivity tools 
-
 Assistive technology is technology used by individuals with disabilities in order to perform functions that might otherwise be difficult or impossible. 
 
 Digital Assistive technology includes hardware, software, and peripherals that assist people with disabilities to access information. For example, people who are blind may use software (screen readers) that reads text on the screen in a computer-generated voice, people with low vision may use software that enlarges screen content or people who cannot use a mouse or pointer due to low mobility may use voice recognition to control their devices and dictate their work.
