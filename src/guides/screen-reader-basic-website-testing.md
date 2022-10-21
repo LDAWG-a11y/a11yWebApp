@@ -5,6 +5,11 @@ summary: A look at how to test websites using a Screen Reader with the most
 author: mpateman
 date: 2022-10-21
 toc: false
+tags:
+  - Screen reader
+  - NVDA
+  - JAWS
+  - Assistive technology
 isGuide: true
 ---
 # Testing with Screen Readers \[Web pages]
