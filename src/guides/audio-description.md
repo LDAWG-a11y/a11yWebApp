@@ -17,7 +17,7 @@ Furthermore, it can help with things like Search Engine Optimisation (SEO) of co
 
 ## Marketing videos
 
-With other content such as marketing videos etc, the approach would be very similar. Ask speakers to read out onscreen text and captions/job titles to ensure that the main video is inherently accessible - rather than needing a second version with AD. With particularly visual pieces such as brand promotions, where there are important visuals to describe (such as a shiny new science lab in a funding pitch, or something that is trying to convey a sense of student life at a university) then consider adding audio description. Similarly, if the content is to do with accessibility or disability it can be worth adding AD.
+With content such as marketing videos etc, the approach would be very similar. Ask speakers to read out onscreen text and captions/job titles to ensure that the main video is inherently accessible - rather than needing a second version with AD. With particularly visual pieces such as brand promotions, where there are important visuals to describe (such as a shiny new science lab in a funding pitch, or something that is trying to convey a sense of student life at a university) then consider adding audio description. Similarly, if the content is to do with accessibility or disability it can be worth adding AD.
 
 ## Meetings and events
 
