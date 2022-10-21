@@ -6,6 +6,8 @@ summary: "Assistive technology is technology used by individuals with
 author: bwatson
 date: 2022-10-21
 toc: false
+tags:
+  - Assistive technology
 isGuide: true
 ---
 Assistive technology is technology used by individuals with disabilities in order to perform functions that might otherwise be difficult or impossible. 
