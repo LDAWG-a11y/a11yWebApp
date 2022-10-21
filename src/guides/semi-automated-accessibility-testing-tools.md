@@ -5,12 +5,12 @@ summary: This guide is going to introduce some of the tools used throughout the
   some A11y best practices
 author: dlee
 date: 2022-10-19
+toc: true
 tags:
   - Testing
   - Tools
   - Automated
 isGuide: true
-toc: true
 ---
 ## Semi-automated testing intro
 
@@ -51,7 +51,11 @@ Axe is available on Chrome, Firefox and Edge; sadly it’s unavailable on Safari
 
 Axe resides in your DevTools, so once you have those open, we will need to click on the correct tab, within the DevTools (the position of this will be different than the following image, as I have moved it to to the left, so it is always easy to find for me.
 
+![The Axe DevTools tab, highlighted within Chrome's DevTools panel](src/guideImg/screenshot-2022-10-21-at-10.02.59.png)
+
 Once we open the **Axe** tab, we are presented with the Axe interface in which there are 2 primary panels. There is the **Let’s get started** panel and the **Start an Intelligent Guided Test** panel. We don’t need to worry about the latter, that’s the paid version, which teaches you how to manually test those elements that tools alone cannot test.
+
+![The Let's get started panel highlighted, within Axe DevTools](src/guideImg/screenshot-2022-10-21-at-10.07.02.png)
 
 Within the **Let’s get started** panel, the option we need to concern ourselves with is the **Scan ALL my page** button. This does exactly what it indicates it will do and it performs an analysis on the current page.
 
@@ -66,6 +70,8 @@ So, we have several panels of interest, after we click the **Scan ALL my page** 
 * The final panel is the **Issue Description** panel, which provides details about each detected issue
 
 The free version does not allow us to test against a specific level of WCAG, for instance, many people will be most interested in meeting the AA standard (which is the minimum legal requirement in many countries or sectors), which means satisfying both level A and level AA requirements, the free version tests against A, AA and even AAA. So, in reality, some of the errors we get may not be actual failures against the level we’re aiming for, but it's important to note that legal conformance does not necessarily mean accessible, WCAG compliance is the floor, not the ceiling, so aim high, your users deserve it.
+
+![The test results of a Wikipedia page, after running Axe, showing 159 issues, on a page about computer accessibility, sigh.](src/guideImg/screenshot-2022-10-21-at-10.11.44.png)
 
 In the **All Issues** panel, our issues are grouped by issue type and adjacent to the issue type is the number of issues for that particular issue type. As an example, the panel says **Links must have discernible text 2** which means 2 link elements on that page have no accessible name.
 
@@ -94,7 +100,11 @@ Wave is available for Chrome, Firefox and Edge and again, not Safari. [Visit the
 
 The WAVE extension works a little differently, in that it doesn’t require you to use the DevTools, it has a handy button in your extensions bar (usually at the top of your browser). The button’s name is WAVE and it is visually represented as a grey circle with a white letter “W” inside. Alternatively, right clicking anywhere on the page will display a context menu, selecting **Wave this page** will also run the WAVE tool.
 
+![Screenshot of the location of the WAVE extension icon button, in Chrome's extensions bar](src/guideImg/screenshot-2022-10-21-at-10.22.16.png)
+
 The only thing we need to do here, is click the button and the WAVE interface opens up.
+
+![Screenshot of WAVE's interafce open on a page, the issues panel is highlighted.](src/guideImg/screenshot-2022-10-21-at-10.24.38.png)
 
 ### Interpreting the test results
 
@@ -120,6 +130,8 @@ Finally, there is the **Contrast** tab, which contains WebAIM’s Color Contrast
 ## Arc Toolkit
 
 Arc is only available with Chrome, although it can be downloaded to other Chromium-based browsers, I added it to MS Edge using this process:
+
+**Please note:** ARC is being a little buggy, right now, so this guide is incomplete.
 
 1. With Edge open, navigate to [TPGi ARC Toolkit](https://www.tpgi.com/arc-platform/arc-toolkit/)
 2. Locate and click the **Download ARC Toolkit** button (it does have a version number, but I have omitted that, in case it has an update. At the time of writing, it’s the main call to action on the page
@@ -150,13 +162,15 @@ The 4 useful tools here are:
 * **Send URL to the W3C HTML Validator** (which sends the whole page), naturally, well-formed HTML is a huge part of creating accessible interfaces, so we should be looking for invalid nesting, duplicate IDs, missing child tags, misuse of ARIA and invalid ARIA roles etc
 * **Send the page to the ARIA checker**, this provides details on expected patterns when using ARIA, it will flag some patterns where the ARIA does not meet the specification
 * **Check Text Spacing** (Necessary to meet WCAG 1.4.12 Text Spacing), all text on the page should visibly increase its size, Line Height, Letter Spacing, Word Spacing and Paragraph Spacing
-* Check Page Reflow (Necessary to meet WCAG 1.4.10 Reflow), this will set the browser width to 1280px and set zoom to 400%, which replicates a 320px viewport width. At this viewport, there should be no loss of content or functionality and the page should not scroll in 2 directions (there are some exceptions that can scroll in 2 directions, such as maps, complex data tables, complex images etc, but not the whole page)
+* **Check Page Reflow** (Necessary to meet WCAG 1.4.10 Reflow), this will set the browser width to 1280px and set zoom to 400%, which replicates a 320px viewport width. At this viewport, there should be no loss of content or functionality and the page should not scroll in 2 directions (there are some exceptions that can scroll in 2 directions, such as maps, complex data tables, complex images etc, but not the whole page). **Note:** when I prepared this guide the **Check page reflow** was present, but at the time of publishing it appears to be unavailable, I'll leave this in for now, as it may be a temporary issue.
 
 ## Lighthouse
 
 No installation is necessary for Lighthouse, it’s built right into Chromium-based browsers, Chrome, Edge, Brave etc. It can be accessed within the DevTools panel, by right-clicking anywhere on the page and selecting **Inspect** or by pressing <kbd>F12</kbd>.
 
 Lighthouse will be one of the tabs at the top of the DevTools panel, clicking that will tab display the Lighthouse interface.
+
+![Screenshot of the Lighthouse interface, in Chrome's DevTools, the Lighthouse tab is highlighted and there is an arrow pointing at the "Analyze page load" button](src/guideImg/screenshot-2022-10-21-at-10.29.22.png)
 
 There are a number of options we can test against, including Best practices, SEO, Performance, Progressive Web Apps & Accessibility, I’m just going to focus on accessibility in this guide, but if I were developing a site, I would definitely test against Performance, SEO and Best Practices, as performance definitely does link to accessibility, as people with disabilities are a marginalised group and more likely to experience socio-economic related poverty, which means they may not be able to afford the latest and greatest tech, so a page that takes 15 seconds to become interactive on an iPhone 14 Pro Max over a 5G connection may be completely unusable for a user accessing on an old low-powered smart phone, using only 3G.
 
@@ -166,23 +180,31 @@ After the test has ran, a score will be given against each category, as this gui
 
 Below the score, there are accordion components, which when expanded will provide information on elements that fail the tests and issues to manually check. You can click the element identifier, which is situated next to the thumbnail image and it will open up the Elements panel and take you to that exact line of code.
 
+![Screenshot of Lighthouse's test result, for just Accessibility, displaying a score of 88](src/guideImg/screenshot-2022-10-21-at-10.34.32.png)
+
 **Aside:** I tend to find that having Axe installed conflicts with page performance scores on Lighthouse, so if you're going for hundreds across the board in Lighthouse, it may be useful to test in Incognito Mode, in another persona or disable other extensions).
 
 ## Microsoft Accessibility Insights
 
 Accessibility Insights, by Microsoft is available on Chromium-based browsers, such as Chrome, Edge and Brave. Additionally, there are Android and Windows versions, which can be used to test non-web applications, although this guide will focus on the web version.
 
-Navigate to the [Accessibility Insights page](https://accessibilityinsights.io/) and click the **Get Accessibility Insights** link and then click the **Add to [your browser]** link, which will take you to the web store, where you can then add the extension. Go through the prompts to allow access and then the extension should have an **Accessibility Insights for web** button in the extensions bar of your browser (visually represented by a white magnifying glass on a navy-blue background).
+Navigate to the [Accessibility Insights page](https://accessibilityinsights.io/) and click the **Get Accessibility Insights** link and then click the **Add to \[your browser]** link, which will take you to the web store, where you can then add the extension. Go through the prompts to allow access and then the extension should have an **Accessibility Insights for web** button in the extensions bar of your browser (visually represented by a white magnifying glass on a navy-blue background).
 
-Clicking the **Accessibility Insights** button will give us 3 main options:
+![Screenshot of the Accessibility Insights icon button, in Chrome's extension bar](src/guideImg/screenshot-2022-10-21-at-10.40.21.png)
+
+Clicking the **Accessibility Insights** button will give us 3 main options, within it's Launchpad panel:
 
 * **Fast pass**, which runs 3 common tests, for Automated Checks, Tab Stops and Needs Review
 * **Assessment**, which can guide you through both the manual and semi-automated testing processes
 * **Ad-hoc Tools**, which offer 6 quick tools for Automated Checks, Colour Contrast, Heading structure, Landmarks, Tab Stops and Needs Review
 
+![Screenshot of the Launchpad in Accessibility Insights](src/guideImg/screenshot-2022-10-21-at-10.37.11.png)
+
 The **Assessment** option explains each step and considerations for testing against WCAG manually and can provide invaluable information to detect many issues that cannot be detected without human review. Going through each of the checkpoints and marking Pass or Fail after testing each element will give an overall result and help to understand much of the testing process.
 
 **Ad-hoc Tools** is super useful, as it overlays the webpage with outlines for structural elements, such as headings and landmarks, which makes it easier to understand the page’s composition and identify where improvements could be made. Additionally, it can help identify text that is styled to look like a heading but not marked up as such. **Tab Stops** is incredibly useful, as it tracks and enumerates focus throughout the page, when keyboard focus moves around in an unexpected order, that does not match the visual order, this becomes frustrating and confusing for users, as content is accessed out-of-sorts and does not meet their expectations. I tend to screenshot problem areas, for my reports, so the team tasked with remediation can also see the problem, in addition to the text I supply which explains the issue.
+
+![Screenshot of Accessibility Insight's Ad-Hoc Tools panel](src/guideImg/screenshot-2022-10-21-at-10.38.57.png)
 
 The **Color** option will desaturate the page, removing all colour, which helps to identify those elements that were relying on colour alone to communicate information, common occurrences may be the border of an input turning red if there's a validation error, with no supporting error text or icon, when colour is removed from the page, it no longer communicates anything and this is the experience some users face, when interfaces use colour alone as a means of communicating errors, successes and other important information.
 
@@ -190,9 +212,11 @@ The **Fast Pass** option, contains a selection of the tools explained above, it�
 
 ## IBM Equal Access
 
-The Equal Access checker, resides in the DevTools after it has been installed and is available for Chromium-based browsers, as well as Firefox, Safari still gets no love from the vendors though. Toward the bottom of the following page, there are links to install from your browser vendor’s web store (remember, you can install Chrome extensions on Edge and Brave). Follow the usual process to install the plugin and then open up your DevTools by pressing <kbd>F12</kbd> or right-clicking and choosing **Inspect**, in this instance, the tab you should locate, within the DevTools is named **Accessibility Assessment**.
+The Equal Access checker, resides in the DevTools after it has been installed and is available for Chromium-based browsers, as well as Firefox, Safari still gets no love from the vendors though. Please visit the [IBM Accessibility Checker page](https://www.ibm.com/able/toolkit/verify/automated), there are links to install from your browser vendor’s web store (remember, you can install Chrome extensions on Edge and Brave). Follow the usual process to install the plugin and then open up your DevTools by pressing <kbd>F12</kbd> or right-clicking and choosing **Inspect**, in this instance, the tab you should locate, within the DevTools is named **Accessibility Assessment**.
 
 There are 2 panels for the Equal Access checker, the first being the **Scan** panel, where you can scan the page and get an overview of the results and the second being the **Summary** panel, which will provide further details about a specific issue.
+
+![Screenshot of IBM's Equal Access open within Chrome's DevTools, there Accessibility Assessment for the tool is highlighted with an arrow pointing to the Scan button](src/guideImg/screenshot-2022-10-21-at-10.42.18.png)
 
 In the **Scan** panel, click the **Scan** button and wait a moment for the tests to complete. The **Scan** panel is now populated with issues and recommendations, each one against a WCAG success criteria and they are expandable accordions, which when opened will list each **Issue**, **Recommendation** and **Needs Review** item. These can be clicked and the **Summary** pane will provide you with further details on why it is an issue and tips on resolving it. It also shows the element location, but there is no nifty button that will scroll it into view or open the **Elements** panel and highlight the code for you.
 
@@ -204,6 +228,8 @@ Finally, the HTML validator, perhaps the most important tool in any Developer’
 * The [Web Developer extension for Chrome](https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) can also send the DOM to the validator
 
 Or, [if you access the Validator](https://validator.w3.org/) itself, there are options to **Validate by URI**, **Validate by File upload** or **Validate by Direct Input** (paste the page source into the validator, if you choose this approach, it may be easier to right click, select **View page source** and then copy the entire contents of your newly opened browser tab and paste into the validator's **Direct input** input).
+
+![Screenshot of the HTML validator, displaying the 3 tabs for testing a page, Validate by URI, Validate by File Upload and Validate by Direct Input](src/guideImg/screenshot-2022-10-21-at-10.44.56.png)
 
 There are some errors that don’t affect accessibility, but for any developer interested in accessibility, standards, performance or SEO, the aim should always be no errors detected.
 
