@@ -4,7 +4,7 @@ summary: A look at how to test websites using a Screen Reader with the most
   common functions.
 author: mpateman
 date: 2022-10-21
-toc: false
+toc: true
 tags:
   - Screen reader
   - NVDA
@@ -12,7 +12,7 @@ tags:
   - Assistive technology
 isGuide: true
 ---
-# Testing with Screen Readers \[Web pages]
+## Testing with Screen Readers \[Web pages]
 
 When it comes to web accessibility, people with sight loss who use screen readers to complete online tasks is often the thing that people think of. This is where gaps appear. How do screen readers really work? Are they all the same? And why should you conduct screen reader testing on your website? 
 
@@ -34,7 +34,6 @@ Paid-for: JAWS \[Job Access With Speech], Dolphin SuperNova.
 
 ## Screen reader Setup – at first logon
 
-
 Please Note: It is advisable to enable Focus visual cues to allow sighted users to see where the software is whilst on a webpage. This is recommended as screen readers use an invisible cursor to move around any webpage. To enable this feature if it is not already on, please see below.
 
 ### JAWS
@@ -55,82 +54,57 @@ Locate NVDA with left or right arrow and press the application key when on it \[
 
 Go to preferences, then Settings and press enter.
 
-
 Arrow down to Vision, then press tab until you get to Enable Highlighting, and press spacebar to select the option.
 
-
 Tab to the OK button and press enter.
-
-
 
 ## Testing using specific keystrokes
 
 ## Links information
 
-
 With all screen readers you can move through links in various ways. Some SR allow you to move directly on the live page from one to the other, but also allow the user to list links to move and digest the information.
-
 
 JAWS, 		JAWS Key + F7 – This is a specific to only show Links.
 
-
 Narrator,	        Insert or Caps Lock + F7 Opens a dialogue selection.
-
 
 NVDA,		NVDA Key + F7 Opens a dialogue selection.
 
-
 ### Headings information
-
 
 JAWS, 		JAWS Key + F6 – This is a specific to only show Headings.
 
-
 Narrator,	Insert or Caps Lock + F6 Opens a dialogue selection. Select headings.
-
 
 NVDA,		NVDA Key + F7 Opens a dialogue selection. Select headings.
 
-
 ### Form Fields
-
 
 This option includes all form elements with JAWS, or you can choose which element you want to look at with Narrator and NVDA.
 
 JAWS, JAWS Key + F5 – This is a specific to only show Form elements.
 
-
 Narrator,	Insert or Caps Lock + F7 Opens a dialogue selection. Select From fields.
-
 
 NVDA,		NVDA Key + F7 Opens a dialogue selection. Select Form fields.
 
-
-
 ### Graphics
-
 
 JAWS,		JAWS key + control + G to list or just press G or shift G.
 
-
 Narrator,	Not available.
-
 
 NVDA,		Press the letter G or shift G to go backwards.
 
 ### Region \[Landmark]
 
-
 JAWS:		Move to main region press INSERT, Q. No list option for main region. List regions press INSERT, control and R.
 
-
 Narrator:	Caps Lock + F7 – select Landmarks 
-
 
 NVDA:		Caps Lock + F7 – Select Landmarks 
 
 ### Regions explained
-
 
 Most web pages have an overall structure that is consistent with other web pages. For example, they tend to have a banner with branding and other high-level content, one or more lists of links for navigation within the website, a section where the main content resides, and a footer. Many pages also have a sidebar with complementary content, and a section of the page dedicated to search. All users benefit from a consistent, predictable page structure as it helps them to easily find content that typically can be found within these page regions.
 
@@ -140,7 +114,7 @@ Screen reader users need to understand the page structure just like everyone els
 Example of webpage construction with explanations of different areas 
 All the Screen Reading products use the same or similar quick keystrokes when using the internet. If you do not want to list all the elements as above, you can move directly to an area by pressing the correct lettered key. Please see a list of quick keystrokes as below.
 
-## JAWS Internet Keystrokes 
+## JAWS Internet Keystrokes
 
 ### Navigation Quick Keys
 
@@ -150,206 +124,144 @@ In addition, if you press and hold CTRL+INSERT while pressing keystrokes with an
 
 Description		and			Keystroke
 
-
 Next Radio Button				A
 
 *Next Button					B*
-
 
 Next Combo Box, List Box, or Tree View		C
 
 *Next Different Element				D*
 
-
 *Next Edit Box					E*
 
-
 Next Form Control				F
-
 
 Next Graphic					G
 
 *Next Heading					H*
 
-
 *Next Item in a List				I*
 
-
 *Jump to Line					J*
-
 
 Next PlaceMarker				K
 
 *Next List					L*
 
-
 Next Frame					M
 
-
 Skip Past Links					N
-
 
 Next Article					O
 
 *Next Paragraph					P*
 
-
 Move to Main Region				Q
-
 
 Next Region					R
 
 *Next Same Element				S*
 
-
 *Next Table					T*
-
 
 Next Unvisited Link				U
 
-
 Next Visited Link				V
-
 
 Next Check Box					X
 
 *Next Division					Z*
 
-
 Next Tab Control				APOSTROPHE
 
 *Next Separator					DASH*
 
-
 *Next Clickable Element				SLASH*
-
 
 Next Mouse Over Element			SEMICOLON*
 
-
 Next Element					SHIFT+PERIOD
-
 
 Previous Element				SHIFT+COMMA
 
-
-
 ## NVDA – Internet Single Letter Navigation Full keystroke list
-
 
 The following keys by themselves jump to the next available element, while adding the shift key causes them to jump to the previous element:
 
 h: heading
 
-
 l: list
-
 
 i: list item
 
-
 t: table
-
 
 k: link
 
-
 n: nonlinked text
-
 
 f: form field
 
-
 u: unvisited link
-
 
 v: visited link
 
-
 e: edit field
-
 
 b: button
 
-
 x: checkbox
-
 
 c: combo box
 
-
 r: radio button
-
 
 q: block quote
 
-
 s: separator
-
 
 m: frame
 
-
 g: graphic
-
 
 d: landmark
 
-
 o: embedded object (audio and video player, application, dialog, etc.)
-
 
 1 to 6: headings at levels 1 to 6 respectively
 
-
 a: annotation (comment, editor revision, etc.)
-
 
 w: spelling error
 
 ## Narrator Internet Keystrokes
 
-
 E Next edit box
-
 
 R Next Radio Button
 
-
 T Next Table
-
 
 I Next List Item
 
-
 D Next region or Landmark
-
 
 F Next Form field
 
-
 H Next Heading
-
 
 K Next link
 
-
 X Next checkbox
-
 
 C Next combo box
 
-
 B Next button
-
 
 ## Full keystroke list.
 
-
 NVDA: 
 
-
 JAWS: [Full JAWS Keystroke list](https://www.freedomscientific.com/training/jaws/hotkeys/)
-
 
 Narrator: [Full Narrator Keystroke list in PDF](https://compass-ssl.microsoft.com/assets/bc/11/bc11e21a-2b99-4292-9f21-7564bec25f30.pdf?n=Complete-guide-to-Narrator_2004.pdf)
