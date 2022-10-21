@@ -5,7 +5,7 @@ summary: Learn to create accessible links, in documents, websites and other
   users
 author: dlee
 date: 2022-10-17
-toc: true
+toc: false
 tags:
   - Links
   - Best practice
