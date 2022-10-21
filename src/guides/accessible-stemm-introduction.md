@@ -27,9 +27,7 @@ Contributors:
 * George Rhodes
 * Jim Tyson
 * Ben Watson
-* Colleagues at Thomas Pocklington Trust
-
-
+* [Colleagues at Thomas Pocklington Trust](https://www.pocklington-trust.org.uk/)
 
 ## Specific guidance for readers
 
