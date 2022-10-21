@@ -11,6 +11,9 @@ summary: The proposal addresses accessibility of educational content
 author: jtyson
 date: 2022-10-21
 toc: true
+tags:
+  - STEMM
+  - Content
 isGuide: true
 ---
 The proposal addresses accessibility of educational content specifically with respect to the STEMM disciplines. We use the acronym **science, technology, engineering, and mathematics and medicine (STEMM)**, acknowledging that the issues affect a broader community than this. We also raise the issue of **accessible coding,** which is not as frequently addressed as other, better understood issues.
