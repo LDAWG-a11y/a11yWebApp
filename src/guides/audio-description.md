@@ -13,7 +13,26 @@ isGuide: true
 
 Fundamentally, the approach is that all teaching and learning content can be made inherently accessible without the need for audio description to be added as a separate track. Content creators would need to ensure that any images/videos/other visuals (graphs etc) are adequately described either verbally or in text/transcript form (such as a presentation which was being made available directly to users). This means that a user without sight can access the visual information. Having this descriptive information included in the main content also has benefits for all learners as it helps to reinforce information (there are studies that have examined the increased retention when patrons of art galleries/museums have works described to them, rather than consuming on their own). 
 
-Furthermore, it can help with things like Search Engine Optimisation (SEO) of content and opens up the possibility of additional accessibility options - such as a blind user using a screen reader to whizz through the entire transcript of an hour-long video very quickly, rather than listening to the recorded audio in real time. Images can be described by the narrator, while an audio-described version of a video could be played to everyone (or the video could be given a brief introduction before being played). One thing to note in videos would be ensuring that any important onscreen text was read out or conveyed somehow.
+### Creating Integrated Description
+
+* When writing the script, make sure all relevant visual information is included. See Tips for Writing Descriptions below and examples in Accessible Audio and Video Content, [Integrate description section](https://www.w3.org/WAI/media/av/av-content/#integrate-description).
+* Before finalising the video, check to confirm that all relevant visual information is covered in the audio.
+
+### Tips for Writing Descriptions
+
+* Describe the visual elements that are important to understand what the video is communicating. Imagine that you are describing the video to someone who cannot see it — what do you say? You don’t need to describe every detail or things that are apparent from the audio.
+* Describe objectively, without interpretation, censorship, or comment.
+* Write description in present tense, active voice, and third-person narrative style.
+
+Generally, all text in the video should be included in the main audio (integrated description) or in the separate description. For example, title text at the beginning of the video, links and e-mail addresses shown at the end, speakers’ names in text, and text in a presentation. The text does not have to be included verbatim (exactly word-for-word), yet all of the information conveyed by the text needs to be available in the main audio, in the separate description, or clearly with the video.
+
+### Tips for Recording Descriptions
+
+* Use a voice, style, and delivery that is distinguishable from other voices used in the video.
+* Use a neutral voice that does not convey emotions.
+* When recording a single file with timed descriptions, voice the descriptions at the same time as the visual content, or right before the visual content. Don’t put the description after the visual content.
+
+Audio description can help with things like Search Engine Optimisation (SEO) of content and opens up the possibility of additional accessibility options - such as a blind user using a screen reader to whizz through the entire transcript of an hour-long video very quickly, rather than listening to the recorded audio in real time. Images can be described by the narrator, while an audio-described version of a video could be played to everyone (or the video could be given a brief introduction before being played). One thing to note in videos would be ensuring that any important onscreen text was read out or conveyed somehow.
 
 ## Marketing videos
 
