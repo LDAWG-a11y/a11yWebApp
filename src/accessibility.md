@@ -17,7 +17,7 @@ This website is very new and has not been tested for accessibility compliance ye
 
 ## Feedback and contact information
 
-If you are experiencing any accessibility issues with this website or need content in an alternative format please [contact George Rhodes](https://www.makethingsaccessible.com/authors/grhodes/) on any channels listed in his author bio contact information.
+If you are experiencing any accessibility issues with this website or need content in an alternative format please contact us at [info@makethingsaccessible.com](mailto:info@makethingsaccessible.com) on any channels listed in his author bio contact information.
 
 ## Technical information about this website's accessibility
 
