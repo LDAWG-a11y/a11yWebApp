@@ -4,10 +4,10 @@ summary: Accessibility and disability related books and TV programs that are
   worth the watch.
 author: grhodes
 date: 2022-10-13
+toc: false
 tags:
   - Resource
 isGuide: true
-toc: false
 ---
 We often get asked if we have any good recommendations for accessibility or disability related books, TV shows or other resources. The best place to look for a lot of day to day practical references is online and we have links to other useful sites and resources spread throughout our guidance articles.
 
@@ -71,4 +71,4 @@ Channel 4, 2020. Rosie Jones, a comedian with a disability is on a mission to he
 
 ## Suggest something
 
-If you have any suggestions for other resources that you think we should read / watch and should be added to this list, please contact us using the methods listed in our author bios.
+If you have any suggestions for other resources that you think we should read / watch and should be added to this list, please contact us at [info@makethingsaccessible.com](mailto:info@makethingsaccessible.com)
