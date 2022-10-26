@@ -49,4 +49,4 @@ If you are in Northern Ireland you still need to mention the Public Sector Bodie
 
 ## Writing an accessibility statement
 
-If you want to write an accessibility statement for your website you can follow the [sample statement provided by GDS](https://www.gov.uk/government/publications/sample-accessibility-statement/sample-accessibility-statement-for-a-fictional-public-sector-website), or if you want more step by step guidance, you can find more in our writing an accessibility statement guide.
+If you want to write an accessibility statement for your website you can follow the [sample statement provided by GDS](https://www.gov.uk/government/publications/sample-accessibility-statement/sample-accessibility-statement-for-a-fictional-public-sector-website), or if you want more step by step guidance, you can find more in our [How to write an accessibility statement guide](https://www.makethingsaccessible.com/guides/how-to-write-an-accessibility-statement/).
