@@ -25,10 +25,10 @@ We are committed to making the website as accessible as possible in accordance w
 
 ## Compliance status
 
-This website is fully compliant with the [Web Content Accessibility Guidelines 2.1 AA standard](https://www.w3.org/TR/WCAG21/).
+This website is partially with the [Web Content Accessibility Guidelines 2.1 AA standard](https://www.allable.co.uk/research/accessibility-statements-v3), as we have not yet tested the website and there may be some issues.
 
 ## Preparation of this accessibility statement
 
-This statement was prepared on 7th October 2022. It was last reviewed on 7th October 2022.
+This statement was prepared on 7th October 2022. It was last reviewed on 26th October 2022.
 
 This website has not yet been tested but was built by accessibility professionals with accessibility in mind throughout development. We plan to test the website imminently and will be updating this statement with any identified accessibility issues.
