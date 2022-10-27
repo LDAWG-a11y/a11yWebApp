@@ -89,7 +89,7 @@ This 1 little style declaration can do so much harm and make websites unusable, 
 2. The `:focus` pseudo selector, which follows the asterisk, without a space, means apply the following style only when an element (the selector) receives focus, by combining the asterisk and `:focus` we're saying when anything on this page receives focus, apply the style that is between the curly brackets
 3. The `outline:` property is what browsers use to add a focus ring or dotted lines around the elements we can tab to 
 4. The `none` value, does exactly what it says on the tin, it removes that indicator completely
-5. Finally, the `!important `keyword, adds to what's called specificity in CSS, it gives the preceding rule more importance and it will override most other declarations, so in essence, it's a brute force trick
+5. Finally, the `!important`keyword, adds to what's called specificity in CSS, it gives the preceding rule more importance and it will override most other declarations, so in essence, it's a brute force trick
 6. So, in just three lines of CSS, we're essentially saying "I don't care who uses my site, if they use a keyboard etc and focus on absolutely anything, don't show them where there focus is, no matter what" and that awful practice is typically why you may struggle to track focus across a website
 
 ### Can we override it?
@@ -117,19 +117,21 @@ details:focus {
 So let's break that down, notice that each line except the last is separated by a comma, that allows us to list many selectors and apply whatever we put in the curly brackets to all of them, it'll break if you miss a comma though, also don't put a comma on the very last item, as again, it will break as it is expecting some other selector to follow.
 
 1. Setting `a:focus` will apply a focus style to links, which use the `<a>` or anchor element
-2. Setting `button:focus` will apply a focus style to buttons, which use the `<button> ` element
+2. Setting `button:focus` will apply a focus style to buttons, which use the `<button>` element
 3. Setting `select:focus` will apply a focus style to the dropdown inputs you often encounter, which use the `<select>`  element
 4. Setting `input:focus` will apply a focus style to text inputs, checkboxes, radios etc, which use the `<input>`  element
 5. Setting `[tabindex]:focus,` for custom elements that can receive keyboard focus, as developers should be making these elements keyboard accessible and adding in `tabindex="0"` to the element as an attribute, we target attributes in CSS with the square brackets\[], so we can target that with CSS, we're going a little brute force and just using `[tabindex]` here, as there could be other values
 6. Setting `[contenteditable]:focus`, for when we encounter inputs that do not use the default HTML inputs, which is fine if done correctly, but awful when they're not, to make an element that is not an input editable, we would add the `contenteditable` attribute, so we can target that in CSS, by using the square brackets
-7. Setting `iframe:focus`, you may see Twitter or YouTube embeds on a website or indeed many others, an iFrame receives focus, as it is technically a part of another website embedded into another, we can apply focus indicators to iframes, which use the `<iframe> `element
-8. Setting `details:focus `for the native HTML accordion-type element, called `<details>` which is paired with a `<summary>` element, the details being the trigger and the `<summary>` being the panel that will display the additional information when that trigger is clicked, we can apply a focus to details which use the `<details>` element
+7. Setting `iframe:focus`, you may see Twitter or YouTube embeds on a website or indeed many others, an iFrame receives focus, as it is technically a part of another website embedded into another, we can apply focus indicators to iframes, which use the `<iframe>`element
+8. Setting `details:focus`for the native HTML accordion-type element, called `<details>` which is paired with a `<summary>` element, the details being the trigger and the `<summary>` being the panel that will display the additional information when that trigger is clicked, we can apply a focus to details which use the `<details>` element
 9. The style declaration, so we want something that we can see, so I have done the following:
+
    1. `outline: 3px solid rebeccapurple;` that gives us a 3 pixel solid purple line around all of those elements
    2. `outline-offset: 2px;`, that gives us a little space between the element that is focused and the focus indicator we created above, this is often useful, as it won't obscure the text within the element, it may overlay other surrounding text though
    3. Also, I added `!important;` to each, just to make sure our style beats theirs, always. It should always win due to the browser's and CSS's rules, but it doesn't hurt to add it
 
 ### Why so many selectors?
+
 It was easy to completely remove the focus outline, we just used one (the universal) selector and focus was completely gone, but to add it back we have to add all the individual selectors, couldn't we have just added it back with the universal selector? Yes and No. It would work just fine if you were exclusively using a keyboard or other non-pointing device, but if you were using a combination on mouse and keyboard, everytime you clicked on anything, it would add a focus indicator around it, this would make the focus indicator less useful for some people. 
 
 We could have used `:focus-visible` instead of `:focus`, which won't show on mouse/finger presses, but if some of us are using an older browser, it may not work at all, so I've used an approach that should work fine for all use cases.
@@ -174,10 +176,12 @@ Some sites will have a nice focus indicator and you may not to run your styleshe
 
 We don't need a browser extension for Safari, as we can use any stylesheet stored on our Mac, which is a relatively straightforward process. **Note:** I just updated my Mac to Ventura a couple of days ago, so if you haven't done so yet or can't, my instructions may be slightly different, but hopefully noting too drastic has changed.
 
-1. Download this stylesheet and save to somewhere safe on your Mac (rename if you wish, but don't delete the .css file extension, that's super important)
-2.  Open Safari
+1. [Download this stylesheet](<1. src/docs/mystylesheet.css>) and save to somewhere safe on your Mac (rename if you wish, but don't delete the .css file extension, that's super important)
+2. Open Safari
 3. In the Menu bar Click **Safari** > **Settings** (previously called **Preferences**) and then locate and open the **Advanced** tab
 4. Locate the drop down for **Stylesheet**, click it and select **Other**
 5. Locate the stylesheet you downloaded, in step 1, and open that so it becomes our selected option
+
+![Screenshot of the Settings menu (previously called Preferences) in Safari, on MacOS, the Advanced tab is highlighted and there is an arrow pointing to the Stylesheet drop down, which has our custom stylesheet added and is also highlighted](src/guideImg/dl-stylesheets-safari.png)
 
 That's essentially it, I don't think this is as user-friendly as the Stylus extension, in that you have to go through all the options to change stylesheets and it appears you can only have one running at any given time, whereas Stylus you could in theory have many running, which would give you more granular control over how webpages look, but if you were just looking to style a focus indicator so you had a consistent visual indicator across the web, this may be useful.
