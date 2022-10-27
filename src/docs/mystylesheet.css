@@ -1,0 +1,11 @@
+a:focus,
+button:focus,
+select:focus,
+input:focus,
+[tabindex]:focus,
+[contenteditable]:focus,
+iframe:focus,
+details:focus {
+  outline: 3px solid rebeccapurple !important;
+  outline-offset: 2px !important;
+}
