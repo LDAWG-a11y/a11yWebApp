@@ -74,6 +74,10 @@
     [data-theme="dark"] & {
       border: 2px solid var(--color-inactive);
     }
+
+    &:not([data-theme="dark"] &) {
+      border-width: 1px;
+    }
   
     @include mq.mq($from:xs) {
       border: 2px solid var(--color-inactive);
@@ -148,6 +152,12 @@
   ul p,
   ul li p {
     margin-bottom: $space-sm;
+  }
+
+  li {
+    p {
+      margin-bottom: $space-xxs;
+    }
   }
 
   ol:not(.cms__toc > ol) {

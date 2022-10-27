@@ -1844,6 +1844,9 @@ ul:not([class]) > li::marker {
 [data-theme=dark] .cms .code__header {
   border: 2px solid var(--color-inactive);
 }
+.cms .code__header:not([data-theme=dark] .cms .code__header) {
+  border-width: 1px;
+}
 @media (min-width: 26.25em) {
   .cms .code__header {
     border: 2px solid var(--color-inactive);
@@ -1927,6 +1930,9 @@ ul:not([class]) > li::marker {
 .cms ul p,
 .cms ul li p {
   margin-bottom: 0.75rem;
+}
+.cms li p {
+  margin-bottom: 0.25rem;
 }
 .cms ol:not(.cms__toc > ol) {
   margin: 0 0 3rem calc(2.5rem + 3px);
