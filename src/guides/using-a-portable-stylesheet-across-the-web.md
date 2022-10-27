@@ -176,7 +176,7 @@ Some sites will have a nice focus indicator and you may not to run your styleshe
 
 We don't need a browser extension for Safari, as we can use any stylesheet stored on our Mac, which is a relatively straightforward process. **Note:** I just updated my Mac to Ventura a couple of days ago, so if you haven't done so yet or can't, my instructions may be slightly different, but hopefully noting too drastic has changed.
 
-1. [Download this stylesheet](<1. src/docs/mystylesheet.css>) and save to somewhere safe on your Mac (rename if you wish, but don't delete the .css file extension, that's super important)
+1. <a href="src/docs/mystylesheet.css" download>Download this stylesheet</a> and save to somewhere safe on your Mac (rename if you wish, but don't delete the .css file extension, that's super important)
 2. Open Safari
 3. In the Menu bar Click **Safari** > **Settings** (previously called **Preferences**) and then locate and open the **Advanced** tab
 4. Locate the drop down for **Stylesheet**, click it and select **Other**
