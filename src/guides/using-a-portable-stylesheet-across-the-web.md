@@ -23,7 +23,7 @@ Simply put, it's a CSS file that you can turn on or off at your leisure, you can
 
 ### But I don't know CSS
 
-You don't really need to know it, you can have it provided to you by somebody who does. In this particular guide, we're going to create a portable stylesheet and I'm going to walk you through every step, explaining each line of CSS and how you can change it to suit your own needs. We can change more than just focus indicators, but are just going to show you how to see which element you are actually focused on, we may add more tips to this guide at a later date.
+You don't really need to know it, you can have it provided to you by somebody who does. In this particular guide, we're going to create a portable stylesheet and I'm going to walk you through every step, explaining each line of CSS and how you can change it to suit your own needs. We're primarily going to look at custom focus indicators, but we've added a few extra tips in too.
 
 ## Getting started
 
@@ -49,7 +49,7 @@ So, now we have it installed, we can go ahead and make things accessible, well s
 
 ## Using Stylus
 
-You should see a prompt that informs you it has been added to your extensions bar and the stylus icon button should also be visible (I'm using Edge in this guide, as I wanted to start afresh and I have some stylesheets saved in my usual browsers, that I don't want to lose).
+You should see a prompt that informs you it has been added to your extensions bar and the stylus icon button should also be visible (I'm using interchangably moving between Edge and Firefox in this guide, as I wanted to start fresh and I have some stylesheets saved in my usual browser, that I don't want to lose).
 
 ![The stylus icon button in Edge's extensions bar, there is also a prompt informing a user it has been enabled](src/guideImg/dl-portable-css-stylus-icon.png)
 
@@ -124,15 +124,19 @@ So let's break that down, notice that each line except the last is separated by 
 6. Setting `[contenteditable]:focus`, for when we encounter inputs that do not use the default HTML inputs, which is fine if done correctly, but awful when they're not, to make an element that is not an input editable, we would add the `contenteditable` attribute, so we can target that in CSS, by using the square brackets
 7. Setting `iframe:focus`, you may see Twitter or YouTube embeds on a website or indeed many others, an iFrame receives focus, as it is technically a part of another website embedded into another, we can apply focus indicators to iframes, which use the `<iframe> `element
 8. Setting `details:focus `for the native HTML accordion-type element, called `<details>` which is paired with a `<summary>` element, the details being the trigger and the `<summary>` being the panel that will display the additional information when that trigger is clicked, we can apply a focus to details which use the `<details>` element
-9. The style declaration, so we want something that we can see, so i have done the following:
-
-   1. `outline: 3px solid red;` that gives us a 3 pixel solid purple line around all of those elements
+9. The style declaration, so we want something that we can see, so I have done the following:
+   1. `outline: 3px solid rebeccapurple;` that gives us a 3 pixel solid purple line around all of those elements
    2. `outline-offset: 2px;`, that gives us a little space between the element that is focused and the focus indicator we created above, this is often useful, as it won't obscure the text within the element, it may overlay other surrounding text though
-   3. Also, i added `!important;` to each, just to make sure our style beats theirs, always. It should always win due to the browser's and CSS's rules, but it doesn't hurt to add it
+   3. Also, I added `!important;` to each, just to make sure our style beats theirs, always. It should always win due to the browser's and CSS's rules, but it doesn't hurt to add it
+
+### Why so many selectors?
+It was easy to completely remove the focus outline, we just used one (the universal) selector and focus was completely gone, but to add it back we have to add all the individual selectors, couldn't we have just added it back with the universal selector? Yes and No. It would work just fine if you were exclusively using a keyboard or other non-pointing device, but if you were using a combination on mouse and keyboard, everytime you clicked on anything, it would add a focus indicator around it, this would make the focus indicator less useful for some people. 
+
+We could have used `:focus-visible` instead of `:focus`, which won't show on mouse/finger presses, but if some of us are using an older browser, it may not work at all, so I've used an approach that should work fine for all use cases.
 
 ### Can I change any of this?
 
-Of course you can, i'm going to show you how, right now.
+Of course you can, I'm going to show you how, right now.
 
 I have chosen to use the `outline:` property as it doesn't take up any space, it surrounds an element, but won't move it to accommodate a border. 
 
@@ -164,4 +168,16 @@ That's it, we now have a basic stylesheet we can use across the web, there are a
 
 ## Turning our stylesheet on or off
 
-Some sites will have a nice focus indicator and you may not to run your stylesheet  on those, the Stylus button icon in the extensions bar will have a tiny little notification icon on it, showing you that a stylesheet is active. If you click the Stylus button, there will be a checked input that you can change to turn your stylesheet on or off.
+Some sites will have a nice focus indicator and you may not to run your stylesheet  on those, the Stylus button icon in the extensions bar will have a tiny little notification icon on it, showing you that a stylesheet is active. If you click the Stylus button, there will be a checked input that you can toggle to turn your stylesheet on or off.
+
+## Using a portable stylesheet with Safari
+
+We don't need a browser extension for Safari, as we can use any stylesheet stored on our Mac, which is a relatively straightforward process. **Note:** I just updated my Mac to Ventura a couple of days ago, so if you haven't done so yet or can't, my instructions may be slightly different, but hopefully noting too drastic has changed.
+
+1. Download this stylesheet and save to somewhere safe on your Mac (rename if you wish, but don't delete the .css file extension, that's super important)
+2.  Open Safari
+3. In the Menu bar Click **Safari** > **Settings** (previously called **Preferences**) and then locate and open the **Advanced** tab
+4. Locate the drop down for **Stylesheet**, click it and select **Other**
+5. Locate the stylesheet you downloaded, in step 1, and open that so it becomes our selected option
+
+That's essentially it, I don't think this is as user-friendly as the Stylus extension, in that you have to go through all the options to change stylesheets and it appears you can only have one running at any given time, whereas Stylus you could in theory have many running, which would give you more granular control over how webpages look, but if you were just looking to style a focus indicator so you had a consistent visual indicator across the web, this may be useful.
