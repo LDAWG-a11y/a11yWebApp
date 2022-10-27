@@ -1,13 +1,39 @@
 const codeBlocks = document.querySelectorAll('pre');
-const tables = document.querySelectorAll('table')
+const tables = document.querySelectorAll('table');
+if (navigator.clipboard) {
+  const alert = document.createElement('span');
+  alert.classList.add('announcement', 'visually-hidden');
+  alert.setAttribute('aria-live', 'polite')
+  document.body.insertBefore(alert, document.querySelector('footer'));
+}
 
-codeBlocks.forEach(block => {
+codeBlocks.forEach((block, idx) => {
   let language = block.getAttribute('class').split("-");
   if (language) {
-    const label = `<span class="code__label">${language[1].toUpperCase()}</span>`;
-    block.insertAdjacentHTML('beforebegin', label)
+    block.classList.add('code--with-copy')
+    let header;
+    if (navigator.clipboard) {
+      header = `<div class="code__header"><span class="code__fake-btns"></span><span class="code__label">${language[1].toUpperCase()}</span><button class="code__copy-btn">Copy ${language[1].toUpperCase()}</button></div>`;
+      document.body.addEventListener('click', (e) => {
+        if (e.target.classList.contains('code__copy-btn')) {
+          copySnippet(e)
+        }
+      })
+    } else {
+      header = `<div class="code__header"><span class="code__fake-btns"></span><span class="code__label">${language[1].toUpperCase()}</span></div>`
+    }
+    block.insertAdjacentHTML('beforebegin', header);
   }
 })
+
+async function copySnippet(e) {
+  document.querySelector('.announcement').innerText = '';
+  const btn = e.srcElement;
+  const code = btn.parentElement.nextElementSibling.querySelector('code');
+  let text = code.innerText;
+  await navigator.clipboard.writeText(text);
+  document.querySelector('.announcement').innerText = 'Copied code to clipboard';
+}
 
 const toggleTabStopOnTable = () => {
   tables.forEach((table, idx) => {

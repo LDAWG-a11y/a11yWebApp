@@ -1788,12 +1788,14 @@ ul:not([class]) > li::marker {
 .cms .code__label {
   display: block;
   padding-top: 0;
+  align-self: center;
 }
 .cms code[class][class*=language-],
 .cms pre[class][class*=language-] {
   white-space: pre-wrap;
   overflow-wrap: break-word;
   word-break: break-word;
+  margin-top: 0;
 }
 .cms pre[class][class*=language-] {
   margin-bottom: 2.5rem;
@@ -1818,6 +1820,94 @@ ul:not([class]) > li::marker {
 }
 .cms pre[class][class*=language-]:last-of-type {
   margin-bottom: 3rem;
+}
+.cms pre[class][class*=language-].code--with-copy {
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+}
+.cms .code__header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-bg);
+  padding: 0 0.5rem;
+  width: 100%;
+  max-width: 65rem;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 0;
+}
+@media (prefers-color-scheme: dark) {
+  .cms .code__header {
+    border: 2px solid var(--color-inactive);
+  }
+}
+[data-theme=dark] .cms .code__header {
+  border: 2px solid var(--color-inactive);
+}
+@media (min-width: 26.25em) {
+  .cms .code__header {
+    border: 2px solid var(--color-inactive);
+  }
+}
+.cms .code__fake-btns {
+  align-self: center;
+  height: 14px;
+  width: 14px;
+  border: 1px solid #9b9b00;
+  border-radius: 50%;
+  background-color: yellow;
+  margin-left: 1.75rem;
+}
+.cms .code__fake-btns::before, .cms .code__fake-btns::after {
+  content: "";
+  align-self: center;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  position: absolute;
+}
+.cms .code__fake-btns::before {
+  left: 0.75rem;
+  border: 1px solid #860000;
+  background-color: red;
+}
+.cms .code__fake-btns::after {
+  left: 3.75rem;
+  border: 1px solid #018c01;
+  background-color: #02cb02;
+}
+.cms .code__copy-btn {
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+  position: relative;
+  margin: 0.5rem;
+  border: 2px solid var(--color-interactive);
+  border-radius: 4px;
+  padding: 0 0.5rem;
+  font-size: 1.25rem;
+  background-color: var(--color-bg);
+  color: var(--color-interactive);
+}
+.cms .code__copy-btn:focus, .cms .code__copy-btn:hover {
+  background-color: var(--color-interactive);
+  color: var(--color-bg);
+}
+.cms .code__copy-btn::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  bottom: -6px;
+  left: -6px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+}
+@media (forced-colors: active) {
+  .cms .code__copy-btn::before {
+    display: none;
+  }
+}
+.cms .code__copy-btn:focus-visible::before {
+  border-color: var(--color-interactive);
 }
 .cms picture {
   display: block;
