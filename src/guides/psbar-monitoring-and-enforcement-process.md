@@ -5,12 +5,13 @@ summary: An introduction to the UK accessibility regulations monitoring and
   what you need to do as part of monitoring or enforcement action.
 author: grhodes
 date: 2022-10-06
+toc: true
 tags:
   - PSBAR
   - Monitoring
   - Enforcement
+  - Regulations
 isGuide: true
-toc: true
 ---
 ## How the monitoring works
 
