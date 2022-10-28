@@ -76,6 +76,22 @@ If you receive documentation which shows a clean slate for accessibility, also b
 
 ### Using an overlay to maintain compliance
 
+More and more we are seeing suppliers state that they are using an "overlay" product to deliver accessibility for their service. Overlay products are touted as additional plugins which you add onto your website or service which will then adjust pages to make them WCAG compliant without you having to test and remediate issues. These are false claims.
+
+If you want to find out more about overlays and why we do not support their use, read our overlay guide.
+
+If a supplier does respond that they are using an overlay we would suggest responding with the following:
+
+> We would like to clarify that we do not condone the use of overlays and are not willing to accept the legal risk associated with their use. The government department that monitors the regulations we must comply with do not recognise them as an accepted solution, so they do not contribute to our legal compliance. They make many claims about making website meet WCAG 2.1, EN301549, Section 508 etc. All of these are false.
+>
+> You can find more information on the [Overlay Fact Sheet.](https://overlayfactsheet.com/#main "https\://overlayfactsheet.com/#main") The fact sheet is supported by a vast number of the best accessibility professionals in the field, and the industry overwhelmingly agrees to avoid the use of these snake oil products.
+>
+> Many organisations in the US are being sued for staking their compliance claims on these overlay products, and recently a representative from the US Department of Justice referred to overlay use as "committing legal suicide". Beyond accessibility there are also other [GDPR related concerns with overlay usage](https://tink.uk/accessibe-and-data-protection/ "https\://tink.uk/accessibe-and-data-protection/") and their data collection.
+>
+> We are not willing to sign off on the use of \[X overlay product] and do not accept it as evidence of \[Y website or system] complying with technical standards WCAG 2.1, or meeting our legal obligations under the Public Sector Bodies (Websites and Mobile Applications) Accessibility Regulations 2018. If you proceed with the use of \[X overlay product] on \[Y website or system] which we plan to utilise as part of our digital estate, we will be forced to escalate this incompatibility as we cannot accept the legal risks associated and may not be able to proceed to contract.
+>
+> We welcome your thoughts on this issue and what alternative arrangements you will put in place to evidence accessibility compliance.
+
 ### VPAT
 
 VPATs are a type of document which provides a very basic level of information on the accessibility of a digital product. This will normally be in the form of a table listing each of the WCAG success criteria an identification of their compliance, and some notes.
