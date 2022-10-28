@@ -9,6 +9,7 @@ toc: true
 tags:
   - Statement
   - Resource
+file: /docs/draft-accessibility-statement-2022.docx
 isGuide: true
 ---
 You have decided to write a [Public Sector Bodies Accessibility Regulations (PSBAR)](https://www.makethingsaccessible.com/guides/what-are-the-public-sector-bodies-accessibility-regulations/) compliant accessibility statement. To write a correct statement there are a few pieces of information you will need in advance and a specific template you must adhere to for UK requirements.
@@ -37,6 +38,8 @@ Finally, try where possible to give information about how long users might have 
 
 ## The template
 
+[Download the accessibility statement template](/docs/draft-accessibility-statement-2022.docx)
+
 In the UK there is a specific template and several pieces of required legal wording that must go into an accessibility statement. The template provided by the UK Government through the Government Digital Service (GDS) who are the monitoring body for the regulations is in the form of a [sample statement for a fictional website](https://www.gov.uk/government/publications/sample-accessibility-statement/sample-accessibility-statement-for-a-fictional-public-sector-website).
 
 This sample statement is the UK Government interpretation of the original legal document adopted from the [EU Web Accessibility Directive 2016 Model Statement](https://www.legislation.gov.uk/eudn/2018/1523/2020-12-31) which was written into UK law.
@@ -49,7 +52,7 @@ To help you write statements easily, with more prompts than in the GDS sample st
 
 ## How to write a statement – A video guide
 
-To help you work through the template provided and understand the conte that needs to go into each section, we have created this video guide showing George working through the template, giving information on each section and showing you the kind of information that needs to be provided.
+To help you work through the template provided and understand the content that needs to go into each section, we have created this video guide showing George working through the template, giving information on each section and showing you the kind of information that needs to be provided.
 
 ## Things to watch out for
 
