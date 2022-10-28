@@ -13,6 +13,8 @@ isGuide: true
 ---
 You have decided to write a [Public Sector Bodies Accessibility Regulations (PSBAR)](https://www.makethingsaccessible.com/guides/what-are-the-public-sector-bodies-accessibility-regulations/) compliant accessibility statement. To write a correct statement there are a few pieces of information you will need in advance and a specific template you must adhere to for UK requirements.
 
+If you want to know more about what statements are and what they apply to, read the [Accessibility statements - what are they guide](https://www.makethingsaccessible.com/guides/accessibility-statements-what-are-they/).
+
 ## Before you write a statement
 
 ### Know your accessibility issues
