@@ -76,8 +76,6 @@ If you receive documentation which shows a clean slate for accessibility, also b
 
 ### Using an overlay to maintain compliance
 
-
-
 ### VPAT
 
 VPATs are a type of document which provides a very basic level of information on the accessibility of a digital product. This will normally be in the form of a table listing each of the WCAG success criteria an identification of their compliance, and some notes.
@@ -133,4 +131,5 @@ Ideally you will be looking for suppliers to commit to testing against WCAG 2.1 
   * Manual testing is required to confirm several WCAG criteria that can only be done with human judgement such as whether things are correct in context.
   * Automated testing tools can be used to deal with repeat issues that are easier to check with a computer such as comparing colour values for contrast, rather than trying to guess by eye.
   * Assistive technology testing is vital to check that the platform works with common assistive technology and operating system pairings. This would include checking with common screen readers, dictation software, magnification techniques and non-pointer input devices such as keyboard controls.
-* A prioritisation of issues
+* A prioritisation of issues based on impact to users
+* Recommendations on how to fix issues. This may be more present in common easy to fix issues, rather than more complex issues for significant components which may require replacement.
