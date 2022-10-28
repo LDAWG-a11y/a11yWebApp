@@ -82,7 +82,7 @@ If you want to find out more about overlays and why we do not support their use,
 
 If a supplier does respond that they are using an overlay we would suggest responding with the following:
 
-> We would like to clarify that we do not condone the use of overlays and are not willing to accept the legal risk associated with their use. The government department that monitors the regulations we must comply with do not recognise them as an accepted solution, so they do not contribute to our legal compliance. They make many claims about making website meet WCAG 2.1, EN301549, Section 508 etc. All of these are false.
+> We would like to clarify that we do not condone the use of overlays and are not willing to accept the legal risk associated with their use. The government department that monitors the regulations we must meet do not recognise overlays as an accepted solution, and overlays do not contribute to our legal compliance. Overlay products make many claims about making website meet WCAG 2.1, EN301549, Section 508 etc. All of these are false.
 >
 > You can find more information on the [Overlay Fact Sheet.](https://overlayfactsheet.com/#main "https\://overlayfactsheet.com/#main") The fact sheet is supported by a vast number of the best accessibility professionals in the field, and the industry overwhelmingly agrees to avoid the use of these snake oil products.
 >
