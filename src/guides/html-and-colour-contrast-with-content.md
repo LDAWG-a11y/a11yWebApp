@@ -5,6 +5,9 @@ summary: This guide provides useful information on colour contrast and how to
 author: swilkinson
 date: 2022-11-04
 toc: false
+tags:
+  - HTML
+  - Colour Contrast
 isGuide: true
 ---
 ## Introduction to colour contrast
