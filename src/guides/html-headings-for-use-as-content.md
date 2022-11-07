@@ -5,11 +5,11 @@ summary: This guide provides useful information on when to use headings, when
   understandable for all users.
 author: swilkinson
 date: 2022-10-06
+toc: true
 tags:
   - HTML
   - Headings
 isGuide: true
-toc: true
 ---
 ## Introduction to content headings
 
@@ -124,7 +124,7 @@ Use headings for labelling regions on the page, by associating the heading with 
     <h3>Guides</h3>
 ```
 
-### Wrapping up
+## Wrapping up
 
 Hopefully this guide has helped you to understand a bit more of using HTML headers for content. It can be hard especially when the tables are really complicated, and there is an element of author discretion, but ultimately the summary is:
 
