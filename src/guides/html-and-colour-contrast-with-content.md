@@ -4,7 +4,7 @@ summary: This guide provides useful information on colour contrast and how to
   avoid issues with content.
 author: swilkinson
 date: 2022-11-04
-toc: false
+toc: true
 tags:
   - HTML
   - Colour Contrast
