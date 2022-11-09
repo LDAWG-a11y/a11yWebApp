@@ -90,24 +90,28 @@
   }
 
   .code__fake-btns {
+    position: relative;
     width: 3.5rem;
+    padding-top: $space-xs;
+    display: flex;
+    align-items: flex-start;
   }
 
   .code__fake-btn {
     display: inline-block;
-    margin-top: $space-xs;
+    margin-top: 2px;
     height: 14px;
     width: 14px;
     border: 1px solid #9b9b00;
     border-radius: $radius-pill;
     background-color: yellow;
-    margin-left: 1.25rem;
+    margin-left: 1.75rem;
 
     &::before,
     &::after {
       content: "";
       position: absolute;
-      top: $space-xs;
+      top: 0.625rem;
       height: 14px;
       width: 14px;
       border-radius: $radius-pill;

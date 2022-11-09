@@ -1939,22 +1939,26 @@ ul:not([class]) > li::marker {
   }
 }
 .cms .code__fake-btns {
+  position: relative;
   width: 3.5rem;
+  padding-top: 0.5rem;
+  display: flex;
+  align-items: flex-start;
 }
 .cms .code__fake-btn {
   display: inline-block;
-  margin-top: 0.5rem;
+  margin-top: 2px;
   height: 14px;
   width: 14px;
   border: 1px solid #9b9b00;
   border-radius: 50%;
   background-color: yellow;
-  margin-left: 1.25rem;
+  margin-left: 1.75rem;
 }
 .cms .code__fake-btn::before, .cms .code__fake-btn::after {
   content: "";
   position: absolute;
-  top: 0.5rem;
+  top: 0.625rem;
   height: 14px;
   width: 14px;
   border-radius: 50%;
