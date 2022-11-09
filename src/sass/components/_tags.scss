@@ -5,7 +5,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: $space-xs;
-  background-color: var(--color-bg--light);
 
   &:not(.tags__all)::before {
     content: "";
@@ -62,8 +61,7 @@
   &:hover,
   &:focus-visible {
     .tag__count {
-      background-color: var(--color-bg--light);
-      color: var(--color-interactive);
+      border-left: 2px solid var(--color-bg);
     }
   }
 }
@@ -76,17 +74,11 @@
   right: 0;
   display: inline-block;
   margin-left: $space-xxs;
-  border-radius: 0 $radius-sm $radius-sm 0;
+  border-left: 2px solid var(--color-interactive);
   height: 100%;
   width: 1.75rem;
   text-align: center;
   font-weight: 600;
   line-height: 1.7;
-  background-color: var(--color-interactive);
-  color: var(--color-bg--light);
-  transition: background 250ms ease-in-out, color 250ms ease-in-out;
-
-  @media (forced-colors: active) {
-    border-left: 2px solid LinkText;
-  }
+  transition: border-color 250ms ease-in-out;
 }

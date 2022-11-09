@@ -2,18 +2,96 @@
 
 .cms__toc {
   margin: 0 0 $space-xxxxl 0;
-  padding: $space-sm $space-md;
+  padding: 0;
   background-color: var(--color-bg--light);
-  border: 1px solid var(--color-primary);
-  border-radius: $radius-md;
+  border: 1px solid var(--color-interactive);
+  border-radius: $radius-sm;
 
-  h2 {
+  summary {
+    position: relative;
     font-size: 2rem;
-    margin-bottom: $space-md;
+    border-radius: $radius-xs $radius-xs 0 0;
+    border-bottom: 1px solid var(--color-interactive);
+    padding: $space-sm $space-sm $space-sm $space-xxl;
+    list-style: none;
+    line-height: 1;
+    font-weight: 600;
+    color: var(--color-interactive);
+    transition: background 250ms ease-in-out, color 250ms ease-in-out;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+      left: -5px;
+      border: 2px solid transparent;
+      border-radius: $radius-md;
+
+      @media (forced-colors: active) {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: $space-md;
+      top: 1.25rem;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 16px 8px 0 8px;
+      border-color: var(--color-interactive) transparent transparent transparent;
+      transform: rotate(0);
+      transition: 250ms transform ease-in-out;   
+    }
+
+    &::-webkit-details-marker {
+      display: none; 
+    }
+
+    &:hover,
+    &:focus-visible  {
+      color: var(--color-bg--light);
+      background-color: var(--color-interactive);
+
+      &::after {
+        border-color: var(--color-bg--light) transparent transparent transparent;
+      }
+    }
+
+    &:focus-visible {
+      border-radius: $radius-xs;
+
+      &::before {
+        border-color: var(--color-interactive);
+      }
+    }
+  }
+
+  details {
+    outline-color: transparent;
+
+    &[open] {
+      > summary {
+        &::after {
+          transform: rotate(-90deg); 
+        }
+      }
+    }
+
+    &:not([open]) {
+      > summary {
+        border-bottom: none;
+      }
+    }
   }
 
   ol {
     list-style-position: inside;
+    padding: $space-sm;
   }
 
   li {
@@ -30,9 +108,5 @@
         font-size: 1.675rem;
       }
     }
-  }
-
-  a {
-
   }
 }

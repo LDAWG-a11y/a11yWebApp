@@ -44,14 +44,14 @@ select {
   font: inherit;
 }
 
-button {
+button,
+summary {
   cursor: pointer;
 }
 
 a:focus,
 button:focus,
-a:hover,
-button:hover,
+summary:focus,
 h1:focus-visible {
   outline: 3px dotted transparent;
   outline-offset: 2px;

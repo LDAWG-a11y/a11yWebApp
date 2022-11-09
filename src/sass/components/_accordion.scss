@@ -1,3 +1,5 @@
+@use '../vendors/mq';
+
 .accordion {
   display: block;
 
@@ -33,6 +35,40 @@
   
   .has-js & {
     max-width: 70rem;
+  }
+}
+
+.accordion.accordion__full {
+  max-width: 75rem;
+  margin: 0 auto;
+
+  + .accordion__panel--full {
+    max-width: 75rem;
+    margin: 0 auto $space-md;
+
+    .has-js & {
+      border: 2px solid var(--color-interactive);
+      border-top: none;
+      padding-top: $space-lg;
+      background-color: var(--color-bg--light);
+    }
+
+    @include mq.mq($from:lg) {
+      margin-bottom: $space-xxl;
+    }
+  }
+
+  &[data-open="true"] {
+    > .accordion__btn {
+      border-radius: $radius-xs $radius-xs 0 0;
+    }
+  }
+
+  &[data-open="false"] {
+    + .accordion__panel {
+      border: none;
+      background-color: var(--color-bg);
+    }
   }
 }
 
