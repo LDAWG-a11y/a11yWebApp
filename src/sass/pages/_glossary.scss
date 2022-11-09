@@ -33,6 +33,10 @@
       background-color: var(--color-inactive);
     }
 
+    [data-theme="light"] & {
+      background-color: var(--color-accent);
+    }
+
     &::before {
       height: 100%;
       border-color: var(--color-interactive);

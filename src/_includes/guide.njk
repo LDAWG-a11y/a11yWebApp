@@ -23,9 +23,11 @@
       </{% if tagCount > 1 %}ul{% else %}div{% endif %} class="tags tags__all">      
     </div>
     {% if toc %}
-    <nav class="cms__toc" aria-labelledby="toc-heading">
-      <h2 id="toc-heading">Table of contents</h2>
-        {{ content | toc | safe }}
+      <nav class="cms__toc" aria-labelledby="toc-heading">
+        <details open>
+          <summary id="toc-heading">Table of contents</summary>
+          {{ content | toc | safe }}
+        </details>
       </nav>
     {% endif %}
     <article class="cms">

@@ -13,14 +13,12 @@ codeBlocks.forEach((block, idx) => {
     block.classList.add('code--with-copy')
     let header;
     if (navigator.clipboard) {
-      header = `<div class="code__header"><span class="code__fake-btns"></span><span class="code__label">${language[1].toUpperCase()}</span><button class="code__copy-btn">Copy ${language[1].toUpperCase()}</button></div>`;
+      header = `<div class="code__header"><span class="code__fake-btns"><span class="code__fake-btn"></span></span><button class="code__copy-btn">Copy ${language[1].toUpperCase()}</button></div>`;
       document.body.addEventListener('click', (e) => {
         if (e.target.classList.contains('code__copy-btn')) {
           copySnippet(e)
         }
       })
-    } else {
-      header = `<div class="code__header"><span class="code__fake-btns"></span><span class="code__label">${language[1].toUpperCase()}</span></div>`
     }
     block.insertAdjacentHTML('beforebegin', header);
   }

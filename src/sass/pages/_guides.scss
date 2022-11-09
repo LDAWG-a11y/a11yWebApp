@@ -18,3 +18,9 @@
     top: 0;
   }
 }
+
+.skip-tags {
+  .has-js & {
+    display: none;
+  }
+}
