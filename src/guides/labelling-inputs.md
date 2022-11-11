@@ -38,7 +38,7 @@ We're going to discuss each of them, with some practical examples. But first, we
 
 We could actually use all of those on an input, if we so wished, but please don't, so our input could be:
 
-```hcl
+```html
 <label for="ourInput">Your name</label>
 <input id="ourInput" type="text" aria-labelledby="someOtherText" aria-label="What is your name?" placeholder="What you called?" title="Full name">
   
