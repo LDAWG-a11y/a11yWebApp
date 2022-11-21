@@ -189,6 +189,10 @@
     margin: 0 0 0 $space-md;
   }
 
+  ol > li > ul {
+    margin-bottom: $space-xxs;
+  }
+
   ol.decimal { 
     list-style-type: decimal;
   }
@@ -215,16 +219,25 @@
     ol {
       counter-reset: items;
       list-style: none;
+      margin-bottom: 0;
     }
 
     li {
       counter-increment: items;
       padding-left: $space-sm;
       list-style: none;
+      margin-bottom: 0;
     }
     
     li::before {
        content: counters(items, ".") ". ";
+    }
+
+    &.multilevel {
+      ol,
+      ol> * {
+        margin-bottom: $space-xxs;
+      }
     }
   }
 
@@ -285,6 +298,16 @@
       background: var(--color-primary);
       background: linear-gradient(to top, var(--color-primary), var(--color-secondary));
     }
+
+    & p {
+      margin-bottom: 0;
+    }
+  }
+
+  cite {
+    display: block;
+    margin-top: $space-xs;
+    font-size: $medium-paragraph-size;
   }
 
   dl {

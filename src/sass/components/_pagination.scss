@@ -48,6 +48,10 @@
     line-height: 1.3;
     text-decoration: none;
     color: var(--color-interactive);
+
+    @include mq.mq($from:lg) {
+      line-height: 1.1;
+    }
   }
 
   @include mq.mq($from:sm) {

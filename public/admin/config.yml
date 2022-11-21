@@ -4,6 +4,7 @@ backend:
   repo: LDAWG-a11y/a11yWebApp
 media_folder: "src/img"
 public_folder: "src/img"
+publish_mode: editorial_workflow
 collections:
   - name: "guides"
     label: "Guides"
