@@ -1233,13 +1233,16 @@ ul:not([class]) > li::marker {
 }
 
 .tag__item {
+  align-items: center;
+  line-height: 1;
   display: inline-flex;
   font-weight: 600;
 }
 
 .tag__item--inert {
-  line-height: 1.4;
-  border-radius: 6px;
+  align-items: center;
+  line-height: 1;
+  border-radius: 4px;
   padding: 0.25rem 0.5rem;
   font-weight: 500;
   background-color: var(--color-accent);
@@ -1250,9 +1253,8 @@ ul:not([class]) > li::marker {
   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
   position: relative;
   border: 2px solid var(--color-interactive);
-  border-radius: 6px;
+  border-radius: 4px;
   padding: 0.25rem 0.5rem;
-  line-height: 1;
   text-decoration: none;
   color: var(--color-interactive);
 }
@@ -1505,6 +1507,12 @@ ul:not([class]) > li::marker {
 .pagination__item:not(.pagination__item--inert):focus-visible::before,
 .pagination__item:active:not(.pagination__item--inert):focus-visible::before {
   border-color: var(--color-interactive);
+}
+@media (min-width: 64em) {
+  .pagination__item:not(.pagination__item--inert),
+.pagination__item:active:not(.pagination__item--inert) {
+    line-height: 1.1;
+  }
 }
 @media (min-width: 37.5em) {
   .pagination__item,
@@ -2042,6 +2050,9 @@ ul:not([class]) > li::marker {
 .cms ol > li > ol > li > ol {
   margin: 0 0 0 1rem;
 }
+.cms ol > li > ul {
+  margin-bottom: 0.25rem;
+}
 .cms ol.decimal {
   list-style-type: decimal;
 }
@@ -2063,14 +2074,20 @@ ul:not([class]) > li::marker {
 .cms .multilevel ol {
   counter-reset: items;
   list-style: none;
+  margin-bottom: 0;
 }
 .cms .multilevel li {
   counter-increment: items;
   padding-left: 0.75rem;
   list-style: none;
+  margin-bottom: 0;
 }
 .cms .multilevel li::before {
   content: counters(items, ".") ". ";
+}
+.cms .multilevel.multilevel ol,
+.cms .multilevel.multilevel ol > * {
+  margin-bottom: 0.25rem;
 }
 .cms p {
   margin-bottom: 1rem;
@@ -2123,6 +2140,14 @@ ul:not([class]) > li::marker {
   width: 6px;
   background: var(--color-primary);
   background: linear-gradient(to top, var(--color-primary), var(--color-secondary));
+}
+.cms blockquote:not(.twitter-tweet) p {
+  margin-bottom: 0;
+}
+.cms cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
 }
 .cms dl {
   display: flex;

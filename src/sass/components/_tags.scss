@@ -29,6 +29,8 @@
 .tag__item {
   @extend %small-text;
 
+  align-items: center;
+  line-height: 1;
   display: inline-flex;
   font-weight: 600;
 }
@@ -36,8 +38,9 @@
 .tag__item--inert {
   @extend %smallest-text;
 
-  line-height: 1.4;
-  border-radius: $radius-md;
+  align-items: center;
+  line-height: 1;
+  border-radius: $radius-sm;
   padding: $space-xxs $space-xs;
   font-weight: 500;
   background-color: var(--color-accent);
@@ -48,9 +51,8 @@
   @include focus-indicator(true);
 
   border: 2px solid var(--color-interactive);
-  border-radius: $radius-md;
+  border-radius: $radius-sm;
   padding: $space-xxs $space-xs;
-  line-height: calc($default-line-height / 1.5);
   text-decoration: none;
   color: var(--color-interactive);
 
