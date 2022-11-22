@@ -196,7 +196,7 @@ So users are always aware of the accordion's current state as we have passed tha
 
 ### Accordion live demo
 
-Run the CodePen below to see a working example that actually looks like an accordion. Please note, I have added focus styles, hover styles and a Windows High Contrast Mode media query, but I have not tested the styles comprehensively, I built this example in CodePen and viewed it with FireFox, Edge (with forced colors emulation) and Safari on a Mac. In a real-world scenario, I would test this across multiple browsers, devices and operating systems, but the purpose of this guide was to demonstrate how to build a progressively enhanced accordion. So please do battle test my work if you intend on copying the code.
+Run the CodePen below to see a working example that actually looks like an accordion. Please note, I have added focus styles, hover styles and a Windows High Contrast Mode media query, but I have not tested the styles comprehensively, I built this example in CodePen and viewed it with FireFox, Edge (with forced colors emulation) and Safari on a Mac. In a real-world scenario, I would test this across multiple browsers, devices, viewports and operating systems, but the purpose of this guide was to demonstrate how to build a progressively enhanced accordion. So ensure you test on Windows, make it responsive and feel free to add some subtle animations, that won't distract or harm your users.
 
 <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="vYrdrxp" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/vYrdrxp">
@@ -208,3 +208,95 @@ Run the CodePen below to see a working example that actually looks like an accor
 ### What about the Details/Summary element?
 
 Good question, the native accordion-like element provided by HTML which has most of the functionality of our accordion, out of the box. It seems there are still a few little quirks with how browsers and/or assistive technologies handle these, so you should definitely test across multiple devices, multiple browsers and of course assistive technology pairings. We use a `details` and `summary` element for our table of contents, we set it to `open` on page load, this is so a keyboard user who wants to read the whole page sequentially doesn't have to tab or arrow through them, if they don't want.
+
+## Let's build a mobile navigation
+
+I'm not going to go into as much depth here, as in principle we're just doing the same thing, expanding an element to conditionally show some content. there are some differences in HTML structure, of course and we won't be writing our JS in a loop as we will only have 1 navigation element.
+
+When screen space is tight, such as on a mobile or simply when a user zooms the page on a desktop, sometimes we can't fit all of our primary links in a nice horizontal line, so we reach for the mobile navigation pattern. When we do this, we really do need to get this right, because in some cases, all of the links to navigate the site are in there and if a user can't access those, well, that can be a total blocker for them (I mean, there should be more than 1 way to navigate a site anyway).
+
+### Let's start with some good old HTML
+
+```html
+<header>
+  <nav class="nav">
+    <div class="nav__wrapper" id="navlist">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#">Link 1</a></li>
+        <li class="nav__item"><a href="#">Link 2</a></li>
+        <li class="nav__item"><a href="#">Link 3</a></li>
+        <li class="nav__item"><a href="#">Link 4</a></li>
+        <li class="nav__item"><a href="#">Link 5</a></li>
+        <li class="nav__item"><a href="#">Link 6</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+```
+
+So, we have some pretty standard HTML in the code above:
+
+* We have a `<header>`, because that's a good place to put your site nav
+* A `<nav>` element, because well, it's a navigation component
+* We have a `<div>` because we may want a little extra control in styling, it also has an ID, as we need that for the aria-controls reference
+* We have a `<ul>` element, because we want a list of links (some folk put them in lists and some don't, I'm not going into that here, as ultimately that's something that would be better understood by getting feedback from actual screen reader users, as lists are enumerated to screen readers, well, not VoiceOver if you remove the bullets, but that's out of scope here, too)
+* We have our list items, each with a link element inside
+* I've added some classes, so we can get these elements with CSS and JS
+
+Pretty straightforward stuff again, right? A couple of things to bear in mind:
+
+* If you only have a few links in your navigation, it's not worth adding a disclosure widget to display them
+* If you have another `<nav>` element elsewhere on your page, then we should add an accessible name to our `<nav>` element, so it is a unique landmark, perhaps like so `<nav aria-label="primary">`, so users can use their assistive tech to quickly jump to regions of interest. If you're catering for an international audience, you'd be better using `aria-labelledby="IDRef of a visually hidden text node"`, as `aria-label` has some issues with translation
+* Finally, considering we want our navigation to display nicely and be usable should JS not be present, we could just stack this vertically, it may not be what you or your designers designed, but no JS is definitely a thing and we want our sites to be nice and robust, right?
+
+### Let's progressively enhance our nav with JS
+
+```javascript
+const mainNav = document.querySelector('.nav');
+  /*
+    Store all the existing contents of the nav
+  */
+  const mainNavContent = mainNav.innerHTML;
+  
+  /*
+    insert a button into our nav which has:
+    - a class
+    - An aria-controls reference
+    - Aria-expanded set to false
+    - the word Menu as the button's label
+    Then we need to pop the old contents of the nav element back in,
+    as we just replaced it
+  */
+  mainNav.innerHTML = `<button class="nav__btn" aria-expanded="false"
+  aria-controls="navList">Menu</button> ${mainNavContent}`;
+```
+
+Cool, so now we have a button, that references the wrapper which contains the stuff we want to hide, now let's add an event listener so we can actually toggle our aria-expanded value
+
+```javascript
+/*
+    Our previous JS with the comments removed
+  */
+  const mainNav = document.querySelector('.nav');
+  const mainNavContent = mainNav.innerHTML;
+  mainNav.innerHTML = `<button class="nav__btn" aria-expanded="false" aria-controls="navList">Menu</button> ${mainNavContent}`;
+
+  // We're adding new JS below
+
+  /*
+    Look in the nav element for our newly created button
+  */
+  const btn = mainNav.querySelector('.nav__btn');
+
+  /*
+    Add an event listener, where we listen for a click
+  */
+  btn.addEventListener('click', () => {
+    /*
+    When the button is clicked:
+    If the aria-expanded attribute is false, set it to true, 
+    else set it to false
+  */
+    btn.getAttribute('aria-expanded') == 'false' ? btn.setAttribute('aria-expanded', 'true') : btn.setAttribute('aria-expanded', 'false')
+  })
+```
