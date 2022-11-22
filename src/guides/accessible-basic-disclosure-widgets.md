@@ -198,7 +198,7 @@ So users are always aware of the accordion's current state as we have passed tha
 
 Run the CodePen below to see a working example that actually looks like an accordion. Please note, I have added focus styles, hover styles and a Windows High Contrast Mode media query, but I have not tested the styles comprehensively, I built this example in CodePen and viewed it with FireFox, Edge (with forced colors emulation) and Safari on a Mac. In a real-world scenario, I would test this across multiple browsers, devices and operating systems, but the purpose of this guide was to demonstrate how to build a progressively enhanced accordion. So please do battle test my work if you intend on copying the code.
 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="vYrdrxp" data-preview="true" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="vYrdrxp" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/vYrdrxp">
   Accordions Demo</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
