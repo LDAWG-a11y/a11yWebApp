@@ -190,15 +190,20 @@ That's it, our accordion now works, it accessibly hides and displays content. Ju
 I'm on a Mac, using Safari and VoiceOver (That's the combo you should test with if you are on a Mac):
 
 * When I tab to our accordion, VoiceOver informs me: "I have some content to hide, collapsed, button"
-* If I then hit <kbd>Space</kbd> or <kbd>Enter</kbd> I then hear "I have some content to hide, expended, button"
+* If I then hit <kbd>Space</kbd> or <kbd>Enter</kbd> I then hear "I have some content to hide, expanded, button"
 
 So users are always aware of the accordion's current state as we have passed that information to their assistive technology, also, there's no confusion if JS is switched off, it didn't load or the page was accessed in a "Reader view" etc, as there is no button, there are no expanded or collapsed states and everything is available to the user. Other screen readers will make slightly different announcements, so don't worry if you hear something slightly different on a Windows machine, as long as we hear it's a button, whether it is collapsed or expanded and of course the title, we have provided the necessary information that users will be familiar with.
 
-### Wait, we're missing something?
+### Accordion live demo
 
-We are, we're missing an icon which helps users identify the element as a disclosure widget and we are missing a focus style. I'm not really focusing on the styles in this guide, as it's out of scope, but if you were to want to animate an icon on your accordions, you can set it with the `aria-expanded` attribute, in CSS. So if the button has `aria-expanded="true"`, we may have a minus sign or a down chevron etc, if `aria-expanded="false"` is set on the button, we would likely want to rotate the chevron or use css transforms on our minus icon to turn it into a plus icon. I use CSS pseudo elements for this, as it's a little cleaner in the HTML, Codepen is a great place for examples.
+Run the CodePen below to see a working example that actually looks like an accordion. Please note, I have added focus styles, hover styles and a Windows High Contrast Mode media query, but I have not tested the styles comprehensively, I built this example in CodePen and viewed it with FireFox, Edge (with forced colors emulation) and Safari on a Mac. In a real-world scenario, I would test this across multiple browsers, devices and operating systems, but the purpose of this guide was to demonstrate how to build a progressively enhanced accordion. So please do battle test my work if you intend on copying the code.
 
-I haven't added focus management on our accordion, typically an accordion pushes content down as opposed to obscuring other content or controls, I will add it to the navigation pattern though, which is later in this guide.
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="vYrdrxp" data-preview="true" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/vYrdrxp">
+  Accordions Demo</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
 ### What about the Details/Summary element?
 
