@@ -31,7 +31,6 @@ Fist and foremost, let's briefly go over what we need to consider when creating 
 
 * First and foremost, we need to ensure we use the correct HTML elements for the job, as this provides vital information to users of assistive technologies. Using the wrong elements can cause confusion and sometimes it can make using the element impossible for some users
 * Providing additional information with ARIA, this informs users of relationships in content and the current state the control is in, which is super useful for users of assistive technologies
-* Focus management, this is really important, as often websites have an illogical focus order, which can get really confusing for users that navigate with keyboards and other hardware or software that is not a pointing device.
 * Focus styles, simply put, let folk see where they have moved keyboard focus to, so they can actually use the site in a comparable way
 * Progressive enhancement, by using JS only to enhance the experience, we can ensure that where JS doesn't load or a user switches it off, it doesn't prevent a them from accessing any content at all
 * Actually hiding the content from the accessibility tree and the DOM, using CSS, when we say actually hiding we mean using the correct display properties so the content is not reachable in its hidden state
@@ -220,16 +219,14 @@ When screen space is tight, such as on a mobile or simply when a user zooms the 
 ```html
 <header>
   <nav class="nav">
-    <div class="nav__wrapper" id="navlist">
-      <ul class="nav__list">
-        <li class="nav__item"><a href="#">Link 1</a></li>
-        <li class="nav__item"><a href="#">Link 2</a></li>
-        <li class="nav__item"><a href="#">Link 3</a></li>
-        <li class="nav__item"><a href="#">Link 4</a></li>
-        <li class="nav__item"><a href="#">Link 5</a></li>
-        <li class="nav__item"><a href="#">Link 6</a></li>
-      </ul>
-    </div>
+    <ul class="nav__list" id="navlist">
+      <li class="nav__item"><a class="nav__link" href="#">Link 1</a></li>
+      <li class="nav__item"><a class="nav__link" href="#">Link 2</a></li>
+      <li class="nav__item"><a class="nav__link" href="#">Link 3</a></li>
+      <li class="nav__item"><a class="nav__link" href="#">Link 4</a></li>
+      <li class="nav__item"><a class="nav__link" href="#">Link 5</a></li>
+      <li class="nav__item"><a class="nav__link" href="#">Link 6</a></li>
+    </ul>
   </nav>
 </header>
 ```
@@ -238,9 +235,8 @@ So, we have some pretty standard HTML in the code above:
 
 * We have a `<header>`, because that's a good place to put your site nav
 * A `<nav>` element, because well, it's a navigation component
-* We have a `<div>` because we may want a little extra control in styling, it also has an ID, as we need that for the aria-controls reference
-* We have a `<ul>` element, because we want a list of links (some folk put them in lists and some don't, I'm not going into that here, as ultimately that's something that would be better understood by getting feedback from actual screen reader users, as lists are enumerated to screen readers, well, not VoiceOver if you remove the bullets, but that's out of scope here, too)
-* We have our list items, each with a link element inside
+* We have a `<ul>` element, because we want a list of links, it also has an ID, as we need that for the aria-controls reference
+* We have our list items `<li>`, each with a link `<a>` element inside
 * I've added some classes, so we can get these elements with CSS and JS
 
 Pretty straightforward stuff again, right? A couple of things to bear in mind:
@@ -251,52 +247,210 @@ Pretty straightforward stuff again, right? A couple of things to bear in mind:
 
 ### Let's progressively enhance our nav with JS
 
+We need to target our `<nav>` element and add a button inside it, as the control (the `<button>`) forms part of our navigation, so we want it inside of our `<nav>`, the goal here is for a screen reader user to hear something link "navigation, button, collapsed" which provides the necessary information to understand the purpose of the control and its current state, which is initially collapsed.
+
+#### Let's add a button to our navigation
+
 ```javascript
 const mainNav = document.querySelector('.nav');
-  /*
-    Store all the existing contents of the nav
-  */
-  const mainNavContent = mainNav.innerHTML;
-  
-  /*
-    insert a button into our nav which has:
-    - a class
-    - An aria-controls reference
-    - Aria-expanded set to false
-    - the word Menu as the button's label
-    Then we need to pop the old contents of the nav element back in,
-    as we just replaced it
-  */
-  mainNav.innerHTML = `<button class="nav__btn" aria-expanded="false"
-  aria-controls="navList">Menu</button> ${mainNavContent}`;
+/*
+  Store all the existing contents of the nav
+*/
+const mainNavContent = mainNav.innerHTML;
+
+/*
+  insert a button into our nav which has:
+  - a class
+  - An aria-controls reference
+  - Aria-expanded set to false
+  - the word Menu as the button's label
+  Then we need to pop the old contents of the nav element back in,
+  as we just replaced it
+*/
+mainNav.innerHTML = `<button class="nav__btn" aria-expanded="false"
+aria-controls="navList">Menu</button> ${mainNavContent}`;
 ```
 
-Cool, so now we have a button, that references the wrapper which contains the stuff we want to hide, now let's add an event listener so we can actually toggle our aria-expanded value
+Cool, so now we have a button, that references the wrapper which contains the navigation panel we want to hide, now let's add an event listener so we can actually toggle our `aria-expanded` value.
+
+#### Let's listen for a click on our nav button
 
 ```javascript
 /*
-    Our previous JS with the comments removed
-  */
-  const mainNav = document.querySelector('.nav');
-  const mainNavContent = mainNav.innerHTML;
-  mainNav.innerHTML = `<button class="nav__btn" aria-expanded="false" aria-controls="navList">Menu</button> ${mainNavContent}`;
+  Our previous JS with the comments removed
+*/
+const mainNav = document.querySelector('.nav');
+const mainNavContent = mainNav.innerHTML;
+mainNav.innerHTML = `<button class="nav__btn" aria-expanded="false" aria-controls="navList">Menu</button> ${mainNavContent}`;
 
-  // We're adding new JS below
+// We're adding new JS below
 
+/*
+  Look in the nav element for our newly created button
+*/
+const btn = mainNav.querySelector('.nav__btn');
+
+/*
+  Add an event listener, where we listen for a click
+*/
+btn.addEventListener('click', () => {
   /*
-    Look in the nav element for our newly created button
-  */
-  const btn = mainNav.querySelector('.nav__btn');
-
-  /*
-    Add an event listener, where we listen for a click
-  */
-  btn.addEventListener('click', () => {
-    /*
     When the button is clicked:
     If the aria-expanded attribute is false, set it to true, 
     else set it to false
   */
-    btn.getAttribute('aria-expanded') == 'false' ? btn.setAttribute('aria-expanded', 'true') : btn.setAttribute('aria-expanded', 'false')
-  })
+  btn.getAttribute('aria-expanded') == 'false' ? btn.setAttribute('aria-expanded', 'true') : btn.setAttribute('aria-expanded', 'false')
+})
 ```
+
+That's it for the JavaScript, it's a little less involved than the accordion example, for 2 primary reasons:
+
+* We're not looping through all the accordions on the page, we're just targeting a singular `<nav>` element
+* As the button element in this instance is a sibling of the panel we want to toggle the display properties of, we don't need to toggle the value of a data attribute on a parent of the button, as we only needed to toggle one thing, I opted for a ternary operator, as opposed to an if/else statement, just to reduce the JS a little
+
+We will add a tiny bit of extras JS in a while, but that's not directly related to a disclosure pattern.
+
+### Let's add the final ingredient, CSS
+
+This is just the basic CSS to change our display properties:
+
+* On smaller screens, we will accessibly hide the navigation list, if the button is present and it has aria-`expanded="false"` set
+
+  * If `aria-expanded="true"` is present on that button, we will show the navigation list
+* On larger screens, we will accessibly hide the button
+
+  * We will also change the layout to a horizontal list
+
+```css
+.nav {
+  /* 
+    Set the layout to a flex column
+  */
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__btn {
+  /* 
+    Now we have flex column we can easily align the button to the right
+  */
+  align-self: end;
+}
+
+/*  
+  Add a media query with a max width a pixel lower than our desktop nav's media query
+*/
+@media screen and (max-width: 56.24em) {
+  /* 
+    If our button has aria-expanded="false", hide the list
+  */
+  .nav__btn[aria-expanded="false"] + .nav__list {
+    display: none;
+  }
+
+  /* 
+    If our button has aria-expanded="true", show the list
+  */
+  .nav__btn[aria-expanded="true"] + .nav__list {
+    display: block;
+  }
+}
+
+/* 
+    An example desktop media query size, where we want the larger screen layout
+*/
+@media screen and (min-width: 56.25em) {
+
+  .nav__list {
+    /* 
+      Let's say we want our links spaced equally, including around the first and last items
+      We use the flex layout, position its children, with a uniform spacing,
+      using justify-content, set to space-around
+    */
+    display: flex;
+    justify-content: space-around;
+  }
+
+  /* 
+    We have no need for our button on larger screens and we want it to be hidden,
+    from users of assistive technologies too, so let's remove it from the
+    accessibility tree and the page
+  */
+  .nav__btn {
+    display: none;
+  }
+}
+```
+
+Obviously the above doesn't look very pretty, so in a real-world scenario, we'd want to make that look much better. Just a couple of things to consider before you go off styling this example:
+
+* The media query, I just used an arbitrary number, that's somewhat representative of a large tablet, what we may want in the real world is to understand the space taken up by our links, we would have longer link labels, we may have more links or less, remember our sites need to work with text that is sized to 200%, so ensure your implementation doesn't break if we change the font sizes in our browser or operating system
+* We may want to use a "hamburger icon" or similar, ensure we provide an accessible name to that button if we remove the text, otherwise some users may find it difficult to operate or understand
+* If you wanted to animate the opening and closing, it's a little easier with a navigation, as you will typically know how many items are in it and you can calculate the final `height` easier, for this you'd need to use `visibility: hidden/visible` and some keyframes
+
+### Additional enhancements
+
+Whilst we could make this navigation panel overlap other content below, I personally prefer the push down approach, but we all have our own preferences. If we cover other content, we need to make the panel dismissible on <kbd>Esc</kbd> press and return focus back to the trigger. This is something I would do for either pattern, as some users may get to the bottom of the list of links, then want to get back into your site header or they may get part the way through and then want to continue down the page. If we allow users to collapse the navigation pane, that could reduce the physical effort required for them to move away from it. We could do that like so (I'm using the same variables as before):
+
+```javascript
+ /*
+  listen for key down events if a user is in the header
+*/
+mainNav.addEventListener('keydown', (evt) => {
+  /*
+    Only if our button has aria-expanded set to true
+    And a user presses Escape (I have used both, 'Esc' and 'Escape', for better browser support)
+  */
+  if (btn.getAttribute('aria-expanded') == 'true' && (evt.key == 'Escape' || evt.key == 'Esc')) {
+    /*
+      Set our button's aria-expanded value to 'false', so CSS hides it
+      Send focus back to the button
+    */
+    btn.setAttribute('aria-expanded', 'false');
+    btn.focus()
+  }
+})
+```
+
+There wasn't much to that, just 4 lines of JS and we add a nice little enhancement for our users.
+
+### Slightly off-topic
+
+Our last enhancement which isn't related to a disclosure pattern, but if you have got this far and I still have your attention, I may as well squeeze it in. Don't forget to set the current page, with ARIA, this is something that you may do in your backend, you may wish to do it with just JS or you may use some form of framework, library or generator, we use the awesome Eleventy, so we easy have access to that. It would of course be best to do this on a server or during the build process if you're using a static site generator, as we want to reduce the amount of JS on the client (browser) as much as possible, mostly because users do access pages without JS, but also we can make nice fancy sites without a gazillion lines of React or Angular (TODO: add emoji support to the CMS, so I can use the "Sick emoji", joking, I'm not going to add emoji). Anyway, if we do set `aria-current="page"`, also provide a visual indicator too, you may already be doing this with an 'active' class or similar, you could literally swap that active class for aria-current and call it good. If we were to use client side JS, we could easily achieve that like so:
+
+```html
+<style>
+  /* if aria-current is present */
+  .nav__link[aria-current] {
+    /* Style accordingly */
+    background-color: rebeccapurple;
+    color: #fff
+  }
+</style>
+
+<header>
+  <nav class="nav">
+    <ul class="nav__list" id="navlist">
+      <li class="nav__item"><a class="nav__link" href="#">Link 1</a></li>
+      <li class="nav__item"><a class="nav__link" href="#">Link 2</a></li>
+      <li class="nav__item"><a class="nav__link" href="#">Link 3</a></li>
+      <!-- Links removed for brevity -->
+    </ul>
+  </nav>
+</header>
+
+<script>
+  // Loop through the links
+  document.querySelectorAll('.nav__link').forEach(el => {
+    // if the href matches the page URL
+    if (el.getAttribute('href') == window.location.href) {
+      // Add aria-current="page"
+      el.setAttribute('aria-current', 'page')
+    }
+  })
+</script>
+```
+
+## Wrapping up
+
+We covered quite a bit there, we discussed how to create 2 different basic disclosure widgets, using the magic of progressive enhancement, we added all the ARIA we needed via JS and for those users that are viewing without JS, they still get all the information on our page, just with less interactivity, which may well be exactly what they want.
