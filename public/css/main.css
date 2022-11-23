@@ -1872,10 +1872,10 @@ ul:not([class]) > li::marker {
 .cms iframe[src*="youtube.com"],
 .cms iframe[src*="codepen.io"] {
   display: block;
-  margin: 0 auto 3rem;
+  margin-bottom: 3rem;
   aspect-ratio: 16/9;
   width: 100%;
-  max-width: 60rem;
+  max-width: 80rem;
 }
 .cms .code__label {
   display: block;
@@ -1893,7 +1893,7 @@ ul:not([class]) > li::marker {
   margin-bottom: 2.5rem;
   padding: 0.75rem;
   width: 100%;
-  max-width: 65rem;
+  max-width: 80rem;
   font-size: 1.125rem;
   font-size: inherit;
 }
@@ -1926,7 +1926,7 @@ ul:not([class]) > li::marker {
   border: 1px solid var(--color-inactive);
   background-color: var(--color-bg);
   width: 100%;
-  max-width: 65rem;
+  max-width: 80rem;
   border-radius: 8px 8px 0 0;
   border-bottom: 0;
 }
