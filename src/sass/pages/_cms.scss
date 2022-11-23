@@ -8,10 +8,10 @@
   iframe[src*="youtube.com"],
   iframe[src*="codepen.io"] {
     display: block;
-    margin: 0 auto $space-xxxl;
+    margin-bottom: $space-xxxl;
     aspect-ratio: 16 / 9;
     width: 100%;
-    max-width: 60rem;
+    max-width: 80rem;
   }
 
   .code__label {
@@ -32,7 +32,7 @@
     margin-bottom:  $space-xxl;
     padding: $space-sm;
     width: 100%;
-    max-width: 65rem;
+    max-width: 80rem;
     font-size: $default-paragraph-size;
     font-size: inherit;
   
@@ -67,7 +67,7 @@
     border: 1px solid var(--color-inactive);
     background-color: var(--color-bg);
     width: 100%;
-    max-width: 65rem;
+    max-width: 80rem;
 
     @media (prefers-color-scheme: dark) {
       border: 2px solid var(--color-inactive);

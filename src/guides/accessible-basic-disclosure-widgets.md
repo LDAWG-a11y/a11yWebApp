@@ -52,7 +52,7 @@ Pretty straightforward stuff so far, we just have a `h3` and a `div`, each has s
 
 That's the only HTML we will write in a HTML file, we'll add some HTML, but we're going to do that in JS as we're progressively enhancing our accordions. Let's imagine we have several accordions on a page and they each use the same HTML as above, then one of our users comes along and for whatever reason they're accessing the page without JS, they would get a page with several headings, each with some related content that follows, nothing is lost, nothing is inaccessible to them. Sure, they may not get the same experience you or your team designed, but what is important, is they get the experience they chose or the best experience their device or connection will let them have.
 
-### Let's modify out HTML with JS
+### Let's modify our HTML with JS
 
 Let's make this accordion interactive, what's the correct HTML element we need for that? Yep, the trusty `button` element (I'm going to write my JS as if we had more than 1 accordion, as often we will).
 
@@ -75,16 +75,18 @@ accordions.forEach((accordion, idx) => {
     Set an ID on each panel, to create an ARIA reference and relationship.
     arrays are zero-based, so I'm adding 1 to each ID, so we start at 1
   */
-    panel.id = `panel-${idx + 1}`
+  panel.id = `panel-${idx + 1}`
   
   /* 
     - Add a button inside the heading
     - add a class to that button
     - add an aria-controls="[ID of our panels]"
-    - add an aria-expanded="false" to our button (these accordions will start collapsed
+    - add an aria-expanded="false" to our button, our initial state
     - add the text we stored earlier, into the button
   */
-  accordion.innerHTML = `<button class="accordion__btn" aria-controls="panel-${idx + 1}" aria-expanded="false">${title}</button>`;
+  accordion.innerHTML = `<button class="accordion__btn"
+    aria-controls="panel-${idx + 1}" 
+    aria-expanded="false">${title}</button>`;
   
   // Store a reference to the buttons we created
   const btn = accordion.firstElementChild;
@@ -109,7 +111,9 @@ accordions.forEach((accordion, idx) => {
   const title = accordion.innerText;
   const panel = accordion.nextElementSibling;
   panel.id = `panel-${idx + 1}`
-  accordion.innerHTML = `<button class="accordion__btn" aria-controls="panel-${idx + 1}" aria-expanded="false">${title}</button>`;
+  accordion.innerHTML = `<button class="accordion__btn"
+    aria-controls="panel-${idx + 1}" 
+    aria-expanded="false">${title}</button>`;
   const btn = accordion.firstElementChild;
   accordion.setAttribute('data-open', false);
   
@@ -281,8 +285,8 @@ const mainNavContent = mainNav.innerHTML;
   - An aria-controls reference
   - Aria-expanded set to false
   - the word Menu as the button's label
-  Then we need to pop the old contents of the nav element back in,
-  as we just replaced it
+    Then we need to pop the old contents of the nav element back in,
+    as we just replaced it
 */
 mainNav.innerHTML = `<button class="nav__btn" aria-expanded="false"
 aria-controls="navList">Menu</button> ${mainNavContent}`;
@@ -298,7 +302,9 @@ So now we have a button, that references the list we want to toggle the visibili
 */
 const mainNav = document.querySelector('.nav');
 const mainNavContent = mainNav.innerHTML;
-mainNav.innerHTML = `<button class="nav__btn" aria-expanded="false" aria-controls="navList">Menu</button> ${mainNavContent}`;
+mainNav.innerHTML = `<button class="nav__btn"
+  aria-expanded="false"
+  aria-controls="navList">Menu</button> ${mainNavContent}`;
 
 // We're adding new JS below
 
@@ -382,9 +388,9 @@ This is just the basic CSS to change our display properties:
 
   .nav__list {
     /* 
-      Let's say we want our links spaced equally, including around the first and last items
-      We use the flex layout, position its children, with a uniform spacing,
-      using justify-content, set to space-around
+      Let's say we want our links spaced equally, including around the first and
+      last items, we use the flex layout, to position its children, with 
+      uniform spacing, using 'justify-content', set to 'space-around'
     */
     display: flex;
     justify-content: space-around;
@@ -421,7 +427,8 @@ mainNav.addEventListener('keydown', (evt) => {
     And a user presses Escape
     (I'm matching either, 'Esc' or 'Escape', for better browser support)
   */
-  if (btn.getAttribute('aria-expanded') == 'true' && evt.key == 'Escape' || evt.key == 'Esc') {
+  if (btn.getAttribute('aria-expanded') == 'true'
+    && evt.key == 'Escape' || evt.key == 'Esc') {
     /*
       Set our button's aria-expanded value to 'false', so CSS hides it
       Send focus back to the button
