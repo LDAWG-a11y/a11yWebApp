@@ -1319,26 +1319,26 @@ Screen reader support for `scope="rowgroup"` has historically been worse than su
 <table>
   <caption>Split of marks across course</caption>
   <tr>
-    <th colspan="3" id="p">Projects</th>
-    <th rowspan="2" id="hw">Homework</th>
-    <th colspan="3" id="e">Exams</th>
+    <th colspan="3" id="pr2">Projects</th>
+    <th rowspan="2" id="hw2">Homework</th>
+    <th colspan="3" id="ex2">Exams</th>
   </tr>
   <tr>
-    <th id="e1" headers="e">1</th>
-    <th id="e2" headers="e">2</th>
-    <th id="ef" headers="e">Final</th>
-    <th id="p1" headers="p">1</th>
-    <th id="p2" headers="p">2</th>
-    <th id="pf" headers="p">Final</th>
+    <th id="e1" headers="ex2">1</th>
+    <th id="e2" headers="ex2">2</th>
+    <th id="ef" headers="ex2">Final</th>
+    <th id="p1" headers="pr2">1</th>
+    <th id="p2" headers="pr2">2</th>
+    <th id="pf" headers="pr2">Final</th>
   </tr>
   <tr>
-    <td headers="e e1">14%</td>
-    <td headers="e e2">19%</td>
-    <td headers="e ef">17%</td>
-    <td headers="hw">16%</td>
-    <td headers="p p1">9%</td>
-    <td headers="p p2">16%</td>
-    <td headers="p pf">11%</td>
+    <td headers="ex2 e1">14%</td>
+    <td headers="ex2 e2">19%</td>
+    <td headers="ex2 ef">17%</td>
+    <td headers="hw2">16%</td>
+    <td headers="pr2 p1">9%</td>
+    <td headers="pr2 p2">16%</td>
+    <td headers="pr2 pf">11%</td>
   </tr>
 </table>
 
