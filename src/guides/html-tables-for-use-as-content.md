@@ -474,7 +474,7 @@ Using id and headers attributes to associate data cells with header cells in dat
   </tr>
   <tr>
     <td headers="hw">14%</td>
-    <td headers="ex xe1">16%</td>
+    <td headers="ex e1">16%</td>
     <td headers="ex e2">17%</td>
     <td headers="ex ef">19%</td>
     <td headers="pr p1">9%</td>
