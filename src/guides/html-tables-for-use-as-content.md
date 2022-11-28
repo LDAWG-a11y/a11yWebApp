@@ -1324,21 +1324,21 @@ Screen reader support for `scope="rowgroup"` has historically been worse than su
     <th colspan="3" id="ex2">Exams</th>
   </tr>
   <tr>
-    <th id="e1" headers="ex2">1</th>
-    <th id="e2" headers="ex2">2</th>
-    <th id="ef" headers="ex2">Final</th>
-    <th id="p1" headers="pr2">1</th>
-    <th id="p2" headers="pr2">2</th>
-    <th id="pf" headers="pr2">Final</th>
+    <th id="ee1" headers="ex2">1</th>
+    <th id="ee2" headers="ex2">2</th>
+    <th id="eef" headers="ex2">Final</th>
+    <th id="pp1" headers="pr2">1</th>
+    <th id="pp2" headers="pr2">2</th>
+    <th id="ppf" headers="pr2">Final</th>
   </tr>
   <tr>
-    <td headers="ex2 e1">14%</td>
-    <td headers="ex2 e2">19%</td>
-    <td headers="ex2 ef">17%</td>
+    <td headers="ex2 ee1">14%</td>
+    <td headers="ex2 ee2">19%</td>
+    <td headers="ex2 eef">17%</td>
     <td headers="hw2">16%</td>
-    <td headers="pr2 p1">9%</td>
-    <td headers="pr2 p2">16%</td>
-    <td headers="pr2 pf">11%</td>
+    <td headers="pr2 pp1">9%</td>
+    <td headers="pr2 pp2">16%</td>
+    <td headers="pr2 ppf">11%</td>
   </tr>
 </table>
 
