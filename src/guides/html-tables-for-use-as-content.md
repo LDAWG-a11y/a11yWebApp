@@ -460,7 +460,7 @@ Using id and headers attributes to associate data cells with header cells in dat
 
 <table>
   <tr>
-    <th rowspan="2" id="h1">Homework</th>
+    <th rowspan="2" id="hw">Homework</th>
     <th colspan="3" id="ex">Exams</th>
     <th colspan="3" id="pr">Projects</th>
   </tr>
@@ -473,7 +473,7 @@ Using id and headers attributes to associate data cells with header cells in dat
     <th id="pf" headers="pr">Final</th>
   </tr>
   <tr>
-    <td headers="h1">14%</td>
+    <td headers="hw">14%</td>
     <td headers="ex xe1">16%</td>
     <td headers="ex e2">17%</td>
     <td headers="ex ef">19%</td>
