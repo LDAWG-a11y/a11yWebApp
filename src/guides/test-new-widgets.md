@@ -13,3 +13,5 @@ Do the thing
         </svg><span>Also do this</span></div>
 
 And carry on
+
+<h3 class="accordion">Test accordion</h3><div class="accordion__panel">Testing with some content</div>
