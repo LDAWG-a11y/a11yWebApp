@@ -34,6 +34,37 @@
         return `<kbd>${data.kbd-key}</kbd>`;
       },
     })
+
+    CMS.registerEditorComponent({
+      id: 'accordion',
+      label: 'Accordion',
+      fields: [
+      {
+          name: 'hLevel',
+          label: 'Heading Level',
+          widget: 'number',
+          default: 3,
+          min: 2,
+          max: 6,
+        },
+        {
+          name: 'title',
+          label: 'Title',
+          widget: 'string'
+        },
+        {
+          name: 'content',
+          label: 'Content',
+          widget: 'markdown'
+        }
+      ],
+      toBlock: function(data) {
+        return `<h${hLevel} class="accordion">${title}</h${hLevel}><div class="accordion__panel">${content}</div>`;
+      },
+      toPreview: function(data) {
+        return `<h${hLevel} class="accordion">${title}</h${hLevel}><div class="accordion__panel">${content}</div>`;
+      },
+    })
   </script>
 </body>
 </html>
