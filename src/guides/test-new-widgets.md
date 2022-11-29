@@ -14,10 +14,6 @@ Do the thing
 
 And carry on
 
-<h3 class="accordion">Test accordion</h3><div class="accordion__panel">Testing with some content</div>
+<h2 class="accordion">Test 1</h2><div class="accordion__panel">**And** *test `this`*</div>
 
-<h2 class="accordion">Test another</h2><div class="accordion__panel">**Hello** *Does* `this` [work](www.google.com)
-
-![Test](src/guideImg/dl-automated-tools-access-insights-adhoc-tools.png)</div>
-
-Did it work??
+Test
