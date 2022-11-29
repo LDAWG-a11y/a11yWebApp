@@ -22,16 +22,16 @@
       label: 'Keyboard Key',
       fields: [
         {
-          name: 'kbd-key',
+          name: 'kbdKey',
           label: 'Type the key',
           widget: 'string'
         }
       ],
       toBlock: function(data) {
-        return `<kbd>${data.kbd-key}</kbd>`;
+        return `<kbd>${data.kbdKey}</kbd>`;
       },
       toPreview: function(data) {
-        return `<kbd>${data.kbd-key}</kbd>`;
+        return `<kbd>${data.kbdKey}</kbd>`;
       },
     })
   </script>
