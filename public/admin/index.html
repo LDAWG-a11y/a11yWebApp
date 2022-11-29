@@ -16,5 +16,24 @@
 <body>
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    CMS.registerEditorComponent({
+      id: 'kbd-key',
+      label: 'Keyboard Key',
+      fields: [
+        {
+          name: 'kbd-key',
+          label: 'Type the key',
+          widget: 'string'
+        }
+      ],
+      toBlock: function(data) {
+        return `<kbd>${data.kbd-key}</kbd>`;
+      },
+      toPreview: function(data) {
+        return `<kbd>${data.kbd-key}</kbd>`;
+      },
+    })
+  </script>
 </body>
 </html>
