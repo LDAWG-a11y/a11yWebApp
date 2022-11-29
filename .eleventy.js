@@ -79,6 +79,10 @@ module.exports = eleventyConfig => {
     },
   };
 
+  eleventyConfig.addFilter('markdownify', (markdownString) =>
+    md.render(markdownString)
+  );
+
   let mdLib = markdownIt({
     html: true,
     breaks: true,
