@@ -16,6 +16,7 @@ h2:not(.accordion):not(.cms__toc > h2) {
 .callout__tip,
 .callout__info,
 .callout__warn {
+  align-items: center;
   display: flex;
   width: auto;
   max-width: 60rem;
@@ -56,11 +57,31 @@ h2:not(.accordion):not(.cms__toc > h2) {
   align-items: center;
   border-right: 1px solid white;
   border-radius: 5px 0 0 5px;
-  padding: $space-sm $space-lg;
+  padding: .5rem 1rem;
   background: rebeccapurple;
   color: white;
 }
 
 .callout__text {
   padding: .5rem;
+}
+
+.accordion {
+  position: relative;
+  border: 2px solid rebeccapurple;
+  padding-right: 2rem;;
+}
+
+.accordion::before {
+  position: absolute;
+  content: "+";
+  right: .5rem;
+  top: 50%;
+  font-size: 2rem;
+  font-weight: bolder;
+  transform: translateY(-50%);
+}
+
+.accordion__panel {
+  background-color: rgb(244, 193, 244);
 }
