@@ -79,15 +79,15 @@ module.exports = eleventyConfig => {
     },
   };
 
-  eleventyConfig.addFilter('markdownify', (markdownString) =>
-    md.render(markdownString)
-  );
-
   let mdLib = markdownIt({
     html: true,
     breaks: true,
     linkify: true
   }).use(markdownItEleventyImg, markdownItEleventyImgConfig).use(markdownItAnchor, mdAnchorOpts)
+
+  eleventyConfig.addFilter('markdownify', (markdownString) =>
+    mdLib.render(markdownString)
+  );
 
   eleventyConfig.setLibrary("md", mdLib);
   eleventyConfig.addPlugin(syntaxHighlight);
