@@ -8,6 +8,9 @@ $--color-accent-2: --color-accent-2;
 $--color-interactive: --color-interactive;
 $--color-inactive: --color-inactive;
 $--color-highlight: --color-highlight;
+$--color-tip: --color-tip;
+$--color-info: --color-info;
+$--color-warn: --color-warn;
 
 $theme-map-light: (
   $--color-text: #1f1f1f,
@@ -20,6 +23,9 @@ $theme-map-light: (
   $--color-interactive: #923AE4,
   $--color-inactive: #595959,
   $--color-highlight: #030189,
+  $--color-tip: #a3dd94,
+  $--color-info: #8fd7ff,
+  $--color-warn: #ee7474,
 );
 
 $theme-map-dark: (
@@ -33,6 +39,9 @@ $theme-map-dark: (
   $--color-interactive: #C079E6,
   $--color-inactive: #4a4a4a,
   $--color-highlight: #6ebc9f,
+  $--color-tip: #1A6B4E,
+  $--color-info: #2a4ea3,
+  $--color-warn: #982A2A,
 );
 
 @mixin spread-map($map: ()) {

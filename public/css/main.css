@@ -10,6 +10,9 @@
   --color-interactive: #923AE4;
   --color-inactive: #595959;
   --color-highlight: #030189;
+  --color-tip: #a3dd94;
+  --color-info: #8fd7ff;
+  --color-warn: #ee7474;
 }
 :root ::-moz-selection,
 :root[data-theme=light] ::-moz-selection {
@@ -27,6 +30,9 @@
   --color-interactive: #C079E6;
   --color-inactive: #4a4a4a;
   --color-highlight: #6ebc9f;
+  --color-tip: #1A6B4E;
+  --color-info: #2a4ea3;
+  --color-warn: #982A2A;
 }
 :root[data-theme=dark] ::selection {
   background-color: rgba(139, 168, 217, 0.7058823529);
@@ -49,6 +55,9 @@
     --color-interactive: #C079E6;
     --color-inactive: #4a4a4a;
     --color-highlight: #6ebc9f;
+    --color-tip: #1A6B4E;
+    --color-info: #2a4ea3;
+    --color-warn: #982A2A;
   }
   :root ::selection {
     background-color: rgba(139, 168, 217, 0.7058823529);
@@ -2229,6 +2238,66 @@ ul:not([class]) > li::marker {
 }
 .cms .cms__anchor:hover svg, .cms .cms__anchor:focus-visible svg {
   fill: var(--color-bg);
+}
+.cms .callout__tip,
+.cms .callout__info,
+.cms .callout__warn {
+  display: flex;
+  width: auto;
+  max-width: 60rem;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  color: var(--color-text);
+}
+.cms .callout__tip {
+  background-color: var(--color-tip);
+}
+.no-js .cms .callout__tip .callout__icon {
+  border: 2px solid var(--color-tip);
+  width: max-content;
+}
+.no-js .cms .callout__tip .callout__icon::before {
+  content: "Tip ";
+  width: inherit;
+}
+.cms .callout__info {
+  background-color: var(--color-info);
+}
+.no-js .cms .callout__info .callout__icon::before {
+  content: "Info ";
+  width: inherit;
+}
+.cms .callout__warn {
+  background-color: var(--color-warn);
+}
+.no-js .cms .callout__warn .callout__icon::before {
+  content: "Warning ";
+  width: inherit;
+}
+.cms .callout__icon {
+  display: flex;
+  align-items: center;
+  border-right: 1px solid var(--color-bg);
+  border-radius: 6px 0 0 6px;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-secondary);
+  color: var(--color-bg);
+}
+.cms .callout__icon svg {
+  transform: scale(1.5);
+}
+@media (prefers-color-scheme: dark) {
+  .cms .callout__icon {
+    border-right: 1px solid var(--color-text);
+    color: var(--color-text);
+  }
+}
+[data-theme=dark] .cms .callout__icon {
+  border-right: 1px solid var(--color-text);
+  color: var(--color-text);
+}
+.cms .callout__text {
+  padding: 0.75rem;
 }
 
 .faqs__intro {
