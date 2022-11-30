@@ -1,0 +1,163 @@
+ul p,
+ul li p {
+  margin-bottom: $space-sm;
+}
+
+li p {
+  margin-bottom: $space-xxs;
+}
+
+ol:not(.cms__toc > ol) {
+  margin: 0 0 $space-xxxl calc($space-xxl + 3px);
+}
+
+ul {
+  margin: 0 0 $space-xxxl $space-lg;
+}
+
+ul > li > ul,
+ol > li > ol {
+  margin: 0 0 0 $space-md;
+}
+
+ul > li > ul > li > ul,
+ol > li > ol > li > ol {
+  margin: 0 0 0 $space-md;
+}
+
+ol > li > ul {
+  margin-bottom: $space-xxs;
+}
+
+ol.decimal { 
+  list-style-type: decimal;
+}
+
+ol.upper-alpha { 
+  list-style-type: upper-alpha;
+}
+
+ol.lower-alpha { 
+  list-style-type: lower-alpha; 
+}
+
+ol.lower-roman { 
+  list-style-type: lower-roman;
+}
+
+ol.upper-roman { 
+  list-style-type: upper-roman;
+}
+
+p {
+  margin-bottom: $space-md;
+}
+
+blockquote:not(.twitter-tweet) {
+  position: relative;
+  margin: 0 $space-xs $space-xxl $space-xs;
+  padding: $space-xs $space-xs $space-xs $space-lg;
+  max-width: 50rem;
+  background-color: var(--color-bg--light);
+  font-size: 115%;
+  font-style: italic;   
+}
+
+blockquote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 6px;
+  background: var(--color-primary);
+  background: linear-gradient(to top, var(--color-primary), var(--color-secondary));
+}
+
+cite {
+  display: block;
+  margin-top: $space-xs;
+  font-size: $medium-paragraph-size;
+}
+
+dl {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: $space-xxl;
+}
+
+dl dt {
+  padding-right: $space-md;
+  font-weight: 600;
+}
+
+dl dd {
+  flex-basis: 70%;
+}
+
+kbd {
+  margin: 0 2px;
+  border: 2px solid var(--color-inactive);
+  border-radius: 2px;
+  padding: 1px 3px;
+  font-size: 92.5%;
+  font-weight: 600;
+  box-shadow: 2px 2px 0px 1px rgba(0,0,0,0.5);
+}
+
+h2:not(.accordion):not(.cms__toc > h2) {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.callout__tip,
+.callout__info,
+.callout__warn {
+  display: flex;
+  width: auto;
+  max-width: 60rem;
+  border-radius: $radius-md;
+  margin: $space-lg 0;
+  color: var(--color-text);
+}
+
+.callout__tip {
+  background-color: var(--color-tip);
+}
+
+.callout__tip::before {
+  content: "Tip ";
+  width: inherit;
+}
+
+.callout__info {
+  background-color: var(--color-info);
+}
+
+.callout__info::before {
+  content: "Info ";
+  width: inherit;
+}
+
+.callout__warn {
+  background-color: var(--color-warn);
+}
+
+.callout__warn::before {
+  content: "Warning ";
+  width: inherit;
+}
+
+.callout__icon {
+  display: flex;
+  align-items: center;
+  border-right: 1px solid var(--color-bg);
+  border-radius: $radius-md 0 0 $radius-md;
+  padding: $space-sm $space-lg;
+  background: var(--color-secondary);
+  color: var(--color-bg);
+}
+
+.callout__text {
+  padding: $space-sm;
+}
