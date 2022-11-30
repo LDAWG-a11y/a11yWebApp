@@ -18,7 +18,9 @@
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
     CMS.registerPreviewStyle("/css/main.css");
-    document.querySelector('[class^="WidgetPreviewContainer"]').classList.add('cms')
+    window.addEventListener('load', (e) => {
+      document.querySelector('.frame-content').classList.add('cms')
+    })
   </script>
   <script>
     CMS.registerEditorComponent({
