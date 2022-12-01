@@ -106,22 +106,28 @@
     })
 
     CMS.registerEditorComponent({
-    id: "iframe",
-    label: "Embed code",
-    fields: [{name: 'embed', label: 'Embed Code', widget: 'string'}],
-    pattern: /(?:<iframe[^>]*)(?:(?:\/>)|(?:>.*?<\/iframe>))/g,
-    fromBlock: function(match) {
-      return {
-        embed: match[1]
-      };
-    },
-    toBlock: function(obj) {
-      return obj.embed;
-    },
-    toPreview: function(obj) {
-      return obj.embed
-    }
-  });
+  id: "youtube",
+  label: "YouTube",
+  fields: [
+    {name: 'id', label: 'Youtube Video ID', widget: 'string'},
+    {name: 'title', label: 'Video title', widget: 'string'}
+  ],
+  pattern: /youtube (\S+)\s/,
+  fromBlock: function(match) {
+    return {
+      id: match[1]
+    };
+  },
+  toBlock: function(obj) {
+    return `youtube <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/${obj.id}" title="${obj.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+obj.id;
+  },
+  toPreview: function(obj) {
+    return (
+      `<img src="http://img.youtube.com/vi/${obj.id}/maxresdefault.jpg" alt="Youtube ${obj.title}"/>`
+    );
+  }
+});
 
   CMS.registerEditorComponent({
   id: "transContainer",
