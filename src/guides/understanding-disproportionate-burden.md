@@ -179,7 +179,7 @@ This type of example can come up a lot in jobs where a level of sight, physical 
 
 #### A supplier is not going to fix their service any time soon
 
-This example organisation uses a 3rd party product to surface their pensions information to staff. The 3rd part product is off the shelf and has not been customised for the organisation, who have no ability to remediate accessibility issues without supplier involvement. 
+This example organisation uses a 3rd party product to provide pensions information to staff. The 3rd part product is off the shelf and has not been customised for the organisation, who have no ability to remediate accessibility issues without supplier involvement. 
 
 A complaint has been submitted under the regulations and the organisation has received a monitoring letter requiring accessibility fixes to this pensions system. The organisation takes the following steps:
 
