@@ -25,7 +25,7 @@ To make a claim you must thoroughly evidence that compliance would for example:
 
 Making a disproportionate burden claim requires a lot of supporting evidence and can only be used for niche failures to meet compliance. For example, you might be able to claim disproportionate burden for fixing one very specific failure against WCAG success criteria because to do so would require a complete website redesign for a tool which has low usage figures and there are other routes around. You would not be able to claim disproportionate burden generally, such as not having the funds or capacity to take any action towards compliance.
 
-Each disproportionate burden claim should be unique and no two claims which have the required amount of evidence will be very similar. By its nature the disproportionate burden clause is only for special or extenuating circumstances.
+Each disproportionate burden claim should be unique and no two claims which have the required amount of evidence will be similar. By its nature the disproportionate burden clause is only for special or extenuating circumstances.
 
 ## What the regulations say
 
@@ -112,7 +112,7 @@ In either case, it is incredibly obvious when a statement includes the copied ex
 
 ### Claiming disproportionate burden for exempt content
 
-Many organisations are not aware of what content is and is not in scope of the regulations. Because of this, people writhe disproportionate burden content in accessibility statements which make claims for exempted content.
+Many organisations are not aware of what content is and is not in scope of the regulations. Because of this, people write disproportionate burden content in accessibility statements which make claims for exempted content.
 
 In many cases attempting to meet technical accessibility requirements for all content that is exempted by the regulations may easily be considered a disproportionate amount of effort. For example, providing live video captions through all mediums, or making all document content 100% accessible going back decades. This unreasonable challenge is the reason these requirements are listed as their own exemptions.
 
@@ -179,7 +179,7 @@ This type of example can come up a lot in jobs where a level of sight, physical 
 
 #### A supplier is not going to fix their service any time soon
 
-This example organisation uses a 3rd party product to surface their pensions information to staff. The 3rd part product is off the shelf and has not been customised for the organisation, who have no ability to remediate accessibility issues without supplier involvement. 
+This example organisation uses a 3rd party product to provide pensions information to staff. The 3rd part product is off the shelf and has not been customised for the organisation, who have no ability to remediate accessibility issues without supplier involvement. 
 
 A complaint has been submitted under the regulations and the organisation has received a monitoring letter requiring accessibility fixes to this pensions system. The organisation takes the following steps:
 
