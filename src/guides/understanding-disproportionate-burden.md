@@ -15,8 +15,6 @@ tags:
   - Disproportionate Burden
 isGuide: true
 ---
-## What is disproportionate burden?
-
 Disproportionate burden is a clause in the public sector accessibility regulations that allows organisations to avoid full compliance without penalty (not indefinitely) if the organisation proves that to achieve compliance would be a ‘disproportionate burden’.
 
 To make a claim you must thoroughly evidence that compliance would for example:
