@@ -119,8 +119,7 @@
     };
   },
   toBlock: function(obj) {
-    return `youtube <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/${obj.id}" title="${obj.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
-obj.id;
+    return `youtube ${obj.id} ${obj.title}`
   },
   toPreview: function(obj) {
     return (
