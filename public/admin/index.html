@@ -116,11 +116,20 @@
       };
     },
     toBlock: function(obj) {
-      return 'youtube ' + obj.embed;
+      return obj.embed;
     },
     toPreview: function(obj) {
+      var ID = '';
+      url = obj.replace(/(>|<)/gi,'').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
+      if(obj[2] !== undefined) {
+        ID = obj[2].split(/[^0-9a-z_\-]/i);
+        ID = ID[0];
+      }
+      else {
+        ID = obj;
+      }
       return (
-        'obj.embed'
+        '<img src="http://img.youtube.com/vi/' + obj.ID + '/maxresdefault.jpg" alt="Youtube Video"/>'
       );
     }
   });
