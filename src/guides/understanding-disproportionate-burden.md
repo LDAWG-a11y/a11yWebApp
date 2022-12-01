@@ -25,7 +25,7 @@ To make a claim you must thoroughly evidence that compliance would for example:
 
 Making a disproportionate burden claim requires a lot of supporting evidence and can only be used for niche failures to meet compliance. For example, you might be able to claim disproportionate burden for fixing one very specific failure against WCAG success criteria because to do so would require a complete website redesign for a tool which has low usage figures and there are other routes around. You would not be able to claim disproportionate burden generally, such as not having the funds or capacity to take any action towards compliance.
 
-Each disproportionate burden claim should be unique and no two claims which have the required amount of evidence will be very similar. By its nature the disproportionate burden clause is only for special or extenuating circumstances.
+Each disproportionate burden claim should be unique and no two claims which have the required amount of evidence will be similar. By its nature the disproportionate burden clause is only for special or extenuating circumstances.
 
 ## What the regulations say
 
