@@ -1879,9 +1879,10 @@ ul:not([class]) > li::marker {
   word-break: break-word;
 }
 .cms iframe[src*="youtube.com"],
+.cms iframe[src*="www.youtube-nocookie.com"],
 .cms iframe[src*="codepen.io"] {
   display: block;
-  margin-bottom: 3rem;
+  margin: 3rem 0;
   aspect-ratio: 16/9;
   width: 100%;
   max-width: 80rem;
