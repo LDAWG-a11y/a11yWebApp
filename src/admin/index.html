@@ -105,29 +105,28 @@
       },
     })
 
-    CMS.registerEditorComponent({
-    id: "youtube",
-    label: "YouTube",
-    fields: [
-      {name: 'id', label: 'Youtube Video ID', widget: 'string'},
-      {name: 'title', label: 'Youtube Video Title', widget: 'string'},
-      {name: 'iFrame', label: 'iFrame', widget: 'hidden', default: '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/${obj.id}" title="${obj.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'}
-    ],
-    pattern: /youtubeEmbedFilter (\S+)\s/,
-    fromBlock: function(match) {
-      return {
-        id: match[1]
-      };
-    },
-    toBlock: function(obj) {
-      return `youtubeEmbedFilter ${obj.id} ${obj.title} ${obj.iFrame}`
-    },
-    toPreview: function(obj) {
-      return (
-        `<img src="http://img.youtube.com/vi/${obj.id}/maxresdefault.jpg" alt="Youtube video"/>`
-      );
-    }
-  });
+  //   CMS.registerEditorComponent({
+  //   id: "youtube",
+  //   label: "YouTube",
+  //   fields: [
+  //     {name: 'id', label: 'Youtube Video ID', widget: 'string'},
+  //     {name: 'title', label: 'Video Title', widget: 'string'}
+  //   ],
+  //   pattern: /^<span data-id="(.*?)" data-title="(.*?)">youtubeEmbedFilter<\/span> (\S+)\s/,
+  //   fromBlock: function(match) {
+  //     return {
+  //       id: match[1]
+  //     };
+  //   },
+  //   toBlock: function(obj) {
+  //     return `<span data-youtube-id="${obj.id}" data-youtube-title="${obj.title}">youtubeEmbedFilter</span>`
+  //   },
+  //   toPreview: function(obj) {
+  //     return (
+  //       `<img src="http://img.youtube.com/vi/${obj.id}/maxresdefault.jpg" alt="Youtube video"/>`
+  //     );
+  //   }
+  // });
 
   CMS.registerEditorComponent({
   id: "transContainer",
@@ -161,3 +160,5 @@
   </script>
 </body>
 </html>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/${obj.id}" title="${obj.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

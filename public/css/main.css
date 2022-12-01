@@ -887,7 +887,7 @@ ul:not([class]) > li::marker {
 @media (min-width: 48em) {
   .header__welcome-text {
     margin: 6rem auto 0;
-    width: 26rem;
+    width: 35rem;
   }
 }
 [data-theme=dark] .header__welcome-text {
