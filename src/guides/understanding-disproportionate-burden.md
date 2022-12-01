@@ -58,8 +58,6 @@ A good disproportionate burden assessment is a cost/benefit exercise and should 
 * how long an organisation expects this disproportionate burden to apply
 * if the site or service is procured or outsourced, how long the third-party supplier is contracted for, and how much it would cost to re-tender or renegotiate the contract to get the issues fixed
 
- 
-
 ## Common problems with disproportionate burden
 
 Several pieces of research have found problems with the way organisations make disproportionate burden claims. The list below has been compiled from the following sources:
@@ -112,7 +110,7 @@ Many people who write statements based on the GDS sample statement template see 
 
 In either case, it is incredibly obvious when a statement includes the copied example text and, in every case, when challenged for evidence, proves to be a false claim without supporting evidence.
 
-<div class="callout__tip"><span class="callout__icon"></span><span class="callout__text">If you are writing an accessibility statement and see the government example wording, **DO NOT** leave it in your statement. If you have a claim to make, write your own description.</span></div>
+<div class="callout__tip"><span class="callout__icon"></span><span class="callout__text">If you are writing an accessibility statement and see the government example wording, DO NOT leave it in your statement. If you have a claim to make, write your own description.</span></div>
 
 ### Claiming disproportionate burden for exempt content
 
