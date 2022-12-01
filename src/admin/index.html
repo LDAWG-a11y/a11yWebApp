@@ -143,29 +143,14 @@
   fromBlock: function(match) {
     return {
       summary: match[1],
-      detail: match[2]
+      details: match[2]
     };
   },
   toBlock: function(data) {
-    return `
-    <details>
-      <summary>${data.summary}</summary>
-
-      ${data.detail}
-
-    </details>
-    `;
+    return `<details><summary>${data.summary}</summary>${data.details}</details>`;
   },
   toPreview: function(data) {
-    return `
-    <details>
-      <summary>${data.summary}</summary>
-
-      ${data.detail}
-
-    </details>
-    `;
-    }
+    return `<details><summary>${data.summary}</summary>${data.details}</details>`;}
   });
   </script>
 </body>
