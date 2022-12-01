@@ -6,9 +6,10 @@
   word-break: break-word;
   
   iframe[src*="youtube.com"],
+  iframe[src*="www.youtube-nocookie.com"],
   iframe[src*="codepen.io"] {
     display: block;
-    margin-bottom: $space-xxxl;
+    margin: $space-xxxl 0;
     aspect-ratio: 16 / 9;
     width: 100%;
     max-width: 80rem;
