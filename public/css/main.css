@@ -12,7 +12,7 @@
   --color-highlight: #030189;
   --color-tip: #a3dd94;
   --color-info: #8fd7ff;
-  --color-warn: #ee7474;
+  --color-warn: #f49c9c;
 }
 :root ::-moz-selection,
 :root[data-theme=light] ::-moz-selection {

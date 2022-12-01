@@ -104,6 +104,26 @@
         return `<h${data.hLevel} class="accordion">${data.title}</h${data.hLevel}><div class="accordion__panel">${data.content}</div>`;
       },
     })
+
+    CMS.registerEditorComponent({
+    id: "youtube",
+    label: "Youtube",
+    fields: [{name: 'id', label: 'Youtube Video ID', widget: 'string'}],
+    pattern: /youtube (\S+)\s/,
+    fromBlock: function(match) {
+      return {
+        id: match[1]
+      };
+    },
+    toBlock: function(obj) {
+      return 'youtube ' + obj.id;
+    },
+    toPreview: function(obj) {
+      return (
+        '<img src="http://img.youtube.com/vi/' + obj.id + '/maxresdefault.jpg" alt="Youtube Video"/>'
+      );
+    }
+  });
  
   </script>
 </body>
