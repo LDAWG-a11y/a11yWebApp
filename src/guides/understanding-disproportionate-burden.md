@@ -112,7 +112,7 @@ In either case, it is incredibly obvious when a statement includes the copied ex
 
 ### Claiming disproportionate burden for exempt content
 
-Many organisations are not aware of what content is and is not in scope of the regulations. Because of this, people writhe disproportionate burden content in accessibility statements which make claims for exempted content.
+Many organisations are not aware of what content is and is not in scope of the regulations. Because of this, people write disproportionate burden content in accessibility statements which make claims for exempted content.
 
 In many cases attempting to meet technical accessibility requirements for all content that is exempted by the regulations may easily be considered a disproportionate amount of effort. For example, providing live video captions through all mediums, or making all document content 100% accessible going back decades. This unreasonable challenge is the reason these requirements are listed as their own exemptions.
 
