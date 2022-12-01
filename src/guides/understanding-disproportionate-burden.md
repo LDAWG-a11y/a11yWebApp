@@ -238,7 +238,7 @@ Now you will notice that this is a copy-paste of the government example text, bu
 
 When challenged for evidence to support this claim, the organisation responded:
 
-“Given that some of the failure related to the design, colour, and contrast of the website, and that procuring a new website would be over £100k, the organisation considered this to be a disproportionate burden and therefore completed the statement accordingly.  Equally, some of the colour and contrast issues also relate to our logo and branding guidelines and changing a corporate logo and associated stationary is also very expensive.”
+> “Given that some of the failure related to the design, colour, and contrast of the website, and that procuring a new website would be over £100k, the organisation considered this to be a disproportionate burden and therefore completed the statement accordingly.  Equally, some of the colour and contrast issues also relate to our logo and branding guidelines and changing a corporate logo and associated stationary is also very expensive.”
 
 **Failure 1:** You will notice that this response in no way relates to the claimed issues of skip to content, orientation and text sizes. Instead, the response talks about colour contrast being the issue. So, there is no evidence provided for the original claim subjects.
 
