@@ -149,3 +149,9 @@ Ideally you will be looking for suppliers to commit to testing against WCAG 2.1 
   * Assistive technology testing is vital to check that the platform works with common assistive technology and operating system pairings. This would include checking with common screen readers, dictation software, magnification techniques and non-pointer input devices such as keyboard controls.
 * A prioritisation of issues based on impact to users
 * Recommendations on how to fix issues. This may be more present in common easy to fix issues, rather than more complex issues for significant components which may require replacement.
+
+## Post procurement and contracts
+
+Once you have completed your tendering process and have decided to enter into an agreement with a supplier, it is important to keep accessibility compliance in the requirements.
+
+The best way to do this is to include accessibility into contracts with suppliers. For more information, read our guide on [accessibility in supplier contracts](https://www.makethingsaccessible.com/guides/accessibility-in-supplier-contracts/) which includes example contract clauses.
