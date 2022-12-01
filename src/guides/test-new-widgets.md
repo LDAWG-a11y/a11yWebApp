@@ -14,4 +14,6 @@ isGuide: true
 
 <h3 class="accordion">This is our accordion</h3><div class="accordion__panel">This is the content</div>
 
-imyZy92SBwY
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/imyZy92SBwY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+test
