@@ -103,7 +103,7 @@ These manual tests find issues such as keyboard functionality, visibility of key
 
 Tests are completed using different settings in the Google Chrome browser on Mac OSX with a 13 inch screen.
 
-**Important Note: GDS expect your organisation to fully audit the website to find any other accessibility issues.**
+<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">GDS expect your organisation to fully audit the website to find any other accessibility issues.</span></div>
 
 ## What do I need to do?
 
@@ -126,7 +126,7 @@ Once you have received an audit GDS ask that you:
 * Fix the issues on your website within 12 weeks
 * Publish an accessibility statement in the correct format on your website
 
- GDS will get in touch with you at the end of 12 weeks to request an update on your progress. The 12 weeks starts from the date you are sent the accessibility report unless communicated otherwise.
+GDS will get in touch with you at the end of 12 weeks to request an update on your progress. The 12 weeks starts from the date you are sent the accessibility report unless communicated otherwise.
 
 After 12 weeks GDS will ask for:
 
@@ -139,4 +139,4 @@ GDS will then retest your website to check that any accessibility issues listed 
 
 If GDS find outstanding issues from the report, they will ask you for timelines to fix them. Any issues that have not been fixed should be included in your accessibility statement. This will help users understand where they might find potential barriers when using your website and ways they can request other formats where necessary.
 
-**Important Note: After the 12 weeks, information regarding your website will be passed to the EHRC or ECNI. They will decide whether further action needs to be taken.**
+<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">After the 12 weeks, information regarding your website will be passed to the EHRC or ECNI. They will decide whether further action needs to be taken.</span></div>
