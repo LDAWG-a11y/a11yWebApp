@@ -105,28 +105,27 @@
       },
     })
 
-  //   CMS.registerEditorComponent({
-  //   id: "youtube",
-  //   label: "YouTube",
-  //   fields: [
-  //     {name: 'id', label: 'Youtube Video ID', widget: 'string'},
-  //     {name: 'title', label: 'Video Title', widget: 'string'}
-  //   ],
-  //   pattern: /^<span data-id="(.*?)" data-title="(.*?)">youtubeEmbedFilter<\/span> (\S+)\s/,
-  //   fromBlock: function(match) {
-  //     return {
-  //       id: match[1]
-  //     };
-  //   },
-  //   toBlock: function(obj) {
-  //     return `<span data-youtube-id="${obj.id}" data-youtube-title="${obj.title}">youtubeEmbedFilter</span>`
-  //   },
-  //   toPreview: function(obj) {
-  //     return (
-  //       `<img src="http://img.youtube.com/vi/${obj.id}/maxresdefault.jpg" alt="Youtube video"/>`
-  //     );
-  //   }
-  // });
+    CMS.registerEditorComponent({
+    id: "you_tube",
+    label: "YouTube",
+    fields: [
+      {name: 'id', label: 'Youtube Video ID', widget: 'string'},
+    ],
+    pattern: /you_tube-[\s\S]*/,
+    fromBlock: function(match) {
+      return {
+        id: match[1]
+      };
+    },
+    toBlock: function(obj) {
+      return `youtube-${obj.id}`
+    },
+    toPreview: function(obj) {
+      return (
+        `<img src="http://img.youtube.com/vi/${obj.id}/maxresdefault.jpg" alt="Youtube video"/>`
+      );
+    }
+  });
 
   CMS.registerEditorComponent({
   id: "transContainer",
