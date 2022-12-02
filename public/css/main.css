@@ -1884,8 +1884,11 @@ ul:not([class]) > li::marker {
   display: block;
   margin: 3rem 0;
   aspect-ratio: 16/9;
-  width: 100%;
   max-width: 80rem;
+}
+.cms iframe[src*="youtube.com"],
+.cms iframe[src*="www.youtube-nocookie.com"] {
+  height: auto;
 }
 .cms .code__label {
   display: block;

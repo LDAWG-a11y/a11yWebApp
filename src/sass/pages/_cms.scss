@@ -11,8 +11,12 @@
     display: block;
     margin: $space-xxxl 0;
     aspect-ratio: 16 / 9;
-    width: 100%;
     max-width: 80rem;
+  }
+
+  iframe[src*="youtube.com"],
+  iframe[src*="www.youtube-nocookie.com"] {
+    height: auto;
   }
 
   .code__label {

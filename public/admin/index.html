@@ -106,24 +106,25 @@
     })
 
     CMS.registerEditorComponent({
-  id: "you_tube",
+  id: "youtube",
   label: "YouTube",
   fields: [
     {name: 'id', label: 'YouTube video ID', widget: 'string'},
     {name: 'title', label: 'Video title', widget: 'string'}
   ],
-  pattern: /youtube (\S+)\s/,
-  fromBlock: function(match) {
-    return {
-      id: match[1]
-    };
-  },
+  // pattern: /youtube (\S+)\s/,
+  // fromBlock: function(match) {
+  //   return {
+  //     id: match[1],
+  //     title: match[2]
+  //   };
+  // },
   toBlock: function(obj) {
-    return `you_tube <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/${obj.id}" title="${obj.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    return <a href="http://youtube.com/watch?v=`${obj.id}`" class="youtube__link">`${obj.title}`</a>;
   },
   toPreview: function(obj) {
     return (
-      '<img src="http://img.youtube.com/vi/' + obj.id + '/maxresdefault.jpg" alt="Youtube Video"/>'
+      <a href="http://youtube.com/watch?v=`${obj.id}`" class="youtube__link">`${obj.title}`</a>
     );
   }
 });
