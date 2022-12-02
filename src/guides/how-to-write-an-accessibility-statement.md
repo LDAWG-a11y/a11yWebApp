@@ -30,7 +30,7 @@ You can get started on testing for accessibility with [semi-automated testing to
 
 Besides knowing your accessibility issues, you will need to have a way for users to contact you to get help or request reasonable adjustments. Make sure you know where you are going to direct users to. Ideally this will have contact options such as an email address and phone number.
 
-**NOTE:** Never only offer a phone number. This can be a problem for Deaf users if there is no text option.
+<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">Never only offer a phone number. This can be a problem for Deaf users if there is no text option.</span></div>
 
 If you have a dedicated team that supports alternative formats that is different to the contact who will support website accessibility issues, you should provide information about how users should request alternative formats.
 
