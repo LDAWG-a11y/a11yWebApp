@@ -27,6 +27,14 @@ Making a disproportionate burden claim requires a lot of supporting evidence and
 
 Each disproportionate burden claim should be unique and no two claims which have the required amount of evidence will be similar. By its nature the disproportionate burden clause is only for special or extenuating circumstances.
 
+## Writing a disproportionate burden assessment
+
+The content of this guide is to help you understand what disproportionate burden is for and how best to use it in your own organisation.
+
+If you want information on how to conduct and disproportionate burden assessment before you make a claim, read our [How to write a disproportionate burden assessment guide](https://www.makethingsaccessible.com/guides/how-to-write-a-disproportionate-burden-assessment/).
+
+
+
 ## What the regulations say
 
 Within the regulations, Part 2.7 introduces the clause for Public Sector Bodies to claim “Disproportionate Burden” in which compliance with the accessibility requirements is not required if doing so would impose a disproportionate burden on the Public Sector Body following assessment of the extent to which compliance with the accessibility requirements imposes such a burden.
