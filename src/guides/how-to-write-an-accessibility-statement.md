@@ -75,7 +75,7 @@ Many organisations write in a statement that the website is â€˜fully compliantâ€
 
 Often, if you see a statement for a fully compliant website, you can run a semi-automated checking tool on the home page and find several issues easily.
 
-If you have not yet tested the website or have only done quick automated testing that revealed no issues, do not claim full compliance unless you are completely sure that is the case. The only way to do that is through comprehensive testing.
+<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">If you have not yet tested the website or have only done quick automated testing that revealed no issues, do not claim full compliance unless you are completely sure that is the case. The only way to do that is through comprehensive testing.</span></div>
 
 ### Exemptions
 
