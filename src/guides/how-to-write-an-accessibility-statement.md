@@ -67,7 +67,7 @@ Quick things to know about disproportionate burden:
 * Many people copy the wording from the GDS sample statement. This is example wording only. A holding block much like ‘Lorem Ipsum’ holding text. Do not leave it in the statements you write.
 * We encourage everyone to check what exemptions may apply before making any disproportionate burden claims as these often get confused.
 
-To better understand disproportionate burden, how it works and what you must do to make a claim read our disproportionate burden guide.
+To better understand disproportionate burden, how it works and what you must do to make a claim read our [understanding disproportionate burden guide](https://www.makethingsaccessible.com/tags/disproportionate-burden/).
 
 ### Full compliance claims
 
