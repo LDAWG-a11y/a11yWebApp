@@ -6,4 +6,4 @@ date: 2022-07-01
 toc: false
 isGuide: true
 ---
-you_tube <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/imyZy92SBwY" title="Test" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<a href="http://youtube.com/watch?v=imyZy92SBwY" class="youtube__link">Test</a>
