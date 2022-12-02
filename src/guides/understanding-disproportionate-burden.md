@@ -36,6 +36,11 @@ In undertaking such an assessment, the Public Sector Body must take account of r
 1. The size, resources, and nature of the public sector body; and
 2. The estimated costs and benefits for the public sector body in relation to the estimated benefits for persons with disabilities, taking into account the frequency and duration of use of the specific website or mobile application.
 
+If, following the assessment, a public sector body determines that compliance with the accessibility requirement would impose a disproportionate burden, it must—
+
+1. explain in its accessibility statement the parts of the accessibility requirement that could not be complied with; and
+2. where appropriate, provide accessible alternatives to documents held by that public sector body that are not available on their website or mobile application.
+
 In the event that an assessment such as this determines that compliance with the accessibility requirements would impose a disproportionate burden, this must be reflected in the associated accessibility statement and where appropriate attempt to mitigate impact to users through alternate means.
 
 ## Further advice from the monitoring body
