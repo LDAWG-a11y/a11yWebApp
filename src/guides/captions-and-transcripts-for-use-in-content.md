@@ -54,18 +54,15 @@ Don’t forget to achieve maximum accessibility, have an independent caption fil
 #### Video only (no audio content)
 
 Pre-recorded and live:
-
 * Captions not required because there is not any audio information
 
 #### Audio only (Podcast etc.)
 
 Pre-recorded:
-
 * Captions help those who are hard of hearing because the captions allow them to understand the parts that they may miss
 * Captions not needed to meet WCAG requirements as transcripts are A
 
 Live:
-
 * Captions help those who are hard of hearing because the captions allow them to understand the parts that they may miss
 * WCAG AAA
 
@@ -74,7 +71,6 @@ Live:
 Has the video any audio information that helps understand the visual information?
 
 No:
-
 * Captions not needed because there is not any important audio information
   Yes for pre-recorded:
 * Captions are required for those who are hard of hearing or Deaf
