@@ -6,6 +6,7 @@ summary: This guide provides useful information on when to use captions and
 author: swilkinson
 date: 2022-12-07
 toc: false
+file: /docs/youtube-captions.png
 isGuide: true
 ---
 ## Introduction to Captions and Transcripts
@@ -27,6 +28,7 @@ Remember that they can be used by those who can process written information bett
 In the United States, one in eight people have a functional hearing limitation and this will only increase as the average age increases.
 
 Multimedia content that has speech should have accessible captions that are:
+
 * Equivalent to spoken words and other audio information
 * Accessible or easily available to those who require it
 * Synchronised to appear at the same time as the relevant audio
@@ -39,9 +41,10 @@ Remember if you post a recording and it has captions which were live when it was
 
 ## Captions used to create Interactive Transcripts
 
+Some media players have interactive transcripts generated from the caption files, that highlight text phrases as they get spoken.
 
-Some media players have interactive transcripts generated from the caption files, that highlight text phrases as they get spoken
-
+![YouTube video showing caption and transcript file with the current caption highlighted in the transcript.](src/guideImg/youtube-captions.png "Caption and transcript file on YouTube video")
 
 In the instance of YouTube (and some other players), when a caption in the transcript is selected, it will start playing that part of the video.
+
 Don’t forget to achieve maximum accessibility, have an independent caption file of the description of the visual information (called video description, described video, aor udio description). You can use the caption to develop the transcript and vice versa as they  contain  the same text.
