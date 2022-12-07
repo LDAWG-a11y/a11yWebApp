@@ -28,7 +28,6 @@ Remember that they can be used by those who can process written information bett
 In the United States, one in eight people have a functional hearing limitation and this will only increase as the average age increases.
 
 Multimedia content that has speech should have accessible captions that are:
-
 * Equivalent to spoken words and other audio information
 * Accessible or easily available to those who require it
 * Synchronised to appear at the same time as the relevant audio
