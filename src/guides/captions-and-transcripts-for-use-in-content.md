@@ -142,6 +142,25 @@ There are free captioning software programs and there are online services that c
 
 Transcripts are read by Google which makes it possible for Google to index and rank the content of the video, which helps with search engine optimisation (SEO) which can increase the visibility of the video in search results. 
 
+## Where to put transcripts
+
+Users need to be able to easily understand that a transcript is available, and be able to easily get to the transcript. I would recommend putting the transcript itself or a link to the transcript right underneath the video.
+
+For any videos embedded on your website, include the transcript on the same page.
+
+* [example text transcript with description of visuals](https://www.w3.org/WAI/perspective-videos/captions/#transcript) (external website) at the bottom of same page as the video
+
+With regards videos hosted elsewhere, have the transcript on a separate web page.
+
+* [example podcast transcript on separate page](https://www.w3.org/WAI/highlights/200606wcag2interview.html) (external website)
+
+Please note: the example transcript above is provided as plain text on a simple page, which is easily accessed. It is not a hidden as it can be on YouTube.
+
+Remember to include a link back to the original page provided on the top of the transcript so that users can go back to easily.
+
+* [W3C video notes](https://www.w3.org/2008/06/video-notes#q6)  (external website)
+* [Deque University text transcript tips](https://dequeuniversity.com/tips/text-transcript) (external website)
+
 ## Wrapping up
 
 Hopefully this guide has helped you to understand a bit more of using captions and transcripts for content. 
