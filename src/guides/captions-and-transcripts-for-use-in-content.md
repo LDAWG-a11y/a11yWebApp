@@ -148,10 +148,10 @@ Hopefully this guide has helped you to understand a bit more of using captions a
 
 ## Useful links
 
-* Localising Audiovisual Content: Monolingual Subtitles (external website)
-* Localising Audiovisual Content: Interlingual Subtitles (external website)
-* Captions/Subtitles (external website)
-* Captions, Transcripts, and Audio Descriptions (external website)
-* A guide to using subtitles, captions and transcripts for accessibility (external website)
-* Guide to Transcripts and Captions (external website)
-* How Many People Use Captions and Subtitles? (external website)
+* [Localising Audiovisual Content: Monolingual Subtitles](https://www.web-translations.com/blog/audiovisual-content-monolingual-subtitles/) (external website)
+* [Localising Audiovisual Content: Interlingual Subtitles](https://www.web-translations.com/blog/audiovisual-content-interlingual-subtitles/) (external website)
+* [Captions/Subtitles](https://www.w3.org/WAI/media/av/captions/) (external website)
+* [Captions, Transcripts, and Audio Descriptions](https://webaim.org/techniques/captions/) (external website)
+* [A guide to using subtitles, captions and transcripts for accessibility](https://business.scope.org.uk/article/subtitles-closed-captions-transcripts-and-accessibility/) (external website)
+* [Guide to Transcripts and Captions](https://www.ucop.edu/electronic-accessibility/_files/transcripts-captions-guidelines.pdf) (external website)
+* [How Many People Use Captions and Subtitles?](https://www.3playmedia.com/blog/who-uses-closed-captions-not-just-the-deaf-or-hard-of-hearing/) (external website)
