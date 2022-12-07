@@ -134,3 +134,24 @@ Google's Edit Captions documentation (external website),has instructions and the
 
 * Replacing or hiding automatic captions (external website)
 
+#### Captioning tools
+There are free captioning software programs and there are online services that can be used to develop captions, for example YouTube has tools to edit the automatic captions.
+
+
+## Search Engine Optimisation and transcripts
+
+Transcripts are read by Google which makes it possible for Google to index and rank the content of the video, which helps with search engine optimisation (SEO) which can increase the visibility of the video in search results. 
+
+## Wrapping up
+
+Hopefully this guide has helped you to understand a bit more of using captions and transcripts for content. 
+
+## Useful links
+
+* Localising Audiovisual Content: Monolingual Subtitles (external website)
+* Localising Audiovisual Content: Interlingual Subtitles (external website)
+* Captions/Subtitles (external website)
+* Captions, Transcripts, and Audio Descriptions (external website)
+* A guide to using subtitles, captions and transcripts for accessibility (external website)
+* Guide to Transcripts and Captions (external website)
+* How Many People Use Captions and Subtitles? (external website)
