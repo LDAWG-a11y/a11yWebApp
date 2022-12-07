@@ -6,6 +6,11 @@ summary: This guide provides useful information on when to use captions and
 author: swilkinson
 date: 2022-12-07
 toc: true
+tags:
+  - HTML
+  - Captions
+  - Transcripts
+  - Videos
 file: ""
 isGuide: true
 ---
