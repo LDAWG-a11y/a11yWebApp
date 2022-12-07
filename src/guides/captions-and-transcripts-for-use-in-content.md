@@ -50,19 +50,22 @@ In the instance of YouTube (and some other players), when a caption in the trans
 Don’t forget to achieve maximum accessibility, have an independent caption file of the description of the visual information (called video description, described video, aor udio description). You can use the caption to develop the transcript and vice versa as they  contain  the same text.
 
 ### Do I need Captions on my Media?
+
 #### Video only (no audio content)
 
 Pre-recorded and live:
+
 * Captions not required because there is not any audio information
 
 #### Audio only (Podcast etc.)
 
-
 Pre-recorded:
+
 * Captions help those who are hard of hearing because the captions allow them to understand the parts that they may miss
 * Captions not needed to meet WCAG requirements as transcripts are A
 
 Live:
+
 * Captions help those who are hard of hearing because the captions allow them to understand the parts that they may miss
 * WCAG AAA
 
@@ -71,8 +74,9 @@ Live:
 Has the video any audio information that helps understand the visual information?
 
 No:
+
 * Captions not needed because there is not any important audio information
-Yes for pre-recorded:
+  Yes for pre-recorded:
 * Captions are required for those who are hard of hearing or Deaf
 * Required for WCAG A 1.2.2 Captions (external website)
 
@@ -84,17 +88,49 @@ Yes for live:
 
 Unless the text has been checked completely and is fully accurate it will not meet accessibility requirements or user needs. YouTube has an approximately 60-70% accuracy. This means that 1 in 3 words can be wrong (external website). Rhett & Link’s YouTube video (external website) is a great example of what uncorrected captions are like.
 
-
 Remember, missing one word that is in the spoken audio could contradict the content.
 
 ## Tools and Skills
 
 A transcription of an audio file is not easy especially if you do not have the skill or software as adding timestamps to the captions are simple but monotonous and requires the knowledge of which non-verbal information to include and describe (external website).
 
-
 ## Caption creation
 
 The Web Video Text Tracks (WebVTT external website) format is the most common format, and other formats include SRT or SubRip (external website), and Timed Text Markup Language (TTML external website).
 
 ### Example file with identified speakers
+
+```
+WEBVTT
+
+00:11.000 --> 00:13.000
+<v George Rhodes>Welcome to Make Things Accessible.
+
+00:13.000 --> 00:17.000
+<v Ben Watson>Thank you for this chance to talk about our new website.
+
+00:17.000 --> 00:20.000
+<v George>Why was this website needed?
+
+00:20.000 --> 00:30.000
+<v Ben>L.D.A.W.G. or the London Digital Accessibility Working Group, which is a group of London based universities, needed a website to bring together their expertise.
+```
+
+### Auto-Captions as the starting point
+
+For the video owner, YouTube's auto-captions are useful as the starting point for providing captions. 
+
+Please note: You cannot edit other people’s YouTube videos; you only edit your own. If the voices on the video speak unaccented English and are clear, and there is not music, and the background noise is minimal, you have a good basis for auto-captions getting you started.
+
+#### How to make edit and create good captions
+
+1. Start YouTube. YouTube will create the captions, but the captions will not be accurate enough without editing them
+2.  Return and manually edit the caption text.  By doing this, you just need to fix any problem areas rather than type the entire text
+3. Add the applicable sentence delineation such as capitalisation and punctuation
+4. Provide information about other audio information, such as significant sound effects. Add these descriptions of sound in square brackets, for example \[music] or \[laughter], to help people understand what is occurring
+5. Ensure the captions are in sync with the audio
+
+Google's Edit Captions documentation (external website),has instructions and the How To Edit Automatic Captions in YouTube Video (external website), provide a walkthrough of the process.
+
+* Replacing or hiding automatic captions (external website)
 
