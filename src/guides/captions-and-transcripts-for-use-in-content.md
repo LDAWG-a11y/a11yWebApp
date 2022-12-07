@@ -5,7 +5,7 @@ summary: This guide provides useful information on when to use captions and
   meaningful and understandable for all users.
 author: swilkinson
 date: 2022-12-07
-toc: false
+toc: true
 file: ""
 isGuide: true
 ---
