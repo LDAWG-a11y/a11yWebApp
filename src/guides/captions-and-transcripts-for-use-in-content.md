@@ -48,3 +48,53 @@ Some media players have interactive transcripts generated from the caption files
 In the instance of YouTube (and some other players), when a caption in the transcript is selected, it will start playing that part of the video.
 
 Don’t forget to achieve maximum accessibility, have an independent caption file of the description of the visual information (called video description, described video, aor udio description). You can use the caption to develop the transcript and vice versa as they  contain  the same text.
+
+### Do I need Captions on my Media?
+#### Video only (no audio content)
+
+Pre-recorded and live:
+* Captions not required because there is not any audio information
+
+#### Audio only (Podcast etc.)
+
+
+Pre-recorded:
+* Captions help those who are hard of hearing because the captions allow them to understand the parts that they may miss
+* Captions not needed to meet WCAG requirements as transcripts are A
+
+Live:
+* Captions help those who are hard of hearing because the captions allow them to understand the parts that they may miss
+* WCAG AAA
+
+#### Video with audio
+
+Has the video any audio information that helps understand the visual information?
+
+No:
+* Captions not needed because there is not any important audio information
+Yes for pre-recorded:
+* Captions are required for those who are hard of hearing or Deaf
+* Required for WCAG A 1.2.2 Captions (external website)
+
+Yes for live:
+•	Captions are required for those who are hard of hearing or Deaf
+•	Required for WCAG AA 1.2.4 Captions (external website)
+
+## Automated captions do not meet requirements
+
+Unless the text has been checked completely and is fully accurate it will not meet accessibility requirements or user needs. YouTube has an approximately 60-70% accuracy. This means that 1 in 3 words can be wrong (external website). Rhett & Link’s YouTube video (external website) is a great example of what uncorrected captions are like.
+
+
+Remember, missing one word that is in the spoken audio could contradict the content.
+
+## Tools and Skills
+
+A transcription of an audio file is not easy especially if you do not have the skill or software as adding timestamps to the captions are simple but monotonous and requires the knowledge of which non-verbal information to include and describe (external website).
+
+
+## Caption creation
+
+The Web Video Text Tracks (WebVTT external website) format is the most common format, and other formats include SRT or SubRip (external website), and Timed Text Markup Language (TTML external website).
+
+### Example file with identified speakers
+
