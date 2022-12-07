@@ -96,7 +96,7 @@ A transcription of an audio file is not easy especially if you do not have the s
 
 ## Caption creation
 
-The Web Video Text Tracks or [WebVTT](https://www.w3.org/TR/webvtt/) (external website) format is the most common format, and other formats include [SRT or SubRip](https://en.wikipedia.org/wiki/SubRip) (external website), and Timed Text Markup Language (TTML external website).
+The Web Video Text Tracks or [WebVTT](https://www.w3.org/TR/webvtt/) (external website) format is the most common format, and other formats include [SRT or SubRip](https://en.wikipedia.org/wiki/SubRip) (external website), and Timed Text Markup Language or [TTML](https://www.w3.org/TR/ttml2/) (external website).
 
 ### Example file with identified speakers
 
@@ -130,9 +130,9 @@ Please note: You cannot edit other people’s YouTube videos; you only edit your
 4. Provide information about other audio information, such as significant sound effects. Add these descriptions of sound in square brackets, for example \[music] or \[laughter], to help people understand what is occurring
 5. Ensure the captions are in sync with the audio
 
-Google's Edit Captions documentation (external website),has instructions and the How To Edit Automatic Captions in YouTube Video (external website), provide a walkthrough of the process.
+[Google's Edit Captions documentation](https://support.google.com/youtube/answer/2734705) (external website),has instructions and the [How To Edit Automatic Captions in YouTube Video](https://www.youtube.com/watch?v=Jyl9dsNkyoY) (external website), provide a walkthrough of the process.
 
-* Replacing or hiding automatic captions (external website)
+* [Replacing or hiding automatic captions](https://www.3playmedia.com/blog/remove-automatic-captions-youtube-videos/) (external website)
 
 #### Captioning tools
 
