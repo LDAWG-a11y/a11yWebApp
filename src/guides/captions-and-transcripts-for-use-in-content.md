@@ -78,25 +78,25 @@ No:
 * Captions not needed because there is not any important audio information
   Yes for pre-recorded:
 * Captions are required for those who are hard of hearing or Deaf
-* Required for WCAG A 1.2.2 Captions (external website)
+* Required for [WCAG A 1.2.2 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded.html) (external website)
 
 Yes for live:
 •	Captions are required for those who are hard of hearing or Deaf
-•	Required for WCAG AA 1.2.4 Captions (external website)
+•	Required for [WCAG AA 1.2.4 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-live.html) (external website)
 
 ## Automated captions do not meet requirements
 
-Unless the text has been checked completely and is fully accurate it will not meet accessibility requirements or user needs. YouTube has an approximately 60-70% accuracy. This means that 1 in 3 words can be wrong (external website). Rhett & Link’s YouTube video (external website) is a great example of what uncorrected captions are like.
+Unless the text has been checked completely and is fully accurate it will not meet accessibility requirements or user needs. YouTube has an approximately 60-70% accuracy. This means that [1 in 3 words can be wrong](https://itss.d.umn.edu/centers-locations/media-hub/media-accessibility-services/captioning-and-captioning-services/correct) (external website). Rhett & Link’s YouTube video (external website) is a great example of what uncorrected captions are like.
 
 Remember, missing one word that is in the spoken audio could contradict the content.
 
 ## Tools and Skills
 
-A transcription of an audio file is not easy especially if you do not have the skill or software as adding timestamps to the captions are simple but monotonous and requires the knowledge of which non-verbal information to include and describe (external website).
+A transcription of an audio file is not easy especially if you do not have the skill or software as adding timestamps to the captions are simple but monotonous and requires the knowledge of which non-verbal information to include and [describe](https://www.makethingsaccessible.com/guides/audio-description-basics/#basic-principles) (external website).
 
 ## Caption creation
 
-The Web Video Text Tracks (WebVTT external website) format is the most common format, and other formats include SRT or SubRip (external website), and Timed Text Markup Language (TTML external website).
+The Web Video Text Tracks or [WebVTT](https://www.w3.org/TR/webvtt/) (external website) format is the most common format, and other formats include [SRT or SubRip](https://en.wikipedia.org/wiki/SubRip) (external website), and Timed Text Markup Language (TTML external website).
 
 ### Example file with identified speakers
 
