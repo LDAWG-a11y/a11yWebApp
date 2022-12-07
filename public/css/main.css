@@ -2139,9 +2139,9 @@ ul:not([class]) > li::marker {
   position: relative;
   margin: 0 0.5rem 2.5rem 0.5rem;
   padding: 0.5rem 0.5rem 0.5rem 1.5rem;
-  max-width: 50rem;
+  max-width: 85rem;
   background-color: var(--color-bg--light);
-  font-size: 115%;
+  font-size: 110%;
   font-style: italic;
 }
 .cms blockquote:not(.twitter-tweet)::before {

@@ -105,29 +105,29 @@
       },
     })
 
-    CMS.registerEditorComponent({
-  id: "youtube",
-  label: "YouTube",
-  fields: [
-    {name: 'id', label: 'YouTube video ID', widget: 'string'},
-    {name: 'title', label: 'Video title', widget: 'string'}
-  ],
-  pattern: /youtube (\S+)\s/,
-  fromBlock: function(match) {
-    return {
-      id: match[1],
-      title: match[2]
-    };
-  },
-  toBlock: function(obj) {
-    return `<a href="http://youtube.com/watch?v=${obj.id}" class="youtube__link">${obj.title}</a>`
-  },
-  toPreview: function(obj) {
-    return (
-      `<a href="http://youtube.com/watch?v=${obj.id}" class="youtube__link">${obj.title}</a>`
-    );
-  }
-});
+//     CMS.registerEditorComponent({
+//   id: "youtube",
+//   label: "YouTube",
+//   fields: [
+//     {name: 'id', label: 'YouTube video ID', widget: 'string'},
+//     {name: 'title', label: 'Video title', widget: 'string'}
+//   ],
+//   pattern: /youtube (\S+)\s/,
+//   fromBlock: function(match) {
+//     return {
+//       id: match[1],
+//       title: match[2]
+//     };
+//   },
+//   toBlock: function(obj) {
+//     return `<a class="youtube__link" href="http://youtube.com/watch?v=${obj.id}" >${obj.title}</a>`
+//   },
+//   toPreview: function(obj) {
+//     return (
+//       `<a class="youtube__link" href="http://youtube.com/watch?v=${obj.id}" class="youtube__link">${obj.title}</a>`
+//     );
+//   }
+// });
 
   CMS.registerEditorComponent({
   id: "transContainer",
