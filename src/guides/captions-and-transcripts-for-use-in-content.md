@@ -163,13 +163,9 @@ Transcripts are read by Google which makes it possible for Google to index and r
 
 Users need to be able to easily understand that a transcript is available, and be able to easily get to the transcript. I would recommend putting the transcript itself or a link to the transcript right underneath the video.
 
-For any videos embedded on your website, include the transcript on the same page.
+* For any videos embedded on your website, include the transcript on the same page: [example text transcript with description of visuals](https://www.w3.org/WAI/perspective-videos/captions/#transcript) (external website) at the bottom of same page as the video
 
-* [example text transcript with description of visuals](https://www.w3.org/WAI/perspective-videos/captions/#transcript) (external website) at the bottom of same page as the video
-
-With regards videos hosted elsewhere, have the transcript on a separate web page.
-
-* [example podcast transcript on separate page](https://www.w3.org/WAI/highlights/200606wcag2interview.html) (external website)
+* With regards videos hosted elsewhere, have the transcript on a separate web page: [example podcast transcript on separate page](https://www.w3.org/WAI/highlights/200606wcag2interview.html) (external website)
 
 Please note: the example transcript above is provided as plain text on a simple page, which is easily accessed. It is not a hidden as it can be on YouTube.
 
