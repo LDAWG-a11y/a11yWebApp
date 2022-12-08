@@ -6,4 +6,6 @@ date: 2022-07-01
 toc: false
 isGuide: true
 ---
-<a href="http://youtube.com/watch?v=imyZy92SBwY" class="youtube__link">Test</a>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zGiirUiWslI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<details><summary>Video transcript</summary>khkfewhwef khwakifhkasdf. jkghsfkhagsdjfgjsdf</details>
