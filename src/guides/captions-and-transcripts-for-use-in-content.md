@@ -64,15 +64,20 @@ Pre-recorded and live:
 
 #### Audio only (podcast etc.)
 
-Pre-recorded:
-
-* Captions help those who are hard of hearing because the captions allow them to understand the parts that they may miss
-* Captions not needed to meet WCAG requirements as transcripts are A
-
-Live:
-
-* Captions help those who are hard of hearing because the captions allow them to understand the parts that they may miss
-* WCAG AAA
+<ul>
+	<li>Pre-recorded
+		<ul>
+			<li>Captions help those who are hard of hearing because the captions allow them to understand the parts that they may miss</li>
+			<li>Captions not needed to meet WCAG requirements as transcripts are WCAG A</li>
+		</ul>
+	</li>
+	<li>Live
+		<ul>
+			<li>Captions help those who are hard of hearing because the captions allow them to understand the parts that they may miss</li>
+			<li>WCAG AAA</li>
+		</ul>
+	</li>
+</ul>
 
 #### Video with audio
 
@@ -88,6 +93,7 @@ Yes for pre-recorded:
 * Required for [WCAG A 1.2.2 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded.html) (external website)
 
 Yes for live:
+
 * Captions are required for those who are hard of hearing or Deaf
 * Required for [WCAG AA 1.2.4 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-live.html) (external website)
 
