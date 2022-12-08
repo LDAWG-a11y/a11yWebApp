@@ -77,9 +77,11 @@ Live:
 Has the video any audio information that helps understand the visual information?
 
 No:
+
 * Captions not needed because there is not any important audio information
 
 Yes for pre-recorded:
+
 * Captions are required for those who are hard of hearing or Deaf
 * Required for [WCAG A 1.2.2 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded.html) (external website)
 
@@ -103,21 +105,19 @@ The Web Video Text Tracks or [WebVTT](https://www.w3.org/TR/webvtt/) (external w
 
 ### Example file with identified speakers
 
-```
-WEBVTT
+`WEBVTT`
 
-00:11.000 --> 00:13.000
-<v George Rhodes>Welcome to Make Things Accessible.
+`00:11.000 --> 00:13.000
+<v George Rhodes>Welcome to Make Things Accessible.`
 
-00:13.000 --> 00:17.000
-<v Ben Watson>Thank you for this chance to talk about our new website.
+`00:13.000 --> 00:17.000
+<v Ben Watson>Thank you for this chance to talk about our new website.`
 
-00:17.000 --> 00:20.000
-<v George>Why was this website needed?
+`00:17.000 --> 00:20.000
+<v George>Why was this website needed?`
 
-00:20.000 --> 00:30.000
-<v Ben>L.D.A.W.G. or the London Digital Accessibility Working Group, which is a group of London based universities, needed a website to bring together their expertise.
-```
+`00:20.000 --> 00:30.000
+<v Ben>L.D.A.W.G. or the London Digital Accessibility Working Group, which is a group of London based universities, needed a website to bring together their expertise.`
 
 ### Auto-Captions as the starting point
 
