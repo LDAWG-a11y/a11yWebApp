@@ -189,5 +189,5 @@ Hopefully this guide has helped you to understand a bit more of using captions a
 * [Captions/Subtitles](https://www.w3.org/WAI/media/av/captions/) (external website)
 * [Captions, Transcripts, and Audio Descriptions](https://webaim.org/techniques/captions/) (external website)
 * [A guide to using subtitles, captions and transcripts for accessibility](https://business.scope.org.uk/article/subtitles-closed-captions-transcripts-and-accessibility/) (external website)
-* [Guide to Transcripts and Captions](https://www.ucop.edu/electronic-accessibility/_files/transcripts-captions-guidelines.pdf) (external website)
+* [Guide to Transcripts and Captions](https://www.ucop.edu/electronic-accessibility/_files/transcripts-captions-guidelines.pdf) (PDF 35kb)(external website)
 * [How Many People Use Captions and Subtitles?](https://www.3playmedia.com/blog/who-uses-closed-captions-not-just-the-deaf-or-hard-of-hearing/) (external website)
