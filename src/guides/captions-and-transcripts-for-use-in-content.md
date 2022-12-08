@@ -1,5 +1,5 @@
 ---
-title: Captions and Transcripts for use in content
+title: Captions and transcripts for use in content
 summary: This guide provides useful information on when to use captions and
   transcripts, and how to write captions and transcripts.
 author: swilkinson
