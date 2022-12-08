@@ -46,9 +46,9 @@ Remember if you post a recording and it has captions which were live when it was
 
 Some media players have interactive transcripts generated from the caption files, that highlight text phrases as they get spoken.
 
-![YouTube video showing caption and transcript file.](src/guideImg/youtube-captions.png "Caption and transcript file on YouTube video")
+![YouTube video showing caption and transcript file.](src/guideImg/youtube-captions.png)
 
-The the current caption is highlighted in the transcript.
+The current caption is highlighted in the transcript.
 
 In the instance of YouTube (and some other players), when a caption in the transcript is selected, it will start playing that part of the video.
 
@@ -92,13 +92,13 @@ Has the video any audio information that helps understand the visual information
 	<li>Yes for pre-recorded
 		<ul>
 			<li>Captions are required for those who are hard of hearing or Deaf</li>
-			<li>Required for \[WCAG A 1.2.2 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded.html) (external website)</li>
+			<li>Required for \\[WCAG A 1.2.2 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded.html) (external website)</li>
 		</ul>
 	</li>
 	<li>Yes for live
 		<ul>
 			<li>Captions are required for those who are hard of hearing or Deaf</li>
-			<li>Required for \[WCAG AA 1.2.4 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-live.html) (external website)</li>
+			<li>Required for \\[WCAG AA 1.2.4 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-live.html) (external website)</li>
 		</ul>
 	</li>
 </ul>
