@@ -26,7 +26,7 @@ Please note that what the UK calls subtitles are called “closed captions” or
 
 We use captions to provide the content of audio (whether audio only or video) to those who are Deaf, and other people who cannot hear audio.
 
-Remember that they can be used by those who can process written information better than they can process audio. This could be someone with dyspraxia or autism. 3Play Media says in an article that[ 80% of people who use close captions are not hard of hearing](http://www.3playmedia.com/2014/05/27/ofcom-study-80-people-who-use-closed-captions-are-not-hard-hearing/) (external website).
+Remember that they can be used by those who can process written information better than they can process audio. This could be someone with dyspraxia or autism. 3Play Media says in an article that [80% of people who use close captions are not hard of hearing](http://www.3playmedia.com/2014/05/27/ofcom-study-80-people-who-use-closed-captions-are-not-hard-hearing/) (external website).
 
 In the United States, one in eight people have a functional hearing limitation and this will only increase as the average age increases.
 
@@ -46,7 +46,9 @@ Remember if you post a recording and it has captions which were live when it was
 
 Some media players have interactive transcripts generated from the caption files, that highlight text phrases as they get spoken.
 
-![YouTube video showing caption and transcript file with the current caption highlighted in the transcript.](src/guideImg/youtube-captions.png "Caption and transcript file on YouTube video")
+![YouTube video showing caption and transcript file.](src/guideImg/youtube-captions.png "Caption and transcript file on YouTube video")
+
+The the current caption is highlighted in the transcript.
 
 In the instance of YouTube (and some other players), when a caption in the transcript is selected, it will start playing that part of the video.
 
@@ -62,32 +64,44 @@ Pre-recorded and live:
 
 #### Audio only (podcast etc.)
 
-Pre-recorded:
-
-* Captions help those who are hard of hearing because the captions allow them to understand the parts that they may miss
-* Captions not needed to meet WCAG requirements as transcripts are A
-
-Live:
-
-* Captions help those who are hard of hearing because the captions allow them to understand the parts that they may miss
-* WCAG AAA
+<ul>
+	<li>Pre-recorded
+		<ul>
+			<li>Captions help those who are hard of hearing because the captions allow them to understand the parts that they may miss</li>
+			<li>Captions not needed to meet WCAG requirements as transcripts are WCAG A</li>
+		</ul>
+	</li>
+	<li>Live
+		<ul>
+			<li>Captions help those who are hard of hearing because the captions allow them to understand the parts that they may miss</li>
+			<li>WCAG AAA</li>
+		</ul>
+	</li>
+</ul>
 
 #### Video with audio
 
 Has the video any audio information that helps understand the visual information?
 
-No:
-
-* Captions not needed because there is not any important audio information
-
-Yes for pre-recorded:
-
-* Captions are required for those who are hard of hearing or Deaf
-* Required for [WCAG A 1.2.2 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded.html) (external website)
-
-Yes for live:
-•	Captions are required for those who are hard of hearing or Deaf
-•	Required for [WCAG AA 1.2.4 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-live.html) (external website)
+<ul>
+	<li>No
+		<ul>
+			<li>Captions not needed because there is not any important audio information</li>
+		</ul>
+	</li>
+	<li>Yes for pre-recorded
+		<ul>
+			<li>Captions are required for those who are hard of hearing or Deaf</li>
+			<li>Required for \[WCAG A 1.2.2 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded.html) (external website)</li>
+		</ul>
+	</li>
+	<li>Yes for live
+		<ul>
+			<li>Captions are required for those who are hard of hearing or Deaf</li>
+			<li>Required for \[WCAG AA 1.2.4 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-live.html) (external website)</li>
+		</ul>
+	</li>
+</ul>
 
 ## Automated captions do not meet requirements
 
@@ -135,7 +149,7 @@ Please note: You cannot edit other people’s YouTube videos; you only edit your
 
 [Google's Edit Captions documentation](https://support.google.com/youtube/answer/2734705) (external website),has instructions and the [How To Edit Automatic Captions in YouTube Video](https://www.youtube.com/watch?v=Jyl9dsNkyoY) (external website), provide a walkthrough of the process.
 
-* [Replacing or hiding automatic captions](https://www.3playmedia.com/blog/remove-automatic-captions-youtube-videos/) (external website)
+You can also [replace or hide automatic captions](https://www.3playmedia.com/blog/remove-automatic-captions-youtube-videos/) (external website).
 
 #### Captioning tools
 
