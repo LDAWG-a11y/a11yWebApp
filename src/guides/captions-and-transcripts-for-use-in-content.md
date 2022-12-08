@@ -58,9 +58,7 @@ Don’t forget to achieve maximum accessibility, have an independent caption fil
 
 #### Video only (no audio content)
 
-Pre-recorded and live:
-
-* Captions not required because there is not any audio information
+Pre-recorded and live: captions not required because there is not any audio information.
 
 #### Audio only (podcast etc.)
 
@@ -84,21 +82,17 @@ Pre-recorded and live:
 Has the video any audio information that helps understand the visual information?
 
 <ul>
-	<li>No
-		<ul>
-			<li>Captions not needed because there is not any important audio information</li>
-		</ul>
-	</li>
+	<li>No - captions not needed because there is not any important audio information</li>
 	<li>Yes for pre-recorded
 		<ul>
 			<li>Captions are required for those who are hard of hearing or Deaf</li>
-			<li>Required for \\[WCAG A 1.2.2 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded.html) (external website)</li>
+			<li>Required for \\\\[WCAG A 1.2.2 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded.html) (external website)</li>
 		</ul>
 	</li>
 	<li>Yes for live
 		<ul>
 			<li>Captions are required for those who are hard of hearing or Deaf</li>
-			<li>Required for \\[WCAG AA 1.2.4 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-live.html) (external website)</li>
+			<li>Required for \\\\[WCAG AA 1.2.4 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-live.html) (external website)</li>
 		</ul>
 	</li>
 </ul>
@@ -164,7 +158,6 @@ Transcripts are read by Google which makes it possible for Google to index and r
 Users need to be able to easily understand that a transcript is available, and be able to easily get to the transcript. I would recommend putting the transcript itself or a link to the transcript right underneath the video.
 
 * For any videos embedded on your website, include the transcript on the same page: [example text transcript with description of visuals](https://www.w3.org/WAI/perspective-videos/captions/#transcript) (external website) at the bottom of same page as the video
-
 * With regards videos hosted elsewhere, have the transcript on a separate web page: [example podcast transcript on separate page](https://www.w3.org/WAI/highlights/200606wcag2interview.html) (external website)
 
 Please note: the example transcript above is provided as plain text on a simple page, which is easily accessed. It is not a hidden as it can be on YouTube.
