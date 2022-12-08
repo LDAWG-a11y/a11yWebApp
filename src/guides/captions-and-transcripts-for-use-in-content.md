@@ -58,9 +58,7 @@ Don’t forget to achieve maximum accessibility, have an independent caption fil
 
 #### Video only (no audio content)
 
-Pre-recorded and live:
-
-* Captions not required because there is not any audio information
+Pre-recorded and live: captions not required because there is not any audio information.
 
 #### Audio only (podcast etc.)
 
@@ -88,13 +86,13 @@ Has the video any audio information that helps understand the visual information
 	<li>Yes for pre-recorded
 		<ul>
 			<li>Captions are required for those who are hard of hearing or Deaf</li>
-			<li>Required for \\\[WCAG A 1.2.2 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded.html) (external website)</li>
+			<li>Required for \\\\[WCAG A 1.2.2 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded.html) (external website)</li>
 		</ul>
 	</li>
 	<li>Yes for live
 		<ul>
 			<li>Captions are required for those who are hard of hearing or Deaf</li>
-			<li>Required for \\\[WCAG AA 1.2.4 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-live.html) (external website)</li>
+			<li>Required for \\\\[WCAG AA 1.2.4 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-live.html) (external website)</li>
 		</ul>
 	</li>
 </ul>
