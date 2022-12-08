@@ -88,8 +88,8 @@ Yes for pre-recorded:
 * Required for [WCAG A 1.2.2 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded.html) (external website)
 
 Yes for live:
-•	Captions are required for those who are hard of hearing or Deaf
-•	Required for [WCAG AA 1.2.4 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-live.html) (external website)
+* Captions are required for those who are hard of hearing or Deaf
+* Required for [WCAG AA 1.2.4 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-live.html) (external website)
 
 ## Automated captions do not meet requirements
 
