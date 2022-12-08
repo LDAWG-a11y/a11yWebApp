@@ -12,7 +12,7 @@ tags:
   - Transcripts
 isGuide: true
 ---
-## Introduction to Captions and Transcripts
+## Introduction to captions and transcripts
 
 This guide provides useful information on when to use captions and transcripts, and how to write captions and transcripts that are both meaningful and understandable for all users.
 
@@ -36,13 +36,13 @@ Multimedia content that has speech should have accessible captions that are:
 * Accessible or easily available to those who require it
 * Synchronised to appear at the same time as the relevant audio
 
-## Live Captions
+## Live captions
 
 These will be done either remotely or in-person by a professional real-time captioner or by a specialist provider of Communications Access Realtime Translation (CART).
 
 Remember if you post a recording and it has captions which were live when it was recorded, you will need to check these for accuracy.
 
-## Captions used to create Interactive Transcripts
+## Captions used to create interactive transcripts
 
 Some media players have interactive transcripts generated from the caption files, that highlight text phrases as they get spoken.
 
@@ -52,7 +52,7 @@ In the instance of YouTube (and some other players), when a caption in the trans
 
 Don’t forget to achieve maximum accessibility, have an independent caption file of the description of the visual information (called video description, described video, aor udio description). You can use the caption to develop the transcript and vice versa as they  contain  the same text.
 
-### Do I need Captions on my Media?
+### Do I need captions on my media?
 
 #### Video only (no audio content)
 
@@ -60,7 +60,7 @@ Pre-recorded and live:
 
 * Captions not required because there is not any audio information
 
-#### Audio only (Podcast etc.)
+#### Audio only (podcast etc.)
 
 Pre-recorded:
 
@@ -95,7 +95,7 @@ Unless the text has been checked completely and is fully accurate it will not me
 
 Remember, missing one word that is in the spoken audio could contradict the content.
 
-## Tools and Skills
+## Tools and skills
 
 A transcription of an audio file is not easy especially if you do not have the skill or software as adding timestamps to the captions are simple but monotonous and requires the knowledge of which non-verbal information to include and [describe](https://www.makethingsaccessible.com/guides/audio-description-basics/#basic-principles) (external website).
 
@@ -119,7 +119,7 @@ The Web Video Text Tracks or [WebVTT](https://www.w3.org/TR/webvtt/) (external w
 `00:20.000 --> 00:30.000
 <v Ben>L.D.A.W.G. or the London Digital Accessibility Working Group, which is a group of London based universities, needed a website to bring together their expertise.`
 
-### Auto-Captions as the starting point
+### Auto-captions as the starting point
 
 For the video owner, YouTube's auto-captions are useful as the starting point for providing captions. 
 
