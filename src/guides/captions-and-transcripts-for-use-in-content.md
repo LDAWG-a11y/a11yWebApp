@@ -46,7 +46,7 @@ Remember if you post a recording and it has captions which were live when it was
 
 Some media players have interactive transcripts generated from the caption files, that highlight text phrases as they get spoken.
 
-![YouTube video showing caption and transcript file.](src/guideImg/youtube-captions.png "Caption and transcript file on YouTube video")
+![YouTube video showing caption and transcript file.](src/guideImg/youtube-captions.png)
 
 The current caption is highlighted in the transcript.
 
