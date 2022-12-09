@@ -2303,7 +2303,18 @@ ul:not([class]) > li::marker {
 .cms .callout__text {
   padding: 0.75rem;
 }
-
+.cms details {
+  margin: -2.5rem 0 3rem;
+  border: 2px solid var(--color-interactive);
+  border-radius: 6px;
+  padding: 0.5rem;
+  max-width: 80rem;
+  color: var(--color-interactive);
+  background-color: var(--color-bg--light);
+}
+.cms details summary {
+  cursor: pointer;
+}
 .faqs__intro {
   margin-bottom: 2rem;
 }
