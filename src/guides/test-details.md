@@ -8,10 +8,8 @@ tags:
   - HTML
 isGuide: true
 ---
-<details><summary>Video transcript</summary>\*\*Hello\*\* \[this is a link](www.google.com)
+<h3 class="accordion">Test</h3><div class="accordion__panel">**Hello** *this* `is` a 
 
-Just some text</details>
+## test
 
-<h3 class="accordion">Test md</h3><div class="accordion__panel">**hello** [This is a link](www.google.com)
-
-Just some text</div>
+[With a link](www.google.com)</div>
