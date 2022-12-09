@@ -85,11 +85,10 @@ module.exports = eleventyConfig => {
     linkify: true
   }).use(markdownItEleventyImg, markdownItEleventyImgConfig).use(markdownItAnchor, mdAnchorOpts)
 
+  eleventyConfig.setLibrary("md", mdLib);
   eleventyConfig.addFilter('markdownify', (markdownString) =>
     mdLib.render(markdownString)
   );
-
-  eleventyConfig.setLibrary("md", mdLib);
   eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.addFilter("readableDate", dateObj => {
