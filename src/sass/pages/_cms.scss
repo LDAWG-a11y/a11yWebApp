@@ -497,18 +497,20 @@
     margin: -$space-xxl 0 $space-xxxl;
     border: 2px solid var(--color-interactive);
     border-radius: $radius-md;
-    padding: $space-xs;
+    padding: $space-sm $space-xs;
     max-width: 80rem;
-    color: var(--color-interactive);
     background-color: var(--color-bg--light);
   }
 
   details summary { 
+    font-weight: 600;
+    color: var(--color-interactive);
     cursor: pointer;
   }
 
   details[open] summary {
-    // border-top: 2px solid var(--color-interactive);
+    margin-bottom: $space-md;
+    border-bottom: 2px solid var(--color-interactive);
     
   }
 }

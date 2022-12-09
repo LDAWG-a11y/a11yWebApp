@@ -2307,14 +2307,20 @@ ul:not([class]) > li::marker {
   margin: -2.5rem 0 3rem;
   border: 2px solid var(--color-interactive);
   border-radius: 6px;
-  padding: 0.5rem;
+  padding: 0.75rem 0.5rem;
   max-width: 80rem;
-  color: var(--color-interactive);
   background-color: var(--color-bg--light);
 }
 .cms details summary {
+  font-weight: 600;
+  color: var(--color-interactive);
   cursor: pointer;
 }
+.cms details[open] summary {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--color-interactive);
+}
+
 .faqs__intro {
   margin-bottom: 2rem;
 }
