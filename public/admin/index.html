@@ -156,7 +156,8 @@
     return `
 <details>
   <summary>${data.summary}</summary>
-
+  \n
+  \n
   ${data.details}
 
 </details>
@@ -165,8 +166,10 @@
   toPreview: function(data) {
     return `
 <details>
+  
   <summary>${data.summary}</summary>
-
+  \n
+  \n
   ${data.details}
 
 </details>
@@ -177,4 +180,4 @@
 </body>
 </html>
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/${obj.id}" title="${obj.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/${obj.id}" title="${obj.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->

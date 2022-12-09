@@ -7,14 +7,19 @@ toc: false
 tags:
   - HTML
 isGuide: true
+templateEngineOverride: njk
 ---
-<h3 class="accordion">Test</h3><div class="accordion__panel">**Hello** *this* `is` a 
+<h3 class="accordion">Test</h3><div class="accordion__panel"> 
+
+**Hello**
 
 ## test
 
 [With a link](www.google.com)</div>
 
-<details><summary>Video transcript</summary>**Hello** *this* `is` a 
+<details><summary>Video transcript</summary>
+
+**Hello** *this* `is` a 
 
 ## test
 
