@@ -31,7 +31,7 @@
       </nav>
     {% endif %}
     <article class="cms">
-      {{ content | markdownify | safe }}
+      {{ content | safe }}
     </article>
     {% include "_social-share.njk" %}
     {% set author = guideAuthor %}

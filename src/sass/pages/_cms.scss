@@ -493,4 +493,22 @@
     padding: $space-sm;
   }
 
+  details {
+    margin: -$space-xxl 0 $space-xxxl;
+    border: 2px solid var(--color-interactive);
+    border-radius: $radius-md;
+    padding: $space-xs;
+    max-width: 80rem;
+    color: var(--color-interactive);
+    background-color: var(--color-bg--light);
+  }
+
+  details summary { 
+    cursor: pointer;
+  }
+
+  details[open] summary {
+    // border-top: 2px solid var(--color-interactive);
+    
+  }
 }
