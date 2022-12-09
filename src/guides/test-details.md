@@ -13,3 +13,9 @@ isGuide: true
 ## test
 
 [With a link](www.google.com)</div>
+
+<details><summary>Video transcript</summary>**Hello** *this* `is` a 
+
+## test
+
+[With a link](www.google.com)</details>
