@@ -153,10 +153,25 @@
     };
   },
   toBlock: function(data) {
-    return `<details><summary>${data.summary}</summary>${data.details}</details>`;
+    return `
+<details>
+  <summary>${data.summary}</summary>
+
+  ${data.details}
+
+</details>
+`;
   },
   toPreview: function(data) {
-    return `<details><summary>${data.summary}</summary>${data.details}</details>`;}
+    return `
+<details>
+  <summary>${data.summary}</summary>
+
+  ${data.details}
+
+</details>
+`;
+  }
   });
   </script>
 </body>
