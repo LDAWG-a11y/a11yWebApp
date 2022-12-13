@@ -28,4 +28,4 @@ In addition, one of the previous requirements is being removed, which is SC 4.1.
 
 ## How does this affect the UK public sector?
 
-Well, this may come as either a total bombshell or a complete revelation, but it does affect us and that is a good thing for our users. On Friday 9th December 2022, Cabinet Office of the UK Government released updated guidance regarding the PSBAR regulations
+Well, this may come as either a total bombshell or a complete revelation, but it does affect us and that is a good thing for our users. On Friday 9th December 2022, Cabinet Office of the UK Government released updated guidance regarding the PSBAR regulations on the Gov.uk site
