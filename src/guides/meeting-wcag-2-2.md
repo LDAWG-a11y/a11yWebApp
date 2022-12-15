@@ -117,13 +117,15 @@ The W3C's interpretation of a cognitive function test is a puzzle (that could be
 * Object recognition (this appears to have a bit of a flaw) "The cognitive function test is to recognize \[sic] objects"
 * Personal Content of a non-text type, that a user has provide to the web or app
 
-Back to the direction the horse is facing, that's my only encounter of having to identify any animal-based puzzles and yep, one of them was looking kind of head on, but I winged my way through it. A horse isn't an object, I understand objects to be inanimate things that are tangible, which would also exclude patterns and shapes, right: Let's see what the dictionary says:
+Back to the direction the horse is facing riddle, that's my only encounter of having to identify any animal-based puzzles and yep, one of them was looking kind of head on, but I winged my way through it. A horse isn't an object, I understand objects to be inanimate things that are tangible, which would also exclude patterns and shapes, right? Let's see what the dictionary says:
 
 > Object (noun) A thing that you can see or touch but that is not usually a living animal, plant, or person: <cite>Cambridge dictionary</cite>
 
-Also we have those puzzles where we may be required to identify characters or words, which are typically displayed as a graphic, are they objects or shapes and patterns?
+Wording matters, as when words say one thing, but mean something else, we end up in situations where there's no other choice but to remove the criterion altogether, subtle nod to 4.1.1 Parsing there.
 
-Having to remember certain characters from a memorable word, based upon thieir position, would also fail this requirement.
+Also we have those puzzles where we may be required to identify characters or words, which are typically displayed as a graphic, are they objects or shapes and patterns? I'm no lexicologist, but I'd say the latter.
+
+Having to remember certain characters from a memorable word, based upon their position, would also fail this requirement.
 
 So, in a nutshell, reCAPTCHA is still allowable (sigh), but there are certain requirements that must be met with authenticating:
 
@@ -135,16 +137,20 @@ There's quite a lot to unpack in this one, there seem to be an almost infinite a
 
 I believe we would would typically pass this by accident, if we have inputs with correctly associated clear labels and even autocomplete attributes and nobody in their infinite wisdom thought it would be user friendly to block copy and pasting into those fields, then that's all that is required.
 
-## What's no longer in
+## Goodbye to 4.1.1 Parsing
 
 Ahh, 4.1.1 Parsing is due to be removed from 2.2, as the wording we have all followed was not what we were supposed to be doing, because those words, in the context they were written, were only understandable in their true context, by the folks that wrote them. I'm not going into any detail here, as [Adrian Roselli does a fine job (as always) with his 411 on 4.1.1 article](https://adrianroselli.com/2022/12/the-411-on-4-1-1.html)
 
 In essence, the same failures are still failures, but not against the criterion we were lead to believe they were, by reading it.
 
-## 1 Changed level
+## Focus Visible to be reclassified at Level A
 
-So, did you ever wonder why Focus Visible was a AA? Something so basic, so essential, something that had to be removed by a developer in the first instance only had to be present at Level AA? Well, [2.4.7 Focus Visible is being reclassified as a Level A requirement](https://www.w3.org/TR/WCAG22/#focus-visible). In the UK, we don't typically test for Level A, so other than writing the level, this has no affect on us. As an aside, I've always wondered why most of the colour requirements are Level AA too.
+So, did you ever wonder why Focus Visible was a AA? Something so basic, so essential, something that had to be intentionally removed by a developer in the first instance, only needed to be present at Level AA? Well, [2.4.7 Focus Visible is being reclassified as a Level A requirement](https://www.w3.org/TR/WCAG22/#focus-visible). In the UK, we don't typically test for Level A, so other than writing the level, this has no affect on us. As an aside, I've always wondered why most of the colour requirements are Level AA too.
 
 ## Wrapping up
 
 WCAG 2.2 is essentially a minor revision, whilst it seemingly adds 7 new criteria that we need to meet at Level AA, the only ones that might be a little extra work is Redundant Entry and Focus not Obscured, as much of what is new seems like best practices to me and this is stuff I'd ordinarily put in an advisory or if there were other issues on a specific component, my recommendation would include those best practices. Whilst at this moment I haven't gone into depth on Focus Appearance, due to its 'At risk' nature, I don't see this as being problematic, as when I discover something without a focus indicator, my recommendation would always be a highly visible focus indicator, but we can dig deeper there when and if it makes the cut.
+
+I'll update this guide, as and when things change and also as and when my own understanding changes, should I come across chatter that explains things better than the official standard, which is typically how most of learn how to interpret WCAG anyway, read it several times, scratch one's head and Google the life out of it (other search engines are available).
+
+As the standard has been delayed a few times, we're probably super close to the actual release, the most recent discussions I read stated December or January. With that in mind, it would be worth making preparations now, we've created a new audit template ready for this change and as soon as the standard is canon, we're going to start testing against 2.2, so we don't create an additional backlog of sites to retest at a later date.
