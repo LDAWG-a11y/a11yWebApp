@@ -43,19 +43,19 @@ That gives those of us affected by the regulations a year or so be WCAG 2.2 Leve
 * If you and your organisation have viewed accessibility as a people thing, as opposed to a legal thing, you may have accidentally passed some of those requirements, simply by following 'Best practices'
 * Accessibility as become the norm, many of us have skilled up, designers, developers, QAs, and accessibility testers alike, so the learning curve will be gentler than it was before we needed these in-house skills and expertise
 
-##  OK, so what is new?
+## OK, so what is new?
 
 I'll break these down, so we know how we can meet the requirements.
 
 ### Let's look at the 2 new Level A requirements first
 
-#### [3.2.6 Consistent Help (A)](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/#326-consistent-help-a) 
+#### [3.2.6 Consistent Help (A)](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/#326-consistent-help-a)
 
 This one can be met really easily and shouldn't take any effort at all, this can be met by having any contact details you already have on your sites consistently placed on a page, when repeated across pages. So, if for example your company address and contact details are in the site footer and they appear on multiple pages, they appear in the "same relative order" and use the same labelling. Which basically means all of the links and text remains in the same order on every page it is included on. Obviously it would be super beneficial to provide contact details that have enough alternatives to cater for everybody, for example don't rely solely on social media contact, not everybody has Twitter of Facebook and they'd need an account to contact you on those platforms, and there are genuine reasons for people not wanting to join those platforms. 
 
 I would recommend adding the address, phone number and a monitored email account to the footer and making sure that appeared in the same place, across all pages along with any alternative contact details, also making sure they're in the same relative order.
 
-#### [3.3.9 Redundant Entry (A)](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/#339-redundant-entry-a) 
+#### [3.3.9 Redundant Entry (A)](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/#339-redundant-entry-a)
 
 This applies to forms where users may be required to enter the same data, at more than one step of a process. As an example, a user is filling out an application form to enrol in a programme of education, at Step 1, they provide their name, email, address and phone number etc, at Step 5, we ask them for their address again, instead of the user having to type those details again, either:
 
@@ -70,7 +70,7 @@ This new requirement appears like there will be a little extra development in ca
 
 This new requirement somewhat of combines 2 existing requirements, [2.4.7 Focus Visible (AA)](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=241%2C244%2C246%2C251%2C312%2C322%2C332%2C412%2C122#focus-visible) and [1.4.11 Non-text Contrast (AA) ](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=241%2C244%2C246%2C251%2C312%2C322%2C332%2C412%2C122#non-text-contrast)and enhances them slightly, to provide users with more perceivable focus indicators. It's worth noting that this particular requirement is "At risk", as there doesn't appear to be general consensus over the wording of the requirement. So this requirement may not make it to Recommendation stage, which would be a shame, as it certainly enhances the visibility of focus indicators. As this is "At risk", I'm not going to go into any depth right now, but if the W3C can agree on the wording and get this requirement out the door, I'll add some CopePen examples for a wide variety of use cases.
 
-#### [2.4.12 Focus not Obscured (Minimum) (AA)](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/#2412-focus-not-obscured-minimum-aa) 
+#### [2.4.12 Focus not Obscured (Minimum) (AA)](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/#2412-focus-not-obscured-minimum-aa)
 
 This particular requirement requires that interactive elements on webpages do not become wholly obscured by author-created components, when they receive keyboard focus. The usual suspects that cause this behaviour are sticky headers and footers, overlay type 'drawer' menus or navigations, 'toast' messages, chat widgets, non-modal dialogs and other disclosure patterns that obscure content. This is one of the new requirements that I believe we would mostly hit by accident, as my mindset is people rely on focus indicators to move around webpages, they need to see that focus indicator at all times when they tab between interactive elements, so I always recommend fixes when focus is obscured by something. 
 
@@ -113,4 +113,38 @@ The W3C's interpretation of a cognitive function test is a puzzle (that could be
 "A cognitive function test (such as remembering a password or solving a puzzle) is not required for any step in an authentication process unless that step provides at least one of the following:"
 
 * An alternative: A different method of logging in (authenticating) that does not require a cognitive function test
-*
+* Some form of mechanism is available to assist a user in completing the cognitive function test
+* Object recognition (this appears to have a bit of a flaw) "The cognitive function test is to recognize \[sic] objects"
+* Personal Content of a non-text type, that a user has provide to the web or app
+
+Back to the direction the horse is facing, that's my only encounter of having to identify any animal-based puzzles and yep, one of them was looking kind of head on, but I winged my way through it. A horse isn't an object, I understand objects to be inanimate things that are tangible, which would also exclude patterns and shapes, right: Let's see what the dictionary says:
+
+> Object (noun) A thing that you can see or touch but that is not usually a living animal, plant, or person: <cite>Cambridge dictionary</cite>
+
+Also we have those puzzles where we may be required to identify characters or words, which are typically displayed as a graphic, are they objects or shapes and patterns?
+
+Having to remember certain characters from a memorable word, based upon thieir position, would also fail this requirement.
+
+So, in a nutshell, reCAPTCHA is still allowable (sigh), but there are certain requirements that must be met with authenticating:
+
+A user must not be required to remember their username or password as these typically change between sites. We can rely on password managers, browser autofill and simply fields that allow users to paste credentials into them. If a field prevents you from pasting into it or doesn't auto-fill etc, this would fail the new requirement.
+
+Other acceptable ways of logging in are: biometrics (your face or fingerprint etc), 2-factor authentication where that secondary factor is confirming your identity on your trusted device (maybe TouchID etc), QR codes, third-party providers (Oauth etc), email links with login tokens.
+
+There's quite a lot to unpack in this one, there seem to be an almost infinite amount permissible alternatives, so at it's base level, if a user is required to manually type their password and/or username, then that site fails this requirement. 
+
+I believe we would would typically pass this by accident, if we have inputs with correctly associated clear labels and even autocomplete attributes and nobody in their infinite wisdom thought it would be user friendly to block copy and pasting into those fields, then that's all that is required.
+
+## What's no longer in
+
+Ahh, 4.1.1 Parsing is due to be removed from 2.2, as the wording we have all followed was not what we were supposed to be doing, because those words, in the context they were written, were only understandable in their true context, by the folks that wrote them. I'm not going into any detail here, as [Adrian Roselli does a fine job (as always) with his 411 on 4.1.1 article](https://adrianroselli.com/2022/12/the-411-on-4-1-1.html)
+
+In essence, the same failures are still failures, but not against the criterion we were lead to believe they were, by reading it.
+
+## 1 Changed level
+
+So, did you ever wonder why Focus Visible was a AA? Something so basic, so essential, something that had to be removed by a developer in the first instance only had to be present at Level AA? Well, [2.4.7 Focus Visible is being reclassified as a Level A requirement](https://www.w3.org/TR/WCAG22/#focus-visible). In the UK, we don't typically test for Level A, so other than writing the level, this has no affect on us. As an aside, I've always wondered why most of the colour requirements are Level AA too.
+
+## Wrapping up
+
+WCAG 2.2 is essentially a minor revision, whilst it seemingly adds 7 new criteria that we need to meet at Level AA, the only ones that might be a little extra work is Redundant Entry and Focus not Obscured, as much of what is new seems like best practices to me and this is stuff I'd ordinarily put in an advisory or if there were other issues on a specific component, my recommendation would include those best practices. Whilst at this moment I haven't gone into depth on Focus Appearance, due to its 'At risk' nature, I don't see this as being problematic, as when I discover something without a focus indicator, my recommendation would always be a highly visible focus indicator, but we can dig deeper there when and if it makes the cut.
