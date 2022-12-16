@@ -7,7 +7,7 @@
 
 <div class="socials__container" role="group" aria-labelledby="shareTitle">
   <h2 class="socials__title" id="shareTitle">Share on: </h2>
-  <a href="//twitter.com/intent/tweet?text={{ postTitle | urlencode }}&url={{ site.siteUrl }}{{ page.url }}" class="socials__link" target="_blank">{% include '../svg/twitter.svg' %}<span class="visually-hidden"> Opens in new tab</span></a>
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.siteUrl }}{{ page.url }}&title={{ postTitle | urlencode }}" class="socials__link" target="_blank">{% include '../svg/linkedin.svg' %}<span class="visually-hidden"> Opens in new tab</span></a>
+  <a href="//twitter.com/intent/tweet?text={{ postTitle | urlencode }}&url={{ site.siteUrl }}{{ page.url }}" class="socials__link" rel="noreferrer noopener" target="_blank">{% include '../svg/twitter.svg' %}<span class="visually-hidden"> Opens in new tab</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.siteUrl }}{{ page.url }}&title={{ postTitle | urlencode }}" class="socials__link" rel="noreferrer noopener" target="_blank">{% include '../svg/linkedin.svg' %}<span class="visually-hidden"> Opens in new tab</span></a>
 </div>
 

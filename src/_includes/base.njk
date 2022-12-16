@@ -1,15 +1,17 @@
 {% include "_head.njk" %}
 <body>
   {% include "_header.njk" %}
-  <main class="main {%- if '/accessibility' in page.url or '/about' in page.url or '/privacy' in page.url %} cms{%- endif %}">
-    {% if '/accessibility' in page.url or '/privacy' in page.url %}
-      {% if toc %}
-        <nav class="cms__toc" aria-labelledby="toc-heading">
-          <h2 id="toc-heading">Table of contents</h2>
+  {% if '/accessibility' in page.url or '/privacy' in page.url or '/codeOfConduct' in page.url %}
+    {% if toc %}
+      <nav class="cms__toc" aria-labelledby="toc-heading">
+        <details open>
+          <summary id="toc-heading">Table of contents</summary>
           {{ content | toc | safe }}
-        </nav>
-      {% endif %}
+        </details>
+      </nav>
     {% endif %}
+  {% endif %}
+  <main class="main {%- if '/accessibility' in page.url or '/about' in page.url or '/codeOfConduct' in page.url or '/contributing' in page.url or '/privacy' in page.url %} cms{%- endif %}">
     {{ content | safe }}
   </main>
   {% include "_footer.njk" %}

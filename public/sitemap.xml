@@ -156,12 +156,25 @@
       <lastmod>2022-12-07T00:00:00.000Z</lastmod>
     </url>
   
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/meeting-wcag-2-2/</loc>
+      <lastmod>2022-12-13T00:00:00.000Z</lastmod>
+    </url>
+  
       <url>
         <loc>https://www.makethingsaccessible.com/about/</loc>
         <lastmod>2022-10-06T22:17:15.692Z</lastmod>
       </url>
       <url>
         <loc>https://www.makethingsaccessible.com/accessibility/</loc>
+        <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+      </url>
+      <url>
+        <loc>https://www.makethingsaccessible.com/codeOfConduct</loc>
+        <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+      </url>
+      <url>
+        <loc>https://www.makethingsaccessible.com/contributing</loc>
         <lastmod>2022-10-06T22:17:15.692Z</lastmod>
       </url>
       <url>
@@ -330,6 +343,10 @@
     </url>
     <url>
       <loc>https://www.makethingsaccessible.com/tags/videos/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/wcag-2-2/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
 </urlset>

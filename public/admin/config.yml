@@ -93,6 +93,20 @@ collections:
           - { label: "Table of Contents (TOC)", name: "toc", widget: "boolean", default: false, hint: "Only add a TOC if there 4 or more heading 2s" }
           - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
           - { label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
+      - label: "Code of Conduct"
+        name: "codeOfConduct"
+        file: "/src/codeOfConduct.md"
+        fields:
+          - { label: "Table of Contents (TOC)", name: "toc", widget: "boolean", default: false, hint: "Only add a TOC if there 4 or more heading 2s" }
+          - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
+          - { label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
+      - label: "Contributing"
+        name: "contributing"
+        file: "/src/contributing.md"
+        fields:
+          - { label: "Table of Contents (TOC)", name: "toc", widget: "boolean", default: false, hint: "Only add a TOC if there 4 or more heading 2s" }
+          - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
+          - { label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
       - label: "Home"
         name: "home"
         file: "/src/index.njk"

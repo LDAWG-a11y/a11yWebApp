@@ -7,5 +7,7 @@
   {"text": "Glossary", "url": "/glossary/"},
   {"text": "Privacy Policy", "url": "/privacy/"},
   {"text": "Sitemap", "url": "/sitemapNav/"},
+  {"text": "Code of Conduct", "url": "/codeOfConduct"},
+  {"text": "Contributing", "url": "/contributing"},
   {"text": "Admin", "url": "/admin"}
 ]
