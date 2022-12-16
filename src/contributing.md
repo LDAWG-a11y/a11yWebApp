@@ -1,9 +1,12 @@
 ---
-date: Last Modified
+date: 2022-12-16
 layout: base.njk
 title: Code of Conduct
-summary: We welcome healthy accessibility related contributions from the wider community, please read our Code of Conduct prior to contacting us with a guide, as this space being inclusive, safe, respectful to all and helpful are our primary goals
-toc: true
+summary: We welcome healthy accessibility related contributions from the wider
+  community, please read our Code of Conduct prior to contacting us with a
+  guide, as this space being inclusive, safe, respectful to all and helpful are
+  our primary goals
+toc: false
 ---
 
 ## Contributing
