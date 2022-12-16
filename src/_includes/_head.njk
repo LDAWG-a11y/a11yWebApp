@@ -34,6 +34,7 @@
   <meta name="twitter:description" content="{%- if not home %}{{ title }} | {{ site.siteName }} {%- else %}{{ site.siteName }} | {{ title }} {%- endif %}">
   <meta name="twitter:image" content="{{ site.siteUrl }}/img/social-logo.jpg">
   <meta name="twitter:image:alt" content="Make Things Accessible logo">
+  <meta name="generator" content="Eleventy">
   <script type="application/ld+json">
     {%- if isGuide %}
       {% set guideAuthor = collections.writers | getAuthor(author) %}
