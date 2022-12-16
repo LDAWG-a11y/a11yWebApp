@@ -1056,12 +1056,6 @@ ul:not([class]) > li::marker {
   display: inline-block;
   margin-bottom: 0.75rem;
 }
-.footer__colophon .footer__credit {
-  display: inline-flex;
-}
-.footer__colophon .footer__credit > a {
-  margin-left: 0.25rem;
-}
 
 .latest-articles {
   margin: 0;
