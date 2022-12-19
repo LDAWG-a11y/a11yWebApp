@@ -53,6 +53,7 @@ Examples of informative images could be:
 * An image that you refer to anywhere on the page, if we're saying "as can be seen in the image below, then we don't really want to be hiding that image from people, as they may want to download it, but if it's hidden or marked as decorative, they won't be able to find it
 * An image that if removed, removes some of the meaning of that page
 * An image that validates the content of that page in some way
+* Images of text (although we should only do this as an absolute last resort)
 
 Typically we'd want to describe the intent of the image, as opposed to explaining insignificant details, as an example "Nadia receiving her award for Engineering Excellence, presented by the Vice Chancellor and Head of the school of Engineering", is much better than "Nadia, who is wearing black shiny shoes, with silver decorative features and no laces, blue ankle length trousers and a white blouse, is receiving her award from Dr Smith, who is wearing..." you get the idea, those elements of the image are inconsequential, the important information is Nadia is receiving her award and the people that presented that award are. The subject of the page would likely be Nadia's achievements, the image just validates that content.
 
@@ -62,7 +63,7 @@ There are times where images may be extremely complex, they could be data visual
 
 Some complex images can immediately be understood by people who can see it, but are also in the know, it's a subject familiar to them. Let's imagine we have hired an architect to redesign the main foyer of a campus, another architect could look at those detailed drawings and make some noises of approval, such as "hmmm", or "ahhhh" and fully understand the detailed aspects of what is proposed, but, if like me, you can appreciate a good artist's impression, but have absolutely no idea of how to interpret the finer details or technical considerations, we'd all benefit from this being explained in the surrounding text. Whilst Alt Text used to have limits, it doesn't appear to anymore, but that doesn't mean we should stuff it with 20,000 words, as that experience isn't the best for screen reader users, but if we adequately describe that image on the page and then provide the image with a nice succinct Alt Text, such as "Architect's proposal for the main foyer, image taken from the current front door", should a user wish to download that image, perhaps to send to a friend or colleague, they can do so and it has a nice and short description and the more detailed description is available for everybody.
 
-This kind of logic also applies to charts and such, if we have no choice but to put images of charts on a page, those charts would need to be described accurately on the page itself, adding a complex chart with no supporting text would pretty much confuse all of us.
+This kind of logic also applies to images of maps or charts and such, if we have no choice but to put images of charts on a page, those charts would need to be described accurately on the page itself, adding a complex chart with no supporting text would pretty much confuse all of us.
 
 ### Emotion-rich images
 
@@ -82,3 +83,14 @@ Definitely don't abuse this and explain those marketing images that are "Main in
 ### It's a judgement call
 
 There is no exact science about alternative text, a lot of it comes down to making a judgement call, but by learning about others' lived experiences and considering how are choices can impact users, we can at least make informed judgements and hopefully we will get it right at least most of the time.
+
+The W3C provide a useful tool, which can assist in making those decisions called the [Alt Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)
+
+this doesn't cover the Emotion-rich images, but does cover most other types and can be helpful in determining when to add alternative text or even how.
+
+## Alt text quick tips
+
+* If an image has no alt attribute and no other way of having an accessible name, then a screen reader will use the filename, which we should avoid at all costs
+* If we have an image we have some alt text for, don't start that description with "image of..." or "graphic of...", as screen readers will typically encounter an image and depending on which screen reader it is will announce "Image/graphic, \[then proceed to read the alt text]", so we'd be duplicating already available information.
+* If the type of image is important to the context, then by all means, do include the image type, "child's drawing of the university", "photo of the vice chancellor", "screenshot of the login screen" etc, as the type of image may be be important to some users
+* Be as succinct as possible, but not at the expense of important visual information, "3 students" is very succinct, but that isn't helpful in any way, but "3 Students collaborating on a sculpture of \[famous person]"
