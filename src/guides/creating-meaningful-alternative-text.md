@@ -9,8 +9,8 @@ date: 2022-12-19
 toc: false
 tags:
   - Images
-  - Alt Text
-  - Best Practice
+  - Alt text
+  - Best practice
 isGuide: true
 ---
 ## Introduction to Alternative Text
