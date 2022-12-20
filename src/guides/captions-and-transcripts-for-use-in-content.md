@@ -6,7 +6,6 @@ author: swilkinson
 date: 2022-12-07
 toc: true
 tags:
-  - HTML
   - Videos
   - Captions
   - Transcripts
