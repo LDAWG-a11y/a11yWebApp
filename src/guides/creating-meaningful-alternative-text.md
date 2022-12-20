@@ -6,7 +6,7 @@ summary: Properly explaining images and other graphics in text provides users of
   alternative text or alt text and also many considerations
 author: dlee
 date: 2022-12-19
-toc: false
+toc: true
 tags:
   - Images
   - Alt text
@@ -31,11 +31,11 @@ We will use the term image to refer to pictures, icons, screenshots and complex 
 
 A decorative image is typically an image that serves absolutely no purpose other than to make a page or document look pretty, fill some space, break up large chunk of text or any other reason where it adds no information to the page content and is not related to it in any way. Some marketing images fall into this category, we may encounter images such as "woman on a phone", "man with a tablet", "woman showing group of employees some graphs on a laptop". If these images are stock type images, you got them from some online source, then in most instances, these should be decorative.
 
-In HTML we would provide that image with a so-called null alt attribute, this means the alt attribute is present (it must be present) but its value is an empty string, like so `<img src="path.jpg" alt="">` this means that a screen reader user cannot access this image, it's as if it isn't there at all (That's OK, if it is truly decorative).
+In HTML we would provide that image with a so-called null alt attribute, this means the alt attribute is present (it must be present) but its value is an empty string, like so `<img src="path.jpg" alt="">`, In office-type applications there is often an option to mark as decorative, this has the same functionality as the null Alt attribute in HTML. A correctly marked up decorative image means that a screen reader ignores it, it's as if it isn't there at all (That's OK, if it is truly decorative).
 
 ### Functional images
 
-A functional image is a graphic that can be clicked and it either does something or goes somewhere. Examples of that being, a bin icon in your email, which moves an email o emails to the trash bin, an app icon on your phone, for settings, social media or pretty much everything else or a logo on a website that when clicked usually takes a user to the homepage.
+A functional image is an image that can be clicked and it either does something or goes somewhere. Examples of that being, a bin icon in your email, which moves an email or emails to the trash bin, an app icon on your phone, for settings, social media or pretty much everything else or a logo on a website that when clicked usually takes a user to the homepage.
 
 The test for this is if I can interact with it in some way and it does something in after I do, then it's interactive and therefore functional.
 
@@ -43,25 +43,25 @@ For functional images we typically want to write the purpose of the interaction 
 
 ### Informative images
 
-An informative image is any image that either adds information to or supports the information on a page, typically we would describe these images succinctly and more importantly, we would consider their purpose before writing the description. 
+An informative image is any image that either adds or supports the information on a page, typically we would describe these images succinctly and more importantly, we would consider their purpose before writing the description. 
 
 Examples of informative images could be:
 
 * A page of the board members, each contains a profile photo, each image is informative
 * An image of some students, receiving an award, it supports or validates the surrounding text
 * An icon that serves as a visual label, but is not itself functional, such as a telephone icon, next to an input
-* An image that you refer to anywhere on the page, if we're saying "as can be seen in the image below, then we don't really want to be hiding that image from people, as they may want to download it, but if it's hidden or marked as decorative, they won't be able to find it
+* An image that you refer to anywhere on the page, if we're saying "as can be viewed in the image below, then we don't really want to be hiding that image from people, as they may want to find it to download it, but if it's hidden or marked as decorative, they won't find it at all
 * An image that if removed, removes some of the meaning of that page
 * An image that validates the content of that page in some way
-* Images of text (although we should only do this as an absolute last resort)
+* Images of text (although we should only add these as an absolute last resort), but that text within that image should be available to everybody
 
-Typically we'd want to describe the intent of the image, as opposed to explaining insignificant details, as an example "Nadia receiving her award for Engineering Excellence, presented by the Vice Chancellor and Head of the school of Engineering", is much better than "Nadia, who is wearing black shiny shoes, with silver decorative features and no laces, blue ankle length trousers and a white blouse, is receiving her award from Dr Smith, who is wearing..." you get the idea, those elements of the image are inconsequential, the important information is Nadia is receiving her award and the people that presented that award are. The subject of the page would likely be Nadia's achievements, the image just validates that content.
+Typically we'd want to describe the intent of the image, as opposed to explaining insignificant details, as an example "Nadia receiving her award for Engineering Excellence, presented by the Vice Chancellor and Head of the school of Engineering", is much better than "Nadia, who is wearing black shiny shoes, with silver decorative features and no laces, blue ankle length trousers and a white blouse, is receiving her award from Dr Smith, who is wearing..." you get the idea, those elements of the image are inconsequential, the important information is Nadia is receiving her award and who the people that presented that award are. The subject of the page would likely be Nadia's achievements, the image just validates that content.
 
 ### Complex images
 
 There are times where images may be extremely complex, they could be data visualisations, blueprints, diagrams, artists impressions, architectural drawings many other images. If we had a page about the Mona Lisa, on a school of art page, we'd want to describe the finer details of that image in text, just like we would for all the aforementioned images, but in this instance, we wouldn't really want to do it in Alt Text, we'd ideally be describing the image in visible text, that everybody can access.
 
-Some complex images can immediately be understood by people who can see it, but are also in the know, it's a subject familiar to them. Let's imagine we have hired an architect to redesign the main foyer of a campus, another architect could look at those detailed drawings and make some noises of approval, such as "hmmm", or "ahhhh" and fully understand the detailed aspects of what is proposed, but, if like me, you can appreciate a good artist's impression, but have absolutely no idea of how to interpret the finer details or technical considerations, we'd all benefit from this being explained in the surrounding text. Whilst Alt Text used to have limits, it doesn't appear to anymore, but that doesn't mean we should stuff it with 20,000 words, as that experience isn't the best for screen reader users, but if we adequately describe that image on the page and then provide the image with a nice succinct Alt Text, such as "Architect's proposal for the main foyer, image taken from the current front door", should a user wish to download that image, perhaps to send to a friend or colleague, they can do so and it has a nice and short description and the more detailed description is available for everybody.
+Some complex images can immediately be understood by people who are are familiar with the subject. Let's imagine we have hired an architect to redesign the main foyer of a campus, another architect could look at those detailed drawings and make some noises of approval, such as "hmmm", or "ahhhh" and fully understand the detailed aspects of what is proposed, but, if like me, you can appreciate a good artist's impression, but have absolutely no idea of how to interpret the finer details or technical considerations, we'd all benefit from this being explained in the surrounding text. Whilst Alt Text used to have limits, it doesn't anymore, but that doesn't mean we should stuff it with 20,000 words, as that experience isn't the best for screen reader users, but if we adequately describe that image on the page and then provide the image with a nice succinct Alt Text, such as "Architect's proposal for the main foyer, image taken from the current front door", should a user wish to download that image, perhaps to send to a friend or colleague, they can do so and it has a nice and short description and the more detailed description is available for everybody.
 
 This kind of logic also applies to images of maps or charts and such, if we have no choice but to put images of charts on a page, those charts would need to be described accurately on the page itself, adding a complex chart with no supporting text would pretty much confuse all of us.
 
@@ -76,9 +76,9 @@ An emotion-rich image is typically something that is placed on a page to illicit
 
 Later we'll link to the Alt Decision Tree, but Emotion-rich images don't feature in that, this is something I stumbled across reading a blog of somebody in the Accessibility industry who is hugely respected. Léonie is a screen reader user and also amongst many other notable things sits on the one of the W3C's working groups. [I refer and link to this article often, as it helps us understand the perspective of a screen reader user](https://tink.uk/text-descriptions-emotion-rich-images/), from somebody who relies on a screen reader, but is also involved in creating the standards for accessible websites and content.
 
-Imagine we had 50 screen reader users and we asked them if they would prefer these images, that would otherwise be marked as decorative to be considered emotion-rich and supplied with Alt Text. It's not going to be a case of all 50 people said the same thing, everybody is unique and everybody has their own preferences. Now, if we marked these funny, heartwarming, smile-inducing or heart-string pulling images as decorative, what we are doing is making a decision, that decision is No screen reader user can access this image, ever. I'm not a screen reader user, but I do believe the core principles of accessibility include both choice and alternatives. If we describe an image placed on a page to evoke some emotional response, if a user encounters it and thinks "Not interesting", they can simply move away and listen to other parts of the content they are interested in, but if we mark it as decorative, then those that would have wanted to hear about it, simply cannot, as it doesn't exist to them.
+Imagine we had 50 screen reader users and we asked them if they would prefer these images, that would otherwise be marked as decorative to be considered emotion-rich and supplied with Alt Text. It's not going to be a case of all 50 people said the same thing, everybody is unique and everybody has their own preferences. Now, if we marked these funny, heartwarming, smile-inducing or heart-string pulling images as decorative, what we are doing is making a decision, that decision is: No screen reader user can access this image, ever. I'm not a screen reader user, but I do believe the core principles of accessibility include both choice and alternatives. If we describe an image placed on a page to evoke some emotional response, if a user encounters it and thinks "Not interesting", they can simply move away and listen to other parts of the content they are interested in, but if we mark it as decorative, then those that would have wanted to hear about it, simply cannot, as it doesn't exist to them.
 
-Definitely don't abuse this and explain those marketing images that are "Man in a suit, shaking the hand of a lady in a suit" because, in that instance, it's likely nobody cares whether they are there or not, other than the team who decided to put them there.
+Definitely don't abuse this and explain those marketing images that are "Man in a suit, shaking the hand of a lady in a suit" because, in that instance, it's likely nobody cares whether they are there or not, other than the person who decided to put them there.
 
 ### It's a judgement call
 
@@ -108,3 +108,14 @@ I found the Alt text to be great, I benefitted personally from reading it, as it
 ### The Alt Text from the tweet
 
 "The background of space is black. Thousands of galaxies appear all across the view. Their shapes and colors vary. Some are various shades of orange, others are white. Most stars appear blue, and are sometimes as large as more distant galaxies that appear next to them. A very bright star is just above and left of center. It has eight bright blue, long diffraction spikes. Between 4 o’clock and 6 o’clock in its spikes are several very bright galaxies. A group of three are in the middle, and two are closer to 4 o’clock. These galaxies are part of the galaxy cluster SMACS 0723, and they are warping the appearances of galaxies seen around them. Long orange arcs appear at left and right toward the center."
+
+## Wrapping up
+
+Hopefully this guide has helped you to understand a bit more of the nuance of Alt Text. It can be hard and there is an element of author discretion, but ultimately the summary is:
+
+* Don't say "image of..." or "Graphic of..."
+* Be succinct, but not at the expense of important details
+* If it's there to evoke an emotion or sell the viewer something, sell it in Alt Text too
+* If it adds no information at all, just mark it as decorative
+* If it's functional, it should explain where it goes, not so much what it is
+* Try to explain the purpose of the image, what is the hidden meaning, what are you trying to convey?
