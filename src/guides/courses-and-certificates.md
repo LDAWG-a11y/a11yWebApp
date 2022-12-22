@@ -11,7 +11,7 @@ Free courses
 
 * World Wide Web Consortium (W3C): [Introduction to Web Accessibility](https://www.w3.org/blog/2019/12/free-online-course-introduction-to-web-accessibility/) (external website)
 * Disability Awareness: [Introduction to disability awareness](https://disabilityawareness.com.au/elearning/disability-awareness/) (external website)
-* Google: Web Accessibility (external website)
+* Google via Udacity: [Web Accessibility](https://www.udacity.com/course/web-accessibility--ud891) (external website)
 
 Paid courses
 
