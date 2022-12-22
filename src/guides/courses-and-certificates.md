@@ -23,15 +23,11 @@ isGuide: true
 
 ## Paid courses
 
-
-
 ## Certification
-
-
 
 ## Webinars
 
 * [Government Communication Service](https://gcs.civilservice.gov.uk/webinars/digital-accessibility-for-government-communicators/) (external website)
-* AbilityNet
-* Hassell Inclusion
-* TPGi
+* [AbilityNet](https://abilitynet.org.uk/free-tech-support-and-info/webinars) (external website)
+* Hassell Inclusion (external website)
+* TPGi (external website)
