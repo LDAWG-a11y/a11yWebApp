@@ -23,6 +23,19 @@ isGuide: true
 
 ## Paid courses
 
+### Deque University
+
+Online Self-Paced Web Accessibility Classes:
+* International Association of Accessibility Professionals (IAAP) Certified Professional in Accessibility Core Competencies (CPACC) (external website)
+* International Association of Accessibility Professionals (IAAP) Web Accessibility Specialist (WAS) (external website)
+* International Association of Accessibility Professionals (IAAP) Accessible Document Specialist (ADS) (external website)
+
+### Funka Academy
+Over twenty digital accessibility courses (external website).
+
+### Sara Soueidan
+Online video course for web designers and developers (external website).
+
 ## Certification
 
 ## Webinars
@@ -32,4 +45,4 @@ isGuide: true
 * [Hassell Inclusion](https://www.hassellinclusion.com/webinars/) (external website)
 * [TPGi](https://www.tpgi.com/events/on-demand-webinars/) (external website)
 
-YouTube
+## YouTube
