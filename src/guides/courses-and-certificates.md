@@ -26,14 +26,17 @@ isGuide: true
 ### Deque University
 
 Online Self-Paced Web Accessibility Classes:
-* International Association of Accessibility Professionals (IAAP) Certified Professional in Accessibility Core Competencies (CPACC) (external website)
-* International Association of Accessibility Professionals (IAAP) Web Accessibility Specialist (WAS) (external website)
+
+* [International Association of Accessibility Professionals (IAAP) Certified Professional in Accessibility Core Competencies (CPACC)](https://dequeuniversity.com/curriculum/courses/iaap-cpacc) (external website)
+* [International Association of Accessibility Professionals (IAAP) Web Accessibility Specialist (WAS)](https://dequeuniversity.com/curriculum/packages/iaap-was) (external website)
 * International Association of Accessibility Professionals (IAAP) Accessible Document Specialist (ADS) (external website)
 
 ### Funka Academy
+
 Over twenty digital accessibility courses (external website).
 
 ### Sara Soueidan
+
 Online video course for web designers and developers (external website).
 
 ## Certification
