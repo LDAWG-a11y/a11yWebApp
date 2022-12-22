@@ -29,5 +29,7 @@ isGuide: true
 
 * [Government Communication Service](https://gcs.civilservice.gov.uk/webinars/digital-accessibility-for-government-communicators/) (external website)
 * [AbilityNet](https://abilitynet.org.uk/free-tech-support-and-info/webinars) (external website)
-* Hassell Inclusion (external website)
-* TPGi (external website)
+* [Hassell Inclusion](https://www.hassellinclusion.com/webinars/) (external website)
+* [TPGi](https://www.tpgi.com/events/on-demand-webinars/) (external website)
+
+YouTube
