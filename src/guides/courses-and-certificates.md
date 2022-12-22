@@ -9,11 +9,23 @@ isGuide: true
 ---
 ## Free courses
 
+### Always available
+
 * World Wide Web Consortium (W3C): [Introduction to Web Accessibility](https://www.w3.org/blog/2019/12/free-online-course-introduction-to-web-accessibility/) (external website)
 * Disability Awareness: [Introduction to disability awareness](https://disabilityawareness.com.au/elearning/disability-awareness/) (external website)
 * Google via Udacity: [Web Accessibility](https://www.udacity.com/course/web-accessibility--ud891) (external website)
 * OCAD University: [Understanding Web Accessibility](https://legacy.idrc.ocadu.ca/policy/idrc-and-aoda/441-idrcs-self-paced-course) (external website)
-* EDx (external website)
+
+### Periodically available
+
+* World Wide Web Consortium (W3C): [Introduction to Web Accessibility](https://www.w3.org/blog/2019/12/free-online-course-introduction-to-web-accessibility/) (external website)
+* World Wide Web Consortium (W3C): [Introduction to Web Accessibility](https://www.w3.org/blog/2019/12/free-online-course-introduction-to-web-accessibility/) (external website)
+
+## Paid courses
+
+## Certification
+
+
 
 ## Webinars
 
@@ -21,7 +33,3 @@ isGuide: true
 * AbilityNet
 * Hassell Inclusion
 * TPGi
-
-## Paid courses
-
-## Certification
