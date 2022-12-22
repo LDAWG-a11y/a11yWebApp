@@ -18,10 +18,12 @@ isGuide: true
 
 ### Periodically available
 
-* World Wide Web Consortium (W3C): [Introduction to Web Accessibility](https://www.w3.org/blog/2019/12/free-online-course-introduction-to-web-accessibility/) (external website)
-* World Wide Web Consortium (W3C): [Introduction to Web Accessibility](https://www.w3.org/blog/2019/12/free-online-course-introduction-to-web-accessibility/) (external website)
+* FutureLearn with UAL Creative Computing Institute: [Introduction to UX and Accessible Design](https://www.futurelearn.com/courses/introduction-to-ux-and-accessible-design) (external website)
+* FutureLearn with University of Southampton: [Digital Accessibility: Enabling Participation in the Information Society](https://www.futurelearn.com/courses/digital-accessibility) (external website)
 
 ## Paid courses
+
+
 
 ## Certification
 
