@@ -2,8 +2,9 @@
 title: Creating meaningful alternative text
 summary: Properly explaining images and other graphics in text provides users of
   assistive technologies with the best chance of understanding the purpose of
-  the image and/or the information it conveys. There are several ways of writing
-  alternative text or alt text and also many considerations
+  the image and/or the information it conveys. It's important to provide a
+  comparative experience to everybody and alternative text best practices is one
+  way we can work towards having more inclusive content.
 author: dlee
 date: 2022-12-19
 toc: true
