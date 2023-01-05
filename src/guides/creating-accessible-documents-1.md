@@ -1,10 +1,9 @@
 ---
 title: Creating Accessible Documents
-summary: Accessible digital content is fundamental to good
-  communicationsInclusive, user-centred design is fundamental. The content you
-  add and how you format it can make a huge difference to accessibility.
-  Following this checklist will help you to create accessible, user-centred
-  documents.
+summary: Accessible digital content is fundamental to good communications.
+  Inclusive, user-centred design is fundamental. The content you add and how you
+  format it can make a huge difference to accessibility. Following this
+  checklist will help you to create accessible, user-centred documents.
 author: bwatson
 date: 2023-01-05
 toc: true
