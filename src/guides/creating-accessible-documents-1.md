@@ -11,6 +11,8 @@ tags:
   - Accessible documents
 isGuide: true
 ---
+## Document basics
+
 1. Use proper heading styles:
 
 * Use the built-in heading features of the authoring tool.  
