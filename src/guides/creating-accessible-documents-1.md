@@ -1,5 +1,5 @@
 ---
-title: Creating Accessible Documents
+title: Accessible Document Basics
 summary: Accessible digital content is fundamental to good communications.
   Inclusive, user-centred design is fundamental. The content you add and how you
   format it can make a huge difference to accessibility. Following this
