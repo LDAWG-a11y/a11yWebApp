@@ -79,4 +79,4 @@ Get a colleague to help you craft key communications and documents, especially i
 * Is this really the best angle from the audience point of view? 
 * Are the key points the audience cares about at the top? 
 
-**10. Check the accessibility of your work for example using the Accessibility Checker in Microsoft Office.**
+**10. Check the accessibility of your work for example using the [Accessibility Checker in Microsoft Office.](https://support.microsoft.com/en-us/office/improve-accessibility-with-the-accessibility-checker-a16f6de0-2f39-4a2b-8bd8-5ad801426c7f?ui=en-us&rs=en-us&ad=us)**
