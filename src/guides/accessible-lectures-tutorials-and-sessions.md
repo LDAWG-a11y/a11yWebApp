@@ -64,15 +64,15 @@ To have subtitles for a Slide Show presentation, from the top menu select Slide 
 
 Participants who require captioning may wish to use an app on their smartphone or tablet to provide speech to text functionality. Below are some suggested apps that can be used:
 
-* Otter.ai helps you capture, find, and share important information from meetings, lecturers, interviews, everyday conversation and generate text with audio on to your phone or web browser. Users can search, play, edit and share conversations via this app.
-* Web Captioner is a speech to text transcription appears in seconds on your phone or web browser and its free.
-* Dictation.io is a free website that allows speech to text without downloading or installing it. All you need is the internet connection to use it and Google servers in real time.
+* [Otter.ai](https://otter.ai/) helps you capture, find, and share important information from meetings, lecturers, interviews, everyday conversation and generate text with audio on to your phone or web browser. Users can search, play, edit and share conversations via this app.
+* [Web Captioner](https://webcaptioner.com/) is a speech to text transcription appears in seconds on your phone or web browser and its free.
+* [Dictation.io](https://dictation.io/) is a free website that allows speech to text without downloading or installing it. All you need is the internet connection to use it and Google servers in real time.
 
 ## Further information
 
-* AbilityNet has published guidance on [how to host an accessible online meeting.](%22https:/)
+* AbilityNet has published guidance on [how to host an accessible online meeting.](https://abilitynet.org.uk/news-blogs/how-host-accessible-online-meeting)
 
-## In person sessions and events 
+## In-person sessions and events 
 
 ### Before an in-person event 
 
@@ -105,4 +105,4 @@ If you are making use of a visualiser or adding additional annotations to presen
 
 ## Further information
 
-The University of Edinburgh have produced some good practical guidance for [creating accessible lectures/tutorials](https://www.e). In addition, there are also key guidelines to making face to face sessions accessible.
+The University of Edinburgh have produced some good practical guidance for [creating accessible lectures/tutorials](https://www.ed.ac.uk/information-services/help-consultancy/accessibility/creating-materials/accesslectures). In addition, there are also key guidelines to making face to face sessions accessible.
