@@ -69,7 +69,7 @@ isGuide: true
 * Always left-align body text (to help dyslexic readers). 
 * Use bold sparingly as it slows down reading and can look 'shouty'. 
 
-9. Use these [plain English techniques](https://deploy-preview-200--inquisitive-heliotrope-510c6d.netlify.app/guides/plain-english-tip-sheet/) to help you edit your draft texts and documents. Editing your text into plain English will make it clearer and more concise; this helps everyone quickly understand your message and is especially helpful to assistive technology users and those with dyslexia. 
+9. Use these [Plain English techniques](https://deploy-preview-200--inquisitive-heliotrope-510c6d.netlify.app/guides/plain-english-tip-sheet/) to help you edit your draft texts and documents. Editing your text into plain English will make it clearer and more concise; this helps everyone quickly understand your message and is especially helpful to assistive technology users and those with dyslexia. 
 10. Check the accessibility of your work for example using the [Accessibility Checker in Microsoft Office.](https://support.microsoft.com/en-us/office/improve-accessibility-with-the-accessibility-checker-a16f6de0-2f39-4a2b-8bd8-5ad801426c7f?ui=en-us&rs=en-us&ad=us)
 
 ## Further information
