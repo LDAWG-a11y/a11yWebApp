@@ -11,6 +11,8 @@ tags:
   - Accessible documents
 isGuide: true
 ---
+## Document basics
+
 1. Use proper heading styles:
 
 * Use the built-in heading features of the authoring tool.  
@@ -23,7 +25,7 @@ isGuide: true
       * Heading 3 for next level of sub-headings, etc.  
 * Don’t simply edit the appearance of text to make it stand out as a heading (i.e., increase font size and underline). [](https://support.microsoft.com/en-us/office/make-your-word-docume)
 * The heading tools create structures that allows screen reader software to identify different sections. This enables screen reader users to understand how the page is organised, and to quickly navigate to content of interest. 
-* [Microsoft guidance on accessible headings.](https://support.microsoft.com/en-us/office/make-your-word-docume) 
+* [Microsoft guidance on accessible headings.](https://support.microsoft.com/en-us/office/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d#bkmk_builtinheadings_win) 
 
 2. Make sure that text can be selected, copied and pasted into another location; for example, do not embed or design text in an image (see point 5).
 3. Write meaningful link text (text that links to a web address) that describes its destination. It needs to make sense when it is read out of context. 
@@ -69,9 +71,9 @@ isGuide: true
 * Always left-align body text (to help dyslexic readers). 
 * Use bold sparingly as it slows down reading and can look 'shouty'. 
 
-9. Use these [plain English techniques](https://deploy-preview-200--inquisitive-heliotrope-510c6d.netlify.app/guides/plain-english-tip-sheet/) to help you edit your draft texts and documents. Editing your text into plain English will make it clearer and more concise; this helps everyone quickly understand your message and is especially helpful to assistive technology users and those with dyslexia. 
+9. Use these [Plain English techniques](https://deploy-preview-200--inquisitive-heliotrope-510c6d.netlify.app/guides/plain-english-tip-sheet/) to help you edit your draft texts and documents. Editing your text into plain English will make it clearer and more concise; this helps everyone quickly understand your message and is especially helpful to assistive technology users and those with dyslexia. 
 10. Check the accessibility of your work for example using the [Accessibility Checker in Microsoft Office.](https://support.microsoft.com/en-us/office/improve-accessibility-with-the-accessibility-checker-a16f6de0-2f39-4a2b-8bd8-5ad801426c7f?ui=en-us&rs=en-us&ad=us)
 
 ## Further information
 
-* [Microsoft guidance on accessible formats](https://support.microsoft.com/en-us/office/create-accessible-office-documents-868ecfcd-4f00-4224-b881-a65537a7c155)
+* [Microsoft Office's Accessibility Centre.](https://support.office.com/en-us/article/Office-Accessibility-Center-Resources-for-people-with-disabilities-ecab0fcf-d143-4fe8-a2ff-6cd596bddc6d)
