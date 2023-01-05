@@ -15,13 +15,13 @@ isGuide: true
 
 1. Use proper heading styles:
 
-* Use the built-in heading features of the authoring tool.  
-* Headings should form an outline of the page content.  
-* Heading 1 for main heading 
+* * Use the built-in heading features of the authoring tool.  
+  * Headings should form an outline of the page content.  
+  * Heading 1 for main heading 
 
-  * Heading 2 for first level of sub-headings 
+    * Heading 2 for first level of sub-headings 
 
-    * Heading 3 for next level of sub-headings, etc.  
+      * Heading 3 for next level of sub-headings, etc.  
 * Don’t simply edit the appearance of text to make it stand out as a heading (i.e., increase font size and underline). [](https://support.microsoft.com/en-us/office/make-your-word-docume)
 * The heading tools create structures that allows screen reader software to identify different sections. This enables screen reader users to understand how the page is organised, and to quickly navigate to content of interest. 
 * [Use Microsoft guidance to help you build heading features.](https://support.microsoft.com/en-us/office/make-your-word-docume) 
