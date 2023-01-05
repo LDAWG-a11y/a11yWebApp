@@ -27,7 +27,7 @@ isGuide: true
 * The heading tools create structures that allows screen reader software to identify different sections. This enables screen reader users to understand how the page is organised, and to quickly navigate to content of interest. 
 * [Microsoft guidance on accessible headings.](https://support.microsoft.com/en-us/office/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d#bkmk_builtinheadings_win) 
 
-2. Make sure that text can be selected, copied and pasted into another location; for example, do not embed or design text in an image (see point 5).
+2. Make sure that text can be selected, copied and pasted into another location; for example, do not embed or design text in an image.
 3. Write meaningful link text (text that links to a web address) that describes its destination. It needs to make sense when it is read out of context. 
 
 * Don't write: "[Click here](https://www.makethingsaccessible.com/)  to visit the Make Things Accessible website[](https://www.makethingsaccessible.com/)"  
