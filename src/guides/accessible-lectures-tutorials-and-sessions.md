@@ -59,7 +59,7 @@ Participants who require captioning may wish to use an app on their smartphone o
 * Web Captioner is a speech to text transcription appears in seconds on your phone or web browser and its free.
 * Dictation.io is a free website that allows speech to text without downloading or installing it. All you need is the internet connection to use it and Google servers in real time.
 
-Further information
+## Further information
 
 * AbilityNet has published guidance on [how to host an accessible online meeting.](%22https:/)
 * Zoom have put together a factsheet of [tips and tricks for teachers educating on Zoom](https://zoom.us/docs/doc/Tips).
