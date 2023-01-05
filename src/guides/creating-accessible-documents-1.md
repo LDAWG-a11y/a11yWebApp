@@ -46,16 +46,16 @@ isGuide: true
   * Select an image, select **Format** > **Alt Text**.
   * Select the **Mark as decorative** checkbox. The text entry field becomes grayed out.
 * Most social media platforms have an accessibility option with alt text for posts, but they have varying character limits. You can also describe the image in the post or as a caption. 
+* [Microsoft guidance on alternative text.](https://support.microsoft.com/en-us/office/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d#bkmk_altvisuals_win)
 
-6. Table structure matters. Don't use tables simply for layout; only use a table to display data. 
+6. Use bulleted lists instead of tables where you can. 
 
-* If your data is best presented in a table, try to keep the table simple.  
+* If your data is best presented in a table, try to keep the table simple.  Table structure matters. Don't use tables simply for layout; only use a table to display data. 
 * If the table is complex, consider whether you could use lists or divide it into multiple smaller tables with a heading above each. 
-* A key to making data tables accessible to screen reader users is to clearly identify headers. (From the Table Design menu select Header row).
-* Use bulleted lists instead of tables where you can.  
+* A key to making data tables accessible to screen reader users is to [clearly identify headers](https://support.microsoft.com/en-us/office/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d#bkmk_tableheaders_win). 
 * For screen reader users, it is also useful to add a short descriptive caption for each table under Table Properties > Alt Text. 
 * Keep the structure simple: don't split cells, merge cells, or use nested tables. 
-* [Use Microsoft’s guidance on creating tables in documents](https://support.microsoft.com/en-us/office/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d#bkmk_winbuiltinheadings).  
+* [Microsoft guidance on creating tables in documents](https://support.microsoft.com/en-us/office/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d#bkmk_winbuiltinheadings).  
 
 7. Don't use colour alone to convey meaning (many people are colour blind). If using text on a coloured background or image background, you need to check its colour contrast. There are online tools available to help you check colour contrasts.
 
@@ -69,5 +69,5 @@ isGuide: true
 * Always left-align body text (to help dyslexic readers). 
 * Use bold sparingly as it slows down reading and can look 'shouty'. 
 
-9. Use these [plain English techniques](https://www.kent.ac.uk/guides/plain-english) to help you edit your draft texts and documents. Editing your text into plain English will make it clearer and more concise; this helps everyone quickly understand your message and is especially helpful to assistive technology users and those with dyslexia. 
+9. Use these [plain English techniques](https://deploy-preview-200--inquisitive-heliotrope-510c6d.netlify.app/guides/plain-english-tip-sheet/) to help you edit your draft texts and documents. Editing your text into plain English will make it clearer and more concise; this helps everyone quickly understand your message and is especially helpful to assistive technology users and those with dyslexia. 
 10. Check the accessibility of your work for example using the [Accessibility Checker in Microsoft Office.](https://support.microsoft.com/en-us/office/improve-accessibility-with-the-accessibility-checker-a16f6de0-2f39-4a2b-8bd8-5ad801426c7f?ui=en-us&rs=en-us&ad=us)
