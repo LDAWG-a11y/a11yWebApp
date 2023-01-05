@@ -39,8 +39,6 @@ Captions are particularly helpful for participants with a hearing impairment or 
 
 Zoom and Microsoft Teams meetings offer automatic live captioning. In Teams, this needs to be turned on by and for individual participants, so advise participants of this at the start of the session. In Zoom it is controlled by the host or co-host but individual participants can choose to show or hide them once they are activated. It is good practice to enable closed captions and show participants how to hide them if necessary. 
 
-How to turn on captions as the meeting setter
-
 #### Zoom
 
 Sign in to Zoom, click Settings, scroll down to In Meeting (Advanced), and enable the Close captioning setting. Tick the box beside Allow live transcription service to transcribe meeting automatically and Allow viewing of full transcript in the in-meeting side panel.
