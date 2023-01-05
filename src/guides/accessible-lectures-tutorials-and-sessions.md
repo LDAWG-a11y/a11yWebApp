@@ -16,7 +16,8 @@ isGuide: true
 
 ### Before the session or event
 
-If you don't already know the needs of your participants, find out if they have any special requirements in advance of the session. Any student with an Inclusive Learning Plan should have support in place or you will have been told what additional measures are needed. 
+* If you don't already know the needs of your participants, find out if they have any special requirements in advance of the session. 
+* Share the slides and session materials in advance and [make sure they are accessible](https://support.microsoft.com/en-us/office/make-your-powerpoint-presentations-accessible-to-people-with-disabilities-6f7772b2-2f33-4bd2-8ca7-dae3b2b3ef25).
 
 ### Managing the session or event
 
@@ -39,19 +40,29 @@ Captions are particularly helpful for participants with a hearing impairment or 
 
 Zoom and Microsoft Teams meetings offer automatic live captioning. In Teams, this needs to be turned on by and for individual participants, so advise participants of this at the start of the session. In Zoom it is controlled by the host or co-host but individual participants can choose to show or hide them once they are activated. It is good practice to enable closed captions and show participants how to hide them if necessary. 
 
-How to turn on captions as the meeting setter
+## How to turn on captions as the meeting host
 
-#### Zoom
+### Zoom
 
 Sign in to Zoom, click Settings, scroll down to In Meeting (Advanced), and enable the Close captioning setting. Tick the box beside Allow live transcription service to transcribe meeting automatically and Allow viewing of full transcript in the in-meeting side panel.
 
-#### Teams
+* [Closed captioning and live transcription in Zoom](https://support.zoom.us/hc/en-us/articles/207279736-Closed-Captioning).
+* Zoom have put together a factsheet of [tips and tricks for teachers educating on Zoom](https://zoom.us/docs/doc/Tips).
+* Zoom offers guidance on [accessibility features in Zoom](https://zoom.us/accessibility) including keyboard shortcuts and screen reader support.
 
-To use live captions in a meeting, go to your meeting controls and select More options, and click Turn on live captions.
+### Teams
 
-#### PowerPoint
+To use live captions in a meeting, go to your meeting controls and select More options; click Turn on live captions.
 
-To have subtitles always start up when a Slide Show presentation starts, from the ribbon you can navigate to Slide Show > Always Use Subtitles to turn this feature on for all presentations.
+* [Using closed captions in a Teams meeting](https://support.microsoft.com/en-us/office/use-live-captions-in-a-teams-meeting-4be2d304-f675-4b57-8347-cbd000a21260).
+
+### PowerPoint
+
+To have subtitles for a Slide Show presentation, from the top menu select Slide Show > Always Use Subtitles to turn this feature on for all presentations.
+
+* [Real-time, automatic captions or subtitles in PowerPoint](https://support.microsoft.com/en-us/office/present-with-real-time-automatic-captions-or-subtitles-in-powerpoint-68d20e49-aec3-456a-939d-34a79e8ddd5f).
+
+### Other captioning options
 
 Participants who require captioning may wish to use an app on their smartphone or tablet to provide speech to text functionality. Below are some suggested apps that can be used:
 
@@ -62,10 +73,6 @@ Participants who require captioning may wish to use an app on their smartphone o
 ## Further information
 
 * AbilityNet has published guidance on [how to host an accessible online meeting.](%22https:/)
-* Zoom have put together a factsheet of [tips and tricks for teachers educating on Zoom](https://zoom.us/docs/doc/Tips).
-* Zoom offers guidance on [accessibility features in Zoom](https://zoom.us/accessibility) including keyboard shortcuts and screen reader support.
-* Full details on[ closed captioning and live transcription in Zoom](https://support.zoom.us/hc/en-us/articles/207279736-Closed-Captioning).
-* Microsoft offers guidance on [using closed captions in a Teams meeting](https://support.microsoft.com/en-us/office/use-live-captions-in-a-teams-meeting-4be2d304-f675-4b57-8347-cbd000a21260).
 
 ## In person sessions and events 
 
