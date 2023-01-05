@@ -47,8 +47,6 @@ Zoom and Microsoft Teams meetings offer automatic live captioning. In Teams, thi
 Sign in to Zoom, click Settings, scroll down to In Meeting (Advanced), and enable the Close captioning setting. Tick the box beside Allow live transcription service to transcribe meeting automatically and Allow viewing of full transcript in the in-meeting side panel.
 
 * [Closed captioning and live transcription in Zoom](https://support.zoom.us/hc/en-us/articles/207279736-Closed-Captioning).
-* Zoom have put together a factsheet of [tips and tricks for teachers educating on Zoom](https://zoom.us/docs/doc/Tips).
-* Zoom offers guidance on [accessibility features in Zoom](https://zoom.us/accessibility) including keyboard shortcuts and screen reader support.
 
 ### Teams
 
