@@ -59,10 +59,10 @@ isGuide: true
 * Keep the structure simple: don't split cells, merge cells, or use nested tables. 
 * [Microsoft guidance on creating tables in documents](https://support.microsoft.com/en-us/office/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d#bkmk_winbuiltinheadings).  
 
-7. Don't use colour alone to convey meaning (many people are colour blind). If using text on a coloured background or image background, you need to check its colour contrast. There are online tools available to help you check colour contrasts.
+7. Don't use colour alone to convey meaning (many people are colour blind). If using text on a coloured background or image background, you need to check its colour contrast. There are online tools available to help you check colour contrast:
 
-* [Check colour contrast for text over a background image](https://www.brandwood.com/a11y/) 
-* [WebAIM contrast checker](http://webaim.org/resources/contrast) 
+* [Accessibility Checker in Microsoft Office](https://support.microsoft.com/en-us/office/improve-accessibility-with-the-accessibility-checker-a16f6de0-2f39-4a2b-8bd8-5ad801426c7f?ui=en-us&rs=en-us&ad=us)[](https://www.tpgi.com/color-contrast-checker/)
+* [TPGI's colour contrast anaylser](https://www.tpgi.com/color-contrast-checker/)
 
 8. Fonts and styles can make a big difference to how accessible your information is. 
 
