@@ -19,9 +19,9 @@ isGuide: true
 
 Firstly, starting at the top of the page, looking at the title of the tab, does this makes sense and is it easy to distinguish from other open tabs? Is the page title in use the same as the page you are on and does it reflect the organisation responsible? **(Page titled).** Using just the tab key can you move through the page and interact with every element that you could click on with a mouse or pointer for example links, buttons and menus? **(Keyboard).** When tabbing through are there any options to skip to content so you do not have to tab lots of times to get to the page main section **(Bypass Blocks).** When using the tab button does it move down the page in a logical order - typically top to bottom and left to right or does the page move somewhere other than expected **(Meaningful Sequence, Focus Order).** Can you clearly see where you are tabbing (through a border around each selected element) **(Focus Visible)**? Does the page wrap when you have got to the bottom (automatically return to the first interactive element)? Did you get stuck anywhere e.g. embedded Twitter feeds **(No Keyboard Trap).** 
 
-Next check how the page works when you zoom in, set the zoom to 300+% \[I check to 400%] and make sure you can still tab around and use all the options as you would expect. **(Reflow).**
+Next check how the page works when you zoom in, set the zoom to 400+% (COMMAND and + (Mac), and CTRL and + (Windows)) and make sure you can still tab around and use all the options as you would expect and that everything still fits on the screen without the need for left to right scrolling **(Reflow).**
 
-As you are moving around the page, please make sure that you look at any buttons or links.. are these classed as such, so they have the correct label **(Name, Role, Value)**  
+As you are moving around the page, please make sure that you look at any buttons or links and that they are correctly described and have an appropriate role, so buttons are actually classed as buttons and links are classed as links). To check this press (COMMAND and Option and C (Mac) and CTRL and SHIFT and C (Windows) are these classed as such and they have the correct role **(Name, Role, Value)** and description **(Labels or Instructions):**
 
 ![Inspect an Element ](src/guideImg/inspect-an-element-tool.jpg)
 
