@@ -12,7 +12,14 @@ isGuide: true
 
 1. Identify a journey through representative sample of content e.g. Home page menus, sample page with form, sample page with video  
 2. Go to the first page in your test 
-3. Run the Microsoft Accessibility Insights tool (link) 
+3. Run the Microsoft Accessibility Insights tool 
+
+   * This will check:
+
+     * Language of page*
+     * Presence of alt text
+     * Colour contrast etc etc\
+       Next to check would be the Language of the page the HTML is written for **(page Language)**, Check that all visual elements (e.g. pictures, charts and images etc) have meaningful text alternatives for non-visual users **(non-text content) \*\*\*\*** ou can do this by using the inbuilt accessibility Insights checker [Both Edge and Chrome extensions available). The checker will either explain how you can find the information or check for it within the extension for you. 
 4. Record the results on the Accessibility Audit Template (link) which includes sample entries to show you what is required e.g. screenshot, WCAG number and how to fix. 
 
 ## Script for testing. 
@@ -29,13 +36,13 @@ Does the page have any input fields on it? Can you use these correctly and do th
 
 Next there are a few single options to check for.   
 
-Firstly, look at the links on the page to make sure you understand what would happen if you clicked on the link. Does the link make sense on its own? The purpose of a link must be determined from the text of the link itself or the context surrounding this link. **(Link Purpose)**  
+Firstly, look at the links on the page to make sure you understand what would happen if you clicked on the link (e.g. is the destination clear?). Does the link make sense on its own? The purpose of a link must be determined from the text of the link itself or the context surrounding this link **(Link Purpose).**
 
-Next to check would be the Language of the page the HTML is written for **(page Language)**, Check all pictures charts images etc have text alternatives for non-visual users **(non-text content)** and **(contrast Minimum)** Contrast of colour on the page, you can do this by using the inbuilt accessibility Insights checker [Both Edge and Chrome extensions available). The checker will either explain how you can find the information or check for it within the extension for you. 
+Lastly, if there is any media content on the page make sure there are captions **(Captions)** for any video and that any captioned text displays in time with the video. If audio only, then a transcript of that text is available to download **(Audio only and video only).** If there are parts of the video only visually convey meaning, then Audio description would need to be added for non-visual users along with any transcript download **(Audio Descriptions and media alternatives)**.  
 
-Lastly, if there is any media content on the page, please make sure there are captions **(Captions)** for any video and that any captioned text displays in time with the video. If audio only, then a transcript of that text is available to download **(Audio only and video only)** If there are parts of the video that are visual but explain things, then Audio description would need to be added for non-visual users along with any transcript download **(Audio Descriptions and media alternatives)**.  
+Below are the minimum WCAG points that we believe should be checked on a first sweep by users that have not done much testing before:
 
-Below are the minimum WCAG points that we believe should be checked on a first sweep by users that have not done much testing before.
+### Add WCAG of the Day type descriptions to each of the below:
 
 ### Perceivable  
 
