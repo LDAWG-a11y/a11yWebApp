@@ -21,9 +21,9 @@ Firstly, starting at the top of the page, looking at the title of the tab, does 
 
 Next check how the page works when you zoom in, set the zoom to 400+% (COMMAND and + (Mac), and CTRL and + (Windows)) and make sure you can still tab around and use all the options as you would expect and that everything still fits on the screen without the need for left to right scrolling **(Reflow).**
 
-As you are moving around the page, please make sure that you look at any buttons or links and that they are correctly described and have an appropriate role, so buttons are actually classed as buttons and links are classed as links). To check this press (COMMAND and Option and C (Mac) and CTRL and SHIFT and C (Windows) are these classed as such and they have the correct role **(Name, Role, Value)** and description **(Labels or Instructions):**
+As you are moving around the page, please make sure that you look at any buttons or links and that they are correctly described and have an appropriate role, so buttons are actually classed as buttons and links are classed as links **(Name, Role, Value)** and have appropriate descriptions (**Label in name)** - see image below of inspect element result for a button**.**To check this press (COMMAND and Option and C (Mac) and CTRL and SHIFT and C (Windows)**:**
 
-![Inspect an Element ](src/guideImg/inspect-an-element-tool.jpg)
+![Inspect an Element ](src/guideImg/microsoftteams-image-2-.png)
 
 Does the page have any input fields on it? Can you use then correctly, do they make sense when using a screen reader? **(Labels or Instructions)** When you move through these fields, enter in incorrect text so the element errors, does your focus move to the error when using a screen reader? **(Error Identification)**, if entering the text in to say a query box, or dropdown combo box and it does not error, does the change of information load any new page or does the page allow that option to sit there so you can tab to the next field **(On Input)** – when you are moving through these elements, or buttons do they have meaningful description information via a screen reader or other reader **(Label in Name)**  
 
