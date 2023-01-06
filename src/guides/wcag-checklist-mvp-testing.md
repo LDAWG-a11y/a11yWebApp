@@ -1,67 +1,42 @@
 ---
 title: WCAG Checklist - MVP Testing
-summary: This guide walks you through WCAG testing to a Minimum standard.
+summary: This guide walks you through WCAG testing to a Minimum standard for
+  users that have not completed much testing before.
 author: mpateman
 date: 2023-01-06
 toc: false
 isGuide: true
 ---
-<!--StartFragment-->
-
-Web Content Accessibility Guidelines (WCAG) MPBW MVP 
-
- 
+## Web Content Accessibility Guidelines (WCAG) MPBW MVP 
 
 1. Identify a journey through representative sample of content e.g. Home page menus, sample page with form, sample page with video  
 2. Go to the first page in your test 
 3. Run the Microsoft Accessibility Insights tool (link) 
-4.  
-5. Record the results on the Accessibility Audit Template (link) which includes sample entries to show you what is required e.g. screenshot, WCAG number and how to fix. 
-6.  
+4. Record the results on the Accessibility Audit Template (link) which includes sample entries to show you what is required e.g. screenshot, WCAG number and how to fix. 
 
- 
+## Script for testing. 
 
-Script for testing. 
+Firstly, starting at the top of the page, looking at the title of the tab, does this makes sense? Is the page title in use the same as the page you are on? **(Page titled)** use the tab key to move through the page. Can you see **(Focus Visible)** where you are tabbing to or does the page move somewhere other than expected **(On Focus)** Can you get to each link or element with no issues, does the page wrap when you have got to the bottom? **(Focus Order, Keyboard, and No Keyboard Trap)** When tabbing through are there any options to skip to content so you do not have to tab lots of times to get to the page main section **(Bypass Blocks)** When using the tab button does it move down the page in a logical order? **(Meaningful Sequence, Info and Relationships)**  
 
-Firstly, starting at the top of the page, looking at the title of the tab, does this makes sense? Is the page title in use the same as the page you are on? (Page titled) use the tab key to move through the page. Can you see (Focus Visible) where you are tabbing to or does the page move somewhere other than expected (On Focus) Can you get to each link or element with no issues, does the page wrap when you have got to the bottom? (Focus Order, Keyboard, and No Keyboard Trap) When tabbing through are there any options to skip to content so you do not have to tab lots of times to get to the page main section (Bypass Blocks) When using the tab button does it move down the page in a logical order? (Meaningful Sequence, Info and Relationships)  
+Next check how the page works when you zoom in, set the zoom to 300+% \[I check to 400%] and make sure you can still tab around and use all the options as you would expect. **(Reflow)**  
 
- 
+As you are moving around the page, please make sure that you look at any buttons or links.. are these classed as such, so they have the correct label **(Name, Role, Value)**  
 
-Next check how the page works when you zoom in, set the zoom to 300+% \[I check to 400%] and make sure you can still tab around and use all the options as you would expect. (Reflow)  
+Does the page have any input fields on it? Can you use then correctly, do they make sense when using a screen reader? **(Labels or Instructions)** When you move through these fields, enter in incorrect text so the element errors, does your focus move to the error when using a screen reader? **(Error Identification)**, if entering the text in to say a query box, or dropdown combo box and it does not error, does the change of information load any new page or does the page allow that option to sit there so you can tab to the next field **(On Input)** – when you are moving through these elements, or buttons do they have meaningful description information via a screen reader or other reader **(Label in Name)**  
 
- 
-
-As you are moving around the page, please make sure that you look at any buttons or links.. are these classed as such, so they have the correct label (Name, Role, Value)  
-
- 
-
-Does the page have any input fields on it? Can you use then correctly, do they make sense when using a screen reader? (Labels or Instructions) When you move through these fields, enter in incorrect text so the element errors, does your focus move to the error when using a screen reader? (Error Identification), if entering the text in to say a query box, or dropdown combo box and it does not error, does the change of information load any new page or does the page allow that option to sit there so you can tab to the next field (On Input) – when you are moving through these elements, or buttons do they have meaningful description information via a screen reader or other reader (Label in Name)  
-
- 
-
-Check that all heading and Labels, so all titles (different levels) and labels (fields on any forms) must clearly describe the purpose of the contents or groupings on the screen elements without any ambiguity in their understanding. (Heading and Labels) 
-
- 
+Check that all heading and Labels, so all titles **(different levels)** and labels **(fields on any forms)** must clearly describe the purpose of the contents or groupings on the screen elements without any ambiguity in their understanding. **(Heading and Labels)** 
 
 Next there are a few single options to check for.   
 
-Firstly, look at the links on the page to make sure you understand what would happen if you clicked on the link. Does the link make sense on its own? The purpose of a link must be determined from the text of the link itself or the context surrounding this link. (Link Purpose)  
+Firstly, look at the links on the page to make sure you understand what would happen if you clicked on the link. Does the link make sense on its own? The purpose of a link must be determined from the text of the link itself or the context surrounding this link. **(Link Purpose)**  
 
- 
+Next to check would be the Language of the page the HTML is written for **(page Language)**, Check all pictures charts images etc have text alternatives for non-visual users **(non-text content)** and **(contrast Minimum)** Contrast of colour on the page, you can do this by using the inbuilt accessibility Insights checker [Both Edge and Chrome extensions available). The checker will either explain how you can find the information or check for it within the extension for you. 
 
-Next to check would be the Language of the page the HTML is written for (page Language), Check all pictures charts images etc have text alternatives for non-visual users (non-text content) and (contrast Minimum) Contrast of colour on the page, you can do this by using the inbuilt accessibility Insights checker [Both Edge and Chrome extensions available). The checker will either explain how you can find the information or check for it within the extension for you. 
+Lastly, if there is any media content on the page, please make sure there are captions **(Captions)** for any video and that any captioned text displays in time with the video. If audio only, then a transcript of that text is available to download **(Audio only and video only)** If there are parts of the video that are visual but explain things, then Audio description would need to be added for non-visual users along with any transcript download **(Audio Descriptions and media alternatives)**.  
 
- 
+Below are the minimum WCAG points that we believe should be checked on a first sweep by users that have not done much testing before.
 
-Lastly, if there is any media content on the page, please make sure there are captions (Captions) for any video and that any captioned text displays in time with the video. If audio only, then a transcript of that text is available to download (Audio only and video only) If there are parts of the video that are visual but explain things, then Audio description would need to be added for non-visual users along with any transcript download (Audio Descriptions and media alternatives).  
-
- 
-
- 
-
- 
-
-Perceivable  
+### Perceivable  
 
 1.1.1 Non text Content (A) - Accessibility Insights 
 
@@ -79,9 +54,7 @@ Perceivable  
 
 1.4.10 Reflow (AA) - Manual 
 
- 
-
-Operable 
+### Operable 
 
 2.1.1 Keyboard (A) - Accessibility Insights (tab stops check) 
 
@@ -101,9 +74,7 @@ Operable 
 
 2.5.3 Label in Name (A) - Manual (screen reader) 
 
- 
-
-Understandable 
+### Understandable 
 
 3.1.1 Language of Page (A) - Accessibility Insights  
 
@@ -115,10 +86,6 @@ Understandable 
 
 3.3.2 Labels or Instructions (A) - Manual (screen reader) 
 
- 
+### Robust 
 
-Robust 
-
-4.1.2 Name, Role, Value (A) - Accessibility Insights  
-
-<!--EndFragment-->
+4.1.2 Name, Role, Value (A) - Accessibility Insights
