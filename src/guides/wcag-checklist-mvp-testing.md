@@ -16,9 +16,9 @@ isGuide: true
 
 ## Script for testing. 
 
-Firstly, starting at the top of the page, looking at the title of the tab, does this makes sense? Is the page title in use the same as the page you are on? **(Page titled)** use the tab key to move through the page. Can you see **(Focus Visible)** where you are tabbing to or does the page move somewhere other than expected **(On Focus)** Can you get to each link or element with no issues, does the page wrap when you have got to the bottom? **(Focus Order, Keyboard, and No Keyboard Trap)** When tabbing through are there any options to skip to content so you do not have to tab lots of times to get to the page main section **(Bypass Blocks)** When using the tab button does it move down the page in a logical order? **(Meaningful Sequence, Info and Relationships)**  
+Firstly, starting at the top of the page, looking at the title of the tab, does this makes sense? Is the page title in use the same as the page you are on? **(Page titled)** use the tab key to move through the page. Can you see **(Focus Visible)** where you are tabbing to or does the page move somewhere other than expected **(On Focus)** Can you get to each link or element with no issues, does the page wrap when you have got to the bottom? **(Focus Order, Keyboard, and No Keyboard Trap)** When tabbing through are there any options to skip to content so you do not have to tab lots of times to get to the page main section **(Bypass Blocks)** When using the tab button does it move down the page in a logical order? **(Meaningful Sequence, Info and Relationships).**
 
-Next check how the page works when you zoom in, set the zoom to 300+% \[I check to 400%] and make sure you can still tab around and use all the options as you would expect. **(Reflow)**  
+Next check how the page works when you zoom in, set the zoom to 300+% \[I check to 400%] and make sure you can still tab around and use all the options as you would expect. **(Reflow).**
 
 As you are moving around the page, please make sure that you look at any buttons or links.. are these classed as such, so they have the correct label **(Name, Role, Value)**  
 
