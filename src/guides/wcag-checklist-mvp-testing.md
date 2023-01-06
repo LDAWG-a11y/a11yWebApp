@@ -1,7 +1,9 @@
 ---
-title: WCAG Checklist - MVP Testing
-summary: This guide walks you through WCAG testing to a Minimum standard for
-  users that have not completed much testing before.
+title: Web Content Accessibility Guidelines Checklist - Minimum Viable Product
+  (MVP) Testing
+summary: This guide walks you through a really basic set of test of some key
+  WCAG criteria for testing minimum viable products for users that have not
+  completed much testing before.
 author: mpateman
 date: 2023-01-06
 toc: false
@@ -9,18 +11,20 @@ isGuide: true
 ---
 ## Web Content Accessibility Guidelines (WCAG) MPBW MVP 
 
-1. Identify a journey through representative sample of content e.g. Home page menus, sample page with form, sample page with video  
+1. Identify a journey or journies through a representative sample of content e.g. Home page menus, sample page with form, sample page with video - what is the typical set of tasks that a user will be expected to perform to complete the key expected outcomes from interacting with the site or service?
 2. Go to the first page in your test 
-3. Run the Microsoft Accessibility Insights tool (link) 
-4. Record the results on the Accessibility Audit Template (link) which includes sample entries to show you what is required e.g. screenshot, WCAG number and how to fix. 
+3. Run the [Microsoft Accessibility Insights tool](https://accessibilityinsights.io/)
+4. Record the results on the **Accessibility Audit Template** which includes sample entries to show you what is required e.g. screenshot, WCAG number and how to fix. 
 
 ## Script for testing. 
 
-Firstly, starting at the top of the page, looking at the title of the tab, does this makes sense? Is the page title in use the same as the page you are on? **(Page titled)** use the tab key to move through the page. Can you see **(Focus Visible)** where you are tabbing to or does the page move somewhere other than expected **(On Focus)** Can you get to each link or element with no issues, does the page wrap when you have got to the bottom? **(Focus Order, Keyboard, and No Keyboard Trap)** When tabbing through are there any options to skip to content so you do not have to tab lots of times to get to the page main section **(Bypass Blocks)** When using the tab button does it move down the page in a logical order? **(Meaningful Sequence, Info and Relationships).**
+Firstly, starting at the top of the page, looking at the title of the tab, does this makes sense? Is the page title in use the same as the page you are on and is it clear that the what the page is about and for ideally this should include information about the page content and the organisation providing it? **(Page titled).**
 
-Next check how the page works when you zoom in, set the zoom to 300+% \[I check to 400%] and make sure you can still tab around and use all the options as you would expect. **(Reflow).**
+Using just the tab key to move through the page are there any options to skip to content so you do not have to tab lots of times to get to the page main section **(Bypass Blocks).** Can you interact fully with everything that you would be able to click on with a mouse or pointer e.g. buttons and menus and accordion content? Can you get to each link or element with no issues **(Keyboard)**. Can you clearly see where you are tabbing to **(Focus Visible)** and is this movement in a logical order (typically top to bottom and left to right) **(Meaningful Sequence).** Does the page move somewhere other than expected **(Focus Order)** or do you get stuck anywhere e.g. embedded Twitter feeds (**No Keyboard Trap)?** Does the page wrap (automatically move back to the start point) when you have got to the bottom? 
 
-As you are moving around the page, please make sure that you look at any buttons or links.. are these classed as such, so they have the correct label **(Name, Role, Value)**  
+Next check how the page works when you zoom in, set the zoom to 400+% and make sure you can still tab around and use all the options as you would expect and that everything still fits on the screen without introducing left to right scrolling **(Reflow).**
+
+As you are moving around the page, please make sure that you look at any buttons or links are these classed as such, so they have the correct label **(Name, Role, Value).** Open the Developer Tools window (CTRL+SHIFT+C, or COMMAND+SHIFT+C on a Mac) and hover over the element to check there the role of the element is correct e.g. button and if there is an accessible name/label also **(Label in Name).**
 
 Does the page have any input fields on it? Can you use then correctly, do they make sense when using a screen reader? **(Labels or Instructions)** When you move through these fields, enter in incorrect text so the element errors, does your focus move to the error when using a screen reader? **(Error Identification)**, if entering the text in to say a query box, or dropdown combo box and it does not error, does the change of information load any new page or does the page allow that option to sit there so you can tab to the next field **(On Input)** – when you are moving through these elements, or buttons do they have meaningful description information via a screen reader or other reader **(Label in Name)**  
 
@@ -39,6 +43,8 @@ Below are the minimum WCAG points that we believe should be checked on a first s
 ### Perceivable  
 
 1.1.1 Non text Content (A) - Accessibility Insights 
+
+
 
 1.2.1 Audio-only and video-only (A) - Manual 
 
