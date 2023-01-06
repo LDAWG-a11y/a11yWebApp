@@ -46,6 +46,8 @@ Below are the minimum WCAG points that we believe should be checked on a first s
 
 ### Add WCAG of the Day type descriptions to each of the below:
 
+**Add 2.2 e.g. Contact info**
+
 ### Perceivable  
 
 1.1.1 Non text Content (A) - Accessibility Insights 
