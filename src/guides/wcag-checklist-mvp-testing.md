@@ -1,7 +1,8 @@
 ---
 title: WCAG Checklist - MVP Testing
-summary: This guide walks you through WCAG testing to a Minimum standard for
-  users that have not completed much testing before.
+summary: This guide walks you through Web Content Accessibility Guidelines
+  (WCAG) testing to a Minimum standard for users that have not completed much
+  testing before.
 author: mpateman
 date: 2023-01-06
 toc: false
@@ -16,7 +17,7 @@ isGuide: true
 
 ## Script for testing. 
 
-Firstly, starting at the top of the page, looking at the title of the tab, does this makes sense? Is the page title in use the same as the page you are on? **(Page titled)** use the tab key to move through the page. Can you see **(Focus Visible)** where you are tabbing to or does the page move somewhere other than expected **(On Focus)** Can you get to each link or element with no issues, does the page wrap when you have got to the bottom? **(Focus Order, Keyboard, and No Keyboard Trap)** When tabbing through are there any options to skip to content so you do not have to tab lots of times to get to the page main section **(Bypass Blocks)** When using the tab button does it move down the page in a logical order? **(Meaningful Sequence, Info and Relationships).**
+Firstly, starting at the top of the page, looking at the title of the tab, does this makes sense and is it easy to distinguish from other open tabs? Is the page title in use the same as the page you are on and does it reflect the organisation responsible? **(Page titled).** Using just the tab key can you move through the page and interact with every element that you could click on with a mouse or pointer for example links, buttons and menus? **(Keyboard).** When tabbing through are there any options to skip to content so you do not have to tab lots of times to get to the page main section **(Bypass Blocks).** When using the tab button does it move down the page in a logical order - typically top to bottom and left to right or does the page move somewhere other than expected **(Meaningful Sequence, Focus Order).** Can you clearly see where you are tabbing (through a border around each selected element) **(Focus Visible)**? Does the page wrap when you have got to the bottom (automatically return to the first interactive element)? Did you get stuck anywhere e.g. embedded Twitter feeds **(No Keyboard Trap).** 
 
 Next check how the page works when you zoom in, set the zoom to 300+% \[I check to 400%] and make sure you can still tab around and use all the options as you would expect. **(Reflow).**
 
