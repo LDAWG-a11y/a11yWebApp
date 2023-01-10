@@ -50,17 +50,19 @@ Below are the minimum WCAG points that we believe should be checked on a first s
 
 ### Perceivable  
 
-1.1.1 Non text Content (A) - Accessibility Insights 
+##### 1.1.1 Non text Content (A) - Accessibility Insights 
 
-“Non-text content” means **anything on the site that isn't text**; generally images, videos, audio, charts, maps, and other content that requires interpretation but would not be read aloud by a screen reader looking for text.
+“Non-text content” means anything on the site that isn't text; generally images, videos, audio, charts, maps, and other content that requires interpretation but would not be read aloud by a screen reader looking for text.
 
-1.2.1 Audio-only and video-only (A) - Manual 
+##### 1.2.1 Audio-only and video-only (A) - Manual 
 
+When video content, with no audio, is presented to someone who is blind, they cannot see it. Likewise, when audio-only content is presented to someone who is deaf or has a severe hearing impairment, they cannot hear it. These people are excluded from this type of content within the site or application.
 
+##### 1.2.2 Captions (A) - Manual 
 
-1.2.2 Captions (A) - Manual 
+Captions are a text form of audio information in video and animations. This includes the words that are spoken, who is speaking when it is not evident, and important sounds like music, laughter, and noises. Captions must be synchronized with the visual content to contextualize them.
 
-1.2.3 Audio descriptions and media alternatives (A) - Manual 
+##### 1.2.3 Audio descriptions and media alternatives (A) - Manual 
 
 1.3.1 Info and Relationships (A) - Accessibility Insights, Manual/Headings Map Chrome plugin, Manual (screen reader), Manual (screen reader) 
 
