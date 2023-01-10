@@ -110,9 +110,13 @@ Page titles should be descriptive and should introduce the context of the webpag
 
 The navigation order of focusable elements MUST be logical and intuitive. Note 1: Focusable elements include links, form inputs and controls, buttons, and any element with a tabindex value of 0 or greater. Note 2: The default reading order is determined by the order of the focusable elements in the DOM.
 
-##### 2.4.4 Link Purpose (A) - Manual 
+##### 2.4.4 Link Purpose (A) - \[Manual Test]
 
-2.4.6 Headings and Labels (AA) - Manual/Headings Map Chrome plugin 
+The text in the link is intended to describe the purpose of the link. In cases where the link takes one to a document or a web application, the name of the document or web application would be sufficient to describe the purpose of the link
+
+##### 2.4.6 Headings and Labels (AA) - Manual/Headings Map Chrome plugin 
+
+Headers visually and structurally organize the webpage. Having a correct heading structure allows assistive technology users to navigate via headers and helps them go directly to the content that is most relevant to their search.
 
 2.4.7 Focus Visible (AA) - Manual 
 
