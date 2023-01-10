@@ -54,17 +54,21 @@ Below are the minimum WCAG points that we believe should be checked on a first s
 
 “Non-text content” means anything on the site that isn't text; generally images, videos, audio, charts, maps, and other content that requires interpretation but would not be read aloud by a screen reader looking for text.
 
-##### 1.2.1 Audio-only and video-only (A) - Manual 
+##### 1.2.1 Audio-only and video-only (A) - \[Manual Test]  
 
 When video content, with no audio, is presented to someone who is blind, they cannot see it. Likewise, when audio-only content is presented to someone who is deaf or has a severe hearing impairment, they cannot hear it. These people are excluded from this type of content within the site or application.
 
-##### 1.2.2 Captions (A) - Manual 
+##### 1.2.2 Captions (A) - \[Manual Test]
 
 Captions are a text form of audio information in video and animations. This includes the words that are spoken, who is speaking when it is not evident, and important sounds like music, laughter, and noises. Captions must be synchronized with the visual content to contextualize them.
 
-##### 1.2.3 Audio descriptions and media alternatives (A) - Manual 
+##### 1.2.3 Audio descriptions and media alternatives (A) - \[Manual Test]
 
-1.3.1 Info and Relationships (A) - Accessibility Insights, Manual/Headings Map Chrome plugin, Manual (screen reader), Manual (screen reader) 
+“Descriptive audio” means that your video has additional audio content that describes aspects of the video that are purely visual and not accessible to blind or visually-impaired people. Usually, there's a second audio track that contains the description
+
+##### 1.3.1 Info and Relationships (A) - Accessibility Insights, Manual/Headings Map Chrome plugin,  Manual Test with screen reader
+
+Understanding 1.3. 1 Info and Relationships. "Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text." This success criteria intends to communicate the relationship of elements on a page by more than just visual cues.
 
 1.3.2 Meaningful Sequence (A) - Accessibility Insights (tab stops check) 
 
