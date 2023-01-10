@@ -50,33 +50,33 @@ Below are the minimum WCAG points that we believe should be checked on a first s
 
 ### Perceivable  
 
-##### 1.1.1 Non text Content (A) - Accessibility Insights 
+#### 1.1.1 Non text Content (A) - Accessibility Insights 
 
 “Non-text content” means anything on the site that isn't text; generally images, videos, audio, charts, maps, and other content that requires interpretation but would not be read aloud by a screen reader looking for text.
 
-##### 1.2.1 Audio-only and video-only (A) - \[Manual Test]  
+#### 1.2.1 Audio-only and video-only (A) - \[Manual Test]  
 
 When video content, with no audio, is presented to someone who is blind, they cannot see it. Likewise, when audio-only content is presented to someone who is deaf or has a severe hearing impairment, they cannot hear it. These people are excluded from this type of content within the site or application.
 
-##### 1.2.2 Captions (A) - \[Manual Test]
+#### 1.2.2 Captions (A) - \[Manual Test]
 
 Captions are a text form of audio information in video and animations. This includes the words that are spoken, who is speaking when it is not evident, and important sounds like music, laughter, and noises. Captions must be synchronized with the visual content to contextualize them.
 
-##### 1.2.3 Audio descriptions and media alternatives (A) - \[Manual Test]
+#### 1.2.3 Audio descriptions and media alternatives (A) - \[Manual Test]
 
 “Descriptive audio” means that your video has additional audio content that describes aspects of the video that are purely visual and not accessible to blind or visually-impaired people. Usually, there's a second audio track that contains the description
 
-##### 1.3.1 Info and Relationships (A) - \[Use Accessibility Insights, Manual/Headings Map Chrome plugin,  Manual Test with screen reader]
+#### 1.3.1 Info and Relationships (A) - \[Use Accessibility Insights, Manual/Headings Map Chrome plugin,  Manual Test with screen reader]
 
 "Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text." This intends to communicate the relationship of elements on a page by more than just visual cues.
 
-##### 1.3.2 Meaningful Sequence (A) - Use Accessibility Insights (tab stops check)
+#### 1.3.2 Meaningful Sequence (A) - Use Accessibility Insights (tab stops check)
 
 A sequence is meaningful if the order of content in the sequence cannot be changed without affecting its meaning. For example, if a page contains two independent articles, the relative order of the articles may not affect their meaning, as long as they are not interleaved.
 
 Or you can create content that can be presented in different ways (for example simpler layout) without losing information or structure.
 
-##### 1.4.3 Contrast minimum (AA) - Use Accessibility Insights 
+#### 1.4.3 Contrast minimum (AA) - Use Accessibility Insights 
 
 The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, except for the following:
 
@@ -84,43 +84,47 @@ The visual presentation of text and images of text has a contrast ratio of at le
 
 In WCAG 2, contrast is a measure of the difference in perceived "luminance" or brightness between two colours (the phrase "colour contrast" is never used in WCAG). This brightness difference is expressed as a ratio ranging from 1:1 (e.g. white on white) to 21:1 (Black on White).
 
-##### 1.4.10 Reflow (AA) - \[Manual Test]
+#### 1.4.10 Reflow (AA) - \[Manual Test]
 
 In web design, supporting reflow refers to the process of fitting content to match the user's viewport. The viewport is the visible area of the page, which may change depending on the user's web browser, device, and zoom preferences.
 
 ### Operable 
 
-##### 2.1.1 Keyboard (A) - Use Accessibility Insights (tab stops check) 
+#### 2.1.1 Keyboard (A) - Use Accessibility Insights (tab stops check) 
 
 Make all functionality available for a keyboard.
 
-##### 2.1.2 No Keyboard Trap (A) - Use Accessibility Insights (tab stops check) 
+#### 2.1.2 No Keyboard Trap (A) - Use Accessibility Insights (tab stops check) 
 
 To ensure keyboard accessibility keyboard traps mustn't be present on a web page. Keyboard traps occur when a keyboard user cannot move focus away from an interactive element. Traps can occur in input boxes, drop-down menus, or even on hyperlinks. This forces the keyboard user to be stuck inside the input box or forces them to activate a hyperlink without having the option to go past the link.
 
-##### 2.4.1 Bypass Blocks (A) - \[Manual Test] 
+#### 2.4.1 Bypass Blocks (A) - \[Manual Test] 
 
 Bypass blocks are mechanisms that skip over repeated material on a webpage. They are important for users who navigate with a keyboard because they allow users to skip over repeated sections and go to the content they are looking for immediately.
 
-##### 2.4.2 Page Titled (A) - \[Manual  Test]
+#### 2.4.2 Page Titled (A) - \[Manual  Test]
 
 Page titles should be descriptive and should introduce the context of the webpage. A descriptive title allows all users to know the purpose of the webpage they are visiting.
 
-##### 2.4.3 Focus Order (A) - Use Accessibility Insights (tab stops check) 
+#### 2.4.3 Focus Order (A) - Use Accessibility Insights (tab stops check) 
 
 The navigation order of focusable elements MUST be logical and intuitive. Note 1: Focusable elements include links, form inputs and controls, buttons, and any element with a tabindex value of 0 or greater. Note 2: The default reading order is determined by the order of the focusable elements in the DOM.
 
-##### 2.4.4 Link Purpose (A) - \[Manual Test]
+#### 2.4.4 Link Purpose (A) - \[Manual Test]
 
 The text in the link is intended to describe the purpose of the link. In cases where the link takes one to a document or a web application, the name of the document or web application would be sufficient to describe the purpose of the link
 
-##### 2.4.6 Headings and Labels (AA) - Manual/Headings Map Chrome plugin 
+#### 2.4.6 Headings and Labels (AA) - Manual/Headings Map Chrome plugin 
 
 Headers visually and structurally organize the webpage. Having a correct heading structure allows assistive technology users to navigate via headers and helps them go directly to the content that is most relevant to their search.
 
-2.4.7 Focus Visible (AA) - Manual 
+#### 2.4.7 Focus Visible (AA) - Manual 
 
-2.5.3 Label in Name (A) - Manual (screen reader) 
+Keyboard focus will primarily allow sighted users to know which element from the webpage has focus. If keyboard focus is not present or is difficult to visually see, it becomes a barrier to a user and makes it difficult to access information through a keyboard.
+
+#### 2.5.3 Label in Name (A) - Manual (screen reader) 
+
+
 
 ### Understandable 
 
