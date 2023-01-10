@@ -68,13 +68,25 @@ Captions are a text form of audio information in video and animations. This incl
 
 ##### 1.3.1 Info and Relationships (A) - Accessibility Insights, Manual/Headings Map Chrome plugin,  Manual Test with screen reader
 
-Understanding 1.3. 1 Info and Relationships. "Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text." This success criteria intends to communicate the relationship of elements on a page by more than just visual cues.
+"Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text." This intends to communicate the relationship of elements on a page by more than just visual cues.
 
-1.3.2 Meaningful Sequence (A) - Accessibility Insights (tab stops check) 
+##### 1.3.2 Meaningful Sequence (A) - Accessibility Insights (tab stops check) 
 
-1.4.3 Contrast minimum (AA) - Accessibility Insights 
+A sequence is meaningful if the order of content in the sequence cannot be changed without affecting its meaning. For example, if a page contains two independent articles, the relative order of the articles may not affect their meaning, as long as they are not interleaved.
 
-1.4.10 Reflow (AA) - Manual 
+Or you can create content that can be presented in different ways (for example simpler layout) without losing information or structure.
+
+##### 1.4.3 Contrast minimum (AA) - Accessibility Insights 
+
+The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, except for the following:
+
+Large Text 3:1
+
+In WCAG 2, contrast is a measure of the difference in perceived "luminance" or brightness between two colours (the phrase "colour contrast" is never used in WCAG). This brightness difference is expressed as a ratio ranging from 1:1 (e.g. white on white) to 21:1 (Black on White).
+
+##### 1.4.10 Reflow (AA) - Manual 
+
+In web design, supporting reflow refers to the process of fitting content to match the user's viewport. The viewport is the visible area of the page, which may change depending on the user's web browser, device, and zoom preferences.
 
 ### Operable 
 
