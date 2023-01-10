@@ -44,7 +44,7 @@ Lastly, if there is any media content on the page make sure there are captions *
 
 Below are the minimum WCAG points that we believe should be checked on a first sweep by users that have not done much testing before:
 
-### Add WCAG of the Day type descriptions to each of the below:
+### \*\*\*\*Add WCAG of the Day type descriptions to each of the below:
 
 **Add 2.2 e.g. Contact info**
 
@@ -52,7 +52,11 @@ Below are the minimum WCAG points that we believe should be checked on a first s
 
 1.1.1 Non text Content (A) - Accessibility Insights 
 
+“Non-text content” means **anything on the site that isn't text**; generally images, videos, audio, charts, maps, and other content that requires interpretation but would not be read aloud by a screen reader looking for text.
+
 1.2.1 Audio-only and video-only (A) - Manual 
+
+
 
 1.2.2 Captions (A) - Manual 
 
