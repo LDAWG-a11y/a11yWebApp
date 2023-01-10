@@ -66,41 +66,51 @@ Captions are a text form of audio information in video and animations. This incl
 
 “Descriptive audio” means that your video has additional audio content that describes aspects of the video that are purely visual and not accessible to blind or visually-impaired people. Usually, there's a second audio track that contains the description
 
-##### 1.3.1 Info and Relationships (A) - Accessibility Insights, Manual/Headings Map Chrome plugin,  Manual Test with screen reader
+##### 1.3.1 Info and Relationships (A) - \[Use Accessibility Insights, Manual/Headings Map Chrome plugin,  Manual Test with screen reader]
 
 "Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text." This intends to communicate the relationship of elements on a page by more than just visual cues.
 
-##### 1.3.2 Meaningful Sequence (A) - Accessibility Insights (tab stops check) 
+##### 1.3.2 Meaningful Sequence (A) - Use Accessibility Insights (tab stops check)
 
 A sequence is meaningful if the order of content in the sequence cannot be changed without affecting its meaning. For example, if a page contains two independent articles, the relative order of the articles may not affect their meaning, as long as they are not interleaved.
 
 Or you can create content that can be presented in different ways (for example simpler layout) without losing information or structure.
 
-##### 1.4.3 Contrast minimum (AA) - Accessibility Insights 
+##### 1.4.3 Contrast minimum (AA) - Use Accessibility Insights 
 
 The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, except for the following:
 
-Large Text 3:1
+* Large Text 3:1
 
 In WCAG 2, contrast is a measure of the difference in perceived "luminance" or brightness between two colours (the phrase "colour contrast" is never used in WCAG). This brightness difference is expressed as a ratio ranging from 1:1 (e.g. white on white) to 21:1 (Black on White).
 
-##### 1.4.10 Reflow (AA) - Manual 
+##### 1.4.10 Reflow (AA) - \[Manual Test]
 
 In web design, supporting reflow refers to the process of fitting content to match the user's viewport. The viewport is the visible area of the page, which may change depending on the user's web browser, device, and zoom preferences.
 
 ### Operable 
 
-2.1.1 Keyboard (A) - Accessibility Insights (tab stops check) 
+##### 2.1.1 Keyboard (A) - Use Accessibility Insights (tab stops check) 
 
-2.1.2 No Keyboard Trap (A) - Accessibility Insights (tab stops check) 
+Make all functionality available for a keyboard.
 
-2.4.1 Bypass Blocks (A) - Manual 
+##### 2.1.2 No Keyboard Trap (A) - Use Accessibility Insights (tab stops check) 
 
-2.4.2 Page Titled (A) - Manual  
+To ensure keyboard accessibility keyboard traps mustn't be present on a web page. Keyboard traps occur when a keyboard user cannot move focus away from an interactive element. Traps can occur in input boxes, drop-down menus, or even on hyperlinks. This forces the keyboard user to be stuck inside the input box or forces them to activate a hyperlink without having the option to go past the link.
 
-2.4.3 Focus Order (A) - Accessibility Insights (tab stops check) 
+##### 2.4.1 Bypass Blocks (A) - \[Manual Test] 
 
-2.4.4 Link Purpose (A) - Manual 
+Bypass blocks are mechanisms that skip over repeated material on a webpage. They are important for users who navigate with a keyboard because they allow users to skip over repeated sections and go to the content they are looking for immediately.
+
+##### 2.4.2 Page Titled (A) - \[Manual  Test]
+
+Page titles should be descriptive and should introduce the context of the webpage. A descriptive title allows all users to know the purpose of the webpage they are visiting.
+
+##### 2.4.3 Focus Order (A) - Use Accessibility Insights (tab stops check) 
+
+The navigation order of focusable elements MUST be logical and intuitive. Note 1: Focusable elements include links, form inputs and controls, buttons, and any element with a tabindex value of 0 or greater. Note 2: The default reading order is determined by the order of the focusable elements in the DOM.
+
+##### 2.4.4 Link Purpose (A) - Manual 
 
 2.4.6 Headings and Labels (AA) - Manual/Headings Map Chrome plugin 
 
