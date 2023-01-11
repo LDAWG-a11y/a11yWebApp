@@ -140,9 +140,19 @@ This point is to ensure that functionality is predictable as visitors navigate t
 * new windows launched when a component receives focus;
 * focus is changed to another component when that component receives focus;
 
-3.2.2 On Input (A) - Manual (screen reader) 
+#### 3.2.2 On Input (A) - Manual (screen reader) 
 
-3.3.1 Error Identification (A) - Manual (screen reader) 
+Ensure no element changes on input.
+
+Here are some examples of the kinds of things to look out for:
+
+* Forms must not auto-submit when all fields are filled – this prevents your users from checking and editing what they have written.
+* Focus must not automatically jump to the next input field in a form once the current  field is complete.
+* Using a control (like selecting yes or no) must not automatically perform the action (for example, selecting to subscribe to a newsletter in a check box must not automatically subscribe your user, they should be able to click a submit button to confirm their decision).
+
+#### 3.3.1 Error Identification (A) - Manual (screen reader) 
+
+
 
 3.3.2 Labels or Instructions (A) - Manual (screen reader) 
 
