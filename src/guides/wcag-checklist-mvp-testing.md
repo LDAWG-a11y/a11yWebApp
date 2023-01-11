@@ -1,10 +1,10 @@
 ---
 title: WCAG Checklist - MVP Testing
 summary: This guide walks you through Web Content Accessibility Guidelines
-  (WCAG) testing to a minimum viable product (MVP standard for users that have
-  not completed much testing before. It covers what we feel are some of the most
-  impactful criteria to check under WCAG but is by no means an exhaustive audit
-  and must be followed up with in depth WCAG checking.
+  (WCAG) testing to a minimum viable product MVP standard for users that have
+  not completed much testing before. This guide covers what we feel are some of
+  the most impactful criteria to check under WCAG but is by no means an
+  exhaustive audit and must be followed up with in depth WCAG check.
 author: mpateman
 date: 2023-01-06
 toc: false
