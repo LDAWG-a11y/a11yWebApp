@@ -27,7 +27,7 @@ isGuide: true
 
      * Presence of alt text
      * Colour contrast etc etc\
-       Next to check would be the Language of the page the HTML is written for **(page Language)**, Check that all visual elements (e.g. pictures, charts and images etc) have meaningful text alternatives for non-visual users **(non-text content) \*\*\*\*** ou can do this by using the inbuilt accessibility Insights checker [Both Edge and Chrome extensions available). The checker will either explain how you can find the information or check for it within the extension for you. 
+       Next to check would be the Language of the page the HTML is written for **(page Language)**, Check that all visual elements (e.g. pictures, charts and images etc) have meaningful text alternatives for non-visual users **(non-text content) \*\*\*\*** you can do this by using the inbuilt accessibility Insights checker [Both Edge and Chrome extensions available). The checker will either explain how you can find the information or check for it within the extension for you. 
 4. Record the results on the Accessibility Audit Template (link) which includes sample entries to show you what is required e.g. screenshot, WCAG number and how to fix. 
 
 ## Script for testing. 
