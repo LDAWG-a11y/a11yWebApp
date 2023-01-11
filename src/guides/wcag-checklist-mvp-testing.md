@@ -122,15 +122,23 @@ Headers visually and structurally organize the webpage. Having a correct headin
 
 Keyboard focus will primarily allow sighted users to know which element from the webpage has focus. If keyboard focus is not present or is difficult to visually see, it becomes a barrier to a user and makes it difficult to access information through a keyboard.
 
-#### 2.5.3 Label in Name (A) - Manual (screen reader) 
+#### 2.5.3 Label in Name (A) - Manual test  with screen reader.
 
-
+The label identifies the control to all users. It is generally visible on screen text. Examples of labels are the label element on a form Field control or the text of a link. The label is often used as the name e.g. First Name, Surname etc.
 
 ### Understandable 
 
-3.1.1 Language of Page (A) - Accessibility Insights  
+#### 3.1.1 Language of Page (A) - Accessibility Insights  
 
-3.2.1 On Focus (A) - Manual (screen reader) 
+Specifying the main language of page content within the code enables browsers to present the font characters accurately and also supports assistive technologies that translate text to synthetic speech to use the correct pronunciation. This allows users of all abilities to better understand the material presented.
+
+#### 3.2.1 On Focus (A) - Manual (screen reader) 
+
+This point is to ensure that functionality is predictable as visitors navigate their way through a page. Any component that is able to trigger an event when it receives focus must not change the context. Examples of changing context when a component receives focus include, but are not limited to:
+
+* forms submitted automatically when a component receives focus;
+* new windows launched when a component receives focus;
+* focus is changed to another component when that component receives focus;
 
 3.2.2 On Input (A) - Manual (screen reader) 
 
