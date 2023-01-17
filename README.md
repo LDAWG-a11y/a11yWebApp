@@ -6,7 +6,7 @@ In order to contribute to our site, you would need to receive an invite, so you 
 - Your job title (Optional but strongly recommended you do provide it)
 - Your organisation (Optional but strongly recommended you do provide it)
 - A short bio, just tell us a bit about your experience and help users get to know you a little
-- A profile picture (ideally this will be square 192 * 192px)
+- A profile picture (optional and ideally this would be square 192 * 192px)
 - Optional contact methods are:
   - Your Twitter handle
   - Your LinkedIn
