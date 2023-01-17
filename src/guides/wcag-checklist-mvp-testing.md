@@ -14,22 +14,18 @@ isGuide: true
 
 1. Identify a journey through representative sample of content e.g. Home page menus, sample page with form, sample page with video.
 2. Go to the first page in your test.
-3. Run the [Microsoft Accessibility Insights](https://accessibilityinsights.io/) tool **\*\*\*\*** you can do this by using the inbuilt accessibility Insights checker [Both Edge and Chrome extensions available). The checker will either explain how you can find the information or check for it within the extension for you. 
+3. Run the [Microsoft Accessibility Insights](https://accessibilityinsights.io/) tool. Both Edge and Chrome extensions available. The checker will either explain how you can find the information or check for it within the extension for you. This will check:
 
-   :
+   * Language of page
 
-   * This will check:
-
-     * Language of page
-
-       Next to check would be the Language of the page the HTML is written for **(Language).** We can identify the primary language of the document in the opening html element. The two-letter code "en" specifies English as the primary language of the document. By pressing F12, this opens the developer tab, the first line should contain the following information **< html lang="en">**
-     * Presence of alt text\
-       \
-       Check that all visual elements (e.g. pictures, charts and images etc) have meaningful text alternatives for non-visual users **(Non-text content)**
-     * Colour contrast
+     Next to check would be the Language of the page the HTML is written for **(Language).** We can identify the primary language of the document in the opening html element. The two-letter code "en" specifies English as the primary language of the document. By pressing F12, this opens the developer tab, the first line should contain the following information **< html lang="en">**
+   * Presence of alt text\
+     \
+     Check that all visual elements (e.g. pictures, charts and images etc) have meaningful text alternatives for non-visual users **(Non-text content)**
+   * Colour contrast
 4. Record the results on the **Accessibility Audit Template (link)** which includes sample entries to show you what is required e.g. screenshot, WCAG number and how to fix. 
 
-## Script for testing. 
+## Script for manual testing. 
 
 Firstly, starting at the top of the page, looking at the title of the tab, does this makes sense and is it easy to distinguish from other open tabs? Is the page title in use the same as the page you are on and does it reflect the organisation responsible? **(Page titled).** Using just the tab key can you move through the page and interact with every element that you could click on with a mouse or pointer for example links, buttons and menus? **(Keyboard).** When tabbing through are there any options to skip to content so you do not have to tab lots of times to get to the page main section **(Bypass Blocks).** When using the tab button does it move down the page in a logical order - typically top to bottom and left to right or does the page move somewhere other than expected **(Meaningful Sequence, Focus Order).** Can you clearly see where you are tabbing (through a border around each selected element) **(Focus Visible)**? Does the page wrap when you have got to the bottom (automatically return to the first interactive element)? Did you get stuck anywhere e.g. embedded Twitter feeds **(No Keyboard Trap).** 
 
