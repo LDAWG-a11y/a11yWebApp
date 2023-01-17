@@ -22,9 +22,7 @@ isGuide: true
 
        We can identify the primary language of the document in the opening html element. The two-letter code "en" specifies English as the primary language of the document. By pressing F12, this opens the developer tab, the first line should contain the following information. 
 
-       **<html lang="en">**
-
-
+        ** < html lang="en">**
      * Presence of alt text
      * Colour contrast etc etc\
        Next to check would be the Language of the page the HTML is written for **(page Language)**, Check that all visual elements (e.g. pictures, charts and images etc) have meaningful text alternatives for non-visual users **(non-text content) \*\*\*\*** you can do this by using the inbuilt accessibility Insights checker [Both Edge and Chrome extensions available). The checker will either explain how you can find the information or check for it within the extension for you. 
