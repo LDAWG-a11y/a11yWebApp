@@ -12,21 +12,22 @@ isGuide: true
 ---
 ## Web Content Accessibility Guidelines (WCAG) MPBW MVP 
 
-1. Identify a journey through representative sample of content e.g. Home page menus, sample page with form, sample page with video  
-2. Go to the first page in your test 
-3. Run the Microsoft Accessibility Insights tool 
+1. Identify a journey through representative sample of content e.g. Home page menus, sample page with form, sample page with video.
+2. Go to the first page in your test.
+3. Run the [Microsoft Accessibility Insights](https://accessibilityinsights.io/) tool **\*\*\*\*** you can do this by using the inbuilt accessibility Insights checker [Both Edge and Chrome extensions available). The checker will either explain how you can find the information or check for it within the extension for you. 
+
+   :
 
    * This will check:
 
      * Language of page
 
-       We can identify the primary language of the document in the opening html element. The two-letter code "en" specifies English as the primary language of the document. By pressing F12, this opens the developer tab, the first line should contain the following information. 
-
-       **< html lang="en">**
-     * Presence of alt text
-     * Colour contrast etc etc\
-       Next to check would be the Language of the page the HTML is written for **(page Language)**, Check that all visual elements (e.g. pictures, charts and images etc) have meaningful text alternatives for non-visual users **(non-text content) \*\*\*\*** you can do this by using the inbuilt accessibility Insights checker [Both Edge and Chrome extensions available). The checker will either explain how you can find the information or check for it within the extension for you. 
-4. Record the results on the Accessibility Audit Template (link) which includes sample entries to show you what is required e.g. screenshot, WCAG number and how to fix. 
+       Next to check would be the Language of the page the HTML is written for **(Language).** We can identify the primary language of the document in the opening html element. The two-letter code "en" specifies English as the primary language of the document. By pressing F12, this opens the developer tab, the first line should contain the following information **< html lang="en">**
+     * Presence of alt text\
+       \
+       Check that all visual elements (e.g. pictures, charts and images etc) have meaningful text alternatives for non-visual users **(Non-text content)**
+     * Colour contrast
+4. Record the results on the **Accessibility Audit Template (link)** which includes sample entries to show you what is required e.g. screenshot, WCAG number and how to fix. 
 
 ## Script for testing. 
 
@@ -47,10 +48,6 @@ Firstly, look at the links on the page to make sure you understand what would ha
 Lastly, if there is any media content on the page make sure there are captions **(Captions)** for any video and that any captioned text displays in time with the video. If audio only, then a transcript of that text is available to download **(Audio only and video only).** If there are parts of the video only visually convey meaning, then Audio description would need to be added for non-visual users along with any transcript download **(Audio Descriptions and media alternatives)**.  
 
 Below are the minimum WCAG points that we believe should be checked on a first sweep by users that have not done much testing before:
-
-### \*\*\*\*Add WCAG of the Day type descriptions to each of the below:
-
-**Add 2.2 e.g. Contact info**
 
 ### Perceivable  
 
