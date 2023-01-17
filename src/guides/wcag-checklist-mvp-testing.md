@@ -1,5 +1,5 @@
 ---
-title: WCAG Checklist - MVP Testing
+title: "Draft Minimum Viable Product Accessibility Checklist "
 summary: This guide walks you through Web Content Accessibility Guidelines
   (WCAG) testing to a minimum viable product MVP standard for users that have
   not completed much testing before. This guide covers what we feel are some of
