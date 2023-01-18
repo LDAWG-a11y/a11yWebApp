@@ -63,3 +63,19 @@ Should you wish to include a document on your Guide, it is necessary to upload i
 
 Finally, we have our required fields set, so now we can look into the WYSIWYG (What You See Is What You Get) editor, this is going to be similar to what many of you have encountered before on other CMS sites, such as WordPress etc. It's not as fully featured as many common CMS editors, but we can extend it and we are trying to make it more user friendly in places, especially for the new options we have created.
 
+#### Using the WYSIWYG editor
+
+We use Netlify CMS, which serves our needs and Netlify have kindly sponsored us to have free hosting, what an awesome bunch, right? The editor is both Rich Text and Markdown, you can simply toggle the switch to change your preferred input, I persoanlly use a combination of the two, as there are sometimes some features not available in the Rich Text editor and the Markdown editor lets me write HTML too.
+
+![Screenshot of the editor, with the Rich Text and Markdown toggle highlighted](https://user-images.githubusercontent.com/112703337/213145524-a394c497-0df1-4650-8d05-c0e15d80f6d1.png)
+
+So, first things first there are 9 buttons in the toolbar of the editor, which should be familiar to many of you, but I'll list them here:
+- Bold, for bold text
+- Itallic, for itallic text
+- Code, this is for inline code, a small piece of code that does not appear in a standalone block like so `<h1>`
+- Blockquote, when we quote something somebody else said, we use a blockquote
+- Unordered list, a standard bullet list, we can further indent by using the Tab key
+- Ordered list, again we can further indent with the tab key
+- Add Component, this is where additional blocks reside, I'll explain these in detail, shortly, as there are 1 or 2 caveats
+
+When creating a guide, please don't use a Heading 1, your post title is marked up as the Heading 1, the title of the page, so you just need to use Heading 2s for sections, Heading 3s for subsections and so forth
