@@ -73,6 +73,8 @@ So, first things first there are 9 buttons in the toolbar of the editor, which s
 - Bold, for bold text
 - Itallic, for itallic text
 - Code, this is for inline code, a small piece of code that does not appear in a standalone block like so `<h1>`
+- Link, for creating a hyperlink
+- Headings, for section, subsection etc, headings
 - Blockquote, when we quote something somebody else said, we use a blockquote
 - Unordered list, a standard bullet list, we can further indent by using the Tab key
 - Ordered list, again we can further indent with the tab key
