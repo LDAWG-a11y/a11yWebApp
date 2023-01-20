@@ -33,11 +33,11 @@ Most operating systems now have inbuilt accessibility functions:
 * [Apple OS accessibility](https://support.apple.com/en-gb/guide/mac-help/mh35884/mac)
 * [Microsoft Windows Accessibility](https://www.microsoft.com/en-us/windows/accessibility-features?r=1)
 
-### MyComputerMyWay
+### My Computer My Way
 
-​MyComputerMyWay is a website that provides guidance on configuring your device to meet your own requirements. It provides signposting and step-by-step guides to settings built into your computer for adaptations and adjustments. This includes accessibility features to help you see websites more clearly, text-to-speech and speech-to-text functionality, ways to make your keyboard and mouse easier to use, and adjustments that make reading, writing, and using the internet easier. MyComputerMyWay also provides access to a free booking system for those who need some IT support at home. Their friendly volunteers can help with the majority of technical devices including laptops and phones in the comfort of your own home.
+​My Computer My Way is a website that provides guidance on configuring your device to meet your own requirements. It provides signposting and step-by-step guides to settings built into your computer for adaptations and adjustments. This includes accessibility features to help you see websites more clearly, text-to-speech and speech-to-text functionality, ways to make your keyboard and mouse easier to use, and adjustments that make reading, writing, and using the internet easier. My Computer My Way also provides access to a free booking system for those who need some IT support at home. Their friendly volunteers can help with the majority of technical devices including laptops and phones in the comfort of your own home.
 
-* Get started by going to the [MyComputerMyWay website](https://mcmw.abilitynet.org.uk/mcmw)
+* Get started by going to the [My Computer My Way website](https://mcmw.abilitynet.org.uk/mcmw)
 * Click on the different icons on the website to access recommendations for vision, sound, motor, reading and spelling
 
 ### Accessible formats provision
