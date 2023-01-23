@@ -20,7 +20,7 @@ There are many different types and standards of PDF files, and all are made diff
 3. Searchable / OCR PDFs / PDF (I + HT): These documents usually originate from a PDF Image Only file that has been converted to this format using OCR (optical character recognition) software. Searchable / OCR PDF documents are essentially composed of two different layers. A JPEG or bitmap on top (to ensure that the document will look the same to the user) and a layer containing text beneath which has been created using OCR (optical character recognition) software to be able to determine the contents of the document. This allows people to highlight and search for text in the document, and use it more normally compared to an Image Only PDF, however, despite being an improvement, it is not even near to being fully accessible due to it lacking landmarks to add semantic meaning to the page.
 4. PDF Universal Accessibility / PDF (UA): This standard is intended for creating PDFs that are accessible and requires things such as PDFs being tagged, in order to correctly represent to document's structures (tables, headings, lists, etc.), have a logical reading order, alternate text, embedded fonts and much more. These documents tend to be the most accessible but aren't as complicated to make as it sounds.
 
-Note: This is just a very small sample of the many standards that exist.
+Note: This is just a very small sample of the many standards that exist, however from this you can see that not all documents are created equal and the accessibility of a PDF file can differ.
 
 ## Tips for making your PDF documents more accessible:
 
