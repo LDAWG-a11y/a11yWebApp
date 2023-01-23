@@ -1,9 +1,10 @@
 ---
 title: Wait, there's more than one type of PDF? PDF standards and how they
   differ in terms of accessibility.
-summary: This article explains how to make an accessible PDF file, the different
-  types of standards of PDF files, and how you should approach using PDF
-  overall, with a focus on public sector organisations in the UK..
+summary: How do you make accessible PDF files? This article explains how to make
+  an accessible PDF file, the different types and standards of PDF files, and
+  how you should approach using PDF overall, with a focus on public sector
+  organisations in the UK..
 author: hallen
 date: 2023-01-23
 toc: true
