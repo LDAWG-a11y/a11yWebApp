@@ -5,6 +5,9 @@ summary: This article explains how to make an accessible PDF file
 author: hallen
 date: 2023-01-23
 toc: false
+tags:
+  - PDF
+  - Accessible Documents
 isGuide: true
 ---
 PDF (Portable Document Format) files have been widely used for many years, and are even seen as a universal, simple solution which is compatible with almost everything. This has led to PDF files going from originally being a format for print to being widely used across many industries. Despite it initially seeming like a format that would be very accessible, by default it tends to not be, and there are many vastly different standards of PDF which can have many different implications for accessibility, and even the best formats require some work to be able to create properly.
