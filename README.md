@@ -180,7 +180,7 @@ Now once that has saved, which takes a few seconds, 4 new buttons appear:
   - Ready: You want to get it out there
 - Publish, which is also an expando button, but Publish Now is the only option that matters here
 - Delete Unpublished Entry, which will obviously delete you guide
-- Check for preview, this is where you can see a live preview of your page, on the Make Things ACcessible site, it's not actually on the site, but a clone has been created to preview your guide, you can of course share that link if you want somebody to check it over
+- Check for preview, this is where you can see a live preview of your page, on the Make Things Accessible site, it's not actually on the site, but a clone has been created to preview your guide, you can of course share that link if you want somebody to check it over
 
 If you want to publish, after saving you should change the Status to Ready and once that action is complete, then expand the Publish button and select Publish Now, it takes about 20 seconds for your guide to be live, as there is some wizardry happening in the background, most of which is related to the tools we use doing the heavy lifting for us
 
