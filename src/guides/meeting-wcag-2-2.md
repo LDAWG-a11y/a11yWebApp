@@ -18,15 +18,15 @@ isGuide: true
 
 <div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">This guide is subject to change, as the specification may still undergo some changes, but we will update this guide as soon when and where necessary</span></div>
 
-[WCAG 2.2](https://www.w3.org/TR/WCAG22/) is currently at the "Candidate Release" stage and it has been there for quite some time, this is the final stage before it becomes "Recommendation" or the new standard. It is anticipated by those working for or with the W3C that WCAG 2.2 will achieve Recommendation early in 2023, likely January.
+[WCAG 2.2](https://www.w3.org/TR/WCAG22/) is currently at the "Candidate Release" stage and it has been there for quite some time, this is the final stage before it becomes "Recommendation" or the new standard. It is anticipated by those working for or with the W3C that WCAG 2.2 will achieve Recommendation in 2023, the latest whisperings are "by April 30th".
 
-WCAG currently has 9 additional success criteria (SC) or requirements to meet, in order to "conform to the standard", which are:
+WCAG currently has 9 additional success criteria (SC) or requirements to meet, in order to "conform to the new 2.2 standard", which are:
 
 * 2 new Level A requirements
 * 5 new Level AA requirements
 * 2 new Level AAA requirements
 
-In addition, one of the previous requirements is being removed, which is [SC 4.1.1 Parsing (Level A)](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=122%2C241%2C244%2C247%2C251%2C312%2C322%2C332%2C412%2C246#parsing), as the working group felt this requirement did not accurately explain the intent and has been the source of much confusion. Whilst the requirement is being removed, it does not remove the requirements to have well formed HTML etc, as these are typically recorded against both SC 1.3.1 Info and Relationships (Level A) and SC 4.1.2 Name, Role, Value (Level A), as well as other existing requirements. Finally, one SC is being reclassified from Level AA down to Level A, which is 2.4.7 Focus Visible.
+In addition, one of the previous requirements is being removed, which is [SC 4.1.1 Parsing (Level A)](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=122%2C241%2C244%2C247%2C251%2C312%2C322%2C332%2C412%2C246#parsing), as the working group felt this requirement did not accurately explain the intent and has been the source of much confusion. Whilst the requirement is being removed, it does not remove the requirements to have certain valid HTML nesting etc, as these are typically recorded against both SC 1.3.1 Info and Relationships (Level A) and SC 4.1.2 Name, Role, Value (Level A), as well as other existing requirements. Finally, one SC is being reclassified from Level AA down to Level A, which is 2.4.7 Focus Visible.
 
 ## How does this affect the UK public sector?
 
@@ -162,7 +162,7 @@ Building upon 3.3.7 Accessible Authentication (AA), this removes the exceptions 
 
 ### Goodbye to 4.1.1 Parsing
 
-Ahh, 4.1.1 Parsing is due to be removed from 2.2, as the wording we have all followed was not what we were supposed to be doing, because those words, in the context they were written, were only understandable in their true context, by the folks that wrote them. I'm not going into any detail here, as [Adrian Roselli does a fine job (as always) with his 411 on 4.1.1 article](https://adrianroselli.com/2022/12/the-411-on-4-1-1.html)
+Ahh, 4.1.1 Parsing is due to be removed from 2.2, as the wording many of us followed was not what we were supposed to be doing, because those words, in the context they were written, were only understandable in their true context, by the folks that wrote them. I'm not going into any detail here, as [Adrian Roselli does a fine job (as always) with his 411 on 4.1.1 article](https://adrianroselli.com/2022/12/the-411-on-4-1-1.html)
 
 In essence, the same failures are still failures, but not against the criterion we were lead to believe they were, by reading the actual guidelines.
 
