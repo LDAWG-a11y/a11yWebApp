@@ -28,6 +28,7 @@ W﻿e will be regularly updating the website with new articles and hopefully mor
 * Queen Mary University London
 * SOAS University of London
 * Bloomsbury Learning Exchange
+* British Youth Council (Access and Assistance for All)
 
 ### Getting involved
 
