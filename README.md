@@ -142,7 +142,7 @@ Quick side note. When you initially create an accordion, it will be the blocks, 
 
 ##### Transcript Container
 
-This should only be used directly after we embed a YouTube video and it should contain the transcript to the video. Much like the accordion, it's an expando widget, but this one uses the native HTML Details element, it must come directly after the video, so our users that need it can find it with ease and our users that need it don't have to scroll through a million lines of george talking about accessibility statements (Sorry, George :) )
+This should only be used directly after we embed a YouTube video and it should contain the transcript to the video. Much like the accordion, it's an expando widget, but this one uses the native HTML Details element, it must come directly after the video, so our users that need it can find it with ease and our users that need it don't have to scroll through a million lines of George talking about accessibility statements (Sorry, George)
 
 How do I add a video, you may ask? Well, currently we need to go to YouTube and get the video we wish to embed and:
 
