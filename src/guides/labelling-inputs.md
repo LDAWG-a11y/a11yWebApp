@@ -185,7 +185,7 @@ In the above example, it would be best to put the hint or even error in the `<le
 
 ## Wrapping up
 
-* The first thing you should reach for is a <label> element, although using an `aria-labelledby` can be a perfectly good substitute for site search inputs (as discussed earlier) and a limited amount of other use cases
+* The first thing you should reach for is a `<label>` element, although using an `aria-labelledby` can be a perfectly good substitute for site search inputs (as discussed earlier) and a limited amount of other use cases
 * Avoid using the `title` attribute
 * Avoid using placeholders
 * If Internationalisation matters (it should, right?), don't use `aria-label`
