@@ -20,7 +20,7 @@ The proposal addresses accessibility of educational content specifically with re
 
 The topics covered in these guides are specific to STEMM and we set out the standard where possible with links to help in meeting it.
 
-This proposal is the product of a small group with interests in technology, accessibility, inclusivity, and pedagogy. We welcome comment, criticism, and hope that the wider community will contribute to further development. The proposal has been developed following focus groups with blind and partially sighted people hosted by the Thomas Pocklington Trust.
+This proposal is the product of a small group with interests in technology, accessibility, inclusivity, and pedagogy. We welcome comment, criticism, and hope that the wider community will contribute to further development. The proposal has been developed following focus groups with blind and partially sighted current and former STEMM students hosted by the Thomas Pocklington Trust.
 
 Contributors:
 
