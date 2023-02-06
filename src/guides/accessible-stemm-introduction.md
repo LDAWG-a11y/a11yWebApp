@@ -65,7 +65,7 @@ In general, it cannot be the sole responsibility of the student to ensure that t
 
 Consider issues that may arise in assessment or examination situations. For example, ensure that students using large print formats have adequate space.
 
-We assume that creators of content will already be aware of general issues in accessibility in education and that there is a commitment to the POUR framework that underpins the [Web Content Accessibility Guidelines (WCAG).](https://www.w3.org/TR/WCAG21/)
+We assume that creators of content will already be aware of general issues in accessibility in education and that there is a commitment to the POUR (Perceivable, Operable, Understandable and Robust) framework that underpins the [Web Content Accessibility Guidelines (WCAG).](https://www.w3.org/TR/WCAG21/)
 
 ## Supporting STEMM Learning Content
 
