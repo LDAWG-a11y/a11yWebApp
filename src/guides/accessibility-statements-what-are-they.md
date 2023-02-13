@@ -11,6 +11,7 @@ date: 2022-10-26
 toc: true
 tags:
   - Statement
+  - Regulations
 isGuide: true
 ---
 An accessibility statement is a specific legal document that organisations must publish under the [Public Sector Bodies Accessibility Regulations (PSBAR)](https://www.makethingsaccessible.com/guides/what-are-the-public-sector-bodies-accessibility-regulations/). The statement must include information about accessibility issues on a system, contact information, enforcement procedure, as well as several other legally required sections.
