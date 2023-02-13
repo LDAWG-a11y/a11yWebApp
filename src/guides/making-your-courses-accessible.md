@@ -5,7 +5,7 @@ summary: A resource created for teaching staff from the School of Advanced
 author: sparr
 date: 2023-02-10
 toc: false
-file: /docs/making-your-modules-accessible-scorm12-pe0bigwm.zip
+file: ""
 isGuide: true
 ---
 This is an interactive resource we have created using Articulate Rise for teaching staff at the School of Advanced Study, London University. It designed to dismantle staff's preconceptions about accessibility and reduce anxiety by answering three questions: 
