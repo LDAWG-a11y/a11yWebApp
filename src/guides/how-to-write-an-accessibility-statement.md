@@ -8,7 +8,6 @@ date: 2022-10-26
 toc: true
 tags:
   - Statement
-  - Resource
 file: /docs/draft-accessibility-statement-2022.docx
 isGuide: true
 ---
