@@ -1,5 +1,5 @@
 ---
-title: Making your courses accessible
+title: An interactive course on accessibility for teaching staff
 summary: A resource created for teaching staff from the School of Advanced
   Study, University of London
 author: sparr
