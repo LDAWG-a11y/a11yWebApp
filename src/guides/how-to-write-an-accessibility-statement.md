@@ -9,6 +9,7 @@ toc: true
 tags:
   - Statement
   - Regulations
+  - PSBAR
 file: /docs/draft-accessibility-statement-2022.docx
 isGuide: true
 ---
