@@ -131,6 +131,8 @@ In many cases attempting to meet technical accessibility requirements for all co
 
 <div class="callout__tip"><span class="callout__icon"></span><span class="callout__text">If you are considering making a disproportionate burden claim, read through the list of exempted content in the regulations and seriously consider if your proposed disproportionate burden claim may already fall into one of these categories.</span></div>
 
+You can get more detailed information on the regulation exemptions and how they may affect your systems or content in our PSBAR Exemptions guide.
+
 ### Claiming against the advice of the monitoring body
 
 Organisations sometimes feel that they have “too much on” or “are not focussing on accessibility right now”. For whatever reason, whether it be staff resourcing, budgets or organisational direction, some organisations will make claims that taking any action to align and comply with the regulations would be too much effort.
