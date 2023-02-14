@@ -2,5 +2,9 @@
   "tags": "contributors",
   "key": "sparr",
   "name": "Simon Parr",
-  "bio": "Your bio here"
+  "bio": "Your bio here",
+  "org": "School of Advanced Study, University of London",
+  "title": "Learning Technologist",
+  "email": "simon.parr@sas.ac.uk",
+  "img": "/profileImg/camb.jpg"
 }
