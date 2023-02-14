@@ -1,10 +1,13 @@
 ---
-title: An interactive course on making courses accessible for teaching staff
-summary: A resource created for teaching staff from the School of Advanced
-  Study, University of London
+title: Guidance for making courses accessible for teaching staff
+summary: This is an interactive online course created for teaching staff from
+  the School of Advanced Study using Articulate Rise. The emphasis is on
+  practical steps using the tools available to SAS staff that can make a big
+  difference.
 author: sparr
 date: 2023-02-10
 toc: false
+tags: []
 file: ""
 isGuide: true
 ---
