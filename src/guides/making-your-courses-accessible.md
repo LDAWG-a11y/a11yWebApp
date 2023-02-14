@@ -22,6 +22,3 @@ You can access the course by selecting the link below:
 
 If you have any questions, comments or suggestions, feel free to contact me at simon.parr@sas.ac.uk.
 
-This course is published under a Creative Commons BY NC licence.
-
-![Creative Commons BY NC Licence symbol.](src/guideImg/by-nc.png)
