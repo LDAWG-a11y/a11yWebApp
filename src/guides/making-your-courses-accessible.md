@@ -21,3 +21,7 @@ You can access the course by selecting the link below:
 [Making your Courses Accessible (Make Things Accessible Version)](https://rise.articulate.com/share/1f-BmeBp63PU5QrG58Ma5inXIgsRdKXF)
 
 If you have any questions, comments or suggestions, feel free to contact me at simon.parr@sas.ac.uk.
+
+This course is published under a Creative Commons BY NC licence.
+
+![Creative Commons BY NC Licence symbol.](src/guideImg/by-nc.png)
