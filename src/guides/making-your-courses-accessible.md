@@ -1,5 +1,5 @@
 ---
-title: An interactive course on accessibility for teaching staff
+title: An interactive course on making courses accessible for teaching staff
 summary: A resource created for teaching staff from the School of Advanced
   Study, University of London
 author: sparr
@@ -8,7 +8,7 @@ toc: false
 file: ""
 isGuide: true
 ---
-This is an interactive resource created using Articulate Rise for teaching staff at the School of Advanced Study, London University. It designed to dismantle misconceptions about accessibility and reduce anxiety by answering three questions: 
+Here you can find an interactive resource created using Articulate Rise for teaching staff at the School of Advanced Study, London University. It designed to dismantle misconceptions about accessibility and reduce anxiety by answering three questions: 
 
 * **Why** do I need to make my module accessible?
 * **What** do I need to do to make my module accessible?
