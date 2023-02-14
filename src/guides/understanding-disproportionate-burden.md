@@ -33,8 +33,6 @@ The content of this guide is to help you understand what disproportionate burden
 
 If you want information on how to conduct and disproportionate burden assessment before you make a claim, read our [How to write a disproportionate burden assessment guide](https://www.makethingsaccessible.com/guides/how-to-write-a-disproportionate-burden-assessment/).
 
-
-
 ## What the regulations say
 
 Within the regulations, Part 2.7 introduces the clause for Public Sector Bodies to claim “Disproportionate Burden” in which compliance with the accessibility requirements is not required if doing so would impose a disproportionate burden on the Public Sector Body following assessment of the extent to which compliance with the accessibility requirements imposes such a burden.
@@ -53,7 +51,9 @@ In the event that an assessment such as this determines that compliance with the
 
 ## Further advice from the monitoring body
 
-In their [2021 Monitoring report](https://www.gov.uk/government/publications/accessibility-monitoring-of-public-sector-websites-and-mobile-apps-2020-2021/accessibility-monitoring-of-public-sector-websites-and-mobile-apps-2020-2021#disproportionate-burden), the Government Digital Service (GDS) who monitor regulation compliance gave further advice to organisations on the use of disproportionate burden.
+The Government Digital Service (GDS) who monitor regulation compliance give a useful summary and some examples of their own to help you [understand disproportionate burden](https://www.gov.uk/guidance/accessibility-requirements-for-public-sector-websites-and-apps#when-complying-with-accessibility-regulations-might-be-a-disproportionate-burden) and what you need to do to complete an assessment.
+
+In their [2021 Monitoring report](https://www.gov.uk/government/publications/accessibility-monitoring-of-public-sector-websites-and-mobile-apps-2020-2021/accessibility-monitoring-of-public-sector-websites-and-mobile-apps-2020-2021#disproportionate-burden), GDS gave further advice to organisations on the use of disproportionate burden.
 
 GDS specifically stated:
 
