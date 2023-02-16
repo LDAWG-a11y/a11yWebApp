@@ -131,7 +131,7 @@ In many cases attempting to meet technical accessibility requirements for all co
 
 <div class="callout__tip"><span class="callout__icon"></span><span class="callout__text">If you are considering making a disproportionate burden claim, read through the list of exempted content in the regulations and seriously consider if your proposed disproportionate burden claim may already fall into one of these categories.</span></div>
 
-You can get more detailed information on the regulation exemptions and how they may affect your systems or content in our PSBAR Exemptions guide.
+You can get more detailed information on the regulation exemptions and how they may affect your systems or content in our [PSBAR Exemptions guide](https://www.makethingsaccessible.com/guides/psbar-exemptions/).
 
 ### Claiming against the advice of the monitoring body
 
