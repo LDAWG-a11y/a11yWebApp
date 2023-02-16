@@ -33,15 +33,11 @@ To summarise, the regulations are made up of 3 components:
 2. Public sector organisations must publish an accessibility statement on their websites and in apps to inform visitors about the accessibility of their websites and apps.
 3. The government is required to monitor that public sector websites are meeting these regulations through checking accessibility statements and checking the accessibility of a sample of sites.
 
- 
-
 ## Enforcement
 
 The regulations are monitored and enforced by several different bodies. The Government Digital Service (Part of the UK Cabinet Office) monitors compliance of the regulations and will escalate non-compliances to the two enforcement bodies. In Great Britain the enforcement body is the [Equality and Human Rights Commission](https://www.equalityhumanrights.com/en), and in Northern Ireland the enforcement body is the [Equalities Commission for Northern Ireland](https://www.equalityni.org/Home). The monitoring and enforcement process is supported by the [Equality Advisory and Support Service](https://www.equalityadvisoryservice.com/) who take complaints from individuals such as members of the public.
 
 The way monitoring and enforcement works has several levels to it, and the Government Digital Service works with organisations to improve compliance. Find out more about the process in our [PSBAR monitoring and enforcement process guide.](https://www.makethingsaccessible.com/guides/psbar-monitoring-and-enforcement-process/)
-
- 
 
 ## Standards
 
@@ -57,8 +53,6 @@ This means that when WCAG 2.2 releases, all organisations in scope will be requi
 
 Read the guide on [changes in WCAG 2.2](https://www.makethingsaccessible.com/guides/meeting-wcag-2-2/).
 
- 
-
 ## Accessibility Statements
 
 Part of the PSBAR requirements is the production of accessibility statements for websites in scope of the regulations.
@@ -70,8 +64,6 @@ There is a specific template in the UK that must be followed for accessibility s
 Private companies or others not covered by PSBAR may choose to write an accessibility statement. A good statement will still be similar to a PSBAR statement in terms of listing issues, contact information etc. but does not require certain pieces of legal wording.
 
 Make Things Accessible has guides on [understanding accessibility statements](https://www.makethingsaccessible.com/guides/accessibility-statements-what-are-they/) and [how to write an accessibility statement](https://www.makethingsaccessible.com/guides/how-to-write-an-accessibility-statement/), including a template you can download.
-
- 
 
 ## Disproportionate Burden
 
@@ -87,10 +79,8 @@ Making a disproportionate burden claim requires a lot of supporting evidence and
 
 The subject of disproportionate burden is very nuanced and a claim should only be made as a last resort. To help you use disproportionate burden claims correctly, Make Things Accessible has guides to help you [understand disproportionate burden](https://www.makethingsaccessible.com/guides/understanding-disproportionate-burden/), and [how to write a disproportionate burden assessment](https://www.makethingsaccessible.com/guides/how-to-write-a-disproportionate-burden-assessment/).
 
- 
-
 ## Exemptions
 
 PSBAR covers many different types of organisations and types of content. Because of the variety, and sometimes impossible challenges of making some content fully accessible, there are a range of exemptions to the regulations that you should be aware of.
 
-Find out more about the  exemptions and how they might apply to your systems and content in our PSBAR exemptions guide.
+Find out more about the  exemptions and how they might apply to your systems and content in our [PSBAR exemptions guide](https://www.makethingsaccessible.com/guides/psbar-exemptions/).
