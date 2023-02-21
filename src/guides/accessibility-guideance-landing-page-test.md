@@ -1,5 +1,5 @@
 ---
-title: Accessibility Guideance Landing Page Test
+title: Accessibility Guidance Landing Page Test
 summary: This is a test of implementing a selection process - ignore
 author: hallen
 date: 2023-02-20
