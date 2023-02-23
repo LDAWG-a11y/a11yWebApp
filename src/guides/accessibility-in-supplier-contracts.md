@@ -22,16 +22,12 @@ While there are some complexities to some 3rd party content responsibilities in 
 
 With no direct recourse in the regulations to hold suppliers responsible, it is important to include clauses on accessibility into contract negotiations. Sometimes just the written requirement that the supplier will provide a product or service which complies with all relevant pieces of legislation may be suitable, but it is always best to be as specific as possible.
 
- 
-
 ## What to include
 
 * A requirement for the supplier to maintain and provide on request, up to date evidence on the accessibility compliance of a product or service.
 * Information about what types of evidence documentation may be accepted.
 * Information about what “accessibility compliance” means in the context and preferably. what technical standards the supplier would be expected to meet, for example [WCAG 2.1 AA.](https://www.w3.org/TR/WCAG21/)
 * A requirement for the supplier to detail in writing their plan and commitments on addressing an outstanding accessibility issues.
-
- 
 
 ## Contract clauses template
 
