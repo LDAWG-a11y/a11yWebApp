@@ -10,7 +10,7 @@ tags:
   - Statement
   - Regulations
   - PSBAR
-file: /docs/draft-accessibility-statement-2022.docx
+file: /docs/draft-accessibility-statement-2023-wcag-2.1.docx
 isGuide: true
 ---
 You have decided to write a [Public Sector Bodies Accessibility Regulations (PSBAR)](https://www.makethingsaccessible.com/guides/what-are-the-public-sector-bodies-accessibility-regulations/) compliant accessibility statement. To write a correct statement there are a few pieces of information you will need in advance and a specific template you must adhere to for UK requirements.
@@ -39,7 +39,7 @@ Finally, try where possible to give information about how long users might have 
 
 ## The template
 
-[Download the accessibility statement template](/docs/draft-accessibility-statement-2022.docx)
+[Download the accessibility statement template](/docs/draft-accessibility…ement-2023-wcag-2.1.docx)
 
 In the UK there is a specific template and several pieces of required legal wording that must go into an accessibility statement. The template provided by the UK Government through the Government Digital Service (GDS) who are the monitoring body for the regulations is in the form of a [sample statement for a fictional website](https://www.gov.uk/government/publications/sample-accessibility-statement/sample-accessibility-statement-for-a-fictional-public-sector-website).
 
