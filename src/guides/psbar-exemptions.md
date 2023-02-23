@@ -40,8 +40,6 @@ Content exemptions:
 
 The government digital service also provides a summary list of the exemptions in their [Understanding accessibility requirements for public sector bodies guidance](https://www.gov.uk/guidance/accessibility-requirements-for-public-sector-websites-and-apps#things-you-might-not-need-to-fix).
 
- 
-
 ## Definitions
 
 ### Active Administrative Functions
@@ -51,8 +49,6 @@ Across many of the exemptions, the terms “active administrative functions” o
 The regulations do not specifically give a definition but through significant discussion with many public sector bodies across different backgrounds, we believe our closest definition is:
 
 > Active/Essential online administrative functions include any interactive task that a user would be expected to complete as part of a work, study, or personal documentation (financial, data, legal, licensing) related process. Examples include online job application forms, completing recruitment onboarding documentation, completing a visa application, taxi licensing forms, planning applications, taxes or bills processes, and school consent forms. This does not cover documents which could be considered ‘for information only’ apart from where that information is necessary for the completion of active administrative functions.
-
- 
 
 ### Substantial Revision
 
@@ -79,8 +75,6 @@ The regulations do not specifically give a definition but through significant di
 > * When more than 50% of user journeys or pages on the site were last updated after 23rd September 2019
 > * When more than 50% of views of all user journeys or pages were of content published after 23rd September 2019
 
- 
-
 ### Overriding exemptions
 
 Some exemptions have ambiguous wording and may override other descriptions within the regulations.
@@ -88,8 +82,6 @@ Some exemptions have ambiguous wording and may override other descriptions withi
 For example when discussing online maps, we believe that the exemption for maps overrides definitions of content formats. So, any map, regardless of whether it is a PDF, image on a web page or other format, is still a map and therefore exempt.
 
 Other areas where this order of operations applies is content of intranets and extranets (Reg 4, Clause 2g) which affects all content regardless of format, and archived content (Reg 4, Clause 2h) which overrides any format debate in favour of a time-based definition of “archives”.
-
- 
 
 ## Organisation exemptions
 
@@ -100,8 +92,6 @@ Other areas where this order of operations applies is content of intranets and e
 Public service broadcasters get a blanket exemption. This includes organisations like the BBC who will not come in scope of these regulations but who still do a lot of work to improve the accessibility of their content. Indeed, the BBC promotes many accessibility features such as iPlayer including many pieces of content which have audio descriptions.
 
 Public service broadcasters are still in scope of the Equality Act 2010 and would still be expected to make things accessible through reasonable adjustments.
-
- 
 
 ### Non-government organisations
 
@@ -120,8 +110,6 @@ If such a list of “essential services” was produced for a worldwide health c
 
 If you work for an organisation that could be classified as an NGO, we would suggest comparing the services you provide to whether you were considered “essential services” or “key workers” during the pandemic. If so, a case could be made that you should consider alignment with the regulation requirements.
 
- 
-
 ### Schools or nurseries
 
 > **“Schools or nurseries, except for the content of their websites or mobile applications relating to essential online administrative functions.”**
@@ -131,8 +119,6 @@ When looking at the schools and nurseries exemption, it is important to think ab
 In our view, to deliver accessible administrative functions, not only must the content itself be accessible, but so must the routes by which a user reaches that content. This should include all site navigation methods, including main and footer navigation, search options and sitemaps. These features are often deeply linked with website templates.
 
 While some may initially look at this exemption and consider that schools and nurseries are almost complete exempt apart from some content, we feel that schools and nurseries are almost completely in scope apart from “for information” or “non-administrative content” as to deliver accessible administrative content, the templates and navigation routes must be accessible, and so must any administrative content.
-
- 
 
 ## Content exemptions
 
@@ -148,8 +134,6 @@ Documents which were created pre regulations may not need to be made accessible 
 
 When considering document exemptions, think carefully about what documents may be part of administrative processes, what may be produced by 3rd parties, and what may be considered archived content as these will all affect whether individual documents are in scope or out of scope of the regulations.
 
- 
-
 ### Pre-recorded time-based media
 
 > **“Pre-recorded time-based media published before 23rd September 2020.”**
@@ -162,8 +146,6 @@ If you are publishing audio or video content now (in scope), you will need to en
 
 Remember! The monitoring body believes that only 100% accurate captions are regulation compliant.
 
- 
-
 ### Live time-based media
 
 Live time-based media is quite a straight forward exemption. In the Web Content Accessibility Guidelines, there is a success criteria [1.2.4 Captions (Live) (AA)](https://www.w3.org/TR/WCAG21/#captions-live) which would require captions to be provided for all live audio content in synchronised media.
@@ -173,8 +155,6 @@ This means that for any live audio podcast, or live video stream such as events 
 Remember! The monitoring body believes that only 100% accurate captions are regulation compliant.
 
 Additionally, there are many ways to add live auto-generated captions to sessions. Teams has settings for users to turn on captions and live transcription at the user end, presenters can turn on captions through PowerPoint as they are presenting, and settings can also be accessed in Zoom.
-
- 
 
 ### Online maps
 
@@ -213,8 +193,6 @@ A map in any form demonstrating proposed planning information would be exempt un
 
 Many planning departments already contain the processes to support this kind of accessible alternative. When delivering maps which are not accessible it is our advice to clearly signpost how users can get accessible alternatives on request. This could be as simple as providing a contact address for the planning team who can arrange a time to call or meet with the user to answer any and all questions related to the map.
 
- 
-
 ### Third-party content
 
 > **“Third-party content that is neither funded nor developed by, nor under the control of, the public sector body.”**
@@ -224,8 +202,6 @@ Third party content comes in all shapes and sizes. This could be documents which
 When considering whether third-party produced content is in scope or out of scope of the regulations we consider 5 key questions to understand whether as a public sector body you would have had any opportunity to affect the level of accessibility of that third-party content.
 
 Because the topic of third-party content is so broad, we have a separate guide further explaining 3rd party content exemptions and how you can carefully consider your responsibilities.
-
- 
 
 ### Heritage items
 
@@ -238,11 +214,11 @@ The heritage exemption is included out of practicality and safety for historic a
 
 While the regulations give an exemption for this kind of content, historical institutions such as the British Museum have previously undergone projects to improve accessibility for users with disabilities including creating tactile representations of many exhibits to support blind users.
 
- 
-
 ### Intranet and Extranet content
 
-> **“Content of extranets and intranets published before 23rd September 2019, until such websites undergo a substantial revision.”**
+> **“Content of extranets and intranets published before 23rd September 2019, until such websites undergo a substantial revision.**
+>
+> **Extranets and intranets” means a website that is only available for a closed group of people and not to the general public”**
 
 A common misconception of the regulations is that it only applies to ‘public facing’ websites and content. This is not true. The regulations apply to all websites, both internal facing and public facing.
 
@@ -256,20 +232,21 @@ Older intranet and extranet systems published before the end of the 2019 grace p
 
 New intranet and extranet systems published after the 23rd September 2019 have to fully comply with the regulations.
 
- 
-
 ### Archived content
 
-> **“Content of websites and mobile applications qualifying as archives.”**
+> **“Content of websites and mobile applications qualifying as archives.**
+>
+> **Archives” means a website or mobile application which—**
+>
+> * **only contains content that is not needed for active administrative processes; and**
+> * **is not updated or edited after 23rd September 2019”**
 
-Archived content should not just mean “old content”. We have a responsibility to keep our websites clean and remove older content when no longer relevant. Archive content is specifically that, older content which is being kept unchanged for a specific purpose such as historical records, academic paper libraries or other “frozen” content which can date back decades.
+Archived content should not just mean “old content”. We have a responsibility to keep our websites clean and remove older content when no longer relevant. We consider archive content to be, older content which is being kept unchanged for a specific purpose such as historical records, academic paper libraries or other “frozen” content which can date back decades.
 
 The important things to consider when thinking about archives are:
 
 * The content should be being kept for a purpose rather than just surviving into being outdated.
 * The content should remain exactly as is. If content is being updated, then it is no longer an archive and is in scope of the regulations.
-
- 
 
 ## Where to list exemptions
 
