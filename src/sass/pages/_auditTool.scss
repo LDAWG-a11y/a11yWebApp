@@ -45,11 +45,6 @@
   padding: $space-lg;
 }
 
-.sc-table tr {
-  position: relative;
-  z-index: -2;
-}
-
 .counter-table tbody tr:nth-child(odd),
 .sc-table tbody tr:nth-child(odd) {
   background: var(--color-bg--light);
@@ -77,10 +72,12 @@
 }
 
 .sc-table__group {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  z-index: 2;
 }
 
 .counter-table__group {
@@ -245,13 +242,12 @@
   outline-offset: -2px
 }
 
-.sc-table__radio:focus + .sc-table__label::before {
-  background-color: var(--color-interactive);
+.sc-table__radio:focus + .sc-table__label {
   color: var(--color-bg);
 }
 
-.sc-table__radio:focus + .sc-table__label {
-  color: var(--color-bg);
+.sc-table__radio:focus + .sc-table__label::before {
+  background-color: var(--color-interactive);
 }
 
 .sc-table__radio:checked {
