@@ -1,0 +1,179 @@
+---
+layout: base.njk
+title: Audit Helper Tool
+summary: The requested page could not be found, this page is the Make Things Accessble's 404 page
+eleventyExcludeFromCollections: true
+extraWide: true
+---
+<div class="counter-table__wrapper">
+  <table class="counter-table">
+    <caption class="counter-table__caption">Issue priority counter</caption>
+    <thead>
+      <tr>
+        <td></td>
+        <th scope="col">Critical priority</th>
+        <th scope="col">High priority</th>
+        <th scope="col">Medium priority</th>
+        <th scope="col">Low priority</th>
+        <th scope="col">Weakness</th>
+        <th scope="col">Advisory</th>
+        <th scope="col">Total WCAG failures</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Issue count</th>
+        <td>
+          <fieldset class="counter-table__group">
+            <legend class="visually-hidden">Critical priority counter</legend>
+            <button id="btnMinusCrit" class="counter-table__btn counter-table__btn--minus"><span class="visually-hidden">Minus critical priority</span></button>
+            <label for="critTotal" class="visually-hidden counter-table-label--crit">Critical priority count</label>
+            <output id="critTotal" class="counter-table__result counter-table__result--critical" data-wcag="Critical" data-pass="true">0</output>
+            <button id="btnAddCrit" class="counter-table__btn counter-table__btn--add"><span class="visually-hidden">Add critical priority</span></button>
+          </fieldset>
+        </td>
+        <td>
+          <fieldset class="counter-table__group">
+            <legend class="visually-hidden">High priority counter</legend>
+            <button id="btnMinusHigh" class="counter-table__btn counter-table__btn--minus"><span class="visually-hidden">Minus high priority</span></button>
+            <label for="highTotal" class="visually-hidden counter-table-label--high">High priority count</label>
+            <output id="highTotal" class="counter-table__result counter-table__result--high" data-wcag="High" data-pass="true">0</output>
+            <button id="btnAddHigh" class="counter-table__btn counter-table__btn--add"><span class="visually-hidden">Add high priority</span></button>
+          </fieldset>
+        </td>
+        <td>
+          <fieldset class="counter-table__group">
+            <legend class="visually-hidden">Medium priority counter</legend>
+            <button id="btnMinusMed" class="counter-table__btn counter-table__btn--minus"><span class="visually-hidden">Minus medium priority</span></button>
+            <label for="medTotal" class="visually-hidden counter-table__result-label--med">Medium priority count</label>
+            <output id="medTotal" class="counter-table__result counter-table__result--med" data-wcag="Medium" data-pass="true">0</output>
+            <button id="btnAddMed" class="counter-table__btn counter-table__btn--add"><span class="visually-hidden">Add medium priority</span></button>
+          </fieldset>
+        </td>
+        <td>
+          <fieldset class="counter-table__group">
+            <legend class="visually-hidden">Low priority counter</legend>
+            <button id="btnMinusLow" class="counter-table__btn counter-table__btn--minus"><span class="visually-hidden">Minus low priority</span></button>
+            <label for="lowTotal" class="visually-hidden counter-table__result-label--low">Low priority count</label>
+            <output id="lowTotal" class="counter-table__result counter-table__result--low" data-wcag="Low" data-pass="true">0</output>
+            <button id="btnAddLow" class="counter-table__btn counter-table__btn--add"><span class="visually-hidden">Add low priority</span></button>
+          </fieldset>
+        </td>
+        <td>
+          <fieldset class="counter-table__group">
+            <legend class="visually-hidden">Weaknesses counter</legend>
+            <button id="btnMinusWeak" class="counter-table__btn counter-table__btn--minus"><span class="visually-hidden">Minus weakness</span></button>
+            <label for="weakTotal" class="visually-hidden counter-table__result-label--weak">Weaknesses count</label>
+            <output id="weakTotal" class="counter-table__result counter-table__result--weak" data-pass="true">0</output>
+            <button id="btnAddWeak" class="counter-table__btn counter-table__btn--add"><span class="visually-hidden">Add weakness</span></button>
+          </fieldset>
+        </td>
+        <td>
+          <fieldset class="counter-table__group">
+            <legend class="visually-hidden">Advisories counter</legend>
+            <button id="btnMinusAdv" class="counter-table__btn counter-table__btn--minus"><span class="visually-hidden">Minus advisory</span></button>
+            <label for="advTotal" class="visually-hidden counter-table__result-label--adv">Advisories count</label>
+            <output id="advTotal" class="counter-table__result counter-table__result--adv" data-pass="true">0</output>
+            <button id="btnAddAdv" class="counter-table__btn counter-table__btn--add"><span class="visually-hidden">Add advisory</span></button>
+          </fieldset>
+        </td>
+        <td><span id="wcagTotal" class="counter-table__total" data-pass="true">0</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="sc-table__wrapper">
+  <table class="sc-table">
+    <caption class="sc-table__caption">WCAG 2.1 conformance details</caption>
+    <thead>
+      <tr>
+        <td></td>
+        <th id="confCol" scope="col">Conformance level</th>
+        <th scope="col">Comment</th>
+        <th scope="col">WCAG Result</th>
+      </tr>
+    </thead>
+    <tbody>
+    {%- for item in reportToolSCData %}
+      <tr class="sc-table__requirement" data-level="{{ item.level }}" data-invalid>
+        {% set scNum = item.fullText.split(' ') %}
+        <th scope="row"><a id="wcag{{ item.identifier }}Link" class="sc-table__link" href="{{ item.url }}">{{ scNum[0] }} <span id="wcag{{ item.identifier }}ShortText">{{ item.shortText }}</span> ({{ item.level | uppercase }})</a></th>
+        <td>
+          <fieldset role="radiogroup" aria-required="true" aria-invalid="true" class="sc-table__group">
+            <legend aria-labelledby="confCol">
+              <span id="wcag{{ item.identifier }}errMsg" class="sc-table__err-msg visually-hidden" aria-hidden="true">Required option</span>
+            </legend>
+            <div class="sc-table__radio-wrapper">
+              <input type="radio" id="wcag{{ item.identifier }}Sup" name="sc{{ item.identifier }}" value="supports" class="sc-table__radio" aria-labelledby="wcag{{ item.identifier }}SupLabel wcag{{ item.identifier }}ShortText">
+              <label id="wcag{{ item.identifier }}SupLabel" for="wcag{{ item.identifier }}Sup" class="sc-table__label">Supports</label>
+            </div>
+            <div class="sc-table__radio-wrapper">
+              <input type="radio" id="wcag{{ item.identifier }}Par" name="sc{{ item.identifier }}" value="partially-supports" class="sc-table__radio" aria-labelledby="wcag{{ item.identifier }}ParLabel wcag{{ item.identifier }}ShortText">
+              <label id="wcag{{ item.identifier }}ParLabel" for="wcag{{ item.identifier }}Par" class="sc-table__label">Partially supports</label>
+            </div>
+            <div class="sc-table__radio-wrapper">
+              <input type="radio" id="wcag{{ item.identifier }}Not" name="sc{{ item.identifier }}" value="does-not-support" class="sc-table__radio" aria-labelledby="wcag{{ item.identifier }}NotLabel wcag{{ item.identifier }}ShortText">
+              <label id="wcag{{ item.identifier }}NotLabel" for="wcag{{ item.identifier }}Not" class="sc-table__label">Does not support</label>
+            </div>
+            <div class="sc-table__radio-wrapper">
+              <input type="radio" id="wcag{{ item.identifier }}NA" name="sc{{ item.identifier }}" value="not-applicable" class="sc-table__radio" aria-labelledby="wcag{{ item.identifier }}NALabel wcag{{ item.identifier }}ShortText">
+              <label id="wcag{{ item.identifier }}NALabel" for="wcag{{ item.identifier }}NA" class="sc-table__label">Not applicable</label>
+            </div>
+          </fieldset>
+        </td>
+        <td>
+          <label class="sc-table__comment-label" for="wcag{{ item.identifier }}Com" data-valid="true">
+            <span class="visually-hidden">{{ item.shortText }} comment</span>
+            <span class="visually-hidden sc-table__err-msg" aria-hidden="true">Issue details required</span>
+          </label>
+          <textarea name="{{ item.identifier }}Com" id="wcag{{ item.identifier }}Com" class="sc-table__comment" cols="30" rows="10"></textarea>
+        </td>
+        <td>
+          <span class="sc-table__result" data-pass="clean">--</span>
+        </td>
+      </tr>
+    {% endfor %}
+      <tr>
+        <th scope="row" colspan="3">Total WCAG success criteria failed</th>
+        <td><span class="sc-table__total" data-pass="clean">--</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="control__container">
+  <!-- <button class="control-btn control-btn--clear">Reset all</button> -->
+  <a class="control__btn control__btn--clear" href="javascript:history.go(0)">Reset all</a>
+  <button class="control__btn control__btn--generate">Generate text</button>
+</div>
+
+<div class="modal" role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modalTitle" data-displayed="false">
+  <button id="modalCloseTop" class="modal__close-btn modal__close-btn--top"><span class="visually-hidden">Close</span></button>
+  <div class="modal__inner">
+    <h1 id="modalTitle">Generated text</h1>
+    <p>The 4 sections that are generated, each have a Copy button, the label of that button makes it clear what will be copied to a user's clipboard. There is an ARIA announcement set to assertive for this, presently that messages clears after 1 second, so clicking any button again will require a 1 second gap to hear an announcement.</p>
+    <p>The 2 tables for Level A and AA are presentational tables, they're designed to be copied and then pasted directly into a standard VPAT table in a Word document. The column headers and row headers have been intentionally omitted, as the intent is to highlight all the data cells in a Word template's VPAT table and then populate with this data</p>
+    <h2 class="modal__section-heading">Issue count text</h2>
+    <div class="modal__section-wrapper--text">
+      <div id="sectionTotals" class="modal__text-section"></div>
+    </div>
+    <h2 class="modal__section-heading">Statement list</h2>
+    <div class="modal__section-wrapper--list">
+      <div id="sectionStatement" class="modal__text-section"></div>
+    </div>
+    <h2 class="modal__section-heading">VPAT table (Level A)</h2>
+    <div class="modal__section-wrapper--tableA">
+      <div id="sectionVPATLevelA" class="modal__text-section"></div>
+    </div>
+    <h2 class="modal__section-heading">VPAT table (Level AA)</h2>
+    <div class="modal__section-wrapper--text">
+      <div id="sectionVPATLevelAA" class="modal__text-section"></div>
+    </div>
+    <div class="modal__footer">
+      <button id="modalCloseBottom" class="modal__close-btn modal__close-btn--bottom">Close</button>
+    </div>
+  </div>
+  <div class="modal__announcement visually-hidden" aria-live="assertive"></div>
+</div>
+<div class="page__announcement visually-hidden" aria-live="polite"></div>

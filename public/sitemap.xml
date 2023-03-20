@@ -2,11 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
-      <loc>https://www.makethingsaccessible.com/guides/test-details/</loc>
-      <lastmod>2022-07-01T00:00:00.000Z</lastmod>
-    </url>
-  
-    <url>
       <loc>https://www.makethingsaccessible.com/guides/html-headings-for-use-as-content/</loc>
       <lastmod>2022-10-06T00:00:00.000Z</lastmod>
     </url>
@@ -161,6 +156,46 @@
       <lastmod>2022-12-13T00:00:00.000Z</lastmod>
     </url>
   
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/creating-meaningful-alternative-text/</loc>
+      <lastmod>2022-12-19T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/running-accessible-events/</loc>
+      <lastmod>2022-12-20T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/accessible-lectures-tutorials-and-sessions/</loc>
+      <lastmod>2023-01-05T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/accessible-document-basics/</loc>
+      <lastmod>2023-01-05T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/plain-english-tip-sheet/</loc>
+      <lastmod>2023-01-05T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/draft-minimum-viable-product-accessibility-checklist/</loc>
+      <lastmod>2023-01-06T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/wait-there-s-more-than-one-type-of-pdf-pdf-standards-and-how-they-differ-in-terms-of-accessibility/</loc>
+      <lastmod>2023-02-06T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/psbar-exemptions/</loc>
+      <lastmod>2023-02-14T00:00:00.000Z</lastmod>
+    </url>
+  
       <url>
         <loc>https://www.makethingsaccessible.com/about/</loc>
         <lastmod>2022-10-06T22:17:15.692Z</lastmod>
@@ -198,7 +233,19 @@
         <lastmod>2022-10-06T22:17:15.692Z</lastmod>
       </url>
     <url>
+      <loc>https://www.makethingsaccessible.com/tags/accessible-documents/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/accessible-events/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
       <loc>https://www.makethingsaccessible.com/tags/adapting-websites/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/alt-text/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
@@ -254,6 +301,14 @@
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
+      <loc>https://www.makethingsaccessible.com/tags/events/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/exemptions/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
       <loc>https://www.makethingsaccessible.com/tags/focus-indicators/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
@@ -263,6 +318,10 @@
     </url>
     <url>
       <loc>https://www.makethingsaccessible.com/tags/html/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/images/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
@@ -282,6 +341,10 @@
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
+      <loc>https://www.makethingsaccessible.com/tags/lectures/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
       <loc>https://www.makethingsaccessible.com/tags/links/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
@@ -290,11 +353,23 @@
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
+      <loc>https://www.makethingsaccessible.com/tags/meetings/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
       <loc>https://www.makethingsaccessible.com/tags/monitoring/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
       <loc>https://www.makethingsaccessible.com/tags/nvda/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/pdf/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/plain-english/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
@@ -315,6 +390,10 @@
     </url>
     <url>
       <loc>https://www.makethingsaccessible.com/tags/screen-reader/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/sessions/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
@@ -339,6 +418,10 @@
     </url>
     <url>
       <loc>https://www.makethingsaccessible.com/tags/transcripts/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/tutorials/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>

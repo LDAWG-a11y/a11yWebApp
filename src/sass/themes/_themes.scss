@@ -11,6 +11,7 @@ $--color-highlight: --color-highlight;
 $--color-tip: --color-tip;
 $--color-info: --color-info;
 $--color-warn: --color-warn;
+$--color-warn--bright: --color-warn--bright;
 
 $theme-map-light: (
   $--color-text: #1f1f1f,
@@ -26,6 +27,7 @@ $theme-map-light: (
   $--color-tip: #a3dd94,
   $--color-info: #8fd7ff,
   $--color-warn: #f49c9c,
+  $--color-warn--bright: #c70000,
 );
 
 $theme-map-dark: (
@@ -42,6 +44,7 @@ $theme-map-dark: (
   $--color-tip: #1A6B4E,
   $--color-info: #2a4ea3,
   $--color-warn: #982A2A,
+  $--color-warn--bright: #ff6a6a,
 );
 
 @mixin spread-map($map: ()) {

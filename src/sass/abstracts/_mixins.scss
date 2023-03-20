@@ -1,12 +1,22 @@
 @use '../vendors/mq';
 
-@mixin focus-indicator($is_button: false) {
+@mixin focus-indicator($is_button: false, $is_pill: false, $is_destructive: false, $is_inverted: false) {
   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 
   &:focus,
   &:hover {
     background-color: var($--color-interactive);
     color: var($--color-bg);
+
+    @if $is_destructive {
+      color: var(--color-warn--bright);
+      background-color: var(--color-bg);
+    }
+
+    @if $is_inverted {
+      background-color: var($--color-bg);
+      color: var($--color-interactive);
+    }
   }
 
   @if $is_button {
@@ -20,6 +30,11 @@
       left: -6px;
       border: 2px solid transparent;
       border-radius: $radius-lg;
+      @if $is_pill {
+        border-width: 3px;
+        border-radius: $radius-xxl;
+        inset: -8px;
+      }
 
       @media (forced-colors: active) {
         display: none;
@@ -29,6 +44,9 @@
     &:focus-visible {
       &::before {
         border-color: var(--color-interactive);
+        @if $is_destructive {
+          border-color: var(--color-warn--bright);
+        }
       }
     }
   }
