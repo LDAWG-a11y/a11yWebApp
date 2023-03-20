@@ -141,6 +141,10 @@ module.exports = eleventyConfig => {
     return content.substr(0, content.lastIndexOf(" ", 300)) + "...";
   });
 
+  eleventyConfig.addFilter("uppercase", function(string) {
+    return string.toUpperCase();
+  })
+
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
     if( outputPath && outputPath.endsWith(".html") ) {
       let minified = htmlmin.minify(content, {

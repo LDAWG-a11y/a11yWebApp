@@ -13,15 +13,41 @@ html {
 }
 
 body {
+  position: relative;
   min-height: 100vh;
   max-width: $site-width;
   margin: 0 auto;
   padding: 0 $space-xs;
   background: var(--color-bg);
+  overflow-x: hidden;
 
   @include mq.mq($from:md) {
     padding: 0 $space-lg;
   }
+
+  &.extra-width {
+    max-width: calc($site-width + 2.5rem);
+  }
+}
+
+.extra-width .main {
+  padding: 0;
+}
+
+body[modal-open] {
+  overflow: hidden;
+  z-index: 2;
+}
+
+body[modal-open]::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  z-index: 3;
 }
 
 main {
