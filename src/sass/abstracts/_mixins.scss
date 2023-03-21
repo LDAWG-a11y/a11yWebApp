@@ -30,6 +30,8 @@
       left: -6px;
       border: 2px solid transparent;
       border-radius: $radius-lg;
+      transition: border-color 200ms ease-in;
+
       @if $is_pill {
         border-width: 3px;
         border-radius: $radius-xxl;

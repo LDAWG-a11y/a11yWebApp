@@ -15,12 +15,41 @@
     {{ content | safe }}
   </main>
   {% include "_footer.njk" %}
+  {%- if page.url == "/auditTool/" %}
+    <div class="modal" role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modalTitle" data-displayed="false">
+      <button id="modalCloseTop" class="modal__close-btn modal__close-btn--top"><span class="visually-hidden">Close</span></button>
+      <div class="modal__inner">
+        <h1 id="modalTitle">Generated text</h1>
+        <p>The 4 sections that are generated, each have a Copy button, the label of that button makes it clear what will be copied to a user's clipboard.</p>
+        <p>The 2 tables for Level A and AA are presentational tables, they're designed to be copied and then pasted directly into a standard VPAT table withinin a Word document. The column headers and row headers have been intentionally omitted.</p>
+        <h2 class="modal__section-heading">Issue count text</h2>
+        <div class="modal__section-wrapper--text">
+          <div id="sectionTotals" class="modal__text-section"></div>
+        </div>
+        <h2 class="modal__section-heading">Statement list</h2>
+        <div class="modal__section-wrapper--list">
+          <div id="sectionStatement" class="modal__text-section"></div>
+        </div>
+        <h2 class="modal__section-heading">VPAT table (Level A)</h2>
+        <div class="modal__section-wrapper--tableA">
+          <div id="sectionVPATLevelA" class="modal__text-section"></div>
+        </div>
+        <h2 class="modal__section-heading">VPAT table (Level AA)</h2>
+        <div class="modal__section-wrapper--text">
+          <div id="sectionVPATLevelAA" class="modal__text-section"></div>
+        </div>
+        <div class="modal__footer">
+          <button id="modalCloseBottom" class="modal__close-btn modal__close-btn--bottom">Close</button>
+        </div>
+      </div>
+      <div class="modal__announcement visually-hidden" aria-live="assertive"></div>
+    </div>
+    <div class="page__announcement visually-hidden" aria-live="polite"></div>
+    <script src="/js/auditTool.js"></script>
+  {%- endif %}
   <script src="/js/main.js"></script>
   {%- if page.url == "/faqs/" %}
     <script src="/js/faqs.js"></script>
-  {%- endif %}
-  {%- if page.url == "/auditTool/" %}
-    <script src="/js/auditTool.js"></script>
   {%- endif %}
   <script>
     if (window.netlifyIdentity) {
