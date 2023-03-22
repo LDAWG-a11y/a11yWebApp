@@ -39,7 +39,7 @@ Finally, try where possible to give information about how long users might have 
 
 ## The template
 
-[Download the accessibility statement template](/docs/draft-accessibility…ement-2023-wcag-2.1.docx)
+[Download the accessibility statement template](/docs/draft-accessibility-statement-2023-wcag-2.1.docx)
 
 In the UK there is a specific template and several pieces of required legal wording that must go into an accessibility statement. The template provided by the UK Government through the Government Digital Service (GDS) who are the monitoring body for the regulations is in the form of a [sample statement for a fictional website](https://www.gov.uk/government/publications/sample-accessibility-statement/sample-accessibility-statement-for-a-fictional-public-sector-website).
 
