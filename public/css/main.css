@@ -2571,8 +2571,11 @@ ul:not([class]) > li::marker {
 }
 
 .sc-table__radio {
-  flex-shrink: 0;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
   margin-left: 0.25rem;
   border: 2px solid var(--color-interactive);
   border-radius: 50%;
@@ -2586,7 +2589,6 @@ ul:not([class]) > li::marker {
 }
 .sc-table__radio::before {
   position: absolute;
-  inset: 0.2rem;
   content: "";
   border-radius: 50%;
   height: 1.125rem;

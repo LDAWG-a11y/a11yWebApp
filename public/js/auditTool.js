@@ -1,4 +1,3 @@
-const scRows = document.querySelectorAll('.sc-table__requirement');
 const totalSCFails = document.querySelector('.sc-table__total')
 const modalTrigger = document.querySelector('.control__btn--generate');
 const dataModal = document.querySelector('.modal');
@@ -13,7 +12,7 @@ const wcagTotal =  document.querySelector('#wcagTotal');
 
 counterBtn.forEach(btn => {
   btn.addEventListener('click', (evt) => {
-    const closestOutput = btn.closest('.counter-table__group').querySelector('.counter-table__result');
+    const closestOutput = evt.target.closest('.counter-table__group').querySelector('.counter-table__result');
 
     if (evt.currentTarget.classList.contains('counter-table__btn--add')) {  
       closestOutput.value++;
@@ -21,74 +20,80 @@ counterBtn.forEach(btn => {
       closestOutput.value--;
     }
     wcagTotal.innerText = parseInt(critTotal.value) + parseInt(highTotal.value) + parseInt(medTotal.value) + parseInt(lowTotal.value);
-    closestOutput.value > 0 ? closestOutput.setAttribute('data-pass', false) : closestOutput.setAttribute('data-pass', true);
-    wcagTotal.innerText != 0 ? wcagTotal.setAttribute('data-pass', false) : wcagTotal.setAttribute('data-pass', true);
+    closestOutput.value > 0 ? closestOutput.setAttribute('data-pass', 'false') : closestOutput.setAttribute('data-pass', 'true');
+    wcagTotal.innerText != 0 ? wcagTotal.setAttribute('data-pass', 'false') : wcagTotal.setAttribute('data-pass', 'true');
   })
 })
 
-scRows.forEach(row => {
-  row.querySelectorAll('.sc-table__radio').forEach(radio => {
-    radio.addEventListener('change', (evt) => {
-      radio.closest('.sc-table__group').setAttribute('aria-invalid', false);
+document.querySelectorAll('.sc-table__radio').forEach(radio => {
+  radio.addEventListener('change', (evt) => {
+    radio.closest('.sc-table__group').setAttribute('aria-invalid', 'false');
+    const closestRow = evt.target.closest('tr')
 
-      if (evt.target.value == 'partially-supports' || evt.target.value == 'does-not-support') {
-        row.querySelector('.sc-table__result').setAttribute('data-pass', false);
-        row.querySelector('.sc-table__comment').setAttribute('required', '');
-        row.setAttribute('data-fail', '');
-        row.querySelector('.sc-table__result').innerText = 'Fail';
-
-        if (row.querySelector('.sc-table__comment').value < 1) {
-          row.setAttribute('data-invalid', '');
-          row.querySelector('.sc-table__comment').setAttribute('aria-invalid', true);
-          showErrorMsgForComments(row);
-        } else {
-          rowIsValid(evt.target);  
-        }
-        evt.target.value == 'partially-supports' ? row.setAttribute('data-support', 'Partially Supports') : row.setAttribute('data-support', 'Does Not Support');
-      } else {
-        evt.target.value == 'supports' ? row.setAttribute('data-support', 'Supports') : row.setAttribute('data-support', 'Not Applicable');
-        evt.target.value == 'supports' ? row.querySelector('.sc-table__result').innerText = 'Pass' : row.querySelector('.sc-table__result').innerText = 'N/A';
-        evt.target.value == 'supports' ? row.querySelector('.sc-table__result').setAttribute('data-pass', 'true') : row.querySelector('.sc-table__result').setAttribute('data-pass', 'NA');
-        evt.target.closest('td').querySelector('.sc-table__err-msg').setAttribute('aria-hidden', true);
-        row.querySelector('.sc-table__comment').removeAttribute('required');
-        row.removeAttribute('data-fail');
-        hideErrorMsgForComments(row);
-        rowIsValid(evt.target);        
-      }
-      getFailedSCTotal(document.querySelectorAll('.sc-table__result[data-pass=false').length);
-      evt.target.closest('.sc-table__group').removeAttribute('aria-describedby');
-    })
+    if (evt.target.value == 'partially-supports' || evt.target.value == 'does-not-support') {
+      closestRow.querySelector('.sc-table__result').setAttribute('data-pass', 'false');
+      closestRow.querySelector('.sc-table__result').innerText = 'Fail';
+      closestRow.querySelector('.sc-table__comment').value < 1 ? setErrorMessageForComment(closestRow) : closestRow.removeAttribute('data-invalid');
+    } else {
+      evt.target.value == 'supports' ? closestRow.querySelector('.sc-table__result').innerText = 'Pass' : closestRow.querySelector('.sc-table__result').innerText = 'N/A';
+      evt.target.value == 'supports' ? closestRow.querySelector('.sc-table__result').setAttribute('data-pass', 'true') : closestRow.querySelector('.sc-table__result').setAttribute('data-pass', 'NA');
+      evt.target.closest('td').querySelector('.sc-table__err-msg').setAttribute('aria-hidden', 'true');
+      closestRow.querySelector('.sc-table__comment').removeAttribute('required');
+      setCommentAsValid(closestRow);
+      closestRow.removeAttribute('data-invalid');        
+    }
+    getFailedSCTotal(document.querySelectorAll('.sc-table__result[data-pass=false]').length);
+    evt.target.closest('.sc-table__group').removeAttribute('aria-describedby');
+    evt.target.closest('td').querySelector('.sc-table__err-msg').setAttribute('aria-hidden', 'true');
+    closestRow.setAttribute('data-support', evt.target.nextElementSibling.textContent);
   })
 })
 
 document.querySelector('.sc-table').addEventListener('input', (evt) => {
   if (evt.target.classList.contains('sc-table__comment')) {
-    if (evt.target.value.length > 0) {
-      rowIsValid(evt.target);
-      hideErrorMsgForComments(evt.target.closest('tr'))
+    const closestRow = evt.target.closest('tr');
+    
+    if (evt.target.value.length > 0 && closestRow.querySelector('.sc-table__group').getAttribute('aria-invalid') == 'false') {
+      closestRow.removeAttribute('data-invalid');
+    } 
+    
+    if (evt.target.getAttribute('aria-required') == 'true' && evt.target.value.length == 0) {
+      setErrorMessageForComment(closestRow);
+      closestRow.setAttribute('data-invalid', '');
     } else {
-      evt.target.setAttribute('aria-invalid', true);
-      showErrorMsgForComments( evt.target.closest('tr'));
-      evt.target.closest('tr').setAttribute('data-invalid', '');
+      setCommentAsValid(closestRow)
     }
   }
 })
 
-const rowIsValid = (targetEl) => {
-  targetEl.closest('tr').removeAttribute('data-invalid');
-  targetEl.closest('tr').querySelector('.sc-table__comment').setAttribute('aria-invalid', false);
+const setErrorMessageForComment = (row) => {
+  const errMsg = row.querySelector('.sc-table__comment-wrapper .sc-table__err-msg');
+  row.setAttribute('data-invalid', '');
+  row.querySelector('.sc-table__comment').setAttribute('aria-invalid', 'true');
+  row.querySelector('.sc-table__comment-wrapper').setAttribute('data-valid', 'false');
+  row.querySelector('.sc-table__comment-wrapper .sc-table__err-msg').setAttribute('aria-hidden', 'false');
+  row.querySelector('.sc-table__comment').setAttribute('aria-describedby', errMsg.id)
+}
+
+const setCommentAsValid = (row) => {
+  row.querySelector('.sc-table__comment-wrapper').setAttribute('data-valid', 'true');
+  row.querySelector('.sc-table__comment-wrapper .sc-table__err-msg').setAttribute('aria-hidden', 'true');
+  row.querySelector('.sc-table__comment').removeAttribute('aria-describedby');
+  row.querySelector('.sc-table__comment').setAttribute('aria-invalid', 'false');
 }
 
 const getFailedSCTotal = (totalSCsFailed) => {
   totalSCFails.innerText = totalSCsFailed;
-  totalSCsFailed > 0 ? totalSCFails.setAttribute('data-pass', false) : totalSCFails.setAttribute('data-pass', true);
+  totalSCsFailed > 0 ? totalSCFails.setAttribute('data-pass', 'false') : totalSCFails.setAttribute('data-pass', 'true');
 }
 
 modalTrigger.addEventListener('click', () => {
   const errCount = document.querySelectorAll('tr[data-invalid]');
   errCount.forEach(row => {      
     if (row.querySelector('.sc-table__group').getAttribute('aria-invalid') == 'true') {
-      showErrorMsgForRadios(row);
+      const errMsg = row.querySelector('[data-radio-cell] .sc-table__err-msg');
+      row.querySelector('.sc-table__err-msg').setAttribute('aria-hidden', 'false');
+      row.querySelector('.sc-table__group').setAttribute('aria-describedby', errMsg.id)
     }
   })
 
@@ -104,27 +109,8 @@ modalTrigger.addEventListener('click', () => {
   }
 })
 
-const showErrorMsgForRadios = (row) => {
-  const errMsg = row.querySelector('[data-radio-cell] .sc-table__err-msg');
-  row.querySelector('.sc-table__err-msg').setAttribute('aria-hidden', false);
-  row.querySelector('.sc-table__group').setAttribute('aria-describedby', errMsg.id)
-}
-
-const showErrorMsgForComments = (row) => {
-  const errMsg = row.querySelector('.sc-table__comment-wrapper .sc-table__err-msg');
-  row.querySelector('.sc-table__comment-wrapper').setAttribute('data-valid', 'false');
-  row.querySelector('.sc-table__comment-wrapper .sc-table__err-msg').setAttribute('aria-hidden', false);
-  row.querySelector('.sc-table__comment').setAttribute('aria-describedby', errMsg.id)
-}
-
-const hideErrorMsgForComments = (row) => {
-  row.querySelector('.sc-table__comment-wrapper').setAttribute('data-valid', 'true');
-  row.querySelector('.sc-table__comment-wrapper .sc-table__err-msg').setAttribute('aria-hidden', true);
-  row.querySelector('.sc-table__group').removeAttribute('aria-describedby');
-}
-
 const openModal = () => {
-  dataModal.setAttribute('data-displayed', true);
+  dataModal.setAttribute('data-displayed', 'true');
   generateSummaryParagraph();
   generateStatementAndVPAT();
 
@@ -138,7 +124,7 @@ const openModal = () => {
 }
 
 const generateSummaryParagraph = () => {
-  let totalSCsFailed = document.querySelectorAll('[data-fail]').length;
+  let totalSCsFailed = document.querySelectorAll('.sc-table__result[data-pass="false"]').length;
   let totalWCAGIssues = parseInt(document.querySelector('#wcagTotal').innerText);
 
   if (totalWCAGIssues > 0 ) {
@@ -162,12 +148,11 @@ const generateStatementAndVPAT = () => {
   let vpatTableA = `<table role="presentation">`
   let vpatTableAA = `<table role="presentation">`
 
-  scRows.forEach((row, idx, array) => {
+  document.querySelectorAll('.sc-table__requirement').forEach((row, idx, array) => {
     let issueText = row.querySelector('.sc-table__comment').value;
     const vpatSupport = row.getAttribute('data-support');
-    if (row.hasAttribute('data-fail')) {
+    if (row.querySelector('.sc-table__result[data-pass="false"]')) {
       statementList += '<li style="font: 12pt Arial, sans-serif;">' + issueText.trimEnd() + ' This fails WCAG ' + row.querySelector('.sc-table__link').textContent.trimEnd() + '.</li>';
-      console.log(statementList);
     }
 
     if (row.querySelector('.sc-table__radio[value="supports"').checked == true && row.querySelector('.sc-table__comment').value == '') {
@@ -255,7 +240,6 @@ const closeModal = () => {
   document.body.removeAttribute('modal-open');
   setTimeout(() => {
     modalTrigger.focus();
-
     dataModal.querySelectorAll('.modal__text-section').forEach(el => {
       el.innerHTML = '';
     })
