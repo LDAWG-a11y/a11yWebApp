@@ -272,8 +272,11 @@
 }
 
 .sc-table__radio {
-  flex-shrink: 0;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
   margin-left: $space-xxs;
   border: 2px solid var(--color-interactive);
   border-radius: $radius-pill;
@@ -284,10 +287,11 @@
   background-color: var(--color-bg);
   cursor: pointer;
   z-index: 2;
+
+  
  
   &::before {
     position: absolute;
-    inset: .2rem;
     content: "";
     border-radius: $radius-pill;
     height: 1.125rem;
