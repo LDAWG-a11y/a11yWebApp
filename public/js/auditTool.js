@@ -33,7 +33,7 @@ document.querySelectorAll('.sc-table__radio').forEach(radio => {
     if (evt.target.value == 'partially-supports' || evt.target.value == 'does-not-support') {
       closestRow.querySelector('.sc-table__result').setAttribute('data-pass', 'false');
       closestRow.querySelector('.sc-table__result').innerText = 'Fail';
-      closestRow.querySelector('.sc-table__comment').value < 1 ? setErrorMessageForComment(closestRow) : closestRow.removeAttribute('data-invalid');
+      closestRow.querySelector('.sc-table__comment').value == 0 ? setErrorMessageForComment(closestRow) : closestRow.removeAttribute('data-invalid');
     } else {
       evt.target.value == 'supports' ? closestRow.querySelector('.sc-table__result').innerText = 'Pass' : closestRow.querySelector('.sc-table__result').innerText = 'N/A';
       evt.target.value == 'supports' ? closestRow.querySelector('.sc-table__result').setAttribute('data-pass', 'true') : closestRow.querySelector('.sc-table__result').setAttribute('data-pass', 'NA');

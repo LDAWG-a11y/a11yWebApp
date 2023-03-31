@@ -511,6 +511,14 @@
   details[open] summary {
     margin-bottom: $space-md;
     border-bottom: 2px solid var(--color-interactive);
-    
+  }
+
+  a {
+    &:hover,
+    &:focus {
+      code {
+        color: var(--color-text);
+      }
+    }
   }
 }

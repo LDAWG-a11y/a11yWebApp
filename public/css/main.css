@@ -2345,6 +2345,9 @@ ul:not([class]) > li::marker {
   margin-bottom: 1rem;
   border-bottom: 2px solid var(--color-interactive);
 }
+.cms a:hover code, .cms a:focus code {
+  color: var(--color-text);
+}
 
 .counter-table__wrapper,
 .sc-table__wrapper,

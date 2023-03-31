@@ -196,6 +196,16 @@
       <lastmod>2023-02-14T00:00:00.000Z</lastmod>
     </url>
   
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/site-navigation-is-not-an-aria-menu/</loc>
+      <lastmod>2023-03-30T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/visually-hiding-text/</loc>
+      <lastmod>2023-03-31T00:00:00.000Z</lastmod>
+    </url>
+  
       <url>
         <loc>https://www.makethingsaccessible.com/about/</loc>
         <lastmod>2022-10-06T22:17:15.692Z</lastmod>
@@ -358,6 +368,10 @@
     </url>
     <url>
       <loc>https://www.makethingsaccessible.com/tags/monitoring/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/navigation/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
