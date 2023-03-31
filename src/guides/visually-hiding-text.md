@@ -5,7 +5,7 @@ summary: Sometimes we may need to visually hide text, particularly when this is
   there are considerations to make before we do.
 author: dlee
 date: 2023-03-31
-toc: false
+toc: true
 tags:
   - HTML
   - CSS
