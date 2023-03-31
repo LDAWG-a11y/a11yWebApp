@@ -93,8 +93,6 @@ Finally, what you should definitely not do is this:
 </nav>
 ```
 
-
-
 The above is all kinds of wrong. Firstly, as should be clear now, it is not a menu, in the programmatic sense, it's a navigation. Secondly, we encounter the above pattern quite often and have to write up the issue over and over against [SC 1.3.1 Info and Relationships (A)](https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html). Some ARIA roles require specific roles on their children, several roles require this, one being `role="menu"`, another being `role="menubar"` (there are of course, several more).
 
 So, aside from a HTML/CSS/JavaScript library or framework with "best intentions" trying to help screen reader users understand the purpose of the navigation and doing so quite badly, as everything was likely perfectly fine before they reached for ARIA, they have provided incomplete ARIA.
@@ -114,4 +112,4 @@ There is of course a reason for its existence, but it's not for navigations. It'
 ## Further reading
 
 * [Don't use ARIA menu roles for site nav - Adrian Roselli](https://adrianroselli.com/2017/10/dont-use-aria-menu-roles-for-site-nav.html)
-* [<li> elements must be contained in a `<ul>` or `<ol>` - Deque University](https://dequeuniversity.com/rules/axe/4.4/listitem)
+* [`<li>` elements must be contained in a `<ul>` or `<ol>` - Deque University](https://dequeuniversity.com/rules/axe/4.4/listitem)
