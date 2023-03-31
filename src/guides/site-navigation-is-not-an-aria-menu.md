@@ -19,7 +19,7 @@ We all understand what site navigation is, we may refer to it as nav, navigation
 
 ## An almost infinite amount of site nav flavours
 
-There are likely thousands of patterns of navigation that we may encounter whilst surfing the web, but they can be grouped into 2 types: On-screen navigation and off-screen navigation, the former will be an element that always shows the main navigation links and the latter will only display them as the result of an action such as clicking a button (that's the HTML element` <button>`, which is not spelled like this: `<a>`, sorry, I couldn't resist).
+There are likely thousands of patterns of navigation that we may encounter whilst surfing the web, but they can be grouped into 2 types: On-screen navigation and off-screen navigation, the former will be an element that always shows the main navigation links and the latter will only display them as the result of an action such as clicking a button (that's the HTML element`<button>`, which is not spelled like this: `<a>`, sorry, I couldn't resist).
 
 ## Is a site nav a menu?
 
@@ -93,13 +93,15 @@ Finally, what you should definitely not do is this:
 </nav>
 ```
 
-The above is all kinds of wrong. Firstly, as should be clear now, it is not a menu, in the programmatic sense, it's a navigation. Secondly, we encounter the above pattern quite often and have to write up the issue over and over. Some ARIA roles require specific roles on their children, several roles require this, one being `role="menu"`, another being `role="menubar"` (there are of course, several more).
+
+
+The above is all kinds of wrong. Firstly, as should be clear now, it is not a menu, in the programmatic sense, it's a navigation. Secondly, we encounter the above pattern quite often and have to write up the issue over and over against [SC 1.3.1 Info and Relationships (A)](https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html). Some ARIA roles require specific roles on their children, several roles require this, one being `role="menu"`, another being `role="menubar"` (there are of course, several more).
 
 So, aside from a HTML/CSS/JavaScript library or framework with "best intentions" trying to help screen reader users understand the purpose of the navigation and doing so quite badly, as everything was likely perfectly fine before they reached for ARIA, they have provided incomplete ARIA.
 
 The `<ul>` tag is understood to be a unordered list, a list where the order of contained items does not really affect the meaning, which is in contrast to an `<ol>` or ordered list, which would typically contain items where the order matters.
 
-What is actually happening here, when there is a `<ul role="menu">` present and it is incomplete, by omitting required children, we have list elements that are orphaned from what should have been their parent, because their parent is no longer an unordered list, it is an ARIA menu, which is a different species and this particular species only likes to raise children that are its own and by extension, the same species. If Mowgli had been an `<li>` and the wolves `role="menu",` then let's just say Jungle Book wouldn't have been a Disney movie. So, staying with Jungle Book for one more moment, remember how Baloo sang the song "The Bare Necessities", that applies to site navs too, we just need a navigation element, probably a list and some links, we don't need to change any roles.
+What is actually happening here, when there is a `<ul role="menu">` present and it is incomplete, by omitting required children, we have list elements that are orphaned from what should have been their parent. This is because their parent is no longer an unordered list, it is an ARIA menu as its native semantics have been neutered by ARIA. `A role="menu"` cannot be an `<li>`'s parent as it's like a different species and this particular species only likes to raise children that are its own and by extension, the same species. If Mowgli had been an `<li>` and the wolves `role="menu",` then let's just say Jungle Book wouldn't have been a Disney movie. So, staying with Jungle Book for one more moment, remember how Baloo sang the song "The Bare Necessities", that applies to site navs too, we just need a navigation element, probably a list and some links, we don't need to change any roles, we just want those bare necessities.
 
 So, in order to keep that relationship between a `<ul>` or `<ol>` and its children, when creating a site nav, leave the ARIA roles out of it, they're not needed here. There is of course some ARIA you should be using if you have a button that will display an off-screen navigation once it has been interacted with, but, they're not roles, they're properties or attributes.
 
@@ -112,4 +114,4 @@ There is of course a reason for its existence, but it's not for navigations. It'
 ## Further reading
 
 * [Don't use ARIA menu roles for site nav - Adrian Roselli](https://adrianroselli.com/2017/10/dont-use-aria-menu-roles-for-site-nav.html)
-* [<li> elements must be contained in a <ul> or <ol> - Deque University](https://dequeuniversity.com/rules/axe/4.4/listitem)
+* [<li> elements must be contained in a `<ul>` or `<ol>` - Deque University](https://dequeuniversity.com/rules/axe/4.4/listitem)
