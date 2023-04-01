@@ -109,9 +109,9 @@ The above example works just fine, as the "Contents" of the button, is the image
 
 We can use CSS alone, which is useful when we cannot use an alt attribute as maybe our graphic is created with CSS as opposed to an image and given that the [first rule of ARIA](https://www.w3.org/TR/using-aria/#firstrule) states:
 
-> If you *can* use a native HTML element [[HTML51](https://www.w3.org/TR/using-aria/#bib-html51)] or attribute with the semantics and behaviour you require **already built in**, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible**, then do so**
+> If you can use a native HTML element [[HTML5.1](https://www.w3.org/TR/using-aria/#bib-html51)] or attribute with the semantics and behaviour you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so
 
-So, as a button will happily accept an inline element's text string to formulate its accessible name, we can add some text inside the button, using a suitable HTML tag (I'm going for a <span>) and then I'll hide it visually, but ensure it is still passed to the button's accessible name calculation, first we'd create our HTML element, like so:
+So, as a button will happily accept an inline element's text string to formulate its accessible name, we can add some text inside the button, using a suitable HTML tag (I'm going for a `<span>`) and then I'll hide it visually, but ensure it is still passed to the button's accessible name calculation, first we'd create our HTML element, like so:
 
 ```html
 <nav>
