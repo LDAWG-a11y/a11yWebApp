@@ -27,7 +27,7 @@ You have been given access to a Digital Accessibility remediation spreadsheet to
 * <span style="color:#FFFFFF;background-color:#C00000;">Backlog</span> #C00000 background #FFFFFF text – Open issues, not going to be fixed in the next 6 months
 * <span style="color:#000000;background-color:#d9d9d9;">Discounted</span> #d9d9d9 background #000000 text – Issue discussed and discounted from remediation due to workarounds or other resolution
 * <span style="color:#000000;background-color:#E2EFD9;">Closed</span> #E2EFD9 background #000000 text – Content relating to issue has been removed or End of Life
-* Blocked #D45B5B background #000000 text – used when absolute block to this being resolved, exempted content under law, supplier no longer exists, nothing can be done until put out to tender, exemptions, disproportionate burden etc.  Blocked claims must be double-checked with Digital Accessibility Team for Accessibility Regulations coverage
+* <span style="color:#000000;background-color:#D45B5B;">Blocked</span> #D45B5B background #000000 text – used when absolute block to this being resolved, exempted content under law, supplier no longer exists, nothing can be done until put out to tender, exemptions, disproportionate burden etc.  Blocked claims must be double-checked with Digital Accessibility Team for Accessibility Regulations coverage
 * Not yet assigned #A18518 background #000000 text – default starting status, needs to be changed to relevant status by product owner.
 
 ### Priority
