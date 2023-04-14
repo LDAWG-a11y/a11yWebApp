@@ -31,8 +31,8 @@ You have been given access to a Digital Accessibility remediation spreadsheet to
 * <span style="color:#000000;background-color:#A18518;">Not yet assigned</span> #A18518 background #000000 text – default starting status, needs to be changed to relevant status by product owner.
 
 ### Priority
-* Critical #C00000 background #FFFFFF text
-* High #FCA0AE background #000000 text
+* <span style="color:#FFFFFF;background-color:#C00000;">Critical</span> #C00000 background #FFFFFF text
+* <span style="color:#000000;background-color:#FCA0AE;">High</span> #FCA0AE background #000000 text
 * Medium #FFF2CC background #000000 text
 * Low #E2EFD9 background #000000 text
 * Weakness #d9d9d9 background #000000 text – Some audit reports will refer to weaknesses ad advisories.
