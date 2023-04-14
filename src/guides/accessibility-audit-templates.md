@@ -49,6 +49,43 @@ If you have any questions on filling out the spreadsheet please email xxx@xxx.xx
 
 ## Remediation Email Template
 
+Hi, 
+
+
+
+The Digital Accessibility Team have been working through testing for all the digital systems as part of our remediation programme to help us meet our legal requirements.
+  
+
+Please find attached a copy of the accessibility audit for the X_SYSTEM (Attached for reference) and the X_SYSTEM Accessibility Audit Issue List (Attached for reference).  
+
+
+
+We need your help to complete the X_SYSTEM Accessibility Audit Issue List to help us move forward with meeting our legal requirements.  
+
+
+
+It is vital that we understand the forward roadmap for fixing outstanding accessibility issues. Some of these issues can be solved by UoW internal changes, some may need to be fixed by suppliers, and some complex issues may need more discussion between product owners and the DA team.  
+
+
+
+We would appreciate if you can fill out the spreadsheet to the best of your knowledge, identifying issues that are in scope of your control, would be supplier fixes, or need further discussion. To do this we would appreciate you selecting the appropriate status level (explanation attached) and providing any additional notes relevant to each issue.
+  
+
+Results from these remediation plan spreadsheets will be fed back into ISS workplan discussions if applicable. Thank you in advance for your help.  
+
+
+
+Any questions please feel free to ask and one of the team will be happy to support. 
+ 
+
+
+Kind regards, 
+
+
+
+
+
+Digital Accessibility Team
 
 ## Remediation Follow Up Email Template
 
