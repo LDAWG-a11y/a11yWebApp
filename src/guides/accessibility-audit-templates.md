@@ -4,17 +4,26 @@ summary: Accessibility Audit Templates to help with auditing and remediation
 author: swilkinson
 date: 2023-04-14
 toc: false
+tags:
+  - Audit
+  - Testing
 isGuide: true
 ---
 ## Digital Accessibility Remediation Spreadsheet instructions
 
-You have been given access to a Digital Accessibility remediation spreadsheet to help produce a forward plan to resolve digital accessibility issues to help UoW meet our legal requirements.
-  To complete the spreadsheet you will have to set the Status for each issue based on your knowledge of who would be able to implement required changes or if any changes have been made.
-  If you know when changes are likely to be made you can give indicative resolution dates to help with forward planning.
-  You can also provide any additional notes on issues to help the DA team better understand where there may be additional complexities or blockers.
-  Each issue has a number and priority (matching the associated audit report), an explanation of the issue and what WCAG success criteria it fails against.
-  Explanations of Status types and Priorities can be found below.
-  If you have any questions on filling out the spreadsheet please email digitalaccessibility@westminster.ac.uk
+You have been given access to a Digital Accessibility remediation spreadsheet to help produce a forward plan to resolve digital accessibility issues to help meet the legal requirements.
+
+To complete the spreadsheet you will have to set the Status for each issue based on your knowledge of who would be able to implement required changes or if any changes have been made.
+
+If you know when changes are likely to be made you can give indicative resolution dates to help with forward planning.
+
+You can also provide any additional notes on issues to help the Digital Accessibility team better understand where there may be additional complexities or blockers.
+
+Each issue has a number and priority (matching the associated audit report), an explanation of the issue and what WCAG success criteria it fails against.
+
+Explanations of Status types and Priorities can be found below.
+
+If you have any questions on filling out the spreadsheet please email xxx@xxx.xx.xx
 
 ### Status
 
@@ -37,3 +46,86 @@ You have been given access to a Digital Accessibility remediation spreadsheet to
 * <span style="color:#000000;background-color:#E2EFD9;">Low</span> #E2EFD9 background #000000 text
 * <span style="color:#000000;background-color:#d9d9d9;">Weakness</span> #d9d9d9 background #000000 text – Some audit reports will refer to weaknesses.
 * <span style="color:#000000;background-color:#FFFFFF;">Advisory</span> #FFFFFF background #000000 text – Some audit reports will refer to advisories.
+
+## Remediation Email Template
+
+Hi, 
+
+
+
+The Digital Accessibility Team have been working through testing for all the digital systems as part of our remediation programme to help us meet our legal requirements.
+  
+
+Please find attached a copy of the accessibility audit for the X_SYSTEM (Attached for reference) and the X_SYSTEM Accessibility Audit Issue List (Attached for reference).  
+
+
+
+We need your help to complete the X_SYSTEM Accessibility Audit Issue List to help us move forward with meeting our legal requirements.  
+
+
+
+It is vital that we understand the forward roadmap for fixing outstanding accessibility issues. Some of these issues can be solved by organisational internal changes, some may need to be fixed by suppliers, and some complex issues may need more discussion between product owners and the DA team.  
+
+
+
+We would appreciate if you can fill out the spreadsheet to the best of your knowledge, identifying issues that are in scope of your control, would be supplier fixes, or need further discussion. To do this we would appreciate you selecting the appropriate status level (explanation attached) and providing any additional notes relevant to each issue.
+  
+
+Results from these remediation plan spreadsheets will be fed back into the workplan discussions if applicable. Thank you in advance for your help.  
+
+
+
+Any questions please feel free to ask and one of the team will be happy to support. 
+ 
+
+
+Kind regards, 
+
+
+
+
+
+Digital Accessibility Team
+
+## Remediation Follow Up Email Template
+
+Hi,
+
+
+
+The Digital Accessibility Team have been working through testing for all the digital systems as part of our remediation programme to help us meet our legal requirements.
+
+
+
+On the 00/00/00 you were sent a copy of the accessibility audit for X_SYSTEM (Attached for reference). We are now getting back in touch to progress remediation actions.
+
+
+
+We need your help to complete the XSYSTEM Remediation Spreadsheet (linked) to help us move forward with meeting our legal requirements. (if you cannot access the spreadsheet please email).
+
+
+
+It is vital that we understand the forward roadmap for fixing outstanding accessibility issues. Some of these issues can be solved by organisational internal changes, some may need to be fixed by suppliers, and some complex issues may need more discussion between product owners and the DA team.
+
+
+
+We would appreciate if you can fill out the spreadsheet to the best of your knowledge, identifying issues that are in scope of your control, would be supplier fixes, or need further discussion. To do this we would appreciate you selecting the appropriate status level (explanation attached) and providing any additional notes relevant to each issue.
+
+
+
+We will be in touch again in 2 weeks to discuss responses and will start planning in further meetings to agree actions on complex issues that require further discussion.
+
+
+Results from these remediation plan spreadsheets will be fed back into the workplan discussions. Thank you in advance for your help.
+
+
+
+Any questions please feel free to ask and one of the team will be happy to support.
+
+
+
+Kind regards,
+
+
+
+The Digital Accessibility Team
