@@ -71,7 +71,7 @@ It is vital that we understand the forward roadmap for fixing outstanding access
 We would appreciate if you can fill out the spreadsheet to the best of your knowledge, identifying issues that are in scope of your control, would be supplier fixes, or need further discussion. To do this we would appreciate you selecting the appropriate status level (explanation attached) and providing any additional notes relevant to each issue.
   
 
-Results from these remediation plan spreadsheets will be fed back into ISS workplan discussions if applicable. Thank you in advance for your help.  
+Results from these remediation plan spreadsheets will be fed back into the workplan discussions if applicable. Thank you in advance for your help.  
 
 
 
