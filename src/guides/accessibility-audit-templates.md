@@ -23,7 +23,7 @@ You have been given access to a Digital Accessibility remediation spreadsheet to
 * <span style="color:#000000;background-color:#f7cb1b;">In-progress fixed</span> #f7cb1b background #000000 text - Fixed but waiting for approval to deploy
 * <span style="color:#000000;background-color:#b6e3b3;">Approved</span> #b6e3b3 background #000000 text – Fix approved, waiting to be deployed
 * <span style="color:#000000;background-color:#8ae384;">Resolved</span> #8ae384 background #000000 text – Fixed, rechecked by DA team
-* Supplier #FCA0AE background #000000 text – Can only be fixed by third party supplier
+* <span style="color:#000000;background-color:#FCA0AE;">Supplier</span> #FCA0AE background #000000 text – Can only be fixed by third party supplier
 * Backlog #C00000 #FFFFFF text – Open issues, not going to be fixed in the next 6 months
 * Discounted #d9d9d9 background #000000 text – Issue discussed and discounted from remediation due to workarounds or other resolution
 * Closed #E2EFD9 background #000000 text – Content relating to issue has been removed or End of Life
