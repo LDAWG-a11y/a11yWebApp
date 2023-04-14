@@ -64,7 +64,7 @@ We need your help to complete the X_SYSTEM Accessibility Audit Issue List to hel
 
 
 
-It is vital that we understand the forward roadmap for fixing outstanding accessibility issues. Some of these issues can be solved by UoW internal changes, some may need to be fixed by suppliers, and some complex issues may need more discussion between product owners and the DA team.  
+It is vital that we understand the forward roadmap for fixing outstanding accessibility issues. Some of these issues can be solved by organisational internal changes, some may need to be fixed by suppliers, and some complex issues may need more discussion between product owners and the DA team.  
 
 
 
