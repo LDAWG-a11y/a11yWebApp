@@ -35,4 +35,5 @@ You have been given access to a Digital Accessibility remediation spreadsheet to
 * <span style="color:#000000;background-color:#FCA0AE;">High</span> #FCA0AE background #000000 text
 * <span style="color:#000000;background-color:#FFF2CC;">Medium</span> #FFF2CC background #000000 text
 * <span style="color:#000000;background-color:#E2EFD9;">Low</span> #E2EFD9 background #000000 text
-* <span style="color:#000000;background-color:#d9d9d9;">Weakness</span> #d9d9d9 background #000000 text – Some audit reports will refer to weaknesses ad advisories.
+* <span style="color:#000000;background-color:#d9d9d9;">Weakness</span> #d9d9d9 background #000000 text – Some audit reports will refer to weaknesses.
+* <span style="color:#000000;background-color:#FFFFFF;">Advisory</span> #FFFFFF background #000000 text – Some audit reports will refer to advisories.
