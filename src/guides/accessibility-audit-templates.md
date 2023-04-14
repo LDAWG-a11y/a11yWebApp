@@ -18,7 +18,7 @@ You have been given access to a Digital Accessibility remediation spreadsheet to
 
 ### Status
 
-* Open #FFEB9C background #000000 text - Tested by DA team, internal responsibility, no work to resolved underway
+* <span style="color:#FFEB9C;background-color:#000000;">Open</span> #FFEB9C background #000000 text - Tested by DA team, internal responsibility, no work to resolved underway
 * In-progress #f7d963 background #000000 text - Currently investigating or working on fix
 * In-progress fixed #f7cb1b background #000000 text - Fixed but waiting for approval to deploy
 * Approved #b6e3b3 background #000000 text – Fix approved, waiting to be deployed
