@@ -66,4 +66,44 @@ We'll assume this opens a modal of some sort and a user can change some settings
 
 Here, we've added an ID, just for easier targeting of the element, then we are listening for a `keydown` event, when that happens on our link-not-a-link element, we prevent the default behaviour of the browser, which would be to scroll the screen, then we simulate a `click` event on the link-not-a-link, which would act the same as pressing <kbd>Enter</kbd> or clicking with a mouse etc. So, is it a link or a button now?
 
-Well, as we have a href attribute, when we click it, the URL is modified, which could be problematic in some instances, say a user wanting to revisit your site typing in the Search bar and then clicking the suggestion with the appended URL,
+Well, as we have a href attribute, when we click it, the URL is modified, which could be problematic in some instances, say a user wanting to revisit your site typing in the Search bar and then clicking the suggestion with the appended URL, so now we may want to remove the `href` attribute, like so:
+
+```html
+<a id="clickyThing" role="button">Home</a>
+
+<script>
+  document.querySelector('#clickyThing').addEventListener('keydown', (evt) => {
+    if (evt.keyCode == 32) {
+      evt.preventDefault();
+      evt.target.click();
+    }
+  })
+</script>
+```
+
+Now we're golden right, we don't interfere with the browser history, modify the URL and our link that we wanted to be a button is now a button, right? Wrong. Because now the link doesn't have an `href` attribute, it's not actually a link and it's still not a button, because it won't receive keyboard focus. The moment that we removed that `href`, we prevented keyboard users from being able to use the control, so let's fix that:
+
+```html
+<a tabindex="0" id="clickyThing" role="button">Home</a>
+
+<script>
+  document.querySelector('#clickyThing').addEventListener('keydown', (evt) => {
+    if (evt.keyCode == 32) {
+      evt.preventDefault();
+      evt.target.click();
+    }
+  })
+</script>
+```
+
+Now by setting tabindex="0" on to the link, we're getting closer:
+
+It has a role of button
+
+It has an accessible name
+
+It won't modify the URL or affect browser history
+
+It works with both <kbd>Space</kbd>
+
+But now, it won't work with <kbd>Enter</kbd>, as it's not a link anymore, so we need to modify our eventListener, like so:
