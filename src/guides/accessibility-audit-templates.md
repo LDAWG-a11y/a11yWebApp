@@ -4,14 +4,21 @@ summary: Accessibility Audit Templates to help with auditing and remediation
 author: swilkinson
 date: 2023-04-14
 toc: false
+tags:
+  - Audit
+  - Testing
 isGuide: true
 ---
 ## Digital Accessibility Remediation Spreadsheet instructions
 
 You have been given access to a Digital Accessibility remediation spreadsheet to help produce a forward plan to resolve digital accessibility issues to help UoW meet our legal requirements.
-  To complete the spreadsheet you will have to set the Status for each issue based on your knowledge of who would be able to implement required changes or if any changes have been made.
-  If you know when changes are likely to be made you can give indicative resolution dates to help with forward planning.
-  You can also provide any additional notes on issues to help the DA team better understand where there may be additional complexities or blockers.
+
+To complete the spreadsheet you will have to set the Status for each issue based on your knowledge of who would be able to implement required changes or if any changes have been made.
+
+If you know when changes are likely to be made you can give indicative resolution dates to help with forward planning.
+
+You can also provide any additional notes on issues to help the DA team better understand where there may be additional complexities or blockers.
+
   Each issue has a number and priority (matching the associated audit report), an explanation of the issue and what WCAG success criteria it fails against.
   Explanations of Status types and Priorities can be found below.
   If you have any questions on filling out the spreadsheet please email digitalaccessibility@westminster.ac.uk
