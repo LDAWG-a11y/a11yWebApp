@@ -14,7 +14,9 @@ isGuide: true
 
 [Test the website](https://www.makethingsaccessible.com/guides/draft-minimum-viable-product-accessibility-checklist/) using both your favoured [semi-automated tools](https://www.makethingsaccessible.com/guides/semi-automated-accessibility-testing-tools/) such as Accessibility Insights for Web, or Axe, as well as manually testing the website using [screen readers](https://www.makethingsaccessible.com/guides/screen-reader-basic-website-testing/), mobile devices, using only a keyboard, and by looking at the [HTML](https://www.makethingsaccessible.com/tags/html/) code to check if it works as expected and required and meets the Web Content Accessibility Guidelines (WCAG) [2.1](https://www.w3.org/TR/WCAG21/).
 
-Use the Make Things Accessible 
+Use the [Make Things Accessible Master Accessibility Audit Template](/docs/mta-master-accessibility-audit-template.dotx) (28KB DOTX) to detail the auditing and complete the document.
+
+
 
 ## Digital Accessibility Remediation Spreadsheet instructions
 
