@@ -10,6 +10,10 @@ tags:
 file: /docs/mta-master-accessibility-audit-template.dotx
 isGuide: true
 ---
+## Digital Accessibility Audit instructions
+Test the website using both your favoured semi-automated tools such as Accessibility Insights for Web, or Axe, as well as manually testing the website using 
+
+
 ## Digital Accessibility Remediation Spreadsheet instructions
 
 You have been given access to a Digital Accessibility remediation spreadsheet to help produce a forward plan to resolve digital accessibility issues to help meet the legal requirements.
