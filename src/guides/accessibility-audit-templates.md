@@ -7,7 +7,7 @@ toc: false
 tags:
   - Audit
   - Testing
-file: /docs/mta-master-accessibility-audit-template.dotx
+file: /docs/mta-master-accessibility-issues-list-template.xlsx
 isGuide: true
 ---
 ## Digital Accessibility Audit instructions
@@ -16,7 +16,7 @@ isGuide: true
 
 Use the [Make Things Accessible Master Accessibility Audit Template](/docs/mta-master-accessibility-audit-template.dotx) (28KB DOTX) to create an audit document, then detail the auditing and complete the audit document.
 
-Once the audit is complete, transfer each WCAG Success Criteria Failure for each issue onto the Make Things Accessible spreadsheet so that where each failure is sitting in the remediation lifecycle can be logged.
+Once the audit is complete, transfer each WCAG Success Criteria Failure for each issue onto the the accessibility issues list spreadsheet created from the [Make Things Accessible spreadsheet template](/docs/mta-master-accessib…ssues-list-template.xlsx), so that where each failure is sitting in the remediation lifecycle can be logged.
 
 ## Digital Accessibility Remediation Spreadsheet instructions
 
