@@ -8,6 +8,9 @@ summary: This guide walks you through Web Content Accessibility Guidelines
 author: mpateman
 date: 2023-01-06
 toc: false
+tags:
+  - Audit
+  - Testing
 isGuide: true
 ---
 ## Web Content Accessibility Guidelines (WCAG) MPBW MVP 
