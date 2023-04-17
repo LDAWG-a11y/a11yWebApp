@@ -5,7 +5,7 @@ summary: Let's take a look at links and buttons and discuss why these two
   expectations
 author: dlee
 date: 2023-04-16
-toc: false
+toc: true
 tags:
   - HTML
   - Best practice
