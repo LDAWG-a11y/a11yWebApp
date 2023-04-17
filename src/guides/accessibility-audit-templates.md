@@ -7,7 +7,7 @@ toc: false
 tags:
   - Audit
   - Testing
-file: /docs/uow-master-accessibility-audit-template.dotx
+file: /docs/mta-master-accessibility-audit-template.dotx
 isGuide: true
 ---
 ## Digital Accessibility Remediation Spreadsheet instructions
