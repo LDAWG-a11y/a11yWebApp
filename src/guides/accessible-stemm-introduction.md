@@ -1,5 +1,5 @@
 ---
-title: Accessible STEMM Introduction
+title: Accessible STEMM Baseline Introduction
 summary: The proposal addresses accessibility of educational content
   specifically with respect to the STEMM disciplines. We use the acronym
   science, technology, engineering, and mathematics and medicine (STEMM),
