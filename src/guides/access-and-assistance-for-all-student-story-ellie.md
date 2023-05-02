@@ -7,6 +7,8 @@ date: 2023-05-02
 toc: false
 isGuide: true
 ---
+<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">These student stories were produced as part of the "Access and Assistance for All" campaign by the British Youth Council, which aims to increase awareness and access to assistive technology within further education. See the main \[Access and Assistance for All student stories](/guides/aaa-student-stories/) page to learn more about our campaign.</span></div>
+
 ![](src/guideImg/ellie.png)
 
 ## Could you tell us a little bit about your background?
