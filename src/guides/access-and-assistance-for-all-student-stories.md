@@ -17,7 +17,7 @@ isGuide: true
 
 <div class="stories-grid-item">
 
-![]()
+![](src/guideImg/jake.png)
 
 <p class="stories-grid-p"></p>
 
