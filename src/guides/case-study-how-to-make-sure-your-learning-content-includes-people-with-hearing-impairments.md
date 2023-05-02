@@ -7,6 +7,8 @@ summary: Jake Harrison is a participant in the BYC's Access and Assistance for
 author: admin
 date: 2023-05-02
 toc: false
+tags:
+  - AAA Student Stories
 isGuide: true
 ---
 # How to make sure your learning content includes people with hearing impairments
