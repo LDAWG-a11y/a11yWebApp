@@ -9,11 +9,9 @@ tags:
   - AAA Student Stories
 isGuide: true
 ---
-<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">These student stories were produced as part of the "Access and Assistance for All" campaign by the British Youth Council, which aims to increase awareness and access to assistive technology within further education. See the main \\\[Access and Assistance for All student stories](/guides/aaa-student-stories/) page to learn more about our campaign.</span></div>
+<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">These student stories were produced as part of the "Access and Assistance for All" campaign by the British Youth Council, which aims to increase awareness and access to assistive technology within further education. See the main \[Access and Assistance for All student stories](/guides/aaa-student-stories/) page to learn more about our campaign.</span></div>
 
 ![](src/guideImg/coleen.png)
-
-
 
 ## Could you tell us a little bit about your background?
 
