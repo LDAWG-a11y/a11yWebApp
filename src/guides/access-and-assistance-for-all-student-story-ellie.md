@@ -3,7 +3,7 @@ title: Access and Assistance for All Student Story- Ellie
 summary: Ellie is a participant in the BYC's Access and Assistance for All
   campaign. This is her student story.
 author: admin
-date: 2023-05-02
+date: 2023-05-17
 toc: false
 tags:
   - AAA Student Stories
