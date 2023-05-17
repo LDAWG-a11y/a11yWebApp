@@ -4,7 +4,7 @@ summary: Tim is a participant in the BYC's Access and Assistance for All
   campaign. This is his student story, about how he overcame some of the
   challenges of dyslexia.
 author: admin
-date: 2023-05-02
+date: 2023-05-17
 toc: true
 tags:
   - AAA Student Stories
