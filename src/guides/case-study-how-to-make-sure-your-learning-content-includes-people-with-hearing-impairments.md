@@ -5,18 +5,15 @@ summary: Jake Harrison is a participant in the BYC's Access and Assistance for
   All campaign. This is his student story, about how you can make sure that your
   leaning content is inclusive for people with hearing impairments.
 author: admin
-date: 2023-05-02
+date: 2023-05-17
 toc: false
 tags:
   - AAA Student Stories
 isGuide: true
 ---
-# How to make sure your learning content includes people with hearing impairments
-
 ## A learner case study by [Jake Harrison](https://www.linkedin.com/in/jakeyharrison3/) from [Designing Accessible Learning Content](https://www.koganpage.com/product/designing-accessible-learning-content-9781789668056)
 
-
-<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">These student stories were produced as part of the "Access and Assistance for All" campaign by the British Youth Council, which aims to increase awareness and access to assistive technology within further education. See the main [Access and Assistance for All student stories](/guides/aaa-student-stories/) page to learn more about our campaign.</span></div>
+<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">These student stories were produced as part of the "Access and Assistance for All" campaign by the British Youth Council, which aims to increase awareness and access to assistive technology within further education. See the main \[Access and Assistance for All student stories](/guides/aaa-student-stories/) page to learn more about our campaign.</span></div>
 
 ![](src/guideImg/jake.png)
 
