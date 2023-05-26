@@ -203,6 +203,8 @@ When considering whether third-party produced content is in scope or out of scop
 
 Because the topic of third-party content is so broad, we have a separate guide further explaining 3rd party content exemptions and how you can carefully consider your responsibilities.
 
+[3rd party content responsibilities guide](https://www.makethingsaccessible.com/guides/3rd-party-content-responsibilities/).
+
 ### Heritage items
 
 > **“Reproductions of items in heritage collections that cannot be made fully accessible because of either-**
