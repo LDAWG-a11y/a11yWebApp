@@ -9,6 +9,7 @@ tags:
   - PSBAR
   - Regulations
   - Exemptions
+file: /docs/new-3rd-part-content-responsibility-matrix.xlsx
 isGuide: true
 ---
 Third party content comes in all shapes and sizes. This could be documents which you are required to publish on your website in a certain template by law, comments from members of the public on ‘forum’ areas, or a wide range of other content.
@@ -120,7 +121,7 @@ The flow diagram covers the following 8 journeys:
    * Is there statutory pressure? No, next question
    * Did you pay for it? No, you are not responsible
 
-Alternatively, if you want the options presented as a matrix with some example text for options, you can download the responsibilities matrix.
+Alternatively, if you want the options presented as a matrix with some example text for options, you can [download the responsibilities matrix](/docs/new-3rd-part-conten…sponsibility-matrix.xlsx).
 
 ## 3rd party examples
 
