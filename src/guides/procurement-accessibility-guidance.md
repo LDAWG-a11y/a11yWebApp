@@ -18,7 +18,7 @@ If you are currently procuring any website, system, mobile app or other content 
 
 Public sector bodies are in scope of [accessibility regulations](https://www.makethingsaccessible.com/guides/what-are-the-public-sector-bodies-accessibility-regulations/) and as such all legal responsibility falls on the public sector body, developers and contractors cannot be held accountable unless you specifically tie them to meeting the legal obligations within contract documentation and make sure to get evidence during procurement.
 
-There are many complexities when it comes to regulation responsibilities and 3rd parties. Find out whether you may hold responsibility for 3rd party content.
+There are many complexities when it comes to regulation responsibilities and 3rd parties. We have more information on these complexities in our [3rd party content responsibilities guide](https://www.makethingsaccessible.com/guides/3rd-party-content-responsibilities/).
 
 ## Going to tender
 
