@@ -1,5 +1,5 @@
 {% include "_head.njk" %}
-<body {%- if extraWide %} class="extra-width" {%- endif %}>
+<body {%- if extraWide %} class="extra-width" {%- endif %} {%- if aaa %} class="aaa-content" {% endif %}>
   {% include "_header.njk" %}
   {% if '/accessibility' in page.url or '/privacy' in page.url or '/codeOfConduct' in page.url %}
     {% if toc %}

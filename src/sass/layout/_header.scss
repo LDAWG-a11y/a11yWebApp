@@ -4,20 +4,27 @@
   margin-bottom: $space-xxxxl;
   padding: $space-xxxl $space-xs 0;
   height: auto;
-  background: var(--color-primary);
-  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
-  clip-path: polygon(0 0, 100% 0, 100% 97.5%, 0% 100%);
-  
+
+  &:not(.aaa-content &) {
+    background: var(--color-primary);
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    clip-path: polygon(0 0, 100% 0, 100% 97.5%, 0% 100%);
+  }  
 
   @include mq.mq($from:sm) {
-    clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);    
+    &:not(.aaa-content &) {
+      clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+    }
   }
 
   @include mq.mq($from:md) {
     margin-bottom: $space-bigger;
     padding-top: $space-xl;
     height: auto;
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+
+    &:not(.aaa-content &) {
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+    }
 
     .has-js & {
       padding-top: $space-xxxxl;
@@ -46,6 +53,10 @@ button[class^="header__themes-btn"] {
   top: $space-sm;
   right: $space-md;
   padding: $space-xxs $space-xl $space-xxs $space-sm;
+
+  .aaa-content & {
+    border: 2px solid var(--color-interactive);
+  }
 
   &::before,
   &::after {
@@ -186,12 +197,17 @@ button[class^="header__themes-btn"] {
 
 .header__themes-btn--light,
 .header__themes-btn--system,
-.header__themes-btn--dark {
+.header__themes-btn--dark,
+.sub-nav__toggle {
   @extend %smallest-text;
 
   position: relative;
   padding: $space-xs $space-sm;
   width: fit-content;
+
+  .aaa-content & {
+    border: 2px solid var(--color-interactive);
+  }
 
   &::before,
   &::after {
@@ -248,8 +264,30 @@ button[class^="header__themes-btn"] {
 }
 
 .main-nav {
+  position: relative;
   border-radius: $radius-sm;
   background: var(--color-bg);
+
+  .aaa-content & {
+    margin: $space-sm 0 0;
+    border-radius: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+      z-index: -1;
+
+      @include mq.mq($from:md) {
+        border-radius: 50px;
+      }
+    }
+
+    @include mq.mq($from:md) {
+      border-radius: 50px;
+    }
+  }
 
   @media (prefers-color-scheme: dark) {
     background-color: var(--color-bg);
@@ -363,7 +401,8 @@ button[class^="header__themes-btn"] {
   }
 }
 
-.main-nav__link {
+.main-nav__link,
+.sub-nav__link {
   position: relative;
   text-decoration: none;
   padding: $space-xxs $space-xxs;
@@ -447,6 +486,10 @@ button[class^="header__themes-btn"] {
   color: var(--color-bg);
   transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 
+  .aaa-content & {
+    color: var(--color-text);
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -464,14 +507,26 @@ button[class^="header__themes-btn"] {
 
   [data-theme="dark"] & {
     color: var(--color-text);
+
+    .aaa-content & {
+      color: var(--color-bg);
+    }
   }
 
   [data-theme="light"] & {
     color: var(--color-bg);
+
+    .aaa-content & {
+      color: var(--color-text);
+    }
   }
 
   @media (prefers-color-scheme: dark) {
     color: var(--color-text);
+
+    .aaa-content & {
+      color: var(--color-bg);
+    }
   }
 
   &:focus-visible {
@@ -482,4 +537,46 @@ button[class^="header__themes-btn"] {
       width: 100%;
     }
   }
+}
+
+.header__aaa-logo {
+  &:not(.header__welcome-text &) {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto 0;
+  }
+}
+
+.sub-nav {
+  text-align: right;
+  margin-top: $space-xxxl;
+}
+
+.sub-nav__toggle {
+  @extend %small-text;
+  margin-bottom: $space-lg;
+  border-radius: $radius-sm;
+  font-weight: 600;
+}
+
+.sub-nav__toggle[aria-expanded="false"] + .sub-nav__list {
+  display: none;
+}
+
+.sub-nav__toggle[aria-expanded="true"] + .sub-nav__list {
+  display: block;
+}
+
+.sub-nav__list {
+  list-style: none;
+}
+
+.sub-nav__item {
+  
+}
+
+.sub-nav__link {
+  // @include focus-indicator(false, false, false, false);
+
+  // padding: $;
 }
