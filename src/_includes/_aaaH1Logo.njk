@@ -1,0 +1,15 @@
+<h1 id="h1" class="header__welcome-text" tabindex="-1">
+  {%- if page.url === "/aaa/" %}
+  <picture class="header__aaa-logo">
+    <img
+    sizes="(max-width: 800px) 100vw, 800px"
+    srcset="
+    ../img/aaa-light_vpjlfm_c_scale,w_300.png 300w,
+    ../img/aaa-light_vpjlfm_c_scale,w_800.png 800w"
+    src="../aaa-light_vpjlfm_c_scale,w_800.png"
+    alt="Access and Assistance for All logo">
+  </picture>
+  {% else %}
+    {{ title }}
+  {%- endif  %}
+</h1>

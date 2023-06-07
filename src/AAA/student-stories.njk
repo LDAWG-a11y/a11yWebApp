@@ -1,0 +1,24 @@
+---
+date: Last Modified
+permalink: "aaa/student-stories/"
+layout: base.njk
+pageName:
+title: AAA Student Stories
+summary: Some summary
+aaa: true
+usesCMS: true
+---
+<p>These student stories were produced as part of the "Access and Assistance for All" campaign by the British Youth Council, which aims to increase awareness and access to assistive technology within further education.</p>
+
+<ul class="cards" data-aaa>
+  {% for card in collections.studentStoriesAAA %}
+    <li class="card">
+      <div class="card__text-wrapper">
+        <h2 class="card__title"><a href="{{ card.url }}" class="card__link">{{ card.data.title }}</a></h2>
+      </div>
+      <div class="card__img-wrapper">
+        {%- if card.data.img %}{% image card.data.img.src, '' %}{% else %}<img class="card__placeholder-img--aaa" src="/img/aaa-light_vpjlfm_c_scale,w_360.png" alt="">{% endif %}
+      </div>
+    </li>
+  {% endfor %}
+</ul>

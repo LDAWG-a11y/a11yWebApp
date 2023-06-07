@@ -6,6 +6,7 @@ summary: The Make Things Accessible website's accessibility statement was
   written after a robust manual and semi-automated testing procedure, reaching
   or surpassing WCAG AA conformance
 toc: true
+usesCMS: true
 ---
 This accessibility statement applies to the makethingsaccessible.com website.
 

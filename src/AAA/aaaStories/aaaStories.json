@@ -1,0 +1,6 @@
+{
+  "layout": "guide.njk",
+  "tags": "studentStoriesAAA",
+  "permalink": "/aaa/stories/{{ title | slugify }}/",
+  "aaa": true
+}

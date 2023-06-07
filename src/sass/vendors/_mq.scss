@@ -15,6 +15,7 @@ $breakpoints: (
   xs: 420px,
   sm: 600px,
   md: 768px,
+  md-tweak: 960px,
   lg: 1024px,
   xl: 1200px,
   xxl: 1440px
@@ -31,7 +32,7 @@ $breakpoints: (
 ///
 ///
 /// @type map
-$show-breakpoints: (xxs, xs, sm, md, lg, xl, xxl) !default;
+$show-breakpoints: (xxs, xs, sm, md, md-tweak, lg, xl, xxl) !default;
 
 /// Customize the media type (for example: `@media screen` or `@media print`)
 /// By default sass-mq uses an "all" media type (`@media all and …`)
@@ -303,5 +304,5 @@ $media-type: all !default;
 }
 
 @if list.length($show-breakpoints) > 0 {
-  // @include show-breakpoints;
+  @include show-breakpoints;
 }

@@ -24,3 +24,22 @@ home: true
     {%- endif %}
   </div>
 </div>
+
+<div class="latest-articles">
+  <h2 class="latest-articles__heading">Latest stories from AAA</h2>
+  <p class="latest-articles__intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, itaque excepturi ut non nesciunt, sint magni blanditiis possimus et assumenda magnam soluta exercitationem corporis aspernatur illo? Molestias expedita nesciunt alias?</p>
+  <ul class="cards" data-aaa>
+    {% for card in collections.studentStoriesAAA | reverse %}
+      {% if loop.index < 5 %}
+        <li class="card">
+          <div class="card__text-wrapper">
+            <h2 class="card__title"><a href="{{ card.url }}" class="card__link">{{ card.data.title }}</a></h2>
+          </div>
+          <div class="card__img-wrapper">
+            {%- if card.data.img %}{% image card.data.img.src, '' %}{% else %}<img class="card__placeholder-img--aaa" src="/img/aaa-light_vpjlfm_c_scale,w_360.png" alt="">{% endif %}
+          </div>
+        </li>
+        {% endif %}
+    {% endfor %}
+  </ul>
+</div>

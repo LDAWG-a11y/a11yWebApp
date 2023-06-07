@@ -1,7 +1,8 @@
 {% include "_head.njk" %}
-<body>
+<body {%- if aaa %} class="aaa-content" {% endif %}>
   {% include "_header.njk" %}
   <main class="main">
+    {%- if not aaa %}
     <div class="guide__info-panel">
       <div class="guide__author">
         {% set guideAuthor = collections.writers | getAuthor(author) %}
@@ -22,6 +23,7 @@
         {%- endfor %}
       </{% if tagCount > 1 %}ul{% else %}div{% endif %} class="tags tags__all">      
     </div>
+    {% endif %}
     {% if toc %}
       <nav class="cms__toc" aria-labelledby="toc-heading">
         <details open>
@@ -34,9 +36,11 @@
       {{ content | markdownify | safe }}
     </article>
     {% include "_social-share.njk" %}
-    {% set author = guideAuthor %}
+    {%- if not aaa %}
+      {% set author = guideAuthor %}
     {% if author != 'Admin' %}
       {% include "_bio.njk" %}
+    {% endif %}
     {% endif %}
   </main>
   {% include "_footer.njk" %}

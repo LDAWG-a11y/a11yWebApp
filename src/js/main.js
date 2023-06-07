@@ -11,15 +11,12 @@ accordions.forEach( (accordion, idx) => {
   accordion.setAttribute('data-open', false);
 
   accBtn.addEventListener('click', () => {
-    if (accBtn.getAttribute('aria-expanded') == 'false') {
-      accBtn.setAttribute('aria-expanded', 'true');
-      accordion.setAttribute('data-open', "true");
-      // accPanel.setAttribute('style', `height: ${accPanel.getAttribute('data-height')}rem`);
-    } else {
-      accBtn.setAttribute('aria-expanded', 'false');
-      accordion.setAttribute('data-open', false);
-      // accPanel.setAttribute('style', 'height: 0');
-    }
+    // if (accBtn.getAttribute('aria-expanded') == 'false') {
+    //   // accPanel.setAttribute('style', `height: ${accPanel.getAttribute('data-height')}rem`);
+    // } else {
+    //   // accPanel.setAttribute('style', 'height: 0');
+    // }
+    togglebooleanAttributes(accBtn);
   });
 })
 
@@ -43,10 +40,25 @@ accordions.forEach(accordion => {
 // window.addEventListener('resize', resizeAccordions);
 // window.onresize = resizeAccordions;
 
-document.querySelector('#themeTrigger').addEventListener('click', () => {
-  let btn = document.querySelector('#themeTrigger');
-  btn.getAttribute('aria-expanded') == 'false' ? btn.setAttribute('aria-expanded', 'true') : btn.setAttribute('aria-expanded', 'false')
+const togglebooleanAttributes = (btn) => {
+  btn.getAttribute('aria-expanded') == 'false' ? btn.setAttribute('aria-expanded', 'true') : btn.setAttribute('aria-expanded', 'false');
+
+  if (btn.closest('.accordion')) {
+    const accordion = btn.closest('.accordion');
+    accordion.getAttribute('data-open') == 'false' ? accordion.setAttribute('data-open', 'true') : accordion.setAttribute('data-open', 'false');
+  }
+}
+
+document.querySelector('#themeTrigger').addEventListener('click', (evt) => {
+  togglebooleanAttributes(evt.target);
 });
+
+if (document.querySelector('#aaaTrigger')) {
+  document.querySelector('#aaaTrigger').addEventListener('click', (evt) => {
+    togglebooleanAttributes(evt.target);
+  });
+}
+
 
 const themeBtnLight = document.querySelector('.header__themes-btn--light');
 const themeBtnSystem = document.querySelector('.header__themes-btn--system');

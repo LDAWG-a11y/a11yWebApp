@@ -6,6 +6,7 @@ const Image = require("@11ty/eleventy-img");
 const htmlmin = require("html-minifier");
 const slugify = require("slugify");
 const pluginTOC = require('eleventy-plugin-toc');
+const path = require('path');
 
 module.exports = eleventyConfig => {
   const { DateTime } = require("luxon");
@@ -43,6 +44,31 @@ module.exports = eleventyConfig => {
       sizes: "100vw"
     }
   }
+
+  function imageShortcode(src, alt, sizes="(max-width: 380px) 100vw 25vw") {
+    let options = {
+			widths: [380],
+			formats: ["webp", "jpeg"],
+			urlPath: "/guideImg/",
+			outputDir: "./public/guideImg/",
+			filenameFormat: function (id, src, width, format, options) {
+				const extension = path.extname(src)
+				const name = path.basename(src, extension)
+				return `${name}-${width}w.${format}`
+			}
+    }
+    Image(src, options)
+
+		let imageAttributes = {
+			alt,
+			sizes,
+			loading: "lazy",
+			decoding: "async",
+		}
+		metadata = Image.statsSync(src, options)
+		return Image.generateHTML(metadata, imageAttributes)
+	}
+	eleventyConfig.addShortcode("image", imageShortcode)
 
   const linkAfterHeader = markdownItAnchor.permalink.linkAfterHeader({
     class: "cms__anchor",
@@ -134,6 +160,12 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.addFilter("getGuidesByAuthor", (guides, author) => {
     return guides.filter(a => a.data.author === author);
+  });
+
+  eleventyConfig.addCollection("aaaStories", collection => {
+    return collection
+      .getFilteredByTag("aaaStories")
+      
   });
 
   eleventyConfig.addFilter("answer", (faq) => {

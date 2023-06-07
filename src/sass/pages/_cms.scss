@@ -147,20 +147,21 @@
     color: var(--color-interactive);
   }
 
+ 
   picture {
     display: block;
     width: 100%;
 
-    > img {
+    img {
       border: 2px solid var(--color-inactive);
       border-radius: $radius-sm;
       max-width: 100%;
       height: auto;
     }
   }
-  
+    
   picture,
-  img:not([class]),
+  img,
   pre {
     margin-bottom: $space-xxxl;
   }
@@ -180,7 +181,7 @@
     margin: 0 0 $space-xxxl calc($space-xxl + 3px);
   }
 
-  ul {
+  ul:not(.cards) {
     margin: 0 0 $space-xxxl $space-lg;
   }
 
@@ -353,6 +354,10 @@
   h2:not(.accordion):not(.cms__toc > h2) {
     display: inline-block;
     margin-bottom: 0;
+
+    .aaa-content & {
+      margin-bottom: $space-md;
+    }
   }
 
   .cms__anchor-wrapper {

@@ -52,10 +52,12 @@ button[class^="header__themes-btn"] {
   position: absolute;
   top: $space-sm;
   right: $space-md;
+  align-items: center;
   padding: $space-xxs $space-xl $space-xxs $space-sm;
+  background-color: var(--color-bg--light);
 
   .aaa-content & {
-    border: 2px solid var(--color-interactive);
+    border: 3px solid var(--color-interactive);
   }
 
   &::before,
@@ -204,9 +206,10 @@ button[class^="header__themes-btn"] {
   position: relative;
   padding: $space-xs $space-sm;
   width: fit-content;
+  background-color: var(--color-bg--light);
 
   .aaa-content & {
-    border: 2px solid var(--color-interactive);
+    border: 3px solid var(--color-interactive);
   }
 
   &::before,
@@ -248,8 +251,8 @@ button[class^="header__themes-btn"] {
   &[aria-pressed="true"] {
     &::before {
       bottom: 3px;
-      left: $space-xs;
-      width: calc(100% - #{$space-md});
+      left: $space-sm;
+      width: calc(100% - #{$space-lg});
       height: 3px;
       background-color: var(--color-interactive);
     }
@@ -557,6 +560,7 @@ button[class^="header__themes-btn"] {
   margin-bottom: $space-lg;
   border-radius: $radius-sm;
   font-weight: 600;
+  color: var(--color-interactive);
 }
 
 .sub-nav__toggle[aria-expanded="false"] + .sub-nav__list {

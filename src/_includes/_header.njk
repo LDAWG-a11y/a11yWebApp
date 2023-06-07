@@ -49,35 +49,7 @@
       {%- endif %}
     </h1>
   {%- else %}
-    <nav class="sub-nav" aria-label="Access and Assistance for All">
-      <button id="aaaTrigger" class="sub-nav__toggle" aria-expanded="false">Menu<span class="sub-nav__hamburger"></span></button>
-      <ul class="sub-nav__list">
-        {%- for item in navLinks %}
-          {%- if item.aaa == true %}
-            <li class="sub-nav__item">
-              <a class="sub-nav__link" href="{{ item.url }}"
-              {%- if item.url === page.url %}
-                aria-current="page"
-              {%- endif %}>{{ item.text }}</a>
-            </li>
-        {%- endif %}
-      {%- endfor %}
-      </ul>
-    </nav>
-    <h1 id="h1" class="header__welcome-text" tabindex="-1">
-      {%- if page.url === "/aaa/" %}
-      <picture class="header__aaa-logo">
-        <img
-        sizes="(max-width: 800px) 100vw, 800px"
-        srcset="
-        ../img/aaa-light_vpjlfm_c_scale,w_300.png 300w,
-        ../img/aaa-light_vpjlfm_c_scale,w_800.png 800w"
-        src="../aaa-light_vpjlfm_c_scale,w_800.png"
-        alt="Access and Assistance for All logo">
-      </picture>
-      {% else %}
-        {{ title }}
-      {%- endif  %}
-    </h1>
+    {% include "_aaaSubNav.njk" %}
+    {% include "_aaaH1Logo.njk" %}
   {%- endif %}
 </header>

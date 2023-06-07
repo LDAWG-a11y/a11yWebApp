@@ -11,8 +11,11 @@
       </nav>
     {% endif %}
   {% endif %}
-  <main class="main {%- if '/accessibility' in page.url or '/about' in page.url or '/codeOfConduct' in page.url or '/contributing' in page.url or '/privacy' in page.url %} cms{%- endif %}">
+  <main class="main {%- if usesCMS %} cms{%- endif %}">
     {{ content | safe }}
+    {%- if aaaHome %}
+      {% include "_aaaSupporters.njk" %}
+    {% endif %}
   </main>
   {% include "_footer.njk" %}
   {%- if page.url == "/auditTool/" %}
@@ -51,6 +54,9 @@
   {%- if page.url == "/faqs/" %}
     <script src="/js/faqs.js"></script>
   {%- endif %}
+  {%- if aaa %}
+    <script src="/js/guide.js"></script>
+  {%- endif %}
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
@@ -64,3 +70,4 @@
     </script>
 </body>
 </html>
+
