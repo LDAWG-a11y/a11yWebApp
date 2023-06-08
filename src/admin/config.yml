@@ -24,6 +24,22 @@ collections:
       - { label: "Include files", name: "file", widget: "file", required: false, media_folder: "/src/docs", public_folder: "/docs", media_library: {config: {multiple: true}} }
       - { label: "Page content", name: "body", widget: "markdown" }
       - { label: "isGuide", name: "isGuide", default: true, widget: "hidden" }
+  - name: "aaaStories"
+    label: "AAA Stories"
+    folder: "/src/AAA/aaaStories"
+    media_folder: "/src/guideImg"
+    public_folder: "src/guideImg"
+    slug: "{{slug}}"
+    create: true
+    delete: true
+    fields:
+      - { label: "Title", name: "title", widget: "string", hint: "Try to keep this short and meaningful" }
+      - { label: "Summary", name: "summary", widget: "string", hint: "This is displayed in search engine results, for SEO purposes" }
+      - { label: "Date", name: "date", widget: "datetime", format: 'YYYY-MM-DD', hint: "Change this only if you update your guide"}
+      - { label: "Table of Contents (TOC)", name: "toc", widget: "boolean", default: false, hint: "Only add a TOC if there 4 or more heading 2s" }
+      - { label: "Include files", name: "file", widget: "file", required: false, media_folder: "/src/docs", public_folder: "/docs", media_library: {config: {multiple: true}} }
+      - { label: "Page content", name: "body", widget: "markdown" }
+      - { label: "isGuide", name: "isGuide", default: true, widget: "hidden" }
   - name: "authors"
     label: "Authors"
     create: true
@@ -70,6 +86,21 @@ collections:
       - { label: "Permalink", name: "permalink", default: false, widget: "hidden" }
       - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if you add a new item" }
       - { label: "Tags", name: "tags", default: "terms", widget: "hidden" }
+  - name: "aaapages"
+    label: "AAA Pages"
+    files:
+      - label: "AAA Home"
+        name: "aaaHome"
+        file: "/src/AAA/index.md"
+        fields:
+          - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
+          - {label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
+      - label: "AAA Roles"
+        name: "roles"
+        file: "/src/AAA/roles.md"
+        fields:
+          - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
+          - {label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
   - name: "pages"
     label: "Pages"
     files:
