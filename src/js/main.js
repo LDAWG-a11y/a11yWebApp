@@ -53,13 +53,6 @@ document.querySelector('#themeTrigger').addEventListener('click', (evt) => {
   togglebooleanAttributes(evt.target);
 });
 
-if (document.querySelector('#aaaTrigger')) {
-  document.querySelector('#aaaTrigger').addEventListener('click', (evt) => {
-    togglebooleanAttributes(evt.target);
-  });
-}
-
-
 const themeBtnLight = document.querySelector('.header__themes-btn--light');
 const themeBtnSystem = document.querySelector('.header__themes-btn--system');
 const themeBtnDark = document.querySelector('.header__themes-btn--dark');

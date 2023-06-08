@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en" class="no-js {%- if aaa %} aaa-content{% endif %}">
 <head>
   <title>{%- if not home %} {{ title }} | {{ site.siteName }} {%- else %} {{ site.siteName }} | {{ title }} {%- endif %}</title>
   <meta charset="UTF-8">

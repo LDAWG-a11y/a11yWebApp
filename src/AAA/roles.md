@@ -17,12 +17,12 @@ usesCMS: true
 
 <h3 id="educators">Educators and Teachers</h3>
 As an educator or teacher there are many steps that you can take towards improving the accessibility of your courses. The main steps to doing this are:
-*   Ensure all documents and resources are available in an accessible format
-*   Ensure that students who could potentially benefit from assistive technology are identified and referred to SEN and aware of the assistive technology that could be available to them
-*   Ensure that lessons are made and run in an inclusive manner
 
-#### Ensuring resources are available in an accessible format and ensuring that lessons are made and run in an inclusive manner 
-[See our main landing page for guidance on this if you have not already.](/aaa/)
+* Ensure all documents and resources are available in an accessible format
+* Ensure that students who could potentially benefit from assistive technology are identified and referred to SEN and aware of the assistive technology that could be available to them
+* Ensure that lessons are made and run in an inclusive manner
+
+Ensuring resources are available in an accessible format and ensuring that lessons are made and run in an inclusive manner [See our main landing page for guidance on this if you have not already.](/aaa/)
 
 ### Identifying students who could potentially benefit from assistive technology
 
@@ -31,9 +31,7 @@ We have resources on our main landing page and throughout this site on this topi
 
 <h3 id="ITAdmin">IT Administrators</h3>
 
-#### Ensuring resources are available in an accessible format and ensuring that lessons are made and run in an inclusive manner
-
-[See our main landing page for guidance on this if you have not already.](/aaa/)
+Ensuring resources are available in an accessible format and ensuring that lessons are made and run in an inclusive manner [See our main landing page for guidance on this if you have not already.](/aaa/)
 
 #### Identifying students who could potentially benefit from assistive technology
 
@@ -79,8 +77,8 @@ Here's an outline of how to make different aspects of your website more accessib
 
 #### Skip links, and other components for people with disabilities:
 
-*   [How to Create a “Skip to Content” Link - CSS Tricks](https://css-tricks.com/how-to-create-a-skip-to-content-link/)
-As well as having basic components, such as skip links, you should also aim to have media-queries for reduced motion, and potentially even buttons on your website to change it's behaviour to cater for accessibility needs. Below is an example of media queries for reduced motion:*   [Example of media queries for accessibility: Reduced motion - MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_Media_Queries_for_Accessibility)
+* [How to Create a “Skip to Content” Link - CSS Tricks](https://css-tricks.com/how-to-create-a-skip-to-content-link/)
+* As well as having basic components, such as skip links, you should also aim to have media-queries for reduced motion, and potentially even buttons on your website to change it's behaviour to cater for accessibility needs. [Example of media queries for accessibility: Reduced motion - MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_Media_Queries_for_Accessibility)
 
 #### Testing and meeting web content accessibility guidelines:
 

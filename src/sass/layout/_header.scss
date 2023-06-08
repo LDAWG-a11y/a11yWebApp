@@ -199,8 +199,7 @@ button[class^="header__themes-btn"] {
 
 .header__themes-btn--light,
 .header__themes-btn--system,
-.header__themes-btn--dark,
-.sub-nav__toggle {
+.header__themes-btn--dark {
   @extend %smallest-text;
 
   position: relative;
@@ -510,26 +509,18 @@ button[class^="header__themes-btn"] {
 
   [data-theme="dark"] & {
     color: var(--color-text);
-
-    .aaa-content & {
-      color: var(--color-bg);
-    }
   }
 
   [data-theme="light"] & {
     color: var(--color-bg);
+  }
 
-    .aaa-content & {
-      color: var(--color-text);
-    }
+  [data-theme="light"].aaa-content & {
+    color: var(--color-text);
   }
 
   @media (prefers-color-scheme: dark) {
     color: var(--color-text);
-
-    .aaa-content & {
-      color: var(--color-bg);
-    }
   }
 
   &:focus-visible {
@@ -550,29 +541,70 @@ button[class^="header__themes-btn"] {
   }
 }
 
+// TODO refactor, remove important
+.header__aaa-logo.header__aaa-logo--light {
+  [data-theme="light"] & {
+    display: flex !important;
+  }
+
+  [data-theme="dark"] & {
+    display: none !important;
+  }
+}
+
+.header__aaa-logo.header__aaa-logo--dark {
+  [data-theme="dark"] & {
+    display: flex !important;
+  }
+
+  [data-theme="light"] & {
+    display: none !important;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .header__aaa-logo.header__aaa-logo--dark {
+    .aaa-content & {
+      display: none;
+    }
+  }
+
+  .header__aaa-logo.header__aaa-logo--light {
+    .aaa-content & {
+      display: flex;
+      background-color: #fff;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .header__aaa-logo.header__aaa-logo--light {
+    .aaa-content & {
+      display: none;
+    }
+  }
+
+  .header__aaa-logo.header__aaa-logo--dark {
+    .aaa-content & {
+      display: flex;
+    }
+  }
+}
+
 .sub-nav {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
   margin-top: $space-xxxl;
-}
-
-.sub-nav__toggle {
-  @extend %small-text;
-  margin-bottom: $space-lg;
-  border-radius: $radius-sm;
-  font-weight: 600;
-  color: var(--color-interactive);
-}
-
-.sub-nav__toggle[aria-expanded="false"] + .sub-nav__list {
-  display: none;
-}
-
-.sub-nav__toggle[aria-expanded="true"] + .sub-nav__list {
-  display: block;
 }
 
 .sub-nav__list {
   list-style: none;
+
+  @include mq.mq($from:sm) {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 50rem;
+  }
 }
 
 .sub-nav__item {

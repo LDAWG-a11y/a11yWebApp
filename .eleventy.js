@@ -45,7 +45,7 @@ module.exports = eleventyConfig => {
     }
   }
 
-  function imageShortcode(src, alt, sizes="(max-width: 380px) 100vw 25vw") {
+  function imageShortcode(src, alt, sizes="(max-width: 28rem)") {
     let options = {
 			widths: [380],
 			formats: ["webp", "jpeg"],
@@ -122,7 +122,7 @@ module.exports = eleventyConfig => {
   });
 
   function filterTagList(tags) {
-    return (tags || []).filter(tag => ["guide", "glossarySorted", "writers", "contributors", "guides", "faqs", "terms"].indexOf(tag) === -1);
+    return (tags || []).filter(tag => ["guide", "glossarySorted", "writers", "contributors", "guides", "faqs", "terms", "studentStoriesAAA"].indexOf(tag) === -1);
   }
 
   eleventyConfig.addFilter("filterTagList", filterTagList)
@@ -146,12 +146,12 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.addCollection("writers", author => Object.values(author.items[0].data.contributors));
 
-  eleventyConfig.addCollection("latest", collection => {
-    return collection
-      .getFilteredByTag("guides")
-      .reverse()
-      .slice(0, 3);
-  });
+  // eleventyConfig.addCollection("latest", collection => {
+  //   return collection
+  //     .getFilteredByTag("guides")
+  //     .reverse()
+  //     .slice(0, 4);
+  // });
 
   eleventyConfig.addFilter("getAuthor", (authors,label) => {
     let author = authors.filter(a => a.key === label)[0];

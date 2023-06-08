@@ -14,32 +14,36 @@ home: true
 </div>
 
 <div class="latest-articles">
-  <h2 class="latest-articles__heading">Latest guides</h2>
-  <p class="latest-articles__intro">Our latest 3 digital accessibility guides are displayed in this section, this will be updated each time we produce a new guide, alternatively, you can view all guides by selecting "Guides" in the main navigation or the footer area.</p>
-  <div class="cards">
-    {%- if collections.latest.length %}
-      {%- for guide in collections.latest %}
-      {% include "_card.njk" %}
+  <h2 class="latest-articles__heading" id="latestGuidesHeading">Latest guides</h2>
+  <p class="latest-articles__intro">Our latest digital accessibility guides are displayed in this section, this will be updated each time we produce a new guide, alternatively, you can <a href="/guides/">view all guides here</a>.</p>
+  <section class="cards--scrollable" tabindex="0" aria-labelledby="latestGuidesHeading">
+    <ul class="cards">
+      {%- for guide in collections.guides | reverse %}
+        {% if loop.index < 7 %}
+          {% include "_card.njk" %}
+        {% endif %}
       {%- endfor %}
-    {%- endif %}
-  </div>
+    </ul>
+  </section>
 </div>
 
 <div class="latest-articles">
-  <h2 class="latest-articles__heading">Latest stories from AAA</h2>
+  <h2 class="latest-articles__heading" id="latestAAAHeading">Latest stories from AAA</h2>
   <p class="latest-articles__intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, itaque excepturi ut non nesciunt, sint magni blanditiis possimus et assumenda magnam soluta exercitationem corporis aspernatur illo? Molestias expedita nesciunt alias?</p>
-  <ul class="cards" data-aaa>
-    {% for card in collections.studentStoriesAAA | reverse %}
-      {% if loop.index < 5 %}
-        <li class="card">
-          <div class="card__text-wrapper">
-            <h2 class="card__title"><a href="{{ card.url }}" class="card__link">{{ card.data.title }}</a></h2>
-          </div>
-          <div class="card__img-wrapper">
-            {%- if card.data.img %}{% image card.data.img.src, '' %}{% else %}<img class="card__placeholder-img--aaa" src="/img/aaa-light_vpjlfm_c_scale,w_360.png" alt="">{% endif %}
-          </div>
-        </li>
-        {% endif %}
-    {% endfor %}
-  </ul>
+  <section class="cards--scrollable" tabindex="0" aria-labelledby="latestAAAHeading">
+    <ul class="cards">
+      {% for card in collections.studentStoriesAAA | reverse %}
+        {% if loop.index < 5 %}
+          <li class="card__item">
+            <div class="card__text-wrapper">
+              <h2 class="card__title"><a href="{{ card.url }}" class="card__link">{{ card.data.title }}</a></h2>
+            </div>
+            <div class="card__img-wrapper">
+              {%- if card.data.img %}{% image card.data.img.src, '' %}{% else %}<img class="card__placeholder-img--aaa" src="/img/aaa-light_vpjlfm_c_scale,w_360.png" alt="">{% endif %}
+            </div>
+          </li>
+          {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
 </div>

@@ -7,13 +7,16 @@ author: admin
 date: 2023-05-17
 toc: true
 tags:
-  - AAA Student Stories
 isGuide: true
 img:
   src: ./src/guideImg/tim.png
   alt: Tim
 ---
-<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">These student stories were produced as part of the "Access and Assistance for All" campaign by the British Youth Council, which aims to increase awareness and access to assistive technology within further education. See the main \[Access and Assistance for All student stories](/guides/aaa-student-stories/) page to learn more about our campaign.</span></div>
+<div class="intro-panel">
+
+These student stories were produced as part of the "Access and Assistance for All" campaign by the British Youth Council, which aims to increase awareness and access to assistive technology within further education. See the main [Access and Assistance for All student stories](/aaa/student-stories/) page to learn more about our campaign.
+
+</div>
 
 ![](src/guideImg/tim.png)
 

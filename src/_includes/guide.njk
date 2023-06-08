@@ -38,7 +38,7 @@
     {% include "_social-share.njk" %}
     {%- if not aaa %}
       {% set author = guideAuthor %}
-    {% if author != 'Admin' %}
+    {% if (author != 'Admin') or (author != 'Admin') %}
       {% include "_bio.njk" %}
     {% endif %}
     {% endif %}

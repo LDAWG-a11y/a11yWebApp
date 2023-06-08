@@ -10,9 +10,9 @@ usesCMS: true
 ---
 <p>These student stories were produced as part of the "Access and Assistance for All" campaign by the British Youth Council, which aims to increase awareness and access to assistive technology within further education.</p>
 
-<ul class="cards" data-aaa>
+<ul class="cards">
   {% for card in collections.studentStoriesAAA %}
-    <li class="card">
+    <li class="card__item">
       <div class="card__text-wrapper">
         <h2 class="card__title"><a href="{{ card.url }}" class="card__link">{{ card.data.title }}</a></h2>
       </div>

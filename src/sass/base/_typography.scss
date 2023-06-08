@@ -71,7 +71,7 @@ h2 {
   font-size: 2.25rem;
   margin-bottom: $space-lg;
 
-  &:not(.accordion):not(.pagination__heading):not(.card &) {
+  &:not(.accordion):not(.pagination__heading):not(.card__item &) {
     padding-left: $space-md;
 
     &::before {
