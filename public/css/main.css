@@ -2265,6 +2265,9 @@ ul:not([class]) > li::marker {
   max-width: 100%;
   height: auto;
 }
+.aaa-content .cms picture img {
+  max-width: 40rem;
+}
 .cms picture,
 .cms img,
 .cms pre {

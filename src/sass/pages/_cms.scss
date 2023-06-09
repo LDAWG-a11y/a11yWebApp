@@ -157,6 +157,10 @@
       border-radius: $radius-sm;
       max-width: 100%;
       height: auto;
+
+      .aaa-content & {
+        max-width: 40rem;
+      }
     }
   }
     

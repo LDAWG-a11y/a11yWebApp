@@ -32,6 +32,9 @@
         </details>
       </nav>
     {% endif %}
+    {% if isAAAStory %}
+    {% include "_studentStoryIntro.njk" %}
+    {% endif %}
     <article class="cms">
       {{ content | markdownify | safe }}
     </article>

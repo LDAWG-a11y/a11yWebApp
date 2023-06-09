@@ -3,21 +3,15 @@ title: Tim
 summary: Tim is a participant in the BYC's Access and Assistance for All
   campaign. This is his student story, about how he overcame some of the
   challenges of dyslexia.
-author: admin
 date: 2023-05-17
 toc: true
 tags:
+isAAAStory: true
 isGuide: true
 img:
   src: ./src/guideImg/tim.png
   alt: Tim
 ---
-<div class="intro-panel">
-
-These student stories were produced as part of the "Access and Assistance for All" campaign by the British Youth Council, which aims to increase awareness and access to assistive technology within further education. See the main [Access and Assistance for All student stories](/aaa/student-stories/) page to learn more about our campaign.
-
-</div>
-
 ![](src/guideImg/tim.png)
 
 ## Could you tell us a little bit about your background?

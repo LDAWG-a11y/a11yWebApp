@@ -2,20 +2,14 @@
 title: Yasmin
 summary: Yasmin is a participant in the BYC's Access and Assistance for All
   campaign. This is her student story.
-author: admin
 date: 2023-05-17
 toc: false
+isAAAStory: true
 isGuide: true
 img:
   src: ./src/guideImg/yasmin.png
   alt: Yasmin
 ---
-<div class="intro-panel">
-
-These student stories were produced as part of the "Access and Assistance for All" campaign by the British Youth Council, which aims to increase awareness and access to assistive technology within further education. See the main [Access and Assistance for All student stories](/aaa/student-stories/) page to learn more about our campaign.
-
-</div>
-
 ![](src/guideImg/yasmin.png)
 
 ## Could you tell us a little bit about your background?
