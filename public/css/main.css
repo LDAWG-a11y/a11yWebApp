@@ -1973,7 +1973,6 @@ ul:not([class]) > li::marker {
   order: 1;
   height: 16rem;
   overflow: hidden;
-  z-index: -1;
 }
 .cards div.card__img-wrapper picture {
   display: block;
@@ -2026,6 +2025,7 @@ ul:not([class]) > li::marker {
 .cards .card__link::before {
   inset: 0;
   cursor: pointer;
+  z-index: 2;
 }
 .cards .card__link::after {
   inset: -8px;
@@ -2061,7 +2061,7 @@ ul:not([class]) > li::marker {
   font-weight: 600;
   text-decoration: none;
   color: var(--color-interactive);
-  z-index: 1;
+  z-index: 3;
 }
 .cards .card__author-link:focus, .cards .card__author-link:hover {
   background-color: var(--color-interactive);

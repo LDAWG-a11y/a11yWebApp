@@ -98,7 +98,6 @@
     order: 1;
     height: 16rem;
     overflow: hidden;
-    z-index: -1;
   
     picture {
       display: block;
@@ -157,6 +156,7 @@
     &::before {
       inset: 0;
       cursor: pointer;
+      z-index: 2;
     }
   
     &::after {
@@ -209,7 +209,7 @@
     font-weight: 600;
     text-decoration: none;
     color: var(--color-interactive);
-    z-index: 1;
+    z-index: 3;
 
     &:hover,
     &:focus-visible {
