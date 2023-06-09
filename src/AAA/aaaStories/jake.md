@@ -7,9 +7,7 @@ date: 2023-05-17
 toc: false
 isAAAStory: true
 isGuide: true
-img:
-  src: ./src/guideImg/jake.png
-  alt: Jake
+img: ./src/guideImg/jake.png
 ---
 These student stories were produced as part of the "Access and Assistance for All" campaign by the British Youth Council, which aims to increase awareness and access to assistive technology within further education. See the main [Access and Assistance for All student stories](/aaa/student-stories/) page to learn more about our campaign.
 

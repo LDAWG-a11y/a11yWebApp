@@ -8,9 +8,7 @@ toc: true
 tags:
 isAAAStory: true
 isGuide: true
-img:
-  src: ./src/guideImg/tim.png
-  alt: Tim
+img: ./src/guideImg/tim.png
 ---
 ![](src/guideImg/tim.png)
 

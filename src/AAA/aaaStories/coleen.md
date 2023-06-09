@@ -5,9 +5,7 @@ date: 2023-05-17
 toc: false
 isAAAStory: true
 isGuide: true
-img:
-  src: ./src/guideImg/coleen.png
-  alt: Coleen
+img: ./src/guideImg/coleen.png
 ---
 ![](src/guideImg/coleen.png)
 

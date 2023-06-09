@@ -6,9 +6,7 @@ date: 2023-05-17
 toc: false
 isAAAStory: true
 isGuide: true
-img:
-  src: ./src/guideImg/ellie.png
-  alt: Ellie
+img: ./src/guideImg/ellie.png
 ---
 ![](src/guideImg/ellie.png)
 

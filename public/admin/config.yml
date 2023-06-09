@@ -35,7 +35,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string", hint: "Try to keep this short and meaningful", pattern: ['^.{0,80}$', 'Must not exceed 80 characters']}
       - { label: "Summary", name: "summary", widget: "string", hint: "This is displayed in search engine results, for SEO purposes", pattern: ['^.{0,200}$', 'Must not exceed 200 characters'] }
-      - { label: "Card image", name: "cardImage", widget: "image", hint: "Landscape shape, omitting this will display AAA logo" }
+      - { label: "Card image", name: "img", widget: "image", hint: "Landscape shape, omitting this will display AAA logo" }
       - { label: "Date", name: "date", widget: "datetime", format: 'YYYY-MM-DD', hint: "Change this only if you update your guide"}
       - { label: "Table of Contents (TOC)", name: "toc", widget: "boolean", default: false, hint: "Only add a TOC if there 4 or more heading 2s" }
       - { label: "Include files", name: "file", widget: "file", required: false, media_folder: "/src/docs", public_folder: "/docs", media_library: {config: {multiple: true}} }

@@ -41,7 +41,7 @@ home: true
               <h2 class="card__title"><a href="{{ card.url }}" class="card__link">{{ card.data.title }}</a></h2>
             </div>
             <div class="card__img-wrapper">
-              {%- if card.data.img %}{% image card.data.img.src, '' %}{% else %}<img class="card__placeholder-img--aaa" src="/img/aaa-light_vpjlfm_c_scale,w_360.png" alt="">{% endif %}
+              {%- if card.data.img %}{% image card.data.img, '' %}{% else %}<img class="card__placeholder-img--aaa" src="/img/aaa-light_vpjlfm_c_scale,w_360.png" alt="">{% endif %}
             </div>
           </li>
           {% endif %}
