@@ -7,7 +7,7 @@ isAAAStory: true
 isGuide: true
 img: ./src/guideImg/coleen.png
 ---
-![](src/guideImg/coleen.png)
+![Coleen](src/guideImg/coleen.png)
 
 ## Could you tell us a little bit about your background?
 
