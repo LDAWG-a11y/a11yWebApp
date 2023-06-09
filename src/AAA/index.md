@@ -1,14 +1,13 @@
 ---
-date: Last Modified
-permalink: "aaa/"
-layout: base.njk
-title: Access and Assistance for All
-summary: Some summary
-aaa: true
 aaaHome: true
+aaa: true
+summary: Some summary
+layout: base.njk
+permalink: aaa/
+date: Last Modified
+title: Access and Assistance for All
 usesCMS: true
 ---
-
 AAA is a campaign that aims to increase access to assistive technology across further education colleges as well as raising awareness of how to make resources accessible by design so they are compatible with assistive technology. The BYC's youth-led campaign group consists of 15 young regional champions from across England, along with our partners at the University College of London and the Kent and Medway Progression Federation.
 
 ## Why is this campaign needed?
@@ -23,7 +22,7 @@ Click on the following sections to expand them:
 <div class="accordion__panel">
 
 Ideally content should be made in HTML on a website that has been built with accessibility in mind, however, we understand that for quite a lot of schools this is not practical, and our campaign aims to maximise accessibility for documents in all formats produced by Further Education colleges. To this end, we have the folowing guides on how to make accessible lessons in a variety of formats:
- 
+
 * [Here's a guide to the basics of accessible documents by Ben Watson](https://www.makethingsaccessible.com/guides/accessible-document-basics/)
 * [See this guide on how to make PDF files more accessible, and the different standards of PDF files](https://www.makethingsaccessible.com/guides/wait-there-s-more-than-one-type-of-pdf-pdf-standards-and-how-they-differ-in-terms-of-accessibility/)
 * [See this guide on making accessible lectures, tutorials and sessions by Ben Watson.](https://www.makethingsaccessible.com/guides/accessible-lectures-tutorials-and-sessions/)
@@ -44,11 +43,11 @@ You should have a direct point of contact for anyone with accessibility related 
 
 An accessibility champion should be:
 
-*   Available for all students and parents to contact, regardless of disability status or any other characteristic through both email and visits in person.
-*   Have experience with assistive technology regulation, guidance, applications and implementation.
-*   Open to new ideas and feedback on how the organisation could improve accessibility.
-*   Be in direct communication with senior leadership within the organisation and able to improve accessibility issues both within the physical premises and the lessons themselves.
-*   Pointed out to all students so they are aware of who to talk to about any accessibilty issues or requirements, to ensure that they are met.
+* Available for all students and parents to contact, regardless of disability status or any other characteristic through both email and visits in person.
+* Have experience with assistive technology regulation, guidance, applications and implementation.
+* Open to new ideas and feedback on how the organisation could improve accessibility.
+* Be in direct communication with senior leadership within the organisation and able to improve accessibility issues both within the physical premises and the lessons themselves.
+* Pointed out to all students so they are aware of who to talk to about any accessibilty issues or requirements, to ensure that they are met.
 
 Having an accessiblity champion enables students to reach their full potential in their school / college, and can mean that people within the organisation are adequately equipped to succeed.
 
@@ -71,6 +70,7 @@ There are many forms of both physical and digital assistive technology that can 
 Having a personalised charter that is spread across the school and displayed openly ensures that students are made aware of what they can have access to, and can also provide clear evidence of progress being made towards ensuring that a school or college is more accessible.
 
 [Download the charter template](/img/charter.docx)
+
 </div>
 
 <h3 class="accordion">To require all staff to look the Access and Assistance for all webpages and read student stories, so that they can understand the importance of assistive technology and how it can benefit all students.</h3>
@@ -88,8 +88,8 @@ We recognise how many demands there are on colleges and aim to make signing up t
 
 ### In return for signing up to the pledges you will:
 
-1.  Take a positive and meaningful step to provide a more inclusive learning environment for all your students with better outcomes for individuals and your college as a whole
-2.  Be listed as a supporter, below and have the option to share any good practice that you are already doing
-3.  Show your commitment to improving accessibility through the use of our supporters’ logo
+1. Take a positive and meaningful step to provide a more inclusive learning environment for all your students with better outcomes for individuals and your college as a whole
+2. Be listed as a supporter, below and have the option to share any good practice that you are already doing
+3. Show your commitment to improving accessibility through the use of our supporters’ logo
 
-If you are interested about learning more on how to do this or register your interest please contact us at [accessforallcampaign@gmail.com](mailto:accessforallcampaign@gmail.com).
+If you are interested about learning more on how to do this or register your interest please contact us at [accessforallcampaign@gmail.com](mailto:accessforallcampaign@gmail.com)..
