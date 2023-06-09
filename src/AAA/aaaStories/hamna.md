@@ -13,7 +13,7 @@ I am a first year undergraduate student at University College London (UCL) study
 
 ## Have you used any assistive technology and faced barriers?
 
-Although I have not used assistive technology first-hand, I understand that assistive technology plays a crucial role in improving accessibility and inclusivity for individuals with difficulties. While I may not have direct experience with it, I recognise the several barriers faced by individuals who have used assistive technology and I recognize the importance of empowering and enabling them to overcome various challenges.
+Although I have not used assistive technology first-hand, I understand that assistive technology plays a crucial role in improving accessibility and inclusivity for individuals with difficulties. While I may not have direct experience with it, I recognise the several barriers faced by individuals who have used assistive technology and I recognise the importance of empowering and enabling them to overcome various challenges.
 
 ## Why have you joined AAA?
 
