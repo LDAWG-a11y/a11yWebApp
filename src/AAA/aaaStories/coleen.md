@@ -1,11 +1,12 @@
 ---
-title: "Coleen"
-summary: Coleen is a participant in the BYC's Access and Assistance for All campaign. This is her student story.
+title: Coleen
+summary: Coleen is a participant in the BYC's Access and Assistance for All
+  campaign. This is her student story.
+img: ./src/guideImg/coleen.png
 date: 2023-05-17
 toc: false
 isAAAStory: true
 isGuide: true
-img: ./src/guideImg/coleen.png
 ---
 ![Coleen](src/guideImg/coleen.png)
 
