@@ -1,11 +1,12 @@
 ---
-title: "Coleen"
-summary: Coleen is a participant in the BYC's Access and Assistance for All campaign. This is her student story.
+title: Coleen
+summary: Coleen is a participant in the BYC's Access and Assistance for All
+  campaign. This is her student story.
+img: ./src/guideImg/coleen.png
 date: 2023-05-17
 toc: false
 isAAAStory: true
 isGuide: true
-img: ./src/guideImg/coleen.png
 ---
 ![](src/guideImg/coleen.png)
 
@@ -25,4 +26,4 @@ I’ve witnessed students leave higher education due to the lack of support from
 
 Moving from Northern Ireland to Leeds has caused many changes to my everyday life due to the lack of knowledge of volunteering in a new area.
 
-When the opportunity to join AAA arised I believed it was best to put the knowledge I gathered during my Bachelors Degree to greater use and help spread awareness. I wanted to help in spreading not just how important technology is becoming to everybody’s everyday life, but those who need support in using this new tool for development; with the additional impact of assistive tech in not only our careers but ourselves as individuals.
+When the opportunity to join AAA arised I believed it was best to put the knowledge I gathered during my Bachelors Degree to greater use and help spread awareness. I wanted to help in spreading not just how important technology is becoming to everybody’s everyday life, but those who need support in using this new tool for development; with the additional impact of assistive tech in not only our careers but ourselves as individuals..
