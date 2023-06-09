@@ -970,6 +970,10 @@ ul:not([class]) > li::marker {
   border-bottom: 4px solid var(--color-bg);
   transition: width 250ms 150ms ease-in, left 250ms 150ms ease-in;
 }
+.aaa-content .header__welcome-text::before {
+  border-bottom-color: var(--color-interactive);
+  bottom: 0;
+}
 @media (min-width: 48em) {
   .header__welcome-text {
     margin: 6rem auto 0;
