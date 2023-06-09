@@ -4,20 +4,27 @@
   margin-bottom: $space-xxxxl;
   padding: $space-xxxl $space-xs 0;
   height: auto;
-  background: var(--color-primary);
-  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
-  clip-path: polygon(0 0, 100% 0, 100% 97.5%, 0% 100%);
-  
+
+  &:not(.aaa-content &) {
+    background: var(--color-primary);
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    clip-path: polygon(0 0, 100% 0, 100% 97.5%, 0% 100%);
+  }  
 
   @include mq.mq($from:sm) {
-    clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);    
+    &:not(.aaa-content &) {
+      clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+    }
   }
 
   @include mq.mq($from:md) {
     margin-bottom: $space-bigger;
     padding-top: $space-xl;
     height: auto;
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+
+    &:not(.aaa-content &) {
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+    }
 
     .has-js & {
       padding-top: $space-xxxxl;
@@ -45,7 +52,13 @@ button[class^="header__themes-btn"] {
   position: absolute;
   top: $space-sm;
   right: $space-md;
+  align-items: center;
   padding: $space-xxs $space-xl $space-xxs $space-sm;
+  background-color: var(--color-bg--light);
+
+  .aaa-content & {
+    border: 3px solid var(--color-interactive);
+  }
 
   &::before,
   &::after {
@@ -192,6 +205,11 @@ button[class^="header__themes-btn"] {
   position: relative;
   padding: $space-xs $space-sm;
   width: fit-content;
+  background-color: var(--color-bg--light);
+
+  .aaa-content & {
+    border: 3px solid var(--color-interactive);
+  }
 
   &::before,
   &::after {
@@ -232,8 +250,8 @@ button[class^="header__themes-btn"] {
   &[aria-pressed="true"] {
     &::before {
       bottom: 3px;
-      left: $space-xs;
-      width: calc(100% - #{$space-md});
+      left: $space-sm;
+      width: calc(100% - #{$space-lg});
       height: 3px;
       background-color: var(--color-interactive);
     }
@@ -248,8 +266,30 @@ button[class^="header__themes-btn"] {
 }
 
 .main-nav {
+  position: relative;
   border-radius: $radius-sm;
   background: var(--color-bg);
+
+  .aaa-content & {
+    margin: $space-sm 0 0;
+    border-radius: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+      z-index: -1;
+
+      @include mq.mq($from:md) {
+        border-radius: 50px;
+      }
+    }
+
+    @include mq.mq($from:md) {
+      border-radius: 50px;
+    }
+  }
 
   @media (prefers-color-scheme: dark) {
     background-color: var(--color-bg);
@@ -363,7 +403,8 @@ button[class^="header__themes-btn"] {
   }
 }
 
-.main-nav__link {
+.main-nav__link,
+.sub-nav__link {
   position: relative;
   text-decoration: none;
   padding: $space-xxs $space-xxs;
@@ -447,6 +488,10 @@ button[class^="header__themes-btn"] {
   color: var(--color-bg);
   transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 
+  .aaa-content & {
+    color: var(--color-text);
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -470,6 +515,10 @@ button[class^="header__themes-btn"] {
     color: var(--color-bg);
   }
 
+  [data-theme="light"].aaa-content & {
+    color: var(--color-text);
+  }
+
   @media (prefers-color-scheme: dark) {
     color: var(--color-text);
   }
@@ -482,4 +531,88 @@ button[class^="header__themes-btn"] {
       width: 100%;
     }
   }
+}
+
+.header__aaa-logo {
+  &:not(.header__welcome-text &) {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto 0;
+  }
+}
+
+// TODO refactor, remove important
+.header__aaa-logo.header__aaa-logo--light {
+  [data-theme="light"] & {
+    display: flex !important;
+  }
+
+  [data-theme="dark"] & {
+    display: none !important;
+  }
+}
+
+.header__aaa-logo.header__aaa-logo--dark {
+  [data-theme="dark"] & {
+    display: flex !important;
+  }
+
+  [data-theme="light"] & {
+    display: none !important;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .header__aaa-logo.header__aaa-logo--dark {
+    .aaa-content & {
+      display: none;
+    }
+  }
+
+  .header__aaa-logo.header__aaa-logo--light {
+    .aaa-content & {
+      display: flex;
+      background-color: #fff;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .header__aaa-logo.header__aaa-logo--light {
+    .aaa-content & {
+      display: none;
+    }
+  }
+
+  .header__aaa-logo.header__aaa-logo--dark {
+    .aaa-content & {
+      display: flex;
+    }
+  }
+}
+
+.sub-nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: $space-xxxl;
+}
+
+.sub-nav__list {
+  list-style: none;
+
+  @include mq.mq($from:sm) {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 50rem;
+  }
+}
+
+.sub-nav__item {
+  
+}
+
+.sub-nav__link {
+  // @include focus-indicator(false, false, false, false);
+
+  // padding: $;
 }

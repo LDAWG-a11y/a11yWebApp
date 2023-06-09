@@ -9,7 +9,7 @@
       <button class="header__themes-btn--dark" aria-pressed="false">Dark</button>
     </fieldset>
   </div>
-  <nav class="main-nav">
+  <nav class="main-nav" aria-label="primary">
     <div class="header__logo" role="img" aria-label="{{ site.siteName }} logo"></div>
     <ul class="main-nav__list">
       {%- for item in navLinks %}
@@ -25,12 +25,40 @@
       {%- endfor %}
     </ul>
   </nav>
+
+  {%- if aaa == true %}
+    {%- if page.url !== "/aaa/" %}
+      <picture class="header__aaa-logo header__aaa-logo--light">
+        <img
+        sizes="(max-width: 220px) 100vw, 220px"
+        srcset="
+        /img/aaa-light_vpjlfm_c_scale,w_180.png 180w,
+        /img/aaa-light_vpjlfm_c_scale,w_360.png 360w"
+        src="/img/aaa-light_vpjlfm_c_scale,w_360.png"
+          alt="Access and Assistance for All logo">
+      </picture>
+      <picture class="header__aaa-logo header__aaa-logo--dark">
+        <img
+          sizes="(max-width: 220px) 100vw, 220px"
+          srcset="
+          /img/aaa-dark_lmf9it_c_scale,w_180.png 180w,
+          /img/aaa-dark_lmf9it_c_scale,w_360.png 360w"
+          src="/img/aaa-dark_lmf9it_c_scale,w_360.png"
+          alt="Access and Assistance for All logo">
+      </picture>
+    {%- endif  %}
+  {%- endif %}
  
-  <h1 id="h1" class="header__welcome-text" tabindex="-1">
-    {%- if page.url !== "/" %}
-      {{ title }}
-    {%- else %}
-      {{ site.siteName }}
-    {%- endif %}
-  </h1>
+  {%- if aaa !== true %}
+    <h1 id="h1" class="header__welcome-text" tabindex="-1">
+      {%- if page.url !== "/" %}
+        {{ title }}
+      {%- else %}
+        {{ site.siteName }}
+      {%- endif %}
+    </h1>
+  {%- else %}
+    {% include "_aaaSubNav.njk" %}
+    {% include "_aaaH1Logo.njk" %}
+  {%- endif %}
 </header>

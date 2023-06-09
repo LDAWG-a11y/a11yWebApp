@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en" class="no-js {%- if aaa %} aaa-content{% endif %}">
 <head>
-  <title>{%- if not home %} {{ title }} | {{ site.siteName }} {%- else %} {{ site.siteName }} | {{ title }} {%- endif %}</title>
+  <title>{%- if not home %} {{ title }}{% if isAAAStory %}, AAA Student Story {% endif %} | {{ site.siteName }} {%- else %} {{ site.siteName }} | {{ title }} {%- endif %}</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#702A8C">
@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
   <link rel="canonical" href="{{ site.siteUrl }}{{ page.url }}">
-  <meta property="og:title" content="{%- if not home %}{{ title }} | {{ site.siteName }} {%- else %}{{ site.siteName }} | {{ title }} {%- endif %}">
+  <meta property="og:title" content="{%- if not home %}{{ title }} | {{ site.siteName }} {%- else %}{{ site.siteName }} | {% if isAAAStory %}AAA Student Story -{% endif %} {{ title }} {%- endif %}">
   <meta property="og:description" content="{%- if not home %}{{ summary }}{%- else %}A repository of guidance & resources for organisations & individuals aiming to improve digital accessibility, through web development, documents and other digital media{%- endif %}">
   <meta property='og:url' content="{{ site.siteUrl }}{{ page.url }}" />
   <meta property="og:locale" content="en_GB">
@@ -31,7 +31,7 @@
   <meta property="og:image" content="{{ site.siteUrl }}/img/social-logo.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="Make Things Accessible">
-  <meta name="twitter:description" content="{%- if not home %}{{ title }} | {{ site.siteName }} {%- else %}{{ site.siteName }} | {{ title }} {%- endif %}">
+  <meta name="twitter:description" content="{%- if not home %}{{ title }} | {{ site.siteName }} {%- else %}{{ site.siteName }} | {% if isAAAStory %}AAA Student Story -{% endif %} {{ title }} {%- endif %}">
   <meta name="twitter:image" content="{{ site.siteUrl }}/img/social-logo.jpg">
   <meta name="twitter:image:alt" content="Make Things Accessible logo">
   <meta name="generator" content="Eleventy">
@@ -44,7 +44,7 @@
         "name": "{{ title }}",
         "author": {
           "@type": "Person",
-          "name": "{{ guideAuthor.name }}"
+          "name": "{% if isAAAStory %}AAA Student Story - {{ title }}{% else%}{{ guideAuthor.name }}{% endif %}"
         },
         "datePublished": "{{ date.toISOString() }}"
       }

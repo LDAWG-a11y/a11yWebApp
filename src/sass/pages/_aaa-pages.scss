@@ -1,0 +1,22 @@
+.supporters__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: $space-lg;
+
+  img,
+  picture {
+    margin-bottom: 0;
+    max-height: 10rem;
+    width: auto;
+  }
+}
+
+.supporters__link {
+  &:hover,
+  &:focus-visible {
+    outline: 3px solid var(--color-interactive);
+    outline-offset: 2px;
+  }
+}
