@@ -500,6 +500,11 @@ button[class^="header__themes-btn"] {
     width: 0;
     border-bottom: 4px solid var(--color-bg);
     transition: width 250ms 150ms ease-in, left 250ms 150ms ease-in;
+
+    .aaa-content & {
+      border-bottom-color: var(--color-interactive);
+      bottom: 0;
+    }
   }
 
   @include mq.mq($from:md) {
