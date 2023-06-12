@@ -1897,6 +1897,14 @@ ul:not([class]) > li::marker {
   background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
   background-attachment: local, local, scroll, scroll;
 }
+@media (prefers-color-scheme: dark) {
+  .cards--scrollable {
+    background-image: none;
+  }
+}
+[data-theme=dark] .cards--scrollable {
+  background-image: none;
+}
 .cards--scrollable:focus-visible {
   outline: 2px solid var(--color-interactive);
   outline-offset: 2px;
