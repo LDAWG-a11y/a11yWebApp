@@ -166,3 +166,9 @@ First, let's have a stab at a global indicator, I'd not necessarily recommend th
 In our experiment, we discovered that the 2 ring indicators typically fared better than the single ring indicators and this would have a greater chance of being true on sites that had sections that had different backgrounds.
 
 We also discovered that by having a very high contrast between the 2 rings, the likelihood of it falling down was significantly reduced, I'm inclined to think in most instances it would pass and you'd have to try to break it to actually break it, but our little experiment was quite basic, so I'm sure a thorough battle test would find some other situations where it isn't effective.
+
+What if we could create an Oreo type indicator, by Oreo I mean 2 dark layers and 1 light layer sandwiched within? We're not going for aesthetics right now, we're just brute-forcing something that may be as close to unbreakable as we can get, but obviously that would require our CSS to be suited to our needs.
+
+Shall we use pseudo-elements? We could use both the `::before` and `::after` along with an `outline` to create an Oreo type ring, I'm not going down this route though, as we're pretending we're just adding this to the Custom CSS file of a Wordpress site (or similar), as a quick fix and on at least on some of the WordPress sites I have looked at, some theme developers use both those pseudo elements in the main navigation, for what appears to be regulating the positioning of elements, yeah my thoughts exactly.
+
+If we get a little clever with a box-shadow and an outline, we can achieve the same effect:
