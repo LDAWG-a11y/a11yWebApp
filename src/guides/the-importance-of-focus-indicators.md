@@ -56,7 +56,7 @@ Why would we not want people who cannot use a mouse or a touchscreen to leave wi
 
 So, now we have the intro out of the way, which I probably waffled on, let's get to the more technical stuff.
 
-### WCAG compliance
+## WCAG compliance
 
 There are a couple of WCAG success criteria we need to be aware of which relates to focus indicators:
 
@@ -143,6 +143,8 @@ Here's the screenshot of the Safari focus indicators:
 
 The aim of the experiment above was to demonstrate that the default focus indicator isn't necessarily that great for users. This is because we may have sites that have different backgrounds in places, it may pass comfortably on one component and fall down on another. I didn't even create a test case here with dark mode enabled, which would likely introduce more interesting results.
 
+I know that the default indicator does not fail if it is unmodified, but we just made the assumption we had a basic modification, just to demonstrate where the user agent indicators could fail.
+
 Given the importance of the focus indicator and how some folks rely on it to use our sites I'm of the opinion that we should author our own, highly perceivable indicators. Browsers are smart, but they don't appear to use those smarts to intelligently create perceptible focus indicators, maybe its expensive from a performance viewpoint or maybe it's too complex to achieve? Engineering for browsers is way beyond my skillset, so I don't know the answer to that.
 
 ### I want to add focus indicators, but I'm getting pushback
@@ -154,3 +156,13 @@ First things first, try to educate them, explain how actual people need these, u
 The second thing I'd try is compromise, we have the `:focus-visible` pseudo class now, which on most elements will only ever be seen by somebody using a keyboard. I believe the hatred for the `:focus` selector stemmed from the fact it momentarily displayed on a mouse click or a tap, so ultimately `:focus-visible` was created to provide that compromise and is supported in all evergreen browsers. [It would need a fallback for older browsers](https://www.tpgi.com/focus-visible-and-backwards-compatibility/), but maybe your team don't care so much for older browsers, so you can just do that?
 
 If none of that works, hopefully some other team poaches you, where your considerations are welcomed.
+
+## Let's create some focus indicators
+
+First, let's have a stab at a global indicator, I'd not necessarily recommend this as a permanent solution, but if you're testing a site and it's immediately clear all focus indicators have been removed and say it's a CMS where you can add some custom CSS, this can certainly improve things pretty quickly, maybe just as a temporary sticking plaster or maybe it will work as a permanent solution, but you'd need to test that yourself.
+
+### Our experiment helps us here
+
+In our experiment, we discovered that the 2 ring indicators typically fared better than the single ring indicators and this would have a greater chance of being true on sites that had sections that had different backgrounds.
+
+We also discovered that by having a very high contrast between the 2 rings, the likelihood of it falling down was significantly reduced, I'm inclined to think in most instances it would pass and you'd have to try to break it to actually break it, but our little experiment was quite basic, so I'm sure a thorough battle test would find some other situations where it isn't effective.
