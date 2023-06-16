@@ -70,3 +70,26 @@ So, given that somebody found the loophole, in WCAG 2.1, Non-text Contrast was i
 The folks working on WCAG 2.2 did try to put an end to all this confusion by creating a new requirement called 2.4.11 Focus Appearance - Level AA, which required a certain area the indicator must cover for an element. Sadly, this requirement was eventually bumped up to a AAA requirement, which means it likely won't be used that often. I believe it was moved to AAA as there was confusion with the wording and how evaluators interpreted it, still, it's a shame though as this would have been a welcome addition by users who don't use pointing devices.
 
 So, just because 1 pixel that has a minimum 3:1 contrast ratio against any pixel it touches, is supposedly technically permissible, it's obviously not very useful to users, so please don't go for the minimum, we can do better.
+
+### Don't browsers add an indicator by default?
+
+Browsers do add their own focus indicator for interactive elements, which is part of the User Agent Stylesheet. Technically, if you don't modify the focus indicator in any way at all, then this that is enough to pass, but the moment you add just 1 line of CSS to the focus style of an element, you're on the hook to ensure it passes on all browsers and devices etc. Let's not get carried away though, just because it is enough to technically pass, doesn't necessarily mean it's the best.
+
+### Show me the different browser focus styles
+
+I've made a basic Codepen, each has three links and each is on a different coloured background. The link text in each passes has a contrast against its background that is higher than the 4.5:1 minimum for text of the size I used. I have not modified the focus styles in any way and the aim is to view the Codepen in each browser. For the purposes of this, I will just remain on the same device (MacOS) and I will use Safari, Chrome, Firefox and Edge, there are of course other browsers and operating systems that could also help us understand the problem further:
+
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="dyQMooX" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/dyQMooX">
+  Untitled</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+What did we notice there? Just for transparency and as things always change:
+
+Today's date is Friday 16th June 2023
+
+I'm using a Mac on MacOS 13.4
+
+Chrome version is:
