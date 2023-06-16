@@ -88,8 +88,69 @@ I've made a basic Codepen, each has three links and each is on a different colou
 
 What did we notice there? Just for transparency and as things always change:
 
-Today's date is Friday 16th June 2023
+* Today's date is Friday 16th June 2023
+* I'm using a Mac on MacOS 13.4
+* Chrome version is: 114.0.5735.133
+* Firefox version: 115.0b3
+* Safari version: 16.5 (18615.2.9.11.4)
+* Edge version: 114.0.1823.51
 
-I'm using a Mac on MacOS 13.4
+#### Firefox comments
 
-Chrome version is:
+* The focus indicator cannot be seen at all in the first (purple) container can it? That's because Firefox uses the colour rebeccapurple (#663399) for the focus indicator, I intentionally used that background, for that reason.
+* The second container which has a CSS background called cornflowerblue (#6495ED) does make it easier to see the focus indicator in Firefox, but if we added a single thing to this such as making the focus ring thicker, then we are immediately on the hook and we actually fail, as the contrast between the focus ring and the container's background is only 2.82:1, which is pretty close to the required minimum, but there's no discretion here, it's pass or fail.
+* The final container which uses the page's white background is absolutely fine, there's a strong contrast of 8.4:1 here.
+
+Here is a screenshot to visually show the indicators:
+
+![Screenshot of focus indicators in Firefox, visually showing the issues mentioned above.](src/guideImg/dl-ff-focus.png)
+
+#### Chrome comments
+
+Chrome uses a 2 colour ring, the colours of that ring are white (#FFF) and blue (#005FCC), this particular indicator has a greater chance of passing than the Firefox one, as if one colour fails, the other should be visible too. Does it pass on all three of our links, if we don't edit the focus styles at all, then technically, yes. But if we try to improve it by making it thicker, then we still fail.
+
+* We're good on our first link, as the white is the same colour as the text, which has an 8.04:1 contrast against the rebeccapurple background, so we don't need to worry about the blue part of the ring "passing".
+* Here's where things get interesting: On the second link, with the cornflowerblue background, blue ring fails against our background with a contrast of 2.01:1 and the white ring fails against our background with a contrast of 2.97:1, which is extremely close, but remember, no discretion here.
+* On the third link, with the white background, we can't see the white ring at all, which is OK, as we can see the blue ring against our background, as it has a 5.98:1 contrast, which is of course a good contrast. I'm sure we would be able to get that colour to fail more significantly should we choose a different background colour.
+
+A screenshot of all three links is below:
+
+![Screenshot of focus indicators in Chrome, visually showing the issues mentioned above.](src/guideImg/dl-chrome-focus.png)
+
+#### Edge comments
+
+much like Chrome, Edge uses the 2 colour ring, but the Edge team opted for black and white rings, which is the highest possible contrast 21:1. I think in most instances, it would be difficult to not be able to see one of the rings, but it's definitely not bulletproof. Maybe if we created a button, with a white background and a black box-shadow border, we could get the white part to sit over our button's white background and the black part to sit over our border, but I'm not going to attempt to do that, as the aim of this guide is to understand focus indicators, not put a sheer amount of effort in to blend them in to something. Does it pass against our little demo, if we don't modify it, yes and even if we do modify it, it will also pass using the existing 2 rings as long as the colours aren't changed:
+
+* For the first link, the white ring comfortably passes against the rebeccapurple background.
+* For the second ring, the black ring comfortably passes against our cornflowerblue background.
+* For the third link, we have maximum contrast between our white background and the black ring.
+
+![Screenshot of focus indicators in Edge, visually showing the issues mentioned above.](src/guideImg/dl-edge-focus.png)
+
+#### Safari comments
+
+Safari uses a blue ring (#0067f4), the ring colour is quite light, so it's immediately clear we're going to run into low contrast issues against our three backgrounds:
+
+* On the first link with the rebeccapurple background the contrast is 1.69:1, which is very low and could easily be missed or difficult to see for some folks.
+* On the second link with our cornflowerblue background, the contrast is 1.66:1, which is also very low.
+* On the third link with the white background, the contrast is 4.94:1, which is is a strong contrast.
+
+Here's the screenshot of the Safari focus indicators:
+
+![Screenshot of focus indicators in Safari, visually showing the issues mentioned above.](src/guideImg/dl-safari-focus.png)
+
+### Summary of user agent focus indicators
+
+The aim of the experiment above was to demonstrate that the default focus indicator isn't necessarily that great for users. This is because we may have sites that have different backgrounds in places, it may pass comfortably on one component and fall down on another. I didn't even create a test case here with dark mode enabled, which would likely introduce more interesting results.
+
+Given the importance of the focus indicator and how some folks rely on it to use our sites I'm of the opinion that we should author our own, highly perceivable indicators. Browsers are smart, but they don't appear to use those smarts to intelligently create perceptible focus indicators, maybe its expensive from a performance viewpoint or maybe it's too complex to achieve? Engineering for browsers is way beyond my skillset, so I don't know the answer to that.
+
+### I want to add focus indicators, but I'm getting pushback
+
+This is sadly a thing, you may work on a team where a colleague with more clout than you hates "ugly focus indicators" and it can be difficult to get any traction if they're likely to die on that hill. 
+
+First things first, try to educate them, explain how actual people need these, users of that site will need them and when they discover they don't exist, they may just go elsewhere.
+
+The second thing I'd try is compromise, we have the `:focus-visible` pseudo class now, which on most elements will only ever be seen by somebody using a keyboard. I believe the hatred for the `:focus` selector stemmed from the fact it momentarily displayed on a mouse click or a tap, so ultimately `:focus-visible` was created to provide that compromise and is supported in all evergreen browsers. [It would need a fallback for older browsers](https://www.tpgi.com/focus-visible-and-backwards-compatibility/), but maybe your team don't care so much for older browsers, so you can just do that?
+
+If none of that works, hopefully some other team poaches you, where your considerations are welcomed.
