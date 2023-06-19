@@ -332,7 +332,7 @@ Also, before we move on, `:focus-within` does have great support, but older brow
 
 ## Before we wrap up
 
-
+We didn't discuss Windows High Contrast Mode (WHCM). This is the reason that when "resetting" our focus indicators, I did this by setting the colour of the outline to transparent. WHCM ignores transparency, so it will always still display correctly if we use a property that is not supported by default in WHCM. As an example our Oreo focus indicator won't display the innermost and outermost rings, as the shadow property is typically ignored, this is unlikely to be an issue though, as WHCM also ignores the background colours we set, so if a user is viewing in WHCM with say a black background and our site has multiple different backgrounds, they should only ever see one background colour, which will relate to the theme they use in WHCM and our focus indicator will also be set by that theme, so should be highly perceivable. Of course, we should always test with WHCM as it's best to not make assumptions and validate things ourselves.
 
 ## Wrapping up
 
