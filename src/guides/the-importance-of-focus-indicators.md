@@ -139,7 +139,7 @@ Safari uses a blue ring (#0067f4), the ring colour is quite light, so it's immed
 
 Here's the screenshot of the Safari focus indicators:
 
-![Screenshot of focus indicators in Safari, visually showing the issues mentioned above.](src/guideImg/dl-safari-focus.png)
+![Screenshot of focus indicators in Safari, visually showing the issues mentioned above.](src/guideImg/dl-ff-focus.png)
 
 ### Summary of user agent focus indicators
 
