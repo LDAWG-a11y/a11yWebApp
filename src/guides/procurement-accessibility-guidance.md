@@ -28,11 +28,13 @@ If the developer is bidding to create a system to your specification:
 
 * Describe how the supplier will ensure the proposed solution (customer and staff facing) shall meet WCAG 2.1 AA compliance in line with the government requirements. This should include a description of how the supplier plans to test the final product against WCAG 2.1, their audit process or the audit process of the subcontractor they may involve for external testing. This should also include any information regarding how they would roadmap fixes if the final product is not compliant.
 * Describe how the solution will support content upload compliance with WCAG where relevant. For example, what restrictions, options or guidance the solution will implement to help content creators upload or write accessible content.
+* Overlay and Underlay products/plugins/add-ons which offer to remediate accessibility issues represent a false approach to accessibility compliance. The supplier will indicate if in the delivery of the service to us they are using or plan to use any products provided by companies listed in the [Overlay Fact Sheet](https://overlayfactsheet.com/#main), or any other products that fit the description above.
 
 If the developer is offering their own product that will be “customised” to your requirements we set out the following expectations:
 
 * The proposed solution (customer and staff facing) shall meet WCAG 2.1 AA compliance in line with the government accessibility requirements - Public Sector Bodies Accessibility Regulations (2018). Supplier to provide test reports to evidence how they meet / don't meet WCAG 2.1 AA compliance. For example, a WCAG audit report, VPAT, evidence of assistive technology testing or user testing with disabled user groups. Supplier to provide their development roadmap for accessibility if their product partially complies.
 * Describe how the solution will support content upload compliance with WCAG where relevant. For example, what restrictions, options, or guidance the solution will implement to help content creators upload or write accessible content.
+* Overlay and Underlay products/plugins/add-ons which offer to remediate accessibility issues represent a false approach to accessibility compliance. The supplier will indicate if in the delivery of the service to us they are using or plan to use any products provided by companies listed in the [Overlay Fact Sheet](https://overlayfactsheet.com/#main), or any other products that fit the description above.
 * Supplier to provide a copy of the accessibility statement for their product covering core technical sections as required by the Public Sector Bodies Accessibility Regulations (2018). Or the supplier works with us to produce an accessibility statement for the proposed solution which meets our legislative obligation as a public sector body under PSBAR (2018) and is acceptable to us. Supplier provides / works with us to provide guidance for assistive technology users on using the solution. Guidance material required in all cases; additional guidance required to navigate areas of non-compliance with WCAG if present.
 
 ## Reviewing tender responses
@@ -48,6 +50,8 @@ Assuming you have used the previous questions to get information from suppliers 
 * Remediation roadmap
 * Plans for testing
 
+The below sections provide further information on what these responses might look link and how best to respond to or interpret different responses and evidence.
+
 ### [](<>)No information or other negative response
 
 The range of poor responses you might receive from suppliers can be quite broad. You may receive anything including
@@ -58,7 +62,9 @@ The range of poor responses you might receive from suppliers can be quite broad.
 * No one has ever asked about this before (including “you are the first Council/Uni/College/etc. to ask for this”)
 * We are on X framework (such as Crown Commercial Services frameworks) so we must be fine, no further evidence supplied.
 
-If a tender response cannot provide any information to show that they are aware of the legal accessibility requirements for their customer base and know how to deal with requests and have appropriate evidence, then they are significantly high risk and should not be dealt with.
+If a tender response cannot provide any information to show that they are aware of the legal accessibility requirements for their customer base and know how to deal with requests and have appropriate evidence, then they are significantly higher risk.
+
+Remember that we all first learn about accessibility at some point. For many suppliers, this might be the first time they are being made aware of the requirements. The important thing is how the supplier responde to these requirements. If they approach it proactively and try to make fixes and are operating in good faith then that is one thing, but conversely they may dismiss the need because it has been "unimportant" up till now. The supplier's direction from this point is important.
 
 <div class="callout__tip"><span class="callout__icon"></span><span class="callout__text">Remember, you as the public sector body hold all the legal responsibility. If a supplier that does not know what they are doing delivers you an illegal product, you are responsible if something goes wrong.</span></div>
 
@@ -70,7 +76,11 @@ Many suppliers will claim that the product they are trying to sell you fully com
 
 Most times we have seen this response provided; the supplier will answer following questions explaining that there are a limited number of areas where the product has current issues against WCAG. This might be in a written response to one of the tender questions or can be identified through documentation such as a VPAT or audit report as mentioned below.
 
-If you receive a response from a supplier which says “fully compliant” and then receive documentation which does not say they are 100% perfect, you should immediately call them out on this inconsistency and be very sceptical of doing business with that organisation.
+If you receive a response from a supplier which says “fully compliant” and then receive documentation which does not say they are 100% perfect, you should immediately raise this inconsistency and be sceptical of their documentation. Consider:
+
+* Who wrote the report?
+* Was it in-house or a reputable 3rd party auditor
+* To what extent the supplier understand and can meet your requirements if they are making such contradictory statements.
 
 If you receive documentation which shows a clean slate for accessibility, also be sceptical and ask to be able to do your own testing. As has been said, most of the time, any suitably large system will not be perfect, and sometimes that has to be accepted but you are looking for an accurate state of the system not clean documentation just to get past the check.
 
@@ -78,23 +88,11 @@ If you receive documentation which shows a clean slate for accessibility, also b
 
 More and more we are seeing suppliers state that they are using an "overlay" product to deliver accessibility for their service. Overlay products are touted as additional plugins which you add onto your website or service which will then adjust pages to make them WCAG compliant without you having to test and remediate issues. These are false claims.
 
-If you want to find out more about overlays and why we do not support their use, read our overlay guide.
-
-If a supplier does respond that they are using an overlay we would suggest responding with the following:
-
-> We would like to clarify that we do not condone the use of overlays and are not willing to accept the legal risk associated with their use. The government department that monitors the regulations we must meet do not recognise overlays as an accepted solution, and overlays do not contribute to our legal compliance. Overlay products make many claims about making website meet WCAG 2.1, EN301549, Section 508 etc. All of these are false.
->
-> You can find more information on the [Overlay Fact Sheet.](https://overlayfactsheet.com/#main "https\://overlayfactsheet.com/#main") The fact sheet is supported by a vast number of the best accessibility professionals in the field, and the industry overwhelmingly agrees to avoid the use of these snake oil products.
->
-> Many organisations in the US are being sued for staking their compliance claims on these overlay products, and recently a representative from the US Department of Justice referred to overlay use as "committing legal suicide". Beyond accessibility there are also other [GDPR related concerns with overlay usage](https://tink.uk/accessibe-and-data-protection/ "https\://tink.uk/accessibe-and-data-protection/") and their data collection.
->
-> We are not willing to sign off on the use of \[X overlay product] and do not accept it as evidence of \[Y website or system] complying with technical standards WCAG 2.1, or meeting our legal obligations under the Public Sector Bodies (Websites and Mobile Applications) Accessibility Regulations 2018. If you proceed with the use of \[X overlay product] on \[Y website or system] which we plan to utilise as part of our digital estate, we will be forced to escalate this incompatibility as we cannot accept the legal risks associated and may not be able to proceed to contract.
->
-> We welcome your thoughts on this issue and what alternative arrangements you will put in place to evidence accessibility compliance.
+If you want to find out more about overlays, why we do not support their use, and how to respond to suppliers who use overlays read our [overlay guide](https://www.makethingsaccessible.com/guides/overlays-and-other-fix-it-products/).
 
 ### VPAT
 
-VPATs are a type of document which provides a very basic level of information on the accessibility of a digital product. This will normally be in the form of a table listing each of the WCAG success criteria an identification of their compliance, and some notes.
+VPATs are a type of document which provides a very basic level of information on the accessibility of a digital product. This will normally be in the form of a table listing each of the WCAG success criteria an identification of their compliance, and some notes. VPAT's are part of the American Section 508 requirements, but have become an internationally used piece of accessibility documentation.
 
 The problem with VPATs is that they are normally not detailed enough to give useful information on the true level of impact for a service.
 
@@ -104,13 +102,13 @@ The question you should be asking is what does “some” mean? Is it the main n
 
 If the navigation is not accessible or the main content is not accessible but other content is, then that still counts as some but would mean that a wide range of users would not be able to interact with the product at all.
 
-If you receive a VPAT that includes vague statements such as the above, which could mean a potential massive risk, or you are not sure, ask the supplier for more detailed information on the exact areas of the product that the issue covers, and refuse to sign any contract until you see a more detailed list.
+If you receive a VPAT that includes vague statements such as the above, which could mean a potential massive risk, or you are not sure, ask the supplier for more detailed information on the exact areas of the product that the issue covers, and refuse to sign any contract until you see a more detailed list. A VPAT can only have been produced correctly following in-depth testing. They are summary documents and so the detailed test results must exist.
 
 You should also be asking for a detailed remediation roadmap. If they are already aware of several issues as detailed in their VPAT, ask them for evidence of how they are planning to fix those identified issues. If they have no answer, refuse to sign a contract until they do.
 
 ### Other detailed auditing documentation
 
-If the supplier responds with detailed testing documentation for the product you should look through the documents carefully. Read our guide for reviewing testing documentation.
+If the supplier responds with detailed testing documentation for the product you should look through the documents carefully.
 
 You will want to look at:
 
