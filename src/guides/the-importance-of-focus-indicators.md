@@ -232,7 +232,7 @@ I think it is good, but it's unlikely that it is perfect for everybody, for inst
 a:focus-visible {
   outline: 2px solid black;
   outline-offset: 2px;
-  box-shadow: 0px 0px 0px 6px white 
+  box-shadow: 0px 0px 0px 6px white;
 }
 ```
 
