@@ -102,7 +102,7 @@ collections:
         fields:
           - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
           - {label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
-      - label: "AAA Assitive Tech"
+      - label: "AAA Assistive Tech"
         name: "aaa-at"
         file: "/src/AAA/aaa-at.md"
         fields:
