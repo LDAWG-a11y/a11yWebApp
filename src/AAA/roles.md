@@ -61,8 +61,6 @@ Working with Special Educational Needs (SEN) or other disability support advisor
 2. Test equipment prior to exams: It's important to test all equipment prior to exams to ensure that it's working properly and that students who require assistive technology are able to access it.
 3. Provide support during exams: During exams, support staff should be on call to assist students who require assistive technology. This may involve providing training on how to use the software or troubleshooting any technical issues that arise.
 
-We have resources on our main landing page and throughout this site on this topic.
-
 ## Web Developers
 
 The following list covers guides on how to make common aspects of website more accessible:
@@ -86,8 +84,6 @@ The following list covers guides on how to make common aspects of website more a
 * [Semi-automated accessibility testing tools](/guides/semi-automated-accessibility-testing-tools/)
 * [Screen Reader - Basic Website Testing](/guides/screen-reader-basic-website-testing/)
 
-Following these guides should (hopefully!) help you make different aspects of your website accessible!
-
 ## SEN Coordinator
 
 As the head of accessibility / special needs coordinator for your organisation, there are many things that you can do to ensure that your organisation is more accessible to everyone. This includes:
@@ -97,12 +93,12 @@ As the head of accessibility / special needs coordinator for your organisation, 
 * Gather feedback from pupils on how accessibility within your organisation could be improved, and take this on board to build an accessibility strategy for the future.
 * Ensure that all accessibility guidance required by the law is available and published on your website.
 
-## School Adminsistrator
+## School Administrator
 
 As a school administrator, you will tend to have a significant amount of access to data and regular contact with other members of senior leadership. This gives you a unique perspective on the impacts of accessibility within your organisation. Following this advice should help improve accessibility within your organisation:
 
-* Identify areas in which accessibility could be improved within your organisation, both physically, digitally and in terms of how lessons are delivered. Ensure that these are raised with the appropriate members of staff / senior leadership and that action is taken to fulfill these objectives.
-* Ensure that under-performing performing students are made aware of the support (and potentially assistive technology) available to them, and attempt to identify any additional needs that they may have, to help them improve.
+* Identify areas in which accessibility could be improved within your organisation, both physically, digitally and in terms of how lessons are delivered. Ensure that these are raised with the appropriate members of staff / senior leadership and that action is taken to fulfil these objectives.
+* Ensure that under-performing students are made aware of the support (and potentially assistive technology) available to them, and attempt to identify any additional needs that they may have, to help them improve.
 * Ensure that, if people make requests related to accessibility, that they are directed to the appropriate member of staff (SENCO, facilities manager, IT support staff, etc.) This will be individual to the specific request. If possible, attempt to ensure that action is being taken by these members of staff to fulfil the request that has been made through follow-ups.
 * Claim funding! There is funding available for creating solutions to SEN needs in schools that is separate from the main budget, provided by the government. For more info, [check out this guide from educationadvocacy.co.uk on how this funding works](https://educationadvocacy.co.uk/sen-funding/).
 
