@@ -8,6 +8,6 @@ summary: Access and Assistance for All's Assistive Technology information page,
 aaa: true
 usesCMS: true
 ---
-[My Computer My Way](https://mcmw.abilitynet.org.uk/) - Search our simple 'how to' guides to make your device easier to use
+[My Computer My Way](https://mcmw.abilitynet.org.uk/) - Search simple 'how to' guides to make your device easier to use
 
-The guides below offer step by step instructions on how to adapt your phone, computer or tablet to meet your needs. You can search for a specific need (e.g. making text larger) or filter the guides based on your symptoms (e.g. hand tremor) or condition (e.g. dyslexia).
+The guides offer step by step instructions on how to adapt your phone, computer or tablet to meet your needs. You can search for a specific need (e.g. making text larger) or filter the guides based on your symptoms (e.g. hand tremor) or condition (e.g. dyslexia).
