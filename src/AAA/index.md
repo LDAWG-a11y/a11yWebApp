@@ -68,7 +68,7 @@ There are many forms of both physical and digital assistive technology that can 
 
 Having a personalised charter that is spread across the school and displayed openly ensures that students and parents/carers are made aware of what accessibility support they can access, and can also provide clear evidence of progress being made towards ensuring that a school or college is more accessible.
 
-[Download the charter template](src/img/college-charter-access-and-assisstance-for-all.docx)
+[Download the charter template](src/img/college-charter.docx)
 
 </div>
 
