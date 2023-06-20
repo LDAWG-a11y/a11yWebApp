@@ -1,7 +1,7 @@
 ---
 aaaHome: true
 aaa: true
-summary: Some summary
+summary: The Access and Assistance for All campaign aims to raise awareness across the UK education sector about providing accomodations and support for learners with disabilities
 layout: base.njk
 permalink: aaa/
 date: Last Modified

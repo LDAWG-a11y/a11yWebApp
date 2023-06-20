@@ -3,7 +3,7 @@ date: Last Modified
 permalink: "aaa/roles/"
 layout: base.njk
 title: AAA Roles
-summary: Some summary
+summary: Guidance on what responsibilities your job role has in ensuring learners are provided with the necessary support and accommodations they need throughout their education
 aaa: true
 usesCMS: true
 ---
