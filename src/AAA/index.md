@@ -1,7 +1,9 @@
 ---
 aaaHome: true
 aaa: true
-summary: The Access and Assistance for All campaign aims to raise awareness across the UK education sector about providing accomodations and support for learners with disabilities
+summary: The Access and Assistance for All campaign aims to raise awareness
+  across the UK education sector about providing accomodations and support for
+  learners with disabilities
 layout: base.njk
 permalink: aaa/
 date: Last Modified
@@ -57,7 +59,7 @@ Having an accessibility champion enables students to reach their full potential 
 
 There are many forms of both physical and digital assistive technology that can aid students throughout their education, and these could potentially be of huge benefit to students, so should be promoted (even non-disabled people can benefit from assistive technology! Spellcheck, auto-complete and even basic organisational systems originated as assistive technology, and can be beneficial to all when implemented correctly). There are also sites, such as [My Computer My Way](https://mcmw.abilitynet.org.uk/), which can show you how to setup the many free digital accessibility solutions already available on most devices.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/31hyupkkyqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/r2yRs4DejyA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 </div>
 
