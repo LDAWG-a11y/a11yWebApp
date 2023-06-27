@@ -10,7 +10,7 @@ date: Last Modified
 title: Access and Assistance for All
 usesCMS: true
 ---
-Access and Assistance for All (AAA) is a campaign that aims to increase access to assistive technology across further education colleges as well as raising awareness of how to make resources accessible by design so they are compatible with assistive technology. The British Youth Council's (BYC's) youth-led campaign group consists of 15 young regional champions from across England, along with our partners at the University College of London and the Kent and Medway Progression Federation.
+Access and Assistance for All (AAA) is a campaign that aims to increase access to assistive technology across further education colleges as well as raising awareness of how to make resources accessible by design so they are compatible with assistive technology. The British Youth Council's (BYC's) youth-led campaign group consists of 15 young regional champions from across England, along with our partners at University College of London (UCL) and the Kent and Medway Progression Federation (KMPF).
 
 ## Why is this campaign needed?
 
