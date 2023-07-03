@@ -159,3 +159,5 @@ Due to the accessibility concerns of using access keys it is recommended that th
 * [MDN Web Docs Access Key](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey)
 * [WebAim Accesskey](https://webaim.org/techniques/keyboard/accesskey)
 * [Why Access Keys Are Mostly Useless for Accessibility Purposes](https://www.thesitewizard.com/webdesign/access-keys-are-useless.shtml)
+* [Usable Accessibility: Making Web Sites Work Well for People with Disabilities](https://www.uxmatters.com/mt/archives/2009/02/usable-accessibility-making-web-sites-work-well-for-people-with-disabilities.php)
+* [HOBO SEO Consultancy - UK Government Access Keys Standard For Websites](<HOBO SEO Consultancy - UK Government Access Keys Standard For Websites>)
