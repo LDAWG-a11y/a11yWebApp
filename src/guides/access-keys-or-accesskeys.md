@@ -156,7 +156,8 @@ We would recommend because of the accessibility concerns of access keys, that th
 * Use the numbers "1" - "9" in order for the items in the list
 * Throughout the website use this consistently
 * Put the list after the main content at the bottom of the page unless they can be in the navigation bar (if there are two or three)
-* Access is a fallback for things that do not have a standard activation behaviour
+
+Remember access keys are a fallback for things that do not have a standard activation behaviour.
 
 ## Useful links
 
