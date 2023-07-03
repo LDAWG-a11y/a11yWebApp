@@ -174,4 +174,5 @@ Remember access keys are a fallback for things that do not have a standard activ
 * [WebAim Accesskey](https://webaim.org/techniques/keyboard/accesskey)
 * [Why Access Keys Are Mostly Useless for Accessibility Purposes](https://www.thesitewizard.com/webdesign/access-keys-are-useless.shtml)
 * [Usable Accessibility: Making Web Sites Work Well for People with Disabilities](https://www.uxmatters.com/mt/archives/2009/02/usable-accessibility-making-web-sites-work-well-for-people-with-disabilities.php)
+* [Time to revisit accesskey?](https://tink.uk/time-to-revisit-accesskey/)
 * [HOBO SEO Consultancy - UK Government Access Keys Standard For Websites](<HOBO SEO Consultancy - UK Government Access Keys Standard For Websites>)
