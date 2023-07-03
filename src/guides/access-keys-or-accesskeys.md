@@ -178,6 +178,7 @@ Remember access keys are a fallback for things that do not have a standard activ
 
 ## Useful links
 
+* [Access Keys](https://en.wikipedia.org/wiki/Access_key)
 * [WHATWG community HTML Living Standard](https://html.spec.whatwg.org/multipage/)
 * [WHATWG community The accesskey attribute](https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute) 
 * [W3C Accesskey](https://www.w3.org/WAI/PF/HTML/wiki/Accesskey)
@@ -189,4 +190,5 @@ Remember access keys are a fallback for things that do not have a standard activ
 * [Usable Accessibility: Making Web Sites Work Well for People with Disabilities](https://www.uxmatters.com/mt/archives/2009/02/usable-accessibility-making-web-sites-work-well-for-people-with-disabilities.php)
 * [Time to revisit accesskey?](https://tink.uk/time-to-revisit-accesskey/)
 * [WUHCAG - Keyboard (2.1.1 – Level A)](https://www.wuhcag.com/keyboard/)
+* [UK Government accesskeys standard](https://webarchive.nationalarchives.gov.uk/ukgwa/20100703000205/http://archive.cabinetoffice.gov.uk/e-government/resources/handbook/html/2-4.asp#2.4.4)
 * [HOBO SEO Consultancy - UK Government Access Keys Standard For Websites](<HOBO SEO Consultancy - UK Government Access Keys Standard For Websites>)
