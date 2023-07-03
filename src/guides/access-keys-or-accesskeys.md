@@ -154,6 +154,7 @@ The screen reader interacts with the virtual buffer by listening for events gene
 Unfortunately, most available keys are allocated for Windows screen reader specific commands, and not many keys are able to pass through to the browser, and the JavaScript shortcuts therefor do not get triggered. 
 
 You can tell Jaws and NVDA to route the next key to the browser:
+
 * NVDA - press NVDA modifier (insert) f2, followed by the key to be passed through
 * Jaws - press Jaws modifier (insert) 3, followed by the key you want to pass through
 
@@ -187,4 +188,5 @@ Remember access keys are a fallback for things that do not have a standard activ
 * [Why Access Keys Are Mostly Useless for Accessibility Purposes](https://www.thesitewizard.com/webdesign/access-keys-are-useless.shtml)
 * [Usable Accessibility: Making Web Sites Work Well for People with Disabilities](https://www.uxmatters.com/mt/archives/2009/02/usable-accessibility-making-web-sites-work-well-for-people-with-disabilities.php)
 * [Time to revisit accesskey?](https://tink.uk/time-to-revisit-accesskey/)
+* [WUHCAG - Keyboard (2.1.1 – Level A)](https://www.wuhcag.com/keyboard/)
 * [HOBO SEO Consultancy - UK Government Access Keys Standard For Websites](<HOBO SEO Consultancy - UK Government Access Keys Standard For Websites>)
