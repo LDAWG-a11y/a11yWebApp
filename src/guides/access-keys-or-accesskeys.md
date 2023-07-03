@@ -87,23 +87,23 @@ It can be helpful to the user to do something to show what key is the access key
 
 ## Accessibilty concerns
 
-*There is poor support amongst the browsers (and different operating systems use different keys to activate them)
-*There is not a standardised set of accesskeys but if accesskeys are to be useful to a website, they must be specifically customised for that website – the number of frequently used common keys are very small
-*The accesskey may not work in a particular combination of AT, browser and OS whereas it will work in another
-*Some accesskey values are missing on specific keyboards, such as particular language ones.
-*There is the possibility of activating the accesskey accidentally if the user is not aware that it exists
-*If the user has cognitive issues then accesskeys that use numbers can be confusing especially if the functionality does not have an association to the number that is logical
-*The accesskey may conflict with short cut keys within the AT or the browser and stop important functionality being accessed
-*Using the accesskeys can be more difficult that normal typing often requiring  greater dexterity
+* There is poor support amongst the browsers (and different operating systems use different keys to activate them)
+* There is not a standardised set of accesskeys but if accesskeys are to be useful to a website, they must be specifically customised for that website – the number of frequently used common keys are very small
+* The accesskey may not work in a particular combination of AT, browser and OS whereas it will work in another
+* Some accesskey values are missing on specific keyboards, such as particular language ones.
+* There is the possibility of activating the accesskey accidentally if the user is not aware that it exists
+* If the user has cognitive issues then accesskeys that use numbers can be confusing especially if the functionality does not have an association to the number that is logical
+* The accesskey may conflict with short cut keys within the AT or the browser and stop important functionality being accessed
+* Using the accesskeys can be more difficult that normal typing often requiring  greater dexterity
 
 ## Wrapping up
 
 Due to the accessibility concerns of using access keys it is recommended that they are not used.
 
 Useful links
-*[WHATWG community HTML Living Standard](https://html.spec.whatwg.org/multipage/)
-*WHATWG community The accesskey attribute 
-*W3 Schools Global Access Keys*
-MDN Web Docs Access Key
-*WebAim Accesskey*
+[WHATWG community HTML Living Standard](https://html.spec.whatwg.org/multipage/)
+WHATWG community The accesskey attribute 
+W3 Schools Global Access Keys
+*MDN Web Docs Access Key
+WebAim Accesskey*
 Why Access Keys Are Mostly Useless for Accessibility Purposes
