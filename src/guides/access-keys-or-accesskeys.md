@@ -145,6 +145,10 @@ It can be helpful to the user to do something to show what key is the access key
 * The accesskey may conflict with short cut keys within the AT or the browser and stop important functionality being accessed
 * Using the accesskeys can be more difficult that normal typing often requiring  greater dexterity
 
+## Alternatives
+
+JavaScript can be used as an alternative because it is able to detect key presses, or a combination of key presses
+
 ## Wrapping up
 
 Good usability allows the website design to provide flexibility, and user controls will help make a website accessible, and while there are always going to be trade-offs, this will enable the adjustment of the interface to match users’ requirements, and work with their accessibility settings, assistive technology, and adaptive strategies.
