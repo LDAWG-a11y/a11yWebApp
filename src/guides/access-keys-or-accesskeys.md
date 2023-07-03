@@ -9,6 +9,7 @@ tags:
   - HTML
   - accesskey
   - access key
+  - hot-key
 isGuide: true
 ---
 ## Introduction to access keys
@@ -146,13 +147,26 @@ It can be helpful to the user to do something to show what key is the access key
 
 ## Wrapping up
 
-Due to the accessibility concerns of using access keys it is recommended that they are not used.
+Good usability design by allowing the website design to provide flexibility and user control will help make a website accessible, and while there are always going to be trade-offs, this will enable the adjustment of the interface to match users’ requirements, and work with their accessibility settings, assistive technology, and adaptive strategies.
+
+We would recommend because of the accessibility concerns of access keys, that they are not used, but if you are going to use accesskeys use the GOV.UK standard or if it does not apply:
+
+* Determine commonly used or important links on your website
+* Place the links into a numbered list <ol>
+* Use the numbers "1" - "9" in order for the items in the list
+* Throughout the website use this consistently
+* Put the list after the main content at the bottom of the page unless they can be in the navigation bar (if there are two or three)
+* Access is a fallback for things that do not have a standard activation behaviour
 
 ## Useful links
 
 * [WHATWG community HTML Living Standard](https://html.spec.whatwg.org/multipage/)
 * [WHATWG community The accesskey attribute](https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute) 
+* [W3C Accesskey](https://www.w3.org/WAI/PF/HTML/wiki/Accesskey)
+* [Shared Techniques wiki for the W3C Mobile Web Initative Best Practices AccessKeys](https://www.w3.org/2005/MWI/BPWG/techs/AccessKeys.html)
 * [W3 Schools Global Access Keys](https://www.w3schools.com/tags/att_global_accesskey.asp)
 * [MDN Web Docs Access Key](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey)
 * [WebAim Accesskey](https://webaim.org/techniques/keyboard/accesskey)
 * [Why Access Keys Are Mostly Useless for Accessibility Purposes](https://www.thesitewizard.com/webdesign/access-keys-are-useless.shtml)
+* [Usable Accessibility: Making Web Sites Work Well for People with Disabilities](https://www.uxmatters.com/mt/archives/2009/02/usable-accessibility-making-web-sites-work-well-for-people-with-disabilities.php)
+* [HOBO SEO Consultancy - UK Government Access Keys Standard For Websites](<HOBO SEO Consultancy - UK Government Access Keys Standard For Websites>)
