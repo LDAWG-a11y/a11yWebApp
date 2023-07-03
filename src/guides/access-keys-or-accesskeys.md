@@ -101,7 +101,6 @@ It can be helpful to the user to do something to show what key is the access key
 Due to the accessibility concerns of using access keys it is recommended that they are not used.
 
 ## Useful links
-[](https://html.spec.whatwg.org/multipage/)
 
 * [WHATWG community HTML Living Standard](https://html.spec.whatwg.org/multipage/)
 * [WHATWG community The accesskey attribute](https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute) 
