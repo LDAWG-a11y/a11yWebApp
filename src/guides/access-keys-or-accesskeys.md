@@ -147,9 +147,9 @@ It can be helpful to the user to do something to show what key is the access key
 
 ## Wrapping up
 
-Good usability design by allowing the website design to provide flexibility and user control will help make a website accessible, and while there are always going to be trade-offs, this will enable the adjustment of the interface to match users’ requirements, and work with their accessibility settings, assistive technology, and adaptive strategies.
+Good usability to allow the website design to provide flexibility and user control will help make a website accessible, and while there are always going to be trade-offs, this will enable the adjustment of the interface to match users’ requirements, and work with their accessibility settings, assistive technology, and adaptive strategies.
 
-We would recommend because of the accessibility concerns of access keys, that they are not used, but if you are going to use accesskeys use the GOV.UK standard or if it does not apply:
+We would recommend due to the noted accessibility concerns of access keys that they are not used, but if you are going to use accesskeys use the GOV.UK standard or if it does not apply:
 
 * Determine commonly used or important links on your website
 * Place the links into a numbered list `<ol>`
