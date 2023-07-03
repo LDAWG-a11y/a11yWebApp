@@ -155,6 +155,7 @@ Due to the accessibility concerns of using access keys it is recommended that th
 
 * [WHATWG community HTML Living Standard](https://html.spec.whatwg.org/multipage/)
 * [WHATWG community The accesskey attribute](https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute) 
+* [W3C Accesskey](https://www.w3.org/WAI/PF/HTML/wiki/Accesskey)
 * [Shared Techniques wiki for the W3C Mobile Web Initative Best Practices AccessKeys](https://www.w3.org/2005/MWI/BPWG/techs/AccessKeys.html)
 * [W3 Schools Global Access Keys](https://www.w3schools.com/tags/att_global_accesskey.asp)
 * [MDN Web Docs Access Key](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey)
