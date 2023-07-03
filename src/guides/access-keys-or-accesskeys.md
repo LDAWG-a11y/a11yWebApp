@@ -147,7 +147,7 @@ It can be helpful to the user to do something to show what key is the access key
 
 ## Alternatives
 
-JavaScript can be used as an alternative because it is able to detect key presses, or a combination of key presses
+JavaScript can be used as an alternative to activate shortcut key functionality because it is able to detect key presses, or a combination of key presses, but there may be possible conflicts that are hard to identify.
 
 ## Wrapping up
 
