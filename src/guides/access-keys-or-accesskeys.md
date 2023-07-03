@@ -13,7 +13,7 @@ isGuide: true
 ---
 ## Introduction to access keys
 
-Web browser Access Keys were developed to enable a computer user to go to a particular web page or field immediately when a specified key is pressed alongside the Alt key. It is not recommended that they are used because they cause more issues for users of adaptive technology (AT) than they solve.
+Web browser Access Keys were developed to enable a computer user to go to a particular web page or field immediately when a specified key is pressed alongside the Alt key. It is not recommended that they are used because they [cause more issues for users of adaptive technology (AT) than they solve](https://www.makethingsaccessible.com/guides/access-keys-or-accesskeys/#accessibilty-concerns).
 
 ## History
 
