@@ -9,6 +9,7 @@ tags:
   - HTML
   - accesskey
   - access key
+  - hot-key
 isGuide: true
 ---
 ## Introduction to access keys
@@ -145,6 +146,8 @@ It can be helpful to the user to do something to show what key is the access key
 * Using the accesskeys can be more difficult that normal typing often requiring  greater dexterity
 
 ## Wrapping up
+
+Good usability design by allowing the website design to provide flexibility and user control will help make a website accessible, and while there are always going to be trade-offs, this will enable the adjustment of the interface to match users’ requirements, and work with their accessibility settings, assistive technology, and adaptive strategies.
 
 Due to the accessibility concerns of using access keys it is recommended that they are not used.
 
