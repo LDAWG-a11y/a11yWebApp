@@ -152,7 +152,7 @@ Good usability design by allowing the website design to provide flexibility and 
 We would recommend because of the accessibility concerns of access keys, that they are not used, but if you are going to use accesskeys use the GOV.UK standard or if it does not apply:
 
 * Determine commonly used or important links on your website
-* Place the links into a numbered list <ol>
+* Place the links into a numbered list `<ol>`
 * Use the numbers "1" - "9" in order for the items in the list
 * Throughout the website use this consistently
 * Put the list after the main content at the bottom of the page unless they can be in the navigation bar (if there are two or three)
