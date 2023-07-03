@@ -149,7 +149,14 @@ It can be helpful to the user to do something to show what key is the access key
 
 Good usability design by allowing the website design to provide flexibility and user control will help make a website accessible, and while there are always going to be trade-offs, this will enable the adjustment of the interface to match users’ requirements, and work with their accessibility settings, assistive technology, and adaptive strategies.
 
-Due to the accessibility concerns of using access keys it is recommended that they are not used.
+We would recommend because of the accessibility concerns of using access keys that they are not used, but if you are going to use accesskeys then:
+
+* Determine commonly used or important links on your website
+* Place the links into a numbered list <ol>
+* Use the numbers "1" - "9" in order for the items in the list
+* Throughout the website use this consistently
+* Put the list after the main content at the bottom of the page unless they can be in the navigation bar (if there are two or three)
+* Access is a fallback for things that do not have a standard activation behaviour
 
 ## Useful links
 
