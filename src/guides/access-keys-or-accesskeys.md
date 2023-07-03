@@ -104,7 +104,7 @@ The UK Government published in May 2002 the [Building in universal accessibility
     </tr>
     <tr>
       <th scope="row">Alt + S</th>
-      <td>Skip navigation/td>
+      <td>Skip navigation</td>
     </tr>
   </tbody>
 </table>
