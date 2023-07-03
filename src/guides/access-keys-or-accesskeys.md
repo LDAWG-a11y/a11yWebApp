@@ -145,6 +145,10 @@ It can be helpful to the user to do something to show what key is the access key
 * The accesskey may conflict with short cut keys within the AT or the browser and stop important functionality being accessed
 * Using the accesskeys can be more difficult that normal typing often requiring  greater dexterity
 
+## Alternatives
+
+JavaScript can be used as an alternative to activate shortcut key functionality because it is able to detect key presses, or a combination of key presses, but there may be possible conflicts that are hard to identify.
+
 ## Windows virtual buffer
 
 Screen readers used in Windows support interaction with browser rendered content by using a virtual model. A virtual buffer of content is generated using the page content, based upon the accessibility tree and information in DOM, and the screen reader presents this to the user.
@@ -157,10 +161,6 @@ You can tell Jaws and NVDA to route the next key to the browser:
 
 * NVDA - press NVDA modifier (insert) f2, followed by the key to be passed through
 * Jaws - press Jaws modifier (insert) 3, followed by the key you want to pass through
-
-## Alternatives
-
-JavaScript can be used as an alternative to activate shortcut key functionality because it is able to detect key presses, or a combination of key presses, but there may be possible conflicts that are hard to identify.
 
 ## Wrapping up
 
