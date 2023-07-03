@@ -100,10 +100,12 @@ It can be helpful to the user to do something to show what key is the access key
 
 Due to the accessibility concerns of using access keys it is recommended that they are not used.
 
-Useful links
-[WHATWG community HTML Living Standard](https://html.spec.whatwg.org/multipage/)
-WHATWG community The accesskey attribute 
-W3 Schools Global Access Keys
-*MDN Web Docs Access Key
-WebAim Accesskey*
-Why Access Keys Are Mostly Useless for Accessibility Purposes
+## Useful links
+[](https://html.spec.whatwg.org/multipage/)
+
+* [WHATWG community HTML Living Standard](https://html.spec.whatwg.org/multipage/)
+* [WHATWG community The accesskey attribute](https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute) 
+* [W3 Schools Global Access Keys](https://www.w3schools.com/tags/att_global_accesskey.asp)
+* [MDN Web Docs Access Key](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey)
+* [WebAim Accesskey](https://webaim.org/techniques/keyboard/accesskey)
+* [Why Access Keys Are Mostly Useless for Accessibility Purposes](https://www.thesitewizard.com/webdesign/access-keys-are-useless.shtml)
