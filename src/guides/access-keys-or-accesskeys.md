@@ -100,7 +100,7 @@ The UK Government published in May 2002 the [Building in universal accessibility
     </tr>
     <tr>
       <th scope="row">Alt + 3</th>
-      <td>Sitemap/td>
+      <td>Sitemap</td>
     </tr>
     <tr>
       <th scope="row">Alt + S</th>
