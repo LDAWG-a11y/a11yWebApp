@@ -153,6 +153,10 @@ The screen reader interacts with the virtual buffer by listening for events gene
 
 Unfortunately, most available keys are allocated for Windows screen reader specific commands, and not many keys are able to pass through to the browser, and the JavaScript shortcuts therefor do not get triggered. 
 
+You can tell Jaws and NVDA to route the next key to the browser:
+* NVDA - press NVDA modifier (insert) f2, followed by the key to be passed through
+* Jaws - press Jaws modifier (insert) 3, followed by the key you want to pass through
+
 ## Alternatives
 
 JavaScript can be used as an alternative to activate shortcut key functionality because it is able to detect key presses, or a combination of key presses, but there may be possible conflicts that are hard to identify.
