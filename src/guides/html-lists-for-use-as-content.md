@@ -5,11 +5,11 @@ summary: This guide provides useful information on when to use lists, when not
   understandable for all users.
 author: swilkinson
 date: 2022-10-07
+toc: true
 tags:
   - HTML
   - Lists
 isGuide: true
-toc: true
 ---
 ## Introduction to content lists
 
@@ -689,6 +689,7 @@ If you wish to force VoiceOver to read out "List of X items" then you will need 
 This is not a recommendation and there are different views on whether VoiceOver should work this way, and whether VoiceOver should be forced to read a list by adding `<ul role="list">`.
 
 * Scott O'Hara on [lists and Safari](https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html) (external link)
+* Scott O'Hara on ["Fixing" Lists](https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html) (external link)
 * Smashing Magazine - [adding roles that duplicate](https://www.smashingmagazine.com/2022/09/wai-aria-guide/#adding-roles-that-duplicate-html) (external link)
 
 ### Using CSS to produce lists with 1.1.1 numbers
