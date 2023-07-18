@@ -131,7 +131,7 @@ Well the first thing that is happening is because I did not actually make this n
 
 So, Safari and VoiceOver on MacOS/iOS do not support this property at all, so if you are testing with VoiceOver on Mac, you won't hear anything out of the ordinary in Safari, as it is ignored. Oddly, VoiceOver does not ignore it with other browsers on a Mac, so I can at least stay on this device as I'm only attempting to explain the differences.
 
-But, what if we use Firefox or even the commit an accessibility faux pas and try it with Chrome with VoiceOver? In both instances the property is communicated, the name is read out on Chrome the same as the accessibility pane indicated it would: "I own something elsewhere", which is obviously not great at all and would be even worse if there were lots of links in that list.
+But, what if we use Firefox or even commit an accessibility faux pas and try it with Chrome with VoiceOver? In both instances the property is communicated, the name is read out on Chrome the same as the accessibility pane indicated it would: "I own something elsewhere", which is obviously not great at all and would be even worse if there were lots of links in that list.
 
 Firefox and VoiceOver actually gives us a little more information, which may just be the kicker in realising how bad this actually is: "I own something, bullet, elsewhere, collapsed button group" Yuck, right?
 
