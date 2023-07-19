@@ -139,7 +139,7 @@ Note: I don't usually test VoiceOver in Chrome, but I just wanted to demonstrate
 
 #### Ok that's bad, why does it actually do that?
 
-Essentially, by using `aria-owns`, the structure in the DOM is not the same as the accessibility tree's structure, you're essentially telling the accessibility tree to interpret your button as this:
+Essentially, by using `aria-owns`, you're modifying the structure of the accessibility tree to be different than the DOM, by telling the accessibility tree "Put all this stuff inside that button". This is similar to what happens when folks wrap a whole card in a link, it gets read out, along with its contents. It's ultimately telling the accessibility tree to interpret your button as this:
 
 ```html
  <button aria-owns="navList2" aria-expanded="false">
