@@ -10,6 +10,7 @@ tags:
   - Overlays
   - Procurement
   - Automated
+  - Products
 isGuide: true
 ---
 Overlays refers to a range of products which offer to fix accessibility issues automatically on a website by adding a small snippet of code, or a button to your web pages which will “fix” the user experience.
