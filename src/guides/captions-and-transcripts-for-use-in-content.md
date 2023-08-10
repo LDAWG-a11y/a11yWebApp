@@ -179,3 +179,4 @@ Hopefully this guide has helped you to understand a bit more of using captions a
 * [A guide to using subtitles, captions and transcripts for accessibility](https://business.scope.org.uk/article/subtitles-closed-captions-transcripts-and-accessibility/) (external website)
 * [Guide to Transcripts and Captions](https://www.ucop.edu/electronic-accessibility/_files/transcripts-captions-guidelines.pdf) (PDF 35kb)(external website)
 * [How Many People Use Captions and Subtitles?](https://www.3playmedia.com/blog/who-uses-closed-captions-not-just-the-deaf-or-hard-of-hearing/) (external website)
+* [Resources from StageText](https://www.stagetext.org/for-venues/resources/) (external website)
