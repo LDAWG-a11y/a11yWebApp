@@ -180,3 +180,4 @@ Hopefully this guide has helped you to understand a bit more of using captions a
 * [Guide to Transcripts and Captions](https://www.ucop.edu/electronic-accessibility/_files/transcripts-captions-guidelines.pdf) (PDF 35kb)(external website)
 * [How Many People Use Captions and Subtitles?](https://www.3playmedia.com/blog/who-uses-closed-captions-not-just-the-deaf-or-hard-of-hearing/) (external website)
 * [Resources from StageText](https://www.stagetext.org/for-venues/resources/) (external website)
+* [A Guide to the Visual Language of Closed Captions and Subtitles](https://www.linkedin.com/pulse/guide-visual-language-closed-captions-subtitles-gareth-ford-williams/) (external website)
