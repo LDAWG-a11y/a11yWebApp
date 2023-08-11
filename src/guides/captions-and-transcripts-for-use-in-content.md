@@ -166,6 +166,12 @@ Remember to include a link back to the original page provided on the top of the 
 * [W3C video notes](https://www.w3.org/2008/06/video-notes#q6)  (external website)
 * [Deque University text transcript tips](https://dequeuniversity.com/tips/text-transcript) (external website)
 
+## Subtitles
+
+* [BBC Subtitle Guidelines](https://www.bbc.co.uk/accessibility/forproducts/guides/subtitles/) (external website)
+* [How do I create subtitles? - Academy Guides BBC](https://www.bbc.com/academy-guides/how-do-i-create-subtitles) (external website)
+* [Ofcom guidelines](https://www.ofcom.org.uk/__data/assets/pdf_file/0025/212776/provision-of-tv-access-services-guidelines.pdf) (PDF on external website)
+
 ## Wrapping up
 
 Hopefully this guide has helped you to understand a bit more of using captions and transcripts for content. 
@@ -181,3 +187,4 @@ Hopefully this guide has helped you to understand a bit more of using captions a
 * [How Many People Use Captions and Subtitles?](https://www.3playmedia.com/blog/who-uses-closed-captions-not-just-the-deaf-or-hard-of-hearing/) (external website)
 * [Resources from StageText](https://www.stagetext.org/for-venues/resources/) (external website)
 * [A Guide to the Visual Language of Closed Captions and Subtitles](https://www.linkedin.com/pulse/guide-visual-language-closed-captions-subtitles-gareth-ford-williams/) (external website)
+* [Create closed captions for a video - Microsoft PowerPoint](https://support.microsoft.com/en-us/office/create-closed-captions-for-a-video-b1cfb30f-5b00-4435-beeb-2a25e115024b#PickTab=Windows) (external website)
