@@ -166,6 +166,12 @@ Remember to include a link back to the original page provided on the top of the 
 * [W3C video notes](https://www.w3.org/2008/06/video-notes#q6)  (external website)
 * [Deque University text transcript tips](https://dequeuniversity.com/tips/text-transcript) (external website)
 
+## Subtitles
+
+* [BBC Subtitle Guidelines](https://www.bbc.co.uk/accessibility/forproducts/guides/subtitles/) (external website)
+* [How do I create subtitles? - Academy Guides BBC](https://www.bbc.com/academy-guides/how-do-i-create-subtitles) (external website)
+* [Ofcom guidelines](https://www.ofcom.org.uk/__data/assets/pdf_file/0025/212776/provision-of-tv-access-services-guidelines.pdf) (PDF on external website)
+
 ## Wrapping up
 
 Hopefully this guide has helped you to understand a bit more of using captions and transcripts for content. 
