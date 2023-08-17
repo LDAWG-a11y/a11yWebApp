@@ -127,9 +127,15 @@ extraWide: true
   </table>
 </div>
 
+<!-- <fieldset class="wcag-toggle__fieldset">
+  <legend class="wcag-toggle__legend">WCAG version</legend>
+  <button class="wcag-toggle__btn" id="wcag22" aria-pressed="true">WCAG 2.2 <span>&#10003;</span></button>
+  <button class="wcag-toggle__btn" id="wcag21" aria-pressed="false">WCAG 2.1 <span>&#10003;</span></button>
+</fieldset> -->
+
 <div class="sc-table__wrapper">
   <table class="sc-table">
-    <caption class="sc-table__caption">WCAG 2.1 conformance details</caption>
+    <caption class="sc-table__caption">WCAG 2.2 conformance details</caption>
     <thead>
       <tr>
         <td></td>
@@ -140,40 +146,44 @@ extraWide: true
     </thead>
     <tbody>
     {%- for item in reportToolSCData %}
-      <tr class="sc-table__requirement" data-level="{{ item.level }}" data-invalid>
-        {% set scNum = item.fullText.split(' ') %}
-        <th scope="row"><a id="wcag{{ item.identifier }}Link" class="sc-table__link" href="{{ item.url }}" target="_blank" rel="noreferrer noopener" aria-describedby="newTabInstruction">{{ scNum[0] }} <span id="wcag{{ item.identifier }}ShortText">{{ item.shortText }}</span> ({{ item.level | uppercase  }}) {% include './svg/newTab.svg' %}</a></th>
-        <td data-radio-cell>
-          <span id="wcag{{ item.identifier }}GroupErrMsg" class="sc-table__err-msg" aria-hidden="true">Required option</span>
-          <div role="radiogroup" aria-required="true" aria-invalid="true" class="sc-table__group" aria-labelledby="confCol">
-            <div class="sc-table__radio-wrapper">
-              <input type="radio" id="wcag{{ item.identifier }}Sup" name="sc{{ item.identifier }}" value="supports" class="sc-table__radio" aria-labelledby="wcag{{ item.identifier }}SupLabel wcag{{ item.identifier }}ShortText">
-              <label id="wcag{{ item.identifier }}SupLabel" for="wcag{{ item.identifier }}Sup" class="sc-table__label">Supports</label>
+      {% if item.hide != '22' %}
+        <tr class="sc-table__requirement" data-level="{{ item.level }}" data-invalid {% if item.hide %}data-hide-{{item.hide}}{% endif %}>
+          {% set scNum = item.fullText.split(' ') %}
+          <th scope="row">
+            <a id="wcag{{ item.identifier }}Link" class="sc-table__link" href="{{ item.url }}" target="_blank" rel="noreferrer noopener" aria-describedby="newTabInstruction">{{ scNum[0] }} <span id="wcag{{ item.identifier }}ShortText">{{ item.shortText }}</span> ({{ item.level | uppercase  }}) {% include './svg/newTab.svg' %}</a>
+          </th>
+          <td data-radio-cell>
+            <span id="wcag{{ item.identifier }}GroupErrMsg" class="sc-table__err-msg" aria-hidden="true">Required option</span>
+            <div role="radiogroup" aria-required="true" aria-invalid="true" class="sc-table__group" aria-labelledby="confCol">
+              <div class="sc-table__radio-wrapper">
+                <input type="radio" id="wcag{{ item.identifier }}Sup" name="sc{{ item.identifier }}" value="supports" class="sc-table__radio" aria-labelledby="wcag{{ item.identifier }}SupLabel wcag{{ item.identifier }}ShortText">
+                <label id="wcag{{ item.identifier }}SupLabel" for="wcag{{ item.identifier }}Sup" class="sc-table__label">Supports</label>
+              </div>
+              <div class="sc-table__radio-wrapper">
+                <input type="radio" id="wcag{{ item.identifier }}Par" name="sc{{ item.identifier }}" value="partially-supports" class="sc-table__radio" aria-labelledby="wcag{{ item.identifier }}ParLabel wcag{{ item.identifier }}ShortText">
+                <label id="wcag{{ item.identifier }}ParLabel" for="wcag{{ item.identifier }}Par" class="sc-table__label">Partially supports</label>
+              </div>
+              <div class="sc-table__radio-wrapper">
+                <input type="radio" id="wcag{{ item.identifier }}Not" name="sc{{ item.identifier }}" value="does-not-support" class="sc-table__radio" aria-labelledby="wcag{{ item.identifier }}NotLabel wcag{{ item.identifier }}ShortText">
+                <label id="wcag{{ item.identifier }}NotLabel" for="wcag{{ item.identifier }}Not" class="sc-table__label">Does not support</label>
+              </div>
+              <div class="sc-table__radio-wrapper">
+                <input type="radio" id="wcag{{ item.identifier }}NA" name="sc{{ item.identifier }}" value="not-applicable" class="sc-table__radio" aria-labelledby="wcag{{ item.identifier }}NALabel wcag{{ item.identifier }}ShortText">
+                <label id="wcag{{ item.identifier }}NALabel" for="wcag{{ item.identifier }}NA" class="sc-table__label">Not applicable</label>
+              </div>
             </div>
-            <div class="sc-table__radio-wrapper">
-              <input type="radio" id="wcag{{ item.identifier }}Par" name="sc{{ item.identifier }}" value="partially-supports" class="sc-table__radio" aria-labelledby="wcag{{ item.identifier }}ParLabel wcag{{ item.identifier }}ShortText">
-              <label id="wcag{{ item.identifier }}ParLabel" for="wcag{{ item.identifier }}Par" class="sc-table__label">Partially supports</label>
+          </td>
+          <td>
+            <div class="sc-table__comment-wrapper" data-valid="true">
+              <span id="wcag{{ item.identifier }}CommentErrMsg" class="sc-table__err-msg" aria-hidden="true">Issue details required</span>
+              <textarea name="{{ item.identifier }}Com" id="wcag{{ item.identifier }}Com" class="sc-table__comment" cols="30" rows="10" aria-labelledby="wcag{{ item.identifier }}ShortText comCol" autocomplete="off"></textarea>
             </div>
-            <div class="sc-table__radio-wrapper">
-              <input type="radio" id="wcag{{ item.identifier }}Not" name="sc{{ item.identifier }}" value="does-not-support" class="sc-table__radio" aria-labelledby="wcag{{ item.identifier }}NotLabel wcag{{ item.identifier }}ShortText">
-              <label id="wcag{{ item.identifier }}NotLabel" for="wcag{{ item.identifier }}Not" class="sc-table__label">Does not support</label>
-            </div>
-            <div class="sc-table__radio-wrapper">
-              <input type="radio" id="wcag{{ item.identifier }}NA" name="sc{{ item.identifier }}" value="not-applicable" class="sc-table__radio" aria-labelledby="wcag{{ item.identifier }}NALabel wcag{{ item.identifier }}ShortText">
-              <label id="wcag{{ item.identifier }}NALabel" for="wcag{{ item.identifier }}NA" class="sc-table__label">Not applicable</label>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div class="sc-table__comment-wrapper" data-valid="true">
-            <span id="wcag{{ item.identifier }}CommentErrMsg" class="sc-table__err-msg" aria-hidden="true">Issue details required</span>
-            <textarea name="{{ item.identifier }}Com" id="wcag{{ item.identifier }}Com" class="sc-table__comment" cols="30" rows="10" aria-labelledby="wcag{{ item.identifier }}ShortText comCol" autocomplete="off"></textarea>
-          </div>
-        </td>
-        <td>
-          <span class="sc-table__result" data-pass="clean">--</span>
-        </td>
-      </tr>
+          </td>
+          <td>
+            <span class="sc-table__result" data-pass="clean">--</span>
+          </td>
+        </tr>
+      {% endif %}
     {% endfor %}
       <tr>
         <th scope="row" colspan="3">Total WCAG success criteria failed</th>
