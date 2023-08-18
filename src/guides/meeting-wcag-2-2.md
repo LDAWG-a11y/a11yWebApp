@@ -57,7 +57,7 @@ Obviously it would be widely beneficial to provide contact details that have eno
 
 Arguably, the most robust contact method of all is an email address, generally people who use computers have one, we need one to set up a phone, computer or tablet and of course shop online. Giving people choices on how to contact you would be the best practice here, don't restrict users to chatbots, phones or social media, add an email address (or an accessible contact form) to your existing contact methods, so everybody has choice and nobody is excluded from contacting you. 
 
-#### [3.3.9 Redundant Entry (A)](https://www.w3.org/TR/WCAG22/#redundant-entry)
+#### [3.3.7 Redundant Entry (A)](https://www.w3.org/TR/WCAG22/#redundant-entry)
 
 This applies to forms where users may be required to enter the same data, at more than one step of a process. As an example, a user is filling out an application form to enrol in a programme of education, at Step 1, they provide their name, email, address and phone number etc, at Step 5, we ask them for their address again for correspondence, instead of the user having to type those details again, either:
 
@@ -68,7 +68,7 @@ This new requirement appears like there will be a little extra development in ca
 
 ### Now let's look at the 4 new Level AA requirements
 
-#### [2.4.12 Focus not Obscured (Minimum) (AA)](https://www.w3.org/TR/WCAG22/#focus-not-obscured-minimum)
+#### [2.4.11 Focus not Obscured (Minimum) (AA)](https://www.w3.org/TR/WCAG22/#focus-not-obscured-minimum)
 
 This particular requirement requires that interactive elements on webpages do not become wholly obscured by author-created components when they receive keyboard focus. The usual suspects that cause this behaviour are sticky headers and footers, overlay type 'drawer' menus or navigations, 'toast' messages, chat widgets, non-modal dialogs and other elements that exist on a higher stacking context than interactive elements beneath.. This is one of the new requirements that I believe we would hopefully hit by accident, as my mindset is people rely on focus indicators to move around webpages, they need to see that focus indicator at all times when they tab between interactive elements, so I always recommend fixes when focus is obscured by something. 
 
@@ -108,7 +108,7 @@ Here's where I have noticed something that passes, but then doesn't. Icons in a 
 
 Many of you will be familiar with Adrian Roselli who puts out some amazing guides and offers his wisdom to many in the community, across a variety of channels, well Adrian has created some nifty bookmarklets to test this, I'm not going to explain how to use them, as there is nothing I could offer that Adrian hasn't considered and explained perfectly, already, [so grab the bookmarklets here, and do read the instructions and considerations](https://adrianroselli.com/2022/05/24x24-pixel-cursor-bookmarklet.html).
 
-#### [3.3.7 Accessible Authentication (AA)](https://www.w3.org/TR/WCAG22/#accessible-authentication-minimum)
+#### [3.3.8 Accessible Authentication (Minimum) (AA)](https://www.w3.org/TR/WCAG22/#accessible-authentication-minimum)
 
 This requirement applies to when users login to sites or applications, as in order to be logged in, they must be authenticated. The idea with this requirement is reduce the cognitive burden of remembering login credentials and to a lesser extent, other cognitive function tests. This unfortunately doesn't do away with the dreaded reCAPTCHA and other similar riddles, so we'll all likely still be asking ourselves whether part of the pedestrian crossing is in a specific square or not or even which way a horse is facing (yes, really).
 
@@ -143,11 +143,11 @@ This one makes me a little sad, as it was initially intended for Level AA, but a
 
 This new requirement somewhat of combines 2 existing requirements, [2.4.7 Focus Visible (AA)](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=241%2C244%2C246%2C251%2C312%2C322%2C332%2C412%2C122#focus-visible) and [1.4.11 Non-text Contrast (AA) ](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=241%2C244%2C246%2C251%2C312%2C322%2C332%2C412%2C122#non-text-contrast)and enhances them slightly, to provide users with more perceivable focus indicators. Essentially, it requires that the focus indicator is at least as large as a 2px thick perimeter of the component and that that minimum sized indicator has at least a 3:1 contrast against the unfocused pixels. This is not to say that it has to be a 2px ring around an item, it just needs to cover exactly the same minimum surface area that a 2px ring would. It would require some math to meet this
 
-#### [2.4.13 Focus not Obscured (Enhanced) (AAA)](https://www.w3.org/TR/WCAG22/#focus-not-obscured-enhanced)
+#### [2.4.12 Focus not Obscured (Enhanced) (AAA)](https://www.w3.org/TR/WCAG22/#focus-not-obscured-enhanced)
 
 This one builds on 2.4.12 Focus not Obscured (Minimum) (AA), in that no part of the focused element or by extension, its focus indicator becomes obscured by any author created content. This does away with the vagueness of "Some part" of the component is not hidden and explicitly states none of it should be. I think this is the standard we should be pushing for, remember conformance is the floor, not the ceiling.
 
-#### [3.3.8 Accessible Authentication (No Exception) (AAA)](https://www.w3.org/TR/WCAG22/#accessible-authentication-minimum)
+#### [3.3.9 Accessible Authentication (Enhanced) (AAA)](https://www.w3.org/TR/WCAG22/#accessible-authentication-minimum)
 
 Building upon 3.3.7 Accessible Authentication (AA), this removes the exceptions in the aforementioned requirement, in that if a site does have a puzzle of some sort, then there is an alternative which a user may choose, that does not rely on a cognitive function test. So, assuming the website wants us to prove beyond all doubt that we are not a robot by having us help them improve the artificial intelligence for self-driving cars, there must be another way to authenticate that doesn't require recognition of objects, so, hasta la vista, reCAPTCHA (sorry).
 
