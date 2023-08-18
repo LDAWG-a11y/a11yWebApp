@@ -26,13 +26,13 @@ When you are putting together your requirements, you should make sure to include
 
 If the developer is bidding to create a system to your specification:
 
-* Describe how the supplier will ensure the proposed solution (customer and staff facing) shall meet WCAG 2.1 AA compliance in line with the government requirements. This should include a description of how the supplier plans to test the final product against WCAG 2.1, their audit process or the audit process of the subcontractor they may involve for external testing. This should also include any information regarding how they would roadmap fixes if the final product is not compliant.
+* Describe how the supplier will ensure the proposed solution (customer and staff facing) shall meet compliance with the latest published version of WCAG (currently 2.2) A and AA success criteria, in line with the government requirements. This should include a description of how the supplier plans to test the final product against WCAG success criteria, tooling used, their audit process or the audit process of the subcontractor they may involve for external testing. This should also include any information regarding how they would roadmap fixes if the final product is not compliant.
 * Describe how the solution will support content upload compliance with WCAG where relevant. For example, what restrictions, options or guidance the solution will implement to help content creators upload or write accessible content.
 * Overlay and Underlay products/plugins/add-ons which offer to remediate accessibility issues represent a false approach to accessibility compliance. The supplier will indicate if in the delivery of the service to us they are using or plan to use any products provided by companies listed in the [Overlay Fact Sheet](https://overlayfactsheet.com/#main), or any other products that fit the description above.
 
 If the developer is offering their own product that will be “customised” to your requirements we set out the following expectations:
 
-* The proposed solution (customer and staff facing) shall meet WCAG 2.1 AA compliance in line with the government accessibility requirements - Public Sector Bodies Accessibility Regulations (2018). Supplier to provide test reports to evidence how they meet / don't meet WCAG 2.1 AA compliance. For example, a WCAG audit report, VPAT, evidence of assistive technology testing or user testing with disabled user groups. Supplier to provide their development roadmap for accessibility if their product partially complies.
+* The proposed solution (customer and staff facing) shall meet compliance with the latest published version of WCAG (currently 2.2) A and AA success criteria, in line with the government requirements - Public Sector Bodies Accessibility Regulations (2018). Supplier to provide test reports to evidence how they meet / don't meet WCAG compliance including listing test tooling used. For example, a WCAG audit report, VPAT, evidence of assistive technology testing or user testing with disabled user groups. Supplier to also provide their development roadmap for accessibility if their product partially complies.
 * Describe how the solution will support content upload compliance with WCAG where relevant. For example, what restrictions, options, or guidance the solution will implement to help content creators upload or write accessible content.
 * Overlay and Underlay products/plugins/add-ons which offer to remediate accessibility issues represent a false approach to accessibility compliance. The supplier will indicate if in the delivery of the service to us they are using or plan to use any products provided by companies listed in the [Overlay Fact Sheet](https://overlayfactsheet.com/#main), or any other products that fit the description above.
 * Supplier to provide a copy of the accessibility statement for their product covering core technical sections as required by the Public Sector Bodies Accessibility Regulations (2018). Or the supplier works with us to produce an accessibility statement for the proposed solution which meets our legislative obligation as a public sector body under PSBAR (2018) and is acceptable to us. Supplier provides / works with us to provide guidance for assistive technology users on using the solution. Guidance material required in all cases; additional guidance required to navigate areas of non-compliance with WCAG if present.
@@ -70,7 +70,7 @@ Remember that we all first learn about accessibility at some point. For many sup
 
 ### [](<>)“Our product fully complies”
 
-Many suppliers will claim that the product they are trying to sell you fully complies with all WCAG 2.1 A and AA success criteria. In our experience this is in almost every case, incorrect.
+Many suppliers will claim that the product they are trying to sell you fully complies with all WCAG A and AA success criteria. In our experience this is in almost every case, incorrect.
 
 <div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">If a supplier says this in the tender response, you should be immediately sceptical. Any large or complex product will almost never be fully compliant just on the size alone.</span></div>
 
@@ -137,7 +137,7 @@ In the event that you receive detailed documentation from a supplier that includ
 
 Sometimes, particularly with new products that are either being designed bespoke for you or are a new launch from the supplier, thorough testing and road mapping may not yet have taken place. In this case you would expect to see information from the supplier about how they plan to test the product and what they will do about issues found during that testing.
 
-Ideally you will be looking for suppliers to commit to testing against WCAG 2.1 A & AA success criteria as a minimum. This can be done either in house if they have the skills, or by a subcontractor such as professional accessibility auditing companies. In any case the testing should include:
+Ideally you will be looking for suppliers to commit to testing against the latest WCAG A & AA success criteria as a minimum. This can be done either in house if they have the skills, or by a subcontractor such as professional accessibility auditing companies. In any case the testing should include:
 
 * A significant scope which covers the majority of components across a platform through a representative sample
 * A mix of manual, automated and assistive technology testing.
