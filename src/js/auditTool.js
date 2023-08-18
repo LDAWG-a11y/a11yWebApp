@@ -28,7 +28,7 @@ counterBtn.forEach(btn => {
 document.querySelectorAll('.sc-table__radio').forEach(radio => {
   radio.addEventListener('change', (evt) => {
     radio.closest('.sc-table__group').setAttribute('aria-invalid', 'false');
-    const closestRow = evt.target.closest('tr')
+    const closestRow = evt.target.closest('tr:not([data-ignore])')
 
     if (evt.target.value == 'partially-supports' || evt.target.value == 'does-not-support') {
       closestRow.querySelector('.sc-table__result').setAttribute('data-pass', 'false');
@@ -88,7 +88,7 @@ const getFailedSCTotal = (totalSCsFailed) => {
 }
 
 modalTrigger.addEventListener('click', () => {
-  const errCount = document.querySelectorAll('tr[data-invalid]');
+  const errCount = document.querySelectorAll('tr[data-invalid]:not([data-ignore])');
   errCount.forEach(row => {      
     if (row.querySelector('.sc-table__group').getAttribute('aria-invalid') == 'true') {
       const errMsg = row.querySelector('[data-radio-cell] .sc-table__err-msg');
@@ -99,7 +99,7 @@ modalTrigger.addEventListener('click', () => {
 
   if (!!errCount.length) {
     document.querySelector('.page__announcement').textContent = `${errCount.length} row${errCount.length > 1 ? 's have' : ' has'} not been completed`;
-    document.querySelector('tr[data-invalid] .sc-table__link').focus();
+    document.querySelector('tr[data-invalid]:not([data-ignore]) .sc-table__link').focus();
 
     setTimeout(() => {
       document.querySelector('.page__announcement').textContent = ``;
@@ -148,7 +148,7 @@ const generateStatementAndVPAT = () => {
   let vpatTableA = `<table role="presentation">`
   let vpatTableAA = `<table role="presentation">`
 
-  document.querySelectorAll('.sc-table__requirement').forEach((row, idx, array) => {
+  document.querySelectorAll('.sc-table__requirement:not([data-ignore])').forEach((row, idx, array) => {
     let issueText = row.querySelector('.sc-table__comment').value;
     const vpatSupport = row.getAttribute('data-support');
     if (row.querySelector('.sc-table__result[data-pass="false"]')) {
@@ -249,22 +249,46 @@ const closeModal = () => {
 
 const wcagToggleBtn = document.querySelectorAll('.wcag-toggle__btn');
 document.body.setAttribute('data-tool', '22');
+const SCRows = document.querySelectorAll('.sc-table__requirement');
 
-// wcagToggleBtn.forEach((btn) => {
-//   btn.addEventListener('click', (evt) => {
-//     if (evt.target.getAttribute('aria-pressed') == 'false') {
-//       const notPressed = evt.target.closest('fieldset').querySelector('[aria-pressed="false"]');
-//       const pressed = evt.target.closest('fieldset').querySelector('[aria-pressed="true"]');
-//       pressed.setAttribute('aria-pressed', 'false');
-//       notPressed.setAttribute('aria-pressed', 'true');
+wcagToggleBtn.forEach((btn) => {
+  btn.addEventListener('click', (evt) => {
+    if (evt.target.getAttribute('aria-pressed') == 'false') {
+      const notPressed = evt.target.closest('fieldset').querySelector('[aria-pressed="false"]');
+      const pressed = evt.target.closest('fieldset').querySelector('[aria-pressed="true"]');
+      pressed.setAttribute('aria-pressed', 'false');
+      notPressed.setAttribute('aria-pressed', 'true');
 
-//       if (evt.target.id == 'wcag21') {
-//         document.body.setAttribute('data-tool', '21');
-//         document.querySelector('.sc-table__caption').innerText = 'WCAG 2.1 conformance details';
-//       } else {
-//         document.body.setAttribute('data-tool', '22');
-//         document.querySelector('.sc-table__caption').innerText = 'WCAG 2.2 conformance details';
-//       }
-//     }
-//   })
-// })
+      if (evt.target.id == 'wcag21') {
+        document.body.setAttribute('data-tool', '21');
+        document.querySelector('.sc-table__caption').innerText = 'WCAG 2.1 conformance details';
+        ignoreRows('21');
+      } else {
+        document.body.setAttribute('data-tool', '22');
+        document.querySelector('.sc-table__caption').innerText = 'WCAG 2.2 conformance details';
+        ignoreRows('22');
+      }
+      updateUrl();
+    }
+  })
+})
+
+const ignoreRows = (level) => {
+  SCRows.forEach(row => {
+    row.getAttribute('data-hide') == level ? row.setAttribute('data-ignore', '') : row.removeAttribute('data-ignore');
+   
+  })
+}
+ignoreRows('22');
+
+const updateUrl = () => {
+  SCRows.forEach(row => {
+    let ReqLink = row.querySelector('a');
+    if (ReqLink.getAttribute('href').includes('WCAG22')) {
+      var updatedLink = ReqLink.getAttribute('href').replace('WCAG22', 'WCAG21');
+    } else if (ReqLink.getAttribute('href').includes('WCAG21')) {
+      var updatedLink = ReqLink.getAttribute('href').replace('WCAG21', 'WCAG22')
+    }
+    ReqLink.setAttribute('href', updatedLink);
+  })
+}
