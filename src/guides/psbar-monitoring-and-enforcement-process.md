@@ -41,8 +41,6 @@ Regularly GDS then have to announce figures for their monitoring results on beha
 
 [Read the GDS monitoring figures for 2020-2021](https://www.gov.uk/government/publications/accessibility-monitoring-of-public-sector-websites-and-mobile-apps-2020-2021/accessibility-monitoring-of-public-sector-websites-and-mobile-apps-2020-2021)
 
-Why do we report to the European Commission? – A history of PSBAR
-
 ### Level 3 - Enforcement
 
 Enforcement is the final stage reserved for when a resolution cannot be reached regarding a user complaint, or a lack of action by a public sector body in response to government monitoring.
@@ -104,6 +102,8 @@ These manual tests find issues such as keyboard functionality, visibility of key
 Tests are completed using different settings in the Google Chrome browser on Mac OSX with a 13 inch screen.
 
 <div class="callout__info"><span class="callout__icon"></span><span class="callout__text">GDS expect your organisation to fully audit the website to find any other accessibility issues.</span></div>
+
+With the introduction of [WCAG 2.2](https://www.w3.org/TR/WCAG22/), GDS published an [update to the regulations](https://www.legislation.gov.uk/uksi/2022/1097/made) in October 2022. GDS explained in their [government article](https://accessibility.blog.gov.uk/2022/12/09/some-changes-to-the-public-sector-digital-accessibility-regulations/) that there will be a grace period after WCAG 2.2 comes into effect, after which GDS will be requiring organisations to evidence compliance against WCAG 2.2. GDS have explained that there will be a 12 month grace period from the date of WCAG 2.2 release.
 
 ## What do I need to do?
 
