@@ -187,7 +187,7 @@
     </url>
   
     <url>
-      <loc>https://www.makethingsaccessible.com/guides/wait-there-s-more-than-one-type-of-pdf-pdf-standards-and-how-they-differ-in-terms-of-accessibility/</loc>
+      <loc>https://www.makethingsaccessible.com/guides/pdf-standards-and-how-they-differ-in-terms-of-accessibility/</loc>
       <lastmod>2023-02-06T00:00:00.000Z</lastmod>
     </url>
   
@@ -207,11 +207,6 @@
     </url>
   
     <url>
-      <loc>https://www.makethingsaccessible.com/guides/accessibility-audit-templates/</loc>
-      <lastmod>2023-04-14T00:00:00.000Z</lastmod>
-    </url>
-  
-    <url>
       <loc>https://www.makethingsaccessible.com/guides/links-vs-buttons-vs-other-clicky-things/</loc>
       <lastmod>2023-04-16T00:00:00.000Z</lastmod>
     </url>
@@ -219,6 +214,31 @@
     <url>
       <loc>https://www.makethingsaccessible.com/guides/3rd-party-content-responsibilities/</loc>
       <lastmod>2023-05-26T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/the-importance-of-focus-indicators/</loc>
+      <lastmod>2023-06-16T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/overlays-and-other-fix-it-products/</loc>
+      <lastmod>2023-06-19T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/access-keys-or-accesskeys/</loc>
+      <lastmod>2023-07-03T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/aria-controls-vs-aria-owns/</loc>
+      <lastmod>2023-07-18T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/pdf-and-online-flipbooks/</loc>
+      <lastmod>2023-07-21T00:00:00.000Z</lastmod>
     </url>
   
       <url>
@@ -270,11 +290,19 @@
         <lastmod>2022-10-06T22:17:15.692Z</lastmod>
       </url>
     <url>
+      <loc>https://www.makethingsaccessible.com/tags/access-key/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
       <loc>https://www.makethingsaccessible.com/tags/accessible-documents/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
       <loc>https://www.makethingsaccessible.com/tags/accessible-events/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/accesskey/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
@@ -358,6 +386,10 @@
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
+      <loc>https://www.makethingsaccessible.com/tags/hot-key/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
       <loc>https://www.makethingsaccessible.com/tags/html/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
@@ -410,6 +442,10 @@
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>
+      <loc>https://www.makethingsaccessible.com/tags/overlays/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
       <loc>https://www.makethingsaccessible.com/tags/pdf/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
@@ -419,6 +455,10 @@
     </url>
     <url>
       <loc>https://www.makethingsaccessible.com/tags/procurement/</loc>
+      <lastmod>2022-10-06T22:17:15.692Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/products/</loc>
       <lastmod>2022-10-06T22:17:15.692Z</lastmod>
     </url>
     <url>

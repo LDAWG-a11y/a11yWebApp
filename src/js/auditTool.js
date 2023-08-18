@@ -246,3 +246,25 @@ const closeModal = () => {
     document.querySelectorAll('[class^="modal__section-wrapper"] > div').forEach(btnContainer => {btnContainer.innerHTML = ''});
   }, 275);
 }
+
+const wcagToggleBtn = document.querySelectorAll('.wcag-toggle__btn');
+document.body.setAttribute('data-tool', '22');
+
+// wcagToggleBtn.forEach((btn) => {
+//   btn.addEventListener('click', (evt) => {
+//     if (evt.target.getAttribute('aria-pressed') == 'false') {
+//       const notPressed = evt.target.closest('fieldset').querySelector('[aria-pressed="false"]');
+//       const pressed = evt.target.closest('fieldset').querySelector('[aria-pressed="true"]');
+//       pressed.setAttribute('aria-pressed', 'false');
+//       notPressed.setAttribute('aria-pressed', 'true');
+
+//       if (evt.target.id == 'wcag21') {
+//         document.body.setAttribute('data-tool', '21');
+//         document.querySelector('.sc-table__caption').innerText = 'WCAG 2.1 conformance details';
+//       } else {
+//         document.body.setAttribute('data-tool', '22');
+//         document.querySelector('.sc-table__caption').innerText = 'WCAG 2.2 conformance details';
+//       }
+//     }
+//   })
+// })
