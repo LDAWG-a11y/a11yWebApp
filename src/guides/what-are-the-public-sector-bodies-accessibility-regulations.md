@@ -49,7 +49,7 @@ When the regulations were released in 2018, the most recent standard was [WCAG 2
 
 On Friday 9th December 2022, [Cabinet Office of the UK Government released updated guidance regarding the PSBAR regulations on the Gov.uk site](https://accessibility.blog.gov.uk/2022/12/09/some-changes-to-the-public-sector-digital-accessibility-regulations/) which detailed an addendum to the regulations which means as WCAG is updated, the regulations will automatically change to require the latest current version of WCAG to achieve compliance.
 
-This means that when WCAG 2.2 releases, all organisations in scope will be required to start aiming for compliance against WCAG 2.2 A and AA success criteria.
+This means that when WCAG 2.2 releases, all organisations in scope will be required to start aiming for compliance against WCAG 2.2 A and AA success criteria. GDS have explained that there will be a 12 month grace period from the date of WCAG 2.2 release before they will be expecting 2.2 compliance evidence.
 
 Read the guide on [changes in WCAG 2.2](https://www.makethingsaccessible.com/guides/meeting-wcag-2-2/).
 
