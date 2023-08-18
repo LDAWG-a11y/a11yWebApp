@@ -37,7 +37,7 @@ The [Overlay Fact Sheet](https://overlayfactsheet.com/#main) is a useful introdu
 
 <div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">Overlays will not make you compliant with WCAG or any accessibility regulations.</span></div>
 
-This is a simple statement and if you see an overlay that promises it will make you meet WCAG 2.1, EN301549, Section 508 etc. this is false and you should avoid that product.
+This is a simple statement and if you see an overlay that promises it will make you meet WCAG 2.0, 2.1, 2.2, EN301549, Section 508 etc. this is false and you should avoid that product.
 
 We advise everyone to prioritise accessibility by default for their websites, and only incorporate overlay or ‘accessibility modules’ for that expanded functionality **in addition** to a fundamentally accessible website.
 
@@ -58,7 +58,7 @@ We recommend the use of the following question specifically about overlay use in
 
 If a supplier does respond that they are using an overlay we would suggest responding with the following:
 
-> We would like to clarify that we do not condone the use of overlays and are not willing to accept the legal risk associated with their use. The government department that monitors the regulations we must meet do not recognise overlays as an accepted solution, and overlays do not contribute to our legal compliance. Overlay products make many claims about making website meet WCAG 2.1, EN301549, Section 508 etc. All of these are false.
+> We would like to clarify that we do not condone the use of overlays and are not willing to accept the legal risk associated with their use. The government department that monitors the regulations we must meet do not recognise overlays as an accepted solution, and overlays do not contribute to our legal compliance. Overlay products make many claims about making website meet WCAG 2.0, 2.1, 2.2, EN301549, Section 508 etc. All of these are false.
 >
 > You can find more information on the [Overlay Fact Sheet.](https://overlayfactsheet.com/#main "https\://overlayfactsheet.com/#main") The fact sheet is supported by a vast number of the best accessibility professionals in the field, and the industry overwhelmingly agrees to avoid the use of these products.
 >
