@@ -3313,11 +3313,11 @@ ul:not([class]) > li::marker {
   display: none;
 }
 
-[data-tool="21"] [data-hide-21] {
+[data-tool="21"] [data-hide="21"] {
   display: none;
 }
 
-[data-tool="22"] [data-hide-22] {
+[data-tool="22"] [data-hide="22"] {
   display: none;
 }
 
