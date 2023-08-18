@@ -40,7 +40,7 @@ For example, you might say something like:
 
 You should give some clarity to the regulation requirements and provide context for why this assessment document is needed.
 
-For example, we might identify that the regulations require all public sector bodies digital systems to conform with the Web Content Accessibility Guidelines 2.1 Level AA (WCAG 2.1 AA) as well as publish an accessibility statement.
+For example, we might identify that the regulations require all public sector bodies digital systems to conform with the latest version of the Web Content Accessibility Guidelines as well as publish an accessibility statement.
 
 This lets readers know that there are technical standards that must be met. And sets the context for later on in the assessment when you start to go into more detail about what specific technical requirements you may be unable to meet and why.
 
@@ -63,7 +63,7 @@ This section is where you start to get into the specific details of the case you
 
 For example, you might list something like the following:
 
-> “This report outlines the organisation’s assessment of disproportionate burden for the requirement of delivering compliance for the website examplewebsite.gov.uk against all The Regulation requirements including meeting WCAG 2.1 AA.
+> “This report outlines the organisation’s assessment of disproportionate burden for the requirement of delivering compliance for the website examplewebsite.gov.uk against all The Regulation requirements including meeting the latest published version of WCAG AA requirements. At time of writing this is WCAG 2.2
 >
 > The website is used by large numbers of the public which includes users with additional access needs. We know that some of the website cannot easily be accessed by users with additional access needs or users of assistive technology. The current website is due to be replaced with a new website by the end of February 2023 which is 3 months from the date of this assessment. The organisation plans to assess the value of attempting to resolve issues with the current website, given the imminent replacement.”
 
@@ -73,7 +73,7 @@ It is good to clarify for readers exactly what has changed which has led to new 
 
 In this section you will want to outline exactly what the regulations are doing to cause this assessment. For example, if you were claiming for now needing to make all lecture content 100% accurately captioned you might say something like the following:
 
-> “Under the [Public Sector Bodies (Websites and Mobile Applications) Accessibility Regulations 2018](http://www.legislation.gov.uk/uksi/2018/952/contents/made) our obligation as a university have changed. From September 23rd 2020 all pre-recorded audio/video content that is published by the University on either external or internal platforms is required to meet Web Content Accessibility Guidelines (WCAG) 2.1 AA by law, which demands captions, transcript and audio descriptions on all content.
+> “Under the [Public Sector Bodies (Websites and Mobile Applications) Accessibility Regulations 2018](http://www.legislation.gov.uk/uksi/2018/952/contents/made) our obligation as a university have changed. From September 23rd 2020 all pre-recorded audio/video content that is published by the University on either external or internal platforms is required to meet Web Content Accessibility Guidelines (WCAG) 2.2 AA by law, which demands captions, transcript and audio descriptions on all content.
 >
 > Because of this change to the University’s responsibilities the output would now not only be the captioning / transcription / audio descriptions of lecture content specifically used by identified students with relevant access needs but would require the University to ensure that all lecture content was fully and accurately captioned / transcribed / audio described.”
 
