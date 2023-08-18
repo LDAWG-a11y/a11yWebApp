@@ -10,7 +10,7 @@ tags:
   - Statement
   - Regulations
   - PSBAR
-file: /docs/draft-accessibility-statement-2023-wcag-2.1.docx
+file: /docs/draft-accessibility-statement-2023-wcag-2.2.docx
 isGuide: true
 ---
 You have decided to write a [Public Sector Bodies Accessibility Regulations (PSBAR)](https://www.makethingsaccessible.com/guides/what-are-the-public-sector-bodies-accessibility-regulations/) compliant accessibility statement. To write a correct statement there are a few pieces of information you will need in advance and a specific template you must adhere to for UK requirements.
@@ -21,7 +21,7 @@ If you want to know more about what statements are and what they apply to, read 
 
 ### Know your accessibility issues
 
-The accessibility statement is the final piece of an accessibility testing journey. To write a statement you are going to provide information on known accessibility issues on a website which must include the standards they fail against, information about how this affects the users and what you are doing about it. To get this information you must first have completed some accessibility testing against the [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/).
+The accessibility statement is the final piece of an accessibility testing journey. To write a statement you are going to provide information on known accessibility issues on a website which must include the standards they fail against, information about how this affects the users and what you are doing about it. To get this information you must first have completed some accessibility testing against the Web Content Accessibility Guidelines (WCAG). The latest version of WCAG is 2.2 but you may still receive testing results against 2.1, or 2.0 frequently from suppliers.
 
 There are several ways to test including using semi-automated tools or manual testing. We always encourage a comprehensive accessibility audit which includes automated and manual testing, including testing with common pieces of assistive technology to get a good picture of the accessibility issues of a system.
 
@@ -39,7 +39,9 @@ Finally, try where possible to give information about how long users might have 
 
 ## The template
 
-[Download the accessibility statement template](/docs/draft-accessibility-statement-2023-wcag-2.1.docx)
+[Download the WCAG 2.1 accessibility statement template](/docs/draft-accessibility-statement-2023-wcag-2.1.docx)
+
+[Download the WCAG 2.2 accessibility statement template](/docs/draft-accessibility…ement-2023-wcag-2.2.docx)
 
 In the UK there is a specific template and several pieces of required legal wording that must go into an accessibility statement. The template provided by the UK Government through the Government Digital Service (GDS) who are the monitoring body for the regulations is in the form of a [sample statement for a fictional website](https://www.gov.uk/government/publications/sample-accessibility-statement/sample-accessibility-statement-for-a-fictional-public-sector-website).
 
