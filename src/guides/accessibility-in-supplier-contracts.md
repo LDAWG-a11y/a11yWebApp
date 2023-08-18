@@ -26,7 +26,7 @@ With no direct recourse in the regulations to hold suppliers responsible, it is 
 
 * A requirement for the supplier to maintain and provide on request, up to date evidence on the accessibility compliance of a product or service.
 * Information about what types of evidence documentation may be accepted.
-* Information about what “accessibility compliance” means in the context and preferably. what technical standards the supplier would be expected to meet, for example [WCAG 2.1 AA.](https://www.w3.org/TR/WCAG21/)
+* Information about what “accessibility compliance” means in the context and preferably. what technical standards the supplier would be expected to meet, for example [WCAG 2.2 AA](https://www.w3.org/TR/WCAG22/).
 * A requirement for the supplier to detail in writing their plan and commitments on addressing an outstanding accessibility issues.
 
 ## Contract clauses template
