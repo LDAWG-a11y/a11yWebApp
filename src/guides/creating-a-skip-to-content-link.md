@@ -24,7 +24,11 @@ As the page title suggests, we're going to deep dive into Skip Links. In my expe
 
 There are undoubtedly more out in the wild, whether you want to Hop, Skip or Jump to the main content of your page, I'm just going to call them Skip Links in this guide, just for consistency's sake.
 
-## What is a skip link?
+## A bit of a deep dive into skip links.
+
+This isn't going to be the most in-depth guide out there, hopefully it will provide enough understanding on why these are really helpful for folks and i consider them to be a quick win, in that it takes mere minutes to create one and by doing so, you're making your site more usable to folks that don't use a mouse.
+
+### What is a skip link?
 
 It is just a link with a href that points to another area on the page. the most common place to find these would be at the top of a page, they'll seldom be visible until they receive keyboard focus, as they're often hidden away until they do receive focus. 
 
@@ -40,7 +44,7 @@ That's 16 interactive elements there, which a keyboard user would have to <kbd>T
 
 If the site I have open had a Skip Link a user could have used it on each of the 5 pages I looked at and reduced the number of keypresses by 70, as using the Skip Link typically takes 2 keypresses <kbd>Tab</kbd> and then <kbd>Enter</kbd>. It makes navigation less arduous, enabling users to complete tasks more efficiently and with less effort.
 
-## Why is it important?
+### Why are skip links important?
 
 For those of you who may be new to accessibility, you may be wondering why it is important, you may understand that some users cannot use pointing devices and also think something along the lines of "It's not really a great amount of effort to press keys" or "If I hold <kbd>Tab</kbd> down, it'll quickly move through all the interactive elements until I let go".
 
@@ -56,11 +60,11 @@ That list is by no means exhaustive and there are many more reasons why forcing 
 
 It's also worth pointing out that users can get frustrated, frustrated users are more likely to bounce away from your website than happy ones, that's pretty much accepted by everyone. A user who relies on a keyboard may get sick of repeatedly tabbing through the navigation on every page of your site, they may just go elsewhere as it has become unnecessarily repetitive, laborious, frustrating or it's causing them fatigue.
 
-## Do they benefit screen reader users, too?
+### Do they benefit screen reader users, too?
 
 They can do, but I guess the correct answer here is: It depends. Screen readers have built-in menus users can access to navigate to certain parts of a site (assuming the site has decent use of HTML), this could be by headings, by landmarks, by lists, by links, by images and other aspects of the site. Which method they prefer would of course come down to individual preferences. Although it is safe to say, by adding one to your site, you are definitely giving a variety of users the choice to use them.
 
-## Do we use them just for skipping the navigation?
+### Do we use them just for skipping the navigation?
 
 In a word: Nope. Whilst it is common to find them on accessible or accessible-ish sites (even though accessible sites are unfortunately quite uncommon) at the top of a page to skip over the navigation, they certainly don't need to be limited to that. Some examples of stuff a user may not want to tab through could be:
 
@@ -72,7 +76,7 @@ Again, the above is not a comprehensive list, it's just to give you food for tho
 
 You may choose to place it above the thing you think users may want to skip or you may add additional ones at the top of the page, just ensure the labels for each are unique, understandable and they actually skip to where a user wants to be.
 
-## Are they required by WCAG?
+### Are they required by WCAG?
 
 This is another "it depends" answer, I hate those too. [WCAG 2.4.1  Bypass Blocks (A)](https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html) states: "A mechanism is available to bypass blocks of content that are repeated on multiple Web pages". So, at the very least, if there are repeated blocks of interactive content across pages, there needs to be a way of bypassing those.
 
@@ -108,6 +112,28 @@ Honestly, you can wade through heaps of discussions on this matter and come away
 
 If you have a site that uses the correct landmarks, has a good heading structure (especially the heading that introduces the main content) and has a Skip Link, then users can typically skip the repeated content and you will pass this success criterion.
 
-## Where should focus go?
+### Where should focus be sent to?
 
-Some sites send it to the `<main>` landmark, some to the primary title, which would ordinarily be the `<h1>`. In reality, if it goes to the `<main>` landmark, a screen reader user will usually hear they are on the main landmark and if they hear "heading 1" and the text within the heading, that will also make sense. If sending focus to your main content, it's a good idea to have the main role, as if it is just a <div>, then it may just be silence as obviously there is no role to announce.
+Some sites send it to the `<main>` landmark, some to the primary title, which would ordinarily be the `<h1>`. In reality, if it goes to the `<main>` landmark, a screen reader user will usually hear they are on the main landmark and if they hear "heading 1" and the text within the heading, that will also make sense. If sending focus to your main content, it's a good idea to have the main role, as if it is just a <div>, then it may just be silence as obviously there is no role to announce. There may of course be other sensible places to send focus to, depending on the specifics of the site, but generally speaking, the `<main>` element or the `<h1>` are usually going to be a good call.
+
+## You've waffled enough, how do I make one?
+
+We basically need 2 ingredients here, a tiny bit of HTML and some CSS, absolutely no JS needed.
+
+First things first, we need an actual link, which we will want to position at the top of our page, in fact, it should be the very first thing a user discovers, so putting it as the first item in the <header> makes the most sense, this is our HTML:
+
+```html
+<a href="#main" class="skip-link">Skip to content</a>
+```
+
+### Breakdown of the above HTML
+
+* We have an anchor link as skip divs or skip buttons are definitely not a thing
+* We are setting an ID of main as the target, in the href, which of course relates to an ID on the same page (we haven't added that here, I'll do that in the CodePen
+* We have a class, so we can easily style our Skip Link with the CSS we will write
+
+### Let's style it
+
+There are a 2 approaches we could use here, we could have a persistently visible Skip link, which basically means it's up at the top, a sighted user will see it when the page loads and it's easy to discover or we could have a skip link that is initially hidden and only displays on keyboard focus. Whilst it is technically out of view, as soon as a user presses tab to move focus into your page, it then displays as we have written our CSS to do that. Whichever approach you chose, just make sure it is right for your site, users and stakeholders.
+
+It doesn't make a great deal of sense for me to show you how to create a persistent Skip Link, as just that HTML alone would be enough, of course you'd want to make sure the text was readable, with sufficient contrast and there was a good focus indicator, but that would likely be dictated by your site's styles.
