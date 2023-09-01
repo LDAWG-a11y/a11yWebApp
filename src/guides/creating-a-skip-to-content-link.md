@@ -76,10 +76,38 @@ You may choose to place it above the thing you think users may want to skip or y
 
 This is another "it depends" answer, I hate those too. [WCAG 2.4.1  Bypass Blocks (A)](https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html) states: "A mechanism is available to bypass blocks of content that are repeated on multiple Web pages". So, at the very least, if there are repeated blocks of interactive content across pages, there needs to be a way of bypassing those.
 
-A mechanism does not explicitly require it to be a Skip Link, but if a user is using a keyboard alone then it's on us to provide that mechanism. There are browser extensions out there that can somewhat replicate what a screen reader can do by moving focus to landmarks, but we really should not be directing our users to install plugins. Any of you ever had a job where your system is locked down and you have to ask IT to download every single piece of software for you and they don't let you have browser plugins as they cannot verify their security? Ahh, fun times, this is just one reason why we should not expect users to go off and find a plugin, some simply can't and some just would have no idea how to.
+A mechanism does not explicitly require it to be a Skip Link, but if a user is using a keyboard alone then it's on us to provide that mechanism. There are browser extensions out there that can somewhat replicate the navigation functionality that screen readers have by moving focus to landmarks, but we should not be directing our users to install plugins. Any of you ever had a job where your system is locked down and you have to ask IT to download every single piece of software for you and they don't let you have browser plugins as they cannot verify their security? Ahh, fun times, this is just one reason why we should not expect users to go off and find a plugin, some simply can't and some just would have no idea how to.
 
-If you have a site that uses a mobile menu across all viewports and it is the only interactive element in the navigation, then there's little point in adding a tab stop to skip a single tab stop, in fact, the wording in the understanding document states: "Small repeated sections such as individual words, phrases or single links are not considered blocks for the purposes of this provision", So, as long as whatever repeats (the navigation) only contains a very small number of interactive elements, it's probably not required, definitely not for 1 or 2, but 3 or more, I guess that is discretion of the auditor.
+If you have a site that uses a mobile menu across all viewports and it is the only interactive element in the navigation, then there's little point in adding a tab stop to skip a single tab stop, in fact, the wording in the understanding document states: "Small repeated sections such as individual words, phrases or single links are not considered blocks for the purposes of this provision", So, as long as the repeating content (the navigation) only contains a very small number of interactive elements, it's not required, definitely not for 1 or 2 interactive elements, perhaps subjectively not for 3 or 4, but anything beyond that should have a "mechanism".
 
-You may have a navigation that is expanded on page load, but is collapsible, a standard disclosure pattern or a `details` and `summary` element, which would of course also be a mechanism assuming the links within are correctly hidden, as a user could collapse it and tab away, thus avoiding the repeating blocks of content.
+You may have a navigation that is expanded on page load, but is collapsible, a standard disclosure pattern or a `details` and `summary` element, which would of course also be a mechanism assuming the links within are correctly hidden when it is collapsed, as a user could collapse it and tab away, thus avoiding the repeating blocks of content.
 
-Given that mobile menus on desktop are not that great anyway, let's just go back to talking about a regular site.
+Use of landmarks is one of the Sufficient Techniques to pass this success criterion, assuming you have a good HTML structure, like so:
+
+```html
+<header>
+  <nav>
+    <ul>
+      <!-- Nav links -->
+    </ul>
+  </nav>
+</header>
+<main>
+  <!-- The content -->
+</main>
+<footer>
+  <!-- Footer stuff -->
+</footer>
+```
+
+Then these landmarks do provide a way to skip over repeating blocks of content, although in reality that is not super useful for keyboard-only users.
+
+Using headings is also listed as a Sufficient Technique, but just like the landmarks alone, they do not offer any benefit in skipping repeated content for keyboard-only users.
+
+Honestly, you can wade through heaps of discussions on this matter and come away with more questions than answers as to what is required to pass this success criterion. What is actually much clearer, as is often the case, is best practice:
+
+If you have a site that uses the correct landmarks, has a good heading structure (especially the heading that introduces the main content) and has a Skip Link, then users can typically skip the repeated content and you will pass this success criterion.
+
+## Where should focus go?
+
+Some sites send it to the `<main>` landmark, some to the primary title, which would ordinarily be the `<h1>`. In reality, if it goes to the `<main>` landmark, a screen reader user will usually hear they are on the main landmark and if they hear "heading 1" and the text within the heading, that will also make sense. If sending focus to your main content, it's a good idea to have the main role, as if it is just a <div>, then it may just be silence as obviously there is no role to announce.
