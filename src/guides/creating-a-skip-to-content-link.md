@@ -122,18 +122,35 @@ We basically need 2 ingredients here, a tiny bit of HTML and some CSS, absolutel
 
 First things first, we need an actual link, which we will want to position at the top of our page, in fact, it should be the very first thing a user discovers, so putting it as the first item in the <header> makes the most sense, this is our HTML:
 
+### The skip link's HTML
+
 ```html
-<a href="#main" class="skip-link">Skip to content</a>
+<a href="#pageTitle" class="skip-link">Skip to content</a>
 ```
 
-### Breakdown of the above HTML
+### The target's HTML
 
-* We have an anchor link as skip divs or skip buttons are definitely not a thing
-* We are setting an ID of main as the target, in the href, which of course relates to an ID on the same page (we haven't added that here, I'll do that in the CodePen
-* We have a class, so we can easily style our Skip Link with the CSS we will write
+```html
+<!-- The target of the skip link could be like so: -->
+<main>
+  <h1 tabindex="-1" id="pageTitle">Hello</h1>
+  <!-- Page content -->
+</main>
+    
+```
+
+### Overview of the above HTML snippets
+
+In the skip link's HTML, we're using a link and that link's href points to `#pageTitle` which is the ID of the page's `<h1>` in our example
+
+We also add a class, so we can easily style it
+
+In the target's HTML, we make sure that ID reference is present on the `<h1>` and we also add `tabindex="-1"` to our target (the `<h1>`), this is because some older browsers did not actually send focus to the non-interactive element, they just scrolled it into view, so a keyboard user would still have to tab from the start of the page. So by adding this attribute, it will ensure that programmatic focus does in fact land on our target, even in older browsers. This is worth putting in as whilst we may assume that most folks have updated their browsers recently, there are still folks who cannot, so we're ensuring they can also skip to our target.
 
 ### Let's style it
 
-There are a 2 approaches we could use here, we could have a persistently visible Skip link, which basically means it's up at the top, a sighted user will see it when the page loads and it's easy to discover or we could have a skip link that is initially hidden and only displays on keyboard focus. Whilst it is technically out of view, as soon as a user presses tab to move focus into your page, it then displays as we have written our CSS to do that. Whichever approach you chose, just make sure it is right for your site, users and stakeholders.
+There are a 2 approaches we could use here, we could have a persistently visible Skip link, which basically means it's up at the top, a sighted user will see it when the page loads and it's easy to discover or we could have a skip link that is initially hidden and only displays on keyboard focus. Whilst it is technically out of view, as soon as a user presses <kbd>tab</kbd> to move focus into your page,it then shows, due to the CSS we will use. Whichever approach you chose, just make sure it is right for your site, users and stakeholders.
 
-It doesn't make a great deal of sense for me to show you how to create a persistent Skip Link, as just that HTML alone would be enough, of course you'd want to make sure the text was readable, with sufficient contrast and there was a good focus indicator, but that would likely be dictated by your site's styles.
+It doesn't make a great deal of sense for me to show you how to create a persistent Skip Link, as just that HTML alone would be technically be enough, of course you'd want to make sure the text was readable, with sufficient contrast and there was a good focus indicator, but that would likely be dictated by your site's styles.
+
+So, without further waffling, let's just add the CSS:
