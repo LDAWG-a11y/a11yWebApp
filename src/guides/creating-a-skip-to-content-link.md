@@ -1,7 +1,7 @@
 ---
 title: Creating a Skip to Content link
-summary: let's learn why we should add a Skip Link to our sites, who benefits
-  from them and discuss a couple of ways we can build one, along with some best
+summary: Learn why we should add a Skip Link to our sites, who benefits from
+  them and discuss a couple of ways we can build one, along with some best
   practice accessibility considerations
 author: dlee
 date: 2023-09-01
