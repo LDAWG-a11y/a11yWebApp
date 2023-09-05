@@ -35,7 +35,7 @@ I'll outline the success criterion I would be testing against.
 
 #### 2.4.1 Bypass Blocks (A)
 
-First thing's first, it's an iFrame so we check for a title on that iFrame and by inspecting the code, i can confirm the title of "Unistats KIS Widget" is present. Is that a good title? Not really, I have no idea what "KIS" means without Googling, also what if there were more than one of these iFrames on the page, but displaying different statistics? Would they both have that same Generic title? probably. I'd recommend as a best practice the title be more descriptive, if there was more than one present on a page and they had identical titles, I'd fail it against 1.3.1 Info and Relationships (A).
+First thing's first, it's an iFrame so we check for a title on that iFrame and by inspecting the code, i can confirm the title of "Unistats KIS Widget" is present. Is that a good title? Not really, I have no idea what "KIS" means I searched it up and I'm still none the wiser, also what if there were more than one of these iFrames on the page, but displaying different statistics? Would they both have that same Generic title? probably. I'd recommend as a best practice the title be more descriptive, if there was more than one present on a page and they had identical titles, I'd fail it against 1.3.1 Info and Relationships (A).
 
 #### 1.4.3 Contrast (Minimum) (AA)
 
