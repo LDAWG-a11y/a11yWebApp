@@ -154,3 +154,41 @@ There are a 2 approaches we could use here, we could have a persistently visible
 It doesn't make a great deal of sense for me to show you how to create a persistent Skip Link, as just that HTML alone would be technically be enough, of course you'd want to make sure the text was readable, with sufficient contrast and there was a good focus indicator, but that would likely be dictated by your site's styles.
 
 So, without further waffling, let's just add the CSS:
+
+```css
+/* Set some base styles, so it is easy to see */
+.skip-link {
+  position: absolute;
+  display: inline-block;
+  padding: .375rem .75rem;
+  line-height: 1;
+  font-size: 1.25rem;
+  background-color: rebeccapurple;
+  color: white;
+  /* Ensure the Y position is set to zero and any movement on the transform property */
+  transform: translateY(0);
+  transition: transform 250ms ease-in;
+}
+
+/* When it is not focused, transform its Y position by its total height, using a negative value, so it hides above the viewport */
+.skip-link:not(:focus) {
+  transform: translateY(-2rem);
+}
+```
+
+In the above CSS, we setting styles for how we want it to look when it is actually visible, I've just added a background, decent contrast and a decent sized font. I've also ensure I used relative units (rem) and I know the height of the Skip Link is 2rem, as the font size, bottom padding and top padding is equal to 2rem: 1.25rem (font size) + .375rem (bottom padding) + .375rem (top padding) = 2rem.
+
+When the skip link is Not focused, I am using the total height of the element (2rem), to push the Skip Link up, above the viewport, this is achieved with a negative value, as vertically, negative values move up. As the transform is set to 0 in the first style block, when it does receive focus, it slides down to its natural position.
+
+Just a quick note before we get to the CodePen, this works as I intended here, but it does depend on site margins, the body element having position: relative; set and other aspects that you may need to tweak for your use case.
+
+### The skip link in action:
+
+I have added a few extra bits of CSS here, I have also added the text of the `<h1>` into a `<span>` element, as I wanted a focus indicator to show a user where focus is. I am aware that if I click `<h1>` with a mouse, the focus indicator does display, which may not be desirable for everybody, but that's beyong the scope of this guide.
+
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="WNLobNR" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/WNLobNR">
+  Skip link example</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
