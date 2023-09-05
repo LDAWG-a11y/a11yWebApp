@@ -9,7 +9,7 @@ toc: false
 tags:
   - HTML
   - CSS
-  - Best Practice
+  - Best practice
 isGuide: true
 ---
 ## Intro
