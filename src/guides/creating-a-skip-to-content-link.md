@@ -14,7 +14,7 @@ isGuide: true
 ---
 ## Intro
 
-As the page title suggests, we're going to deep dive into Skip Links. In my experience (which of course is not necessarily the same as everybody else's) I understand a Skip Link to be an element that allows a user to skip over repeated items across a set of web pages. Other folks may call them something different, such as Jump Links and this may in fact be reflected in the visible label to the element, which can differ from site to site, some common examples are:
+As the page title suggests, we're going to deep dive into Skip Links. In my experience (which of course is not necessarily the same as everybody else's) I consider a Skip Link to be an element that allows a user to skip over some content, usually because it may take some effort to get past that content by tabbing through it. Other folks may call them something different, such as Jump Links and this may in fact be reflected in the visible label of the element, which can differ from site to site, some common examples are:
 
 * Skip to main
 * Skip navigation
@@ -22,7 +22,7 @@ As the page title suggests, we're going to deep dive into Skip Links. In my expe
 * Jump to main
 * Jump to content
 
-There are undoubtedly more out in the wild, whether you want to Hop, Skip or Jump to the main content of your page, I'm just going to call them Skip Links in this guide, just for consistency's sake.
+There are undoubtedly more names for Skip Links out in the wild, whether you want to Hop, Skip or Jump to the main content of your page, I'm just going to call them Skip Links in this guide, just for consistency's sake.
 
 ## A bit of a deep dive into skip links.
 
@@ -30,9 +30,9 @@ This isn't going to be the most in-depth guide out there, hopefully it will prov
 
 ### What is a skip link?
 
-It is just a link with a href that points to another area on the page. the most common place to find these would be at the top of a page, they'll seldom be visible until they receive keyboard focus, as they're often hidden away until they do receive focus, but sometimes you may encounter Skip Links that are always visible, both work, they achieve the same thing.
+It is just a link with a href that points to another area on the page via an ID reference. the most common place to find these would be at the top of a page, they'll seldom be visible until they receive keyboard focus, as they're often hidden away until they do receive focus, but sometimes you may encounter Skip Links that are always visible, both work, they achieve the same thing.
 
-When used at the top of a page, the purpose is to allow keyboard users to tab to the Skip Link and then press <kbd>Enter</kbd>, so then keyboard focus moves to the start of the actual page content. This reduces both the effort and repetition required to actually get to the parts of the page a user is interested in. As an example, some sites may have a significant number of interactive elements in the page's `<header>` area, I've got a site open right now, that has the following:
+When used at the top of a page, the purpose is usually to allow keyboard users to tab to the Skip Link and then press <kbd>Enter</kbd>, so their keyboard focus moves to the start of the actual page content. This reduces both the repetition and effort required to actually get to the parts of the page a user is interested in. As an example, some sites may have a significant number of interactive elements in the page's `<header>` area, I've got a site open right now, that has the following:
 
 * Logo, which is wrapped in a link and points to the Home page
 * 4 social media links
@@ -40,7 +40,7 @@ When used at the top of a page, the purpose is to allow keyboard users to tab to
 * Search button
 * Navigation menu with 9 links
 
-That's 16 interactive elements there, which a keyboard user would have to <kbd>Tab</kbd> through to get to the content they are interested in. As this navigation is identical across all pages and it requires at least 5 screens to complete the transaction on the site I have open, then it is at least 5 * 16 = 80 additional tab stops that a keyboard user must endure, when they didn't actually need the navigation in the first place.
+That's 16 interactive elements there, which a keyboard user would have to <kbd>Tab</kbd> through to get to the content they are interested in. As this navigation is identical across all pages and it requires at least 5 pages to complete the transaction on the site I have open, then it is at least 5 * 16 = 80 additional tab stops that a keyboard user must endure, when they didn't actually need the navigation in the first place.
 
 If the site I have open had a Skip Link a user could have used it on each of the 5 pages I looked at and reduced the number of keypresses by 70, as using the Skip Link typically takes 2 keypresses <kbd>Tab</kbd> and then <kbd>Enter</kbd>. It makes navigation less arduous, enabling users to complete tasks more efficiently and with less effort.
 
@@ -52,17 +52,17 @@ I don't rely on a keyboard, I'm fortunate enough to be able to use pointing devi
 
 The important thing to remember is what a non-disabled person experiences is often completely different to what a person with a disability experiences. We need to look beyond how we interact with sites and consider the varying needs of others, the goal has to be making our sites easier to use for everybody, some considerations could be:
 
-* A user may not be able to use their hands at all, they may use alternative input devices, such as mouth sticks, foot pedals, head wands or maybe eye-tracking
-* A user may have have a disability that causes discomfort or pain, meaning without a Skip Link we may be causing them some physical harm by not considering their circumstances
+* A user may not be able to use their hands at all, they may use alternative input devices, such as a mouth stick, foot pedals, a head wand or maybe eye-tracking
+* A user may have have a disability that causes them discomfort or pain, meaning without a Skip Link we may be causing them some physical harm by not considering their circumstances
 * A user may have tremors, tics or not have the required precision to hit the keys accurately, which could make their task very difficult
 
 That list is by no means exhaustive and there are many more reasons why forcing users to tab through unnecessary interactive elements can be harmful.
 
-It's also worth pointing out that users can get frustrated, frustrated users are more likely to bounce away from your website than happy ones, that's pretty much accepted by everyone. A user who relies on a keyboard may get sick of repeatedly tabbing through the navigation on every page of your site, they may just go elsewhere (if that is an option) as they are not prepared to put up with the physical or mental fatigue of repeatedly tabbing through things that can easily be skipped
+It's also worth pointing out that users can get frustrated and frustrated users are more likely to bounce away from your website than happy ones, that's pretty much accepted by everyone. A user who relies on a keyboard may get sick of repeatedly tabbing through the navigation on every page of your site, they may just go elsewhere (if that is an option) as they are not prepared to put up with the physical or mental fatigue of repeatedly tabbing through things that can easily be skipped
 
 ### Do they benefit screen reader users, too?
 
-They can do, but I guess the correct answer here is: It depends. Screen readers have built-in navigation menus their users can access to skip to certain parts of a site (assuming the site has decent use of HTML), this could be headings, landmarks, lists, links, images and other aspects of the site. Which method they prefer would of course come down to individual preferences. Although it is safe to say, by adding a Skip Link to your site, you enable users of screen readers to choose how they want to navigate.
+They can do, but I guess the correct answer here is: It depends. Screen readers have built-in navigation menus their users can access to skip to certain parts of a site (assuming the site has decent HTML), this could be headings, landmarks, lists, links, images and other aspects of the site. Which method they prefer would of course come down to individual preferences. Although it is safe to say, by adding a Skip Link to your site, you enable users of screen readers to choose how they want to navigate along with providing keyboard-only users with a way of getting to the important content easily.
 
 ### Do we use them just for skipping the navigation?
 
@@ -74,17 +74,17 @@ In a word: Nope. Whilst it is more common to find Skip Links at the top of a pag
 
 Again, the above is not a comprehensive list, it's just to give you food for thought. But ultimately, if there is something on a site that is not likely to be important to everybody, but would take a considerable number of keypresses to bypass, then adding additional Skip Links may be super beneficial for some folks.
 
-You may choose to place it above the content you think users may want to skip over or you may add additional links at the top of the page, just ensure the labels for each are unique, understandable and they actually skip to where a user wants to be.
+You may choose to place it above the content you think users may want to skip over or you may add additional links at the top of the page, just ensure the labels for each are unique, understandable and they do actually skip to where a user wants to be.
 
 ### Are they required by WCAG?
 
 This is another "it depends" answer, I hate those too. [WCAG 2.4.1  Bypass Blocks (A)](https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html) states: "A mechanism is available to bypass blocks of content that are repeated on multiple Web pages". So, at the very least, if there are repeated blocks of interactive content across pages, there needs to be a way of bypassing those.
 
-A mechanism does not explicitly require it to be a Skip Link, but it's on us to provide that mechanism. There are browser extensions out there that can somewhat replicate the navigation functionality that screen readers have, by moving focus to landmarks, but we should not be directing our users to install plugins. Any of you ever had a job where your system is locked down and you have to ask IT to download every single piece of software for you and they don't let you have browser plugins as they cannot verify their security? Ahh, fun times, this is just one reason why we should not expect users to go off and find a plugin, some simply can't and some just would have no idea how to.
+A mechanism does not explicitly require it to be a Skip Link, but it's on us to provide that mechanism. There are browser extensions out there that can somewhat help keyboard users navigate to landmarks similar to the way a screen reader can, but we should not be directing our users to install plugins. Any of you ever had a job where your system is locked down and you have to ask IT to download every single piece of software for you and they don't let you have browser plugins as they cannot verify their security? Ahh, fun times, this is just one reason why we should not expect users to go off and find a plugin, some simply can't and some just would have no idea how to.
 
-If you have a site that uses a mobile menu across all viewports and it is the only interactive element in the navigation, then there's little point in adding a tab stop to skip a single tab stop, in fact, the wording in the understanding document states: "Small repeated sections such as individual words, phrases or single links are not considered blocks for the purposes of this provision", So, as long as the repeating content (the navigation) only contains a very small number of interactive elements, it's not required, definitely not for 1 or 2 interactive elements, perhaps subjectively not for 3 or 4, but anything beyond that should have a "mechanism".
+If you have a site that uses a mobile menu across all viewports and it is the only interactive element in the navigation, then there's little point in adding a tab stop to skip a single tab stop, in fact, the wording in the understanding document states: "Small repeated sections such as individual words, phrases or single links are not considered blocks for the purposes of this provision", So, as long as the repeating content (the navigation) only contains a very small number of interactive elements, it's not required, again there is no indication of what a sensible number would be, so you would be required to make your own judgement call. I would perhaps recommend adding one for anything over 4 or 5 tab stops, but others may have a different view.
 
-You may have a navigation that is expanded on page load, but is collapsible, a standard disclosure pattern or a `details` and `summary` element, which would of course also be a mechanism. As long as that control came before the links and a user could collapse them and move on, this too would be fine.
+You may have a navigation that is expanded on page load, but is also collapsible, that too is considered a mechanism. As long as that control came before the links and a user could collapse them and move on, this too would be fine.
 
 Use of landmarks is one of the Sufficient Techniques to pass this success criterion, assuming you have a good HTML structure, like so:
 
@@ -105,13 +105,13 @@ Use of landmarks is one of the Sufficient Techniques to pass this success criter
 </footer>
 ```
 
-The use of landmarks and headings do provide a way to skip over repeating blocks of content, although in reality that is not super useful for keyboard-only users and primarily benefit screen reader users.
+The use of landmarks and headings do provide a way to skip over repeating blocks of content, although in reality that is not super useful for keyboard-only users and primarily only benefits screen reader users.
 
 Honestly, you can wade through heaps of discussions on this matter and come away with more questions than answers as to what is required to pass this success criterion.
 
-I have seen some folks that are way more experienced than me state "Yes, landmarks and/or headings are sufficient", but then I have seen others state "Landmarks aren't accessibility supported, as a keyboard-only user does not benefit from them". 
+I have seen some folks that are way more experienced than me state "Yes, landmarks and/or headings are sufficient", but then I have seen others state "Landmarks aren't accessibility supported, as a keyboard-only user doesn't benefit from them". As both of these views have been put out there by people smarter than me and the Understanding Document does nothing to clarify either way, it's arguably better to be on the "They're required" side of the fence, if there is a user benefit on that site and no other mechanism.
 
-If you have a site that uses the correct landmarks, has a good heading structure (especially the heading that introduces the main content) and has a Skip Link to skip over repeated content, then we typically have a good structure which enables all users to navigate in their preferred way, so save yourself the "WCAG interpretation" headache and put users first.
+If you have a site that uses the correct landmarks, has a good heading structure (especially the `<h1>` that introduces the main content) and has a Skip Link to skip over repeated content, then you'd typically have a good structure which enables all users to navigate in their preferred way, so save yourself the "WCAG interpretation" headache and put users first.
 
 ### Where should focus be sent to?
 
