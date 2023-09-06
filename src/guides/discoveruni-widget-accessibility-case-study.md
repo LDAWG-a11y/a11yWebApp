@@ -63,10 +63,6 @@ I check to see if the iFrames text resizes along with the rest of the page, as s
 
 Many iFrames contain interactive content such as buttons or links, these can sometimes create an irregular focus order, particularly when the frame content changes over time, as often I find that the non-visible content is not accessibly hidden, it often just has 0 opacity, so is still able to receive focus. On this particular implementation, there are 3 slides and only one ever displays at any given time, `display: none;` is added to the 2 non-visible slides, so they are accessibly hidden, which again, is good.
 
-#### 1.3.2 Meaningful Sequence (A)
-
-Much like the previous issue, static content can often be accessed out of sequence, either because there is some DOM trickery going on or content that should be accessibly hidden is not. There are no issues with that here, the reading order makes sense.
-
 #### 2.4.4 Link Purpose in Context (A)
 
 There is a link in the iFrame with the visible label "see course data", given the surrounding text and page content, this does make sense.
@@ -102,4 +98,159 @@ This is a pretty straightforward fix, I'll provide a quick code sample below:
 
 #### 2.4.7 Focus Visible (AA)
 
-tabbing to the link within the iFrame I can see there is no visible focus indicator present
+Tabbing to the link within the iFrame I can see there is no visible focus indicator present, so a user would not know where focus is. Inspecting the styles for the element I can easily identify the issue here when I add the :focus state in the Devtools, it has :focus {outline: 0;} set and no other form of visible focus indicator, in essence, they have removed the browser's default focus indicator, which would have been better than nothing.
+
+![Screenshot of the link, which currently has keyboard focus forced upon it, in the DevTools, which also form part of the screenshot. In the CSS, it is evident that the focus indicator has been removed, intentionally](src/guideImg/dl-screenshot-discoverunifocus.png)
+
+##### Recommendation
+
+I would expect much better here, intentionally not supplying a focus indicator after removing the browser's default is indicator is poor practice. This is an easy fix, I'm going to make the assumption that the colours are predetermined by the devs that created the widget and each institution cannot change them (I did find another implementation on another university and the colours were the same, so I'm confident colours are not customisable). Here's the current CSS for the link (I'm just going to pop all styles into 1 selector, for simplicity's sake):
+
+```css
+.kis-widget .kis-widget__cta-block .kis-widget__cta {
+  position: relative;
+  width: 100%;
+  font-weight: normal;
+  background-color: white;
+  border-radius: 60px;
+  color: #307e7e;
+  font-size: 1rem !important;
+  line-height: 1.2rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  z-index: 25;
+  text-decoration: none;
+  position: relative;
+  font-family: Nunito Sans, sans-serif;
+}
+```
+
+That's pretty much it, now let's fix it. I'll use my own CSS just to simplify the above:
+
+```css
+ /* Just reset margin and box sizing */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  /* Created a background element, using existing colours */
+  .container-background {
+    height: 10rem;
+    width: 15rem;
+    background: linear-gradient(145deg, rgba(36, 131, 132, 1), rgba(39, 134, 93, 1));
+    padding: .75rem;
+  }
+
+  /* Simplified the CSS - although I don't have to deal with specificity here */
+  .kis-widget__cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 60px;
+    padding: .5625rem 0;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    font-weight: normal;
+    font-family: Nunito Sans, sans-serif;
+    color: #307e7e;
+    background-color: #FFF;
+    text-decoration: none;
+  }
+
+  /* This is from the existing styles, definitely not mine */
+  .kis-widget__cta:focus {
+    outline: 0;
+  }
+
+  /* Hide the the appended text within, visually */
+  .kis-widget__cta span {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+  }
+
+  /* Added a focus style for keyboard users, just using an outline and underline */
+  .kis-widget__cta:focus-visible {
+     outline: 2px solid #fff;
+    outline-offset: 2px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+  }
+```
+
+* I recreated a small background container using the existing gradient
+* I recreated the visually hiding of the appended text within the button (more on that later)
+* I added the outline back, with a 2px solid white border
+* I added a 2px thick underline, with a px offset
+
+Just to visualise what I have done, I will show 2 screenshots, the first is the link in the unfocused state, the second is the link whilst focused:
+
+![Screenshot of the link we have just replicated, which looks identical to the link in the iFrame in its unfocused state](src/guideImg/dl-screenshot-discoveruni-linknotfocus.png)
+
+![Screenshot of the same link, now with focus, visually this has an outline added to the perimenter of the link and a small offset, so the ring has some breathing space, I also added a 2px thick outline and together the 2 effects should make this clear it is a focused link](src/guideImg/dl-screenshot-discoveruni-linkfocus.png)
+
+With just a few lines of CSS it is now clear this link has keyboard focus as the outline and underline do help a user to perceive the visual change. It could of course be improved further, I'd probably change the colour of the background and ensure the text changed to maintain an acceptable contrast, but that's my own personal preference.
+
+#### 1.3.1 Info and Realtionships (A)
+
+Within the source code I can identify several instances of `aria-label` being present on a `<div>` elements, which have no implicit or explicit role. Simply put,` aria-label` is not allowed on a `<div>`, `<span>` or several other generic elements, unless they have a role explicitly added. This is a misunderstanding of ARIA, the `<div>` elements here are simply wrapping elements, used for layout, they have "contents" contained in another node, the contents would be read anyway without adding `aria-label`s unnecessarily to unsupported nodes. I would have previously filed this under 4.1.1 Parsing (A), but as that is no longer a failure and this is not an interactive element so it cannot be 4.1.2 Name, Role, Value (A). The issue here is some screen readers will read the `aria-label` and then read the content, thus creating unnecessary verbosity.
+
+![Screenshot of the DevTools, which is displaying the ARIA misuse on just one of the slides. ARIA labels are used twice on div elements, where they do not need to be. I have annotated the screenshot with red boxes and arrows, to aid in visual identification of the issue](src/guideImg/dl-screenshot-discoveruni-ariamisuse.png)
+
+##### Recommendation
+
+The solution is super simple here: Remove the `aria-label`s, they are not required at all.
+
+#### 1.3.2 Meaningful Sequence (A)
+
+The issue here is caused by the transition, when a user of a screen reader is navigating with cursor keys, they can get into the iFrame to read the text within, the screen reader starts to read the text and then the slide they were on has `display: none;` applied, which then somehow sends the virtual cursor to a node above the iFrame, which would be quite jarring and confusing. The content is then read out of sorts, so to speak. 
+
+##### Recommendation
+
+This for me is a little more difficult to suggest something that does not materially change the appearance and functionality of the iFrame and its contents. Whilst it changes, there is always the risk of unpredictable hijacking of the virtual cursor, the element ceases to exist, therefore something unexpected happens.
+
+If there were a pause button, a user could at least pause it to read the slide, but then they would have to unpause it, move back into the slide and the transition could happen anyway, which does not help a screen reader user. 
+
+There are no controls for a user to manually move to the next or previous slide, like those that would be present in a carousel.
+
+Looking at the HTML and the actual widget, it's clear that the only content that actually changes (or needs to change) in the current implementation is one sentence per slide: the actual statistic. We're talking about four sentences of text:
+
+* 74% of students agreed staff were good at explaining things.
+* 85% in work or doing further study 15 months after the course.
+* 73% of students were satisfied overall with their course.
+* Data for courses in Business and management (non-specific) at The University of Westminster
+
+The last entry in that list only has a slight change, in that (non-specific) is added on 2 slides, whereas it is not included in the other
+
+Personally, I believe this slide transition effect is overkill for  small sentences and is the root of the majority of the accessibility issues.
+
+I have dismissed the following consideration:
+
+Hiding the content of each slide from the accessibility tree and providing a visually hidden, static text alternative. The benefit of this would be a user would cursor into the iFrame and perhaps a list with the contents of each slide would be read out to them, the actual text content would be hidden with aria-hidden. Whilst this would solve the issue of the virtual cursor bouncing outside of the iFrame, we need to consider users of screen readers that are not blind, they may use a combination of their mouse and a screen reader and then accessing text they can see will of course be silence, which isn't great.
+
+An example could be something like so:
+
+```html
+<iframe>
+  <ul class="visually-hidden">
+    <li>74% of students agreed staff were good at explaining things - Data for courses in Business and management (non-specific) at The University of Westminster</li>
+    <li>73% of students were satisfied overall with their course - Data for courses in Business and management (non-specific) at The University of Westminster</li>
+    <li>85% in work or doing further study 15 months after the course - Data for courses in Business and management at The University of Westminster</li>
+  </ul>
+  <div class="ofsKisClear kis-widget__lead" aria-hidden="true">
+    <!-- The content that changes -->
+  </div>
+  <!-- The CTA content -->
+</iframe>
+```
+
+The above is something I always try to avoid, as it feels hacky and I'm not comfortable with hiding things that are in plain sight, although
