@@ -212,30 +212,44 @@ The solution is super simple here: Remove the `aria-label`s, they are not requir
 
 #### 1.3.2 Meaningful Sequence (A)
 
-The issue here is caused by the transition, when a user of a screen reader is navigating with cursor keys, they can get into the iFrame to read the text within, the screen reader starts to read the text and then the slide they were on has `display: none;` applied, which then somehow sends the virtual cursor to a node above the iFrame, which would be quite jarring and confusing. The content is then read out of sorts, so to speak. 
+The issue here is caused by the transition, when a user of a screen reader is navigating with cursor keys, they can get into the iFrame to read the text within, the screen reader starts to read the text and then the slide they were on has `display: none;` applied, which can then alter the meaning and order of the information, in unexpected ways.
 
-##### Recommendation
+Using VoiceOver and Safari on MacOS (latest versions at the time of writing), when I use the VO key and cursors to get into the iFrame, it does start to read the statistic, however, as soon as the transition occurs, the virtual cursor position is then ejected from the iFrame and placed on the text node immediately above it.
 
-This for me is a little more difficult to suggest something that does not materially change the appearance and functionality of the iFrame and its contents. Whilst it changes, there is always the risk of unpredictable hijacking of the virtual cursor, the element ceases to exist, therefore something unexpected happens.
+This effects the sequence of reading, in that it would be difficult to hear the statistics in a sequence that made sense, as every time a transition occurred, the information they hear is interrupted by them being ejected out of the iFrame.
 
-If there were a pause button, a user could at least pause it to read the slide, but then they would have to unpause it, move back into the slide and the transition could happen anyway, which does not help a screen reader user. 
+Using NVDA (2023.2) and Firefox (latest version, at the time of writing) on Windows 10 Education (20H2), I am not ejected from the iFrame when the transition occurs, however, what does happen is the screen reader starts to read the statistic (the percentage), then the transition occurs and then the slide changes, so it reads the text of the next statistic, as that is what is now present in the DOM. So to simplify what is happening, the process is as follows:
 
-There are no controls for a user to manually move to the next or previous slide, like those that would be present in a carousel.
+* Cursor into iFrame
+* NVDA reads the percentage of the first statistic, the currently visible statistic
+* The slide transition occurs
+* NVDA reads the text of the 2nd transition (the new slide that is now visible)
 
-Looking at the HTML and the actual widget, it's clear that the only content that actually changes (or needs to change) in the current implementation is one sentence per slide: the actual statistic. We're talking about four sentences of text:
+This results in inaccurate information being presented to the user as they are hearing a combination of 2 statistics which could be misleading and therefore, alters the meaning of the text.
 
-* 74% of students agreed staff were good at explaining things.
-* 85% in work or doing further study 15 months after the course.
-* 73% of students were satisfied overall with their course.
-* Data for courses in Business and management (non-specific) at The University of Westminster
+As the stats are both regulatory and help users in making informed decisions, it's absolutely vital that they are communicated to screen reader users in a comparable way and the current implementation is likely both incredibly confusing and frustrating for screen reader users as the sequence or meaning is different than what is supplied visually.
 
-The last entry in that list only has a slight change, in that (non-specific) is added on 2 slides, whereas it is not included in the other
+This would not be remedied by a pause button, sequence or meaning would still be incorrect. Consider a screen reader user entering the frame, they discover the first item, which I previously recommended to be a pause button. They pause the slides and then proceed to listen to the text, where they will hear a full statistic, but then what about the next statistic? the user would need to move back to the pause button and click it again to play the transition, they'd move into the slide to read the statistic, only it changes and they are either ejected or hear a mismatch of 2 slides.
 
-Personally, I believe this slide transition effect is overkill for  small sentences and is the root of the majority of the accessibility issues.
+In this implementation, there is no announcement that anything has changed, I'd be averse to recommend that on the basis that it would get pretty noisy, pretty quickly.
 
-I have dismissed the following consideration:
+There are no controls for a user to manually move to the next or previous slide, like those that would be present in a carousel, so that is not an option for our users, also, it would be overkill to create a full-blown carousel for what is in affect, 3 sentences.
 
-Hiding the content of each slide from the accessibility tree and providing a visually hidden, static text alternative. The benefit of this would be a user would cursor into the iFrame and perhaps a list with the contents of each slide would be read out to them, the actual text content would be hidden with aria-hidden. Whilst this would solve the issue of the virtual cursor bouncing outside of the iFrame, we need to consider users of screen readers that are not blind, they may use a combination of their mouse and a screen reader and then accessing text they can see will of course be silence, which isn't great.
+##### Recommendation 1
+
+Looking at the HTML and the actual widget, it's clear that the only content that actually changes (or needs to change) is the actual statistic and the source for that statistic.
+
+Personally, I believe this slide transition effect is overkill for a few small sentences and is the root of the majority of the accessibility issues.
+
+###### The pros
+
+The first solution I thought of was to hide the actual slides from assistive technologies and use a visually hidden node to provide exactly the same information back and this would be positioned before the slides in the DOM. There are both pros and cons to this approach:
+
+As the slides would no longer be exposed to assistive technologies, as we would use aria-hidden, a user would not be able to cursor into them, so their virtual cursor could not be hijacked. As we would be providing the exact same text on a visually hidden node that is outside of the transition, a transition could not alter the order or meaning of the statistic.
+
+###### The con
+
+Obviously there are sighted screen reader users, some of whom use a mouse, if they are using their mouse to have their screen reader read out content on the page, should they click on the iFrame, then they will not hear the statistic as we have removed it from the accessibility tree. We could get a little clever with CSS to overlay the slide with our visually hidden text, so when the click occurs, it would read out our 3 statistics, but I still feel this could be a little confusing
 
 An example could be something like so:
 
