@@ -152,11 +152,6 @@
     </url>
   
     <url>
-      <loc>https://www.makethingsaccessible.com/guides/meeting-wcag-2-2/</loc>
-      <lastmod>2022-12-13T00:00:00.000Z</lastmod>
-    </url>
-  
-    <url>
       <loc>https://www.makethingsaccessible.com/guides/creating-meaningful-alternative-text/</loc>
       <lastmod>2022-12-19T00:00:00.000Z</lastmod>
     </url>
@@ -239,6 +234,16 @@
     <url>
       <loc>https://www.makethingsaccessible.com/guides/pdf-and-online-flipbooks/</loc>
       <lastmod>2023-07-21T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/meeting-wcag-2-2/</loc>
+      <lastmod>2023-08-18T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/creating-a-skip-to-content-link/</loc>
+      <lastmod>2023-09-01T00:00:00.000Z</lastmod>
     </url>
   
       <url>
