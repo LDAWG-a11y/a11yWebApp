@@ -49,11 +49,7 @@ Often iFrames cause whole page horizontal scroll on smaller screens or when zoom
 
 #### 1.1.1 Non-text Content (A)
 
-Typically when I encounter small iFrames that look like ads they're typically an image with poor alt text but often with no alt text. The content in this iFrame is actual text, which is good. There is a very small DiscoverUni logo, which does have the alt text of "DiscoverUni", this could be slightly improved by appending the word "logo" to the alt text.
-
-#### 1.4.5 images of Text (AA)
-
-As banner-type iFrames are often an image of text, I'd sometimes write that up as often the same result can be achieved with CSS and HTML, which helps low vision users scale the content without pixelation or distortion. As I pointed out in the previous issue, the content here is actual text, so again, this is good.
+There is a very small DiscoverUni logo, which does have the alt text of "DiscoverUni", this could be slightly improved by appending the word "logo" to the alt text.
 
 #### 1.4.6 Resize Text (AA)
 
@@ -65,7 +61,7 @@ Many iFrames contain interactive content such as buttons or links, these can som
 
 #### 2.4.4 Link Purpose in Context (A)
 
-There is a link in the iFrame with the visible label "see course data", given the surrounding text and page content, this does make sense.
+There is a link in the iFrame with the visible label "see course data", given the surrounding text and page content, this does make sense, there is one issue with the visually hidden text within though.
 
 ### Now let's look at the WCAG failures
 
@@ -82,14 +78,19 @@ I'd simply recommend a pause or stop button for this. As long as that button cou
 This is a pretty straightforward fix, I'll provide a quick code sample below:
 
 ```html
-<button aria-pressed="false">
-  <span class="visually-hidden">Pause</span>
-</button>
+<div role="group" aria-labelledby="slideTitle">
+  <h1 class="visually-hidden" id="slideTitle">Course statistics</h1>
+  <button aria-pressed="false">
+    <span class="visually-hidden">Pause</span>
+  </button>
+  <!-- The slides -->
+</div>
 ```
 
 * I'd probably add a pseudo element with a pause symbol inside the button, so there was an understandable visible label.
 * Don't change the accessible name of the button when clicked, just toggle the value of `aria-pressed`, as changing the name along with aria-pressed would be confusing and we need `aria-pressed` to indicate the state of the button (it would be fine to change the symbol to a play icon though, in fact, I think that makes the most sense)
 * I made the assumption the developers understand how to visually hide things, but still expose them in the accessible name calculation, with a visually-hidden class. If this is new to you, [you can read up about hiding content here](https://www.makethingsaccessible.com/guides/visually-hiding-text/).
+* I'd add the button and the slides in a group, with an accessible name, which would be calculated from the visually hidden heading, just so the control and slides were grouped to help with understanding the relationship
 * I have not provided any CSS, but I would ensure the icon button has good contrast against the background
 * I would make sure that the icon button has a good focus indicator, which is perceivable against adjacent colours
 * I'd ensure the icon button was of a reasonable size
@@ -179,7 +180,7 @@ That's pretty much it, now let's fix it. I'll use my own CSS just to simplify th
 
   /* Added a focus style for keyboard users, just using an outline and underline */
   .kis-widget__cta:focus-visible {
-     outline: 2px solid #fff;
+    outline: 2px solid #fff;
     outline-offset: 2px;
     text-decoration: underline;
     text-decoration-thickness: 2px;
@@ -247,11 +248,13 @@ The first solution I thought of was to hide the actual slides from assistive tec
 
 As the slides would no longer be exposed to assistive technologies, as we would use aria-hidden, a user would not be able to cursor into them, so their virtual cursor could not be hijacked. As we would be providing the exact same text on a visually hidden node that is outside of the transition, a transition could not alter the order or meaning of the statistic.
 
-###### The con
+###### The cons
 
-Obviously there are sighted screen reader users, some of whom use a mouse, if they are using their mouse to have their screen reader read out content on the page, should they click on the iFrame, then they will not hear the statistic as we have removed it from the accessibility tree. We could get a little clever with CSS to overlay the slide with our visually hidden text, so when the click occurs, it would read out our 3 statistics, but I still feel this could be a little confusing
+Obviously there are sighted screen reader users, some of whom use a mouse, if they are using their mouse to have their screen reader read out content on the page, should they click on the iFrame, then they will not hear the statistic as we have removed it from the accessibility tree. We could get a little clever with CSS to overlay the slide with our visually hidden text, so when the click occurs, it would read out our 3 statistics, but I still feel this could be a little confusing.
 
-An example could be something like so:
+We'd still need a pause button, if that pause button is focusable a screen reader user may become a little confused when they encounter a button that seemingly has no purpose, especially where I earlier recommended adding it, along with the slides into a group, which would now only contain the button in the accessibility tree.
+
+An example could be something like so (button and group not present):
 
 ```html
 <iframe>
@@ -267,4 +270,245 @@ An example could be something like so:
 </iframe>
 ```
 
-The above is something I always try to avoid, as it feels hacky and I'm not comfortable with hiding things that are in plain sight, although
+This may have been a good solution, had there been no button, but as we need the button to pause/resume the animation, I discounted this approach in that it would be solving the main issue, but introducing another. I would not want to hide the button from assistive technologies and prevent it being focusable, as this will cause problems for voice users, sighted screen reader users and others.
+
+##### Recommendation 2
+
+I feel that this is somewhat over-engineered, the aim of the iFrame is to provide a small number of statistics to users, each statistic is a small sentence and may have a different source than the previous statistic. Does this really need to be animated, can't we just show the whole thing? I'm no designer, but this does not feel like a challenge to me.
+
+The widget never takes up the full screen width, so we can utilise some of that extra space. I will concede that I don't know how many stats could be provided, I'm basing this off there always being 3 stats, maybe there are implementations out there with many more?
+
+Let's have a stab at it and see how we can improve this, here's the HTML:
+
+```html
+<!-- Add a better title, one that makes a little more sense to a user -->
+<iframe title="Business management courses statistics">
+  <!-- iFrame head and body omitted for brevity -->
+<article class="uniStat__container">
+    <div class="uniStat__stat-wrapper">
+      <ul class="uniStat__list">
+        <li class="uniStat__item">
+          <span class="uniStat__percent">73%</span> <span>of students were satisfied overall with their course. <a href="#source1" aria-describedby="source1"><span class="uniStat__reference">[1]</s></a></span>
+        </li>
+        <li class="uniStat__item">
+          <span class="uniStat__percent">74%</span> <span>of students agreed staff were good at explaining things. <a href="#source1" aria-describedby="source1"><span class="uniStat__reference">[1]</span></a></span>
+        </li>
+        <li class="uniStat__item">
+          <span class="uniStat__percent">85%</span><span> in work or doing further study 15 months after the course. <a href="#source2" aria-describedby="source2"><span class="uniStat__reference">[2]</span></a></span>
+        </li>
+      </ul>
+      <div class="uniStats__sources">
+        <p class="uniStats__source" id="source1">[1] Data for courses in Business and management at The University of Westminster</p>
+        <p class="uniStats__source" id="source2">[2] Data for courses in Business and management (non-specific) at The University of Westminster</p>
+      </div>
+    </div>
+    <div class="uniStat__cta-wrapper">
+      <div>
+        <p class="uniStat__cta-text">For <strong>more</strong> official course information visit DiscoverUni</p>
+        <img class="uniStat__cta-img" src="https://discoveruni.gov.uk/static/images/logos/widget_logo_english.svg" alt="Discover Uni logo">
+      </div>
+      <div>
+        <a class="uniStat__cta-link" href="" >See course data
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M15 0a1.5 1.5 0 0 0 0 3h3.9l-9.5 9.4a1.5 1.5 0 0 0 2.2 2.2L21 5v4a1.5 1.5 0 0 0 3 0V1.5c0-.8-.7-1.5-1.5-1.5ZM3.7 1.5A3.8 3.8 0 0 0 0 5.3v15c0 2 1.7 3.7 3.8 3.7h15c2 0 3.7-1.7 3.7-3.8V15a1.5 1.5 0 0 0-3 0v5.3c0 .4-.3.7-.8.7h-15a.8.8 0 0 1-.7-.8v-15c0-.4.3-.7.8-.7H9a1.5 1.5 0 0 0 0-3Zm0 0"/>
+          </svg>
+          <span class="visually-hidden"> opens in new tab</span>
+        </a>
+      </div>
+    </div>
+  </article>
+  
+</iframe>
+```
+
+And here's the CSS:
+
+```css
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Nunito Sans, sans-serif;
+}
+
+body {
+  padding: 1rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+}
+
+.uniStat__container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #4EA27D;
+  border-bottom: none;
+  max-width: 25rem;
+}
+
+.uniStat__stat-wrapper {
+  padding: 1rem;
+}
+
+.uniStat__list {
+  list-style: none;
+  color: #307e7e;
+}
+
+.uniStat__item {
+  display: flex;
+  align-items: center;
+}
+
+.uniStat__item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.uniStat__item a {
+  position: relative;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #307e7e;
+}
+
+.uniStat__item a::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  cursor: pointer;
+}
+
+.uniStat__item a:focus-visible {
+  outline: 2px solid #307e7e;
+  outline-offset: 2px;
+}
+
+.uniStat__reference {
+  padding: .25rem;
+  letter-spacing: 1px;
+  color: #307e7e;
+}
+
+.uniStat__percent {
+  padding-right: .75rem;
+  font-size: 3rem;
+  padding-top: .5rem;
+}
+
+.uniStats__sources {
+  margin-top: .75rem;
+  padding-top: .75rem;
+  border-top: 1px solid #4EA27D;
+}
+
+.uniStats__source {
+  line-height: 1.5;
+  font-size: .875rem;
+  color: #307e7e;
+}
+
+.uniStat__cta-wrapper {
+  background: linear-gradient(145deg, rgba(36, 131, 132, 1), rgba(39, 134, 93, 1));
+  padding: .75rem;
+  color: #FFF;
+}
+
+.uniStat__cta-text {
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.uniStat__cta-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 60px;
+  padding: .5625rem 1rem;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  font-weight: normal;
+  color: #307e7e;
+  background-color: #FFF;
+  text-decoration: none;
+}
+
+.uniStat__cta-link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+.uniStat__cta-link svg {
+ margin-left: .75rem;
+}
+
+@media screen and (min-width: 48em) {
+  .uniStat__container {
+    max-width: 40rem;
+  }
+  
+  .uniStat__cta-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  } 
+}
+```
+
+I'm not going to explain every line of CSS and HTML here, like I usually would, mainly because there's a bit too much to explain in full, I will of course explain what I have done and my decision-making process:
+
+###### The HTML
+
+* I added the 3 slides into a list, so for users of screen readers, they know how many stats are present (if their screen reader reads out lists without bullets, that is)
+* I display all 3 stats, always, no transitions here
+* I moved the call to action panel to the bottom of the frame, so utilise horizontal width and reduce clutter
+* I removed all of the unnecessary ARIA
+* I added a link at the end that references a footnote, there are 2 sources in the footnotes and they are correctly linked
+* I was reluctant to add links, I just wanted to create an aria-describedby reference on the <li> element, as I seemed to think that would work, but it isn't actually announced, so given that I just wanted the description, I was pretty much constrained to using an interactive element and only an <a> would be appropriate here, as the <a> has aria-describedby, a screen reader user can at least get the description without clicking on the link
+* I added the word "logo" to the logo's alt text, just to make it a little clearer
+* I added an icon into the call to action link, as only screen reader users would have been advised about the "opens in new tab" behaviour, which is not fair on others, so I used the typicall icon for opening in a new tab, which the majority of sighted users will understand, as it's present on their operating systems and email clients etc
+
+###### The CSS
+
+* I styled the percentage the same, it may look different on CodePen, as I didn't install the font
+* I centred the text vertically, against the percentage, as this looks much cleaner to me
+* I styled the footnote links using the same green as the text, but ensured I added a more prominent underline
+* I used a ::before pseudo element to increase the click/tap area of the links to the footnotes, as they were tiny, I actually opted out of using the <sup> element as it doesn't make any difference to users and I didn't want it to be a tiny superscript link anyway
+* I built it mobile first, using the same existing breakpoint as the original (768px)
+* I made the iFrame a little wider, as there was plenty of free space across several implementations I looked at
+* I added the same focus style as we created earlier, for the CTA link
+* I display the CTA panel as a column on smaller screens, where the link is full width at the bottom
+* On larger screens, I display the CTA panel as a row, where the link is on the right, with plenty of breathing space
+* I also used relative units where necessary and added a decent focus indicator to the footnote links
+
+#### Overview
+
+As I stated, I am not a designer, but I have tried my best to present this widget by keeping as true as possible to the existing design. Of course, I had to make some necessary design changes here and there and I also made a couple of design enhancements, where it improved readability, maybe an actual designer would have a different approach, but that's cool, because firstly the task was to fix the accessibility and secondly, because I don't care, because my "design" isn't the broken "design".
+
+Accessibility-wise, there are no errors present here, at all. Sure, it is in an iFrame, which isn't perfect, but obviously we could not change that. We now have a nice static list, which contains our 3 stats, the 2 footnotes are sitting below the list and have visual identifiers and they can also be reached with the links for the stats, but it's likely nobody will need to do that, as there is an aria-description on each link.
+
+Overall, i'm quite happy with my approach here, it feels cleaner, clearer and I know that folk aren't going to have their virtual cursor snatched from them by a transition of content.
+
+I haven't tested this in all browsers, I used Chrome, Firefox and Safari on a Mac, everything is up to date and I used Chrome on Windows, the browser is up to date (at the time of writing). I also only used VoiceOver and NVDA. So, my solution will probably be fine, but there may be some minor display issues
+
+#### The result
+
+Obviously I can't not show the result, so here's the CodePen:
+
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="BavpWYz" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/BavpWYz">
+  uniStat widget</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
