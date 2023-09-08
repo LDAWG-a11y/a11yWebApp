@@ -107,7 +107,7 @@ Tabbing to the link within the iFrame I can see there is no visible focus indica
 
 ##### Recommendation
 
-I would expect much better here, intentionally not supplying a focus indicator after removing the browser's default is indicator is obviously a bad choice. This is an easy fix, I'm going to make the assumption that the colours are predetermined by the team that created the widget and each institution cannot change them (I did find another implementation on another university and the colours were the same, so I'm confident colours are not customisable). Here's the current CSS for the link (I'm just going to pop all styles into 1 selector, for simplicity's sake):
+I would expect much better here, intentionally not supplying a focus indicator after removing the browser's default indicator is obviously a bad choice. This is an easy fix, I'm going to make the assumption that the colours are predetermined by the team that created the widget and each institution cannot change them (I did find another implementation on another university and the colours were the same, so I'm confident colours are not customisable). Here's the current CSS for the link (I'm just going to pop all styles into 1 selector, for simplicity's sake):
 
 ```css
 .kis-widget__cta {
