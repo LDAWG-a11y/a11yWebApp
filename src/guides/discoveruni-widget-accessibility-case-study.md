@@ -11,7 +11,7 @@ isGuide: true
 ---
 ## Intro
 
-We're perhaps venturing away from the typical Guides we provide here, in that we're not so much showing you how to make a particular pattern accessible, we're primarily auditing one and then making suggestions on how to improve it.
+We're perhaps venturing away from the typical Guides we usually write, in that we'd ordinarily base it upon something we have seen and not name the culprits or provide a way to identify them. This time is a little different, we are going to discuss a widget that the Higher Education sector in the UK must display on course pages, due to regulations.
 
 Essentially the DiscoverUni widget is an iFrame embed, it may appear on course specific pages and within the embed it provides information such as:
 
@@ -19,7 +19,7 @@ Essentially the DiscoverUni widget is an iFrame embed, it may appear on course s
 * The percentage of students that thought were happy with the course delivery
 * The percentage of students that were in related employment within a certain amount of time after completing the course
 
-The first thing to take note of is the domain for DiscoverUi, which is a .gov.uk domain, so as this domain is reserved for government, then it really is on them to make it accessible. Also, as the content is in an iFrame, it can be super difficult to fix the accessibility issues, as it exists on another site, but then why would a couple of hundred institutions be required to patch it up with JS, when it could simply be fixed at source?
+The first thing to take note of is the domain for DiscoverUni, which is a .gov.uk domain, so as this domain is reserved for government and is part of the Office for Students, then it really is on them to make it accessible. Also, as the content is in an iFrame, it can be super difficult to fix the accessibility issues with DOM manipulation, as it exists on another site, but then why would a couple of hundred institutions be required to patch it up with JS, when it could simply be fixed at source and fixed once?
 
 ## So what is the widget?
 
@@ -27,25 +27,25 @@ Well, to give you an example, here is a screenshot of the widget in question, ta
 
 ![Screenshot of the widget which contains text with statistics for how many students were in work or further study within 15 months of completing the course. There is also a link within the widget that takes a user to the Discover ui site and displays these details in greater depth.](src/guideImg/dl-screenshot-discoveruni1.png)
 
-This iFrame is not static, on the page I am viewing, there is a transition occurring where the contents fade out and a new statistic is displayed.
+This iFrame is not static, on the page I am viewing, there is a transition occurring where the contents fade out and a new statistic is displayed, there are 3 separate statistics, each presented in their own slide and the animation is infinite.
 
 ### First, let's outline the bits that do not fail WCAG
 
-In order to be fair, I'll give an overview of some of the common issues I encounter with iFrames that do at least comply on this widget.
+I'm somewhat uncomfortable outing other developers in public, so I want to provide a balanced review, so In order to be fair, we'll look at some of the stuff that does at least comply, on this widget before we get down to the issues.
 
 #### 2.4.1 Bypass Blocks (A)
 
-First thing's first, it's an iFrame so we check for a title on that iFrame and by inspecting the code, i can confirm the title of "Unistats KIS Widget" is present. Is that a good title? Not really, I have no idea what "KIS" means I searched it up and I'm still none the wiser, also what if there were more than one of these iFrames on the page, but displaying different statistics? Would they both have that same Generic title? probably. I'd recommend as a best practice the title be more descriptive, if there was more than one present on a page and they had identical titles, I'd fail it against 1.3.1 Info and Relationships (A).
+First thing's first, it's an iFrame so we check for a `title` attribute on the iFrame and by inspecting the code, I can confirm the title of "Unistats KIS Widget" is present. Is that a good title? Not really, I have no idea what "KIS" means I searched it up and I'm still none the wiser, also what if there were more than one of these iFrames on the page, but displaying different statistics? Would they both have that same Generic `title`? probably. I'd recommend as a best practice the `title` be more descriptive, if there was more than one present on a page and they had identical titles, I'd fail it against 1.3.1 Info and Relationships (A), as they would be non-unique.
 
 #### 1.4.3 Contrast (Minimum) (AA)
 
 The text within (yes, it is text and not an image) has the colour of green (#307E7E) and a background colour of white (#FFF), which gives us a contrast ratio of 4.76:1 and this passes for both small text and large text. This could possibly be a colour we have selected, so other organisations may have different results.
 
-The area to the side does have a gradient background, with white text, so I check that again and both colours used in the gradient do pass, albeit only just with a ratio of 4.51:1
+The static section that contains the CTA (Call to action) link does have a gradient background, with white text, so I check that again and both colours used in the gradient do pass, albeit only just with a ratio of 4.51:1
 
 #### 1.4.10 Reflow (AA)
 
-Often iFrames cause whole page horizontal scroll on smaller screens or when zoomed on larger screens, there's no issue with that here, the item stacks so it does not cause an issue where a user would be required to scroll in 2 directions.
+Often iFrames cause whole page horizontal scroll on smaller screens or when zoomed on larger screens, as often they have fixed widths, there's no issue with that here, the item stacks into a column so it does not cause an issue where a user would be required to scroll in 2 directions.
 
 #### 1.1.1 Non-text Content (A)
 
@@ -57,11 +57,11 @@ I check to see if the iFrames text resizes along with the rest of the page, as s
 
 #### 2.4.3 Focus Order (A)
 
-Many iFrames contain interactive content such as buttons or links, these can sometimes create an irregular focus order, particularly when the frame content changes over time, as often I find that the non-visible content is not accessibly hidden, it often just has 0 opacity, so is still able to receive focus. On this particular implementation, there are 3 slides and only one ever displays at any given time, `display: none;` is added to the 2 non-visible slides, so they are accessibly hidden, which again, is good.
+Many iFrames contain interactive content such as buttons or links, these can sometimes create an irregular focus order, particularly when the frame content changes over time, as often I find that the non-visible content is not accessibly hidden, it often just has 0 opacity, so is still able to receive focus. On this particular implementation, there is only 1 link and it is in a static part of the iFrame, so we don't have an issue with that here.
 
 #### 2.4.4 Link Purpose in Context (A)
 
-There is a link in the iFrame with the visible label "see course data", given the surrounding text and page content, this does make sense, there is one issue with the visually hidden text within though.
+There is a link in the iFrame with the visible label "see course data" and given the surrounding text and page content, this does make sense, there is one issue with the visually hidden text within though, which I have written as an Advisory in the WCAG failures.
 
 ### Now let's look at the WCAG failures
 
@@ -69,11 +69,11 @@ Whilst there are some positives, as outlined above, unfortunately there are some
 
 #### 2.2.2 Pause, Stop, Hide (A)
 
-The most obvious issue is the slide transition effect, the content changes between 3 different slides at an interval of approximately 3 or 4 seconds. This animation is infinite, in that it just loops continuously. there is no mechanism to pause, stop or hide this transition. This can be distracting for users, particularly some users that may have difficulty with focusing or be easily distracted.
+The most obvious issue is the slide transition effect, the content changes between 3 different slides at an interval of approximately 3 or 4 seconds. This animation is infinite, in that it just loops continuously. There is no mechanism to pause, stop or hide this transition. This can be distracting for users, particularly some users that may have difficulty with focusing or those that can become easily distracted.
 
 ##### Recommendation
 
-I'd simply recommend a pause or stop button for this. As long as that button could restart the animation should a user wish to, this would be adequate. As the transition is quite quick 3 or 4 seconds, some users may not get sufficient time to read a slide, by providing a pause or stop button, these users can at least take the time they need to read the slide, without having to wait for it to loop back through.
+I'd ordinarily recommend a pause or stop button for this. As long as that button could restart the animation should a user wish to, this would be adequate. As the transition is quite fast: 3 or 4 seconds, some users may not get sufficient time to read a slide, by providing a pause or stop button, these users can at least take the time they need to read the slide, without having to wait for it to loop back through.
 
 This is a pretty straightforward fix, I'll provide a quick code sample below:
 
@@ -94,21 +94,23 @@ This is a pretty straightforward fix, I'll provide a quick code sample below:
 * I have not provided any CSS, but I would ensure the icon button has good contrast against the background
 * I would make sure that the icon button has a good focus indicator, which is perceivable against adjacent colours
 * I'd ensure the icon button was of a reasonable size
-* I'd ensure the icon button was the first interactive element within the frame, that way a user can tab to it and turn it off straight away, should they need to
+* I'd ensure the icon button was the first interactive element within the iFrame, that way a user can tab to it and turn it off straight away, should they need to
 * Functionally, I would likely just toggle a data-attribute on to the animated part of the frame, perhaps data-paused="true" when the pause button is pressed & then when that attribute/value pair is present on the slide, I would simply prevent the animation in CSS
+
+In this instance, our final result does not use this method, it would fix that issue, but it wouldn't solve what is arguably the most severe issue, so carry on reading.
 
 #### 2.4.7 Focus Visible (AA)
 
-Tabbing to the link within the iFrame I can see there is no visible focus indicator present, so a user would not know where focus is. Inspecting the styles for the element I can easily identify the issue here when I add the :focus state in the Devtools, it has :focus {outline: 0;} set and no other form of visible focus indicator, in essence, they have removed the browser's default focus indicator, which would have been better than nothing.
+Tabbing to the link within the iFrame I can see there is no visible focus indicator present, so a user would not know where focus is. Inspecting the styles for the element I can easily identify the issue here when I add the `:focus` state in the Devtools, it has `:focus {outline: 0;}` set and no other form of visible focus indicator, in essence, they have removed the browser's default focus indicator, which would have been better than nothing.
 
 ![Screenshot of the link, which currently has keyboard focus forced upon it, in the DevTools, which also form part of the screenshot. In the CSS, it is evident that the focus indicator has been removed, intentionally](src/guideImg/dl-screenshot-discoverunifocus.png)
 
 ##### Recommendation
 
-I would expect much better here, intentionally not supplying a focus indicator after removing the browser's default is indicator is poor practice. This is an easy fix, I'm going to make the assumption that the colours are predetermined by the devs that created the widget and each institution cannot change them (I did find another implementation on another university and the colours were the same, so I'm confident colours are not customisable). Here's the current CSS for the link (I'm just going to pop all styles into 1 selector, for simplicity's sake):
+I would expect much better here, intentionally not supplying a focus indicator after removing the browser's default is indicator is obviously a bad choice. This is an easy fix, I'm going to make the assumption that the colours are predetermined by the team that created the widget and each institution cannot change them (I did find another implementation on another university and the colours were the same, so I'm confident colours are not customisable). Here's the current CSS for the link (I'm just going to pop all styles into 1 selector, for simplicity's sake):
 
 ```css
-.kis-widget .kis-widget__cta-block .kis-widget__cta {
+.kis-widget__cta {
   position: relative;
   width: 100%;
   font-weight: normal;
@@ -191,7 +193,7 @@ That's pretty much it, now let's fix it. I'll use my own CSS just to simplify th
 * I recreated a small background container using the existing gradient
 * I recreated the visually hiding of the appended text within the button (more on that later)
 * I added the outline back, with a 2px solid white border
-* I added a 2px thick underline, with a px offset
+* I added a 2px thick underline, with a 2px offset
 
 Just to visualise what I have done, I will show 2 screenshots, the first is the link in the unfocused state, the second is the link whilst focused:
 
@@ -203,7 +205,7 @@ With just a few lines of CSS it is now clear this link has keyboard focus as the
 
 #### 1.3.1 Info and Realtionships (A)
 
-Within the source code I can identify several instances of `aria-label` being present on a `<div>` elements, which have no implicit or explicit role. Simply put,` aria-label` is not allowed on a `<div>`, `<span>` or several other generic elements, unless they have a role explicitly added. This is a misunderstanding of ARIA, the `<div>` elements here are simply wrapping elements, used for layout, they have "contents" contained in another node, the contents would be read anyway without adding `aria-label`s unnecessarily to unsupported nodes. I would have previously filed this under 4.1.1 Parsing (A), but as that is no longer a failure and this is not an interactive element so it cannot be 4.1.2 Name, Role, Value (A). The issue here is some screen readers will read the `aria-label` and then read the content, thus creating unnecessary verbosity.
+Within the source code I can identify several instances of `aria-label` being present on a `<div>` elements, which have no implicit or explicit role. Simply put,` aria-label` is not allowed on a `<div>`, `<span>` or several other generic elements, unless they have a role explicitly added. This is a misunderstanding of ARIA, the `<div>` elements here are simply wrapping elements, used for layout, they have "contents" contained in another node, the contents would be read anyway without adding `aria-label`s unnecessarily to unsupported nodes. I would have previously filed this under 4.1.1 Parsing (A), but as that is no longer a failure and this is not an interactive element so it cannot be 4.1.2 Name, Role, Value (A), 1.3.1 is the new Parsing for static content. The issue here is some screen readers will read the `aria-label` and then read the content, thus creating unnecessary verbosity.
 
 ![Screenshot of the DevTools, which is displaying the ARIA misuse on just one of the slides. ARIA labels are used twice on div elements, where they do not need to be. I have annotated the screenshot with red boxes and arrows, to aid in visual identification of the issue](src/guideImg/dl-screenshot-discoveruni-ariamisuse.png)
 
@@ -211,9 +213,27 @@ Within the source code I can identify several instances of `aria-label` being pr
 
 The solution is super simple here: Remove the `aria-label`s, they are not required at all.
 
+#### Advisory
+
+The current widget has visually hidden text that informs a screen reader user that the CTA link opens in a new tab, surely this information is useful to everybody? A voice user may see this if they instruct their software to "Show labels", but typically, only a screen reader user will benefit from this and accessibility is not just for screen reader users, it's for all people with disabilities. Even non-disabled people would benefit from knowing a link opens in a new tab.
+
+Generally speaking, we should leave that choice up to users, there's multiple ways a user can open a link in a new tab:
+
+* <kbd>Cmd</kbd> or <kbd>Ctrl</kbd> along with click or <kbd>Enter</kbd>
+* Middle mouse button
+* Right click and "Open in new Tab"
+
+If we use `target="_blank"`, we remove that choice for everybody, so everybody has to open in a new tab and they may not want to or it can become disorienting.
+
+##### Recommendation
+
+For best practice, do not force users to view the linked page in a new tab, simply remove "`target="_blank"`, along with the visually hidden text, as that would no longer make sense.
+
+At the very least, the hidden instruction should be presented visually, in a way that makes sense to sighted users, there is a somewhat ubiquitous icon for this, but giving users the choice is a much better approach.
+
 #### 1.3.2 Meaningful Sequence (A)
 
-The issue here is caused by the transition, when a user of a screen reader is navigating with cursor keys, they can get into the iFrame to read the text within, the screen reader starts to read the text and then the slide they were on has `display: none;` applied, which can then alter the meaning and order of the information, in unexpected ways.
+The issue here is caused by the transition when a user of a screen reader is navigating with cursor keys, they can get into the iFrame to read the text within, the screen reader starts to read the text and then the slide they were on has `display: none;` applied, which can then alter the meaning and order of the information, in unexpected ways.
 
 Using VoiceOver and Safari on MacOS (latest versions at the time of writing), when I use the VO key and cursors to get into the iFrame, it does start to read the statistic, however, as soon as the transition occurs, the virtual cursor position is then ejected from the iFrame and placed on the text node immediately above it.
 
@@ -224,17 +244,17 @@ Using NVDA (2023.2) and Firefox (latest version, at the time of writing) on Wind
 * Cursor into iFrame
 * NVDA reads the percentage of the first statistic, the currently visible statistic
 * The slide transition occurs
-* NVDA reads the text of the 2nd transition (the new slide that is now visible)
+* NVDA reads the text of the 2nd slide (the new slide that is now visible)
 
 This results in inaccurate information being presented to the user as they are hearing a combination of 2 statistics which could be misleading and therefore, alters the meaning of the text.
 
 As the stats are both regulatory and help users in making informed decisions, it's absolutely vital that they are communicated to screen reader users in a comparable way and the current implementation is likely both incredibly confusing and frustrating for screen reader users as the sequence or meaning is different than what is supplied visually.
 
-This would not be remedied by a pause button, sequence or meaning would still be incorrect. Consider a screen reader user entering the frame, they discover the first item, which I previously recommended to be a pause button. They pause the slides and then proceed to listen to the text, where they will hear a full statistic, but then what about the next statistic? the user would need to move back to the pause button and click it again to play the transition, they'd move into the slide to read the statistic, only it changes and they are either ejected or hear a mismatch of 2 slides.
+This would not be remedied by a pause button, as the sequence or meaning would still be incorrect. Consider a screen reader user entering the frame, they discover the first item, which I previously recommended to be a pause button. They pause the slides and then proceed to listen to the text, where they will hear a full statistic, but then what about the next statistic? the user would need to move back to the pause button and click it again to play the transition, they'd move into the slide to read the statistic, only the transition occurs and they are either ejected or hear a mismatch of 2 slides.
 
 In this implementation, there is no announcement that anything has changed, I'd be averse to recommend that on the basis that it would get pretty noisy, pretty quickly.
 
-There are no controls for a user to manually move to the next or previous slide, like those that would be present in a carousel, so that is not an option for our users, also, it would be overkill to create a full-blown carousel for what is in affect, 3 sentences.
+There are no controls for a user to manually move to the next or previous slide, like those that would be present in a carousel, so that is not an option for our users, also, it would be overkill to create a full-blown carousel for what is in affect just a few small sentences.
 
 ##### Recommendation 1
 
@@ -244,15 +264,15 @@ Personally, I believe this slide transition effect is overkill for a few small s
 
 ###### The pros
 
-The first solution I thought of was to hide the actual slides from assistive technologies and use a visually hidden node to provide exactly the same information back and this would be positioned before the slides in the DOM. There are both pros and cons to this approach:
+The first solution I thought of was to hide the actual slides from assistive technologies and use a visually hidden node to provide exactly the same information  and this would be positioned before the slides in the DOM. There are both pros and cons to this approach:
 
-As the slides would no longer be exposed to assistive technologies, as we would use aria-hidden, a user would not be able to cursor into them, so their virtual cursor could not be hijacked. As we would be providing the exact same text on a visually hidden node that is outside of the transition, a transition could not alter the order or meaning of the statistic.
+As the slides would no longer be exposed to assistive technologies, as we would use `aria-hidden`, a user would not be able to cursor into them, so their virtual cursor could not be hijacked. As we would be providing the exact same text on a visually hidden node that is outside of the transition, a transition could not alter the order or meaning of the statistic.
 
 ###### The cons
 
-Obviously there are sighted screen reader users, some of whom use a mouse, if they are using their mouse to have their screen reader read out content on the page, should they click on the iFrame, then they will not hear the statistic as we have removed it from the accessibility tree. We could get a little clever with CSS to overlay the slide with our visually hidden text, so when the click occurs, it would read out our 3 statistics, but I still feel this could be a little confusing.
+Obviously there are sighted screen reader users, some of whom use a mouse, if they are using their mouse to have their screen reader read out content on the page, should they click on the iFrame, then they will not hear the statistic as we have removed it from the accessibility tree. We could get a little clever with CSS to overlay the slide with our visually hidden text, so when the click occurs, it would read out our 3 statistics, but I still feel this could be a little confusing. We could get smart with JS and detect a mouse click event to switch the aria-hidden between the visible and hidden nodes, but I don't feel the juice is worth the squeeze here, it's a few small sentences, why hide any?
 
-We'd still need a pause button, if that pause button is focusable a screen reader user may become a little confused when they encounter a button that seemingly has no purpose, especially where I earlier recommended adding it, along with the slides into a group, which would now only contain the button in the accessibility tree.
+We'd still need a pause button, if that pause button is focusable a screen reader user may become a little confused when they encounter a button that seemingly has no purpose, especially where I earlier discussed it, along with the slides into a group, which would now only contain the button in the accessibility tree.
 
 An example could be something like so (button and group not present):
 
@@ -270,20 +290,17 @@ An example could be something like so (button and group not present):
 </iframe>
 ```
 
-This may have been a good solution, had there been no button, but as we need the button to pause/resume the animation, I discounted this approach in that it would be solving the main issue, but introducing another. I would not want to hide the button from assistive technologies and prevent it being focusable, as this will cause problems for voice users, sighted screen reader users and others.
+This may have been a good solution, had there been no button, but as we need the button to pause/resume the animation, I discounted this approach in that it would be solving the main issue, but introducing another. I would not want to hide the pause button from assistive technologies or prevent it being focusable, as this will cause problems for voice users, sighted screen reader users and others.
 
 ##### Recommendation 2
 
-I feel that this is somewhat over-engineered, the aim of the iFrame is to provide a small number of statistics to users, each statistic is a small sentence and may have a different source than the previous statistic. Does this really need to be animated, can't we just show the whole thing? I'm no designer, but this does not feel like a challenge to me.
+I feel that this widget is somewhat over-engineered and has an animation for animation's sake and no other valid reason. The aim of the iFrame is to provide a small number of statistics to users, each statistic is a small sentence and may have a different source than the previous statistic. Does this really need to be animated, can't we just show the whole thing? I'm no designer, but this does not feel like a challenge to me.
 
-The widget never takes up the full screen width, so we can utilise some of that extra space. I will concede that I don't know how many stats could be provided, I'm basing this off there always being 3 stats, maybe there are implementations out there with many more?
+The widget never takes up the full screen width, so we can utilise some of that extra space. I will concede that I don't know how many stats could be provided, I'm basing this off there always being just a few stats, maybe there are implementations out there with many more?
 
 Let's have a stab at it and see how we can improve this, here's the HTML:
 
 ```html
-<!-- Add a better title, one that makes a little more sense to a user -->
-<iframe title="Business management courses statistics">
-  <!-- iFrame head and body omitted for brevity -->
 <article class="uniStat__container">
     <div class="uniStat__stat-wrapper">
       <ul class="uniStat__list">
@@ -308,17 +325,10 @@ Let's have a stab at it and see how we can improve this, here's the HTML:
         <img class="uniStat__cta-img" src="https://discoveruni.gov.uk/static/images/logos/widget_logo_english.svg" alt="Discover Uni logo">
       </div>
       <div>
-        <a class="uniStat__cta-link" href="" >See course data
-          <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M15 0a1.5 1.5 0 0 0 0 3h3.9l-9.5 9.4a1.5 1.5 0 0 0 2.2 2.2L21 5v4a1.5 1.5 0 0 0 3 0V1.5c0-.8-.7-1.5-1.5-1.5ZM3.7 1.5A3.8 3.8 0 0 0 0 5.3v15c0 2 1.7 3.7 3.8 3.7h15c2 0 3.7-1.7 3.7-3.8V15a1.5 1.5 0 0 0-3 0v5.3c0 .4-.3.7-.8.7h-15a.8.8 0 0 1-.7-.8v-15c0-.4.3-.7.8-.7H9a1.5 1.5 0 0 0 0-3Zm0 0"/>
-          </svg>
-          <span class="visually-hidden"> opens in new tab</span>
-        </a>
+        <a class="uniStat__cta-link" href="https://www.discoveruni.gov.uk/course-details/10007165/U09FUBMA/FullTime/">See course data</a>
       </div>
     </div>
   </article>
-  
-</iframe>
 ```
 
 And here's the CSS:
@@ -416,6 +426,9 @@ body {
 }
 
 .uniStat__cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
   background: linear-gradient(145deg, rgba(36, 131, 132, 1), rgba(39, 134, 93, 1));
   padding: .75rem;
   color: #FFF;
@@ -424,6 +437,10 @@ body {
 .uniStat__cta-text {
   line-height: 1.5;
   font-size: 1rem;
+}
+
+.uniStat__cta-img {
+  padding-top: .5rem;
 }
 
 .uniStat__cta-link {
@@ -458,11 +475,15 @@ body {
   }
   
   .uniStat__cta-wrapper {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-  } 
+  }
+  
+  .uniStat__cta-img {
+    padding-top: 0;
+  }
 }
 ```
 
@@ -472,19 +493,20 @@ I'm not going to explain every line of CSS and HTML here, like I usually would, 
 
 * I added the 3 slides into a list, so for users of screen readers, they know how many stats are present (if their screen reader reads out lists without bullets, that is)
 * I display all 3 stats, always, no transitions here
-* I moved the call to action panel to the bottom of the frame, so utilise horizontal width and reduce clutter
+* I moved the call to action panel to the bottom of the frame, so make better use of the horizontal width and prevent the sentences of text becoming a little too squished
 * I removed all of the unnecessary ARIA
-* I added a link at the end that references a footnote, there are 2 sources in the footnotes and they are correctly linked
-* I was reluctant to add links, I just wanted to create an aria-describedby reference on the <li> element, as I seemed to think that would work, but it isn't actually announced, so given that I just wanted the description, I was pretty much constrained to using an interactive element and only an <a> would be appropriate here, as the <a> has aria-describedby, a screen reader user can at least get the description without clicking on the link
+* I added a more descriptive `title` to the iFrame
+* I added a link at the end of each stat that references a footnote, there are 2 sources in the footnotes and they are correctly linked
+* I was reluctant to add links, I just wanted to create an `aria-describedby` reference on the `<li>` element, as I mistakingly thought that would work, but it isn't actually announced, so given that I just wanted the description to be announced by a screen reader, I was pretty much constrained to using an interactive element and only an `<a>` would be appropriate here. Now, as the `<a>` has `aria-describedby`, a screen reader user can at least hear the description without clicking on the link
 * I added the word "logo" to the logo's alt text, just to make it a little clearer
-* I added an icon into the call to action link, as only screen reader users would have been advised about the "opens in new tab" behaviour, which is not fair on others, so I used the typicall icon for opening in a new tab, which the majority of sighted users will understand, as it's present on their operating systems and email clients etc
+* I added removed the target="_blank" and the visually hidden text, as user choice is always key, so it is best to open in the same tab by default
 
 ###### The CSS
 
 * I styled the percentage the same, it may look different on CodePen, as I didn't install the font
 * I centred the text vertically, against the percentage, as this looks much cleaner to me
 * I styled the footnote links using the same green as the text, but ensured I added a more prominent underline
-* I used a ::before pseudo element to increase the click/tap area of the links to the footnotes, as they were tiny, I actually opted out of using the <sup> element as it doesn't make any difference to users and I didn't want it to be a tiny superscript link anyway
+* I used a `::before` pseudo element to increase the click/tap area of the links to the footnotes, as they were tiny, I actually opted out of using the `<sup>` element as it doesn't make any difference to users and I didn't want it to be a tiny superscript link anyway
 * I built it mobile first, using the same existing breakpoint as the original (768px)
 * I made the iFrame a little wider, as there was plenty of free space across several implementations I looked at
 * I added the same focus style as we created earlier, for the CTA link
@@ -494,13 +516,13 @@ I'm not going to explain every line of CSS and HTML here, like I usually would, 
 
 #### Overview
 
-As I stated, I am not a designer, but I have tried my best to present this widget by keeping as true as possible to the existing design. Of course, I had to make some necessary design changes here and there and I also made a couple of design enhancements, where it improved readability, maybe an actual designer would have a different approach, but that's cool, because firstly the task was to fix the accessibility and secondly, because I don't care, because my "design" isn't the broken "design".
+As I stated, I am not a designer, but I have tried my best to present this widget by keeping as true as possible to the existing design. Of course, I had to make some necessary design changes here and there and I also made a couple of design enhancements, where it improved readability, maybe an actual designer would have a different approach, but that's cool, because firstly the task was to fix the accessibility and secondly, because my "design" isn't the broken "design".
 
-Accessibility-wise, there are no errors present here, at all. Sure, it is in an iFrame, which isn't perfect, but obviously we could not change that. We now have a nice static list, which contains our 3 stats, the 2 footnotes are sitting below the list and have visual identifiers and they can also be reached with the links for the stats, but it's likely nobody will need to do that, as there is an aria-description on each link.
+Accessibility-wise, there are no errors present here, at all. Sure, it is in an iFrame, which isn't perfect, but obviously we could not change that. We now have a nice static list, which contains our 3 stats, the 2 footnotes are sitting below the list and have visual identifiers. The footnotes can also be reached with the links for the stats, but it's likely nobody will need to do that, as there is an `aria-describedby` on each link.
 
-Overall, i'm quite happy with my approach here, it feels cleaner, clearer and I know that folk aren't going to have their virtual cursor snatched from them by a transition of content.
+Overall, I'm quite happy with my approach here, it feels cleaner, clearer and I know that folk aren't going to have their virtual cursor snatched from them by a transition of content.
 
-I haven't tested this in all browsers, I used Chrome, Firefox and Safari on a Mac, everything is up to date and I used Chrome on Windows, the browser is up to date (at the time of writing). I also only used VoiceOver and NVDA. So, my solution will probably be fine, but there may be some minor display issues
+I haven't tested this in all browsers, I used Chrome, Firefox and Safari on a Mac, everything is up to date and I used Chrome on Windows, the browser is up to date (at the time of writing). I also only used VoiceOver and NVDA. So, my solution will probably be fine, but there may be some minor display issues, I haven't tested on Android or iOS, not because I'm lazy, but just because I don't work for the government department that created this.
 
 #### The result
 
@@ -512,3 +534,17 @@ Obviously I can't not show the result, so here's the CodePen:
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+Maybe some folks don't want to delve into the CodePen, so here's 2 images, one at mobile (320px) view and one at a larger view (960px)
+
+![Screenshot of the mobile view of the Discover Uni widget. The widget fits into the viewport, it flows into a single column and the call to action is presented at the bottom](src/guideImg/dl-screenshot-discoveruni-mobile-solution.png)
+
+![Screenshot of the small desktop view of the Discover Uni widget. The widget fits into the viewport, the statistics fit on their own lines and the call to action panel is at the bottom, the call to action link sits neatly to the right of that container](src/guideImg/dl-screenshot-discoveruni-desktop-solution.png)
+
+#### Windows High Contrast Mode
+
+I didn't need to add any media queries for WHCM, but I did check it over and everything looks OK. Obviously background colours are not visible, but that's a choice Microsoft made, based upon user needs, so I haven't forced them back on, as that would be counter-intuitive.
+
+## Wrapping up
+
+We've covered quite a bit here and hopefully it's clear that sometimes it's not worth over-complicating things with transitions and all that jazz, especially when there is hardly any content in the first place. There could be situations out there where there are more stats to display and my solution isn't the best, I haven't read the regulation that requires this widget to be displayed, but surely a wrapping the iFrame in a disclosure widget would be allowed, that would also give users a nice way to skip the iFrame altogether.
