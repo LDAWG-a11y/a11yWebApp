@@ -499,7 +499,7 @@ I'm not going to explain every line of CSS and HTML here, like I usually would, 
 * I added a link at the end of each stat that references a footnote, there are 2 sources in the footnotes and they are correctly linked
 * I was reluctant to add links, I just wanted to create an `aria-describedby` reference on the `<li>` element, as I mistakingly thought that would work, but it isn't actually announced, so given that I just wanted the description to be announced by a screen reader, I was pretty much constrained to using an interactive element and only an `<a>` would be appropriate here. Now, as the `<a>` has `aria-describedby`, a screen reader user can at least hear the description without clicking on the link
 * I added the word "logo" to the logo's alt text, just to make it a little clearer
-* I added removed the target="_blank" and the visually hidden text, as user choice is always key, so it is best to open in the same tab by default
+* I added removed the `target="_blank"` and the visually hidden text, as user choice is always key, so it is best to open in the same tab by default
 
 ###### The CSS
 
