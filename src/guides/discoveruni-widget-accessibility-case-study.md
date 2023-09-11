@@ -11,11 +11,13 @@ tags:
   - Audit
   - Third-party
   - Remediation
+  - Component
+  - Higher Education
 isGuide: true
 ---
 ## Intro
 
-We're perhaps venturing away from the typical Guides we usually write, in that we'd ordinarily base it upon something we have seen and not name the culprits or provide a way to identify them. This time is a little different, we are going to discuss a widget that the Higher Education sector in the UK must display on course pages, due to regulations.
+The DiscoverUni widget is an Office for Students (OfS) mandated component Higher Education Institutes in the UK must display on course pages.
 
 Essentially the DiscoverUni widget is an iFrame embed, it may appear on course specific pages and within the embed it provides information such as:
 
@@ -23,7 +25,19 @@ Essentially the DiscoverUni widget is an iFrame embed, it may appear on course s
 * The percentage of students that thought were happy with the course delivery
 * The percentage of students that were in related employment within a certain amount of time after completing the course
 
-The first thing to take note of is the domain for DiscoverUni, which is a .gov.uk domain, so as this domain is reserved for government and is part of the Office for Students, then it really is on them to make it accessible. Also, as the content is in an iFrame, it can be super difficult to fix the accessibility issues with DOM manipulation, as it exists on another site, but then why would a couple of hundred institutions be required to patch it up with JS, when it could simply be fixed at source and fixed once?
+The first thing to take note of is the domain for DiscoverUni, which is a .gov.uk domain, so as this domain is reserved for government and is part of the Office for Students, then it really is on them to make it accessible centrally rather than the responsibility lying with individual universities. Also, as the content is in an iFrame, it can be super difficult to fix the accessibility issues with DOM manipulation, as it exists on another site, but then why would a couple of hundred institutions be required to patch it up with JS, when it could simply be fixed at source and fixed once?
+
+### Public Sector Accessibility Regulations coverage
+
+The reason we decided to look at this widget and document our testing and fix approach is because this has been regularly flagged by the monitoring body under the [Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility Regulations 2018](https://www.legislation.gov.uk/uksi/2018/952/pdfs/uksi_20180952_en.pdf).
+
+The issue here is the competing requirements to present accessible websites while also being required to incorporate the DiscoverUni widget onto course pages.
+
+The initial expectation is that the DiscoverUni widget is out of scope for universities' responsibilities under the [3rd party content exemption](https://www.makethingsaccessible.com/guides/3rd-party-content-responsibilities/) as it is neither funded nor developed by the universities and they have no control to deliver technical fixes to it but must keep it on their website.
+
+If GDS do advise that universities are responsible despite lack of ownership or control,  we would recommend universities consider disproportionate burden claims after having flagged the issue with OfS and documenting the response.
+
+The rest of the guide detailing the problems with the Discover Uni widget including technical details. We hope the guide will provide a consistent answer on this topic which universities can link to from their accessibility statements.
 
 ## So what is the widget?
 
@@ -43,7 +57,7 @@ First thing's first, it's an iFrame so we check for a `title` attribute on the i
 
 #### 1.4.3 Contrast (Minimum) (AA)
 
-The text within (yes, it is text and not an image) has the colour of green (#307E7E) and a background colour of white (#FFF), which gives us a contrast ratio of 4.76:1 and this passes for both small text and large text. This could possibly be a colour we have selected, so other organisations may have different results.
+The text within (yes, it is text and not an image) has the colour of green (#307E7E) and a background colour of white (#FFF), which gives us a contrast ratio of 4.76:1 and this passes for both small text and large text.
 
 The static section that contains the CTA (Call to action) link does have a gradient background, with white text, so I check that again and both colours used in the gradient do pass, albeit only just with a ratio of 4.51:1
 
@@ -105,13 +119,13 @@ In this instance, our final result does not use this method, it would fix that i
 
 #### 2.4.7 Focus Visible (AA)
 
-Tabbing to the link within the iFrame I can see there is no visible focus indicator present, so a user would not know where focus is. Inspecting the styles for the element I can easily identify the issue here when I add the `:focus` state in the Devtools, it has `:focus {outline: 0;}` set and no other form of visible focus indicator, in essence, they have removed the browser's default focus indicator, which would have been better than nothing.
+Tabbing to the link within the iFrame I can see there is no visible focus indicator present, so a user would not know where focus is. Inspecting the styles for the element I can identify the issue here when I add the `:focus` state in the Devtools, it has `:focus {outline: 0;}` set and no other form of visible focus indicator, in essence, they have removed the browser's default focus indicator, which would have been better than nothing.
 
 ![Screenshot of the link, which currently has keyboard focus forced upon it, in the DevTools, which also form part of the screenshot. In the CSS, it is evident that the focus indicator has been removed, intentionally](src/guideImg/dl-screenshot-discoverunifocus.png)
 
 ##### Recommendation
 
-I would expect much better here, intentionally not supplying a focus indicator after removing the browser's default indicator is obviously a bad choice. This is an easy fix, I'm going to make the assumption that the colours are predetermined by the team that created the widget and each institution cannot change them (I did find another implementation on another university and the colours were the same, so I'm confident colours are not customisable). Here's the current CSS for the link (I'm just going to pop all styles into 1 selector, for simplicity's sake):
+Intentionally not supplying a focus indicator after removing the browser's default indicator is a bad choice. This is an easy fix, I'm going to make the assumption that the colours are predetermined by the team that created the widget and each institution cannot change them (I did find another implementation on another university and the colours were the same, so I'm confident colours are not customisable). Here's the current CSS for the link (I'm just going to pop all styles into 1 selector, for simplicity's sake):
 
 ```css
 .kis-widget__cta {
@@ -207,9 +221,9 @@ Just to visualise what I have done, I will show 2 screenshots, the first is the 
 
 With just a few lines of CSS it is now clear this link has keyboard focus as the outline and underline do help a user to perceive the visual change. It could of course be improved further, I'd probably change the colour of the background and ensure the text changed to maintain an acceptable contrast, but that's my own personal preference.
 
-#### 1.3.1 Info and Realtionships (A)
+#### 1.3.1 Info and Relationships (A)
 
-Within the source code I can identify several instances of `aria-label` being present on a `<div>` elements, which have no implicit or explicit role. Simply put,` aria-label` is not allowed on a `<div>`, `<span>` or several other generic elements, unless they have a role explicitly added. This is a misunderstanding of ARIA, the `<div>` elements here are simply wrapping elements, used for layout, they have "contents" contained in another node, the contents would be read anyway without adding `aria-label`s unnecessarily to unsupported nodes. I would have previously filed this under 4.1.1 Parsing (A), but as that is no longer a failure and this is not an interactive element so it cannot be 4.1.2 Name, Role, Value (A), 1.3.1 is the new Parsing for static content. The issue here is some screen readers will read the `aria-label` and then read the content, thus creating unnecessary verbosity.
+Within the source code I can identify several instances of `aria-label` being present on a `<div>` elements, which have no implicit or explicit role. Simply put, `aria-label` is not allowed on a `<div>`, `<span>` or several other generic elements, unless they have a role explicitly added. This is a misunderstanding of ARIA, the `<div>` elements here are simply wrapping elements, used for layout, they have "contents" contained in another node, the contents would be read anyway without adding `aria-label`s unnecessarily to unsupported nodes. I would have previously filed this under 4.1.1 Parsing (A), but as that is no longer a failure and this is not an interactive element so it cannot be 4.1.2 Name, Role, Value (A), 1.3.1 is the new Parsing for static content. The issue here is some screen readers will read the `aria-label` and then read the content, thus creating unnecessary verbosity.
 
 ![Screenshot of the DevTools, which is displaying the ARIA misuse on just one of the slides. ARIA labels are used twice on div elements, where they do not need to be. I have annotated the screenshot with red boxes and arrows, to aid in visual identification of the issue](src/guideImg/dl-screenshot-discoveruni-ariamisuse.png)
 
@@ -252,7 +266,7 @@ Using NVDA (2023.2) and Firefox (latest version, at the time of writing) on Wind
 
 This results in inaccurate information being presented to the user as they are hearing a combination of 2 statistics which could be misleading and therefore, alters the meaning of the text.
 
-As the stats are both regulatory and help users in making informed decisions, it's absolutely vital that they are communicated to screen reader users in a comparable way and the current implementation is likely both incredibly confusing and frustrating for screen reader users as the sequence or meaning is different than what is supplied visually.
+As the stats are both mandatory and help users in making informed decisions, it's absolutely vital that they are communicated to screen reader users in a comparable way and the current implementation is likely both incredibly confusing and frustrating for screen reader users as the sequence or meaning is different than what is supplied visually.
 
 This would not be remedied by a pause button, as the sequence or meaning would still be incorrect. Consider a screen reader user entering the frame, they discover the first item, which I previously recommended to be a pause button. They pause the slides and then proceed to listen to the text, where they will hear a full statistic, but then what about the next statistic? the user would need to move back to the pause button and click it again to play the transition, they'd move into the slide to read the statistic, only the transition occurs and they are either ejected or hear a mismatch of 2 slides.
 
@@ -501,7 +515,7 @@ I'm not going to explain every line of CSS and HTML here, like I usually would, 
 * I removed all of the unnecessary ARIA
 * I added a more descriptive `title` to the iFrame
 * I added a link at the end of each stat that references a footnote, there are 2 sources in the footnotes and they are correctly linked
-* I was reluctant to add links, I just wanted to create an `aria-describedby` reference on the `<li>` element, as I mistakingly thought that would work, but it isn't actually announced, so given that I just wanted the description to be announced by a screen reader, I was pretty much constrained to using an interactive element and only an `<a>` would be appropriate here. Now, as the `<a>` has `aria-describedby`, a screen reader user can at least hear the description without clicking on the link
+* I was reluctant to add links, I just wanted to create an `aria-describedby` reference on the `<li>` element, as I mistakenly thought that would work, but it isn't actually announced, so given that I just wanted the description to be announced by a screen reader, I was pretty much constrained to using an interactive element and only an `<a>` would be appropriate here. Now, as the `<a>` has `aria-describedby`, a screen reader user can at least hear the description without clicking on the link
 * I added the word "logo" to the logo's alt text, just to make it a little clearer
 * I added removed the `target="_blank"` and the visually hidden text, as user choice is always key, so it is best to open in the same tab by default
 
