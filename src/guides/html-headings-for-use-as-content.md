@@ -76,6 +76,10 @@ It is okay to go from an `<h3>` to an `<h2>` when starting a new section:
 
 Each heading has a default size but this can be changed with style and using CSS font-size property.
 
+## Length
+
+While technically there is no limit to the length of a heading, the heading should be not be long as multiple headings will be read by assistive technology.
+
 ## Page organisation
 
 Use headings for labelling regions on the page, by associating the heading with the specific page region by using the aria-labelledby to point to the existing element using its unique id. 
