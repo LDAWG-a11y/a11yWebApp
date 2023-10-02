@@ -78,7 +78,7 @@ Each heading has a default size but this can be changed with style and using CSS
 
 ## Length
 
-While technically there is no limit to the length of a heading, the heading should be not be long as multiple headings will be read by assistive technology.
+While technically there is no limit to the length of a heading, the heading should be not be long as multiple headings will be accessed by assistive technology so they should not take a long time to be delivered to the user.
 
 ## Page organisation
 
