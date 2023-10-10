@@ -9,6 +9,7 @@ tags:
   - PSBAR
   - Regulations
   - Exemptions
+  - Third-party
 file: /docs/new-3rd-part-content-responsibility-matrix.xlsx
 isGuide: true
 ---
