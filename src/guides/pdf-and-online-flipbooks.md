@@ -10,6 +10,8 @@ tags:
   - PDF
   - Content
   - Products
+  - Third-party
+  - Component
 isGuide: true
 ---
 PDF and Online Flipbooks are website addons used to make documents on a website more visually appealing by evoking the tactile feeling of “page flipping”.
