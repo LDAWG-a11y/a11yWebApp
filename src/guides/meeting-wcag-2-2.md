@@ -16,17 +16,13 @@ isGuide: true
 ---
 ## Intro to WCAG 2.2
 
-<div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">This guide is subject to change, as the specification may still undergo some changes, but we will update this guide as soon when and where necessary</span></div>
-
-[WCAG 2.2](https://www.w3.org/TR/WCAG22/) is currently at the "Proposed Recommendation" stage and it appears it will become the new standard in the coming days or weeks (This guide was last edited 18th August 2023).
-
 WCAG currently has 9 additional success criteria (SC) or requirements to meet, in order to "conform to the new 2.2 standard", which are:
 
 * 2 new Level A requirements
 * 4 new Level AA requirements
 * 3 new Level AAA requirements
 
-In addition, one of the previous requirements is being removed, which is [SC 4.1.1 Parsing (Level A)](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=122%2C241%2C244%2C247%2C251%2C312%2C322%2C332%2C412%2C246#parsing), as the working group felt this requirement did not accurately explain the intent and has been the source of much confusion.
+In addition, one of the previous requirements has been removed, which is [SC 4.1.1 Parsing (Level A)](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=122%2C241%2C244%2C247%2C251%2C312%2C322%2C332%2C412%2C246#parsing), as the working group felt this requirement did not accurately explain the intent and has been the source of much confusion.
 
 ## How does this affect the UK public sector?
 
@@ -35,7 +31,7 @@ This may come as complete bombshell, but this change can only be a good thing fo
 The key takeaways from Cabinet Office's amendments to the regulations are:
 
 * All those organisations that fall under the PSBAR regs will need to meet WCAG 2.2 at Level AA
-* The monitoring body will start testing those sites for WCAG 2.2 compliance a year after WCAG 2.2 becomes the standard
+* The monitoring body will start testing those sites for WCAG 2.2 compliance a year after WCAG 2.2 becomes the standard (So October 2024)
 
 That gives those of us affected by the regulation change a year or so to be WCAG 2.2 Level AA compliant, which definitely won't be as much work as when the initial regulations came into law back in 2018. There are a few of reasons I think this will be a relatively straightforward transition from WCAG 2.1:
 
