@@ -26,7 +26,7 @@ Click on the following sections to expand them:
 Colleges create a range of content, resources and learning materials. This includes HTML web content, PDFs, PowerPoints, etc. Our campaign aims to maximise accessibility for documents in all formats produced by Further Education colleges. Make Things accessible has a number of guides on improving content accessibility and we will link to other good sources as we find them:
 
 * [Basics of accessible documents](https://www.makethingsaccessible.com/guides/accessible-document-basics/)
-* [How to make PDF files more accessible, and the different standards of PDF files](https://www.makethingsaccessible.com/guides/wait-there-s-more-than-one-type-of-pdf-pdf-standards-and-how-they-differ-in-terms-of-accessibility/)
+* [How to make PDF files more accessible, and the different standards of PDF files](https://www.makethingsaccessible.com/guides/pdf-standards-and-how-they-differ-in-terms-of-accessibility/)
 * [Making accessible lectures, tutorials and sessions](https://www.makethingsaccessible.com/guides/accessible-lectures-tutorials-and-sessions/)
 * [Microsoft guide on how to make PowerPoint files more accessible to people with disabilities](https://support.microsoft.com/en-us/office/make-your-powerpoint-presentations-accessible-to-people-with-disabilities-6f7772b2-2f33-4bd2-8ca7-dae3b2b3ef25)
 * [Captioning and transcripts guide for making pre-recorded videos](https://www.makethingsaccessible.com/guides/captions-and-transcripts-for-use-in-content/)
