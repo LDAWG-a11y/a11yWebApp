@@ -726,7 +726,7 @@ So that the table looks like this
 
 Screen reader support for `scope="rowgroup"` has historically been worse than support for `scope="colgroup"`, so for maximum accessibility, especially in terms of backward compatibility, it is best to orient the table in a configuration that allows `scope="colgroup"`, and which does not require `scope="rowgroup"`.
 
-### Making a table with tfooter
+### Making a table with tfoot
 
 ```html
 <table>
