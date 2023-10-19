@@ -740,43 +740,43 @@ Screen reader support for `scope="rowgroup"` has historically been worse than su
         </tr>
     </thead>
     <tbody>
-        <tr class="">
+        <tr>
             <th scope="row">09/10/2023</th>
             <td>35</td>
             <td>4,141.00</td>
             <td>118.31</td>
         </tr>
-        <tr class="resultsOdd">
+        <tr>
             <th scope="row">10/10/2023</th>
             <td>33</td>
             <td>1,155.00</td>
             <td>35.00</td>
         </tr>
-        <tr class="">
+        <tr>
             <th scope="row">11/10/2023</th>
             <td>13</td>
             <td>2,675.00</td>
             <td>205.77</td>
         </tr>
-        <tr class="resultsOdd">
+        <tr>
             <th scope="row">12/10/2023</th>
             <td>33</td>
             <td>6,995.00</td>
             <td>211.97</td>
         </tr>
-        <tr class="">
+        <tr>
             <th scope="row">13/10/2023</th>
             <td>14</td>
             <td>3,255.00</td>
             <td>232.50</td>
         </tr>
-        <tr class="resultsOdd">
+        <tr>
             <th scope="row">14/10/2023</th>
             <td>7</td>
             <td>495.00</td>
             <td>70.71</td>
         </tr>
-        <tr class="">
+        <tr>
             <th scope="row">15/10/2023</th>
             <td>4</td>
             <td>167.00</td>
@@ -807,43 +807,43 @@ So that the table looks like this
         </tr>
     </thead>
     <tbody>
-        <tr class="">
+        <tr>
             <th scope="row">09/10/2023</th>
             <td>35</td>
             <td>4,141.00</td>
             <td>118.31</td>
         </tr>
-        <tr class="resultsOdd">
+        <tr>
             <th scope="row">10/10/2023</th>
             <td>33</td>
             <td>1,155.00</td>
             <td>35.00</td>
         </tr>
-        <tr class="">
+        <tr>
             <th scope="row">11/10/2023</th>
             <td>13</td>
             <td>2,675.00</td>
             <td>205.77</td>
         </tr>
-        <tr class="resultsOdd">
+        <tr>
             <th scope="row">12/10/2023</th>
             <td>33</td>
             <td>6,995.00</td>
             <td>211.97</td>
         </tr>
-        <tr class="">
+        <tr>
             <th scope="row">13/10/2023</th>
             <td>14</td>
             <td>3,255.00</td>
             <td>232.50</td>
         </tr>
-        <tr class="resultsOdd">
+        <tr>
             <th scope="row">14/10/2023</th>
             <td>7</td>
             <td>495.00</td>
             <td>70.71</td>
         </tr>
-        <tr class="">
+        <tr>
             <th scope="row">15/10/2023</th>
             <td>4</td>
             <td>167.00</td>
