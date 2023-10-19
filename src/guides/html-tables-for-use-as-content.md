@@ -30,11 +30,11 @@ We do not use tables for the layout of content.
 
 ## Captions
 
-A caption acts as a heading for a table. Most screen readers will disclose the content of captions, and the captions will help users to discover a table and comprehend it's meaning and then they can decide if they want to read it. If the AT user uses “Tables Mode”, the captions are the main instrument used to identify tables. The caption is provided by the <caption> element.
-
+A caption acts as a heading for a table. Most screen readers will disclose the content of captions, and the captions will help users to discover a table and comprehend it's meaning and then they can decide if they want to read it. If the AT user uses “Tables Mode”, the captions are the main instrument used to identify tables. The caption is provided by the 
 ```html
 <caption>Bin collections</caption>
 ```
+element.
 
 ## Accessible tables that scrolls horizontally on mobile
 
