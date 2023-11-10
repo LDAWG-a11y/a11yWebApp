@@ -33,4 +33,4 @@ W﻿e will be regularly updating the website with new articles and hopefully mor
 
 ### Getting involved
 
-I﻿f you want to get involved with with project, have something to contribute, have seen something that is not quite right, or want to talk to us for any other reason please feel free to contact us at [info@makethingsaccessible.com](mailto:info@makethingsaccessible.com) on any channels listed in his author bio contact information.
+I﻿f you want to get involved with this project, have something to contribute, have seen something that is not quite right, or want to talk to us for any other reason please feel free to contact us at [info@makethingsaccessible.com](mailto:info@makethingsaccessible.com) or on any channels listed in a guide author's bio, which is present on each Guide page.
