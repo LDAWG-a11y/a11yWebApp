@@ -113,22 +113,33 @@ Also, I have wrapped them all in a <div class="widget__wrapper"> because we'll n
 
 ### Cool, JS is available, let's do the magic
 
-First we want to reference our wrapper, as we'll need this for manipulating HTML within, then store the text from each summary and the HTML that follows it, we'll declare our 2 variables globally for this and then assign them in the small function we create.
+* First we want to reference our wrapper, as we'll need this for manipulating HTML within, then we'll declare a few variables in the global scope, so we can access them from outside of our code block.
+* Then we create a loop to iterate through our collection of tabs, selecting each of the <details> element's textContent and assigning it to our btnText variable, then we grab the innerHTML of the wrapper's lastElementChild, as we know our wrapping <div> contains all of the content and we assign that to the widgetContent variable.
+* Now we need to create a template literal, which holds our new HTML string in our baseHTML variable, we do this with the addition assignment operator, to concatenate the strings for each loop iteration.
+* We are creating IDs in here, using the index of the loop and we are also adding all attributes that are used on both accordions and tabs
 
-In the function, we're just grabbing what we need from within a loop
+  * We're keeping classes and IDs the same, for simplicity
+  * Both accordions and tabs have aria-controls on the trigger, so we'll add that here and we can of course reference the panel, as we created that ID in this loop too
+  * Tabpanels have an accessible name and accordions can too, so we will use aria-labelledby and refer
+* We are ultimately going to use this baseHTML variable again later, on every occasion we change from accordions to tabs and vice versa.
+* We then set the wrapper's innerHTML to an empty string, as we want rid of the existing HTML now we have JS.
+* Finally, outside of the loop we insertAdjacentHTML after the beginning of the wrapper and the HTML we want to insert is of course the baseHTML
 
 ```javascript
 const widgetWrapper = document.querySelector('.widget__wrapper');
-let controlText, widgetContent
+let btnText, widgetContent, baseHTML = '';
 
-
-const getContents = () => {
-  widgetWrapper.querySelectorAll('details').forEach(el => {
-    controlText = el.firstElementChild.textContent;
+const createBaseHTML = () => {
+  widgetWrapper.querySelectorAll('details').forEach((el, idx) => {
+    btnText = el.firstElementChild.textContent;
     widgetContent = el.lastElementChild.innerHTML;
-  })
-  widgetWrapper.innerHTML = '';
-}
 
-getContents();
+    baseHTML += `<h3 class="widget__heading" id="btn-${idx + 1}">
+      <button class="widget__btn" aria-controls="panel-${idx + 1}">${btnText}</button></h3>
+      <div class="widget__panel" id="panel-${idx + 1}" aria-labelledby="btn-${idx + 1}">${widgetContent}</div>`;
+    widgetWrapper.innerHTML = '';
+  })
+  widgetWrapper.insertAdjacentHTML('afterbegin', baseHTML);
+}
+createBaseHTML();
 ```
