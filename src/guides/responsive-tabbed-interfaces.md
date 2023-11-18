@@ -113,33 +113,173 @@ Also, I have wrapped them all in a <div class="widget__wrapper"> because we'll n
 
 ### Cool, JS is available, let's do the magic
 
-* First we want to reference our wrapper, as we'll need this for manipulating HTML within, then we'll declare a few variables in the global scope, so we can access them from outside of our code block.
-* Then we create a loop to iterate through our collection of tabs, selecting each of the <details> element's textContent and assigning it to our btnText variable, then we grab the innerHTML of the wrapper's lastElementChild, as we know our wrapping <div> contains all of the content and we assign that to the widgetContent variable.
+* First we want to reference our wrapper, as we'll need this for manipulating the HTML within, then we'll declare a few variables in the global scope, so we can access them from outside of our code block.
+* Then we create a loop to iterate through our collection of widgets, selecting each of the <details> element's textContent and assigning it to our btnText variable, then we grab the innerHTML of the wrapper's lastElementChild, as we know our wrapping <div> contains all of the content and we assign that to the widgetContent variable.
 * Now we need to create a template literal, which holds our new HTML string in our baseHTML variable, we do this with the addition assignment operator, to concatenate the strings for each loop iteration.
 * We are creating IDs in here, using the index of the loop and we are also adding all attributes that are used on both accordions and tabs
 
   * We're keeping classes and IDs the same, for simplicity
   * Both accordions and tabs have aria-controls on the trigger, so we'll add that here and we can of course reference the panel, as we created that ID in this loop too
-  * Tabpanels have an accessible name and accordions can too, so we will use aria-labelledby and refer
-* We are ultimately going to use this baseHTML variable again later, on every occasion we change from accordions to tabs and vice versa.
-* We then set the wrapper's innerHTML to an empty string, as we want rid of the existing HTML now we have JS.
-* Finally, outside of the loop we insertAdjacentHTML after the beginning of the wrapper and the HTML we want to insert is of course the baseHTML
+  * Tabpanels have an accessible name and accordions can too, so we will use aria-labelledby and refer to the button element (I know we shouldn't use aria-labelledby on a <div> without a role, but the roles will be present, they're obviously different)
+* We are ultimately going to use this baseHTML variable again later, on every occasion we change from accordions to tabs and vice versa, I personally find this way easier than stripping individual attributes out and adding new ones for each change, maybe there's a better way?
+* We then set the wrapper's innerHTML to an empty string, as we want rid of its existing HTML as we can progressively enhance what we had.
+* Then, outside of the loop we reassign our variable with a wrapping <div> that has the class widget__controls-wrapper and the contents from our loop (we need this extra wrapping div a little later) 
+* Finally,  we use insertAdjacentHTML after the beginning of the outer wrapper and the HTML we want to insert is of course the baseHTML
 
 ```javascript
 const widgetWrapper = document.querySelector('.widget__wrapper');
 let btnText, widgetContent, baseHTML = '';
 
-const createBaseHTML = () => {
-  widgetWrapper.querySelectorAll('details').forEach((el, idx) => {
-    btnText = el.firstElementChild.textContent;
-    widgetContent = el.lastElementChild.innerHTML;
+widgetWrapper.querySelectorAll('details').forEach((el, idx) => {
+  btnText = el.firstElementChild.textContent;
+  widgetContent = el.lastElementChild.innerHTML;
 
-    baseHTML += `<h3 class="widget__heading" id="btn-${idx + 1}">
-      <button class="widget__btn" aria-controls="panel-${idx + 1}">${btnText}</button></h3>
-      <div class="widget__panel" id="panel-${idx + 1}" aria-labelledby="btn-${idx + 1}">${widgetContent}</div>`;
-    widgetWrapper.innerHTML = '';
+  baseHTML += `<h3 class="widget__heading" id="btn-${idx + 1}">
+    <button class="widget__btn" aria-controls="panel-${idx + 1}">${btnText}</button></h3>
+    <div class="widget__panel" id="panel-${idx + 1}" aria-labelledby="btn-${idx + 1}">${widgetContent}</div>`;
+  widgetWrapper.innerHTML = '';
+})
+baseHTML = `<div class="widget__controls-wrapper">${baseHTML}</div>`;
+widgetWrapper.insertAdjacentHTML('afterbegin', baseHTML);
+
+```
+
+Next we're going to create some more variables, I'm going to add new code below the previous step's to make it easier to follow along, we'll tidy this up at the end, for the final output.
+
+* We're eventually going to detect the current media query and display the correct widget, so we use the matchMedia method and store that in our mq variable, I've set the breakpoint's max-width at 767px, of course you should do what works best for your site
+* We'll store the keys that we need for the tabbed interface in an array, so we can match these later
+* We store a reference to our widget__controls-wrapper, as we need this later
+* We store the buttons and panels into collections, with the variables widgetBtns and widgetPanels, respectively
+
+```javascript
+const widgetWrapper = document.querySelector('.widget__wrapper');
+let btnText, widgetContent, baseHTML = '';
+
+widgetWrapper.querySelectorAll('details').forEach((el, idx) => {
+  btnText = el.firstElementChild.textContent;
+  widgetContent = el.lastElementChild.innerHTML;
+
+  baseHTML += `<h3 class="widget__heading" id="btn-${idx + 1}">
+    <button class="widget__btn" aria-controls="panel-${idx + 1}">${btnText}</button></h3>
+    <div class="widget__panel" id="panel-${idx + 1}" aria-labelledby="btn-${idx + 1}">${widgetContent}</div>`;
+  widgetWrapper.innerHTML = '';
+})
+widgetWrapper.insertAdjacentHTML('afterbegin', baseHTML);
+
+// New code below
+const mq = window.matchMedia('(max-width: 767px)');
+const navKeys = ['ArrowRight', 'ArrowLeft', 'Home', 'End'];
+baseHTML = widgetWrapper.innerHTML;
+widgetControlsWrapper = widgetWrapper.querySelector('.widget__controls-wrapper');
+widgetBtns = widgetWrapper.querySelectorAll('.widget__btn');
+widgetPanels = widgetWrapper.querySelectorAll('.widget__panel');
+widgetBtnsCount = widgetWrapper.querySelectorAll('.widget__btn').length - 1;
+```
+
+Just because mobile first is the best way of building sites, we'll create our accordions first as they are what will display on smaller viewports.
+
+* We're just looping through the buttons, getting a reference to the button and its index on each loop iteration
+* We want to set the first accordion to be open so we if the index is 0, set aria-expanded="true", else set it to false
+* We're setting a data attribute on the parent <h3> called data-expanded, this is just a handy hook for the CSS so we can use the sibling selector
+* Finally, we are adding a role=region to the panel, so now our aria-labelledby becomes valid and creates a landmark, when opened
+
+```javascript
+const widgetWrapper = document.querySelector('.widget__wrapper');
+let btnText, widgetContent, baseHTML = '';
+
+widgetWrapper.querySelectorAll('details').forEach((el, idx) => {
+  btnText = el.firstElementChild.textContent;
+  widgetContent = el.lastElementChild.innerHTML;
+
+  baseHTML += `<h3 class="widget__heading" id="btn-${idx + 1}">
+    <button class="widget__btn" aria-controls="panel-${idx + 1}">${btnText}</button></h3>
+    <div class="widget__panel" id="panel-${idx + 1}" aria-labelledby="btn-${idx + 1}">${widgetContent}</div>`;
+  widgetWrapper.innerHTML = '';
+})
+widgetWrapper.insertAdjacentHTML('afterbegin', baseHTML);
+
+const mq = window.matchMedia('(max-width: 767px)');
+const navKeys = ['ArrowRight', 'ArrowLeft', 'Home', 'End'];
+baseHTML = widgetWrapper.innerHTML;
+widgetControlsWrapper = widgetWrapper.querySelector('.widget__controls-wrapper');
+widgetBtns = widgetWrapper.querySelectorAll('.widget__btn');
+widgetPanels = widgetWrapper.querySelectorAll('.widget__panel');
+widgetBtnsCount = widgetWrapper.querySelectorAll('.widget__btn').length - 1;
+
+// New code below
+const createAccordions = () => {
+  widgetBtns.forEach((btn, idx) => {
+    idx === 0 ? btn.setAttribute('aria-expanded', 'true') : btn.setAttribute('aria-expanded', 'false');
+    idx === 0 ? btn.parentElement.setAttribute('data-expanded', 'true') : btn.parentElement.setAttribute('data-expanded', 'false');
   })
-  widgetWrapper.insertAdjacentHTML('afterbegin', baseHTML);
+
+  widgetPanels.forEach(panel => {
+    panel.setAttribute('role', 'region');
+  })
 }
-createBaseHTML();
+```
+
+We could run that now by calling the function createAccordions() and we could inspect the DOM to see that we do indeed now have the typically ARIA accordion markup.
+
+What we will do instead is create the tabs pattern, which requires a different roles and properties:
+
+First we're going to add role="tablist" to that inner wrapper, as the actual tabs need to be inside this role, but not the tabpanels though, so we'll need to move them out
+
+Now we're going to loop through the buttons again, we can't have the buttons' parent headings exposed as headings so we'll just neuter their semantics with role="presentation"
+
+We add role="tab" to each button
+
+As we're not using list elements, we don't get the enumeration, so we can add that back by using aria-setsize by getting the length of the widgetBtns variable, this tells us how many tabs are in our tablist and then we can get the current position of each tab from within that set by simply using the idx variable and adding +1, as the collaction is zero-based
+
+On all but the first tab we set aria-selected="false" and on the first we of course set it to true, as this is what we want to show on page load
+
+
+
+```javascript
+const widgetWrapper = document.querySelector('.widget__wrapper');
+let btnText, widgetContent, baseHTML = '';
+
+widgetWrapper.querySelectorAll('details').forEach((el, idx) => {
+  btnText = el.firstElementChild.textContent;
+  widgetContent = el.lastElementChild.innerHTML;
+
+  baseHTML += `<h3 class="widget__heading" id="btn-${idx + 1}">
+    <button class="widget__btn" aria-controls="panel-${idx + 1}">${btnText}</button></h3>
+    <div class="widget__panel" id="panel-${idx + 1}" aria-labelledby="btn-${idx + 1}">${widgetContent}</div>`;
+  widgetWrapper.innerHTML = '';
+})
+widgetWrapper.insertAdjacentHTML('afterbegin', baseHTML);
+
+const mq = window.matchMedia('(max-width: 767px)');
+const navKeys = ['ArrowRight', 'ArrowLeft', 'Home', 'End'];
+baseHTML = widgetWrapper.innerHTML;
+widgetControlsWrapper = widgetWrapper.querySelector('.widget__controls-wrapper');
+widgetBtns = widgetWrapper.querySelectorAll('.widget__btn');
+widgetPanels = widgetWrapper.querySelectorAll('.widget__panel');
+widgetBtnsCount = widgetWrapper.querySelectorAll('.widget__btn').length - 1;
+
+const createAccordions = () => {
+  widgetBtns.forEach((btn, idx) => {
+    idx === 0 ? btn.setAttribute('aria-expanded', 'true') : btn.setAttribute('aria-expanded', 'false');
+    idx === 0 ? btn.parentElement.setAttribute('data-expanded', 'true') : btn.parentElement.setAttribute('data-expanded', 'false');
+  })
+
+  widgetPanels.forEach(panel => {
+    panel.setAttribute('role', 'region');
+  })
+}
+
+// New code below
+const createTabs = () => {
+  widgetControlsWrapper.setAttribute('role', 'tablist');
+
+  widgetBtns.forEach((btn, idx) => {
+    btn.parentElement.setAttribute('role', 'presentation');
+    btn.setAttribute('role', 'tab');
+    btn.setAttribute('aria-setsize', widgetBtnsCount.length);
+    btn.setAttribute('aria-posinset', idx + 1);
+    idx === 0 ? btn.setAttribute('aria-selected', 'true') : btn.setAttribute('aria-selected', 'false');
+  
+  })
+}
 ```
