@@ -397,4 +397,4 @@ widgetControlsWrapper.addEventListener('keydown', handleTabNavigation);
 
 #### Handling focus when the viewport changes
 
-In our current implementation it will be mostly fine for users, however, there is a situation where we can do better. Should a keyboard user be focused on a tab, accordion button or anything within the panels and they change their zoom level to make reading the contents more comfortable, as it stands focus could be lost to the body element, as the element they were focused on could become hidden
+In our current implementation it will be mostly fine for users, however, there is a situation where we can do better. Should a keyboard user be focused on a tab, accordion button or anything within the panels and they change their zoom level to make reading the contents more comfortable, as it stands focus could be lost to the body element, as the element they were focused on could become hidden, that's because I hardcoded the values of which widget panel to open when the media query changes, so we will need to fix that so we don't frustrate our users and make them lose their place or focus postion.
