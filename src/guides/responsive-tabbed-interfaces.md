@@ -125,9 +125,8 @@ What I am going to do is just show each step's code on its own as opposed to the
 
 Both accordions and tabs have `aria-controls` on the trigger, so we've added that here along with a reference to the corresponding panel. Tabpanels have an accessible name and accordions can too, so we will use `aria-labelledby` and refer to the button element (I know we shouldn't use `aria-labelledby` on a `<div>` without a role, but the roles will be present on both widgets later.
 
-We are ultimately going to use this `baseHTML` variable again later, on every occasion we change from accordions to tabs and vice versa, I did consider just stripping the unneeded attributes out and adding the required ones back in for each change, but I opted for this approach as it made sense at the time, but I could be wrong, either way we are shuffling stuff about and manipulating many attributes.
-
-Finally, outside of the loop we reassign our variable with another inner wrapping `<div>` that has the class `widget__controls-wrappe`r and we add the contents from our loop 
+* We are ultimately going to use this `baseHTML` variable again later when the page initially loads
+* Finally, outside of the loop we reassign our variable with another inner wrapping `<div>` that has the class `widget__controls-wrappe`r and we add the contents from our loop 
 
 ```javascript
 const widgetWrapper = document.querySelector('.widget__wrapper');
@@ -146,15 +145,12 @@ baseHTML = `<div class="widget__controls-wrapper">${baseHTML}</div>`;
 
 #### Creating a function that resets the widgets when called
 
-* We create an initialising function `init()` and set the `innerHTML` of the `widgetWrapper` to an empty string, as we want to remove the the base HTML from the DOM
-* We then set `insertAdjacentHTML` on the widgetWrapper at the beginning of the element and the HTML string we pass through is of course our baseHTML
-* We store a reference to our `widget__controls-wrapper`, `within init()` as we need this later
+* We create an initialising function `init()` 
+* We store a reference to our `widget__controls-wrapper`, within `init()` as we need this later
 * We assign the buttons and panels into collections, with our variables `widgetBtns` and `widgetPanels`, respectively
 
 ```javascript
 const init = () => {
-  widgetWrapper.innerHTML = '';
-  widgetWrapper.insertAdjacentHTML('afterbegin', baseHTML);
   widgetControlsWrapper = widgetWrapper.querySelector('.widget__controls-wrapper');
   widgetBtns = widgetWrapper.querySelectorAll('.widget__btn');
   widgetPanels = widgetWrapper.querySelectorAll('.widget__panel');
@@ -168,17 +164,31 @@ Just because mobile first is the best way of building sites, we'll create our ac
 * We're just looping through the `widgetBtns`, getting a reference to the button and its index on each loop iteration
 * We want to set the first accordion to be open so if the index is 0, set `aria-expanded="true"`, else set `aria-expanded="false"`
 * We're setting a data attribute on the parent `<h3>` called `data-expanded`, this is just a handy hook for the CSS so we can use the sibling selector
-* Finally, we are adding a `role=region` to the panel, so now our `aria-labelledby` becomes valid and creates a landmark, when opened
+* We are also adding a `role=region` to the panel, so now our `aria-labelledby` becomes valid and creates a landmark, when opened
+* Unfortunately, tabs and accordions are quite different, so we not only have a heap of roles and properties to remove, but we need to move the actual panels about each time the viewport changes. That's because an accordion panel opens below each trigger element, whereas tabs are contained in a tablist and the panel needs to be outside of this
+
+  * We remove each of the unnecessary attributes that should not be present on an accordion
+  * We remove the attributes that should not be present on an accordion's panel
+  * We move the panels directly below their `<h3>`, by matching the value of the panels' aria-labelledby attribute with the buttons' IDs, we then use the `after()` method to hoist these up into their correct position
 
 ```javascript
 const createAccordions = () => {
+  widgetControlsWrapper.removeAttribute('role');
   widgetBtns.forEach((btn, idx) => {
     idx === 0 ? btn.setAttribute('aria-expanded', 'true') : btn.setAttribute('aria-expanded', 'false');
     idx === 0 ? btn.parentElement.setAttribute('data-expanded', 'true') : btn.parentElement.setAttribute('data-expanded', 'false');
+    btn.parentElement.removeAttribute('role');
+    btn.removeAttribute('role');
+    btn.removeAttribute('aria-setsize');
+    btn.removeAttribute('aria-posinset');
+    btn.removeAttribute('aria-selected');
+    btn.parentElement.after(widgetWrapper.querySelector(`[aria-labelledby="${btn.id}"]`));
   })
 
   widgetPanels.forEach(panel => {
     panel.setAttribute('role', 'region');
+    panel.removeAttribute('tabindex');
+    panel.removeAttribute('hidden');
   })
 }
 ```
@@ -192,6 +202,7 @@ We'll add a createTabs function which will add all of the necessary roles and pr
 * We add `role="tab"` to each button
 * As we're not using list elements, we don't get the enumeration, so we can add that back by using `aria-setsize` by getting the `length` of the `widgetBtns` collection, this tells us how many tabs are in our `tablist` and then we can get the current position of each tab from within that set by simply using the `idx` variable and adding `+1`, as the collection is zero-based
 * On all but the first tab we set `aria-selected="false"` and on the first we of course set `aria-selected="true"`, as this is what we want to show on page load
+* Then we remove all of the unnecessary `aria-expanded` from the `<button>` and the `data-expanded` attribute from its parent
 
 Finally, we'll add the required roles and properties to the panels:
 
@@ -213,6 +224,8 @@ const createTabs = () => {
     btn.setAttribute('aria-setsize', widgetBtns.length);
     btn.setAttribute('aria-posinset', idx + 1);
     idx === 0 ? btn.setAttribute('aria-selected', 'true') : btn.setAttribute('aria-selected', 'false');
+    btn.removeAttribute('aria-expanded');
+    btn.parentElement.removeAttribute('data-expanded');
   })
 
   widgetPanels.forEach((panel, idx) => {
@@ -238,6 +251,8 @@ There are two conditions where we want to determine which widget to display, on 
 * We set an `addEventListener` on our `mq` (media query) variable, which listens for a `change` in the media query and passes that event to the `determineWidgetToDisplay` function
 * we also add an `addEventListener` to the `window`, which listens for when the page has loaded using the `DOMContentLoaded` event, this time we pass the `mq` variable to the `determineWidgetToDisplay` function
 
+  * In here we set the the existing HTML of the `widgetWrapper` to an empty string and replace it with our `baseHTML` variable, with the `insertAdjacentHTML` method, using the `'afterbegin'` position, this is because on page load, we need to remove all of the <details> & <summary> elements and replace with the `baseHTML`, which is the commonly shared HTML between the 2 widget types, with the exception of the position of the `widgetControlsWrapper`
+
 If you have been following along in a code editor, should you load the page or resize it, you will notice that we always display the correct element, granted, it looks pretty bad, but the if you open up the DevTools, everything looks sweet in there and everything is updated correctly. Next, we need to make these widgets functional to mouse and keyboard events.
 
 ```javascript
@@ -257,6 +272,8 @@ mq.addEventListener('change', (evt) => {
 })
 
 window.addEventListener('DOMContentLoaded', () => {
+  widgetWrapper.innerHTML = '';
+  widgetWrapper.insertAdjacentHTML('afterbegin', baseHTML);
   determineWidgetToDisplay(mq);
 })
 ```
@@ -380,4 +397,4 @@ widgetControlsWrapper.addEventListener('keydown', handleTabNavigation);
 
 #### Handling focus when the viewport changes
 
-In our current implementation let us just imagine a user was using a keyboard, they tabbed to the tabs, but then realised the text size needed to be bigger for them to read comfortably, so they zoom the page and the "mobile view" kicks in, what would happen? As I completely replace the contents of the wrapper, focus is lost to the body element, which would be annoying to our users.
+In our current implementation it will be mostly fine for users, however, there is a situation where we can do better. Should a keyboard user be focused on a tab, accordion button or anything within the panels and they change their zoom level to make reading the contents more comfortable, as it stands focus could be lost to the body element, as the element they were focused on could become hidden
