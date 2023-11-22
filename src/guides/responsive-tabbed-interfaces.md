@@ -119,7 +119,7 @@ What I am going to do is just show each step's code on its own as opposed to the
 * We declare two variables in the global scope, that we need later `baseHTML` (which we're setting to an empty string) and also `open`, more on the latter, later
 * We're eventually going to switch the widget type based upon the current media query, so we use the `matchMedia` method and store that in our `mq` variable, I've set the breakpoint's `(max-width: 767px)`, of course you should do what works best for your site
 * Then we create an array `navKeys`, which holds all of the codes for the key presses we need in the tabbed interface pattern
-* We loop through all of our <details> elements that are present in the `widgetWrapper`, getting the index with the `idx` variable and each element with the `el` variable. As we iterate through we build a HTML string using a template literal (backticks), and use the addition assignment operator `+=`, so we concatenate that string on each iteration, this is saved to our `baseHTML` variable
+* We loop through all of our `<details>` elements that are present in the `widgetWrapper`, getting the index with the `idx` variable and each element with the `el` variable. As we iterate through we build a HTML string using a template literal (backticks), and use the addition assignment operator `+=`, so we concatenate that string on each iteration, this is saved to our `baseHTML` variable
 
   * Within that loop we add the classes and IDs, the latter of which we generate from the `idx` variable, so each ID is unique. Both the buttons and the panels need IDs to create programmatic relationships and accessible names for the panels. 
   * We set the contents of each button within this string to be the text that was in the `<summary>` element, we of course know that this is the first child of a `<details>`element and we just want its text, so we do this with `${el.firstElementChild.textContent}`
@@ -323,12 +323,12 @@ So we need a function to handle setting the active tab and displaying its corres
 
   * We `aria-selected="true"` on that `<button>`
   * We remove the `tabindex` attribute, as we don't need `tabindex="0"` on an actual `<button>`, as it's already focusable
-  * We get the exact panel that `<button>` owns by searching in the `widgetWrapper` and finding an element that has `aria-labelledby` where the value matches the ID of the selected <button> and we add `tabindex="0"` to that panel, so should a user press <kbd>Tab</kbd>, their focus advances to the `tabpanel` and they can then access the content within, in the correct sequence
+  * We get the exact panel that `<button>` owns by searching in the `widgetWrapper` and finding an element that has `aria-labelledby` where the value matches the ID of the selected `<button>` and we add `tabindex="0"` to that panel, so should a user press <kbd>Tab</kbd>, their focus advances to the `tabpanel` and they can then access the content within, in the correct sequence
   * We also remove the `hidden` attribute from the panel, because this needs to be the `tabpanel` that is displayed, we use the same `querySelector` as above
 * In our loop we obviously have the active tab and the rest are the non-active tabs, so we target them with the else block, we're pretty much reversing what we did for the active tab
 
   * For every `<button>` that reaches this condition we set `aria-selected="false"`
-  * We add `tabindex="-1"` to each of these `<buttons>`, as tabs are focusable with arrows as opposed to the <kbd>Tab</kbd> key, so we want to remove the non-active tabs out of the tab order
+  * We add `tabindex="-1"` to each of these `<button>` elements, as tabs are focusable with arrows as opposed to the <kbd>Tab</kbd> key, so we want to remove the non-active tabs out of the tab order
   * We remove the `tabindex` attribute from each non-active `tabpanel`
   * Finally, we add the `hidden` attribute to each of non-active tabpanel
 
@@ -452,13 +452,13 @@ I'm not going to explain the CSS, as this has guide has already taken forever to
 * We need to make our accordions look like accordions and they will need a focus indicator
 * We need to hide the content of collapsed accordions and only show it when they are expanded
 * Our tabs need to look interactive and be aligned horizontally, each tab needs to look like something a user can operate and we need a focus indicator, along with a selected indicator
-* Our tabpanels need a focus indicator too, as the active panel has tabindex="0" set, so we need to show keyboard users where they are
+* Our tabpanels need a focus indicator too, as the active panel has `tabindex="0"` set, so we need to show keyboard users where they are
 
 ## Completed code
 
 Each completed code example is present in the accordions below.
 
-<h3 class="accordion">HTML</h3><div class="accordion__panel">\`\``html
+<h3 class="accordion">HTML</h3><div class="accordion__panel">\\`\\``html
 <div class="widget__wrapper">
   <details open>
     <summary>Tab 1</summary>
@@ -487,13 +487,13 @@ Each completed code example is present in the accordions below.
     </div>
   </details>
 </div>
-\`\``</div>
+\\`\\``</div>
 
-<h3 class="accordion">JavaScript</h3><div class="accordion__panel">\`\``javascript
+<h3 class="accordion">JavaScript</h3><div class="accordion__panel">\\`\\``javascript
 const widgetWrapper = document.querySelector('.widget__wrapper');
 let baseHTML = '', open, currentFocus;
 const mq = window.matchMedia('(max-width: 767px)');
-const navKeys = \['ArrowRight', 'ArrowLeft', 'Home', 'End'];
+const navKeys = \\['ArrowRight', 'ArrowLeft', 'Home', 'End'];
 
 widgetWrapper.querySelectorAll('details').forEach((el, idx) => {
   baseHTML += `<h3 class="widget__heading">
