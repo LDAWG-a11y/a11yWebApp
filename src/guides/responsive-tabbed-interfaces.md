@@ -646,7 +646,4 @@ widgetWrapper.addEventListener('keydown', handleTabNavigation);
 [data-expanded="false"]+.widget__panel {
   display: none;
 }
-```</div>
-
-## Wrapping up
 ````
