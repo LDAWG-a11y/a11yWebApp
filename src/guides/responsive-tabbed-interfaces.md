@@ -122,7 +122,7 @@ What I am going to do is just show each step's code on its own as opposed to the
 * We loop through all of our <details> elements that are present in the `widgetWrapper`, getting the index with the `idx` variable and each element with the `el` variable. As we iterate through we build a HTML string using a template literal (backticks), and use the addition assignment operator `+=`, so we concatenate that string on each iteration, this is saved to our `baseHTML` variable
 
   * Within that loop we add the classes and IDs, the latter of which we generate from the `idx` variable, so each ID is unique. Both the buttons and the panels need IDs to create programmatic relationships and accessible names for the panels. 
-  * We set the contents of each button within this string to be the text that was in the `<summary>` element, we of course know that this is the first child of a `<details> `element and we just want its text, so we do this with `${el.firstElementChild.textContent}`
+  * We set the contents of each button within this string to be the text that was in the `<summary>` element, we of course know that this is the first child of a `<details>`element and we just want its text, so we do this with `${el.firstElementChild.textContent}`
   * As we wrapped the actual contents of each `<details>` element in a `<div>` earlier, we know that this `<div>` is the last child of each `<details>` element and will contain HTML such as paragraphs, lists or anything else, so we add that HTML within each panel per loop iteration with `${el.lastElementChild.innerHTML}`
   * Both accordions and tabs have `aria-controls` on the trigger which creates the programmatic relationship between the trigger and its corresponding panel, via an ID reference. Tabpanels have an accessible name and accordions can too, so we will use `aria-labelledby` and refer to its corresponding button element, so each panels' accessible name becomes that of its controlling button, as it references that ID. I have added these common attributes here, as they will never change
 * Outside of the loop we modify our `baseHTML` variable with another wrapper `<div class="widget__controls-wrapper">`, unfortunately tabs and accordions have a different structure and we need this additional wrapper, for the tabs. We add the contents from our loop `${baseHTML}`, within that new wrapper
@@ -418,7 +418,7 @@ First declare a new `currentFocus` variable globally, just add this to the list 
 * Now we will address the layout change from accordions to tabs, which is a little more involved
 
   * If `currentFocus` is equal to a `btn` with `aria-expanded`, set `open` to the `idx` value of that `btn` which will of course select the `tab` which displays after the `mq` event and open its corresponding `tabpanel`. 
-  * Now, if focus was in an the accordion panel, we need to get the right panel to open, firstly we check it was in a panel by detecting whether `currentFocus` has an ancestor `('[role="region"]) `with the `closest()` method, then whichever `btn` has an `id` that matches the value of the panel's `aria-labelledby` attribute, we set `open` to the value of the `idx` of that `btn`
+  * Now, if focus was in an the accordion panel, we need to get the right panel to open, firstly we check it was in a panel by detecting whether `currentFocus` has an ancestor `('[role="region"])`with the `closest()` method, then whichever `btn` has an `id` that matches the value of the panel's `aria-labelledby` attribute, we set `open` to the value of the `idx` of that `btn`
 
 At the bottom of the function, outside of the loop we simply set `focus()` back on to the element that previously had `focus()`, which we of course stored in our `currentFocus` variable. I have taken this approach as when focus was inside a panel, focus was lost to the `<body>`, likely due to the shuffling about of the DOM. Now at least we set focus back to where a user was and open the correct panel. I'm not personally a screen reader user, so I am guessing a little here, but if we had a sighted screen reader user that was using the keyboard and triggered the media query event, maybe they would appreciate the information provided by refocusing the button, as the new roles and properties may provide them with the necessary information they need to know when to switch between arrow keys and the <kbd>Tab</kbd> key or vice versa. That is something users could tell you though. Well, that concludes the JS part of this, finally.
 
@@ -458,7 +458,7 @@ I'm not going to explain the CSS, as this has guide has already taken forever to
 
 Each completed code example is present in the accordions below.
 
-<h3 class="accordion">HTML</h3><div class="accordion__panel">```html
+<h3 class="accordion">HTML</h3><div class="accordion__panel">\`\``html
 <div class="widget__wrapper">
   <details open>
     <summary>Tab 1</summary>
@@ -487,13 +487,13 @@ Each completed code example is present in the accordions below.
     </div>
   </details>
 </div>
-```</div>
+\`\``</div>
 
-<h3 class="accordion">JavaScript</h3><div class="accordion__panel">```javascript
+<h3 class="accordion">JavaScript</h3><div class="accordion__panel">\`\``javascript
 const widgetWrapper = document.querySelector('.widget__wrapper');
 let baseHTML = '', open, currentFocus;
 const mq = window.matchMedia('(max-width: 767px)');
-const navKeys = ['ArrowRight', 'ArrowLeft', 'Home', 'End'];
+const navKeys = \['ArrowRight', 'ArrowLeft', 'Home', 'End'];
 
 widgetWrapper.querySelectorAll('details').forEach((el, idx) => {
   baseHTML += `<h3 class="widget__heading">
@@ -504,8 +504,8 @@ baseHTML = `<div class="widget__controls-wrapper">${baseHTML}</div>`;
 
 widgetWrapper.innerHTML = '';
 widgetWrapper.insertAdjacentHTML('afterbegin', baseHTML);
-const widgetControlsWrapper = widgetWrapper.querySelector('.widget__controls-wrapper');
-const widgetBtns = widgetWrapper.querySelectorAll('.widget__btn');
+const widgetControlsWrapper = widgetWrapper.querySelector('.widget**controls-wrapper');
+const widgetBtns = widgetWrapper.querySelectorAll('.widget**btn');
 const widgetPanels = widgetWrapper.querySelectorAll('.widget__panel');
 
 const createAccordions = () => {
@@ -586,21 +586,24 @@ function handleTabNavigation(evt) {
     let parent = evt.target.closest('.widget__heading');
     let currentTab;
 
-    if (evt.key === 'ArrowRight' && parent.nextElementSibling) {
-      currentTab = parent.nextElementSibling.firstElementChild
-    } else if (evt.key === 'ArrowRight' && !parent.nextElementSibling) {
-      currentTab = widgetBtns[0];
-    } else if (evt.key === 'ArrowLeft' && parent.previousElementSibling) {
-      currentTab = parent.previousElementSibling.firstElementChild
-    } else if (evt.key === 'ArrowLeft' && !parent.previousElementSibling) {
-      currentTab = widgetBtns[widgetBtns.length - 1];
-    }
+```
+if (evt.key === 'ArrowRight' && parent.nextElementSibling) {
+  currentTab = parent.nextElementSibling.firstElementChild
+} else if (evt.key === 'ArrowRight' && !parent.nextElementSibling) {
+  currentTab = widgetBtns[0];
+} else if (evt.key === 'ArrowLeft' && parent.previousElementSibling) {
+  currentTab = parent.previousElementSibling.firstElementChild
+} else if (evt.key === 'ArrowLeft' && !parent.previousElementSibling) {
+  currentTab = widgetBtns[widgetBtns.length - 1];
+}
 
-    if (evt.key === 'Home') currentTab = widgetControlsWrapper.querySelectorAll('[role="tab"]')[0];
-    if (evt.key === 'End') currentTab = widgetControlsWrapper.querySelectorAll('[role="tab"]')[widgetBtns.length - 1];
+if (evt.key === 'Home') currentTab = widgetControlsWrapper.querySelectorAll('[role="tab"]')[0];
+if (evt.key === 'End') currentTab = widgetControlsWrapper.querySelectorAll('[role="tab"]')[widgetBtns.length - 1];
 
-    setActiveTab(currentTab);
-    currentTab.focus();
+setActiveTab(currentTab);
+currentTab.focus();
+```
+
   }
 }
 
@@ -621,8 +624,8 @@ mq.addEventListener('change', (evt) => {
     widgetBtns.forEach((btn, idx) => {
       if (btn.getAttribute('aria-selected') === 'true') open = idx;
       if (btn === currentFocus && btn.hasAttribute('aria-expanded')) open = idx;
-      if (currentFocus.closest('[role="region"]')) {
-        if (btn.id === currentFocus.closest('[role="region"]').getAttribute('aria-labelledby')) open = idx;
+      if (currentFocus.closest('\[role="region"]')) {
+        if (btn.id === currentFocus.closest('\[role="region"]').getAttribute('aria-labelledby')) open = idx;
       }
     })
     currentFocus.focus();
@@ -637,8 +640,8 @@ window.addEventListener('DOMContentLoaded', (evt) => {
 
 widgetWrapper.addEventListener('click', handleClickOnBtns);
 widgetWrapper.addEventListener('keydown', handleTabNavigation);
-```</div>
 
+````css
 <h3 class="accordion">CSS</h3><div class="accordion__panel">```css
 [data-expanded="false"]+.widget__panel {
   display: none;
@@ -646,3 +649,4 @@ widgetWrapper.addEventListener('keydown', handleTabNavigation);
 ```</div>
 
 ## Wrapping up
+````
