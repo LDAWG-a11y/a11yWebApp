@@ -440,7 +440,7 @@ mq.addEventListener('change', (evt) => {
 
 ### Now, let's style um
 
-I'm not going to explain the CSS, as this has guide has already taken forever to write, I will of course provide the completed code at the end (which is actually pretty close) and I'll just summarise what we need in the bullets below:
+I'm not going to explain the CSS, as this has guide has already taken forever to write, I will of course provide the completed code at the end and I'll just summarise what we need in the bullets below:
 
 * We need a media query in CSS that matches our media query in JS, we don't need separate classes, although if you prefer that, you can take that approach
 * We need to style the `<details>` & `<summary>` elements so they look nice where JS isn't available, we also need to ensure they have a focus indicator
