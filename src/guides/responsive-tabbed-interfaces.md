@@ -456,194 +456,22 @@ I'm not going to explain the CSS, as this has guide has already taken forever to
 
 ## Completed code
 
-Each completed code example is present in the accordions below.
 
-<h3 class="accordion">HTML</h3><div class="accordion__panel">\\`\\``html
-<div class="widget__wrapper">
-  <details open>
-    <summary>Tab 1</summary>
-    <div>
-      <p>Tab 1 contents: Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro quasi ab, error fugiat at,
-        maiores enim impedit cumque quidem similique et laborum aliquam modi assumenda officiis est! Sapiente, non
-        neque! <a href="">Test 1</a>
-      </p>
-    </div>
-  </details>
-  <details>
-    <summary>Tab 2</summary>
-    <div>
-      <p>Tab 2 contents: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam molestias nostrum
-        repudiandae, quaerat alias iste placeat at a, sequi deserunt iure praesentium velit repellendus ipsum culpa
-        ratione soluta eius magni quasi fugiat repellat necessitatibus fugit. <a href="">Test 2</a>
-      </p>
-    </div>
-  </details>
-  <details>
-    <summary>Tab 3</summary>
-    <div>
-      <p>Tab 3 contents: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est illo hic vitae tenetur omnis
-        laborum itaque vero adipisci doloremque optio ullam, vel similique aliquam quo! <a href="">Test 3</a>
-      </p>
-    </div>
-  </details>
-</div>
-\\`\\``</div>
 
-<h3 class="accordion">JavaScript</h3><div class="accordion__panel">\\`\\``javascript
-const widgetWrapper = document.querySelector('.widget__wrapper');
-let baseHTML = '', open, currentFocus;
-const mq = window.matchMedia('(max-width: 767px)');
-const navKeys = \\['ArrowRight', 'ArrowLeft', 'Home', 'End'];
+## Codepen
 
-widgetWrapper.querySelectorAll('details').forEach((el, idx) => {
-  baseHTML += `<h3 class="widget__heading">
-    <button class="widget__btn" id="btn-${idx + 1}" aria-controls="panel-${idx + 1}">${el.firstElementChild.textContent}</button></h3>
-    <div class="widget__panel" id="panel-${idx + 1}" aria-labelledby="btn-${idx + 1}">${el.lastElementChild.innerHTML}</div>`;
-})
-baseHTML = `<div class="widget__controls-wrapper">${baseHTML}</div>`;
 
-widgetWrapper.innerHTML = '';
-widgetWrapper.insertAdjacentHTML('afterbegin', baseHTML);
-const widgetControlsWrapper = widgetWrapper.querySelector('.widget**controls-wrapper');
-const widgetBtns = widgetWrapper.querySelectorAll('.widget**btn');
-const widgetPanels = widgetWrapper.querySelectorAll('.widget__panel');
 
-const createAccordions = () => {
-  widgetControlsWrapper.removeAttribute('role');
-  widgetBtns.forEach((btn, idx) => {
-    idx === open ? btn.setAttribute('aria-expanded', 'true') : btn.setAttribute('aria-expanded', 'false');
-    idx === open ? btn.parentElement.setAttribute('data-expanded', 'true') : btn.parentElement.setAttribute('data-expanded', 'false');
-    btn.parentElement.removeAttribute('role');
-    btn.removeAttribute('role');
-    btn.removeAttribute('aria-setsize');
-    btn.removeAttribute('aria-posinset');
-    btn.removeAttribute('aria-selected');
-    btn.parentElement.after(widgetWrapper.querySelector(`[aria-labelledby="${btn.id}"]`));
-  })
+## Screenshots
 
-  widgetPanels.forEach(panel => {
-    panel.setAttribute('role', 'region');
-    panel.removeAttribute('tabindex');
-    panel.removeAttribute('hidden');
-  })
-}
 
-const createTabs = () => {
-  widgetControlsWrapper.setAttribute('role', 'tablist');
-  widgetBtns.forEach((btn, idx) => {
-    btn.parentElement.setAttribute('role', 'presentation');
-    btn.setAttribute('role', 'tab');
-    btn.setAttribute('aria-setsize', widgetBtns.length);
-    btn.setAttribute('aria-posinset', idx + 1);
-    idx === open ? btn.setAttribute('aria-selected', 'true') : btn.setAttribute('aria-selected', 'false');
-    if (idx !== open) btn.setAttribute('tabindex', '-1');
-    btn.removeAttribute('aria-expanded');
-    btn.parentElement.removeAttribute('data-expanded');
-  })
 
-  widgetPanels.forEach((panel, idx) => {
-    panel.setAttribute('role', 'tabpanel');
-    if (idx === open) panel.setAttribute('tabindex', '0');
-    if (idx !== open) panel.setAttribute('hidden', '');
-  })
+## Wrapping up
 
-  Array.from(widgetPanels).reverse().forEach(el => widgetControlsWrapper.after(el));
-}
+Is it worth the effort to wrangle the DOM to provide a user with either tabs or accordions depending on their viewport size? Well, it took us less than 150 lines of JS to do that and I have no doubt that could be further reduced by a JS ninja. In this example though we have taken a `<details>` & `<summary>` element and progressively enhanced it, providing ARIA accordions for the smaller viewport breakpoint and ARIA tabs for the larger viewport breakpoint, when JS is available. We did so with all of the correct ARIA and interaction patterns and we even considered the edge case of managing focus when a user triggers the `'change'` event for the media query, so we have pretty much covered everything here.
 
-function handleClickOnBtns(evt) {
-  if (evt.target.getAttribute('aria-expanded') === 'false') {
-    evt.target.setAttribute('aria-expanded', 'true');
-    evt.target.parentElement.setAttribute('data-expanded', 'true');
-  } else if (evt.target.getAttribute('aria-expanded') === 'true') {
-    evt.target.setAttribute('aria-expanded', 'false');
-    evt.target.parentElement.setAttribute('data-expanded', 'false');
-  }
+I'm not really a fan of tabs, not because I find them difficult to use, but because they typically only appear suited to larger viewports, they just don't seem to work as well, visually on smaller viewports, but that's just my view. Accordions, however, work on all screen sizes, so my preference would be to just use accordions, which would be much simpler in those cases where some content should be hidden in a collapsed state. We don't always get the choice though, sometimes we have to work with what we have, despite our best efforts at highlighting the issues certain patterns may have. So, maybe when we find ourselves in a situation where tabs are staying put, then this approach could be an alternative to Heydon's or Andy's solutions? I'm not saying my solution is as good as either of theirs, I just wanted to provide a different solution, because the tabs problem actually comes up quite often, usually when we encounter them though, they don't have the correct interaction model and often the ARIA is wrong or not present at all.
 
-  if (evt.target.getAttribute('role') === 'tab') {
-    setActiveTab(evt.target);
-  }
-}
+Whether this approach is worth the effort will depend on several factors, I haven't considered performance, both my internet and laptop are fast, so everything appeared seamless to me, but I know that not everybody has the privilege of the latest tech and fibre broadband, so this is something you should look into yourselves. I've made this in a silo, it's not on a site with lots of other components, functionality, images and embeds, so maybe the performance would be more noticeable on a live site? I typically try to only use JS when I have to, less is more and all that jazz, I typically only use a small amount of JS when building things I have control over, a tiny amount if you compare it to the hellscape of single page apps, so I would feel safe doing this on a site with minimal JS and as always I have considered the use cases where JS isn't available, so there is a comparable experience there, too.
 
-setActiveTab = (activeTab) => {
-  widgetBtns.forEach(tab => {
-    if (tab === activeTab) {
-      tab.setAttribute('aria-selected', 'true');
-      tab.removeAttribute('tabindex');
-      widgetWrapper.querySelector(`[aria-labelledby="${tab.id}"]`).setAttribute('tabindex', '0');
-      widgetWrapper.querySelector(`[aria-labelledby="${tab.id}"]`).removeAttribute('hidden');
-    } else {
-      tab.setAttribute('aria-selected', 'false');
-      tab.setAttribute('tabindex', '-1');
-      document.getElementById(tab.getAttribute('aria-controls')).removeAttribute('tabindex');
-      document.getElementById(tab.getAttribute('aria-controls')).setAttribute('hidden', '');
-    }
-  })
-}
-
-function handleTabNavigation(evt) {
-  if (navKeys.includes(evt.key) && evt.target.getAttribute('role') === 'tab') {
-    evt.preventDefault();
-    let parent = evt.target.closest('.widget__heading');
-    let currentTab;
-
-```
-if (evt.key === 'ArrowRight' && parent.nextElementSibling) {
-  currentTab = parent.nextElementSibling.firstElementChild
-} else if (evt.key === 'ArrowRight' && !parent.nextElementSibling) {
-  currentTab = widgetBtns[0];
-} else if (evt.key === 'ArrowLeft' && parent.previousElementSibling) {
-  currentTab = parent.previousElementSibling.firstElementChild
-} else if (evt.key === 'ArrowLeft' && !parent.previousElementSibling) {
-  currentTab = widgetBtns[widgetBtns.length - 1];
-}
-
-if (evt.key === 'Home') currentTab = widgetControlsWrapper.querySelectorAll('[role="tab"]')[0];
-if (evt.key === 'End') currentTab = widgetControlsWrapper.querySelectorAll('[role="tab"]')[widgetBtns.length - 1];
-
-setActiveTab(currentTab);
-currentTab.focus();
-```
-
-  }
-}
-
-const determineWidgetToDisplay = (evt) => {
-  if (evt.matches) {
-    widgetWrapper.setAttribute('data-widget', 'accordions');
-    createAccordions();
-  } else {
-    widgetWrapper.setAttribute('data-widget', 'tabs');
-    createTabs();
-  }
-}
-
-mq.addEventListener('change', (evt) => {
-  currentFocus = document.activeElement;
-
-  if (currentFocus.closest('.widget__wrapper')) {
-    widgetBtns.forEach((btn, idx) => {
-      if (btn.getAttribute('aria-selected') === 'true') open = idx;
-      if (btn === currentFocus && btn.hasAttribute('aria-expanded')) open = idx;
-      if (currentFocus.closest('\[role="region"]')) {
-        if (btn.id === currentFocus.closest('\[role="region"]').getAttribute('aria-labelledby')) open = idx;
-      }
-    })
-    currentFocus.focus();
-  }
-  determineWidgetToDisplay(evt);
-})
-
-window.addEventListener('DOMContentLoaded', (evt) => {
-  open = 0;
-  determineWidgetToDisplay(mq);
-})
-
-widgetWrapper.addEventListener('click', handleClickOnBtns);
-widgetWrapper.addEventListener('keydown', handleTabNavigation);
-
-````css
-<h3 class="accordion">CSS</h3><div class="accordion__panel">```css
-[data-expanded="false"]+.widget__panel {
-  display: none;
-}
-````
+Where this may come in handy is when the tabbed interface is an option in a CMS, if that output isn't great, if it looks odd at smaller viewports or if it is not compliant, then maybe this could be useful to patch it up as an interim measure. Well, that wraps up this challenge, which actually ended up being an extremely long guide, sorry about that, if you're experienced in JS, then you undoubtedly felt like I was over-explaining with the step-by-step approach, but I was also trying to cater for folks working in accessibility or development where maybe  they don't know a lot of JS or they're just starting out. Maybe in future I'll put the step-by-step stuff in accordions and just have the summary text above them, it would definitely be accordions though and definitely not tabs.
