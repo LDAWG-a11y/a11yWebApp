@@ -116,12 +116,13 @@ What I am going to do is just show each step's code on its own as opposed to the
 #### Setting up our main variables
 
 * First we want to reference our `<div class="widget__wrapper">` element and assign it to the `widgetWrapper` variable
-* We declare two variables in the global scope, that we need later `baseHTML` (which we're setting to an empty string) and also `open`, more on the latter, later
-* We're eventually going to switch the widget type based upon the current media query, so we use the `matchMedia` method and store that in our `mq` variable, I've set the breakpoint's `(max-width: 767px)`, of course you should do what works best for your site
+* We declare two variables in the global scope, that we need later `baseHTML` (which we're setting to an empty string) and also `open`
+* We're eventually going to switch the widget type based upon the current media query, so we use the `matchMedia` method and store that in our `mq` variable, I've set the breakpoint's `(max-width: 767px)`, for this example
 * Then we create an array `navKeys`, which holds all of the codes for the key presses we need in the tabbed interface pattern
 * We loop through all of our `<details>` elements that are present in the `widgetWrapper`, getting the index with the `idx` variable and each element with the `el` variable. As we iterate through we build a HTML string using a template literal (backticks), and use the addition assignment operator `+=`, so we concatenate that string on each iteration, this is saved to our `baseHTML` variable
 
-  * Within that loop we add the classes and IDs, the latter of which we generate from the `idx` variable, so each ID is unique. Both the buttons and the panels need IDs to create programmatic relationships and accessible names for the panels. 
+  * Within that loop we add the classes and IDs, the latter of which we generate from the `idx` variable, so each ID is unique. Both the buttons and the panels need IDs to create programmatic relationships and accessible names for the panels, respectively
+  * We also add a data attribute to each button and each panel, this holds a number we get from our `idx` variable and here we are starting that number from `0`, those data attributes for buttons and panels are `data-btn-idx` and `data-panel-idx`, respectively
   * We set the contents of each button within this string to be the text that was in the `<summary>` element, we of course know that this is the first child of a `<details>`element and we just want its text, so we do this with `${el.firstElementChild.textContent}`
   * As we wrapped the actual contents of each `<details>` element in a `<div>` earlier, we know that this `<div>` is the last child of each `<details>` element and will contain HTML such as paragraphs, lists or anything else, so we add that HTML within each panel per loop iteration with `${el.lastElementChild.innerHTML}`
   * Both accordions and tabs have `aria-controls` on the trigger which creates the programmatic relationship between the trigger and its corresponding panel, via an ID reference. Tabpanels have an accessible name and accordions can too, so we will use `aria-labelledby` and refer to its corresponding button element, so each panels' accessible name becomes that of its controlling button, as it references that ID. I have added these common attributes here, as they will never change
@@ -142,9 +143,8 @@ const navKeys = ['ArrowRight', 'ArrowLeft', 'Home', 'End'];
 
 widgetWrapper.querySelectorAll('details').forEach((el, idx) => {
   baseHTML += `<h3 class="widget__heading">
-    <button class="widget__btn" id="btn-${idx + 1}" aria-controls="panel-${idx + 1}">${el.firstElementChild.textContent}</button>
-  </h3>
-  <div class="widget__panel" id="panel-${idx + 1}" aria-labelledby="btn-${idx + 1}">${el.lastElementChild.innerHTML}</div>`;
+    <button class="widget__btn" id="btn-${idx + 1}" data-btn-idx="${idx}" aria-controls="panel-${idx + 1}">${el.firstElementChild.textContent}</button></h3>
+    <div class="widget__panel" id="panel-${idx + 1}" data-panel-idx="${idx}" aria-labelledby="btn-${idx + 1}">${el.lastElementChild.innerHTML}</div>`;
 })
 baseHTML = `<div class="widget__controls-wrapper">${baseHTML}</div>`;
 
@@ -397,49 +397,44 @@ widgetControlsWrapper.addEventListener('keydown', handleTabNavigation);
 
 #### Handling focus when the viewport changes
 
-Some users may struggle to read text that others find comfortable, we all have different needs and preferences, so we need to consider those circumstances where our current implementation has one obvious issue. Let's assume we have a user that has low-vision, they open up our page and see the tabbed interface and one of the tabs contains the topic they are interested in. This user also uses a keyboard to navigate websites, as that is what works best for them. They decide they want to zoom in, as the font size isn't quite large enough for them.
+Some users may struggle to read text that others find comfortable, we all have different needs and preferences, so we need to consider those circumstances where our current implementation has one issue that may be less than obvious Let's assume we have a user that has low-vision, they open up our page and see the tabbed interface and one of the tabs contains the topic they are interested in. This user also uses a keyboard to navigate websites, as that is what works best for them. They decide they want to zoom in, to read the content, currently in our implementation, their focus could be lost, which would be hugely frustrating for many keyboard users.
 
-When the user zooms in the "mobile" viewport is displayed and those tabs become accordions, if they had any tab open that wasn't the first tab, at present their focus position will be lost to the `<body>` element, as that panel closes, so anything within cannot receive keyboard focus as it is hidden from the accessibility tree. This is because at present we set the value of `open = 0` on the window's addEventListener() method and we don't update it anywhere else. As we're all here because we want to do better, we want to make our sites work for everybody we need to address this.
+This happened because we never update our `open` variable, it is just set to o once the page has loaded. That's OK though, as obviously we have that for a reason and now we are going to use it properly. Let's look at the three situations where we don't want the switching of patterns to become jarring, confusing or steal a user's focus:
 
-There is a little extra consideration involved here, in that a user can have all accordions open, but only one `tabpanel`, that makes handling focus when a user zooms the page in super easy, as we just detect which tab was open and force that same panel to be open in the accordions pattern. we can't exactly reverse that, as if the user had 2 accordions open but then made their browser window larger and the tabs displayed, we need to know where their focus was before that happened, so we can display the correct `tabpanel`. This isn't bulletproof though, because a screen reader user may be reading a panel's contents, in which case they will be in browse mode, using arrow keys and their modifier key(s) and we can't track that.
+* If a user's focus was on one of the buttons, irrespective of whether they were in the accordions layout or the tabs layout, the browser doesn't lose focus here, as the buttons are only modified with attributes, but to offer some similarity, we will force that panel to be the open panel, if the layout was accordions, we have to open one panel when it changes to tabs and by focusing on this `tab`, it also becomes the selected `tab`, so it should be this one and if a user was viewing the tabs layout, that `tab` was selected so we'll just expand that accordion
+* If a user was focused on a `tabpanel` (as they're focusable), we cannot send focus to the relevant accordion panel as accordion panels are not focusable, so the sensible solution is to send focus back one step, to its controlling `<button>` and we'll expand that accordion as it was open in the tabs layout (if we didn't do this, focus would be lost to the `<body>` as that element is no longer focusable)
+* Finally, the only other place focus could have been was inside a panel, in which case that panel was open and a user's focus position needs to be maintained, so we just detect which panel was open and force that to be open in whichever layout the user triggered and return focus to the initial position (currently focus is lost to the `<body>` as we hoist the panels around and I guess for a fraction of a second, they don't exist so focus is lost)
 
-What we will do is get the last focused element: 
+It is of course possible that a user had multiple accordions open, but we can't do anything about that, as our tabs can only have one panel open. We do all of the above simply by detecting where focus was and getting a reference to that element or its closest ancestor that matches a given query, which is why we added the data attributes `data-btn-idx` and `data-panel-idx`, earlier. We then update the value of our `open` variable to force the panel open that meets one of our three conditions. We also store a reference to a user's currently focused element and we only do anything about that if their focus was inside our `widgetWrapper`, as this is where we kinda broke the way a browser manages that.
 
-* If the focused element was inside our widgetWrapper, we will manage it, else the browser can manage that just fine
-* If the focused element was inside a panel, we will force that panel to be open and ensure that focus returns the same spot
-* If focus was on an accordion button we will check if that button was expanded, if it was we will force that panel open and set focus to that button
-* If focus was on an accordion button and it was not expanded, we will just set the first accordion to be expanded, as this was the page default
+We'll update our `mq.addEventListener()` method as this is the only time we need to concern ourselves with this change
 
-First declare a new `currentFocus` variable globally, just add this to the list of declared variables, at the top of the file. Now we'll update our `mq.addEventListener()` method as this is the only time we need to concern ourselves with this change
+* First we will check initialise a variable to get the currently focused element using the `document.activeElement` property, we'll call this variable `currentFocus`
+* Then we will check that focus was in inside the `widgetWrapper` by checking if the `currentFocus` variable has an ancestor with the class `widget__wrapper`, with the `closest()` method
+* The first condition simply checks whether `currentFocus` was on an element that has a class `widget__button`, if it does we'll get the value of its `data-btn-idx` attribute, convert it from a string to a `Number() `and set `open` to that value
+* The second condition checks whether `currentFocus` has a class that is `widget__panel`, if it does we set the value of `open` to the value of `data-panel-idx `(the button and panel always have the same value for these attributes), again we convert it to a `Number()` first
+* The final condition detects whether focus was inside a panel by checking if there is an ancestor with the class `widget__panel`, if there was, get that `closest()` panel and then get the value from its `data-panel-idx` attribute, convert it to a `Number()` and set it as the value of the `open` variable
+* At the bottom of the function, outside of the loop we simply set `focus()` back on to the element that previously had `focus()`, which we of course stored in our `currentFocus` variable. 
 
-* First we will check that focus was in inside the `widgetWrapper` by checking if the `currentFocus` variable has an ancestor with the class `widget__wrapper`, with the `closest()` method
-* Then we loop through the buttons again, making sure to get the index of each item, with `idx`
-* The first `if` statement is super easy, only one `tabpanel` could be open, so we get the `idx` of that `btn` and set `open` to that `idx`, which will ensure the same content opens, just in accordion form
-* Now we will address the layout change from accordions to tabs, which is a little more involved
-
-  * If `currentFocus` is equal to a `btn` with `aria-expanded`, set `open` to the `idx` value of that `btn` which will of course select the `tab` which displays after the `mq` event and open its corresponding `tabpanel`. 
-  * Now, if focus was in an the accordion panel, we need to get the right panel to open, firstly we check it was in a panel by detecting whether `currentFocus` has an ancestor `('[role="region"])`with the `closest()` method, then whichever `btn` has an `id` that matches the value of the panel's `aria-labelledby` attribute, we set `open` to the value of the `idx` of that `btn`
-
-At the bottom of the function, outside of the loop we simply set `focus()` back on to the element that previously had `focus()`, which we of course stored in our `currentFocus` variable. I have taken this approach as when focus was inside a panel, focus was lost to the `<body>`, likely due to the shuffling about of the DOM. Now at least we set focus back to where a user was and open the correct panel. I'm not personally a screen reader user, so I am guessing a little here, but if we had a sighted screen reader user that was using the keyboard and triggered the media query event, maybe they would appreciate the information provided by refocusing the button, as the new roles and properties may provide them with the necessary information they need to know when to switch between arrow keys and the <kbd>Tab</kbd> key or vice versa. That is something users could tell you though. Well, that concludes the JS part of this, finally.
+That does it for the JS, finally. We covered quite a bit and sorry if I over-explained, I'm sure you skimmed past anything that you already knew, but I was also trying to cater for folks who may be new to JS or A11y. Maybe I'll put the step-by-step stuff in accordions, definitely not tabs though.
 
 ```javascript
-let baseHTML = '', open, currentFocus; 
-// Add new variable to list above
-
- mq.addEventListener('change', (evt) => {
-   // New code below
- if (currentFocus.closest('.widget__wrapper')) {
-  widgetBtns.forEach((btn, idx) => {
-    if (btn.getAttribute('aria-selected') === 'true') open = idx;
-    if (btn === currentFocus && btn.hasAttribute('aria-expanded')) open = idx;
-    if (currentFocus.closest('[role="region"]')) {
-      if (btn.id === currentFocus.closest('[role="region"]').getAttribute('aria-labelledby')) open = idx;
+mq.addEventListener('change', (evt) => {
+// New code below
+  if (currentFocus.closest('.widget__wrapper')) {
+    if (currentFocus.classList.contains('widget__btn')) {
+      open = Number(currentFocus.getAttribute('data-btn-idx'));
+    } else if (currentFocus.classList.contains('widget__panel')) {
+      open = Number(currentFocus.getAttribute('data-panel-idx'));
+      currentFocus = widgetWrapper.querySelector(`[data-btn-idx="${String(open)}"]`);
+    } else if (currentFocus.closest('.widget__panel')) {
+      open = Number(currentFocus.closest('.widget__panel').getAttribute('data-panel-idx'));
     }
-  })
-  currentFocus.focus();
-}
+  }
   // New code above
   determineWidgetToDisplay(evt);
+  // New code below
+  currentFocus.focus();
 })
 ```
 
@@ -456,15 +451,9 @@ I'm not going to explain the CSS, as this has guide has already taken forever to
 
 ## Completed code
 
-
-
 ## Codepen
 
-
-
 ## Screenshots
-
-
 
 ## Wrapping up
 
