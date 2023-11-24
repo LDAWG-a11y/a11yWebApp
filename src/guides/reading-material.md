@@ -73,6 +73,10 @@ Channel 4, 2020. Rosie Jones, a comedian with a disability is on a mission to he
 
 Netflix 2023 limited series. A work of fiction, the story of Marie-Laure, a blind French teenager, and Werner, a German soldier, whose paths collide in occupied France as both try to survive the devastation of World War II. In the series, Marie's father builds her highly detailed tactile maps of both Paris and Saint-Malo to help her learn her surroundings and navigate around town independently.
 
+### [Sex Education - Season 4, Episode 7](https://www.imdb.com/title/tt28942002/)
+
+Netflix 2023 series. A sub plot to this series was the barriers to education faced by Isaac, one of the cast who is a wheelchair user. The main issue is the lack of a working lift on the college campus. The lift once again not working and stopping Isaac from getting to his exam triggers collective action about the missing accessibility considerations at the college affecting different students.
+
 ## Suggest something
 
 If you have any suggestions for other resources that you think we should read / watch and should be added to this list, please contact us at [info@makethingsaccessible.com](mailto:info@makethingsaccessible.com)
