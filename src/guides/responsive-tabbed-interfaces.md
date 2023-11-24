@@ -492,7 +492,7 @@ I'm not going to explain the CSS, as this has guide has already taken forever to
 
 ## Screenshots
 
-### The no JS solution, using <details> & <summary>
+### The no JS solution, using `<details>` & `<summary>`
 
 ![Screenshot of the Details and Summary elements which are provided to users where JavaScript is unavailable, disabled or doesn't load. The first panel is open, they have minimal styling, using the rebeccapurple colour for their borders and the text in the Summary element](src/guideImg/dl-widget-details.png)
 
