@@ -490,6 +490,14 @@ I'm not going to explain the CSS, as this has guide has already taken forever to
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
+## Wrapping up
+
+Is it worth the effort to wrangle the DOM to provide a user with either tabs or accordions depending on their viewport size? Well, it took us just over 130 lines of JS to do that and I have no doubt that could be further reduced by a JS ninja. In this example though we have taken a `<details>` & `<summary>` element and progressively enhanced it, providing ARIA accordions for the smaller viewport breakpoint and ARIA tabs for the larger viewport breakpoint. We did so with all of the correct ARIA and interaction patterns and we even considered managing focus when a user triggers the `'change'` event for the media query, so we have pretty much covered everything here.
+
+I'm not really a fan of tabs, not because I find them difficult to use, but because they typically only appear suited to larger viewports, they just don't seem suited to smaller viewports, but that's just my view. Accordions, however, work on all screen sizes, so my preference would be to just use accordions, which would be much simpler in those cases where we want to hide some content until a user exposes it. We don't always get the choice though, sometimes we have to work with what we have. So, maybe when we find ourselves in a situation where tabs are staying put, then this approach could be an alternative to Heydon's or Andy's solutions? I'm not saying my solution is as good as either of theirs, I just wanted to provide a different solution, because the tabs problem actually comes up quite often, usually when we encounter them though, they don't have the correct interaction model and often the ARIA is wrong or not present at all.
+
+If you have a site that hardly has any JS and loads fast anyway, then this solution should only have a minimal impact, performance wise. Perhaps some users may find it a bit odd having to switch from accordions to tabs, especially if they use a keyboard as the differing interaction pattern may be confusing. We tried to mitigate this by adding the optional interaction pattern in for accordions, but it's still not the same keys. This is where user testing would need to come in, getting actual users with disabilities to test these patterns and compensate them for their time.
+
 ## Screenshots
 
 ### The no JS solution, using `<details>` & `<summary>`
@@ -504,13 +512,19 @@ I'm not going to explain the CSS, as this has guide has already taken forever to
 
 ![Screenshot of the tabs, which displays on the larger viewport. The first tab is selected and there is a thicker border at the top of the tab to show this, in addition, there is no bottom border on the tab, so it flows into its associated panel. They have minimal styling, using the rebccapurple colour for their borders, the thicker border for the selected tab and the button text](src/guideImg/dl-widget-tabs.png)
 
-## Wrapping up
+### Windows High Contrast Mode
 
-Is it worth the effort to wrangle the DOM to provide a user with either tabs or accordions depending on their viewport size? Well, it took us just over 130 lines of JS to do that and I have no doubt that could be further reduced by a JS ninja. In this example though we have taken a `<details>` & `<summary>` element and progressively enhanced it, providing ARIA accordions for the smaller viewport breakpoint and ARIA tabs for the larger viewport breakpoint. We did so with all of the correct ARIA and interaction patterns and we even considered managing focus when a user triggers the `'change'` event for the media query, so we have pretty much covered everything here.
+#### No JS `<details>` and `<summary>` solution
 
-I'm not really a fan of tabs, not because I find them difficult to use, but because they typically only appear suited to larger viewports, they just don't seem suited to smaller viewports, but that's just my view. Accordions, however, work on all screen sizes, so my preference would be to just use accordions, which would be much simpler in those cases where we want to hide some content until a user exposes it. We don't always get the choice though, sometimes we have to work with what we have. So, maybe when we find ourselves in a situation where tabs are staying put, then this approach could be an alternative to Heydon's or Andy's solutions? I'm not saying my solution is as good as either of theirs, I just wanted to provide a different solution, because the tabs problem actually comes up quite often, usually when we encounter them though, they don't have the correct interaction model and often the ARIA is wrong or not present at all.
+![Screenshot of the Details and Summary elements in High Contrast Mode. the second panel has focus and is expanded, there is a focus indicator present, which is 3px thick and no information is lost](src/guideImg/dl-widget-whcm-details.png)
 
-If you have a site that hardly has any JS and loads fast anyway, then this solution should only have a minimal impact, performance wise. Perhaps some users may find it a bit odd having to switch from accordions to tabs, especially if they use a keyboard as the differing interaction pattern may be confusing. We tried to mitigate this by adding the optional interaction pattern in for accordions, but it's still not the same keys. This is where user testing would need to come in, getting actual users with disabilities to test these patterns and compensate them for their time.
+#### Accordions solution
+
+![Screenshot of the accordions in High Contrast Mode. The first accordion has focus and a thick focus indicator is present, the second accordion is expanded, the plus and minus icons that indicate the collapsed or expanded states are present](src/guideImg/dl-widget-whcm-accordions.png)
+
+#### Tabs solution
+
+![Screenshot of the tabs layout in High Contrast Mode. The 3rd and final tab is selected and its panel is displayed. The selected panel indicator is a thick top border on the selected tab, which is present, there is also a focus indicator which surrounds the text.](src/guideImg/dl-widget-whcm-tabs.png)
 
 ## Completed code
 
