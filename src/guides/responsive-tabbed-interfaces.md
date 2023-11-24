@@ -36,7 +36,7 @@ Errm, not really. Again you end up in that situation where the only time the vis
 <blockquote>
 Don't make me think
 <footer>
-Steve krug
+Steve Krug
 </footer>
 </blockquote>
 
@@ -237,6 +237,24 @@ So now we have two functions that generate the correct HTML and ARIA, one that c
     idx === open ? panel.setAttribute('tabindex', '0') : panel.setAttribute('hidden', '');
   })
   widgetPanels.reverse().forEach(el => widgetControlsWrapper.after(el));
+}
+```
+
+#### Just a tiny bit of CSS, for now
+
+Just so we can actually see these working, we'll hide the accordion panels when `data-expanded="false"` is present on the sibling heading with `display: none;` and we'll also belt and brace the `hidden` attribute for tabpanels with the same CSS.
+
+Just so our tabs are displayed horizontally, we'll set `display: flex;` and `gap: 2px;` to the `tablist` container.
+
+```css
+[role="tablist"] {
+  display: flex;
+  gap: 2px;
+}
+
+[hidden],
+[data-expanded="false"]+.widget__panel {
+  display: none;
 }
 ```
 
@@ -462,11 +480,15 @@ I'm not going to explain the CSS, as this has guide has already taken forever to
 * Our tabs need to look interactive and be aligned horizontally, each tab needs to look like something a user can operate and we need a focus indicator, along with a selected indicator
 * Our tabpanels need a focus indicator too, as the active panel has `tabindex="0"` set, so we need to show keyboard users where they are
 
-## Completed code
-
 ## Codepen
 
 ## Screenshots
+
+![Screenshot of the Details and Summary elements which are provided to users where JavaScript is unavailable, disabled or doesn't load. The first panel is open, they have minimal styling, using the rebeccapurple colour for their borders and the text in the Summary element](src/guideImg/dl-widget-details.png)
+
+![Screenshot of the accordions, which display on smaller viewports, the first panel is expanded, each accordion has an icon, which is a minus if expanded and a plus if collapsed. They have minimal styling, using the rebccapurple colour for their borders and the button text](src/guideImg/dl-widget-accordion.png)
+
+![Screenshot of the tabs, which displays on the larger viewport. The first tab is selected and there is a thicker border at the top of the tab to show this, in addition, there is no bottom border on the tab, so it flows into its associated panel. They have minimal styling, using the rebccapurple colour for their borders, the thicker border for the selected tab and the button text](src/guideImg/dl-widget-tabs.png)
 
 ## Wrapping up
 
@@ -475,3 +497,336 @@ Is it worth the effort to wrangle the DOM to provide a user with either tabs or 
 I'm not really a fan of tabs, not because I find them difficult to use, but because they typically only appear suited to larger viewports, they just don't seem suited to smaller viewports, but that's just my view. Accordions, however, work on all screen sizes, so my preference would be to just use accordions, which would be much simpler in those cases where we want to hide some content until a user exposes it. We don't always get the choice though, sometimes we have to work with what we have, despite our best efforts at highlighting the issues certain patterns may have. So, maybe when we find ourselves in a situation where tabs are staying put, then this approach could be an alternative to Heydon's or Andy's solutions? I'm not saying my solution is as good as either of theirs, I just wanted to provide a different solution, because the tabs problem actually comes up quite often, usually when we encounter them though, they don't have the correct interaction model and often the ARIA is wrong or not present at all.
 
 If you have a site that hardly has any JS and loads fast anyway, then this solution should only have a minimal impact, performance wise. Perhaps some users may find it a bit odd having to switch from accordions to tabs, especially if they use a keyboard as the differing interaction panel may be confusing
+
+## Completed code
+
+### HTML full code
+
+```html
+<div class="widget__wrapper">
+  <details open>
+    <summary>Widget 1</summary>
+    <div>
+      <p>Widget 1 contents: Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro quasi ab, error fugiat at,
+        maiores enim impedit cumque quidem similique et laborum aliquam modi assumenda officiis est! Sapiente, non
+        neque! <a href="">Test 1</a>
+      </p>
+    </div>
+  </details>
+  <details>
+    <summary>Widget 2</summary>
+    <div>
+      <p>Widget 2 contents: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam molestias nostrum
+        repudiandae, quaerat alias iste placeat at a, sequi deserunt iure praesentium velit repellendus ipsum culpa
+        ratione soluta eius magni quasi fugiat repellat necessitatibus fugit. <a href="">Test 2</a>
+      </p>
+    </div>
+  </details>
+  <details>
+    <summary>Widget 3</summary>
+    <div>
+      <p>Widget 3 contents: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est illo hic vitae tenetur omnis
+        laborum itaque vero adipisci doloremque optio ullam, vel similique aliquam quo! <a href="">Test 3</a>
+      </p>
+    </div>
+  </details>
+</div>
+```
+
+### JavaScript full code
+
+```javascript
+const widgetWrapper = document.querySelector('.widget__wrapper');
+let baseHTML = '', open = 0;
+const mq = window.matchMedia('(max-width: 767px)');
+const navKeys = ['ArrowUp', 'ArrowRight', 'ArrowDown', 'ArrowLeft', 'Home', 'End'];
+
+widgetWrapper.querySelectorAll('details').forEach((el, idx) => {
+  baseHTML += `<h3 class="widget__heading">
+    <button class="widget__btn" id="btn-${idx + 1}" data-btn-idx="${idx}" aria-controls="panel-${idx + 1}">${el.firstElementChild.textContent}</button></h3>
+    <div class="widget__panel" id="panel-${idx + 1}" data-panel-idx="${idx}" aria-labelledby="btn-${idx + 1}">${el.lastElementChild.innerHTML}</div>`;
+})
+baseHTML = `<div class="widget__controls-wrapper">${baseHTML}</div>`;
+
+widgetWrapper.innerHTML = '';
+widgetWrapper.insertAdjacentHTML('afterbegin', baseHTML);
+const widgetControlsWrapper = widgetWrapper.querySelector('.widget__controls-wrapper');
+const widgetBtns = Array.from(widgetWrapper.querySelectorAll('.widget__btn'));
+const widgetPanels = Array.from(widgetWrapper.querySelectorAll('.widget__panel'));
+
+const createAccordions = () => {
+  widgetControlsWrapper.removeAttribute('role');
+  widgetBtns.forEach((btn, idx) => {
+    idx === open ? btn.setAttribute('aria-expanded', 'true') : btn.setAttribute('aria-expanded', 'false');
+    idx === open ? btn.parentElement.setAttribute('data-expanded', 'true') : btn.parentElement.setAttribute('data-expanded', 'false');
+    btn.parentElement.removeAttribute('role');
+    btn.removeAttribute('tabindex');
+    btn.removeAttribute('role');
+    btn.removeAttribute('aria-setsize');
+    btn.removeAttribute('aria-posinset');
+    btn.removeAttribute('aria-selected');
+    btn.parentElement.after(widgetWrapper.querySelector(`[aria-labelledby="${btn.id}"]`));
+  })
+
+  widgetPanels.forEach(panel => {
+    panel.setAttribute('role', 'region');
+    panel.removeAttribute('tabindex');
+    panel.removeAttribute('hidden');
+  })
+}
+
+const createTabs = () => {
+  widgetControlsWrapper.setAttribute('role', 'tablist');
+  widgetBtns.forEach((btn, idx) => {
+    btn.parentElement.setAttribute('role', 'presentation');
+    btn.setAttribute('role', 'tab');
+    btn.setAttribute('aria-setsize', widgetBtns.length);
+    btn.setAttribute('aria-posinset', idx + 1);
+    idx === open ? btn.setAttribute('aria-selected', 'true') : btn.setAttribute('aria-selected', 'false');
+    if (idx !== open) btn.setAttribute('tabindex', '-1');
+    btn.removeAttribute('aria-expanded');
+    btn.parentElement.removeAttribute('data-expanded');
+  })
+
+  widgetPanels.forEach((panel, idx) => {
+    panel.setAttribute('role', 'tabpanel');
+    idx === open ? panel.setAttribute('tabindex', '0') : panel.setAttribute('hidden', '');
+  })
+  widgetPanels.reverse().forEach(el => widgetControlsWrapper.after(el));
+}
+
+function handleClickOnBtns(evt) {
+  if (evt.target.classList.contains('widget__btn')) {
+    if (evt.target.getAttribute('aria-expanded') === 'false') {
+      evt.target.setAttribute('aria-expanded', 'true');
+      evt.target.parentElement.setAttribute('data-expanded', 'true');
+    } else if (evt.target.getAttribute('aria-expanded') === 'true') {
+      evt.target.setAttribute('aria-expanded', 'false');
+      evt.target.parentElement.setAttribute('data-expanded', 'false');
+    }
+    if (evt.target.hasAttribute('role')) setActiveTab(evt.target);
+  }
+}
+
+setActiveTab = (activeTab) => {
+  widgetBtns.forEach(tab => {
+    if (tab === activeTab) {
+      tab.setAttribute('aria-selected', 'true');
+      tab.removeAttribute('tabindex');
+      widgetWrapper.querySelector(`[aria-labelledby="${tab.id}"]`).setAttribute('tabindex', '0');
+      widgetWrapper.querySelector(`[aria-labelledby="${tab.id}"]`).removeAttribute('hidden');
+    } else {
+      tab.setAttribute('aria-selected', 'false');
+      tab.setAttribute('tabindex', '-1');
+      document.getElementById(tab.getAttribute('aria-controls')).removeAttribute('tabindex');
+      document.getElementById(tab.getAttribute('aria-controls')).setAttribute('hidden', '');
+    }
+  })
+}
+
+function handleKeyboardInteraction(evt) {
+  if (navKeys.includes(evt.key) && evt.target.classList.contains('widget__btn')) {
+    evt.preventDefault();
+    const currentIdx = Number(evt.target.getAttribute('data-btn-idx'));
+    evt.target.hasAttribute('role') ? next = 'ArrowRight' : next = 'ArrowDown';
+    evt.target.hasAttribute('role') ? prev = 'ArrowLeft' : prev = 'ArrowUp';
+
+    if (evt.key === next && currentIdx < widgetBtns.length - 1) {
+      evt.target.hasAttribute('role') ? setActiveTab(widgetBtns[currentIdx + 1]) : widgetBtns[currentIdx + 1].focus();
+      if (evt.target.hasAttribute('role')) widgetBtns[currentIdx + 1].focus();
+    } else if (evt.key === prev && currentIdx > 0) {
+      evt.target.hasAttribute('role') ? setActiveTab(widgetBtns[currentIdx - 1]) : widgetBtns[currentIdx - 1].focus();
+      if (evt.target.hasAttribute('role')) widgetBtns[currentIdx - 1].focus();
+    } else if (evt.key === 'Home' || evt.key === 'End') {
+      evt.key === 'Home' && evt.target.hasAttribute('role') ? setActiveTab(widgetBtns[0]) : widgetBtns[0].focus();
+      evt.key === 'End' && evt.target.hasAttribute('role') ? setActiveTab(widgetBtns[widgetBtns.length - 1]) : widgetBtns[widgetBtns.length - 1];
+    }
+  }
+}
+
+window.addEventListener('DOMContentLoaded', (evt) => {
+  mq.matches ? createAccordions() : createTabs();
+})
+
+mq.addEventListener('change', (evt) => {
+  let currentFocus = document.activeElement;
+
+  if (currentFocus.closest('.widget__wrapper')) {
+    if (currentFocus.classList.contains('widget__btn')) {
+      open = Number(currentFocus.getAttribute('data-btn-idx'));
+    } else if (currentFocus.classList.contains('widget__panel')) {
+      open = Number(currentFocus.getAttribute('data-panel-idx'));
+      currentFocus = widgetWrapper.querySelector(`[data-btn-idx="${open}"]`);
+    } else if (currentFocus.closest('.widget__panel')) {
+      open = Number(currentFocus.closest('.widget__panel').getAttribute('data-panel-idx'));
+    }
+  }
+  mq.matches ? createAccordions() : createTabs();
+  currentFocus.focus();
+})
+
+widgetWrapper.addEventListener('click', handleClickOnBtns);
+widgetWrapper.addEventListener('keydown', handleKeyboardInteraction);
+```
+
+### CSS full code (Basic styling)
+
+```css
+:root {
+  --colour-interactive: rebeccapurple;
+  --colour-bg: #f1f1f1;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  padding: .5rem;
+  max-width: 50rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #202020;
+  background-color: var(--colour-bg);
+}
+
+details {
+  margin-bottom: 2px;
+  border: 2px solid var(--colour-interactive);
+}
+
+details div {
+  border-top: 2px solid var(--colour-interactive);
+  padding: 8px;
+}
+
+summary {
+  padding: 8px 10px;
+  color: var(--colour-interactive);
+  font-weight: bold;
+}
+
+summary:focus-visible {
+  color: var(--colour-bg);
+  background-color: var(--colour-interactive);
+  outline: 2px solid transparent;
+}
+
+.widget__btn {
+  position: relative;
+  padding: 8px 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--colour-interactive);
+  cursor: pointer;
+}
+
+.widget__btn[aria-expanded] {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+  border: 2px solid var(--colour-interactive);
+  width: 100%;
+  text-align: left;
+}
+
+.widget__btn[aria-expanded]::before,
+.widget__btn[aria-expanded]::after {
+  content: "";
+  position: absolute;
+  background-color: var(--colour-interactive);
+}
+
+.widget__btn[aria-expanded]::before {
+  right: 20px;
+  height: 20px;
+  width: 6px;
+  transition: transform ease-in 200ms;
+}
+
+.widget__btn[aria-expanded]::after {
+  right: 13px;
+  height: 6px;
+  width: 20px;
+}
+
+.widget__btn[aria-expanded="true"]::before {
+  transform: scaleY(0);
+}
+
+.widget__btn[aria-expanded]:focus-visible {
+  color: var(--colour-bg);
+  background-color: var(--colour-interactive);
+  outline: 2px solid transparent;
+}
+
+.widget__btn[aria-expanded]:focus-visible::before,
+.widget__btn[aria-expanded]:focus-visible::after {
+  background-color: var(--colour-bg);
+}
+
+.widget__panel[role="region"] {
+  position: relative;
+  top: -2px;
+  border: 2px solid var(--colour-interactive);
+  border-top: none;
+  padding: 8px;
+}
+
+[role="tablist"] {
+  display: flex;
+  gap: 2px;
+}
+
+[role="tab"] {
+  border: 1px solid var(--colour-interactive);
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+}
+
+[role="tab"][aria-selected="true"]::before,
+[role="tab"][aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+[role="tab"][aria-selected="true"]::before {
+  top: 0;
+  height: 0;
+  border-top: 3px solid var(--colour-interactive);
+}
+
+[role="tab"][aria-selected="true"]::after {
+  bottom: -1px;
+  width: 100%;
+  height: 3px;
+  background-color: var(--colour-bg);
+}
+
+[role="tabpanel"] {
+  padding: 8px;
+  border: 1px solid var(--colour-interactive);
+}
+
+[role="tab"]:focus-visible {
+  outline: 2px solid var(--colour-interactive);
+  outline-offset: -8px;
+}
+
+[role="tabpanel"]:focus-visible {
+  position: relative;
+  outline: 2px solid var(--colour-interactive);
+  z-index: 1;
+}
+
+[hidden],
+[data-expanded="false"]+.widget__panel {
+  display: none;
+}
+```
