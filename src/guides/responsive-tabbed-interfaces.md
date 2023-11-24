@@ -68,6 +68,8 @@ If this isn't the solution for you, I recommend exploring those linked above.
 
 ## So, without further ado, let's get stuck in
 
+I'm going to explain this step-by-step, which if you're already comfortable with JS will likely be far too much information, but maybe some folks are just starting out with it, so you can skip past those bits.
+
 ### A MVP for when there is no JS
 
 Let's start with the good stuff, the HTML, we want this to be our minimum viable product (MVP), this should be accessible if or when JS doesn't load or the user chooses not to allow it. Given that tabs usually show the the first panel on page load, we could do something similar, we could use the `<details><summary>` element and force the first one to be `open` on page load. But there are still some browser inconsistencies, as [Scott O'Hara points out here](https://www.scottohara.me/blog/2022/09/12/details-summary.html) and [Adrian Roselli points out here.](https://adrianroselli.com/2019/04/details-summary-are-not-insert-control-here.html)
