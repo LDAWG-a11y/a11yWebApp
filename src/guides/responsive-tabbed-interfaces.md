@@ -355,10 +355,10 @@ The interaction model for horizontal tabs is as follows:
 * Only one `tab` is in the page's focus order at any given time, pressing <kbd>Tab</kbd> whilst focus is on a `tab` will move focus out of the `tablist`, in our example focus will move to the `tabpanel`
 * Pressing <kbd>Shift</kbd> and <kbd>Tab</kbd> will also move focus out of the `tablist`, in reverse
 * Pressing <kbd>Shift</kbd> and <kbd>Tab</kbd> whilst focus is on a `tabpanel` will move focus back up to the active `tab`
-* A keyboard user should be able to focus on adjacent tabs using the horizontal arrow keys, in our automatic activation implementation, focusing on any tab will make it the active tab and automatically display its panel
-* Should a user reach the last tab and press the right arrow key or they press the left arrow key whilst focus is on the first tab, we can either cycle back through, infinitely or just do nothing, we're going to do nothing, reaching either end of the `tablist` will be a hard stop
-* If a user presses <kbd>Home</kbd> whilst focus is within the tablist, then focus moves to the first tab
-* If a user presses <kbd>End</kbd> whilst focus is within the tablist, then focus moves to the last tab
+* A keyboard user should be able to focus on adjacent tabs using the horizontal arrow keys, in our automatic activation implementation, focusing on any tab will make it the active `tab` and automatically display its panel
+* Should a user reach the last tab and press the right arrow key or they press the left arrow key whilst focus is on the first `tab`, we can either cycle back through, infinitely or just do nothing, we're going to do nothing, reaching either end of the `tablist` will be a hard stop
+* If a user presses <kbd>Home</kbd> whilst focus is within the `tablist`, then focus moves to the first `tab`
+* If a user presses <kbd>End</kbd> whilst focus is within the `tablist`, then focus moves to the last `tab`
 
 The interaction model for accordions is as follows:
 
