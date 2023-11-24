@@ -479,7 +479,9 @@ I'm not going to explain the CSS, as this has guide has already taken forever to
 * We need to hide the content of collapsed accordions and only show it when they are expanded
 * Our tabs need to look interactive and be aligned horizontally, each tab needs to look like something a user can operate and we need a focus indicator, along with a selected indicator
 * Our tabpanels need a focus indicator too, as the active panel has `tabindex="0"` set, so we need to show keyboard users where they are
-* We need to consider Windows High Contrast Mode, which will ignore a couple of background colours we set
+* We need to consider Windows High Contrast Mode, which will ignore a couple of background colours I had set
+
+I genuinely haven't taken much time to style these, I would of course do much better for an actual site. The High Contrast Mode focus indicators could definitely be improved and the CSS would be better if I used classes and media queries, as I'm currently using attributes, which may be present elsewhere on a page. This wasn't a styling exercise, just a proof of concept, please feel free to style your version much nicer.
 
 ## Codepen
 
