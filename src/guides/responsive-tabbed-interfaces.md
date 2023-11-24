@@ -816,6 +816,7 @@ summary:focus-visible {
   border: 1px solid var(--colour-interactive);
   border-bottom: none;
   border-radius: 3px 3px 0 0;
+  background-color: var(--colour-bg);
 }
 
 [role="tab"][aria-selected="true"]::before,
