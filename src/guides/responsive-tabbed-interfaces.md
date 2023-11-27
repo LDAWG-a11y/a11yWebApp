@@ -395,8 +395,8 @@ Quite a bit to consider there, but it's not as involved as it sounds, as the bro
   * We use the same logic as above for 'ArrowLeft' and 'ArrowUp', but assigning them to a `prev` variable
 * If the `evt.key` matches the value of our `next` variable (When tabs are present that will be the right arrow key, else accordions are present so it will be the down arrow key) and focus is not on the last button (`currentIdx` is less than `widgetBtns.length - 1` then we need to advance focus to the next button
 
-  * If it's a tab then we need to pass the next button to the `setActiveTab()` function and we pass in `widgetBtns[currentIdx + 1]`, which just gets the next item in the array, we also run a check that the element was a tab and then get that same indexed element and append with `.focus()`
-  * If it's an accordion, we only need to move focus to the next one if present, so we don't call a function, we just use the array index and append with `.focus()`
+  * If it's a tab then we need to pass the next button to the `setActiveTab()` function and we pass in `widgetBtns[currentIdx + 1]`, which just gets the next item in the array
+  * Then for either widget, we need to move focus to the next or previous button one if present, so we use the array index and append with `.focus()`
 * We repeat the same logic as the previous step, in reverse for when a user presses the left or up arrows, this time we are matching against the `prev` variable's value. We are checking if a user is not focused on the first button by requiring the `currentIdx` to be greater than `0` and if it is we call the `setActiveTab` function and move `focus()`, this time we don't add `1` to the array, we subtract `1`
 * If the keys pressed were either `'Home'` or `'End'` we then determine which widget is displayed by checking whether the `target` `<button>` has the `role` attribute present, if it does and a user pressed  <kbd>Home</kbd> pass the first item in the `widgetBtns` array to the `setActiveTab()` function, then `focus()` on the first item in the same array
 
@@ -414,13 +414,13 @@ That's pretty much it, our tabs and accordions have good markup, the correct ARI
     evt.target.hasAttribute('role') ? prev = 'ArrowLeft' : prev = 'ArrowUp';
 
     if (evt.key === next && currentIdx < widgetBtns.length - 1) {
-      evt.target.hasAttribute('role') ? setActiveTab(widgetBtns[currentIdx + 1]) : widgetBtns[currentIdx + 1].focus();
-      if (evt.target.hasAttribute('role')) widgetBtns[currentIdx + 1].focus();
+      if (evt.target.hasAttribute('role')) setActiveTab(widgetBtns[currentIdx + 1])
+      widgetBtns[currentIdx + 1].focus();
     } else if (evt.key === prev && currentIdx > 0) {
-      evt.target.hasAttribute('role') ? setActiveTab(widgetBtns[currentIdx - 1]) : widgetBtns[currentIdx - 1].focus();
-      if (evt.target.hasAttribute('role')) widgetBtns[currentIdx - 1].focus();
+      if (evt.target.hasAttribute('role')) setActiveTab(widgetBtns[currentIdx - 1]);
+      widgetBtns[currentIdx - 1].focus();
     }
-    
+
     if (evt.key === 'Home' && evt.target.hasAttribute('role')) setActiveTab(widgetBtns[0]);
     if (evt.key === 'Home') widgetBtns[0].focus();
     if (evt.key === 'End' && evt.target.hasAttribute('role')) setActiveTab(widgetBtns[widgetBtns.length - 1]);
@@ -646,7 +646,7 @@ function handleClickOnBtns(evt) {
   }
 }
 
-setActiveTab = (activeTab) => {
+const setActiveTab = (activeTab) => {
   widgetBtns.forEach(tab => {
     if (tab === activeTab) {
       tab.setAttribute('aria-selected', 'true');
@@ -670,11 +670,11 @@ function handleKeyboardInteraction(evt) {
     evt.target.hasAttribute('role') ? prev = 'ArrowLeft' : prev = 'ArrowUp';
 
     if (evt.key === next && currentIdx < widgetBtns.length - 1) {
-      evt.target.hasAttribute('role') ? setActiveTab(widgetBtns[currentIdx + 1]) : widgetBtns[currentIdx + 1].focus();
-      if (evt.target.hasAttribute('role')) widgetBtns[currentIdx + 1].focus();
+      if (evt.target.hasAttribute('role')) setActiveTab(widgetBtns[currentIdx + 1])
+      widgetBtns[currentIdx + 1].focus();
     } else if (evt.key === prev && currentIdx > 0) {
-      evt.target.hasAttribute('role') ? setActiveTab(widgetBtns[currentIdx - 1]) : widgetBtns[currentIdx - 1].focus();
-      if (evt.target.hasAttribute('role')) widgetBtns[currentIdx - 1].focus();
+      if (evt.target.hasAttribute('role')) setActiveTab(widgetBtns[currentIdx - 1]);
+      widgetBtns[currentIdx - 1].focus();
     }
 
     if (evt.key === 'Home' && evt.target.hasAttribute('role')) setActiveTab(widgetBtns[0]);
