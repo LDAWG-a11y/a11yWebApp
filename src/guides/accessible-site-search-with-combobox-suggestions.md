@@ -23,9 +23,9 @@ In essence, it is a combobox in that if it quacks like a combobox and walks like
 
 I couldn't talk about comboboxes without linking to [Sarah Higley's amazing deep dive into comboboxes](https://sarahmhigley.com/writing/select-your-poison/), this is my goto for most combobox recommendations, as it is super detailed. Sarah's comboboxes are for displaying suggestions for options, picking fruit etc, something that will not navigate to a new URL, so this guide does differ somewhat, but also because I'm not as smart as Sarah.
 
-## Ok, how will this one differ?
+## Ok, how will ours differ?
 
-There will be a few minor differences, but in general they'll be super similar and I'll point out where we have an issue that may be problematic, so as an advance waring, please do not take this code and think it is immediately accessible or compliant.
+I'm going to build three different examples using different patterns, each of them will have something that may be an issue to users or compliance. So, unfortunately this is not a guide that can provide a "solution" as such, it's a guide that provides three options, but for use in the wild, I cannot stress enough that these would need to be tested with disabled users to determine which approach is the best for them. I don't have the luxury of a budget to pay for user testing so these are just concepts, for further exploration by you and your team. In isolation, they may all have at least one issue, but on an actual site those issues may or may not be problematic, depending on other factors. So, this is a proceed with caution warning.
 
 ## Let's look at some other site searches from around the web
 
