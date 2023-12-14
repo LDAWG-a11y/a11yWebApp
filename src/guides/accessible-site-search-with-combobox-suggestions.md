@@ -87,7 +87,7 @@ As it is critical that we consider all users when developing sites and the compo
 
 ## How should we build one?
 
-I don't have a definitive answer here, I'm afraid. If I had the resources available to me, I'd quite happily pay for some user testing, to test several patterns to determine which one seemed the most intuitive to screen reader users. We can build a few patterns though and list the pros and cons of each, then if you're viewing this page to find a solution, maybe you can conduct the user testing and base your decision on that?
+I don't have a definitive answer here, I'm afraid. If I had the resources available to me, I'd quite happily pay for some user testing, to test several patterns to determine which one seemed the most intuitive, especially to screen reader users. We can build a few patterns though and list the pros and cons of each, then if you're viewing this page to find a solution, maybe you can conduct the user testing and base your decision on that?
 
 ## Let's build some examples
 
