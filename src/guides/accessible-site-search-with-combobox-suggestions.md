@@ -17,11 +17,9 @@ isGuide: true
 
 We have all encountered those site search patterns where as we start typing or focus on the input, a box displays underneath the input and it will filter suggestions based upon the characters typed into the input. All major search engines use these patterns, so when you Google something, Bing it (that will never sound right) or whatever else, you'll typically start typing in an input and it will display suggestions, based upon matching the characters you have typed. They are of course also very common on eCommerce sites and most sites where there is a tonne of content.
 
-Functionally, they act almost identical to the combobox pattern, with one major difference, a combobox usually displays a list of items with role="option" and it will do something on that page or set a selection when a user makes their choice.
+Functionally, they act almost identical to the combobox pattern, with one major difference, a `combobox` with a `listbox` displays a list of items with `role="option"` and it will do something on that page or set a selection when a user makes their choice, a site search with suggestions will navigate to a new page; be that a results page or directly to the exact page.
 
-In essence, it is a combobox in that if it quacks like a combobox and walks like a combobox, then it probably is, only this one flies to another page, which does create an issue that seemingly has no definitive answer.
-
-I couldn't talk about comboboxes without linking to [Sarah Higley's amazing deep dive into comboboxes](https://sarahmhigley.com/writing/select-your-poison/), this is my goto for most combobox recommendations, as it is super detailed. Sarah's comboboxes are for displaying suggestions for options, picking fruit etc, something that will not navigate to a new URL, so this guide does differ somewhat, but also because I'm not as smart as Sarah.
+I couldn't talk about comboboxes without linking to [Sarah Higley's amazing deep dive into comboboxes](https://sarahmhigley.com/writing/select-your-poison/), this is my goto for most `combobox` recommendations, as it is super detailed. Sarah's comboboxes are for displaying suggestions for options, picking fruit etc, something that will not navigate to a new URL, so this guide does differ somewhat, but also because I'm not as smart as Sarah.
 
 ## Ok, how will ours differ?
 
@@ -79,9 +77,7 @@ This one is quite disappointing, even if it simply announced the presence of the
 
 We looked at four different implementations and we could have gone on forever, as seldom are the patterns the same under the hood. I'm not saying it is important that a screen reader hears that it is an "option" because that implies that no change of context should automatically occur (without warning). Which begs the question, what should they hear if they access the suggestions? Well ultimately it's a link as it navigates to a new URL, but we cannot have links in a `listbox`, at least we cannot have their semantics exposed, we can of course add `role="option"` to them, but then we are back at square one, assuming that role is announced at all.
 
-Apple's are announced as links and it does inform a screen reader that there are a certain number of options available. It does not have `aria-controls` present on the input, which I know doesn't do a great deal due to lack of screen reader support, it does create that programmatic relationship.
-
-I have to admit to not having any data on how often a blind screen reader user will use the suggestions, I can imagine scenarios where they are not as helpful to an unsighted user as they are to a sighted user, but that is always going to differ from user to user, from site to site, browsing history and even from query to query. If a user is searching for something that they have previously searched for before and that input stores their previous searches, they could of course be super useful. More obscure sequences of characters, perhaps an author's name for example may pretty much guarantee that the suggestion will appear, so that could be helpful, there are lots of scenarios where they could indeed be super useful to screen reader users.
+Apple's are announced as links and it does inform a screen reader that there are a certain number of options available. It does not have `aria-controls` present on the input, which I know doesn't do a great deal due to lack of screen reader support, it does at least reinforce that programmatic relationship.
 
 As it is critical that we consider all users when developing sites and the components they are built with we need to ensure that we ensure they work for screen reader users too, then they are in the best position to decide whether they use it or not, choice is tool that allows users to operate sites in a way that works for them.
 
@@ -91,28 +87,334 @@ I don't have a definitive answer here, I'm afraid. If I had the resources availa
 
 ## Let's build some examples
 
-As always, this isn't a design demo, so I'm just going to make them look OK, I will of course ensure contrast and focus are perceivable, but they'll look relatively basic, just to reduce the amount of work I need to do. Also, there are some differences between the examples we discussed, most of them redirect a user to a search results page, whereas the Mozilla example directs a user to the actual page, we're going to be doing the latter
+As always, this isn't a design demo, so I'm just going to make them look OK, I will of course ensure contrast and focus are perceivable, but they'll look relatively basic, just to reduce the amount of work I need to do. Also, there are some differences between the examples we discussed, most of them redirect a user to a search results page, whereas the Mozilla example directs a user to the actual page, we're going to be doing the latter.
+
+We will only add the combobox when JS is available, I always buy into progressive enhancement, in that we don't want redundant controls on a page for our users if JS isn't available. What I'm going to do here is I'm going to write the base HTML for the input and its containers in actual HTML, obviously without JS this will do nothing at all. The two options here are:
+
+* Add the input and wrapping elements to the DOM with JS, then a user won't have to face the frustration of interacting with a redundant control
+* Wrap the element in a <form> (assuming you have a backend for this), which you may want to remove or neutralise when JS is available as the links will be doing the navigating when there is JS
+
+For the first example, I am going to provide all three files: HTML, JS & CSS and only the JS for the remaining examples, as that's the only file that will change (He says apprehensively as thus far he has only built the first example).
 
 ### The combobox and option approach
 
-We will only add the combobox when JS is available, let's pretend we have a backend that handles the form submission, we just have a form with role="search", an input with aria-labelledby="\[ID_of_button]" and then finally, we have a <button> which contains two <span> elements, one contains the legally required magnifying magnifying glass (If you read your law from design magazines that is) and the other contains the to-be-hidden text label, because that's usually what we have to work with.
+Technically this fails [WCAG 3.2.2 On Input (A)](https://www.w3.org/WAI/WCAG22/Understanding/on-input.html), as it states "Changing the setting of any user interface component does not automatically cause a change of context unless the user has been advised of the behaviour before using the component." It then goes on to state that "So checking a checkbox, entering text into a text field, or changing the selected option in a list control changes its setting, but activating a link or a button does not". So, this is in fact causing a change of context here, in that the page that loads is a new context, focus will move to the `<body>` of the new page and navigating using an `role="option"` is still changing a selected "option".
 
-There is actually a new HTML element <search> which has pretty good browser support right now, with just a couple of browsers on mobile not having implemented it, I'm not going to use it here just because I have never got round to using it or playing around with it, I'm not putting a placeholder in this, because meh and I'm also having a button, even though it's getting more common that search fields don't have them, again, meh.
+How much of an issue is this? Ultimately if something is tested with disabled users and they say it is perfectly understandable to them, irrespective of what WCAG says then users before standards, always. This view can of course be problematic for legal risk, depending where in the world you live, maybe the fact it does not fully comply could leave you open to some legal challenge.
+
+What behaviour would a user expect from a site search? A sighted user would not "see" a typical `<select>` &` <option>`s element, as the OS styles those, so what they "see" resembles something they encounter every time they use a search engine, an item that will accept text filtering, whilst filtering a bunch of suggestions, clicking one of those suggestions will navigate to a results page or an actual page.
+
+What about a user that is blind and cannot see the interface? If their screen reader tells them "option, 1 of 10, selected" (or words to that effect), will they expect to navigate to a new URL? That's a question only screen reader users can answer. If the only user group that may find this behaviour unexpected are screen reader users, would it be enough to advise just those users of what will happen? I'm not a fan of hiding instructions just for screen reader users, typically all users benefit from them, in this instance though maybe it's acceptable, as we can make our suggestions look like links, we could use icons, underlines or whatever just to add additional visual affordances. As any of those aforementioned affordances won't necessarily provide a user of a screen reader with any additional information, could we just ensure that the name of the <input> includes a little extra info? If our input had a visually hidden accessible name, such as "Search navigation links" and we had underlines on the actual links, is that enough of an advance warning to both sighted and unsighted users?
+
+I could include a `<button>`, like a "Go" <`button>`, a user clicks a suggestion, focus returns to the input and there is an adjacent `<button>`, which when clicked will then do exactly perform the same action. This is an acceptable WCAG technique for meeting the On input SC. But, sometimes it may be hard to convince stakeholders to add that `<button>`, as you may get the whole "It's adding an extra step for everybody" feedback, which is probably true. We may also get the "We don't want a visible text `<label>` on the `<input>`" instruction. So, what I am going to do, is just create an `<input>`, the `<input>` will have no button or visible label, it will just have a magnifying glass icon. Visually it has a label, as the icon communicates the purpose, programmatically, it will have a proper< label>, with the visually hidden text "Search navigation links". I have to admit to not being 100% sure whether in isolation the underlined links and the hidden label are enough to "advise" a user of expected behaviour to pass On input, I think it is, but somebody smarter may disagree. See this as a "grey area", until you can confirm otherwise.
+
+In any event, I would hope that this would not be the sole navigation mechanism on any site, so assuming there was a typical `<nav>` and perhaps a site map or footer links, then there are alternative ways navigating. But ultimately, test with users, they can tell you what is understandable and usable to them, much better than somebody who does not have the same lived experiences.
+
+#### The HTML
+
+Nothing spectacular here, an `<input>` with an SVG and some wrapping `<div>` elements. we'll add the roles and properties with JS, as they're redundant without it, but as I said, this could be in a `<form>` for users without JS.
 
 ```html
-<form class="search__wrapper" role="search">
-  <input class="search__input" type="text" aria-labelledby="sBtn">
-  <button class="search__btn" type="submit">
-    <span>
-      <svg aria-hidden="true" focusable="false" stroke="#000" stroke-width="9.8" viewBox="-19.6 -19.6 529.6 529.6"
-        height="1.25rem">
-        <path
-          d="M484.1 454.8 373.6 344.2a210.6 210.6 0 1 0-29.2 29.2l110.5 110.5c12.9 11.8 25 4.2 29.2 0a20 20 0 0 0 0-29.1zm-443-244a169.5 169.5 0 1 1 339 0 169.5 169.5 0 0 1-339 0z" />
-      </svg>
-    </span>
-    <span class="visually-hidden">Search</span>
-  </button>
-</form>
+<div class="header__search-container">
+  <div class="search__wrapper" data-expanded="false">
+    <label for="sFilter" class="visually-hidden">Search navigation links</label>
+    <input class="search__input" id="sFilter" class="search__input" type="text" autocomplete="off">
+    <svg aria-hidden="true" focusable="false" stroke="#000" stroke-width="9.8" viewBox="-19.6 -19.6 529.6 529.6"
+      height="1.25rem">
+      <path
+        d="M484.1 454.8 373.6 344.2a210.6 210.6 0 1 0-29.2 29.2l110.5 110.5c12.9 11.8 25 4.2 29.2 0a20 20 0 0 0 0-29.1zm-443-244a169.5 169.5 0 1 1 339 0 169.5 169.5 0 0 1-339 0z" />
+    </svg>
+  </div>
+</div>
+<h1>Some static content</h1>
 ```
 
-Now, I'll just style it, i'm not going to explain any of this.
+#### The CSS
+
+Now, I'll just style it, I'm not going to explain any of this, I'll just summarise a few key points, after.
+
+```css
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --colour__primary: rebeccapurple;
+  --colour__bg: #fafafa;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header__search-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 24px 8px;
+  width: 100%;
+  font-size: 1.125rem;
+}
+
+.search__wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 25rem;
+}
+
+.search__wrapper svg {
+  position: absolute;
+  right: .5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--colour__primary);
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.search__input {
+  border: 2px solid var(--colour__primary);
+  border-radius: 6px;
+  padding: 8px 32px 8px 8px;
+  width: 100%;
+  font-size: 1.25rem;
+}
+
+.search__input:focus {
+  outline: 3px solid var(--colour__primary);
+  outline-offset: 2px;
+}
+
+.search__panel-container {
+  position: absolute;
+  bottom: 22px;
+  transform: translateY(100%);
+  border: 2px solid var(--colour__primary);
+  border-radius: 0 0 4px 4px;
+  margin: 0 4px;
+  padding-top: 6px;
+  width: calc(100% - 16px);
+  max-width: 25rem;
+  background-color: var(--colour__bg);
+}
+
+.search__wrapper[data-expanded="false"]+.search__panel-container {
+  display: none;
+}
+
+.search__panel {
+  width: 100%;
+  overflow-y: auto;
+  max-height: 60dvh;
+}
+
+.search__option {
+  display: block;
+  margin-bottom: 4px;
+  padding: 4px;
+  line-height: 1.5;
+  color: var(--colour__primary);
+}
+
+.search__option[aria-selected="true"],
+.search__option:hover {
+  background-color: var(--colour__primary);
+  color: var(--colour__bg);
+}
+
+@media (forced-colors: active) {
+  .search__option[aria-selected="true"] {
+    color: var(--colour__primary);
+    outline: 3px solid var(--colour__primary);
+    outline-offset: -2px;
+  }
+}
+
+.search__message {
+  display: block;
+  margin-bottom: 4px;
+  padding: 4px;
+  line-height: 1.5;
+  color: #bd0000;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+```
+
+* Normally I use `rem` units for `padding` and `margin`, I'm just experimenting with `px` units for this, as in this case there's little benefit making spacing bigger with page zoom
+* I add an `outline` with an offset to the `<input>` when it has focus, because show the people where they are and all that
+* I invert the colours of the background and text for the options, as typically you will see folks add a light grey background to the selected option and I can't see how that would pass [1.4.1 Use of Colour](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html)
+* Our background won't show in High Contrast Mode, so I've added an outline to the selected option, so people can see where they are
+* I've hidden the actual label as I am being a sheep
+* I've made it look okay-ish and centred it etc
+
+#### The JavaScript
+
+```javascript
+const searchFilterWrapper = document.querySelector('.header__search-container');
+const keys = ['ArrowUp', 'ArrowDown', 'Enter'];
+let itemsArr = [];
+let currItem;
+const links = [
+  { label: "Home", url: "#a" },
+  { label: "About", url: "#b" },
+  { label: "Contact", url: "#c" },
+  { label: "Old Thing", url: "#d" },
+  { label: "New Thing", url: "#" },
+  { label: "New Thing Ultra", url: "#e" },
+  { label: "New Thing Ultra Pro", url: "#f" },
+  { label: "New Thing Ultra Pro Max", url: "#g" },
+  { label: "New Thing Ultra Pro Max Plus", url: "#h" },
+  { label: "Shipping", url: "#i" },
+  { label: "Privacy", url: "#j" },
+  { label: "Cookies", url: "#k" },
+  { label: "Accessibility? LOL", url: "#l" }
+];
+
+searchFilterWrapper.insertAdjacentHTML('beforeend', `<div class="search__panel-container"><div class="search__panel" id="lbox" role="listbox" aria-labelledby="sFilter"></div>
+<span aria-live="polite" class="search__message visually-hidden"></span></div>`);
+
+links.forEach((link, idx) => {
+  itemsArr += `<a class="search__option" id="opt-${idx + 1}" role="option" tabindex="-1" href="${link.url}">${link.label}</a>`;
+})
+
+const searchWrapper = document.querySelector('.search__wrapper');
+const searchInput = document.querySelector('.search__input');
+const listbox = document.querySelector('.search__panel');
+const message = searchFilterWrapper.querySelector('.search__message');
+listbox.insertAdjacentHTML('beforeend', itemsArr);
+itemsArr = Array.from(listbox.querySelectorAll('.search__option'));
+
+searchInput.setAttribute('role', 'combobox');
+searchInput.setAttribute('aria-activedescendant', '');
+searchInput.setAttribute('aria-autocomplete', 'list');
+searchInput.setAttribute('aria-expanded', 'false');
+searchInput.setAttribute('aria-controls', 'lbox');
+
+const enumerateItems = () => {
+  listbox.querySelectorAll('.search__option').forEach((item, idx) => {
+    item.setAttribute('aria-setsize', `${listbox.querySelectorAll('.search__option').length}`);
+    item.setAttribute('aria-posinset', `${idx + 1}`);
+  })
+}
+
+listbox.querySelectorAll('.search__option').forEach((link, idx) => {
+  enumerateItems();
+})
+
+searchInput.addEventListener('focus', (evt) => {
+  searchInput.setAttribute('aria-expanded', 'true');
+  searchWrapper.setAttribute('data-expanded', 'true');
+})
+
+searchInput.addEventListener('blur', (evt) => {
+  searchInput.setAttribute('aria-expanded', 'false');
+  searchWrapper.setAttribute('data-expanded', 'false');
+})
+
+const filterItems = () => {
+  itemsArr.forEach((item, idx) => {
+    if (item.textContent.toLowerCase().includes(searchInput.value.toLowerCase())) {
+      listbox.appendChild(item);
+    } else {
+      item.removeAttribute('aria-selected');
+      item.remove();
+    }
+    enumerateItems();
+  })
+}
+
+searchInput.addEventListener('keydown', (evt) => {
+  if (keys.includes(evt.key) && itemsArr.length) {
+    evt.preventDefault();
+
+    if (!currItem && evt.key === 'ArrowDown') {
+      setSelected(listbox.querySelector('[aria-posinset="1"]'));
+    } else if (currItem && evt.key === 'ArrowDown' && currItem.nextSibling) {
+      setSelected(currItem.nextElementSibling);
+    }
+
+    if (currItem && evt.key === 'ArrowUp' && currItem.previousSibling) {
+      setSelected(currItem.previousElementSibling);
+    }
+
+    if (evt.key === 'Enter') {
+      listbox.querySelector('.search__option').forEach(item => {
+        if (searchInput.value.toLowerCase() === item.textContent.toLowerCase()) {
+          item.click();
+        }
+      })
+    }
+  }
+})
+
+searchInput.addEventListener('input', (evt) => {
+  filterItems();
+  if (listbox.querySelectorAll('.search__option').length === 0) {
+    searchInput.setAttribute('aria-activedescendant', '');
+    currItem = '';
+    displayError();
+  } else {
+    message.classList.add('visually-hidden');
+  }
+
+  if (currItem) {
+    if (listbox.querySelectorAll('.search__option').length === 1 ||
+      (listbox.querySelectorAll('.search__option').length > 1 && !listbox.querySelector(`${currItem.id}`))) {
+      setSelected(listbox.querySelector('[aria-posinset="1"]'));
+    }
+  }
+})
+
+const setSelected = (item) => {
+
+  document.querySelectorAll('.search__option').forEach(link => {
+    if (link === item) {
+      item.setAttribute('aria-selected', 'true');
+      searchInput.setAttribute('aria-activedescendant', item.id);
+      currItem = item;
+      item.scrollIntoView({ block: "nearest", inline: "nearest" });
+    } else {
+      link.removeAttribute('aria-selected')
+    }
+
+    if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+      message.textContent = '';
+      message.textContent = `${item.textContent}, selected, ${item.getAttribute('aria-posinset')} of ${listbox.querySelectorAll('a').length}`;
+    }
+  })
+}
+
+function displayError() {
+  message.classList.remove('visually-hidden');
+  message.textContent = 'No matching results';
+}
+```
+
+* So, I'm setting some global variables, particularly for the container to pop the listbox in, the keys a user will press an empty array and an empty variable
+* I'm just grabbing out links from an array of objects
+* I'm adding a further wrapper (We can't have an error in a listbox), then I'm adding this message container, I'm mostly doing this as Safari doesn't support aria-activedescendant, but also I want to inform a user that there are no  matching suggestions, as that's useful to know, right?
+* I loop through our links creating a HTML string, with the necessary roles and properties, along with classes and IDs, adding to our previously empty array
+* I decare all the variables as HTML elements that we need later
+* I add all of the roles and properties to the input
+* You may notice I didn't use a list, I have used aria-posinset and aria-setsize instead, I of course update this as necessary
+* I expand the listbox on focus and close it on a blur event
+* I filter a user's typed string against the textContent of the links, if that string is present, keep it, else remove it from the DOM
+* I listen for key presses that match our array of keys, if it arrow down and there is no selected option we pass the first (aria-posinset="1") to a setSelection() function, else we just move to the next sibling if present and a hard stop if there isn't a sibling
+* Similar to above, if a user is pressing up we send the previous sibling to the setSelection() function, else a hard stop
+* If a user presses Enter and the characters they input match the textContent of any link, we auto click that link and they navigate to that page
+* If the user has focussed on a link and presses Enter, we also complete that action automatically
