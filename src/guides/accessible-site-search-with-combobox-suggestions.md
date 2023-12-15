@@ -417,4 +417,10 @@ function displayError() {
 * I listen for key presses that match our array of keys, if it arrow down and there is no selected option we pass the first (aria-posinset="1") to a setSelection() function, else we just move to the next sibling if present and a hard stop if there isn't a sibling
 * Similar to above, if a user is pressing up we send the previous sibling to the setSelection() function, else a hard stop
 * If a user presses Enter and the characters they input match the textContent of any link, we auto click that link and they navigate to that page
-* If the user has focussed on a link and presses Enter, we also complete that action automatically
+* If the user has focussed on a link and presses Enter, we also complete that action automatically NEED TO FIX THIS
+* If there are no matches, we reset our variable to empty, set aria-activedescendant to empty and call the displayError() function
+* We manage which item to focus on, in the options if there is at leas one option, this could be improved, as if the currently focused item is removed from the DOM, I'm just pushing it back to the first item, when it would be nicer to plce it on the next sibling if it exists
+* When an item is the "focused" item, we set aria-selected and update the value of aria-active descendant, along with our currItem variable
+* We ensure that the user can actually see which item they have arrowed to, using scrollIntoView() and we remove aria-selected from any item that isn't the currently selected item
+* We shoehorn a fix in for Safari, as they don't support aria-activedescendant, so we check for that user agent, then we build a string that will announce "\[Item name], selected, \[position of item] of \[number of items in set]", this matched exactly what I heard from VoiceOver output on Safari with an alternative, so i have provided identical information
+* I finally have a error message which will be visible to users and heard by screen reader users "No matching results"
