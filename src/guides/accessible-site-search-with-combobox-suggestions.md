@@ -221,6 +221,7 @@ body {
 }
 
 .search__option[aria-selected="true"],
+.search__option[data-focused="true"],
 .search__option:hover {
   background-color: var(--colour__primary);
   color: var(--colour__bg);
@@ -405,9 +406,10 @@ function displayError() {
 ```
 
 * So, I'm setting some global variables, particularly for the input, its wrapper, the container to pop the listbox in, the keys a user will press, an empty `itemsArr` array and an empty `currItem` variable
-* I'm just grabbing our links from an array of objects
+* I'm just grabbing our `links` from an array of objects
 * I'm adding a further wrapper (We can't have an error message in a `listbox`), then I'm adding this message container as a sibling of the `listbox`, I'm mostly doing this as Safari doesn't support `aria-activedescendant`, yet, but also I want to inform a user that there are no  matching suggestions, as that's useful to know, right?
-* I loop through our links creating a HTML string, with the necessary roles and properties, along with classes and IDs, adding them to our `itemsArr` array
+* I loop through our `links` creating a HTML string, with the necessary roles and properties, along with classes and IDs, adding them to our `itemsArr` array
+* I'm actually using links with a `role="option"`, as there seems little point reinventing the wheel for navigating when links do exactly that
 * I declare some new variables that we created from strings as actual HTML elements that we need later
 * I add all of the roles and properties to the input
 * You may notice I didn't use a list, I have used `aria-posinset` and `aria-setsize` instead, I of course update this as necessary, so it is always accurate
@@ -423,3 +425,11 @@ function displayError() {
 * We ensure that the user can actually see which item they have arrowed to, using `scrollIntoView() `and we remove `aria-selected` from any item that isn't the currently selected item
 * We shoehorn a fix in for Safari, as it doesn't support `aria-activedescendant`, so we check for that user agent, then we build a string that will announce "\[Item name], selected, \[position of item] of \[number of items in set]", this matched exactly what I heard from VoiceOver output on Safari with an alternative, so I have provided identical information
 * I finally have a error message which will be visible to users and heard by screen reader users "No matching results"
+
+So, that wraps up the first example, which uses the standard combobox pattern, albeit for navigation as opposed to selecting something. Unlike MDN's at least we haven't added a link inside the option, we just used a link so we got its behaviour and applied `role="option" `to use the correct ARIA pattern.
+
+Whether this is better than any of the examples we looked at for users is not something I can answer, but it is an approach worth considering, maybe you or your team could improve it further?
+
+### The combobox and dialog approach
+
+I haven't seen this used out in the wild, it was an untested suggestion by a member of the A11y Slack community and it makes a lot of sense. A `combobox` can be associated with an element that either has the role of `listbox`, `tree`, `grid` or `dialog`. We have already used `listbox`, we don't need `grid` or `tree`, but the beauty of `dialog` is that it doesn't have any constraints over what we place inside it. Our links can actually be links without overwriting the `role`. As I am writing this little intro to this next component, I have to say, I haven't built it yet, so this is going to be something cool to explore for me. We're not going to use a modal dialog, we're going non-modal. I'm just going to try and get away with using our existing HTML and CSS, although for a `dialog`, I could likely get rid of a wrapping `<div>` or two, but that's not an issue. Just to be clear, I definitely didn't have to add an extra line of CSS, for the links in the dialog, I totally guessed that in advance, honest :) .
