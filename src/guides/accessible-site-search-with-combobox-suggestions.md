@@ -15,7 +15,7 @@ isGuide: true
 ---
 ## Site search with suggestions
 
-We have all encountered those site search patterns where as we start typing or focus on the input, a box displays underneath the input and it will filter suggestions based upon the characters typed into the input. All major search engines use these patterns, so when you Google something, Bing it (that will never sound right) or whatever else, you'll typically start typing in an input and it will display suggestions, based upon matching the characters you have typed. They are of course also very common on eCommerce sites and most sites where there is a tonne of content.
+We have all encountered those site search patterns where as we start typing or focus on the input, a box displays underneath the input and it will filter suggestions based upon the characters typed into the input. All major search engines use these patterns, so when you Google something, Bing it (that will never sound right) or whatever else, you'll typically start typing into an input and it will display suggestions, based upon matching the characters you have typed against suggestions. They are of course also very common on eCommerce sites and most sites where there is a tonne of content.
 
 Functionally, they act almost identical to the combobox pattern, with one major difference, a `combobox` with a `listbox` displays a list of items with `role="option"` and it will do something on that page or set a selection when a user makes their choice, a site search with suggestions will navigate to a new page; be that a results page or directly to the exact page.
 
@@ -23,13 +23,13 @@ I couldn't talk about comboboxes without linking to [Sarah Higley's amazing deep
 
 ## Ok, how will ours differ?
 
-I'm going to build three different examples using different patterns, each of them will have something that may be an issue to users or compliance. So, unfortunately this is not a guide that can provide a "solution" as such, it's a guide that provides three options, but for use in the wild, I cannot stress enough that these would need to be tested with disabled users to determine which approach is the best for them. I don't have the luxury of a budget to pay for user testing so these are just concepts, for further exploration by you and your team. In isolation, they may all have at least one issue, but on an actual site those issues may or may not be problematic, depending on other factors. So, this is a proceed with caution warning.
+I'm going to build three different examples using different patterns, unfortunately this is not a guide that can provide a "solution" as such, it's a guide that provides three options, but if using in the wild, I cannot stress enough that these would need to be tested with disabled users to determine which approach is the best for them. I don't have the luxury of a budget to pay for user testing so these are just concepts, for further exploration by you and your team. In isolation, they may all have at least one issue, but on an actual site those issues may or may not be problematic, depending on other factors. So, this is a proceed with caution warning.
 
 ## Let's look at some other site searches from around the web
 
-I'll discuss several different implementations here, just to show how there isn't a universally agreed pattern and how each company has approached the issue. There will be limitations with my findings here, in that visually, they all look somewhat the same, as there is an input which will display a panel of suggestions below it. Sighted users will generally be familiar with the pattern, they have no idea what roles and properties the components use, as much of this information is only communicated to screen readers, although it can of course affect other assistive technologies such as speech input etc.
+I'll discuss several different implementations here, just to show how there isn't a universally agreed pattern and how each organisation has approached the issue. There will be limitations with my findings here, in that visually, they all look somewhat the same, as there is an input which will display a panel of suggestions below it. Sighted users will generally be familiar with the pattern, they have no idea what roles and properties the components use, as much of this information is only communicated to screen readers, although it can of course affect other assistive technologies such as speech input etc.
 
-The information that is passed to a screen reader comes from the roles and properties, a screen reader user who cannot see the interface will of course rely on certain roles and properties, along with names to understand a component, its purpose, how to interact with it. I cannot speak for screen reader users and I have no anecdotal evidence to suggest any of the following patterns is more accessible or less accessible than another to a screen reader user. I'm just making observations and this is primarily to discuss the different patterns in use across popular sites.
+The information that is passed to a screen reader comes from the roles and properties, a screen reader user who cannot see the interface will of course rely on certain roles and properties, along with names to understand a component, its purpose and how to interact with it. I cannot speak for screen reader users and I have no anecdotal evidence to suggest any of the following patterns is more accessible or less accessible than another to a screen reader user. I'm just making observations and this is primarily to discuss the different patterns in use across popular sites.
 
 It is of course safe to say that if the suggestions offer value to some users, then that same value must be afforded to all users, so in the case of a screen reader user that cannot see the suggestions appear and filter, they need to know they are there and how to get to them should they wish to use them.
 
@@ -41,7 +41,7 @@ Once I start typing in the input, that list of Quick Links then becomes a list o
 
 Upon typing to narrow down results, if I pause typing whilst VoiceOver is running, it does announce "\[Count of] total results" and pressing the down arrow will move visual focus to the items in the suggestions list enabling me to navigate them like I would a `combobox`. So there is some audible information that provides a cue there are some suggestions.
 
-Is there enough information here for a screen reader user to understand the pattern? A sighted user who started typing and saw the suggestions change may find that useful, they are of course generally oblivious to the ARIA roles and properties of UI components, as they rely upon visual affordances. But what about a screen reader user? They would typically rely on roles and properties to understand relationships and interaction patterns. These suggestions can also be reached with the <kbd>Tab</kbd> key too, so even if the user was unaware they could use the cursor keys, they could also find the suggestions by tabbing to them. The five suggestions are quite restrictive though, in that five is a small number, it is quite possible to type a few characters, tab through the two buttons into the suggestions list and discover that the characters you typed weren't quite granular enough to filter down the suggestions to exactly what you wanted. Because you used the <kbd>Tab</kbd> key, you can't just continue typing to further filter, you have to <kbd>Shift</kbd> & <kbd>Tab</kbd> back up into the input and maybe at this stage, our screen reader user would be wondering why they bothered attempting to use the suggestions at all?
+Is there enough information here for a screen reader user to understand the pattern? A sighted user who started typing and saw the suggestions change can indeed find that useful. But what about a screen reader user? They would typically rely on roles and properties to understand relationships and interaction patterns. These suggestions can also be reached with the <kbd>Tab</kbd> key too, so even if the user was unaware they could use the cursor keys, they could also find the suggestions by tabbing to them. The five suggestions are quite restrictive though, in that five is a small number, it is quite possible to type a few characters, tab through the two buttons into the suggestions list and discover that the characters you typed weren't quite granular enough to filter down the suggestions to exactly what you wanted. Because you used the <kbd>Tab</kbd> key, you can't just continue typing to further filter, you have to <kbd>Shift</kbd> & <kbd>Tab</kbd> back up into the input and maybe at this stage, our screen reader user would be wondering why they bothered attempting to use the suggestions at all?
 
 Perhaps Apple found this pattern to be better for screen reader users after user-testing with them, assuming they did? Maybe they used this pattern because they realised the same issue as we will encounter (Which is the same issue in the next examples)? Whatever their reason, it is an interesting approach and I am curious how screen reader users would rate this approach compared to others. 
 
@@ -51,17 +51,17 @@ Using the [Google.com](https://www.google.com/) search page, this one uses a som
 
 Now, remember when I said there is an issue we will encounter using combobox for site search? So looking at [WCAG 3.2.2 On Input (A)](https://www.w3.org/WAI/WCAG22/Understanding/on-input.html), it states "Changing the setting of any user interface component does not automatically cause a change of context unless the user has been advised of the behaviour before using the component." It then goes on to state that "So checking a checkbox, entering text into a text field, or changing the selected option in a list control changes its setting, but activating a link or a button does not". So, this is in fact causing a change of context here, in that the page that loads is a new context and navigating using an `role="option"` is still changing a selected "option".
 
-This fails simply because it is an "option", but it's only an "option" programmatically, in that visually it doesn't look like a `<select>` and `<option>` pattern as the operating system styles  a list of `<option>`s in its own way, whereas these are fully custom elements that the developers have full control over. Would a user that does not use a screen reader have any idea they are "option" elements? No, of course not, so are their user expectations met when they start typing into the field and the suggestions display, would they expect to click a suggestion and navigate to a new page? I think given that this type of component is commonplace and this is a search engine, a sighted would expect that behaviour.
+This fails simply because it is an "option", but it's only an "option" programmatically, in that visually it doesn't look like a `<select>` and `<option>` pattern as the operating system styles  a list of `<option>`s in its own way, whereas these are fully custom elements that the developers have full control over. Would a user that does not use a screen reader have any idea they are "option" elements? No, of course not, so are their user expectations met when they start typing into the field and the suggestions display, would they expect to click a suggestion and navigate to a new page? I think given that this type of component is commonplace and this is a search engine, a sighted would expect that behaviour. It's likely a screen reader user can also expect that, given it is a search engine and typing in a search input will navigate to a new page.
 
-Quite interestingly, should I use arrows to navigate to the suggestions, neither "option" nor "link" is announced on any result in VoiceOver/Safari, the only thing announced is the actual text. The `role="option"` is present on the suggestions, but it's just not being passed to VoiceOver. The reason this is happening is because as a user arrows up or down the suggestions, the value of the input changes to match the text of the current "option", so that change in value is what is actually announced. Should I navigate with the virtual cursor to actually get inside the listbox, I do hear the list enumeration and the text, but still not that the item is an "option". 
+Quite interestingly, with VoiceOver/Safari, the only thing announced is the actual text. The `role="option"` is present on the suggestions, but it's just not being passed to VoiceOver. The reason this is happening is because as a user arrows up or down the suggestions, the value of the input changes to match the text of the current "option", so that change in value is what is actually announced.
 
-Should I use up and down arrows with NVDA and Firefox, I do hear the list enumeration and the suggestion text, still not the role of "option" though though, even though it is present. I'm sure if we dug deep enough, we'd find out why that is the case, would that be odd or confusing for screen reader users or would it in fact be super clear and concise?
+Should I use up and down arrows with NVDA and Firefox, I do hear the list enumeration and the suggestion text, still not the role of "option" though, even though it is present. Arguably as a user does not hear it is an "option" maybe this mitigates the confucion for them? I don't have access to JAWS, so I am unable to say what is output.
 
 ### MDN
 
 Many of us are familiar with [MDN (Mozilla Developer Network)](https://developer.mozilla.org/en-US/), as we may visit often to learn syntax or understand something related to web technologies a little better. MDN have a search filter in their site header and looking at the HTML for the input alone, it contains all of the roles and properties that an ARIA 1.2 `combobox` uses. Where this one gets a problematic is the actual suggestions in the related `listbox`, have `role="option"`, which are required children for a `listbox` (you can also use `role="group",` but they must have `role="option"` children present), but interestingly, MDN have decided to place a link inside the `role="option"` elements.
 
-As `role="option"` is fundamentally the same as an `<option>` as far as assistive technologies are concerned it is only allowed presentational children, not interactive elements. Whilst a role in itself doesn't really alter the way something behaves, the expectation from the user agent is that you make this item interactive, after all, it is an "option" and options can be selected. As the ARIA spec and user agents expect this element to be interactive, popping another interactive element inside it is actually invalid ARIA and of course when we use ARIA, we need to do so responsibly, as the effects can have all manner of consequences for disabled users.
+As `role="option"` is fundamentally the same as an `<option>` as far as assistive technologies are concerned it is only allowed presentational children, not interactive elements. Whilst a `role` in itself doesn't really alter the way something behaves, the expectation from the user agent is that you make this item interactive, after all, it is an "option" and options can be selected. As the ARIA spec and user agents expect this element to be interactive, popping another interactive element inside it is actually invalid ARIA and of course when we use ARIA, we need to do so responsibly, as the effects can have all manner of consequences for disabled users.
 
 Similar to the Google pattern, this does not announce the role of "option" or even "link", it reports each item as a text element in VoiceOver. Quite annoyingly, it doesn't work correctly, in that with VoiceOver running, if I press down arrow, it closes the suggestions panel, so I have to navigate to the options using the virtual cursor and then get into the `listbox`. the problem with that is the input now doesn't have focus, so a user cannot continue typing to further filter the suggestions.
 
@@ -77,36 +77,34 @@ This one is quite disappointing, even if it simply announced the presence of the
 
 We looked at four different implementations and we could have gone on forever, as seldom are the patterns the same under the hood. I'm not saying it is important that a screen reader hears that it is an "option" because that implies that no change of context should automatically occur (without warning). Which begs the question, what should they hear if they access the suggestions? Well ultimately it's a link as it navigates to a new URL, but we cannot have links in a `listbox`, at least we cannot have their semantics exposed, we can of course add `role="option"` to them, but then we are back at square one, assuming that role is announced at all.
 
-Apple's are announced as links and it does inform a screen reader that there are a certain number of options available. It does not have `aria-controls` present on the input, which I know doesn't do a great deal due to lack of screen reader support, it does at least reinforce that programmatic relationship.
+Apple's are announced as links and it does inform a screen reader that there are a certain number of options available. It does not have `aria-controls` present on the `<input>,` which I know doesn't do a great deal due to lack of screen reader support, it does at least reinforce that programmatic relationship.
 
-As it is critical that we consider all users when developing sites and the components they are built with we need to ensure that we ensure they work for screen reader users too, then they are in the best position to decide whether they use it or not, choice is tool that allows users to operate sites in a way that works for them.
+As it is critical that we consider all users when developing sites and the components they are built with we need to ensure that they work for screen reader users too, then they are in the best position to decide whether they use it or not, choice is tool that allows users to operate sites in a way that works for them.
 
 ## How should we build one?
 
-I don't have a definitive answer here, I'm afraid. If I had the resources available to me, I'd quite happily pay for some user testing, to test several patterns to determine which one seemed the most intuitive, especially to screen reader users. We can build a few patterns though and list the pros and cons of each, then if you're viewing this page to find a solution, maybe you can conduct the user testing and base your decision on that?
+I don't have a definitive answer here I'm afraid. If I had the resources available to me, I'd quite happily pay for some user testing, to test several patterns to determine which one seemed the most intuitive, especially to screen reader users. We can build a few patterns though and list the pros and cons of each, then if you're viewing this page to find a solution, maybe you can conduct the user testing and base your decision on that?
 
 ## Let's build some examples
 
 As always, this isn't a design demo, so I'm just going to make them look OK, I will of course ensure contrast and focus are perceivable, but they'll look relatively basic, just to reduce the amount of work I need to do. Also, there are some differences between the examples we discussed, most of them redirect a user to a search results page, whereas the Mozilla example directs a user to the actual page, we're going to be doing the latter.
 
-We will only add the combobox when JS is available, I always buy into progressive enhancement, in that we don't want redundant controls on a page for our users if JS isn't available. What I'm going to do here is I'm going to write the base HTML for the input and its containers in actual HTML, obviously without JS this will do nothing at all. The two options here are:
+We will only add the `listbox` when JS is available, I always build in progressive enhancement, in that we don't want redundant controls on a page for our users if JS isn't available. What I'm going to do here is I'm going to write the base HTML for the input and its containers in actual HTML, obviously without JS this will do nothing at all. The two options here are:
 
-* Add the input and wrapping elements to the DOM with JS, then a user won't have to face the frustration of interacting with a redundant control
+* Add the input and wrapping elements to the DOM with JS instead, then a user won't have to face the frustration of interacting with a redundant control
 * Wrap the element in a <form> (assuming you have a backend for this), which you may want to remove or neutralise when JS is available as the links will be doing the navigating when there is JS
 
 For the first example, I am going to provide all three files: HTML, JS & CSS and only the JS for the remaining examples, as that's the only file that will change (He says apprehensively as thus far he has only built the first example).
 
 ### The combobox and option approach
 
-Technically this fails [WCAG 3.2.2 On Input (A)](https://www.w3.org/WAI/WCAG22/Understanding/on-input.html), as it states "Changing the setting of any user interface component does not automatically cause a change of context unless the user has been advised of the behaviour before using the component." It then goes on to state that "So checking a checkbox, entering text into a text field, or changing the selected option in a list control changes its setting, but activating a link or a button does not". So, this is in fact causing a change of context here, in that the page that loads is a new context, focus will move to the `<body>` of the new page and navigating using an `role="option"` is still changing a selected "option".
+Technically this fails [WCAG 3.2.2 On Input (A)](https://www.w3.org/WAI/WCAG22/Understanding/on-input.html), as similar to the Google approach, how much of an issue that actually is is something that can only be determined by disabled folks, if they say it is perfectly understandable to them, irrespective of what WCAG says then users before standards, always. This view can of course be problematic for legal risk, depending where in the world you live, maybe the fact it does not fully comply could leave you open to some legal challenge.
 
-How much of an issue is this? Ultimately if something is tested with disabled users and they say it is perfectly understandable to them, irrespective of what WCAG says then users before standards, always. This view can of course be problematic for legal risk, depending where in the world you live, maybe the fact it does not fully comply could leave you open to some legal challenge.
+What behaviour would a user expect from a site search? A sighted user would not "see" a typical `<select>` &` <option>`s element, as the OS styles those, so what they "see" resembles something they encounter every time they use a search engine, an <input> that will accept text filtering, whilst filtering a bunch of suggestions, clicking one of those suggestions will navigate to a results page or an actual page.
 
-What behaviour would a user expect from a site search? A sighted user would not "see" a typical `<select>` &` <option>`s element, as the OS styles those, so what they "see" resembles something they encounter every time they use a search engine, an item that will accept text filtering, whilst filtering a bunch of suggestions, clicking one of those suggestions will navigate to a results page or an actual page.
+If the only user group that may find this behaviour unexpected are screen reader users, would it be enough to advise just those users of what will happen? I'm not a fan of hiding instructions just for screen reader users, typically all users benefit from them, in this instance though maybe it's acceptable, as we can make our suggestions look like links, we could use icons, underlines or whatever, just to add additional visual affordances. As any of those aforementioned affordances won't necessarily provide a user of a screen reader with any additional information, could we just ensure that the name of the `<input>` includes a little extra info? If our `<input>` had a visually hidden accessible name, such as "Search navigation links" and we had underlines on the actual links, is that enough of an advance warning to both sighted and unsighted users?
 
-What about a user that is blind and cannot see the interface? If their screen reader tells them "option, 1 of 10, selected" (or words to that effect), will they expect to navigate to a new URL? That's a question only screen reader users can answer. If the only user group that may find this behaviour unexpected are screen reader users, would it be enough to advise just those users of what will happen? I'm not a fan of hiding instructions just for screen reader users, typically all users benefit from them, in this instance though maybe it's acceptable, as we can make our suggestions look like links, we could use icons, underlines or whatever just to add additional visual affordances. As any of those aforementioned affordances won't necessarily provide a user of a screen reader with any additional information, could we just ensure that the name of the <input> includes a little extra info? If our input had a visually hidden accessible name, such as "Search navigation links" and we had underlines on the actual links, is that enough of an advance warning to both sighted and unsighted users?
-
-I could include a `<button>`, like a "Go" <`button>`, a user clicks a suggestion, focus returns to the input and there is an adjacent `<button>`, which when clicked will then do exactly perform the same action. This is an acceptable WCAG technique for meeting the On input SC. But, sometimes it may be hard to convince stakeholders to add that `<button>`, as you may get the whole "It's adding an extra step for everybody" feedback, which is probably true. We may also get the "We don't want a visible text `<label>` on the `<input>`" instruction. So, what I am going to do, is just create an `<input>`, the `<input>` will have no button or visible label, it will just have a magnifying glass icon. Visually it has a label, as the icon communicates the purpose, programmatically, it will have a proper< label>, with the visually hidden text "Search navigation links". I have to admit to not being 100% sure whether in isolation the underlined links and the hidden label are enough to "advise" a user of expected behaviour to pass On input, I think it is, but somebody smarter may disagree. See this as a "grey area", until you can confirm otherwise.
+I could include a `<button>`, like a "Go" <`button>`, a user clicks a suggestion, focus returns to the input and there is an adjacent `<button>`, which when clicked will then perform the same action. This is an acceptable WCAG technique for meeting the On Input SC. But, sometimes it may be hard to convince stakeholders to add that `<button>`, as you may get the whole "It's adding an extra step for everybody" feedback, which is probably true. We may also get the "We don't want a visible text `<label>` on the `<input>`, we just want an icon" instruction. So, what I am going to do, is just create an `<input>`, with no button or visible label, it will just have a magnifying glass icon. Visually it has a label, as the icon communicates the purpose, programmatically, it will have a proper `<label>`, with the visually hidden text "Search navigation links". I have to admit to not being 100% sure whether in isolation the underlined links and the hidden label are enough to "advise" a user of expected behaviour to pass On input, I think it is, but somebody smarter may disagree. See this as a "grey area", until you can confirm otherwise.
 
 In any event, I would hope that this would not be the sole navigation mechanism on any site, so assuming there was a typical `<nav>` and perhaps a site map or footer links, then there are alternative ways navigating. But ultimately, test with users, they can tell you what is understandable and usable to them, much better than somebody who does not have the same lived experiences.
 
@@ -274,15 +272,15 @@ const links = [
   { label: "About", url: "#b" },
   { label: "Contact", url: "#c" },
   { label: "Old Thing", url: "#d" },
-  { label: "New Thing", url: "#" },
-  { label: "New Thing Ultra", url: "#e" },
-  { label: "New Thing Ultra Pro", url: "#f" },
-  { label: "New Thing Ultra Pro Max", url: "#g" },
-  { label: "New Thing Ultra Pro Max Plus", url: "#h" },
-  { label: "Shipping", url: "#i" },
-  { label: "Privacy", url: "#j" },
-  { label: "Cookies", url: "#k" },
-  { label: "Accessibility? LOL", url: "#l" }
+  { label: "New Thing", url: "#e" },
+  { label: "New Thing Ultra", url: "#f" },
+  { label: "New Thing Ultra Pro", url: "#g" },
+  { label: "New Thing Ultra Pro Max", url: "#h" },
+  { label: "New Thing Ultra Pro Max Plus", url: "#i" },
+  { label: "Shipping", url: "#j" },
+  { label: "Privacy", url: "#k" },
+  { label: "Cookies", url: "#l" },
+  { label: "Accessibility? LOL", url: "#m" }
 ];
 
 searchFilterWrapper.insertAdjacentHTML('beforeend', `<div class="search__panel-container"><div class="search__panel" id="lbox" role="listbox" aria-labelledby="sFilter"></div>
@@ -353,10 +351,11 @@ searchInput.addEventListener('keydown', (evt) => {
     }
 
     if (evt.key === 'Enter') {
-      listbox.querySelector('.search__option').forEach(item => {
-        if (searchInput.value.toLowerCase() === item.textContent.toLowerCase()) {
+      listbox.querySelectorAll('.search__option').forEach(item => {
+        if (searchInput.value.toLowerCase() === item.textContent.toLowerCase() || item.hasAttribute('aria-selected')) {
           item.click();
         }
+        console.log(listbox);
       })
     }
   }
@@ -405,22 +404,22 @@ function displayError() {
 }
 ```
 
-* So, I'm setting some global variables, particularly for the container to pop the listbox in, the keys a user will press an empty array and an empty variable
-* I'm just grabbing out links from an array of objects
-* I'm adding a further wrapper (We can't have an error in a listbox), then I'm adding this message container, I'm mostly doing this as Safari doesn't support aria-activedescendant, but also I want to inform a user that there are no  matching suggestions, as that's useful to know, right?
-* I loop through our links creating a HTML string, with the necessary roles and properties, along with classes and IDs, adding to our previously empty array
-* I decare all the variables as HTML elements that we need later
+* So, I'm setting some global variables, particularly for the input, its wrapper, the container to pop the listbox in, the keys a user will press, an empty `itemsArr` array and an empty `currItem` variable
+* I'm just grabbing our links from an array of objects
+* I'm adding a further wrapper (We can't have an error message in a `listbox`), then I'm adding this message container as a sibling of the `listbox`, I'm mostly doing this as Safari doesn't support `aria-activedescendant`, yet, but also I want to inform a user that there are no  matching suggestions, as that's useful to know, right?
+* I loop through our links creating a HTML string, with the necessary roles and properties, along with classes and IDs, adding them to our `itemsArr` array
+* I declare some new variables that we created from strings as actual HTML elements that we need later
 * I add all of the roles and properties to the input
-* You may notice I didn't use a list, I have used aria-posinset and aria-setsize instead, I of course update this as necessary
-* I expand the listbox on focus and close it on a blur event
-* I filter a user's typed string against the textContent of the links, if that string is present, keep it, else remove it from the DOM
-* I listen for key presses that match our array of keys, if it arrow down and there is no selected option we pass the first (aria-posinset="1") to a setSelection() function, else we just move to the next sibling if present and a hard stop if there isn't a sibling
-* Similar to above, if a user is pressing up we send the previous sibling to the setSelection() function, else a hard stop
-* If a user presses Enter and the characters they input match the textContent of any link, we auto click that link and they navigate to that page
-* If the user has focussed on a link and presses Enter, we also complete that action automatically NEED TO FIX THIS
-* If there are no matches, we reset our variable to empty, set aria-activedescendant to empty and call the displayError() function
-* We manage which item to focus on, in the options if there is at leas one option, this could be improved, as if the currently focused item is removed from the DOM, I'm just pushing it back to the first item, when it would be nicer to plce it on the next sibling if it exists
-* When an item is the "focused" item, we set aria-selected and update the value of aria-active descendant, along with our currItem variable
-* We ensure that the user can actually see which item they have arrowed to, using scrollIntoView() and we remove aria-selected from any item that isn't the currently selected item
-* We shoehorn a fix in for Safari, as they don't support aria-activedescendant, so we check for that user agent, then we build a string that will announce "\[Item name], selected, \[position of item] of \[number of items in set]", this matched exactly what I heard from VoiceOver output on Safari with an alternative, so i have provided identical information
+* You may notice I didn't use a list, I have used `aria-posinset` and `aria-setsize` instead, I of course update this as necessary, so it is always accurate
+* I expand the `listbox` on `focus` and close it on a `blur` event
+* I filter a user's typed string against the `textContent` of the links, if that string is present, keep it, else remove it from the DOM
+* I listen for key presses that match our array of keys, if it arrow down and there is no selected option we pass the first link (`aria-posinset="1"`) to a `setSelection()` function, else we just move to the next sibling if present and a hard stop if there isn't a next sibling
+* Similar to above, if a user is pressing up we send the previous sibling to the `setSelection()` function, else a hard stop
+* If a user presses <kbd>Enter</kbd> and the characters they input match the `textContent` of any link, we auto click that link and they navigate to that page
+* If the user has focussed on a link and presses <kbd>Enter</kbd>, we also complete that action automatically
+* If there are no matches, we reset our variable to empty, set `aria-activedescendant `to empty and call the `displayError()` function
+* We manage which item to focus on, in the options if there is at least one option, this could be improved, as if the currently focused item is removed from the DOM after typing, I'm just pushing focus back to the first item, when it would be nicer to place it on the next sibling if it exists
+* When an item is the "focused" item, we set `aria-selected="true"` and update the value of `aria-activedescendant`, along with our `currItem` variable
+* We ensure that the user can actually see which item they have arrowed to, using `scrollIntoView() `and we remove `aria-selected` from any item that isn't the currently selected item
+* We shoehorn a fix in for Safari, as it doesn't support `aria-activedescendant`, so we check for that user agent, then we build a string that will announce "\[Item name], selected, \[position of item] of \[number of items in set]", this matched exactly what I heard from VoiceOver output on Safari with an alternative, so I have provided identical information
 * I finally have a error message which will be visible to users and heard by screen reader users "No matching results"
