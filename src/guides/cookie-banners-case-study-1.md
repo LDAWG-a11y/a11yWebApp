@@ -52,8 +52,8 @@ This resource is intended for informational use only, to help organisations unde
 The cookie banners:
 
 * <a href="/guides/admiral-cookier-banner/">Admiral</a>
-* Civic Cookie Control
-* Easy Space Cookie
+* <a href="/easy-cookie-cookier-banner/>Civic Cookie Control</a>
+* <a href="/easy-cookie-cookier-banner/>Easy Space Cookie</a>
 * Gov.uk
 * Ketch
 * OneTrust CookiePro
