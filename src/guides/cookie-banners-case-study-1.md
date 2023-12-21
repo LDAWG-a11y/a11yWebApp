@@ -52,9 +52,9 @@ This resource is intended for informational use only, to help organisations unde
 The cookie banners:
 
 * <a href="/guides/admiral-cookier-banner/">Admiral</a>
-* <a href="/easy-cookie-cookier-banner/>Civic Cookie Control</a>
-* <a href="/easy-cookie-cookier-banner/>Easy Space Cookie</a>
-* Gov.uk
+* <a href="/guides/civic-cookie-control-cookier-banner/>Civic Cookie Control</a>
+* <a href="/guides/easy-cookie-cookier-banner/>Easy Space Cookie</a>
+* <a href="/guides/cookies-on-gov-uk">Gov.uk</a>
 * Ketch
 * OneTrust CookiePro
 * Osano
