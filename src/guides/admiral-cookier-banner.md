@@ -28,9 +28,12 @@ isGuide: true
 * `<b>` tags are used. these have been <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b#:~:text=Styling%20information%20has%20been%20deprecated,order%20to%20make%20text%20bold">deprecated since HTML 4</a>. `<b>` is not the same as `<strong>` because `<strong>`, `<em>` and `<mark>` represent text of importance whereas `<b>` does not convey that semantic information. If you need the headings to be bold or strong, use styles rather than `<b>` or `<strong>`, but most screen readers will not announce text inside the `<b>` HTML tags any differently, so emphasis is lost for those who cannot see the text
 * Some users of screen readers may not be able to use the consent checkboxes as they won't work with implicit labels, only explicit labels.
 
-Change the “toggles” to two radio buttons within a fieldset with the legend such as suggested by Sara Soueidan in her article On Designing and Building Toggle Switches.
+Change the “toggles” to two radio buttons within a `fieldset` with the legend such as suggested by Sara Soueidan in her article <a href="https://www.sarasoueidan.com/blog/toggle-switch-design/">On Designing and Building Toggle Switches</a>
+* Number 7 toggle choice was missing
+* Consent buttons are hard to see when using the Windows Contrast theme Night sky
 
 
 ## Advisories
 
 * There is a list of the type of ads that can be selected. This list disguised as a table – display as list or create an accessible table
+* On some customer versions that the “Reject all” button is removed. GDPR has to be as easy to reject as it is to accept, so that not having the “Reject all" which is the equivalent to the “Accept all” means it is far harder to reject as each individual consent checkbox has to set to off. Do not allow customers to remove the “Reject all” button
