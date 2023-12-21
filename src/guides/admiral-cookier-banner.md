@@ -3,7 +3,7 @@ title: Admiral cookier banner
 summary: Accessibility issues with the Admiral cookie banner
 author: swilkinson
 date: 2023-12-21
-toc: false
+toc: true
 tags:
   - Remediation
   - Cookies
@@ -20,3 +20,13 @@ isGuide: true
 * Contrast colour issues on text and links and buttons. This fails WCAG 1.4.3 Contrast Minimum (AA). Whether this is due to cookie banner default colour schemes or organisation customised branding schemes, poor colour contrast can make content harder to see and read.
 * Duplicate labels used. This fails WCAG 2.4.6 Headings and Labels (AA). Often all cookie acceptance checkboxes are identified as "accept cookies" rather than "accept marketing cookies" or "accept analytics cookies". Not being able to differentiate the controls because everything has the same label stops screen reader users from making informed choices.
 * User is not made aware of new content. his fails WCAG 4.1.2 Name, Role, Value (A). Often when screen reader users change a toggle control or expand a collapsed content section (accordion) they are not told that there is more content to read, or whether the toggle control now means they have accepted or declined cookies.
+
+## Weaknesses
+
+* The example page the banner was tested on had so many links when using the keyboard to tab through the page, it took 43 tabs to get through the “Reject all” button which was the first button on the banner
+* With CSS turned off, the “Your consent choices saved” image <img src="https://www.getadmiral.com/hubfs/Blog-Images-HS/Admiral-consent-cmp-1200x628.jpg" alt=""> without any CSS takes up most of the page. Resize the image so that it is the size is far smaller (the size the CSS makes it) making the page easier to read without CSS or with user defined CSS
+* `<b>` tags are used. these have been deprecated since HTML 4. `<b>` is not the same as `<strong>` because `<strong>`, `<em>` and `<mark>` represent text of importance whereas `<b>` does not convey that semantic information. If you need the headings to be bold or strong, use styles rather than `<b>` or `<strong>`, but most screen readers will not announce text inside the `<b>` HTML tags any differently, so emphasis is lost for those who cannot see the text
+
+## Advisories
+
+* There is a list of the type of ads that can be selected. This list disguised as a table – display as list or create an accessible table
