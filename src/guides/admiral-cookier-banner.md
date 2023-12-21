@@ -25,7 +25,11 @@ isGuide: true
 
 * The example page the banner was tested on had so many links when using the keyboard to tab through the page, it took 43 tabs to get through the “Reject all” button which was the first button on the banner
 * With CSS turned off, the “Your consent choices saved” image <img src="https://www.getadmiral.com/hubfs/Blog-Images-HS/Admiral-consent-cmp-1200x628.jpg" alt=""> without any CSS takes up most of the page. Resize the image so that it is the size is far smaller (the size the CSS makes it) making the page easier to read without CSS or with user defined CSS
-* `<b>` tags are used. these have been deprecated since HTML 4. `<b>` is not the same as `<strong>` because `<strong>`, `<em>` and `<mark>` represent text of importance whereas `<b>` does not convey that semantic information. If you need the headings to be bold or strong, use styles rather than `<b>` or `<strong>`, but most screen readers will not announce text inside the `<b>` HTML tags any differently, so emphasis is lost for those who cannot see the text
+* `<b>` tags are used. these have been <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b#:~:text=Styling%20information%20has%20been%20deprecated,order%20to%20make%20text%20bold">deprecated since HTML 4</a>. `<b>` is not the same as `<strong>` because `<strong>`, `<em>` and `<mark>` represent text of importance whereas `<b>` does not convey that semantic information. If you need the headings to be bold or strong, use styles rather than `<b>` or `<strong>`, but most screen readers will not announce text inside the `<b>` HTML tags any differently, so emphasis is lost for those who cannot see the text
+* Some users of screen readers may not be able to use the consent checkboxes as they won't work with implicit labels, only explicit labels.
+
+Change the “toggles” to two radio buttons within a fieldset with the legend such as suggested by Sara Soueidan in her article On Designing and Building Toggle Switches.
+
 
 ## Advisories
 
