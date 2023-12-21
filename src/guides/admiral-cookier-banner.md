@@ -14,7 +14,8 @@ isGuide: true
 ---
 ## Cookie banner accessibility issues
 
-* Ensure elements are accessible by keyboard. The label associated with the form control is empty. This fails WCAG 1.3.1 Info and Relationships (A).
+* Ensure elements are accessible by keyboard. This fails WCAG 2.1.1 Keyboard (A). This normally affects interactive components such as links, buttons, collapsed content, and cookie selection toggles. This can stop keyboard users and screen reader users from being able to change options and submit their choices.
+* The label associated with the form control is empty. This fails WCAG 1.3.1 Info and Relationships (A). 
 * Cookie banner partially obscures page. This fails WCAG 1.3.2 Meaningful Sequence (A).
 * Contrast colour issues on text and links and buttons. This fails WCAG 1.4.3 Contrast (Minimum) (AA).
 * Cookie banner partially obscures page. This fails WCAG 1.4.10 Reflow (AA).
