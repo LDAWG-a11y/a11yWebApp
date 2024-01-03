@@ -7,7 +7,7 @@ summary: Many organisations are using third-party cookie banners to meet their
   reference guide.
 author: swilkinson
 date: 2023-10-10
-toc: true
+toc: false
 tags:
   - Third-party
   - Cookies
