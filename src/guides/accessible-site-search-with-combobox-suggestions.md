@@ -100,7 +100,7 @@ For the first example, I am going to provide all three files: HTML, JS & CSS and
 
 Technically this fails [WCAG 3.2.2 On Input (A)](https://www.w3.org/WAI/WCAG22/Understanding/on-input.html), as similar to the Google approach, how much of an issue that actually is is something that can only be determined by disabled folks, if they say it is perfectly understandable to them, irrespective of what WCAG says then users before standards, always. This view can of course be problematic for legal risk, depending where in the world you live, maybe the fact it does not fully comply could leave you open to some legal challenge.
 
-What behaviour would a user expect from a site search? A sighted user would not "see" a typical `<select>` &` <option>`s element, as the OS styles those, so what they "see" resembles something they encounter every time they use a search engine, an <input> that will accept text filtering, whilst filtering a bunch of suggestions, clicking one of those suggestions will navigate to a results page or an actual page.
+What behaviour would a user expect from a site search? A sighted user would not "see" a typical `<select>` &`<option>`s element, as the OS styles those, so what they "see" resembles something they encounter every time they use a search engine, an <input> that will accept text filtering, whilst filtering a bunch of suggestions, clicking one of those suggestions will navigate to a results page or an actual page.
 
 If the only user group that may find this behaviour unexpected are screen reader users, would it be enough to advise just those users of what will happen? I'm not a fan of hiding instructions just for screen reader users, typically all users benefit from them, in this instance though maybe it's acceptable, as we can make our suggestions look like links, we could use icons, underlines or whatever, just to add additional visual affordances. As any of those aforementioned affordances won't necessarily provide a user of a screen reader with any additional information, could we just ensure that the name of the `<input>` includes a little extra info? If our `<input>` had a visually hidden accessible name, such as "Search navigation links" and we had underlines on the actual links, is that enough of an advance warning to both sighted and unsighted users?
 
@@ -419,17 +419,19 @@ function displayError() {
 * Similar to above, if a user is pressing up we send the previous sibling to the `setSelection()` function, else a hard stop
 * If a user presses <kbd>Enter</kbd> and the characters they input match the `textContent` of any link, we auto click that link and they navigate to that page
 * If the user has focussed on a link and presses <kbd>Enter</kbd>, we also complete that action automatically
-* If there are no matches, we reset our variable to empty, set `aria-activedescendant `to empty and call the `displayError()` function
+* If there are no matches, we reset our variable to empty, set `aria-activedescendant`to empty and call the `displayError()` function
 * We manage which item to focus on, in the options if there is at least one option, this could be improved, as if the currently focused item is removed from the DOM after typing, I'm just pushing focus back to the first item, when it would be nicer to place it on the next sibling if it exists
 * When an item is the "focused" item, we set `aria-selected="true"` and update the value of `aria-activedescendant`, along with our `currItem` variable
-* We ensure that the user can actually see which item they have arrowed to, using `scrollIntoView() `and we remove `aria-selected` from any item that isn't the currently selected item
+* We ensure that the user can actually see which item they have arrowed to, using `scrollIntoView()`and we remove `aria-selected` from any item that isn't the currently selected item
 * We shoehorn a fix in for Safari, as it doesn't support `aria-activedescendant`, so we check for that user agent, then we build a string that will announce "\[Item name], selected, \[position of item] of \[number of items in set]", this matched exactly what I heard from VoiceOver output on Safari with an alternative, so I have provided identical information
 * I finally have a error message which will be visible to users and heard by screen reader users "No matching results"
 
-So, that wraps up the first example, which uses the standard combobox pattern, albeit for navigation as opposed to selecting something. Unlike MDN's at least we haven't added a link inside the option, we just used a link so we got its behaviour and applied `role="option" `to use the correct ARIA pattern.
+So, that wraps up the first example, which uses the standard combobox pattern, albeit for navigation as opposed to selecting something. Unlike MDN's at least we haven't added a link inside the option, we just used a link so we got its behaviour and applied `role="option"`to use the correct ARIA pattern.
 
 Whether this is better than any of the examples we looked at for users is not something I can answer, but it is an approach worth considering, maybe you or your team could improve it further?
 
 ### The combobox and dialog approach
 
 I haven't seen this used out in the wild, it was an untested suggestion by a member of the A11y Slack community and it makes a lot of sense. A `combobox` can be associated with an element that either has the role of `listbox`, `tree`, `grid` or `dialog`. We have already used `listbox`, we don't need `grid` or `tree`, but the beauty of `dialog` is that it doesn't have any constraints over what we place inside it. Our links can actually be links without overwriting the `role`. As I am writing this little intro to this next component, I have to say, I haven't built it yet, so this is going to be something cool to explore for me. We're not going to use a modal dialog, we're going non-modal. I'm just going to try and get away with using our existing HTML and CSS, although for a `dialog`, I could likely get rid of a wrapping `<div>` or two, but that's not an issue. Just to be clear, I definitely didn't have to add an extra line of CSS, for the links in the dialog, I totally guessed that in advance, honest :) .
+
+G
