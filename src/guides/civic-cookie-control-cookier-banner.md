@@ -1,7 +1,7 @@
 ---
 title: Civic Cookie Control cookie banner
 summary: Accessibility issues with the Civic Cookie Control cookie banner
-author: Steve wilkinson
+author: Steve Wilkinson
 date: 2023-12-21
 toc: true
 tags:
