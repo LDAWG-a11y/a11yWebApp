@@ -1,5 +1,5 @@
 ---
-title: Cookie banners case study
+title: Cookie banners case study (Keep)
 summary: Many organisations are using third-party cookie banners to meet their
   GDPR responsibilities. These banners often cause accessibility issues that you
   may not be aware of. This case study covers several examples of common in use
