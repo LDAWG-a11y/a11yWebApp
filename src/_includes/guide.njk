@@ -1,4 +1,5 @@
 {% include "_head.njk" %}
+
 <body {%- if aaa %} class="aaa-content" {% endif %}>
   {% include "_header.njk" %}
   <main class="main">
@@ -14,23 +15,23 @@
       </div>
       <strong class="guide__label">Tagged with: </strong>
       {% set tagCount = tags | filterTagList | length %}
-      <{% if tagCount > 1 %}ul{% else %}div{% endif %} class="tags tags__all">
+      <{% if tagCount> 1 %}ul{% else %}div{% endif %} class="tags tags__all">
         {%- for tag in tags | filterTagList %}
         {% set tagUrl %}/tags/{{ tag | slug }}/{%- endset %}
-        <{% if tagCount > 1 %}li{% else %}span{% endif %} class="tag__item">
+        <{% if tagCount> 1 %}li{% else %}span{% endif %} class="tag__item">
           <a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a>
-        </{% if tagCount > 1 %}li{% else %}span{% endif %}>
+        </{% if tagCount> 1 %}li{% else %}span{% endif %}>
         {%- endfor %}
-      </{% if tagCount > 1 %}ul{% else %}div{% endif %} class="tags tags__all">      
+      </{% if tagCount> 1 %}ul{% else %}div{% endif %} class="tags tags__all">
     </div>
     {% endif %}
     {% if toc %}
-      <nav class="cms__toc" aria-labelledby="toc-heading">
-        <details open>
-          <summary id="toc-heading">Table of contents</summary>
-          {{ content | toc | safe }}
-        </details>
-      </nav>
+    <nav class="cms__toc" aria-labelledby="toc-heading">
+      <details open>
+        <summary id="toc-heading">Table of contents</summary>
+        {{ content | toc | safe }}
+      </details>
+    </nav>
     {% endif %}
     {% if isAAAStory %}
     {% include "_studentStoryIntro.njk" %}
@@ -40,9 +41,9 @@
     </article>
     {% include "_social-share.njk" %}
     {%- if not aaa %}
-      {% set author = guideAuthor %}
-    {% if (author != 'Admin') or (author != 'Admin') %}
-      {% include "_bio.njk" %}
+    {% set author = guideAuthor %}
+    {% if (author != 'Admin') %}
+    {% include "_bio.njk" %}
     {% endif %}
     {% endif %}
   </main>
@@ -50,4 +51,5 @@
   <script src="/js/main.js"></script>
   <script src="/js/guide.js"></script>
 </body>
+
 </html>
