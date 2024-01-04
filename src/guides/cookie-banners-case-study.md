@@ -51,7 +51,7 @@ This resource is intended for informational use only, to help organisations unde
 
 The cookie banners:
 
-* <a href="/admiral-cookier-banner/">Admiral</a>
+* Admiral
 * Civic Cookie Control
 * Easy Space Cookie
 * Gov.uk
