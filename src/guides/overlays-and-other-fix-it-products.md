@@ -76,13 +76,17 @@ If you want to avoid overlays on websites you visit, the Chrome extension [Acces
 
 Many accessibility professional far more involved in this debate than us have had much to say on the use of overlays, and the behaviour of the companies involved. Below is a selection of articles from other sources about overlays that are worth reading.
 
+We particularly recommend following the series of articles by Adrian Roselli about his legal battle with the overlay company AudioEye and note the impact that suit has had in terms of reputational damages, and the chilling effect on users being able to critisize overlay products they feel do not deliver promised functionality.
+
 If you have further useful sources to suggest to help inform on the state of overlay products and their capabilities please contact us.
 
-* [Anna E. Cook - There’s no such thing as fully automated web accessibility](https://uxdesign.cc/theres-no-such-thing-as-fully-automated-web-accessibility-260d6f4632a8)
-* [Overlay False Claims – Truth in advertising does not exist for overlay vendors](https://overlayfalseclaims.com/)
-* [National Federation of the Blind – National convention sponsorship statement regarding AccessiBe](https://nfb.org/about-us/press-room/national-convention-sponsorship-statement-regarding-accessibe)
 * [Adrian Roselli – AccessiBe will get you sued](https://adrianroselli.com/2020/06/accessibe-will-get-you-sued.html)
 * [Adrian Roselli – #AudioEye will get you sued](https://adrianroselli.com/2023/02/audioeye-will-get-you-sued.html)
 * [Adrian Roselli – #AudioEye is suing me](https://adrianroselli.com/2023/05/audioeye-is-suing-me.html)
-* [Todd Libby - AccessiBe is not your friend](https://dev.to/colabottles/accessibe-is-not-your-friend-5d4n)
+* [Adrian Roselli - #AudioEye has dropped its suit against me](https://adrianroselli.com/2024/01/audioeye-has-dropped-its-suit-against-me.html)
+* [Anna E. Cook - There’s no such thing as fully automated web accessibility](https://uxdesign.cc/theres-no-such-thing-as-fully-automated-web-accessibility-260d6f4632a8)
 * [Koena - Koena given formal notice by FACIL’iti](https://koena.net/en/koena-given-formal-notice-by-faciliti/)
+* [National Federation of the Blind – National convention sponsorship statement regarding AccessiBe](https://nfb.org/about-us/press-room/national-convention-sponsorship-statement-regarding-accessibe)
+* [Overlay False Claims – Truth in advertising does not exist for overlay vendors](https://overlayfalseclaims.com/)
+* [Todd Libby - AccessiBe is not your friend](https://dev.to/colabottles/accessibe-is-not-your-friend-5d4n)
+* [Webbed Briefs - What are accessibility overlays?](https://briefs.video/videos/what-are-accessibility-overlays/)
