@@ -80,3 +80,6 @@ Over the course of this case study we have documented many accessibility issues 
 * **Duplicate labels used** - This fails WCAG 2.4.6 Headings and Labels (AA). Often all cookie acceptance checkboxes are identified as "accept cookies" rather than "accept marketing cookies" or "accept analytics cookies". Not being able to differentiate the controls because everything has the same label stops screen reader users from making informed choices.
 * **Contrast colour issues on text, links, and buttons** - This fails WCAG 1.4.3 Contrast Minimum (AA). Whether this is due to cookie banner default colour schemes or organisation customised branding schemes, poor colour contrast can make content harder to see and read.
 * **Non-active element in tab order** - This fails WCAG 4.1.2 Name, Role, Value (A). Keyboard users use the tabindex to move between interactive components. Sometimes developers force include non-interactive elements in the tabindex which adds to the user journey time and can disrupt or confuse the reading of the cookie banner.
+
+## Cookie banner accessibility issues
+
