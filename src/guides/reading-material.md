@@ -77,6 +77,10 @@ Netflix 2023 limited series. A work of fiction, the story of Marie-Laure, a blin
 
 Netflix 2023 series. A sub plot to this series was the barriers to education faced by Isaac, one of the cast who is a wheelchair user. The main issue is the lack of a working lift on the college campus. The lift once again not working and stopping Isaac from getting to his exam triggers collective action about the missing accessibility considerations at the college affecting different students.
 
+### [Webbed Briefs](https://briefs.video/)
+
+Heydon Pickering's collection of joke filled videos present many web topics in a flippant but easy to understand and compelling way. Topics such as; What is ARIA even for?, What are accessibility overlays?, and What happened to text inputs? are all great accessibility related watches.
+
 ## Suggest something
 
 If you have any suggestions for other resources that you think we should read / watch and should be added to this list, please contact us at [info@makethingsaccessible.com](mailto:info@makethingsaccessible.com)
