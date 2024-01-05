@@ -177,6 +177,7 @@ No advisories.
 * **`<svg>` acts as an image, but is missing an explicit role="img"** - This fails WCAG 1.1.1 Non-text Content (A). This means that assistive technology users do not know that the element is an image and there is not alt-text for the element to give meaningful information to them. 
 * **The accessible name of the control (which is exposed to assistive technologies) does not contain the visible text** - This fails WCAG 2.5.3 Label in Name (A). For user interface components with labels that include text or images of text, the name contains the text that is presented visually. In this case the link has the text of “Cookie Notice”, but the aria-label “More information about cookies and other trackers we use”. The aria-label overrides the title so “More information about cookies and other trackers we use” will get read out by the AT and the text “Cookie Notice” will not.
 * **List works with incorrect keys** - This fails WCAG 2.4.3 Focus Order (A). When you have tabbed into the list of options, you have to use the left and right arrow keys to move through the list rather than the up and down arrow keys. There also seems to be an event trapping the user from tabbing into the text. 
+* **ARIA input field does not have an accessible name** - This fails WCAG 4.1.2 Name, Role, Value (A). This stops users of assistive technology from comprehending what the field represents. 
 
 #### Weaknesses
 
