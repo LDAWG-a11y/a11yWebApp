@@ -176,15 +176,15 @@ No advisories.
 * **Contrast colour issues on text, links, and buttons** - This fails WCAG 1.4.3 Contrast Minimum (AA). Whether this is due to cookie banner default colour schemes or organisation customised branding schemes, poor colour contrast can make content harder to see and read.
 * **<svg> acts as an image, but is missing an explicit role="img"** - This fails WCAG 1.1.1 Non-text Content (A). This means that assistive technology users do not know that the element is an image and there is not alt-text for the element to give meaningful information to them. 
 * **The accessible name of the control (which is exposed to assistive technologies) does not contain the visible text** - This fails WCAG 2.5.3 Label in Name (A). For user interface components with labels that include text or images of text, the name contains the text that is presented visually. In this case the link has the text of “Cookie Notice”, but the aria-label “More information about cookies and other trackers we use”. The aria-label overrides the title so “More information about cookies and other trackers we use” will get read out by the AT and the text “Cookie Notice” will not.
-* **Aria-controls are missing and the keyboard interaction pattern is incorrect** - This fails WCAG 1.3.2 Meaningful Sequence (A) and 2.4.3 Focus Order (A). The aria-controls are missing from the elements, there is a needless label, and the keyboard interaction pattern is wrong - left and right arrow keys don't work – and it also fails on focus order as it goes to About before tabbing into content.
+* **List works with incorrect keys** - This fails WCAG 2.4.3 Focus Order (A). The aria-controls are missing from the elements, there is a needless label, and the keyboard interaction pattern is wrong - left and right arrow keys don't work – and it also fails on focus order as it goes to About before tabbing into content.
 
 #### Weaknesses
 
-* Even though the link title is different for each “Learn more about this provider”, Windows Narrator only reads out “Learn more about this provider”. Change the link to “Learn more about LinkedIn”, “Learn more about Usercentrics” etc.
+* Don't set the visible link text to "here", "click here" or anything else that lacks context in isolation. Some users use assistive technologies which can bring up a list of links to navigate to and when those links have the readable text "here" or "click here", that makes it really difficult for them to understand where that link will go, more so if there are many of them, as this will impact voice input users, as they may instruct their voice control software "Click here", hoping to read more about an interesting blog and end up reading the cookies policy, as their software couldn't guess which "here" they meant.
 
 #### Advisories
 
-No advisories.
+* When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
 
 </div>
 
