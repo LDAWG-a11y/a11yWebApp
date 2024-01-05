@@ -178,10 +178,12 @@ No advisories.
 * **The accessible name of the control (which is exposed to assistive technologies) does not contain the visible text** - This fails WCAG 2.5.3 Label in Name (A). For user interface components with labels that include text or images of text, the name contains the text that is presented visually. In this case the link has the text of “Cookie Notice”, but the aria-label “More information about cookies and other trackers we use”. The aria-label overrides the title so “More information about cookies and other trackers we use” will get read out by the AT and the text “Cookie Notice” will not.
 * **List works with incorrect keys** - This fails WCAG 2.4.3 Focus Order (A). When you have tabbed into the list of options, you have to use the left and right arrow keys to move through the list rather than the up and down arrow keys. There also seems to be an event trapping the user from tabbing into the text. 
 * **ARIA input field does not have an accessible name** - This fails WCAG 4.1.2 Name, Role, Value (A). This stops users of assistive technology from comprehending what the field represents. 
+* **Buttons missing text** - This fails WCAG 4.1.2 Name, Role, Value (A). Without buttons having discernible text that clearly describes the destination, purpose, function, or action for screen reader users, it is difficult for AT users to understand what the buttons represent.
 
 #### Weaknesses
 
 * Don't set the visible link text to "here", "click here" or anything else that lacks context in isolation. Some users use assistive technologies which can bring up a list of links to navigate to and when those links have the readable text "here" or "click here", that makes it really difficult for them to understand where that link will go, more so if there are many of them, as this will impact voice input users, as they may instruct their voice control software "Click here", hoping to read more about an interesting blog and end up reading the cookies policy, as their software couldn't guess which "here" they meant.
+* Text is disappearing on the right-hand side of the screen.
 
 #### Advisories
 
