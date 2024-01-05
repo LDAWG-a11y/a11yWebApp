@@ -145,3 +145,29 @@ Over the course of this case study we have documented many accessibility issues 
 * When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
 
 </div>
+
+<h3 class="accordion">GOV.UK</h3><div class="accordion__panel">
+
+GOV.UK is fully compliant with WCAG 2.2 AA standards.
+
+</div>
+
+<h3 class="accordion">Easy Cookie</h3><div class="accordion__panel">#### Accessibility issues
+
+* **Elements are not accessible by keyboard** - This fails WCAG 2.1.1 Keyboard (A). This normally affects interactive components such as links, buttons, collapsed content, and cookie selection toggles. This can stop keyboard users and screen reader users from being able to change options and submit their choices.
+* **Content behind “modal” banner not marked “inert”** - This fails WCAG 2.4.11 Focus Not Obscured (AA) and is one of the most impactful issues. This means that users can navigate around main page content "behind" the cookie banner. This is wrong because keyboard users can lose focus on interactive elements as the focus is hidden behind the cookie banner blocking the view.
+* **Focus is not visible when using the keyboard** - This fails WCAG 2.4.7 Focus Visible (AA). This normally occurs on links, buttons, and cookie selection toggle. This can stop keyboard only users from being able to follow what components they are interacting with in the cookie banner.
+* **Contrast colour issues on text, links, and buttons** - This fails WCAG 1.4.3 Contrast Minimum (AA). Whether this is due to cookie banner default colour schemes or organisation customised branding schemes, poor colour contrast can make content harder to see and read.
+* **Visible label with hidden input** - This fails WCAG 1.3.1 Info and Relationships and 4.1.2 Name, Role, Value (A). Labels are used so that AT users can understand what they need to enter data and hiding inputs is confusing.
+* **Accordions do not notify all screen readers when they open or close** - This fails WCAG 4.1.2 Name, Role, Value (A). AT users are not notified when the accordion is opened. The accordions should be changed to [accessible basic disclosure widgets](https://www.makethingsaccessible.com/guides/accessible-basic-disclosure-widgets/). Scott O’Hara has a guide to [Progressively enhanced ARIA accordions](https://scottaohara.github.io/a11y_accordions/). [MakeThingsAccessible](https://www.makethingsaccessible.com/) has some good advice on [making keyboard accessible accordions](https://www.makethingsaccessible.com/guides/accessible-basic-disclosure-widgets/).
+* **Multiple labels with same text content** - This fails WCAG 1.3.1 Info and Relationships, 2.4.6 Headings and Labels (AA),  and 3.3.2 Labels or Instructions (A). Labels stating the same text is confusing for AT users.
+
+#### Weaknesses
+
+* Tables do not use scope which allows accessibility tools to understand which column or row a cell belongs to. [MakeThingsAccessible](https://www.makethingsaccessible.com/) has a good guide to [using HTML tables for content.](https://www.makethingsaccessible.com/guides/html-tables-for-use-as-content/)
+
+#### Advisories
+
+* When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
+
+</div>
