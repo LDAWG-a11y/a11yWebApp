@@ -105,3 +105,24 @@ Over the course of this case study we have documented many accessibility issues 
 * Some customer versions that the “Reject all” button is removed. GDPR has to be as easy to reject as it is to accept, so that not having the “Reject all" which is the equivalent to the “Accept all” means it is far harder to reject as each individual consent checkbox has to set to off. Do not allow customers to remove the “Reject all” button.
 
 </div>
+
+<h3 class="accordion">Civic Cookie Control</h3><div class="accordion__panel">#### Accessibility issues
+
+* **Elements are not accessible by keyboard** - This fails WCAG 2.1.1 Keyboard (A). This normally affects interactive components such as links, buttons, collapsed content, and cookie selection toggles. This can stop keyboard users and screen reader users from being able to change options and submit their choices.
+* **Content behind “modal” banner not marked “inert”** - This fails WCAG 2.4.11 Focus Not Obscured (AA) and is one of the most impactful issues. This means that users can navigate around main page content "behind" the cookie banner. This is wrong because keyboard users can lose focus on interactive elements as the focus is hidden behind the cookie banner blocking the view.
+* **Focus is not visible when using the keyboard** - This fails WCAG 2.4.7 Focus Visible (AA). This normally occurs on links, buttons, and cookie selection toggle. This can stop keyboard only users from being able to follow what components they are interacting with in the cookie banner.
+* **Banner does not work with magnification** - This fails WCAG 1.4.10 Reflow (A). Some banners do not respond well to magnification, zooming, or being viewed on smaller screens which sometimes makes content get lost off the side of the screen. This can stop partially sighted and magnifier users from accessing all content.
+* **Contrast colour issues on text, links, and buttons** - This fails WCAG 1.4.3 Contrast Minimum (AA). Whether this is due to cookie banner default colour schemes or organisation customised branding schemes, poor colour contrast can make content harder to see and read.
+* **User is not made aware of new content or changes** - This fails WCAG 4.1.2 Name, Role, Value (A). Often when screen reader users change a toggle control or expand a collapsed content section (accordion) they are not told that there is more content to read, or whether the toggle control now means they have accepted or declined cookies.
+* **Duplicate labels used** - This fails WCAG 2.4.6 Headings and Labels (AA). Often all cookie acceptance checkboxes are identified as "accept cookies" rather than "accept marketing cookies" or "accept analytics cookies". Not being able to differentiate the controls because everything has the same label stops screen reader users from making informed choices.
+* **Label associated with form control is empty** - This fails WCAG 1.3.1 Info and Relationships (A). Labels require text so that users of Assistive Technology (AT) can understand what the control is for.
+
+#### Weaknesses
+
+* When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
+
+#### Advisories
+
+* The aria-expanded on modal is not necessarily needed.
+
+</div>
