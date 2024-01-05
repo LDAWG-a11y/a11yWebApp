@@ -93,8 +93,18 @@ Over the course of this case study we have documented many accessibility issues 
 
 **Contrast colour issues on text, links, and buttons** - This fails WCAG 1.4.3 Contrast Minimum (AA). Whether this is due to cookie banner default colour schemes or organisation customised branding schemes, poor colour contrast can make content harder to see and read.
 
-#### Accessibility issues
+**User is not made aware of new content or changes** - This fails WCAG 4.1.2 Name, Role, Value (A). Often when screen reader users change a toggle control or expand a collapsed content section (accordion) they are not told that there is more content to read, or whether the toggle control now means they have accepted or declined cookies.
 
+**Duplicate labels used** - This fails WCAG 2.4.6 Headings and Labels (AA). Often all cookie acceptance checkboxes are identified as "accept cookies" rather than "accept marketing cookies" or "accept analytics cookies". Not being able to differentiate the controls because everything has the same label stops screen reader users from making informed choices.
 
+#### Weaknesses
 
-#### Accessibility issues</div>
+When using the keyboard to tab through the page, it takes 43 tabs to get through the “Reject all” button which is the first button on the banner.
+
+When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
+
+There are <b> tags used and these have been deprecated since HTML 4. <b> is not the same as <strong> because <strong>, <em> and <mark> represent text of importance whereas <b> does not convey that semantic information. If you need the headings to be bold or strong, use styles rather than <b> or <strong>, but most screen readers will not announce text inside the <b> HTML tags any differently, so emphasis is lost for those who cannot see the text.
+
+#### Advisories
+
+List disguised as a table – display as list or create an accessible table.</div>
