@@ -81,4 +81,4 @@ Over the course of this case study we have documented many accessibility issues 
 
 ## Cookie banner accessibility issues
 
-<h3 class="accordion">Admiral</h3><div class="accordion__panel">undefined</div>
+<h3 class="accordion">Admiral</h3><div class="accordion__panel">TBA</div>
