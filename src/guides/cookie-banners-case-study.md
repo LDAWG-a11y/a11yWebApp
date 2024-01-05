@@ -152,7 +152,7 @@ GOV.UK is fully compliant with WCAG 2.2 AA standards.
 
 </div>
 
-<h3 class="accordion">Easy Cookie</h3><div class="accordion__panel">#### Accessibility issues
+<h3 class="accordion">Ketch</h3><div class="accordion__panel">#### Accessibility issues
 
 * **Elements are not accessible by keyboard** - This fails WCAG 2.1.1 Keyboard (A). This normally affects interactive components such as links, buttons, collapsed content, and cookie selection toggles. This can stop keyboard users and screen reader users from being able to change options and submit their choices.
 * **Content behind “modal” banner not marked “inert”** - This fails WCAG 2.4.11 Focus Not Obscured (AA) and is one of the most impactful issues. This means that users can navigate around main page content "behind" the cookie banner. This is wrong because keyboard users can lose focus on interactive elements as the focus is hidden behind the cookie banner blocking the view.
