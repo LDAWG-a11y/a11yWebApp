@@ -105,9 +105,9 @@ When using the keyboard to tab through the page, it takes 43 tabs to get through
 
 When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
 
-There are <b> tags used and these have been deprecated since HTML 4. <b> is not the same as <strong> because <strong>, <em> and <mark> represent text of importance whereas <b> does not convey that semantic information. If you need the headings to be bold or strong, use styles rather than <b> or <strong>, but most screen readers will not announce text inside the <b> HTML tags any differently, so emphasis is lost for those who cannot see the text.
+There are `<b>` tags used and these have been deprecated since HTML 4. `<b>` is not the same as `<strong>` because `<strong>`, `<em>` and `<mark>` represent text of importance whereas `<b>` does not convey that semantic information. If you need the headings to be bold or strong, use styles rather than `<b>` or `<strong>`, but most screen readers will not announce text inside the `<b>` HTML tags any differently, so emphasis is lost for those who cannot see the text.
 
-Some users of screen readers may not be able to use the consent checkboxes as they won't work with implicit labels, only explicit labels. Change the “toggles” to two radio buttons within a fieldset with the legend such as suggested by Sara Soueidan in her article On Designing and Building Toggle Switches.
+Some users of screen readers may not be able to use the consent checkboxes as they won't work with implicit labels, only explicit labels. Change the “toggles” to two radio buttons within a fieldset with the legend such as suggested by Sara Soueidan in her article [On Designing and Building Toggle Switches](https://www.sarasoueidan.com/blog/toggle-switch-design/).
 
 #### Advisories
 
