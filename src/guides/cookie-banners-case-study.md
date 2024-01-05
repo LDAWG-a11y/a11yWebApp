@@ -169,3 +169,22 @@ GOV.UK is fully compliant with WCAG 2.2 AA standards.
 No advisories.
 
 </div>
+
+<h3 class="accordion">OneTrust CookiePro</h3><div class="accordion__panel">#### Accessibility issues
+
+* **Focus is not visible when using the keyboard** - This fails WCAG 2.4.7 Focus Visible (AA). This normally occurs on links, buttons, and cookie selection toggle. This can stop keyboard only users from being able to follow what components they are interacting with in the cookie banner.
+* **Contrast colour issues on text, links, and buttons** - This fails WCAG 1.4.3 Contrast Minimum (AA). Whether this is due to cookie banner default colour schemes or organisation customised branding schemes, poor colour contrast can make content harder to see and read.
+* **<svg> acts as an image, but is missing an explicit role="img"** - This fails WCAG 1.1.1 Non-text Content (A). This means that assistive technology users do not know that the element is an image and there is not alt-text for the element to give meaningful information to them. 
+* **Focus is not visible when using the keyboard** - This fails WCAG 2.4.7 Focus Visible (AA). This normally occurs on links, buttons, and cookie selection toggle. This can stop keyboard only users from being able to follow what components they are interacting with in the cookie banner.
+* **Aria-controls are missing and the keyboard interaction pattern is incorrect** - This fails WCAG 1.3.2 Meaningful Sequence (A) and 2.4.3 Focus Order (A). The aria-controls are missing from the elements, there is a needless label, and the keyboard interaction pattern is wrong - left and right arrow keys don't work – and it also fails on focus order as it goes to About before tabbing into content.
+
+#### Weaknesses
+
+* Even though the link title is different for each “Learn more about this provider”, Windows Narrator only reads out “Learn more about this provider”. Change the link to “Learn more about LinkedIn”, “Learn more about Usercentrics” etc.
+
+#### Advisories
+
+No advisories.
+
+</div>
+
