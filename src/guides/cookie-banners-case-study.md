@@ -53,7 +53,7 @@ The cookie banners:
 
 * Admiral
 * Civic Cookie Control
-* Easy Space Cookie
+* Easy Cookie
 * Gov.uk
 * Ketch
 * OneTrust CookiePro
@@ -103,6 +103,26 @@ Over the course of this case study we have documented many accessibility issues 
 
 * List disguised as a table using CSS – display as list or create an accessible table.
 * Some customer versions that the “Reject all” button is removed. GDPR has to be as easy to reject as it is to accept, so that not having the “Reject all" which is the equivalent to the “Accept all” means it is far harder to reject as each individual consent checkbox has to set to off. Do not allow customers to remove the “Reject all” button.
+
+</div>
+
+<h3 class="accordion">Civic Cookie Control</h3><div class="accordion__panel">#### Accessibility issues
+
+* **Elements are not accessible by keyboard** - This fails WCAG 2.1.1 Keyboard (A). This normally affects interactive components such as links, buttons, collapsed content, and cookie selection toggles. This can stop keyboard users and screen reader users from being able to change options and submit their choices.
+* **Content behind “modal” banner not marked “inert”** - This fails WCAG 2.4.11 Focus Not Obscured (AA) and is one of the most impactful issues. This means that users can navigate around main page content "behind" the cookie banner. This is wrong because keyboard users can lose focus on interactive elements as the focus is hidden behind the cookie banner blocking the view.
+* **Focus is not visible when using the keyboard** - This fails WCAG 2.4.7 Focus Visible (AA). This normally occurs on links, buttons, and cookie selection toggle. This can stop keyboard only users from being able to follow what components they are interacting with in the cookie banner.
+* **Aria-label different to text in image** - This fails WCAG 1.4.5 Images of Text (AA). The label has different a sentence but the text of the SVG image is only one letter. This is confusing to users as the should text in each case should be the same.
+* **Contrast colour issues on text, links, and buttons** - This fails WCAG 1.4.3 Contrast Minimum (AA). Whether this is due to cookie banner default colour schemes or organisation customised branding schemes, poor colour contrast can make content harder to see and read.
+* **Focus goes to “C” image rather than main body** - This fails WCAG 2.4.3 Focus Order (A). When cookies are accepted or rejected the focus goes to the "C" image/link rather than the main body.
+* **Checkbox should not be used as a toggle switch**  - This fails WCAG 1.3.1 Info and Relationships (A), 2.4.6 Headings and Labels (AA), and 4.1.2 Name, Role, Value (A). Accessible names, ARIA attributes, or unique ARIA id are used by AT to understand the roles of elements and their children. The accessible name is “Analytical Cookies” and should, using the current set up, be made up of the header and text in div, but because Gestalt Theory of Proximity states “that things that are close together appear to be more related than things that are spaced farther apart.”, due to the distance “Analytical Cookies” is from the check box, it fails this. This means that when using voice input on Mac or Voice access on Windows "click off" does not turn off the checkbox, the user has to say "click Analytical Cookies " does turn it off. Change the checkbox to two radio buttons and within a fieldset with the legend such as suggested by Sara Soueidan in her article [On Designing and Building Toggle Switches](https://www.sarasoueidan.com/blog/toggle-switch-design/).
+
+#### Weaknesses
+
+* When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
+
+#### Advisories
+
+* The aria-expanded on modal is not necessarily needed.
 
 </div>
 
