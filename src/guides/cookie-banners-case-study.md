@@ -97,6 +97,8 @@ Over the course of this case study we have documented many accessibility issues 
 
 **Duplicate labels used** - This fails WCAG 2.4.6 Headings and Labels (AA). Often all cookie acceptance checkboxes are identified as "accept cookies" rather than "accept marketing cookies" or "accept analytics cookies". Not being able to differentiate the controls because everything has the same label stops screen reader users from making informed choices.
 
+**Label associated with form control is empty** - This fails WCAG 1.3.1 Info and Relationships (A). Labels require text so that users of Assistive Technology (AT) can understand what the control is for.
+
 #### Weaknesses
 
 When using the keyboard to tab through the page, it takes 43 tabs to get through the “Reject all” button which is the first button on the banner.
@@ -107,4 +109,4 @@ There are <b> tags used and these have been deprecated since HTML 4. <b> is not 
 
 #### Advisories
 
-List disguised as a table – display as list or create an accessible table.</div>
+List disguised as a table using CSS – display as list or create an accessible table.</div>
