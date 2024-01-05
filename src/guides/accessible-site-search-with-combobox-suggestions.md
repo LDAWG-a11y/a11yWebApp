@@ -59,7 +59,7 @@ Quite interestingly, with VoiceOver/Safari, the only thing announced is the actu
 
 Should I use up and down arrows with NVDA and Firefox, I do hear the list enumeration and the suggestion text, still not the role of "option" though, even though it is present. Arguably as a user does not hear it is an "option" maybe this mitigates the confusion for them? I don't have access to JAWS, so I am unable to determine what, if any differences are output with that screen reader.
 
-Despite it being "technically" a failure, is it actually a "problem" for users? Ultimately, usability trumps compliance, if disabled users know what to expect and have no problems using the component and find it intuitive and you can back that up with actual user testing, perhaps it can be justified
+Despite it being "technically" a failure, is it actually a "problem" for users? Ultimately, usability trumps compliance, if disabled users know what to expect and have no problems using the component and find it intuitive. If that can be backed up with robust testing with disabled users, then perhaps it can be justified?
 
 ### MDN
 
@@ -70,6 +70,8 @@ As `role="option"` is fundamentally the same as an `<option>` as far as assistiv
 Similar to the Google pattern, this does not announce the role of "option" or even "link", it reports each item as a text element in VoiceOver. Quite annoyingly, it doesn't work correctly, in that with VoiceOver running, if I press down arrow, it closes the suggestions panel, so I have to navigate to the options using the virtual cursor and then get into the `listbox`. the problem with that is the input now doesn't have focus, so a user cannot continue typing to further filter the suggestions.
 
 In Firefox with NVDA, I can at least use the up and down arrows and again, there is no role announced, just the text and list enumeration.
+
+Whilst it works similar to the Google search (albeit this implementation takes a user directly to a specific page), the nested `<a>` element sits uncomfortably with me, I'm struggling to see how why they took this approach, as it isn't necessary at all. Sure, links provide us with out-of-the-box interactivity, which is useful here, but they could have just added the `role="option"` to the links to preserve the functionality of the `<a>` element and provide the required ARIA children for the listbox, I'll demo this later. It's still technically a failure, as an option is navigating, but less of a failure than nesting interactive elements in my opinion.
 
 ### Amazon
 
@@ -83,7 +85,7 @@ We looked at four different implementations and we could have gone on forever, a
 
 Apple's are announced as links and it does inform a screen reader that there are a certain number of options available. It does not have `aria-controls` present on the `<input>,` which I know doesn't do a great deal due to lack of screen reader support, it does at least reinforce that programmatic relationship.
 
-As it is critical that we consider all users when developing sites and the components they are built with we need to ensure that they work for screen reader users too, then they are in the best position to decide whether they use it or not, choice is tool that allows users to operate sites in a way that works for them.
+As it is critical that we consider all users when developing sites and the components they are built with, we need to ensure that they work for screen reader users too, then they are in the best position to decide whether they use it or not, user choice is the tool that allows users to operate sites in a way that works for them.
 
 ## How should we build one?
 
@@ -93,10 +95,10 @@ I don't have a definitive answer here I'm afraid. If I had the resources availab
 
 As always, this isn't a design demo, so I'm just going to make them look OK, I will of course ensure contrast and focus are perceivable, but they'll look relatively basic, just to reduce the amount of work I need to do. Also, there are some differences between the examples we discussed, most of them redirect a user to a search results page, whereas the Mozilla example directs a user to the actual page, we're going to be doing the latter.
 
-We will only add the `listbox` when JS is available, I always build in progressive enhancement, in that we don't want redundant controls on a page for our users if JS isn't available. What I'm going to do here is I'm going to write the base HTML for the input and its containers in actual HTML, obviously without JS this will do nothing at all. The two options here are:
+We will only add the `listbox` when JS is available, I always build with progressive enhancement in mind, in that we don't want redundant controls on a page for our users if JS isn't available. What I'm going to do here is I'm going to write the base HTML for the input and its containers in actual HTML, obviously without JS this will do nothing at all. The two options here are:
 
 * Add the input and wrapping elements to the DOM with JS instead, then a user won't have to face the frustration of interacting with a redundant control
-* Wrap the element in a <form> (assuming you have a backend for this), which you may want to remove or neutralise when JS is available as the links will be doing the navigating when there is JS
+* Wrap the element in a <form> (assuming you have a backend for this), which you may want to remove or neuter when JS is available and have it direct to a Search Results page, but when JS is available have it operate by clicking the links or matching the input text to an item in the `listbox`
 
 For the first example, I am going to provide all three files: HTML, JS & CSS and only the JS for the remaining examples, as that's the only file that will change (He says apprehensively as thus far he has only built the first example).
 
@@ -104,22 +106,22 @@ For the first example, I am going to provide all three files: HTML, JS & CSS and
 
 Technically this fails [WCAG 3.2.2 On Input (A)](https://www.w3.org/WAI/WCAG22/Understanding/on-input.html), as similar to the Google approach, how much of an issue that actually is is something that can only be determined by disabled folks, if they say it is perfectly understandable to them, irrespective of what WCAG says then users before standards, always. This view can of course be problematic for legal risk, depending where in the world you live, maybe the fact it does not fully comply could leave you open to some legal challenge.
 
-What behaviour would a user expect from a site search? A sighted user would not "see" a typical `<select>` &`<option>`s element, as the OS styles those, so what they "see" resembles something they encounter every time they use a search engine, an <input> that will accept text filtering, whilst filtering a bunch of suggestions, clicking one of those suggestions will navigate to a results page or an actual page.
+What behaviour would a user expect from a site search? A sighted user would not "see" a typical `<select>` &`<option>`s element, as the OS styles those, so what they "see" resembles something they encounter every time they use a search engine, an `<input>` that will accept text text input, whilst filtering a bunch of suggestions, clicking one of those suggestions will navigate to a results page or an actual page.
 
-If the only user group that may find this behaviour unexpected are screen reader users, would it be enough to advise just those users of what will happen? I'm not a fan of hiding instructions just for screen reader users, typically all users benefit from them, in this instance though maybe it's acceptable, as we can make our suggestions look like links, we could use icons, underlines or whatever, just to add additional visual affordances. As any of those aforementioned affordances won't necessarily provide a user of a screen reader with any additional information, could we just ensure that the name of the `<input>` includes a little extra info? If our `<input>` had a visually hidden accessible name, such as "Search navigation links" and we had underlines on the actual links, is that enough of an advance warning to both sighted and unsighted users?
+If the only user group that may find this behaviour unexpected are screen reader users, would it be enough to advise just those users of what will happen? I'm not a fan of hiding instructions just for screen reader users, typically all users benefit from them, in this instance though maybe it's acceptable, as we can make our suggestions look like links, we could use icons, underlines or whatever, just to add additional visual affordances. As any of those aforementioned affordances won't necessarily provide a user of a screen reader with any additional information, could we just ensure that the name of the `<input>` includes a little extra info? If our `<input>` had a visually hidden accessible name, such as "Search and filter navigation links" and we had underlines on the actual links, is that enough of an advance warning to both sighted and unsighted users?
 
-I could include a `<button>`, like a "Go" <`button>`, a user clicks a suggestion, focus returns to the input and there is an adjacent `<button>`, which when clicked will then perform the same action. This is an acceptable WCAG technique for meeting the On Input SC. But, sometimes it may be hard to convince stakeholders to add that `<button>`, as you may get the whole "It's adding an extra step for everybody" feedback, which is probably true. We may also get the "We don't want a visible text `<label>` on the `<input>`, we just want an icon" instruction. So, what I am going to do, is just create an `<input>`, with no button or visible label, it will just have a magnifying glass icon. Visually it has a label, as the icon communicates the purpose, programmatically, it will have a proper `<label>`, with the visually hidden text "Search navigation links". I have to admit to not being 100% sure whether in isolation the underlined links and the hidden label are enough to "advise" a user of expected behaviour to pass On input, I think it is, but somebody smarter may disagree. See this as a "grey area", until you can confirm otherwise.
+I could include a `<button>`, like a "Go" <`button>`, a user clicks a suggestion, focus returns to the input and there is an adjacent `<button>`, which when clicked will then perform the same action. This is an acceptable WCAG technique for meeting the On Input SC. But, sometimes it may be hard to convince stakeholders to add that `<button>`, as you may get the whole "It's adding an extra step for everybody" feedback, which is probably true. We may also get the "We don't want a visible text `<label>` on the `<input>`, we just want an icon" instruction. So, what I am going to do, is just create an `<input>`, with no button or visible label, it will just have a magnifying glass icon. Visually it has a label, as the icon communicates the purpose, programmatically, it will have a proper `<label>`, with the visually hidden text "Search and filter navigation links". I have to admit to not being 100% sure whether in isolation the underlined links and the hidden label are enough to "advise" a user of expected behaviour to pass On Input, I think it is, but somebody smarter may disagree. See this as a "grey area", until you can confirm otherwise.
 
-In any event, I would hope that this would not be the sole navigation mechanism on any site, so assuming there was a typical `<nav>` and perhaps a site map or footer links, then there are alternative ways navigating. But ultimately, test with users, they can tell you what is understandable and usable to them, much better than somebody who does not have the same lived experiences.
+In any event, I would hope that this would not be the sole navigation mechanism on any site, so assuming there was a typical `<nav>` and perhaps a site map or footer links, then there are alternative ways of navigating. But ultimately, test with users, they can tell you what is understandable and usable to them, much better than somebody who does not have the same lived experiences.
 
 #### The HTML
 
-Nothing spectacular here, an `<input>` with an SVG and some wrapping `<div>` elements. we'll add the roles and properties with JS, as they're redundant without it, but as I said, this could be in a `<form>` for users without JS.
+Nothing spectacular here, an `<input>` with an SVG and some wrapping `<div>` elements. we'll add the roles and properties with JS, as they're redundant without it, but as I said, this could be in a `<form>` for users without JS. The label for the input is just "Search" when JS isn't available, as no filtering can occur, so just keep this basic and swap it out when or if JS loads.
 
 ```html
 <div class="header__search-container">
   <div class="search__wrapper" data-expanded="false">
-    <label for="sFilter" class="visually-hidden">Search navigation links</label>
+    <label for="sFilter" class="visually-hidden">Search</label>
     <input class="search__input" id="sFilter" class="search__input" type="text" autocomplete="off">
     <svg aria-hidden="true" focusable="false" stroke="#000" stroke-width="9.8" viewBox="-19.6 -19.6 529.6 529.6"
       height="1.25rem">
