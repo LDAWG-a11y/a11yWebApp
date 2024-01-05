@@ -1,5 +1,5 @@
 ---
-title: Cookie banners case study (Keep)
+title: Cookie banners case study
 summary: Many organisations are using third-party cookie banners to meet their
   GDPR responsibilities. These banners often cause accessibility issues that you
   may not be aware of. This case study covers several examples of common in use
@@ -63,8 +63,6 @@ The cookie banners:
 * Wordpress - admin
 * Wordpress - ads
 
-
-
 ## Common cookie banner accessibility issues
 
 Over the course of this case study we have documented many accessibility issues with cookie banner examples. The list below represented the most common accessibility issues we see with cookie banners and why they are a problem.
@@ -83,3 +81,4 @@ Over the course of this case study we have documented many accessibility issues 
 
 ## Cookie banner accessibility issues
 
+<h3 class="accordion">Admiral</h3><div class="accordion__panel">undefined</div>
