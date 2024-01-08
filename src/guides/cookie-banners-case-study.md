@@ -252,7 +252,9 @@ No advisories
 
 </div>
 
-<h3 class="accordion">Osano</h3><div class="accordion__panel">#### Accessibility issues
+<h3 class="accordion">Usercentrics Cookiebot</h3><div class="accordion__panel">#### Accessibility issues
+
+
 
 * **Focus is not visible when using the keyboard** - This fails WCAG 2.4.7 Focus Visible (AA). This normally occurs on links, buttons, and cookie selection toggle. This can stop keyboard only users from being able to follow what components they are interacting with in the cookie banner.
 * **Content behind “modal” banner not marked “inert”** - This fails WCAG 2.4.11 Focus Not Obscured (AA) and is one of the most impactful issues. This means that users can navigate around main page content "behind" the cookie banner. This is wrong because keyboard users can lose focus on interactive elements as the focus is hidden behind the cookie banner blocking the view.
