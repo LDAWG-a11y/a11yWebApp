@@ -254,22 +254,32 @@ No advisories
 
 <h3 class="accordion">Usercentrics Cookiebot</h3><div class="accordion__panel">#### Accessibility issues
 
+* **Content behind “modal” banner not marked “inert”** - This fails WCAG 2.4.11 Focus Not Obscured (AA) and is one of the most impactful issues. This means that users can navigate around main page content "behind" the cookie banner. This is wrong because keyboard users can lose focus on interactive elements as the focus is hidden behind the cookie banner blocking the view.
+* **Banner does not work with magnification** - This fails WCAG 1.4.10 Reflow (A). Some banners do not respond well to magnification, zooming, or being viewed on smaller screens which sometimes makes content get lost off the side of the screen. This can stop partially sighted and magnifier users from accessing all content.
+* **Non-active element in tab order** - This fails WCAG 4.1.2 Name, Role Value Content (A). The element has been given a `tabindex="0"` but the element does not have a specific `role="..."`. Users of assistive technology which uses the headings to understand the sequence of the page could become confused about the order of the elements. 
+
 
 
 * **Focus is not visible when using the keyboard** - This fails WCAG 2.4.7 Focus Visible (AA). This normally occurs on links, buttons, and cookie selection toggle. This can stop keyboard only users from being able to follow what components they are interacting with in the cookie banner.
-* **Content behind “modal” banner not marked “inert”** - This fails WCAG 2.4.11 Focus Not Obscured (AA) and is one of the most impactful issues. This means that users can navigate around main page content "behind" the cookie banner. This is wrong because keyboard users can lose focus on interactive elements as the focus is hidden behind the cookie banner blocking the view.
-* **Banner does not work with magnification** - This fails WCAG 1.4.10 Reflow (A). Some banners do not respond well to magnification, zooming, or being viewed on smaller screens which sometimes makes content get lost off the side of the screen. This can stop partially sighted and magnifier users from accessing all content.
+
 
 
 * **Contrast colour issues on text, links, and buttons** - This fails WCAG 1.4.3 Contrast Minimum (AA). Whether this is due to cookie banner default colour schemes or organisation customised branding schemes, poor colour contrast can make content harder to see and read.
 
+
+
 #### Weaknesses
 
 
-* Don't set the visible link text to "here", "click here" or anything else that lacks context in isolation. Some users use assistive technologies which can bring up a list of links to navigate to and when those links have the readable text "here" or "click here", that makes it really difficult for them to understand where that link will go, more so if there are many of them, as this will impact voice input users, as they may instruct their voice control software "Click here", hoping to read more about an interesting blog and end up reading the cookies policy, as their software couldn't guess which "here" they meant.
+
+* It is hard to see the difference between the out of focus and in focus “Allow all” button. 
 * Text is disappearing on the right-hand side of the screen.
 
+
+
 #### Advisories
+
+
 
 * When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
 
