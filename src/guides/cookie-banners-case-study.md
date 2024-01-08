@@ -273,7 +273,7 @@ No advisories
 
 
 * It is hard to see the difference between the out of focus and in focus “Allow all” button. 
-* Even though the link title is different for each “Learn more about this provider”, Windows Narrator only reads out “Learn more about this provider”. Change the link to “Learn more about LinkedIn”, “Learn more about Usercentrics” etc.
+* Even though the link title is different for each “Learn more about this provider”, Windows Narrator only reads out “Learn more about this provider”. 
 
 
 
