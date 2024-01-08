@@ -311,6 +311,38 @@ No advisories.
 
 </div>
 
+<h3 class="accordion">WordPress WordAds</h3><div class="accordion__panel">#### Accessibility issues
+
+* **`<iframe>` element does not have an accessible name** - This fails WCAG 4.1.2 Name, Role, Value (A). Accessible names are used by AT to understand the roles of elements and their children.
+* **Focus is not visible when using the keyboard** - This fails WCAG 2.4.7 Focus Visible (AA). This normally occurs on links, buttons, and cookie selection toggle. This can stop keyboard only users from being able to follow what components they are interacting with in the cookie banner.
+* **Content behind “modal” banner not marked “inert”** - This fails WCAG 2.4.11 Focus Not Obscured (AA) and is one of the most impactful issues. This means that users can navigate around main page content "behind" the cookie banner. This is wrong because keyboard users can lose focus on interactive elements as the focus is hidden behind the cookie banner blocking the view.
+* **Banner does not work with magnification** - This fails WCAG 1.4.10 Reflow (A). Some banners do not respond well to magnification, zooming, or being viewed on smaller screens which sometimes makes content get lost off the side of the screen. This can stop partially sighted and magnifier users from accessing all content.
+* **Contrast colour issues on text, links, and buttons** - This fails WCAG 1.4.3 Contrast Minimum (AA). Whether this is due to cookie banner default colour schemes or organisation customised branding schemes, poor colour contrast can make content harder to see and read.
+* **Language within page needs to be set* - This fails WCAG 3.1.2 Language of Parts (AA). Language not set within page for the multiple languages so that the user agents and AT will not necessarily use the correct pronunciation rules. 
+* **Elements are not accessible by keyboard** - This fails WCAG 2.1.1 Keyboard (A). This normally affects interactive components such as links, buttons, collapsed content, and cookie selection toggles. This can stop keyboard users and screen reader users from being able to change options and submit their choices.
+* **User is not made aware of new content or changes** - This fails WCAG 4.1.2 Name, Role, Value (A). Often when screen reader users change a toggle control or expand a collapsed content section (accordion) they are not told that there is more content to read, or whether the toggle control now means they have accepted or declined cookies.
+* **Form elements do not have labels** - This fails WCAG 1.3.1 Info and Relationships (A) and 4.1.2 Name, Role, Value (A). When screen reader users move through form elements such as radio buttons or checkboxes which are commonly used in cookie banners, they must be told what question they are answering or what type of cookie they are accepting / denying. When form elements do not have labels or legends users are not told what the context of the control is. For example instead of saying "accept marketing cookies checkbox not checked" it might just say "checkbox not checked" which does not help the user.
+
+
+
+#### Weaknesses
+
+
+
+No weaknesses.
+
+
+
+#### Advisories
+
+
+
+No advisories.
+
+
+
+</div>
+
 
 
 
