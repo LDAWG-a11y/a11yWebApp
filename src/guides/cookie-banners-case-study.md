@@ -273,7 +273,7 @@ No advisories
 
 
 * It is hard to see the difference between the out of focus and in focus “Allow all” button. 
-* Text is disappearing on the right-hand side of the screen.
+* Even though the link title is different for each “Learn more about this provider”, Windows Narrator only reads out “Learn more about this provider”. Change the link to “Learn more about LinkedIn”, “Learn more about Usercentrics” etc.
 
 
 
@@ -281,7 +281,7 @@ No advisories
 
 
 
-* When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
+No advisories.
 
 
 
