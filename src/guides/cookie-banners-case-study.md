@@ -239,6 +239,7 @@ No advisories
 
 
 * Don't set the visible link text to "here", "click here" or anything else that lacks context in isolation. Some users use assistive technologies which can bring up a list of links to navigate to and when those links have the readable text "here" or "click here", that makes it really difficult for them to understand where that link will go, more so if there are many of them, as this will impact voice input users, as they may instruct their voice control software "Click here", hoping to read more about an interesting blog and end up reading the cookies policy, as their software couldn't guess which "here" they meant.
+* When using the keyboard to tab through the page, it takes 86 tabs to get to the “Accept all” cookie buttons. Make the banner modal so that the user accesses the banner first.
 
 
 
