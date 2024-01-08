@@ -219,6 +219,8 @@ No advisories.
 <h3 class="accordion">Osano</h3><div class="accordion__panel">#### Accessibility issues
 
 * **Focus is not visible when using the keyboard** - This fails WCAG 2.4.7 Focus Visible (AA). This normally occurs on links, buttons, and cookie selection toggle. This can stop keyboard only users from being able to follow what components they are interacting with in the cookie banner.
+* **Content behind “modal” banner not marked “inert”** - This fails WCAG 2.4.11 Focus Not Obscured (AA) and is one of the most impactful issues. This means that users can navigate around main page content "behind" the cookie banner. This is wrong because keyboard users can lose focus on interactive elements as the focus is hidden behind the cookie banner blocking the view.
+
 
 * **Contrast colour issues on text, links, and buttons** - This fails WCAG 1.4.3 Contrast Minimum (AA). Whether this is due to cookie banner default colour schemes or organisation customised branding schemes, poor colour contrast can make content harder to see and read.
 
@@ -236,6 +238,29 @@ No advisories
 
 
 </div>
+
+<h3 class="accordion">Piwik PRO</h3><div class="accordion__panel">#### Accessibility issues
+
+* **Focus is not visible when using the keyboard** - This fails WCAG 2.4.7 Focus Visible (AA). This normally occurs on links, buttons, and cookie selection toggle. This can stop keyboard only users from being able to follow what components they are interacting with in the cookie banner.
+
+* **Contrast colour issues on text, links, and buttons** - This fails WCAG 1.4.3 Contrast Minimum (AA). Whether this is due to cookie banner default colour schemes or organisation customised branding schemes, poor colour contrast can make content harder to see and read.
+
+
+#### Weaknesses
+
+* It is not possible to toggle the checkboxes using voice input on Mac or Voice access on Windows. Saying “click Targeted Advertising” does not cause the checkbox to check or uncheck. This would be fixed by removing the left: -10000px; from .osano-cm-toggle_input css.
+
+
+
+#### Advisories
+
+No advisories
+
+
+
+</div>
+
+
 
 
 
