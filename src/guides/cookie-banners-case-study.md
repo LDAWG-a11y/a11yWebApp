@@ -259,7 +259,7 @@ No advisories
 * **Non-active element in tab order** - This fails WCAG 4.1.2 Name, Role Value Content (A). The element has been given a `tabindex="0"` but the element does not have a specific `role="..."`. Users of assistive technology which uses the headings to understand the sequence of the page could become confused about the order of the elements. 
 
 
-* **Aria-controls are missing and the keyboard interaction pattern is incorrect** - This fails WCAG 1.3.2 Meaningful Sequence (A) and 2.4.3 Focus Order (A). The aria-controls are missing from the elements, there is a needless label, and the keyboard interaction pattern is wrong - left and right arrow keys don't work – and it also fails on focus order as it goes to About before tabbing into content..
+* **Aria-controls are missing and the keyboard interaction pattern is incorrect** - This fails WCAG 1.3.2 Meaningful Sequence (A) and 2.4.3 Focus Order (A). The aria-controls are missing from the elements, there is a needless label, and the keyboard interaction pattern is wrong - left and right arrow keys don't work – and it also fails on focus order as it goes to About before tabbing into content.
 
 
 
