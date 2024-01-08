@@ -264,7 +264,32 @@ No advisories
 
 
 
-* **Contrast colour issues on text, links, and buttons** - This fails WCAG 1.4.3 Contrast Minimum (AA). Whether this is due to cookie banner default colour schemes or organisation customised branding schemes, poor colour contrast can make content harder to see and read.
+#### Weaknesses
+
+
+
+* It is hard to see the difference between the out of focus and in focus “Allow all” button. 
+* Even though the link title is different for each “Learn more about this provider”, Windows Narrator only reads out “Learn more about this provider”. 
+
+
+
+#### Advisories
+
+
+
+No advisories.
+
+
+
+</div>
+
+<h3 class="accordion">Wordpress Adminstration</h3><div class="accordion__panel">#### Accessibility issues
+
+* **Focus is not visible when using the keyboard** - This fails WCAG 2.4.7 Focus Visible (AA). This normally occurs on links, buttons, and cookie selection toggle. This can stop keyboard only users from being able to follow what components they are interacting with in the cookie banner.
+* **Content behind “modal” banner not marked “inert”** - This fails WCAG 2.4.11 Focus Not Obscured (AA) and is one of the most impactful issues. This means that users can navigate around main page content "behind" the cookie banner. This is wrong because keyboard users can lose focus on interactive elements as the focus is hidden behind the cookie banner blocking the view.
+* **Banner does not work with magnification** - This fails WCAG 1.4.10 Reflow (A). Some banners do not respond well to magnification, zooming, or being viewed on smaller screens which sometimes makes content get lost off the side of the screen. This can stop partially sighted and magnifier users from accessing all content.
+* **Form elements do not have labels** - This fails WCAG 1.3.1 Info and Relationships (A) and 4.1.2 Name, Role, Value (A). When screen reader users move through form elements such as radio buttons or checkboxes which are commonly used in cookie banners, they must be told what question they are answering or what type of cookie they are accepting / denying. When form elements do not have labels or legends users are not told what the context of the control is. For example instead of saying "accept marketing cookies checkbox not checked" it might just say "checkbox not checked" which does not help the user.
+* **User is not made aware of new content or changes** - This fails WCAG 4.1.2 Name, Role, Value (A). Often when screen reader users change a toggle control or expand a collapsed content section (accordion) they are not told that there is more content to read, or whether the toggle control now means they have accepted or declined cookies.
 
 
 
@@ -272,8 +297,7 @@ No advisories
 
 
 
-* It is hard to see the difference between the out of focus and in focus “Allow all” button. 
-* Even though the link title is different for each “Learn more about this provider”, Windows Narrator only reads out “Learn more about this provider”. 
+* When the cookie banner changes when the Customize button is activated and the cookie form appears, the focus is set to the Email address on the form behind the cookie banner - I would suggest making the start of the cookie form the focus. 
 
 
 
