@@ -81,7 +81,9 @@ Over the course of this case study we have documented many accessibility issues 
 
 ## Cookie banner accessibility issues
 
-<h3 class="accordion">Admiral</h3><div class="accordion__panel">#### Accessibility issues
+<h3 class="accordion">Admiral</h3><div class="accordion__panel">
+
+#### Accessibility issues
 
 * **Elements are not accessible by keyboard** - This fails WCAG 2.1.1 Keyboard (A). This normally affects interactive components such as links, buttons, collapsed content, and cookie selection toggles. This can stop keyboard users and screen reader users from being able to change options and submit their choices.
 * **Content behind “modal” banner not marked “inert”** - This fails WCAG 2.4.11 Focus Not Obscured (AA) and is one of the most impactful issues. This means that users can navigate around main page content "behind" the cookie banner. This is wrong because keyboard users can lose focus on interactive elements as the focus is hidden behind the cookie banner blocking the view.
@@ -106,7 +108,9 @@ Over the course of this case study we have documented many accessibility issues 
 
 </div>
 
-<h3 class="accordion">Civic Cookie Control</h3><div class="accordion__panel">#### Accessibility issues
+<h3 class="accordion">Civic Cookie Control</h3><div class="accordion__panel">
+
+#### Accessibility issues
 
 * **Elements are not accessible by keyboard** - This fails WCAG 2.1.1 Keyboard (A). This normally affects interactive components such as links, buttons, collapsed content, and cookie selection toggles. This can stop keyboard users and screen reader users from being able to change options and submit their choices.
 * **Content behind “modal” banner not marked “inert”** - This fails WCAG 2.4.11 Focus Not Obscured (AA) and is one of the most impactful issues. This means that users can navigate around main page content "behind" the cookie banner. This is wrong because keyboard users can lose focus on interactive elements as the focus is hidden behind the cookie banner blocking the view.
@@ -126,7 +130,9 @@ Over the course of this case study we have documented many accessibility issues 
 
 </div>
 
-<h3 class="accordion">Easy Cookie</h3><div class="accordion__panel">#### Accessibility issues
+<h3 class="accordion">Easy Cookie</h3><div class="accordion__panel">
+
+#### Accessibility issues
 
 * **Elements are not accessible by keyboard** - This fails WCAG 2.1.1 Keyboard (A). This normally affects interactive components such as links, buttons, collapsed content, and cookie selection toggles. This can stop keyboard users and screen reader users from being able to change options and submit their choices.
 * **Content behind “modal” banner not marked “inert”** - This fails WCAG 2.4.11 Focus Not Obscured (AA) and is one of the most impactful issues. This means that users can navigate around main page content "behind" the cookie banner. This is wrong because keyboard users can lose focus on interactive elements as the focus is hidden behind the cookie banner blocking the view.
@@ -152,7 +158,9 @@ GOV.UK is fully compliant with WCAG 2.2 AA standards.
 
 </div>
 
-<h3 class="accordion">Ketch</h3><div class="accordion__panel">#### Accessibility issues
+<h3 class="accordion">Ketch</h3><div class="accordion__panel">
+
+#### Accessibility issues
 
 * **Active SVG missing aria-label** - This fails WCAG 4.1.2 Name, Role, Value (A). The button does not have an accessible name so it is read out as “button” when using a screen reader.
 * **Checkbox should not be used as a toggle switch**  - This fails WCAG 1.3.1 Info and Relationships (A), 2.4.6 Headings and Labels (AA), and 4.1.2 Name, Role, Value (A). Accessible names, ARIA attributes, or unique ARIA id are used by AT to understand the roles of elements and their children. Aria-label has been used so that the accessible name is “Behavioral Advertising Purpose is OFF”. This is extremely confusing because to someone using AT, it would appear that the aria-label=”Behavioral Advertising Purpose” and the “is OFF” refers to the status of the checkbox. A user using Microsoft Voice access or voice input on Mac is likely to say “click Behavioral Advertising Purpose“ expecting that to check or uncheck the checkbox. Change the checkbox to two radio buttons and within a fieldset with the legend such as suggested by Sara Soueidan in her article [On Designing and Building Toggle Switches](https://www.sarasoueidan.com/blog/toggle-switch-design/).
@@ -170,7 +178,9 @@ No advisories.
 
 </div>
 
-<h3 class="accordion">OneTrust CookiePro</h3><div class="accordion__panel">#### Accessibility issues
+<h3 class="accordion">OneTrust CookiePro</h3><div class="accordion__panel">
+
+#### Accessibility issues
 
 * **Focus is not visible when using the keyboard** - This fails WCAG 2.4.7 Focus Visible (AA). This normally occurs on links, buttons, and cookie selection toggle. This can stop keyboard only users from being able to follow what components they are interacting with in the cookie banner.
 * **Contrast colour issues on text, links, and buttons** - This fails WCAG 1.4.3 Contrast Minimum (AA). Whether this is due to cookie banner default colour schemes or organisation customised branding schemes, poor colour contrast can make content harder to see and read.
@@ -193,7 +203,9 @@ No advisories.
 
 
 
-<h3 class="accordion">Osano</h3><div class="accordion__panel">#### Accessibility issues
+<h3 class="accordion">Osano</h3><div class="accordion__panel">
+
+#### Accessibility issues
 
 
 
@@ -219,7 +231,9 @@ No advisories
 
 </div>
 
-<h3 class="accordion">Piwik PRO</h3><div class="accordion__panel">#### Accessibility issues
+<h3 class="accordion">Piwik PRO</h3><div class="accordion__panel">
+
+#### Accessibility issues
 
 * **Elements are not accessible by keyboard** - This fails WCAG 2.1.1 Keyboard (A). This normally affects interactive components such as links, buttons, collapsed content, and cookie selection toggles. This can stop keyboard users and screen reader users from being able to change options and submit their choices.
 
@@ -252,7 +266,9 @@ No advisories
 
 </div>
 
-<h3 class="accordion">Usercentrics Cookiebot</h3><div class="accordion__panel">#### Accessibility issues
+<h3 class="accordion">Usercentrics Cookiebot</h3><div class="accordion__panel">
+
+#### Accessibility issues
 
 * **Content behind “modal” banner not marked “inert”** - This fails WCAG 2.4.11 Focus Not Obscured (AA) and is one of the most impactful issues. This means that users can navigate around main page content "behind" the cookie banner. This is wrong because keyboard users can lose focus on interactive elements as the focus is hidden behind the cookie banner blocking the view.
 * **Banner does not work with magnification** - This fails WCAG 1.4.10 Reflow (A). Some banners do not respond well to magnification, zooming, or being viewed on smaller screens which sometimes makes content get lost off the side of the screen. This can stop partially sighted and magnifier users from accessing all content.
@@ -283,7 +299,9 @@ No advisories.
 
 </div>
 
-<h3 class="accordion">Wordpress Adminstration</h3><div class="accordion__panel">#### Accessibility issues
+<h3 class="accordion">Wordpress Adminstration</h3><div class="accordion__panel">
+
+#### Accessibility issues
 
 * **Focus is not visible when using the keyboard** - This fails WCAG 2.4.7 Focus Visible (AA). This normally occurs on links, buttons, and cookie selection toggle. This can stop keyboard only users from being able to follow what components they are interacting with in the cookie banner.
 * **Content behind “modal” banner not marked “inert”** - This fails WCAG 2.4.11 Focus Not Obscured (AA) and is one of the most impactful issues. This means that users can navigate around main page content "behind" the cookie banner. This is wrong because keyboard users can lose focus on interactive elements as the focus is hidden behind the cookie banner blocking the view.
@@ -311,7 +329,9 @@ No advisories.
 
 </div>
 
-<h3 class="accordion">WordPress WordAds</h3><div class="accordion__panel">#### Accessibility issues
+<h3 class="accordion">WordPress WordAds</h3><div class="accordion__panel">
+
+#### Accessibility issues
 
 * **`<iframe>` element does not have an accessible name** - This fails WCAG 4.1.2 Name, Role, Value (A). Accessible names are used by AT to understand the roles of elements and their children.
 * **Focus is not visible when using the keyboard** - This fails WCAG 2.4.7 Focus Visible (AA). This normally occurs on links, buttons, and cookie selection toggle. This can stop keyboard only users from being able to follow what components they are interacting with in the cookie banner.
