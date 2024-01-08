@@ -245,7 +245,8 @@ No advisories
 
 #### Advisories
 
-No advisories
+
+* When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
 
 
 
