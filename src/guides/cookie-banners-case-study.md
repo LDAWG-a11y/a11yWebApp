@@ -231,6 +231,7 @@ No advisories
 * **`<svg>` acts as an image, but is missing an explicit role="img"** - This fails WCAG 1.1.1 Non-text Content (A). This means that assistive technology users do not know that the element is an image and there is not alt-text for the element to give meaningful information to them. 
 * **Active `<svg>` missing an aria-label** - This fails WCAG 4.1.2 Name, Role Value Content (A). The `<svg>` element does not have an accessible name even though it is the only content of an actionable element. This means that assistive technology users do not know any meaningful information to about what the actionable element does. 
 * **Non-active element in tab order** - This fails WCAG 4.1.2 Name, Role Value Content (A). The element has been given a `tabindex="0"` but the element does not have a specific `role="..."`. Users of assistive technology which uses the headings to understand the sequence of the page could become confused about the order of the elements. 
+* **Language within page needs to be set* - This fails WCAG 3.1.2 Language of Parts (AA). Language not set within page for the multiple languages so that the user agents and AT will not necessarily use the correct pronunciation rules. 
 
 
 #### Weaknesses
