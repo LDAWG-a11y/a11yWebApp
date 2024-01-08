@@ -191,3 +191,47 @@ No advisories.
 
 </div>
 
+<h3 class="accordion">Osano</h3><div class="accordion__panel">#### Accessibility issues
+
+* **Focus is not visible when using the keyboard** - This fails WCAG 2.4.7 Focus Visible (AA). This normally occurs on links, buttons, and cookie selection toggle. This can stop keyboard only users from being able to follow what components they are interacting with in the cookie banner.
+* **Content behind “modal” banner not marked “inert”** - This fails WCAG 2.4.11 Focus Not Obscured (AA) and is one of the most impactful issues. This means that users can navigate around main page content "behind" the cookie banner. This is wrong because keyboard users can lose focus on interactive elements as the focus is hidden behind the cookie banner blocking the view.
+* **Banner does not work with magnification** - This fails WCAG 1.4.10 Reflow (A). Some banners do not respond well to magnification, zooming, or being viewed on smaller screens which sometimes makes content get lost off the side of the screen. This can stop partially sighted and magnifier users from accessing all content.
+
+
+* **Contrast colour issues on text, links, and buttons** - This fails WCAG 1.4.3 Contrast Minimum (AA). Whether this is due to cookie banner default colour schemes or organisation customised branding schemes, poor colour contrast can make content harder to see and read.
+
+#### Weaknesses
+
+* Don't set the visible link text to "here", "click here" or anything else that lacks context in isolation. Some users use assistive technologies which can bring up a list of links to navigate to and when those links have the readable text "here" or "click here", that makes it really difficult for them to understand where that link will go, more so if there are many of them, as this will impact voice input users, as they may instruct their voice control software "Click here", hoping to read more about an interesting blog and end up reading the cookies policy, as their software couldn't guess which "here" they meant.
+* Text is disappearing on the right-hand side of the screen.
+
+#### Advisories
+
+* When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
+
+</div>
+
+<h3 class="accordion">Osano</h3><div class="accordion__panel">#### Accessibility issues
+
+* **Focus is not visible when using the keyboard** - This fails WCAG 2.4.7 Focus Visible (AA). This normally occurs on links, buttons, and cookie selection toggle. This can stop keyboard only users from being able to follow what components they are interacting with in the cookie banner.
+
+* **Contrast colour issues on text, links, and buttons** - This fails WCAG 1.4.3 Contrast Minimum (AA). Whether this is due to cookie banner default colour schemes or organisation customised branding schemes, poor colour contrast can make content harder to see and read.
+* **`<svg>` acts as an image, but is missing an explicit role="img"** - This fails WCAG 1.1.1 Non-text Content (A). This means that assistive technology users do not know that the element is an image and there is not alt-text for the element to give meaningful information to them. 
+* **The accessible name of the control (which is exposed to assistive technologies) does not contain the visible text** - This fails WCAG 2.5.3 Label in Name (A). For user interface components with labels that include text or images of text, the name contains the text that is presented visually. In this case the link has the text of “Cookie Notice”, but the aria-label “More information about cookies and other trackers we use”. The aria-label overrides the title so “More information about cookies and other trackers we use” will get read out by the AT and the text “Cookie Notice” will not.
+* **List works with incorrect keys** - This fails WCAG 2.4.3 Focus Order (A). When you have tabbed into the list of options, you have to use the left and right arrow keys to move through the list rather than the up and down arrow keys. There also seems to be an event trapping the user from tabbing into the text. 
+* **ARIA input field does not have an accessible name** - This fails WCAG 4.1.2 Name, Role, Value (A). This stops users of assistive technology from comprehending what the field represents. 
+* **Buttons missing text** - This fails WCAG 4.1.2 Name, Role, Value (A). Without buttons having discernible text that clearly describes the destination, purpose, function, or action for screen reader users, it is difficult for AT users to understand what the buttons represent.
+
+#### Weaknesses
+
+* Don't set the visible link text to "here", "click here" or anything else that lacks context in isolation. Some users use assistive technologies which can bring up a list of links to navigate to and when those links have the readable text "here" or "click here", that makes it really difficult for them to understand where that link will go, more so if there are many of them, as this will impact voice input users, as they may instruct their voice control software "Click here", hoping to read more about an interesting blog and end up reading the cookies policy, as their software couldn't guess which "here" they meant.
+* Text is disappearing on the right-hand side of the screen.
+
+#### Advisories
+
+* When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
+
+</div>
+
+
+
