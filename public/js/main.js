@@ -1,12 +1,16 @@
 const accordions = document.querySelectorAll('.accordion');
 // const rootFont = parseInt(window.getComputedStyle(document.getElementsByTagName('html')[0]).getPropertyValue('font-size'));
 
-accordions.forEach( (accordion, idx) => {
+accordions.forEach((accordion, idx) => {
   const accTitle = accordion.innerText;
   const accPanel = accordion.nextElementSibling;
-  accPanel.id = `accPanel-${idx + 1}`
+  accPanel.id = `accPanel-${idx + 1}`;
   // accPanel.setAttribute('data-height', `${accPanel.scrollHeight / rootFont}`);
-  accordion.innerHTML = `<button class="accordion__btn" aria-controls="accPanel-${idx + 1}" aria-expanded="false">${accTitle}</button>`;
+  accordion.innerHTML = `<button class="accordion__btn" id="acc-${
+    idx + 1
+  }" aria-controls="accPanel-${
+    idx + 1
+  }" aria-expanded="false">${accTitle}</button>`;
   let accBtn = accordion.firstElementChild;
   accordion.setAttribute('data-open', false);
 
@@ -18,14 +22,17 @@ accordions.forEach( (accordion, idx) => {
     // }
     togglebooleanAttributes(accBtn);
   });
-})
+});
 
 accordions.forEach(accordion => {
   const accPanel = accordion.nextElementSibling;
-  if (!accPanel.nextElementSibling || !accPanel.nextElementSibling.hasAttribute('data-open')) {
+  if (
+    !accPanel.nextElementSibling ||
+    !accPanel.nextElementSibling.hasAttribute('data-open')
+  ) {
     accPanel.setAttribute('data-last', '');
   }
-})
+});
 
 // TODO calculation to animate is a little off and doesn't work correctly when font-sizing is changed
 
@@ -40,16 +47,20 @@ accordions.forEach(accordion => {
 // window.addEventListener('resize', resizeAccordions);
 // window.onresize = resizeAccordions;
 
-const togglebooleanAttributes = (btn) => {
-  btn.getAttribute('aria-expanded') == 'false' ? btn.setAttribute('aria-expanded', 'true') : btn.setAttribute('aria-expanded', 'false');
+const togglebooleanAttributes = btn => {
+  btn.getAttribute('aria-expanded') == 'false'
+    ? btn.setAttribute('aria-expanded', 'true')
+    : btn.setAttribute('aria-expanded', 'false');
 
   if (btn.closest('.accordion')) {
     const accordion = btn.closest('.accordion');
-    accordion.getAttribute('data-open') == 'false' ? accordion.setAttribute('data-open', 'true') : accordion.setAttribute('data-open', 'false');
+    accordion.getAttribute('data-open') == 'false'
+      ? accordion.setAttribute('data-open', 'true')
+      : accordion.setAttribute('data-open', 'false');
   }
-}
+};
 
-document.querySelector('#themeTrigger').addEventListener('click', (evt) => {
+document.querySelector('#themeTrigger').addEventListener('click', evt => {
   togglebooleanAttributes(evt.target);
 });
 
@@ -57,30 +68,38 @@ const themeBtnLight = document.querySelector('.header__themes-btn--light');
 const themeBtnSystem = document.querySelector('.header__themes-btn--system');
 const themeBtnDark = document.querySelector('.header__themes-btn--dark');
 
-document.querySelector('.header').addEventListener('keyup', (e) => {
-  if (e.key == "Escape" && document.querySelector('#themeTrigger').getAttribute('aria-expanded') == 'true' && !document.querySelector('.main-nav__list').contains(document.activeElement)) {
-    if (document.querySelector('#themePanel').contains(document.activeElement)) {
+document.querySelector('.header').addEventListener('keyup', e => {
+  if (
+    e.key == 'Escape' &&
+    document.querySelector('#themeTrigger').getAttribute('aria-expanded') ==
+      'true' &&
+    !document.querySelector('.main-nav__list').contains(document.activeElement)
+  ) {
+    if (
+      document.querySelector('#themePanel').contains(document.activeElement)
+    ) {
       document.querySelector('#themeTrigger').focus();
     }
-    document.querySelector('#themeTrigger').setAttribute('aria-expanded', 'false')
+    document
+      .querySelector('#themeTrigger')
+      .setAttribute('aria-expanded', 'false');
   }
 });
 
-themeBtnLight.addEventListener('click', (e) => {
+themeBtnLight.addEventListener('click', e => {
   setTheme('light');
 });
 
-themeBtnSystem.addEventListener('click', (e) => {
+themeBtnSystem.addEventListener('click', e => {
   e.preventDefault();
   setTheme(false);
 });
 
-themeBtnDark.addEventListener('click', (e) => {
+themeBtnDark.addEventListener('click', e => {
   setTheme('dark');
 });
 
-const setTheme = (theme) => {
-  
+const setTheme = theme => {
   if (theme) {
     document.documentElement.setAttribute('data-theme', theme);
     window.localStorage.setItem('theme', theme);
@@ -93,22 +112,20 @@ const setTheme = (theme) => {
       themeBtnDark.setAttribute('aria-pressed', true);
     }
     themeBtnSystem.setAttribute('aria-pressed', false);
-  }
-  
-  else {
+  } else {
     document.documentElement.removeAttribute('data-theme');
     window.localStorage.removeItem('theme');
     themeBtnLight.setAttribute('aria-pressed', false);
     themeBtnSystem.setAttribute('aria-pressed', true);
     themeBtnDark.setAttribute('aria-pressed', false);
   }
-}
+};
 
 window.onload = () => {
   const themeAttr = document.documentElement.getAttribute('data-theme');
   if (themeAttr) {
-    setTheme(themeAttr)
+    setTheme(themeAttr);
   } else {
     themeBtnSystem.setAttribute('aria-pressed', true);
   }
-}
+};
