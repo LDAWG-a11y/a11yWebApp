@@ -202,6 +202,7 @@ No advisories.
 
 #### Weaknesses
 
+
 * Don't set the visible link text to "here", "click here" or anything else that lacks context in isolation. Some users use assistive technologies which can bring up a list of links to navigate to and when those links have the readable text "here" or "click here", that makes it really difficult for them to understand where that link will go, more so if there are many of them, as this will impact voice input users, as they may instruct their voice control software "Click here", hoping to read more about an interesting blog and end up reading the cookies policy, as their software couldn't guess which "here" they meant.
 * Text is disappearing on the right-hand side of the screen.
 
@@ -210,6 +211,8 @@ No advisories.
 * When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
 
 </div>
+
+
 
 <h3 class="accordion">Osano</h3><div class="accordion__panel">#### Accessibility issues
 
