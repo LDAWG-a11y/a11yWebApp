@@ -120,11 +120,11 @@ Over the course of this case study we have documented many accessibility issues 
 
 #### Weaknesses
 
-* When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
+No weaknesses.
 
 #### Advisories
 
-* The aria-expanded on modal is not necessarily needed.
+No advisories.
 
 </div>
 
@@ -146,7 +146,7 @@ Over the course of this case study we have documented many accessibility issues 
 
 #### Advisories
 
-* When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
+No advisories.
 
 </div>
 
@@ -191,11 +191,11 @@ No advisories.
 #### Weaknesses
 
 * Don't set the visible link text to "here", "click here" or anything else that lacks context in isolation. Some users use assistive technologies which can bring up a list of links to navigate to and when those links have the readable text "here" or "click here", that makes it really difficult for them to understand where that link will go, more so if there are many of them, as this will impact voice input users, as they may instruct their voice control software "Click here", hoping to read more about an interesting blog and end up reading the cookies policy, as their software couldn't guess which "here" they meant.
-* Text is disappearing on the right-hand side of the screen.
+* Text is partially hidden on the right-hand side of the screen even when the scrollbar is fully over due to the CSS settings.
 
 #### Advisories
 
-* When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
+No advisories.
 
 </div>
 
