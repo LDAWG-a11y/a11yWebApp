@@ -83,6 +83,8 @@ Paperturn provide a [guide on how to use their accessibility features](https://w
 
 When looking at their viewer controls, it was immediately obvious that many disabled people would not be able to use the "accessible" viewer because none of the controls provide focus indication either in the default or the "accessible" viewer. So any keyboard only users will have no chance of even turning on the proposed accessibility features or navigating the "accessible" viewer even if they could somehow get into it.
 
+Paperturn also offer an overlay product as part of their "accessibility" tools. Find out more about the risks of overlay products in our [Overlays and other "fix-it" products guide](https://www.makethingsaccessible.com/guides/overlays-and-other-fix-it-products/).
+
 ### Publitas
 
 Publitas do not list accessibility in their [features list](https://www.publitas.com/features/), and use the same [support portal](https://support.publitas.com/hc/en-us) as Issuu in which again we could not find any relevant articles for the keywords: accessibility, disability, screen reader, JAWS, VoiceOver, or blind.
