@@ -127,9 +127,9 @@ In any event, I would hope that this would not be the sole navigation mechanism 
 Nothing spectacular here, an `<input>` with an SVG and some wrapping `<div>` elements. we'll add the roles and properties with JS, as they're redundant without it, but as I said, this could be in a `<form>` for users without JS. The label for the input is just "Search" when JS isn't available, as no filtering can occur, so just keep this basic and swap it out when or if JS loads.
 
 ```html
-<div class="header__search-container">
+ <div class="header__search-container">
   <div class="search__wrapper" data-expanded="false">
-    <label id="sFilterLbl" for="sFilter" class="visually-hidden">Search navigation links</label>
+    <label id="sFilterLbl" for="sFilter" class="visually-hidden">Search</label>
     <input class="search__input" id="sFilter" class="search__input" type="text" autocomplete="off">
     <svg aria-hidden="true" focusable="false" stroke="#000" stroke-width="9.8" viewBox="-19.6 -19.6 529.6 529.6"
       height="1.25rem">
@@ -224,25 +224,29 @@ body {
   width: 100%;
   overflow-y: auto;
   max-height: 60dvh;
+  list-style-type: none;
+  padding: 0;
 }
 
 .search__option {
   display: block;
   margin-bottom: 4px;
-  padding: 4px;
+  padding: 4px 6px;
   line-height: 1.5;
   color: var(--colour__primary);
 }
 
 .search__option[aria-selected="true"],
-.search__option[data-focused="true"],
+.search__option[data-selected="true"],
 .search__option:hover {
   background-color: var(--colour__primary);
   color: var(--colour__bg);
 }
 
 @media (forced-colors: active) {
-  .search__option[aria-selected="true"] {
+
+  .search__option[aria-selected="true"],
+  .search__option[data-selected="true"] {
     color: var(--colour__primary);
     outline: 3px solid var(--colour__primary);
     outline-offset: -2px;
@@ -265,6 +269,11 @@ body {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+/* ignore */
+a:not([class]) {
+  padding: 1rem 0;
 }
 ```
 
@@ -442,16 +451,170 @@ Whether this is better than any of the examples we looked at for users is not so
 
 ### The combobox and dialog approach
 
-I haven't seen this used out in the wild, it was an untested suggestion by a member of the A11y Slack community and it makes a lot of sense. A `combobox` can be associated with an element that either has the role of `listbox`, `tree`, `grid` or `dialog`. We have already used `listbox`, we don't need `grid` or `tree`, but the beauty of `dialog` is that it doesn't have any constraints over what we place inside it. Our links can actually be links without overwriting the `role`. As I am writing this little intro to this next component, I have to say, I haven't built it yet, so this is going to be something cool to explore for me. We're not going to use a modal dialog, we're going non-modal. I'm just going to try and get away with using our existing HTML and CSS, although for a `dialog`, I could likely get rid of a wrapping `<div>` or two, but that's not an issue in the grand scheme of things.
+I haven't seen this used out in the wild, it was an untested suggestion by a member of the A11y Slack community and it makes a lot of sense. A `combobox` can be associated with an element that either has the role of `listbox`, `tree`, `grid` or `dialog`. We have already used `listbox`, we don't need `grid` or `tree`, but the beauty of `dialog` is that it doesn't have any constraints over what we place inside it. Our links can actually be links without overwriting the `role`. As I am writing this little intro to this next component, I have to say, I haven't built it yet, so this is going to be something new to explore for me. We're not going to use a modal dialog, we're going non-modal. I'm just going to try and get away with using our existing HTML and CSS, which I'm only doing for simplicity's sake and to keep this guide a bit shorter. So, just the JS changes a little here, I'll outline what I changed from the initial implementation:
 
+```javascript
+const searchFilterWrapper = document.querySelector('.header__search-container');
+const keys = ['ArrowUp', 'ArrowDown', 'Enter'];
+const searchWrapper = document.querySelector('.search__wrapper');
+const searchInput = document.querySelector('.search__input');
+let itemsArr = [];
+let currItem;
+const links = [
+  { label: "Home", url: "#a" },
+  { label: "About", url: "#b" },
+  { label: "Contact", url: "#c" },
+  { label: "Old Thing", url: "#d" },
+  { label: "New Thing", url: "#e" },
+  { label: "New Thing Ultra", url: "#f" },
+  { label: "New Thing Ultra Pro", url: "#g" },
+  { label: "New Thing Ultra Pro Max", url: "#h" },
+  { label: "New Thing Ultra Pro Max Plus", url: "#i" },
+  { label: "Shipping", url: "#j" },
+  { label: "Privacy", url: "#k" },
+  { label: "Cookies", url: "#l" },
+  { label: "Accessibility? LOL", url: "#m" }
+];
 
+searchFilterWrapper.querySelector('#sFilterLbl').textContent = 'Search and filter navigation links';
+searchFilterWrapper.insertAdjacentHTML('beforeend', `<div class="search__panel-container" role="dialog" aria-labelledby="sFilter"><ul class="search__panel" id="lBox"></ul>
+<span aria-live="polite" class="search__message visually-hidden"></span></div>`);
 
+links.forEach((link, idx) => {
+  itemsArr += `
+  <li class="search__item" data-pos="${idx + 1}">
+    <a class="search__option" id="opt-${idx + 1}" tabindex="-1" href="${link.url}">${link.label}</a>
+  </li>`;
+})
 
+const listbox = document.querySelector('#lBox');
+const message = searchFilterWrapper.querySelector('.search__message');
+listbox.insertAdjacentHTML('beforeend', itemsArr);
+itemsArr = Array.from(listbox.querySelectorAll('.search__item'));
 
-### Potential issues with both approaches
+searchInput.setAttribute('role', 'combobox');
+searchInput.setAttribute('aria-activedescendant', '');
+searchInput.setAttribute('aria-autocomplete', 'list');
+searchInput.setAttribute('aria-expanded', 'false');
+searchInput.setAttribute('aria-controls', 'lBox');
 
-Don't just go copying my code and expecting it to work in all scenarios, there are a couple of things you may need to consider:
+searchInput.addEventListener('focus', (evt) => {
+  searchInput.setAttribute('aria-expanded', 'true');
+  searchWrapper.setAttribute('data-expanded', 'true');
+})
+
+searchInput.addEventListener('blur', (evt) => {
+  searchInput.setAttribute('aria-expanded', 'false');
+  searchWrapper.setAttribute('data-expanded', 'false');
+})
+
+const filterItems = () => {
+  itemsArr.forEach((item, idx) => {
+    if (item.textContent.toLowerCase().includes(searchInput.value.toLowerCase())) {
+      listbox.appendChild(item);
+    } else {
+      item.firstElementChild.removeAttribute('data-selected');
+      item.remove();
+    }
+  })
+
+  listbox.querySelectorAll('.search__item').forEach((item, idx) => {
+    item.setAttribute('data-pos', `${idx + 1}`)
+  })
+}
+
+searchInput.addEventListener('keydown', (evt) => {
+  if (keys.includes(evt.key) && itemsArr.length) {
+    evt.preventDefault();
+
+    if (!currItem && evt.key === 'ArrowDown') {
+      setSelected(listbox.querySelector('[data-pos="1"]'));
+    } else if (currItem && evt.key === 'ArrowDown' && currItem.nextElementSibling) {
+      setSelected(currItem.nextElementSibling);
+    }
+
+    if (currItem && evt.key === 'ArrowUp' && currItem.previousElementSibling) {
+      setSelected(currItem.previousElementSibling);
+    }
+
+    if (evt.key === 'Enter') {
+      listbox.querySelectorAll('.search__option').forEach(item => {
+        if (searchInput.value.toLowerCase() === item.textContent.toLowerCase() || item.hasAttribute('data-selected')) {
+          item.click();
+        }
+      })
+    }
+  }
+})
+
+searchInput.addEventListener('input', (evt) => {
+  filterItems();
+  if (listbox.querySelectorAll('.search__item').length === 0) {
+    searchInput.setAttribute('aria-activedescendant', '');
+    currItem = '';
+    displayError();
+  } else {
+    message.textContent = '';
+    message.classList.add('visually-hidden');
+  }
+
+  if (currItem) {
+    if (listbox.querySelectorAll('.search__item').length === 1 ||
+      (listbox.querySelectorAll('.search__item').length > 1 && !listbox.querySelector(`${currItem.firstElementChild.id}`))) {
+      setSelected(listbox.querySelector('[data-pos="1"]'));
+    }
+  }
+})
+
+const setSelected = (item) => {
+  listbox.querySelectorAll('.search__item').forEach(listItem => {
+    if (listItem === item) {
+      item.firstElementChild.setAttribute('data-selected', 'true');
+      searchInput.setAttribute('aria-activedescendant', item.firstElementChild.id);
+      currItem = item;
+      item.scrollIntoView({ block: "nearest", inline: "nearest" });
+    } else {
+      listItem.firstElementChild.removeAttribute('data-selected')
+    }
+
+    if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+      message.textContent = '';
+      message.textContent = `${item.textContent}, ${item.getAttribute('data-pos')} of ${listbox.querySelectorAll('li').length}`;
+      message.classList.add('visually-hidden');
+    }
+  })
+}
+
+function displayError() {
+  message.textContent = 'No matching results';
+  message.classList.remove('visually-hidden');
+}
+```
+
+* I removed the combobox role and associated properties from the <ul> and added role="dialog" and aria-labelledby="sFilter" to the parent container .search__panel-container
+* I removed the presentation role from the list items, our list is now exposed as a list (yeah, I know, Safari and bullets)
+* I removed role="option from the links, so now they are exposed as actual links
+* All references to aria-selected have been replaced with a data attribute, data-selected as we cannot have aria-selected on elements with a link role and as we are using "pretend focus" for the suggestions, we needed a class or attribute to hook on to, to add a "focussed" indicator
+* In our shoe-horned Safari fix, I removed the word "selected" from the generated string for the announcement, as that would be odd hearing a link is selected
+
+That was pretty easy going, not a great deal changed there. As I said, this is not something I have personally encountered, but it was recommended as something to explore by somebody more experienced than me, so I thought its inclusion was worthwhile.
+
+We no longer need to concern ourselves with the On Input issue on the previous implementation as our links no longer have their semantics overwritten, they are actual links. Of course, there is a slight issue in that they cannot be tabbed to, but this is a combobox, which has a purpose of allowing a user to mix up typing and arrowing up or down, without "true focus" ever leaving the input and of course, we definitely do not want this in place of a well structured, accessible site nav, but if used in combination with a good navigation, it could certainly help users find nested pages, such as products, guides, courses or whatever.
+
+Please do test with users before following this approach, I can't see why it would be too different that the previous pattern, given the announcement of roles and properties from the input and other surrounding context, but it's always best to not just assume we know best, when users in fact know what is best.
+
+### Potential considerations and improvements
+
+Don't just go copying my code and hoping it works in all scenarios, there are a few of things you may need to consider:
 
 As my search is at the top of the page and the page has hardly any content, I don't need to worry about it being in view when focussed, maybe you do? Ensure that wherever it is situated, when it receives focus it is visible and so is enough of the suggestions box
 
-Think about the virtual keyboard, as we have an input, a mobile user is going to trigger the on screen keyboard which will at times obscure the "focussed" item
+Think about the virtual keyboard, as we have an input, a mobile user is going to trigger the on screen keyboard which will at times obscure the "focussed" item, this is something unavoidable and a user can close the virtual keyboard if they so wish. I guess we could get creative and increase the padding dramatically so the "pretend focus" item is always situated at the top of the suggestions dialog, we could also use inline autocomplete, as the current "pretend focus" item's text would appear in the input, so that removes all doubt
+
+We could add aria-current="true" to any item that matches the current page URL, but we can only do this for the role="dialog" approach
+
+If we had a site with 1000s of products, how useful would this be, we're not going to put a couple of thousand items in there, are we? So, what should the maximum limit of items in the panel be, should we cap it at 20, 30, 50, more? Too few and we run the risk of having a blind user thinking "Oh, there's only 10 things in there, I'll use that" and they find the thing they wanted is not present and they still need to type something to get it to show
+
+Is there a too many? What are the effects of having a large number of items, does it put users off, make it difficult, increase the cognitive load?
+
+How do we handle empty queries, typos, search terms that don't match our array? We don't want to assume our users know exactly what to type to filter down the suggestions, many orgs have a "Contact us" page, some have a "get in touch" page instead, if our users type "Cont" hoping to filter enough to show "contact us" yet we're breaking from convention to seem really "hip", by calling that page "get in touch", then they're not gonna find what they are looking for. Given my view on progressive enhancement, I recommended having a Search page for when JS is not available, it would likely be a good fallback to use that when a user types something that does not match an existing item, that's backend stuff though and that is on you
