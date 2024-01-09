@@ -52,16 +52,16 @@ This resource is intended for informational use only, to help organisations unde
 The cookie banners:
 
 * [Admiral](#acc-1)
-* Civic Cookie Control
-* Easy Cookie
-* Gov.uk
-* Ketch
-* OneTrust CookiePro
-* Osano
-* Piwik PRO
-* Usercentrics Cookiebot
-* Wordpress - admin
-* Wordpress - ads
+* [Civic Cookie Control](#acc-2)
+* [Easy Cookie](#acc-3)
+* [Gov.uk](#acc-4)
+* [Ketch](#acc-5)
+* [OneTrust CookiePro](#acc-6)
+* [Osano](#acc-7)
+* [Piwik PRO](#acc-8)
+* [Usercentrics Cookiebot](#acc-9)
+* [Wordpress - admin](#acc-10)
+* [Wordpress - ads](#acc-11)
 
 ## Common cookie banner accessibility issues
 
