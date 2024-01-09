@@ -77,6 +77,12 @@ Their own [accessibility guide](https://read.nxtbook.com/pageraft/reflow_guide/a
 
 The Nxtbook media [Digital Accessibility and Content Creation article, 2020](https://www.nxtbookmedia.com/blog/digital-accessibility-and-content-creation/) explains the basics of accessibility to customers and makes further commitments that their product supports accessible content creation.
 
+### Paperturn
+
+Paperturn provide a [guide on how to use their accessibility features](https://www.paperturn.com/uk/pdf-flip-book-guide/flipbook-accessibility). They make the bold claims that when using Paparturn, your flipbooks are 100% accessible and comply with all worldwide accessibility legislation. They state this is because disabled users have their own unique flipbook viewer.
+
+When looking at their viewer controls, it was immediately obvious that many disabled people would not be able to use the "accessible" viewer because none of the controls provide focus indication either in the default or the "accessible" viewer. So any keyboard only users will have no chance of even turning on the proposed accessibility features or navigating the "accessible" viewer even if they could somehow get into it.
+
 ### Publitas
 
 Publitas do not list accessibility in their [features list](https://www.publitas.com/features/), and use the same [support portal](https://support.publitas.com/hc/en-us) as Issuu in which again we could not find any relevant articles for the keywords: accessibility, disability, screen reader, JAWS, VoiceOver, or blind.
