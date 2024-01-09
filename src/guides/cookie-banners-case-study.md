@@ -96,8 +96,6 @@ Over the course of this case study we have documented many accessibility issues 
 
 #### Weaknesses
 
-* When using the keyboard to tab through the page, it takes 43 tabs to get through the “Reject all” button which is the first button on the banner.
-* When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
 * There are `<b>` tags used and these have been deprecated since HTML 4. `<b>` is not the same as `<strong>` because `<strong>`, `<em>` and `<mark>` represent text of importance whereas `<b>` does not convey that semantic information. If you need the headings to be bold or strong, use styles rather than `<b>` or `<strong>`, but most screen readers will not announce text inside the `<b>` HTML tags any differently, so emphasis is lost for those who cannot see the text.
 * Some users of screen readers may not be able to use the consent checkboxes as they won't work with implicit labels, only explicit labels. Change the “toggles” to two radio buttons within a fieldset with the legend such as suggested by Sara Soueidan in her article [On Designing and Building Toggle Switches](https://www.sarasoueidan.com/blog/toggle-switch-design/).
 
@@ -122,11 +120,11 @@ Over the course of this case study we have documented many accessibility issues 
 
 #### Weaknesses
 
-* When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
+No weaknesses.
 
 #### Advisories
 
-* The aria-expanded on modal is not necessarily needed.
+No advisories.
 
 </div>
 
@@ -148,7 +146,7 @@ Over the course of this case study we have documented many accessibility issues 
 
 #### Advisories
 
-* When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
+No advisories.
 
 </div>
 
@@ -193,11 +191,11 @@ No advisories.
 #### Weaknesses
 
 * Don't set the visible link text to "here", "click here" or anything else that lacks context in isolation. Some users use assistive technologies which can bring up a list of links to navigate to and when those links have the readable text "here" or "click here", that makes it really difficult for them to understand where that link will go, more so if there are many of them, as this will impact voice input users, as they may instruct their voice control software "Click here", hoping to read more about an interesting blog and end up reading the cookies policy, as their software couldn't guess which "here" they meant.
-* Text is disappearing on the right-hand side of the screen.
+* The CSS partially hides some of the text on the right-hand side of the "box" as it is not wide enough to display all the text.
 
 #### Advisories
 
-* When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
+No advisories.
 
 </div>
 
@@ -253,14 +251,13 @@ No advisories
 
 
 * Don't set the visible link text to "here", "click here" or anything else that lacks context in isolation. Some users use assistive technologies which can bring up a list of links to navigate to and when those links have the readable text "here" or "click here", that makes it really difficult for them to understand where that link will go, more so if there are many of them, as this will impact voice input users, as they may instruct their voice control software "Click here", hoping to read more about an interesting blog and end up reading the cookies policy, as their software couldn't guess which "here" they meant.
-* When using the keyboard to tab through the page, it takes 86 tabs to get to the “Accept all” cookie buttons. Make the banner modal so that the user accesses the banner first.
 
 
 
 #### Advisories
 
 
-* When CSS is turned off, images are huge and need to be resized making the page easier to read without CSS or with user defined CSS.
+No advisories.
 
 
 
@@ -285,7 +282,7 @@ No advisories
 
 
 * It is hard to see the difference between the out of focus and in focus “Allow all” button. 
-* Even though the link title is different for each “Learn more about this provider”, Windows Narrator only reads out “Learn more about this provider”. 
+* Even though the link title is different for each “Learn more about this provider”, Windows Narrator only reads out “Learn more about this provider”. Change the link to “Learn more about LinkedIn”, “Learn more about Usercentrics” etc. 
 
 
 
