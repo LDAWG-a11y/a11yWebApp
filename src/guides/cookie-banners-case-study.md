@@ -51,7 +51,7 @@ This resource is intended for informational use only, to help organisations unde
 
 The cookie banners:
 
-* Admiral
+* [Admiral](#acc-1)
 * Civic Cookie Control
 * Easy Cookie
 * Gov.uk
