@@ -603,18 +603,163 @@ We no longer need to concern ourselves with the On Input issue on the previous i
 
 Please do test with users before following this approach, I can't see why it would be too different that the previous pattern, given the announcement of roles and properties from the input and other surrounding context, but it's always best to not just assume we know best, when users in fact know what is best.
 
+### The non-combobox approach
+
+This is more like the Apple example we discussed earlier, with a couple of minor tweaks. This particular approach doesn't convince me it is as conventional of a pattern as the previous two approaches. The issue I see here, is the lack of roles on the input. A screen reader user would take cues from those roles in that they indicate a certain interaction model (at least it should if coded correctly), without these roles, would a screen reader know arrow key navigation is available? The Apple implementation does also allow tabbing to the suggestions, but if the input loses focus and our user has to reverse <kbd>Tab</kbd> back to it when they discover their suggestion is not in the list, then this seems a bit clunky and less than ideal. I'm not a screen reader user, so this is just my "best guess" take on it, but I base that best guess on what seems the glaringly obvious reason the combobox pattern exists, to be able to type, have a little search in the suggestions, then being able to type some more without having to <kbd>Tab</kbd> back up into the input to be able to continue typing/filtering? It would certainly be beneficial to explore this pattern with screen reader users, along with the others.
+
+Again, as I'm a little lazy, I'm just gonna modify the code from before, so just the JS is changing again:
+
+```javascript
+ const searchFilterWrapper = document.querySelector('.header__search-container');
+const keys = ['ArrowUp', 'ArrowDown', 'Enter'];
+const searchWrapper = document.querySelector('.search__wrapper');
+const searchInput = document.querySelector('.search__input');
+let itemsArr = [];
+let currItem;
+const links = [
+  { label: "Home", url: "#a" },
+  { label: "About", url: "#b" },
+  { label: "Contact", url: "#c" },
+  { label: "Old Thing", url: "#d" },
+  { label: "New Thing", url: "#e" },
+  { label: "New Thing Ultra", url: "#f" },
+  { label: "New Thing Ultra Pro", url: "#g" },
+  { label: "New Thing Ultra Pro Max", url: "#h" },
+  { label: "New Thing Ultra Pro Max Plus", url: "#i" },
+  { label: "Shipping", url: "#j" },
+  { label: "Privacy", url: "#k" },
+  { label: "Cookies", url: "#l" },
+  { label: "Accessibility? LOL", url: "#m" }
+];
+
+searchFilterWrapper.querySelector('#sFilterLbl').textContent = 'Search and filter navigation links, suggestions below';
+searchFilterWrapper.insertAdjacentHTML('beforeend', `<div class="search__panel-container" role="region" aria-labelledby="sFilter"><ul class="search__panel" id="lBox"></ul>
+<span aria-live="polite" class="search__message visually-hidden"></span></div>`);
+
+links.forEach((link, idx) => {
+  itemsArr += `
+  <li class="search__item" data-pos="${idx + 1}">
+    <a class="search__option" id="opt-${idx + 1}" tabindex="-1" href="${link.url}">${link.label}</a>
+  </li>`;
+})
+
+const listbox = document.querySelector('#lBox');
+const message = searchFilterWrapper.querySelector('.search__message');
+listbox.insertAdjacentHTML('beforeend', itemsArr);
+itemsArr = Array.from(listbox.querySelectorAll('.search__item'));
+
+searchInput.setAttribute('aria-controls', 'lBox');
+
+searchInput.addEventListener('focus', (evt) => {
+  searchWrapper.setAttribute('data-expanded', 'true');
+})
+
+searchInput.addEventListener('blur', (evt) => {
+  searchWrapper.setAttribute('data-expanded', 'false');
+})
+
+const filterItems = () => {
+  itemsArr.forEach((item, idx) => {
+    if (item.textContent.toLowerCase().includes(searchInput.value.toLowerCase())) {
+      listbox.appendChild(item);
+    } else {
+      item.firstElementChild.removeAttribute('data-selected');
+      item.remove();
+    }
+  })
+
+  listbox.querySelectorAll('.search__item').forEach((item, idx) => {
+    item.setAttribute('data-pos', `${idx + 1}`)
+  })
+}
+
+searchInput.addEventListener('keydown', (evt) => {
+  if (keys.includes(evt.key) && itemsArr.length) {
+    evt.preventDefault();
+
+    if (!currItem && evt.key === 'ArrowDown') {
+      setSelected(listbox.querySelector('[data-pos="1"]'));
+    } else if (currItem && evt.key === 'ArrowDown' && currItem.nextElementSibling) {
+      setSelected(currItem.nextElementSibling);
+    }
+
+    if (currItem && evt.key === 'ArrowUp' && currItem.previousElementSibling) {
+      setSelected(currItem.previousElementSibling);
+    }
+
+    if (evt.key === 'Enter') {
+      listbox.querySelectorAll('.search__option').forEach(item => {
+        if (searchInput.value.toLowerCase() === item.textContent.toLowerCase() || item.hasAttribute('data-selected')) {
+          item.click();
+        }
+      })
+    }
+  }
+})
+
+searchInput.addEventListener('input', (evt) => {
+  filterItems();
+  if (listbox.querySelectorAll('.search__item').length === 0) {
+    currItem = '';
+    displayError();
+  } else {
+    message.textContent = '';
+    message.classList.add('visually-hidden');
+  }
+
+  if (currItem) {
+    if (listbox.querySelectorAll('.search__item').length === 1 ||
+      (listbox.querySelectorAll('.search__item').length > 1 && !listbox.querySelector(`${currItem.firstElementChild.id}`))) {
+      setSelected(listbox.querySelector('[data-pos="1"]'));
+    }
+  }
+})
+
+const setSelected = (item) => {
+  listbox.querySelectorAll('.search__item').forEach(listItem => {
+    if (listItem === item) {
+      item.firstElementChild.setAttribute('data-selected', 'true');
+      currItem = item;
+      item.scrollIntoView({ block: "nearest", inline: "nearest" });
+    } else {
+      listItem.firstElementChild.removeAttribute('data-selected')
+    }
+
+    message.textContent = '';
+    message.textContent = `${item.textContent}, ${item.getAttribute('data-pos')} of ${listbox.querySelectorAll('li').length}`;
+    message.classList.add('visually-hidden');
+  })
+}
+
+function displayError() {
+  message.textContent = 'No matching results';
+  message.classList.remove('visually-hidden');
+}
+```
+
+* I removed all references to the `combobox` role, replacing it with `role="region"` and kept the accessible name
+* I removed all references to `aria-activedescendant`, `aria-autocomplete` and `aria-expanded` as none of those are supported on a standard input
+* I removed the `dialog`/`listbox` role from the list container
+* Where we previously had our Safari fix, I now provide this for every user agent, as without `aria-activedescendant`, nothing is announced on any browser
+* I appended the label with "suggestions below", which feels wrong, but this is just an example, not a recommendation
+
 ### Potential considerations and improvements
 
 Don't just go copying my code and hoping it works in all scenarios, there are a few of things you may need to consider:
 
-As my search is at the top of the page and the page has hardly any content, I don't need to worry about it being in view when focussed, maybe you do? Ensure that wherever it is situated, when it receives focus it is visible and so is enough of the suggestions box
+* As my search is at the top of the page and the page has hardly any content, I don't need to worry about it being in view when focussed, maybe you do? Ensure that wherever it is situated, when it receives focus it is visible and so is enough of the suggestions box, perhaps scrolling it to the top of the screen upon it receiving focus will ensure at least some suggestions are in view
+* Think about the virtual keyboard, as we have an input, a some users user are going to trigger the on screen keyboard which will at times obscure the "focussed" item (this could be more obvious on a small mobile), this is something unavoidable, a user can close the virtual keyboard if they so wish. I guess we could get creative and increase the padding dramatically so the "pretend focus" item is always situated at the top of the suggestions dialog, we could also use inline autocomplete, as the current "pretend focus" item's text would appear in the input, so that removes all doubt
+* We could add aria-current="true" to an item that matches the current page URL, but we can only do this for the role="dialog" and the non-combobox approaches
+* If we had a site with 1000s of products, how useful would this be, we're not going to put a couple of thousand items in there, are we? So, what should the maximum limit of items in the panel be, should we cap it at 20, 30, 50, more? Too few and we run the risk of having a blind user thinking "Oh, there's only 10 things in there, I'll use that" and they find the thing they wanted is not present and they still need to input enough text to filter the thing they want into the list
+* Is there a too many? What are the effects of having a large number of items, does it put users off, make it difficult, increase the cognitive load? I have seen patterns where it may show 20 or so items, then the last item is a "Load more" item, obviously we'd need to manage focus for this functionality and also what would the role of that item be? It should be a button in most cases, but button's can't be present inside a combobox, so I'm unsure what the solution to that would be
+* How do we handle empty queries, typos, search terms that don't match our array? We don't want to assume our users know exactly what to type to filter down the suggestions, many orgs have a "Contact us" page, some have a "Get in touch" page instead, if our users type "Cont" hoping to filter enough to show "Contact us" and we're breaking from convention to seem really "hip", by calling that page "get in touch", then they're not gonna find what they are looking for. Given my view on progressive enhancement, I recommended having a Search page for when JS is not available, it would likely be a good fallback to use that when a user types something that does not match an existing item, that's backend stuff though and that is on you 
 
-Think about the virtual keyboard, as we have an input, a mobile user is going to trigger the on screen keyboard which will at times obscure the "focussed" item, this is something unavoidable and a user can close the virtual keyboard if they so wish. I guess we could get creative and increase the padding dramatically so the "pretend focus" item is always situated at the top of the suggestions dialog, we could also use inline autocomplete, as the current "pretend focus" item's text would appear in the input, so that removes all doubt
+Functionally, all of the 3 examples are identical, they all operate in the same way, the differences are with what is announced to a screen reader user, as the roles and properties differ and it is typically only a screen reader user that will be provided with those cues.
 
-We could add aria-current="true" to any item that matches the current page URL, but we can only do this for the role="dialog" approach
+## Wrapping up
 
-If we had a site with 1000s of products, how useful would this be, we're not going to put a couple of thousand items in there, are we? So, what should the maximum limit of items in the panel be, should we cap it at 20, 30, 50, more? Too few and we run the risk of having a blind user thinking "Oh, there's only 10 things in there, I'll use that" and they find the thing they wanted is not present and they still need to type something to get it to show
+Looking at the three examples using my knowledge of ARIA and HTML I'm inclined to assume the third example will be the most difficult to understand for a user that cannot see the component, as most of the auditory information that is provided in the previous two examples is stripped out. I even had to remove `aria-expanded`, as it is not supported on on an input without a `role="combobox"`. I did have to append the accessible name of the input to provide our users with an idea that there are suggestions below.
 
-Is there a too many? What are the effects of having a large number of items, does it put users off, make it difficult, increase the cognitive load?
+The first example may well be entirely usable and understandable, it does of course come with the On input Issue, how much of an issue that actually is would depend on various factors, firstly how usable it is to users of with various disabilities and then legislation, internal policies or whatever else.
 
-How do we handle empty queries, typos, search terms that don't match our array? We don't want to assume our users know exactly what to type to filter down the suggestions, many orgs have a "Contact us" page, some have a "get in touch" page instead, if our users type "Cont" hoping to filter enough to show "contact us" yet we're breaking from convention to seem really "hip", by calling that page "get in touch", then they're not gonna find what they are looking for. Given my view on progressive enhancement, I recommended having a Search page for when JS is not available, it would likely be a good fallback to use that when a user types something that does not match an existing item, that's backend stuff though and that is on you
+The second example does remove the non-compliance risk, as we're using actual links to navigate, as opposed to options. Does the using of a dialog as opposed to a listbox affect a user's understanding of the component? I tentatively say I don't **think** it would, but I'm basing that on what I heard with the screen readers I used and none of them output either dialog or listbox
