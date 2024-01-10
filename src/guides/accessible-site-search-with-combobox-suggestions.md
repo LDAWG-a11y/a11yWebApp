@@ -450,6 +450,15 @@ So, that wraps up the first example, which uses the standard combobox pattern, a
 
 Whether this is better than any of the examples we looked at for users is not something I can answer, but it is an approach worth considering, maybe you or your team could improve it further?
 
+Here's a CodePen to test and tinker with:
+
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="js,result" data-slug-hash="LYaZwro" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/LYaZwro">
+  ARIA 1.2 combobox for links (experimental)</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
 ### The combobox and dialog approach
 
 I haven't seen this pattern used out in the wild, it was an untested suggestion by a member of the A11y Slack community and it makes a lot of sense. A `combobox` can be associated with an element that either has the role of `listbox`, `tree`, `grid` or `dialog`. We have already used `listbox`, we don't need `grid` or `tree`, but the beauty of using `dialog` is that it doesn't have any constraints over what we place inside it. Our links can actually be links without overwriting the `role`. I'm just going to try and get away with using our existing HTML and CSS, which I'm only doing for simplicity's sake and to keep this guide a bit shorter. So, just the JS changes a little here, I'll outline what I changed from the initial implementation:
@@ -604,6 +613,15 @@ We no longer need to concern ourselves with the On Input issue on the previous i
 
 Please do test with users before following this approach, I can't see why it would be too different than the previous pattern, given the announcement of roles and properties are the same, but actual users are the ones that can give you far better data than me.
 
+Here's the CodePen:
+
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="js,result" data-slug-hash="JjzKgmV" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/JjzKgmV">
+  ARIA 1.2 combobox for links with dialog (experimental)</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
 ### The non-combobox approach
 
 This is more like the Apple example we discussed earlier, with a couple of minor tweaks. This particular approach doesn't convince me it's as conventional of a pattern as the previous two approaches. The issue I see here, is the lack of roles on the input. A screen reader user would take cues from those roles in that they indicate a certain interaction model (at least it should if coded correctly), without these roles, would a screen reader know arrow key navigation is available? The Apple implementation does also allow tabbing to the suggestions, but if the input loses focus and our user has to reverse <kbd>Tab</kbd> back to it when they discover their suggestion is not in the list, then this seems a bit clunky and less than ideal. I'm not a screen reader user, so this is just my "best guess" take on it, but I base that best guess on what seems the glaringly obvious reason the combobox pattern exists, to be able to type, have a little search in the suggestions, then being able to type some more without having to <kbd>Tab</kbd> back up into the input to be able to continue typing/filtering? It would certainly be beneficial to explore this pattern with screen reader users, along with the others.
@@ -743,6 +761,15 @@ function displayError() {
 * I removed the `dialog`/`listbox` role from the list container, replacing it with `role="region"` and kept the accessible name
 * Where we previously had our Safari fix, I now provide this for every user agent, as without `aria-activedescendant`, nothing is announced on any browser/screen reader pairing
 * I appended the label with "suggestions below", which feels wrong, but this is just an example, not a recommendation
+
+Here's the CodePen:
+
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="js,result" data-slug-hash="YzgWmgX" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/YzgWmgX">
+  Search filter for nav links no combobox role (experimental)</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
 ### Potential considerations and improvements
 
