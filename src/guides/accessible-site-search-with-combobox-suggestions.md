@@ -4,7 +4,7 @@ summary: A common UI pattern is a site search input that comes with a list of
   suggestions, where each suggestion is a link. Let's look at what we need to
   consider
 author: dlee
-date: 2023-12-07
+date: 2024-01-10
 toc: true
 tags:
   - HTML
