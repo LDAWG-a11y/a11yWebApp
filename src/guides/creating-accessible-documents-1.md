@@ -90,8 +90,8 @@ Don't use colour alone to convey meaning (many people are colour blind). For exa
 
 If using text on a coloured background or image background, you need to check its colour contrast. There are online tools available to help you check colour contrast:
 
-* [Accessibility Checker in Microsoft Office](https://support.microsoft.com/en-us/office/improve-accessibility-with-the-accessibility-checker-a16f6de0-2f39-4a2b-8bd8-5ad801426c7f?ui=en-us&rs=en-us&ad=us)[](https://www.tpgi.com/color-contrast-checker/)
-* [TPGI's colour contrast analyse](https://www.tpgi.com/color-contrast-checker/)
+* [Accessibility Checker in Microsoft Office](https://support.microsoft.com/en-us/office/improve-accessibility-with-the-accessibility-checker-a16f6de0-2f39-4a2b-8bd8-5ad801426c7f?ui=en-us&rs=en-us&ad=us)[](https://www.tpgi.com/color-contrast-checker/)[](https://www.tpgi.com/color-contrast-checker/)
+* [TPGI's colour contrast analyser](https://www.tpgi.com/color-contrast-checker/)
 
 ## 8. Use Sans Serif fonts
 
