@@ -24,7 +24,7 @@ Accessible digital content is fundamental to good communications. Inclusive, use
     * Heading 2 for first level of sub-headings
 
       * Heading 3 for next level of sub-headings, etc. 
-* Don’t simply edit the appearance of text to make it stand out as a heading (i.e., increase font size and underline).[](https://support.microsoft.com/en-us/office/make-your-word-docume)
+* Don’t simply edit the appearance of text to make it stand out as a heading (i.e., increase font size and underline).
 * The heading tools create structures that allows screen reader software to identify different sections. This enables screen reader users to understand how the page is organised, and to quickly navigate to content of interest.
 
 [Microsoft guidance on accessible headings.](https://support.microsoft.com/en-us/office/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d#bkmk_builtinheadings_win)
@@ -38,7 +38,7 @@ Accessible digital content is fundamental to good communications. Inclusive, use
 
 Write meaningful link text (text that links to a web address) that describes its destination. It needs to make sense when it is read out of context.
 
-* Don't write: "[Click here](https://www.makethingsaccessible.com/)  to visit the Make Things Accessible website[](https://www.makethingsaccessible.com/)"
+* Don't write: "[Click here](https://www.makethingsaccessible.com/)  to visit the Make Things Accessible website
 * Write: "Visit the  [Make Things Accessible website ](https://www.makethingsaccessible.com/)"
 
 [Microsoft guidance on accessible links.](https://support.microsoft.com/en-us/office/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d#bkmk_links_and_screentips_win)
@@ -91,7 +91,7 @@ Don't use colour alone to convey meaning (many people are colour blind). For exa
 
 If using text on a coloured background or image background, you need to check its colour contrast. There are online tools available to help you check colour contrast:
 
-* [Accessibility Checker in Microsoft Office](https://support.microsoft.com/en-us/office/improve-accessibility-with-the-accessibility-checker-a16f6de0-2f39-4a2b-8bd8-5ad801426c7f?ui=en-us&rs=en-us&ad=us)[](https://www.tpgi.com/color-contrast-checker/)[](https://www.tpgi.com/color-contrast-checker/)
+* [Accessibility Checker in Microsoft Office](https://support.microsoft.com/en-us/office/improve-accessibility-with-the-accessibility-checker-a16f6de0-2f39-4a2b-8bd8-5ad801426c7f?ui=en-us&rs=en-us&ad=us)
 * [TPGI's colour contrast analyser](https://www.tpgi.com/color-contrast-checker/)
 
 ## 8. Use Sans Serif fonts
