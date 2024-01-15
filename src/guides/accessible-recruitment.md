@@ -95,7 +95,7 @@ Making improvements to JD structure can sometimes be the job of HR teams rather 
 
 Along with making the structure of job descriptions accessible, there are further actions you can take to improve the content of your JDs not only so they better support neurodiverse applicants but will be better for everyone.
 
-The language you use in your job descriptions and where the important information is located all impacts how compelling the JD may be to prospective applicants. The core advice is to follow plain English practices. This is not about “dumbing down” content, but about making your text as smooth to read as possible.
+The language you use in your job descriptions and where the important information is located all impacts how compelling the JD may be to prospective applicants. The core advice is to follow plain English practices. This is not about “watering down” content, but about making your text as smooth to read as possible.
 
 You will still use all the field appropriate jargon in the description but the order in which you provide information, and the way in which you describe responsibilities can all be streamlined to help people get through your JD without getting bored or put off.
 
