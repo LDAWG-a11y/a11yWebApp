@@ -36,8 +36,9 @@ Accessible digital content is fundamental to good communications. Inclusive, use
 
 ## 3. Use meaningful links
 
-Write meaningful link text (text that links to a web address) that describes its destination. It needs to make sense when it is read out of context.
+Write meaningful link text (text that links to a web address) that describes its destination. It needs to make sense when it is read out of context so embed the link in to text that describes where the link is going to take you:
 
+* Don't include full links: <https://www.makethingsaccessible.com/>
 * Don't write: "[Click here](https://www.makethingsaccessible.com/)  to visit the Make Things Accessible website
 * Write: "Visit the  [Make Things Accessible website ](https://www.makethingsaccessible.com/)"
 
