@@ -24,6 +24,8 @@ Accessible digital content is fundamental to good communications. Inclusive, use
     * Heading 2 for first level of sub-headings
 
       * Heading 3 for next level of sub-headings, etc. 
+* Don’t simply edit the appearance of text to make it stand out as a heading (i.e., increase font size and underline).[](https://support.microsoft.com/en-us/office/make-your-word-docume)
+* The heading tools create structures that allows screen reader software to identify different sections. This enables screen reader users to understand how the page is organised, and to quickly navigate to content of interest.
 
 [Microsoft guidance on accessible headings.](https://support.microsoft.com/en-us/office/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d#bkmk_builtinheadings_win)
 
