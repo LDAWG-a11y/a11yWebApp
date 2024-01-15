@@ -12,14 +12,17 @@ eleventyExcludeFromCollections: true
 ---
 
 <h2>Glossary of frequently used terms and abbreviations</h2>
-<p class="glossary__intro">We know that in digital media, specifically web-development and digital accessibility there are many acronyms and terms that may be new to our users, we aim to help our users understand them by providing definitions, all in one place.</p>
+<p class="glossary__intro">We know that in digital media, specifically web-development and digital accessibility there
+  are many acronyms and terms that may be new to our users, we aim to help our users understand them by providing
+  definitions, all in one place.</p>
 {%- if descList.length %}
-  <dl class="glossary__list">
-    {%- for item in descList  %}
-      <div class="glossary__item-wrapper">
-        <dt class="glossary__term" id="{{ item.data.title | slugify }}" tabindex="-1">{%- if item.data.acronym %}<abbr>{%- endif %}{{ item.data.title }}{%- if item.data.acronym %}</abbr>{%- endif %}</dt>
-        <dd class="glossary__definition">{{ item.templateContent | safe  }}</dd>
-      </div>
-    {%- endfor %}
-  </dl>
+<dl class="glossary__list">
+  {%- for item in descList %}
+  <div class="glossary__item-wrapper">
+    <dt class="glossary__term" id="{{ item.data.title | slugify }}" tabindex="-1">{%- if item.data.acronym %}<abbr>{%-
+        endif %}{{ item.data.title }}{%- if item.data.acronym %}</abbr>{%- endif %}</dt>
+    <dd class="glossary__definition">{{ item.templateContent | safe }}</dd>
+  </div>
+  {%- endfor %}
+</dl>
 {%- endif %}
