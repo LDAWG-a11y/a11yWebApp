@@ -10,9 +10,6 @@ isGuide: true
 ---
 <h3 class="accordion">Test</h3><div class="accordion__panel">test</div>
 
-
-
-
 <details>
   <summary>Video transcript</summary>
   
@@ -20,3 +17,9 @@ isGuide: true
   htth
 
 </details>
+
+
+
+```html
+<p>Hi</p>
+```
