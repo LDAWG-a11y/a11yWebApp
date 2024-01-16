@@ -168,7 +168,7 @@ GOV.UK is fully compliant with WCAG 2.2 AA standards.
 
 #### Weaknesses
 
-* Even though the link title is different for each “Learn more about this provider”, Windows Narrator only reads out “Learn more about this provider”. Change the link to “Learn more about LinkedIn”, “Learn more about Usercentrics” etc.
+* Even though the link title (Analytics, Behavioural Advertising, and Email Marketing) is different for each “Cookies” link, Windows Narrator only reads out “Cookies”. Change the link to “Analytics Cookies”, “Behavioural Advertising cookies” etc.
 
 #### Advisories
 
