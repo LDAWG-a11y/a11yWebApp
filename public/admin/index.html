@@ -145,7 +145,7 @@
       widget: 'markdown'
     }
   ],
-  pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n\n(.*?)\n^<\/details>$/ms,
+  pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
   fromBlock: function(match) {
     return {
       summary: match[1],
@@ -156,7 +156,7 @@
     return `
 <details>
   <summary>${data.summary}</summary>
-  \n
+
   ${data.details}
 
 </details>
@@ -167,7 +167,7 @@
 <details>
   
   <summary>${data.summary}</summary>
-  \n
+  
   ${data.details}
 
 </details>
