@@ -156,8 +156,8 @@
       default: 'Video transcript'
     },
     {
-      name: 'details',
-      label: 'Details',
+      name: 'contents',
+      label: 'Contents',
       widget: 'markdown'
     }
   ],
@@ -165,7 +165,7 @@
   fromBlock: function(match) {
     return {
       summary: match[1],
-      details: match[2]
+      contents: match[2]
     };
   },
   toBlock: function(data) {
@@ -173,7 +173,7 @@
 <details>
   <summary>${data.summary}</summary>
 
-  ${data.details}
+  ${data.contents}
 
 </details>
 `;
@@ -184,7 +184,7 @@
   
   <summary>${data.summary}</summary>
   
-  ${data.details}
+  ${data.contents}
 
 </details>
 `;
