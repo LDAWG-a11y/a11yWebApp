@@ -8,13 +8,16 @@ tags:
   - HTML
 isGuide: true
 ---
-<h3 class="accordion">Test</h3><div class="accordion__panel">test</div>
+<h3 class="accordion">Test</h3>
+
+<div class="accordion__panel">test</div>
 
 
 <details>
   <summary>Video transcript</summary>
 
-        Yup
+          Yup
+
 
 
 
@@ -30,18 +33,20 @@ isGuide: true
 <details>
   <summary>Video transcript</summary>
 
-      Two
+        Two
+
 
 
 
 </details>
 
 
+```
+    <h3 class="accordion">Hello</h3>
 
-        <h3 class="accordion">Hello</h3>
+    <div class="accordion__panel">
 
-        <div class="accordion__panel">
+      hello
 
-          hello
-
-        </div>
+    </div>
+```
