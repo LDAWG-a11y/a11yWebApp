@@ -127,7 +127,9 @@ What I am going to do is just show each step's code on its own as opposed to mak
 
 First we'll initialise our global variables and then we'll build a string from the contents of the `<details>` and `<summary` elements, so we can use this as our base HTML. Once that is all sorted, we'll remove everything from our wrapper and insert our new string as HTML and then reference the global variables we need from that new HTML.
 
-<h5 class="accordion">Explainer 1</h5><div class="accordion__panel">
+<h5 class="accordion">Explainer 1</h5>
+
+<div class="accordion__panel">
 
 * First we want to reference our `<div class="widget__wrapper">` element and assign it to the `widgetWrapper` variable
 * We initialise two variables in the global scope, that we need later `baseHTML` (which we're setting to an empty string) and also `open`, which we will set to `0`
