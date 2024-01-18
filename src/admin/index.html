@@ -97,26 +97,32 @@
           widget: 'markdown'
         }
       ],
-      pattern: /^<h[2-6].*class="accordion".*\>(.*?)\<\/h[2-6]\>\n\<div class="accordion__panel">\n(.*?)\<\/div\>$/ms,
+      pattern: /^<h\d[^>]*class="accordion"[^>]*>(.*?)<\/h\d>\n<div class="accordion__panel"\>\n(.*?)\n\<\/div\>$/ms,
       fromBlock: function(match) {
         return {
           hLevel: match[1],
           title: match[2],
-          content: match[3],
+          content: match[4],
         };
       },
       toBlock: function(data) {
         return `
         <h${data.hLevel} class="accordion">${data.title}</h${data.hLevel}>
+
         <div class="accordion__panel">
+
           ${data.content}
+
         </div>`;
       },
       toPreview: function(data) {
         return `
         <h${data.hLevel} class="accordion">${data.title}</h${data.hLevel}>
+
         <div class="accordion__panel">
+
           ${data.content}
+          
         </div>`;
       },
     })
@@ -156,8 +162,8 @@
       default: 'Video transcript'
     },
     {
-      name: 'details',
-      label: 'Details',
+      name: 'contents',
+      label: 'Contents',
       widget: 'markdown'
     }
   ],
@@ -165,7 +171,7 @@
   fromBlock: function(match) {
     return {
       summary: match[1],
-      details: match[2]
+      contents: match[2]
     };
   },
   toBlock: function(data) {
@@ -173,7 +179,7 @@
 <details>
   <summary>${data.summary}</summary>
 
-  ${data.details}
+  ${data.contents}
 
 </details>
 `;
@@ -184,7 +190,7 @@
   
   <summary>${data.summary}</summary>
   
-  ${data.details}
+  ${data.contents}
 
 </details>
 `;
