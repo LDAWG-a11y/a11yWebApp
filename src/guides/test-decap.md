@@ -9,3 +9,12 @@ tags:
 isGuide: true
 ---
 test
+
+
+        <h3 class="accordion">Testing</h3>
+
+        <div class="accordion__panel">
+
+          Testing
+
+        </div>
