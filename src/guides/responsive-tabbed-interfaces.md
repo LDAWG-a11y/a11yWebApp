@@ -128,18 +128,19 @@ What I am going to do is just show each step's code on its own as opposed to mak
 First we'll initialise our global variables and then we'll build a string from the contents of the `<details>` and `<summary` elements, so we can use this as our base HTML. Once that is all sorted, we'll remove everything from our wrapper and insert our new string as HTML and then reference the global variables we need from that new HTML.
 
 <h5 class="accordion">Explainer 1</h5>
-        <div class="accordion__panel">
-          * First we want to reference our `<div class="widget__wrapper">` element and assign it to the `widgetWrapper` variable
-* We initialise two variables in the global scope, that we need later `baseHTML` (which we're setting to an empty string) and also `open`, which we will set to `0`
-* We're going to switch the widget type based upon a media query, so we use the `matchMedia` method and store that in our `mq` variable, I've set the breakpoint's `(max-width: 767px)`, for this example
-* Then we create an array `navKeys`, which holds all of the codes for the key presses we want for these widgets, that the browser doesn't provide
-* We loop through all of our `<details>` elements that are present in the `widgetWrapper`, getting the index with the `idx` variable and each element with the `el` variable. As we iterate through we build a HTML string using a template literal (backticks), and use the addition assignment operator `+=`, so we concatenate that string on each iteration, this is saved to our `baseHTML` variable
+<div class="accordion__panel">
 
-  * Within that loop we add some classes and IDs, the latter of which we generate from the a string and `idx` variable `+ 1`, so each ID is unique. Both the buttons and the panels need IDs to create programmatic relationships and accessible names for the panels, respectively
-  * We also add a data attribute to each button and panel, this holds a number we get from our `idx` variable and here we are starting that number from `0`, those data attributes for buttons and panels are `data-btn-idx` and `data-panel-idx`, respectively
-  * We set the contents of each button within this string to be the text that was in the `<summary>` element, we know that this was the first child of a `<details>` element and we just want its text, so we do this with `${el.firstElementChild.textContent}`
-  * As we wrapped the collapsible contents of each `<details>` element in a `<div>` earlier, we know that this `<div>` is the last child of each `<details>` element and will contain the HTML we need, so we add the correct HTML inside each panel per loop iteration with `${el.lastElementChild.innerHTML}`
-  * Both accordions and tabs have `aria-controls` on the trigger which creates the programmatic relationship between the trigger and its corresponding panel, via an ID reference. Tabpanels have an accessible name and accordions can optionally have one, so we will use `aria-labelledby` and reference its controlling button element's ID, so each panels' accessible name becomes that of its controlling button. I have added these common attributes here, as they will never change
+* First we want to reference our `<div class="widget__wrapper">\` element and assign it to the \`widgetWrapper\` variable
+\* We initialise two variables in the global scope, that we need later \`baseHTML\` (which we're setting to an empty string) and also \`open\`, which we will set to \`0\`
+\* We're going to switch the widget type based upon a media query, so we use the \`matchMedia\` method and store that in our \`mq\` variable, I've set the breakpoint's \`(max-width: 767px)\`, for this example
+\* Then we create an array \`navKeys\`, which holds all of the codes for the key presses we want for these widgets, that the browser doesn't provide
+\* We loop through all of our \`<details>\` elements that are present in the \`widgetWrapper\`, getting the index with the \`idx\` variable and each element with the \`el\` variable. As we iterate through we build a HTML string using a template literal (backticks), and use the addition assignment operator \`+=\`, so we concatenate that string on each iteration, this is saved to our \`baseHTML` variable
+
+* Within that loop we add some classes and IDs, the latter of which we generate from the a string and `idx` variable `+ 1`, so each ID is unique. Both the buttons and the panels need IDs to create programmatic relationships and accessible names for the panels, respectively
+* We also add a data attribute to each button and panel, this holds a number we get from our `idx` variable and here we are starting that number from `0`, those data attributes for buttons and panels are `data-btn-idx` and `data-panel-idx`, respectively
+* We set the contents of each button within this string to be the text that was in the `<summary>` element, we know that this was the first child of a `<details>` element and we just want its text, so we do this with `${el.firstElementChild.textContent}`
+* As we wrapped the collapsible contents of each `<details>` element in a `<div>` earlier, we know that this `<div>` is the last child of each `<details>` element and will contain the HTML we need, so we add the correct HTML inside each panel per loop iteration with `${el.lastElementChild.innerHTML}`
+* Both accordions and tabs have `aria-controls` on the trigger which creates the programmatic relationship between the trigger and its corresponding panel, via an ID reference. Tabpanels have an accessible name and accordions can optionally have one, so we will use `aria-labelledby` and reference its controlling button element's ID, so each panels' accessible name becomes that of its controlling button. I have added these common attributes here, as they will never change
 * Outside of the loop we modify our `baseHTML` variable with a wrapper `<div class="widget__controls-wrapper">`, unfortunately tabs and accordions have a different structure and we need this additional wrapper, for the tabs. We add the contents from our loop `${baseHTML}`, within that new wrapper
 * Now that we have our `baseHTML` string that contains all of the HTML and contents we need for our initial HTML we can remove all of the HTML from the `widgetWrapper` by setting `widgetWrapper.innerHTML= ''`, which removes its contents.
 * Now we want to insert that `baseHTML` string at the beginning of the `widgetWrapper` element, with `insertAdjacentHTML('afterbegin', baseHTML)`
@@ -148,7 +149,8 @@ First we'll initialise our global variables and then we'll build a string from t
   * We assign the `<div class="widget__controls-wrapper">` element, with `widgetControlsWrapper`
   * We create an `Array.from()` a collection of the new buttons which is assigned to `widgetBtns`
   * We create an `Array.from()` a collection of the new panels which is assigned to `widgetPanels`
-        </div>
+
+</div>
 
 ```javascript
 const widgetWrapper = document.querySelector('.widget__wrapper');
