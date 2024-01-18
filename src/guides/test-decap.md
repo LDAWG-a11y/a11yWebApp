@@ -14,7 +14,8 @@ isGuide: true
 <details>
   <summary>Video transcript</summary>
 
-      Yup
+        Yup
+
 
 
 
@@ -29,17 +30,18 @@ isGuide: true
 <details>
   <summary>Video transcript</summary>
 
-    Two
+      Two
+
 
 
 </details>
 
 
 
-        <h3 class="accordion">Test</h3>
+        <h3 class="accordion">Hello</h3>
 
         <div class="accordion__panel">
 
-          Hi
+          hello
 
         </div>
