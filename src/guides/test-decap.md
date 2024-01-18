@@ -8,10 +8,4 @@ tags:
   - HTML
 isGuide: true
 ---
-
-<details>
-  <summary>Video transcript</summary>
-
-  hjjhg
-
-</details>
+test
