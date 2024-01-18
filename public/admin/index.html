@@ -30,6 +30,12 @@
           widget: 'string'
         }
       ],
+      pattern: /^<div class="callout__tip"><span class="callout__icon"><\/span><span class="callout__text">(.*?)<\/span><\/div>$/,
+      fromBlock: function(match) {
+        return {
+          tipCallout: match[1]
+        };
+      },
       toBlock: function(data) {
         return `<div class="callout__tip"><span class="callout__icon"></span><span class="callout__text">${data.tipCallout}</span></div>`;
       },
@@ -48,6 +54,12 @@
           widget: 'string'
         }
       ],
+      pattern: /^<div class="callout__info"><span class="callout__icon"><\/span><span class="callout__text">(.*?)<\/span><\/div>$/,
+      fromBlock: function(match) {
+        return {
+          infoCallout: match[1]
+        };
+      },
       toBlock: function(data) {
         return `<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">${data.infoCallout}</span></div>`;
       },
@@ -66,6 +78,12 @@
           widget: 'string'
         }
       ],
+      pattern: /^<div class="callout__warn"><span class="callout__icon"><\/span><span class="callout__text">(.*?)<\/span><\/div>$/,
+      fromBlock: function(match) {
+        return {
+          warnCallout: match[1]
+        };
+      },
       toBlock: function(data) {
         return `<div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">${data.warnCallout}</span></div>`;
       },
