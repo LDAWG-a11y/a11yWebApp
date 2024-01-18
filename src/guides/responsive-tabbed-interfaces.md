@@ -131,11 +131,10 @@ First we'll initialise our global variables and then we'll build a string from t
 <div class="accordion__panel">
 
 * First we want to reference our `<div class="widget__wrapper">\` element and assign it to the \`widgetWrapper\` variable
-\* We initialise two variables in the global scope, that we need later \`baseHTML\` (which we're setting to an empty string) and also \`open\`, which we will set to \`0\`
-\* We're going to switch the widget type based upon a media query, so we use the \`matchMedia\` method and store that in our \`mq\` variable, I've set the breakpoint's \`(max-width: 767px)\`, for this example
-\* Then we create an array \`navKeys\`, which holds all of the codes for the key presses we want for these widgets, that the browser doesn't provide
-\* We loop through all of our \`<details>\` elements that are present in the \`widgetWrapper\`, getting the index with the \`idx\` variable and each element with the \`el\` variable. As we iterate through we build a HTML string using a template literal (backticks), and use the addition assignment operator \`+=\`, so we concatenate that string on each iteration, this is saved to our \`baseHTML` variable
-
+  \* We initialise two variables in the global scope, that we need later \`baseHTML\` (which we're setting to an empty string) and also \`open\`, which we will set to \`0\`
+  \* We're going to switch the widget type based upon a media query, so we use the \`matchMedia\` method and store that in our \`mq\` variable, I've set the breakpoint's \`(max-width: 767px)\`, for this example
+  \* Then we create an array \`navKeys\`, which holds all of the codes for the key presses we want for these widgets, that the browser doesn't provide
+  \* We loop through all of our `<details>\` elements that are present in the \`widgetWrapper\`, getting the index with the \`idx\` variable and each element with the \`el\` variable. As we iterate through we build a HTML string using a template literal (backticks), and use the addition assignment operator \`+=\`, so we concatenate that string on each iteration, this is saved to our \`baseHTML` variable
 * Within that loop we add some classes and IDs, the latter of which we generate from the a string and `idx` variable `+ 1`, so each ID is unique. Both the buttons and the panels need IDs to create programmatic relationships and accessible names for the panels, respectively
 * We also add a data attribute to each button and panel, this holds a number we get from our `idx` variable and here we are starting that number from `0`, those data attributes for buttons and panels are `data-btn-idx` and `data-panel-idx`, respectively
 * We set the contents of each button within this string to be the text that was in the `<summary>` element, we know that this was the first child of a `<details>` element and we just want its text, so we do this with `${el.firstElementChild.textContent}`
@@ -608,11 +607,11 @@ Whether you choose to use or improve this pattern yourself, always test, I have 
 
 ### The smaller viewport solution: accordions
 
-![Screenshot of the accordions, which display on smaller viewports, the first panel is expanded, each accordion has an icon, which is a minus if expanded and a plus if collapsed. They have minimal styling, using the rebccapurple colour for their borders and the button text](src/guideImg/dl-widget-accordion.png)
+![Screenshot of the accordions, which display on smaller viewports, the first panel is expanded, each accordion has an icon, which is a minus if expanded and a plus if collapsed. They have minimal styling, using the rebeccapurple colour for their borders and the button text](src/guideImg/dl-widget-accordion.png)
 
 ### The larger viewport, showing the tabs
 
-![Screenshot of the tabs, which displays on the larger viewport. The first tab is selected and there is a thicker border at the top of the tab to show this, in addition, there is no bottom border on the tab, so it flows into its associated panel. They have minimal styling, using the rebccapurple colour for their borders, the thicker border for the selected tab and the button text](src/guideImg/dl-widget-tabs.png)
+![Screenshot of the tabs, which displays on the larger viewport. The first tab is selected and there is a thicker border at the top of the tab to show this, in addition, there is no bottom border on the tab, so it flows into its associated panel. They have minimal styling, using the rebeccapurple colour for their borders, the thicker border for the selected tab and the button text](src/guideImg/dl-widget-tabs.png)
 
 ### Windows High Contrast Mode
 
