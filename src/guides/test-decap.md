@@ -8,13 +8,4 @@ tags:
   - HTML
 isGuide: true
 ---
-test
-
-
-        <h3 class="accordion">Testing</h3>
-
-        <div class="accordion__panel">
-
-          Testing
-
-        </div>
+<h3 class="accordion">Test</h3><div class="accordion__panel">Test</div>
