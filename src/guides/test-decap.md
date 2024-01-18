@@ -12,15 +12,10 @@ isGuide: true
 
 <details>
   <summary>Video transcript</summary>
-  
 
   Yup
 
 </details>
-
-<h3 class="accordion">Test</h3><div class="accordion__panel">Test</div>
-
-
 
 
 
