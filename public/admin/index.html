@@ -108,15 +108,21 @@
       toBlock: function(data) {
         return `
         <h${data.hLevel} class="accordion">${data.title}</h${data.hLevel}>
+
         <div class="accordion__panel">
+
           ${data.content}
+
         </div>`;
       },
       toPreview: function(data) {
         return `
         <h${data.hLevel} class="accordion">${data.title}</h${data.hLevel}>
+
         <div class="accordion__panel">
+
           ${data.content}
+          
         </div>`;
       },
     })
