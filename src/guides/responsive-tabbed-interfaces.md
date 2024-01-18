@@ -128,10 +128,8 @@ What I am going to do is just show each step's code on its own as opposed to mak
 First we'll initialise our global variables and then we'll build a string from the contents of the `<details>` and `<summary` elements, so we can use this as our base HTML. Once that is all sorted, we'll remove everything from our wrapper and insert our new string as HTML and then reference the global variables we need from that new HTML.
 
 <h5 class="accordion">Explainer 1</h5>
-
-<div class="accordion__panel">
-
-* First we want to reference our `<div class="widget__wrapper">` element and assign it to the `widgetWrapper` variable
+        <div class="accordion__panel">
+          * First we want to reference our `<div class="widget__wrapper">` element and assign it to the `widgetWrapper` variable
 * We initialise two variables in the global scope, that we need later `baseHTML` (which we're setting to an empty string) and also `open`, which we will set to `0`
 * We're going to switch the widget type based upon a media query, so we use the `matchMedia` method and store that in our `mq` variable, I've set the breakpoint's `(max-width: 767px)`, for this example
 * Then we create an array `navKeys`, which holds all of the codes for the key presses we want for these widgets, that the browser doesn't provide
@@ -150,8 +148,7 @@ First we'll initialise our global variables and then we'll build a string from t
   * We assign the `<div class="widget__controls-wrapper">` element, with `widgetControlsWrapper`
   * We create an `Array.from()` a collection of the new buttons which is assigned to `widgetBtns`
   * We create an `Array.from()` a collection of the new panels which is assigned to `widgetPanels`
-
-</div>
+        </div>
 
 ```javascript
 const widgetWrapper = document.querySelector('.widget__wrapper');
