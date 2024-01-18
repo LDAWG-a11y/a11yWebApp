@@ -10,15 +10,24 @@ isGuide: true
 ---
 <h3 class="accordion">Test</h3><div class="accordion__panel">test</div>
 
+
 <details>
   <summary>Video transcript</summary>
 
-  Yup
+    Yup
+
 
 </details>
-
 
 
 ```html
 <p>Hi</p>
 ```
+
+
+<details>
+  <summary>Video transcript</summary>
+
+  Two
+
+</details>
