@@ -97,7 +97,7 @@
           widget: 'markdown'
         }
       ],
-      pattern: /^<(h[2-6]) class="accordion">(.*)<\/h[2-6]><div class="accordion__panel">(.*)<\/div>$/,
+      pattern: /^<h([2-6]) class="accordion">(.*)<\/h[2-6]><div class="accordion__panel">(.*)<\/div>$/,
       fromBlock: function(match) {
         return {
           hLevel: match[1],
