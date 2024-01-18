@@ -9,10 +9,9 @@ tags:
 isGuide: true
 ---
 
-        <h3 class="accordion">Test</h3>
+<details>
+  <summary>Video transcript</summary>
 
-        <div class="accordion__panel">
+  hjjhg
 
-          Test
-
-        </div>
+</details>
