@@ -4,6 +4,8 @@
   {% include "_header.njk" %}
   <main class="main">
     {%- if not aaa %}
+    <div class="main__warning">We are aware of an issue in some code blocks where unwanted tags are displayed, we are currently investigating the cause of this issue. Sorry for any inconvenience</div>
+
     <div class="guide__info-panel">
       <div class="guide__author">
         {% set guideAuthor = collections.writers | getAuthor(author) %}
