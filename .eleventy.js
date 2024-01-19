@@ -10,6 +10,7 @@ const path = require('path');
 module.exports = eleventyConfig => {
   const { DateTime } = require('luxon');
   const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+  eleventyConfig.amendLibrary("md", mdLib => mdLib.enable("code"));
 
   eleventyConfig.addWatchTarget('./src/sass');
   eleventyConfig.addPassthroughCopy('./src/css');
