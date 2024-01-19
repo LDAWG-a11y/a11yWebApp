@@ -30,7 +30,7 @@
           widget: 'string'
         }
       ],
-      pattern: /^<div class="callout__tip"><span class="callout__icon"><\/span><span class="callout__text">(.*?)<\/span><\/div>$/,
+      pattern: /^\s*<div class="callout__tip"><span class="callout__icon"><\/span><span class="callout__text">(.*?)<\/span><\/div>$/,
       fromBlock: function(match) {
         return {
           tipCallout: match[1]
@@ -54,7 +54,7 @@
           widget: 'string'
         }
       ],
-      pattern: /^<div class="callout__info"><span class="callout__icon"><\/span><span class="callout__text">(.*?)<\/span><\/div>$/,
+      pattern: /^\s*<div class="callout__info"><span class="callout__icon"><\/span><span class="callout__text">(.*?)<\/span><\/div>$/,
       fromBlock: function(match) {
         return {
           infoCallout: match[1]
@@ -78,7 +78,7 @@
           widget: 'string'
         }
       ],
-      pattern: /^<div class="callout__warn"><span class="callout__icon"><\/span><span class="callout__text">(.*?)<\/span><\/div>$/,
+      pattern: /^\s*<div class="callout__warn"><span class="callout__icon"><\/span><span class="callout__text">(.*?)<\/span><\/div>$/,
       fromBlock: function(match) {
         return {
           warnCallout: match[1]
@@ -115,7 +115,7 @@
           widget: 'markdown'
         }
       ],
-      pattern: /^<h([2-6]) class="accordion">(.*?)<\/h[2-6]>[\r\n]*<div class="accordion__panel">[\r\n]*(.*?)[\r\n]*<\/div>$/,
+      pattern: /^\s*<h([2-6]) class="accordion">(.*?)<\/h[2-6]>[\r\n]*^\s*<div class="accordion__panel">[\r\n]*(.*?)[\r\n]*^\s*<\/div>$/,
       fromBlock: function(match) {
         return {
           hLevel: match[1],
@@ -177,7 +177,7 @@
       widget: 'markdown'
     }
   ],
-  pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
+  pattern: /^\s*<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
   fromBlock: function(match) {
     return {
       summary: match[1],
