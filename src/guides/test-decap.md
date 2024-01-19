@@ -8,9 +8,15 @@ tags:
   - HTML
 isGuide: true
 ---
-<h3 class="accordion">Test</h3>
-<div class="accordion__panel">
- Test
-</div>
+<h3 class="accordion">undefined</h3>
+        <div class="accordion__panel">
+          undefined
+        </div>
 
-<div class="callout__tip"><span class="callout__icon"></span><span class="callout__text">Meh</span></div>
+
+<details>
+  <summary>Video transcript</summary>
+
+  undefined
+
+</details>
