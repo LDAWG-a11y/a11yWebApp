@@ -24,7 +24,7 @@
   &[data-open="false"] {
     + .accordion__panel {
       height: 0;
-      // transition: height 250ms ease-in-out;
+      // transition: height 250ms ease-in-out ;
       animation: hide 250ms ease-in-out;
       animation-fill-mode: forwards;
     }
