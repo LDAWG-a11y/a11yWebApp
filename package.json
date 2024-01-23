@@ -6,7 +6,7 @@
   "scripts": {
     "watch:sass": "sass --watch --no-source-map src/sass:public/css",
     "build:sass": "sass --no-source-map src/sass:public/css",
-    "watch:eleventy": "eleventy --serve",
+    "watch:eleventy": "npx eleventy --serve",
     "build:eleventy": "eleventy",
     "postbuild": "lightningcss --minify --targets '> 0.25%, not IE 11' public/css/*.css -o public/css/*.css",
     "clean": "rm -rf ./public",
@@ -26,8 +26,8 @@
   "homepage": "https://github.com/LDAWG-a11y/a11yWebApp#readme",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "markdown-it-anchor": "^8.6.7",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+    "markdown-it-anchor": "^8.6.5",
     "markdown-it-eleventy-img": "^0.10.1",
     "npm-run-all": "^4.1.5"
   },
@@ -35,8 +35,8 @@
     "@11ty/eleventy-img": "^3.1.8",
     "eleventy-plugin-toc": "^1.1.5",
     "html-minifier": "^4.0.0",
-    "lightningcss-cli": "^1.23.0",
-    "sass": "^1.69.7"
+    "lightningcss-cli": "^1.16.0",
+    "sass": "^1.54.9"
   },
   "browserslist": [
     "last 3 versions",
