@@ -206,6 +206,54 @@
 `;
   }
   });
+
+
+  CMS.registerEditorComponent({
+  id: "logoLink",
+  label: "Logo link",
+  fields: [
+  {
+      name: 'url',
+      label: 'Site URL',
+      widget: 'string'
+    },
+    {
+      name: 'img',
+      label: 'Image ',
+      widget: 'image',
+      media_library: {
+        allow_multiple: false,
+      }
+    },
+    {
+      name: 'imgAlt',
+      label: 'Alt text (Name of site)',
+      widget: 'string'
+    }
+  ],
+  pattern: /^\s*<a href="(.*?)" class="supporters__logo">$\s*?<img src="(.*?)" alt="(.*?)">$\s*?<\/a>$/m,
+  fromBlock: function(match) {
+    return {
+      url: match[1],
+      img: match[2],
+      imgAlt: match[3],
+    };
+  },
+  toBlock: function(data) {
+    return `
+    <a href="${data.url}" class="supporters__link">
+      <img src="${data.url}" alt="${data.imgAlt}">
+    </a>
+    `;
+  },
+  toPreview: function(data) {
+    return `
+    <a href="${data.url}" class="supporters__link">
+      <img src="${data.url}" alt="${data.imgAlt}">
+    </a>
+    `;
+  }
+  });
   </script>
 </body>
 </html>
