@@ -108,6 +108,14 @@ collections:
         fields:
           - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
           - {label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
+      - name: "aaaSupporters"
+        label: "AAA Supporters"
+        folder: "/src/AAA/aaaSupporters"
+        media_folder: "/src/AAA/aaaSupportersImg"
+        public_folder: "src/AAA/aaaSupportersImg"
+        slug: "{{slug}}"
+        fields:
+          - { label: "Page content", name: "body", widget: "markdown", hint: "Only use the Logo Link option to add a supporter" }
   - name: "pages"
     label: "Pages"
     files:
