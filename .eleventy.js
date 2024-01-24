@@ -18,6 +18,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('src/img');
   eleventyConfig.addPassthroughCopy('src/profileImg');
   eleventyConfig.addPassthroughCopy('src/guideImg');
+  eleventyConfig.addPassthroughCopy('src/AAA/aaaAssets');
   eleventyConfig.addPassthroughCopy('src/docs');
   eleventyConfig.addPassthroughCopy('src/faqImg');
   eleventyConfig.addPassthroughCopy('src/svg');
