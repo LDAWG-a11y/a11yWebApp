@@ -3,7 +3,7 @@ date: Last Modified
 permalink: aaa/supporters/
 layout: base.njk
 title: AAA Our supporters
-summary: Access and Assistance for All's supporters
+summary: Become one of Access and Assistance for All's supporters by signing up to our pledges to incorporate inclusive learning for all your learners, enabling everybody to reach their potential
 aaa: true
 usesCMS: true
 ---
