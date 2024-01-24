@@ -6,9 +6,9 @@ date: 2023-05-17
 toc: false
 isAAAStory: true
 isGuide: true
-img: ./src/guideImg/ellie.png
+img: ./src/AAA/aaaAssets/ellie.png
 ---
-![Ellie](src/guideImg/ellie.png)
+![Ellie](src/AAA/aaaAssets/ellie.png)
 
 ## Could you tell us a little bit about your background?
 
