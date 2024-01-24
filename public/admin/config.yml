@@ -113,7 +113,7 @@ collections:
         folder: "/src/AAA/aaaSupporters"
         media_folder: "/src/AAA/aaaSupportersImg"
         public_folder: "src/AAA/aaaSupportersImg"
-        slug: "{{slug}}"
+        file: "/src/AAA/supporters.md"
         fields:
           - { label: "Page content", name: "body", widget: "markdown", hint: "Only use the Logo Link option to add a supporter" }
   - name: "pages"
