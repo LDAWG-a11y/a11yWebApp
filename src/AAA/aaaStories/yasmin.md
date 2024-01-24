@@ -5,7 +5,7 @@ date: 2023-05-17
 toc: false
 isAAAStory: true
 isGuide: true
-img: ./src/guideImg/yasmin.png
+img: ./src/AAA/aaaAssets/yasmin.png
 ---
 ![Yasmin](src/guideImg/yasmin.png)
 

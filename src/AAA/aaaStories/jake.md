@@ -7,7 +7,7 @@ date: 2023-05-17
 toc: false
 isAAAStory: true
 isGuide: true
-img: ./src/guideImg/jake.png
+img: ./src/AAA/aaaAssets/jake.png
 ---
 ![Jake](src/guideImg/jake.png)
 

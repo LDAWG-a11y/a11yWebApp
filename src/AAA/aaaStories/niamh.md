@@ -7,7 +7,7 @@ toc: false
 tags:
 isAAAStory: true
 isGuide: true
-img: ./src/guideImg/niamh.png
+img: ./src/AAA/aaaAssets/niamh.png
 ---
 ![Niamh](src/guideImg/niamh.png)
 
