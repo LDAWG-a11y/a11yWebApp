@@ -9,7 +9,7 @@ isAAAStory: true
 isGuide: true
 img: ./src/AAA/aaaAssets/jake.png
 ---
-![Jake](src/guideImg/jake.png)
+![Jake](src/AAA/aaaAssets/jake.png)
 
 I am Jake Harrison. I am studying an HND in Computing at Higher Education college. I am deaf and have two cochlear implants which help me to recognise sound. I rely heavily on lip reading and also use British Sign Language (BSL) and Sign Supported English (SSE) to understand people and to communicate. I also rely on captions on videos and for live video conferencing. I sometimes find it difficult to understand written English, especially if the language is technical and complex and the sentences are long. It helps me if there is a BSL interpretation as this breaks down the English and makes it easier and less stressful for me to understand.
 

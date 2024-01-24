@@ -9,7 +9,7 @@ isAAAStory: true
 isGuide: true
 img: ./src/AAA/aaaAssets/niamh.png
 ---
-![Niamh](src/guideImg/niamh.png)
+![Niamh](src/AAA/aaaAssets/niamh.png)
 
 ## Could you tell us a little bit about your background?
 

@@ -10,7 +10,7 @@ isAAAStory: true
 isGuide: true
 img: ./src/AAA/aaaAssets/tim.png
 ---
-![Tim](src/guideImg/tim.png)
+![Tim](src/AAA/aaaAssets/tim.png)
 
 ## Could you tell us a little bit about your background?
 

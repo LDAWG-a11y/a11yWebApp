@@ -7,7 +7,7 @@ isAAAStory: true
 isGuide: true
 img: ./src/AAA/aaaAssets/yasmin.png
 ---
-![Yasmin](src/guideImg/yasmin.png)
+![Yasmin](src/AAA/aaaAssets/yasmin.png)
 
 ## Could you tell us a little bit about your background?
 

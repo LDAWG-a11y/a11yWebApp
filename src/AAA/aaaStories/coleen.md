@@ -8,7 +8,7 @@ toc: false
 isAAAStory: true
 isGuide: true
 ---
-![Coleen](src/guideImg/coleen.png)
+![Coleen](src/AAA/aaaAssets/coleen.png)
 
 ## Could you tell us a little bit about your background?
 
