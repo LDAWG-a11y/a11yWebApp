@@ -115,37 +115,38 @@ collections:
   - name: "aaapages"
     label: "AAA Pages"
     folder: "/src/aaa"
-    media_folder: "/src/AAA/aaaAssets"
-    public_folder: "src/AAA/aaaAssets"
     files:
       - label: "AAA Home"
         name: "aaaHome"
         file: "/src/AAA/index.md"
+        media_folder: "/src/AAA/aaaAssets"
         fields:
           - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
           - {label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
       - label: "AAA Roles"
         name: "roles"
         file: "/src/AAA/roles.md"
+        media_folder: "/src/AAA/aaaAssets"
         fields:
           - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
           - {label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
       - label: "AAA Assistive Tech"
         name: "aaa-at"
         file: "/src/AAA/aaa-at.md"
+        media_folder: "/src/AAA/aaaAssets"
         fields:
           - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
           - {label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
       - name: "aaaSupporters"
         label: "AAA Supporters"
         file: "/src/AAA/supporters.md"
+        media_folder: "/src/AAA/aaaAssets"
         fields:
           - { label: "Page content", name: "body", widget: "markdown", hint: "Only use the Logo Link option to add a supporter" }
   - name: "aaaStories"
     label: "AAA Stories"
     folder: "/src/AAA/aaaStories"
     media_folder: "/src/AAA/aaaAssets"
-    public_folder: "src/AAA/aaaAssets"
     slug: "{{slug}}"
     create: true
     delete: true
