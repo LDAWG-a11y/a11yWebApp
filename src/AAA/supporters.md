@@ -16,8 +16,3 @@ usesCMS: true
 3. Show your commitment to improving accessibility through the use of our supporters’ logo
 
 If you are interested about learning more on how to do this or register your interest please contact us at [accessforallcampaign@gmail.com](mailto:accessforallcampaign@gmail.com).
-
-
-    <a href="https://www.pocklington.org.uk/" class="supporters__link">
-      <img src="/src/AAA/aaaAssets/TPT_logo.png" alt="undefined">
-    </a>
