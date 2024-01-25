@@ -232,22 +232,22 @@
     }
   ],
   pattern: /^\s*<a href="(.*?)" class="supporters__logo">$\s*?<img src="(.*?)" alt="(.*?)">$\s*?<\/a>$/m,
-  fromBlock: function(match) {
-    return {
+  fromBlock: match => {
+    match && {
       url: match[1],
       image: match[2],
-      imgAlt: match[3],
+      alt: match[3],
     };
   },
-  toBlock: function(data) {
+  toBlock: function({url, image, alt}, getAsset, fields) {
     return `
-    <a href="${data.url}" class="supporters__link">
-      <img src="${data.image}" alt="${data.imgAlt}">
+    <a href="${url}" class="supporters__link">
+      <img src="${image}" alt="${alt}">
     </a>
     `;
   },
-  toPreview: function(data) {
-    return `<img src="${data.image}" alt="${data.imgAlt}">`;
+  toPreview: ({url, image, alt}, getAsset, fields) => {
+    return `<img src="${image}" alt="${ialtmgAlt}">`;
   }
   });
   </script>
