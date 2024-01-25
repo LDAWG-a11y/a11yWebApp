@@ -242,16 +242,12 @@
   toBlock: function(data) {
     return `
     <a href="${data.url}" class="supporters__link">
-      <img src="${data.url}" alt="${data.imgAlt}">
+      <img src="${data.img}" alt="${data.imgAlt}">
     </a>
     `;
   },
   toPreview: function(data) {
-    return `
-    <a href="${data.url}" class="supporters__link">
-      <img src="${data.url}" alt="${data.imgAlt}">
-    </a>
-    `;
+    return `<img src="${data.img}" alt="${data.imgAlt}">`;
   }
   });
   </script>
