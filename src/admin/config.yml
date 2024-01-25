@@ -114,7 +114,6 @@ collections:
           - { label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
   - name: "aaapages"
     label: "AAA Pages"
-    folder: "/src/aaa"
     files:
       - label: "AAA Home"
         name: "aaaHome"
