@@ -218,7 +218,7 @@
       widget: 'string'
     },
     {
-      name: 'img',
+      name: 'image',
       label: 'Image ',
       widget: 'image',
       media_library: {
@@ -232,22 +232,22 @@
     }
   ],
   pattern: /^\s*<a href="(.*?)" class="supporters__logo">$\s*?<img src="(.*?)" alt="(.*?)">$\s*?<\/a>$/m,
-  fromBlock: function(match) {
-    return {
+  fromBlock: match => {
+    match && {
       url: match[1],
-      img: match[2],
-      imgAlt: match[3],
+      image: match[2],
+      alt: match[3],
     };
   },
-  toBlock: function(data) {
+  toBlock: function({url, image, alt}, getAsset, fields) {
     return `
-    <a href="${data.url}" class="supporters__link">
-      <img src="${data.img}" alt="${data.imgAlt}">
+    <a href="${url}" class="supporters__link">
+      <img src="${image}" alt="${alt}">
     </a>
     `;
   },
-  toPreview: function(data) {
-    return `<img src="${data.img}" alt="${data.imgAlt}">`;
+  toPreview: ({url, image, alt}, getAsset, fields) => {
+    return `<img src="${image}" alt="${ialtmgAlt}">`;
   }
   });
   </script>
