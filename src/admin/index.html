@@ -218,7 +218,7 @@
       widget: 'string'
     },
     {
-      name: 'img',
+      name: 'image',
       label: 'Image ',
       widget: 'image',
       media_library: {
@@ -235,19 +235,19 @@
   fromBlock: function(match) {
     return {
       url: match[1],
-      img: match[2],
+      image: match[2],
       imgAlt: match[3],
     };
   },
   toBlock: function(data) {
     return `
     <a href="${data.url}" class="supporters__link">
-      <img src="${data.img}" alt="${data.imgAlt}">
+      <img src="${data.image}" alt="${data.imgAlt}">
     </a>
     `;
   },
   toPreview: function(data) {
-    return `<img src="${data.img}" alt="${data.imgAlt}">`;
+    return `<img src="${data.image}" alt="${data.imgAlt}">`;
   }
   });
   </script>
