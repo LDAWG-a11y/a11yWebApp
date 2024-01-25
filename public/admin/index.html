@@ -162,49 +162,49 @@
 // });
 
   CMS.registerEditorComponent({
-  id: "transContainer",
-  label: "Transcript container",
-  fields: [
-    {
-      name: 'summary',
-      label: 'Summary',
-      widget: 'string',
-      default: 'Video transcript'
+    id: "transContainer",
+    label: "Transcript container",
+    fields: [
+      {
+        name: 'summary',
+        label: 'Summary',
+        widget: 'string',
+        default: 'Video transcript'
+      },
+      {
+        name: 'contents',
+        label: 'Contents',
+        widget: 'markdown'
+      }
+    ],
+    pattern: /^\s*<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
+    fromBlock: function(match) {
+      return {
+        summary: match[1],
+        contents: match[2]
+      };
     },
-    {
-      name: 'contents',
-      label: 'Contents',
-      widget: 'markdown'
+    toBlock: function(data) {
+      return `
+  <details>
+    <summary>${data.summary}</summary>
+
+    ${data.contents}
+
+  </details>
+  `;
+    },
+    toPreview: function(data) {
+      return `
+  <details>
+    
+    <summary>${data.summary}</summary>
+    
+    ${data.contents}
+
+  </details>
+  `;
     }
-  ],
-  pattern: /^\s*<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
-  fromBlock: function(match) {
-    return {
-      summary: match[1],
-      contents: match[2]
-    };
-  },
-  toBlock: function(data) {
-    return `
-<details>
-  <summary>${data.summary}</summary>
-
-  ${data.contents}
-
-</details>
-`;
-  },
-  toPreview: function(data) {
-    return `
-<details>
-  
-  <summary>${data.summary}</summary>
-  
-  ${data.contents}
-
-</details>
-`;
-  }
   });
 
 
@@ -228,7 +228,7 @@
     toPreview: ({url, img, alt}, getAsset, fields) => {
       return `<img src="${img}" alt="${alt}">`;
     },
-    pattern: /^\s*<a href="(.*?)" class="supporters__logo">$\s*?<img src="(.*?)" alt="(.*?)">$\s*?<\/a>$/m,
+    pattern: /^\s*<a href="(.*?)" class="supporters__logo">[\r\n]*\s*<img src="(.*?)" alt="(.*?)">[\r\n]*\s*<\/a>$/m,
     fields: [
       {
         name: 'url',
