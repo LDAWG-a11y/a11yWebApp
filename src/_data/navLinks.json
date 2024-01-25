@@ -6,6 +6,7 @@
   {"text": "AAA Home", "url": "/aaa/", "aaa": true},
   {"text": "AAA Roles", "url": "/aaa/roles/", "aaa": true, "ignoreFooterNav": true},
   {"text": "AAA Student Stories", "url": "/aaa/student-stories/", "aaa": true, "ignoreFooterNav": true},
+  {"text": "AAA Supporters", "url": "/aaa/supporters/", "aaa": true, "ignoreFooterNav": true},
   {"text": "Accessibility", "url": "/accessibility/"},
   {"text": "Glossary", "url": "/glossary/"},
   {"text": "Privacy Policy", "url": "/privacy/"},
