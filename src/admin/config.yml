@@ -138,7 +138,6 @@ collections:
           - {label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
       - name: "aaaSupporters"
         label: "AAA Supporters"
-        folder: "/src/AAA/aaaSupporters"
         file: "/src/AAA/supporters.md"
         fields:
           - { label: "Page content", name: "body", widget: "markdown", hint: "Only use the Logo Link option to add a supporter" }
