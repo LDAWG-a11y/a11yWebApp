@@ -242,13 +242,12 @@
     toPreview: (data, getAsset, fields) => {
       const imgField = fields?.find(field => field.get('widget') === 'image');
       const src = getAsset(data.image, imgField);
-      console.log(getAsset)
-      return `
-      <a href="${data.url || ''}" class="supporters__link"><img src="${src || ''}" alt="${data.alt || ''}"></a>`;
+      const str = `<a href="${data.url || ''}" class="supporters__link"><img src="${src || ''}" alt="${data.alt || ''}"></a>`;
+      return trim(str);
     },
     toBlock: function(data) {
-      return `
-      <a href="${data.url || ''}" class="supporters__link"><img src="${data.image || ''}" alt="${data.alt || ''}"></a>`;
+      const str = `<a href="${data.url || ''}" class="supporters__link"><img src="${data.image || ''}" alt="${data.alt || ''}"></a>`;
+      return trim(str);
     },
   });
   </script>
