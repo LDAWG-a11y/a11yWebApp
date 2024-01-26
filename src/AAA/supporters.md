@@ -16,8 +16,3 @@ usesCMS: true
 3. Show your commitment to improving accessibility through the use of our supporters’ logo
 
 If you are interested about learning more on how to do this or register your interest please contact us at [accessforallcampaign@gmail.com](mailto:accessforallcampaign@gmail.com).
-
-
-      <a href="https://www.byc.org.uk/" class="supporters__link">
-        <img src="aaa/aaaAssets/byc.png" alt="British Youth Council">
-      </a>
