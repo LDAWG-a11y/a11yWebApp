@@ -218,17 +218,23 @@
         alt: match[3],
       };
     },
-    toBlock: function(data) {
-      return `
-      <a href="${data.url || ''}" class="supporters__link">
-        <img src="${data.image || ''}" alt="${data.alt || ''}">
-      </a>`;
-      
-    },
     toPreview: (data, getAsset, fields) => {
       const imgField = fields?.find(field => field.get('widget') === 'image');
       const src = getAsset(data.image, imgField);
-      return `<img src="${src || ''}" alt="${data.alt || ''}">`;
+      return `
+      <a href="${data.url || ''}" class="supporters__link">
+
+        <img src="${src || ''}" alt="${data.alt || ''}">
+
+      </a>`;
+    },
+    toBlock: function(data) {
+      return `
+      <a href="${data.url || ''}" class="supporters__link">
+
+        <img src="${data.image || ''}" alt="${data.alt || ''}">
+        
+      </a>`;
     },
     pattern: /^\s*<a href="(.*?)" class="supporters__logo">[\r\n]*\s*<img src="(.*?)" alt="(.*?)">[\r\n]*\s*<\/a>$/m,
     fields: [
