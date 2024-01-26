@@ -243,11 +243,11 @@
       const imgField = fields?.find(field => field.get('widget') === 'image');
       const src = getAsset(data.image, imgField);
       const str = `<a href="${data.url || ''}" class="supporters__link"><img src="${src || ''}" alt="${data.alt || ''}"></a>`;
-      return trim(str);
+      return str.trim();
     },
     toBlock: function(data) {
       const str = `<a href="${data.url || ''}" class="supporters__link"><img src="${data.image || ''}" alt="${data.alt || ''}"></a>`;
-      return trim(str);
+      return str.trim();
     },
   });
   </script>
