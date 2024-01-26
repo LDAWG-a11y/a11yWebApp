@@ -247,8 +247,8 @@
     },
     toPreview: (data, getAsset, fields) => {
       const imgField = fields?.find(f => f.get('widget') === 'image');
-      const src = getAsset(data.image, imageField);
-      return `<img src="${data.img}" alt="${data.alt}">`;
+      const src = getAsset(data.image, imgField);
+      return `<img src="${src}" alt="${data.alt}">`;
     },
     pattern: /^\s*<a href="(.*?)" class="supporters__logo">[\r\n]*\s*<img src="(.*?)" alt="(.*?)">[\r\n]*\s*<\/a>$/m,
     
