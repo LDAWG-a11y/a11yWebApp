@@ -211,24 +211,6 @@
   CMS.registerEditorComponent({
     id: "logoLink",
     label: "Logo link",
-    fromBlock: match => {
-      match && {
-        url: match[1],
-        img: match[2],
-        alt: match[3],
-      };
-    },
-    toBlock: function({url, img, alt}, getAsset, fields) {
-      return `
-      <a href="${url}" class="supporters__link">
-        <img src="${img}" alt="${alt}">
-      </a>
-      `;
-    },
-    toPreview: ({url, img, alt}, getAsset, fields) => {
-      return `<img src="${img}" alt="${alt}">`;
-    },
-    pattern: /^\s*<a href="(.*?)" class="supporters__logo">[\r\n]*\s*<img src="(.*?)" alt="(.*?)">[\r\n]*\s*<\/a>$/m,
     fields: [
       {
         name: 'url',
@@ -249,6 +231,27 @@
         widget: 'string'
       }
     ],
+    fromBlock: function(match) {
+      return {
+        url: match[1],
+        img: match[2],
+        alt: match[3],
+      };
+    },
+    toBlock: function(data) {
+      return `
+      <a href="${data.url}" class="supporters__link">
+        <img src="${data.img}" alt="${data.alt}">
+      </a>
+      `;
+    },
+    toPreview: (data, getAsset, fields) => {
+      const imgField = fields?.find(f => f.get('widget') === 'image');
+      const src = getAsset(data.image, imageField);
+      return `<img src="${data.img}" alt="${data.alt}">`;
+    },
+    pattern: /^\s*<a href="(.*?)" class="supporters__logo">[\r\n]*\s*<img src="(.*?)" alt="(.*?)">[\r\n]*\s*<\/a>$/m,
+    
   });
   </script>
 </body>
