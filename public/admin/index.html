@@ -213,30 +213,30 @@
     label: "Logo link",
     fromBlock: function(match) {
       return {
-        // url: match[1],
+        url: match[1],
         image: match[2],
         alt: match[3],
       };
     },
     toBlock: function(data) {
-      return `<img src="${data.image || ''}" alt="${data.alt || ''}">`;
-      // <a href="${data.url || ''}" class="supporters__link">
-      //   <img src="${data.image || ''}" alt="${data.alt || ''}">
-      // </a>
+      return `
+      <a href="${data.url || ''}" class="supporters__link">
+        <img src="${data.image || ''}" alt="${data.alt || ''}">
+      </a>`;
+      
     },
     toPreview: (data, getAsset, fields) => {
       const imgField = fields?.find(field => field.get('widget') === 'image');
       const src = getAsset(data.image, imgField);
       return `<img src="${src || ''}" alt="${data.alt || ''}">`;
     },
-    // pattern: /^\s*<a href="(.*?)" class="supporters__logo">[\r\n]*\s*<img src="(.*?)" alt="(.*?)">[\r\n]*\s*<\/a>$/m,
-    pattern: /<img\s+src="([^"]*)"\s+alt="([^"]*)"\/>/,
+    pattern: /^\s*<a href="(.*?)" class="supporters__logo">[\r\n]*\s*<img src="(.*?)" alt="(.*?)">[\r\n]*\s*<\/a>$/m,
     fields: [
-      // {
-      //   name: 'url',
-      //   label: 'Site URL',
-      //   widget: 'string'
-      // },
+      {
+        name: 'url',
+        label: 'Site URL',
+        widget: 'string'
+      },
       {
         name: 'image',
         label: 'Image ',
