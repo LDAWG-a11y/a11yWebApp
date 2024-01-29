@@ -20,8 +20,10 @@ Although good practice of promoting assistive technology can be found in college
 
 Click on the following sections to expand them:
 
-<h3 class="accordion">To work towards making college resources and learning materials accessible by design</h3>
+<h3 class="accordion">Work towards making learning resources accessible</h3>
 <div class="accordion__panel">
+
+To work towards making college resources and learning materials accessible by design
 
 Colleges create a range of content, resources and learning materials. This includes HTML web content, PDFs, PowerPoints, etc. Our campaign aims to maximise accessibility for documents in all formats produced by Further Education colleges. Make Things accessible has a number of guides on improving content accessibility and we will link to other good sources as we find them:
 
@@ -35,8 +37,10 @@ Ensuring that your lesson materials are accessible by design not only helps peop
 
 </div>
 
-<h3 class="accordion">To create a champion for accessibility who is a direct point of contact for students and parents/carers (including future students)</h3>
+<h3 class="accordion">Create an accessibility champion</h3>
 <div class="accordion__panel">
+
+To create a champion for accessibility who is a direct point of contact for students and parents/carers (including future students)
 
 You should have a direct point of contact for anyone with accessibility related needs that people can go to, at any time, in confidence that their queries will be answered and requirements met. Note: Some schools may call this "SEN", "SENCO", "ALS" or something entirely different.
 
@@ -54,8 +58,10 @@ Having an accessibility champion enables students to reach their full potential 
 
 </div>
 
-<h3 class="accordion">To promote comprehensive information about assistive technology and how to access free accessibility tools, for example, by signposting students to the Access and Assistance for All webpages (here)</h3>
+<h3 class="accordion">Promote comprehensive information about Assistive tech</h3>
 <div class="accordion__panel">
+
+To promote comprehensive information about assistive technology and how to access free accessibility tools, for example, by signposting students to the Access and Assistance for All webpages
 
 There are many forms of both physical and digital assistive technology that can aid students throughout their education, and these could potentially be of huge benefit to students, so should be promoted (even non-disabled people can benefit from assistive technology! Spellcheck, auto-complete and even basic organisational systems originated as assistive technology, and can be beneficial to all when implemented correctly). There are also sites, such as [My Computer My Way](https://mcmw.abilitynet.org.uk/), which can show you how to setup the many free digital accessibility solutions already available on most devices.
 
@@ -63,8 +69,10 @@ There are many forms of both physical and digital assistive technology that can 
 
 </div>
 
-<h3 class="accordion">To use the Access and Assistance for All template to promote and display a personalised charter so that students and parents/carers are made aware of what they can ask the college for in terms of accessibility</h3>
+<h3 class="accordion">Use the AAA template</h3>
 <div class="accordion__panel">
+
+To use the Access and Assistance for All template to promote and display a personalised charter so that students and parents/carers are made aware of what they can ask the college for in terms of accessibility
 
 Having a personalised charter that is spread across the school and displayed openly ensures that students and parents/carers are made aware of what accessibility support they can access, and can also provide clear evidence of progress being made towards ensuring that a school or college is more accessible.
 
@@ -72,8 +80,10 @@ To get access to the charter template and a range of resources to support your c
 
 </div>
 
-<h3 class="accordion">To require all staff to look the Access and Assistance for All webpages and read student stories, so that they can understand the importance of assistive technology and how it can benefit all students</h3>
+<h3 class="accordion">Staff requirements</h3>
 <div class="accordion__panel">
+
+To require all staff to look at the Access and Assistance for All webpages and read student stories, so that they can understand the importance of assistive technology and how it can benefit all students
   
 Participants in our campaign have shared stories of their experiences with using assistive technology, which provides brilliant examples of how it can benefit students and give a wider range of people equal access to education, and help level the playing field. We would advise staff members to read these, to understand the practical aspects of assistive technology.
 
