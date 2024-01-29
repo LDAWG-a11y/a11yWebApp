@@ -141,7 +141,6 @@ collections:
         file: "/src/AAA/supporters.md"
         media_folder: "/src/AAA/aaaAssets"
         public_folder: "/aaa/aaaAssets"
-        buttons: ["logoLink"]
         fields:
           - { label: "Page content", name: "body", widget: "markdown", hint: "Only use the Logo Link option to add a supporter" }
   - name: "aaaStories"
