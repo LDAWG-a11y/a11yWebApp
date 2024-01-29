@@ -231,7 +231,7 @@
         widget: 'string'
       }
     ],
-    pattern: /<a href="([^"]*)"\s+class="supporters__logo">[\r\n]*\<img\s+src="([^"]*)" alt="([^"]*)">[\r\n]*<\/a>/m,
+    pattern: /<a href="([^"]*)"\s+class="supporters__link">[\r\n]*\<img\s+src="([^"]*)" alt="([^"]*)">[\r\n]*<\/a>/,
     fromBlock: function(match) {
       return {
         url: match[1],
