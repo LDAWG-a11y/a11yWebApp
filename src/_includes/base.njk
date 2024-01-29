@@ -12,9 +12,12 @@
     {% endif %}
   {% endif %}
   <main class="main {%- if usesCMS %} cms{%- endif %}">
+    {%- if aaaSupporters %}
+      <div class="supporters__wrapper">
+    {% endif %}
     {{ content | safe }}
-    {%- if aaaHome %}
-      {% include "_aaaSupporters.njk" %}
+    {%- if aaaSupporters %}
+      </div>
     {% endif %}
   </main>
   {% include "_footer.njk" %}
