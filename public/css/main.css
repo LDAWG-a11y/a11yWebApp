@@ -3529,9 +3529,9 @@ ul:not([class]) > li::marker {
   align-items: center;
   gap: 1.5rem;
 }
-.supporters__wrapper img,
-.supporters__wrapper picture {
+.supporters__wrapper img {
   margin-bottom: 0;
+  height: 10rem;
   max-height: 10rem;
   width: auto;
 }

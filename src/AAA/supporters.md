@@ -8,6 +8,7 @@ summary: Become one of Access and Assistance for All's supporters by signing up
   enabling everybody to reach their potential
 aaa: true
 usesCMS: true
+aaaSupporters: true
 ---
 
 

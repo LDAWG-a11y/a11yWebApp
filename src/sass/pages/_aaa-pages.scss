@@ -5,9 +5,9 @@
   align-items: center;
   gap: $space-lg;
 
-  img,
-  picture {
+  img {
     margin-bottom: 0;
+    height: 10rem;
     max-height: 10rem;
     width: auto;
   }
