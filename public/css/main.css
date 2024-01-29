@@ -3536,7 +3536,7 @@ ul:not([class]) > li::marker {
   width: auto;
 }
 
-.supporters__link:hover, .supporters__link:focus-visible {
+.supporters__link:hover img, .supporters__link:focus img {
   outline: 3px solid var(--color-interactive);
   outline-offset: 2px;
 }

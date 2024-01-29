@@ -15,8 +15,10 @@
 
 .supporters__link {
   &:hover,
-  &:focus-visible {
-    outline: 3px solid var(--color-interactive);
-    outline-offset: 2px;
+  &:focus {
+    img {
+      outline: 3px solid var(--color-interactive);
+      outline-offset: 2px;
+    }
   }
 }
