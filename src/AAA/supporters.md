@@ -3,15 +3,20 @@ date: Last Modified
 permalink: aaa/supporters/
 layout: base.njk
 title: AAA - Our supporters
-summary: Become one of Access and Assistance for All's supporters by signing up to our pledges to incorporate inclusive learning for all your learners, enabling everybody to reach their potential
+summary: Become one of Access and Assistance for All's supporters by signing up
+  to our pledges to incorporate inclusive learning for all your learners,
+  enabling everybody to reach their potential
 aaa: true
 usesCMS: true
 ---
 
-### In return for signing up to the pledges you will:
 
-1. Take a positive and meaningful step to provide a more inclusive learning environment for all your students with better outcomes for individuals and your college as a whole
-2. Be listed as a supporter, below and have the option to share any good practice that you are already doing
-3. Show your commitment to improving accessibility through the use of our supporters’ logo
+<a href="https://www.byc.org.uk/" class="supporters__link"><img src="/aaa/aaaAssets/byc.png" alt="British Youth Council"></a>
 
-If you are interested about learning more on how to do this or register your interest please contact us at [accessforallcampaign@gmail.com](mailto:accessforallcampaign@gmail.com).
+<a href="https://kmpf.org/" class="supporters__link"><img src="/aaa/aaaAssets/kmpf.png" alt="Kent and Medway Progression Federation"></a>
+
+<a href="https://www.hee.nhs.uk/our-work/choices-college-supported-internships" class="supporters__link"><img src="/aaa/aaaAssets/choices_logo.png" alt="Choices College"></a>
+
+<a href="https://www.pocklington.org.uk/" class="supporters__link"><img src="/aaa/aaaAssets/TPT_logo.png" alt="Thomas Pocklington Trust"></a>
+
+<a href="https://www.ucl.ac.uk/" class="supporters__link"><img src="/aaa/aaaAssets/UCL_logo.png" alt="The University of Central London"></a>
