@@ -203,3 +203,33 @@ So if you have agreed to review an unpublished guide or you want to hold off on 
 ## Editing your Information
 
 You may want to edit your information, from time to time, new job, new skill edit, add or remove socials, well you can do all of that from the Authors page.
+
+## Access and Assistance for All Guidance
+
+After being invited via email you may edit the AAA content, following the guidance above. There are a few small differences for your content which should be understood prior to creating new content.
+
+By clicking on the "Contents" tab within the CMS, there are two options for AAA at within the "Collactions" panel, the options are "AAA Pages" and "AAA Stories".
+
+### AAA Pages
+
+This option contains the core pages "AAA Home" your Home page, "AAA Roles" the role-specific guidance you provide, "AAA Assistive Tech" the information you provide on assistive technologies and "AAA Supporters" a page where a linked logo of each of your supporters can be edited.
+
+![Screenshot showing the CMS interface, the two AAA options for AAA pages are highlighted, the AAA Pages option is set and shows the collection of pages in the main options tab.](https://github.com/LDAWG-a11y/a11yWebApp/assets/112703337/8e1dfc3d-4419-4741-99c5-4906f647836c)
+
+Guidance for adding a supporter must be followed, as adding any content other than images will cause the layout to break. Only images should be added to this page and each image requires a URL to the supporter's Home page (or other appropriate page).
+
+To add a Supporter please follow these steps:
+
+1. Click an appropriate place in the CMS editor (Any white space between/before or after existing supporters' blocks), to position the cursor at that point
+2. Click the button in the editor that is visually identified as a plus icon with a small down-facing triangle (the accessible name of this button is "Add Component"
+3. Select "logo link" from the Menu that opens as a result of clicking the aforementioned button
+4. You will be presented with a block at the point where your cursor was positioned (Component block) which contains three fields
+5. All three fields are required, the "Site URL" Field should be a link to the appropriate page of the sponsor, the "Alt Text" Should simply be the name of the site (as this is a functional image), as an example the Thomas Pocklington Trust logo simply has the Alt Text "Thomas Pocklington Trust", which is all that is required (if you need to link to a specific page on a supporter's site, you can of course append that text to something more specific if you feel it is helpful
+6. The Image filed links to the AAA media gallery where only AAA assets are present, you can upload new images or select existing images. We do require that you ensure images are a reasonable size before uploading, the maximum rendered size of an image is about 200px, so please do resize any images to that height before uploading, as high-resolution images will cause performance issues, there are multiple options to a resize an image, some operating systems contain built-in software to do this, Photoshop and similar and there are multiple online tools that are free to use (Search "Image resizer", logos should be uploaded in .png format
+
+![Screenshot of the CMS editor, the add component button has been activated and siplays a flyout menu, the Logo link option is highlighted](https://github.com/LDAWG-a11y/a11yWebApp/assets/112703337/209acfae-5725-4c3c-b71c-4f343e0d2d73)
+
+To upload an image click "Choose an image" from the Image field, a dialog will appear which displays the assets stored and several options. To use an already stored image, simply click the image and then click the "Choose selected" button.
+
+To add a new image, click the "Upload" button and upload a file from your device in the usual way. This option should be auto selected once it has uploaded, then simply click the "Choose selection" button to add that image to the block.
+
