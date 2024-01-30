@@ -55,7 +55,14 @@ There is an Add Tags button, which when clicked will expand the panel and reveal
 
 ### Include Files
 
-Should you wish to include a document on your Guide, it is necessary to upload it using this option, so you would click Choose Files and then you would likely want to choose Upload, which would upload from your device. Please ensure your file has a unique name, as this will cause an issue if it's non-unique, fortunately, all the documents are saved in the same folder and they are presented to you in the dialog for files. Uploading a file does nothing more than store it in a folder, we need to add the file link to our content by adding pasting the following 1. `<a href="docs/[..THE FILENAME AND EXTENSION..]" download>` this could definitely be improved, but ensure the HTML string for the `<a>` tag is identical to the example provided, delete the square barckets with all of their contents and then add your filename between the forward slsh after "docs" and the next double quote and ensure your filename along with its extension are identical to the one in the system.
+Should you wish to include a document on your Guide, it is necessary to upload it using this option, so you would click Choose Files and then you would likely want to choose Upload, which would upload from your device. Please ensure your file has a unique name, as this will cause an issue if it's non-unique, fortunately, all the documents are saved in the same folder and they are presented to you in the dialog for files. Uploading a file does nothing more than store it in the documents folder, so there is one more step to take. Once the file you wish to add is within the folder, simply select that file and then click the "Copy Path" button (this would have previously been disabled/greyed out). Now the file path is saved to your clipboard, so highlight the text you wish to act as the link, select the "link" option in the editor's toolbar (visually, this is two segments of a chain). A dialog then opens with a single input, you just need to paste the contents of your clipboard into there, in your usual way (some common methods are below:
+- CTRL + V (Windows)
+- CMD + V (MacOS)
+- Right click and select "Paste" (Windows and MacOS)
+- Long press and select "Paste" (Android and Apple touch devices)
+- Or however you would usually paste copied content
+
+Finally, click "OK" in the dialog and your link to the file is complete
 
 ## Creating page content
 
