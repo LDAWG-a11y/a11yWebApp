@@ -7,9 +7,9 @@ toc: false
 tags:
 isAAAStory: true
 isGuide: true
-img: ./src/AAA/aaaAssets/niamh.png
+img: ./src/guideImg/aaaAssets/niamh.png
 ---
-![Niamh](src/AAA/aaaAssets/niamh.png)
+![Niamh](src/guideImg/aaaAssets/niamh.png)
 
 ## Could you tell us a little bit about your background?
 

@@ -30,8 +30,8 @@ collections:
     format: json
     identifier_field: name
     folder: "/src/_data/contributors"
-    media_folder: "/src/profileImg"
-    public_folder: "/profileImg"
+    media_folder: "/src/guideImg/profileImg"
+    public_folder: "/guideImg/profileImg"
     fields:
       - { label: "Username", name: "key", widget: "string", hint: "This is not displayed anywhere but the URL, it needs to be unique and can only contain alphanumeric characters, e.g: jBloggs1" }
       - { label: "Name", name: name, widget: string, hint: "Your full name"}
@@ -49,8 +49,8 @@ collections:
     folder: "/src/faqs"
     create: true
     delete: true
-    media_folder: "/src/faqImg"
-    public_folder: "/faqImg"
+    media_folder: "/src/guideImg/faqImg"
+    public_folder: "/guideImg/faqImg"
     fields:
       - { label: "Question", name: "title", widget: "string", hint: "The title is displayed in an accordion button"}
       - { label: "Answer", name: "body", widget: "markdown" }
@@ -118,35 +118,35 @@ collections:
       - label: "AAA Home"
         name: "aaaHome"
         file: "/src/AAA/index.md"
-        media_folder: "/src/AAA/aaaAssets"
+        media_folder: "/src/guideImg/aaaAssets"
         fields:
           - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
           - {label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
       - label: "AAA Roles"
         name: "roles"
         file: "/src/AAA/roles.md"
-        media_folder: "/src/AAA/aaaAssets"
+        media_folder: "/src/guideImg/aaaAssets"
         fields:
           - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
           - {label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
       - label: "AAA Assistive Tech"
         name: "aaa-at"
         file: "/src/AAA/aaa-at.md"
-        media_folder: "/src/AAA/aaaAssets"
+        media_folder: "/src/guideImg/aaaAssets"
         fields:
           - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
           - {label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
       - name: "aaaSupporters"
         label: "AAA Supporters"
         file: "/src/AAA/supporters.md"
-        media_folder: "/src/AAA/aaaAssets"
-        public_folder: "/aaa/aaaAssets"
+        media_folder: "/src/guideImg/aaaAssets"
+        public_folder: "/src/guideImg/aaaAssets"
         fields:
           - { label: "Page content", name: "body", widget: "markdown", hint: "Only use the Logo Link option to add a supporter" }
   - name: "aaaStories"
     label: "AAA Stories"
     folder: "/src/AAA/aaaStories"
-    media_folder: "/src/AAA/aaaAssets"
+    media_folder: "/src/guideImg/aaaAssets"
     slug: "{{slug}}"
     create: true
     delete: true
