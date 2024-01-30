@@ -166,13 +166,6 @@ module.exports = eleventyConfig => {
     Object.values(author.items[0].data.contributors)
   );
 
-  // eleventyConfig.addCollection("latest", collection => {
-  //   return collection
-  //     .getFilteredByTag("guides")
-  //     .reverse()
-  //     .slice(0, 4);
-  // });
-
   eleventyConfig.addFilter('getAuthor', (authors, label) => {
     let author = authors.filter(a => a.key === label)[0];
     return author;

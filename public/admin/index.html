@@ -19,6 +19,15 @@
   <script>
     CMS.registerPreviewStyle("https://www.makethingsaccessible.com/admin/admin.css");
   </script>
+
+  <script>
+    document.addEventListener('copy', (evt) => {
+      const selection = document.getSelection();
+      console.log( selection );
+      evt.clipboardData.setData("text/plain", selection.toString())
+    })
+  </script>
+
   <script>
     CMS.registerEditorComponent({
       id: 'tipComponent',
