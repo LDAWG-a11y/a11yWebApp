@@ -235,5 +235,5 @@ To add a new image, click the "Upload" button and upload a file from your device
 
 *Note* Do not worry that the layout of the images is different in the CMS than on the website, this is purely to show they are present, they will display according to viewport size/pixel density/zoom level, using CSS flexbox on the live site.
 
-All information necessary for images is available further up the page [or you can click this link, for images guidance](#images).
+All information necessary for images is available further up the page [or you can click this link, for images guidance](#image).
 
