@@ -22,10 +22,12 @@
 
   <script>
     document.addEventListener('copy', (evt) => {
-      const selection = document.getSelection();
-      console.log( selection );
+      let selection = window.getSelection().toString();
       evt.clipboardData.setData("text/plain", selection.toString())
-      console.log( clipboardData );
+      console.log( selection, 'initial' );
+      selection.replace('src/', '');
+      console.log( selection, 'replaced' );
+      console.log( evt.clipboardData, 'clipboardData' );
     })
   </script>
 
