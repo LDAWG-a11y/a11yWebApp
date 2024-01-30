@@ -2,13 +2,13 @@
 title: Coleen
 summary: Coleen is a participant in the BYC's Access and Assistance for All
   campaign. This is her student story.
-img: ./src/AAA/aaaAssets/coleen.png
+img: ./src/guideImg/aaaAssets/coleen.png
 date: 2023-05-17
 toc: false
 isAAAStory: true
 isGuide: true
 ---
-![Coleen](src/AAA/aaaAssets/coleen.png)
+![Coleen](src/guideImg/aaaAssets/coleen.png)
 
 ## Could you tell us a little bit about your background?
 

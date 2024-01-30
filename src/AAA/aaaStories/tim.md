@@ -8,9 +8,9 @@ toc: true
 tags:
 isAAAStory: true
 isGuide: true
-img: ./src/AAA/aaaAssets/tim.png
+img: ./src/guideImg/aaaAssets/tim.png
 ---
-![Tim](src/AAA/aaaAssets/tim.png)
+![Tim](src/guideImg/aaaAssets/tim.png)
 
 ## Could you tell us a little bit about your background?
 
