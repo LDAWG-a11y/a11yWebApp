@@ -23,9 +23,7 @@
   <script>
     document.addEventListener('copy', (evt) => {
       let selection = window.getSelection().toString();
-      selection = selection.replace('src/', '');
-      evt.clipboardData.setData("text/plain", selection);
-      console.log( selection, 'replaced' );
+      evt.clipboardData.setData("text/plain", selection.replace('src/', ''));
     })
   </script>
 
