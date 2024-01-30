@@ -233,3 +233,7 @@ To upload an image click "Choose an image" from the Image field, a dialog will a
 
 To add a new image, click the "Upload" button and upload a file from your device in the usual way. This option should be auto selected once it has uploaded, then simply click the "Choose selection" button to add that image to the block.
 
+*Note* Do not worry that the layout of the images is different in the CMS than on the website, this is purely to show they are present, they will display according to viewport size/pixel density/zoom level, using CSS flexbox on the live site.
+
+All information necessary for images is available further up the page [or you can click this link, for images guidance](#images).
+
