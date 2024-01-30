@@ -489,3 +489,5 @@ The above really is just an example, please do this server side or on page gener
 ## Wrapping up
 
 We covered quite a bit there, we discussed how to create 2 different basic disclosure widgets, using the magic of progressive enhancement, we added all the ARIA we needed via JS and for those users that are viewing without JS, they still get all the information on our page, just with less interactivity, which may well be exactly what they want.
+
+[Test](src/docs/draft-accessibility-statement-2022.docx)
