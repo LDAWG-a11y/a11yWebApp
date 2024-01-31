@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js {%- if aaa %} aaa-content{% endif %}">
 <head>
-  <title>{%- if not home %} {{ title }}{% if isAAAStory %}, AAA Student Story {% endif %} | {{ site.siteName }} {%- else %} {{ site.siteName }} | {{ title }} {%- endif %}</title>
+  <title>{%- if not home %} {{ title }} {%- if subTitle %} {{ subTitle }}{% endif %}{% if isAAAStory %}, AAA Student Story {% endif %} | {{ site.siteName }} {%- else %} {{ title }} | {{ site.siteName }} {%- endif %}</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#702A8C">

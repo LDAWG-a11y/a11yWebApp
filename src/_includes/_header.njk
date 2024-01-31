@@ -54,6 +54,9 @@
       {%- else %}
         {{ site.siteName }}
       {%- endif %}
+      {%- if subTitle %}
+      <span class="header__welcome-text--sub">{{ subTitle }}</span>
+      {% endif %}
     </h1>
   {%- else %}
     {% include "_aaaSubNav.njk" %}

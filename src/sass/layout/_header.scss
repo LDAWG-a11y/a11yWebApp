@@ -538,6 +538,11 @@ button[class^="header__themes-btn"] {
   }
 }
 
+.header__welcome-text--sub {
+  display: block;
+  font-size: 75%;
+}
+
 .header__aaa-logo {
   &:not(.header__welcome-text &) {
     display: flex;

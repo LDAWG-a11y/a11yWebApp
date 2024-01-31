@@ -1,7 +1,6 @@
 ---
 date: Last Modified
 layout: base.njk
-title: All Guides
 templateEngineOverride: njk
 pagination:
   size: 12
@@ -9,7 +8,8 @@ pagination:
   alias: helpGuides
   reverse: true
 eleventyComputed:
-  title: All guides {%- if page.url != pagination.href.first %} page {{ pagination.pageNumber + 1 }} of {{ pagination.pageLinks.length }} {%- endif%}
+  title: All guides
+  subTitle: page {{ pagination.pageNumber + 1 }} of {{ pagination.pageLinks.length }}
   summary: "View all useful digital accessibility guides from our website by all of our contributors, covering inclusive design, web development, documentation & social media"
 ---
 
