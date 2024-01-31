@@ -1002,6 +1002,11 @@ ul:not([class]) > li::marker {
   width: 100%;
 }
 
+.header__welcome-text--sub {
+  display: block;
+  font-size: 75%;
+}
+
 .header__aaa-logo:not(.header__welcome-text .header__aaa-logo) {
   display: flex;
   justify-content: center;
