@@ -244,3 +244,11 @@ To add a new image, click the "Upload" button and upload a file from your device
 
 All information necessary for images is available further up the page [or you can click this link, for images guidance](#image).
 
+Should you need to add files to any of your pages, the process is exactly the same as [The Include Files guidance, documented earlier](#include-files), although you have your own AAA document folder. A quick recap would be like so:
+
+- Adding a file is optional, if you wish to add one, click the "Choose files" option, from the "Include files" field
+- If the file you wish to link to is not present in the folder, then you will need to upload it, by clicking the "Upload" button and then following the usual steps for file upload that is set by your operating system
+- Once the file is present in the folder, simply select it (Unfortunately, his does not appear to work with keyboard, at present, we will raise an issue for that), once selected, click the "Copy path" button (this button was previously greyed out/disabled and was called "Copy")
+- Close the file upload dialog
+- Highlight the text you wish to add the file link to, example 'Read our charter', then you can either click the link icon (accessible name 'Link') in the CMS's toolbar or use a keyboard shortcut such as CTRL + K or CMD + K (or long press on mobile) and then paste the contents of your clipboard into the field and press Enter or click the "OK" button and your file is now linked to the text you selected
+
