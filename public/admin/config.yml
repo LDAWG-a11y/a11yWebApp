@@ -121,6 +121,7 @@ collections:
         media_folder: "/src/guideImg/aaaAssets"
         fields:
           - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
+          - { label: "Include files", name: "file", widget: "file", required: false, media_folder: "/src/docs/aaaDocs", public_folder: "/docs/aaaDocs", media_library: {config: {multiple: true}} }
           - {label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
       - label: "AAA Roles"
         name: "roles"
@@ -128,6 +129,7 @@ collections:
         media_folder: "/src/guideImg/aaaAssets"
         fields:
           - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
+          - { label: "Include files", name: "file", widget: "file", required: false, media_folder: "/src/docs/aaaDocs", public_folder: "/docs/aaaDocs", media_library: {config: {multiple: true}} }
           - {label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
       - label: "AAA Assistive Tech"
         name: "aaa-at"
@@ -135,6 +137,7 @@ collections:
         media_folder: "/src/guideImg/aaaAssets"
         fields:
           - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
+          - { label: "Include files", name: "file", widget: "file", required: false, media_folder: "/src/docs/aaaDocs", public_folder: "/docs/aaaDocs", media_library: {config: {multiple: true}} }
           - {label: "Page content", name: body, widget: markdown, hint: "The page already has a H1, so if starting with a heading it needs to be a H2" }
       - name: "aaaSupporters"
         label: "AAA Supporters"
@@ -156,6 +159,6 @@ collections:
       - { label: "Card image", name: "img", widget: "image", hint: "Landscape shape, omitting this will display AAA logo", required: false }
       - { label: "Date", name: "date", widget: "datetime", format: 'YYYY-MM-DD', hint: "Change this only if you update your guide"}
       - { label: "Table of Contents (TOC)", name: "toc", widget: "boolean", default: false, hint: "Only add a TOC if there 4 or more heading 2s" }
-      - { label: "Include files", name: "file", widget: "file", required: false, media_folder: "/src/docs", public_folder: "/docs", media_library: {config: {multiple: true}} }
+      - { label: "Include files", name: "file", widget: "file", required: false, media_folder: "/src/docs/aaaDocs", public_folder: "/docs/aaaDocs", media_library: {config: {multiple: true}} }
       - { label: "Page content", name: "body", widget: "markdown" }
       - { label: "isGuide", name: "isGuide", default: true, widget: "hidden" }
