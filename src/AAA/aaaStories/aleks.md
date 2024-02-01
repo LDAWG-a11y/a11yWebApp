@@ -4,7 +4,7 @@ summary: Aleks is a participant in the BYC's Access and Assistance for All
   campaign. This is his student story.
 img: /src/guideImg/aaaAssets/aleks.jpg
 date: 2024-02-01
-toc: false
+toc: true
 isGuide: true
 ---
 ## Could you tell us a little bit about your background?
