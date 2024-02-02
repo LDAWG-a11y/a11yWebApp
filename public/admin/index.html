@@ -30,7 +30,6 @@
       console.log( btnLabels.includes(evt.target.innerText) );
       if (btnLabels.includes(evt.target.innerText)) {
         clickedCopy = true;
-        console.log( 'cc', clickedCopy );
         selection = window.getSelection().toString();
         newSelection = selection.replace('src', '');
       } else {
@@ -43,10 +42,11 @@
     document.addEventListener('copy', (evt) => {
       setTimeout(() => {
         if (clickedCopy === true) {
-        console.log( 'in' );
-        evt.clipboardData.setData("text/plain", newSelection);
-        evt.preventDefault();
-      }
+          console.log( 'in' );
+          console.log( newSelection );
+          evt.clipboardData.setData("text/plain", newSelection);
+          evt.preventDefault();
+        }
       }, 50);
     })
   </script>
