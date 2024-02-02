@@ -24,11 +24,10 @@
 
     document.addEventListener('copy', (evt) => {
       if (window.getSelection().toString().includes('src/docs/aaaDocs')) {
-        console.log( 'in' );
-        const selection = window.getSelection().toString();
-        const newSelection = selection.replace('src', '')
-        evt.clipboardData.setData("text/plain", newSelection);
-        evt.preventDefault();
+        // const selection = window.getSelection().toString();
+        // const newSelection = selection.replace('src', '')
+        // evt.clipboardData.setData("text/plain", newSelection);
+        // evt.preventDefault();
       }
     })
   </script>
