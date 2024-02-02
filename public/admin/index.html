@@ -25,8 +25,9 @@
 
     document.addEventListener('click', (evt) => {
       if (btnLabels.includes(evt.target.innerText) && selection.length) {
-        selection = window.getSelection().toString();
-        newSelection = selection.replace('src', '');
+        console.log( evt );
+        let selection = window.getSelection().toString();
+        let newSelection = selection.replace('src', '');
         evt.clipboardData.setData("text/plain", newSelection);
         evt.preventDefault();
       } else {
