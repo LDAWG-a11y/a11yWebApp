@@ -21,33 +21,18 @@
   </script>
 
   <script>
-    let clickedCopy = false;
     const btnLabels = ['Copy', 'Copied', 'Copy Path'];
-    let selection = '';
-    let newSelection = '';
 
     document.addEventListener('click', (evt) => {
-      console.log( btnLabels.includes(evt.target.innerText) );
-      if (btnLabels.includes(evt.target.innerText)) {
-        clickedCopy = true;
+      if (btnLabels.includes(evt.target.innerText) && selection.length) {
         selection = window.getSelection().toString();
         newSelection = selection.replace('src', '');
+        evt.clipboardData.setData("text/plain", newSelection);
+        evt.preventDefault();
       } else {
-        clickedCopy = false;
         selection = '';
         newSelection = '';
       }
-    })
-
-    document.addEventListener('copy', (evt) => {
-      setTimeout(() => {
-        if (clickedCopy === true) {
-          console.log( 'in' );
-          console.log( newSelection );
-          evt.clipboardData.setData("text/plain", newSelection);
-          evt.preventDefault();
-        }
-      }, 50);
     })
   </script>
 
