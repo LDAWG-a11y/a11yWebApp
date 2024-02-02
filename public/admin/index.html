@@ -21,12 +21,19 @@
   </script>
 
   <script>
+    let clickedCopy = false;
+
     document.addEventListener('copy', (evt) => {
-      console.log( evt );
-      const selection = window.getSelection().toString();
-      const newSelection = selection.replace('src', '')
-      evt.clipboardData.setData("text/plain", newSelection);
-      evt.preventDefault();
+      if (clickedCopy === true) {
+        const selection = window.getSelection().toString();
+        const newSelection = selection.replace('src', '')
+        evt.clipboardData.setData("text/plain", newSelection);
+        evt.preventDefault();
+      }
+    })
+
+    document.addEventListener('click', (evt) => {
+      evt.target.innerText === 'Copy Path' ? clickedCopy = true : clickedCopy = false;
     })
   </script>
 
