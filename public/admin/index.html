@@ -23,6 +23,12 @@
   <script>
     let clickedCopy = false;
 
+    document.addEventListener('click', (evt) => {
+      console.log( 'hit' );
+      console.log( evt.target.innerText );
+      evt.target.innerText === 'Copy Path' ? clickedCopy = true : clickedCopy = false;
+    })
+
     document.addEventListener('copy', (evt) => {
       if (clickedCopy === true) {
         const selection = window.getSelection().toString();
@@ -30,12 +36,6 @@
         evt.clipboardData.setData("text/plain", newSelection);
         evt.preventDefault();
       }
-    })
-
-    document.addEventListener('click', (evt) => {
-      console.log( 'hit' );
-      console.log( evt.target.innerText );
-      evt.target.innerText === 'Copy Path' ? clickedCopy = true : clickedCopy = false;
     })
   </script>
 
