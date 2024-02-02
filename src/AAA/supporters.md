@@ -16,6 +16,6 @@ usesCMS: true
 
 <a href="https://www.hee.nhs.uk/our-work/choices-college-supported-internships" class="supporters__link"><img src="/guideImg/aaaAssets/choices_logo.png" alt="Choices College"></a>
 
-
+<a href="https://www.ucl.ac.uk/" class="supporters__link"><img src="src/guideImg/aaaAssets/UCL_logo.png" alt="University of Central London"></a>
 
 <a href="https://www.barnsley.ac.uk/" class="supporters__link"><img src="src/guideImg/aaaAssets/bc-logo-lb-no-strap.jpg" alt="Barnsley College"></a>
