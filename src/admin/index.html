@@ -24,6 +24,7 @@
     const btnLabels = ['Copy', 'Copied', 'Copy Path'];
 
     document.addEventListener('click', (evt) => {
+      console.log( evt );
       if (btnLabels.includes(evt.target.innerText) && selection.length) {
         console.log( evt );
         let selection = window.getSelection().toString();
