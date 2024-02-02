@@ -25,11 +25,7 @@
     const btnLabels = ['Copy', 'Copied', 'Copy Path']
 
     document.addEventListener('click', (evt) => {
-      evt.target.innerText === 'Copied' ? clickedCopy = true : clickedCopy = false;
-
-      if (btnLabels.includes(evt.target.innerText)) {
-        console.log( 'hit' );
-      }
+      btnLabels.includes(evt.target.innerText) === 'Copied' ? clickedCopy = true : clickedCopy = false;
     })
 
     document.addEventListener('copy', (evt) => {
