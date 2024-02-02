@@ -24,9 +24,7 @@
     let clickedCopy = false;
 
     document.addEventListener('click', (evt) => {
-      console.log( 'hit' );
-      console.log( evt.target.innerText );
-      evt.target.innerText === 'Copy Path' ? clickedCopy = true : clickedCopy = false;
+      evt.target.innerText === 'Copied' ? clickedCopy = true : clickedCopy = false;
     })
 
     document.addEventListener('copy', (evt) => {
