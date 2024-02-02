@@ -119,6 +119,7 @@ collections:
         name: "aaaHome"
         file: "/src/AAA/index.md"
         media_folder: "/src/guideImg/aaaAssets"
+        public_folder: "./src/guideImg/aaaAssets"
         fields:
           - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
           - { label: "Include files", name: "file", widget: "file", required: false, media_folder: "/src/docs/aaaDocs", public_folder: "/docs/aaaDocs", media_library: {config: {multiple: true}} }
@@ -127,6 +128,7 @@ collections:
         name: "roles"
         file: "/src/AAA/roles.md"
         media_folder: "/src/guideImg/aaaAssets"
+        public_folder: "./src/guideImg/aaaAssets"
         fields:
           - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
           - { label: "Include files", name: "file", widget: "file", required: false, media_folder: "/src/docs/aaaDocs", public_folder: "/docs/aaaDocs", media_library: {config: {multiple: true}} }
@@ -135,6 +137,7 @@ collections:
         name: "aaa-at"
         file: "/src/AAA/aaa-at.md"
         media_folder: "/src/guideImg/aaaAssets"
+        public_folder: "./src/guideImg/aaaAssets"
         fields:
           - { label: "Date", name: "date", format: 'YYYY-MM-DD', widget: "datetime", hint: "This should be changed if the page is edited" }
           - { label: "Include files", name: "file", widget: "file", required: false, media_folder: "/src/docs/aaaDocs", public_folder: "/docs/aaaDocs", media_library: {config: {multiple: true}} }
@@ -143,7 +146,7 @@ collections:
         label: "AAA Supporters"
         file: "/src/AAA/supporters.md"
         media_folder: "/src/guideImg/aaaAssets"
-        public_folder: "/src/guideImg/aaaAssets"
+        public_folder: "./src/guideImg/aaaAssets"
         fields:
           - { label: "Page content", name: "body", widget: "markdown", hint: "Only use the Logo Link option to add a supporter" }
   - name: "aaaStories"
