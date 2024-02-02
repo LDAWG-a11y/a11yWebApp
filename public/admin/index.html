@@ -41,11 +41,13 @@
     })
 
     document.addEventListener('copy', (evt) => {
-      if (clickedCopy === true) {
+      setTimeout(() => {
+        if (clickedCopy === true) {
         console.log( 'in' );
         evt.clipboardData.setData("text/plain", newSelection);
         evt.preventDefault();
       }
+      }, 50);
     })
   </script>
 
