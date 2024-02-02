@@ -149,7 +149,8 @@ collections:
   - name: "aaaStories"
     label: "AAA Stories"
     folder: "/src/AAA/aaaStories"
-    media_folder: "./src/guideImg/aaaAssets"
+    media_folder: "/src/guideImg/aaaAssets"
+    public_folder: "./src/guideImg/aaaAssets"
     slug: "{{slug}}"
     create: true
     delete: true
