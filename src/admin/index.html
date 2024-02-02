@@ -22,16 +22,16 @@
 
   <script>
     let clickedCopy = false;
-    const btnLabels = ['Copy', 'Copied', 'Copy Path']
+    const btnLabels = ['Copy', 'Copied', 'Copy Path'];
 
     document.addEventListener('click', (evt) => {
-      btnLabels.includes(evt.target.innerText) === 'Copied' ? clickedCopy = true : clickedCopy = false;
+      btnLabels.includes(evt.target.innerText) ? clickedCopy = true : clickedCopy = false;
     })
 
     document.addEventListener('copy', (evt) => {
       if (clickedCopy === true) {
-        const selection = window.getSelection().toString();
-        const newSelection = selection.replace('src', '')
+        let selection = window.getSelection().toString();
+        let newSelection = selection.replace('src', '')
         evt.clipboardData.setData("text/plain", newSelection);
         evt.preventDefault();
       }
