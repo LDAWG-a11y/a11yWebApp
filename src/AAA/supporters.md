@@ -19,3 +19,5 @@ usesCMS: true
 <a href="https://www.ucl.ac.uk/" class="supporters__link"><img src="/guideImg/aaaAssets/UCL_logo.png" alt="University of Central London"></a>
 
 <a href="https://www.barnsley.ac.uk/" class="supporters__link"><img src="/guideImg/aaaAssets/bc-logo-lb-no-strap.jpg" alt="Barnsley College"></a>
+
+<a href="www.maekthingsaccessible.com" class="supporters__link"><img src="../guideImg/aaaAssets/kmpf.png" alt="Ignore this, it is just a test"></a>
