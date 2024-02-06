@@ -18,4 +18,4 @@ usesCMS: true
 
 <a href="https://www.ucl.ac.uk/" class="supporters__link"><img src="/aaaAssets/UCL_logo.png" alt="University of Central London"></a>
 
-<a href="https://www.barnsley.ac.uk/" class="supporters__link"><img src="/aaaAssets/bc-logo-lb-no-strap.jpg" alt="Barnsley College"></a>
+<a href="https://www.barnsley.ac.uk/" class="supporters__link"><img src="/aaaAssets/bc-logo-lb-no-strap.png" alt="Barnsley College"></a>
