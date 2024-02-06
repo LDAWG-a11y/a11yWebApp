@@ -18,11 +18,10 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('src/img');
   eleventyConfig.addPassthroughCopy('src/guideImg');
   eleventyConfig.addPassthroughCopy('src/profileImg');
-  eleventyConfig.addPassthroughCopy('src/Img');
-  eleventyConfig.addPassthroughCopy('src/Img');
   eleventyConfig.addPassthroughCopy('src/faqImg');
   eleventyConfig.addPassthroughCopy('src/aaaAssets');
   eleventyConfig.addPassthroughCopy('src/docs');
+  eleventyConfig.addPassthroughCopy('src/aaaDocs');
   eleventyConfig.addPassthroughCopy('src/svg');
   eleventyConfig.addPassthroughCopy('src/fonts');
   eleventyConfig.addPassthroughCopy('src/admin');
@@ -52,8 +51,8 @@ module.exports = eleventyConfig => {
     let options = {
       widths: [380],
       formats: ['webp', 'jpeg'],
-      urlPath: '/aaaAssets',
-      outputDir: './public/aaaAssets',
+      urlPath: '/aaaAssets/',
+      outputDir: './public/aaaAssets/',
       filenameFormat: function (id, src, width, format, options) {
         const extension = path.extname(src);
         const name = path.basename(src, extension);
@@ -68,7 +67,7 @@ module.exports = eleventyConfig => {
       loading: 'lazy',
       decoding: 'async',
     };
-    metadata = Image.statsSync(src, options);
+    let metadata = Image.statsSync(src, options);
     return Image.generateHTML(metadata, imageAttributes);
   }
   eleventyConfig.addShortcode('image', imageShortcode);
