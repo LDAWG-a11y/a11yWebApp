@@ -27,7 +27,7 @@
       if (evt.target.classList.contains('e288rjk0') && evt.target.innerText === 'Copied') {
         
           let clipboardData = evt.clipboardData || window.clipboardData;
-          if (clipboardData.includes('src')) {
+          if (clipboardData.getData('text').includes('src')) {
             console.log( 'yeyy' );
             console.log( clipboardData.getData('text') );
           }
