@@ -17,6 +17,11 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('src/js');
   eleventyConfig.addPassthroughCopy('src/img');
   eleventyConfig.addPassthroughCopy('src/guideImg');
+  eleventyConfig.addPassthroughCopy('src/profileImg');
+  eleventyConfig.addPassthroughCopy('src/Img');
+  eleventyConfig.addPassthroughCopy('src/Img');
+  eleventyConfig.addPassthroughCopy('src/faqImg');
+  eleventyConfig.addPassthroughCopy('src/aaaAssets');
   eleventyConfig.addPassthroughCopy('src/docs');
   eleventyConfig.addPassthroughCopy('src/svg');
   eleventyConfig.addPassthroughCopy('src/fonts');
@@ -47,8 +52,8 @@ module.exports = eleventyConfig => {
     let options = {
       widths: [380],
       formats: ['webp', 'jpeg'],
-      urlPath: '/guideImg/',
-      outputDir: './public/guideImg/',
+      urlPath: '/aaaAssets',
+      outputDir: './public/aaaAssets',
       filenameFormat: function (id, src, width, format, options) {
         const extension = path.extname(src);
         const name = path.basename(src, extension);
