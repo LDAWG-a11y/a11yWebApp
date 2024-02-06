@@ -20,4 +20,4 @@ usesCMS: true
 
 <a href="https://www.barnsley.ac.uk/" class="supporters__link"><img src="/aaaAssets/bc-logo-lb-no-strap.jpg" alt="Barnsley College"></a>
 
-<a href="www.maekthingsaccessible.com" class="supporters__link"><img src="/aaaAssets/kmpf.png" alt="Ignore this, it is just a test"></a>
+<a href="https://www.byc.org.uk" class="supporters__link"><img src="/aaaAssets/byc.png" alt="testing, please ignore"></a>
