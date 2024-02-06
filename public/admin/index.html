@@ -25,10 +25,12 @@
 
     document.addEventListener('click', (evt) => {
       if (evt.target.classList.contains('e288rjk0') && evt.target.innerText === 'Copied') {
-        console.log( 'yeyy' );
+        
           let clipboardData = evt.clipboardData || window.clipboardData;
-          console.log( clipboardData.toString() );
-          console.log( clipboardData );
+          if (clipboardData.includes('src')) {
+            console.log( 'yeyy' );
+            console.log( clipboardData.getData('text') );
+          }
       }
     })
 
