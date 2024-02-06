@@ -37,7 +37,7 @@
         }
 
         if (text) {
-          text = text.substring(3)
+          navigator.clipboard.writeText(text.substring(3));
         }
         
           // let clipboardData = evt.clipboardData || window.clipboardData;
