@@ -22,8 +22,11 @@
 
   <script>
 
+
     document.addEventListener('click', (evt) => {
-      console.log( evt.target );
+      if (evt.target.classList.contains('e288rjk0') && evt.target.innerText === 'Copied') {
+        console.log( 'yeyy' );
+      }
     })
 
     document.addEventListener('paste', (evt) => {
