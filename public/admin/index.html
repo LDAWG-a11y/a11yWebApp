@@ -22,17 +22,27 @@
 
   <script>
 
-    document.addEventListener('copy', (evt) => {
+    document.addEventListener('paste', (evt) => {
+      setTimeout(() => {
+        let clipboardData = evt.clipboardData || window.clipboardData;
+        var pastedText = clipboardData.getData("text/plain");
+        if (pastedText.includes('src/docs/aaaDocs')) {
+          console.log( 'does' );
+        } else {
+          console.log( 'not' );
+        }
+
+      }, 100);
       // if (window.getSelection().toString().includes('src/docs/aaaDocs')) {
       //   const selection = window.getSelection().toString();
       //   const newSelection = selection.replace('src', '')
-      console.log( evt.clipboardData );
+      
         // evt.clipboardData.setData("text/plain", newSelection);
         // evt.preventDefault();
       // }
       // selection = '';
       // newSelection = '';
-
+        
     })
   </script>
 
