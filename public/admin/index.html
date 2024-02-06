@@ -23,14 +23,28 @@
   <script>
 
 
-    document.addEventListener('click', (evt) => {
+    document.addEventListener('click', async () => {
       if (evt.target.classList.contains('e288rjk0') && evt.target.innerText === 'Copied') {
+
+        let text = '';
+
+        try {
+          text =  await navigator.clipboard.readText();
+        }
+
+        catch(err) {
+          text = text.substring(3)
+        }
+
+        if (text) {
+          text
+        }
         
-          let clipboardData = evt.clipboardData || window.clipboardData;
-          if (clipboardData.getData('text').includes('src')) {
-            console.log( 'yeyy' );
-            console.log( clipboardData.getData('text') );
-          }
+          // let clipboardData = evt.clipboardData || window.clipboardData;
+          // if (clipboardData.getData('text').includes('src')) {
+          //   console.log( 'yeyy' );
+          //   console.log( clipboardData.getData('text') );
+          // }
       }
     })
 
