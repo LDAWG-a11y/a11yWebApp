@@ -30,17 +30,17 @@
     })
 
     document.addEventListener('paste', (evt) => {
-      setTimeout(() => {
-        let clipboardData = evt.clipboardData || window.clipboardData;
-        let pastedText = clipboardData.getData("text");
-        if (pastedText.includes('src/docs') || pastedText.includes('src/aaaDocs')) {
+      // setTimeout(() => {
+      //   let clipboardData = evt.clipboardData || window.clipboardData;
+      //   let pastedText = clipboardData.getData("text");
+      //   if (pastedText.includes('src/docs') || pastedText.includes('src/aaaDocs')) {
           
-          console.log( 'does' );
-        } else {
-          console.log( 'not' );
-        }
-        evt.preventDefault();
-      }, 100);
+      //     console.log( 'does' );
+      //   } else {
+      //     console.log( 'not' );
+      //   }
+      //   evt.preventDefault();
+      // }, 100);
       // if (window.getSelection().toString().includes('src/docs/aaaDocs')) {
       //   const selection = window.getSelection().toString();
       //   const newSelection = selection.replace('src', '')
