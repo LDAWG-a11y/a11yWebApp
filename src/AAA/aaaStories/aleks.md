@@ -2,7 +2,7 @@
 title: Aleks
 summary: Aleks is a member of the BYC's Access and Assistance for All campaign.
   This is his student story.
-img: /aaaAssets/aleks.jpg
+img: ""
 date: 2024-02-01
 toc: true
 isGuide: true
