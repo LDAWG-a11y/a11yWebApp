@@ -1,11 +1,12 @@
 ---
 title: Aleks
-summary: Aleks is a member of the BYC's Access and Assistance for All campaign.
-  This is his student story.
+summary: Aleks is a member of the BYC's Access and Assistance for All campaign. This is his student story.
+img: ./src/aaaAssets/aleks.png
 date: 2024-02-01
 toc: true
 isGuide: true
 ---
+![Aleks](src/aaaAssets/aleks.png)
 ## Could you tell us a little bit about your background?
 Greetings, my name is Aleks, I am 23-years-old and I am studying marketing. Outside of studying, I volunteer in a couple of charities supporting causes related to the VI-community. 
 ## What barriers have you had to overcome?
