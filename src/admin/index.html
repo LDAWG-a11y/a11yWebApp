@@ -25,8 +25,8 @@
     document.addEventListener('paste', (evt) => {
       setTimeout(() => {
         let clipboardData = evt.clipboardData || window.clipboardData;
-        var pastedText = clipboardData.getData("text/plain");
-        if (pastedText.includes('src/docs/aaaDocs')) {
+        if (clipboardData.toString().includes('src/docs') || clipboardData.toString().includes('src/aaaDocs')) {
+          // let pastedText = clipboardData.getData("text/plain");
           console.log( 'does' );
         } else {
           console.log( 'not' );
