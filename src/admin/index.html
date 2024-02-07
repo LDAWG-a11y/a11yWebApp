@@ -29,11 +29,9 @@
 
         try {
           text =  await navigator.clipboard.readText();
-        }
+        } catch(err) {}
 
-        catch(err) {}
-
-        if (text) {
+        if (text && text.startsWith('src')) {
           navigator.clipboard.writeText(text.substring(3));
         }
       }
