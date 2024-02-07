@@ -1,7 +1,7 @@
 ---
 title: Test 4
 summary: Test
-img: /src/aaaAssets/test.jpg
+img: ""
 date: 2024-02-07
 toc: false
 isGuide: true
