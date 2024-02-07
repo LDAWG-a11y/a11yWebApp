@@ -7,7 +7,7 @@ date: 2024-02-01
 toc: true
 isGuide: true
 ---
-![Aleks](src/aaaAssets/aleks.png)
+![Aleks](src/aaaAssets/aleks.jpg)
 
 ## Could you tell us a little bit about your background?
 
