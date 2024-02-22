@@ -12,7 +12,7 @@
 @import 'base/typography';
 
 @import 'layout/main';
-@import 'layout/header';
+// @import 'layout/header';
 @import 'layout/footer';
 @import 'layout/latest-articles';
 
@@ -26,6 +26,8 @@
 @import 'components/socials';
 @import 'components/toc';
 @import 'components/card';
+@import 'components/settings-modal';
+@import 'components/search-filter';
 
 @import 'pages/guides';
 @import 'pages/guide';
@@ -37,3 +39,8 @@
 @import 'pages/aaa-pages';
 
 @import 'vendors/prism';
+
+
+// V2
+
+@import 'layout/v2-header';

@@ -1,0 +1,77 @@
+@use '../vendors/mq';
+
+.header__search-block {
+  margin-top: $space-bigger;
+
+  .has-js & {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include mq.mq($from:md) {
+    margin-top: $space-biggest;
+  }
+}
+
+.search__wrapper,
+.search__label {
+  width: 35rem;
+  max-width: 96%;
+}
+
+.search__wrapper {
+  position: relative;
+  
+
+  svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: $a-space-lg;
+    stroke: var(--v2--color-interactive);
+    fill: var(--v2--color-interactive);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border: 2px solid transparent;
+    border-radius: $radius-md;
+    z-index: -1;
+  }
+
+  &:focus-within {
+    &::before {
+      border-color: var(--v2--color-interactive);
+    }
+  }
+}
+
+.search__label {
+  display: block;
+  padding: $a-space-md 0;
+}
+
+.search__input {
+  border: 2px solid var(--v2--color-interactive);
+  border-radius: $radius-sm;
+  padding: 0 2.25rem 0 8px;
+  width: 100%;
+  height: 2.5rem;
+  // TODO font size global
+  font-size: 1.125rem;
+  background-color: var(--v2--color-bg);
+
+  @include mq.mq($from:md) {
+    height: 3rem;
+    // TODO font size global
+    font-size: 1.25rem;
+  }
+
+  @include mq.mq($from:lg) {
+    // TODO font size global
+    font-size: 1.5rem;
+  }
+}

@@ -60,7 +60,7 @@
     background-color: var(--color-bg);
     color: var(--color-inactive);
 
-    [data-theme="dark"] & {
+    [data-pref--theme="dark"] & {
       color: #959595;
     }
   
@@ -76,7 +76,7 @@
       background-color: var(--color-inactive);
       color: var(--color-bg);
 
-      [data-theme="dark"] & {
+      [data-pref--theme="dark"] & {
         background-color: #959595;
       }
     

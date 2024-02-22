@@ -1,26 +1,29 @@
+const settingsModal = document.querySelector('#settingsModal');
+const modalCloseBtn = settingsModal.querySelector('#modalCloseBtn');
+const prefsBtns = settingsModal.querySelectorAll('button[class^="settings__btn"]');
+const prefsModalBtn = document.querySelector('#prefsBtn');
 const accordions = document.querySelectorAll('.accordion');
-// const rootFont = parseInt(window.getComputedStyle(document.getElementsByTagName('html')[0]).getPropertyValue('font-size'));
+const navBtn = document.querySelector('#navBtn');
+const collabBtn = document.querySelector('#collabBtn');
+
+const toggleBool = (el, attr) => {
+  el.getAttribute(attr) === 'false' ? el.setAttribute(attr, 'true') : el.setAttribute(attr, 'false');
+}
 
 accordions.forEach((accordion, idx) => {
   const accTitle = accordion.innerText;
   const accPanel = accordion.nextElementSibling;
   accPanel.id = `accPanel-${idx + 1}`;
-  // accPanel.setAttribute('data-height', `${accPanel.scrollHeight / rootFont}`);
-  accordion.innerHTML = `<button class="accordion__btn" id="acc-${
-    idx + 1
-  }" aria-controls="accPanel-${
-    idx + 1
-  }" aria-expanded="false">${accTitle}</button>`;
+  accordion.innerHTML = `<button class="accordion__btn" id="acc-${idx + 1}"
+  aria-controls="accPanel-${idx + 1}"
+  aria-expanded="false">${accTitle}</button>`;
+
   let accBtn = accordion.firstElementChild;
   accordion.setAttribute('data-open', false);
 
   accBtn.addEventListener('click', () => {
-    // if (accBtn.getAttribute('aria-expanded') == 'false') {
-    //   // accPanel.setAttribute('style', `height: ${accPanel.getAttribute('data-height')}rem`);
-    // } else {
-    //   // accPanel.setAttribute('style', 'height: 0');
-    // }
-    togglebooleanAttributes(accBtn);
+    toggleBool(accBtn, 'aria-expanded');
+    toggleBool(accBtn.parentElement, 'data-open');
   });
 });
 
@@ -34,98 +37,105 @@ accordions.forEach(accordion => {
   }
 });
 
-// TODO calculation to animate is a little off and doesn't work correctly when font-sizing is changed
-
-// const resizeAccordions = () => {
-//   document.querySelectorAll('.accordion__panel').forEach(panel => {
-//     if (panel.previousElementSibling.getAttribute('data-open') == 'true') {
-//       panel.setAttribute('style', `height: ${panel.scrollHeight / rootFont}rem`);
-//     }
-//   })
-// }
-
-// window.addEventListener('resize', resizeAccordions);
-// window.onresize = resizeAccordions;
-
-const togglebooleanAttributes = btn => {
-  btn.getAttribute('aria-expanded') == 'false'
-    ? btn.setAttribute('aria-expanded', 'true')
-    : btn.setAttribute('aria-expanded', 'false');
-
-  if (btn.closest('.accordion')) {
-    const accordion = btn.closest('.accordion');
-    accordion.getAttribute('data-open') == 'false'
-      ? accordion.setAttribute('data-open', 'true')
-      : accordion.setAttribute('data-open', 'false');
-  }
-};
-
-document.querySelector('#themeTrigger').addEventListener('click', evt => {
-  togglebooleanAttributes(evt.target);
-});
-
-const themeBtnLight = document.querySelector('.header__themes-btn--light');
-const themeBtnSystem = document.querySelector('.header__themes-btn--system');
-const themeBtnDark = document.querySelector('.header__themes-btn--dark');
-
-document.querySelector('.header').addEventListener('keyup', e => {
-  if (
-    e.key == 'Escape' &&
-    document.querySelector('#themeTrigger').getAttribute('aria-expanded') ==
-      'true' &&
-    !document.querySelector('.main-nav__list').contains(document.activeElement)
-  ) {
-    if (
-      document.querySelector('#themePanel').contains(document.activeElement)
-    ) {
-      document.querySelector('#themeTrigger').focus();
+prefsBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.setAttribute('aria-pressed', 'true');
+    const pref = btn.getAttribute('data-pref').split(' ');
+    if (pref[1] !== 'reset') {
+      document.documentElement.setAttribute(`data-pref--${pref[0]}`, pref[1]);
+      window.localStorage.setItem(`data-pref--${pref[0]}`, pref[1]);
+    } else {
+      document.documentElement.removeAttribute(`data-pref--${pref[0]}`);
+      window.localStorage.removeItem(`data-pref--${pref[0]}`);
     }
-    document
-      .querySelector('#themeTrigger')
-      .setAttribute('aria-expanded', 'false');
-  }
-});
+    togglePrefsBtns(btn);
+    if (pref[0] === 'theme') toggleLightDarkLogo(); 
+  })
+})
 
-themeBtnLight.addEventListener('click', e => {
-  setTheme('light');
-});
-
-themeBtnSystem.addEventListener('click', e => {
-  e.preventDefault();
-  setTheme(false);
-});
-
-themeBtnDark.addEventListener('click', e => {
-  setTheme('dark');
-});
-
-const setTheme = theme => {
-  if (theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    window.localStorage.setItem('theme', theme);
-
-    if (theme == 'light') {
-      themeBtnLight.setAttribute('aria-pressed', true);
-      themeBtnDark.setAttribute('aria-pressed', false);
-    } else if (theme == 'dark') {
-      themeBtnLight.setAttribute('aria-pressed', false);
-      themeBtnDark.setAttribute('aria-pressed', true);
+const togglePrefsBtns = (btn) => {
+  btn.closest('.settings__btns-wrapper').querySelectorAll('button').forEach(prefBtn => {
+    if (prefBtn !== btn) {
+      prefBtn.setAttribute('aria-pressed', 'false');
     }
-    themeBtnSystem.setAttribute('aria-pressed', false);
-  } else {
-    document.documentElement.removeAttribute('data-theme');
-    window.localStorage.removeItem('theme');
-    themeBtnLight.setAttribute('aria-pressed', false);
-    themeBtnSystem.setAttribute('aria-pressed', true);
-    themeBtnDark.setAttribute('aria-pressed', false);
-  }
-};
+  })
+}
+
+const toggleLightDarkLogo = () => {
+  const themeAttr = document.documentElement.getAttribute('data-pref--theme');
+  let currTheme = themeAttr === 'light' ? 'light' : 'dark';
+  
+  document.querySelectorAll('[data-main-logo]').forEach(imgSource => {
+    if (themeAttr) {
+      if (imgSource.getAttribute('srcset').includes(currTheme)) {
+        imgSource.setAttribute('media', 'all');
+      } else {
+        imgSource.setAttribute('media', 'none');
+      }
+    } else {
+      let theme = imgSource.getAttribute('srcset').includes('light') ? 'light' : 'dark';
+      imgSource.setAttribute('media', `(prefers-color-scheme: ${theme})`);
+    }
+  })
+}
+toggleLightDarkLogo()
 
 window.onload = () => {
-  const themeAttr = document.documentElement.getAttribute('data-theme');
-  if (themeAttr) {
-    setTheme(themeAttr);
-  } else {
-    themeBtnSystem.setAttribute('aria-pressed', true);
+  const userStoredPrefs = {...localStorage};
+  for (const prop in userStoredPrefs) {
+    if (prop.startsWith('data-pref-') && prop !== 'data-pref--theme') {
+      document.documentElement.setAttribute(`${prop}`, userStoredPrefs[prop]);
+    }
   }
-};
+
+  for (const userPref of document.documentElement.attributes) {
+    if (userPref.name.includes('data-pref--')) {
+      let prefType = userPref.name.split('--');
+      settingsModal.querySelector(`.settings__btn--${prefType[1]}-${userPref.value}`).setAttribute('aria-pressed', 'true');
+    }
+  }
+
+  settingsModal.querySelectorAll('.settings__btns-wrapper').forEach(group => {
+    if (!group.querySelector('button[aria-pressed="true"]')) {
+      group.querySelector('[data-pref~="reset"').setAttribute('aria-pressed', 'true');
+    }
+  })
+}
+
+collabBtn.addEventListener('click', () => {
+  toggleBool(collabBtn, 'aria-expanded')
+})
+
+navBtn.addEventListener('click', () => {
+  toggleBool(navBtn, 'aria-expanded');
+  navBtn.removeAttribute('data-untouched');
+})
+
+document.addEventListener('keydown', (evt) => {
+  if (evt.key === 'Escape') {
+    if (collabBtn.getAttribute('aria-expanded') === 'true' && !settingsModal.hasAttribute('open')) {
+      toggleBool(collabBtn, 'aria-expanded');
+    }
+  }
+})
+
+prefsModalBtn.addEventListener('click', () => {
+  settingsModal.showModal();
+})
+
+modalCloseBtn.addEventListener('click', () => {
+  closeModal();
+})
+
+document.addEventListener('click', (evt) => {
+  if (evt.target === settingsModal) closeModal();
+})
+
+const closeModal = () => {
+  settingsModal.classList.add('animating');
+
+  setTimeout(() => {
+    settingsModal.classList.remove('animating');
+    settingsModal.close();
+  }, 750);
+}

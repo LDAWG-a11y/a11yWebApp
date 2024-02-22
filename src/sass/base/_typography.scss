@@ -15,6 +15,19 @@ html {
   font-size: 100%;
 }
 
+
+*,
+*::before,
+::after {
+  [data-pref--l-spacing="increased"] & {
+    letter-spacing: calc($default-paragraph-size * .12) !important;
+  }
+
+  [data-pref--w-spacing="increased"] & {
+    word-spacing:  calc($default-paragraph-size * .16) !important;
+  }
+}
+
 body {
   @include font-size;
   
@@ -37,16 +50,16 @@ h4,
 h5,
 h6 {
   line-height: $default-line-height;
-  letter-spacing: .0125rem;
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   overflow-wrap: break-word;
 }
 
 h1 {
-  position: relative;
-  font-size: 3rem;
+  margin-top: $space-bigger;
   padding-bottom: $space-biggest;
+  text-align: center;
+  font-size: 3rem;
   line-height: 1.25;
 
   .aaa-content & {
@@ -59,6 +72,10 @@ h1 {
 
   @include mq.mq($from:sm) {
     font-size: 3.5rem;
+  }
+
+  @include mq.mq($from:md) {
+    margin-top: $space-biggest;
   }
 
   @include mq.mq($from:lg) {
