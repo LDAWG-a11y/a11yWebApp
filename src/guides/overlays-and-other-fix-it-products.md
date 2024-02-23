@@ -23,7 +23,7 @@ Overlay products have had a controversial history over the last few years. Some 
 
 * Some of these products have been involved in lawsuits in the US because of differences between their advertised services and the results.
 * Some have openly attacked disabled users for raising concerns over the functions of these overlays.
-* Some are attempting legal action against accessibility expects for publishing information showing the discrepancies of these products.
+* Some are attempting legal action against accessibility experts for publishing information showing the discrepancies of these products.
 
 Suffice to say that there has been controversy surrounding overlays for some time. This article identifies our position on overlay products as a concept and why we do not support their use for compliance purposes.
 
