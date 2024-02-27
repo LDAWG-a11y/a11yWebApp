@@ -1,32 +1,27 @@
-<a class="skip-link" href="#h1">Skip navigation</a>
-<header class="header">
-  <button class="header__themes-btn" id="themeTrigger" aria-expanded="false" aria-controls="themePanel" hidden>Themes</button>
-  <div class="header__themes-panel" id="themePanel" hidden>
-    <fieldset class="header__themes-fieldset">
-      <legend class="header__themes-legend">Theme preference</legend>
-      <button class="header__themes-btn--light" aria-pressed="false">Light</button>
-      <button class="header__themes-btn--system" aria-pressed="false">System</button>
-      <button class="header__themes-btn--dark" aria-pressed="false">Dark</button>
-    </fieldset>
-  </div>
-  <nav class="main-nav" aria-label="primary">
-    <div class="header__logo" role="img" aria-label="{{ site.siteName }} logo"></div>
-    <ul class="main-nav__list">
-      {%- for item in navLinks %}
-        {%- if item.mainNav == true %}
-        <li class="main-nav__item">
-          <a class="main-nav__link"
-          href="{{ item.url }}"
-          {%- if item.url === page.url %}
-            aria-current="page"
-          {%- endif %}>{{ item.text }}</a>
-        </li>
-        {%- endif %}
-      {%- endfor %}
-    </ul>
-  </nav>
 
-  {%- if aaa == true %}
+<header class="header">
+  <a class="skip-link" href="#h1">Skip navigation</a>
+  {% include "_nav.njk" %}
+
+  <picture class="header__logo">
+    <source media="(prefers-color-scheme: light)" srcset="/img/MTA-logo-light.webp" height="136" width="600" data-main-logo>
+    <source media="(prefers-color-scheme: light)" srcset="/img/MTA-logo-light.png" height="136" width="600" data-main-logo>
+    <source media="(prefers-color-scheme: dark)" srcset="/img/MTA-logo-dark.webp" height="136" width="600" data-main-logo>
+    <source media="(prefers-color-scheme: dark)" srcset="/img/MTA-logo-dark.png" height="136" width="600" data-main-logo>
+    <img src="/img/MTA-logo-light.png" height="136" width="600" alt="Make Things Accessible, logo">
+  </picture>
+
+  {%- if not aaa %}
+    <div class="header__search-block">
+      <label id="sFilterLbl" for="sFilter" class="search__label">Search for Guides or Tags, by keyword</label>
+      <div class="search__wrapper" data-expanded="false">
+        <input class="search__input" id="sFilter" type="text" autocomplete="off">
+        {% include '../svg/magnifier.svg' %}
+      </div>
+    </div>
+  {%- endif %}
+
+  {%- if aaa %}
     {%- if page.url !== "/aaa/" %}
       <picture class="header__aaa-logo header__aaa-logo--light">
         <img
@@ -45,21 +40,5 @@
         alt="Access and Assistance for All logo">
       </picture>
     {%- endif  %}
-  {%- endif %}
- 
-  {%- if aaa !== true %}
-    <h1 id="h1" class="header__welcome-text" tabindex="-1">
-      {%- if page.url !== "/" %}
-        {{ title }}
-      {%- else %}
-        {{ site.siteName }}
-      {%- endif %}
-      {%- if subTitle %}
-      <span class="header__welcome-text--sub">{{ subTitle }}</span>
-      {% endif %}
-    </h1>
-  {%- else %}
-    {% include "_aaaSubNav.njk" %}
-    {% include "_aaaH1Logo.njk" %}
   {%- endif %}
 </header>

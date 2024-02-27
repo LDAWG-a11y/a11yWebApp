@@ -8,45 +8,47 @@ extraWide: true
 
 <h2 class="accordion accordion--large">Usage instructions</h2>
 <div class="accordion__panel accordion__panel--large">
-  <p>This tool is designed and built to remove some of the repetition and "faff" involved in writing accessibility reports. It won't be useful to everybody, 
-    as the generated text sections are designed to match the format of our reports and as we all have different report formats, it won't fit nicely for all auditors. This tool relies on JavaScript,
-     so it will not work without it.
-  </p>
-  <h3>How to use</h3>
-  <ul>
-    <li>The counter tallies at the top are not required, as the default is zero for each</li>
-    <li>The Critical, High, Medium and Low are tallied up in the Total WCAG column</li>
-    <li>Each row on the "WCAG 2.1 conformance details" table has a links to the specific success criterion, that link <span id="newTabInstruction">opens in a new tab</span></li>
-    <li>Each row in the WCAG table contains a set of radio buttons, for the conformance level, these are unchecked by default and 1 radio per row must be checked to generate any text</li>
-    <li>If "Partially supports" or "Does not support" are checked, then the "Comment" input in the adjacent cell becomes required as you'd need to explain the issue, visible error message will indicate this and of course, this can be picked up by assitive technologies</li>
-    <li>If "Supports" is checked, the "Comment" is optional, if you leave the comment blank, the generated text will set a default of "No issues detected", otherwise your comment will be part of the generated text</li>
-    <li>If "Not applicable" is checked, again the "Comment" is optional and the default will be "No content in scope applicable"</li>
-    <li>We generate 4 blocks of data:
-      <ul>
-        <li>a summary paragraph, which counts the issues, breaks down the priorties and also counts how many success criterion have failed</li>
-        <li>The list for the accessibility statement, which will have the issue text and then the text that states which success criterion it fails against</li>
-        <li>The VPAT Level A table, which contains the Conformance level and the same issue text as the statement (Which may not suit everybody)</li>
-        <li>The same pattern happens for the VPAT Level AA table</li>
-      </ul> 
-    </li>
-    <li>At the moment, this tool doesn't save your data, after some testing it will save to Local Storage</li>
-    <li>The "Reset" control at the moment is a link, that resets browser history, this will be a button once we have added the Local Storage functionality</li>
-  </ul>
-  <p>We have report templates in Microsoft Word, so for the VPAT tables, we highlight the data cells for the "Conformance level" column and the "Remarks and "Explanations" column and paste then paste it in. We don't generate the whole table or the first column</p>
-  <h3>Accessibility</h3>
-  <p>This tool has been built with accessibility-first principals, which required a few little assumptions to be made along the way:</p>
-  <ul>
-    <li>The buttons for the issue counters have no visible text, they do have an accessible name, which is [icon (Add or Minus) + column header], 
-      so if you wanted to add a Critical issue, using a voice command, then "Add critical priority" is the name of that button and "Minus high priority", would remove 1 from the High tally (assuming the result wasn't zero)</li>
-    <li>The radio buttons get their accessible name from like so: [individual label + the text of the row header (without numbers or WCAG level)], so the name of the Supports radio, in the first row is "Supports Non-text Content", 
-      we removed the numbering and the level letter, in an effort to reduce verbosity for screen reader users and provide voice input users with easier intuitive commands</li>
-    <li>A similar pattern was used for the "Comment" input, this time the accessible name is created like so [Row header (without numbers or WCAG level) and column header], so the second row's text input will have the accessible name "Audio only and Video only Prerecorded comment"</li>
-    <li>If when you click "Generate text" there are errors, focus will be sent the link on the first row with an error, this seemed like a sensible choice, as if a radio group were invalid, we wouldn't want to check that for you, as it may not be obvious</li>
-    <li>There will be an audible announcement for screen reader users, in the event of an error, it will inform you how many rows have an error</li>
-    <li>Clicking any of the copy buttons in the Generated text modal, will announce "Copied to clipboard" to screen reader users, as it's important to know something happened</li>
-  </ul>
-  <p>This still needs optimising for High Contrast Mode (we haven't forgot, it'll be the next thing on the list).</p>
-  <p>Hopefully the above makes this tool intuitive to use, for anybody that finds it useful, as always, feedback or suggestions are welcome: <a href="mailto:info@makethingsaccessible.com">Contact us</a>.</p>
+  <div>
+    <p>This tool is designed and built to remove some of the repetition and "faff" involved in writing accessibility reports. It won't be useful to everybody, 
+      as the generated text sections are designed to match the format of our reports and as we all have different report formats, it won't fit nicely for all auditors. This tool relies on JavaScript,
+      so it will not work without it.
+    </p>
+    <h3>How to use</h3>
+    <ul>
+      <li>The counter tallies at the top are not required, as the default is zero for each</li>
+      <li>The Critical, High, Medium and Low are tallied up in the Total WCAG column</li>
+      <li>Each row on the "WCAG 2.1 conformance details" table has a links to the specific success criterion, that link <span id="newTabInstruction">opens in a new tab</span></li>
+      <li>Each row in the WCAG table contains a set of radio buttons, for the conformance level, these are unchecked by default and 1 radio per row must be checked to generate any text</li>
+      <li>If "Partially supports" or "Does not support" are checked, then the "Comment" input in the adjacent cell becomes required as you'd need to explain the issue, visible error message will indicate this and of course, this can be picked up by assitive technologies</li>
+      <li>If "Supports" is checked, the "Comment" is optional, if you leave the comment blank, the generated text will set a default of "No issues detected", otherwise your comment will be part of the generated text</li>
+      <li>If "Not applicable" is checked, again the "Comment" is optional and the default will be "No content in scope applicable"</li>
+      <li>We generate 4 blocks of data:
+        <ul>
+          <li>a summary paragraph, which counts the issues, breaks down the priorties and also counts how many success criterion have failed</li>
+          <li>The list for the accessibility statement, which will have the issue text and then the text that states which success criterion it fails against</li>
+          <li>The VPAT Level A table, which contains the Conformance level and the same issue text as the statement (Which may not suit everybody)</li>
+          <li>The same pattern happens for the VPAT Level AA table</li>
+        </ul> 
+      </li>
+      <li>At the moment, this tool doesn't save your data, after some testing it will save to Local Storage</li>
+      <li>The "Reset" control at the moment is a link, that resets browser history, this will be a button once we have added the Local Storage functionality</li>
+    </ul>
+    <p>We have report templates in Microsoft Word, so for the VPAT tables, we highlight the data cells for the "Conformance level" column and the "Remarks and "Explanations" column and paste then paste it in. We don't generate the whole table or the first column</p>
+    <h3>Accessibility</h3>
+    <p>This tool has been built with accessibility-first principals, which required a few little assumptions to be made along the way:</p>
+    <ul>
+      <li>The buttons for the issue counters have no visible text, they do have an accessible name, which is [icon (Add or Minus) + column header], 
+        so if you wanted to add a Critical issue, using a voice command, then "Add critical priority" is the name of that button and "Minus high priority", would remove 1 from the High tally (assuming the result wasn't zero)</li>
+      <li>The radio buttons get their accessible name from like so: [individual label + the text of the row header (without numbers or WCAG level)], so the name of the Supports radio, in the first row is "Supports Non-text Content", 
+        we removed the numbering and the level letter, in an effort to reduce verbosity for screen reader users and provide voice input users with easier intuitive commands</li>
+      <li>A similar pattern was used for the "Comment" input, this time the accessible name is created like so [Row header (without numbers or WCAG level) and column header], so the second row's text input will have the accessible name "Audio only and Video only Prerecorded comment"</li>
+      <li>If when you click "Generate text" there are errors, focus will be sent the link on the first row with an error, this seemed like a sensible choice, as if a radio group were invalid, we wouldn't want to check that for you, as it may not be obvious</li>
+      <li>There will be an audible announcement for screen reader users, in the event of an error, it will inform you how many rows have an error</li>
+      <li>Clicking any of the copy buttons in the Generated text modal, will announce "Copied to clipboard" to screen reader users, as it's important to know something happened</li>
+    </ul>
+    <p>This still needs optimising for High Contrast Mode (we haven't forgot, it'll be the next thing on the list).</p>
+    <p>Hopefully the above makes this tool intuitive to use, for anybody that finds it useful, as always, feedback or suggestions are welcome: <a href="mailto:info@makethingsaccessible.com">Contact us</a>.</p>
+  </div>
 </div>
 
 <div class="counter-table__wrapper">

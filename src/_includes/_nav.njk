@@ -1,0 +1,51 @@
+<nav class="nav">
+  <button class="nav__prefs-btn" id="prefsBtn">
+    {% include '../svg/cog.svg' %}
+    <span class="visually-hidden">Settings</span>
+  </button>
+  <button class="nav__menu-btn" id="navBtn" aria-controls="navPanel" aria-expanded="false" data-untouched>
+    <span class="nav__menu-bar"></span>
+    <span class="visually-hidden">Menu</span>
+  </button>
+  <div class="nav__wrapper" id="navPanel">
+    <ul class="nav__list">
+      {%- for item in navLinks %}
+        {%- if item.mainNav == true %}
+          <li class="nav__item {%- if item.collabBtn %} nav__item--parent{%- endif %}">
+            <a class="nav__link"
+              href="{{ item.url }}"
+              {%- if item.url === page.url %}
+                aria-current="page"
+              {%- endif %}>{{ item.text }}
+            </a>
+          </li>
+        {%- endif %}
+      {%- endfor %}
+      <li class="nav__sub-items--parent">
+        <button class="nav__btn--collab" aria-expanded="false" aria-controls="collabNavPanel" id="collabBtn">Collaborations</button>
+        <div class="nav__list-sub-panel" id="collabNavPanel">
+          <ul class="nav__list--level-2">
+            {%- for collab in collaborations %}
+              <li>
+                <h2 class="nav__list-collaborator" data-no-accent>{{ collab.name }}</h2>
+                <ul class="nav__list--level-3">
+                  {% for link in collab.pages %}
+                    <li>
+                      <a class="nav__link-sub"
+                        href="{{ link.url }}"
+                        {%- if link.url === page.url %}
+                          aria-current="page"
+                        {%- endif %}>
+                        {{ link.text }}
+                      </a>
+                    </li>
+                  {%- endfor %}
+                </ul>
+              </li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,95 +1,84 @@
 @use '../vendors/mq';
 
 .accordion {
-  display: block;
-
-  .no-js & {
-
-  }
-  
-  .has-js & {
-    max-width: 60rem;
-    margin-bottom: $space-xs;
-  }
+  margin-bottom: 0;
+  width: 100%;
 
   &[data-open="true"] {
     + .accordion__panel {
-      height: auto;
-      // transition: height 250ms ease-in-out;
-      animation: show 250ms ease-in-out;
-      animation-fill-mode: forwards;
+      grid-template-rows: 1fr;
+      visibility: visible;
+      transition: grid-template-rows 400ms ease-in, visibility 0ms ease-in 0ms;
     }
   }
 
   &[data-open="false"] {
     + .accordion__panel {
-      height: 0;
-      // transition: height 250ms ease-in-out ;
-      animation: hide 250ms ease-in-out;
-      animation-fill-mode: forwards;
+      grid-template-rows: 0fr;
+      visibility: hidden;
+      transition: grid-template-rows 400ms ease-in, visibility 0ms ease-in 400ms;
     }
   }
 }
 
-.accordion--large {
-  
-  .has-js & {
-    max-width: 70rem;
-  }
+.accordion,
+.accordion + .accordion__panel {
+  width: 100%;
+  max-width: 60rem;
 }
 
-.accordion.accordion__full {
-  max-width: 75rem;
+.accordion--large,
+.accordion--large + .accordion__panel {
+  max-width: 70rem;
+}
+
+.accordion--full,
+.accordion--full + .accordion__panel--full {
   margin: 0 auto;
+  width: 100%;
+  max-width: 75rem;
+}
 
-  + .accordion__panel--full {
-    max-width: 75rem;
-    margin: 0 auto $space-md;
-
-    .has-js & {
-      border: 2px solid var(--color-interactive);
-      border-top: none;
-      padding-top: $space-lg;
-      background-color: var(--color-bg--light);
-    }
-
-    @include mq.mq($from:lg) {
-      margin-bottom: $space-xxl;
-    }
+.accordion--single {
+  .accordion__btn {
+    border-width: 1px;
+    border-radius: $radius-md;
   }
+}
 
-  &[data-open="true"] {
-    > .accordion__btn {
-      border-radius: $radius-xs $radius-xs 0 0;
-    }
+.accordion--single {
+  + .accordion__panel {
+    width: calc(100% - $space-md);
+    margin-bottom: 24px;
   }
+}
 
-  &[data-open="false"] {
-    + .accordion__panel {
-      border: none;
-      background-color: var(--color-bg);
-    }
+.accordion--multiple {
+  .accordion__btn {
+    padding: 6px 12px 6px $space-xxxl;
+    margin-bottom: 6px;
   }
 }
 
 .accordion__btn {
   position: relative;
-  border: 2px solid var(--color-interactive);
-  border-radius: $radius-xs;
-  padding: $space-xs $space-xxl $space-xs $space-sm;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--v2--color-interactive-alt);
+  padding: 0 12px 0 $space-xxxl;
   width: 100%;
-  font-size: $large-text;
-  text-align: left;
-  color: var(--color-interactive);
-  background: var(--color-bg--light);
-  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+  background-color: var(--v2--color-bg);
+  color: var(--v2--color-interactive-alt);
+  transition: background-color 300ms ease-in, color 300ms ease-in;
+  z-index: 1;
+
 
   &::before,
   &::after {
     content: "";
     position: absolute;
-    background-color: var(--color-interactive);
-    transition: background 250ms ease-in-out, transform 250ms ease-in-out, opacity 200ms ease-in-out;
+    background-color: var(--v2--color-interactive-alt);
+    transition: background 300ms ease-in-out, transform 300ms ease-in-out, opacity 250ms ease-in-out;
     transform-origin: top;
 
     @media (forced-colors: active) {
@@ -99,22 +88,18 @@
 
   &::before {
     top: 50%;
-    right: 18px;
-    width: 4px;
-    height: 18px;
+    left: 18px;
+    width: $space-xxs;
+    height: 1.125rem;
     transform: translateY(-50%);
   }
 
   &::after {
     top: 50%;
-    right: 11px;
-    width: 18px;
-    height: 4px;
+    left: 11px;
+    width: 1.125rem;
+    height: $space-xxs;
     transform: translateY(-50%);
-  }
-
-  &[aria-expanded="false"] {
-    opacity: 1;
   }
 
   &[aria-expanded="true"] {
@@ -128,52 +113,198 @@
     }
   }
 
-  &:focus,
+  &:focus-visible,
   &:hover {
-    background-color: var(--color-interactive);
-    color: var(--color-bg);
+    background-color: var(--v2--color-interactive-alt);
+    color: var(--v2--color-bg);
 
     &::before,
     &::after {
-      background-color: var(--color-bg);
-
-      @media (forced-colors: active) {
-        background-color: ButtonText;
-      }
+      background-color: var(--v2--color-bg);
+      color: var(--v2--color-interactive-alt);
     }
   }
 
   &:focus-visible {
-    box-shadow: 0px 0px 0px 2px var(--color-bg),0px 0px 0px 4px var(--color-interactive);
+    outline: 2px solid var(--v2--color-interactive-alt);
   }
 }
+ 
 
 .accordion__panel {
+  position: relative;
+  display: grid;
+  margin: 0 $space-xxs;
+  background-color: var(--v2--color-bg);
 
-  .no-js & {
-
-  }
-
-  .has-js & {
+  > div {
+    grid-row: 1 / span 2;
+    padding: 0 $space-xs;
     overflow: hidden;
-    padding: 0 $space-xs 0;
-    max-width: 60rem;
-    height: 0;
-    visibility: hidden;
-  }
 
-  > *:last-child {
-    padding-bottom: $space-xxl;
+    &::before {
+      content: "";
+      position: relative;
+      top: 0;
+      display: block;
+      width: 100%;
+      height: $space-md;
+    }
   }
 
   &[data-last] {
     margin-bottom: $space-xxxl;
   }
-}
 
-.accordion__panel--large {
+  @media (prefers-reduced-motion) {
+    transition: grid-template-rows 0ms, visibility 0ms ease-in;
+  }
 
-  .has-js & {
-    max-width: 70rem;
+  @include mq.mq($from:md) {
+    padding: 0 $space-sm;
   }
 }
+
+// ---------- Move and or fix for all lists
+.settings__help {
+  margin-bottom: 18px;
+
+  ul {
+    margin-bottom: 0;
+    padding: $space-xl $space-sm;
+
+    > li {
+      margin-bottom: .5rem;
+
+      
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+// .accordion {
+//   display: block;
+
+//   .no-js & {
+
+//   }
+  
+//   .has-js & {
+//     
+//     margin-bottom: $space-xs;
+//   }
+
+//   &[data-open="true"] {
+//     + .accordion__panel {
+//       height: auto;
+//       // transition: height 250ms ease-in-out;
+//       animation: show 250ms ease-in-out;
+//       animation-fill-mode: forwards;
+//     }
+//   }
+
+
+// }
+
+
+
+
+
+//   + .accordion__panel--full {
+//     max-width: 75rem;
+//     margin: 0 auto $space-md;
+
+//     .has-js & {
+//       border: 2px solid var(--color-interactive);
+//       border-top: none;
+//       padding-top: $space-lg;
+//       background-color: var(--color-bg--light);
+//     }
+
+//     @include mq.mq($from:lg) {
+//       margin-bottom: $space-xxl;
+//     }
+//   }
+
+//   &[data-open="true"] {
+//     > .accordion__btn {
+//       border-radius: $radius-xs $radius-xs 0 0;
+//     }
+//   }
+
+//   &[data-open="false"] {
+//     + .accordion__panel {
+//       border: none;
+//       background-color: var(--color-bg);
+//     }
+//   }
+// }
+
+// .accordion__btn {
+//   position: relative;
+//   border: 2px solid var(--color-interactive);
+//   border-radius: $radius-xs;
+//   padding: $space-xs $space-xxl $space-xs $space-sm;
+//   width: 100%;
+//   font-size: $large-text;
+//   text-align: left;
+//   color: var(--color-interactive);
+//   background: var(--color-bg--light);
+//   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+
+
+
+//   &:focus,
+//   &:hover {
+//     background-color: var(--color-interactive);
+//     color: var(--color-bg);
+
+//     &::before,
+//     &::after {
+//       background-color: var(--color-bg);
+
+//       @media (forced-colors: active) {
+//         background-color: ButtonText;
+//       }
+//     }
+//   }
+
+//   &:focus-visible {
+//     box-shadow: 0px 0px 0px 2px var(--color-bg),0px 0px 0px 4px var(--color-interactive);
+//   }
+// }
+
+// .accordion__panel {
+
+//   .no-js & {
+
+//   }
+
+//   .has-js & {
+//     overflow: hidden;
+//     padding: 0 $space-xs 0;
+//     max-width: 60rem;
+//     height: 0;
+//     visibility: hidden;
+//   }
+
+//   > *:last-child {
+//     padding-bottom: $space-xxl;
+//   }
+
+
+// }
+
+// .accordion__panel--large {
+
+//   .has-js & {
+//     max-width: 70rem;
+//   }
+// }

@@ -20,8 +20,8 @@ pagination:
 </div>
 {%- for faq in accordions %}
   {%- if faq.data.title %}
-    <h3 class="accordion">{{ faq.data.title }}</h3>
-    <div class="accordion__panel">{{ faq.templateContent | safe }}</div>
+    <h3 class="accordion accordion--multiple">{{ faq.data.title }}</h3>
+    <div class="accordion__panel"><div>{{ faq.templateContent | safe }}</div></div>
   {%- endif %}
 {%- endfor %}
 

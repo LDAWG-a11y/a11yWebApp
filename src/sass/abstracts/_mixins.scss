@@ -82,3 +82,31 @@
     font-size: $x-large-paragraph-size;
   }
 }
+
+@mixin dark-theme($styles: ()) {
+  @media (prefers-color-scheme: dark) {
+    @each $prop, $val in $styles {
+      #{$prop}: $val;
+    }
+  }
+
+  :root[data-pref--theme="dark"] & {
+    @each $prop, $val in $styles {
+      #{$prop}: $val;
+    }
+  }
+}
+
+@mixin light-theme($styles: ()) {
+  @media (prefers-color-scheme: light) {
+    @each $prop, $val in $styles {
+      #{$prop}: $val;
+    }
+  }
+
+  :root[data-pref--theme="light"] & {
+    @each $prop, $val in $styles {
+      #{$prop}: $val;
+    }
+  }
+}

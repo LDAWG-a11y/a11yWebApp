@@ -1,0 +1,489 @@
+@use '../vendors/mq';
+
+.nav {
+  position: relative;
+  padding: 12px 8px;
+  background: var(--v2--color-primary);
+
+  transform-style: preserve-3d;
+  z-index: auto;
+
+  @include mq.mq($from:md) {
+    padding: 12px 16px;
+  }
+
+  @include mq.mq($from:lg) {
+    border-radius: $radius-md;
+  }
+}
+
+.nav__list,
+.nav__list--level-2,
+.nav__list--level-3 {
+  list-style: none;
+  text-align: right;
+
+  @include mq.mq($from:md) {
+    display: flex;
+    gap: 6px;
+    justify-content: flex-end;
+  }
+}
+
+.nav__link,
+.nav__link-sub {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border-radius: $radius-sm;
+  padding: 2px 8px 0;
+  height: 2.75rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: var(--v2--color-text-alt);
+  transition: color 300ms ease-in, background-color 300ms ease-in;
+
+  &[aria-current="page"] {
+    text-decoration: none;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 8px;
+      left: 6px;
+      width: calc(100% - 12px);
+      height: 0;
+      border-top: 3px solid var(--v2--color-text-alt);
+      transition: background-color 300ms ease-in, transform 300ms ease-in;
+
+      @include mq.mq($from:xl) {
+        bottom: 6px;
+      }
+    }
+
+    &::after {
+      @include dark-theme(('border-top-color': var(--v2--color-primary)));
+      
+      transform: scaleX(0);
+      border-top-color: var(--v2--color-interactive);
+    }
+  } 
+
+  &:focus-visible,
+  &:hover {    
+    color: var(--v2--color-interactive);
+    background-color: var(--v2--color-bg-alt);
+
+    &::before {
+      background-color: var(--v2--color-interactive);
+    }
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  @include mq.mq($until:md) {
+    margin-top: 4px;
+  }
+}
+
+.nav__link {
+  @include mq.mq($from:md) {
+    text-decoration: none;
+
+    &:not([aria-current="page"]) {
+      [data-pref--underline="yes"] & {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      }
+    }
+  }
+}
+
+.nav__list-collaborator {
+  margin: 0;
+  padding: 24px 6px 8px 0;
+  font-size: calc($default-paragraph-size + .25rem);
+  color: var(--v2--color-text-alt);
+
+  @include mq.mq($from:md) {
+    padding: 0 6px 8px 0;
+    font-size: calc($default-paragraph-size + .375rem);
+  }
+
+  @include mq.mq($from:lg) {
+    font-size: calc($default-paragraph-size + .5rem);
+  }
+}
+
+:where(.has-js) {
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include mq.mq($from:md) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  .nav__btn--collab {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--v2--color-text-alt);
+    border-radius: $radius-sm;
+    padding: 0 36px 0 12px;
+    color: var(--v2--color-interactive);
+    background-color: var(--v2--color-text-alt);
+    transition: color 300ms ease-in, background-color 300ms ease-in;
+
+    @include mq.mq($until:md) {
+      display: none;
+    }
+
+    @include mq.mq($from:md) {
+      
+      &[aria-expanded="true"] + div {
+        grid-template-rows: 1fr;
+        visibility: visible;
+      }
+
+      &[aria-expanded="false"] + div {
+        grid-template-rows: 0fr;
+        visibility: hidden;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: $space-sm;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: .5rem .5rem 0 .5rem;
+        border-color: var(--v2--color-interactive) transparent transparent transparent;
+        transition: transform 300ms ease-in, border-color 300ms ease-in;
+      }
+
+      &[aria-expanded="false"]::after {
+        transform: rotate(0deg);
+      }
+
+      &[aria-expanded="true"]::after {
+        transform: rotate(-90deg);
+      }
+
+      &:focus-visible,
+      &:hover {
+        color: var(--v2--color-text-alt);
+        background-color: var(--v2--color-primary);
+
+        &::after {
+          border-color: var(--v2--color-text-alt) transparent transparent transparent;
+        }
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--v2--color-text-alt);
+      }
+    }
+  }
+
+  .nav__prefs-btn,
+  .nav__menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 2px solid var(--v2--color-text-alt);
+    border-radius: $radius-sm;
+    padding: 4px;
+    width: 2.75rem;
+    background-color: var(--v2--color-text-alt);
+    transition: background-color 300ms ease-in;
+
+    svg {
+      fill: var(--v2--color-interactive);
+      transition: transform 300ms ease-in, fill 300ms ease-in;
+    }
+
+    &:focus-visible,
+    &:hover {
+      background-color: var(--v2--color-interactive);
+      
+      svg {
+        fill: var(--v2--color-text-alt);
+        transform: rotate(90deg);
+      }
+
+      .nav__menu-bar,
+      .nav__menu-bar::before,
+      .nav__menu-bar::after {
+        background-color: var(--v2--color-text-alt);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--v2--color-text-alt);
+    }
+  }
+
+  .nav__menu-btn {
+    position: relative;
+
+    &[aria-expanded="true"] {
+      .nav__menu-bar {
+        visibility: hidden;
+
+        &::before,
+        &::after {
+          visibility: visible;
+        }
+
+        &::before {
+          animation: down-rotate 350ms ease-in forwards;
+          
+        }
+
+        &::after {
+          animation: up-rotate 350ms ease-in forwards;
+        }
+      }
+    }
+
+    &[aria-expanded="false"]:not([data-untouched]) {
+      .nav__menu-bar {
+
+        &::before {
+          animation: back-up-rotate 350ms ease-in forwards;
+        }
+
+        &::after {
+          animation: back-down-rotate 350ms ease-in forwards;
+        }
+      }
+    }
+
+    @include mq.mq($until:md) {
+      &[aria-expanded="false"] + .nav__wrapper {
+        visibility: hidden;
+        transition: grid-template-rows 400ms ease-in, visibility 0ms ease-in 400ms;
+
+        @media (prefers-reduced-motion) {
+          transition: grid-template-rows 0ms, visibility 0ms;
+        }
+      }
+  
+      &[aria-expanded="true"] + .nav__wrapper {
+        grid-template-rows: 1fr;
+        visibility: visible;
+      }
+    }
+
+    @include mq.mq($from:md) {
+      display: none;
+
+      + .nav__wrapper {
+        transition: none;
+      }
+    }
+  }
+
+  .nav__menu-bar {
+    border-radius: $radius-xs;
+    width: 100%;
+    height: .25rem;
+    background-color: var(--v2--color-interactive);
+    transform: rotate(0deg);
+    transition: background-color 300ms ease-in;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      min-width: 2rem;
+      border-radius: $radius-xs;
+      height: .25rem;
+      background-color: var(--v2--color-interactive);
+      transform-origin: center;
+      transform: rotate(0deg) scale(1);
+      transition: background-color 300ms ease-in;
+    }
+
+    &::before {
+      top: .625rem;
+    }
+
+    &::after {
+      bottom: .625rem;
+    }
+  }  
+
+  .nav__wrapper {
+    transition: grid-template-rows 400ms ease-in, visibility 0ms ease-in 400ms;
+    width: 100%;
+
+    @media (prefers-reduced-motion) {
+      transition: grid-template-rows 0ms, visibility 0ms;
+    }
+
+    @include mq.mq($until:md) {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 400ms ease-in;
+
+      @media (prefers-reduced-motion) {
+        transition: grid-template-rows 0ms;
+      }
+    }
+  }
+
+  .nav__list {
+    @include mq.mq($until:md) {
+      grid-row: 1 / span 2;
+      overflow: hidden;
+    }
+
+    @include mq.mq($from:md) {
+      gap: 24px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      height: 24px;
+      background-color: var(--v2--color-primary);
+    }
+  }
+
+  .nav__sub-items--parent {
+    @include mq.mq($from:md) {
+      padding: 0 0 0 24px;
+    }
+  }
+
+  .nav__list-sub-panel {
+    padding: 0 0 24px 0;
+    width: 100%;
+    background-color: var(--v2--color-primary);
+    transition: grid-template-rows 400ms ease-in, visibility 400ms ease-in;
+    
+    @include mq.mq($from:md) {
+      position: absolute;
+      left: 0;
+      display: grid;
+      grid-template-columns: 4fr;
+      margin-top: 12px;
+      padding: 24px 16px;
+      width: 100%;
+      text-align: left;
+    }
+
+    @include mq.mq($from:lg) {
+      left: 6px;
+      border-radius: 0 0 $radius-md $radius-md;
+      width: calc(100% - 12px);
+    }
+
+    @media (prefers-reduced-motion) {
+      transition: grid-template-rows 0ms, visibility 0ms;
+    }
+  }
+
+  .nav__list--level-2 {
+    grid-row: 1 / span 2;
+    overflow: hidden;
+  }
+
+  .nav__list--level-3 {
+    flex-direction: column;
+    li {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+// Base styles for no-js
+.no-js {
+  .nav {
+    @include mq.mq($from:md) {
+      // padding: 12px 12px $space-xxxxl;
+    }
+  }
+
+  .nav__prefs-btn,
+  .nav__menu-btn,
+  .nav__btn--collab {
+    display: none
+  }
+
+  .nav__list {
+    // @include mq.mq($from:md) {
+    //   position: relative;
+    // }
+
+    // @include mq.mq($from:xl) {
+    //   margin-bottom: 10px;
+    // }
+  }
+  
+  .nav__list--collabs {
+    @include mq.mq($from:md) {
+      // position: relative;
+      // top: $space-xxxl;
+      // right: 0;
+      
+      // &::before {
+      //   content: "";
+      //   position: absolute;
+      //   top: -4px;
+      //   left: 0;
+      //   border-top: 1px solid white;
+      //   width: 100%;
+
+      //   @include mq.mq($from:xl) {
+      //     top: -10px;
+      //   }
+      // }
+    }
+
+    @include mq.mq($from:xl) {
+      // top: $space-xxxxl;
+    }
+  }
+}
+
+// End no-js
+
+
+
+.header__logo {
+  display: flex;
+  justify-content: center;
+  margin-top: $space-bigger;
+
+  img {
+    height: auto;
+    max-width: 96%;
+
+    @include mq.mq($from:sm) {
+      max-width: 35rem;
+    }
+  }
+
+  @include mq.mq($from:md) {
+    margin-top: $space-biggest;
+  }
+}
+
+// [data-preload] > * {
+//   animation-duration: 0.001s !important; 
+//   transition: none;
+// }
+
+// @include dark-theme(('': , 'color': ));

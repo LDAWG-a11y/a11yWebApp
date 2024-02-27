@@ -8,6 +8,10 @@
   padding: 0;
 }
 
+:root {
+  color-scheme: light dark;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -17,16 +21,18 @@ body {
   min-height: 100vh;
   max-width: $site-width;
   margin: 0 auto;
-  padding: 0 $space-xs;
   background: var(--color-bg);
-  overflow-x: hidden;
 
-  @include mq.mq($from:md) {
-    padding: 0 $space-lg;
+  @include mq.mq($from:lg) {
+    padding: 20px;
   }
 
   &.extra-width {
     max-width: calc($site-width + 2.5rem);
+  }
+
+  &[data-scroll-blocked] {
+    overflow-y: hidden;
   }
 }
 
@@ -65,25 +71,42 @@ img {
 
 input,
 button,
-textarea,
-select {
+textarea {
   font: inherit;
 }
 
 button,
 summary {
+  min-height: 2.75rem;
   cursor: pointer;
 }
+  
 
 a:focus,
 button:focus,
 summary:focus,
-h1:focus-visible {
+h1:focus-visible,
+input:focus-visible {
   outline: 3px dotted transparent;
   outline-offset: 2px;
-  // transition: outline-color 0.01ms ease-in-out !important;
 
   @media (forced-colors: active) {
     transition: all 0.01ms ease-in-out;
+  }
+}
+
+[data-pref--motion="off"] *,
+[data-pref--motion="off"] *::before,
+[data-pref--motion="off"] *::after {
+  transition: all .0001ms !important;
+  scroll-behavior: unset !important;
+  animation-duration: .0001ms !important;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: unset !important;
   }
 }

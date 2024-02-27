@@ -1,6 +1,6 @@
 @import 'vendors/mq';
-@import 'themes/themes';
 
+@import 'abstracts/CSSVars';
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
 @import 'abstracts/functions';
@@ -11,29 +11,31 @@
 @import 'base/reset';
 @import 'base/typography';
 
-@import 'layout/main';
-@import 'layout/header';
 @import 'layout/footer';
+@import 'layout/header';
 @import 'layout/latest-articles';
+@import 'layout/main';
+@import 'layout/nav';
 
-@import 'components/skip-link';
+@import 'components/accordion';
+@import 'components/author_bio';
 @import 'components/intro-panel';
 @import 'components/cards';
-@import 'components/tags';
-@import 'components/accordion';
-@import 'components/pagination';
-@import 'components/author_bio';
-@import 'components/socials';
-@import 'components/toc';
 @import 'components/card';
+@import 'components/dialog';
+@import 'components/pagination';
+@import 'components/search-filter';
+@import 'components/socials';
+@import 'components/tags';
+@import 'components/toc';
 
-@import 'pages/guides';
-@import 'pages/guide';
-@import 'pages/cms';
+@import 'pages/aaa-pages';
 @import 'pages/auditTool';
+@import 'pages/cms';
 @import 'pages/faq';
 @import 'pages/glossary';
+@import 'pages/guide';
+@import 'pages/guides';
 @import 'pages/sitemap';
-@import 'pages/aaa-pages';
 
 @import 'vendors/prism';
