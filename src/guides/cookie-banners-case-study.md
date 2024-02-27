@@ -81,7 +81,7 @@ Over the course of this case study we have documented many accessibility issues 
 
 ## Cookie banner accessibility issues
 
-<h3 class="accordion">Admiral</h3><div class="accordion__panel">
+<h3 class="accordion">Admiral</h3><div class="accordion__panel"><div>
 
 #### Accessibility issues
 
@@ -105,8 +105,9 @@ Over the course of this case study we have documented many accessibility issues 
 * Some customer versions that the “Reject all” button is removed. GDPR has to be as easy to reject as it is to accept, so that not having the “Reject all" which is the equivalent to the “Accept all” means it is far harder to reject as each individual consent checkbox has to set to off. Do not allow customers to remove the “Reject all” button.
 
 </div>
+</div>
 
-<h3 class="accordion">Civic Cookie Control</h3><div class="accordion__panel">
+<h3 class="accordion">Civic Cookie Control</h3><div class="accordion__panel"><div>
 
 #### Accessibility issues
 
@@ -127,8 +128,9 @@ No weaknesses.
 No advisories.
 
 </div>
+</div>
 
-<h3 class="accordion">Easy Cookie</h3><div class="accordion__panel">
+<h3 class="accordion">Easy Cookie</h3><div class="accordion__panel"><div>
 
 #### Accessibility issues
 
@@ -149,14 +151,16 @@ No advisories.
 No advisories.
 
 </div>
+</div>
 
-<h3 class="accordion">GOV.UK</h3><div class="accordion__panel">
+<h3 class="accordion">GOV.UK</h3><div class="accordion__panel"><div>
 
 GOV.UK is fully compliant with WCAG 2.2 AA standards.
 
 </div>
+</div>
 
-<h3 class="accordion">Ketch</h3><div class="accordion__panel">
+<h3 class="accordion">Ketch</h3><div class="accordion__panel"><div>
 
 #### Accessibility issues
 
@@ -175,8 +179,9 @@ GOV.UK is fully compliant with WCAG 2.2 AA standards.
 No advisories.
 
 </div>
+</div>
 
-<h3 class="accordion">OneTrust CookiePro</h3><div class="accordion__panel">
+<h3 class="accordion">OneTrust CookiePro</h3><div class="accordion__panel"><div>
 
 #### Accessibility issues
 
@@ -198,10 +203,10 @@ No advisories.
 No advisories.
 
 </div>
+</div>
 
 
-
-<h3 class="accordion">Osano</h3><div class="accordion__panel">
+<h3 class="accordion">Osano</h3><div class="accordion__panel"><div>
 
 #### Accessibility issues
 
@@ -212,10 +217,7 @@ No advisories.
 
 * **Contrast colour issues on text, links, and buttons** - This fails WCAG 1.4.3 Contrast Minimum (AA). Whether this is due to cookie banner default colour schemes or organisation customised branding schemes, poor colour contrast can make content harder to see and read.
 
-
 #### Weaknesses
-
-
 
 * It is not possible to toggle the checkboxes using voice input on Mac or Voice access on Windows. Saying “click Targeted Advertising” does not cause the checkbox to check or uncheck. This would be fixed by removing the left: -10000px; from .osano-cm-toggle_input css.
 
@@ -225,11 +227,10 @@ No advisories.
 
 No advisories
 
-
-
+</div>
 </div>
 
-<h3 class="accordion">Piwik PRO</h3><div class="accordion__panel">
+<h3 class="accordion">Piwik PRO</h3><div class="accordion__panel"><div>
 
 #### Accessibility issues
 
@@ -248,22 +249,16 @@ No advisories
 
 #### Weaknesses
 
-
-
 * Don't set the visible link text to "here", "click here" or anything else that lacks context in isolation. Some users use assistive technologies which can bring up a list of links to navigate to and when those links have the readable text "here" or "click here", that makes it really difficult for them to understand where that link will go, more so if there are many of them, as this will impact voice input users, as they may instruct their voice control software "Click here", hoping to read more about an interesting blog and end up reading the cookies policy, as their software couldn't guess which "here" they meant.
-
-
 
 #### Advisories
 
-
 No advisories.
 
-
-
+</div>
 </div>
 
-<h3 class="accordion">Usercentrics Cookiebot</h3><div class="accordion__panel">
+<h3 class="accordion">Usercentrics Cookiebot</h3><div class="accordion__panel"><div>
 
 #### Accessibility issues
 
@@ -295,8 +290,9 @@ No advisories.
 
 
 </div>
+</div>
 
-<h3 class="accordion">Wordpress Adminstration</h3><div class="accordion__panel">
+<h3 class="accordion">Wordpress Adminstration</h3><div class="accordion__panel"><div>
 
 #### Accessibility issues
 
@@ -325,8 +321,9 @@ No advisories.
 
 
 </div>
+</div>
 
-<h3 class="accordion">WordPress WordAds</h3><div class="accordion__panel">
+<h3 class="accordion">WordPress WordAds</h3><div class="accordion__panel"><div>
 
 #### Accessibility issues
 
@@ -358,6 +355,7 @@ No advisories.
 
 
 
+</div>
 </div>
 
 

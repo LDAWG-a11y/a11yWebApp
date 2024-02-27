@@ -1,13 +1,12 @@
 @use '../vendors/mq';
 
-.settings-modal {
+.dialog {
   margin: auto;
   border: 1px solid var(--v2--color-inactive);
   border-radius: $radius-lg;
   width: 70rem;
   max-width: 96%;
   height: 96vh;
-  font-size: $default-paragraph-size;
   transform: scale(0);
   opacity: 0;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -54,15 +53,6 @@
     max-height: 100vh;
   }
 
-  // TODO create mixin
-  @include mq.mq($from:md) {
-    font-size: calc($default-paragraph-size + .125rem);
-  }
-
-  @include mq.mq($from:lg) {
-    font-size: calc($default-paragraph-size + .25rem);
-  }
-
   @media (prefers-reduced-motion) {
     transform: scale(1);
     transition: opacity 600ms ease-in;
@@ -84,7 +74,7 @@
 }
 
 @starting-style {
-  .settings-modal[open] {
+  .dialog[open] {
     opacity: 0;
     transform: scale(0);
 
@@ -94,8 +84,8 @@
   }
 }
 
-.settings-modal__header,
-.settings-modal__footer {
+.dialog__header,
+.dialog__footer {
   display: flex;
   align-items: center;
   padding: 0 16px;
@@ -109,31 +99,42 @@
     min-height: 4.5rem;
   }
 
-  @include mq.mq($from:md) {
+  @include mq.mq($from:lg) {
     height: 5rem;
     min-height: 5rem;
   }
 }
 
-.settings-modal__footer {
+.dialog__header {
+  justify-content: center;
+}
+
+.dialog__footer {
   justify-content: flex-end;
 }
 
-.settings-modal__title {
-  // TODO need to redo mixin
-  font-size: 2rem;
+.dialog__title {
+  margin: 0;
+  padding: 0;
+  font-size: calc($default-paragraph-size * 2);
   color: var(--v2--color-text-alt);
 
   @include mq.mq($from:md) {
-    font-size: 2.25rem;
-  }
-
-  @include mq.mq($from:lg) {
-    font-size: 2.5rem;
+    font-size: calc($default-paragraph-size * 2.25);
   }
 }
 
-.settings-modal__content {
+.dialog__subtitle {
+  margin: 32px 0;
+  padding: 0;
+  font-size: calc($default-paragraph-size * 1.75);
+
+  @include mq.mq($from:md) {
+    font-size: calc($default-paragraph-size * 2);
+  }
+}
+
+.dialog__content {
   padding: $space-xl $space-sm;
   overflow-y: auto;
   color: var(--v2--color-text);
@@ -142,23 +143,9 @@
     height: calc(100vh - 8rem);
   }
 
-  // TODO create mixin
-  p {
-    font-size: $default-paragraph-size;
-
-    @include mq.mq($from:md) {
-      font-size: calc($default-paragraph-size + .125rem);
-    }
-  
-    @include mq.mq($from:lg) {
-      font-size: calc($default-paragraph-size + .25rem);
-    }
+  @include mq.mq($from:md) {
+    padding: $space-xl;
   }
-}
-
-.settings-modal__title {
-  margin: 0 auto;
-  padding: 0;
 }
 
 .settings__fieldset {
@@ -178,7 +165,7 @@
   position: relative;
   margin-left: -12px;
   border-radius: $radius-sm;
-  padding: 0 12px;
+  padding: 4px 12px;
   color: var(--v2--color-text-alt);
   background-color: var(--v2--color-tertiary);
 
@@ -195,68 +182,12 @@
   }
 }
 
-.settings__help {
-  margin-bottom: 18px;
-  border: 1px solid var(--v2--color-interactive-alt);
-  border-radius: $radius-md;
-  width: 100%;
-  max-width: 65rem;
-  background-color: var(--v2--color-bg);
-  transition: border-color 300ms ease-in;
-  // TODO need to redo mixin
-  font-size: 1.125rem;
-
-  &[open],
-  &[open] > summary {
-    border-radius: $radius-md $radius-md 0 0;
-  }
-
-  > summary {
-    position: relative;
-    border-radius: $radius-md;
-    padding: 4px 6px 4px 12px;
-    color: var(--v2--color-interactive-alt);
-    transition: color 300ms ease-in, background-color 300ms ease-in;
-
-    &:focus-visible,
-    &:hover {
-      background-color: var(--v2--color-interactive-alt);
-      color: var(--v2--color-bg);
-    }
-
-    &:focus-visible {
-      outline: 2px solid var(--v2--color-interactive-alt);
-    }
-
-    @include mq.mq($from:md) {
-      font-size: 1.25rem;
-    }
-
-    @include mq.mq($from:xl) {
-      font-size: 1.375rem;
-    }
-  }
-
-  ul {
-    margin-bottom: 0;
-    padding: $space-xl $space-sm;
-
-    > li {
-      margin-bottom: .5rem;
-
-      &::marker {
-        color: var(--v2--color-secondary);
-      }
-    }
-  }
-}
-
 .settings__btns-wrapper {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
   gap: 12px;
-  margin: 8px auto 0;
+  margin: 20px auto 0;
 
   @include mq.mq($from:sm) {
     flex-direction: row;
@@ -264,14 +195,13 @@
 }
 
 button[class^="settings__btn"],
-.settings-modal__close-btn {
+.dialog__close-btn {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: $radius-md;
-  padding: 6px $space-xxxl;
-  line-height: 1.6;
+  padding: 0 $space-xl;
   transition: color 300ms ease-in, background-color 300ms ease-in, border-color 300ms ease-in;
 
   @-moz-document url-prefix() {
@@ -280,17 +210,6 @@ button[class^="settings__btn"],
     span {
       padding-top: 2px;
     }
-  }
-
-  // TODO need to redo mixin
-  font-size: 1.125rem;
-
-  @include mq.mq($from:md) {
-    font-size: 1.25rem;
-  }
-
-  @include mq.mq($from:xl) {
-    font-size: 1.375rem;
   }
 }
 
@@ -309,7 +228,6 @@ button[class^="settings__btn"] {
         top: 50%;
         right: -$space-lg;
         transform: translateY(-50%);
-        font-weight: bold;
         color: inherit;
       }
     }
@@ -326,7 +244,7 @@ button[class^="settings__btn"] {
   }
 }
 
-.settings-modal__close-btn {
+.dialog__close-btn {
   @include dark-theme(('border-color': var(--v2--color-text-alt)));
 
   border: 2px solid var(--v2--color-bg);
@@ -346,12 +264,5 @@ button[class^="settings__btn"] {
 }
 
 body:has(dialog[open]) {
-  position: fixed;
-  overflow-y: scroll;
-  max-width: 100%;
-}
-
-body:not(:has(dialog[open])) {
-  position: static;
-  overflow-y: auto;
+  overflow-y: hidden;
 }

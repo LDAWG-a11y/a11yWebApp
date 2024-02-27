@@ -22,6 +22,7 @@ Click on the following sections to expand them:
 
 <h3 class="accordion">Work towards making learning resources accessible</h3>
 <div class="accordion__panel">
+<div>
 
 To work towards making college resources and learning materials accessible by design
 
@@ -36,9 +37,11 @@ Colleges create a range of content, resources and learning materials. This inclu
 Ensuring that your lesson materials are accessible by design not only helps people who are actively attending your lectures access the content provided to them, but also helps to future-proof the lessons, and address future accessibility needs.
 
 </div>
+</div>
 
 <h3 class="accordion">Create an accessibility champion</h3>
 <div class="accordion__panel">
+<div>
 
 To create a champion for accessibility who is a direct point of contact for students and parents/carers (including future students)
 
@@ -57,9 +60,11 @@ An accessibility champion should be:
 Having an accessibility champion enables students to reach their full potential in their school / college, and can mean that people within the organisation are adequately equipped to succeed.
 
 </div>
+</div>
 
 <h3 class="accordion">Promote comprehensive information about Assistive tech</h3>
 <div class="accordion__panel">
+<div>
 
 To promote comprehensive information about assistive technology and how to access free accessibility tools, for example, by signposting students to the Access and Assistance for All webpages
 
@@ -68,9 +73,11 @@ There are many forms of both physical and digital assistive technology that can 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/r2yRs4DejyA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 </div>
+</div>
 
 <h3 class="accordion">Use the AAA template</h3>
 <div class="accordion__panel">
+<div>
 
 To use the Access and Assistance for All template to promote and display a personalised charter so that students and parents/carers are made aware of what they can ask the college for in terms of accessibility
 
@@ -79,9 +86,11 @@ Having a personalised charter that is spread across the school and displayed ope
 To get access to the charter template and a range of resources to support your college please email us at accessforallcampaign@gmail.com
 
 </div>
+</div>
 
 <h3 class="accordion">Staff requirements</h3>
 <div class="accordion__panel">
+<div>
 
 To require all staff to look at the Access and Assistance for All webpages and read student stories, so that they can understand the importance of assistive technology and how it can benefit all students
   
@@ -89,6 +98,7 @@ Participants in our campaign have shared stories of their experiences with using
 
 [See our student stories](/aaa/student-stories/)
 
+</div>
 </div>
 
 We recognise how many demands there are on colleges and aim to make signing up to these pledges as simple as possible so we are creating resources to support the implementation of all of these pledges. In order to do this we have produced role-specific guidance:

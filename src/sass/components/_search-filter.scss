@@ -28,7 +28,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: $a-space-lg;
+    right: 8px;
     stroke: var(--v2--color-interactive);
     fill: var(--v2--color-interactive);
   }
@@ -51,7 +51,7 @@
 
 .search__label {
   display: block;
-  padding: $a-space-md 0;
+  padding: 6px 0;
 }
 
 .search__input {

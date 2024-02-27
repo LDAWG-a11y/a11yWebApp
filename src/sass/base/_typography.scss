@@ -15,7 +15,6 @@ html {
   font-size: 100%;
 }
 
-
 *,
 *::before,
 ::after {
@@ -29,14 +28,48 @@ html {
 }
 
 body {
-  @include font-size;
-  
   position: relative;
   font-size: $default-paragraph-size;
   line-height: $default-line-height;
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
   color: var(--color-text);
   text-rendering: optimizeLegibility;
+
+  @include mq.mq($from:md) {
+    font-size: calc($default-paragraph-size + .125rem);
+    
+  }
+
+  @include mq.mq($from:lg) {
+    font-size: calc($default-paragraph-size + .25rem);
+  }
+}
+
+main,
+dialog {
+  // font-size: var(--v2--main-font-size);
+
+  @include mq.mq($from:md) {
+    font-size: calc($default-paragraph-size + .25rem);
+  }
+
+  @include mq.mq($from:lg) {
+    font-size: calc($default-paragraph-size + .375rem);
+
+    // font-size: calc(var(--v2--main-font-size) * 1.5);
+  }
+}
+
+button,
+summary,
+input {
+  @include mq.mq($from:md) {
+    font-size: calc($default-paragraph-size + .125rem);
+  }
+
+  @include mq.mq($from:lg) {
+    font-size: calc($default-paragraph-size + .25rem);
+  }
 }
 
 kbd {
@@ -88,22 +121,27 @@ h2 {
   font-size: 2.25rem;
   margin-bottom: $space-lg;
 
-  &:not(.accordion):not(.pagination__heading):not(.card__item &) {
-    padding-left: $space-md;
-
-    &::before {
+  &:not([data-no-accent]) {
+    
+    &::before,
+    &::after {
       content: "";
       position: absolute;
-      top: .4rem;
-      left: 0;
-      border-radius: $radius-md;
-      height: calc(100% - #{$space-xs});
-      width: 6px;
-      background: linear-gradient(to top, var(--color-primary), var(--color-accent-2));
+      top: -5px;
+      height: 6px;
+      border-radius: $radius-xl;
+      background-color: var(--v2--color-secondary);
+    }
 
-      @include mq.mq($from:lg) {
-        top: .3rem;
-      }
+    &::before {
+      left: 0;
+      width: 60px;
+      opacity: .7;
+    }
+
+    &::after {
+      left: 20px;
+      width: 20px;
     }
   }
   
@@ -193,7 +231,7 @@ ul:not([class]) {
 
   & > li {
     &::marker {
-      color: var(--color-accent-2);
+      color: var(--color-secondary);
     }
   }
 }

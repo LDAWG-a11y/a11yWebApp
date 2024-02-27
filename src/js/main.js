@@ -13,6 +13,7 @@ const toggleBool = (el, attr) => {
 accordions.forEach((accordion, idx) => {
   const accTitle = accordion.innerText;
   const accPanel = accordion.nextElementSibling;
+  accordion.setAttribute('data-no-accent', '');
   accPanel.id = `accPanel-${idx + 1}`;
   accordion.innerHTML = `<button class="accordion__btn" id="acc-${idx + 1}"
   aria-controls="accPanel-${idx + 1}"
@@ -29,11 +30,20 @@ accordions.forEach((accordion, idx) => {
 
 accordions.forEach(accordion => {
   const accPanel = accordion.nextElementSibling;
-  if (
-    !accPanel.nextElementSibling ||
-    !accPanel.nextElementSibling.hasAttribute('data-open')
-  ) {
+  if (!accPanel.nextElementSibling || !accPanel.nextElementSibling.hasAttribute('data-open')) {
     accPanel.setAttribute('data-last', '');
+  }
+
+  if (!accordion.previousElementSibling || !accordion.previousElementSibling.classList.contains('accordion__panel')) {
+    accordion.nextElementSibling.setAttribute('data-first', '');
+  }
+
+  if (accPanel.hasAttribute('data-first') && accPanel.hasAttribute('data-last')) {
+    accPanel.removeAttribute('data-last');
+    accPanel.removeAttribute('data-first');
+    accPanel.previousElementSibling.classList.add('accordion--single');
+  } else {
+    accPanel.previousElementSibling.classList.add('accordion--multiple');
   }
 });
 
@@ -41,7 +51,7 @@ prefsBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     btn.setAttribute('aria-pressed', 'true');
     const pref = btn.getAttribute('data-pref').split(' ');
-    if (pref[1] !== 'reset') {
+    if (pref[1] !== 'unset') {
       document.documentElement.setAttribute(`data-pref--${pref[0]}`, pref[1]);
       window.localStorage.setItem(`data-pref--${pref[0]}`, pref[1]);
     } else {
@@ -97,7 +107,7 @@ window.onload = () => {
 
   settingsModal.querySelectorAll('.settings__btns-wrapper').forEach(group => {
     if (!group.querySelector('button[aria-pressed="true"]')) {
-      group.querySelector('[data-pref~="reset"').setAttribute('aria-pressed', 'true');
+      group.querySelector('[data-pref~="unset"').setAttribute('aria-pressed', 'true');
     }
   })
 }

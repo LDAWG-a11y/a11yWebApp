@@ -23,6 +23,7 @@ $--color-tip: --color-tip;
 $--color-info: --color-info;
 $--color-warn: --color-warn;
 $--color-warn--bright: --color-warn--bright;
+$--v2--main-font-size: --v2--main-font-size;
 
 $theme-map-light: (
   $--v2--color-primary: #702A8C,
@@ -30,7 +31,7 @@ $theme-map-light: (
   $--v2--color-tertiary: #fdf7ff,
   $--v2--color-text: #1f1f1f,
   $--v2--color-text-alt: #e6e6e6,
-  $--v2--color-bg: #fdfdfd,
+  $--v2--color-bg: #f8f8f8,
   $--v2--color-bg-alt: #fdfdfd,
   $--v2--color-subtle: #595959,
   $--v2--color-interactive: #8935d7,
@@ -54,7 +55,7 @@ $theme-map-light: (
 
 $theme-map-dark: (
   $--v2--color-primary: #50366b,
-  $--v2--color-secondary: #BF2669,
+  $--v2--color-secondary: #DC508D,
   $--v2--color-tertiary: #322E33,
   $--v2--color-text: #B0B0B0,
   $--v2--color-text-alt: #D9D9D9,
@@ -80,11 +81,19 @@ $theme-map-dark: (
   $--color-warn--bright: #ff6a6a,
 );
 
+$font-map-default: (
+  $--v2--main-font-size: 2.5rem,
+);
+
 
 @mixin spread-map($map: ()) {
   @each $key, $value in $map {
       #{$key}: $value;
   }
+}
+
+:root {
+  @include spread-map($font-map-default);
 }
 
 :root, 

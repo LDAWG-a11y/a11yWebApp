@@ -71,15 +71,16 @@ img {
 
 input,
 button,
-textarea,
-select {
+textarea {
   font: inherit;
 }
 
 button,
 summary {
+  min-height: 2.75rem;
   cursor: pointer;
 }
+  
 
 a:focus,
 button:focus,

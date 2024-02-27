@@ -13,17 +13,17 @@ eleventyComputed:
   summary: "View all useful digital accessibility guides from our website by all of our contributors, covering inclusive design, web development, documentation & social media"
 ---
 
-  <h2 class="accordion accordion__full">Filters</h2>
+  <h2 class="accordion accordion--full">Filters</h2>
   <div class="accordion__panel accordion__panel--full">
-    <a class="skip-tags" href="#h2">Skip filters</a>
-    <h3 class="intro-panel__heading">Filter by tag</h3>
-    <ul class="tags tags__all">
-      {%- for tag in collections.tagList %}
-        <li class="tag__item">
-          {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
-          <a class="tag__link tag__link--has-count" href="{{ tagUrl | url }}">{{ tag }}<span class="tag__count">{{ collections[tag].length }}<span class="visually-hidden"> guide{%- if collections[tag].length > 1 %}s{%- endif %}</span></span></a>
-        </li>
-      {%- endfor %}
+    <div>
+      <h3 class="intro-panel__heading">Filter by tag</h3>
+      <ul class="tags tags__all">
+        {%- for tag in collections.tagList %}
+          <li class="tag__item">
+            {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
+            <a class="tag__link tag__link--has-count" href="{{ tagUrl | url }}">{{ tag }}<span class="tag__count">{{ collections[tag].length }}<span class="visually-hidden"> guide{%- if collections[tag].length > 1 %}s{%- endif %}</span></span></a>
+          </li>
+        {%- endfor %}
       </ul>
       <h3 class="intro-panel__heading">Filter by author</h3>
       <ul class="tags tags__all">
@@ -36,6 +36,7 @@ eleventyComputed:
           {%- endif %}
         {%- endfor %}
       </ul>
+    </div>
   </div>
 
 <div class="cards__wrapper">

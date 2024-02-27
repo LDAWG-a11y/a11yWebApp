@@ -1,18 +1,5 @@
 @use '../vendors/mq';
 
-.header {
-  // TODO create mixin
-  font-size: $default-paragraph-size;
-
-  @include mq.mq($from:md) {
-    font-size: calc($default-paragraph-size + .125rem);
-  }
-
-  @include mq.mq($from:lg) {
-    font-size: calc($default-paragraph-size + .25rem);
-  }
-}
-
 .nav {
   position: relative;
   padding: 12px 8px;
@@ -46,9 +33,11 @@
 .nav__link,
 .nav__link-sub {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   border-radius: $radius-sm;
-  padding: 4px 6px;
+  padding: 2px 8px 0;
+  height: 2.75rem;
   text-decoration: underline;
   text-underline-offset: 2px;
   color: var(--v2--color-text-alt);
@@ -60,7 +49,7 @@
     &::after {
       content: "";
       position: absolute;
-      bottom: 4px;
+      bottom: 8px;
       left: 6px;
       width: calc(100% - 12px);
       height: 0;
@@ -126,11 +115,6 @@
   @include mq.mq($from:lg) {
     font-size: calc($default-paragraph-size + .5rem);
   }
-
-  // TODO remove when headings are redone
-  &::before {
-    display: none;
-  }
 }
 
 :where(.has-js) {
@@ -151,7 +135,7 @@
     align-items: center;
     border: 2px solid var(--v2--color-text-alt);
     border-radius: $radius-sm;
-    padding: 4px 36px 4px 12px;
+    padding: 0 36px 0 12px;
     color: var(--v2--color-interactive);
     background-color: var(--v2--color-text-alt);
     transition: color 300ms ease-in, background-color 300ms ease-in;
@@ -217,7 +201,6 @@
     border: 2px solid var(--v2--color-text-alt);
     border-radius: $radius-sm;
     padding: 4px;
-    height: 2.75rem;
     width: 2.75rem;
     background-color: var(--v2--color-text-alt);
     transition: background-color 300ms ease-in;
@@ -290,7 +273,7 @@
         transition: grid-template-rows 400ms ease-in, visibility 0ms ease-in 400ms;
 
         @media (prefers-reduced-motion) {
-          transition: grid-template-rows 0ms, visibility 0ms ease-in 400ms;
+          transition: grid-template-rows 0ms, visibility 0ms;
         }
       }
   
@@ -345,7 +328,7 @@
     width: 100%;
 
     @media (prefers-reduced-motion) {
-      transition: grid-template-rows 0ms, visibility 0ms ease-in 400ms;
+      transition: grid-template-rows 0ms, visibility 0ms;
     }
 
     @include mq.mq($until:md) {
@@ -361,6 +344,7 @@
 
   .nav__list {
     @include mq.mq($until:md) {
+      grid-row: 1 / span 2;
       overflow: hidden;
     }
 
@@ -406,11 +390,12 @@
     }
 
     @media (prefers-reduced-motion) {
-      transition: grid-template-rows 0ms, visibility 400ms ease-in;
+      transition: grid-template-rows 0ms, visibility 0ms;
     }
   }
 
   .nav__list--level-2 {
+    grid-row: 1 / span 2;
     overflow: hidden;
   }
 
