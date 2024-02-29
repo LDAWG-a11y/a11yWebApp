@@ -29,11 +29,15 @@ html {
 
 body {
   position: relative;
-  font-size: $default-paragraph-size;
   line-height: $default-line-height;
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
   color: var(--color-text);
-  text-rendering: optimizeLegibility;
+  // text-rendering: optimizeLegibility;
+}
+
+header,
+footer {
+  font-size: $default-paragraph-size;
 
   @include mq.mq($from:md) {
     font-size: calc($default-paragraph-size + .125rem);
@@ -116,7 +120,8 @@ h1 {
   }
 }
 
-h2 {
+h2,
+.accent {
   position: relative;
   font-size: 2.25rem;
   margin-bottom: $space-lg;
@@ -231,7 +236,7 @@ ul:not([class]) {
 
   & > li {
     &::marker {
-      color: var(--color-secondary);
+      color: var(--v2--color-secondary);
     }
   }
 }

@@ -15,8 +15,8 @@
   width: auto;
   height: 2.75rem;
   line-height: 1.75;
-  background: var($--v2--color-interactive-alt);
-  color: var($--color-bg);
+  background: var($--v2--color-primary);
+  color: var($--v2--color-text-alt);
   transform: translateY(0);
   transition: transform 250ms ease-in;
   z-index: 5;

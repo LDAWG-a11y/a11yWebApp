@@ -8,10 +8,6 @@
   padding: 0;
 }
 
-:root {
-  color-scheme: light dark;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -19,30 +15,7 @@ html {
 body {
   position: relative;
   min-height: 100vh;
-  max-width: $site-width;
   margin: 0 auto;
-  background: var(--color-bg);
-
-  @include mq.mq($from:lg) {
-    padding: 20px;
-  }
-
-  &.extra-width {
-    max-width: calc($site-width + 2.5rem);
-  }
-
-  &[data-scroll-blocked] {
-    overflow-y: hidden;
-  }
-}
-
-.extra-width .main {
-  padding: 0;
-}
-
-body[modal-open] {
-  overflow: hidden;
-  z-index: 2;
 }
 
 body[modal-open]::before {
@@ -81,13 +54,16 @@ summary {
   cursor: pointer;
 }
   
-
 a:focus,
+a:focus-visible,
 button:focus,
+button:focus-visible,
 summary:focus,
+summary:focus-visible,
 h1:focus-visible,
+input:focus,
 input:focus-visible {
-  outline: 3px dotted transparent;
+  outline: 2px solid transparent;
   outline-offset: 2px;
 
   @media (forced-colors: active) {

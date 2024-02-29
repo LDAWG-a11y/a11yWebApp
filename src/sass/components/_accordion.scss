@@ -41,7 +41,6 @@
 
 .accordion--single {
   .accordion__btn {
-    border-width: 1px;
     border-radius: $radius-md;
   }
 }
@@ -64,11 +63,11 @@
   position: relative;
   display: flex;
   align-items: center;
-  border: 2px solid var(--v2--color-interactive-alt);
+  border: 2px solid var(--v2--color-primary--light);
   padding: 0 12px 0 $space-xxxl;
   width: 100%;
   background-color: var(--v2--color-bg);
-  color: var(--v2--color-interactive-alt);
+  color: var(--v2--color-primary--light);
   transition: background-color 300ms ease-in, color 300ms ease-in;
   z-index: 1;
 
@@ -77,7 +76,7 @@
   &::after {
     content: "";
     position: absolute;
-    background-color: var(--v2--color-interactive-alt);
+    background-color: var(--v2--color-primary--light);
     transition: background 300ms ease-in-out, transform 300ms ease-in-out, opacity 250ms ease-in-out;
     transform-origin: top;
 
@@ -115,18 +114,18 @@
 
   &:focus-visible,
   &:hover {
-    background-color: var(--v2--color-interactive-alt);
+    background-color: var(--v2--color-primary--light);
     color: var(--v2--color-bg);
 
     &::before,
     &::after {
       background-color: var(--v2--color-bg);
-      color: var(--v2--color-interactive-alt);
+      color: var(--v2--color-primary--light);
     }
   }
 
   &:focus-visible {
-    outline: 2px solid var(--v2--color-interactive-alt);
+    outline: 2px solid var(--v2--color-primary--light);
   }
 }
  
@@ -222,7 +221,7 @@
 //     margin: 0 auto $space-md;
 
 //     .has-js & {
-//       border: 2px solid var(--color-interactive);
+//       border: 2px solid var(--color-primary);
 //       border-top: none;
 //       padding-top: $space-lg;
 //       background-color: var(--color-bg--light);
@@ -249,13 +248,13 @@
 
 // .accordion__btn {
 //   position: relative;
-//   border: 2px solid var(--color-interactive);
+//   border: 2px solid var(--color-primary);
 //   border-radius: $radius-xs;
 //   padding: $space-xs $space-xxl $space-xs $space-sm;
 //   width: 100%;
 //   font-size: $large-text;
 //   text-align: left;
-//   color: var(--color-interactive);
+//   color: var(--color-primary);
 //   background: var(--color-bg--light);
 //   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 
@@ -263,7 +262,7 @@
 
 //   &:focus,
 //   &:hover {
-//     background-color: var(--color-interactive);
+//     background-color: var(--color-primary);
 //     color: var(--color-bg);
 
 //     &::before,
@@ -277,7 +276,7 @@
 //   }
 
 //   &:focus-visible {
-//     box-shadow: 0px 0px 0px 2px var(--color-bg),0px 0px 0px 4px var(--color-interactive);
+//     box-shadow: 0px 0px 0px 2px var(--color-bg),0px 0px 0px 4px var(--color-primary);
 //   }
 // }
 

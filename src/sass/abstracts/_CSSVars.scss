@@ -1,11 +1,14 @@
 $--v2--color-primary: --v2--color-primary;
+$--v2--color-primary--dark: --v2--color-primary--dark;
+$--v2--color-primary--light: --v2--color-primary--light;
 $--v2--color-secondary: --v2--color-secondary;
 $--v2--color-tertiary: --v2--color-tertiary;
 $--v2--color-text: --v2--color-text;
 $--v2--color-text-alt: --v2--color-text-alt;
 $--v2--color-bg: --v2--color-bg;
-$--v2--color-bg-alt: --v2--color-bg-alt;
-$--v2--color-subtle: --v2--color-subtle;
+$--v2--color-bg-alt-1: --v2--color-bg-alt-1;
+$--v2--color-bg-alt-2: --v2--color-bg-alt-2;
+$--v2--color-border--light: --v2--color-border--light;
 $--v2--color-interactive: --v2--color-interactive;
 $--v2--color-interactive-alt: --v2--color-interactive-alt;
 $--color-text: --color-text;
@@ -26,16 +29,17 @@ $--color-warn--bright: --color-warn--bright;
 $--v2--main-font-size: --v2--main-font-size;
 
 $theme-map-light: (
-  $--v2--color-primary: #702A8C,
-  $--v2--color-secondary: #BF2669,
-  $--v2--color-tertiary: #fdf7ff,
+  $--v2--color-primary: #72278E,
+  $--v2--color-primary--dark: #511868,
+  $--v2--color-primary--light: #702A8C,
+  $--v2--color-secondary: #41b09b,
+  $--v2--color-tertiary: #BB35B0,
   $--v2--color-text: #1f1f1f,
-  $--v2--color-text-alt: #e6e6e6,
+  $--v2--color-text-alt: #e7e7e7,
   $--v2--color-bg: #f8f8f8,
-  $--v2--color-bg-alt: #fdfdfd,
-  $--v2--color-subtle: #595959,
-  $--v2--color-interactive: #8935d7,
-  $--v2--color-interactive-alt: #8935d7,
+  $--v2--color-bg-alt-1: #fdfdfd,
+  $--v2--color-bg-alt-2: #f8ebff,
+  $--v2--color-border--light: #a2a2a2,
   $--color-text: #1f1f1f,
   $--color-bg: #fdfdfd,
   $--color-bg--light: #fffaf0,
@@ -55,15 +59,16 @@ $theme-map-light: (
 
 $theme-map-dark: (
   $--v2--color-primary: #50366b,
-  $--v2--color-secondary: #DC508D,
-  $--v2--color-tertiary: #322E33,
+  $--v2--color-primary--dark: #50366b,
+  $--v2--color-primary--light: #C2A7D7,
+  $--v2--color-secondary: #50dcc2,
+  $--v2--color-tertiary: #bc58ad,
   $--v2--color-text: #B0B0B0,
   $--v2--color-text-alt: #D9D9D9,
   $--v2--color-bg: #252525,
-  $--v2--color-bg-alt: #fdfdfd,
-  $--v2--color-subtle: #4a4a4a,
-  $--v2--color-interactive: #744e9b,
-  $--v2--color-interactive-alt: #C4A7D3,
+  $--v2--color-bg-alt-1: #fdfdfd,
+  $--v2--color-bg-alt-2: #241f27,
+  $--v2--color-border--light: #434343,
   $--color-text: #D9D9D9,
   $--color-bg: #252525,
   $--color-bg--light: #2d2d2d,
@@ -100,13 +105,35 @@ $font-map-default: (
 :root[data-pref--theme="light"] {
   @include spread-map($theme-map-light);
 
+  color-scheme: light;
+  
   ::-moz-selection {
     background-color: #8ba8d9b4;
   }   
 }
 
+:root {
+  @media (prefers-color-scheme: light) {
+    @include spread-map($theme-map-light);
+
+    color-scheme: light;
+
+    ::selection {
+      background-color: #8ba8d9b4;
+      color: black;
+    }
+  
+    h1::selection {
+      background-color: var(--color-text);
+      color: var(--color-primary);
+    }
+  }
+}
+
 :root[data-pref--theme="dark"] {
   @include spread-map($theme-map-dark);
+
+  color-scheme: dark;
 
   ::selection {
     background-color: #8ba8d9b4;
@@ -122,6 +149,8 @@ $font-map-default: (
 :root {
   @media (prefers-color-scheme: dark) {
     @include spread-map($theme-map-dark);
+
+    color-scheme: dark;
 
     ::selection {
       background-color: #8ba8d9b4;
