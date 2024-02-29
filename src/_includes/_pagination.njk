@@ -1,5 +1,5 @@
 <nav class="pagination" aria-labelledby="guidesPagination">
-  <h2 class="pagination__heading" id="guidesPagination">Page {{ pagination.pageNumber + 1 }} of {{ pagination.pageLinks.length }}</h2>
+  <h2 class="pagination__heading" id="guidesPagination" data-no-accent>Page {{ pagination.pageNumber + 1 }} of {{ pagination.pageLinks.length }}</h2>
   <div class="pagination__items-wrapper">
     {%- if pagination.previousPageLink %}
       {%- if pagination.pages.length > 2 %}
