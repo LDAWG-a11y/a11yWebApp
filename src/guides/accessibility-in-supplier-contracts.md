@@ -32,13 +32,13 @@ With no direct recourse in the regulations to hold suppliers responsible, it is 
 
 ## Contract clauses template
 
+[Download a copy of the contract wording template](/docs/mta-contract-wording-template.docx)
+
 This contract wording has been created in collaboration with RNIB (Royal National Institute of Blind People) and several London Universities to ensure consistent world leading accessibility standards are embedded within all products or services as part of all procurement process to benefit everyone involved in its delivery. This is part of an ongoing relationship to make the UK Higher Education sector more inclusive and accessible to all.
 
 We hope that the template will be of use to others, but as with any contract, these clauses may be negotiated by both parties, and we suggest that you still seek your own legal advice before use.
 
 <div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">This publication is issued as guidance only. It is not intended to provide legal or professional advice. All collaborators on this content accept no liability for any errors, omissions or any consequences, losses or damages arising from any use of, or reliance placed on, this publication. You need to ensure that any contractual terms are appropriate for your organisation. You should seek advice from a suitably qualified professional.</span></div>
-
-[Download a copy of the contract wording template](/public/docs/mta-contract-wording-template.docx)
 
 ### The MTA template
 
