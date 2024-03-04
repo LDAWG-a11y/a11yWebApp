@@ -1,3 +1,5 @@
+@use '../vendors/mq';
+
 .visually-hidden {
   clip: rect(0 0 0 0); 
   clip-path: inset(50%);
@@ -6,4 +8,34 @@
   position: absolute;
   white-space: nowrap; 
   width: 1px;
+}
+
+.btm__gutter__minor-block {
+  margin-bottom: $space-abs-xxxxl;
+  
+  @include mq.mq($from:md) {
+    margin-bottom: $space-abs-bigger;
+  }
+}
+
+.btm__gutter__major-block {
+  margin-bottom: $space-abs-big;
+
+  @include mq.mq($from:md) {
+    margin-bottom: $space-abs-bigger;
+  }
+}
+
+.btm__gutter--largest {
+  margin-bottom: $space-abs-bigger;
+
+  @include mq.mq($from:md) {
+    margin-bottom: $space-abs-biggest;
+  }
+}
+
+.flex__middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

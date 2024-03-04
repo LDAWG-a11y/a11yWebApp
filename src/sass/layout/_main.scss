@@ -5,7 +5,7 @@ body {
   background: var(--v2--color-bg);
 
   @include mq.mq($from:lg) {
-    padding: 20px;
+    padding: $space-abs-xl;
   }
 
   &.extra-width {
@@ -23,13 +23,9 @@ body[modal-open] {
 }
 
 .main {
-  padding: 0 8px 3.5rem;
-
-  // @include mq.mq($from:md) {
-  //   padding: 0 $space-md 80px;
-  // }
+  padding: 0 $space-abs-sm $space-abs-bigger;
 
   @include mq.mq($from:lg) {
-    padding: 0 $space-md 10rem;
+    padding: 0 $space-abs-lg $space-rel-biggest;
   }
 }

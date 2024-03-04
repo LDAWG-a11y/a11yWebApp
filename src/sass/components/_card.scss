@@ -3,7 +3,7 @@
 .cards--scrollable {
   display: flex;
   flex-direction: row;
-  padding: $space-md 0;
+  padding: $space-rel-md 0;
   overflow-x: auto;
 
   background-image: linear-gradient(to right, white, white),
@@ -35,13 +35,13 @@
 
   .cards--scrollable & {
     display: flex;
-    gap: $space-md;
+    gap: $space-rel-md;
   }
 
   @include mq.mq($from:sm) {
     display: flex;
     flex-wrap: wrap;
-    gap: $space-md;
+    gap: $space-rel-md;
 
     .cards--scrollable & {
       flex-wrap: nowrap;
@@ -50,7 +50,7 @@
   }
 
   @include mq.mq($from:md-tweak) {
-    gap: $space-lg;
+    gap: $space-rel-lg;
   }
 
   .card__item {
@@ -68,7 +68,7 @@
   
     @include mq.mq($until:sm) {
       &:not(:last-of-type) {
-        margin-bottom: $space-md;
+        margin-bottom: $space-rel-md;
 
         .cards--scrollable & {
           margin-bottom: 0;
@@ -78,7 +78,7 @@
     }
   
     @include mq.mq($from:sm) {
-      max-width: calc(50% - #{$space-xs});
+      max-width: calc(50% - #{$space-rel-xs});
 
       .cards--scrollable & {
         width: 21.5rem;
@@ -86,7 +86,7 @@
     }
   
     @include mq.mq($from:md-tweak) {
-      max-width: calc(33.3% - #{$space-md});
+      max-width: calc(33.3% - #{$space-rel-md});
     }
   
     @include mq.mq($from:xxl) {
@@ -125,7 +125,7 @@
   
     .card__placeholder-img--aaa {
       margin-top: 50%;
-      padding: 0 $space-md;
+      padding: 0 $space-rel-md;
       transform: translateY(-50%);
     }
   }
@@ -135,7 +135,7 @@
     flex-direction: column;
     flex: 1;
     order: 2;
-    padding: $space-sm;
+    padding: $space-rel-sm;
     transition: background-color 300ms ease-in;
   }
   
@@ -191,7 +191,7 @@
   }
 
  .card__summary {
-    margin-bottom: $space-lg;
+    margin-bottom: $space-rel-lg;
     font-size:  $default-font-size;
     flex: 1;
 

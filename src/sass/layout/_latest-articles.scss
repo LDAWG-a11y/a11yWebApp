@@ -7,11 +7,11 @@
   @include mq.mq($from:md) {
     border-width: 3px;
     border-radius: $radius-lg;
-    padding: $space-md 0;
+    padding: $space-rel-md 0;
   }
 
   &:not(:last-of-type) {
-    margin-bottom: $space-xxxl;
+    margin-bottom: $space-rel-xxxl;
   }
 }
 
@@ -20,5 +20,5 @@
 }
 
 .latest-articles__intro {
-  margin-bottom: $space-xl;
+  margin-bottom: $space-rel-xl;
 }

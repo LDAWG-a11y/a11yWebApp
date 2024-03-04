@@ -263,6 +263,39 @@ a:not([class]):visited {
   width: 1px;
 }
 
+.btm__gutter__minor-block {
+  margin-bottom: 40px;
+}
+@media (min-width: 48em) {
+  .btm__gutter__minor-block {
+    margin-bottom: 90px;
+  }
+}
+
+.btm__gutter__major-block {
+  margin-bottom: 56px;
+}
+@media (min-width: 48em) {
+  .btm__gutter__major-block {
+    margin-bottom: 90px;
+  }
+}
+
+.btm__gutter--largest {
+  margin-bottom: 90px;
+}
+@media (min-width: 48em) {
+  .btm__gutter--largest {
+    margin-bottom: 120px;
+  }
+}
+
+.flex__middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 *,
 *::before,
 *::after {
@@ -408,7 +441,7 @@ body {
   position: relative;
   line-height: 1.5;
   font-family: "Red Hat Display", Helvetica, Verdana, sans-serif;
-  color: var(--color-text);
+  color: var(--v2--color-text);
   text-rendering: auto;
 }
 
@@ -452,7 +485,6 @@ footer {
 main,
 dialog {
   font-size: var(--v2--base-font-size);
-  color: var(--v2--color-text);
 }
 @media (min-width: 48em) {
   main,
@@ -500,8 +532,6 @@ h6 {
 }
 
 h1 {
-  margin-top: 6rem;
-  padding-bottom: 10rem;
   text-align: center;
   font-size: 3rem;
   font-weight: 900;
@@ -515,14 +545,9 @@ h1 {
     line-height: 1.5;
   }
 }
-@media (min-width: 37.5em) {
-  h1 {
-    font-size: 3.5rem;
-  }
-}
 @media (min-width: 48em) {
   h1 {
-    margin-top: 10rem;
+    font-size: 3.5rem;
   }
 }
 @media (min-width: 64em) {
@@ -532,9 +557,10 @@ h1 {
 }
 
 .main__title--home {
-  margin: 6rem auto 0;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
-  max-width: 60rem;
+  max-width: 65rem;
 }
 .main__title--home span {
   position: relative;
@@ -546,7 +572,15 @@ h1 {
   background-position: 100%;
   animation: colour-swipe 1250ms cubic-bezier(0, 0.55, 0.45, 1) 750ms forwards;
 }
+@media (min-width: 48em) {
+  .main__title--home span {
+    font-size: 4rem;
+  }
+}
 @media (min-width: 64em) {
+  .main__title--home span {
+    font-size: 4.5rem;
+  }
   .main__title--home span::before {
     content: "";
     position: absolute;
@@ -658,8 +692,8 @@ a {
 a:not([class]),
 a:not([class]):visited {
   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
-  margin: -3px -3px;
-  padding: 3px 3px;
+  margin: -4px -4px;
+  padding: 4px 4px;
   color: var(--color-interactive);
 }
 a:not([class]):focus, a:not([class]):hover,
@@ -671,12 +705,13 @@ a:not([class]):visited:hover {
 
 button {
   font-family: "Red Hat Display", Helvetica, Verdana, sans-serif;
+  font-size: var(--v2--current-font-size);
   font-weight: 500;
 }
 
 ul:not([class]),
 ol {
-  margin-left: 1.5rem;
+  margin-left: 24px;
 }
 
 ul:not([class]),
@@ -722,7 +757,7 @@ ul:not([class]) li::before {
 @media (min-width: 64em) {
   .footer {
     border-radius: 6px;
-    padding: 7.5rem 24px 24px;
+    padding: 10rem 24px 24px;
   }
 }
 .footer h2 {
@@ -751,9 +786,6 @@ ul:not([class]) li::before {
   }
   .footer__contact-us h2 {
     margin-bottom: 1rem;
-  }
-  .footer__contact-us div {
-    justify-content: center;
   }
   .footer__contact-us svg {
     color: var(--v2--color-secondary);
@@ -791,10 +823,6 @@ ul:not([class]) li::before {
     background-color: var(--v2--color-primary);
   }
 }
-.footer__contact-us div {
-  display: flex;
-  align-items: center;
-}
 .footer__contact-us div:first-of-type {
   margin-bottom: 2px;
 }
@@ -808,15 +836,7 @@ ul:not([class]) li::before {
 .footer__help,
 .footer__mta-links,
 .footer__collabs {
-  margin-bottom: 36px;
-}
-@media (min-width: 48em) {
-  .footer__contact-us,
-  .footer__help,
-  .footer__mta-links,
-  .footer__collabs {
-    margin-bottom: 36px;
-  }
+  margin-bottom: 32px;
 }
 @media (min-width: 64em) {
   .footer__contact-us,
@@ -828,16 +848,10 @@ ul:not([class]) li::before {
 }
 
 @media (min-width: 64em) {
-  .footer__help {
-    margin-top: 2rem;
-  }
-}
-
-@media (min-width: 64em) {
   .footer__help-text {
     display: block;
     column-count: 2;
-    column-gap: 4rem;
+    column-gap: 56px;
     min-width: 100%;
   }
 }
@@ -946,6 +960,16 @@ ul:not([class]) li::before {
   transform: translateY(0);
 }
 
+.header__logo img {
+  height: auto;
+  max-width: 96%;
+}
+@media (min-width: 37.5em) {
+  .header__logo img {
+    max-width: 35rem;
+  }
+}
+
 .latest-articles {
   margin: 0;
   padding: 0;
@@ -988,11 +1012,11 @@ body[modal-open] {
 }
 
 .main {
-  padding: 0 8px 3.5rem;
+  padding: 0 8px 90px;
 }
 @media (min-width: 64em) {
   .main {
-    padding: 0 1rem 10rem;
+    padding: 0 16px 10rem;
   }
 }
 
@@ -1122,9 +1146,6 @@ body[modal-open] {
 }
 :where(.has-js) .nav__prefs-btn,
 :where(.has-js) .nav__menu-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
   border: 2px solid var(--v2--color-text-alt);
   border-radius: 4px;
@@ -1328,26 +1349,6 @@ body[modal-open] {
 .no-js .nav__btn--collab {
   display: none;
 }
-.header__logo {
-  display: flex;
-  justify-content: center;
-  margin-top: 6rem;
-}
-.header__logo img {
-  height: auto;
-  max-width: 96%;
-}
-@media (min-width: 37.5em) {
-  .header__logo img {
-    max-width: 35rem;
-  }
-}
-@media (min-width: 48em) {
-  .header__logo {
-    margin-top: 10rem;
-  }
-}
-
 .accordion {
   margin-bottom: 0;
   width: 100%;
@@ -1391,7 +1392,6 @@ body[modal-open] {
 }
 
 .accordion--multiple .accordion__btn {
-  padding: 6px 12px 6px 3rem;
   margin-bottom: 6px;
 }
 
@@ -1400,9 +1400,8 @@ body[modal-open] {
   display: flex;
   align-items: center;
   border: 2px solid var(--v2--color-primary--light);
-  padding: 0 12px 0 3rem;
+  padding: 0 6px 0 2.5rem;
   width: 100%;
-  font-size: calc(var(--v2--current-font-size) + 0.125rem);
   background-color: var(--v2--color-bg);
   color: var(--v2--color-primary--light);
   transition: background-color 300ms ease-in, color 300ms ease-in;
@@ -1479,22 +1478,6 @@ body[modal-open] {
   .accordion__panel {
     transition: grid-template-rows 0ms, visibility 0ms ease-in;
   }
-}
-@media (min-width: 48em) {
-  .accordion__panel {
-    padding: 0 0.75rem;
-  }
-}
-
-.settings__help {
-  margin-bottom: 18px;
-}
-.settings__help ul {
-  margin-bottom: 0;
-  padding: 2rem 0.75rem;
-}
-.settings__help ul > li {
-  margin-bottom: 0.5rem;
 }
 
 .author-bio {
@@ -2311,18 +2294,10 @@ body:has(dialog[open]) {
   color: var(--color-inactive);
 }
 
-.header__search-block {
-  margin-top: 6rem;
-}
 .has-js .header__search-block {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-@media (min-width: 48em) {
-  .header__search-block {
-    margin-top: 10rem;
-  }
 }
 
 .search__wrapper,
@@ -2366,22 +2341,12 @@ body:has(dialog[open]) {
   padding: 0 2.25rem 0 8px;
   width: 100%;
   height: 2.5rem;
-  font-size: 1.125rem;
   background-color: var(--v2--color-bg);
 }
 @media (min-width: 48em) {
   .search__input {
     height: 3rem;
-    font-size: 1.25rem;
   }
-}
-@media (min-width: 64em) {
-  .search__input {
-    font-size: 1.5rem;
-  }
-}
-.search__input:focus, .search__input:focus-visible {
-  outline-color: transparent;
 }
 
 .socials__container {
