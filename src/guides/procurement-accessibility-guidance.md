@@ -12,144 +12,99 @@ tags:
   - Procurement
 isGuide: true
 ---
-If you are currently procuring any website, system, mobile app or other content or hiring a 3rd party to develop digital content or systems for you, then you must ensure that you are tying the 3rd party / supplier / provider to meeting your legal obligations when it comes to accessibility, for example helping you to meet the requirements of the Public Sector Bodies (Websites and Mobile Applications) Accessibility Regulations 2018.
+This accessibility in procurement guidance has been created in collaboration with RNIB (Royal National Institute of Blind People) to ensure consistent world leading accessibility standards are embedded within all products or services to benefit everyone involved in its delivery. This is part of an ongoing relationship to make the UK Higher Education sector more inclusive and accessible to all.
 
-## [](<>)Public sector responsibilities
+We hope that the template will be of use to others, but as with any procurement exercise, these clauses may be adjusted to your organisation needs, and we suggest that you still seek your own advice before use.
 
-Public sector bodies are in scope of [accessibility regulations](https://www.makethingsaccessible.com/guides/what-are-the-public-sector-bodies-accessibility-regulations/) and as such all legal responsibility falls on the public sector body, developers and contractors cannot be held accountable unless you specifically tie them to meeting the legal obligations within contract documentation and make sure to get evidence during procurement.
+## Introduction
+
+Public Sector Bodies have a responsibility under the [Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility Regulations 2018 (PSBAR)](https://www.makethingsaccessible.com/guides/what-are-the-public-sector-bodies-accessibility-regulations/), the Equality Act 2010 and the Public Sector Equality Duty to ensure that the digital systems/products they procure are accessible. We have an equal duty to not discriminate against members of the public or our staff because of disability. We do this by making sure all the products we buy meet the required standards, with clear evidence to support compliance with our legal responsibilities.
+
+Getting accessibility right during the tendering and procurement process is vital as it helps us fulfil our legal requirements from the very start and prevents 'buying into problems'.
 
 There are many complexities when it comes to regulation responsibilities and 3rd parties. We have more information on these complexities in our [3rd party content responsibilities guide](https://www.makethingsaccessible.com/guides/3rd-party-content-responsibilities/).
 
+The intent of this guide is for you to be able to use the following example digital accessibility requirements in tender and technical or functional requirements documentation when procuring Software as a Service (SaaS) products.
+
+SaaS can cover a wide variety of digital purchases (and range of included content) such as commissioning a new website, the production of digital documents for marketing campaigns, 3rd party applications, mobile apps, or systems, and other digital content.
+
+### Coverage
+
+The requirement to be accessible applies to both for front-end (customer, students, members of the public) and back-end (staff) aspects of systems and services. This means that we need to ensure that the entirety of the service is accessible, including the following: 
+
+* external facing screens;
+* internal facing screens;
+* administration facing screens;
+* password verification systems;
+* authentication processes; and
+* all communications, including emails, generated document formats, confirmation user action, receipt of acknowledgment, requests, additional correspondence, requests for further information, and use of third-party plugins.
+
+### Relevant Regulations and Standards
+
+When receiving responses from suppliers, they may reference different standards depending on where they are based. It is good to understand the following relevant regulations and standards to accessibility in procurement and the information different compliance documentation may contain. The list below is a quick reference of some of the key requirements:
+
+* **PSBAR** – [Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility Regulations 2018 (PSBAR)](https://www.makethingsaccessible.com/guides/what-are-the-public-sector-bodies-accessibility-regulations/) which requires evidence of compliance with WCAG 2.2 and an [accessibility statement](https://www.makethingsaccessible.com/guides/accessibility-statements-what-are-they/).
+* **[EU Web Accessibility Directive](<•	EU Web Accessibility Directive>)** – The EU equivalent of PSBAR. Differs between EU members states but all require evidence of compliance with WCAG (under the banner of the EN 301 549 harmonised standard) and an accessibility statement.
+* **[EU Accessibility Act 2019](https://ec.europa.eu/social/main.jsp?catId=1202#:~:text=The%20European%20accessibility%20act%20is,EU%20leading%20to%20costs%20reduction)** – Will require evidence of compliance with WCAG 2.1 or better and other standards for physical accessibility for electrical hardware as well.
+* **[Section 508](https://www.section508.gov/)** – The American standards which require evidence of WCAG compliance for 2.0 or better. Is evidenced through a VPAT.
+* **[WCAG](https://www.w3.org/TR/WCAG22/)** – The Web Content Accessibility Guidelines. The underlying technical standards that all others refer back to.
+* **[ATAG](https://www.w3.org/WAI/standards-guidelines/atag/)** – The Authoring Tools Accessibility Guidelines. A subset of WCAG requirements and additional points focussed on accessible authoring tools.
+* **[EN 301 549](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf)** – The European harmonised standard which aligns WCAG requirements with a wider range of formats including documents.
+* **[VPAT](https://www.section508.gov/sell/vpat/)** – A type of WCAG checklist used to evidence levels of compliance under Section 508. Originally an American thing but have become more of a common widespread document.
+
+### General guidance
+
+We recommend where possible, you involve your organisations digital accessibility officers in the review of any supplier responses received during a procurement exercise. It is important to get the feedback of accessibility professionals to be able to correctly judge the quality of documentation provided by suppliers.
+
+For example, if a supplier provides an accessibility roadmap it should be reviewed by an appropriate accessibility professional outside the project. They weigh up the potential user impact, proposed mitigations, and consider the availability of alternative products. They may approve or not; approval may be subject to specific mitigations being implemented as a prerequisite to purchase.
+
+If you do not have accessibility specialists to review your supplier responses, please refer to our [Reviewing procurement responses guide](https://www.makethingsaccessible.com/guides/reviewing-procurement-responses-for-accessibility/) which give some suggestions on what you should be looking for in different response and documentation types.
+
+### Contracts
+
+When you have chosen your supplier, use the [Make Things Accessible SaaS contracts accessibility clauses](https://www.makethingsaccessible.com/guides/accessibility-in-supplier-contracts/) to embed your accessibility requirements into the final delivery.
+
 ## Going to tender
 
-When you are putting together your requirements, you should make sure to include accessibility in what you ask the developers to agree to. Include the following in the tender requirements.
+When you are putting together your requirements, you should make sure to include accessibility in what you ask the suppliers to agree to. Depending on what kind of SaaS product you are procuring, you should include the following in the tender requirements. In the sections below we describe requirements for the following types of SaaS procurement:
 
-If the developer is bidding to create a system to your specification:
+1. Supplier is offering to create a system to your specification
+2. Supplier is offering their own product that will be “customised” to your requirements
+3. Supplier is offering a Commercial Off the Shelf (COtS) Product
 
-* Describe how the supplier will ensure the proposed solution (customer and staff facing) shall meet compliance with the latest published version of WCAG (currently 2.2) A and AA success criteria, in line with the government requirements. This should include a description of how the supplier plans to test the final product against WCAG success criteria, tooling used, their audit process or the audit process of the subcontractor they may involve for external testing. This should also include any information regarding how they would roadmap fixes if the final product is not compliant.
-* Describe how the solution will support content upload compliance with WCAG where relevant. For example, what restrictions, options or guidance the solution will implement to help content creators upload or write accessible content.
-* Overlay and Underlay products/plugins/add-ons which offer to remediate accessibility issues represent a false approach to accessibility compliance. The supplier will indicate if in the delivery of the service to us they are using or plan to use any products provided by companies listed in the [Overlay Fact Sheet](https://overlayfactsheet.com/#main), or any other products that fit the description above.
+### Option 1: Supplier is offering to create a system to your specification
 
-If the developer is offering their own product that will be “customised” to your requirements we set out the following expectations:
+If a supplier is offering to create a system to your specification, they will not necessarily be able to provide you with documentation for a system’s compliance at the tender stage but should instead provide clear detail about how they plan to develop your system to accessibility standards and how they plan to test and evidence this compliance. For this situation we suggest using the following set of requirements:
 
-* The proposed solution (customer and staff facing) shall meet compliance with the latest published version of WCAG (currently 2.2) A and AA success criteria, in line with the government requirements - Public Sector Bodies Accessibility Regulations (2018). Supplier to provide test reports to evidence how they meet / don't meet WCAG compliance including listing test tooling used. For example, a WCAG audit report, VPAT, evidence of assistive technology testing or user testing with disabled user groups. Supplier to also provide their development roadmap for accessibility if their product partially complies.
-* Describe how the solution will support content upload compliance with WCAG where relevant. For example, what restrictions, options, or guidance the solution will implement to help content creators upload or write accessible content.
-* Overlay and Underlay products/plugins/add-ons which offer to remediate accessibility issues represent a false approach to accessibility compliance. The supplier will indicate if in the delivery of the service to us they are using or plan to use any products provided by companies listed in the [Overlay Fact Sheet](https://overlayfactsheet.com/#main), or any other products that fit the description above.
-* Supplier to provide a copy of the accessibility statement for their product covering core technical sections as required by the Public Sector Bodies Accessibility Regulations (2018). Or the supplier works with us to produce an accessibility statement for the proposed solution which meets our legislative obligation as a public sector body under PSBAR (2018) and is acceptable to us. Supplier provides / works with us to provide guidance for assistive technology users on using the solution. Guidance material required in all cases; additional guidance required to navigate areas of non-compliance with WCAG if present.
+1. **Describe how the supplier will ensure the proposed solution (customer and staff facing) shall meet compliance with the latest published version of [WCAG](https://www.w3.org/TR/WCAG22/) (Web Content Accessibility Guidelines) (currently 2.2) A and AA success criteria, in line with regulation requirements and international best practice.** This should include a description of how the supplier plans to test the final product against WCAG success criteria, tooling used, their audit process or the audit process of the subcontractor they may involve for external testing. This should also include any information regarding how they would roadmap fixes if the final product is not compliant.
+2. **Describe how the solution will support accessible content creation and upload compliance with [WCAG](https://www.w3.org/TR/WCAG22/) where relevant.** For example, what restrictions, options, or guidance the solution will implement to help content creators upload or write accessible content.
+3. **Describe how the solution will support disabled staff in using authoring tools to create content in compliance with the [ATAG](https://www.w3.org/WAI/standards-guidelines/atag/) (Authoring Tools Accessibility Guidelines 2.0).** For example, how will internal screens function with keyboard controls and assistive technologies like screen readers or dictation software to ensure staff can navigate and interact with internal functions.
+4. **The supplier will indicate if in the delivery of the solution they are using or plan to use any products provided by companies listed in the [Overlay Fact Sheet](https://overlayfactsheet.com/#main), or any other products that fit the description below.** Overlay and Underlay products/plugins/add-ons which offer to remediate accessibility issues represent a false approach to accessibility compliance and can present legal and reputational risks to both the supplier and customer. It is important to be clear on where and what the supplier is using overlay products for because [overlay products cannot be used for regulation compliance](https://www.makethingsaccessible.com/guides/overlays-and-other-fix-it-products/).
+5. **The supplier agrees to works with the customer to produce an accessibility statement for the proposed solution** which meets customer legislative obligation as a public sector body under PSBAR (2018) and is acceptable to the customer. The prerequisite (REQ 1) being that the supplier obtains sufficient evidence of WCAG compliance testing from which to draw details required for the accessibility statement.
+6. **The supplier agrees to work with the customer to provide guidance for assistive technology users.** Guidance material required in all cases; additional guidance required to navigate areas of non-compliance with WCAG if present.
+7. **Describe how the supplier will ensure that any related content shall meet compliance with the content relevant success criteria in the latest published version of [WCAG](https://www.w3.org/TR/WCAG22/) (Web Content Accessibility Guidelines) (currently 2.2) and detailed in [EN 301 549](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.01.02_60/en_301549v010102p.pdf), in line with regulation requirements and international best practice.** This should cover any content generated by the system, or related to the promotion, use, or management of the system, including all communications, emails, generated document formats, confirmation user action, receipt of acknowledgment, requests, additional correspondence, requests for further information, and use of third-party plugins.
 
-## Reviewing tender responses
+### Option 2: Supplier is offering their own product that will be “customised” to your requirements
 
-Assuming you have used the previous questions to get information from suppliers on how their systems will meet your requirements, you should have received some information back that broadly fits into the following categories:
+If a supplier is offering their own product that will be “customised” to your requirements, they should be able to provide compliance documentation for a “default” version of the platform and be able to clarify how much customisation they offer to customers, and what impacts that may have on accessibility compliance and how they support mitigating those risks during the implementation process. For this situation we suggest using the following set of requirements:
 
-* No information or other negative response
-* “Our product fully complies”
-* We use an overlay to maintain compliance
-* VPATs
-* Other detailed auditing documentation
-* An [accessibility statement](https://www.makethingsaccessible.com/guides/accessibility-statements-what-are-they/)
-* Remediation roadmap
-* Plans for testing
+* **Describe how the supplier will ensure the proposed solution (customer and staff facing) shall meet and maintain compliance with the latest published version of [WCAG](https://www.w3.org/TR/WCAG22/) (Web Content Accessibility Guidelines) (currently 2.2) A and AA success criteria, in line with regulation requirements and international best practice.** Supplier to provide test reports to evidence how they meet / don't meet WCAG compliance including listing test tooling used, their audit process or the audit process of the subcontractor they may involve for external testing. For example, a detailed WCAG audit report, VPAT, evidence of assistive technology testing or user testing with disabled user groups. Supplier to also provide their development roadmap for accessibility if their product partially complies, and how they plan to test and maintain compliance in future.
+* **Describe levels of customisations available to the customer in terms of themes, GUI, and functionality.** Supplier should explain what impacts customisations may have on accessibility compliance and how the supplier supports customers to check for and mitigating accessibility risks being introduced during the implementation process. For example, does the supplier maintain guidance on how to implement GUI or theme changes to maintain colour or magnification requirements, or components list and their known accessibility issues so that customers can choose only accessible components before implementation.
+* **Describe how the solution supports accessible content creation and upload compliance with [WCAG](https://www.w3.org/TR/WCAG22/) where relevant.** For example, what restrictions, options, or guidance the solution includes to help content creators upload or write accessible content.
+* **Describe how the solution supports disabled staff in using authoring tools to create content in compliance with the [ATAG](https://www.w3.org/WAI/standards-guidelines/atag/) (Authoring Tools Accessibility Guidelines 2.0).** For example, how do internal screens function with keyboard controls and assistive technologies like screen readers or dictation software to ensure staff can navigate and interact with internal functions.
+* **The supplier will indicate if in the delivery of the solution they are using or plan to use any products provided by companies listed in the [Overlay Fact Sheet](https://overlayfactsheet.com/#main), or any other products that fit the description below.** Overlay and Underlay products/plugins/add-ons which offer to remediate accessibility issues represent a false approach to accessibility compliance and can present legal and reputational risks to both the supplier and customer. It is important to be clear on where and what the supplier is using overlay products for because [overlay products cannot be used for regulation compliance](https://www.makethingsaccessible.com/guides/overlays-and-other-fix-it-products/).
+* **Supplier to provide a copy of the accessibility statement for their product** covering core technical sections as required by the Public Sector Bodies Accessibility Regulations (2018). Or the supplier agrees to works with the customer to produce an accessibility statement for the proposed solution which meets customer legislative obligation as a public sector body under PSBAR (2018) and is acceptable to the customer. The prerequisite (REQ1) being that the supplier has sufficient evidence of WCAG compliance testing from which to draw details required for the accessibility statement.
+* **The supplier provides / works with the customer to provide guidance for assistive technology users.** Guidance material required in all cases; additional guidance required to navigate areas of non-compliance with WCAG if present.
+* **Describe how the supplier will ensure that any related content shall meet compliance with the content relevant success criteria in the latest published version of [WCAG](https://www.w3.org/TR/WCAG22/) (Web Content Accessibility Guidelines) (currently 2.2) and detailed in [EN 301 549](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.01.02_60/en_301549v010102p.pdf), in line with regulation requirements and international best practice.** This should cover any content generated by the system, or related to the promotion, use, or management of the system, including all communications, emails, generated document formats, confirmation user action, receipt of acknowledgment, requests, additional correspondence, requests for further information, and use of third-party plugins.
 
-The below sections provide further information on what these responses might look link and how best to respond to or interpret different responses and evidence.
+### Option 3: Supplier is offering a Commercial Off the Shelf (COtS) Product
 
-### [](<>)No information or other negative response
+If a supplier is offering their own product with no customisations, they should be able to provide compliance documentation for the platform, including their testing processes, tools they use, and how they fix known issues and maintain high accessibility standards. For this situation we suggest using the following set of requirements:
 
-The range of poor responses you might receive from suppliers can be quite broad. You may receive anything including
-
-* no answers at all
-* accessibility is not on their roadmap
-* They have not done any testing to check compliance
-* No one has ever asked about this before (including “you are the first Council/Uni/College/etc. to ask for this”)
-* We are on X framework (such as Crown Commercial Services frameworks) so we must be fine, no further evidence supplied.
-
-If a tender response cannot provide any information to show that they are aware of the legal accessibility requirements for their customer base and know how to deal with requests and have appropriate evidence, then they are significantly higher risk.
-
-Remember that we all first learn about accessibility at some point. For many suppliers, this might be the first time they are being made aware of the requirements. The important thing is how the supplier responde to these requirements. If they approach it proactively and try to make fixes and are operating in good faith then that is one thing, but conversely they may dismiss the need because it has been "unimportant" up till now. The supplier's direction from this point is important.
-
-<div class="callout__tip"><span class="callout__icon"></span><span class="callout__text">Remember, you as the public sector body hold all the legal responsibility. If a supplier that does not know what they are doing delivers you an illegal product, you are responsible if something goes wrong.</span></div>
-
-### [](<>)“Our product fully complies”
-
-Many suppliers will claim that the product they are trying to sell you fully complies with all WCAG A and AA success criteria. In our experience this is in almost every case, incorrect.
-
-<div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">If a supplier says this in the tender response, you should be immediately sceptical. Any large or complex product will almost never be fully compliant just on the size alone.</span></div>
-
-Most times we have seen this response provided; the supplier will answer following questions explaining that there are a limited number of areas where the product has current issues against WCAG. This might be in a written response to one of the tender questions or can be identified through documentation such as a VPAT or audit report as mentioned below.
-
-If you receive a response from a supplier which says “fully compliant” and then receive documentation which does not say they are 100% perfect, you should immediately raise this inconsistency and be sceptical of their documentation. Consider:
-
-* Who wrote the report?
-* Was it in-house or a reputable 3rd party auditor
-* To what extent the supplier understand and can meet your requirements if they are making such contradictory statements.
-
-If you receive documentation which shows a clean slate for accessibility, also be sceptical and ask to be able to do your own testing. As has been said, most of the time, any suitably large system will not be perfect, and sometimes that has to be accepted but you are looking for an accurate state of the system not clean documentation just to get past the check.
-
-### Using an overlay to maintain compliance
-
-More and more we are seeing suppliers state that they are using an "overlay" product to deliver accessibility for their service. Overlay products are touted as additional plugins which you add onto your website or service which will then adjust pages to make them WCAG compliant without you having to test and remediate issues. These are false claims.
-
-If you want to find out more about overlays, why we do not support their use, and how to respond to suppliers who use overlays read our [overlay guide](https://www.makethingsaccessible.com/guides/overlays-and-other-fix-it-products/).
-
-### VPAT
-
-VPATs are a type of document which provides a very basic level of information on the accessibility of a digital product. This will normally be in the form of a table listing each of the WCAG success criteria an identification of their compliance, and some notes. VPAT's are part of the American Section 508 requirements, but have become an internationally used piece of accessibility documentation.
-
-The problem with VPATs is that they are normally not detailed enough to give useful information on the true level of impact for a service.
-
-For example, a VPAT may say for a digital system that it partially complies with 2.1.1 Keyboard (A). The notes read “Some areas of the product are not accessible to all keyboard controls”.
-
-The question you should be asking is what does “some” mean? Is it the main navigation for the platform? Is it all main content? Or is it a logo in the footer?
-
-If the navigation is not accessible or the main content is not accessible but other content is, then that still counts as some but would mean that a wide range of users would not be able to interact with the product at all.
-
-If you receive a VPAT that includes vague statements such as the above, which could mean a potential massive risk, or you are not sure, ask the supplier for more detailed information on the exact areas of the product that the issue covers, and refuse to sign any contract until you see a more detailed list. A VPAT can only have been produced correctly following in-depth testing. They are summary documents and so the detailed test results must exist.
-
-You should also be asking for a detailed remediation roadmap. If they are already aware of several issues as detailed in their VPAT, ask them for evidence of how they are planning to fix those identified issues. If they have no answer, refuse to sign a contract until they do.
-
-### Other detailed auditing documentation
-
-If the supplier responds with detailed testing documentation for the product you should look through the documents carefully.
-
-You will want to look at:
-
-* How they have tested the product
-* What tools they have used
-* Is there a mix between manual, automated and assistive technology testing
-* How large was the scope of testing
-* How serious the issues are or if the descriptions are vague
-* What priority ratings they have given for issues
-
-If there are any issues present in the detailed documentation you should ask for a detailed remediation roadmap. If they are already aware of several issues as detailed in their detailed documentation, ask them for evidence of how they are planning to fix those identified issues. If they have no answer, refuse to sign a contract until they do.
-
-### Accessibility Statement
-
-The accessibility statement is the end of the documentation journey. If the supplier can provide you with an accessibility statement, this is an insight into their testing process. If the statement is good, and has useful information on issues and even suggested workarounds already this could be a positive sign.
-
-If the statement is poor and does not include specific information about technical issues and their affects on users, but instead includes vapid statements about "commitments to support all users" this could be a sign that they do not have meaningful practical documentation to back this up and show what actions they are taking to deliver on those commitments.
-
-In either case, if an accessibility statement is provided as the main piece of evidence you should respond asking for other detailed auditing documentation which must have been used to create a good accessibility statement, or is what is required in the event a poor statement is provided, which is not enough to proceed by itself.
-
-### Remediation roadmaps
-
-In the event that you receive detailed documentation from a supplier that includes identifying issues as well as remediation roadmaps which go into detail about when each issue is planned to be fixed, this is an excellent response and should show that the supplier is aware of issues with their product, are working to fix them and can provide you as the customer with significant evidence to support due diligence.
-
-### Plans for testing
-
-Sometimes, particularly with new products that are either being designed bespoke for you or are a new launch from the supplier, thorough testing and road mapping may not yet have taken place. In this case you would expect to see information from the supplier about how they plan to test the product and what they will do about issues found during that testing.
-
-Ideally you will be looking for suppliers to commit to testing against the latest WCAG A & AA success criteria as a minimum. This can be done either in house if they have the skills, or by a subcontractor such as professional accessibility auditing companies. In any case the testing should include:
-
-* A significant scope which covers the majority of components across a platform through a representative sample
-* A mix of manual, automated and assistive technology testing.
-
-  * Manual testing is required to confirm several WCAG criteria that can only be done with human judgement such as whether things are correct in context.
-  * Automated testing tools can be used to deal with repeat issues that are easier to check with a computer such as comparing colour values for contrast, rather than trying to guess by eye.
-  * Assistive technology testing is vital to check that the platform works with common assistive technology and operating system pairings. This would include checking with common screen readers, dictation software, magnification techniques and non-pointer input devices such as keyboard controls.
-* A prioritisation of issues based on impact to users
-* Recommendations on how to fix issues. This may be more present in common easy to fix issues, rather than more complex issues for significant components which may require replacement.
-
-## Post procurement and contracts
-
-Once you have completed your tendering process and have decided to enter into an agreement with a supplier, it is important to keep accessibility compliance in the requirements.
-
-The best way to do this is to include accessibility into contracts with suppliers. For more information, read our guide on [accessibility in supplier contracts](https://www.makethingsaccessible.com/guides/accessibility-in-supplier-contracts/) which includes example contract clauses.
+1. **Describe how the supplier will ensure the proposed solution (customer and staff facing) shall meet and maintain compliance with the latest published version of [WCAG](https://www.w3.org/TR/WCAG22/) (Web Content Accessibility Guidelines) (currently 2.2) A and AA success criteria, in line with regulation requirements and international best practice.** Supplier to provide test reports to evidence how they meet / don't meet WCAG compliance including listing test tooling used, their audit process or the audit process of the subcontractor they may involve for external testing. For example, a detailed WCAG audit report, VPAT, evidence of assistive technology testing or user testing with disabled user groups. Supplier to also provide their development roadmap for accessibility if their product partially complies, and how they plan to test and maintain compliance in future.
+2. **Describe how the solution supports accessible content creation and upload compliance with [WCAG](https://www.w3.org/TR/WCAG22/) where relevant.** For example, what restrictions, options, or guidance the solution includes to help content creators upload or write accessible content.
+3. **Describe how the solution supports disabled staff in using authoring tools to create content in compliance with the [ATAG](https://www.w3.org/WAI/standards-guidelines/atag/) (Authoring Tools Accessibility Guidelines 2.0).** For example, how do internal screens function with keyboard controls and assistive technologies like screen readers or dictation software to ensure staff can navigate and interact with internal functions.
+4. **The supplier will indicate if in the delivery of the solution they are using or plan to use any products provided by companies listed in the [Overlay Fact Sheet](https://overlayfactsheet.com/#main), or any other products that fit the description below.** Overlay and Underlay products/plugins/add-ons which offer to remediate accessibility issues represent a false approach to accessibility compliance and can present legal and reputational risks to both the supplier and customer. It is important to be clear on where and what the supplier is using overlay products for because [overlay products cannot be used for regulation compliance](https://www.makethingsaccessible.com/guides/overlays-and-other-fix-it-products/).
+5. **Supplier to provide a copy of the accessibility statement for their product** covering core technical sections as required by the Public Sector Bodies Accessibility Regulations (2018). Or the supplier agrees to works with the customer to produce an accessibility statement for the proposed solution which meets customer legislative obligation as a public sector body under PSBAR (2018) and is acceptable to the customer. The prerequisite (REQ1) being that the supplier has sufficient evidence of WCAG compliance testing from which to draw details required for the accessibility statement.
+6. **The supplier provides / works with the customer to provide guidance for assistive technology users.** Guidance material required in all cases; additional guidance required to navigate areas of non-compliance with WCAG if present.
+7. **Describe how the supplier will ensure that any related content shall meet compliance with the content relevant success criteria in the latest published version of [WCAG](https://www.w3.org/TR/WCAG22/) (Web Content Accessibility Guidelines) (currently 2.2) and detailed in [EN 301 549](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.01.02_60/en_301549v010102p.pdf), in line with regulation requirements and international best practice.** This should cover any content generated by the system, or related to the promotion, use, or management of the system, including all communications, emails, generated document formats, confirmation user action, receipt of acknowledgment, requests, additional correspondence, requests for further information, and use of third-party plugins.
