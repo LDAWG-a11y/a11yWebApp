@@ -72,6 +72,8 @@ If a supplier does respond that they are using an overlay we would suggest respo
 
 If you want to avoid overlays on websites you visit, the Chrome extension [AccessiByeBye](https://www.accessibyebye.org/) blocks and switches off overlays as you visit websites.
 
+<div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">This publication is issued as guidance only. It is not intended to provide legal or professional advice. All collaborators on this content accept no liability for any errors, omissions or any consequences, losses or damages arising from any use of, or reliance placed on, this publication. You should seek advice from a suitably qualified professional.</span></div>
+
 ## Further reading
 
 Many accessibility professional far more involved in this debate than us have had much to say on the use of overlays, and the behaviour of the companies involved. Below is a selection of articles from other sources about overlays that are worth reading.
