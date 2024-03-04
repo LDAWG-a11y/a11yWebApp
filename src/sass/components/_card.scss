@@ -192,7 +192,7 @@
 
  .card__summary {
     margin-bottom: $space-lg;
-    font-size:  $default-paragraph-size;
+    font-size:  $default-font-size;
     flex: 1;
 
     @include mq.mq($from:md) {

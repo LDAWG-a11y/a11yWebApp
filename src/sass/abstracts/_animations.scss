@@ -82,3 +82,31 @@
   }
 }
 
+@keyframes colour-swipe {
+  0% {
+    background-position: 100%;
+  }
+
+  0% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: 0%;
+  }
+}
+
+@keyframes test {
+ 
+}
+
+@keyframes underline-word {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+

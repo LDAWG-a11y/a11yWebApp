@@ -72,7 +72,7 @@
 }
 
 @mixin font-size {
-  font-size: $default-paragraph-size;
+  font-size: $default-font-size;
 
   @include mq.mq($from:lg) {
     font-size: $large-paragraph-size;

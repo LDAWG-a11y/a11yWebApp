@@ -71,12 +71,15 @@ input:focus-visible {
   }
 }
 
-[data-pref--motion="off"] *,
-[data-pref--motion="off"] *::before,
-[data-pref--motion="off"] *::after {
+[data-pref--motion="none"] *,
+[data-pref--motion="none"] *::before,
+[data-pref--motion="none"] *::after {
   transition: all .0001ms !important;
+  transition-delay: .0001ms !important;
   scroll-behavior: unset !important;
+  animation-delay: .0001ms !important;
   animation-duration: .0001ms !important;
+  animation: none !important;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
