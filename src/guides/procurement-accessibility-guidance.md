@@ -10,6 +10,10 @@ date: 2022-10-28
 toc: true
 tags:
   - Procurement
+file:
+  - /public/docs/option-1-bespoke-system-requirements.docx
+  - /public/docs/option-2-customised-system-requirements.docx
+  - /public/docs/option-3-cots-requirements.docx
 isGuide: true
 ---
 This accessibility in procurement guidance has been created in collaboration with RNIB (Royal National Institute of Blind People) to ensure consistent world leading accessibility standards are embedded within all products or services to benefit everyone involved in its delivery. This is part of an ongoing relationship to make the UK Higher Education sector more inclusive and accessible to all.
@@ -60,6 +64,8 @@ For example, if a supplier provides an accessibility roadmap it should be review
 
 If you do not have accessibility specialists to review your supplier responses, please refer to our [Reviewing procurement responses guide](https://www.makethingsaccessible.com/guides/reviewing-procurement-responses-for-accessibility/) which give some suggestions on what you should be looking for in different response and documentation types.
 
+<div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">This publication is issued as guidance only. It is not intended to provide legal or professional advice. All collaborators on this content accept no liability for any errors, omissions or any consequences, losses or damages arising from any use of, or reliance placed on, this publication. You should seek advice from a suitably qualified professional.</span></div>
+
 ### Contracts
 
 When you have chosen your supplier, use the [Make Things Accessible SaaS contracts accessibility clauses](https://www.makethingsaccessible.com/guides/accessibility-in-supplier-contracts/) to embed your accessibility requirements into the final delivery.
@@ -71,6 +77,12 @@ When you are putting together your requirements, you should make sure to include
 1. Supplier is offering to create a system to your specification
 2. Supplier is offering their own product that will be “customised” to your requirements
 3. Supplier is offering a Commercial Off the Shelf (COtS) Product
+
+### Download template requirements
+
+1. [Option 1 - bespoke system requirements](/docs/option-1-bespoke-system-requirements.docx)
+2. [Option 2 - customised system requirements](/docs/option-2-customised-system-requirements.docx)
+3. [Option 3 - COTS requirements](/docs/option-3-cots-requirements.docx)
 
 ### Option 1: Supplier is offering to create a system to your specification
 
