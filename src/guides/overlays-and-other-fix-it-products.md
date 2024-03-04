@@ -17,6 +17,8 @@ Overlays refers to a range of products which offer to fix accessibility issues a
 
 Often, they will say they use AI to dynamically fix accessibility issues across a website. This might be at the user end where an overlay button might appear which will adjust the code to “fix” issues for particular user groups, or it might fix things in the background without the user ever knowing that an overlay is present.
 
+<div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">This publication is issued as guidance only. It is not intended to provide legal or professional advice. All collaborators on this content accept no liability for any errors, omissions or any consequences, losses or damages arising from any use of, or reliance placed on, this publication. You should seek advice from a suitably qualified professional.</span></div>
+
 ## A bit of history
 
 Overlay products have had a controversial history over the last few years. Some longer-standing products have offered user accessibility customisation tools without issues for years. However, a new brand of overlay products recently entered the market and significantly shifted the kinds of services overlay products supposedly offer.
@@ -71,8 +73,6 @@ If a supplier does respond that they are using an overlay we would suggest respo
 ## Avoiding overlays
 
 If you want to avoid overlays on websites you visit, the Chrome extension [AccessiByeBye](https://www.accessibyebye.org/) blocks and switches off overlays as you visit websites.
-
-<div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">This publication is issued as guidance only. It is not intended to provide legal or professional advice. All collaborators on this content accept no liability for any errors, omissions or any consequences, losses or damages arising from any use of, or reliance placed on, this publication. You should seek advice from a suitably qualified professional.</span></div>
 
 ## Further reading
 
