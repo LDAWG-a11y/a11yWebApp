@@ -8,10 +8,10 @@
   @extend %underline;
 
   position: absolute;
-  left: $space-sm;
+  left: $space-rel-sm;
   top: 0;
   border: 3px solid var(--color-bg);
-  padding: 0 $space-sm;
+  padding: 0 $space-rel-sm;
   width: auto;
   height: 2.75rem;
   line-height: 1.75;
@@ -26,7 +26,7 @@
   }
 
   @include mq.mq($from:lg) {
-    top: -20px; 
+    top: -$space-abs-xl; 
   }
 }
 
@@ -36,4 +36,15 @@
 
 .skip-link:focus {
   transform: translateY(0);
+}
+
+.header__logo {
+  img {
+    height: auto;
+    max-width: 96%;
+
+    @include mq.mq($from:sm) {
+      max-width: 35rem;
+    }
+  }
 }

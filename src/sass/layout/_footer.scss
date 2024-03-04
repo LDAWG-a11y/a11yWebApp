@@ -2,17 +2,17 @@
 
 .footer {
   position: relative;
-  padding: 32px 8px 12px;
+  padding: $space-abs-xxxl $space-abs-sm $space-abs-md;
   background-color: var(--v2--color-primary--dark);
   color: var(--v2--color-text-alt);
 
   @include mq.mq($from:md) {
-    padding: 32px 20px 24px;
+    padding: $space-abs-xxxl $space-abs-xl $space-abs-xxl;
   }
 
   @include mq.mq($from:lg) {
     border-radius: $radius-md;
-    padding: 7.5rem 24px 24px;
+    padding: $space-rel-biggest $space-abs-xxl $space-abs-xxl;
   }
 
   h2 {
@@ -31,7 +31,7 @@
     left: 50%;
     border: 4px solid var(--v2--color-primary--dark);
     border-radius: $radius-lg;
-    padding: 8px 12px 20px;
+    padding: $space-abs-sm $space-abs-md $space-abs-xl;
     width: 80%;
     max-width: 65rem;
     text-align: center;
@@ -40,12 +40,7 @@
     background-color: var(--v2--color-bg);
 
     h2 {
-
       margin-bottom: 1rem;
-    }
-
-    div {
-      justify-content: center;
     }
 
     svg {
@@ -64,16 +59,13 @@
   }
 
   div {
-    display: flex;
-    align-items: center;
-
     &:first-of-type {
-      margin-bottom: 2px;
+      margin-bottom: $space-abs-xxxs;
     }
   }
 
   svg {
-    margin-right: 8px;
+    margin-right: $space-abs-sm;
     height: 2rem;
     width: 2rem;
   }
@@ -83,20 +75,10 @@
 .footer__help,
 .footer__mta-links,
 .footer__collabs {
-  margin-bottom: 36px;
-
-  @include mq.mq($from:md) {
-    margin-bottom: 36px;
-  }
+  margin-bottom: $space-abs-xxxl;
 
   @include mq.mq($from:lg) {
-    margin-bottom: 40px;
-  }
-}
-
-.footer__help {
-  @include mq.mq($from:lg) {
-    margin-top: 2rem;
+    margin-bottom: $space-abs-xxxxl;
   }
 }
 
@@ -104,20 +86,20 @@
   @include mq.mq($from:lg) {
     display: block;
     column-count: 2;
-    column-gap: 4rem;
+    column-gap: $space-abs-big;
     min-width: 100%;
   }
 }
 
 .footer__mta-links {
-  padding: 8px 0;
+  padding: $space-abs-sm 0;
 
   @include mq.mq($from:md) {
-    padding: 12px 0;
+    padding: $space-abs-md 0;
   }
 
   @include mq.mq($from:lg) {
-    padding: 20px 0;
+    padding: $space-abs-xl 0;
   }
 }
 
@@ -126,7 +108,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px;
+  gap: $space-abs-sm;
   list-style: none;
 }
 
@@ -141,7 +123,7 @@
     column-count: 3;
 
     li {
-      margin: 6px 0;
+      margin: $space-abs-xs 0;
 
       &:first-of-type {
         margin-top: 0;
@@ -153,15 +135,14 @@
 .footer__colophon {
   text-align: center;
   border-top: 1px solid var(--v2--color-bg);
-  
 
   p {
     margin: 0;
-    padding-top: 16px;
-    font-size: 1rem;
+    padding-top: $space-abs-lg;
+    font-size: $small-paragraph-size;
 
     @include mq.mq($from:md) {
-      font-size: 1.125rem;
+      font-size: $default-font-size;
     }
   }
 }
@@ -172,6 +153,6 @@
   }
 
   @include mq.mq($from:md) {
-    padding-top: 2px;
+    padding-top: $space-abs-xxxs;
   }
 }

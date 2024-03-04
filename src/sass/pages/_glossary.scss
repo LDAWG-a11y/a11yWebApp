@@ -1,16 +1,16 @@
 @use '../vendors/mq';
 
 .glossary__intro {
-  margin-bottom: $space-xxxl;
+  margin-bottom: $space-rel-xxxl;
 }
 
 .glossary__list {
-  padding-top: $space-lg;
+  padding-top: $space-rel-lg;
 }
 
 .glossary__item-wrapper {
   position: relative;
-  padding: $space-md $space-sm;
+  padding: $space-rel-md $space-rel-sm;
   border-bottom: 2px solid var(--color-accent);
   
   &::before {
@@ -102,7 +102,7 @@
 
 .glossary__definition {
   @include mq.mq($from:md) {
-    padding-left: $space-lg;
+    padding-left: $space-rel-lg;
     width: 80%;
   }
 }

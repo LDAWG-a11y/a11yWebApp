@@ -3,7 +3,7 @@
   <a class="skip-link" href="#h1">Skip navigation</a>
   {% include "_nav.njk" %}
 
-  <picture class="header__logo">
+  <picture class="header__logo flex__middle btm__gutter--largest">
     <source media="(prefers-color-scheme: light)" srcset="/img/MTA-logo-light.webp" height="136" width="600" data-main-logo>
     <source media="(prefers-color-scheme: light)" srcset="/img/MTA-logo-light.png" height="136" width="600" data-main-logo>
     <source media="(prefers-color-scheme: dark)" srcset="/img/MTA-logo-dark.webp" height="136" width="600" data-main-logo>
@@ -12,7 +12,7 @@
   </picture>
 
   {%- if not aaa %}
-    <div class="header__search-block">
+    <div class="header__search-block btm__gutter--largest">
       <label id="sFilterLbl" for="sFilter" class="search__label">Search for Guides or Tags, by keyword</label>
       <div class="search__wrapper" data-expanded="false">
         <input class="search__input" id="sFilter" type="text" autocomplete="off">

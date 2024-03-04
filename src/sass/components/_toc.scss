@@ -1,7 +1,7 @@
 @use '../vendors/mq';
 
 .cms__toc {
-  margin: 0 0 $space-xxxxl 0;
+  margin: 0 0 $space-rel-xxxxl 0;
   padding: 0;
   background-color: var(--color-bg--light);
   border: 1px solid var(--color-interactive);
@@ -12,7 +12,7 @@
     font-size: 2rem;
     border-radius: $radius-xs $radius-xs 0 0;
     border-bottom: 1px solid var(--color-interactive);
-    padding: $space-sm $space-sm $space-sm $space-xxl;
+    padding: $space-rel-sm $space-rel-sm $space-rel-sm $space-rel-xxl;
     list-style: none;
     line-height: 1;
     font-weight: 600;
@@ -37,7 +37,7 @@
     &::after {
       content: "";
       position: absolute;
-      left: $space-md;
+      left: $space-rel-md;
       top: 1.25rem;
       width: 0;
       height: 0;
@@ -91,7 +91,7 @@
 
   ol {
     list-style-position: inside;
-    padding: $space-sm;
+    padding: $space-rel-sm;
   }
 
   li {

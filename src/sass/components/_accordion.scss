@@ -47,15 +47,14 @@
 
 .accordion--single {
   + .accordion__panel {
-    width: calc(100% - $space-md);
-    margin-bottom: 24px;
+    width: calc(100% - $space-rel-md);
+    margin-bottom: $space-abs-xxl;
   }
 }
 
 .accordion--multiple {
   .accordion__btn {
-    padding: 6px 12px 6px $space-xxxl;
-    margin-bottom: 6px;
+    margin-bottom: $space-abs-xs;
   }
 }
 
@@ -64,14 +63,12 @@
   display: flex;
   align-items: center;
   border: 2px solid var(--v2--color-primary--light);
-  padding: 0 12px 0 $space-xxxl;
+  padding: 0 $space-abs-xs 0 $space-rel-xxl;
   width: 100%;
-  font-size: calc(var(--v2--current-font-size) + .125rem);
   background-color: var(--v2--color-bg);
   color: var(--v2--color-primary--light);
   transition: background-color 300ms ease-in, color 300ms ease-in;
   z-index: 1;
-
 
   &::before,
   &::after {
@@ -89,7 +86,7 @@
   &::before {
     top: 50%;
     left: 18px;
-    width: $space-xxs;
+    width: $space-rel-xxs;
     height: 1.125rem;
     transform: translateY(-50%);
   }
@@ -98,7 +95,7 @@
     top: 50%;
     left: 11px;
     width: 1.125rem;
-    height: $space-xxs;
+    height: $space-rel-xxs;
     transform: translateY(-50%);
   }
 
@@ -134,12 +131,12 @@
 .accordion__panel {
   position: relative;
   display: grid;
-  margin: 0 $space-xxs;
+  margin: 0 $space-rel-xxs;
   background-color: var(--v2--color-bg);
 
   > div {
     grid-row: 1 / span 2;
-    padding: 0 $space-xs;
+    padding: 0 $space-rel-xs;
     overflow: hidden;
 
     &::before {
@@ -148,43 +145,18 @@
       top: 0;
       display: block;
       width: 100%;
-      height: $space-md;
+      height: $space-rel-md;
     }
   }
 
   &[data-last] {
-    margin-bottom: $space-xxxl;
+    margin-bottom: $space-rel-xxxl;
   }
 
   @media (prefers-reduced-motion) {
     transition: grid-template-rows 0ms, visibility 0ms ease-in;
   }
-
-  @include mq.mq($from:md) {
-    padding: 0 $space-sm;
-  }
 }
-
-// ---------- Move and or fix for all lists
-.settings__help {
-  margin-bottom: 18px;
-
-  ul {
-    margin-bottom: 0;
-    padding: $space-xl $space-sm;
-
-    > li {
-      margin-bottom: .5rem;
-
-      
-    }
-  }
-}
-
-
-
-
-
 
 
 
@@ -198,7 +170,7 @@
   
 //   .has-js & {
 //     
-//     margin-bottom: $space-xs;
+//     margin-bottom: $space-rel-xs;
 //   }
 
 //   &[data-open="true"] {
@@ -219,17 +191,17 @@
 
 //   + .accordion__panel--full {
 //     max-width: 75rem;
-//     margin: 0 auto $space-md;
+//     margin: 0 auto $space-rel-md;
 
 //     .has-js & {
 //       border: 2px solid var(--color-primary);
 //       border-top: none;
-//       padding-top: $space-lg;
+//       padding-top: $space-rel-lg;
 //       background-color: var(--color-bg--light);
 //     }
 
 //     @include mq.mq($from:lg) {
-//       margin-bottom: $space-xxl;
+//       margin-bottom: $space-rel-xxl;
 //     }
 //   }
 
@@ -251,7 +223,7 @@
 //   position: relative;
 //   border: 2px solid var(--color-primary);
 //   border-radius: $radius-xs;
-//   padding: $space-xs $space-xxl $space-xs $space-sm;
+//   padding: $space-rel-xs $space-rel-xxl $space-rel-xs $space-rel-sm;
 //   width: 100%;
 //   font-size: $large-text;
 //   text-align: left;
@@ -289,14 +261,14 @@
 
 //   .has-js & {
 //     overflow: hidden;
-//     padding: 0 $space-xs 0;
+//     padding: 0 $space-rel-xs 0;
 //     max-width: 60rem;
 //     height: 0;
 //     visibility: hidden;
 //   }
 
 //   > *:last-child {
-//     padding-bottom: $space-xxl;
+//     padding-bottom: $space-rel-xxl;
 //   }
 
 
