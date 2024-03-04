@@ -116,21 +116,20 @@
 .dialog__title {
   margin: 0;
   padding: 0;
-  font-size: calc($default-paragraph-size * 2);
+  font-size: calc(var(--v2--current-font-size) + 1rem);
   color: var(--v2--color-text-alt);
 
   @include mq.mq($from:md) {
-    font-size: calc($default-paragraph-size * 2.25);
+    font-size: calc(var(--v2--current-font-size) + 1.5rem);
   }
 }
 
 .dialog__subtitle {
-  margin: 32px 0;
   padding: 0;
-  font-size: calc($default-paragraph-size * 1.75);
-
+  font-size: calc(var(--v2--current-font-size) + .625rem);
+  
   @include mq.mq($from:md) {
-    font-size: calc($default-paragraph-size * 2);
+    font-size: calc(var(--v2--current-font-size) + .875rem);
   }
 }
 
@@ -152,10 +151,10 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 32px;
+  margin-bottom: 32px;
   border: 1px solid var(--v2--color-border--light);
   border-radius: 0 $radius-sm $radius-sm $radius-sm;
-  padding: 16px 12px;
+  padding: 16px 12px 24px;
   background-color: var(--v2--color-bg-alt-2);
 }
 
@@ -165,7 +164,7 @@
   position: relative;
   margin-left: -12px;
   border-radius: $radius-sm;
-  padding: 4px 12px;
+  padding: 4px 16px;
   color: var(--v2--color-text-alt);
   background-color: var(--v2--color-bg-alt-2);
 
@@ -187,7 +186,6 @@
   flex-direction: column;
   justify-content: center;
   gap: 12px;
-  margin: 20px auto 0;
 
   @include mq.mq($from:sm) {
     flex-direction: row;
@@ -202,6 +200,7 @@ button[class^="settings__btn"],
   justify-content: center;
   border-radius: $radius-md;
   padding: 0 $space-xl;
+  font-size: var(--v2--current-font-size);
   transition: color 300ms ease-in, background-color 300ms ease-in, border-color 300ms ease-in;
 
   @-moz-document url-prefix() {

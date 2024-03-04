@@ -26,13 +26,16 @@ $--color-tip: --color-tip;
 $--color-info: --color-info;
 $--color-warn: --color-warn;
 $--color-warn--bright: --color-warn--bright;
-$--v2--main-font-size: --v2--main-font-size;
+$--v2--base-font-size: --v2--base-font-size;
+$--v2--current-font-size: --v2--current-font-size;
+$--v2--paragraph-spacing: --v2--paragraph-spacing;
+$--v2--line-height: --v2--line-height;
 
 $theme-map-light: (
   $--v2--color-primary: #72278E,
   $--v2--color-primary--dark: #511868,
   $--v2--color-primary--light: #702A8C,
-  $--v2--color-secondary: #41b09b,
+  $--v2--color-secondary: #3A9C8A,
   $--v2--color-tertiary: #BB35B0,
   $--v2--color-text: #1f1f1f,
   $--v2--color-text-alt: #e7e7e7,
@@ -86,38 +89,43 @@ $theme-map-dark: (
   $--color-warn--bright: #ff6a6a,
 );
 
-$font-map-default: (
-  $--v2--main-font-size: 2.5rem,
+$typography-map: (
+  $--v2--base-font-size: 1.125rem,
+  $--v2--current-font-size: 1.25rem,
+  $--v2--line-height: 1.5,
+  $--v2--paragraph-spacing: 1.5em,
 );
 
+@use '../vendors/mq';
 
 @mixin spread-map($map: ()) {
   @each $key, $value in $map {
-      #{$key}: $value;
+    #{$key}: $value;
   }
 }
 
+
 :root {
-  @include spread-map($font-map-default);
-}
-
-:root, 
-:root[data-pref--theme="light"] {
   @include spread-map($theme-map-light);
-
   color-scheme: light;
-  
+    
   ::-moz-selection {
     background-color: #8ba8d9b4;
   }   
-}
-
-:root {
-  @media (prefers-color-scheme: light) {
+  
+  &[data-pref--theme="light"] {
     @include spread-map($theme-map-light);
-
     color-scheme: light;
+    
+    ::-moz-selection {
+      background-color: #8ba8d9b4;
+    }   
+  }
 
+  &[data-pref--theme="dark"] {
+    @include spread-map($theme-map-dark);
+    color-scheme: dark;
+  
     ::selection {
       background-color: #8ba8d9b4;
       color: black;
@@ -128,28 +136,9 @@ $font-map-default: (
       color: var(--color-primary);
     }
   }
-}
 
-:root[data-pref--theme="dark"] {
-  @include spread-map($theme-map-dark);
-
-  color-scheme: dark;
-
-  ::selection {
-    background-color: #8ba8d9b4;
-    color: black;
-  }
-
-  h1::selection {
-    background-color: var(--color-text);
-    color: var(--color-primary);
-  }
-}
-
-:root {
   @media (prefers-color-scheme: dark) {
     @include spread-map($theme-map-dark);
-
     color-scheme: dark;
 
     ::selection {

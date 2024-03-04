@@ -27,7 +27,7 @@
   }
 }
 
-.nav__link {
+a.nav__link {
   @include mq.mq($from:md) {
     text-decoration: none;
 
@@ -43,16 +43,16 @@
 .nav__list-collaborator {
   margin: 0;
   padding: 24px 6px 8px 0;
-  font-size: calc($default-paragraph-size + .25rem);
+  font-size: calc($default-font-size + .25rem);
   color: var(--v2--color-text-alt);
 
   @include mq.mq($from:md) {
     padding: 0 6px 8px 0;
-    font-size: calc($default-paragraph-size + .375rem);
+    font-size: calc($default-font-size + .375rem);
   }
 
   @include mq.mq($from:lg) {
-    font-size: calc($default-paragraph-size + .5rem);
+    font-size: calc($default-font-size + .5rem);
   }
 }
 

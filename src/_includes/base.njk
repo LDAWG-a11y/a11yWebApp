@@ -15,11 +15,11 @@
     {%- if aaaSupporters %}
       <div class="supporters__wrapper">
     {% endif %}
-    <h1 id="h1" class="main__title" tabindex="-1">
-      {%- if page.url !== "/" %}
+    <h1 id="h1" class="main__title {%- if home %} main__title--home {% endif %}" tabindex="-1">
+      {%- if not home %}
         {{ title }}
       {%- else %}
-        Welcome to Make Things Accessible
+        Welcome to <span>Make Things Accessible</span>
       {%- endif %}
       {%- if subTitle %}
       <span class="header__welcome-text--sub">{{ subTitle }}</span>

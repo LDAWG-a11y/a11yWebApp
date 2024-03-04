@@ -1,14 +1,39 @@
 @use '../vendors/mq';
 
-/* oswald-600 - latin */
 @font-face {
-  font-family: 'Oswald';
+  font-family: 'Rem';
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   src: local(''),
-       url('/fonts/oswald-v49-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/fonts/oswald-v49-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  font-display: block;
+       url('/fonts/rem-700.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rem';
+  font-style: normal;
+  font-weight: 900;
+  src: local(''),
+       url('/fonts/rem-900.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Red Hat display';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('/fonts/red-hat-display-400.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Red Hat display';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+       url('/fonts/red-hat-display-500.woff2') format('woff2');
+  font-display: swap;
 }
 
 html {
@@ -17,62 +42,83 @@ html {
 
 *,
 *::before,
-::after {
+*::after {
   [data-pref--l-spacing="increased"] & {
-    letter-spacing: calc($default-paragraph-size * .12) !important;
+    letter-spacing: calc($default-font-size * .12) !important;
   }
 
   [data-pref--w-spacing="increased"] & {
-    word-spacing:  calc($default-paragraph-size * .16) !important;
+    word-spacing:  calc($default-font-size * .16) !important;
   }
 }
 
 body {
   position: relative;
   line-height: $default-line-height;
-  font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+  font-family: "Red Hat Display", Helvetica, Verdana, sans-serif;
   color: var(--color-text);
-  // text-rendering: optimizeLegibility;
+  text-rendering: auto;
+}
+
+:root {
+  @include spread-map($typography-map);
+
+  &[data-pref--f-size="large"] {
+    --v2--base-font-size: 1.25rem;
+  }
+
+  &[data-pref--f-size="largest"] {
+    --v2--base-font-size: 1.375rem;
+  }
+
+  &[data-pref--l-height="increased"] {
+    --v2--line-height: 2;
+  }
+
+  &[data-pref--p-spacing="increased"] {
+    --v2--paragraph-spacing: calc(1.5em * 1.5);
+  }
+
+  --v2--current-font-size: var(--v2--base-font-size);
 }
 
 header,
 footer {
-  font-size: $default-paragraph-size;
+  font-size: $default-font-size;
 
   @include mq.mq($from:md) {
-    font-size: calc($default-paragraph-size + .125rem);
-    
+    font-size: calc($default-font-size + .125rem);
   }
 
   @include mq.mq($from:lg) {
-    font-size: calc($default-paragraph-size + .25rem);
+    font-size: calc($default-font-size + .25rem);
   }
 }
 
 main,
 dialog {
-  // font-size: var(--v2--main-font-size);
+  font-size: var(--v2--base-font-size);
+  color: var(--v2--color-text);
 
   @include mq.mq($from:md) {
-    font-size: calc($default-paragraph-size + .25rem);
+    --v2--current-font-size: calc(var(--v2--base-font-size) + .25rem);
+    font-size: var(--v2--current-font-size);
   }
 
   @include mq.mq($from:lg) {
-    font-size: calc($default-paragraph-size + .375rem);
-
-    // font-size: calc(var(--v2--main-font-size) * 1.5);
+    --v2--current-font-size: calc(var(--v2--base-font-size) + .375rem);
+    font-size: var(--v2--current-font-size);
   }
 }
 
-button,
 summary,
 input {
   @include mq.mq($from:md) {
-    font-size: calc($default-paragraph-size + .125rem);
+    font-size: calc($default-font-size + .125rem);
   }
 
   @include mq.mq($from:lg) {
-    font-size: calc($default-paragraph-size + .25rem);
+    font-size: calc($default-font-size + .25rem);
   }
 }
 
@@ -87,9 +133,10 @@ h4,
 h5,
 h6 {
   line-height: $default-line-height;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Rem', sans-serif;
   font-weight: 700;
   overflow-wrap: break-word;
+  margin-bottom: .5em;
 }
 
 h1 {
@@ -97,6 +144,7 @@ h1 {
   padding-bottom: $space-biggest;
   text-align: center;
   font-size: 3rem;
+  font-weight: 900;
   line-height: 1.25;
 
   .aaa-content & {
@@ -120,11 +168,62 @@ h1 {
   }
 }
 
-h2,
-.accent {
+
+
+.main__title--home {
+  margin: $space-bigger auto 0;
+  width: 100%;
+  max-width: 60rem;
+
+  span {
+    position: relative;
+    display: inline-block;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right,
+      var(--v2--color-primary--light),
+      var(--v2--color-primary--light) 50%,
+      var(--v2--color-bg-alt-2) 50%
+    );
+    background-size: 200% 100%;
+    background-position: 100%;
+    animation: colour-swipe 1250ms cubic-bezier(0, 0.55, 0.45, 1) 750ms forwards;
+
+    @include mq.mq($from:lg) {
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        border-bottom: 4px solid var(--v2--color-secondary);
+        width: 0;
+        animation: underline-word 1250ms cubic-bezier(0, 0.55, 0.45, 1) 750ms forwards;
+      }
+    }
+
+    [data-pref--motion="none"] & {
+      -webkit-text-fill-color: var(--v2--color-text);
+
+      &::before {
+        animation: none;
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion) {
+      -webkit-text-fill-color: var(--v2--color-text);
+
+      &::before {
+        animation: none;
+        width: 100%;
+      }
+    }
+  }
+}
+
+h2 {
   position: relative;
-  font-size: 2.25rem;
-  margin-bottom: $space-lg;
+  font-size: calc(var(--v2--current-font-size) + 1.5rem);
 
   &:not([data-no-accent]) {
     
@@ -132,7 +231,7 @@ h2,
     &::after {
       content: "";
       position: absolute;
-      top: -5px;
+      top: -4px;
       height: 6px;
       border-radius: $radius-xl;
       background-color: var(--v2--color-secondary);
@@ -149,55 +248,57 @@ h2,
       width: 20px;
     }
   }
-  
 
-  @include mq.mq($from:lg) {
-    margin-bottom: $space-xl;
-    font-size: 2.5rem;
+  @include mq.mq($from:md) {
+    font-size: calc(var(--v2--base-font-size) + 1.25rem);
   }
 }
 
 h3 {
-  margin-bottom: $space-md;
-  font-size: 1.75rem;
+  font-size: calc(var(--v2--current-font-size) + 1.25rem);
 
-  @include mq.mq($from:lg) {
-    font-size: 2rem;
+  @include mq.mq($from:md) {
+    font-size: calc(var(--v2--current-font-size) + 1rem);
   }
 }
 
 h4 {
-  margin-bottom: $space-md;
-  font-size: 1.5rem;
+  font-size: calc(var(--v2--current-font-size) + 1rem);
 
-  @include mq.mq($from:lg) {
-    font-size: 1.75rem;
+  @include mq.mq($from:md) {
+    font-size: calc(var(--v2--current-font-size) + .75rem);
   }
 }
 
 h5 {
-  margin-bottom: $space-md;
-  font-size: 1.3rem;
+  font-size: calc(var(--v2--current-font-size) + .75rem);
 
-  @include mq.mq($from:lg) {
-    font-size: 1.4rem;
+  @include mq.mq($from:md) {
+    font-size: calc(var(--v2--current-font-size) + .5rem);
   }
 }
 
 h6 {
-  margin-bottom: $space-md;
-  font-size: 1.25rem;
+  font-size: calc(var(--v2--current-font-size) + .5rem);
 
   @include mq.mq($from:lg) {
-    font-size: 1.35rem;
+    font-size: .35rem;
   }
 }
 
-p {
+p,
+ul:not([class]) > li {
   max-width: 80rem;
+  line-height: var(--v2--line-height);
+}
 
+p {
   &:not(:last-of-type) {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--v2--paragraph-spacing);
+  }
+
+  &:last-of-type {
+    margin-bottom: .5em;
   }
 }
 
@@ -213,30 +314,48 @@ a:not([class]):visited {
 
   margin: -3px -3px;
   padding: 3px 3px;
-  font-weight: 600;
   color: var(--color-interactive);
 }
 
-ul:not([class]) {
-  margin-bottom: $space-xxxl;
+button {
+  font-family: "Red Hat Display", Helvetica, Verdana, sans-serif;
+  font-weight: 500;
+}
+
+ul:not([class]),
+ol {
   margin-left: $space-lg;
 }
 
-ul:not([class]) > li > ul {
-  margin-bottom: 0;
-  margin-left: $space-lg;
-}
+ul:not([class]), 
+ol {
+  margin-bottom: 1em;
 
-ul:not([class]) > li > ul > li > ul {
-  margin-bottom: 0;
-  margin-left: $space-xxl;
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+
+  > li {
+    position: relative;
+  }
 }
 
 ul:not([class]) {
-
-  & > li {
+  li {
     &::marker {
-      color: var(--v2--color-secondary);
+      content: "";
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: .5em;
+      left: -18px;
+      width: 6px;
+      height: 6px;
+      transform: rotate(-45deg) translateY(50%);
+      background-color: var(--v2--color-secondary);
     }
   }
 }

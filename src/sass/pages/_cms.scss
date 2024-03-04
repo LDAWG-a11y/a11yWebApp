@@ -38,7 +38,7 @@
     padding: $space-sm;
     width: 100%;
     max-width: 80rem;
-    font-size: $default-paragraph-size;
+    font-size: $default-font-size;
     font-size: inherit;
   
     @media (prefers-color-scheme: dark) {
@@ -142,7 +142,7 @@
     border: 2px solid var(--color-interactive);
     border-radius: $radius-sm;
     padding: 0 $space-xs;
-    font-size: $default-paragraph-size;
+    font-size: $default-font-size;
     background-color: var(--color-bg);
     color: var(--color-interactive);
   }
@@ -170,38 +170,38 @@
     margin-bottom: $space-xxxl;
   }
 
-  ul p,
-  ul li p {
-    margin-bottom: $space-sm;
-  }
+  // ul p,
+  // ul li p {
+  //   margin-bottom: $space-sm;
+  // }
 
-  li {
-    p {
-      margin-bottom: $space-xxs;
-    }
-  }
+  // li {
+  //   p {
+  //     margin-bottom: $space-xxs;
+  //   }
+  // }
 
-  ol:not(.cms__toc > ol) {
-    margin: 0 0 $space-xxxl calc($space-xxl + 3px);
-  }
+  // ol:not(.cms__toc > ol) {
+  //   margin: 0 0 $space-xxxl calc($space-xxl + 3px);
+  // }
 
-  ul:not(.cards) {
-    margin: 0 0 $space-xxxl $space-lg;
-  }
+  // ul:not(.cards) {
+  //   margin: 0 0 $space-xxxl $space-lg;
+  // }
 
-  ul > li > ul,
-  ol > li > ol {
-    margin: 0 0 0 $space-md;
-  }
+  // ul > li > ul,
+  // ol > li > ol {
+  //   margin: 0 0 0 $space-md;
+  // }
 
-  ul > li > ul > li > ul,
-  ol > li > ol > li > ol {
-    margin: 0 0 0 $space-md;
-  }
+  // ul > li > ul > li > ul,
+  // ol > li > ol > li > ol {
+  //   margin: 0 0 0 $space-md;
+  // }
 
-  ol > li > ul {
-    margin-bottom: $space-xxs;
-  }
+  // ol > li > ul {
+  //   margin-bottom: $space-xxs;
+  // }
 
   ol.decimal { 
     list-style-type: decimal;
@@ -252,11 +252,11 @@
   }
 
   p {
-    margin-bottom: $space-md;
+    // margin-bottom: $space-md;
 
-    @include mq.mq($from:md) {
-      margin-bottom: $space-lg;
-    }
+    // @include mq.mq($from:md) {
+    //   margin-bottom: $space-lg;
+    // }
   }
 
   table {

@@ -66,6 +66,7 @@
   border: 2px solid var(--v2--color-primary--light);
   padding: 0 12px 0 $space-xxxl;
   width: 100%;
+  font-size: calc(var(--v2--current-font-size) + .125rem);
   background-color: var(--v2--color-bg);
   color: var(--v2--color-primary--light);
   transition: background-color 300ms ease-in, color 300ms ease-in;
