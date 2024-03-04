@@ -18,6 +18,8 @@ For example, if a supplier provides an accessibility roadmap it should be review
 
 If you do not have accessibility specialists to review your supplier responses, this guide should help you understand the types of responses you might receive from suppliers and what you should be looking for in different response and documentation types.
 
+<div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">This publication is issued as guidance only. It is not intended to provide legal or professional advice. All collaborators on this content accept no liability for any errors, omissions or any consequences, losses or damages arising from any use of, or reliance placed on, this publication. You should seek advice from a suitably qualified professional.</span></div>
+
 ## How to interpret accessibility responses
 
 Assuming you have used the [MTA procurement requirements template](https://www.makethingsaccessible.com/guides/procurement-accessibility-guidance/) to get information from suppliers on how their systems will meet your requirements, you should have received some information which you need to assess to ensure that the supplier’s approach to accessibility fits with your organisational requirements.
