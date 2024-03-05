@@ -16,7 +16,7 @@ eleventyComputed:
   <h2 class="accordion accordion--full">Filters</h2>
   <div class="accordion__panel accordion__panel--full">
     <div>
-      <h3 class="intro-panel__heading">Filter by tag</h3>
+      <h3 class="panel__heading">Filter by tag</h3>
       <ul class="tags tags__all">
         {%- for tag in collections.tagList %}
           <li class="tag__item">
@@ -25,7 +25,7 @@ eleventyComputed:
           </li>
         {%- endfor %}
       </ul>
-      <h3 class="intro-panel__heading">Filter by author</h3>
+      <h3 class="panel__heading">Filter by author</h3>
       <ul class="tags tags__all">
         {%- for author in collections.writers %}
           {% set posts = collections.guides | getGuidesByAuthor(author.key) %}

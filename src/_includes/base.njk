@@ -1,7 +1,7 @@
 {% include "_head.njk" %}
 <body {%- if extraWide %} class="extra-width" {%- endif %}>
   {% include "_header.njk" %}
-  {% if '/accessibility' in page.url or '/privacy' in page.url or '/codeOfConduct' in page.url %}
+  {% if toc %}
     {% if toc %}
       <nav class="cms__toc" aria-labelledby="toc-heading">
         <details open>

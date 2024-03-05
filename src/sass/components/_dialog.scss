@@ -9,7 +9,7 @@
   height: 96vh;
   transform: scale(0);
   opacity: 0;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--v2--shadow);
   background-color: var(--v2--color-bg);
   overflow-y: hidden;
   transition: transform 600ms ease-in, opacity 600ms ease-in;
@@ -88,7 +88,7 @@
 .dialog__footer {
   display: flex;
   align-items: center;
-  padding: 0 16px;
+  padding: 0 $space-abs-lg;
   height: 4rem;
   min-height: 4rem;
   background-color: var(--v2--color-primary);
@@ -145,47 +145,37 @@
   @include mq.mq($from:md) {
     padding: $space-rel-xl;
   }
+
+  p:last-of-type {
+    margin-bottom: $space-abs-xxxl;
+  }
 }
 
 .settings__fieldset {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 32px;
-  border: 1px solid var(--v2--color-border--light);
-  border-radius: 0 $radius-sm $radius-sm $radius-sm;
-  padding: 16px 12px 24px;
-  background-color: var(--v2--color-bg-alt-2);
+  border: none;
+}
+
+.panel:has(.settings__fieldset) {
+  margin-bottom: $space-abs-xxxl;
+  
+  @include mq.mq($from:md) {
+    padding-top: $space-abs-sm;
+  }
 }
 
 .settings__legend {
-  @include light-theme(('color': var(--v2--color-text)));
-
-  position: relative;
-  margin-left: -12px;
-  border-radius: $radius-sm;
-  padding: 4px 16px;
-  color: var(--v2--color-text-alt);
-  background-color: var(--v2--color-bg-alt-2);
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: -1px;
-    top: -1px;
-    border: 1px solid var(--v2--color-border--light);
-    border-radius: $radius-sm $radius-sm 0 0;
-    width: calc(100% + 2px);
-    height: 100%;
-    z-index: -1;
-  }
+  padding: $space-abs-xxs $space-abs-xxl;
+  text-align: center;
 }
 
 .settings__btns-wrapper {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  gap: 12px;
+  gap: $space-abs-md;
 
   @include mq.mq($from:sm) {
     flex-direction: row;
@@ -200,7 +190,6 @@ button[class^="settings__btn"],
   justify-content: center;
   border-radius: $radius-md;
   padding: 0 $space-rel-xl;
-  font-size: var(--v2--current-font-size);
   transition: color 300ms ease-in, background-color 300ms ease-in, border-color 300ms ease-in;
 
   @-moz-document url-prefix() {

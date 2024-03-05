@@ -10,15 +10,15 @@
   width: 1px;
 }
 
-.btm__gutter__minor-block {
-  margin-bottom: $space-abs-xxxxl;
+.gutter-btm--minor {
+  margin-bottom: $space-abs-xxxl;
   
   @include mq.mq($from:md) {
-    margin-bottom: $space-abs-bigger;
+    margin-bottom: $space-abs-xxxxl;
   }
 }
 
-.btm__gutter__major-block {
+.gutter-btm--major {
   margin-bottom: $space-abs-big;
 
   @include mq.mq($from:md) {
