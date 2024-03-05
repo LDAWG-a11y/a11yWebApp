@@ -5,6 +5,7 @@ $--v2--color-secondary: --v2--color-secondary;
 $--v2--color-tertiary: --v2--color-tertiary;
 $--v2--color-text: --v2--color-text;
 $--v2--color-text-alt: --v2--color-text-alt;
+$--v2--color-text-faded: --v2--color-text-faded;
 $--v2--color-bg: --v2--color-bg;
 $--v2--color-bg-alt-1: --v2--color-bg-alt-1;
 $--v2--color-bg-alt-2: --v2--color-bg-alt-2;
@@ -30,22 +31,25 @@ $--v2--base-font-size: --v2--base-font-size;
 $--v2--current-font-size: --v2--current-font-size;
 $--v2--paragraph-spacing: --v2--paragraph-spacing;
 $--v2--line-height: --v2--line-height;
+$--v2--shadow-color: --v2--shadow-color;
+$--v2--shadow: --v2--shadow;
 
 $theme-map-light: (
   $--v2--color-primary: #72278E,
   $--v2--color-primary--dark: #511868,
-  $--v2--color-primary--light: #702A8C,
-  $--v2--color-secondary: #3A9C8A,
+  $--v2--color-primary--light: #7E2F9D,
+  $--v2--color-secondary: #C144BC,
   $--v2--color-tertiary: #BB35B0,
   $--v2--color-text: #1f1f1f,
   $--v2--color-text-alt: #e7e7e7,
+  $--v2--color-text-faded: #d4d4d4,
   $--v2--color-bg: #f8f8f8,
   $--v2--color-bg-alt-1: #fdfdfd,
-  $--v2--color-bg-alt-2: #f8ebff,
-  $--v2--color-border--light: #a2a2a2,
+  $--v2--color-bg-alt-2: #f6fffd,
+  $--v2--color-border--light: #e3e3e3,
   $--color-text: #1f1f1f,
   $--color-bg: #fdfdfd,
-  $--color-bg--light: #fffaf0,
+  $--color-bg--light: #e8e8e8,
   $--color-primary: #702A8C,
   $--color-secondary: #BF2669,
   $--color-tertiary: #fdf7ff,
@@ -58,6 +62,12 @@ $theme-map-light: (
   $--color-info: #8fd7ff,
   $--color-warn: #f49c9c,
   $--color-warn--bright: #c70000,
+  $--v2--shadow-color: 167deg 27% 53%,
+  $--v2--shadow:
+  (0.8px 0.5px 1.2px hsl(var(--v2--shadow-color) / 0.18),
+  3.1px 2px 4.8px -0.5px hsl(var(--v2--shadow-color) / 0.25),
+  6.8px 4.4px 10.4px -0.9px hsl(var(--v2--shadow-color) / 0.32),
+  15.1px 9.7px 23.2px -1.4px hsl(var(--v2--shadow-color) / 0.39)),
 );
 
 $theme-map-dark: (
@@ -68,10 +78,11 @@ $theme-map-dark: (
   $--v2--color-tertiary: #bc58ad,
   $--v2--color-text: #B0B0B0,
   $--v2--color-text-alt: #D9D9D9,
+  $--v2--color-text-faded: #3e3e3e,
   $--v2--color-bg: #252525,
   $--v2--color-bg-alt-1: #fdfdfd,
-  $--v2--color-bg-alt-2: #241f27,
-  $--v2--color-border--light: #434343,
+  $--v2--color-bg-alt-2: #2a2a2a,
+  $--v2--color-border--light: #323232,
   $--color-text: #D9D9D9,
   $--color-bg: #252525,
   $--color-bg--light: #2d2d2d,
@@ -87,6 +98,7 @@ $theme-map-dark: (
   $--color-info: #2a4ea3,
   $--color-warn: #982A2A,
   $--color-warn--bright: #ff6a6a,
+  $--v2--shadow: none,
 );
 
 $typography-map: (
@@ -104,14 +116,27 @@ $typography-map: (
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  :root:not([data-pref--theme="light"]) {
+    @include spread-map($theme-map-dark);
+    color-scheme: dark;
+
+    ::selection {
+      background-color: #8ba8d9b4;
+      color: black;
+    }
+
+    h1::selection {
+      background-color: var(--color-text);
+      color: var(--color-primary);
+    }
+  }
+}
 
 :root {
   @include spread-map($theme-map-light);
   color-scheme: light;
-    
-  ::-moz-selection {
-    background-color: #8ba8d9b4;
-  }   
+  
   
   &[data-pref--theme="light"] {
     @include spread-map($theme-map-light);
@@ -136,19 +161,6 @@ $typography-map: (
       color: var(--color-primary);
     }
   }
-
-  @media (prefers-color-scheme: dark) {
-    @include spread-map($theme-map-dark);
-    color-scheme: dark;
-
-    ::selection {
-      background-color: #8ba8d9b4;
-      color: black;
-    }
-  
-    h1::selection {
-      background-color: var(--color-text);
-      color: var(--color-primary);
-    }
-  }
 }
+
+

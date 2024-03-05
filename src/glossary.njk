@@ -11,10 +11,12 @@ pagination:
 eleventyExcludeFromCollections: true
 ---
 
-<h2>Glossary of frequently used terms and abbreviations</h2>
-<p class="glossary__intro">We know that in digital media, specifically web-development and digital accessibility there
-  are many acronyms and terms that may be new to our users, we aim to help our users understand them by providing
-  definitions, all in one place.</p>
+<div class="panel gutter-btm--major">
+  <h2>Glossary of frequently used terms and abbreviations</h2>
+  <p class="glossary__intro">We know that in digital media, specifically web-development and digital accessibility there
+    are many acronyms and terms that may be new to our users, we aim to help our users understand them by providing
+    definitions, all in one place.</p>
+</div>
 {%- if descList.length %}
 <dl class="glossary__list">
   {%- for item in descList %}

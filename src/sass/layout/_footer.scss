@@ -50,10 +50,12 @@
     a {
       @include light-theme(('color': var(--v2--color-primary)));
       @include dark-theme(('color': var(--v2--color-text)));
+      text-decoration-color: var(--v2--color-secondary);
 
       &:hover,
       &:focus-visible {
         @include light-theme(('color': var(--v2--color-bg), 'background-color': var(--v2--color-primary)));
+        text-decoration-color: var(--v2--color-bg);
       }
     }
   }

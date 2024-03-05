@@ -355,25 +355,11 @@
     }
   }
 
-  h2:not(.accordion):not(.cms__toc > h2) {
-    display: inline-block;
-    margin-bottom: 0;
-
-    .aaa-content & {
-      margin-bottom: $space-rel-md;
-    }
-  }
-
   .cms__anchor-wrapper {
     display: grid;
     grid-template-columns: minmax(auto, max-content) min-content;
     align-items: stretch;
     gap: 0.5rem;
-    margin-bottom: $space-rel-lg;
-
-    @include mq.mq($from:lg) {
-      margin-bottom: $space-rel-xl;
-    }
   }
 
   .cms__anchor {
