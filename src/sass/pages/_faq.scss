@@ -1,7 +1,7 @@
 @use '../vendors/mq';
 
 .faqs__intro {
-  margin-bottom: $space_xl;
+  margin-bottom:$space-rel-xl;
 }
 
 .faqs__toggle-container {
@@ -9,8 +9,8 @@
   .has-js & {
     display: flex;
     justify-content: flex-end;
-    gap: $space-md;
-    margin-bottom: $space-xs;
+    gap: $space-rel-md;
+    margin-bottom: $space-rel-xs;
     max-width: 60rem;
   }
 }
@@ -22,7 +22,7 @@
   position: relative;
   border: 2px solid var(--color-interactive);
   border-radius: $radius-sm;
-  padding: 0 $space-xs;
+  padding: 0 $space-rel-xs;
   font-weight: 600;
   background-color: var(--color-bg--light);
   color: var(--color-interactive);
@@ -60,7 +60,7 @@
     background-color: var(--color-bg);
     color: var(--color-inactive);
 
-    [data-theme="dark"] & {
+    [data-pref--theme="dark"] & {
       color: #959595;
     }
   
@@ -76,7 +76,7 @@
       background-color: var(--color-inactive);
       color: var(--color-bg);
 
-      [data-theme="dark"] & {
+      [data-pref--theme="dark"] & {
         background-color: #959595;
       }
     

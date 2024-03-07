@@ -45,7 +45,7 @@ pre[class*="language-"] {
     background-color: var(--color-inactive);
   }
 
-  [data-theme="dark"] & {
+  [data-pref--theme="dark"] & {
     background-color: var(--color-inactive);
   }
 }

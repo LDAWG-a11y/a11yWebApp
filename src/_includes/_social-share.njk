@@ -6,7 +6,7 @@
 {% endfor %}
 
 <div class="socials__container" role="group" aria-labelledby="shareTitle">
-  <h2 class="socials__title" id="shareTitle">Share on: </h2>
-  <a href="//twitter.com/intent/tweet?text={{ postTitle | urlencode }}&url={{ site.siteUrl }}{{ page.url }}" class="socials__link">{% include '../svg/twitter.svg' %}</a>
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.siteUrl }}{{ page.url }}&title={{ postTitle | urlencode }}" class="socials__link">{% include '../svg/linkedin.svg' %}</a>
+  <h2 class="socials__title" id="shareTitle" data-no-accent>Share on: </h2>
+  <a href="//twitter.com/intent/tweet?text={{ postTitle | urlencode }}&url={{ site.siteUrl }}{{ page.url }}" class="socials__link"><span class="visually-hidden">Twitter</span> include '../svg/twitter.svg' %}</a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.siteUrl }}{{ page.url }}&title={{ postTitle | urlencode }}" class="socials__link"><span class="visually-hidden">LinkedIn</span>{% include '../svg/linkedin.svg' %}</a>
 </div>

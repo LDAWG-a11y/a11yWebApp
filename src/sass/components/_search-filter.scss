@@ -1,0 +1,63 @@
+@use '../vendors/mq';
+
+.header__search-block {
+
+  .has-js & {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.search__wrapper,
+.search__label {
+  width: 35rem;
+  max-width: 96%;
+}
+
+.search__wrapper {
+  position: relative;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: $space-abs-sm;
+    stroke: var(--v2--color-primary--light);
+    fill: var(--v2--color-primary--light);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -$space-abs-xxs;
+    border: 2px solid transparent;
+    border-radius: $radius-md;
+    z-index: -1;
+    transition: border-color 300ms ease-in;
+  }
+
+  &:focus-within {
+    &::before {
+      border-color: var(--v2--color-primary--light);
+    }
+  }
+}
+
+.search__label {
+  display: block;
+  padding: $space-abs-xs 0;
+}
+
+.search__input {
+  border: 2px solid var(--v2--color-primary--light);
+  border-radius: $radius-sm;
+  padding: 0 2.25rem 0 $space-abs-sm;
+  width: 100%;
+  height: 2.5rem;
+  background-color: var(--v2--color-bg);
+
+  @include mq.mq($from:md) {
+    height: 3rem;
+  }
+}

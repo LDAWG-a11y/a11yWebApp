@@ -5,7 +5,7 @@
   justify-content: left;
   align-items: center;
   flex-wrap: wrap;
-  margin: $space-bigger 0 $space-biggest;
+  margin: $space-rel-bigger 0 $space-rel-biggest;
   width: 100%;
 
   @include mq.mq($from:xs) {
@@ -16,7 +16,7 @@
 
 .socials__title {
   display: inline-block;
-  padding-right: $space-md;
+  padding-right: $space-rel-md;
   margin-bottom: 0;
   font-size: 2rem;
 }
@@ -45,7 +45,7 @@
   }
 
   &:not(:last-of-type) {
-    margin-right: $space-md;
+    margin-right: $space-rel-md;
   }
 
   &:first-of-type {

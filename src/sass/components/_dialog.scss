@@ -1,0 +1,256 @@
+@use '../vendors/mq';
+
+.dialog {
+  margin: auto;
+  border: 1px solid var(--v2--color-inactive);
+  border-radius: $radius-lg;
+  width: 70rem;
+  max-width: 96%;
+  height: 96vh;
+  transform: scale(0);
+  opacity: 0;
+  box-shadow: var(--v2--shadow);
+  background-color: var(--v2--color-bg);
+  overflow-y: hidden;
+  transition: transform 600ms ease-in, opacity 600ms ease-in;
+
+  &::backdrop {
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.3);    
+    backdrop-filter: blur(7.5px);
+    transition: opacity 600ms ease-in;
+  }
+
+  &[open] {
+    display: flex;
+    flex-direction: column;
+    transform: scale(1);
+    opacity: 1;
+
+    &::backdrop {
+      opacity: 1;
+    }
+  }
+
+  &.animating {
+    transform: scale(0);
+    opacity: 0;
+
+    &::backdrop {
+      opacity: 0;
+    }
+
+    @media (prefers-reduced-motion) {
+      transform: scale(1);
+      transition: opacity 600ms ease-in;
+    }
+  }
+
+  @media screen and (max-height: 40em) and (orientation: landscape) {
+    border-radius: 0;
+    max-width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+  }
+
+  @media (prefers-reduced-motion) {
+    transform: scale(1);
+    transition: opacity 600ms ease-in;
+  }
+}
+
+@media (prefers-reduced-transparency) {
+  ::backdrop {
+    background: grey;
+    opacity: .95;
+    backdrop-filter: blur(0);
+  }
+}
+
+[data-pref--motion="off"] {
+  ::backdrop {
+    transition: opacity .0001ms !important;
+  }
+}
+
+@starting-style {
+  .dialog[open] {
+    opacity: 0;
+    transform: scale(0);
+
+    &::backdrop {
+      opacity: 0;
+    }
+  }
+}
+
+.dialog__header,
+.dialog__footer {
+  display: flex;
+  align-items: center;
+  padding: 0 $space-abs-lg;
+  height: 4rem;
+  min-height: 4rem;
+  background-color: var(--v2--color-primary);
+  color: var(--v2--color-bg);
+
+  @include mq.mq($from:md) {
+    height: 4.5rem;
+    min-height: 4.5rem;
+  }
+
+  @include mq.mq($from:lg) {
+    height: 5rem;
+    min-height: 5rem;
+  }
+}
+
+.dialog__header {
+  justify-content: center;
+}
+
+.dialog__footer {
+  justify-content: flex-end;
+}
+
+.dialog__title {
+  margin: 0;
+  padding: 0;
+  font-size: calc(var(--v2--current-base-font-size) + 1rem);
+  color: var(--v2--color-text-alt);
+
+  @include mq.mq($from:md) {
+    font-size: calc(var(--v2--current-base-font-size) + 1.5rem);
+  }
+}
+
+.dialog__subtitle {
+  padding: 0;
+  font-size: calc(var(--v2--current-base-font-size) + .625rem);
+  
+  @include mq.mq($from:md) {
+    font-size: calc(var(--v2--current-base-font-size) + .875rem);
+  }
+}
+
+.dialog__content {
+  padding: $space-rel-xl $space-rel-sm;
+  overflow-y: auto;
+  color: var(--v2--color-text);
+
+  @media screen and (max-height: 40em) and (orientation: landscape) {
+    height: calc(100vh - 8rem);
+  }
+
+  @include mq.mq($from:md) {
+    padding: $space-rel-xl;
+  }
+
+  p:last-of-type {
+    margin-bottom: $space-abs-xxxl;
+  }
+}
+
+.settings__fieldset {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: none;
+}
+
+.panel:has(.settings__fieldset) {
+  margin-bottom: $space-abs-xxxl;
+  
+  @include mq.mq($from:md) {
+    padding-top: $space-abs-sm;
+  }
+}
+
+.settings__legend {
+  padding: $space-abs-xxs $space-abs-xxl;
+  text-align: center;
+}
+
+.settings__btns-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $space-abs-md;
+
+  @include mq.mq($from:sm) {
+    flex-direction: row;
+  }
+}
+
+button[class^="settings__btn"],
+.dialog__close-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-md;
+  padding: 0 $space-rel-xl;
+  transition: color 300ms ease-in, background-color 300ms ease-in, border-color 300ms ease-in;
+
+  @-moz-document url-prefix() {
+    padding: 5px $space-rel-xxl;
+    
+    span {
+      padding-top: 2px;
+    }
+  }
+}
+
+button[class^="settings__btn"] {
+  border: 2px solid var(--v2--color-primary--light);
+  background-color: var(--v2--color-primary--light);
+  color: var(--v2--color-bg);
+
+  &[aria-pressed="true"] {
+    span {
+      position: relative;
+    
+      &::after {
+        content: "\2713";
+        position: absolute;
+        top: 50%;
+        right: -$space-rel-lg;
+        transform: translateY(-50%);
+        color: inherit;
+      }
+    }
+  }
+
+  &:focus-visible,
+  &:hover {
+    background-color: var(--v2--color-bg);
+    color: var(--v2--color-primary--light);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--v2--color-primary--light);
+  }
+}
+
+.dialog__close-btn {
+  @include dark-theme(('border-color': var(--v2--color-text-alt)));
+
+  border: 2px solid var(--v2--color-bg);
+  background-color: var(--v2--color-bg);
+  color: var(--v2--color-primary--light);
+
+  &:focus-visible,
+  &:hover {
+    background-color: var(--v2--color-primary--light);
+    color: var(--v2--color-bg);
+  }
+
+  &:focus-visible {
+    @include dark-theme(('outline-color': var(--v2--color-text-alt)));
+    outline: 2px solid var(--v2--color-bg);
+  }
+}
+
+body:has(dialog[open]) {
+  overflow-y: hidden;
+}

@@ -1,5 +1,5 @@
 .sitemap__text {
-  margin-bottom: $space-lg;
+  margin-bottom: $space-rel-lg;
 }
 
 .sitemap__list,
@@ -13,9 +13,9 @@
 }
 
 .sitemap__list {
-  margin-left: $space-lg;
+  margin-left: $space-rel-lg;
 }
 
 .sitemap__list--nested {
-  margin: $space-xs 0 $space-xs $space-lg;
+  margin: $space-rel-xs 0 $space-rel-xs $space-rel-lg;
 }

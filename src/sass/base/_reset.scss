@@ -15,28 +15,7 @@ html {
 body {
   position: relative;
   min-height: 100vh;
-  max-width: $site-width;
   margin: 0 auto;
-  padding: 0 $space-xs;
-  background: var(--color-bg);
-  overflow-x: hidden;
-
-  @include mq.mq($from:md) {
-    padding: 0 $space-lg;
-  }
-
-  &.extra-width {
-    max-width: calc($site-width + 2.5rem);
-  }
-}
-
-.extra-width .main {
-  padding: 0;
-}
-
-body[modal-open] {
-  overflow: hidden;
-  z-index: 2;
 }
 
 body[modal-open]::before {
@@ -65,25 +44,48 @@ img {
 
 input,
 button,
-textarea,
-select {
+textarea {
   font: inherit;
 }
 
 button,
 summary {
+  min-height: 2.75rem;
   cursor: pointer;
 }
-
+  
 a:focus,
+a:focus-visible,
 button:focus,
+button:focus-visible,
 summary:focus,
-h1:focus-visible {
-  outline: 3px dotted transparent;
+summary:focus-visible,
+h1:focus-visible,
+input:focus,
+input:focus-visible {
+  outline: 2px solid transparent;
   outline-offset: 2px;
-  // transition: outline-color 0.01ms ease-in-out !important;
 
   @media (forced-colors: active) {
     transition: all 0.01ms ease-in-out;
+  }
+}
+
+[data-pref--motion="none"] *,
+[data-pref--motion="none"] *::before,
+[data-pref--motion="none"] *::after {
+  transition: all .0001ms !important;
+  transition-delay: .0001ms !important;
+  scroll-behavior: unset !important;
+  animation-delay: .0001ms !important;
+  animation-duration: .0001ms !important;
+  animation: none !important;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: unset !important;
   }
 }

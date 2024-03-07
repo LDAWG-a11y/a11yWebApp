@@ -134,7 +134,7 @@
           widget: 'markdown'
         }
       ],
-      pattern: /^\s*<h([2-6]) class="accordion">(.*?)<\/h[2-6]>[\r\n]*\s*<div class="accordion__panel">[\r\n]*(.*?)[\r\n]*\s*<\/div>$/,
+      pattern: /^\s*<h([2-6]) class="accordion">(.*?)<\/h[2-6]>[\r\n]*\s*<div class="accordion__panel"><div>[\r\n]*(.*?)[\r\n]*\s*<\/div><\/div>$/,
       fromBlock: function(match) {
         return {
           hLevel: match[1],
@@ -145,13 +145,17 @@
       toBlock: function(data) {
         return `<h${data.hLevel} class="accordion">${data.title}</h${data.hLevel}>
         <div class="accordion__panel">
-          ${data.content}
+          <div>
+            ${data.content}
+          </div>
         </div>`;
       },
       toPreview: function(data) {
         return `<h${data.hLevel} class="accordion">${data.title}</h${data.hLevel}>
         <div class="accordion__panel">
-          ${data.content}
+          <div>
+            ${data.content}
+          </div>
         </div>`;
       },
     })

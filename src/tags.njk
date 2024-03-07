@@ -13,6 +13,7 @@ eleventyComputed:
 
 <div class="cards__wrapper">
   <h2>Showing {{ collections[ tag ].length }} result{%- if collections[ tag ].length > 1%}s{%- endif %} for {{ tag }}</h2>
+  {% set headingLevel = 'h3' %}
   <ul class="cards">
     {% set taglist = collections[ tag ] %}
     {%- for guide in taglist | reverse %}

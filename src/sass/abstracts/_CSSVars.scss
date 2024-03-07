@@ -1,0 +1,176 @@
+$--v2--color-primary: --v2--color-primary;
+$--v2--color-primary--dark: --v2--color-primary--dark;
+$--v2--color-primary--light: --v2--color-primary--light;
+$--v2--color-secondary: --v2--color-secondary;
+$--v2--color-tertiary: --v2--color-tertiary;
+$--v2--color-quaternary: --v2--color-quaternary;
+$--v2--color-accent:  --v2--color-accent;
+$--v2--color-text: --v2--color-text;
+$--v2--color-text-alt: --v2--color-text-alt;
+$--v2--color-text-faded: --v2--color-text-faded;
+$--v2--color-bg: --v2--color-bg;
+$--v2--color-bg-alt-1: --v2--color-bg-alt-1;
+$--v2--color-bg-alt-2: --v2--color-bg-alt-2;
+$--v2--color-border--light: --v2--color-border--light;
+$--v2--color-interactive: --v2--color-interactive;
+$--v2--color-interactive-alt: --v2--color-interactive-alt;
+$--color-text: --color-text;
+$--color-bg: --color-bg;
+$--color-bg--light: --color-bg--light;
+$--color-primary: --color-primary;
+$--color-secondary: --color-secondary;
+$--color-tertiary: --color-tertiary;
+$--color-accent: --color-accent;
+$--color-accent-2: --color-accent-2;
+$--color-interactive: --color-interactive;
+$--color-inactive: --color-inactive;
+$--color-highlight: --color-highlight;
+$--color-tip: --color-tip;
+$--color-info: --color-info;
+$--color-warn: --color-warn;
+$--color-warn--bright: --color-warn--bright;
+$--v2--base-font-size: --v2--base-font-size;
+$--v2--small-font-size: --v2--small-font-size;
+$--v2--current-base-font-size: --v2--current-base-font-size;
+$--v2--current-small-font-size: --v2--current-small-font-size;
+$--v2--paragraph-spacing: --v2--paragraph-spacing;
+$--v2--line-height: --v2--line-height;
+$--v2--shadow-color: --v2--shadow-color;
+$--v2--shadow: --v2--shadow;
+
+$theme-map-light: (
+  $--v2--color-primary: #72278E,
+  $--v2--color-primary--dark: #511868,
+  $--v2--color-primary--light: #7E2F9D,
+  $--v2--color-secondary: #C144BC,
+  $--v2--color-tertiary: #2BA174,
+  $--v2--color-quaternary: #2b6ca1,
+  $--v2--color-accent: #f1ecc5,
+  $--v2--color-text: #1f1f1f,
+  $--v2--color-text-alt: #e7e7e7,
+  $--v2--color-text-faded: #d4d4d4,
+  $--v2--color-bg: #f4f4f4,
+  $--v2--color-bg-alt-1: #f0f0f0,
+  $--v2--color-bg-alt-2: #f6fffd,
+  $--v2--color-border--light: #eefffb,
+  $--color-text: #1f1f1f,
+  $--color-bg: #fdfdfd,
+  $--color-bg--light: #e8e8e8,
+  $--color-primary: #702A8C,
+  $--color-secondary: #BF2669,
+  $--color-tertiary: #fdf7ff,
+  $--color-accent: #ffd6b5,
+  $--color-accent-2: #e86620,
+  $--color-interactive: #8935d7,
+  $--color-inactive: #595959,
+  $--color-highlight: #030189,
+  $--color-tip: #a3dd94,
+  $--color-info: #8fd7ff,
+  $--color-warn: #f49c9c,
+  $--color-warn--bright: #c70000,
+  $--v2--shadow-color: 192deg 30% 62%,
+  $--v2--shadow:
+  (0.8px 0.5px 1.2px hsl(var(--v2--shadow-color) / 0.18),
+  3.1px 2px 4.8px -0.5px hsl(var(--v2--shadow-color) / 0.25),
+  6.8px 4.4px 10.4px -0.9px hsl(var(--v2--shadow-color) / 0.32),
+  15.1px 9.7px 23.2px -1.4px hsl(var(--v2--shadow-color) / 0.39)),
+);
+
+$theme-map-dark: (
+  $--v2--color-primary: #50366b,
+  $--v2--color-primary--dark: #50366b,
+  $--v2--color-primary--light: #C2A7D7,
+  $--v2--color-secondary: #50dcc2,
+  $--v2--color-tertiary: #bc58ad,
+  $--v2--color-quaternary: #2b6ca1,
+  $--v2--color-accent: #1d2221,
+  $--v2--color-text: #B0B0B0,
+  $--v2--color-text-alt: #D9D9D9,
+  $--v2--color-text-faded: #3e3e3e,
+  $--v2--color-bg: #252525,
+  $--v2--color-bg-alt-1: #fdfdfd,
+  $--v2--color-bg-alt-2: #2a2a2a,
+  $--v2--color-border--light: #323232,
+  $--color-text: #D9D9D9,
+  $--color-bg: #252525,
+  $--color-bg--light: #2d2d2d,
+  $--color-primary: #783592,
+  $--color-secondary: #ae1557,
+  $--color-tertiary: #332f34,
+  $--color-accent: #d0dfd7,
+  $--color-accent-2: #db9238,
+  $--color-interactive: #C079E6,
+  $--color-inactive: #4a4a4a,
+  $--color-highlight: #6ebc9f,
+  $--color-tip: #1A6B4E,
+  $--color-info: #2a4ea3,
+  $--color-warn: #982A2A,
+  $--color-warn--bright: #ff6a6a,
+  $--v2--shadow: none,
+);
+
+$typography-map: (
+  $--v2--base-font-size: 1.125rem,
+  $--v2--small-font-size: 1rem,
+  $--v2--current-base-font-size: 1.25rem,
+  $--v2--current-small-font-size: 1rem,
+  $--v2--line-height: 1.5,
+  $--v2--paragraph-spacing: 1.5em,
+);
+
+@use '../vendors/mq';
+
+@mixin spread-map($map: ()) {
+  @each $key, $value in $map {
+    #{$key}: $value;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-pref--theme="light"]) {
+    @include spread-map($theme-map-dark);
+    color-scheme: dark;
+
+    ::selection {
+      background-color: #8ba8d9b4;
+      color: black;
+    }
+
+    h1::selection {
+      background-color: var(--color-text);
+      color: var(--color-primary);
+    }
+  }
+}
+
+:root {
+  @include spread-map($theme-map-light);
+  color-scheme: light;
+  
+  
+  &[data-pref--theme="light"] {
+    @include spread-map($theme-map-light);
+    color-scheme: light;
+    
+    ::-moz-selection {
+      background-color: #8ba8d9b4;
+    }   
+  }
+
+  &[data-pref--theme="dark"] {
+    @include spread-map($theme-map-dark);
+    color-scheme: dark;
+  
+    ::selection {
+      background-color: #8ba8d9b4;
+      color: black;
+    }
+  
+    h1::selection {
+      background-color: var(--color-text);
+      color: var(--color-primary);
+    }
+  }
+}
+
+

@@ -7,18 +7,25 @@
   <meta name="theme-color" content="#702A8C">
   <meta name="description" content="{%- if not home %}{{ summary }} {%- else %}A repository of guidance & resources for organisations & individuals aiming to improve digital accessibility, across web development, documents & digital media{%- endif %}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="color-scheme" content="dark light">
+  <meta name="color-scheme" content="light dark">
   <script>
-    const themeSetter = window.localStorage.getItem('theme');
-			if (typeof themeSetter === 'string') {
-				document.documentElement.setAttribute('data-theme', themeSetter);
-			}
-  </script>
-  <script type="module">
     document.documentElement.classList.remove('no-js');
     document.documentElement.classList.add('has-js');
+    
+    if (localStorage.getItem('theme')) {
+      localStorage.setItem('data-pref--theme', localStorage.getItem('theme'));
+      localStorage.removeItem('theme');
+    }
+
+    if (localStorage.getItem('data-pref--theme')) {
+      document.documentElement.setAttribute('data-pref--theme', localStorage.getItem('data-pref--theme'))
+    }
   </script>
-  <link rel="preload" href="/fonts/oswald-v49-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/rem-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/rem-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/rem-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/red-hat-display-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/red-hat-display-500.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
   <link rel="canonical" href="{{ site.siteUrl }}{{ page.url }}">

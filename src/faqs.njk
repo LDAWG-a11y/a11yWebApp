@@ -10,18 +10,19 @@ pagination:
   alias: accordions
   reverse: true
 ---
-
-<h2>Frequently asked accessibility questions</h2>
-<p class="faqs__intro">Some questions come up often from people that are starting out to learn digital accessibility best practices, in fact, you don't necessarily have to be new to the field, as there's so much to learn and that willingness to continue learning makes digital media and websites much easier to use for everybody, especially people that rely on assistive technology to access digital content.</p>
-<p class="faqs__intro">We've put together some of our FAQs here, it may be a useful place to start, especially if you're just starting out on this journey, if you are just starting out, welcome to the digital accessibility community.</p>
+<div class="panel panel gutter-btm--major">
+  <h2>Frequently asked accessibility questions</h2>
+  <p class="faqs__intro">Some questions come up often from people that are starting out to learn digital accessibility best practices, in fact, you don't necessarily have to be new to the field, as there's so much to learn and that willingness to continue learning makes digital media and websites much easier to use for everybody, especially people that rely on assistive technology to access digital content.</p>
+  <p class="faqs__intro">We've put together some of our FAQs here, it may be a useful place to start, especially if you're just starting out on this journey, if you are just starting out, welcome to the digital accessibility community.</p>
+</div>
 <div class="faqs__toggle-container" hidden>
   <button class="faqs__toggle--expand-all" aria-pressed="false">Expand all</button>
   <button class="faqs__toggle--collapse-all" aria-pressed="false">Collapse all</button>
 </div>
 {%- for faq in accordions %}
   {%- if faq.data.title %}
-    <h3 class="accordion">{{ faq.data.title }}</h3>
-    <div class="accordion__panel">{{ faq.templateContent | safe }}</div>
+    <h3 class="accordion accordion--multiple">{{ faq.data.title }}</h3>
+    <div class="accordion__panel"><div>{{ faq.templateContent | safe }}</div></div>
   {%- endif %}
 {%- endfor %}
 
