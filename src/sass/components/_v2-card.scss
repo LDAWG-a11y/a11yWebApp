@@ -100,7 +100,8 @@
 
 .card__link {
   text-underline-offset: .075em;
-  transition: text-underline-offset 300ms;
+  text-decoration-thickness: 3px;
+  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 400ms;
 
   [data-pref--underline] & {
     text-decoration: underline;
