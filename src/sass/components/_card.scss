@@ -1,232 +1,190 @@
 @use '../vendors/mq';
 
 .cards--scrollable {
-  // display: flex;
-  // flex-direction: row;
-  // padding: $space-rel-md 0;
-  // overflow-x: auto;
+  display: grid;
+  gap: 0 $space-abs-lg;
 
-  // background-image: linear-gradient(to right, white, white),
-  //   linear-gradient(to right, white, white),
-  //   linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0)),
-  //   linear-gradient(to left, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0));
-  // background-position: left center, right center, left center, right center;
-  // background-repeat: no-repeat;
-  // background-color: transparent;
-  // background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
-  // background-attachment: local, local, scroll, scroll;
+  .card__item {
+    grid-row: 1;
+    min-width: 18rem;
 
-  // @media (prefers-color-scheme: dark) {
-  //   background-image: none;
-  // }
+    @include mq.mq($from:xs) {
+      min-width: 21rem;
+    }
 
-  // [data-pref--theme="dark"] & {
-  //   background-image: none;
-  // }
+    @include mq.mq($from:xs) {
+      min-width: 22.5rem;
+    }
+  }
 
-  // &:focus-visible {
-  //   outline: 2px solid var(--color-interactive);
-  //   outline-offset: 2px;
-  // }
+  .card__meta {
+    flex-direction: column;
+  }
 }
 
-// .cards {
-//   margin: 0;
+.cards:not(.cards--scrollable) {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: $space-abs-lg;
 
-//   .cards--scrollable & {
-//     display: flex;
-//     gap:$space-abs-sm;
-//   }
+  .card__meta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: $space-abs-sm 1.5rem;
+  }
 
-//   @include mq.mq($from:sm) {
-//     display: flex;
-//     flex-wrap: wrap;
-//     gap: $space-abs-md;
+  @include mq.mq($from:sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-//     .cards--scrollable & {
-//       flex-wrap: nowrap;
-//       flex-direction: row;
-//     }
-//   }
+  @include mq.mq($from:lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-//   @include mq.mq($from:md-tweak) {
-//     gap: $space-rel-lg;
-//   }
-// }
+  @include mq.mq($from:xxl) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
-//   .card__item {
-//     display: flex;
-//     flex-direction: column;
-//     position: relative;
-//     border: 2px solid var(--color-interactive);
-//     border-radius: $radius-lg;
-//     width: 100%;
-//     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+.card__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 8px solid var(--v2--color-border--light);
+  border-radius: $radius-xl;
+  padding: $space-abs-sm;
+  background-color: var(--v2--color-bg-alt-2);
+  box-shadow: var(--v2--shadow);
+  transition: border-color 300ms ease-in;
 
-//     .cards--scrollable & {
-//       width: 18rem;
-//     }
+  &:has(.card__link:focus-visible),
+  &:has(.card__link:hover) {
+    border-color: var(--v2--color-primary--light);
+  }
+
+  .colour {
+    fill: var(--v2--color-secondary);
+  }
+}
+
+.card__top {
+  display: flex;
+  flex-direction: column;
+
+  svg {
+    order: 1;
+    align-self: center;
+    margin-bottom: $space-abs-xl;
+  }
+}
+
+.card__title {
+  order: 2;
+  margin-bottom: $space-abs-xl;
+  font-size: calc(var(--v2--current-base-font-size) + .25rem);
+
+  text-align: center;
+ 
+  @include mq.mq($from:md) {
+    font-size: calc(var(--v2--current-base-font-size) + .125rem);
+  }
+}
+
+.card__link,
+.card__link:visited,
+.card__author-link,
+.card__author-link:visited, {
+  color: var(--v2--color-primary--light);
+}
+
+.card__link {
+  text-underline-offset: .075em;
+  text-decoration-thickness: 3px;
+  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 400ms;
+
+  [data-pref--underline] & {
+    text-decoration: underline;
+  }
+
+  &:not(:focus-visible),
+  &:not(:hover) {
+    text-decoration: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -$space-abs-sm;
+    border-radius: $radius-xxl;
+  }
   
-//     @include mq.mq($until:sm) {
-//       &:not(:last-of-type) {
-//         margin-bottom: $space-rel-md;
 
-//         .cards--scrollable & {
-//           margin-bottom: 0;
-//           width: 18rem;
-//         }
-//       }
-//     }
-  
-//     @include mq.mq($from:sm) {
-//       max-width: calc(50% - #{$space-rel-xs});
+  &:hover,
+  &:focus-visible {
+    color: var(--v2--color-primary--light);
+    text-decoration: underline;
+    text-underline-offset: .2em;
+  }
+}
 
-//       .cards--scrollable & {
-//         width: 21.5rem;
-//       }
-//     }
-  
-//     @include mq.mq($from:md-tweak) {
-//       max-width: calc(33.3% - #{$space-rel-md});
-//     }
-  
-//     @include mq.mq($from:xxl) {
-//       max-width: calc(25% - 1.125rem);
-//     }
-  
-//     &:hover {
-//       img {
-//         transform: scale(1.05);
-//         transition: transform 300ms ease-in-out;
-//       }
-//     }
-//   }
-  
-//   div.card__img-wrapper {
-//     position: relative;
-//     order: 1;
-//     height: 16rem;
-//     overflow: hidden;
-  
-//     picture {
-//       display: block;
-//       margin-bottom: 0;
-      
-//       img[src] {
-//         margin-bottom: 0;
-//         object-fit: cover;
-//         object-position: top;
-//         border: none;
-//         border-radius: $radius-sm $radius-sm 0 0;
-//         height: 16rem;
-//         width: 100%;
-//         transition: transform 300ms ease-in-out;
-//       }
-//     }
-  
-//     .card__placeholder-img--aaa {
-//       margin-top: 50%;
-//       padding: 0 $space-rel-md;
-//       transform: translateY(-50%);
-//     }
-//   }
-  
-//   .card__text-wrapper {
-//     display: flex;
-//     flex-direction: column;
-//     flex: 1;
-//     order: 2;
-//     padding: $space-rel-sm;
-//     transition: background-color 300ms ease-in;
-//   }
-  
-//   .card__title {
-//     position: static;
-//     font-size: $large-paragraph-size;
-//   }
-  
-//   .card__link {
-//     @include focus-indicator;
+.card__bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: var(--v2--current-small-font-size);
+}
 
-//     display: inline-block;
-//     margin: -3px;
-//     padding: 3px;
-//     text-decoration: none;
-//     color: var(--color-interactive);
-    
-//     &::before,
-//     &::after {
-//       content: "";
-//       position: absolute;
-//       transition: border-color 300ms ease-in;
-      
-//     }
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-abs-sm;
+  margin-bottom: $space-abs-xl;
+}
+
+.tags__label {
+  width: 100%;
+}
+
+.card__tag {
+  padding: 0 $space-abs-xs;
+  background-color: var(--v2--color-accent);
+}
+
+.card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: $space-abs-sm 0;
+}
+
+.card__author,
+.card__date {
+  display: flex;
+  align-items: center;
   
-//     &::before {
-//       inset: 0;
-//       cursor: pointer;
-//       z-index: 2;
-//     }
-  
-//     &::after {
-//       inset: -8px;
-//       border: 4px solid transparent;
-//       border-radius: calc($radius-lg + $radius-sm);
-//     }
+  svg {
+    margin-right: $space-abs-sm;
 
-//     &:hover,
-//     &:focus-visible {
-//       @extend %underline;
-//     }
-  
-//     &:focus-visible {
-//       &::after {
-//         border-color: var(--color-interactive);
-//       }
-//     }
-  
-//     &:hover {
-//       background-color: var(--color-bg);
-//       color: var(--color-interactive);
-//     }
-//   }
+    &.avatar {
+      padding: $space-abs-xxxs;
+    }
 
-//  .card__summary {
-//     margin-bottom: $space-rel-lg;
-//     font-size:  $default-font-size;
-//     flex: 1;
+    path {
+      fill: var(--v2--color-tertiary);
+      stroke: var(--v2--color-tertiary);
+      color: var(--v2--color-tertiary);
+    }
+  }
+}
 
-//     @include mq.mq($from:md) {
-//       font-size: $medium-paragraph-size;
-//     }
-//   }
+.card__author-link {
+  position: relative;
+  padding: $space-abs-sm $space-abs-xxs;
+  min-height: 2.75rem;
+  z-index: 1;
 
-//   .tags__label {
-//     @extend %small-text;
-//     display: block;
-//     width: 100%;
-//   }
-
-//   .card__author-link {
-//     @include focus-indicator;
-//     @extend %smallest-text;
-    
-
-//     position: relative;
-//     margin: -4px -3px;
-//     padding: 4px 3px;
-//     font-weight: 600;
-//     text-decoration: none;
-//     color: var(--color-interactive);
-//     z-index: 3;
-
-//     &:hover,
-//     &:focus-visible {
-//       @extend %underline;
-//     }
-//   }
-
-//   .card__date {
-//     @extend %smallest-text;
-//   }
-// }
+  &:hover,
+  &:focus-visible {
+    color: var(--v2--color-bg);
+  }
+}
