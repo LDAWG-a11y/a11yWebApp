@@ -1,19 +1,31 @@
 <li class="card__item">
-  <div class="card__text-wrapper">
-    <h3 class="card__title"><a href="{{ guide.url }}" class="card__link">{{ guide.data.title }}</a></h3>
-    <p class="card__summary">{{ guide.data.summary.slice(0, 120) }}{% if guide.data.summary.length > 120 %}&hellip;{% endif %}</p>
-    <footer class="card__footer">
-      <p class="tags">
-        <span class="tags__label">Tags: </span>
-        {%- for tag in guide.data.tags | filterTagList %}
-          <span class="tag__item tag__item--inert">
-            {{ tag }}
-          </span>
-        {%- endfor %}
-        </p>
+  <div class="card__top">
+    {% set headinglevel = headingLevel if headingLevel else 'h3' %}
+    <{{ headingLevel }} class="card__title"><a href="{{ guide.url }}" class="card__link">{{ guide.data.title }}</a></{{ headingLevel }}>
+    {% include '../svg/MTA-logo-only.svg' %}
+    <!-- {%- set titleLength = guide.data.title.length %}
+    {{ titleLength}} -->
+    <!-- <p class="card__summary">{{ guide.data.summary.slice(0, 120) }}{% if guide.data.summary.length > 120 %}&hellip;{% endif %}</p> -->
+  </div>
+  <div class="card__bottom">
+    <div class="card__tags">
+      <strong class="tags__label">Tagged:</strong>
+      {%- for tag in guide.data.tags | filterTagList %}
+        <span class="card__tag">
+          {{ tag }}
+        </span>
+      {%- endfor %}
+    </div>
+    <div class="card__meta">
       {% set guideAuthor = collections.writers | getAuthor(guide.data.author) %}
-      <a href="/authors/{{ guideAuthor.key }}" class="card__author-link">{{ guideAuthor.name }}</a>
-      <time class="card__date" datetime="{{ guide.data.date.toISOString() }}">{{ guide.data.date | readableDate }}</time>
-    </footer>
+      <span class="card__author">{% include '../svg/avatar-unknown.svg' %} 
+        {% if not authorPage %}
+          <a href="/authors/{{ guideAuthor.key }}" class="card__author-link">{{ guideAuthor.name }}</a>
+        {% else %}
+          {{ guideAuthor.name }}
+        {% endif %}
+      </span>
+      <time class="card__date" datetime="{{ guide.data.date.toISOString() }}">{% include '../svg/date.svg' %} {{ guide.data.date | readableDate }}</time>
+    </div>
   </div>
 </li>

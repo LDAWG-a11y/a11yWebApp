@@ -49,18 +49,6 @@ html {
   font-size: 100%;
 }
 
-*,
-*::before,
-*::after {
-  [data-pref--l-spacing="increased"] & {
-    letter-spacing: calc($default-font-size * .12) !important;
-  }
-
-  [data-pref--w-spacing="increased"] & {
-    word-spacing:  calc($default-font-size * .16) !important;
-  }
-}
-
 body {
   position: relative;
   line-height: $default-line-height;
@@ -74,10 +62,12 @@ body {
 
   &[data-pref--f-size="large"] {
     --v2--base-font-size: 1.25rem;
+    --v2--small-font-size: 1.125rem;
   }
 
   &[data-pref--f-size="largest"] {
     --v2--base-font-size: 1.375rem;
+    --v2--small-font-size: 1.25rem;
   }
 
   &[data-pref--l-height="increased"] {
@@ -88,7 +78,19 @@ body {
     --v2--paragraph-spacing: calc(1.5em * 1.5);
   }
 
-  --v2--current-font-size: var(--v2--base-font-size);
+  --v2--current-base-font-size: var(--v2--base-font-size);
+}
+
+*,
+*::before,
+*::after {
+  [data-pref--l-spacing="increased"] & {
+    letter-spacing: calc(var(--v2--current-base-font-size) * .12) !important;
+  }
+
+  [data-pref--w-spacing="increased"] & {
+    word-spacing: calc(var(--v2--current-base-font-size) * .16) !important;
+  }
 }
 
 header,
@@ -109,24 +111,21 @@ dialog {
   font-size: var(--v2--base-font-size);
 
   @include mq.mq($from:md) {
-    --v2--current-font-size: calc(var(--v2--base-font-size) + .25rem);
-    font-size: var(--v2--current-font-size);
+    --v2--current-base-font-size: calc(var(--v2--base-font-size) + .25rem);
+    --v2--current-small-font-size: calc(var(--v2--small-font-size) + .125rem);
+    font-size: var(--v2--current-base-font-size);
   }
 
   @include mq.mq($from:lg) {
-    --v2--current-font-size: calc(var(--v2--base-font-size) + .375rem);
-    font-size: var(--v2--current-font-size);
+    --v2--current-base-font-size: calc(var(--v2--base-font-size) + .375rem);
+    font-size: var(--v2--current-base-font-size);
   }
 }
 
 summary,
 input {
   @include mq.mq($from:md) {
-    font-size: calc($default-font-size + .125rem);
-  }
-
-  @include mq.mq($from:lg) {
-    font-size: calc($default-font-size + .25rem);
+    // font-size: var(--v2--current-base-font-size);
   }
 }
 
@@ -231,8 +230,9 @@ h1 {
 
 h2 {
   position: relative;
-  font-size: calc(var(--v2--current-font-size) + 1.5rem);
-
+  font-size: calc(var(--v2--current-base-font-size) + 1.5rem);
+  line-height: calc(var(--v2--line-height) - .125);
+  
   &:not([data-no-accent]) {
     margin-top: $space-abs-md;
     
@@ -264,31 +264,31 @@ h2 {
 }
 
 h3 {
-  font-size: calc(var(--v2--current-font-size) + 1.25rem);
+  font-size: calc(var(--v2--current-base-font-size) + 1.25rem);
 
   @include mq.mq($from:md) {
-    font-size: calc(var(--v2--current-font-size) + 1rem);
+    font-size: calc(var(--v2--current-base-font-size) + 1rem);
   }
 }
 
 h4 {
-  font-size: calc(var(--v2--current-font-size) + 1rem);
+  font-size: calc(var(--v2--current-base-font-size) + 1rem);
 
   @include mq.mq($from:md) {
-    font-size: calc(var(--v2--current-font-size) + .75rem);
+    font-size: calc(var(--v2--current-base-font-size) + .75rem);
   }
 }
 
 h5 {
-  font-size: calc(var(--v2--current-font-size) + .75rem);
+  font-size: calc(var(--v2--current-base-font-size) + .75rem);
 
   @include mq.mq($from:md) {
-    font-size: calc(var(--v2--current-font-size) + .5rem);
+    font-size: calc(var(--v2--current-base-font-size) + .5rem);
   }
 }
 
 h6 {
-  font-size: calc(var(--v2--current-font-size) + .5rem);
+  font-size: calc(var(--v2--current-base-font-size) + .5rem);
 
   @include mq.mq($from:lg) {
     font-size: .35rem;
@@ -312,28 +312,35 @@ p {
 }
 
 a {
+  font-family: 'Rem', sans-serif;
+  font-weight: 500;
   text-decoration-skip-ink: auto;
   word-break: break-word;
+
+  .nav & {
+    font-family: "Red Hat Display", Helvetica, Verdana, sans-serif;
+    font-weight: 400;
+  }
 }
 
 a:not([class]),
-a:not([class]):visited {
+a:not([class]):visited,
+.card__author-link {
   margin: (-$space-abs-xxs) (-$space-abs-xxs);
   padding: $space-abs-xxs $space-abs-xxs;
-  font-family: 'Rem', sans-serif;
-  font-weight: 500;
   text-decoration: underline;
   text-underline-offset: 2px;
   text-decoration-thickness: 3px;
   text-decoration-color: var(--v2--color-secondary);
   color: var(--v2--color-primary--light);
-  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in;
+  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 400ms;
 
   &:focus,
   &:hover {
     color: var($--v2--color-bg);
     background-color: var($--v2--color-primary--light);
     text-decoration-color: var(--v2--color-bg);
+    text-underline-offset: .2em;
   }
 }
 
@@ -343,7 +350,7 @@ button {
 }
 
 button:not(.nav__btn--collab) {
-  font-size: calc(var(--v2--current-font-size) - .125rem);
+  font-size: calc(var(--v2--current-base-font-size) - .125rem);
 }
 
 ul:not([class]),
@@ -377,5 +384,10 @@ ul:not([class]) {
       background-color: var(--v2--color-secondary);
     }
   }
+}
+
+strong {
+  font-family: 'Red Hat display';
+  font-weight: 500;
 }
 
