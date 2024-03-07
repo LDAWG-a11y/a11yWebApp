@@ -1,48 +1,14 @@
 @use '../vendors/mq';
 
+/* oswald-600 - latin */
 @font-face {
-  font-family: 'Rem';
+  font-family: 'Oswald';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   src: local(''),
-       url('/fonts/rem-500.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Rem';
-  font-style: normal;
-  font-weight: 700;
-  src: local(''),
-       url('/fonts/rem-700.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Rem';
-  font-style: normal;
-  font-weight: 900;
-  src: local(''),
-       url('/fonts/rem-900.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Red Hat display';
-  font-style: normal;
-  font-weight: 400;
-  src: local(''),
-       url('/fonts/red-hat-display-400.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Red Hat display';
-  font-style: normal;
-  font-weight: 500;
-  src: local(''),
-       url('/fonts/red-hat-display-500.woff2') format('woff2');
-  font-display: swap;
+       url('/fonts/oswald-v49-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/fonts/oswald-v49-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: block;
 }
 
 html {
@@ -50,83 +16,14 @@ html {
 }
 
 body {
+  @include font-size;
+  
   position: relative;
+  font-size: $default-paragraph-size;
   line-height: $default-line-height;
-  font-family: "Red Hat Display", Helvetica, Verdana, sans-serif;
-  color: var(--v2--color-text);
-  text-rendering: auto;
-}
-
-:root {
-  @include spread-map($typography-map);
-
-  &[data-pref--f-size="large"] {
-    --v2--base-font-size: 1.25rem;
-    --v2--small-font-size: 1.125rem;
-  }
-
-  &[data-pref--f-size="largest"] {
-    --v2--base-font-size: 1.375rem;
-    --v2--small-font-size: 1.25rem;
-  }
-
-  &[data-pref--l-height="increased"] {
-    --v2--line-height: 2;
-  }
-
-  &[data-pref--p-spacing="increased"] {
-    --v2--paragraph-spacing: calc(1.5em * 1.5);
-  }
-
-  --v2--current-base-font-size: var(--v2--base-font-size);
-}
-
-*,
-*::before,
-*::after {
-  [data-pref--l-spacing="increased"] & {
-    letter-spacing: calc(var(--v2--current-base-font-size) * .12) !important;
-  }
-
-  [data-pref--w-spacing="increased"] & {
-    word-spacing: calc(var(--v2--current-base-font-size) * .16) !important;
-  }
-}
-
-header,
-footer {
-  font-size: $default-font-size;
-
-  @include mq.mq($from:md) {
-    font-size: calc($default-font-size + .125rem);
-  }
-
-  @include mq.mq($from:lg) {
-    font-size: calc($default-font-size + .25rem);
-  }
-}
-
-main,
-dialog {
-  font-size: var(--v2--base-font-size);
-
-  @include mq.mq($from:md) {
-    --v2--current-base-font-size: calc(var(--v2--base-font-size) + .25rem);
-    --v2--current-small-font-size: calc(var(--v2--small-font-size) + .125rem);
-    font-size: var(--v2--current-base-font-size);
-  }
-
-  @include mq.mq($from:lg) {
-    --v2--current-base-font-size: calc(var(--v2--base-font-size) + .375rem);
-    font-size: var(--v2--current-base-font-size);
-  }
-}
-
-summary,
-input {
-  @include mq.mq($from:md) {
-    // font-size: var(--v2--current-base-font-size);
-  }
+  font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+  color: var(--color-text);
+  text-rendering: optimizeLegibility;
 }
 
 kbd {
@@ -138,30 +35,29 @@ h2,
 h3,
 h4,
 h5,
-h6,
-legend {
+h6 {
   line-height: $default-line-height;
-  font-family: 'Rem', sans-serif;
+  letter-spacing: .0125rem;
+  font-family: 'Oswald', sans-serif;
   font-weight: 700;
   overflow-wrap: break-word;
-  margin-bottom: .5em;
 }
 
 h1 {
-  text-align: center;
+  position: relative;
   font-size: 3rem;
-  font-weight: 900;
+  padding-bottom: $space-biggest;
   line-height: 1.25;
 
   .aaa-content & {
-    padding-bottom: $space-rel-md;
+    padding-bottom: $space-md;
   }
 
   @media (forced-colors: active) {
     line-height: 1.5;
   }
 
-  @include mq.mq($from:md) {
+  @include mq.mq($from:sm) {
     font-size: 3.5rem;
   }
 
@@ -170,224 +66,118 @@ h1 {
   }
 }
 
-.main__title--home {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: 65rem;
-
-  span {
-    position: relative;
-    display: inline-block;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(to right,
-      var(--v2--color-primary--light),
-      var(--v2--color-primary--light) 50%,
-      var(--v2--color-text-faded) 50%
-    );
-    background-size: 200% 100%;
-    background-position: 100%;
-    animation: colour-swipe 1250ms cubic-bezier(0, 0.55, 0.45, 1) 750ms forwards;
-
-    @include mq.mq($from:md) {
-      font-size: 4rem;
-    }
-
-    @include mq.mq($from:lg) {
-      font-size: 4.5rem;
-
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: -$space-abs-xxs;
-        left: 0;
-        border-bottom: $space-abs-xxs solid var(--v2--color-secondary);
-        width: 0;
-        animation: underline-word 1250ms cubic-bezier(0, 0.55, 0.45, 1) 750ms forwards;
-      }
-    }
-
-    [data-pref--motion="none"] & {
-      -webkit-text-fill-color: var(--v2--color-text);
-
-      &::before {
-        animation: none;
-        width: 100%;
-      }
-    }
-
-    @media (prefers-reduced-motion) {
-      -webkit-text-fill-color: var(--v2--color-text);
-
-      &::before {
-        animation: none;
-        width: 100%;
-      }
-    }
-  }
-}
-
 h2 {
   position: relative;
-  font-size: calc(var(--v2--current-base-font-size) + 1.5rem);
-  line-height: calc(var(--v2--line-height) - .125);
-  
-  &:not([data-no-accent]) {
-    margin-top: $space-abs-md;
-    
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      top: -$space-abs-xxs;
-      height: 6px;
-      border-radius: $radius-xl;
-      background-color: var(--v2--color-secondary);
-    }
+  font-size: 2.25rem;
+  margin-bottom: $space-lg;
+
+  &:not(.accordion):not(.pagination__heading):not(.card__item &) {
+    padding-left: $space-md;
 
     &::before {
+      content: "";
+      position: absolute;
+      top: .4rem;
       left: 0;
-      width: 60px;
-      opacity: .7;
-    }
+      border-radius: $radius-md;
+      height: calc(100% - #{$space-xs});
+      width: 6px;
+      background: linear-gradient(to top, var(--color-primary), var(--color-accent-2));
 
-    &::after {
-      left: $space-abs-xl;
-      width: $space-abs-xl;
+      @include mq.mq($from:lg) {
+        top: .3rem;
+      }
     }
   }
+  
 
-  @include mq.mq($from:md) {
-    font-size: calc(var(--v2--base-font-size) + 1.25rem);
+  @include mq.mq($from:lg) {
+    margin-bottom: $space-xl;
+    font-size: 2.5rem;
   }
 }
 
 h3 {
-  font-size: calc(var(--v2--current-base-font-size) + 1.25rem);
+  margin-bottom: $space-md;
+  font-size: 1.75rem;
 
-  @include mq.mq($from:md) {
-    font-size: calc(var(--v2--current-base-font-size) + 1rem);
+  @include mq.mq($from:lg) {
+    font-size: 2rem;
   }
 }
 
 h4 {
-  font-size: calc(var(--v2--current-base-font-size) + 1rem);
+  margin-bottom: $space-md;
+  font-size: 1.5rem;
 
-  @include mq.mq($from:md) {
-    font-size: calc(var(--v2--current-base-font-size) + .75rem);
+  @include mq.mq($from:lg) {
+    font-size: 1.75rem;
   }
 }
 
 h5 {
-  font-size: calc(var(--v2--current-base-font-size) + .75rem);
+  margin-bottom: $space-md;
+  font-size: 1.3rem;
 
-  @include mq.mq($from:md) {
-    font-size: calc(var(--v2--current-base-font-size) + .5rem);
+  @include mq.mq($from:lg) {
+    font-size: 1.4rem;
   }
 }
 
 h6 {
-  font-size: calc(var(--v2--current-base-font-size) + .5rem);
+  margin-bottom: $space-md;
+  font-size: 1.25rem;
 
   @include mq.mq($from:lg) {
-    font-size: .35rem;
+    font-size: 1.35rem;
   }
-}
-
-p,
-ul:not([class]) > li {
-  max-width: 80rem;
-  line-height: var(--v2--line-height);
 }
 
 p {
-  &:not(:last-of-type) {
-    margin-bottom: var(--v2--paragraph-spacing);
-  }
+  max-width: 80rem;
 
-  &:last-of-type {
-    margin-bottom: .5em;
+  &:not(:last-of-type) {
+    margin-bottom: 1.5rem;
   }
 }
 
 a {
-  font-family: 'Rem', sans-serif;
-  font-weight: 500;
   text-decoration-skip-ink: auto;
   word-break: break-word;
-
-  .nav & {
-    font-family: "Red Hat Display", Helvetica, Verdana, sans-serif;
-    font-weight: 400;
-  }
 }
 
 a:not([class]),
-a:not([class]):visited,
-.card__author-link {
-  margin: (-$space-abs-xxs) (-$space-abs-xxs);
-  padding: $space-abs-xxs $space-abs-xxs;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  text-decoration-thickness: 3px;
-  text-decoration-color: var(--v2--color-secondary);
-  color: var(--v2--color-primary--light);
-  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 400ms;
+a:not([class]):visited {
+  @include focus-indicator;
+  @extend %underline;
 
-  &:focus,
-  &:hover {
-    color: var($--v2--color-bg);
-    background-color: var($--v2--color-primary--light);
-    text-decoration-color: var(--v2--color-bg);
-    text-underline-offset: .2em;
-  }
-}
-
-button {
-  font-family: "Red Hat Display", Helvetica, Verdana, sans-serif;
-  font-weight: 500;
-}
-
-button:not(.nav__btn--collab) {
-  font-size: calc(var(--v2--current-base-font-size) - .125rem);
-}
-
-ul:not([class]),
-ol {
-  margin: 0 0 1.5em $space-abs-xxl;
-
-  ul,
-  ol {
-    margin-bottom: 0;
-  }
-
-  > li {
-    position: relative;
-  }
+  margin: -3px -3px;
+  padding: 3px 3px;
+  font-weight: 600;
+  color: var(--color-interactive);
 }
 
 ul:not([class]) {
-  li {
-    &::marker {
-      content: "";
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: .5em;
-      left: -18px;
-      width: 6px;
-      height: 6px;
-      transform: rotate(-45deg) translateY(50%);
-      background-color: var(--v2--color-secondary);
-    }
-  }
+  margin-bottom: $space-xxxl;
+  margin-left: $space-lg;
 }
 
-strong {
-  font-family: 'Red Hat display';
-  font-weight: 500;
+ul:not([class]) > li > ul {
+  margin-bottom: 0;
+  margin-left: $space-lg;
+}
+
+ul:not([class]) > li > ul > li > ul {
+  margin-bottom: 0;
+  margin-left: $space-xxl;
+}
+
+ul:not([class]) {
+
+  & > li {
+    &::marker {
+      color: var(--color-accent-2);
+    }
+  }
 }
 

@@ -4,7 +4,7 @@ layout: base.njk
 title: Home
 home: true
 ---
-<div class="panel gutter-btm--major">
+<div class="intro-panel">
   <h2>Hello and welcome</h2>
   <p>To the Make Things Accessible website, a repository for guidance material and useful resources for organisations looking to improve their digital accessibility.</p>
   <p>This project is a shared effort between a number of London-based universities looking to pool our efforts and knowledge on delivering accessible experiences for students and staff.</p>
@@ -13,14 +13,13 @@ home: true
   <p>If you can’t find what you are looking for and get stuck, we have helpful FAQs and Glossary pages which may offer assistance. If there are topics that we have not yet added but you think we should, something we have gotten wrong, or you want to contact us for any other reason please reach out.</p>
 </div>
 
-<div class="latest-articles gutter-btm--major">
+<div class="latest-articles">
   <h2 class="latest-articles__heading" id="latestGuidesHeading">Latest guides</h2>
   <p class="latest-articles__intro">Our latest digital accessibility guides are displayed in this section, this will be updated each time we produce a new guide, alternatively, you can <a href="/guides/">view all guides here</a>.</p>
-  <section class="latest-articles--scrollable" tabindex="0" aria-labelledby="latestGuidesHeading">
-    <ul class="cards cards--scrollable">
+  <section class="cards--scrollable" tabindex="0" aria-labelledby="latestGuidesHeading">
+    <ul class="cards">
       {%- for guide in collections.guides | reverse %}
         {% if loop.index < 7 %}
-          {% set headingLevel = 'h3' %}
           {% include "_card.njk" %}
         {% endif %}
       {%- endfor %}
@@ -39,7 +38,7 @@ home: true
         {% if loop.index < 5 %}
           <li class="card__item">
             <div class="card__text-wrapper">
-              <h3 class="card__title"><a href="{{ card.url }}" class="card__link">{{ card.data.title }}</a></h3>
+              <h2 class="card__title"><a href="{{ card.url }}" class="card__link">{{ card.data.title }}</a></h2>
             </div>
             <div class="card__img-wrapper">
               {%- if card.data.img %}{% image card.data.img, '' %}{% else %}<img class="card__placeholder-img--aaa" src="/img/aaa-light_vpjlfm_c_scale,w_360.png" alt="">{% endif %}

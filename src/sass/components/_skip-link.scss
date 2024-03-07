@@ -1,0 +1,28 @@
+@use '../vendors/mq';
+
+.skip-link {
+  @extend %underline;
+
+  position: absolute;
+  left: $space-xs;
+  border: 2px solid var(--color-bg);
+  padding: $space-xs $space-sm;
+  width: auto;
+  height: auto;
+  background: var($--color-interactive);
+  color: var($--color-bg);
+  transition: top 250ms ease-in;
+  z-index: 1;
+
+  @include mq.mq($from:md) {
+    left: $space-lg;
+  }
+}
+
+.skip-link:not(:active):not(:focus) {
+  top: -$space-xxxxl;
+}
+
+.skip-link:focus {
+  top: 0;
+}

@@ -2,15 +2,15 @@
 
 .author-bio {
   position: relative;
-  margin: $space-rel-bigger auto $space-rel-xxxxl;
+  margin: $space-bigger auto $space-xxxxl;
   border: 2px solid var(--color-primary);
   border-radius: $radius-md;
-  padding: $space-rel-xxxxl $space-rel-sm $space-rel-xl;
+  padding: $space-xxxxl $space-sm $space-xl;
   max-width: 75rem;
   background-color: var(--color-bg--light);
 
   @include mq.mq($from:md) {
-    padding: $space-rel-xs $space-rel-lg $space-rel-xl;
+    padding: $space-xs $space-lg $space-xl;
     border-radius: $radius-lg;
   }
 
@@ -36,14 +36,14 @@
       @include mq.mq($from:md) {
         height: 10.3rem;
         width: 10.3rem;
-        right: calc($space-rel-xl - 0.15rem);
+        right: calc($space-xl - 0.15rem);
         transform: translateX(0);
       }
     }
   }
   
   &:not(.author-bio--with-image) {
-    padding-top: $space-rel-md;
+    padding-top: $space-md;
   }
 
   &::after {
@@ -58,7 +58,7 @@
 }
 
 .author-bio__title {
-  margin-top: $space-rel-lg;
+  margin-top: $space-lg;
 
   @include mq.mq($from:md) {
     max-width: calc(100% - 11rem);
@@ -80,13 +80,13 @@
   @include mq.mq($from:md) {
     height: 10rem;
     width: 10rem;
-    right: $space-rel-xl;
+    right: $space-xl;
     transform: translateX(0);
   }
 }
 
 .author-bio__intro {
-  margin-bottom: $space-rel-lg;
+  margin-bottom: $space-lg;
 }
 
 .author-bio__meta {
@@ -101,10 +101,10 @@
   }
 
   &:not(:last-of-type) {
-    margin-bottom: $space-rel-xl;
+    margin-bottom: $space-xl;
 
     @include mq.mq($from:sm) {
-      margin-bottom: $space-rel-xs;
+      margin-bottom: $space-xs;
     }
   }
 }
@@ -123,7 +123,7 @@
   }
 
   @include mq.mq($from:sm) {
-    margin-right: $space-rel-md;
+    margin-right: $space-md;
   }
 }
 

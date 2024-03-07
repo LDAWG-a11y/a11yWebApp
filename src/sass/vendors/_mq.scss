@@ -13,7 +13,7 @@
 $breakpoints: (
   xxs: 320px,
   xs: 420px,
-  sm: 620px,
+  sm: 600px,
   md: 768px,
   md-tweak: 960px,
   lg: 1024px,
@@ -304,5 +304,5 @@ $media-type: all !default;
 }
 
 @if list.length($show-breakpoints) > 0 {
-  @include show-breakpoints;
+  // @include show-breakpoints;
 }

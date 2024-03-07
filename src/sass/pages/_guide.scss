@@ -4,8 +4,8 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-bottom: $space-rel-xxxl;
-  padding: $space-rel-sm;
+  margin-bottom: $space-xxxl;
+  padding: $space-sm;
 
   & > .tags {
     padding-top: 0;
@@ -15,5 +15,5 @@
 }
 
 .guide__label {
-  padding-bottom: $space-rel-xs;
+  padding-bottom: $space-xs;
 }

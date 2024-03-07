@@ -13,24 +13,20 @@ eleventyComputed:
   summary: "View all useful digital accessibility guides from our website by all of our contributors, covering inclusive design, web development, documentation & social media"
 ---
 
-  
-
-<div class="cards__wrapper">
-  <h2 id="h2" tabindex="-1">Showing {{ (pagination.pageNumber * pagination.size) + 1 }} to {%- if pagination.nextPageLink %} {{ (pagination.pageNumber * pagination.size) + pagination.size }} {%- else %} {{ collections.guides.length }} {%- endif %} of {{ collections.guides.length }} results</h2>
-  <h2 class="accordion accordion--full">Filters</h2>
+  <h2 class="accordion accordion__full">Filters</h2>
   <div class="accordion__panel accordion__panel--full">
-    <div>
-      <h3>Filter by tag</h3>
-      <ul class="tags">
-        {%- for tag in collections.tagList %}
-          <li class="tag__item">
-            {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
-            <a class="tag__link tag__link--has-count" href="{{ tagUrl | url }}">{{ tag }}<span class="tag__count">{{ collections[tag].length }}<span class="visually-hidden"> guide{%- if collections[tag].length > 1 %}s{%- endif %}</span></span></a>
-          </li>
-        {%- endfor %}
+    <a class="skip-tags" href="#h2">Skip filters</a>
+    <h3 class="intro-panel__heading">Filter by tag</h3>
+    <ul class="tags tags__all">
+      {%- for tag in collections.tagList %}
+        <li class="tag__item">
+          {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
+          <a class="tag__link tag__link--has-count" href="{{ tagUrl | url }}">{{ tag }}<span class="tag__count">{{ collections[tag].length }}<span class="visually-hidden"> guide{%- if collections[tag].length > 1 %}s{%- endif %}</span></span></a>
+        </li>
+      {%- endfor %}
       </ul>
-      <h3>Filter by author</h3>
-      <ul class="tags">
+      <h3 class="intro-panel__heading">Filter by author</h3>
+      <ul class="tags tags__all">
         {%- for author in collections.writers %}
           {% set posts = collections.guides | getGuidesByAuthor(author.key) %}
           {%- if posts.length %}
@@ -40,11 +36,11 @@ eleventyComputed:
           {%- endif %}
         {%- endfor %}
       </ul>
-    </div>
   </div>
 
+<div class="cards__wrapper">
+  <h2 id="h2" tabindex="-1">Showing {{ (pagination.pageNumber * pagination.size) + 1 }} to {%- if pagination.nextPageLink %} {{ (pagination.pageNumber * pagination.size) + pagination.size }} {%- else %} {{ collections.guides.length }} {%- endif %} of {{ collections.guides.length }} results</h2>
   <ul class="cards">
-    {% set headingLevel = 'h3' %}
     {%- for guide in helpGuides %}
       {% include "_card.njk" %}
     {%- endfor %}

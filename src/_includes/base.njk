@@ -1,7 +1,7 @@
 {% include "_head.njk" %}
 <body {%- if extraWide %} class="extra-width" {%- endif %}>
   {% include "_header.njk" %}
-  {% if toc %}
+  {% if '/accessibility' in page.url or '/privacy' in page.url or '/codeOfConduct' in page.url %}
     {% if toc %}
       <nav class="cms__toc" aria-labelledby="toc-heading">
         <details open>
@@ -15,16 +15,6 @@
     {%- if aaaSupporters %}
       <div class="supporters__wrapper">
     {% endif %}
-    <h1 id="h1" class="main__title {%- if home %} main__title--home {% endif %} btm__gutter--largest" tabindex="-1">
-      {%- if not home %}
-        {{ title }}
-      {%- else %}
-        Welcome to <span>Make Things Accessible</span>
-      {%- endif %}
-      {%- if subTitle %}
-      <span class="header__welcome-text--sub">{{ subTitle }}</span>
-      {% endif %}
-    </h1>
     {{ content | safe }}
     {%- if aaaSupporters %}
       </div>

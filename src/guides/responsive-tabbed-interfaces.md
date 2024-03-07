@@ -128,7 +128,7 @@ What I am going to do is just show each step's code on its own as opposed to mak
 First we'll initialise our global variables and then we'll build a string from the contents of the `<details>` and `<summary` elements, so we can use this as our base HTML. Once that is all sorted, we'll remove everything from our wrapper and insert our new string as HTML and then reference the global variables we need from that new HTML.
 
 <h5 class="accordion">Explainer 1</h5>
-<div class="accordion__panel"><div>
+<div class="accordion__panel">
 
 * First we want to reference our `<div class="widget__wrapper">` element and assign it to the \`widgetWrapper\` variable
   \* We initialise two variables in the global scope, that we need later \`baseHTML\` (which we're setting to an empty string) and also \`open\`, which we will set to \`0\`
@@ -149,7 +149,6 @@ First we'll initialise our global variables and then we'll build a string from t
   * We create an `Array.from()` a collection of the new buttons which is assigned to `widgetBtns`
   * We create an `Array.from()` a collection of the new panels which is assigned to `widgetPanels`
 
-</div>
 </div>
 
 ```javascript
@@ -197,7 +196,7 @@ const widgetPanels = Array.from(
 We'll create our accordions first as they are what will display on smaller viewports and mobile first tends to be the best way of building sites, so we create a `createAccordions()` function.
 
 <h5 class="accordion">Explainer 2</h5>
-<div class="accordion__panel"><div>
+<div class="accordion__panel">
 
 * We're just looping through the `widgetBtns` array, getting a reference to the button and its index on each loop iteration, with `btn` and `idx`, respectively
 * On page load we want the first panel to be open, but users can resize the window or zoom in or out after the page has loaded, which may trigger the media query change. We need to plan ahead a little here, we don't want a situation where our user has focused on something and should they trigger the media query change by zooming or resizing and then their focus gets lost
@@ -213,7 +212,6 @@ We'll create our accordions first as they are what will display on smaller viewp
   * We are also adding a `role=region` to each panel, so now our accordions' panels have a role with an accessible name (which we added in the `baseHTML` string with `aria-labelledby`)
   * We remove both the `tabindex` and `hidden` attributes, as we don't want these for accordions
 
-</div>
 </div>
 
 ```javascript
@@ -250,7 +248,7 @@ const createAccordions = () => {
 We'll now create a `createTabs()` function which will add all of the necessary roles and properties to our tabbed interface, as well as removing any artefacts of the accordions pattern.
 
 <h5 class="accordion">Explainer 3</h5>
-<div class="accordion__panel"><div>
+<div class="accordion__panel">
 
 * First we're going to add `role="tablist"` to the `widgetControlsWrapper`, as the actual tabs need to be inside an element with this role
 * Now we're going to loop through the buttons again, we can't have the buttons' parent headings exposed as headings so we'll just neuter their semantics with `role="presentation"`
@@ -269,7 +267,6 @@ Finally, we'll add the required roles and properties to the panels:
 
 So now we have two functions that generate the correct HTML and ARIA, one that creates accordions and one that creates tabs.
 
-</div>
 </div>
 
 ```javascript
@@ -321,14 +318,13 @@ Just so our tabs are displayed horizontally, we'll set `display: flex;` and `gap
 Now we need to determine which widget to display, initially we need to do this on page load so we are providing the user with the widget that best fits their viewport.
 
 <h5 class="accordion">Explainer 4</h5>
-<div class="accordion__panel"><div>
+<div class="accordion__panel">
 
 * We add an `addEventListener()` to the `window`, listening to the event `'DOMContentLoaded'` when that event is complete, we check if the current media query `matches` our `mq` variable, if it does call `createAccordions()` if not call `createTabs()`
 * We use a similar `addEventListener()` as above, this time we set it on the `mq` variable and listen for a `'change'` event, which just means the current media query has changed
 
 If you have been following along in a code editor, should you load the page or resize it, you will notice that we now display the correct element per media query. It looks pretty awful right now, but if you open up the DevTools, everything looks sweet in there and everything is updated correctly. Next, we need to make these widgets functional to mouse and keyboard events.
 
-</div>
 </div>
 
 ```javascript
@@ -348,7 +344,7 @@ Accordions are naturally easier to manage as we just need a `click` event, which
 Now we will create a function `handleClickOnBtns()` which will listen for clicks on our `<button>` elements, the first thing we need to do is make sure that the `'click'` event was on an item that has the class which is present on our buttons, as we only want this code to run if it was our buttons that were clicked, otherwise it will run if somebody adds elements with certain roles to any of the panels, best to be safe, right?
 
 <h5 class="accordion">Explainer 5</h5>
-<div class="accordion__panel"><div>
+<div class="accordion__panel">
 
 * We check if the `<button>` has `aria-expanded="false"`, if it does toggle that value to `"true",` else set it to `"false"` we are using an `else if` here, as this way we're also checking for the presence of `aria-expanded`, as this is unique to the accordions in our example. If we just used an `else` which doesn't allow a condition, the event would add `aria-expanded` to tabs and we don't want that
 * We also toggle the `data-attribute` on the parent `<h3>` so its value is always in sync with the button's `aria-expanded` value
@@ -361,7 +357,6 @@ We call an as yet undeclared function named `setActiveTab()` where we will pass 
 
 We also need a way to call the `handleClickOnBtns()` function on a `'click'` event, so we use an `addEventListener()` and listen for a `'click'` event within the `widgetWrapper` and if there is one, it will call this function.
 
-</div>
 </div>
 
 ```javascript
@@ -388,7 +383,7 @@ widgetWrapper.addEventListener('click', handleClickOnBtns);
 So we need a function to handle setting the active tab and displaying its corresponding panel, whilst setting all other tabs to be non-active and their corresponding panels to `hidden`, we will do this in a `setActiveTab()` function, which will accept the current `tab` a user has clicked or selected.
 
 <h5 class="accordion">Explainer 6</h5>
-<div class="accordion__panel"><div>
+<div class="accordion__panel">
 
 * We passed in the `target` element (the clicked `<button>`) in the previous step's call to this function
 * We loop through all of the tabs and check to see which one matches the `<button>` passed to this function, by matching the `tab` is equal to the `activeTab`, which we passed in
@@ -404,7 +399,6 @@ So we need a function to handle setting the active tab and displaying its corres
   * We remove the `tabindex` attribute from each non-active `tabpanel`
   * Finally, we add the `hidden` attribute to each non-active `tabpanel`
 
-</div>
 </div>
 
 ```javascript
@@ -461,7 +455,7 @@ The interaction model for accordions is as follows:
 Quite a bit to consider there, but it's not as involved as it sounds, as the browser already handles a good chunk of that, we have hidden our panels properly, so focus cannot enter them if they are not displayed. We already manage the focus by setting the appropriate `tabindex` values, where required, so we only need to add the functionality for the keys we stored in our `navKeys` array. We're going to also add the optional interaction for accordions.
 
 <h5 class="accordion">Explainer 7</h5>
-<div class="accordion__panel"><div>
+<div class="accordion__panel">
 
 * We create a function `handleKeyboardInteraction()` that accepts an event `evt` parameter
 * If the `key` passed from the `evt` exists in the `navKeys` array we created earlier and that `key` was pressed whilst focus was on an element with a class `widget__btn`, we'll execute the code within, otherwise, we just do nothing
@@ -482,7 +476,6 @@ Quite a bit to consider there, but it's not as involved as it sounds, as the bro
 
 That's pretty much it, our tabs and accordions have good markup, the correct ARIA and the right interaction model, they will display according to the media query set and we're almost good, there's just one more thing.
 
-</div>
 </div>
 
 ```javascript
@@ -537,7 +530,7 @@ It is of course possible that a user had multiple accordions open, but we can't 
 We'll update our `mq.addEventListener()` method as this is the only time we need to concern ourselves with this change.
 
 <h5 class="accordion">Explainer 8</h5>
-<div class="accordion__panel"><div>
+<div class="accordion__panel">
 
 * First we will initialise a variable to get the currently focused element using the `document.activeElement` property, we'll call this variable `currentFocus`
 * Then we will check that focus was in inside the `widgetWrapper` by checking if the `currentFocus` variable has an ancestor with the class `widget__wrapper`, using the `closest()` method
@@ -548,7 +541,6 @@ We'll update our `mq.addEventListener()` method as this is the only time we need
 
 That does it for the JS, finally. We covered quite a bit and sorry if I over-explained, I'm sure you skimmed past everything that you already knew, I was also trying to cater for folks who may be new to JS or A11y. Maybe I'll put the step-by-step stuff in accordions, definitely not tabs though.
 
-</div>
 </div>
 
 ```javascript

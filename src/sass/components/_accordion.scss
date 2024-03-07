@@ -1,81 +1,95 @@
 @use '../vendors/mq';
 
 .accordion {
-  margin-bottom: 0;
-  width: 100%;
+  display: block;
+
+  .no-js & {
+
+  }
+  
+  .has-js & {
+    max-width: 60rem;
+    margin-bottom: $space-xs;
+  }
 
   &[data-open="true"] {
     + .accordion__panel {
-      grid-template-rows: 1fr;
-      visibility: visible;
-      transition: grid-template-rows 400ms ease-in, visibility 0ms ease-in 0ms;
+      height: auto;
+      // transition: height 250ms ease-in-out;
+      animation: show 250ms ease-in-out;
+      animation-fill-mode: forwards;
     }
   }
 
   &[data-open="false"] {
     + .accordion__panel {
-      grid-template-rows: 0fr;
-      visibility: hidden;
-      transition: grid-template-rows 400ms ease-in, visibility 0ms ease-in 400ms;
+      height: 0;
+      // transition: height 250ms ease-in-out ;
+      animation: hide 250ms ease-in-out;
+      animation-fill-mode: forwards;
     }
   }
 }
 
-.accordion,
-.accordion + .accordion__panel {
-  width: 100%;
-  max-width: 60rem;
+.accordion--large {
+  
+  .has-js & {
+    max-width: 70rem;
+  }
 }
 
-.accordion--large,
-.accordion--large + .accordion__panel {
-  max-width: 70rem;
-}
-
-.accordion--full,
-.accordion--full + .accordion__panel--full {
-  margin: 0 auto;
-  width: 100%;
+.accordion.accordion__full {
   max-width: 75rem;
-}
+  margin: 0 auto;
 
-.accordion--single {
-  .accordion__btn {
-    border-radius: $radius-md;
+  + .accordion__panel--full {
+    max-width: 75rem;
+    margin: 0 auto $space-md;
+
+    .has-js & {
+      border: 2px solid var(--color-interactive);
+      border-top: none;
+      padding-top: $space-lg;
+      background-color: var(--color-bg--light);
+    }
+
+    @include mq.mq($from:lg) {
+      margin-bottom: $space-xxl;
+    }
   }
-}
 
-.accordion--single {
-  + .accordion__panel {
-    width: calc(100% - $space-rel-md);
-    margin-bottom: $space-abs-xxl;
+  &[data-open="true"] {
+    > .accordion__btn {
+      border-radius: $radius-xs $radius-xs 0 0;
+    }
   }
-}
 
-.accordion--multiple {
-  .accordion__btn {
-    margin-bottom: $space-abs-xs;
+  &[data-open="false"] {
+    + .accordion__panel {
+      border: none;
+      background-color: var(--color-bg);
+    }
   }
 }
 
 .accordion__btn {
   position: relative;
-  display: flex;
-  align-items: center;
-  border: 2px solid var(--v2--color-primary--light);
-  padding: 0 $space-abs-xs 0 $space-rel-xxl;
+  border: 2px solid var(--color-interactive);
+  border-radius: $radius-xs;
+  padding: $space-xs $space-xxl $space-xs $space-sm;
   width: 100%;
-  background-color: var(--v2--color-bg);
-  color: var(--v2--color-primary--light);
-  transition: background-color 300ms ease-in, color 300ms ease-in;
-  z-index: 1;
+  font-size: $large-text;
+  text-align: left;
+  color: var(--color-interactive);
+  background: var(--color-bg--light);
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 
   &::before,
   &::after {
     content: "";
     position: absolute;
-    background-color: var(--v2--color-primary--light);
-    transition: background 300ms ease-in-out, transform 300ms ease-in-out, opacity 250ms ease-in-out;
+    background-color: var(--color-interactive);
+    transition: background 250ms ease-in-out, transform 250ms ease-in-out, opacity 200ms ease-in-out;
     transform-origin: top;
 
     @media (forced-colors: active) {
@@ -85,18 +99,22 @@
 
   &::before {
     top: 50%;
-    left: 18px;
-    width: $space-rel-xxs;
-    height: 1.125rem;
+    right: 18px;
+    width: 4px;
+    height: 18px;
     transform: translateY(-50%);
   }
 
   &::after {
     top: 50%;
-    left: 11px;
-    width: 1.125rem;
-    height: $space-rel-xxs;
+    right: 11px;
+    width: 18px;
+    height: 4px;
     transform: translateY(-50%);
+  }
+
+  &[aria-expanded="false"] {
+    opacity: 1;
   }
 
   &[aria-expanded="true"] {
@@ -110,173 +128,52 @@
     }
   }
 
-  &:focus-visible,
+  &:focus,
   &:hover {
-    background-color: var(--v2--color-primary--light);
-    color: var(--v2--color-bg);
+    background-color: var(--color-interactive);
+    color: var(--color-bg);
 
     &::before,
     &::after {
-      background-color: var(--v2--color-bg);
-      color: var(--v2--color-primary--light);
+      background-color: var(--color-bg);
+
+      @media (forced-colors: active) {
+        background-color: ButtonText;
+      }
     }
   }
 
   &:focus-visible {
-    outline: 2px solid var(--v2--color-primary--light);
+    box-shadow: 0px 0px 0px 2px var(--color-bg),0px 0px 0px 4px var(--color-interactive);
   }
 }
- 
 
 .accordion__panel {
-  position: relative;
-  display: grid;
-  margin: 0 $space-rel-xxs;
-  background-color: var(--v2--color-bg);
 
-  > div {
-    grid-row: 1 / span 2;
-    padding: 0 $space-rel-xs;
+  .no-js & {
+
+  }
+
+  .has-js & {
     overflow: hidden;
+    padding: 0 $space-xs 0;
+    max-width: 60rem;
+    height: 0;
+    visibility: hidden;
+  }
 
-    &::before {
-      content: "";
-      position: relative;
-      top: 0;
-      display: block;
-      width: 100%;
-      height: $space-rel-md;
-    }
+  > *:last-child {
+    padding-bottom: $space-xxl;
   }
 
   &[data-last] {
-    margin-bottom: $space-rel-xxxl;
-  }
-
-  @media (prefers-reduced-motion) {
-    transition: grid-template-rows 0ms, visibility 0ms ease-in;
+    margin-bottom: $space-xxxl;
   }
 }
 
+.accordion__panel--large {
 
-
-
-// .accordion {
-//   display: block;
-
-//   .no-js & {
-
-//   }
-  
-//   .has-js & {
-//     
-//     margin-bottom: $space-rel-xs;
-//   }
-
-//   &[data-open="true"] {
-//     + .accordion__panel {
-//       height: auto;
-//       // transition: height 250ms ease-in-out;
-//       animation: show 250ms ease-in-out;
-//       animation-fill-mode: forwards;
-//     }
-//   }
-
-
-// }
-
-
-
-
-
-//   + .accordion__panel--full {
-//     max-width: 75rem;
-//     margin: 0 auto $space-rel-md;
-
-//     .has-js & {
-//       border: 2px solid var(--color-primary);
-//       border-top: none;
-//       padding-top: $space-rel-lg;
-//       background-color: var(--color-bg--light);
-//     }
-
-//     @include mq.mq($from:lg) {
-//       margin-bottom: $space-rel-xxl;
-//     }
-//   }
-
-//   &[data-open="true"] {
-//     > .accordion__btn {
-//       border-radius: $radius-xs $radius-xs 0 0;
-//     }
-//   }
-
-//   &[data-open="false"] {
-//     + .accordion__panel {
-//       border: none;
-//       background-color: var(--color-bg);
-//     }
-//   }
-// }
-
-// .accordion__btn {
-//   position: relative;
-//   border: 2px solid var(--color-primary);
-//   border-radius: $radius-xs;
-//   padding: $space-rel-xs $space-rel-xxl $space-rel-xs $space-rel-sm;
-//   width: 100%;
-//   font-size: $large-text;
-//   text-align: left;
-//   color: var(--color-primary);
-//   background: var(--color-bg--light);
-//   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
-
-
-
-//   &:focus,
-//   &:hover {
-//     background-color: var(--color-primary);
-//     color: var(--color-bg);
-
-//     &::before,
-//     &::after {
-//       background-color: var(--color-bg);
-
-//       @media (forced-colors: active) {
-//         background-color: ButtonText;
-//       }
-//     }
-//   }
-
-//   &:focus-visible {
-//     box-shadow: 0px 0px 0px 2px var(--color-bg),0px 0px 0px 4px var(--color-primary);
-//   }
-// }
-
-// .accordion__panel {
-
-//   .no-js & {
-
-//   }
-
-//   .has-js & {
-//     overflow: hidden;
-//     padding: 0 $space-rel-xs 0;
-//     max-width: 60rem;
-//     height: 0;
-//     visibility: hidden;
-//   }
-
-//   > *:last-child {
-//     padding-bottom: $space-rel-xxl;
-//   }
-
-
-// }
-
-// .accordion__panel--large {
-
-//   .has-js & {
-//     max-width: 70rem;
-//   }
-// }
+  .has-js & {
+    max-width: 70rem;
+  }
+}
