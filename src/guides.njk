@@ -42,6 +42,7 @@ eleventyComputed:
 <div class="cards__wrapper">
   <h2 id="h2" tabindex="-1">Showing {{ (pagination.pageNumber * pagination.size) + 1 }} to {%- if pagination.nextPageLink %} {{ (pagination.pageNumber * pagination.size) + pagination.size }} {%- else %} {{ collections.guides.length }} {%- endif %} of {{ collections.guides.length }} results</h2>
   <ul class="cards">
+    {% set headingLevel = 'h3' %}
     {%- for guide in helpGuides %}
       {% include "_card.njk" %}
     {%- endfor %}

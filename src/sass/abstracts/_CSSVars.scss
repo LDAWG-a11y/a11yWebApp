@@ -3,6 +3,8 @@ $--v2--color-primary--dark: --v2--color-primary--dark;
 $--v2--color-primary--light: --v2--color-primary--light;
 $--v2--color-secondary: --v2--color-secondary;
 $--v2--color-tertiary: --v2--color-tertiary;
+$--v2--color-quaternary: --v2--color-quaternary;
+$--v2--color-accent:  --v2--color-accent;
 $--v2--color-text: --v2--color-text;
 $--v2--color-text-alt: --v2--color-text-alt;
 $--v2--color-text-faded: --v2--color-text-faded;
@@ -28,7 +30,9 @@ $--color-info: --color-info;
 $--color-warn: --color-warn;
 $--color-warn--bright: --color-warn--bright;
 $--v2--base-font-size: --v2--base-font-size;
-$--v2--current-font-size: --v2--current-font-size;
+$--v2--small-font-size: --v2--small-font-size;
+$--v2--current-base-font-size: --v2--current-base-font-size;
+$--v2--current-small-font-size: --v2--current-small-font-size;
 $--v2--paragraph-spacing: --v2--paragraph-spacing;
 $--v2--line-height: --v2--line-height;
 $--v2--shadow-color: --v2--shadow-color;
@@ -39,14 +43,16 @@ $theme-map-light: (
   $--v2--color-primary--dark: #511868,
   $--v2--color-primary--light: #7E2F9D,
   $--v2--color-secondary: #C144BC,
-  $--v2--color-tertiary: #BB35B0,
+  $--v2--color-tertiary: #2BA174,
+  $--v2--color-quaternary: #2b6ca1,
+  $--v2--color-accent: #f1ecc5,
   $--v2--color-text: #1f1f1f,
   $--v2--color-text-alt: #e7e7e7,
   $--v2--color-text-faded: #d4d4d4,
-  $--v2--color-bg: #f8f8f8,
-  $--v2--color-bg-alt-1: #fdfdfd,
+  $--v2--color-bg: #f4f4f4,
+  $--v2--color-bg-alt-1: #f0f0f0,
   $--v2--color-bg-alt-2: #f6fffd,
-  $--v2--color-border--light: #e3e3e3,
+  $--v2--color-border--light: #eefffb,
   $--color-text: #1f1f1f,
   $--color-bg: #fdfdfd,
   $--color-bg--light: #e8e8e8,
@@ -62,7 +68,7 @@ $theme-map-light: (
   $--color-info: #8fd7ff,
   $--color-warn: #f49c9c,
   $--color-warn--bright: #c70000,
-  $--v2--shadow-color: 167deg 27% 53%,
+  $--v2--shadow-color: 192deg 30% 62%,
   $--v2--shadow:
   (0.8px 0.5px 1.2px hsl(var(--v2--shadow-color) / 0.18),
   3.1px 2px 4.8px -0.5px hsl(var(--v2--shadow-color) / 0.25),
@@ -76,6 +82,8 @@ $theme-map-dark: (
   $--v2--color-primary--light: #C2A7D7,
   $--v2--color-secondary: #50dcc2,
   $--v2--color-tertiary: #bc58ad,
+  $--v2--color-quaternary: #2b6ca1,
+  $--v2--color-accent: #1d2221,
   $--v2--color-text: #B0B0B0,
   $--v2--color-text-alt: #D9D9D9,
   $--v2--color-text-faded: #3e3e3e,
@@ -103,7 +111,9 @@ $theme-map-dark: (
 
 $typography-map: (
   $--v2--base-font-size: 1.125rem,
-  $--v2--current-font-size: 1.25rem,
+  $--v2--small-font-size: 1rem,
+  $--v2--current-base-font-size: 1.25rem,
+  $--v2--current-small-font-size: 1rem,
   $--v2--line-height: 1.5,
   $--v2--paragraph-spacing: 1.5em,
 );

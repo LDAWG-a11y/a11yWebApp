@@ -13,13 +13,14 @@ home: true
   <p>If you can’t find what you are looking for and get stuck, we have helpful FAQs and Glossary pages which may offer assistance. If there are topics that we have not yet added but you think we should, something we have gotten wrong, or you want to contact us for any other reason please reach out.</p>
 </div>
 
-<div class="latest-articles">
+<div class="latest-articles gutter-btm--major">
   <h2 class="latest-articles__heading" id="latestGuidesHeading">Latest guides</h2>
   <p class="latest-articles__intro">Our latest digital accessibility guides are displayed in this section, this will be updated each time we produce a new guide, alternatively, you can <a href="/guides/">view all guides here</a>.</p>
-  <section class="cards--scrollable" tabindex="0" aria-labelledby="latestGuidesHeading">
-    <ul class="cards">
+  <section class="latest-articles--scrollable" tabindex="0" aria-labelledby="latestGuidesHeading">
+    <ul class="cards cards--scrollable">
       {%- for guide in collections.guides | reverse %}
         {% if loop.index < 7 %}
+          {% set headingLevel = 'h3' %}
           {% include "_card.njk" %}
         {% endif %}
       {%- endfor %}

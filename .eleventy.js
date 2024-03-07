@@ -123,7 +123,7 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.addFilter('readableDate', dateObj => {
     return DateTime.fromJSDate(dateObj).toLocaleString(
-      DateTime.DATE_MED_WITH_WEEKDAY
+      DateTime.DATE_MED
     );
   });
 

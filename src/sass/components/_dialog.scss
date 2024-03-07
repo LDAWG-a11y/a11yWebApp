@@ -116,20 +116,20 @@
 .dialog__title {
   margin: 0;
   padding: 0;
-  font-size: calc(var(--v2--current-font-size) + 1rem);
+  font-size: calc(var(--v2--current-base-font-size) + 1rem);
   color: var(--v2--color-text-alt);
 
   @include mq.mq($from:md) {
-    font-size: calc(var(--v2--current-font-size) + 1.5rem);
+    font-size: calc(var(--v2--current-base-font-size) + 1.5rem);
   }
 }
 
 .dialog__subtitle {
   padding: 0;
-  font-size: calc(var(--v2--current-font-size) + .625rem);
+  font-size: calc(var(--v2--current-base-font-size) + .625rem);
   
   @include mq.mq($from:md) {
-    font-size: calc(var(--v2--current-font-size) + .875rem);
+    font-size: calc(var(--v2--current-base-font-size) + .875rem);
   }
 }
 
