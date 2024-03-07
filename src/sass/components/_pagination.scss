@@ -4,12 +4,12 @@
  display: flex;
  flex-direction: column;
  align-items: center;
- margin-top: $space-rel-xxxl;
+ margin-top: $space-xxxl;
 }
 
 .pagination__heading {
   display: block;
-  margin-bottom: $space-rel-md;
+  margin-bottom: $space-md;
   font-size: $large-text;
 }
 
@@ -19,7 +19,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: $space-rel-xs;
+  gap: $space-xs;
 
   @include mq.mq($from:sm) {
     flex-wrap: nowrap;
@@ -44,7 +44,7 @@
     display: block;
     border: 2px solid var(--color-interactive);
     border-radius: $radius-sm;
-    padding: $space-rel-xs;
+    padding: $space-xs;
     font-weight: 600;
     text-decoration: none;
     color: var(--color-interactive);
@@ -55,13 +55,13 @@
   }
 
   @include mq.mq($from:sm) {
-    padding: $space-rel-sm;
+    padding: $space-sm;
   }
 }
 
 .pagination__item--inert {
   border-radius: $radius-sm;
-  padding: $space-rel-sm;
+  padding: $space-sm;
   text-align: center;
   line-height: 1;
   background-color: var(--color-accent);

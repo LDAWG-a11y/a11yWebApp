@@ -1,16 +1,16 @@
 @use '../vendors/mq';
 
 .glossary__intro {
-  margin-bottom: $space-rel-xxxl;
+  margin-bottom: $space-xxxl;
 }
 
 .glossary__list {
-  padding-top: $space-rel-lg;
+  padding-top: $space-lg;
 }
 
 .glossary__item-wrapper {
   position: relative;
-  padding: $space-rel-md $space-rel-sm;
+  padding: $space-md $space-sm;
   border-bottom: 2px solid var(--color-accent);
   
   &::before {
@@ -29,11 +29,11 @@
       background-color: var(--color-inactive);
     }
   
-    [data-pref--theme="dark"] & {
+    [data-theme="dark"] & {
       background-color: var(--color-inactive);
     }
 
-    [data-pref--theme="light"] & {
+    [data-theme="light"] & {
       background-color: var(--color-accent);
     }
 
@@ -41,7 +41,7 @@
       height: 100%;
       border-color: var(--color-interactive);
 
-      :not([data-pref--theme="dark"]) & {
+      :not([data-theme="dark"]) & {
         top: -2px;
         height: calc(100% + 4px);
       }
@@ -51,7 +51,7 @@
         height: 100%;
       }
     
-      [data-pref--theme="dark"] & {
+      [data-theme="dark"] & {
         top: 0;
         height: 100%;
       }
@@ -63,7 +63,7 @@
         top: 0;
         height: 100%;
 
-        :not([data-pref--theme="dark"]) & {
+        :not([data-theme="dark"]) & {
           height: calc(100% + 2px);
         }
 
@@ -71,7 +71,7 @@
           height: 100%;
         }
       
-        [data-pref--theme="dark"] & {
+        [data-theme="dark"] & {
           height: 100%;
         }
       }
@@ -102,7 +102,7 @@
 
 .glossary__definition {
   @include mq.mq($from:md) {
-    padding-left: $space-rel-lg;
+    padding-left: $space-lg;
     width: 80%;
   }
 }

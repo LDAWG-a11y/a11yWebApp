@@ -1,0 +1,93 @@
+$--color-text: --color-text;
+$--color-bg: --color-bg;
+$--color-bg--light: --color-bg--light;
+$--color-primary: --color-primary;
+$--color-secondary: --color-secondary;
+$--color-accent: --color-accent;
+$--color-accent-2: --color-accent-2;
+$--color-interactive: --color-interactive;
+$--color-inactive: --color-inactive;
+$--color-highlight: --color-highlight;
+$--color-tip: --color-tip;
+$--color-info: --color-info;
+$--color-warn: --color-warn;
+$--color-warn--bright: --color-warn--bright;
+
+$theme-map-light: (
+  $--color-text: #1f1f1f,
+  $--color-bg: #fdfdfd,
+  $--color-bg--light: #fffaf0,
+  $--color-primary: #702A8C,
+  $--color-secondary: #BF2669,
+  $--color-accent: #ffd6b5,
+  $--color-accent-2: #e86620,
+  $--color-interactive: #923AE4,
+  $--color-inactive: #595959,
+  $--color-highlight: #030189,
+  $--color-tip: #a3dd94,
+  $--color-info: #8fd7ff,
+  $--color-warn: #f49c9c,
+  $--color-warn--bright: #c70000,
+);
+
+$theme-map-dark: (
+  $--color-text: #D9D9D9,
+  $--color-bg: #252525,
+  $--color-bg--light: #2d2d2d,
+  $--color-primary: #783592,
+  $--color-secondary: #ae1557,
+  $--color-accent: #d0dfd7,
+  $--color-accent-2: #db9238,
+  $--color-interactive: #C079E6,
+  $--color-inactive: #4a4a4a,
+  $--color-highlight: #6ebc9f,
+  $--color-tip: #1A6B4E,
+  $--color-info: #2a4ea3,
+  $--color-warn: #982A2A,
+  $--color-warn--bright: #ff6a6a,
+);
+
+@mixin spread-map($map: ()) {
+  @each $key, $value in $map {
+      #{$key}: $value;
+  }
+}
+
+:root, 
+:root[data-theme="light"] {
+  @include spread-map($theme-map-light);
+
+  ::-moz-selection {
+    background-color: #8ba8d9b4;
+  }   
+}
+
+:root[data-theme="dark"] {
+  @include spread-map($theme-map-dark);
+
+  ::selection {
+    background-color: #8ba8d9b4;
+    color: black;
+  }
+
+  h1::selection {
+    background-color: var(--color-text);
+    color: var(--color-primary);
+  }
+}
+
+:root {
+  @media (prefers-color-scheme: dark) {
+    @include spread-map($theme-map-dark);
+
+    ::selection {
+      background-color: #8ba8d9b4;
+      color: black;
+    }
+  
+    h1::selection {
+      background-color: var(--color-text);
+      color: var(--color-primary);
+    }
+  }
+}

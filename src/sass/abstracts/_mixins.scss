@@ -54,8 +54,25 @@
   }
 }
 
+@mixin dark-theme-adjust-light-btn {
+  border-color: var(--color-text);
+  background-color: var(--color-bg--light);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-interactive);
+    border-color: var(--color-bg);
+  }
+
+  &:focus-visible {
+    &::after {
+      border-color: var(--color-text);
+    }
+  }
+}
+
 @mixin font-size {
-  font-size: $default-font-size;
+  font-size: $default-paragraph-size;
 
   @include mq.mq($from:lg) {
     font-size: $large-paragraph-size;
@@ -63,33 +80,5 @@
 
   @include mq.mq($from:xl) {
     font-size: $x-large-paragraph-size;
-  }
-}
-
-@mixin dark-theme($styles: ()) {
-  @media (prefers-color-scheme: dark) {
-    @each $prop, $val in $styles {
-      #{$prop}: $val;
-    }
-  }
-
-  :root[data-pref--theme="dark"] & {
-    @each $prop, $val in $styles {
-      #{$prop}: $val;
-    }
-  }
-}
-
-@mixin light-theme($styles: ()) {
-  @media (prefers-color-scheme: light) {
-    @each $prop, $val in $styles {
-      #{$prop}: $val;
-    }
-  }
-
-  :root[data-pref--theme="light"] & {
-    @each $prop, $val in $styles {
-      #{$prop}: $val;
-    }
   }
 }

@@ -1,31 +1,8 @@
 @use '../vendors/mq';
 
-body {
-  max-width: $site-width;
-  background: var(--v2--color-bg);
-
-  @include mq.mq($from:lg) {
-    padding: $space-abs-xl;
-  }
-
-  &.extra-width {
-    max-width: calc($site-width + 2.5rem);
-  }
-}
-
-.extra-width .main {
-  padding: 0;
-}
-
-body[modal-open] {
-  overflow: hidden;
-  z-index: 2;
-}
-
 .main {
-  padding: 0 $space-abs-sm $space-abs-bigger;
 
   @include mq.mq($from:lg) {
-    padding: 0 $space-abs-lg $space-rel-biggest;
+    padding: 0 $space-md;
   }
 }
