@@ -1,19 +1,7 @@
 @use '../vendors/mq';
 
 .footer {
-  position: relative;
-  padding: $space-abs-xxxl $space-abs-sm $space-abs-md;
-  background-color: var(--v2--color-primary--dark);
   color: var(--v2--color-text-alt);
-
-  @include mq.mq($from:md) {
-    padding: $space-abs-xxxl $space-abs-xl $space-abs-xxl;
-  }
-
-  @include mq.mq($from:lg) {
-    border-radius: $radius-md;
-    padding: $space-rel-biggest $space-abs-xxl $space-abs-xxl;
-  }
 
   h2 {
     font-size: calc(var(--v2--base-font-size)  * 1.5);
@@ -22,25 +10,49 @@
       font-size: calc(var(--v2--base-font-size)  * 1.75);
     }
   }
+
+  @include mq.mq($from:lg) {
+    margin-top: $space-abs-xxxxl;
+  }
+}
+
+.footer__bottom {
+  padding: $space-abs-xxxl $space-abs-sm $space-abs-md;
+  background-color: var(--v2--color-primary--dark);
+
+  @include mq.mq($from:md) {
+    padding: $space-abs-xxxl $space-abs-xl $space-abs-xxl;
+  }
+
+  @include mq.mq($from:lg) {
+    border-radius: $radius-lg;
+    padding: $space-rel-biggest $space-abs-xxl $space-abs-xxl;
+    background-color: var(--v2--color-primary--dark);
+  }
 }
 
 .footer__contact-us {
+  background-color: var(--v2--color-primary--dark);
+  padding: $space-abs-xl $space-abs-sm $space-abs-sm;
+
+  @include mq.mq($from:md) {
+    padding: $space-abs-xxxl $space-abs-xl $space-abs-xl;
+  }
+
   @include mq.mq($from:lg) {
-    position: absolute;
-    top: 0;
-    left: 50%;
+    margin: 0 auto;
     border: 4px solid var(--v2--color-primary--dark);
     border-radius: $radius-lg;
     padding: $space-abs-sm $space-abs-md $space-abs-xl;
     width: 80%;
     max-width: 65rem;
     text-align: center;
-    transform: translate(-50%, -50%);
     color: var(--v2--color-text);
     background-color: var(--v2--color-bg);
+    transform: translateY(50%);
 
     h2 {
-      margin-bottom: 1rem;
+      margin-bottom: .25em;
     }
 
     svg {
@@ -73,7 +85,15 @@
   }
 }
 
-.footer__contact-us,
+.footer__contact {
+  display: flex;
+  align-items: center;
+
+  @include mq.mq($from:lg) {
+    justify-content: center;
+  }
+}
+
 .footer__help,
 .footer__mta-links,
 .footer__collabs {
@@ -132,6 +152,10 @@
       }
     }
   }
+}
+
+.footer__link {
+  margin-left: (-$space-abs-xs);
 }
 
 .footer__colophon {

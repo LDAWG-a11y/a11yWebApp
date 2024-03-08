@@ -1,59 +1,62 @@
 <footer class="footer">
+  
   <div class="footer__contact-us">
     <h2 data-no-accent>Contact us</h2>
-    <div class="flex--middle">
+    <div class="footer__contact">
       {% include '../svg/twitter.svg' %}
       <a class="footer__link" href="https://twitter.com/MTAccessible?s=20&t=x69yq8wMBQ4y5j6byafhyw" class="">Find us on Twitter</a>
     </div>
-    <div class="flex--middle">
+    <div class="footer__contact">
       {% include '../svg/email.svg' %}
       <span class="visually-hidden">Email: </span>
       <a class="footer__link" href="mailto:{{ site.siteEmail }}">{{ site.siteEmail }}</a>
     </div>
   </div>
-  <div class="footer__help">
-    <h2 data-no-accent>Need help?</h2>
-    <p class="footer__help-text">
-      If you have trouble with accessing any part of our site or links, please let us know and one of our experienced team will identify and resolve the problem. If any part of the site does not work as intended with your assistive technology, please provide details of the browser, assistive technology you're using, and the URL wherever possible.
-    </p>
-  </div>
-  <div class="footer__mta-links">
-    <h2 data-no-accent>Make Things Accessible links</h2>
-    <ul class="footer__list">
-      {%- for item in navLinks %}
-        {%- if not item.ignoreFooterNav %}
-          <li class="footer__list-item">
-            <a class="footer__link" href="{{ item.url }}"
-                {%- if item.url === page.url %}
-                aria-current="page"
-                {%- endif %}
-            >{{ item.text }}
-            </a>
-          </li>
-        {% endif %}
-      {%- endfor %}
-    </ul>
-  </div>
-  <div class="footer__collabs">
-    {%- for collab in collaborations %}
-      <h2 data-no-accent>{{ collab.name }}</h2>
-      <ul class="footer__list--collabs">
-        {% for link in collab.pages %}
-          <li class="footer__list-item">
-            <a class="footer__link"
-              href="{{ link.url }}"
-              {%- if link.url === page.url %}
-                aria-current="page"
-              {%- endif %}>
-              {{ link.text }}
-            </a>
-          </li>
+  <div class="footer__bottom">
+    <div class="footer__help">
+      <h2 data-no-accent>Need help?</h2>
+      <p class="footer__help-text">
+        If you have trouble with accessing any part of our site or links, please let us know and one of our experienced team will identify and resolve the problem. If any part of the site does not work as intended with your assistive technology, please provide details of the browser, assistive technology you're using, and the URL wherever possible.
+      </p>
+    </div>
+    <div class="footer__mta-links">
+      <h2 data-no-accent>Make Things Accessible links</h2>
+      <ul class="footer__list">
+        {%- for item in navLinks %}
+          {%- if not item.ignoreFooterNav %}
+            <li class="footer__list-item">
+              <a class="footer__link" href="{{ item.url }}"
+                  {%- if item.url === page.url %}
+                  aria-current="page"
+                  {%- endif %}
+              >{{ item.text }}
+              </a>
+            </li>
+          {% endif %}
         {%- endfor %}
       </ul>
-    {%- endfor %}
-  </div>
-  <div class="footer__colophon">
-    <p>&copy; {% year %} {{ site.siteName }} - powered by <a class="footer__link" href="https://www.netlify.com/">Netlify</a> & <a class="footer__link" href="https://www.11ty.dev/">11ty</a></p>
+    </div>
+    <div class="footer__collabs">
+      {%- for collab in collaborations %}
+        <h2 data-no-accent>{{ collab.name }}</h2>
+        <ul class="footer__list--collabs">
+          {% for link in collab.pages %}
+            <li class="footer__list-item">
+              <a class="footer__link"
+                href="{{ link.url }}"
+                {%- if link.url === page.url %}
+                  aria-current="page"
+                {%- endif %}>
+                {{ link.text }}
+              </a>
+            </li>
+          {%- endfor %}
+        </ul>
+      {%- endfor %}
+    </div>
+    <div class="footer__colophon">
+      <p>&copy; {% year %} {{ site.siteName }} - powered by <a class="footer__link" href="https://www.netlify.com/">Netlify</a> & <a class="footer__link" href="https://www.11ty.dev/">11ty</a></p>
+    </div>
   </div>
 </footer>
 {% include "_dialog.njk" %}

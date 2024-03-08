@@ -1155,21 +1155,7 @@ body:before {
   }
 }
 .footer {
-  position: relative;
-  padding: 32px 8px 12px;
-  background-color: var(--v2--color-primary--dark);
   color: var(--v2--color-text-alt);
-}
-@media (min-width: 48em) {
-  .footer {
-    padding: 32px 20px 24px;
-  }
-}
-@media (min-width: 64em) {
-  .footer {
-    border-radius: 6px;
-    padding: 10rem 24px 24px;
-  }
 }
 .footer h2 {
   font-size: calc(var(--v2--base-font-size) * 1.5);
@@ -1179,24 +1165,53 @@ body:before {
     font-size: calc(var(--v2--base-font-size) * 1.75);
   }
 }
+@media (min-width: 64em) {
+  .footer {
+    margin-top: 40px;
+  }
+}
 
+.footer__bottom {
+  padding: 32px 8px 12px;
+  background-color: var(--v2--color-primary--dark);
+}
+@media (min-width: 48em) {
+  .footer__bottom {
+    padding: 32px 20px 24px;
+  }
+}
+@media (min-width: 64em) {
+  .footer__bottom {
+    border-radius: 8px;
+    padding: 10rem 24px 24px;
+    background-color: var(--v2--color-primary--dark);
+  }
+}
+
+.footer__contact-us {
+  background-color: var(--v2--color-primary--dark);
+  padding: 20px 8px 8px;
+}
+@media (min-width: 48em) {
+  .footer__contact-us {
+    padding: 32px 20px 20px;
+  }
+}
 @media (min-width: 64em) {
   .footer__contact-us {
-    position: absolute;
-    top: 0;
-    left: 50%;
+    margin: 0 auto;
     border: 4px solid var(--v2--color-primary--dark);
     border-radius: 8px;
     padding: 8px 12px 20px;
     width: 80%;
     max-width: 65rem;
     text-align: center;
-    transform: translate(-50%, -50%);
     color: var(--v2--color-text);
     background-color: var(--v2--color-bg);
+    transform: translateY(50%);
   }
   .footer__contact-us h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.25em;
   }
   .footer__contact-us svg {
     color: var(--v2--color-secondary);
@@ -1249,14 +1264,22 @@ body:before {
   width: 2rem;
 }
 
-.footer__contact-us,
+.footer__contact {
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 64em) {
+  .footer__contact {
+    justify-content: center;
+  }
+}
+
 .footer__help,
 .footer__mta-links,
 .footer__collabs {
   margin-bottom: 32px;
 }
 @media (min-width: 64em) {
-  .footer__contact-us,
   .footer__help,
   .footer__mta-links,
   .footer__collabs {
@@ -1311,6 +1334,10 @@ body:before {
   .footer__list li:first-of-type {
     margin-top: 0;
   }
+}
+
+.footer__link {
+  margin-left: -6px;
 }
 
 .footer__colophon {
@@ -1585,7 +1612,7 @@ body[modal-open] {
 }
 @media (min-width: 64em) {
   .main {
-    padding: 0 16px 10rem;
+    padding: 0 16px 0;
   }
 }
 
