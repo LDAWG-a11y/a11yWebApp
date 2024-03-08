@@ -26,6 +26,6 @@ body[modal-open] {
   padding: 0 $space-abs-sm $space-abs-bigger;
 
   @include mq.mq($from:lg) {
-    padding: 0 $space-abs-lg $space-rel-biggest;
+    padding: 0 $space-abs-lg 0;
   }
 }
