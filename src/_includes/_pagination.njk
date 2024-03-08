@@ -1,26 +1,26 @@
 <nav class="pagination" aria-labelledby="guidesPagination">
   <h2 class="pagination__heading" id="guidesPagination" data-no-accent>Page {{ pagination.pageNumber + 1 }} of {{ pagination.pageLinks.length }}</h2>
-  <div class="pagination__items-wrapper">
+  <div class="pagination__items-wrapper flex--middle">
     {%- if pagination.previousPageLink %}
       {%- if pagination.pages.length > 2 %}
-        <a class="pagination__item" href="{{ pagination.href.first }}">First</a>
+        <a class="pagination__link flex--middle" href="{{ pagination.href.first }}">First</a>
       {%- endif %}
-        <a class="pagination__item" href="{{ pagination.href.previous }}">Prev</a>
+        <a class="pagination__link flex--middle" href="{{ pagination.href.previous }}">Prev</a>
     {%- else %}
       {%- if pagination.pages.length > 2 %}
-        <span class="pagination__item pagination__item--inert" {%- if page.url == pagination.href.first %} aria-current="page"{%- endif %}>First</span>
+        <span class="pagination__item--inert flex--middle">First</span>
       {%- endif %}
-      <span class="pagination__item pagination__item--inert" {%- if page.url == pagination.href.first %} aria-current="page"{%- endif %}>Prev</span>
+      <span class="pagination__item--inert flex--middle">Prev</span>
     {%- endif %}
     {%- if pagination.nextPageLink %}
-      <a class="pagination__item" href="{{ pagination.href.next}}">Next</a>
+      <a class="pagination__link flex--middle" href="{{ pagination.href.next}}">Next</a>
       {%- if pagination.pages.length > 2 %}
-        <a class="pagination__item" href="{{ pagination.href.last}}">Last</a>
+        <a class="pagination__link flex--middle" href="{{ pagination.href.last}}">Last</a>
       {%- endif %}
     {%- else %}
-      <span class="pagination__item pagination__item--inert" {%- if page.url == pagination.href.last %} aria-current="page"{%- endif %}>Next</span>
+      <span class="pagination__item--inert flex--middle">Next</span>
       {%- if pagination.pages.length > 2 %}
-        <span class="pagination__item pagination__item--inert" {%- if page.url == pagination.href.last %} aria-current="page"{%- endif %}>Last</span>
+        <span class="pagination__item--inert flex--middle">Last</span>
       {%- endif %}
     {%- endif %}
   </div>

@@ -1,69 +1,64 @@
 @use '../vendors/mq';
 
-.pagination {
- display: flex;
- flex-direction: column;
- align-items: center;
- margin-top: $space-rel-xxxl;
-}
+
 
 .pagination__heading {
-  display: block;
-  margin-bottom: $space-rel-md;
-  font-size: $large-text;
+  // display: block;
+  // margin-bottom: $space-rel-md;
+  // font-size: $large-text;
 }
 
 .pagination__items-wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: $space-rel-xs;
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  // justify-content: center;
+  // align-items: center;
+  // gap: $space-rel-xs;
 
-  @include mq.mq($from:sm) {
-    flex-wrap: nowrap;
-  }
+  // @include mq.mq($from:sm) {
+  //   flex-wrap: nowrap;
+  // }
 }
 
 .pagination__item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 2.75rem;
-  width: auto;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // height: 2.75rem;
+  // width: auto;
 }
 
 .pagination__item,
 .pagination__item:active  {
 
   &:not(.pagination__item--inert) {
-    @include focus-indicator(true);
+    // @include focus-indicator(true);
 
-    position: relative;
-    display: block;
-    border: 2px solid var(--color-interactive);
-    border-radius: $radius-sm;
-    padding: $space-rel-xs;
-    font-weight: 600;
-    text-decoration: none;
-    color: var(--color-interactive);
+    // position: relative;
+    // display: block;
+    // border: 2px solid var(--color-interactive);
+    // border-radius: $radius-sm;
+    // padding: $space-rel-xs;
+    // font-weight: 600;
+    // text-decoration: none;
+    // color: var(--color-interactive);
 
-    @include mq.mq($from:lg) {
-      line-height: 1.1;
-    }
+    // @include mq.mq($from:lg) {
+    //   line-height: 1.1;
+    // }
   }
 
   @include mq.mq($from:sm) {
-    padding: $space-rel-sm;
+    // padding: $space-rel-sm;
   }
 }
 
 .pagination__item--inert {
   border-radius: $radius-sm;
   padding: $space-rel-sm;
-  text-align: center;
-  line-height: 1;
-  background-color: var(--color-accent);
-  color: var(--color-inactive);
+  // text-align: center;
+  // line-height: 1;
+  // background-color: var(--color-accent);
+  // color: var(--color-inactive);
 }

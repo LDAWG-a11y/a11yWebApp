@@ -79,6 +79,7 @@ body {
   }
 
   --v2--current-base-font-size: var(--v2--base-font-size);
+  --v2--current-small-font-size: var(--v2--small-font-size);
 }
 
 *,
@@ -112,7 +113,7 @@ dialog {
 
   @include mq.mq($from:md) {
     --v2--current-base-font-size: calc(var(--v2--base-font-size) + .25rem);
-    --v2--current-small-font-size: calc(var(--v2--small-font-size) + .125rem);
+    --v2--current-small-font-size: calc(var(--v2--small-font-size) + .25rem);
     font-size: var(--v2--current-base-font-size);
   }
 
@@ -333,7 +334,7 @@ a:not([class]):visited,
   text-decoration-thickness: 3px;
   text-decoration-color: var(--v2--color-secondary);
   color: var(--v2--color-primary--light);
-  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 400ms;
+  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 400ms ease-in;
 
   &:focus,
   &:hover {

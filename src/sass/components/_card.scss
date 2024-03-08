@@ -83,7 +83,6 @@
   order: 2;
   margin-bottom: $space-abs-xl;
   font-size: calc(var(--v2--current-base-font-size) + .25rem);
-
   text-align: center;
  
   @include mq.mq($from:md) {
@@ -101,7 +100,7 @@
 .card__link {
   text-underline-offset: .075em;
   text-decoration-thickness: 3px;
-  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 400ms;
+  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 400ms ease-in;
 
   [data-pref--underline] & {
     text-decoration: underline;
