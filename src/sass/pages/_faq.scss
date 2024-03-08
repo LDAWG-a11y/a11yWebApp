@@ -1,7 +1,14 @@
 @use '../vendors/mq';
 
-.faqs__intro {
-  margin-bottom:$space-rel-xl;
+
+.faqs__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .accordion__panel:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .faqs__toggle-container {
@@ -9,80 +16,44 @@
   .has-js & {
     display: flex;
     justify-content: flex-end;
-    gap: $space-rel-md;
-    margin-bottom: $space-rel-xs;
+    gap: $space-abs-md;
+    margin-bottom: $space-abs-xs;
+    width: 100%;
     max-width: 60rem;
   }
 }
 
 .faqs__toggle--expand-all,
 .faqs__toggle--collapse-all {
-  @extend %small-text;
 
   position: relative;
-  border: 2px solid var(--color-interactive);
+  border: 2px solid var(--v2--color-primary--light);
   border-radius: $radius-sm;
-  padding: 0 $space-rel-xs;
-  font-weight: 600;
-  background-color: var(--color-bg--light);
-  color: var(--color-interactive);
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -6px;
-    right: -6px;
-    bottom: -6px;
-    left: -6px;
-    border: 2px solid transparent;
-    border-radius: $radius-lg;
-    transition: border-color 250ms ease-in-out;
-
-    @media (forced-colors: active) {
-      display: none;
-    }
-  }
+  padding: 0 $space-abs-sm;
+  font-size: calc(var(--v2--current-base-font-size) - .125rem);
+  color: var(--v2--color-bg);
+  background-color: var(--v2--color-primary--light);
+  transition: border-color 300ms ease-in, color 300ms ease-in, background-color 300ms ease-in;
 
   &:hover,
   &:focus-visible {
-    background-color: var(--color-interactive);
-    color: var(--color-bg);
+    color: var(--v2--color-primary--light);
+    background-color: var(--v2--color-bg);
   }
 
   &:focus-visible {
-    &::before {
-      border-color: var(--color-interactive);
-    }
+    outline: 2px solid var(--v2--color-primary--light);
   }
 
   &[aria-pressed="true"] {
-    border: none;
-    background-color: var(--color-bg);
-    color: var(--color-inactive);
+    border-color: var(--v2--color-bg);;
+    background-color: var(--v2--color-bg);
+    color: var(--v2--color-text);
 
-    [data-pref--theme="dark"] & {
-      color: #959595;
-    }
-  
-    @media (prefers-color-scheme: dark) {
-      color: #959595;
-    }
-
-    &::before {
-      display: none;
-    }
-
+    // TODO these can be the same as pref buttons, once refactored a little
     &:focus-visible {
-      background-color: var(--color-inactive);
-      color: var(--color-bg);
-
-      [data-pref--theme="dark"] & {
-        background-color: #959595;
-      }
-    
-      @media (prefers-color-scheme: dark) {
-        background-color: #959595;
-      }
+      background-color: var(--v2--color-text);
+      color: var(--v2--color-bg);
     }
   }
 }
