@@ -1,8 +1,10 @@
-<aside class="author-bio {%- if author.img %} author-bio--with-image{%- endif %}">
-  <h2 class="author-bio__title">About {{ author.name.split(' ')[0] }}</h2>
-  {%- if author.img %}
-    <img class="author-bio__img" height="128" width="128" src="{{ author.img }}" alt="Profile picture of {{ author.name }}">
-  {%- endif %}
+<aside class="author-bio panel gutter-btm--major {%- if author.img %} author-bio--with-image{%- endif %}">
+  <div class="author-bio__top">
+    <h2 class="author-bio__title">About {{ author.name.split(' ')[0] }}</h2>
+    {%- if author.img %}
+      <img class="author-bio__img" height="128" width="128" src="{{ author.img }}" alt="Profile picture of {{ author.name }}">
+    {%- endif %}
+  </div>
   {%- if author.bio %}
     <div class="author-bio__intro">{{ author.bio | safe }}</div>
   {%- endif %}
