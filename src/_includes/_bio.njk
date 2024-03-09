@@ -47,7 +47,7 @@
         <div class="author-bio__items-wrapper">
           <dt class="author-bio__term">{% include '../svg/website.svg' %}</dt>
           <dd class="author-bio__description">
-            <a href="{{ author.website }}" class="author-bio__link">{{ author.website }}</a>
+            <a href="{{ author.website.url }}" class="author-bio__link">{{ author.website.name }}</a>
           </dd>
         </div>
       {%- endif %}

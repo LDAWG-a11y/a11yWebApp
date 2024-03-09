@@ -6,7 +6,10 @@
   "twitter": "https://twitter.com/Access_Rhodes",
   "title": "Digital Accessibility Lead",
   "tags": "contributors",
-  "website": "allable.co.uk",
+  "website": {
+    "url": "https://www.allable.co.uk",
+    "name": "AllAble.co.uk"
+  },
   "linkedin": "https://www.linkedin.com/in/george-rhodes-17009593/",
   "key": "grhodes"
 }
