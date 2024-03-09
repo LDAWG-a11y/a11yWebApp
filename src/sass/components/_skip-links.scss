@@ -1,24 +1,22 @@
 @use '../vendors/mq';
 
-.header {
-  position: relative;
+.skip-link,
+.skip-link--static {
+  position: absolute;
+  top: 0;
+  border: 3px solid var(--color-bg);
+  padding: 0 $space-abs-sm;
+  width: auto;
+  min-height: 2.75rem;
+  background: var($--v2--color-primary);
+  color: var($--v2--color-text-alt);
+  z-index: 5;
 }
 
 .skip-link {
-
-  position: absolute;
   left: $space-rel-sm;
-  top: 0;
-  border: 3px solid var(--color-bg);
-  padding: 0 $space-rel-sm;
-  width: auto;
-  height: 2.75rem;
-  line-height: 1.75;
-  background: var($--v2--color-primary);
-  color: var($--v2--color-text-alt);
   transform: translateY(0);
   transition: transform 250ms ease-in;
-  z-index: 5;
 
   @include mq.mq($from:md) {
     left: 4.5rem;
@@ -29,21 +27,27 @@
   }
 }
 
+.skip-link--static {
+  left: 0;
+  margin: $space-abs-xxs;
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.skip-link--static:not(:focus):not(:active) {
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  opacity: 0;
+}
+
 .skip-link:not(:active):not(:focus) {
   transform: translateY(-2.75rem);
 }
 
 .skip-link:focus {
   transform: translateY(0);
-}
-
-.header__logo {
-  img {
-    height: auto;
-    max-width: 96%;
-
-    @include mq.mq($from:sm) {
-      max-width: 35rem;
-    }
-  }
 }

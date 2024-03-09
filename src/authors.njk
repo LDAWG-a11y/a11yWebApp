@@ -19,7 +19,7 @@ eleventyComputed:
   {% include "_bio.njk" %}
 {%- endif %}
 <div class="cards__wrapper">
-  <h2>Showing {{ guides.length }} guide{%- if guides.length != 1 %}s{%- endif %}</h2>
+  <h2 id="guideStart">Showing {{ guides.length }} guide{%- if guides.length != 1 %}s{%- endif %}</h2>
   <ul class="cards">
     {% set headingLevel = 'h3' %}
     {%- for guide in guides | reverse %}
