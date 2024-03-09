@@ -326,7 +326,8 @@ a {
 
 a:not([class]),
 a:not([class]):visited,
-.card__author-link {
+.card__author-link,
+.author-bio__link  {
   margin: (-$space-abs-xxs) (-$space-abs-xxs);
   padding: $space-abs-xxs $space-abs-xxs;
   text-decoration: underline;

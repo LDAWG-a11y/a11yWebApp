@@ -42,8 +42,14 @@ collections:
       - { label: "Twitter handle", name: "twitter", widget: "string", required: false, hint: "Please paste in your full Twitter URL" }
       - { label: Email, name: "email", widget: "string", required: false }
       - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
-      - { label: "Website", name: "website", widget: "string", required: false, hint: "Example: www.yoursite.com" }
       - { label: "Tags", name: "tags", default: "contributors", widget: "hidden" }
+        label: 'Website'
+        name: 'website'
+        widget: 'list'
+        required: false
+        fields:
+          - { label: "Website URL", name: "url", widget: "string", hint: "Example: https://www.yoursite.com" }
+          - { label: "Website Name", name: "name", widget: "string", hint: "Example: yoursite.com" }
   - name: "faqs"
     label: "FAQs"
     folder: "/src/faqs"
