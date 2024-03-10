@@ -20,9 +20,9 @@
       {% set guideAuthor = collections.writers | getAuthor(guide.data.author) %}
       <span class="card__author">{% include '../svg/avatar-unknown.svg' %} 
         {% if not authorPage %}
-          <a href="/authors/{{ guideAuthor.key }}" class="card__author-link">{{ guideAuthor.name }}</a>
+          <a href="/authors/{{ guideAuthor.key }}" class="card__author-link">{{ guideAuthor.name.first }} {{ guideAuthor.name.last }}</a>
         {% else %}
-          {{ guideAuthor.name }}
+        {{ guideAuthor.name.first }} {{ guideAuthor.name.last }}
         {% endif %}
       </span>
       <time class="card__date" datetime="{{ guide.data.date.toISOString() }}">{% include '../svg/date.svg' %} {{ guide.data.date | readableDate }}</time>

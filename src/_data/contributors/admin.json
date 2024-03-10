@@ -1,6 +1,9 @@
 {
   "tags": "contributors",
-  "name": "Admin",
+  "name": {
+    "first": "Admin",
+    "last": ""
+  },
   "key": "admin",
   "bio": "Admin"
 }

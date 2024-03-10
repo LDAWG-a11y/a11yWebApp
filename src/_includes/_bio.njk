@@ -1,7 +1,7 @@
 <aside class="author-bio panel gutter-btm--major">
   <a class="skip-link--static" href="#guideStart">Skip bio</a>
   <div class="author-bio--upper">
-    <h2 class="author-bio__title">About {{ author.name.split(' ')[0] }}</h2>
+    <h2 class="author-bio__title">About {{ author.name.first }}</h2>
     {%- if author.img %}
       <img class="author-bio__img" height="128" width="128" src="{{ author.img }}" alt="Profile picture of {{ author.name }}">
     {%- endif %}
@@ -35,7 +35,7 @@
           <div class="author-bio__items-wrapper">
             <dt class="author-bio__term">{% include '../svg/twitter.svg' %}<span class="visually-hidden">Twitter: </span></dt>
             <dd class="author-bio__description">
-              <a href="{{ author.twitter }}" class="author-bio__link">@{{ author.twitter.slice(20) }}</a>
+              <a href="{{ author.twitter }}" class="author-bio__link">@{{ author.twitter.split('https://twitter.com/')[1] }}</a>
             </dd>
           </div>
         {%- endif %}
@@ -43,7 +43,7 @@
           <div class="author-bio__items-wrapper">
             <dt class="author-bio__term">{% include '../svg/linkedin.svg' %}<span class="visually-hidden">LinkedIn: </span></dt>
             <dd class="author-bio__description">
-              <a href="{{ author.linkedin }}" class="author-bio__link">{{ author.linkedin.slice(24) }}</a>
+              <a href="{{ author.linkedin }}" class="author-bio__link">{{ author.linkedin.split('https://www.linkedin.com')[1] }}</a>
             </dd>
           </div>
         {%- endif %}
