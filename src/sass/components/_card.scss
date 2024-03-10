@@ -54,17 +54,17 @@
   border: 8px solid var(--v2--color-border--light);
   border-radius: $radius-xl;
   padding: $space-abs-sm;
-  background-color: var(--v2--color-bg-alt-2);
+  background-color: var(--v2--color-bg--light);
   box-shadow: var(--v2--shadow);
   transition: border-color 300ms ease-in;
 
   &:has(.card__link:focus-visible),
   &:has(.card__link:hover) {
-    border-color: var(--v2--color-primary--light);
+    border-color: var(--v2--color-interactive);
   }
 
   .colour {
-    fill: var(--v2--color-secondary);
+    fill: var(--v2--color-interactive);
   }
 }
 
@@ -94,7 +94,7 @@
 .card__link:visited,
 .card__author-link,
 .card__author-link:visited, {
-  color: var(--v2--color-primary--light);
+  color: var(--v2--color-interactive);
 }
 
 .card__link {
@@ -121,7 +121,7 @@
 
   &:hover,
   &:focus-visible {
-    color: var(--v2--color-primary--light);
+    color: var(--v2--color-interactive);
     text-decoration: underline;
     text-underline-offset: .2em;
   }

@@ -6,7 +6,7 @@
 
   padding: $space-abs-sm;
   border-radius: $radius-md;
-  background-color: var(--v2--color-bg-alt-2);
+  background-color: var(--v2--color-bg--light);
   box-shadow: var(--v2--shadow);
 
   @include mq.mq($from:md) {

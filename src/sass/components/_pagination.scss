@@ -30,7 +30,7 @@
     height: 2em;
     min-width: 4em;
     border: 2px solid var(--v2--color-primary);
-    background-color: var(--v2--color-bg-alt-2);
+    background-color: var(--v2--color-bg--light);
     z-index: -1;
   }
 
@@ -52,7 +52,7 @@
   text-decoration-thickness: 2px;
   text-decoration-color: var(--v2--color-secondary);
   transition: text-underline-offset 300ms, color 300ms ease-in, background-color 300ms ease-in, text-decoration-color 300ms ease-in;
-  color: var(--v2--color-primary--light);
+  color: var(--v2--color-interactive);
 
   &:hover,
   &:focus-visible {
@@ -61,7 +61,7 @@
     text-decoration-color: var(--v2--color-bg);
 
     &::before {
-      background-color: var(--v2--color-primary--light);
+      background-color: var(--v2--color-interactive);
     }
   }
 }

@@ -5,7 +5,7 @@
   transition: color 300ms ease-in, background-color 300ms ease-in, border-color 300ms ease-in;
   
   &:focus-visible {
-    outline: 2px solid var(--v2--color-primary--light);
+    outline: 2px solid var(--v2--color-interactive);
   }
 }
 
@@ -15,93 +15,65 @@
   padding: 0 $space-abs-lg;
    
   &:focus-visible {
-    outline: 2px solid var(--v2--color-primary--light);
+    outline: 2px solid var(--v2--color-interactive);
   }
 }
 
 .btn--default {
   gap: $space-abs-sm;
-  border: 2px solid var(--v2--color-primary--light);
-  background-color: var(--v2--color-primary--light);
+  border: 2px solid var(--v2--color-interactive);
+  background-color: var(--v2--color-interactive);
   color: var(--v2--color-bg);
 
   &[aria-pressed] {
     gap: $space-abs-sm;
 
     span {
-      position: relative;
-      border: 2px solid var(--v2--color-text-alt);
+      border: 2px solid var(--v2--color-bg);
       border-radius: $radius-pill;
       height: var(--v2--current-base-font-size);
       width: var(--v2--current-base-font-size);
       transition: border-color 300ms ease-in;
 
-      &::before,
-      &::after {
+      &::before {
         content: "";
-        margin-right: 1px;
-        transform-origin: center;
-        transition: border-color 300ms ease-in;
+        transition: border-color 300ms ease-in color 300ms ease-in;
+        color: inherit;
       }
     }
   }
 
   &[aria-pressed="true"] {
     span::before {
-      margin-bottom: .125em;
-      border-bottom: 2px solid var(--v2--color-bg);
-      border-right: 2px solid var(--v2--color-bg);
-      height: .55em;
-      width: .25em;
-      transform: rotate(45deg);
+    content: "\2713";
+    font-size: calc(var(--v2--current-small-font-size) - .125rem);
+    font-weight: 300;
     }
   }
 
   &[aria-pressed="false"] {
-    span {
-      padding: $space-abs-xxxs;
-    }
-
-    span::before,
-    span::after {
-      position: absolute;
-      transform: rotate(45deg);
-    }
-    
     span::before {
-      border-right: .125em solid var(--v2--color-bg);
-      height: calc(100% - $space-abs-xxs);
-      width: 0;
-    }
-
-    span::after {
-      border-top: .125em solid var(--v2--color-bg);
-      height: 0;
-      width: calc(100% - $space-abs-xxs);
-      
+      content: "\00d7";
     }
   }
 
   &[aria-pressed="mixed"] {
-    span::after {
+    span::before {
       content: "";
-      width: 85%;
-      height: 0;
-      border-top: 3px solid var(--v2--color-bg);
+     
     }
   }
 
   &:focus-visible,
   &:hover {
     background-color: var(--v2--color-bg);
-    color: var(--v2--color-primary--light);
+    color: var(--v2--color-interactive);
 
     span {
-      border-color: var(--v2--color-primary--light);
+      border-color: var(--v2--color-interactive);
 
-      &::before,
-      &::after {
-        border-color: var(--v2--color-primary--light);
+      &::before {
+        color: var(--v2--color-interactive);
       }
     }
   }
@@ -112,11 +84,11 @@
 
   border: 2px solid var(--v2--color-bg);
   background-color: var(--v2--color-bg);
-  color: var(--v2--color-primary--light);
+  color: var(--v2--color-interactive);
 
   &:focus-visible,
   &:hover {
-    background-color: var(--v2--color-primary--light);
+    background-color: var(--v2--color-interactive);
     color: var(--v2--color-bg);
   }
 
