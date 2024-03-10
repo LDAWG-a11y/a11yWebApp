@@ -22,38 +22,3 @@
     max-width: 60rem;
   }
 }
-
-.faqs__toggle--expand-all,
-.faqs__toggle--collapse-all {
-
-  position: relative;
-  border: 2px solid var(--v2--color-primary--light);
-  border-radius: $radius-sm;
-  padding: 0 $space-abs-sm;
-  font-size: calc(var(--v2--current-base-font-size) - .125rem);
-  color: var(--v2--color-bg);
-  background-color: var(--v2--color-primary--light);
-  transition: border-color 300ms ease-in, color 300ms ease-in, background-color 300ms ease-in;
-
-  &:hover,
-  &:focus-visible {
-    color: var(--v2--color-primary--light);
-    background-color: var(--v2--color-bg);
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--v2--color-primary--light);
-  }
-
-  &[aria-pressed="true"] {
-    border-color: var(--v2--color-bg);;
-    background-color: var(--v2--color-bg);
-    color: var(--v2--color-text);
-
-    // TODO these can be the same as pref buttons, once refactored a little
-    &:focus-visible {
-      background-color: var(--v2--color-text);
-      color: var(--v2--color-bg);
-    }
-  }
-}
