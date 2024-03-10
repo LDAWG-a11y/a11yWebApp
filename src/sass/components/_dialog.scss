@@ -184,71 +184,26 @@
 
 button[class^="settings__btn"],
 .dialog__close-btn {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: $radius-md;
-  padding: 0 $space-rel-xl;
-  transition: color 300ms ease-in, background-color 300ms ease-in, border-color 300ms ease-in;
+  
+ 
+  // padding: 0 $space-rel-xl;
+ 
 
-  @-moz-document url-prefix() {
-    padding: 5px $space-rel-xxl;
+  // @-moz-document url-prefix() {
+  //   padding: 5px $space-rel-xxl;
     
-    span {
-      padding-top: 2px;
-    }
-  }
+  //   span {
+  //     padding-top: 2px;
+  //   }
+  // }
 }
 
 button[class^="settings__btn"] {
-  border: 2px solid var(--v2--color-primary--light);
-  background-color: var(--v2--color-primary--light);
-  color: var(--v2--color-bg);
 
-  &[aria-pressed="true"] {
-    span {
-      position: relative;
-    
-      &::after {
-        content: "\2713";
-        position: absolute;
-        top: 50%;
-        right: -$space-rel-lg;
-        transform: translateY(-50%);
-        color: inherit;
-      }
-    }
-  }
-
-  &:focus-visible,
-  &:hover {
-    background-color: var(--v2--color-bg);
-    color: var(--v2--color-primary--light);
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--v2--color-primary--light);
-  }
 }
 
 .dialog__close-btn {
-  @include dark-theme(('border-color': var(--v2--color-text-alt)));
-
-  border: 2px solid var(--v2--color-bg);
-  background-color: var(--v2--color-bg);
-  color: var(--v2--color-primary--light);
-
-  &:focus-visible,
-  &:hover {
-    background-color: var(--v2--color-primary--light);
-    color: var(--v2--color-bg);
-  }
-
-  &:focus-visible {
-    @include dark-theme(('outline-color': var(--v2--color-text-alt)));
-    outline: 2px solid var(--v2--color-bg);
-  }
+  
 }
 
 body:has(dialog[open]) {

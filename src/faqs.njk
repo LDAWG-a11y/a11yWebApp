@@ -17,8 +17,8 @@ pagination:
 </div>
 <div class="faqs__container">
   <div class="faqs__toggle-container" hidden>
-    <button class="faqs__toggle--expand-all" aria-pressed="false">Expand all</button>
-    <button class="faqs__toggle--collapse-all" aria-pressed="false">Collapse all</button>
+    <button class="faqs__toggle--expand-all btn btn--default" aria-pressed="false">Expand all<span class="flex--middle"></span></button>
+    <button class="faqs__toggle--collapse-all btn btn--default" aria-pressed="false">Collapse all<span class="flex--middle"></span></button>
   </div>
   {%- for faq in accordions %}
     {%- if faq.data.title %}
