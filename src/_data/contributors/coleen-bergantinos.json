@@ -1,6 +1,9 @@
 {
   "tags": "contributors",
   "key": "colB",
-  "name": "Coleen Bergantinos",
+  "name": {
+    "first": "Coleen",
+    "last": "Bergantinos"
+  },
   "bio": "Your Bio here"
 }

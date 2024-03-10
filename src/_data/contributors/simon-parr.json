@@ -1,7 +1,10 @@
 {
   "tags": "contributors",
   "key": "sparr",
-  "name": "Simon Parr",
+  "name": {
+    "first": "Simon",
+    "last": "Parr"
+  },
   "bio": "Your bio here",
   "org": "School of Advanced Study, University of London",
   "title": "Learning Technologist",

@@ -1,6 +1,8 @@
 {
   "tags": "contributors",
-  "key": "sturner",
-  "name": "Steve Turner",
+  "name": {
+    "first": "Steve",
+    "last": "Turner"
+  },
   "bio": "Add to your bio"
 }

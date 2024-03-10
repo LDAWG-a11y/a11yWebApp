@@ -11,7 +11,7 @@ pagination:
    alias: author
 permalink: "/authors/{{ author.key }}/"
 eleventyComputed:
-   title: "All guides written by {{ author.name }}"
+   title: "All guides written by {{ author.name.first }} {{ author.name.last }}"
    summary: "View all digital accessibility learning resources and guides, on this platform written by {{ author.name }}"
 ---
 {% set guides = collections.guides | getGuidesByAuthor(author.key) %}

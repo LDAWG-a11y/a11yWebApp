@@ -1,7 +1,10 @@
 {
   "tags": "contributors",
   "key": "mpateman",
-  "name": "Matt Pateman",
+  "name": {
+    "first": "Matt",
+    "last": "Pateman"
+  },
   "title": "Digital Accessibility Officer",
   "org": "University College London",
   "bio": "With over 20 years experience working with users in Private, Corporate and Charity sectors, assisting those users on applications such as Screen readers, Speech input, Mind Mapping, and Literacy support.\n\nCurrently working in the Digital Accessibility Department at UCL.",

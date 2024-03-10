@@ -1,7 +1,10 @@
 {
   "tags": "contributors",
   "key": "bwatson",
-  "name": "Ben Watson",
+  "name": {
+    "first": "Ben",
+    "last": "Watson"
+  },
   "title": "Head of Digital Accessibility",
   "org": "University College London",
   "bio": "<p>Ben Watson is the Head of Digital Accessibility at University College London. He has experience of working across all UK education sectors to improve the physical and digital accessibility of education organisations. He led the OPERA (Opportunity, Productivity, Engagement, Reducing barriers, Achievement) project which reconsidered approaches to learning and teaching, digital systems and assistive technologies at the University of Kent and was recognised with a Times Higher Education Award for Outstanding Support for Students.</p><p> Ben is one of the founding chairs of the Further and Higher Education Digital Accessibility Working Group (FHEDAWG) which has worked directly with the Government Digital Service to develop guidance for the Higher and Further Education sectors to meet obligations under the Public Sector Bodies (Websites and Mobile Applications) Accessibility Regulations 2018.</p>"

@@ -34,18 +34,22 @@ collections:
     public_folder: "/guideImg/profileImg"
     fields:
       - { label: "Username", name: "key", widget: "string", hint: "This is not displayed anywhere but the URL, it needs to be unique and can only contain alphanumeric characters, e.g: jBloggs1" }
-      - { label: "Name", name: name, widget: string, hint: "Your full name"}
+        name: "name"
+        widget: "list"
+        fields: 
+          - { label: "First Name", name: first, widget: string, hint: "Your first name"}
+          - { label: "Last Name", name: last, widget: string, hint: "Your last name"}
       - { label: "Job Title", name: "title", widget: "string", required: false }
       - { label: "Organisation", name: "org", widget: "string", required: false }
       - { label: "Bio", name: "bio", widget: "text", hint: "Tell the world a bit about yourself" }
       - { label: "Profile picture", name: "img", widget: "image", required: false, hint: "This image needs to be square and it should be quite small, about 192px * 192px" }
       - { label: "Twitter handle", name: "twitter", widget: "string", required: false, hint: "Please paste in your full Twitter URL" }
       - { label: Email, name: "email", widget: "string", required: false }
-      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false, hint: "Please paste in your full LinkedIn URL" }
       - { label: "Tags", name: "tags", default: "contributors", widget: "hidden" }
-        label: 'Website'
-        name: 'website'
-        widget: 'list'
+        label: "Website"
+        name: "website"
+        widget: "list"
         required: false
         fields:
           - { label: "Website URL", name: "url", widget: "string", hint: "Example: https://www.yoursite.com" }
