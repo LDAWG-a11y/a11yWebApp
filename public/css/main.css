@@ -3264,8 +3264,8 @@ body:before {
   top: 50%;
   transform: translateY(-50%);
   right: 8px;
-  stroke: var(--v2--color-interactive);
-  fill: var(--v2--color-interactive);
+  stroke: var(--v2--color-primary);
+  fill: var(--v2--color-primary);
 }
 .search__wrapper::before {
   content: "";

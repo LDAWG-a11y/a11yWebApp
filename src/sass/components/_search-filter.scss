@@ -23,8 +23,8 @@
     top: 50%;
     transform: translateY(-50%);
     right: $space-abs-sm;
-    stroke: var(--v2--color-interactive);
-    fill: var(--v2--color-interactive);
+    stroke: var(--v2--color-primary);
+    fill: var(--v2--color-primary);
   }
 
   &::before {
