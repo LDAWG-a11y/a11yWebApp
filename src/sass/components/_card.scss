@@ -98,9 +98,9 @@
 }
 
 .card__link {
-  text-underline-offset: .075em;
+  text-underline-offset: .2em;
   text-decoration-thickness: 3px;
-  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 400ms ease-in;
+  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 200ms ease-in;
 
   [data-pref--underline] & {
     text-decoration: underline;
@@ -123,7 +123,6 @@
   &:focus-visible {
     color: var(--v2--color-interactive);
     text-decoration: underline;
-    text-underline-offset: .2em;
   }
 }
 

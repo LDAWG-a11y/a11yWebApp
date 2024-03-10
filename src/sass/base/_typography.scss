@@ -331,17 +331,26 @@ a:not([class]):visited,
   margin: (-$space-abs-xxs) (-$space-abs-xxs);
   padding: $space-abs-xxs $space-abs-xxs;
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: .2em;
   text-decoration-thickness: 3px;
   text-decoration-color: var(--v2--color-secondary);
   color: var(--v2--color-interactive);
-  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 400ms ease-in;
+  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 200ms ease-in;
 
   &:focus,
   &:hover {
     color: var($--v2--color-bg);
     background-color: var($--v2--color-interactive);
     text-decoration-color: var(--v2--color-bg);
+    text-underline-offset: .3em;
+  }
+}
+
+a:not([class]) {
+  text-underline-offset: .1em;
+
+  &:focus,
+  &:hover {
     text-underline-offset: .2em;
   }
 }
