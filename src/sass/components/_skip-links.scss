@@ -4,12 +4,12 @@
 .skip-link--static {
   position: absolute;
   top: 0;
-  border: 3px solid var(--color-bg);
+  border: 3px solid var(--v2--color-strong--on-primary);
   padding: 0 $space-abs-sm;
   width: auto;
   min-height: 2.75rem;
   background: var($--v2--color-primary);
-  color: var($--v2--color-text-alt);
+  color: var(--v2--color-strong--on-primary);
   z-index: 5;
 }
 

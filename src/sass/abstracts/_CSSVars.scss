@@ -1,17 +1,17 @@
 $--v2--color-primary: --v2--color-primary;
-$--v2--color-primary--dark: --v2--color-primary--dark;
-$--v2--color-primary--light: --v2--color-primary--light;
+$--v2--color-primary--darker: --v2--color-primary--darker;
+$--v2--color-interactive: --v2--color-interactive;
 $--v2--color-secondary: --v2--color-secondary;
 $--v2--color-tertiary: --v2--color-tertiary;
-$--v2--color-quaternary: --v2--color-quaternary;
 $--v2--color-accent:  --v2--color-accent;
 $--v2--color-text: --v2--color-text;
 $--v2--color-text-alt: --v2--color-text-alt;
 $--v2--color-text-faded: --v2--color-text-faded;
 $--v2--color-bg: --v2--color-bg;
-$--v2--color-bg-alt-1: --v2--color-bg-alt-1;
-$--v2--color-bg-alt-2: --v2--color-bg-alt-2;
+$--v2--color-strong--on-primary: --v2--color-strong--on-primary;
+$--v2--color-bg--light: --v2--color-bg--light;
 $--v2--color-border--light: --v2--color-border--light;
+$--v2--color-border--mid: --v2--color-border--mid;
 $--v2--color-interactive: --v2--color-interactive;
 $--v2--color-interactive-alt: --v2--color-interactive-alt;
 $--color-text: --color-text;
@@ -40,19 +40,20 @@ $--v2--shadow: --v2--shadow;
 
 $theme-map-light: (
   $--v2--color-primary: #72278E,
-  $--v2--color-primary--dark: #511868,
-  $--v2--color-primary--light: #7E2F9D,
+  $--v2--color-primary--darker: #511868,
+  $--v2--color-interactive: #7E2F9D,
   $--v2--color-secondary: #C144BC,
-  $--v2--color-tertiary: #2BA174,
-  $--v2--color-quaternary: #2b6ca1,
-  $--v2--color-accent: #f1ecc5,
+  $--v2--color-tertiary: #28956B,
+  $--v2--color-accent: #ede7b0,
   $--v2--color-text: #1f1f1f,
   $--v2--color-text-alt: #e7e7e7,
   $--v2--color-text-faded: #d4d4d4,
   $--v2--color-bg: #f4f4f4,
-  $--v2--color-bg-alt-1: #f0f0f0,
-  $--v2--color-bg-alt-2: #f6fffd,
+  $--v2--color-bg--light: #f6fffd,
+  $--v2--color-strong--on-primary: #f8f8f8,
   $--v2--color-border--light: #eefffb,
+  $--v2--color-border--mid: #909090,
+  
   $--color-text: #1f1f1f,
   $--color-bg: #fdfdfd,
   $--color-bg--light: #e8e8e8,
@@ -78,19 +79,20 @@ $theme-map-light: (
 
 $theme-map-dark: (
   $--v2--color-primary: #50366b,
-  $--v2--color-primary--dark: #50366b,
-  $--v2--color-primary--light: #C2A7D7,
-  $--v2--color-secondary: #50dcc2,
-  $--v2--color-tertiary: #bc58ad,
-  $--v2--color-quaternary: #2b6ca1,
+  $--v2--color-primary--darker: #50366b,
+  $--v2--color-interactive: #C2A7D7,
+  $--v2--color-secondary: #bc58ad,
+  $--v2--color-tertiary: #50dcc2,
   $--v2--color-accent: #1d2221,
   $--v2--color-text: #B0B0B0,
   $--v2--color-text-alt: #D9D9D9,
   $--v2--color-text-faded: #3e3e3e,
   $--v2--color-bg: #252525,
-  $--v2--color-bg-alt-1: #fdfdfd,
-  $--v2--color-bg-alt-2: #2a2a2a,
+  $--v2--color-bg--light: #2a2a2a,
+  $--v2--color-strong--on-primary: #DEDEDE,
+  
   $--v2--color-border--light: #323232,
+  $--v2--color-border--mid: #8f8f8f,
   $--color-text: #D9D9D9,
   $--color-bg: #252525,
   $--color-bg--light: #2d2d2d,

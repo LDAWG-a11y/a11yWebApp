@@ -22,7 +22,7 @@
   font-size: var(--v2--current-small-font-size);
   text-decoration: none;
   text-underline-offset: .1em;
-  background-color: var(--v2--color-primary--light);
+  background-color: var(--v2--color-interactive);
   color: var(--v2--color-bg);
   transition: background-color 300ms ease-in, color 300ms ease-in, text-underline-offset 400ms;
 
@@ -39,11 +39,11 @@
 
   &:hover,
   &:focus-visible {
-    color: var(--v2--color-primary--light);
+    color: var(--v2--color-interactive);
     background-color: var(--v2--color-bg);
 
     .tag__count {
-      border-color: var(--v2--color-primary--light);
+      border-color: var(--v2--color-interactive);
     }
   }
 
@@ -51,7 +51,7 @@
     content: "";
     position: absolute;
     inset: 1px;
-    border: 2px solid var(--v2--color-primary--light);
+    border: 2px solid var(--v2--color-interactive);
     border-radius: $radius-xs;
   }
 }

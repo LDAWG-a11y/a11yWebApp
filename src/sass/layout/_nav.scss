@@ -72,11 +72,11 @@ a.nav__link {
     position: relative;
     display: flex;
     align-items: center;
-    border: 2px solid var(--v2--color-text-alt);
+    border: 2px solid var(--v2--color-strong--on-primary);
     border-radius: $radius-md;
     padding: 0 36px 0 12px;
     color: var(--v2--color-primary);
-    background-color: var(--v2--color-text-alt);
+    background-color: var(--v2--color-strong--on-primary);
     transition: color 300ms ease-in, background-color 300ms ease-in;
 
     @include mq.mq($until:md) {
@@ -121,12 +121,12 @@ a.nav__link {
         background-color: var(--v2--color-primary);
 
         &::after {
-          border-color: var(--v2--color-text-alt) transparent transparent transparent;
+          border-color: var(--v2--color-strong--on-primary) transparent transparent transparent;
         }
       }
 
       &:focus-visible {
-        outline: 2px solid var(--v2--color-text-alt);
+        outline: 2px solid var(--v2--color-strong--on-primary);
       }
     }
   }
@@ -134,11 +134,11 @@ a.nav__link {
   .nav__prefs-btn,
   .nav__menu-btn {
     position: relative;
-    border: 2px solid var(--v2--color-text-alt);
+    border: 2px solid var(--v2--color-strong--on-primary);
     border-radius: $radius-sm;
     padding: 4px;
     width: 2.75rem;
-    background-color: var(--v2--color-text-alt);
+    background-color: var(--v2--color-strong--on-primary);
     transition: background-color 300ms ease-in;
 
     svg {
@@ -151,19 +151,19 @@ a.nav__link {
       background-color: var(--v2--color-primary);
       
       svg {
-        fill: var(--v2--color-text-alt);
+        fill: var(--v2--color-strong--on-primary);
         transform: rotate(90deg);
       }
 
       .nav__menu-bar,
       .nav__menu-bar::before,
       .nav__menu-bar::after {
-        background-color: var(--v2--color-text-alt);
+        background-color: var(--v2--color-strong--on-primary);
       }
     }
 
     &:focus-visible {
-      outline: 2px solid var(--v2--color-text-alt);
+      outline: 2px solid var(--v2--color-strong--on-primary);
     }
   }
 

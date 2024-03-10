@@ -35,7 +35,7 @@ eleventyComputed:
           {% set posts = collections.guides | getGuidesByAuthor(author.key) %}
           {%- if posts.length %}
             <li class="tag__item">
-              <a class="tag__link tag__link--has-count" href="/authors/{{ author.key }}">{{ author.name }}<span class="tag__count flex--middle">{{ posts.length }}<span class="visually-hidden"> guide{%- if posts.length != 1 %}s{%- endif %}</span></span></a>
+              <a class="tag__link tag__link--has-count" href="/authors/{{ author.key }}">{{ author.name.first }} {{ author.name.last }}<span class="tag__count flex--middle">{{ posts.length }}<span class="visually-hidden"> guide{%- if posts.length != 1 %}s{%- endif %}</span></span></a>
             </li>
           {%- endif %}
         {%- endfor %}

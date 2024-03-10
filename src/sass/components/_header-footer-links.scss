@@ -11,7 +11,7 @@
   height: 2.75rem;
   text-decoration: underline;
   text-underline-offset: 2px;
-  color: var(--v2--color-text-alt);
+  color: var(--v2--color-strong--on-primary);
   transition: color 300ms ease-in, background-color 300ms ease-in, text-decoration-color 300ms ease-in;
 
   &[aria-current="page"] {
@@ -24,7 +24,7 @@
       left: 8px;
       width: calc(100% - 16px);
       height: 0;
-      border-top: 4px solid var(--v2--color-text-alt);
+      border-top: 4px solid var(--v2--color-strong--on-primary);
       transition: background-color 300ms ease-in, transform 300ms ease-in;
 
       @include mq.mq($from:xl) {
@@ -43,7 +43,7 @@
   &:focus-visible,
   &:hover {    
     color: var(--v2--color-primary);
-    background-color: var(--v2--color-bg-alt-1);
+    background-color: var(--v2--color-strong--on-primary);
 
     &::before {
       background-color: var(--v2--color-primary);

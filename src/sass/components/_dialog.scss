@@ -2,7 +2,7 @@
 
 .dialog {
   margin: auto;
-  border: 1px solid var(--v2--color-inactive);
+  border: 2px solid var(--v2--color-border--mid);
   border-radius: $radius-lg;
   width: 70rem;
   max-width: 96%;
@@ -172,7 +172,7 @@
 }
 
 .settings__btns-wrapper {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   gap: $space-abs-md;

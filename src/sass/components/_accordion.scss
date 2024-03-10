@@ -62,11 +62,11 @@
   position: relative;
   display: flex;
   align-items: center;
-  border: 2px solid var(--v2--color-primary--light);
+  border: 2px solid var(--v2--color-interactive);
   padding: 0 $space-abs-xs 0 $space-rel-xxl;
   width: 100%;
   background-color: var(--v2--color-bg);
-  color: var(--v2--color-primary--light);
+  color: var(--v2--color-interactive);
   transition: background-color 300ms ease-in, color 300ms ease-in;
   z-index: 1;
 
@@ -74,7 +74,7 @@
   &::after {
     content: "";
     position: absolute;
-    background-color: var(--v2--color-primary--light);
+    background-color: var(--v2--color-interactive);
     transition: background 300ms ease-in-out, transform 300ms ease-in-out, opacity 250ms ease-in-out;
     transform-origin: top;
 
@@ -112,18 +112,18 @@
 
   &:focus-visible,
   &:hover {
-    background-color: var(--v2--color-primary--light);
+    background-color: var(--v2--color-interactive);
     color: var(--v2--color-bg);
 
     &::before,
     &::after {
       background-color: var(--v2--color-bg);
-      color: var(--v2--color-primary--light);
+      color: var(--v2--color-interactive);
     }
   }
 
   &:focus-visible {
-    outline: 2px solid var(--v2--color-primary--light);
+    outline: 2px solid var(--v2--color-interactive);
   }
 }
  

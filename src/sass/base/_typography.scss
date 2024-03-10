@@ -183,8 +183,8 @@ h1 {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     background-image: linear-gradient(to right,
-      var(--v2--color-primary--light),
-      var(--v2--color-primary--light) 50%,
+      var(--v2--color-interactive),
+      var(--v2--color-interactive) 50%,
       var(--v2--color-text-faded) 50%
     );
     background-size: 200% 100%;
@@ -334,13 +334,13 @@ a:not([class]):visited,
   text-underline-offset: 2px;
   text-decoration-thickness: 3px;
   text-decoration-color: var(--v2--color-secondary);
-  color: var(--v2--color-primary--light);
+  color: var(--v2--color-interactive);
   transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 400ms ease-in;
 
   &:focus,
   &:hover {
     color: var($--v2--color-bg);
-    background-color: var($--v2--color-primary--light);
+    background-color: var($--v2--color-interactive);
     text-decoration-color: var(--v2--color-bg);
     text-underline-offset: .2em;
   }
@@ -353,6 +353,10 @@ button {
 
 button:not(.nav__btn--collab) {
   font-size: calc(var(--v2--current-base-font-size) - .125rem);
+
+  @include mq.mq($from:md) {
+    font-size: calc(var(--v2--current-base-font-size) - .25rem);
+  }
 }
 
 ul:not([class]),

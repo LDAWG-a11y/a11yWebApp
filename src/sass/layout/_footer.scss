@@ -1,7 +1,7 @@
 @use '../vendors/mq';
 
 .footer {
-  color: var(--v2--color-text-alt);
+  color: var(--v2--color-strong--on-primary);
 
   h2 {
     font-size: calc(var(--v2--base-font-size)  * 1.5);
@@ -18,7 +18,7 @@
 
 .footer__bottom {
   padding: $space-abs-xxxl $space-abs-sm $space-abs-md;
-  background-color: var(--v2--color-primary--dark);
+  background-color: var(--v2--color-primary--darker);
 
   @include mq.mq($from:md) {
     padding: $space-abs-xxxl $space-abs-xl $space-abs-xxl;
@@ -27,12 +27,12 @@
   @include mq.mq($from:lg) {
     border-radius: $radius-lg;
     padding: $space-rel-biggest $space-abs-xxl $space-abs-xxl;
-    background-color: var(--v2--color-primary--dark);
+    background-color: var(--v2--color-primary--darker);
   }
 }
 
 .footer__contact-us {
-  background-color: var(--v2--color-primary--dark);
+  background-color: var(--v2--color-primary--darker);
   padding: $space-abs-xl $space-abs-sm $space-abs-sm;
 
   @include mq.mq($from:md) {
@@ -41,7 +41,7 @@
 
   @include mq.mq($from:lg) {
     margin: 0 auto;
-    border: 4px solid var(--v2--color-primary--dark);
+    border: 4px solid var(--v2--color-primary--darker);
     border-radius: $radius-lg;
     padding: $space-abs-sm $space-abs-md $space-abs-xl;
     width: 80%;
@@ -56,17 +56,15 @@
     }
 
     svg {
-      color: var(--v2--color-secondary);
+      color: var(--v2--color-tertiary);
     }
 
     a {
-      @include light-theme(('color': var(--v2--color-primary)));
-      @include dark-theme(('color': var(--v2--color-text)));
+      color: var(--v2--color-interactive);
       text-decoration-color: var(--v2--color-secondary);
 
       &:hover,
       &:focus-visible {
-        @include light-theme(('color': var(--v2--color-bg), 'background-color': var(--v2--color-primary)));
         text-decoration-color: var(--v2--color-bg);
       }
     }
