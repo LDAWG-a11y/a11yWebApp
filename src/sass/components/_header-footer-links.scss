@@ -10,7 +10,7 @@
   padding: 2px 8px 0;
   height: 2.75rem;
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: .2em;
   color: var(--v2--color-strong--on-primary);
   transition: color 300ms ease-in, background-color 300ms ease-in, text-decoration-color 300ms ease-in;
 
@@ -20,16 +20,12 @@
     &::after {
       content: "";
       position: absolute;
-      bottom: 8px;
+      bottom: 6px;
       left: 8px;
       width: calc(100% - 16px);
       height: 0;
       border-top: 4px solid var(--v2--color-strong--on-primary);
       transition: background-color 300ms ease-in, transform 300ms ease-in;
-
-      @include mq.mq($from:xl) {
-        bottom: 5px;
-      }
     }
 
     &::after {
@@ -41,7 +37,8 @@
   } 
 
   &:focus-visible,
-  &:hover {    
+  &:hover { 
+    text-underline-offset: .3em;   
     color: var(--v2--color-primary);
     background-color: var(--v2--color-strong--on-primary);
 

@@ -51,12 +51,13 @@
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-decoration-color: var(--v2--color-secondary);
-  transition: text-underline-offset 300ms, color 300ms ease-in, background-color 300ms ease-in, text-decoration-color 300ms ease-in;
+  text-underline-offset: .15em;
+  transition: text-underline-offset 200ms, color 300ms ease-in, background-color 300ms ease-in, text-decoration-color 300ms ease-in;
   color: var(--v2--color-interactive);
 
   &:hover,
   &:focus-visible {
-    text-underline-offset: .2em;
+    text-underline-offset: .25em;
     color: var(--v2--color-bg);
     text-decoration-color: var(--v2--color-bg);
 

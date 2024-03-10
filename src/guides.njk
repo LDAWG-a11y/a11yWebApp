@@ -25,7 +25,7 @@ eleventyComputed:
         {%- for tag in collections.tagList %}
           <li class="tag__item">
             {%- set tagUrl %}/tags/{{ tag | slugify }}/{%- endset %}
-            <a class="tag__link tag__link--has-count" href="{{ tagUrl | url }}">{{ tag }}<span class="tag__count flex--middle">{{ collections[tag].length }}<span class="visually-hidden"> guide{%- if collections[tag].length > 1 %}s{%- endif %}</span></span></a>
+            <a class="tag__link tag__link--has-count" href="{{ tagUrl | url }}">{{ tag }}<span class="tag__count flex--middle">{{ collections[tag].length }}</span></a>
           </li>
         {%- endfor %}
       </ul>

@@ -61,11 +61,13 @@
 
     a {
       color: var(--v2--color-interactive);
+      text-underline-offset: .2em;
       text-decoration-color: var(--v2--color-secondary);
 
       &:hover,
       &:focus-visible {
         text-decoration-color: var(--v2--color-bg);
+        text-underline-offset: .3em;
       }
     }
   }

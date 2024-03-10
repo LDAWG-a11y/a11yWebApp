@@ -1,3 +1,5 @@
+@use '../vendors/mq';
+
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -24,7 +26,7 @@
   text-underline-offset: .1em;
   background-color: var(--v2--color-interactive);
   color: var(--v2--color-bg);
-  transition: background-color 300ms ease-in, color 300ms ease-in, text-underline-offset 400ms;
+  transition: background-color 300ms ease-in, color 300ms ease-in, text-underline-offset 200ms;
 
   [data-pref--underline] & {
     text-decoration: underline;
@@ -61,8 +63,11 @@
   padding: 0 $space-abs-xs;
   border: 2px solid var(--v2--color-bg);
   border-radius: $radius-sm;
-  height: 1.375em;
-  min-width: 1.375em;
+  height: 1.25em;
+  min-width: 1.25em;
   transition: border-color 300ms ease-in;
- 
+
+  @include mq.mq($from:md) {
+    font-size: calc(var(--v2--current-small-font-size) - .125rem);
+  }
 }

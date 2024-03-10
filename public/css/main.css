@@ -1036,11 +1036,11 @@ a:not([class]):visited,
   margin: -4px -4px;
   padding: 4px 4px;
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 0.2em;
   text-decoration-thickness: 3px;
   text-decoration-color: var(--v2--color-secondary);
   color: var(--v2--color-interactive);
-  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 400ms ease-in;
+  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 200ms ease-in;
 }
 a:not([class]):focus, a:not([class]):hover,
 a:not([class]):visited:focus,
@@ -1052,6 +1052,13 @@ a:not([class]):visited:hover,
   color: var(--v2--color-bg);
   background-color: var(--v2--color-interactive);
   text-decoration-color: var(--v2--color-bg);
+  text-underline-offset: 0.3em;
+}
+
+a:not([class]) {
+  text-underline-offset: 0.1em;
+}
+a:not([class]):focus, a:not([class]):hover {
   text-underline-offset: 0.2em;
 }
 
@@ -1221,10 +1228,12 @@ body:before {
   }
   .footer__contact-us a {
     color: var(--v2--color-interactive);
+    text-underline-offset: 0.2em;
     text-decoration-color: var(--v2--color-secondary);
   }
   .footer__contact-us a:hover, .footer__contact-us a:focus-visible {
     text-decoration-color: var(--v2--color-bg);
+    text-underline-offset: 0.3em;
   }
 }
 .footer__contact-us div:first-of-type {
@@ -2571,9 +2580,9 @@ body:before {
 }
 
 .card__link {
-  text-underline-offset: 0.075em;
+  text-underline-offset: 0.2em;
   text-decoration-thickness: 3px;
-  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 400ms ease-in;
+  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 200ms ease-in;
 }
 [data-pref--underline] .card__link {
   text-decoration: underline;
@@ -2590,7 +2599,6 @@ body:before {
 .card__link:hover, .card__link:focus-visible {
   color: var(--v2--color-interactive);
   text-decoration: underline;
-  text-underline-offset: 0.2em;
 }
 
 .card__bottom {
@@ -2958,7 +2966,7 @@ body:before {
   padding: 2px 8px 0;
   height: 2.75rem;
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 0.2em;
   color: var(--v2--color-strong--on-primary);
   transition: color 300ms ease-in, background-color 300ms ease-in, text-decoration-color 300ms ease-in;
 }
@@ -2974,21 +2982,12 @@ body:before {
 .footer__link[aria-current=page]::after {
   content: "";
   position: absolute;
-  bottom: 8px;
+  bottom: 6px;
   left: 8px;
   width: calc(100% - 16px);
   height: 0;
   border-top: 4px solid var(--v2--color-strong--on-primary);
   transition: background-color 300ms ease-in, transform 300ms ease-in;
-}
-@media (min-width: 75em) {
-  .nav__link[aria-current=page]::before, .nav__link[aria-current=page]::after,
-  .nav__link-sub[aria-current=page]::before,
-  .nav__link-sub[aria-current=page]::after,
-  .footer__link[aria-current=page]::before,
-  .footer__link[aria-current=page]::after {
-    bottom: 5px;
-  }
 }
 .nav__link[aria-current=page]::after,
 .nav__link-sub[aria-current=page]::after,
@@ -3013,6 +3012,7 @@ body:before {
 .nav__link-sub:hover,
 .footer__link:focus-visible,
 .footer__link:hover {
+  text-underline-offset: 0.3em;
   color: var(--v2--color-primary);
   background-color: var(--v2--color-strong--on-primary);
 }
@@ -3091,11 +3091,12 @@ body:before {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-decoration-color: var(--v2--color-secondary);
-  transition: text-underline-offset 300ms, color 300ms ease-in, background-color 300ms ease-in, text-decoration-color 300ms ease-in;
+  text-underline-offset: 0.15em;
+  transition: text-underline-offset 200ms, color 300ms ease-in, background-color 300ms ease-in, text-decoration-color 300ms ease-in;
   color: var(--v2--color-interactive);
 }
 .pagination__link:hover, .pagination__link:focus-visible {
-  text-underline-offset: 0.2em;
+  text-underline-offset: 0.25em;
   color: var(--v2--color-bg);
   text-decoration-color: var(--v2--color-bg);
 }
@@ -3533,6 +3534,60 @@ body:before {
   fill: var(--color-interactive);
 }
 
+body:before {
+  background-color: #fcf8e3;
+  border-bottom: 1px solid #fbeed5;
+  border-left: 1px solid #fbeed5;
+  color: #c09853;
+  font: small-caption;
+  padding: 3px 6px;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}
+
+@media (min-width: 20em) {
+  body:before {
+    content: "xxs ≥ 320px (20em)";
+  }
+}
+@media (min-width: 26.25em) {
+  body:before {
+    content: "xs ≥ 420px (26.25em)";
+  }
+}
+@media (min-width: 38.75em) {
+  body:before {
+    content: "sm ≥ 620px (38.75em)";
+  }
+}
+@media (min-width: 48em) {
+  body:before {
+    content: "md ≥ 768px (48em)";
+  }
+}
+@media (min-width: 60em) {
+  body:before {
+    content: "md-tweak ≥ 960px (60em)";
+  }
+}
+@media (min-width: 64em) {
+  body:before {
+    content: "lg ≥ 1024px (64em)";
+  }
+}
+@media (min-width: 75em) {
+  body:before {
+    content: "xl ≥ 1200px (75em)";
+  }
+}
+@media (min-width: 90em) {
+  body:before {
+    content: "xxl ≥ 1440px (90em)";
+  }
+}
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -3559,7 +3614,7 @@ body:before {
   text-underline-offset: 0.1em;
   background-color: var(--v2--color-interactive);
   color: var(--v2--color-bg);
-  transition: background-color 300ms ease-in, color 300ms ease-in, text-underline-offset 400ms;
+  transition: background-color 300ms ease-in, color 300ms ease-in, text-underline-offset 200ms;
 }
 [data-pref--underline] .tag__link {
   text-decoration: underline;
@@ -3589,9 +3644,14 @@ body:before {
   padding: 0 6px;
   border: 2px solid var(--v2--color-bg);
   border-radius: 4px;
-  height: 1.375em;
-  min-width: 1.375em;
+  height: 1.25em;
+  min-width: 1.25em;
   transition: border-color 300ms ease-in;
+}
+@media (min-width: 48em) {
+  .tag__count {
+    font-size: calc(var(--v2--current-small-font-size) - 0.125rem);
+  }
 }
 
 body:before {
