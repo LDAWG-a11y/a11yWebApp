@@ -260,7 +260,7 @@ h2 {
   }
 
   @include mq.mq($from:md) {
-    font-size: calc(var(--v2--base-font-size) + 1.25rem);
+    font-size: calc(var(--v2--current-base-font-size) + 1.25rem);
   }
 }
 
