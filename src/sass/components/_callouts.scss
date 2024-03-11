@@ -1,0 +1,93 @@
+@use '../vendors/mq';
+
+div[class^="callout"] {
+  display: flex;
+  width: auto;
+  max-width: 55rem;
+  border-radius: $radius-md;
+  margin: $space-rel-lg 0 $space-rel-xl $space-abs-md;
+  color: var(--v2--color-text);
+  background-color: var(--v2--color-bg--light);
+  box-shadow: var(--v2--shadow);
+}
+
+.callout__tip {
+  border-bottom: 6px solid var(--v2--color-tip);
+
+  svg {
+    border: 2px solid var(--v2--color-tip);
+    background-color: var(--v2--color-tip);
+  }
+
+  .no-js & {
+    .callout__icon {
+      width: max-content;
+
+      &::before {
+        content: "Tip ";
+        width: inherit;
+      }
+    }
+  }
+}
+
+.callout__info {
+  border-bottom: 6px solid var(--v2--color-info);
+  
+  svg {
+    border: 2px solid var(--v2--color-info);
+    background-color: var(--v2--color-info);
+  }
+
+  .no-js & {
+    .callout__icon {
+
+      &::before {
+        content: "Info ";
+        width: inherit;
+      }
+    }
+  }
+}
+
+.callout__warn {
+  border-bottom: 6px solid var(--v2--color-warn);
+
+  svg {
+    height: 1.75rem;
+    width: 1.75rem;
+    fill: var(--v2--color-warn);
+  }
+
+  .no-js & {
+    .callout__icon {
+
+      &::before {
+        content: "Warning ";
+        width: inherit;
+      }
+    }
+  }
+}
+
+.callout__icon {
+  position: relative;
+  border-radius: $radius-md 0 0 $radius-md;
+  padding: $space-rel-sm;
+  color: var(--color-bg);
+  
+  svg {
+    position: absolute;
+    top: -.5rem;
+    left: -.5rem;
+    box-sizing: content-box;
+    border-radius: $radius-pill;
+    color: var(--color-bg);
+    transform: scale(1.5);
+    z-index: 2;
+  }
+}
+
+.callout__text {
+  padding: $space-rel-sm;
+}

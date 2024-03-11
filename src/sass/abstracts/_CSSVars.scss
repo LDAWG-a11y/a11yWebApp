@@ -14,6 +14,9 @@ $--v2--color-border--light: --v2--color-border--light;
 $--v2--color-border--mid: --v2--color-border--mid;
 $--v2--color-interactive: --v2--color-interactive;
 $--v2--color-interactive-alt: --v2--color-interactive-alt;
+$--v2--color-tip: --v2--color-tip;
+$--v2--color-info: --v2--color-info;
+$--v2--color-warn: --v2--color-warn;
 $--color-text: --color-text;
 $--color-bg: --color-bg;
 $--color-bg--light: --color-bg--light;
@@ -53,6 +56,9 @@ $theme-map-light: (
   $--v2--color-strong--on-primary: #f8f8f8,
   $--v2--color-border--light: #eefffb,
   $--v2--color-border--mid: #909090,
+  $--v2--color-tip: #49a21e,
+  $--v2--color-info: #3a8dbb,
+  $--v2--color-warn: #c41818,
   
   $--color-text: #1f1f1f,
   $--color-bg: #fdfdfd,
@@ -90,6 +96,9 @@ $theme-map-dark: (
   $--v2--color-bg: #252525,
   $--v2--color-bg--light: #2a2a2a,
   $--v2--color-strong--on-primary: #DEDEDE,
+  $--v2--color-tip: #a3dd94,
+  $--v2--color-info: #8fd7ff,
+  $--v2--color-warn: #f49c9c,
   
   $--v2--color-border--light: #323232,
   $--v2--color-border--mid: #8f8f8f,
