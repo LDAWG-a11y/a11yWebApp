@@ -3546,6 +3546,12 @@ ul:not([class]) > li::marker {
   outline-offset: 2px;
 }
 
+.ap__page .supporters__link img {
+  border: 1px solid var(--color-accent);
+  max-height: 8rem;
+  width: auto;
+}
+
 code[class*=language-],
 pre[class*=language-] {
   color: #f8f8f2;

@@ -45,7 +45,7 @@ We are planning to build out the Accessibility Passport on Make Things Accessibl
  
 To keep up to date join our email list [accessibility-passport@jiscmail.ac.uk](mailto:accessibility-passport@jiscmail.ac.uk) by visiting JISCMail and clicking on the ‘Subscribe’ link.
 
-<div class="supporters__wrapper">
+<div class="supporters__wrapper ap__page">
   <a class="supporters__link" href="https://www.westminster.ac.uk/"><img src="/guideImg/UoW _logo.png" height="138" width="575" alt="University of Westminster">
   <a class="supporters__link" href="https://www.ucl.ac.uk/"><img src="/guideImg/UCL_logo.png" height="120" width="405" alt="University College London">
   <a class="supporters__link" href="https://www.rnib.org.uk/"><img src="/guideImg/rnib-logo.0f50786c3db3.png" height="163" width="220" alt="Royal National Institute for the Blind">
