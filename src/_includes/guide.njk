@@ -4,12 +4,16 @@
   {% include "_header.njk" %}
   <main class="main">
     {%- if not aaa %}
-
+    <div style="display: none;">
+      {% include '../svg/tip.svg' %}
+      {% include '../svg/info.svg' %}
+      {% include '../svg/warn.svg' %}
+    </div>
     <div class="guide__info-panel">
       <div class="guide__author">
         {% set guideAuthor = collections.writers | getAuthor(author) %}
         <strong>By: </strong>
-        <a href="/authors/{{ guideAuthor.key }}">{{ guideAuthor.name }}</a>
+        <a href="/authors/{{ guideAuthor.key }}">{{ guideAuthor.name.first }} {{ guideAuthor.name.last }}</a>
       </div>
       <div class="guide__date">
         <strong>Posted: </strong><time datetime="{{ date.toISOString() }}">{{ date | readableDate }}</time>

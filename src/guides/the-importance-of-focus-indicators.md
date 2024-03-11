@@ -292,7 +292,7 @@ Indeed, webpages contain more than just text links and buttons, I recently chang
 
 The combination of the 3 visual changes is a strong indicator of which card has keyboard focus, although I am not saying it is perfect, because a keyboard user with low-vision would be the best judge of that.
 
-<div class="callout__tip"><span class="callout__icon"></span><span class="callout__text">A card is typically quite large, so I don't think our Oreo indicator we created earlier would be too good here on its own, as if it surrounded the whole card and no other visual change occurred, it may not be obvious it is focused at all for users that may have a narrow field of view or are using screen magnification software.</span></div>
+<div class="callout__tip"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cTip"></use></svg><strong class="visually-hidden">Tip: </strong></span><span class="callout__text">A card is typically quite large, so I don't think our Oreo indicator we created earlier would be too good here on its own, as if it surrounded the whole card and no other visual change occurred, it may not be obvious it is focused at all for users that may have a narrow field of view or are using screen magnification software.</span></div>
 
 To save you navigating away, here's a screenshot of a focused card next to an unfocused card:
 

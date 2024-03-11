@@ -35,7 +35,7 @@ The [Overlay Fact Sheet](https://overlayfactsheet.com/#main) is a useful introdu
 
 ## Overlays and compliance
 
-<div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">Overlays will not make you compliant with WCAG or any accessibility regulations.</span></div>
+<div class="callout__warn"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cWarn"></use></svg><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">Overlays will not make you compliant with WCAG or any accessibility regulations.</span></div>
 
 This is a simple statement and if you see an overlay that promises it will make you meet WCAG 2.0, 2.1, 2.2, EN301549, Section 508 etc. this is false and you should avoid that product.
 

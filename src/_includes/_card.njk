@@ -2,10 +2,7 @@
   <div class="card__top">
     {% set headinglevel = headingLevel if headingLevel else 'h3' %}
     <{{ headingLevel }} class="card__title"><a href="{{ guide.url }}" class="card__link">{{ guide.data.title }}</a></{{ headingLevel }}>
-    {% include '../svg/MTA-logo-only.svg' %}
-    <!-- {%- set titleLength = guide.data.title.length %}
-    {{ titleLength}} -->
-    <!-- <p class="card__summary">{{ guide.data.summary.slice(0, 120) }}{% if guide.data.summary.length > 120 %}&hellip;{% endif %}</p> -->
+    <svg height="96" width="88"><use href="#mtaLogo"></use></svg>
   </div>
   <div class="card__bottom">
     <div class="card__tags">
@@ -18,14 +15,16 @@
     </div>
     <div class="card__meta">
       {% set guideAuthor = collections.writers | getAuthor(guide.data.author) %}
-      <span class="card__author">{% include '../svg/avatar-unknown.svg' %} 
+      <span class="card__author">
+        <svg height="28" width="28"><use href="#avatarIcon"></use></svg>
         {% if not authorPage %}
           <a href="/authors/{{ guideAuthor.key }}" class="card__author-link">{{ guideAuthor.name.first }} {{ guideAuthor.name.last }}</a>
         {% else %}
         {{ guideAuthor.name.first }} {{ guideAuthor.name.last }}
         {% endif %}
       </span>
-      <time class="card__date" datetime="{{ guide.data.date.toISOString() }}">{% include '../svg/date.svg' %} {{ guide.data.date | readableDate }}</time>
+      <time class="card__date" datetime="{{ guide.data.date.toISOString() }}">
+        <svg height="28" width="28"><use href="#dateIcon"></use></svg> {{ guide.data.date | readableDate }}</time>
     </div>
   </div>
 </li>

@@ -66,7 +66,7 @@ In this way LATCos become just like any other 3rd party supplier, where it would
 
 Given that the LATCo is now a commercial supplier, they must content with other commercial entities to offer the most accessible services if they wish to sell to other councils.
 
-<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">In summary, LATCos exist under PSBAR in the same way as any other commercial 3rd party which has been contracted to provide services to, or on behalf of another public sector body.</span></div>
+<div class="callout__info"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cInfo"></use></svg><strong class="visually-hidden">Info: </strong></span><span class="callout__text">In summary, LATCos exist under PSBAR in the same way as any other commercial 3rd party which has been contracted to provide services to, or on behalf of another public sector body.</span></div>
 
 Our [3rd party responsibilities guide](https://www.makethingsaccessible.com/guides/3rd-party-content-responsibilities/) gives more detail on these situations.
 

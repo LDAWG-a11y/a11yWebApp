@@ -66,13 +66,13 @@ If a tender response cannot provide any information to show that they are aware 
 
 Remember that we all first learn about accessibility at some point. For many suppliers, this might be the first time they are being made aware of the requirements. The important thing is how the supplier responde to these requirements. If they approach it proactively and try to make fixes and are operating in good faith then that is one thing, but conversely they may dismiss the need because it has been "unimportant" up till now. The supplier's direction from this point is important.
 
-<div class="callout__tip"><span class="callout__icon"></span><span class="callout__text">Remember, you as the public sector body hold all the legal responsibility. If a supplier that does not know what they are doing delivers you an illegal product, you are responsible if something goes wrong.</span></div>
+<div class="callout__tip"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cTip"></use></svg><strong class="visually-hidden">Tip: </strong></span><span class="callout__text">Remember, you as the public sector body hold all the legal responsibility. If a supplier that does not know what they are doing delivers you an illegal product, you are responsible if something goes wrong.</span></div>
 
 ### [](<>)“Our product fully complies”
 
 Many suppliers will claim that the product they are trying to sell you fully complies with all WCAG A and AA success criteria. In our experience this is in almost every case, incorrect.
 
-<div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">If a supplier says this in the tender response, you should be immediately sceptical. Any large or complex product will almost never be fully compliant just on the size alone.</span></div>
+<div class="callout__warn"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cWarn"></use></svg><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">If a supplier says this in the tender response, you should be immediately sceptical. Any large or complex product will almost never be fully compliant just on the size alone.</span></div>
 
 Most times we have seen this response provided; the supplier will answer following questions explaining that there are a limited number of areas where the product has current issues against WCAG. This might be in a written response to one of the tender questions or can be identified through documentation such as a VPAT or audit report as mentioned below.
 

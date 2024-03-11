@@ -2495,7 +2495,9 @@ body:before {
     content: "xxl ≥ 1440px (90em)";
   }
 }
-div[class^=callout] {
+.callout__tip,
+.callout__info,
+.callout__warn {
   display: flex;
   width: auto;
   max-width: 55rem;
@@ -2510,47 +2512,25 @@ div[class^=callout] {
   border-bottom: 6px solid var(--v2--color-tip);
 }
 .callout__tip svg {
-  border: 2px solid var(--v2--color-tip);
   background-color: var(--v2--color-tip);
-}
-.no-js .callout__tip .callout__icon {
-  width: max-content;
-}
-.no-js .callout__tip .callout__icon::before {
-  content: "Tip ";
-  width: inherit;
 }
 
 .callout__info {
   border-bottom: 6px solid var(--v2--color-info);
 }
 .callout__info svg {
-  border: 2px solid var(--v2--color-info);
   background-color: var(--v2--color-info);
-}
-.no-js .callout__info .callout__icon::before {
-  content: "Info ";
-  width: inherit;
 }
 
 .callout__warn {
   border-bottom: 6px solid var(--v2--color-warn);
 }
 .callout__warn svg {
-  height: 1.75rem;
-  width: 1.75rem;
   fill: var(--v2--color-warn);
-}
-.no-js .callout__warn .callout__icon::before {
-  content: "Warning ";
-  width: inherit;
 }
 
 .callout__icon {
   position: relative;
-  border-radius: 6px 0 0 6px;
-  padding: 0.75rem;
-  color: var(--color-bg);
 }
 .callout__icon svg {
   position: absolute;
@@ -2684,7 +2664,10 @@ body:before {
 .card__item:has(.card__link:focus-visible), .card__item:has(.card__link:hover) {
   border-color: var(--v2--color-interactive);
 }
-.card__item .colour {
+.card__item use svg .colour {
+  fill: var(--v2--color-interactive);
+}
+.card__item .colour use {
   fill: var(--v2--color-interactive);
 }
 
@@ -2781,8 +2764,8 @@ body:before {
 .card__date svg.avatar {
   padding: 2px;
 }
-.card__author svg path,
-.card__date svg path {
+.card__author svg use,
+.card__date svg use {
   fill: var(--v2--color-tertiary);
   stroke: var(--v2--color-tertiary);
   color: var(--v2--color-tertiary);

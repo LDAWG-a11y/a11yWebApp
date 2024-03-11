@@ -1,6 +1,8 @@
 @use '../vendors/mq';
 
-div[class^="callout"] {
+.callout__tip,
+.callout__info,
+.callout__warn {
   display: flex;
   width: auto;
   max-width: 55rem;
@@ -15,19 +17,7 @@ div[class^="callout"] {
   border-bottom: 6px solid var(--v2--color-tip);
 
   svg {
-    border: 2px solid var(--v2--color-tip);
     background-color: var(--v2--color-tip);
-  }
-
-  .no-js & {
-    .callout__icon {
-      width: max-content;
-
-      &::before {
-        content: "Tip ";
-        width: inherit;
-      }
-    }
   }
 }
 
@@ -35,18 +25,7 @@ div[class^="callout"] {
   border-bottom: 6px solid var(--v2--color-info);
   
   svg {
-    border: 2px solid var(--v2--color-info);
     background-color: var(--v2--color-info);
-  }
-
-  .no-js & {
-    .callout__icon {
-
-      &::before {
-        content: "Info ";
-        width: inherit;
-      }
-    }
   }
 }
 
@@ -54,27 +33,12 @@ div[class^="callout"] {
   border-bottom: 6px solid var(--v2--color-warn);
 
   svg {
-    height: 1.75rem;
-    width: 1.75rem;
     fill: var(--v2--color-warn);
-  }
-
-  .no-js & {
-    .callout__icon {
-
-      &::before {
-        content: "Warning ";
-        width: inherit;
-      }
-    }
   }
 }
 
 .callout__icon {
   position: relative;
-  border-radius: $radius-md 0 0 $radius-md;
-  padding: $space-rel-sm;
-  color: var(--color-bg);
   
   svg {
     position: absolute;

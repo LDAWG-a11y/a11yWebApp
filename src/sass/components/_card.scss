@@ -63,7 +63,11 @@
     border-color: var(--v2--color-interactive);
   }
 
-  .colour {
+   use svg .colour {
+    fill: var(--v2--color-interactive);
+  }
+
+   .colour use {
     fill: var(--v2--color-interactive);
   }
 }
@@ -167,7 +171,7 @@
       padding: $space-abs-xxxs;
     }
 
-    path {
+    use {
       fill: var(--v2--color-tertiary);
       stroke: var(--v2--color-tertiary);
       color: var(--v2--color-tertiary);

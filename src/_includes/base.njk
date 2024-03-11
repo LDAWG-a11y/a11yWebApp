@@ -12,6 +12,13 @@
     {% endif %}
   {% endif %}
   <main class="main {%- if usesCMS %} cms{%- endif %}">
+    {%- if hasCards %}
+      <div style="display: none;">
+        {% include '../svg/MTA-logo-only.svg' %}
+        {% include '../svg/avatar-unknown.svg' %}
+        {% include '../svg/date.svg' %}
+      </div>
+    {% endif %}
     {%- if aaaSupporters %}
       <div class="supporters__wrapper">
     {% endif %}
