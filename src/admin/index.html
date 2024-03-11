@@ -49,17 +49,17 @@
           widget: 'string'
         }
       ],
-      pattern: /^\s*<div class="callout__tip"><span class="callout__icon"><\/span><span class="callout__text">(.*?)<\/span><\/div>$/,
+      pattern: /^\s*<div class="callout__tip"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cTip"><\/use><\/svg><strong class="visually-hidden">Tip: <\/strong><\/span><span class="callout__text">(.*?)<\/span><\/div>$/,
       fromBlock: function(match) {
         return {
           tipCallout: match[1]
         };
       },
       toBlock: function(data) {
-        return `<div class="callout__tip"><span class="callout__icon"></span><span class="callout__text">${data.tipCallout}</span></div>`;
+        return `<div class="callout__tip"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cTip"></use></svg><strong class="visually-hidden">Tip: </strong></span><span class="callout__text">${data.tipCallout}</span></div>`;
       },
       toPreview: function(data) {
-        return `<div class="callout__tip"><span class="callout__icon"></span><span class="callout__text">${data.tipCallout}</span></div>`;
+        return `<div class="callout__tip"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cTip"></use></svg><strong class="visually-hidden">Tip: </strong></span><span class="callout__text">${data.tipCallout}</span></div>`;
       },
     })
 
@@ -69,21 +69,21 @@
       fields: [
         {
           name: 'infoCallout',
-          label: 'Tip',
+          label: 'Info',
           widget: 'string'
         }
       ],
-      pattern: /^\s*<div class="callout__info"><span class="callout__icon"><\/span><span class="callout__text">(.*?)<\/span><\/div>$/,
+      pattern: /^\s*<div class="callout__info"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cInfo"><\/use><\/svg><strong class="visually-hidden">Info: <\/strong><\/span><span class="callout__text">(.*?)<\/span><\/div>$/,
       fromBlock: function(match) {
         return {
           infoCallout: match[1]
         };
       },
       toBlock: function(data) {
-        return `<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">${data.infoCallout}</span></div>`;
+        return `<div class="callout__info"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cInfo"></use></svg><strong class="visually-hidden">Info: </strong></span><span class="callout__text">${data.infoCallout}</span></div>`;
       },
       toPreview: function(data) {
-        return `<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">${data.infoCallout}</span></div>`;
+        return `<div class="callout__info"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cInfo"></use></svg><strong class="visually-hidden">Info: </strong></span><span class="callout__text">${data.infoCallout}</span></div>`;
       },
     })
 
@@ -93,21 +93,21 @@
       fields: [
         {
           name: 'warnCallout',
-          label: 'Tip',
+          label: 'Warn',
           widget: 'string'
         }
       ],
-      pattern: /^\s*<div class="callout__warn"><span class="callout__icon"><\/span><span class="callout__text">(.*?)<\/span><\/div>$/,
+      pattern: /^\s*<div class="callout__warn"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cWarn"><\/use><\/svg><strong class="visually-hidden">Warning: <\/strong><\/span><span class="callout__text">(.*?)<\/span><\/div>$/,
       fromBlock: function(match) {
         return {
-          warnCallout: match[1]
+          tipCallout: match[1]
         };
       },
       toBlock: function(data) {
-        return `<div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">${data.warnCallout}</span></div>`;
+        return `<div class="callout__warn"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cWarn"></use></svg><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">${data.warnCallout}</span></div>`;
       },
       toPreview: function(data) {
-        return `<div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">${data.warnCallout}</span></div>`;
+        return `<div class="callout__warn"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cWarn"></use></svg><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">${data.warnCallout}</span></div>`;
       },
     })
 

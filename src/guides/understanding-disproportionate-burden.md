@@ -83,7 +83,7 @@ The main problem we have found with disproportionate burden claims is that peopl
 
 Often, when people see the phrase “disproportionate burden” and read the brief description of its use, they jump to classify complex issues as disproportionate burden in their accessibility statements without completing an assessment first.
 
-<div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">You MUST complete a detailed assessment of why something is disproportionate burden before you include any wording into an accessibility statement.</span></div>
+<div class="callout__warn"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cWarn"></use></svg><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">You MUST complete a detailed assessment of why something is disproportionate burden before you include any wording into an accessibility statement.</span></div>
 
 When challenged for evidence, and the ‘no information’ response is given, it often comes with any number of excuses:
 
@@ -115,13 +115,13 @@ The [GDS Sample Accessibility Statement](https://www.gov.uk/government/publicati
 >
 > Our forms are built and hosted through third party software and ‘skinned’ to look like our website.”
 
-<div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">This is an example ONLY of the level of detail you should go into about any given disproportionate burden claim in an accessibility statement. It is NOT an example of a suitable claim subject.</span></div>
+<div class="callout__warn"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cWarn"></use></svg><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">This is an example ONLY of the level of detail you should go into about any given disproportionate burden claim in an accessibility statement. It is NOT an example of a suitable claim subject.</span></div>
 
 Many people who write statements based on the GDS sample statement template see the wording and automatically assume that because the government wrote it in the example, then it must be sensible to claim, either that or they just do not bother to read what they are leaving in a **LEGAL DOCUMENT.**
 
 In either case, it is incredibly obvious when a statement includes the copied example text and, in every case, when challenged for evidence, proves to be a false claim without supporting evidence.
 
-<div class="callout__tip"><span class="callout__icon"></span><span class="callout__text">If you are writing an accessibility statement and see the government example wording, DO NOT leave it in your statement. If you have a claim to make, write your own description.</span></div>
+<div class="callout__tip"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cTip"></use></svg><strong class="visually-hidden">Tip: </strong></span><span class="callout__text">If you are writing an accessibility statement and see the government example wording, DO NOT leave it in your statement. If you have a claim to make, write your own description.</span></div>
 
 ### Claiming disproportionate burden for exempt content
 
@@ -129,7 +129,7 @@ Many organisations are not aware of what content is and is not in scope of the r
 
 In many cases attempting to meet technical accessibility requirements for all content that is exempted by the regulations may easily be considered a disproportionate amount of effort. For example, providing live video captions through all mediums, or making all document content 100% accessible going back decades. This unreasonable challenge is the reason these requirements are listed as their own exemptions.
 
-<div class="callout__tip"><span class="callout__icon"></span><span class="callout__text">If you are considering making a disproportionate burden claim, read through the list of exempted content in the regulations and seriously consider if your proposed disproportionate burden claim may already fall into one of these categories.</span></div>
+<div class="callout__tip"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cTip"></use></svg><strong class="visually-hidden">Tip: </strong></span><span class="callout__text">If you are considering making a disproportionate burden claim, read through the list of exempted content in the regulations and seriously consider if your proposed disproportionate burden claim may already fall into one of these categories.</span></div>
 
 You can get more detailed information on the regulation exemptions and how they may affect your systems or content in our [PSBAR Exemptions guide](https://www.makethingsaccessible.com/guides/psbar-exemptions/).
 
@@ -166,7 +166,7 @@ To help you understand and gauge what might be considered a disproportionate bur
 
 Use these examples to learn about how to approach disproportionate burden claims. Do not use these examples to base your own claims on. You must always conduct your own claims unique to you.
 
-<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">These are not something you can cut and paste for your own use. What might be a burden for one of the organisations in the below examples may not be applicable in your case.</span></div>
+<div class="callout__info"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cInfo"></use></svg><strong class="visually-hidden">Info: </strong></span><span class="callout__text">These are not something you can cut and paste for your own use. What might be a burden for one of the organisations in the below examples may not be applicable in your case.</span></div>
 
 ### Possible disproportionate burdens
 

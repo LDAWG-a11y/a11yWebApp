@@ -3,6 +3,7 @@ date: Last Modified
 layout: base.njk
 title: Home
 home: true
+hasCards: true
 ---
 <div class="panel gutter-btm--major">
   <h2>Hello and welcome</h2>
@@ -33,7 +34,7 @@ home: true
   <p class="latest-articles__intro">Make Things Accessible are proud to collaborate with Access and Assistance for All (AAA) a campaign run by the British Youth Council. The campaign aims to encourage education organisations to sign up to the charter, which encourages supporters to ensure learning is inclusive for all students
     and make accommodations whenever necessary. Within the AAA section of this site, there are real student stories, which highlight some of the barriers current and previous students with disabilities have faced during their studies. there is a small selection of stories below, alternatively, you can view all <a href="/aaa/student-stories/">Student stories here</a>. You can also visit the <a href="/aaa/">AAA Home page</a>, to find out about the awesome work AAA doing to make learning more inclusive.
   </p>
-  <section class="cards--scrollable" tabindex="0" aria-labelledby="latestAAAHeading">
+  <!-- <section class="cards--scrollable" tabindex="0" aria-labelledby="latestAAAHeading">
     <ul class="cards">
       {% for card in collections.studentStoriesAAA | reverse %}
         {% if loop.index < 5 %}
@@ -48,5 +49,5 @@ home: true
           {% endif %}
       {% endfor %}
     </ul>
-  </section>
+  </section> -->
 </div>
