@@ -7,14 +7,19 @@ blockquote:not(.twitter-tweet) {
   margin: $space-abs-xxxxl 0 $space-abs-xxxl $space-abs-md;
   border-bottom: 6px solid var(--v2--color-secondary);
   border-radius: $radius-md;
-  padding: $space-abs-lg $space-abs-md $space-abs-md;
+  padding: $space-abs-xl $space-abs-md $space-abs-md;
   color: var(--v2--color-text);
   background-color: var(--v2--color-bg--light);
   box-shadow: var(--v2--shadow);
 
+  @include mq.mq($from:md) {
+    margin-left: $space-abs-md;;
+  }
+
   @include mq.mq($from:lg) {
     margin-left: 0;
     border-radius: $radius-xl;
+    padding: $space-abs-xl $space-abs-lg $space-abs-lg;
   }
 
   &::before,

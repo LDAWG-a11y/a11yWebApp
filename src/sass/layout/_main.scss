@@ -4,6 +4,10 @@ body {
   max-width: $site-width;
   background: var(--v2--color-bg);
 
+  @include mq.mq($from:md) {
+    padding: $space-abs-md;
+  }
+
   @include mq.mq($from:lg) {
     padding: $space-abs-xl;
   }
