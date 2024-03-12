@@ -4,6 +4,7 @@
   @include dark-theme(('border': 2px solid var(--v2--color-border--light)));
   @include light-theme(('border': none));
 
+  position: relative;
   padding: $space-abs-sm;
   border-radius: $radius-md;
   background-color: var(--v2--color-bg--light);
