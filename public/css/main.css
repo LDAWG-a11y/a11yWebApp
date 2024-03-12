@@ -956,7 +956,7 @@ h2 {
   line-height: calc(var(--v2--line-height) - 0.125);
 }
 h2:not([data-no-accent]) {
-  margin-top: 12px;
+  margin-top: 16px;
 }
 h2:not([data-no-accent])::before, h2:not([data-no-accent])::after {
   content: "";
@@ -2418,6 +2418,12 @@ blockquote:not(.twitter-tweet) {
   background-color: var(--v2--color-bg--light);
   box-shadow: var(--v2--shadow);
 }
+@media (min-width: 64em) {
+  blockquote:not(.twitter-tweet) {
+    margin-left: 0;
+    border-radius: 10px;
+  }
+}
 blockquote:not(.twitter-tweet)::before, blockquote:not(.twitter-tweet)::after {
   content: "";
   position: absolute;
@@ -2591,10 +2597,18 @@ body:before {
   width: auto;
   max-width: 55rem;
   border-radius: 6px;
-  margin: 56px 0 24px 12px;
+  margin: 40px 0 32px 12px;
   color: var(--v2--color-text);
   background-color: var(--v2--color-bg--light);
   box-shadow: var(--v2--shadow);
+}
+@media (min-width: 64em) {
+  .callout__tip,
+  .callout__info,
+  .callout__warn {
+    margin-left: 0;
+    border-radius: 10px;
+  }
 }
 
 .callout__tip {
