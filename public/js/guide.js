@@ -10,34 +10,38 @@ if (navigator.clipboard) {
 codeBlocks.forEach((block, idx) => {
   let language = block.getAttribute('class').split('-');
   if (language) {
-    block.classList.add('code--with-copy');
-    let header;
+    let label = `${language[1] == 'javascript' ? language[1] = 'JavaScript' : language[1].toUpperCase()}`;
+    block.insertAdjacentHTML('beforebegin', `<section class="code__wrapper" aria-labelledby="cb${idx + 1}"><div class="code__header">
+    <span id="cb${idx + 1}" class="visually-hidden">Code block ${idx + 1}, ${label}</span></div></section>`);
+    
+    let header = block.previousElementSibling.querySelector('.code__header');
+    block.previousElementSibling.appendChild(block);
     if (navigator.clipboard) {
-      header = `<div class="code__header"><span class="code__fake-btns"><span class="code__fake-btn"></span></span><button class="code__copy-btn">Copy ${
-        language[1] == 'javascript'
-          ? (language[1] = 'JavaScript')
-          : language[1].toUpperCase()
-      }</button></div>`;
-      document.body.addEventListener('click', e => {
-        if (e.target.classList.contains('code__copy-btn')) {
-          copySnippet(e);
-        }
-      });
+      block.classList.add('code--with-copy');
+      header.insertAdjacentHTML('afterbegin', `<output class="copy__announcement flex--middle"></output><button class="code__copy-btn btn btn--default">Copy ${label}</button>`);
     } else {
-      header = `<div class="code__header"><span class="code__fake-btn"></span><span class="code__label">${language[1].toUpperCase()}</span></div>`;
+      header.insertAdjacentHTML('afterbegin', `<span class="code__label">${label}</span>`);
     }
-    block.insertAdjacentHTML('beforebegin', header);
   }
 });
 
-async function copySnippet(e) {
-  document.querySelector('.announcement').innerText = '';
-  const btn = e.srcElement;
+document.querySelectorAll('.code__copy-btn').forEach(btn => {
+  btn.addEventListener('click', (evt) => {
+    copySnippet(evt.target);
+  });
+});  
+
+async function copySnippet(btn) {
+  let output = btn.closest('section').querySelector('.copy__announcement');
+  output.innerText = '';
   const code = btn.parentElement.nextElementSibling.querySelector('code');
   let text = code.innerText;
   await navigator.clipboard.writeText(text);
-  document.querySelector('.announcement').innerText =
-    'Copied code to clipboard';
+  output.innerText = 'Copied to clipboard';
+
+  setTimeout(() => {
+    output.innerText = '';
+  }, 5000);
 }
 
 const toggleTabStopOnTable = () => {

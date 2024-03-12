@@ -8,14 +8,19 @@
   max-width: 55rem;
   border-radius: $radius-md;
   margin: $space-abs-xxxxl 0 $space-abs-xxxl $space-abs-md;
+  padding: $space-abs-xl $space-abs-md $space-abs-md;
   color: var(--v2--color-text);
   background-color: var(--v2--color-bg--light);
   box-shadow: var(--v2--shadow);
 
+  @include mq.mq($from:md) {
+    margin-left: $space-abs-md;;
+  }
+
   @include mq.mq($from:lg) {
     margin-left: 0;
     border-radius: $radius-xl;
-    
+    padding: $space-abs-xl $space-abs-md $space-abs-md;
   }
 }
 
@@ -48,16 +53,11 @@
   
   svg {
     position: absolute;
-    top: -.5rem;
-    left: -.5rem;
+    top: -2rem;
+    left: -1.375rem;
     box-sizing: content-box;
     border-radius: $radius-pill;
-    color: var(--color-bg);
     transform: scale(1.5);
     z-index: 2;
   }
-}
-
-.callout__text {
-  padding: $space-rel-sm;
 }
