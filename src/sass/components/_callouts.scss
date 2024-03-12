@@ -11,6 +11,12 @@
   color: var(--v2--color-text);
   background-color: var(--v2--color-bg--light);
   box-shadow: var(--v2--shadow);
+
+  @include mq.mq($from:lg) {
+    margin-left: 0;
+    border-radius: $radius-xl;
+    
+  }
 }
 
 .callout__tip {
