@@ -126,8 +126,13 @@ body:before {
     --v2--color-info: #8fd7ff;
     --v2--color-warn: #f49c9c;
     --v2--color-black: #1c1c1c;
+    --v2--color-code-one: #00e0e0;
+    --v2--color-code-two: #ffd700;
+    --v2--color-code-three: #ffa07a;
+    --v2--color-code-four: #abe338;
     --v2--color-border--light: #323232;
     --v2--color-border--mid: #8f8f8f;
+    --v2--shadow: none;
     --color-text: #D9D9D9;
     --color-bg: #252525;
     --color-bg--light: #2d2d2d;
@@ -143,7 +148,6 @@ body:before {
     --color-info: #2a4ea3;
     --color-warn: #982A2A;
     --color-warn--bright: #ff6a6a;
-    --v2--shadow: none;
     color-scheme: dark;
   }
   :root:not([data-pref--theme=light]) ::selection {
@@ -175,6 +179,10 @@ body:before {
   --v2--color-info: #3a8dbb;
   --v2--color-warn: #c41818;
   --v2--color-black: #1c1c1c;
+  --v2--color-code-one: #3A539B;
+  --v2--color-code-two: #744E2E;
+  --v2--color-code-three: #8B008B;
+  --v2--color-code-four: #006060;
   --color-text: #1f1f1f;
   --color-bg: #fdfdfd;
   --color-bg--light: #e8e8e8;
@@ -214,6 +222,10 @@ body:before {
   --v2--color-info: #3a8dbb;
   --v2--color-warn: #c41818;
   --v2--color-black: #1c1c1c;
+  --v2--color-code-one: #3A539B;
+  --v2--color-code-two: #744E2E;
+  --v2--color-code-three: #8B008B;
+  --v2--color-code-four: #006060;
   --color-text: #1f1f1f;
   --color-bg: #fdfdfd;
   --color-bg--light: #e8e8e8;
@@ -254,8 +266,13 @@ body:before {
   --v2--color-info: #8fd7ff;
   --v2--color-warn: #f49c9c;
   --v2--color-black: #1c1c1c;
+  --v2--color-code-one: #00e0e0;
+  --v2--color-code-two: #ffd700;
+  --v2--color-code-three: #ffa07a;
+  --v2--color-code-four: #abe338;
   --v2--color-border--light: #323232;
   --v2--color-border--mid: #8f8f8f;
+  --v2--shadow: none;
   --color-text: #D9D9D9;
   --color-bg: #252525;
   --color-bg--light: #2d2d2d;
@@ -271,7 +288,6 @@ body:before {
   --color-info: #2a4ea3;
   --color-warn: #982A2A;
   --color-warn--bright: #ff6a6a;
-  --v2--shadow: none;
   color-scheme: dark;
 }
 :root[data-pref--theme=dark] ::selection {
@@ -5638,7 +5654,7 @@ body:before {
 
 code[class*=language-],
 pre[class*=language-] {
-  color: #f8f8f2;
+  color: var(--v2--color-text);
   background: none;
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   text-align: left;
@@ -5651,9 +5667,6 @@ pre[class*=language-] {
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
   hyphens: none;
 }
 
@@ -5682,12 +5695,12 @@ pre[class*=language-] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: #ffa07a;
+  color: var(--v2--color-code-three);
 }
 
 .token.boolean,
 .token.number {
-  color: #00e0e0;
+  color: var(--v2--color-code-one);
 }
 
 .token.selector,
@@ -5696,7 +5709,7 @@ pre[class*=language-] {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: #abe338;
+  color: var(--v2--color-code-four);
 }
 
 .token.operator,
@@ -5705,22 +5718,22 @@ pre[class*=language-] {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-  color: #00e0e0;
+  color: var(--v2--color-code-one);
 }
 
 .token.atrule,
 .token.attr-value,
 .token.function {
-  color: #ffd700;
+  color: var(--v2--color-code-two);
 }
 
 .token.keyword {
-  color: #00e0e0;
+  color: var(--v2--color-code-one);
 }
 
 .token.regex,
 .token.important {
-  color: #ffd700;
+  color: var(--v2--color-code-two);
 }
 
 .token.important,
@@ -5729,7 +5742,7 @@ pre[class*=language-] {
 }
 
 .token.italic {
-  font-style: italic;
+  font-weight: bold;
 }
 
 .token.entity {
