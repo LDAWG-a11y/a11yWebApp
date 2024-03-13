@@ -4,11 +4,7 @@
   color: var(--v2--color-strong--on-primary);
 
   h2 {
-    font-size: calc(var(--v2--base-font-size)  * 1.5);
-
-    @include mq.mq($from:md) {
-      font-size: calc(var(--v2--base-font-size)  * 1.75);
-    }
+    font-size: calc(var(--v2--current-base-font-size) * 1.4);
   }
 
   @include mq.mq($from:lg) {
