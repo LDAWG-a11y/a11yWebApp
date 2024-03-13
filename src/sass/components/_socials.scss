@@ -5,7 +5,7 @@
   justify-content: left;
   align-items: center;
   flex-wrap: wrap;
-  margin: $space-rel-bigger 0 $space-rel-biggest;
+  margin: $space-abs-bigger 0 $space-abs-biggest;
   width: 100%;
 
   @include mq.mq($from:xs) {
@@ -15,71 +15,26 @@
 }
 
 .socials__title {
-  display: inline-block;
-  padding-right: $space-rel-md;
-  margin-bottom: 0;
-  font-size: 2rem;
+  margin: 0;
+  font-size: calc(var(--v2--current-base-font-size) * 1.4);
 }
 
 .socials__link {
-  position: relative;
-  top: 3px;
-  display: inline-block;
-  height: 2rem;
-  font-size: 0;
-
-  &::before {
-    content: "";
-    position: absolute;
-    height: 2.375rem;
-    width: 2.375rem;
-    top: -3px;
-    left: -3px;
-    border: 3px solid transparent;
-    border-radius: $radius-md;
-    transition: border-color 250ms ease-in-out;
-
-    @media (forced-colors: active) {
-      display: none;
-    }
-  }
-
-  &:not(:last-of-type) {
-    margin-right: $space-rel-md;
-  }
-
-  &:first-of-type {
-    &::before {
-      left: -4px;
-    }
-  }
+  height: 2.75rem;
+  width: 2.75rem;
+  gap: $space-abs-sm;
 
   &:focus-visible {
-    &::before {
-      border-color: var(--color-interactive);
-    }
+    outline: 2px solid var(--v2--color-interactive);
+    outline-offset: -3px;
   }
 
   > svg {
     height: 2rem;
     width: 2rem;
 
-    &[aria-label*="Twitter"] {
-      margin-top: 1px;
-      border-radius: $radius-sm;
-      height: 1.875rem;
-      width: 1.875rem;
-      background-color: var(--color-interactive);
-    }
-
-    &[aria-label*="Twitter"] {
-      > path {
-        fill: var(--color-bg);
-      }
-    }
-
     > path {
-      fill: var(--color-interactive);
+      fill: var(--v2--color-interactive);
     }
   }
 }

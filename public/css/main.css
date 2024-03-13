@@ -114,7 +114,7 @@ body:before {
     --v2--color-interactive: #C2A7D7;
     --v2--color-secondary: #bc58ad;
     --v2--color-tertiary: #50dcc2;
-    --v2--color-accent: #1d2221;
+    --v2--color-accent: #032B1C;
     --v2--color-text: #B0B0B0;
     --v2--color-text-alt: #D9D9D9;
     --v2--color-text-faded: #3e3e3e;
@@ -254,7 +254,7 @@ body:before {
   --v2--color-interactive: #C2A7D7;
   --v2--color-secondary: #bc58ad;
   --v2--color-tertiary: #50dcc2;
-  --v2--color-accent: #1d2221;
+  --v2--color-accent: #032B1C;
   --v2--color-text: #B0B0B0;
   --v2--color-text-alt: #D9D9D9;
   --v2--color-text-faded: #3e3e3e;
@@ -1211,12 +1211,7 @@ body:before {
   color: var(--v2--color-strong--on-primary);
 }
 .footer h2 {
-  font-size: calc(var(--v2--base-font-size) * 1.5);
-}
-@media (min-width: 48em) {
-  .footer h2 {
-    font-size: calc(var(--v2--base-font-size) * 1.75);
-  }
+  font-size: calc(var(--v2--current-base-font-size) * 1.4);
 }
 @media (min-width: 64em) {
   .footer {
@@ -3870,7 +3865,7 @@ body:before {
   justify-content: left;
   align-items: center;
   flex-wrap: wrap;
-  margin: 6rem 0 10rem;
+  margin: 90px 0 120px;
   width: 100%;
 }
 @media (min-width: 26.25em) {
@@ -3881,60 +3876,25 @@ body:before {
 }
 
 .socials__title {
-  display: inline-block;
-  padding-right: 1rem;
-  margin-bottom: 0;
-  font-size: 2rem;
+  margin: 0;
+  font-size: calc(var(--v2--current-base-font-size) * 1.4);
 }
 
 .socials__link {
-  position: relative;
-  top: 3px;
-  display: inline-block;
-  height: 2rem;
-  font-size: 0;
+  height: 2.75rem;
+  width: 2.75rem;
+  gap: 8px;
 }
-.socials__link::before {
-  content: "";
-  position: absolute;
-  height: 2.375rem;
-  width: 2.375rem;
-  top: -3px;
-  left: -3px;
-  border: 3px solid transparent;
-  border-radius: 6px;
-  transition: border-color 250ms ease-in-out;
-}
-@media (forced-colors: active) {
-  .socials__link::before {
-    display: none;
-  }
-}
-.socials__link:not(:last-of-type) {
-  margin-right: 1rem;
-}
-.socials__link:first-of-type::before {
-  left: -4px;
-}
-.socials__link:focus-visible::before {
-  border-color: var(--color-interactive);
+.socials__link:focus-visible {
+  outline: 2px solid var(--v2--color-interactive);
+  outline-offset: -3px;
 }
 .socials__link > svg {
   height: 2rem;
   width: 2rem;
 }
-.socials__link > svg[aria-label*=Twitter] {
-  margin-top: 1px;
-  border-radius: 4px;
-  height: 1.875rem;
-  width: 1.875rem;
-  background-color: var(--color-interactive);
-}
-.socials__link > svg[aria-label*=Twitter] > path {
-  fill: var(--color-bg);
-}
 .socials__link > svg > path {
-  fill: var(--color-interactive);
+  fill: var(--v2--color-interactive);
 }
 
 body:before {
