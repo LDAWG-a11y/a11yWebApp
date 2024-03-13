@@ -43,7 +43,7 @@ We are planning to build out the Accessibility Passport on Make Things Accessibl
 - Supporting research in assistive technology and accessibility.
 - Charter mark and accreditation like an accessibility alternative to the existing [Cyber Essentials](https://www.ncsc.gov.uk/cyberessentials/overview) framework agreements for cyber security.
  
-To keep up to date join our email list [accessibility-passport@jiscmail.ac.uk](mailto:accessibility-passport@jiscmail.ac.uk) by visiting JISCMail and clicking on the ‘Subscribe’ link.
+To keep up to date join our email list [Accessibility Passport JISC Sign up](https://www.jiscmail.ac.uk/cgi-bin/wa-jisc.exe?A0=ACCESSIBILITY-PASSPORT) by visiting JISCMail and clicking on the ‘Subscribe’ link.
 
 <div class="supporters__wrapper ap__page">
   <a class="supporters__link" href="https://www.westminster.ac.uk/"><img src="/guideImg/UoW _logo.png" height="138" width="575" alt="University of Westminster">
