@@ -148,26 +148,6 @@
     }
   }
 
-  kbd {
-    margin: 0 2px;
-    border: 2px solid var(--color-inactive);
-    border-radius: 2px;
-    padding: 1px 3px;
-    font-size: 92.5%;
-    font-weight: 600;
-    box-shadow: 2px 2px 0px 1px rgba(0,0,0,0.5);
-
-    @media (prefers-color-scheme: dark) {
-      border-color: var(--color-text);
-      box-shadow: 3px 2px 0px 1px rgba(255,255,255,0.5);
-    }
-
-    [data-pref--theme="dark"] & {
-      border-color: var(--color-text);
-      box-shadow: 3px 2px 0px 1px rgba(255,255,255,0.5);
-    }
-  }
-
   .cms__anchor-wrapper {
     display: grid;
     grid-template-columns: minmax(auto, max-content) min-content;
