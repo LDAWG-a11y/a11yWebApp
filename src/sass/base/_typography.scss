@@ -132,6 +132,13 @@ input {
 
 kbd {
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+  margin: 0 2px;
+  border: 2px solid var(--v2--color-border--mid);
+  border-radius: 2px;
+  padding: 1px 3px;
+  font-size: 92.5%;
+  font-weight: 600;
+  box-shadow: 2px 2px 0px 1px rgba(101, 101, 101, 0.588);
 }
 
 h1,

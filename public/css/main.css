@@ -881,6 +881,13 @@ dialog {
 
 kbd {
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+  margin: 0 2px;
+  border: 2px solid var(--v2--color-border--mid);
+  border-radius: 2px;
+  padding: 1px 3px;
+  font-size: 92.5%;
+  font-weight: 600;
+  box-shadow: 2px 2px 0px 1px rgba(101, 101, 101, 0.588);
 }
 
 h1,
@@ -5186,25 +5193,6 @@ body:before {
 .cms dl > dd {
   flex-basis: 70%;
 }
-.cms kbd {
-  margin: 0 2px;
-  border: 2px solid var(--color-inactive);
-  border-radius: 2px;
-  padding: 1px 3px;
-  font-size: 92.5%;
-  font-weight: 600;
-  box-shadow: 2px 2px 0px 1px rgba(0, 0, 0, 0.5);
-}
-@media (prefers-color-scheme: dark) {
-  .cms kbd {
-    border-color: var(--color-text);
-    box-shadow: 3px 2px 0px 1px rgba(255, 255, 255, 0.5);
-  }
-}
-[data-pref--theme=dark] .cms kbd {
-  border-color: var(--color-text);
-  box-shadow: 3px 2px 0px 1px rgba(255, 255, 255, 0.5);
-}
 .cms .cms__anchor-wrapper {
   display: grid;
   grid-template-columns: minmax(auto, max-content) min-content;
@@ -5548,8 +5536,8 @@ body:before {
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-bottom: 3rem;
-  padding: 0.75rem;
+  margin-bottom: 32px;
+  padding: 8px;
 }
 .guide__info-panel > .tags {
   padding-top: 0;
@@ -5557,7 +5545,7 @@ body:before {
 }
 
 .guide__label {
-  padding-bottom: 0.5rem;
+  padding-bottom: 6px;
 }
 
 body:before {
