@@ -5553,7 +5553,6 @@ body:before {
 }
 .guide__info-panel > .tags {
   padding-top: 0;
-  background: var(--color-bg);
   justify-content: center;
 }
 
