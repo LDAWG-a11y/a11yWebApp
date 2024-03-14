@@ -189,7 +189,7 @@ Just a quick note before we get to the CodePen, this works as I intended here, b
 
 I have added a few extra bits of CSS here, I have also added the text of the `<h1>` into a `<span>` element, as I wanted a focus indicator to show a user where focus is. I am aware that if I click `<h1>` with a mouse, the focus indicator does display, which may not be desirable for everybody, but that's beyond the scope of this guide.
 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="WNLobNR" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<p class="codepen" data-height="300" data-preview="true" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="WNLobNR" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/WNLobNR">
   Skip link example</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
@@ -223,7 +223,7 @@ This method is more common than the one I have just explained and this essential
 
 Using similar CSS for the page and `<h1>` as the previous example, our Skip Link works exactly the same, but this time it just instantly appears, as can ve viewed in the following CodePen:
 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="VwqmYbw" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<p class="codepen" data-height="300" data-preview="true" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="VwqmYbw" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/VwqmYbw">
   Skip link clip method</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>

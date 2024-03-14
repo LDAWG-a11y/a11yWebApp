@@ -79,6 +79,7 @@ module.exports = eleventyConfig => {
   });
 
   const mdAnchorOpts = {
+    
     level: [2],
     slugify: str =>
       slugify(str, {

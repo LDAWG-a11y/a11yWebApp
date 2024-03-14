@@ -590,7 +590,7 @@ I genuinely haven't taken much time to style these, I would of course do better 
 
 ## Codepen
 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="ExrRyJp" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<p class="codepen" data-height="300" data-preview="true" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="ExrRyJp" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/ExrRyJp">
   Responsive Accessible Tabs</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>

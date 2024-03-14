@@ -99,7 +99,7 @@ The panel agreed that candidates were able to deliver more in depth answers whic
 
 Likewise, candidates overwhelmingly commented on how Westminster is clearly committed to EDI and compassionate employment, and that candidates would want to continue to explore ways to work with the university in future because of the positive experience they had as part of this process.
 
-## **Next steps**
+## Next steps
 
 * Following this trial, the AELD team will be making interview questions and recruitment pack standard practice for all interviews.
 * It is proposed that the wider Library and Archives team consider the use of a Recruitment Welcome Pack.

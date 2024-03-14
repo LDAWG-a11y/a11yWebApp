@@ -1,7 +1,6 @@
 @use '../vendors/mq';
 
 body {
-  padding: 0 $space-abs-sm;
   max-width: $site-width;
   background: var(--v2--color-bg);
 
@@ -31,10 +30,9 @@ body[modal-open] {
   z-index: 2;
 }
 
-// .main {
-//   padding: 0 $space-abs-sm $space-abs-bigger;
+.main {
 
-//   @include mq.mq($from:lg) {
-//     padding: 0 $space-abs-lg 0;
-//   }
-// }
+  @include mq.mq($until:md) {
+    padding: 0 $space-abs-sm;
+  }
+}
