@@ -47,7 +47,7 @@ collections:
       - { label: Email, name: "email", widget: "string", required: false }
       - { label: "LinkedIn", name: "linkedin", widget: "string", required: false, hint: "Please paste in your full LinkedIn URL" }
       - { label: "Tags", name: "tags", default: "contributors", widget: "hidden" }
-        label: "Website"
+      - label: 'Website'
         name: "website"
         widget: "list"
         required: false
