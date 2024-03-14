@@ -132,7 +132,7 @@
   position: relative;
   display: grid;
   margin: 0 $space-rel-xxs;
-  background-color: var(--v2--color-bg);
+  background-color: var(--v2--color-bg--light);
 
   > div {
     grid-row: 1 / span 2;

@@ -3,6 +3,7 @@
 <body {%- if aaa %} class="aaa-content" {% endif %}>
   {% include "_header.njk" %}
   <main class="main">
+    <h1 id="h1" class="main__title btm__gutter--largest" tabindex="-1">{{ title }}</h1>
     {%- if not aaa %}
     <div style="display: none;">
       {% include '../svg/tip.svg' %}
@@ -31,12 +32,10 @@
     </div>
     {% endif %}
     {% if toc %}
-    <nav class="cms__toc" aria-labelledby="toc-heading">
-      <details open>
-        <summary id="toc-heading">Table of contents</summary>
-        {{ content | toc | safe }}
-      </details>
-    </nav>
+      <nav class="toc__nav" aria-labelledby="acc-1">
+        <h2 class="accordion accordion--full">Table of contents</h2>
+        <div class="accordion__panel accordion__panel--full"><div>{{ content | toc | safe }}</div></div>
+      </nav>
     {% endif %}
     {% if isAAAStory %}
     {% include "_studentStoryIntro.njk" %}

@@ -165,6 +165,11 @@
     padding-top: $space-abs-lg;
     font-size: $small-paragraph-size;
 
+    @include mq.mq($until:sm) {
+     max-width: 80%;
+     margin: 0 auto;
+    }
+
     @include mq.mq($from:md) {
       font-size: $default-font-size;
     }
@@ -179,4 +184,8 @@
   @include mq.mq($from:md) {
     padding-top: $space-abs-xxxs;
   }
+}
+
+.colophon__link {
+  margin: 0 $space-abs-xxxs;
 }

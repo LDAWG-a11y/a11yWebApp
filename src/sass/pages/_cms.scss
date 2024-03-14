@@ -144,18 +144,19 @@
 
     h2 {
       display: inline;
-      max-width: calc(100% - 2.875rem);
+      max-inline-size: calc(100% - 2.875rem);
     }
 
     @include mq.mq($from:xl) {
-      position: relative;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
 
       .cms__anchor {
-        position: absolute;
-        left: -2.785rem;
+        margin-left: -2.875rem;
       }
     }
   }
+
 
   .cms__anchor {
     margin-top: 1.25em;

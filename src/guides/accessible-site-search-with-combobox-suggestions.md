@@ -452,7 +452,7 @@ Whether this is better than any of the examples we looked at for users is not so
 
 Here's a CodePen to test and tinker with:
 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="js,result" data-slug-hash="LYaZwro" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<p class="codepen" data-height="300" data-preview="true" data-theme-id="dark" data-default-tab="js,result" data-slug-hash="LYaZwro" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/LYaZwro">
   ARIA 1.2 combobox for links (experimental)</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
@@ -601,7 +601,7 @@ function displayError() {
 }
 ```
 
-* I removed the combobox role and associated properties from the <ul> and added role="dialog" and `aria-labelledby="sFilter"` to the parent container `.search__panel-container`
+* I removed the combobox role and associated properties from the `<ul>` and added role="dialog" and `aria-labelledby="sFilter"` to the parent container `.search__panel-container`
 * I removed the presentation role from the list items, our list is now exposed as a list
 * I removed `role="option"` from the links, so now they are exposed as actual links
 * All references to `aria-selected` have been replaced with a data attribute, `data-selected` as we cannot have `aria-selected` on elements with a link role and as we are using "pretend focus" for the suggestions, we needed a class or attribute to hook on to, to add a focus indicator
@@ -615,7 +615,7 @@ Please do test with users before following this approach, I can't see why it wou
 
 Here's the CodePen:
 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="js,result" data-slug-hash="JjzKgmV" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<p class="codepen" data-height="300" data-theme-id="dark" data-preview="true" data-default-tab="js,result" data-slug-hash="JjzKgmV" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/JjzKgmV">
   ARIA 1.2 combobox for links with dialog (experimental)</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
@@ -764,7 +764,7 @@ function displayError() {
 
 Here's the CodePen:
 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="js,result" data-slug-hash="YzgWmgX" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<p class="codepen" data-height="300" data-preview="true" data-theme-id="dark" data-default-tab="js,result" data-slug-hash="YzgWmgX" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/YzgWmgX">
   Search filter for nav links no combobox role (experimental)</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>

@@ -546,7 +546,7 @@ I haven't tested this in all browsers, I used Chrome, Firefox and Safari on a Ma
 
 Obviously I can't not show the result, so here's the CodePen:
 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="BavpWYz" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<p class="codepen" data-height="300" data-preview="true" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="BavpWYz" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/BavpWYz">
   uniStat widget</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>

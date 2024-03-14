@@ -1,7 +1,13 @@
+@use '../vendors/mq';
+
 .pagination {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include mq.mq($until:lg) {
+    margin-bottom: $space-abs-biggest;
+  }
  }
 
  .pagination__heading {

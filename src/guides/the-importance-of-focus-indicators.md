@@ -80,7 +80,7 @@ Browsers do add their own focus indicator for interactive elements, which is par
 
 I've made a basic CodePen, each has three links and each link is on a different coloured background. The link text passes against its background for all three links as it is higher than the 4.5:1 minimum for text of the size I used. I have not modified the focus styles in any way and the aim is to view the CodePen in each browser. For the purposes of this, I will just remain on the same device (MacOS) and I will use Safari, Chrome, Firefox and Edge, there are of course other browsers and operating systems that could also help us understand the problem further:
 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="dyQMooX" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<p class="codepen" data-height="300" data-preview="true" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="dyQMooX" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/dyQMooX">
   Untitled</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
@@ -314,7 +314,7 @@ The effect we are going to go for here is on a standard input and when it receiv
 
 So, as a compromise, maybe suggesting something like the following could work?
 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="mdQEEEL" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<p class="codepen" data-height="300" data-preview="true" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="mdQEEEL" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/mdQEEEL">
   Untitled</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
