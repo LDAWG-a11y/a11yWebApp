@@ -19,11 +19,16 @@
   transition: transform 250ms ease-in;
 
   @include mq.mq($from:md) {
+    top: -$space-abs-lg;
     left: 4.5rem;
   }
 
   @include mq.mq($from:lg) {
-    top: -$space-abs-xl; 
+    top: -$space-abs-xxl; 
+  }
+
+  @include mq.mq($from:xl) {
+    top: -$space-abs-xxxxl; 
   }
 }
 

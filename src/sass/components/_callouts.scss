@@ -5,22 +5,22 @@
 .callout__warn {
   display: flex;
   width: auto;
-  max-width: 55rem;
+  max-width: 57.5rem;
   border-radius: $radius-md;
-  margin: $space-abs-xxxxl 0 $space-abs-xxxl $space-abs-md;
-  padding: $space-abs-xl $space-abs-md $space-abs-md;
+  margin: $space-abs-xxxxl 0;
+  padding: $space-abs-xxxl $space-abs-md $space-abs-md;
   color: var(--v2--color-text);
   background-color: var(--v2--color-bg--light);
   box-shadow: var(--v2--shadow);
 
   @include mq.mq($from:md) {
-    margin-left: $space-abs-md;;
+    margin: $space-abs-xxxxl $space-abs-md;
   }
 
   @include mq.mq($from:lg) {
-    margin-left: 0;
+    margin: $space-abs-xxxxl 0;
     border-radius: $radius-xl;
-    padding: $space-abs-xl $space-abs-md $space-abs-md;
+    padding: $space-abs-xxxl $space-abs-lg $space-abs-lg;
   }
 }
 
@@ -53,11 +53,15 @@
   
   svg {
     position: absolute;
-    top: -2rem;
-    left: -1.375rem;
+    top: -2.625rem;
+    left: -.375rem;
     box-sizing: content-box;
     border-radius: $radius-pill;
     transform: scale(1.5);
     z-index: 2;
+    
+    @include mq.mq($from:md) {
+      left: -1.375rem;
+    }
   }
 }

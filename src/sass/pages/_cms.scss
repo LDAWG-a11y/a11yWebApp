@@ -36,8 +36,7 @@
   }
     
   picture,
-  img,
-  pre {
+  img {
     margin-bottom: $space-rel-xxxl;
   }
 
@@ -87,14 +86,6 @@
         margin-bottom: $space-rel-xxs;
       }
     }
-  }
-
-  p {
-    // margin-bottom: $space-rel-md;
-
-    // @include mq.mq($from:md) {
-    //   margin-bottom: $space-rel-lg;
-    // }
   }
 
   table {
@@ -149,52 +140,49 @@
   }
 
   .cms__anchor-wrapper {
-    display: grid;
-    grid-template-columns: minmax(auto, max-content) min-content;
-    align-items: stretch;
-    gap: 0.5rem;
+    display: flex;
+
+    h2 {
+      display: inline;
+      max-width: calc(100% - 2.875rem);
+    }
+
+    @include mq.mq($from:xl) {
+      position: relative;
+
+      .cms__anchor {
+        position: absolute;
+        left: -2.785rem;
+      }
+    }
   }
 
   .cms__anchor {
-    position: relative;
-    bottom: 0;
-    display: inline-block;
-    height: 2rem;
-    width: 2rem;
-    transform: translateY(50%);
-
-    &::before {
-      box-sizing: content-box;
-      content: "";
-      position: absolute;
-      left: -2px;
-      top: -2px;
-      height: 2rem;
-      width: 2rem;
-      border: 2px solid transparent;
-      border-radius: $radius-pill;
-      background-color: var(--color-bg);
-      transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
-    }
+    margin-top: 1.25em;
+    height: 2.75rem;
+    width: 2.75rem;
+    transition: background-color 300ms ease-in;
     
     svg {
-      fill: var(--color-interactive);
+      fill: var(--v2--color-interactive);
       transform: rotate(-45deg);
-      bottom: 0;
-      transition: fill 250ms ease-in-out;
+      transition: fill 300ms ease-in;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--v2--color-interactive);
     }
 
     &:hover,
     &:focus-visible {
-
-      &::before {
-        background-color: var(--color-interactive);
-        border-color: var(--color-interactive);
-      }
-
+      background-color: var(--v2--color-interactive);
       svg {
         fill: var(--color-bg);
       }
+    }
+
+    @include mq.mq($from:md) {
+      margin-top: 1em;
     }
   }
 

@@ -17,6 +17,7 @@
   background-color: var(--v2--color-primary--darker);
 
   @include mq.mq($from:md) {
+    border-radius: 0 0 $space-abs-md $space-abs-md;
     padding: $space-abs-xxxl $space-abs-xl $space-abs-xxl;
   }
 
@@ -32,6 +33,7 @@
   padding: $space-abs-xl $space-abs-sm $space-abs-sm;
 
   @include mq.mq($from:md) {
+    border-radius: $space-abs-md $space-abs-md 0 0;
     padding: $space-abs-xxxl $space-abs-xl $space-abs-xl;
   }
 

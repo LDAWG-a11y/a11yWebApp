@@ -73,7 +73,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addShortcode('image', imageShortcode);
 
   const linkAfterHeader = markdownItAnchor.permalink.linkAfterHeader({
-    class: 'cms__anchor',
+    class: 'cms__anchor flex--middle',
     symbol: `<svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="4 14 40 20"><path d="M22.5 34H14q-4.2 0-7-3t-3-7q0-4.2 3-7t7-3h8.5v3H14q-2.9 0-5 2-2 2.1-2 5t2 5q2.1 2 5 2h8.5Zm-6.3-8.5v-3h15.6v3Zm9.3 8.5v-3H34q2.9 0 5-2 2-2.1 2-5t-2-5q-2.1-2-5-2h-8.5v-3H34q4.2 0 7 3t3 7q0 4.2-3 7t-7 3Z"></path></svg>`,
     style: 'aria-labelledby',
   });

@@ -1,15 +1,20 @@
 @use '../vendors/mq';
 
 body {
+  padding: 0 $space-abs-sm;
   max-width: $site-width;
   background: var(--v2--color-bg);
 
   @include mq.mq($from:md) {
-    padding: $space-abs-md;
+    padding: $space-abs-lg;
   }
 
   @include mq.mq($from:lg) {
-    padding: $space-abs-xl;
+    padding: $space-abs-xxl;
+  }
+
+  @include mq.mq($from:xl) {
+    padding: $space-abs-xxxxl $space-abs-big;
   }
 
   &.extra-width {
@@ -26,10 +31,10 @@ body[modal-open] {
   z-index: 2;
 }
 
-.main {
-  padding: 0 $space-abs-sm $space-abs-bigger;
+// .main {
+//   padding: 0 $space-abs-sm $space-abs-bigger;
 
-  @include mq.mq($from:lg) {
-    padding: 0 $space-abs-lg 0;
-  }
-}
+//   @include mq.mq($from:lg) {
+//     padding: 0 $space-abs-lg 0;
+//   }
+// }

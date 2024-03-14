@@ -11,11 +11,11 @@ codeBlocks.forEach((block, idx) => {
   let language = block.getAttribute('class').split('-');
   if (language) {
     let label = `${language[1] == 'javascript' ? language[1] = 'JavaScript' : language[1].toUpperCase()}`;
-    block.insertAdjacentHTML('beforebegin', `<section class="code__wrapper" aria-labelledby="cb${idx + 1}"><div class="code__header">
-    <span id="cb${idx + 1}" class="visually-hidden">Code block ${idx + 1}, ${label}</span></div></section>`);
+    block.insertAdjacentHTML('beforebegin', `<div class="code__wrapper"><section class="code__region" aria-labelledby="cb${idx + 1}"><div class="code__header">
+    <span id="cb${idx + 1}" class="visually-hidden">Code block ${idx + 1}, ${label}</span></div></section></div>`);
     
     let header = block.previousElementSibling.querySelector('.code__header');
-    block.previousElementSibling.appendChild(block);
+    block.previousElementSibling.querySelector('.code__region').appendChild(block)
     if (navigator.clipboard) {
       block.classList.add('code--with-copy');
       header.insertAdjacentHTML('afterbegin', `<output class="copy__announcement flex--middle"></output><button class="code__copy-btn btn btn--default">Copy ${label}</button>`);
@@ -32,9 +32,9 @@ document.querySelectorAll('.code__copy-btn').forEach(btn => {
 });  
 
 async function copySnippet(btn) {
-  let output = btn.closest('section').querySelector('.copy__announcement');
+  let output = btn.closest('.code__header').querySelector('.copy__announcement');
   output.innerText = '';
-  const code = btn.parentElement.nextElementSibling.querySelector('code');
+  const code = btn.closest('.code__wrapper').querySelector('code');
   let text = code.innerText;
   await navigator.clipboard.writeText(text);
   output.innerText = 'Copied to clipboard';
@@ -42,6 +42,16 @@ async function copySnippet(btn) {
   setTimeout(() => {
     output.innerText = '';
   }, 5000);
+}
+
+const addTabStopToCodeBlock = () => { 
+  document.querySelectorAll('.code__region').forEach(region => {
+    if (region.scrollWidth > region.getBoundingClientRect().width) {
+      region.setAttribute('tabindex', '0');
+    } else {
+      region.removeAttribute('tabindex');
+    }
+  })
 }
 
 const toggleTabStopOnTable = () => {
@@ -68,6 +78,11 @@ const toggleTabStopOnTable = () => {
   });
 };
 
+// TODO: Tidy this and reuse functionality for both
 window.addEventListener('resize', toggleTabStopOnTable);
+window.addEventListener('resize', addTabStopToCodeBlock);
 window.onresize = toggleTabStopOnTable;
+window.onresize = addTabStopToCodeBlock;
 toggleTabStopOnTable();
+addTabStopToCodeBlock();
+

@@ -1,41 +1,18 @@
 @use '../vendors/mq';
 
 .code__wrapper {
-  margin: $space-abs-xxxxl 0 $space-abs-xxxl $space-abs-md;
+  position: relative;
+  margin: $space-abs-xxxxl 0;
   border: 1px solid var(--v2--color-border--light);
-  border-top: none;
   border-radius: $radius-md;
   width: 100%;
   font-size: var(--v2--current-small-font-size);
   background: var(--v2--color-bg--light);
   box-shadow: var(--v2--shadow);
 
-  @include mq.mq($from:md) {
-    margin-left: $space-abs-md;;
+  section {
+    overflow: auto;
   }
-
-  @include mq.mq($from:lg) {
-    margin-left: 0;
-    border-radius: $radius-xl;
-  }
-}
-
-pre[class][class*="language-"] {
-  padding: 0 $space-abs-sm $space-abs-sm;
-
-  @include mq.mq($from:md) {
-    padding: 0 $space-abs-md $space-abs-md;
-  }
-}
-
-.code__header {
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: $space-abs-md;
-  margin-bottom: $space-abs-md;
-  padding: $space-abs-sm;
 
   &::before,
   &::after {
@@ -45,7 +22,6 @@ pre[class][class*="language-"] {
 
   &::before {
     top: -1.25rem;
-    left: -1rem;
     background-color: var(--v2--color-secondary);
     border-radius: $radius-pill;
     height: 2.5rem;
@@ -54,13 +30,51 @@ pre[class][class*="language-"] {
 
   &::after {
     top: -1rem;
-    left: -.75rem;
+    left: .25rem;
     height: 2rem;
     width: 2rem;
     mask-image: url('/svg/code.svg');
     mask-repeat: no-repeat;
     background-color: var(--v2--color-text-alt);
   }
+
+  @include mq.mq($from:md) {
+    margin: $space-abs-xxxxl $space-abs-md;
+    width: auto;
+
+    &::before {
+      left: -1rem;
+    }
+
+    &::after {
+      left: -.75rem;
+    }
+  }
+
+  @include mq.mq($from:lg) {
+    margin: $space-abs-xxxxl 0;
+    width: auto;
+    border-radius: $radius-xl;
+  }
+}
+
+pre[class][class*="language-"] {
+  padding: 4.5rem $space-abs-sm $space-abs-sm;
+
+  @include mq.mq($from:md) {
+    padding: 4.5rem $space-abs-md $space-abs-md;
+  }
+}
+
+.code__header {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: $space-abs-md;
+  margin-bottom: $space-abs-md;
+  padding: $space-abs-sm $space-abs-md;
 }
 
 .copy__announcement {

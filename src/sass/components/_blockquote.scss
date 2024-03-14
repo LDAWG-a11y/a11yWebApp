@@ -3,24 +3,14 @@
 blockquote:not(.twitter-tweet) {
   position: relative;
   width: auto;
-  max-width: 55rem;
-  margin: $space-abs-xxxxl 0 $space-abs-xxxl $space-abs-md;
+  max-width: 57.5rem;
+  margin: $space-abs-xxxxl 0;
   border-bottom: 6px solid var(--v2--color-secondary);
   border-radius: $radius-md;
-  padding: $space-abs-xl $space-abs-md $space-abs-md;
+  padding: $space-abs-xxl $space-abs-md $space-abs-md;
   color: var(--v2--color-text);
   background-color: var(--v2--color-bg--light);
   box-shadow: var(--v2--shadow);
-
-  @include mq.mq($from:md) {
-    margin-left: $space-abs-md;;
-  }
-
-  @include mq.mq($from:lg) {
-    margin-left: 0;
-    border-radius: $radius-xl;
-    padding: $space-abs-xl $space-abs-lg $space-abs-lg;
-  }
 
   &::before,
   &::after {
@@ -30,22 +20,42 @@ blockquote:not(.twitter-tweet) {
   }
 
   &::before {
-    top: -1.125rem;
-    left: -1rem;
+    top: -1.25rem;
+    left: 0;
     height: 2.25rem;
     width: 2.25rem;
     background-color: var(--v2--color-secondary);
   }
 
   &::after {
-    top: -.875rem;
-    left: -.75rem;
+    top: -1rem;
+    left: .25rem;
     height: 1.75rem;
     width: 1.75rem;
     background-color: var(--v2--color-bg);
     mask-image: url('/svg/quotes.svg');
     mask-repeat: no-repeat;
     transform: rotate(180deg);
+  }
+
+  @include mq.mq($from:md) {
+    margin: $space-abs-xxxxl $space-abs-md;
+    width: calc(100% - $space-abs-xxl);
+
+    &::before {
+      left: -1rem;
+    }
+
+    &::after {
+      left: -.75rem;
+    }
+  }
+
+  @include mq.mq($from:lg) {
+    margin: $space-abs-xxxxl 0;
+    width: 100%;
+    border-radius: $radius-xl;
+    padding: $space-abs-xxl $space-abs-lg $space-abs-lg;
   }
 }
 

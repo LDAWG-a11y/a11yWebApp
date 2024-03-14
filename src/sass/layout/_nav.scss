@@ -6,11 +6,12 @@
   background: var(--v2--color-primary);
 
   @include mq.mq($from:md) {
+    border-radius: $radius-md;
     padding: 12px 16px;
   }
 
   @include mq.mq($from:lg) {
-    border-radius: $radius-md;
+    border-radius: $radius-lg;
   }
 }
 
