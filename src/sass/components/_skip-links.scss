@@ -19,6 +19,7 @@
   transition: transform 250ms ease-in;
 
   @include mq.mq($from:md) {
+    top: -$space-abs-lg;
     left: 4.5rem;
   }
 

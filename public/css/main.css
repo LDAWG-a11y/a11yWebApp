@@ -1226,6 +1226,7 @@ body:before {
 }
 @media (min-width: 48em) {
   .footer__bottom {
+    border-radius: 0 0 12px 12px;
     padding: 32px 20px 24px;
   }
 }
@@ -1243,6 +1244,7 @@ body:before {
 }
 @media (min-width: 48em) {
   .footer__contact-us {
+    border-radius: 12px 12px 0 0;
     padding: 32px 20px 20px;
   }
 }
@@ -1606,12 +1608,13 @@ body:before {
   }
 }
 body {
+  padding: 0 8px;
   max-width: 95rem;
   background: var(--v2--color-bg);
 }
 @media (min-width: 48em) {
   body {
-    padding: 12px;
+    padding: 16px;
   }
 }
 @media (min-width: 64em) {
@@ -1698,12 +1701,13 @@ body:before {
 }
 @media (min-width: 48em) {
   .nav {
+    border-radius: 6px;
     padding: 12px 16px;
   }
 }
 @media (min-width: 64em) {
   .nav {
-    border-radius: 6px;
+    border-radius: 8px;
   }
 }
 
@@ -2437,26 +2441,14 @@ body:before {
 blockquote:not(.twitter-tweet) {
   position: relative;
   width: auto;
-  max-width: 55rem;
-  margin: 40px 0 32px 12px;
+  max-width: 57.5rem;
+  margin: 40px 0;
   border-bottom: 6px solid var(--v2--color-secondary);
   border-radius: 6px;
-  padding: 20px 12px 12px;
+  padding: 24px 12px 12px;
   color: var(--v2--color-text);
   background-color: var(--v2--color-bg--light);
   box-shadow: var(--v2--shadow);
-}
-@media (min-width: 48em) {
-  blockquote:not(.twitter-tweet) {
-    margin-left: 12px;
-  }
-}
-@media (min-width: 64em) {
-  blockquote:not(.twitter-tweet) {
-    margin-left: 0;
-    border-radius: 10px;
-    padding: 20px 16px 16px;
-  }
 }
 blockquote:not(.twitter-tweet)::before, blockquote:not(.twitter-tweet)::after {
   content: "";
@@ -2464,21 +2456,41 @@ blockquote:not(.twitter-tweet)::before, blockquote:not(.twitter-tweet)::after {
   border-radius: 50%;
 }
 blockquote:not(.twitter-tweet)::before {
-  top: -1.125rem;
-  left: -1rem;
+  top: -1.25rem;
+  left: 0;
   height: 2.25rem;
   width: 2.25rem;
   background-color: var(--v2--color-secondary);
 }
 blockquote:not(.twitter-tweet)::after {
-  top: -0.875rem;
-  left: -0.75rem;
+  top: -1rem;
+  left: 0.25rem;
   height: 1.75rem;
   width: 1.75rem;
   background-color: var(--v2--color-bg);
   mask-image: url("/svg/quotes.svg");
   mask-repeat: no-repeat;
   transform: rotate(180deg);
+}
+@media (min-width: 48em) {
+  blockquote:not(.twitter-tweet) {
+    margin: 40px 12px;
+    width: calc(100% - 24px);
+  }
+  blockquote:not(.twitter-tweet)::before {
+    left: -1rem;
+  }
+  blockquote:not(.twitter-tweet)::after {
+    left: -0.75rem;
+  }
+}
+@media (min-width: 64em) {
+  blockquote:not(.twitter-tweet) {
+    margin: 40px 0;
+    width: 100%;
+    border-radius: 10px;
+    padding: 24px 16px 16px;
+  }
 }
 
 .btn {
@@ -2629,10 +2641,10 @@ body:before {
 .callout__warn {
   display: flex;
   width: auto;
-  max-width: 55rem;
+  max-width: 57.5rem;
   border-radius: 6px;
-  margin: 40px 0 32px 12px;
-  padding: 20px 12px 12px;
+  margin: 40px 0;
+  padding: 32px 12px 12px;
   color: var(--v2--color-text);
   background-color: var(--v2--color-bg--light);
   box-shadow: var(--v2--shadow);
@@ -2641,16 +2653,16 @@ body:before {
   .callout__tip,
   .callout__info,
   .callout__warn {
-    margin-left: 12px;
+    margin: 40px 12px;
   }
 }
 @media (min-width: 64em) {
   .callout__tip,
   .callout__info,
   .callout__warn {
-    margin-left: 0;
+    margin: 40px 0;
     border-radius: 10px;
-    padding: 20px 12px 12px;
+    padding: 32px 16px 16px;
   }
 }
 
@@ -2680,12 +2692,17 @@ body:before {
 }
 .callout__icon svg {
   position: absolute;
-  top: -2rem;
-  left: -1.375rem;
+  top: -2.625rem;
+  left: -0.375rem;
   box-sizing: content-box;
   border-radius: 50%;
   transform: scale(1.5);
   z-index: 2;
+}
+@media (min-width: 48em) {
+  .callout__icon svg {
+    left: -1.375rem;
+  }
 }
 
 body:before {
@@ -2978,9 +2995,8 @@ body:before {
 }
 .code__wrapper {
   position: relative;
-  margin: 40px 0 40px 6px;
+  margin: 40px 0;
   border: 1px solid var(--v2--color-border--light);
-  border-top: none;
   border-radius: 6px;
   width: 100%;
   font-size: var(--v2--current-small-font-size);
@@ -2996,7 +3012,6 @@ body:before {
 }
 .code__wrapper::before {
   top: -1.25rem;
-  left: -1rem;
   background-color: var(--v2--color-secondary);
   border-radius: 50%;
   height: 2.5rem;
@@ -3004,7 +3019,7 @@ body:before {
 }
 .code__wrapper::after {
   top: -1rem;
-  left: -0.75rem;
+  left: 0.25rem;
   height: 2rem;
   width: 2rem;
   mask-image: url("/svg/code.svg");
@@ -3013,12 +3028,20 @@ body:before {
 }
 @media (min-width: 48em) {
   .code__wrapper {
-    margin-left: 12px;
+    margin: 40px 12px;
+    width: auto;
+  }
+  .code__wrapper::before {
+    left: -1rem;
+  }
+  .code__wrapper::after {
+    left: -0.75rem;
   }
 }
 @media (min-width: 64em) {
   .code__wrapper {
-    margin-left: 0;
+    margin: 40px 0;
+    width: auto;
     border-radius: 10px;
   }
 }
@@ -3563,7 +3586,7 @@ body:before {
 }
 .panel {
   position: relative;
-  padding: 8px;
+  padding: 8px 6px;
   border-radius: 6px;
   background-color: var(--v2--color-bg--light);
   box-shadow: var(--v2--shadow);
@@ -3583,6 +3606,11 @@ body:before {
 }
 :root[data-pref--theme=light] .panel {
   border: none;
+}
+@media (min-width: 38.75em) {
+  .panel {
+    padding: 8px;
+  }
 }
 @media (min-width: 48em) {
   .panel {
@@ -3774,6 +3802,7 @@ body:before {
 }
 @media (min-width: 48em) {
   .skip-link {
+    top: -16px;
     left: 4.5rem;
   }
 }

@@ -2,9 +2,8 @@
 
 .code__wrapper {
   position: relative;
-  margin: $space-abs-xxxxl 0 $space-abs-xxxxl $space-abs-xs;
+  margin: $space-abs-xxxxl 0;
   border: 1px solid var(--v2--color-border--light);
-  border-top: none;
   border-radius: $radius-md;
   width: 100%;
   font-size: var(--v2--current-small-font-size);
@@ -23,7 +22,6 @@
 
   &::before {
     top: -1.25rem;
-    left: -1rem;
     background-color: var(--v2--color-secondary);
     border-radius: $radius-pill;
     height: 2.5rem;
@@ -32,7 +30,7 @@
 
   &::after {
     top: -1rem;
-    left: -.75rem;
+    left: .25rem;
     height: 2rem;
     width: 2rem;
     mask-image: url('/svg/code.svg');
@@ -41,11 +39,21 @@
   }
 
   @include mq.mq($from:md) {
-    margin-left: $space-abs-md;;
+    margin: $space-abs-xxxxl $space-abs-md;
+    width: auto;
+
+    &::before {
+      left: -1rem;
+    }
+
+    &::after {
+      left: -.75rem;
+    }
   }
 
   @include mq.mq($from:lg) {
-    margin-left: 0;
+    margin: $space-abs-xxxxl 0;
+    width: auto;
     border-radius: $radius-xl;
   }
 }

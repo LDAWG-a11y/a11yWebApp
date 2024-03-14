@@ -1,11 +1,12 @@
 @use '../vendors/mq';
 
 body {
+  padding: 0 $space-abs-sm;
   max-width: $site-width;
   background: var(--v2--color-bg);
 
   @include mq.mq($from:md) {
-    padding: $space-abs-md;
+    padding: $space-abs-lg;
   }
 
   @include mq.mq($from:lg) {
