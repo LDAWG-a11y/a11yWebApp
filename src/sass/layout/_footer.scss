@@ -2,6 +2,7 @@
 
 .footer {
   color: var(--v2--color-strong--on-primary);
+  margin-top: $space-abs-biggest;
 
   h2 {
     font-size: calc(var(--v2--current-base-font-size) * 1.4);
