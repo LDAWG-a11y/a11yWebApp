@@ -1,31 +1,3 @@
-@keyframes hide {
-  0% {
-    visibility: visible;
-  }
-
-  99% {
-    visibility: visible;
-  }
-
-  100% {
-    visibility: hidden;
-  }
-}
-
-@keyframes show {
-  0% {
-    visibility: hidden;
-  }
-
-  1% {
-    visibility: visible;
-  }
-
-  100% {
-    visibility: visible;
-  }
-}
-
 @keyframes down-rotate {
   0% {
     transform: translateY(0) rotate(0);
@@ -96,10 +68,6 @@
   }
 }
 
-@keyframes test {
- 
-}
-
 @keyframes underline-word {
   0% {
     width: 0;
@@ -107,6 +75,29 @@
 
   100% {
     width: 100%;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
   }
 }
 

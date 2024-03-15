@@ -176,6 +176,7 @@ document.addEventListener('keydown', (evt) => {
 })
 
 prefsModalBtn.addEventListener('click', () => {
+  settingsModal.removeAttribute('hidden');
   settingsModal.showModal();
 })
 
@@ -188,10 +189,11 @@ document.addEventListener('click', (evt) => {
 })
 
 const closeModal = () => {
-  settingsModal.classList.add('animating');
-
+  settingsModal.classList.add('closing');
+  
   setTimeout(() => {
-    settingsModal.classList.remove('animating');
+    settingsModal.classList.remove('closing');
+    settingsModal.setAttribute('hidden', '');
     settingsModal.close();
-  }, 750);
+  }, 800);
 }

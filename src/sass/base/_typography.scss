@@ -71,7 +71,7 @@ body {
   }
 
   &[data-pref--l-height="increased"] {
-    --v2--line-height: 2;
+    --v2--line-height: 2em;
   }
 
   &[data-pref--p-spacing="increased"] {
@@ -398,10 +398,11 @@ ul:not([class]) {
     &::before {
       content: "";
       position: absolute;
-      top: .5em;
-      left: -18px;
-      width: 6px;
-      height: 6px;
+      // top: .5em;
+      top: calc(var(--v2--line-height) / 2 - .5rem);
+      left: -20px;
+      width: .5rem;
+      height: .5rem;
       transform: rotate(-45deg) translateY(50%);
       background-color: var(--v2--color-secondary);
     }
