@@ -19,4 +19,5 @@ usesCMS: true
 <a href="https://www.ucl.ac.uk/" class="supporters__link"><img src="/aaaAssets/UCL_logo.png" alt="University of Central London"></a>
 
 <a href="https://www.barnsley.ac.uk/" class="supporters__link"><img src="/aaaAssets/bc-logo-lb-no-strap.png" alt="Barnsley College"></a>
-<a href="https://www.bradfordcollege.ac.uk/" class="supporters_link"><img src="/img/bradford-college.jpg" alt="Bradford College"></a>
+
+<a href="https://www.bradfordcollege.ac.uk/" class="supporters__link"><img src="/aaaAssets/bradford-college.jpg" alt="Bradford College"></a>
