@@ -11,7 +11,6 @@
   opacity: 0;
   box-shadow: var(--v2--shadow);
   background-color: var(--v2--color-bg);
-  overflow-y: hidden;
   transition: transform 600ms ease-in, opacity 600ms ease-in;
 
   &::backdrop {
@@ -73,16 +72,16 @@
   }
 }
 
-@starting-style {
-  .dialog[open] {
-    opacity: 0;
-    transform: scale(0);
+// @starting-style {
+//   .dialog[open] {
+//     opacity: 0;
+//     transform: scale(0);
 
-    &::backdrop {
-      opacity: 0;
-    }
-  }
-}
+//     &::backdrop {
+//       opacity: 0;
+//     }
+//   }
+// }
 
 .dialog__header,
 .dialog__footer {

@@ -5,9 +5,15 @@ const prefsModalBtn = document.querySelector('#prefsBtn');
 const accordions = document.querySelectorAll('.accordion');
 const navBtn = document.querySelector('#navBtn');
 const collabBtn = document.querySelector('#collabBtn');
+const expandAll = document.querySelector('.faqs__toggle--expand-all');
+const collapseAll = document.querySelector('.faqs__toggle--collapse-all');
+const accsContainer = document.querySelector('.faqs__container');
 
-const toggleBool = (el, attr) => {
-  el.getAttribute(attr) === 'false' ? el.setAttribute(attr, 'true') : el.setAttribute(attr, 'false');
+const toggleBool = (el, attr, state) => {
+  if (!state) {
+    el.getAttribute(attr) === 'false' ? state = 'true' : state = 'false';
+  }
+  el.getAttribute(attr) === 'false' ? el.setAttribute(attr, state) : el.setAttribute(attr, state);
 }
 
 accordions.forEach((accordion, idx) => {
@@ -46,6 +52,46 @@ accordions.forEach(accordion => {
     accPanel.previousElementSibling.classList.add('accordion--multiple');
   }
 });
+
+if (accsContainer) {
+  const FAQsAccordions = accsContainer.querySelectorAll('.accordion');
+  accsContainer.addEventListener('click', (evt) => {
+    let newState;
+    if (evt.target.hasAttribute('aria-pressed')) {
+      if (evt.target === expandAll) {
+        newState = 'true';
+        expandAll.setAttribute('aria-pressed', 'true');
+        collapseAll.setAttribute('aria-pressed', 'false');
+      } else if (evt.target === collapseAll) {
+        newState = 'false';
+        collapseAll.setAttribute('aria-pressed', 'true');
+        expandAll.setAttribute('aria-pressed', 'false');
+      }
+    
+      FAQsAccordions.forEach(accordion => {
+        toggleBool(accordion, 'data-open', newState);
+        toggleBool(accordion.firstElementChild, 'aria-expanded', newState);
+      })
+    }
+
+    if (evt.target.classList.contains('accordion__btn')) {
+      let expandedAccs = accsContainer.querySelectorAll('.accordion__btn[aria-expanded="true"]');
+      if (expandedAccs.length && expandedAccs.length < FAQsAccordions.length) {
+        expandAll.setAttribute('aria-pressed', 'mixed');
+        collapseAll.setAttribute('aria-pressed', 'mixed');
+      } else if (!expandedAccs.length) {
+        collapseAll.setAttribute('aria-pressed', 'true');
+        expandAll.setAttribute('aria-pressed', 'false');
+      } else if (expandedAccs.length && expandedAccs.length === FAQsAccordions.length) {
+        expandAll.setAttribute('aria-pressed', 'true');
+        collapseAll.setAttribute('aria-pressed', 'false');
+      } else {
+        expandAll.setAttribute('aria-pressed', 'false');
+        collapseAll.setAttribute('aria-pressed', 'false');
+      }
+    }
+  })
+}
 
 prefsBtns.forEach(btn => {
   btn.addEventListener('click', () => {

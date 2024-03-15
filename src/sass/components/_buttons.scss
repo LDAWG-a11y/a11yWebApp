@@ -20,6 +20,7 @@
 }
 
 .btn--default {
+  position: relative;
   gap: $space-abs-sm;
   border: 2px solid var(--v2--color-interactive);
   background-color: var(--v2--color-interactive);
@@ -29,6 +30,7 @@
     gap: $space-abs-sm;
 
     span {
+      position: relative;
       border: 2px solid var(--v2--color-bg);
       border-radius: $radius-pill;
       height: var(--v2--current-base-font-size);
@@ -37,30 +39,54 @@
 
       &::before {
         content: "";
-        transition: border-color 300ms ease-in color 300ms ease-in;
-        color: inherit;
+        position: absolute;
+        transition: border-color 300ms ease-in;
       }
     }
   }
 
   &[aria-pressed="true"] {
     span::before {
-    content: "\2713";
-    font-size: calc(var(--v2--current-small-font-size) - .125rem);
-    font-weight: 300;
+      top: calc(50% - .0625rem);
+      right: 50%;
+      height: .8125rem;
+      width: .35rem;
+      border-bottom: 3px solid var(--v2--color-bg);
+      border-right: 3px solid var(--v2--color-bg);
+      transform: rotate(45deg) translate(-50%, -50%);
     }
   }
 
   &[aria-pressed="false"] {
+    span::before,
+    span::after {
+      top: 50%;
+      left: 50%;
+      height: 0; 
+      width: .75rem;
+      border-bottom: solid 3px var(--v2--color-bg);
+      transform-origin: center;
+    }
+
     span::before {
-      content: "\00d7";
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    span::after {
+      content: "";
+      position: absolute;
+      transition: border-color 300ms ease-in;
+      transform: translate(-50%, -50%) rotate(-45deg);
     }
   }
 
   &[aria-pressed="mixed"] {
     span::before {
-      content: "";
-     
+      top: 50%;
+      left: 50%;
+      width: .75rem;
+      border-bottom: 3px solid var(--v2--color-bg);   
+      transform: translate(-50%, -50%);  
     }
   }
 
@@ -72,8 +98,10 @@
     span {
       border-color: var(--v2--color-interactive);
 
-      &::before {
+      &::before,
+      &::after {
         color: var(--v2--color-interactive);
+        border-color: var(--v2--color-interactive);
       }
     }
   }

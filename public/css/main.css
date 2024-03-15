@@ -1210,6 +1210,7 @@ body:before {
 }
 .footer {
   color: var(--v2--color-strong--on-primary);
+  margin-top: 120px;
 }
 .footer h2 {
   font-size: calc(var(--v2--current-base-font-size) * 1.4);
@@ -2529,6 +2530,7 @@ blockquote:not(.twitter-tweet)::after {
 }
 
 .btn--default {
+  position: relative;
   gap: 8px;
   border: 2px solid var(--v2--color-interactive);
   background-color: var(--v2--color-interactive);
@@ -2538,6 +2540,7 @@ blockquote:not(.twitter-tweet)::after {
   gap: 8px;
 }
 .btn--default[aria-pressed] span {
+  position: relative;
   border: 2px solid var(--v2--color-bg);
   border-radius: 50%;
   height: var(--v2--current-base-font-size);
@@ -2546,19 +2549,42 @@ blockquote:not(.twitter-tweet)::after {
 }
 .btn--default[aria-pressed] span::before {
   content: "";
-  transition: border-color 300ms ease-in color 300ms ease-in;
-  color: inherit;
+  position: absolute;
+  transition: border-color 300ms ease-in;
 }
 .btn--default[aria-pressed=true] span::before {
-  content: "✓";
-  font-size: calc(var(--v2--current-small-font-size) - 0.125rem);
-  font-weight: 300;
+  top: calc(50% - 0.0625rem);
+  right: 50%;
+  height: 0.8125rem;
+  width: 0.35rem;
+  border-bottom: 3px solid var(--v2--color-bg);
+  border-right: 3px solid var(--v2--color-bg);
+  transform: rotate(45deg) translate(-50%, -50%);
+}
+.btn--default[aria-pressed=false] span::before,
+.btn--default[aria-pressed=false] span::after {
+  top: 50%;
+  left: 50%;
+  height: 0;
+  width: 0.75rem;
+  border-bottom: solid 3px var(--v2--color-bg);
+  transform-origin: center;
 }
 .btn--default[aria-pressed=false] span::before {
-  content: "×";
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.btn--default[aria-pressed=false] span::after {
+  content: "";
+  position: absolute;
+  transition: border-color 300ms ease-in;
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 .btn--default[aria-pressed=mixed] span::before {
-  content: "";
+  top: 50%;
+  left: 50%;
+  width: 0.75rem;
+  border-bottom: 3px solid var(--v2--color-bg);
+  transform: translate(-50%, -50%);
 }
 .btn--default:focus-visible, .btn--default:hover {
   background-color: var(--v2--color-bg);
@@ -2567,8 +2593,9 @@ blockquote:not(.twitter-tweet)::after {
 .btn--default:focus-visible span, .btn--default:hover span {
   border-color: var(--v2--color-interactive);
 }
-.btn--default:focus-visible span::before, .btn--default:hover span::before {
+.btn--default:focus-visible span::before, .btn--default:focus-visible span::after, .btn--default:hover span::before, .btn--default:hover span::after {
   color: var(--v2--color-interactive);
+  border-color: var(--v2--color-interactive);
 }
 
 .btn--on-primary {
@@ -3162,7 +3189,6 @@ body:before {
   opacity: 0;
   box-shadow: var(--v2--shadow);
   background-color: var(--v2--color-bg);
-  overflow-y: hidden;
   transition: transform 600ms ease-in, opacity 600ms ease-in;
 }
 .dialog::backdrop {
@@ -3219,15 +3245,6 @@ body:before {
   transition: opacity 0.0001ms !important;
 }
 
-@starting-style {
-  .dialog[open] {
-    opacity: 0;
-    transform: scale(0);
-  }
-  .dialog[open]::backdrop {
-    opacity: 0;
-  }
-}
 .dialog__header,
 .dialog__footer {
   display: flex;
