@@ -2,5 +2,6 @@
   "layout": "guide.njk",
   "tags": "guides",
   "permalink": "/guides/{{ title | slugify }}/",
-  "usesCMS": true
+  "usesCMS": true,
+  "team": "mta"
 }
