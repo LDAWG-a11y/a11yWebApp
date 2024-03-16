@@ -1,49 +1,53 @@
 {% include "_head.njk" %}
 
-<body {%- if aaa %} class="aaa-content" {% endif %}>
-  {% include "_header.njk" %}
-  <main class="main">
-    <h1 id="h1" class="main__title btm__gutter--largest" tabindex="-1">{{ title }}</h1>
-    <div style="display: none;">
-      {% include '../svg/tip.svg' %}
-      {% include '../svg/info.svg' %}
-      {% include '../svg/warn.svg' %}
-    </div>
-    <div class="guide__info-panel">
-      <div class="guide__author">
-        {% set guideAuthor = collections.writers | getAuthor(author) %}
-        <strong>By: </strong>
-        <a href="/authors/{{ guideAuthor.key }}">{{ guideAuthor.name.first }} {{ guideAuthor.name.last }}</a>
+  <body>
+    {% include "_header.njk" %}
+    <main class="main">
+      <h1 id="h1" class="main__title btm__gutter--largest" tabindex="-1">{{ title }}</h1>
+      <div style="display: none;">
+        {% include '../svg/tip.svg' %}
+        {% include '../svg/info.svg' %}
+        {% include '../svg/warn.svg' %}
       </div>
-      <div class="guide__date">
-        <strong>Posted: </strong><time datetime="{{ date.toISOString() }}">{{ date | readableDate }}</time>
+      <div class="guide__info-panel">
+        <div class="guide__author">
+          {% set guideAuthor = collections.writers | getAuthor(author) %}
+          <strong>By: </strong>
+          <a href="/authors/{{ guideAuthor.key }}">{{ guideAuthor.name.first }} {{ guideAuthor.name.last }}</a>
+        </div>
+        <div class="guide__date">
+          <strong>Posted: </strong><time datetime="{{ date.toISOString() }}">{{ date | readableDate }}</time>
+        </div>
+        <strong class="guide__label">Tagged with: </strong>
+        {% set tagCount = tags | filterTagList | length %}
+        <{% if tagCount> 1 %}ul{% else %}div{% endif %} class="tags tags__all">
+          {%- for tag in tags | filterTagList %}
+          {% set tagUrl %}/tags/{{ tag | slug }}/{%- endset %}
+          <{% if tagCount> 1 %}li{% else %}span{% endif %} class="tag__item">
+            <a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a>
+          </{% if tagCount> 1 %}li{% else %}span{% endif %}>
+          {%- endfor %}
+        </{% if tagCount> 1 %}ul{% else %}div{% endif %} class="tags tags__all">
       </div>
-      <strong class="guide__label">Tagged with: </strong>
-      {% set tagCount = tags | filterTagList | length %}
-      <{% if tagCount> 1 %}ul{% else %}div{% endif %} class="tags tags__all">
-        {%- for tag in tags | filterTagList %}
-        {% set tagUrl %}/tags/{{ tag | slug }}/{%- endset %}
-        <{% if tagCount> 1 %}li{% else %}span{% endif %} class="tag__item">
-          <a href="{{ tagUrl | url }}" class="tag__link">{{ tag }}</a>
-        </{% if tagCount> 1 %}li{% else %}span{% endif %}>
-        {%- endfor %}
-      </{% if tagCount> 1 %}ul{% else %}div{% endif %} class="tags tags__all">
-    </div>
-    {% if toc %}
-      {% include "_toc.njk" %}
-    {% endif %}
-    <article class="cms">
-      {{ content | safe }}
-    </article>
-    {% include "_social-share.njk" %}
-    {% set author = guideAuthor %}
-    {% if (author != 'Admin') %}
-      {% include "_bio.njk" %}
-    {% endif %}
-  </main>
-  {% include "_footer.njk" %}
-  <script src="/js/main.js"></script>
-  <script src="/js/guide.js"></script>
-</body>
-
+      {% if toc %}
+        {% include "_toc.njk" %}
+      {% endif %}
+      <article class="cms">
+        {{ content | safe }}
+      </article>
+      {% include "_social-share.njk" %}
+      {% set author = guideAuthor %}
+      {% if (author != 'Admin') %}
+        {% include "_bio.njk" %}
+      {% endif %}
+    </main>
+    {% include "_footer.njk" %}
+    {% set js %}
+      {% include "site.js" %}
+      {%- if usesCMS %}
+        {% include "guide.js" %}
+      {% endif %}
+    {% endset %}
+    <script>{{ js | jsmin | safe }}</script>
+  </body>
 </html>

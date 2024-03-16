@@ -6,6 +6,7 @@ const htmlmin = require('html-minifier');
 const slugify = require('slugify');
 const pluginTOC = require('eleventy-plugin-toc');
 const path = require('path');
+const { minify } = require("terser");
 
 module.exports = eleventyConfig => {
   const { DateTime } = require('luxon');
@@ -14,7 +15,6 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.addWatchTarget('./src/sass');
   eleventyConfig.addPassthroughCopy('./src/css');
-  eleventyConfig.addPassthroughCopy('src/js');
   eleventyConfig.addPassthroughCopy('src/img');
   eleventyConfig.addPassthroughCopy('src/guideImg');
   eleventyConfig.addPassthroughCopy('src/profileImg');
@@ -203,6 +203,19 @@ module.exports = eleventyConfig => {
       return minified;
     }
     return content;
+  });
+
+  eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (
+    code,
+    callback
+  ) {
+    try {
+      const minified = await minify(code);
+      callback(null, minified.code);
+    } catch (err) {
+      console.error("Terser error: ", err);
+      callback(null, code);
+    }
   });
 
   return {

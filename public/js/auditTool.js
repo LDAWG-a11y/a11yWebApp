@@ -203,7 +203,7 @@ async function handleCopyEvent(evt) {
 
 document.querySelectorAll('.modal__close-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    closeModal();
+    closeToolModal();
   })
 
   btn.addEventListener('keydown', (evt) => {
@@ -225,17 +225,17 @@ document.querySelectorAll('.modal__close-btn').forEach(btn => {
 
 document.addEventListener('click', (evt) => {
   if (document.body.hasAttribute('modal-open') && !evt.target.closest('.modal'))  {
-    closeModal();
+    closeToolModal();
   }
 })
 
 document.addEventListener('keydown', (evt) => {
   if (document.body.hasAttribute('modal-open') && evt.key == 'Escape') {
-    closeModal();
+    closeToolModal();
   }
 })
 
-const closeModal = () => {
+const closeToolModal = () => {
   dataModal.setAttribute('data-displayed', 'false');
   document.body.removeAttribute('modal-open');
   setTimeout(() => {
