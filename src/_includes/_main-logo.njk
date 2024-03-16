@@ -1,0 +1,25 @@
+<picture class="header__logo flex--middle btm__gutter--largest">
+  {% set default = '' %}
+  {% set name = '' %}
+  {%- for teams in mainLogos %}
+    {%- if teams.id === team %}
+      {%- set name = teams.teamName %}
+      {% for logo in teams.logo %}
+        {% if logo.default %}
+          {% set default = logo %}
+        {% endif %}
+        <source media="(prefers-color-scheme: {{ logo.theme }})" srcset="{{ logo.src }}" data-main-logo>
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+  <img src="{{ default.src }}" height="{{ default.height }}" width="{{ default.width }}" alt="{{ name }}, logo">
+</picture>
+
+
+<!-- <picture class="header__logo flex--middle btm__gutter--largest">
+  <source media="(prefers-color-scheme: light)" srcset="/img/aaa-light-600.webp" height="136" width="600" data-main-logo>
+  <source media="(prefers-color-scheme: light)" srcset="/img/aaa-light-600.png" height="136" width="600" data-main-logo>
+  <source media="(prefers-color-scheme: dark)" srcset="/img/aaa-dark-600.webp" height="136" width="600" data-main-logo>
+  <source media="(prefers-color-scheme: dark)" srcset="/img/aaa-dark-600.png" height="136" width="600" data-main-logo>
+  
+</picture> -->

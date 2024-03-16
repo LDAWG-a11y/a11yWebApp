@@ -1,0 +1,28 @@
+{% include "_head.njk" %}
+
+<body>
+  <div style="display: none;">
+    {% include '../svg/tip.svg' %}
+    {% include '../svg/info.svg' %}
+    {% include '../svg/warn.svg' %}
+  </div>
+  {% include "_header.njk" %}
+  <main class="main">
+    <h1 id="h1" class="main__title btm__gutter--largest" tabindex="-1">{{ title }}</h1>
+    {% if toc %}
+      {% include "_toc.njk" %}
+    {% endif %}
+    {% if isAAAStory %}
+      {% include "_studentStoryIntro.njk" %}
+    {% endif %}
+    <article class="cms {%- if page.url === '/aaa/supporters/' %} image__wrapper flex--middle{% endif %}">
+      {{ content | safe }}
+    </article>
+    {% include "_social-share.njk" %}
+  </main>
+  {% include "_footer.njk" %}
+  <script src="/js/main.js"></script>
+  <script src="/js/guide.js"></script>
+</body>
+
+</html>

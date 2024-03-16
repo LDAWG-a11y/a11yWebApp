@@ -1,0 +1,64 @@
+[
+  {
+    "id": "mta",
+    "teamName": "Make Things Accessible",
+    "logo": [
+      {
+        "src": "/img/mta-light-sm.webp 360w, /img/mta-light.webp 600w",
+        "height": "136",
+        "width": "600",
+        "theme": "light"
+      },
+      {
+        "src": "/img/mta-light.png",
+        "height": "136",
+        "width": "600",
+        "theme": "light",
+        "default": true
+      },
+      {
+        "src": "/img/mta-dark-sm.webp 360w, /img/mta-dark.webp",
+        "height": "136",
+        "width": "600",
+        "theme": "dark"
+      },
+      {
+        "src": "/img/mta-dark.png",
+        "height": "136",
+        "width": "600",
+        "theme": "dark"
+      }
+    ]
+  },
+  {
+    "id": "aaa",
+    "teamName": "Access and Assistance for All",
+    "logo": [
+      {
+        "src": "/img/aaa-light-sm.webp 360w, /img/aaa-light.webp, 533w",
+        "height": "213",
+        "width": "533",
+        "theme": "light"
+      },
+      {
+        "src": "/img/aaa-light.png",
+        "height": "213",
+        "width": "533",
+        "theme": "light",
+        "default": true
+      },
+      {
+        "src": "/img/aaa-dark-sm.webp 360w, /img/aaa-dark.webp, 533w",
+        "height": "213",
+        "width": "533",
+        "theme": "dark"
+      },
+      {
+        "src": "/img/aaa-dark.png",
+        "height": "213",
+        "width": "533",
+        "theme": "dark"
+      }
+    ]
+  }
+]

@@ -18,6 +18,7 @@
 @import 'layout/nav';
 
 @import 'components/accordion';
+@import 'components/accordion-toggles';
 @import 'components/author_bio';
 
 @import 'components/blockquote';
@@ -27,6 +28,7 @@
 @import 'components/code-block';
 @import 'components/dialog';
 @import 'components/header-footer-links';
+@import 'components/image-wrapper';
 @import 'components/pagination';
 @import 'components/panel';
 @import 'components/search-filter';
@@ -38,7 +40,6 @@
 @import 'pages/aaa-pages';
 @import 'pages/auditTool';
 @import 'pages/cms';
-@import 'pages/faq';
 @import 'pages/glossary';
 @import 'pages/guide';
 @import 'pages/guides';

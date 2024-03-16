@@ -4,11 +4,12 @@ aaa: true
 summary: The Access and Assistance for All campaign aims to raise awareness
   across the UK education sector about providing accomodations and support for
   learners with disabilities
-layout: base.njk
+layout: collaborators.njk
 permalink: aaa/
 date: Last Modified
 title: Access and Assistance for All
 usesCMS: true
+team: aaa
 ---
 Access and Assistance for All (AAA) is a campaign that aims to increase access to assistive technology across further education colleges as well as raising awareness of how to make resources accessible by design so they are compatible with assistive technology. The British Youth Council's (BYC's) youth-led campaign group consists of 15 young regional champions from across England, along with our partners at University College of London (UCL) and the Kent and Medway Progression Federation (KMPF).
 
@@ -19,6 +20,8 @@ Although good practice of promoting assistive technology can be found in college
 ## Our ask to Further Education Colleges:
 
 Click on the following sections to expand them:
+<div class="accs__container">
+{% include "_accordion-toggles.njk" %}
 
 <h3 class="accordion">Work towards making learning resources accessible</h3>
 <div class="accordion__panel">
@@ -70,7 +73,7 @@ To promote comprehensive information about assistive technology and how to acces
 
 There are many forms of both physical and digital assistive technology that can aid students throughout their education, and these could potentially be of huge benefit to students, so should be promoted (even non-disabled people can benefit from assistive technology! Spellcheck, auto-complete and even basic organisational systems originated as assistive technology, and can be beneficial to all when implemented correctly). There are also sites, such as [My Computer My Way](https://mcmw.abilitynet.org.uk/), which can show you how to setup the many free digital accessibility solutions already available on most devices.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/r2yRs4DejyA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/r2yRs4DejyA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
 
 </div>
 </div>
@@ -94,16 +97,13 @@ To get access to the charter template and a range of resources to support your c
 
 To require all staff to look at the Access and Assistance for All webpages and read student stories, so that they can understand the importance of assistive technology and how it can benefit all students
   
-Participants in our campaign have shared stories of their experiences with using assistive technology, which provides brilliant examples of how it can benefit students and give a wider range of people equal access to education, and help level the playing field. We would advise staff members to read these, to understand the practical aspects of assistive technology.
-
-[See our student stories](/aaa/student-stories/)
+Participants in our campaign have shared stories of their experiences with using assistive technology, which provides brilliant examples of how it can benefit students and give a wider range of people equal access to education, and help level the playing field. We would advise staff members to read these, to understand the practical aspects of assistive technology, [see our student stories](/aaa/student-stories/).
 
 </div>
 </div>
+</div>
 
-We recognise how many demands there are on colleges and aim to make signing up to these pledges as simple as possible so we are creating resources to support the implementation of all of these pledges. In order to do this we have produced role-specific guidance:
-
-[See our role-specific guidance](/aaa/roles/)
+We recognise how many demands there are on colleges and aim to make signing up to these pledges as simple as possible so we are creating resources to support the implementation of all of these pledges. In order to do this we have produced role-specific guidance, [see our role-specific guidance](/aaa/roles/).
 
 ### In return for signing up to the pledges you will:
 

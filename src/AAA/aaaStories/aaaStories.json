@@ -1,6 +1,7 @@
 {
-  "layout": "guide.njk",
+  "layout": "collaborators.njk",
   "tags": "studentStoriesAAA",
   "permalink": "/aaa/stories/{{ title | slugify }}/",
-  "aaa": true
+  "usesCMS": true,
+  "team": "aaa"
 }

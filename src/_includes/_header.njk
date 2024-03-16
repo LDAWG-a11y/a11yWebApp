@@ -2,16 +2,9 @@
 <header class="header">
   <a class="skip-link" href="#h1">Skip navigation</a>
   {% include "_nav.njk" %}
+  {% include "_main-logo.njk" %}  
 
-  <picture class="header__logo flex--middle btm__gutter--largest">
-    <source media="(prefers-color-scheme: light)" srcset="/img/MTA-logo-light.webp" height="136" width="600" data-main-logo>
-    <source media="(prefers-color-scheme: light)" srcset="/img/MTA-logo-light.png" height="136" width="600" data-main-logo>
-    <source media="(prefers-color-scheme: dark)" srcset="/img/MTA-logo-dark.webp" height="136" width="600" data-main-logo>
-    <source media="(prefers-color-scheme: dark)" srcset="/img/MTA-logo-dark.png" height="136" width="600" data-main-logo>
-    <img src="/img/MTA-logo-light.png" height="136" width="600" alt="Make Things Accessible, logo">
-  </picture>
-
-  {%- if not aaa %}
+  {%- if team === 'mta' %}
     <div class="header__search-block btm__gutter--largest">
       <label id="sFilterLbl" for="sFilter" class="search__label">Search for Guides or Tags, by keyword</label>
       <div class="search__wrapper" data-expanded="false">
@@ -19,26 +12,5 @@
         {% include '../svg/magnifier.svg' %}
       </div>
     </div>
-  {%- endif %}
-
-  {%- if aaa %}
-    {%- if page.url !== "/aaa/" %}
-      <picture class="header__aaa-logo header__aaa-logo--light">
-        <img
-        sizes="(max-width: 220px) 100vw, 220px"
-        srcset="
-        /aaaAssets/aaa-light_vpjlfm_c_scale,w_360.png 360w"
-        src="/aaaAssets/aaa-light_vpjlfm_c_scale,w_360.png"
-        alt="Access and Assistance for All logo">
-      </picture>
-      <picture class="header__aaa-logo header__aaa-logo--dark">
-        <img
-        sizes="(max-width: 220px) 100vw, 220px"
-        srcset="
-        /aaaAssets/aaa-dark_lmf9it_c_scale,w_360.png 360w"
-        src="/aaaAssets/img/aaa-dark_lmf9it_c_scale,w_360.png"
-        alt="Access and Assistance for All logo">
-      </picture>
-    {%- endif  %}
   {%- endif %}
 </header>

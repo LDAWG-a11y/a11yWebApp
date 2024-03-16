@@ -3,11 +3,11 @@ aaa: true
 summary: Become one of Access and Assistance for All's supporters by signing up
   to our pledges to incorporate inclusive learning for all your learners,
   enabling everybody to reach their potential
-layout: base.njk
+layout: collaborators.njk
 permalink: aaa/supporters/
 date: Last Modified
 title: AAA - Our supporters
-aaaSupporters: true
+team: aaa
 usesCMS: true
 ---
 <a href="https://www.byc.org.uk/" class="supporters__link"><img src="/aaaAssets/byc.png" alt="British Youth Council"></a>

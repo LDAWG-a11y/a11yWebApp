@@ -5,7 +5,6 @@ summary: Ellie is a participant in the BYC's Access and Assistance for All
 date: 2023-05-17
 toc: false
 isAAAStory: true
-isGuide: true
 img: ./src/aaaAssets/ellie.png
 ---
 ![Ellie](src/aaaAssets/ellie.png)

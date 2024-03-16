@@ -6,7 +6,6 @@ date: 2023-05-17
 toc: false
 tags:
 isAAAStory: true
-isGuide: true
 img: ./src/aaaAssets/niamh.png
 ---
 ![Niamh](src/aaaAssets/niamh.png)

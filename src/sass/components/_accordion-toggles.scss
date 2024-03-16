@@ -1,0 +1,112 @@
+@use '../vendors/mq';
+
+
+.accs__container {
+  display: flex;
+  flex-direction: column;
+  gap: $space-abs-xxs;
+  align-items: center;
+
+  .accordion__panel:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .aaa-content & {
+    align-items: flex-start;
+  }
+
+   &:has(+ *) {
+      margin-bottom: $space-abs-xxxxl;
+  }
+}
+
+.accs__toggle-container {
+
+  .has-js & {
+    display: flex;
+    justify-content: flex-end;
+    gap: $space-abs-md;
+    margin-bottom: $space-abs-xs;
+    width: 100%;
+    max-width: 60rem;
+  }
+}
+
+.btn--default {
+  &[aria-pressed] {
+    gap: $space-abs-sm;
+
+    span {
+      position: relative;
+      border: 2px solid var(--v2--color-bg);
+      border-radius: $radius-pill;
+      height: 1.5rem;
+      width: 1.5rem;
+      transition: border-color 300ms ease-in;
+
+      &::before {
+        content: "";
+        position: absolute;
+        transition: border-color 300ms ease-in;
+      }
+    }
+  }
+
+  &[aria-pressed="true"] {
+    span::before {
+      top: calc(50% - .0625rem);
+      right: 50%;
+      height: calc(100% - 6px);
+      width: .35em;
+      border-bottom: 3px solid var(--v2--color-bg);
+      border-right: 3px solid var(--v2--color-bg);
+      transform: rotate(45deg) translate(-50%, -50%);
+    }
+  }
+
+  &[aria-pressed="false"] {
+    span::before,
+    span::after {
+      top: 50%;
+      left: 50%;
+      height: 0; 
+      width: calc(100% - 4px);
+      border-bottom: solid 3px var(--v2--color-bg);
+      transform-origin: center;
+    }
+
+    span::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    span::after {
+      content: "";
+      position: absolute;
+      transition: border-color 300ms ease-in;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  &[aria-pressed="mixed"] {
+    span::before {
+      top: 50%;
+      left: 50%;
+      width: calc(100% - 4px);
+      border-bottom: 3px solid var(--v2--color-bg);   
+      transform: translate(-50%, -50%);  
+    }
+  }
+
+  &:focus-visible,
+  &:hover {
+    span {
+      border-color: var(--v2--color-interactive);
+
+      &::before,
+      &::after {
+        color: var(--v2--color-interactive);
+        border-color: var(--v2--color-interactive);
+      }
+    }
+  }
+}

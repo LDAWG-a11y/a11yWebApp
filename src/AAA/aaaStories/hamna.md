@@ -5,7 +5,6 @@ summary: Hamna is a participant in the BYC's Access and Assistance for All
 date: 2023-05-17
 toc: false
 isAAAStory: true
-isGuide: true
 ---
 ## Could you tell us a little bit about your background?
 
