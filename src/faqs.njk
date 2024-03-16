@@ -3,6 +3,7 @@ date: Last Modified
 layout: base.njk
 title: Frequently Asked Questions
 summary: View our frequently asked questions, which provide helpful tips, advice and guidance on how to avoid or resolve common digital accessibility issues 
+team: mta
 pagination:
   data: collections.faqs
   filter: ['all', 'tagList', 'latest', 'guides', 'terms']
@@ -12,14 +13,11 @@ pagination:
 ---
 <div class="panel gutter-btm--major">
   <h2>Frequently asked accessibility questions</h2>
-  <p class="faqs__intro">Some questions come up often from people that are starting out to learn digital accessibility best practices, in fact, you don't necessarily have to be new to the field, as there's so much to learn and that willingness to continue learning makes digital media and websites much easier to use for everybody, especially people that rely on assistive technology to access digital content.</p>
-  <p class="faqs__intro">We've put together some of our FAQs here, it may be a useful place to start, especially if you're just starting out on this journey, if you are just starting out, welcome to the digital accessibility community.</p>
+  <p>Some questions come up often from people that are starting out to learn digital accessibility best practices, in fact, you don't necessarily have to be new to the field, as there's so much to learn and that willingness to continue learning makes digital media and websites much easier to use for everybody, especially people that rely on assistive technology to access digital content.</p>
+  <p>We've put together some of our FAQs here, it may be a useful place to start, especially if you're just starting out on this journey, if you are just starting out, welcome to the digital accessibility community.</p>
 </div>
-<div class="faqs__container">
-  <div class="faqs__toggle-container" hidden>
-    <button class="faqs__toggle--expand-all btn btn--default" aria-pressed="false">Expand all<span></span></button>
-    <button class="faqs__toggle--collapse-all btn btn--default" aria-pressed="false">Collapse all<span></span></button>
-  </div>
+<div class="accs__container">
+  {% include "_accordion-toggles.njk" %}
   {%- for faq in accordions %}
     {%- if faq.data.title %}
       <h3 class="accordion accordion--multiple">{{ faq.data.title }}</h3>

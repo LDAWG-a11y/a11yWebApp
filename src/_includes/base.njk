@@ -20,18 +20,9 @@
       {% endif %}
     </h1>
     {% if toc %}
-      <nav class="toc__nav" aria-labelledby="acc-1">
-        <h2 class="accordion accordion--full">Table of contents</h2>
-        <div class="accordion__panel accordion__panel--full"><div>{{ content | toc | safe }}</div></div>
-      </nav>
-    {% endif %}
-    {%- if aaaSupporters %}
-      <div class="supporters__wrapper">
+      {% include "_toc.njk" %}
     {% endif %}
     {{ content | safe }}
-    {%- if aaaSupporters %}
-      </div>
-    {% endif %}
   </main>
   {% include "_footer.njk" %}
   {%- if page.url == "/auditTool/" %}
@@ -67,9 +58,6 @@
     <script src="/js/auditTool.js"></script>
   {%- endif %}
   <script src="/js/main.js"></script>
-  {%- if aaa %}
-    <script src="/js/guide.js"></script>
-  {%- endif %}
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {

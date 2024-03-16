@@ -5,9 +5,9 @@ const prefsModalBtn = document.querySelector('#prefsBtn');
 const accordions = document.querySelectorAll('.accordion');
 const navBtn = document.querySelector('#navBtn');
 const collabBtn = document.querySelector('#collabBtn');
-const expandAll = document.querySelector('.faqs__toggle--expand-all');
-const collapseAll = document.querySelector('.faqs__toggle--collapse-all');
-const accsContainer = document.querySelector('.faqs__container');
+const expandAll = document.querySelector('.accs__toggle--expand-all');
+const collapseAll = document.querySelector('.accs__toggle--collapse-all');
+const accsContainer = document.querySelector('.accs__container');
 
 const toggleBool = (el, attr, state) => {
   if (!state) {
@@ -19,14 +19,19 @@ const toggleBool = (el, attr, state) => {
 accordions.forEach((accordion, idx) => {
   const accTitle = accordion.innerText;
   const accPanel = accordion.nextElementSibling;
+  let initialState = 'false'
+  if (accordion.closest('[data-pre-expanded]')) {
+    console.log( 'hit' );
+    initialState = 'true'
+  }
   accordion.setAttribute('data-no-accent', '');
   accPanel.id = `accPanel-${idx + 1}`;
   accordion.innerHTML = `<button class="accordion__btn" id="acc-${idx + 1}"
   aria-controls="accPanel-${idx + 1}"
-  aria-expanded="false">${accTitle}</button>`;
+  aria-expanded="${initialState}">${accTitle}</button>`;
 
   let accBtn = accordion.firstElementChild;
-  accordion.setAttribute('data-open', false);
+  accordion.setAttribute('data-open', `${initialState}`);
 
   accBtn.addEventListener('click', () => {
     toggleBool(accBtn, 'aria-expanded');
@@ -54,7 +59,8 @@ accordions.forEach(accordion => {
 });
 
 if (accsContainer) {
-  const FAQsAccordions = accsContainer.querySelectorAll('.accordion');
+  const multiAccordions = accsContainer.querySelectorAll('.accordion');
+  collapseAll.setAttribute('aria-pressed', 'true');
   accsContainer.addEventListener('click', (evt) => {
     let newState;
     if (evt.target.hasAttribute('aria-pressed')) {
@@ -68,7 +74,7 @@ if (accsContainer) {
         expandAll.setAttribute('aria-pressed', 'false');
       }
     
-      FAQsAccordions.forEach(accordion => {
+      multiAccordions.forEach(accordion => {
         toggleBool(accordion, 'data-open', newState);
         toggleBool(accordion.firstElementChild, 'aria-expanded', newState);
       })
@@ -76,13 +82,13 @@ if (accsContainer) {
 
     if (evt.target.classList.contains('accordion__btn')) {
       let expandedAccs = accsContainer.querySelectorAll('.accordion__btn[aria-expanded="true"]');
-      if (expandedAccs.length && expandedAccs.length < FAQsAccordions.length) {
+      if (expandedAccs.length && expandedAccs.length < multiAccordions.length) {
         expandAll.setAttribute('aria-pressed', 'mixed');
         collapseAll.setAttribute('aria-pressed', 'mixed');
       } else if (!expandedAccs.length) {
         collapseAll.setAttribute('aria-pressed', 'true');
         expandAll.setAttribute('aria-pressed', 'false');
-      } else if (expandedAccs.length && expandedAccs.length === FAQsAccordions.length) {
+      } else if (expandedAccs.length && expandedAccs.length === multiAccordions.length) {
         expandAll.setAttribute('aria-pressed', 'true');
         collapseAll.setAttribute('aria-pressed', 'false');
       } else {
@@ -105,7 +111,7 @@ prefsBtns.forEach(btn => {
       window.localStorage.removeItem(`data-pref--${pref[0]}`);
     }
     togglePrefsBtns(btn);
-    if (pref[0] === 'theme') toggleLightDarkLogo(); 
+    if (pref[0] === 'theme') matchLogoToTheme(); 
   })
 })
 
@@ -117,24 +123,26 @@ const togglePrefsBtns = (btn) => {
   })
 }
 
-const toggleLightDarkLogo = () => {
-  const themeAttr = document.documentElement.getAttribute('data-pref--theme');
-  let currTheme = themeAttr === 'light' ? 'light' : 'dark';
+const matchLogoToTheme = () => {
+  let currTheme;
+  if (document.documentElement.getAttribute('data-pref--theme')) {
+    currTheme = document.documentElement.getAttribute('data-pref--theme')
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    currTheme = 'dark';
+  } else {
+    currTheme = 'light';
+  }
   
   document.querySelectorAll('[data-main-logo]').forEach(imgSource => {
-    if (themeAttr) {
-      if (imgSource.getAttribute('srcset').includes(currTheme)) {
-        imgSource.setAttribute('media', 'all');
-      } else {
-        imgSource.setAttribute('media', 'none');
-      }
+    if (imgSource.getAttribute('srcset').includes(currTheme)) {
+      imgSource.setAttribute('media', 'all');
     } else {
-      let theme = imgSource.getAttribute('srcset').includes('light') ? 'light' : 'dark';
-      imgSource.setAttribute('media', `(prefers-color-scheme: ${theme})`);
+      imgSource.setAttribute('media', 'none');
     }
   })
 }
-toggleLightDarkLogo()
+
+matchLogoToTheme()
 
 window.onload = () => {
   const userStoredPrefs = {...localStorage};

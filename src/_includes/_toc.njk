@@ -1,0 +1,7 @@
+{% if not tocTitle %}
+  {% set tocTitle = 'Table of contents' %}
+{% endif %}
+<nav class="toc__nav" aria-labelledby="acc-1" {%- if toc === 'open' %}data-pre-expanded{% endif %}>
+  <h2 id="acc-1" class="accordion accordion--full" data-no-accent>{{ tocTitle }}</h2>
+  <div class="accordion__panel accordion__panel--full"><div>{{ content | toc | safe }}</div></div>
+</nav>

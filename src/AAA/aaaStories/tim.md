@@ -7,7 +7,6 @@ date: 2023-05-17
 toc: true
 tags:
 isAAAStory: true
-isGuide: true
 img: ./src/aaaAssets/tim.png
 ---
 ![Tim](src/aaaAssets/tim.png)

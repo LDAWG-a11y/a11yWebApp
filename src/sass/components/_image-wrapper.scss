@@ -1,0 +1,33 @@
+.image__wrapper {
+  flex-wrap: wrap;
+  gap: 1.5rem;
+
+  p {
+    margin: 0;
+    line-height: 0;
+    font-size: 0;
+  }
+
+  .supporters__link {
+    [data-pref--underline="yes"] & {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: (-$space-abs-md);
+        border-bottom: 3px solid var(--v2--color-interactive);
+        height: 0;
+        width: 100%;
+      }
+    }
+
+    img {
+      margin: 0;
+      border: 1px solid var(--v2--color-border--mid);
+      border-radius: $radius-xs;
+      width: auto;
+      height: 10rem;
+    }
+  }
+}

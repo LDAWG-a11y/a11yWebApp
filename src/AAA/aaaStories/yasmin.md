@@ -4,7 +4,6 @@ summary: Yasmin is a participant in the BYC's Access and Assistance for All camp
 date: 2023-05-17
 toc: false
 isAAAStory: true
-isGuide: true
 img: ./src/aaaAssets/yasmin.png
 ---
 ![Yasmin](src/aaaAssets/yasmin.png)

@@ -4,7 +4,6 @@
   {% include "_header.njk" %}
   <main class="main">
     <h1 id="h1" class="main__title btm__gutter--largest" tabindex="-1">{{ title }}</h1>
-    {%- if not aaa %}
     <div style="display: none;">
       {% include '../svg/tip.svg' %}
       {% include '../svg/info.svg' %}
@@ -30,25 +29,16 @@
         {%- endfor %}
       </{% if tagCount> 1 %}ul{% else %}div{% endif %} class="tags tags__all">
     </div>
-    {% endif %}
     {% if toc %}
-      <nav class="toc__nav" aria-labelledby="acc-1">
-        <h2 class="accordion accordion--full">Table of contents</h2>
-        <div class="accordion__panel accordion__panel--full"><div>{{ content | toc | safe }}</div></div>
-      </nav>
-    {% endif %}
-    {% if isAAAStory %}
-    {% include "_studentStoryIntro.njk" %}
+      {% include "_toc.njk" %}
     {% endif %}
     <article class="cms">
       {{ content | safe }}
     </article>
     {% include "_social-share.njk" %}
-    {%- if not aaa %}
     {% set author = guideAuthor %}
     {% if (author != 'Admin') %}
-    {% include "_bio.njk" %}
-    {% endif %}
+      {% include "_bio.njk" %}
     {% endif %}
   </main>
   {% include "_footer.njk" %}

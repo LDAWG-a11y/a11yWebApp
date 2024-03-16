@@ -5,7 +5,6 @@ summary: Aleks is a member of the BYC's Access and Assistance for All campaign.
 img: ./src/aaaAssets/aleks.png
 date: 2024-02-01
 toc: true
-isGuide: true
 ---
 ![Aleks](src/aaaAssets/aleks.jpg)
 

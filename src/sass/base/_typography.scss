@@ -237,10 +237,13 @@ h1 {
 }
 
 h2 {
-  position: relative;
   font-size: calc(var(--v2--current-base-font-size) + 1.5rem);
   line-height: calc(var(--v2--line-height) - .125);
   
+  &:not(.accordion):not([data-no-accent]) {
+    position: relative;
+  }
+
   &:not([data-no-accent]) {
     margin-top: $space-abs-lg;
     

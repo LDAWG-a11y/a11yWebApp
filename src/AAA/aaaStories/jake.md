@@ -6,7 +6,6 @@ summary: Jake Harrison is a participant in the BYC's Access and Assistance for
 date: 2023-05-17
 toc: false
 isAAAStory: true
-isGuide: true
 img: ./src/aaaAssets/jake.png
 ---
 ![Jake](src/aaaAssets/jake.png)

@@ -1,20 +1,15 @@
 ---
 date: Last Modified
 permalink: aaa/roles/
-layout: base.njk
+layout: collaborators.njk
 title: AAA Roles
 summary: Guidance on what responsibilities your job role has in ensuring learners are provided with the necessary support and accommodations they need throughout their education
-aaa: true
 usesCMS: true
+toc: open
+tocTitle: >
+  Guidance for:
+team: aaa
 ---
-## Guidance for:
-
-* [Educators and Teachers](#educators)
-* [IT Administrator](#ITAdmin)
-* [Website Developer](#webDev)
-* [Special Needs Coordinator / Head of Accessibility](#SENCoordinator)
-* [School Administrator / Senior Leadership](#schoolAdmin)
-
 ## Educators and Teachers
 
 As an educator or teacher there are many steps that you can take towards improving the accessibility of your courses. The main steps to doing this are:

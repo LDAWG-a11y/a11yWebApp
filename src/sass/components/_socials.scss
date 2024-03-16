@@ -5,7 +5,7 @@
   justify-content: left;
   align-items: center;
   flex-wrap: wrap;
-  margin: $space-abs-bigger 0 $space-abs-biggest;
+  margin: $space-abs-bigger 0 0;
   width: 100%;
 
   @include mq.mq($from:xs) {

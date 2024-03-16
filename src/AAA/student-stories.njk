@@ -1,23 +1,31 @@
 ---
 date: Last Modified
 permalink: "aaa/student-stories/"
-layout: base.njk
+layout: collaborators.njk
 pageName:
 title: AAA Student Stories
 summary: Access and Assistance for All's real life student stories help us understand the barriers disabled students face in education
-aaa: true
 usesCMS: true
+team: aaa
 ---
 <p>These student stories were produced as part of the "Access and Assistance for All" campaign by the British Youth Council, which aims to increase awareness and access to assistive technology within further education.</p>
 
 <ul class="cards">
   {% for card in collections.studentStoriesAAA %}
-    <li class="card__item">
+    <li class="card__item profile__card">
       <div class="card__text-wrapper">
-        <h2 class="card__title"><a href="{{ card.url }}" class="card__link">{{ card.data.title }}</a></h2>
+        <h2 class="card__title" data-no-accent><a href="{{ card.url }}" class="card__link">{{ card.data.title }}</a></h2>
       </div>
       <div class="card__img-wrapper">
-        {%- if card.data.img %}{% image card.data.img, '' %}{% else %}<img class="card__placeholder-img--aaa" src="/aaaAssets/aaa-light_vpjlfm_c_scale,w_360.png" alt="">{% endif %}
+        {%- if card.data.img %}
+          {% image card.data.img, '' %}
+        {% else %}
+        <picture>
+          <source media="" srcset="/aaaAssets/aaa-light_vpjlfm_c_scale,w_360.png" height="143" width="360" data-main-logo>
+          <source media="" srcset="/aaaAssets/aaa-dark_lmf9it_c_scale,w_360.png" height="143" width="360" data-main-logo>
+          <img class="card__placeholder-img" src="/aaaAssets/aaa-light_vpjlfm_c_scale,w_360.png" alt="Access and Assistance for All, logo">
+        </picture>
+        {% endif %}
       </div>
     </li>
   {% endfor %}
