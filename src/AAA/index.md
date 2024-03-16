@@ -20,7 +20,7 @@ Although good practice of promoting assistive technology can be found in college
 ## Our ask to Further Education Colleges:
 
 Click on the following sections to expand them:
-<div class="accs__container">
+<div class="accs__container flex--start">
 {% include "_accordion-toggles.njk" %}
 
 <h3 class="accordion">Work towards making learning resources accessible</h3>

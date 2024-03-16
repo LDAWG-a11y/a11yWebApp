@@ -85,4 +85,3 @@ window.onresize = toggleTabStopOnTable;
 window.onresize = addTabStopToCodeBlock;
 toggleTabStopOnTable();
 addTabStopToCodeBlock();
-

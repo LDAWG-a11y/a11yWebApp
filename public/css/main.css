@@ -907,9 +907,6 @@ h1 {
   font-weight: 900;
   line-height: 1.25;
 }
-.aaa-content h1 {
-  padding-bottom: 1rem;
-}
 @media (forced-colors: active) {
   h1 {
     line-height: 1.5;
@@ -2287,7 +2284,7 @@ body:before {
 .accs__container .accordion__panel:last-of-type {
   margin-bottom: 0;
 }
-.aaa-content .accs__container {
+.accs__container.flex--start {
   align-items: flex-start;
 }
 .accs__container:has(+ *) {
@@ -5164,9 +5161,6 @@ body:before {
   border-radius: 4px;
   max-width: 100%;
   height: auto;
-}
-.aaa-content .cms picture img {
-  max-width: 40rem;
 }
 .cms picture,
 .cms img {
