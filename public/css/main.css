@@ -5553,23 +5553,6 @@ body:before {
   display: none;
 }
 
-.sitemap__text {
-  margin-bottom: 1.5rem;
-}
-
-.sitemap__list > li::marker,
-.sitemap__list--nested > li::marker {
-  color: var(--color-accent-2);
-}
-
-.sitemap__list {
-  margin-left: 1.5rem;
-}
-
-.sitemap__list--nested {
-  margin: 0.5rem 0 0.5rem 1.5rem;
-}
-
 code[class*=language-],
 pre[class*=language-] {
   color: var(--v2--color-text);
