@@ -147,7 +147,8 @@ h3,
 h4,
 h5,
 h6,
-legend {
+legend,
+dt {
   line-height: $default-line-height;
   font-family: 'Rem', sans-serif;
   font-weight: 700;

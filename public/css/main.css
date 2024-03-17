@@ -893,7 +893,8 @@ h3,
 h4,
 h5,
 h6,
-legend {
+legend,
+dt {
   line-height: 1.5;
   font-family: "Rem", sans-serif;
   font-weight: 700;
@@ -5360,18 +5361,14 @@ body:before {
     content: "xxl ≥ 1440px (90em)";
   }
 }
-.glossary__intro {
-  margin-bottom: 3rem;
-}
-
-.glossary__list {
-  padding-top: 1.5rem;
-}
-
 .glossary__item-wrapper {
   position: relative;
-  padding: 1rem 0.75rem;
-  border-bottom: 2px solid var(--color-accent);
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--v2--color-secondary);
+  border-right: 2px solid transparent;
+}
+.glossary__item-wrapper:first-of-type {
+  border-top: 2px solid var(--v2--color-secondary);
 }
 .glossary__item-wrapper::before {
   content: "";
@@ -5379,57 +5376,14 @@ body:before {
   top: 0;
   left: 0;
   border: 4px solid transparent;
-  height: 0;
+  height: 100%;
 }
 .glossary__item-wrapper:focus-within {
-  background-color: var(--color-accent);
-}
-@media (prefers-color-scheme: dark) {
-  .glossary__item-wrapper:focus-within {
-    background-color: var(--color-inactive);
-  }
-}
-[data-pref--theme=dark] .glossary__item-wrapper:focus-within {
-  background-color: var(--color-inactive);
-}
-[data-pref--theme=light] .glossary__item-wrapper:focus-within {
-  background-color: var(--color-accent);
+  background-color: var(--v2--color-bg--light);
+  border-right-color: var(--v2--color-secondary);
 }
 .glossary__item-wrapper:focus-within::before {
-  height: 100%;
-  border-color: var(--color-interactive);
-}
-:not([data-pref--theme=dark]) .glossary__item-wrapper:focus-within::before {
-  top: -2px;
-  height: calc(100% + 4px);
-}
-@media (prefers-color-scheme: dark) {
-  .glossary__item-wrapper:focus-within::before {
-    top: 0;
-    height: 100%;
-  }
-}
-[data-pref--theme=dark] .glossary__item-wrapper:focus-within::before {
-  top: 0;
-  height: 100%;
-}
-.glossary__item-wrapper:focus-within:first-of-type::before, .glossary__item-wrapper:focus-within:last-of-type::before {
-  top: 0;
-  height: 100%;
-}
-:not([data-pref--theme=dark]) .glossary__item-wrapper:focus-within:first-of-type::before, :not([data-pref--theme=dark]) .glossary__item-wrapper:focus-within:last-of-type::before {
-  height: calc(100% + 2px);
-}
-@media (prefers-color-scheme: dark) {
-  .glossary__item-wrapper:focus-within:first-of-type::before, .glossary__item-wrapper:focus-within:last-of-type::before {
-    height: 100%;
-  }
-}
-[data-pref--theme=dark] .glossary__item-wrapper:focus-within:first-of-type::before, [data-pref--theme=dark] .glossary__item-wrapper:focus-within:last-of-type::before {
-  height: 100%;
-}
-.glossary__item-wrapper:last-of-type {
-  border-bottom: none;
+  border-color: var(--v2--color-secondary);
 }
 @media (min-width: 48em) {
   .glossary__item-wrapper {
@@ -5440,10 +5394,7 @@ body:before {
 }
 
 .glossary__term {
-  overflow-wrap: break-word;
   hyphens: auto;
-  font-weight: bold;
-  outline: 3px solid transparent;
 }
 @media (min-width: 48em) {
   .glossary__term {
@@ -5453,7 +5404,7 @@ body:before {
 
 @media (min-width: 48em) {
   .glossary__definition {
-    padding-left: 1.5rem;
+    padding-left: 16px;
     width: 80%;
   }
 }
