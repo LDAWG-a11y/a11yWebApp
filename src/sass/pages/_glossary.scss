@@ -1,17 +1,14 @@
 @use '../vendors/mq';
 
-.glossary__intro {
-  margin-bottom: $space-rel-xxxl;
-}
-
-.glossary__list {
-  padding-top: $space-rel-lg;
-}
-
 .glossary__item-wrapper {
   position: relative;
-  padding: $space-rel-md $space-rel-sm;
-  border-bottom: 2px solid var(--color-accent);
+  padding: $space-abs-md $space-abs-lg;
+  border-bottom: 2px solid var(--v2--color-secondary);
+  border-right: 2px solid transparent;
+
+  &:first-of-type {
+    border-top: 2px solid var(--v2--color-secondary);
+  }
   
   &::before {
     content: "";
@@ -19,81 +16,27 @@
     top: 0;
     left: 0;
     border: 4px solid transparent;
-    height: 0;
+    height: 100%;
   }
 
   &:focus-within {
-    background-color: var(--color-accent);
-
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--color-inactive);
-    }
-  
-    [data-pref--theme="dark"] & {
-      background-color: var(--color-inactive);
-    }
-
-    [data-pref--theme="light"] & {
-      background-color: var(--color-accent);
-    }
+    background-color: var(--v2--color-bg--light);
+    border-right-color: var(--v2--color-secondary);
 
     &::before {
-      height: 100%;
-      border-color: var(--color-interactive);
-
-      :not([data-pref--theme="dark"]) & {
-        top: -2px;
-        height: calc(100% + 4px);
-      }
-
-      @media (prefers-color-scheme: dark) {
-        top: 0;
-        height: 100%;
-      }
-    
-      [data-pref--theme="dark"] & {
-        top: 0;
-        height: 100%;
-      }
+      border-color: var(--v2--color-secondary);
     }
-
-    &:first-of-type,
-    &:last-of-type {
-      &::before {
-        top: 0;
-        height: 100%;
-
-        :not([data-pref--theme="dark"]) & {
-          height: calc(100% + 2px);
-        }
-
-        @media (prefers-color-scheme: dark) {
-          height: 100%;
-        }
-      
-        [data-pref--theme="dark"] & {
-          height: 100%;
-        }
-      }
-    }
-  }
-
-  &:last-of-type {
-    border-bottom: none;
   }
 
   @include mq.mq($from:md) {
     display: flex;
-    flex-wrap:wrap;
-    width:100%;
+    flex-wrap: wrap;
+    width: 100%;
   }  
 }
 
 .glossary__term {
-  overflow-wrap: break-word;
   hyphens: auto;
-  font-weight: bold;
-  outline: 3px solid transparent;
 
   @include mq.mq($from:md) {
     width: 20%;
@@ -102,7 +45,7 @@
 
 .glossary__definition {
   @include mq.mq($from:md) {
-    padding-left: $space-rel-lg;
+    padding-left: $space-abs-lg;
     width: 80%;
   }
 }
