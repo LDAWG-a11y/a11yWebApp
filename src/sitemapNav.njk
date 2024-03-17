@@ -6,14 +6,14 @@ summary: The sitemap navigation provides a list of all main pages and all digita
 ---
 <div class="panel">
   <h2>Sitemap navigation for pages and guides</h2>
-  <p class="sitemap__text">Guides are displayed by most recent entry first.</p>
-  <ul class="sitemap__list">
+  <p>Guides are displayed by most recent entry first.</p>
+  <ul>
     {%- for item in navLinks | sort(attribute="text") %}
       {% if item.url != '/admin' %}
         {%- if item.url != page.url %}
           <li><a href="{{ item.url }}">{{ item.text }} page</a>
           {%- if item.text == 'Guides' %}
-              <ul class="sitemap__list--nested">
+              <ul>
                 {%- for guide in collections.guides | reverse %}
                   <li><a href="{{ guide.url }}">{{ guide.data.title }}</a></li>
                 {%- endfor %}
