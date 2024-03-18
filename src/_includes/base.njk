@@ -63,6 +63,9 @@
     {% endif %}
   {% endset %}
   <script>{{ js | jsmin | safe }}</script>
+  {%- if team === 'mta' %}
+    <script src="/js/search.js" type="module"></script>
+  {% endif %}
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
