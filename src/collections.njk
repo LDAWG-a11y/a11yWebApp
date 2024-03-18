@@ -1,0 +1,19 @@
+---
+permalink: '/js/collections.js'
+eleventyExcludeFromCollections: true
+---
+{%- set items = [] -%}
+{%- for guide in collections.guides -%}
+{%- set type = "Guide" -%}
+{%- set items = (items.push({title: guide.data.title, url: guide.url, type: type}), items) -%}
+{% endfor %}
+{%- for tag in collections.tagList -%}
+{%- set tagSlug = tag | slugify -%}
+{%- set type = "Tag" -%}
+{%- set tagUrl = ["/tags/", tagSlug, "/"] | join -%}
+{%- set items = (items.push({title: tag, url: tagUrl, type: type }), items) -%}
+{% endfor %}
+
+export const items = [{%- for item in items | sort(false, false, 'title' ) %}
+'<li class="search__item"><a href="{{ item.url }}" id="opt-{{ loop.index }}" class="search__option" tabindex="-1" data-pos="{{ loop.index }}">{{ item.title }}<span class="search__type">{{ item.type }}</a></span></li>',{% endfor %}
+]

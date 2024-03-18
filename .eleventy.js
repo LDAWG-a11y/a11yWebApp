@@ -15,6 +15,7 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.addWatchTarget('./src/sass');
   eleventyConfig.addPassthroughCopy('./src/css');
+  eleventyConfig.addPassthroughCopy('./src/js');
   eleventyConfig.addPassthroughCopy('src/img');
   eleventyConfig.addPassthroughCopy('src/guideImg');
   eleventyConfig.addPassthroughCopy('src/profileImg');
@@ -171,6 +172,10 @@ module.exports = eleventyConfig => {
     Object.values(author.items[0].data.contributors)
   );
 
+  eleventyConfig.addCollection('aaaStories', collection => {
+    return collection.getFilteredByTag('aaaStories');
+  });
+
   eleventyConfig.addFilter('getAuthor', (authors, label) => {
     let author = authors.filter(a => a.key === label)[0];
     return author;
@@ -178,11 +183,7 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.addFilter('getGuidesByAuthor', (guides, author) => {
     return guides.filter(a => a.data.author === author);
-  });
-
-  eleventyConfig.addCollection('aaaStories', collection => {
-    return collection.getFilteredByTag('aaaStories');
-  });
+  });  
 
   eleventyConfig.addFilter('answer', faq => {
     const content = faq.replace(/(<([^>]+)>)/gi, '');
