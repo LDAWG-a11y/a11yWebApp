@@ -1457,7 +1457,7 @@ body:before {
   position: absolute;
   left: 0.75rem;
   top: 0;
-  border: 3px solid var(--color-bg);
+  border: 3px solid var(--v2--color-bg);
   padding: 0 0.75rem;
   width: auto;
   height: 2.75rem;
@@ -4273,7 +4273,7 @@ body:before {
 }
 
 .supporters__link:hover img, .supporters__link:focus img {
-  outline: 3px solid var(--color-interactive);
+  outline: 3px solid var(--v2--color-interactive);
   outline-offset: 2px;
 }
 
@@ -5158,7 +5158,7 @@ body:before {
   width: 100%;
 }
 .cms picture img {
-  border: 2px solid var(--color-inactive);
+  border: 2px solid var(--v2--color-border--mid);
   border-radius: 4px;
   max-width: 100%;
   height: auto;
@@ -5220,7 +5220,7 @@ body:before {
 }
 .cms th,
 .cms td {
-  border: 1px solid var(--color-accent-2);
+  border: 1px solid var(--v2--color-secondary);
   padding: 0.75rem;
 }
 .cms caption {
@@ -5288,23 +5288,23 @@ body:before {
 }
 .cms details {
   margin: -2.5rem 0 3rem;
-  border: 2px solid var(--color-interactive);
+  border: 2px solid var(--v2--color-interactive);
   border-radius: 6px;
   padding: 0.75rem 0.5rem;
   max-width: 80rem;
-  background-color: var(--color-bg--light);
+  background-color: var(--v2--color-bg--light);
 }
 .cms details summary {
   font-weight: 600;
-  color: var(--color-interactive);
+  color: var(--v2--color-interactive);
   cursor: pointer;
 }
 .cms details[open] summary {
   margin-bottom: 1rem;
-  border-bottom: 2px solid var(--color-interactive);
+  border-bottom: 2px solid var(--v2--color-interactive);
 }
 .cms a:hover code, .cms a:focus code {
-  color: var(--color-text);
+  color: var(--v2--color-text);
 }
 
 body:before {

@@ -24,7 +24,7 @@
     width: 100%;
 
     img {
-      border: 2px solid var(--color-inactive);
+      border: 2px solid var(--v2--color-border--mid);
       border-radius: $radius-sm;
       max-width: 100%;
       height: auto;
@@ -104,7 +104,7 @@
 
   th,
   td {
-    border: 1px solid var(--color-accent-2);
+    border: 1px solid var(--v2--color-secondary);
     padding: $space-rel-sm;
   }
 
@@ -185,29 +185,29 @@
 
   details {
     margin: -$space-rel-xxl 0 $space-rel-xxxl;
-    border: 2px solid var(--color-interactive);
+    border: 2px solid var(--v2--color-interactive);
     border-radius: $radius-md;
     padding: $space-rel-sm $space-rel-xs;
     max-width: 80rem;
-    background-color: var(--color-bg--light);
+    background-color: var(--v2--color-bg--light);
   }
 
   details summary { 
     font-weight: 600;
-    color: var(--color-interactive);
+    color: var(--v2--color-interactive);
     cursor: pointer;
   }
 
   details[open] summary {
     margin-bottom: $space-rel-md;
-    border-bottom: 2px solid var(--color-interactive);
+    border-bottom: 2px solid var(--v2--color-interactive);
   }
 
   a {
     &:hover,
     &:focus {
       code {
-        color: var(--color-text);
+        color: var(--v2--color-text);
       }
     }
   }
