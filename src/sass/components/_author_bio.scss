@@ -1,6 +1,8 @@
 @use '../vendors/mq';
 
 .author-bio {
+  margin-top: $space-abs-big;
+  
   @include mq.mq($from:xxl) {
     &:has(.author-bio--upper img) {
       .author-bio__meta {

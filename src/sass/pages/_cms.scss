@@ -153,7 +153,6 @@
     }
   }
 
-
   .cms__anchor {
     margin-top: 1.25em;
     height: 2.75rem;
@@ -184,18 +183,36 @@
   }
 
   details {
-    margin: -$space-rel-xxl 0 $space-rel-xxxl;
+    margin-bottom: $space-abs-xxxxl;
     border: 2px solid var(--v2--color-interactive);
     border-radius: $radius-md;
-    padding: $space-rel-sm $space-rel-xs;
+    padding: 0 $space-rel-xs;
     max-width: 80rem;
     background-color: var(--v2--color-bg--light);
   }
 
-  details summary { 
-    font-weight: 600;
+  summary {
+    position: relative;
+    left: (-$space-abs-sm);
+    border-radius: $radius-sm;
+    padding: $space-abs-sm $space-rel-md $space-abs-xs;
+    width: calc(100% + $space-abs-lg);
     color: var(--v2--color-interactive);
-    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: var(--v2--color-bg);
+      background-color: var(--v2--color-interactive);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--v2--color-interactive);
+      outline-offset: 3px;
+    }
+
+    @include mq.mq($from:lg) {
+      padding-top: $space-abs-xs;
+    }
   }
 
   details[open] summary {

@@ -1102,7 +1102,8 @@ a:not([class]):focus, a:not([class]):hover {
   text-underline-offset: 0.2em;
 }
 
-button {
+button,
+summary {
   font-family: "Rem", Helvetica, Verdana, sans-serif;
   font-weight: 500;
 }
@@ -2412,6 +2413,9 @@ body:before {
   body:before {
     content: "xxl ≥ 1440px (90em)";
   }
+}
+.author-bio {
+  margin-top: 56px;
 }
 @media (min-width: 90em) {
   .author-bio:has(.author-bio--upper img) .author-bio__meta {
@@ -4246,6 +4250,9 @@ body:before {
   }
 }
 
+.toc__nav {
+  margin-bottom: 56px;
+}
 .toc__nav li,
 .toc__nav a {
   min-height: 2.75rem;
@@ -5287,17 +5294,33 @@ body:before {
   }
 }
 .cms details {
-  margin: -2.5rem 0 3rem;
+  margin-bottom: 40px;
   border: 2px solid var(--v2--color-interactive);
   border-radius: 6px;
-  padding: 0.75rem 0.5rem;
+  padding: 0 0.5rem;
   max-width: 80rem;
   background-color: var(--v2--color-bg--light);
 }
-.cms details summary {
-  font-weight: 600;
+.cms summary {
+  position: relative;
+  left: -8px;
+  border-radius: 4px;
+  padding: 8px 1rem 6px;
+  width: calc(100% + 16px);
   color: var(--v2--color-interactive);
-  cursor: pointer;
+}
+.cms summary:hover, .cms summary:focus {
+  color: var(--v2--color-bg);
+  background-color: var(--v2--color-interactive);
+}
+.cms summary:focus-visible {
+  outline: 2px solid var(--v2--color-interactive);
+  outline-offset: 3px;
+}
+@media (min-width: 64em) {
+  .cms summary {
+    padding-top: 6px;
+  }
 }
 .cms details[open] summary {
   margin-bottom: 1rem;
