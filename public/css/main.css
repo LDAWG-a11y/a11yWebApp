@@ -130,6 +130,8 @@ body:before {
     --v2--color-code-two: #ffd700;
     --v2--color-code-three: #ffa07a;
     --v2--color-code-four: #abe338;
+    --v2--color-code-five: #B0B0B0;
+    --v2--color-code-six: #DEDEDE;
     --v2--color-border--light: #323232;
     --v2--color-border--mid: #8f8f8f;
     --v2--shadow: none;
@@ -183,6 +185,8 @@ body:before {
   --v2--color-code-two: #744E2E;
   --v2--color-code-three: #8B008B;
   --v2--color-code-four: #006060;
+  --v2--color-code-five: #1f1f1f;
+  --v2--color-code-six: #1f1f1f;
   --color-text: #1f1f1f;
   --color-bg: #fdfdfd;
   --color-bg--light: #e8e8e8;
@@ -226,6 +230,8 @@ body:before {
   --v2--color-code-two: #744E2E;
   --v2--color-code-three: #8B008B;
   --v2--color-code-four: #006060;
+  --v2--color-code-five: #1f1f1f;
+  --v2--color-code-six: #1f1f1f;
   --color-text: #1f1f1f;
   --color-bg: #fdfdfd;
   --color-bg--light: #e8e8e8;
@@ -270,6 +276,8 @@ body:before {
   --v2--color-code-two: #ffd700;
   --v2--color-code-three: #ffa07a;
   --v2--color-code-four: #abe338;
+  --v2--color-code-five: #B0B0B0;
+  --v2--color-code-six: #DEDEDE;
   --v2--color-border--light: #323232;
   --v2--color-border--mid: #8f8f8f;
   --v2--shadow: none;
@@ -3159,6 +3167,7 @@ body:before {
 .code__wrapper::before, .code__wrapper::after {
   content: "";
   position: absolute;
+  z-index: 1;
 }
 .code__wrapper::before {
   top: -1.25rem;
@@ -3199,6 +3208,33 @@ body:before {
 pre[class][class*=language-] {
   padding: 4.5rem 8px 8px;
 }
+[data-pref--code-theme=light] pre[class][class*=language-] {
+  background-color: #f6fffd;
+  --v2--color-code-one: #3A539B;
+  --v2--color-code-two: #744E2E;
+  --v2--color-code-three: #8B008B;
+  --v2--color-code-four: #006060;
+  --v2--color-code-five: #1f1f1f;
+  --v2--color-code-six: #1f1f1f;
+}
+[data-pref--code-theme=lower] pre[class][class*=language-] {
+  background-color: #f6fffd;
+  --v2--color-code-one: #2269dd;
+  --v2--color-code-two: #bd4c21;
+  --v2--color-code-three: #AA5535;
+  --v2--color-code-four: #157e15;
+  --v2--color-code-five: #a9489d;
+  --v2--color-code-six: #1a1a1a;
+}
+[data-pref--code-theme=dark] pre[class][class*=language-] {
+  background-color: #2a2a2a;
+  --v2--color-code-one: #00e0e0;
+  --v2--color-code-two: #ffd700;
+  --v2--color-code-three: #ffa07a;
+  --v2--color-code-four: #abe338;
+  --v2--color-code-five: #B0B0B0;
+  --v2--color-code-six: #DEDEDE;
+}
 @media (min-width: 48em) {
   pre[class][class*=language-] {
     padding: 4.5rem 12px 12px;
@@ -3214,6 +3250,7 @@ pre[class][class*=language-] {
   gap: 12px;
   margin-bottom: 12px;
   padding: 8px 12px;
+  background-color: var(--v2--color-bg--light);
 }
 
 .copy__announcement {
@@ -5578,7 +5615,7 @@ body:before {
 
 code[class*=language-],
 pre[class*=language-] {
-  color: var(--v2--color-text);
+  color: var(--v2--color-code-six);
   background: none;
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   text-align: left;
@@ -5609,11 +5646,11 @@ pre[class*=language-] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: var(--v2--color-text);
+  color: var(--v2--color-code-five);
 }
 
 .token.punctuation {
-  color: var(--v2--color-text);
+  color: var(--v2--color-code-five);
 }
 
 .token.property,
