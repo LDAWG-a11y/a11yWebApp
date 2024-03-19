@@ -23,6 +23,8 @@ $--v2--color-code-one: --v2--color-code-one;
 $--v2--color-code-two: --v2--color-code-two;
 $--v2--color-code-three: --v2--color-code-three;
 $--v2--color-code-four: --v2--color-code-four;
+$--v2--color-code-five: --v2--color-code-five;
+$--v2--color-code-six: --v2--color-code-six;
 
 $--color-text: --color-text;
 $--color-bg: --color-bg;
@@ -67,11 +69,13 @@ $theme-map-light: (
   $--v2--color-tip: #49a21e,
   $--v2--color-info: #3a8dbb,
   $--v2--color-warn: #c41818,
-  $--v2--color-black: #1c1c1c, 
+  $--v2--color-black: #1c1c1c,
   $--v2--color-code-one: #3A539B,
   $--v2--color-code-two: #744E2E,
   $--v2--color-code-three: #8B008B,
   $--v2--color-code-four: #006060,
+  $--v2--color-code-five: #1f1f1f,
+  $--v2--color-code-six: #1f1f1f,
 
   
   $--color-text: #1f1f1f,
@@ -120,6 +124,8 @@ $theme-map-dark: (
   $--v2--color-code-two: #ffd700,
   $--v2--color-code-three: #ffa07a,
   $--v2--color-code-four: #abe338,
+  $--v2--color-code-five: #B0B0B0,
+  $--v2--color-code-six: #DEDEDE,
   $--v2--color-border--light: #323232,
   $--v2--color-border--mid: #8f8f8f,
   $--v2--shadow: none,
@@ -205,5 +211,3 @@ $typography-map: (
     }
   }
 }
-
-

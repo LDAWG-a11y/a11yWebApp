@@ -1,6 +1,6 @@
 code[class*="language-"],
 pre[class*="language-"] {
-	color: var(--v2--color-text);
+	color: var(--v2--color-code-six);
 	background: none;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	text-align: left;
@@ -31,11 +31,11 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: var(--v2--color-text);
+	color: var(--v2--color-code-five);
 }
 
 .token.punctuation {
-	color: var(--v2--color-text);
+	color: var(--v2--color-code-five);
 }
 
 .token.property,

@@ -18,6 +18,7 @@
   &::after {
     content: "";
     position: absolute;
+    z-index: 1;
   }
 
   &::before {
@@ -61,6 +62,36 @@
 pre[class][class*="language-"] {
   padding: 4.5rem $space-abs-sm $space-abs-sm;
 
+  [data-pref--code-theme="light"] & {
+    background-color: #f6fffd;
+    --v2--color-code-one: #3A539B;
+    --v2--color-code-two: #744E2E;
+    --v2--color-code-three: #8B008B;
+    --v2--color-code-four: #006060;
+    --v2--color-code-five: #1f1f1f;
+    --v2--color-code-six: #1f1f1f;
+  }
+  
+  [data-pref--code-theme="lower"] & {
+    background-color: #f6fffd;
+    --v2--color-code-one: #2269dd;
+    --v2--color-code-two: #bd4c21;
+    --v2--color-code-three: #AA5535;
+    --v2--color-code-four: #157e15;
+    --v2--color-code-five: #a9489d;
+    --v2--color-code-six: #1a1a1a;
+  }
+  
+  [data-pref--code-theme="dark"] & {
+    background-color: #2a2a2a;
+    --v2--color-code-one: #00e0e0;
+    --v2--color-code-two: #ffd700;
+    --v2--color-code-three: #ffa07a;
+    --v2--color-code-four: #abe338;
+    --v2--color-code-five: #B0B0B0;
+    --v2--color-code-six: #DEDEDE;
+  }
+
   @include mq.mq($from:md) {
     padding: 4.5rem $space-abs-md $space-abs-md;
   }
@@ -75,6 +106,7 @@ pre[class][class*="language-"] {
   gap: $space-abs-md;
   margin-bottom: $space-abs-md;
   padding: $space-abs-sm $space-abs-md;
+  background-color: var(--v2--color-bg--light);
 }
 
 .copy__announcement {
