@@ -157,12 +157,12 @@
     margin-top: 1.25em;
     height: 2.75rem;
     width: 2.75rem;
-    transition: background-color 300ms ease-in;
+    transition: background-color 300ms ease;
     
     svg {
       fill: var(--v2--color-interactive);
       transform: rotate(-45deg);
-      transition: fill 300ms ease-in;
+      transition: fill 300ms ease;
     }
 
     &:focus-visible {

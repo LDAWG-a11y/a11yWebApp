@@ -42,12 +42,12 @@
       border-radius: $radius-pill;
       height: 1.5rem;
       width: 1.5rem;
-      transition: border-color 300ms ease-in;
+      transition: border-color 300ms ease;
 
       &::before {
         content: "";
         position: absolute;
-        transition: border-color 300ms ease-in;
+        transition: border-color 300ms ease;
       }
     }
   }
@@ -82,7 +82,7 @@
     span::after {
       content: "";
       position: absolute;
-      transition: border-color 300ms ease-in;
+      transition: border-color 300ms ease;
       transform: translate(-50%, -50%) rotate(-45deg);
     }
   }

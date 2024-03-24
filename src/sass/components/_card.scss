@@ -56,7 +56,7 @@
   padding: $space-abs-sm;
   background-color: var(--v2--color-bg--light);
   box-shadow: var(--v2--shadow);
-  transition: border-color 300ms ease-in;
+  transition: border-color 300ms ease;
 
   &:has(.card__link:focus-visible),
   &:has(.card__link:hover) {
@@ -104,7 +104,7 @@
 .card__link {
   text-underline-offset: .2em;
   text-decoration-thickness: 3px;
-  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 200ms ease-in;
+  transition: background-color 300ms ease, color 300ms ease, text-decoration-color 300ms ease, text-underline-offset 200ms ease;
 
   [data-pref--underline] & {
     text-decoration: underline;

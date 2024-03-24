@@ -56,7 +56,7 @@ $theme-map-light: (
   $--v2--color-interactive: #7E2F9D,
   $--v2--color-secondary: #C144BC,
   $--v2--color-tertiary: #28956B,
-  $--v2--color-accent: #ede7b0,
+  $--v2--color-accent: #FFFACD,
   $--v2--color-text: #1f1f1f,
   $--v2--color-text-alt: #e7e7e7,
   $--v2--color-text-faded: #d4d4d4,
@@ -108,7 +108,7 @@ $theme-map-dark: (
   $--v2--color-interactive: #C2A7D7,
   $--v2--color-secondary: #bc58ad,
   $--v2--color-tertiary: #50dcc2,
-  $--v2--color-accent: #032B1C,
+  $--v2--color-accent: #2E1B36,
   $--v2--color-text: #B0B0B0,
   $--v2--color-text-alt: #D9D9D9,
   $--v2--color-text-faded: #3e3e3e,
@@ -126,9 +126,9 @@ $theme-map-dark: (
   $--v2--color-code-four: #abe338,
   $--v2--color-code-five: #B0B0B0,
   $--v2--color-code-six: #DEDEDE,
-  $--v2--color-border--light: #323232,
+  $--v2--color-border--light: #414141,
   $--v2--color-border--mid: #8f8f8f,
-  $--v2--shadow: none,
+  
   
 
   $--color-text: #D9D9D9,
@@ -146,6 +146,11 @@ $theme-map-dark: (
   $--color-info: #2a4ea3,
   $--color-warn: #982A2A,
   $--color-warn--bright: #ff6a6a,
+  $--v2--shadow-color: 0deg 0% 7%,
+  $--v2--shadow: (0.6px 0.6px 0.9px hsl(var(--v2--shadow-color) / 0.5),
+  1.9px 2px 2.9px -1px hsl(var(--v2--shadow-color) / 0.46),
+  5.2px 5.3px 7.8px -2px hsl(var(--v2--shadow-color) / 0.42),
+  13.3px 13.4px 19.8px -3px hsl(var(--v2--shadow-color) / 0.38)),
 );
 
 $typography-map: (

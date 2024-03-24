@@ -15,5 +15,5 @@ eleventyExcludeFromCollections: true
 {% endfor %}
 
 export const items = [{%- for item in items | sort(false, false, 'title' ) %}
-'<li class="search__item"><a href="{{ item.url }}" id="opt-{{ loop.index }}" class="search__option" tabindex="-1" data-pos="{{ loop.index }}">{{ item.title }}<span class="search__type">{{ item.type }}</a></span></li>',{% endfor %}
+{url: '{{ item.url }}', title: '{{ item.title }}', type: '{{ item.type }}', id: 'opt-{{ loop.index }}'},{% endfor %}
 ]

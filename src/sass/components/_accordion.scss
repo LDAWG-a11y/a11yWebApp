@@ -8,7 +8,7 @@
     + .accordion__panel {
       grid-template-rows: 1fr;
       visibility: visible;
-      transition: grid-template-rows 400ms ease-in, visibility 0ms ease-in 0ms;
+      transition: grid-template-rows 400ms ease, visibility 0ms ease 0ms;
     }
   }
 
@@ -16,7 +16,7 @@
     + .accordion__panel {
       grid-template-rows: 0fr;
       visibility: hidden;
-      transition: grid-template-rows 400ms ease-in, visibility 0ms ease-in 400ms;
+      transition: grid-template-rows 400ms ease, visibility 0ms ease 400ms;
     }
   }
 }
@@ -68,7 +68,7 @@
   text-align: left;
   background-color: var(--v2--color-bg);
   color: var(--v2--color-interactive);
-  transition: background-color 300ms ease-in, color 300ms ease-in;
+  transition: background-color 300ms ease, color 300ms ease;
   z-index: 1;
 
   &::before,
@@ -76,7 +76,7 @@
     content: "";
     position: absolute;
     background-color: var(--v2--color-interactive);
-    transition: background 300ms ease-in-out, transform 300ms ease-in-out, opacity 250ms ease-in-out;
+    transition: background 300ms ease, transform 300ms ease, opacity 250ms ease;
     transform-origin: top;
 
     @media (forced-colors: active) {
@@ -155,7 +155,7 @@
   }
 
   @media (prefers-reduced-motion) {
-    transition: grid-template-rows 0ms, visibility 0ms ease-in;
+    transition: grid-template-rows 0ms, visibility 0ms ease;
   }
 }
 
@@ -177,8 +177,8 @@
 //   &[data-open="true"] {
 //     + .accordion__panel {
 //       height: auto;
-//       // transition: height 250ms ease-in-out;
-//       animation: show 250ms ease-in-out;
+//       // transition: height 250ms ease;
+//       animation: show 250ms ease;
 //       animation-fill-mode: forwards;
 //     }
 //   }
@@ -230,7 +230,7 @@
 //   text-align: left;
 //   color: var(--color-primary);
 //   background: var(--color-bg--light);
-//   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+//   transition: background-color 250ms ease, color 250ms ease;
 
 
 

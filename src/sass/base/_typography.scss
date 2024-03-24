@@ -342,7 +342,7 @@ a:not([class]):visited,
   text-decoration-thickness: 3px;
   text-decoration-color: var(--v2--color-secondary);
   color: var(--v2--color-interactive);
-  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 200ms ease-in;
+  transition: background-color 300ms ease, color 300ms ease, text-decoration-color 300ms ease, text-underline-offset 200ms ease;
 
   &:focus,
   &:hover {

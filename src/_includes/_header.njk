@@ -8,8 +8,12 @@
     <div class="header__search-block btm__gutter--largest">
       <label id="sFilterLbl" for="sFilter" class="search__label">Search for Guides or Tags, by keyword</label>
       <div class="search__wrapper" data-expanded="false">
-        <input class="search__input" id="sFilter" type="text" autocomplete="off">
+        <input class="search__input" id="sFilter" type="text" role="combobox" aria-activedescendant="" aria-autocomplete="list" aria-expanded="false" aria-controls="searchDialog" autocomplete="off">
         {% include '../svg/magnifier.svg' %}
+      </div>
+      <div class="search__panel" id="searchDialog" role="dialog" aria-labelledby="sFilterLbl">
+        <ul class="search__list"></ul>
+        <div aria-live="polite" class="visually-hidden search__msg flex--middle"><span class="search__msg--icon">{% include '../svg/warn.svg' %}</span><span id="sMsg" class="search__msg--text"></span></output>
       </div>
     </div>
   {%- endif %}

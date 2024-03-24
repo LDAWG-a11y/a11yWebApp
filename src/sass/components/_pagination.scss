@@ -58,7 +58,7 @@
   text-decoration-thickness: 2px;
   text-decoration-color: var(--v2--color-secondary);
   text-underline-offset: .15em;
-  transition: text-underline-offset 200ms, color 300ms ease-in, background-color 300ms ease-in, text-decoration-color 300ms ease-in;
+  transition: text-underline-offset 200ms, color 300ms ease, background-color 300ms ease, text-decoration-color 300ms ease;
   color: var(--v2--color-interactive);
 
   &:hover,
