@@ -17,7 +17,7 @@
         "default": true
       },
       {
-        "src": "/img/mta-dark-sm.webp 360w, /img/mta-dark.webp",
+        "src": "/img/mta-dark-sm.webp 360w, /img/mta-dark.webp 600w",
         "height": "136",
         "width": "600",
         "theme": "dark"
@@ -57,6 +57,37 @@
         "src": "/img/aaa-dark.png",
         "height": "213",
         "width": "533",
+        "theme": "dark"
+      }
+    ]
+  },
+  {
+    "id": "rnib",
+    "teamName": "RNIB",
+    "logo": [
+      {
+        "src": "/img/rnib-light-sm.webp 360w, /img/rnib-light.webp 600w",
+        "height": "555",
+        "width": "413",
+        "theme": "light"
+      },
+      {
+        "src": "/img/rnib-light.png",
+        "height": "555",
+        "width": "413",
+        "theme": "light",
+        "default": true
+      },
+      {
+        "src": "/img/rnib-dark-sm.webp 360w, /img/rnib-dark.webp 600w",
+        "height": "555",
+        "width": "411",
+        "theme": "dark"
+      },
+      {
+        "src": "/img/rnib-dark.png",
+        "height": "555",
+        "width": "411",
         "theme": "dark"
       }
     ]
