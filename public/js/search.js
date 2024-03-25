@@ -44,6 +44,7 @@ search.addEventListener('keydown', (evt) => {
           }
         })
       }
+      
        if (searchList.querySelectorAll('li').length === 1 && evt.key === 'Enter') {
         searchList.querySelector('a').click();
       }
