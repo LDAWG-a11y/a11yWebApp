@@ -1,6 +1,21 @@
 @use '../vendors/mq';
 
 .header__search-block {
+  position: relative;
+
+  &:has(.search__msg:not(.visually-hidden)) {
+    .search__wrapper::before {
+      border-color: var(--v2--color-warn);
+    }
+
+    .search__panel {
+      border-color: var(--v2--color-warn);
+    }
+  }
+
+  .no-js & {
+    visibility: hidden;
+  }
 
   .has-js & {
     display: flex;
@@ -10,7 +25,8 @@
 }
 
 .search__wrapper,
-.search__label {
+.search__label,
+.search__panel {
   width: 35rem;
   max-width: 96%;
 }
@@ -27,14 +43,29 @@
     fill: var(--v2--color-primary);
   }
 
+  &[data-expanded="false"] + .search__panel {
+    visibility: hidden;
+    transform: translateY(2.5rem);
+    border-color: transparent;
+    opacity: .4;
+    transition: opacity 600ms ease, border-color 300ms ease, visibility .001ms ease 500ms, transform 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  &[data-expanded="true"] + .search__panel {
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+    transition: opacity 400ms ease, border-color 300ms ease, transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
   &::before {
     content: "";
     position: absolute;
-    inset: -$space-abs-xxs;
+    inset: -$space-abs-xs;
     border: 2px solid transparent;
-    border-radius: $radius-md;
+    border-radius: $radius-lg;
     z-index: -1;
-    transition: border-color 300ms ease-in;
+    transition: border-color 300ms ease;
   }
 
   &:focus-within {
@@ -55,9 +86,126 @@
   padding: 0 2.25rem 0 $space-abs-sm;
   width: 100%;
   height: 2.5rem;
+  color: var(--v2--color-black);
   background-color: var(--v2--color-strong--on-primary);
 
   @include mq.mq($from:md) {
     height: 3rem;
   }
 }
+
+.search__panel {
+  position: absolute;
+  top: calc(100% + .75rem);
+  border: 1px solid var(--v2--color-border--light);
+  border-radius: $radius-md;
+  
+  background-color: var(--v2--color-bg);
+  z-index: 5;
+  box-shadow: var(--v2--shadow);
+  
+}
+
+.search__list {
+  list-style-type: none;
+  max-height: calc(100vh - 9rem);
+  overflow-y: auto;
+}
+
+.search__item {
+  overflow: hidden;
+
+  &:first-of-type {
+    border-radius: $radius-md $radius-md 0 0;
+  }
+
+  &:last-of-type {
+    border-radius: 0 0 $radius-md $radius-md;
+  }
+
+  &:only-of-type {
+    border-radius: $radius-md;
+  }
+
+  &:nth-of-type(odd) {
+    background-color: var(--v2--color-bg--light);
+  }
+
+  &:nth-of-type(even) {
+    background-color: var(--v2--color-bg);
+  }
+}
+
+.search__option {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  align-items: center;
+  gap: $space-abs-lg;
+  padding: $space-abs-sm $space-abs-xs;
+  min-height: 2.75rem;
+  font-family: 'Red Hat display';
+  font-size: 1.125rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--v2--color-interactive);
+  transition: color 300ms ease, background-color 300ms ease;
+
+  [data-pref--underline="yes"] & {
+    text-decoration: underline;
+  }
+
+  .underline {
+    transition: text-decoration-color 200ms ease, text-underline-offset 100ms ease;
+  }
+
+  &:hover,
+  [data-current] & {
+    background-color: var(--v2--color-interactive);
+    color: var(--v2--color-bg--light);
+
+    .underline {
+      text-underline-offset: 4px;
+      text-decoration-color: var(--v2--color-bg--light);
+    }
+  }
+
+  @include mq.mq($from:md) {
+    padding: $space-abs-sm $space-abs-md;
+    font-size: 1.25rem;
+  }
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-color: var(--v2--color-secondary);
+  text-underline-offset: 2px;
+}
+
+.search__type {
+  border-radius: $radius-md;
+  padding: $space-abs-xxxs $space-abs-xs;
+  font-size: var(--v2--current-small-font-size);
+  line-height: 1.4;
+  color: var(--v2--color-interactive);
+  background-color: var(--v2--color-accent);
+}
+
+.search__msg:not(.visibility-hidden) {
+  gap: $space-abs-lg;
+  padding: $space-abs-md;
+  min-height: 3.5rem;
+}
+
+.search__msg:empty {
+  display: none;
+}
+
+.search__msg--icon {
+  display: flex;
+  align-items: center;
+  min-height: 1.75rem;
+  min-width: 1.75rem;
+  fill: var(--v2--color-warn);
+}
+

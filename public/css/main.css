@@ -114,7 +114,7 @@ body:before {
     --v2--color-interactive: #C2A7D7;
     --v2--color-secondary: #bc58ad;
     --v2--color-tertiary: #50dcc2;
-    --v2--color-accent: #032B1C;
+    --v2--color-accent: #2E1B36;
     --v2--color-text: #B0B0B0;
     --v2--color-text-alt: #D9D9D9;
     --v2--color-text-faded: #3e3e3e;
@@ -132,9 +132,8 @@ body:before {
     --v2--color-code-four: #abe338;
     --v2--color-code-five: #B0B0B0;
     --v2--color-code-six: #DEDEDE;
-    --v2--color-border--light: #323232;
+    --v2--color-border--light: #414141;
     --v2--color-border--mid: #8f8f8f;
-    --v2--shadow: none;
     --color-text: #D9D9D9;
     --color-bg: #252525;
     --color-bg--light: #2d2d2d;
@@ -150,6 +149,8 @@ body:before {
     --color-info: #2a4ea3;
     --color-warn: #982A2A;
     --color-warn--bright: #ff6a6a;
+    --v2--shadow-color: 0deg 0% 7%;
+    --v2--shadow: 0.6px 0.6px 0.9px hsl(var(--v2--shadow-color)/0.5), 1.9px 2px 2.9px -1px hsl(var(--v2--shadow-color)/0.46), 5.2px 5.3px 7.8px -2px hsl(var(--v2--shadow-color)/0.42), 13.3px 13.4px 19.8px -3px hsl(var(--v2--shadow-color)/0.38);
     color-scheme: dark;
   }
   :root:not([data-pref--theme=light]) ::selection {
@@ -167,7 +168,7 @@ body:before {
   --v2--color-interactive: #7E2F9D;
   --v2--color-secondary: #C144BC;
   --v2--color-tertiary: #28956B;
-  --v2--color-accent: #ede7b0;
+  --v2--color-accent: #FFFACD;
   --v2--color-text: #1f1f1f;
   --v2--color-text-alt: #e7e7e7;
   --v2--color-text-faded: #d4d4d4;
@@ -212,7 +213,7 @@ body:before {
   --v2--color-interactive: #7E2F9D;
   --v2--color-secondary: #C144BC;
   --v2--color-tertiary: #28956B;
-  --v2--color-accent: #ede7b0;
+  --v2--color-accent: #FFFACD;
   --v2--color-text: #1f1f1f;
   --v2--color-text-alt: #e7e7e7;
   --v2--color-text-faded: #d4d4d4;
@@ -260,7 +261,7 @@ body:before {
   --v2--color-interactive: #C2A7D7;
   --v2--color-secondary: #bc58ad;
   --v2--color-tertiary: #50dcc2;
-  --v2--color-accent: #032B1C;
+  --v2--color-accent: #2E1B36;
   --v2--color-text: #B0B0B0;
   --v2--color-text-alt: #D9D9D9;
   --v2--color-text-faded: #3e3e3e;
@@ -278,9 +279,8 @@ body:before {
   --v2--color-code-four: #abe338;
   --v2--color-code-five: #B0B0B0;
   --v2--color-code-six: #DEDEDE;
-  --v2--color-border--light: #323232;
+  --v2--color-border--light: #414141;
   --v2--color-border--mid: #8f8f8f;
-  --v2--shadow: none;
   --color-text: #D9D9D9;
   --color-bg: #252525;
   --color-bg--light: #2d2d2d;
@@ -296,6 +296,8 @@ body:before {
   --color-info: #2a4ea3;
   --color-warn: #982A2A;
   --color-warn--bright: #ff6a6a;
+  --v2--shadow-color: 0deg 0% 7%;
+  --v2--shadow: 0.6px 0.6px 0.9px hsl(var(--v2--shadow-color)/0.5), 1.9px 2px 2.9px -1px hsl(var(--v2--shadow-color)/0.46), 5.2px 5.3px 7.8px -2px hsl(var(--v2--shadow-color)/0.42), 13.3px 13.4px 19.8px -3px hsl(var(--v2--shadow-color)/0.38);
   color-scheme: dark;
 }
 :root[data-pref--theme=dark] ::selection {
@@ -688,11 +690,11 @@ input:focus-visible {
   h1:focus-visible,
   input:focus,
   input:focus-visible {
-    transition: all 0.01ms ease-in-out;
+    transition: all 0.01ms ease;
   }
 }
 
-[data-pref--motion=none] *,
+input[type=text] [data-pref--motion=none] *,
 [data-pref--motion=none] *::before,
 [data-pref--motion=none] *::after {
   transition: all 0.0001ms !important;
@@ -1474,7 +1476,7 @@ body:before {
   background: var(--v2--color-primary);
   color: var(--v2--color-text-alt);
   transform: translateY(0);
-  transition: transform 250ms ease-in;
+  transition: transform 250ms ease;
   z-index: 5;
 }
 @media (min-width: 48em) {
@@ -1796,7 +1798,7 @@ body:before {
   padding: 0 36px 0 12px;
   color: var(--v2--color-primary);
   background-color: var(--v2--color-strong--on-primary);
-  transition: color 300ms ease-in, background-color 300ms ease-in;
+  transition: color 300ms ease, background-color 300ms ease;
 }
 @media (max-width: 47.99em) {
   :where(.has-js) .nav__btn--collab {
@@ -1821,7 +1823,7 @@ body:before {
     border-style: solid;
     border-width: 0.5rem 0.5rem 0 0.5rem;
     border-color: var(--v2--color-primary) transparent transparent transparent;
-    transition: transform 300ms ease-in, border-color 300ms ease-in;
+    transition: transform 300ms ease, border-color 300ms ease;
   }
   :where(.has-js) .nav__btn--collab[aria-expanded=false]::after {
     transform: rotate(0deg);
@@ -1848,12 +1850,12 @@ body:before {
   padding: 4px;
   width: 2.75rem;
   background-color: var(--v2--color-strong--on-primary);
-  transition: background-color 300ms ease-in;
+  transition: background-color 300ms ease;
 }
 :where(.has-js) .nav__prefs-btn svg,
 :where(.has-js) .nav__menu-btn svg {
   fill: var(--v2--color-primary);
-  transition: transform 300ms ease-in, fill 300ms ease-in;
+  transition: transform 300ms ease, fill 300ms ease;
 }
 :where(.has-js) .nav__prefs-btn:focus-visible, :where(.has-js) .nav__prefs-btn:hover,
 :where(.has-js) .nav__menu-btn:focus-visible,
@@ -1893,21 +1895,21 @@ body:before {
   visibility: visible;
 }
 :where(.has-js) .nav__menu-btn[aria-expanded=true] .nav__menu-bar::before {
-  animation: down-rotate 350ms ease-in forwards;
+  animation: down-rotate 350ms ease forwards;
 }
 :where(.has-js) .nav__menu-btn[aria-expanded=true] .nav__menu-bar::after {
-  animation: up-rotate 350ms ease-in forwards;
+  animation: up-rotate 350ms ease forwards;
 }
 :where(.has-js) .nav__menu-btn[aria-expanded=false]:not([data-untouched]) .nav__menu-bar::before {
-  animation: back-up-rotate 350ms ease-in forwards;
+  animation: back-up-rotate 350ms ease forwards;
 }
 :where(.has-js) .nav__menu-btn[aria-expanded=false]:not([data-untouched]) .nav__menu-bar::after {
-  animation: back-down-rotate 350ms ease-in forwards;
+  animation: back-down-rotate 350ms ease forwards;
 }
 @media (max-width: 47.99em) {
   :where(.has-js) .nav__menu-btn[aria-expanded=false] + .nav__wrapper {
     visibility: hidden;
-    transition: grid-template-rows 400ms ease-in, visibility 0ms ease-in 400ms;
+    transition: grid-template-rows 400ms ease, visibility 0ms ease 400ms;
   }
 }
 @media (max-width: 47.99em) and (prefers-reduced-motion) {
@@ -1935,7 +1937,7 @@ body:before {
   height: 0.25rem;
   background-color: var(--v2--color-primary);
   transform: rotate(0deg);
-  transition: background-color 300ms ease-in;
+  transition: background-color 300ms ease;
 }
 :where(.has-js) .nav__menu-bar::before, :where(.has-js) .nav__menu-bar::after {
   content: "";
@@ -1947,7 +1949,7 @@ body:before {
   background-color: var(--v2--color-primary);
   transform-origin: center;
   transform: rotate(0deg) scale(1);
-  transition: background-color 300ms ease-in;
+  transition: background-color 300ms ease;
 }
 :where(.has-js) .nav__menu-bar::before {
   top: 0.625rem;
@@ -1956,7 +1958,7 @@ body:before {
   bottom: 0.625rem;
 }
 :where(.has-js) .nav__wrapper {
-  transition: grid-template-rows 400ms ease-in, visibility 0ms ease-in 400ms;
+  transition: grid-template-rows 400ms ease, visibility 0ms ease 400ms;
   width: 100%;
 }
 @media (prefers-reduced-motion) {
@@ -1968,7 +1970,7 @@ body:before {
   :where(.has-js) .nav__wrapper {
     display: grid;
     grid-template-rows: 0fr;
-    transition: grid-template-rows 400ms ease-in;
+    transition: grid-template-rows 400ms ease;
   }
 }
 @media (max-width: 47.99em) and (prefers-reduced-motion) {
@@ -2002,7 +2004,7 @@ body:before {
   padding: 0 0 24px 0;
   width: 100%;
   background-color: var(--v2--color-primary);
-  transition: grid-template-rows 400ms ease-in, visibility 400ms ease-in;
+  transition: grid-template-rows 400ms ease, visibility 400ms ease;
 }
 @media (min-width: 48em) {
   :where(.has-js) .nav__list-sub-panel {
@@ -2106,12 +2108,12 @@ body:before {
 .accordion[data-open=true] + .accordion__panel {
   grid-template-rows: 1fr;
   visibility: visible;
-  transition: grid-template-rows 400ms ease-in, visibility 0ms ease-in 0ms;
+  transition: grid-template-rows 400ms ease, visibility 0ms ease 0ms;
 }
 .accordion[data-open=false] + .accordion__panel {
   grid-template-rows: 0fr;
   visibility: hidden;
-  transition: grid-template-rows 400ms ease-in, visibility 0ms ease-in 400ms;
+  transition: grid-template-rows 400ms ease, visibility 0ms ease 400ms;
 }
 
 .accordion,
@@ -2155,14 +2157,14 @@ body:before {
   text-align: left;
   background-color: var(--v2--color-bg);
   color: var(--v2--color-interactive);
-  transition: background-color 300ms ease-in, color 300ms ease-in;
+  transition: background-color 300ms ease, color 300ms ease;
   z-index: 1;
 }
 .accordion__btn::before, .accordion__btn::after {
   content: "";
   position: absolute;
   background-color: var(--v2--color-interactive);
-  transition: background 300ms ease-in-out, transform 300ms ease-in-out, opacity 250ms ease-in-out;
+  transition: background 300ms ease, transform 300ms ease, opacity 250ms ease;
   transform-origin: top;
 }
 @media (forced-colors: active) {
@@ -2227,7 +2229,7 @@ body:before {
 }
 @media (prefers-reduced-motion) {
   .accordion__panel {
-    transition: grid-template-rows 0ms, visibility 0ms ease-in;
+    transition: grid-template-rows 0ms, visibility 0ms ease;
   }
 }
 
@@ -2319,12 +2321,12 @@ body:before {
   border-radius: 50%;
   height: 1.5rem;
   width: 1.5rem;
-  transition: border-color 300ms ease-in;
+  transition: border-color 300ms ease;
 }
 .btn--default[aria-pressed] span::before {
   content: "";
   position: absolute;
-  transition: border-color 300ms ease-in;
+  transition: border-color 300ms ease;
 }
 .btn--default[aria-pressed=true] span::before {
   top: calc(50% - 0.0625rem);
@@ -2350,7 +2352,7 @@ body:before {
 .btn--default[aria-pressed=false] span::after {
   content: "";
   position: absolute;
-  transition: border-color 300ms ease-in;
+  transition: border-color 300ms ease;
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 .btn--default[aria-pressed=mixed] span::before {
@@ -2659,7 +2661,7 @@ blockquote:not(.twitter-tweet)::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 300ms ease-in, background-color 300ms ease-in, border-color 300ms ease-in;
+  transition: color 300ms ease, background-color 300ms ease, border-color 300ms ease;
 }
 .btn:focus-visible {
   outline: 2px solid var(--v2--color-interactive);
@@ -2948,7 +2950,7 @@ body:before {
   padding: 8px;
   background-color: var(--v2--color-bg--light);
   box-shadow: var(--v2--shadow);
-  transition: border-color 300ms ease-in;
+  transition: border-color 300ms ease;
 }
 .card__item:has(.card__link:focus-visible), .card__item:has(.card__link:hover) {
   border-color: var(--v2--color-interactive);
@@ -2992,7 +2994,7 @@ body:before {
 .card__link {
   text-underline-offset: 0.2em;
   text-decoration-thickness: 3px;
-  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 200ms ease-in;
+  transition: background-color 300ms ease, color 300ms ease, text-decoration-color 300ms ease, text-underline-offset 200ms ease;
 }
 [data-pref--underline] .card__link {
   text-decoration: underline;
@@ -3263,7 +3265,7 @@ pre[class][class*=language-] {
   color: var(--v2--color-black);
   transform-origin: right;
   transform: scaleX(0);
-  transition: transform 200ms ease-in;
+  transition: transform 200ms ease;
 }
 .copy__announcement:not(:empty) {
   transform: scaleX(1);
@@ -3537,7 +3539,7 @@ body:before {
   text-decoration: underline;
   text-underline-offset: 0.2em;
   color: var(--v2--color-strong--on-primary);
-  transition: color 300ms ease-in, background-color 300ms ease-in, text-decoration-color 300ms ease-in;
+  transition: color 300ms ease, background-color 300ms ease, text-decoration-color 300ms ease;
 }
 .nav__link[aria-current=page],
 .nav__link-sub[aria-current=page],
@@ -3556,7 +3558,7 @@ body:before {
   width: calc(100% - 16px);
   height: 0;
   border-top: 4px solid var(--v2--color-strong--on-primary);
-  transition: background-color 300ms ease-in, transform 300ms ease-in;
+  transition: background-color 300ms ease, transform 300ms ease;
 }
 .nav__link[aria-current=page]::after,
 .nav__link-sub[aria-current=page]::after,
@@ -3748,7 +3750,7 @@ body:before {
   text-decoration-thickness: 2px;
   text-decoration-color: var(--v2--color-secondary);
   text-underline-offset: 0.15em;
-  transition: text-underline-offset 200ms, color 300ms ease-in, background-color 300ms ease-in, text-decoration-color 300ms ease-in;
+  transition: text-underline-offset 200ms, color 300ms ease, background-color 300ms ease, text-decoration-color 300ms ease;
   color: var(--v2--color-interactive);
 }
 .pagination__link:hover, .pagination__link:focus-visible {
@@ -3907,6 +3909,18 @@ body:before {
     content: "xxl ≥ 1440px (90em)";
   }
 }
+.header__search-block {
+  position: relative;
+}
+.header__search-block:has(.search__msg:not(.visually-hidden)) .search__wrapper::before {
+  border-color: var(--v2--color-warn);
+}
+.header__search-block:has(.search__msg:not(.visually-hidden)) .search__panel {
+  border-color: var(--v2--color-warn);
+}
+.no-js .header__search-block {
+  visibility: hidden;
+}
 .has-js .header__search-block {
   display: flex;
   flex-direction: column;
@@ -3914,7 +3928,8 @@ body:before {
 }
 
 .search__wrapper,
-.search__label {
+.search__label,
+.search__panel {
   width: 35rem;
   max-width: 96%;
 }
@@ -3930,14 +3945,27 @@ body:before {
   stroke: var(--v2--color-primary);
   fill: var(--v2--color-primary);
 }
+.search__wrapper[data-expanded=false] + .search__panel {
+  visibility: hidden;
+  transform: translateY(2.5rem);
+  border-color: transparent;
+  opacity: 0.4;
+  transition: opacity 600ms ease, border-color 300ms ease, visibility 0.001ms ease 500ms, transform 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.search__wrapper[data-expanded=true] + .search__panel {
+  visibility: visible;
+  transform: translateY(0);
+  opacity: 1;
+  transition: opacity 400ms ease, border-color 300ms ease, transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
 .search__wrapper::before {
   content: "";
   position: absolute;
-  inset: -4px;
+  inset: -6px;
   border: 2px solid transparent;
-  border-radius: 6px;
+  border-radius: 8px;
   z-index: -1;
-  transition: border-color 300ms ease-in;
+  transition: border-color 300ms ease;
 }
 .search__wrapper:focus-within::before {
   border-color: var(--v2--color-interactive);
@@ -3954,12 +3982,117 @@ body:before {
   padding: 0 2.25rem 0 8px;
   width: 100%;
   height: 2.5rem;
+  color: var(--v2--color-black);
   background-color: var(--v2--color-strong--on-primary);
 }
 @media (min-width: 48em) {
   .search__input {
     height: 3rem;
   }
+}
+
+.search__panel {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  border: 1px solid var(--v2--color-border--light);
+  border-radius: 6px;
+  background-color: var(--v2--color-bg);
+  z-index: 5;
+  box-shadow: var(--v2--shadow);
+}
+
+.search__list {
+  list-style-type: none;
+  max-height: calc(100vh - 9rem);
+  overflow-y: auto;
+}
+
+.search__item {
+  overflow: hidden;
+}
+.search__item:first-of-type {
+  border-radius: 6px 6px 0 0;
+}
+.search__item:last-of-type {
+  border-radius: 0 0 6px 6px;
+}
+.search__item:only-of-type {
+  border-radius: 6px;
+}
+.search__item:nth-of-type(odd) {
+  background-color: var(--v2--color-bg--light);
+}
+.search__item:nth-of-type(even) {
+  background-color: var(--v2--color-bg);
+}
+
+.search__option {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 6px;
+  min-height: 2.75rem;
+  font-family: "Red Hat display";
+  font-size: 1.125rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--v2--color-interactive);
+  transition: color 300ms ease, background-color 300ms ease;
+}
+[data-pref--underline=yes] .search__option {
+  text-decoration: underline;
+}
+.search__option .underline {
+  transition: text-decoration-color 200ms ease, text-underline-offset 100ms ease;
+}
+.search__option:hover, [data-current] .search__option {
+  background-color: var(--v2--color-interactive);
+  color: var(--v2--color-bg--light);
+}
+.search__option:hover .underline, [data-current] .search__option .underline {
+  text-underline-offset: 4px;
+  text-decoration-color: var(--v2--color-bg--light);
+}
+@media (min-width: 48em) {
+  .search__option {
+    padding: 8px 12px;
+    font-size: 1.25rem;
+  }
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-color: var(--v2--color-secondary);
+  text-underline-offset: 2px;
+}
+
+.search__type {
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: var(--v2--current-small-font-size);
+  line-height: 1.4;
+  color: var(--v2--color-interactive);
+  background-color: var(--v2--color-accent);
+}
+
+.search__msg:not(.visibility-hidden) {
+  gap: 16px;
+  padding: 12px;
+  min-height: 3.5rem;
+}
+
+.search__msg:empty {
+  display: none;
+}
+
+.search__msg--icon {
+  display: flex;
+  align-items: center;
+  min-height: 1.75rem;
+  min-width: 1.75rem;
+  fill: var(--v2--color-warn);
 }
 
 body:before {
@@ -4032,7 +4165,7 @@ body:before {
 .skip-link {
   left: 0.75rem;
   transform: translateY(0);
-  transition: transform 250ms ease-in;
+  transition: transform 250ms ease;
 }
 @media (min-width: 48em) {
   .skip-link {
@@ -4055,7 +4188,7 @@ body:before {
   left: 0;
   margin: 4px;
   opacity: 1;
-  transition: opacity 300ms ease-in;
+  transition: opacity 300ms ease;
 }
 
 .skip-link--static:not(:focus):not(:active) {
@@ -4247,7 +4380,7 @@ body:before {
   text-underline-offset: 0.1em;
   background-color: var(--v2--color-interactive);
   color: var(--v2--color-bg);
-  transition: background-color 300ms ease-in, color 300ms ease-in, text-underline-offset 200ms;
+  transition: background-color 300ms ease, color 300ms ease, text-underline-offset 200ms;
 }
 [data-pref--underline] .tag__link {
   text-decoration: underline;
@@ -4279,7 +4412,7 @@ body:before {
   border-radius: 4px;
   height: 1.25em;
   min-width: 1.25em;
-  transition: border-color 300ms ease-in;
+  transition: border-color 300ms ease;
 }
 @media (min-width: 48em) {
   .tag__count {
@@ -4451,7 +4584,7 @@ body:before {
   padding: 0.5rem;
   text-align: center;
   font-weight: bold;
-  transition: background 200ms ease-in;
+  transition: background 200ms ease;
 }
 
 .counter-table__result {
@@ -4482,7 +4615,7 @@ body:before {
   height: 2rem;
   width: 2rem;
   background-color: var(--color-interactive);
-  transition: background 150ms ease-in;
+  transition: background 150ms ease;
 }
 .counter-table__btn:focus-visible {
   background: var(--color-bg);
@@ -4503,7 +4636,7 @@ body:before {
   content: "";
   position: absolute;
   background: var(--color-bg);
-  transition: background 150ms ease-in;
+  transition: background 150ms ease;
 }
 
 .counter-table__btn::before {
@@ -4533,7 +4666,7 @@ body:before {
   font-weight: 600;
   text-decoration: none;
   color: var(--color-interactive);
-  transition: background 200ms ease-in;
+  transition: background 200ms ease;
 }
 .sc-table__link::before {
   content: "";
@@ -4542,7 +4675,7 @@ body:before {
   width: calc(100% - 0.5rem);
   height: 0;
   border-top: 3px solid var(--color-interactive);
-  transition: border-color 200ms ease-in;
+  transition: border-color 200ms ease;
 }
 .sc-table__link > span {
   padding: 0 0.25rem;
@@ -4596,7 +4729,7 @@ body:before {
   height: 100%;
   border-radius: 2px;
   z-index: -1;
-  transition: background-color 200ms ease-in;
+  transition: background-color 200ms ease;
 }
 
 .sc-table__radio {
@@ -4623,7 +4756,7 @@ body:before {
   height: 1.125rem;
   width: 1.125rem;
   transform: scale(0);
-  transition: transform 200ms ease-in-out;
+  transition: transform 200ms ease;
 }
 .sc-table__radio:focus {
   outline: 3px solid transparent;
@@ -4670,7 +4803,7 @@ body:before {
   border-radius: 2px;
   overflow: hidden;
   position: relative;
-  transition: box-shadow 200ms ease-in;
+  transition: box-shadow 200ms ease;
 }
 .sc-table__comment-wrapper:focus-within {
   box-shadow: 0px 0px 0px 2px var(--color-bg), 0px 0px 0px 5px var(--color-interactive);
@@ -4709,7 +4842,7 @@ body:before {
   text-align: left;
   background-color: var(--color-warn);
   color: var(--color-text);
-  transition: transform 200ms ease-in;
+  transition: transform 200ms ease;
 }
 
 [data-radio-cell] {
@@ -4734,7 +4867,7 @@ body:before {
   margin: 0;
   border-radius: 0 0 2px 2px;
   width: calc(100% - 4px);
-  transition: transform 200ms ease-in;
+  transition: transform 200ms ease;
 }
 .sc-table__comment-wrapper .sc-table__err-msg[aria-hidden=false] {
   transform: translateY(0);
@@ -4769,7 +4902,7 @@ body:before {
 }
 
 .control__btn--clear {
-  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+  transition: background-color 250ms ease, color 250ms ease;
   position: relative;
   border: 3px solid var(--color-warn--bright);
   background-color: var(--color-warn--bright);
@@ -4792,7 +4925,7 @@ body:before {
   left: -6px;
   border: 2px solid transparent;
   border-radius: 8px;
-  transition: border-color 200ms ease-in;
+  transition: border-color 200ms ease;
   border-width: 3px;
   border-radius: 16px;
   inset: -8px;
@@ -4808,7 +4941,7 @@ body:before {
 }
 
 .control__btn--generate {
-  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+  transition: background-color 250ms ease, color 250ms ease;
   position: relative;
   border-color: var(--color-interactive);
   background-color: var(--color-interactive);
@@ -4829,7 +4962,7 @@ body:before {
   left: -6px;
   border: 2px solid transparent;
   border-radius: 8px;
-  transition: border-color 200ms ease-in;
+  transition: border-color 200ms ease;
   border-width: 3px;
   border-radius: 16px;
   inset: -8px;
@@ -4882,13 +5015,13 @@ body:before {
   visibility: visible;
   transform: translate(-50%, 0);
   opacity: 1;
-  transition: visibility 0ms ease-in, opacity 300ms ease-in, transform 300ms ease-in;
+  transition: visibility 0ms ease, opacity 300ms ease, transform 300ms ease;
 }
 .modal [data-displayed=false] {
   visibility: hidden;
   transform: translate(-50%, 75%);
   opacity: 0;
-  transition: visibility 300ms ease-in, opacity 300ms ease-in, transform 300ms ease-in;
+  transition: visibility 300ms ease, opacity 300ms ease, transform 300ms ease;
 }
 
 .modal__inner {
@@ -4901,7 +5034,7 @@ body:before {
 .modal__close-btn {
   border: 2px solid var(--color-warn--bright);
   background-color: var(--color-warn--bright);
-  transition: background-color 200ms ease-in, color 200ms ease-in;
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 .modal__close-btn--top {
@@ -4921,7 +5054,7 @@ body:before {
   width: 4px;
   height: calc(100% - 4px);
   background-color: var(--color-bg);
-  transition: background-color 200ms ease-in;
+  transition: background-color 200ms ease;
 }
 .modal__close-btn--top::before {
   transform: rotate(-45deg);
@@ -4942,7 +5075,7 @@ body:before {
 }
 
 .modal__close-btn--bottom {
-  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+  transition: background-color 250ms ease, color 250ms ease;
   position: relative;
   margin: 0 0.5rem 0.5rem 0;
   border-radius: 4px;
@@ -4966,7 +5099,7 @@ body:before {
   left: -6px;
   border: 2px solid transparent;
   border-radius: 8px;
-  transition: border-color 200ms ease-in;
+  transition: border-color 200ms ease;
 }
 @media (forced-colors: active) {
   .modal__close-btn--bottom::before {
@@ -5020,7 +5153,7 @@ body:before {
   font-size: 1.25rem;
   color: var(--color-bg);
   background-color: var(--color-interactive);
-  transition: background-color 150ms ease-in, color 150ms ease-in;
+  transition: background-color 150ms ease, color 150ms ease;
 }
 .modal__copy-btn::before {
   content: "";
@@ -5028,7 +5161,7 @@ body:before {
   inset: -6px;
   border: 2px solid transparent;
   border-radius: 6px;
-  transition: border-color 200ms ease-in;
+  transition: border-color 200ms ease;
 }
 .modal__copy-btn:focus {
   outline: 2px solid transparent;
@@ -5076,7 +5209,7 @@ body:before {
   left: -6px;
   border: 2px solid transparent;
   border-radius: 8px;
-  transition: border-color 250ms ease-in-out;
+  transition: border-color 250ms ease;
 }
 .wcag-toggle__btn:hover, .wcag-toggle__btn:focus-visible {
   background-color: var(--color-interactive);
@@ -5309,12 +5442,12 @@ body:before {
   margin-top: 1.25em;
   height: 2.75rem;
   width: 2.75rem;
-  transition: background-color 300ms ease-in;
+  transition: background-color 300ms ease;
 }
 .cms .cms__anchor svg {
   fill: var(--v2--color-interactive);
   transform: rotate(-45deg);
-  transition: fill 300ms ease-in;
+  transition: fill 300ms ease;
 }
 .cms .cms__anchor:focus-visible {
   outline: 2px solid var(--v2--color-interactive);
@@ -5594,7 +5727,7 @@ body:before {
   }
 }
 .skip-tags {
-  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+  transition: background-color 250ms ease, color 250ms ease;
   position: absolute;
   top: 0;
   left: 50%;

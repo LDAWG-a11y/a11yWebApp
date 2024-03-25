@@ -943,7 +943,7 @@ summary:focus-visible {
   right: 20px;
   height: 20px;
   width: 6px;
-  transition: transform ease-in 200ms;
+  transition: transform ease 200ms;
 }
 
 .widget__btn[aria-expanded]::after {

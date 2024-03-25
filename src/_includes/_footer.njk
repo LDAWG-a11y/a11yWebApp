@@ -19,7 +19,7 @@
       </p>
     </div>
     <div class="footer__mta-links">
-      <h2 data-no-accent>Make Things Accessible links</h2>
+      <h2 id="footerLinks" data-no-accent>Make Things Accessible links</h2>
       <ul class="footer__list">
         {%- for item in navLinks %}
           {%- if not item.ignoreFooterNav %}
@@ -59,3 +59,6 @@
   </div>
 </footer>
 {% include "_dialog.njk" %}
+{%- if team === 'mta' %}
+  <script src="/js/search.js" type="module"></script>
+{% endif %}

@@ -12,7 +12,7 @@
   text-decoration: underline;
   text-underline-offset: .2em;
   color: var(--v2--color-strong--on-primary);
-  transition: color 300ms ease-in, background-color 300ms ease-in, text-decoration-color 300ms ease-in;
+  transition: color 300ms ease, background-color 300ms ease, text-decoration-color 300ms ease;
 
   &[aria-current="page"] {
     text-decoration: none;
@@ -25,7 +25,7 @@
       width: calc(100% - 16px);
       height: 0;
       border-top: 4px solid var(--v2--color-strong--on-primary);
-      transition: background-color 300ms ease-in, transform 300ms ease-in;
+      transition: background-color 300ms ease, transform 300ms ease;
     }
 
     &::after {

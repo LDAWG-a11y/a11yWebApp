@@ -68,9 +68,11 @@ input:focus-visible {
   outline-offset: 2px;
 
   @media (forced-colors: active) {
-    transition: all 0.01ms ease-in-out;
+    transition: all 0.01ms ease;
   }
 }
+
+input[type="text"]
 
 [data-pref--motion="none"] *,
 [data-pref--motion="none"] *::before,

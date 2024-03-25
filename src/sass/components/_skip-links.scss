@@ -16,7 +16,7 @@
 .skip-link {
   left: $space-rel-sm;
   transform: translateY(0);
-  transition: transform 250ms ease-in;
+  transition: transform 250ms ease;
 
   @include mq.mq($from:md) {
     top: -$space-abs-lg;
@@ -36,7 +36,7 @@
   left: 0;
   margin: $space-abs-xxs;
   opacity: 1;
-  transition: opacity 300ms ease-in;
+  transition: opacity 300ms ease;
 }
 
 .skip-link--static:not(:focus):not(:active) {

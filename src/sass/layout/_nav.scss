@@ -78,7 +78,7 @@ a.nav__link {
     padding: 0 36px 0 12px;
     color: var(--v2--color-primary);
     background-color: var(--v2--color-strong--on-primary);
-    transition: color 300ms ease-in, background-color 300ms ease-in;
+    transition: color 300ms ease, background-color 300ms ease;
 
     @include mq.mq($until:md) {
       display: none;
@@ -105,7 +105,7 @@ a.nav__link {
         border-style: solid;
         border-width: .5rem .5rem 0 .5rem;
         border-color: var(--v2--color-primary) transparent transparent transparent;
-        transition: transform 300ms ease-in, border-color 300ms ease-in;
+        transition: transform 300ms ease, border-color 300ms ease;
       }
 
       &[aria-expanded="false"]::after {
@@ -140,11 +140,11 @@ a.nav__link {
     padding: 4px;
     width: 2.75rem;
     background-color: var(--v2--color-strong--on-primary);
-    transition: background-color 300ms ease-in;
+    transition: background-color 300ms ease;
 
     svg {
       fill: var(--v2--color-primary);
-      transition: transform 300ms ease-in, fill 300ms ease-in;
+      transition: transform 300ms ease, fill 300ms ease;
     }
 
     &:focus-visible,
@@ -181,12 +181,12 @@ a.nav__link {
         }
 
         &::before {
-          animation: down-rotate 350ms ease-in forwards;
+          animation: down-rotate 350ms ease forwards;
           
         }
 
         &::after {
-          animation: up-rotate 350ms ease-in forwards;
+          animation: up-rotate 350ms ease forwards;
         }
       }
     }
@@ -195,11 +195,11 @@ a.nav__link {
       .nav__menu-bar {
 
         &::before {
-          animation: back-up-rotate 350ms ease-in forwards;
+          animation: back-up-rotate 350ms ease forwards;
         }
 
         &::after {
-          animation: back-down-rotate 350ms ease-in forwards;
+          animation: back-down-rotate 350ms ease forwards;
         }
       }
     }
@@ -207,7 +207,7 @@ a.nav__link {
     @include mq.mq($until:md) {
       &[aria-expanded="false"] + .nav__wrapper {
         visibility: hidden;
-        transition: grid-template-rows 400ms ease-in, visibility 0ms ease-in 400ms;
+        transition: grid-template-rows 400ms ease, visibility 0ms ease 400ms;
 
         @media (prefers-reduced-motion) {
           transition: grid-template-rows 0ms, visibility 0ms;
@@ -235,7 +235,7 @@ a.nav__link {
     height: .25rem;
     background-color: var(--v2--color-primary);
     transform: rotate(0deg);
-    transition: background-color 300ms ease-in;
+    transition: background-color 300ms ease;
 
     &::before,
     &::after {
@@ -248,7 +248,7 @@ a.nav__link {
       background-color: var(--v2--color-primary);
       transform-origin: center;
       transform: rotate(0deg) scale(1);
-      transition: background-color 300ms ease-in;
+      transition: background-color 300ms ease;
     }
 
     &::before {
@@ -261,7 +261,7 @@ a.nav__link {
   }  
 
   .nav__wrapper {
-    transition: grid-template-rows 400ms ease-in, visibility 0ms ease-in 400ms;
+    transition: grid-template-rows 400ms ease, visibility 0ms ease 400ms;
     width: 100%;
 
     @media (prefers-reduced-motion) {
@@ -271,7 +271,7 @@ a.nav__link {
     @include mq.mq($until:md) {
       display: grid;
       grid-template-rows: 0fr;
-      transition: grid-template-rows 400ms ease-in;
+      transition: grid-template-rows 400ms ease;
 
       @media (prefers-reduced-motion) {
         transition: grid-template-rows 0ms;
@@ -307,7 +307,7 @@ a.nav__link {
     padding: 0 0 24px 0;
     width: 100%;
     background-color: var(--v2--color-primary);
-    transition: grid-template-rows 400ms ease-in, visibility 400ms ease-in;
+    transition: grid-template-rows 400ms ease, visibility 400ms ease;
     
     @include mq.mq($from:md) {
       position: absolute;

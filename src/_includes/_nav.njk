@@ -22,8 +22,9 @@
         {%- endif %}
       {%- endfor %}
       <li class="nav__sub-items--parent">
-        <button class="nav__btn--collab" aria-expanded="false" aria-controls="collabNavPanel" id="collabBtn">Collaborations</button>
-        <div class="nav__list-sub-panel" id="collabNavPanel">
+        <noscript><a class="nav__link" href="#footerLinks">All links</a></noscript>
+        <button class="nav__btn--collab" aria-expanded="false" aria-controls="collabNavPanel" id="collabBtn" hidden>Collaborations</button>
+        <div class="nav__list-sub-panel" id="collabNavPanel" hidden>
           <ul class="nav__list--level-2">
             {%- for collab in collaborations %}
               <li>

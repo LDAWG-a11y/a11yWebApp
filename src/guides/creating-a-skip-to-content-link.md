@@ -168,7 +168,7 @@ So, without further waffling, let's just add the CSS:
   color: white;
   /* Ensure the Y position is set to zero and any movement on the transform property */
   transform: translateY(0);
-  transition: transform 250ms ease-in;
+  transition: transform 250ms ease;
 }
 
 /* When it is not focused, transform its Y position by its total height, using a negative value, so it hides above the viewport */

@@ -119,7 +119,7 @@ pre[class][class*="language-"] {
   color: var(--v2--color-black);
   transform-origin: right;
   transform: scaleX(0);
-  transition: transform 200ms ease-in;
+  transition: transform 200ms ease;
 
   &:not(:empty) {
     transform: scaleX(1);

@@ -17,7 +17,7 @@
   background: var($--v2--color-primary);
   color: var($--v2--color-text-alt);
   transform: translateY(0);
-  transition: transform 250ms ease-in;
+  transition: transform 250ms ease;
   z-index: 5;
 
   @include mq.mq($from:md) {

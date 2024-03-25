@@ -1,7 +1,7 @@
 @use '../vendors/mq';
 
 @mixin focus-indicator($is_button: false, $is_pill: false, $is_destructive: false, $is_inverted: false) {
-  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+  transition: background-color 250ms ease, color 250ms ease;
 
   &:focus,
   &:hover {
@@ -30,7 +30,7 @@
       left: -6px;
       border: 2px solid transparent;
       border-radius: $radius-lg;
-      transition: border-color 200ms ease-in;
+      transition: border-color 200ms ease;
 
       @if $is_pill {
         border-width: 3px;
