@@ -1369,6 +1369,9 @@ body:before {
 .footer__list--collabs {
   justify-content: flex-start;
 }
+.footer__list--collabs:first-of-type {
+  margin-bottom: 40px;
+}
 
 @media (min-width: 48em) {
   .footer__list {
@@ -1643,7 +1646,7 @@ body:before {
   }
 }
 body {
-  max-width: 95rem;
+  max-width: 98rem;
   background: var(--v2--color-bg);
 }
 @media (min-width: 48em) {
@@ -1662,7 +1665,7 @@ body {
   }
 }
 body.extra-width {
-  max-width: 97.5rem;
+  max-width: 100.5rem;
 }
 
 .extra-width .main {

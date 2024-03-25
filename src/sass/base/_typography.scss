@@ -142,24 +142,6 @@ dialog {
   }
 }
 
-  // @include mq.mq($from:lg) {
-  //   --v2--current-base-font-size: calc(var(--v2--base-font-size) + .375rem);
-  //   font-size: var(--v2--current-base-font-size);
-
-  //   [data-pref--f-size="largest"] & {
-  //     --v2--current-base-font-size: calc(var(--v2--base-font-size) + .5rem);
-  //     font-size: var(--v2--current-base-font-size);
-  //   }
-  // }
-// }
-
-summary,
-input {
-  @include mq.mq($from:md) {
-    // font-size: var(--v2--current-base-font-size);
-  }
-}
-
 kbd {
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
   margin: 0 2px;
