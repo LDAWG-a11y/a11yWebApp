@@ -24,7 +24,10 @@ search.addEventListener('keydown', (evt) => {
       } else if (evt.key === 'ArrowUp' && currItem.previousSibling) {
         highlightCurrent(currItem.previousElementSibling);
       } 
-      currItem.scrollIntoView({ block: "nearest", inline: "nearest" });
+
+      if (currItem && evt.key !== 'Enter') {
+        currItem.scrollIntoView({ block: "nearest", inline: "nearest" });
+      }
 
       if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
         let title = `Link, ${currItem.querySelector('.underline').textContent}, ${currItem.querySelector('.search__type').textContent}, `;
@@ -40,6 +43,9 @@ search.addEventListener('keydown', (evt) => {
             el.closest('a').click();
           }
         })
+      }
+       if (searchList.querySelectorAll('li').length === 1 && evt.key === 'Enter') {
+        searchList.querySelector('a').click();
       }
     }
   }

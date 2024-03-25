@@ -55,17 +55,14 @@
       <div class="modal__announcement visually-hidden" aria-live="assertive"></div>
     </div>
     <div class="page__announcement visually-hidden" aria-live="polite"></div>
-  {%- endif %}
-  {% set js %}
-    {% include "site.js" %}
-    {%- if team === mta %}
-      {% include "search.js" %}
-    {% endif %}
-    {%- if page.url == "/auditTool/" %}
-      {% include "auditTool.js" %}
-    {% endif %}
-  {% endset %}
-  <script>{{ js | jsmin | safe }}</script>
+    {%- endif %}
+    {% set js %}
+      {% include "site.js" %}
+      {%- if page.url == "/auditTool/" %}
+        {% include "auditTool.js" %}
+      {% endif %}
+    {% endset %}
+    <script>{{ js | jsmin | safe }}</script>
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
