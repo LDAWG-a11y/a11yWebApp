@@ -2006,6 +2006,11 @@ body:before {
   background-color: var(--v2--color-primary);
   transition: grid-template-rows 400ms ease, visibility 400ms ease;
 }
+@media (max-width: 47.99em) {
+  :where(.has-js) .nav__list-sub-panel {
+    display: block;
+  }
+}
 @media (min-width: 48em) {
   :where(.has-js) .nav__list-sub-panel {
     position: absolute;
@@ -2034,6 +2039,15 @@ body:before {
   grid-row: 1/span 2;
   overflow: hidden;
 }
+@media (min-width: 48em) {
+  :where(.has-js) .nav__list--level-2 {
+    gap: 1.5rem;
+  }
+  :where(.has-js) .nav__list--level-2 > li:first-of-type {
+    border-right: 1px solid var(--v2--color-strong--on-primary);
+    padding: 0 1.5rem;
+  }
+}
 :where(.has-js) .nav__list--level-3 {
   flex-direction: column;
 }
@@ -2042,11 +2056,6 @@ body:before {
   width: 100%;
 }
 
-.no-js .nav__prefs-btn,
-.no-js .nav__menu-btn,
-.no-js .nav__btn--collab {
-  display: none;
-}
 body:before {
   background-color: #fcf8e3;
   border-bottom: 1px solid #fbeed5;
@@ -4435,25 +4444,6 @@ body:before {
   margin-bottom: 6px;
 }
 
-.supporters__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-}
-.supporters__wrapper img {
-  margin-bottom: 0;
-  height: 10rem;
-  max-height: 10rem;
-  width: auto;
-}
-
-.supporters__link:hover img, .supporters__link:focus img {
-  outline: 3px solid var(--v2--color-interactive);
-  outline-offset: 2px;
-}
-
 body:before {
   background-color: #fcf8e3;
   border-bottom: 1px solid #fbeed5;
@@ -5498,6 +5488,29 @@ body:before {
 }
 .cms a:hover code, .cms a:focus code {
   color: var(--v2--color-text);
+}
+
+.supporters__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.supporters__wrapper img[src] {
+  margin-bottom: 0;
+  height: 10rem;
+  max-height: 10rem;
+  width: auto;
+}
+
+p:has(+ .supporters__wrapper) {
+  margin-bottom: 40px;
+}
+
+.supporters__link:hover img, .supporters__link:focus img {
+  outline: 3px solid var(--v2--color-interactive);
+  outline-offset: 2px;
 }
 
 body:before {

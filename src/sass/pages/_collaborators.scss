@@ -5,12 +5,16 @@
   align-items: center;
   gap: $space-rel-lg;
 
-  img {
+  img[src] {
     margin-bottom: 0;
     height: 10rem;
     max-height: 10rem;
     width: auto;
   }
+}
+
+p:has(+ .supporters__wrapper) {
+  margin-bottom: $space-abs-xxxxl;
 }
 
 .supporters__link {

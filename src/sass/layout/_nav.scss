@@ -308,6 +308,10 @@ a.nav__link {
     width: 100%;
     background-color: var(--v2--color-primary);
     transition: grid-template-rows 400ms ease, visibility 400ms ease;
+   
+    @include mq.mq($until:md) {
+      display: block;
+    }
     
     @include mq.mq($from:md) {
       position: absolute;
@@ -334,6 +338,15 @@ a.nav__link {
   .nav__list--level-2 {
     grid-row: 1 / span 2;
     overflow: hidden;
+
+    @include mq.mq($from:md) {
+      gap: 1.5rem;
+      
+      > li:first-of-type {
+        border-right: 1px solid var(--v2--color-strong--on-primary);
+        padding: 0 1.5rem;
+      }
+    }
   }
 
   .nav__list--level-3 {
@@ -344,55 +357,3 @@ a.nav__link {
     }
   }
 }
-
-// Base styles for no-js
-.no-js {
-  .nav {
-    @include mq.mq($from:md) {
-      // padding: 12px 12px $space-rel-xxxxl;
-    }
-  }
-
-  .nav__prefs-btn,
-  .nav__menu-btn,
-  .nav__btn--collab {
-    display: none
-  }
-
-  .nav__list {
-    // @include mq.mq($from:md) {
-    //   position: relative;
-    // }
-
-    // @include mq.mq($from:xl) {
-    //   margin-bottom: 10px;
-    // }
-  }
-  
-  .nav__list--collabs {
-    @include mq.mq($from:md) {
-      // position: relative;
-      // top: $space-rel-xxxl;
-      // right: 0;
-      
-      // &::before {
-      //   content: "";
-      //   position: absolute;
-      //   top: -4px;
-      //   left: 0;
-      //   border-top: 1px solid white;
-      //   width: 100%;
-
-      //   @include mq.mq($from:xl) {
-      //     top: -10px;
-      //   }
-      // }
-    }
-
-    @include mq.mq($from:xl) {
-      // top: $space-rel-xxxxl;
-    }
-  }
-}
-
-// End no-js

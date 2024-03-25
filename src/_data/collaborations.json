@@ -1,5 +1,14 @@
 [
   {
+    "name": "RNIB",
+    "pages": [
+      {
+          "text": "Accessibility passport",
+          "url": "/rnib/accessibility-passport"
+      }
+    ]
+  },
+  {
     "name": "Access and Assistance for All",
     "pages": [
       {
