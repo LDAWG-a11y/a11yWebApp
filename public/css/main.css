@@ -877,12 +877,29 @@ dialog {
     --v2--current-small-font-size: calc(var(--v2--small-font-size) + .25rem);
     font-size: var(--v2--current-base-font-size);
   }
+  [data-pref--f-size=large] main,
+  [data-pref--f-size=large] dialog {
+    --v2--current-base-font-size: calc(var(--v2--base-font-size) + .25rem);
+  }
+  [data-pref--f-size=largest] main,
+  [data-pref--f-size=largest] dialog {
+    --v2--current-base-font-size: calc(var(--v2--base-font-size) + .25rem);
+  }
 }
 @media (min-width: 64em) {
   main,
   dialog {
     --v2--current-base-font-size: calc(var(--v2--base-font-size) + .375rem);
+    --v2--current-small-font-size: calc(var(--v2--small-font-size) + .25rem);
     font-size: var(--v2--current-base-font-size);
+  }
+  [data-pref--f-size=large] main,
+  [data-pref--f-size=large] dialog {
+    --v2--current-base-font-size: calc(var(--v2--base-font-size) + .375rem);
+  }
+  [data-pref--f-size=largest] main,
+  [data-pref--f-size=largest] dialog {
+    --v2--current-base-font-size: calc(var(--v2--base-font-size) + .5rem);
   }
 }
 
@@ -3168,7 +3185,7 @@ body:before {
   border: 1px solid var(--v2--color-border--light);
   border-radius: 6px;
   width: 100%;
-  font-size: var(--v2--current-small-font-size);
+  font-size: var(--v2--current-base-font-size);
   background: var(--v2--color-bg--light);
   box-shadow: var(--v2--shadow);
 }
