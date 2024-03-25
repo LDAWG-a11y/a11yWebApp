@@ -135,6 +135,10 @@
 
 .footer__list--collabs {
   justify-content: flex-start;
+
+  &:first-of-type {
+    margin-bottom: $space-abs-xxxxl;
+  }
 }
 
 .footer__list {
