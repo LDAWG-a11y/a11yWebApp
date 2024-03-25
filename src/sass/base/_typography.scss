@@ -114,14 +114,44 @@ dialog {
   @include mq.mq($from:md) {
     --v2--current-base-font-size: calc(var(--v2--base-font-size) + .25rem);
     --v2--current-small-font-size: calc(var(--v2--small-font-size) + .25rem);
+
+    [data-pref--f-size="large"] & {
+      --v2--current-base-font-size: calc(var(--v2--base-font-size) + .25rem);
+    }
+
+    [data-pref--f-size="largest"] & {
+      --v2--current-base-font-size: calc(var(--v2--base-font-size) + .25rem);
+    }
+    
     font-size: var(--v2--current-base-font-size);
   }
 
   @include mq.mq($from:lg) {
     --v2--current-base-font-size: calc(var(--v2--base-font-size) + .375rem);
+    --v2--current-small-font-size: calc(var(--v2--small-font-size) + .25rem);
+    
+    [data-pref--f-size="large"] & {
+      --v2--current-base-font-size: calc(var(--v2--base-font-size) + .375rem);
+    }
+
+    [data-pref--f-size="largest"] & {
+      --v2--current-base-font-size: calc(var(--v2--base-font-size) + .5rem);
+    }
+
     font-size: var(--v2--current-base-font-size);
   }
 }
+
+  // @include mq.mq($from:lg) {
+  //   --v2--current-base-font-size: calc(var(--v2--base-font-size) + .375rem);
+  //   font-size: var(--v2--current-base-font-size);
+
+  //   [data-pref--f-size="largest"] & {
+  //     --v2--current-base-font-size: calc(var(--v2--base-font-size) + .5rem);
+  //     font-size: var(--v2--current-base-font-size);
+  //   }
+  // }
+// }
 
 summary,
 input {
