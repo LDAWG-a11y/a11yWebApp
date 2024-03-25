@@ -1090,7 +1090,7 @@ a:not([class]):visited,
   text-decoration-thickness: 3px;
   text-decoration-color: var(--v2--color-secondary);
   color: var(--v2--color-interactive);
-  transition: background-color 300ms ease, color 300ms ease, text-decoration-color 300ms ease, text-underline-offset 200ms ease;
+  transition: background-color 300ms ease-in, color 300ms ease-in, text-decoration-color 300ms ease-in, text-underline-offset 200ms ease-in;
 }
 a:not([class]):focus, a:not([class]):hover,
 a:not([class]):visited:focus,
@@ -3917,6 +3917,9 @@ body:before {
 }
 .header__search-block:has(.search__msg:not(.visually-hidden)) .search__panel {
   border-color: var(--v2--color-warn);
+}
+.no-js .header__search-block {
+  visibility: hidden;
 }
 .has-js .header__search-block {
   display: flex;

@@ -58,6 +58,9 @@
   {%- endif %}
   {% set js %}
     {% include "site.js" %}
+    {%- if team === mta %}
+      {% include "search.js" %}
+    {% endif %}
     {%- if page.url == "/auditTool/" %}
       {% include "auditTool.js" %}
     {% endif %}
