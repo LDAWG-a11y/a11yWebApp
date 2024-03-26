@@ -17,13 +17,15 @@ Overlays refers to a range of products which offer to fix accessibility issues a
 
 Often, they will say they use AI to dynamically fix accessibility issues across a website. This might be at the user end where an overlay button might appear which will adjust the code to “fix” issues for particular user groups, or it might fix things in the background without the user ever knowing that an overlay is present.
 
+<div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">This publication is issued as guidance only. It is not intended to provide legal or professional advice. All collaborators on this content accept no liability for any errors, omissions or any consequences, losses or damages arising from any use of, or reliance placed on, this publication. You should seek advice from a suitably qualified professional.</span></div>
+
 ## A bit of history
 
 Overlay products have had a controversial history over the last few years. Some longer-standing products have offered user accessibility customisation tools without issues for years. However, a new brand of overlay products recently entered the market and significantly shifted the kinds of services overlay products supposedly offer.
 
 * Some of these products have been involved in lawsuits in the US because of differences between their advertised services and the results.
 * Some have openly attacked disabled users for raising concerns over the functions of these overlays.
-* Some are attempting legal action against accessibility expects for publishing information showing the discrepancies of these products.
+* Some are attempting legal action against accessibility experts for publishing information showing the discrepancies of these products.
 
 Suffice to say that there has been controversy surrounding overlays for some time. This article identifies our position on overlay products as a concept and why we do not support their use for compliance purposes.
 
@@ -35,7 +37,7 @@ The [Overlay Fact Sheet](https://overlayfactsheet.com/#main) is a useful introdu
 
 ## Overlays and compliance
 
-<div class="callout__warn"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cWarn"></use></svg><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">Overlays will not make you compliant with WCAG or any accessibility regulations.</span></div>
+<div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">Overlays will not make you compliant with WCAG or any accessibility regulations.</span></div>
 
 This is a simple statement and if you see an overlay that promises it will make you meet WCAG 2.0, 2.1, 2.2, EN301549, Section 508 etc. this is false and you should avoid that product.
 

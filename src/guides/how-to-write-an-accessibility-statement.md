@@ -31,7 +31,7 @@ You can get started on testing for accessibility with [semi-automated testing to
 
 Besides knowing your accessibility issues, you will need to have a way for users to contact you to get help or request reasonable adjustments. Make sure you know where you are going to direct users to. Ideally this will have contact options such as an email address and phone number.
 
-<div class="callout__info"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cInfo"></use></svg><strong class="visually-hidden">Info: </strong></span><span class="callout__text">Never only offer a phone number. This can be a problem for Deaf users if there is no text option.</span></div>
+<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">Never only offer a phone number. This can be a problem for Deaf users if there is no text option.</span></div>
 
 If you have a dedicated team that supports alternative formats that is different to the contact who will support website accessibility issues, you should provide information about how users should request alternative formats.
 
@@ -917,7 +917,7 @@ Many organisations write in a statement that the website is â€˜fully compliantâ€
 
 Often, if you see a statement for a fully compliant website, you can run a semi-automated checking tool on the home page and find several issues easily.
 
-<div class="callout__info"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cInfo"></use></svg><strong class="visually-hidden">Info: </strong></span><span class="callout__text">If you have not yet tested the website or have only done quick automated testing that revealed no issues, do not claim full compliance unless you are completely sure that is the case. The only way to do that is through comprehensive testing.</span></div>
+<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">If you have not yet tested the website or have only done quick automated testing that revealed no issues, do not claim full compliance unless you are completely sure that is the case. The only way to do that is through comprehensive testing.</span></div>
 
 ### Exemptions
 

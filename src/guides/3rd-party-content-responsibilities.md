@@ -23,7 +23,7 @@ When considering whether third-party produced content is in scope or out of scop
 
 Under [the Public Sector Bodies (Websites and Mobile Applications) Accessibility Regulations 2018](https://www.legislation.gov.uk/uksi/2018/952/contents/made) there are exemptions for some types of 3rd party content. Because of the range of relationships, a public sector organisation can have with 3rd parties applying this exemption must be treated on a case-by-case basis. This article talks through our methodology for considering our responsibilities for 3rd party platforms and content.
 
-<div class="callout__tip"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cTip"></use></svg><strong class="visually-hidden">Tip: </strong></span><span class="callout__text">When we are talking about 3rd party content, we mean anything that comes from an outside source. This could be content in the normal definition as in documents or web page material, and in this instance 3rd party content also means platforms, websites and services that are purchased from 3rd parties.</span></div>
+<div class="callout__tip"><span class="callout__icon"></span><span class="callout__text">When we are talking about 3rd party content, we mean anything that comes from an outside source. This could be content in the normal definition as in documents or web page material, and in this instance 3rd party content also means platforms, websites and services that are purchased from 3rd parties.</span></div>
 
 ## How we think about 3rd party content responsibility
 
@@ -45,7 +45,7 @@ If you commission the development of content and do not require accessibility, t
 
 This question comes up a lot when we are having discussions about [accessibility in procurement](https://www.makethingsaccessible.com/guides/procurement-accessibility-guidance/) and including [accessibility in supplier contracts](https://www.makethingsaccessible.com/guides/accessibility-in-supplier-contracts/)
 
-<div class="callout__tip"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cTip"></use></svg><strong class="visually-hidden">Tip: </strong></span><span class="callout__text">Bespoke means either designed for you, or significantly customised for you. Many services offer bespoke platforms but by that they mean you can have your logo in the top corner and make a change to the main theme colours. This is not bespoke, it is skinned. While this situation still mean you hold some responsibility for your choices, it is not necessarily true that you had the opportunity to demand accessibility of all features or content.</span></div>
+<div class="callout__tip"><span class="callout__icon"></span><span class="callout__text">Bespoke means either designed for you, or significantly customised for you. Many services offer bespoke platforms but by that they mean you can have your logo in the top corner and make a change to the main theme colours. This is not bespoke, it is skinned. While this situation still mean you hold some responsibility for your choices, it is not necessarily true that you had the opportunity to demand accessibility of all features or content.</span></div>
 
 #### 2. Is the content hosted by you?
 
@@ -69,7 +69,7 @@ Sometimes accessibility requirements conflict with requirements of other legisla
 
 We see this from time to time for example where local authorities may be required to publish documents or forms in an inaccessible format, but cannot improve the forms because they are mandated in that way by a higher authority or are set by other legislation. In these cases it may not be your responsibility to fix the issues but you should take what actions you can to mitigate the impacts of those risks.
 
-<div class="callout__tip"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cTip"></use></svg><strong class="visually-hidden">Tip: </strong></span><span class="callout__text">When we ask whether you have to use the inaccessible content we do mean that the “have to” reasoning must be legal or other absolute pressure. “Because management have decided on a platform” or you are being forced to by other office pressure is not enough in this case to avoid responsibility.</span></div>
+<div class="callout__tip"><span class="callout__icon"></span><span class="callout__text">When we ask whether you have to use the inaccessible content we do mean that the “have to” reasoning must be legal or other absolute pressure. “Because management have decided on a platform” or you are being forced to by other office pressure is not enough in this case to avoid responsibility.</span></div>
 
 #### 5. Did you pay for it?
 
