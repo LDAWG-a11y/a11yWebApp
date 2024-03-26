@@ -18,7 +18,7 @@ summary: The sitemap navigation provides a list of all main pages and all digita
                   <li><a href="{{ guide.url }}">{{ guide.data.title }}</a></li>
                 {%- endfor %}
               </ul>
-          {%- elseif item.url === '/contributing' %}
+          {%- elseif item.url === '/codeOfConduct' %}
             <li>Collaborators
               {% for collab in collaborations | reverse %}
               <ul>
