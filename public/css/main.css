@@ -880,6 +880,7 @@ dialog {
   [data-pref--f-size=large] main,
   [data-pref--f-size=large] dialog {
     --v2--current-base-font-size: calc(var(--v2--base-font-size) + .25rem);
+    --v2--current-small-font-size: calc(var(--v2--small-font-size) + .375rem);
   }
   [data-pref--f-size=largest] main,
   [data-pref--f-size=largest] dialog {
@@ -890,12 +891,12 @@ dialog {
   main,
   dialog {
     --v2--current-base-font-size: calc(var(--v2--base-font-size) + .375rem);
-    --v2--current-small-font-size: calc(var(--v2--small-font-size) + .25rem);
     font-size: var(--v2--current-base-font-size);
   }
   [data-pref--f-size=large] main,
   [data-pref--f-size=large] dialog {
     --v2--current-base-font-size: calc(var(--v2--base-font-size) + .375rem);
+    --v2--current-small-font-size: calc(var(--v2--small-font-size) + .5rem);
   }
   [data-pref--f-size=largest] main,
   [data-pref--f-size=largest] dialog {
@@ -4043,14 +4044,11 @@ body:before {
 .search__item {
   overflow: hidden;
 }
-.search__item:first-of-type {
-  border-radius: 6px 6px 0 0;
-}
 .search__item:last-of-type {
   border-radius: 0 0 6px 6px;
 }
 .search__item:only-of-type {
-  border-radius: 6px;
+  border-radius: 0 0 6px 6px;
 }
 .search__item:nth-of-type(odd) {
   background-color: var(--v2--color-bg--light);
@@ -4104,28 +4102,39 @@ body:before {
 .search__type {
   border-radius: 6px;
   padding: 2px 6px;
-  font-size: var(--v2--current-small-font-size);
+  font-size: 1rem;
   line-height: 1.4;
   color: var(--v2--color-interactive);
   background-color: var(--v2--color-accent);
 }
-
-.search__msg:not(.visibility-hidden) {
-  gap: 16px;
-  padding: 12px;
-  min-height: 3.5rem;
+@media (min-width: 48em) {
+  .search__type {
+    font-size: 1.125rem;
+  }
 }
 
-.search__msg:empty {
+.search__info--text:empty #sFix:empty {
   display: none;
 }
 
-.search__msg--icon {
+.search__info--icon {
   display: flex;
   align-items: center;
-  min-height: 1.75rem;
-  min-width: 1.75rem;
+  min-height: 1.5rem;
+  min-width: 1.5rem;
   fill: var(--v2--color-warn);
+}
+
+.search__info {
+  gap: 16px;
+  padding: 8px 12px;
+  min-height: 3.5rem;
+  font-size: 1rem;
+}
+@media (min-width: 48em) {
+  .search__info {
+    font-size: 1.125rem;
+  }
 }
 
 body:before {

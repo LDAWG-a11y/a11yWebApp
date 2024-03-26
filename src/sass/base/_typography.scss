@@ -117,6 +117,7 @@ dialog {
 
     [data-pref--f-size="large"] & {
       --v2--current-base-font-size: calc(var(--v2--base-font-size) + .25rem);
+      --v2--current-small-font-size: calc(var(--v2--small-font-size) + .375rem);
     }
 
     [data-pref--f-size="largest"] & {
@@ -128,10 +129,10 @@ dialog {
 
   @include mq.mq($from:lg) {
     --v2--current-base-font-size: calc(var(--v2--base-font-size) + .375rem);
-    --v2--current-small-font-size: calc(var(--v2--small-font-size) + .25rem);
     
     [data-pref--f-size="large"] & {
       --v2--current-base-font-size: calc(var(--v2--base-font-size) + .375rem);
+      --v2--current-small-font-size: calc(var(--v2--small-font-size) + .5rem);
     }
 
     [data-pref--f-size="largest"] & {
