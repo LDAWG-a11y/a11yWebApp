@@ -61,7 +61,7 @@
   &::before {
     content: "";
     position: absolute;
-    inset: -$space-abs-xs;
+    inset: -$space-abs-xxs;
     border: 2px solid transparent;
     border-radius: $radius-lg;
     z-index: -1;

@@ -21,12 +21,25 @@
       <fieldset class="settings__fieldset">
         <legend class="settings__legend">Code block theme</legend>
         <div class="settings__btns-wrapper">
-          
+          <h3 class="accordion">Code theme help</h3>
+          <div class="accordion__panel">
+            <div>
+              <p>Code block themes can be changed independent of the site theme.</p>
+              <ul>
+                <li>Default: (Unset) Code blocks will have the same theme as the site theme.</li>
+                <li>
+                  Light 1: will be default for users viewing the light theme, this maintains the minimum 7:1 (WCAG Level AAA) contrast ratio we have used throughout the site, it can be quite
+                  difficult to identify the differences in colour between various syntax types, due to the similarities in colour at that contrast ratio
+                </li>
+                <li>Light 2: drops the contrast for syntax highlighting down to WCAG Level AA standards (greater than 4.5:1)</li>
+                <li>Dark: Syntax highlighting has a minimum contrast of 7:1 and due to the dark background differences in colour may appear much more perceivable</li>
+              </ul>
+            </div>
+          </div>
           <button class="settings__btn--code-theme-dark btn btn--default" aria-pressed="false" data-pref="code-theme dark">Dark<span></span></button>
           <button class="settings__btn--code-theme-unset btn btn--default" aria-pressed="false" data-pref="code-theme unset">Unset<span></span></button>
-          <button class="settings__btn--code-theme-light btn btn--default" aria-pressed="false" data-pref="code-theme light">Light<span></span></button>
+          <button class="settings__btn--code-theme-light btn btn--default" aria-pressed="false" data-pref="code-theme light">Light 1<span></span></button>
           <button class="settings__btn--code-theme-lower btn btn--default" aria-pressed="false" data-pref="code-theme lower">Light 2<span></span></button>
-          
         </div>
       </fieldset>
     </div>
@@ -60,7 +73,7 @@
           <div>
             <ul>
               <li>
-                Default (Unset): Most links are underlined, with a few exceptions such as: the top level links in the main navigation (on large screens), cards, tags and image or icon links.
+                Default (Unset): Most links are underlined, with a few exceptions such as: the top level links in the main navigation (on large screens), cards, tags and icon links.
               </li>
               <li>
                 Yes: Will add underlines to the exceptions outlined above, resulting in every link being underlined
@@ -104,7 +117,7 @@
         <div class="accordion__panel">
           <div>
             <ul>
-              <li>Default (Unset): has no modifications to letter spacing present</li>
+              <li>Default (Unset): Default letter spacing applies</li>
               <li>Increased: Multiplies the font size by 0.12 and adds the sum as spacing between each character</li>
             </ul>
           </div>

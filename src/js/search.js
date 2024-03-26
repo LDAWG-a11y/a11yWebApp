@@ -159,6 +159,7 @@ const announceDetailsNow = debounce(() => {
 const announceDetailsSoon = debounce(() => {
   if (isSafari && currItem) {
     sMsg.textContent = `${sFix.textContent} - ${sInfo.textContent}`;
+    sFix.textContent = '';
   } else {
     sMsg.textContent = sInfo.textContent;
   }

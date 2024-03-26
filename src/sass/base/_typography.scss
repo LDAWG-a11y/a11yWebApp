@@ -391,7 +391,7 @@ button:not(.nav__btn--collab) {
 
 ul:not([class]),
 ol {
-  margin: 0 0 1.5em $space-abs-xxl;
+  margin: 0 0 1.5em 0;
 
   ul,
   ol {
@@ -404,17 +404,19 @@ ol {
 }
 
 ul:not([class]) {
+  margin-left: 1.25em;
+
   li {
     &::marker {
       content: "";
+      color: transparent;
     }
 
     &::before {
       content: "";
       position: absolute;
-      // top: .5em;
       top: calc(var(--v2--line-height) / 2 - .5rem);
-      left: -20px;
+      left: -28px;
       width: .5rem;
       height: .5rem;
       transform: rotate(-45deg) translateY(50%);
