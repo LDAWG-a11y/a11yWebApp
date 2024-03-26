@@ -3,47 +3,50 @@ const headerSearchBlock = document.querySelector('.header__search-block');
 const keys = ['ArrowUp', 'ArrowDown', 'Enter', 'Tab', 'Home', 'End'];
 const search = document.querySelector('#sFilter');
 const searchList = document.querySelector('.search__list');
-const sMsg = document.querySelector('.search__msg');
+const sMsg = document.querySelector('#sMsg');
+const sFix = document.querySelector('#sFix');
+const sInfo = document.querySelector('.search__info--text');
 let arrFiltered = [];
 let currItem;
 let isInvalid = false;
+const isSafari = navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1;
 
 search.addEventListener('keydown', (evt) => {
   if (keys.includes(evt.key)) {
     if (evt.key === 'Tab') togglePanel('false');
     
-    if (searchList.querySelector('li') && evt.key !== 'Tab') {
-      evt.preventDefault();
-      evt.stopPropagation();
-      if ((!currItem && evt.key === 'ArrowDown' || evt.key === 'Home')) {
-        highlightCurrent(searchList.firstElementChild);
-      } else if (currItem && evt.key === 'ArrowDown' && currItem.nextSibling) {
-        highlightCurrent(currItem.nextElementSibling);
-      } else if ((!currItem && evt.key === 'ArrowUp') || evt.key === 'End') {
-        highlightCurrent(searchList.lastElementChild)
-      } else if (evt.key === 'ArrowUp' && currItem.previousSibling) {
-        highlightCurrent(currItem.previousElementSibling);
-      } 
+      if (searchList.querySelector('li') && evt.key !== 'Tab') {
+        evt.preventDefault();
+        evt.stopPropagation();
+        if ((!currItem && evt.key === 'ArrowDown' || evt.key === 'Home')) {
+          highlightCurrent(searchList.firstElementChild);
+        } else if (currItem && evt.key === 'ArrowDown' && currItem.nextSibling) {
+          highlightCurrent(currItem.nextElementSibling);
+        } else if ((!currItem && evt.key === 'ArrowUp') || evt.key === 'End') {
+          highlightCurrent(searchList.lastElementChild)
+        } else if (evt.key === 'ArrowUp' && currItem.previousSibling) {
+          highlightCurrent(currItem.previousElementSibling);
+        } 
 
-      if (currItem && evt.key !== 'Enter') {
-        currItem.scrollIntoView({ block: "nearest", inline: "nearest" });
-      }
+        if (currItem && evt.key !== 'Enter') {
+          currItem.scrollIntoView({ block: "nearest", inline: "nearest" });
+        }
 
-      if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
-        let title = `Link, ${currItem.querySelector('.underline').textContent}, ${currItem.querySelector('.search__type').textContent}, `;
-        let count = `${currItem.getAttribute('data-pos')} of ${searchList.querySelectorAll('li').length}`;
-        handleMessage('safari', title + count);
-      }
-  
-      if (currItem && evt.key === 'Enter') {
-        currItem.firstElementChild.click();
-      } else if (searchList.firstElementChild && evt.key === 'Enter') {
-        searchList.querySelectorAll('.underline').forEach(el => {
-          if (cleanStr(el.textContent) === cleanStr(search.value)) {
-            el.closest('a').click();
-          }
-        })
-      }
+        if (isSafari) {
+          let title = `Link, ${currItem.querySelector('.underline').textContent}, ${currItem.querySelector('.search__type').textContent}, `;
+          let count = `${currItem.getAttribute('data-pos')} of ${searchList.querySelectorAll('li').length}`;
+          sFix.textContent = title + count;
+        }
+    
+        if (currItem && evt.key === 'Enter') {
+          currItem.firstElementChild.click();
+        } else if (searchList.firstElementChild && evt.key === 'Enter') {
+          searchList.querySelectorAll('.underline').forEach(el => {
+            if (cleanStr(el.textContent) === cleanStr(search.value)) {
+              el.closest('a').click();
+            }
+          })
+        }
       
        if (searchList.querySelectorAll('li').length === 1 && evt.key === 'Enter') {
         searchList.querySelector('a').click();
@@ -96,21 +99,11 @@ const cleanStr = (str) => {
   return newStr;
 }
 
-const handleMessage = (action, msg) => {
-  if (action === 'show') {
-    sMsg.classList.remove('visually-hidden');
-    sMsg.querySelector('.search__msg--text').innerText = msg;
-    search.setAttribute('aria-activedescendant', '');
-    currItem = '';
-    isInvalid = true;
-  } else if (action === 'hide') {
-    sMsg.classList.add('visually-hidden');
-    sMsg.querySelector('.search__msg--text').innerText = '';
-    isInvalid = false;
-  } else {
-    sMsg.classList.add('visually-hidden');
-    isInvalid = false;
-    sMsg.innerText = msg;
+function debounce( callback, delay ) {
+  let timeout;
+  return function() {
+    clearTimeout( timeout );
+    timeout = setTimeout( callback, delay );
   }
 }
 
@@ -122,11 +115,7 @@ const filterItems = (term) => {
   }
   searchList.innerHTML = '';
   
-  if (!arrFiltered.length) {
-    handleMessage('show', 'No results match your search term!');
-  } else {
-    handleMessage('hide');
-    
+  if (arrFiltered.length) {
     arrFiltered.slice(0, 10).forEach((item, idx) => {
       let res = `<li class="search__item" data-pos="${idx + 1}">
         <a class="search__option" id="${item.id}" href="${item.url}" tabindex="-1">
@@ -142,4 +131,35 @@ const filterItems = (term) => {
       }  
     }
   }
+  displayDetails();
 }
+
+const displayDetails = () => {
+  if (searchList.querySelectorAll('li').length) {
+    isInvalid = false;
+    sInfo.textContent = `Showing ${searchList.querySelectorAll('li').length} of ${arrFiltered.length} results`;
+    sInfo.closest('.search__info').querySelector('.search__info--icon').classList.add('visually-hidden');
+  } else {
+    isInvalid = true;
+    sInfo.textContent = 'No results match your search term!';
+    sInfo.closest('.search__info').querySelector('.search__info--icon').classList.remove('visually-hidden');
+  }
+
+  if (isInvalid || search.value.length < 1) {
+    announceDetailsNow();
+  } else {
+    announceDetailsSoon();
+  }
+}
+
+const announceDetailsNow = debounce(() => {
+  sMsg.textContent = sInfo.textContent;
+}, 0);
+
+const announceDetailsSoon = debounce(() => {
+  if (isSafari && currItem) {
+    sMsg.textContent = `${sFix.textContent} - ${sInfo.textContent}`;
+  } else {
+    sMsg.textContent = sInfo.textContent;
+  }
+}, 750);

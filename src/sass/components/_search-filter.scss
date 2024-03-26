@@ -115,16 +115,12 @@
 .search__item {
   overflow: hidden;
 
-  &:first-of-type {
-    border-radius: $radius-md $radius-md 0 0;
-  }
-
   &:last-of-type {
     border-radius: 0 0 $radius-md $radius-md;
   }
 
   &:only-of-type {
-    border-radius: $radius-md;
+    border-radius: 0 0 $radius-md $radius-md;
   }
 
   &:nth-of-type(odd) {
@@ -185,27 +181,37 @@
 .search__type {
   border-radius: $radius-md;
   padding: $space-abs-xxxs $space-abs-xs;
-  font-size: var(--v2--current-small-font-size);
+  font-size: 1rem;
   line-height: 1.4;
   color: var(--v2--color-interactive);
   background-color: var(--v2--color-accent);
+
+  @include mq.mq($from:md) {
+    font-size: 1.125rem;
+  }
 }
 
-.search__msg:not(.visibility-hidden) {
-  gap: $space-abs-lg;
-  padding: $space-abs-md;
-  min-height: 3.5rem;
-}
-
-.search__msg:empty {
+.search__info--text:empty
+#sFix:empty {
   display: none;
 }
 
-.search__msg--icon {
+.search__info--icon {
   display: flex;
   align-items: center;
-  min-height: 1.75rem;
-  min-width: 1.75rem;
+  min-height: 1.5rem;
+  min-width: 1.5rem;
   fill: var(--v2--color-warn);
+}
+
+.search__info {
+  gap: $space-abs-lg;
+  padding: $space-abs-sm $space-abs-md;
+  min-height: 3.5rem;
+  font-size: 1rem;
+
+  @include mq.mq($from:md) {
+    font-size: 1.125rem;
+  }
 }
 
