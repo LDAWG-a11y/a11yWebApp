@@ -2820,13 +2820,13 @@ body:has(dialog[open]) {
 
 .search__option {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr auto auto;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
   padding: 8px 6px;
   min-height: 2.75rem;
-  font-family: "Red Hat display";
+  font-family: "Red Hat display", Arial, Helvetica, sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
   text-decoration: none;
