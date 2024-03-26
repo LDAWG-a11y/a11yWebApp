@@ -307,7 +307,7 @@ a.nav__link {
     padding: 0 0 24px 0;
     width: 100%;
     background-color: var(--v2--color-primary);
-    transition: grid-template-rows 400ms ease, visibility 400ms ease;
+    transition: grid-template-rows 400ms ease-in, visibility 401ms ease;
    
     @include mq.mq($until:md) {
       display: block;
