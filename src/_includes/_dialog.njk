@@ -3,9 +3,10 @@
     <h1 class="dialog__title" tabindex="-1" autofocus>Site preferences</h1>
   </header>
   <div class="dialog__content">
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto maiores magni veritatis eligendi! Labore accusamus magnam aspernatur totam, inventore nisi!</p>
-    <p>Excepturi officia rerum, quae totam debitis aliquid delectus perspiciatis laudantium mollitia temporibus corrupti optio odit in veniam exercitationem maiores hic!</p>
-    <p>Cumque natus, id distinctio, deserunt odit facere, aliquid quae veniam quo adipisci alias corrupti fugiat dicta ratione itaque delectus rerum!</p>
+    <p>Please feel free to display our site, your way by finding the preferences that work best for you. We do not track any data or preferences at all, 
+      should you select any options in the groups below, we store a small non-identifiable token to your browser's Local Storage, this is required for your preferencesto persist across pages accordion
+      be present on repeat visits. You can remove those tokens if you wish, by simply selecting Unset, from each preference group.
+    </p>
     <h2 class="dialog__subtitle">Theming</h2>
     <div class="panel">
       <fieldset class="settings__fieldset">
@@ -20,7 +21,6 @@
     <div class="panel">
       <fieldset class="settings__fieldset">
         <legend class="settings__legend">Code block theme</legend>
-        <div class="settings__btns-wrapper">
           <h3 class="accordion">Code theme help</h3>
           <div class="accordion__panel">
             <div>
@@ -36,6 +36,7 @@
               </ul>
             </div>
           </div>
+        <div class="settings__btns-wrapper">
           <button class="settings__btn--code-theme-dark btn btn--default" aria-pressed="false" data-pref="code-theme dark">Dark<span></span></button>
           <button class="settings__btn--code-theme-unset btn btn--default" aria-pressed="false" data-pref="code-theme unset">Unset<span></span></button>
           <button class="settings__btn--code-theme-light btn btn--default" aria-pressed="false" data-pref="code-theme light">Light 1<span></span></button>
