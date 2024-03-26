@@ -116,7 +116,7 @@ For an example of these challenges, we can look at our captioning example again 
 >
 > Based on the number of hours that would need to be remediated and the cost per hour of content, to meet the regulation requirement could cost the university £Z hundreds of thousands of pounds.”
 
-<div class="callout__warn"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cWarn"></use></svg><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">Do not try to overinflate the issue with spurious costs or merging multiple actions. Just keep the new impacting costs to those that you have identified are directly related to the delivery of the regulation compliant service.</span></div>
+<div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">Do not try to overinflate the issue with spurious costs or merging multiple actions. Just keep the new impacting costs to those that you have identified are directly related to the delivery of the regulation compliant service.</span></div>
 
 ## Equality Impact Assessment
 
@@ -181,7 +181,7 @@ You might want to consider actions such as:
 
 If you have completed an assessment and found the issue to be a disproportionate burden. You will need to list it in your relevant accessibility statement.
 
-<div class="callout__info"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cInfo"></use></svg><strong class="visually-hidden">Info: </strong></span><span class="callout__text">You do not need to give full breakdown of figures in the accessibility statement and do not need to publish or link to this document directly.</span></div>
+<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">You do not need to give full breakdown of figures in the accessibility statement and do not need to publish or link to this document directly.</span></div>
 
 What you should do is provide a summary of the issue and why it is a disproportionate burden in no more than a few sentences. You can mention that this has been assessed and broadly what you are doing to try and mitigate the issues.
 

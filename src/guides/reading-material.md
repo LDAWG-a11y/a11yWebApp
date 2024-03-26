@@ -47,6 +47,12 @@ Jon McVey
 
 Susi Miller
 
+### [Life of Roy, Does He Take Sugar?](https://www.amazon.co.uk/dp/191620239X?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+
+Richard Dunn and Roy Hirst
+
+
+
 ## Watch list
 
 ### [Crip Camp](https://en.wikipedia.org/wiki/Crip_Camp)
@@ -80,6 +86,14 @@ Netflix 2023 series. A sub plot to this series was the barriers to education fac
 ### [Webbed Briefs](https://briefs.video/)
 
 Heydon Pickering's collection of joke filled videos present many web topics in a flippant but easy to understand and compelling way. Topics such as; What is ARIA even for?, What are accessibility overlays?, and What happened to text inputs? are all great accessibility related watches.
+
+### [A Silent Voice](https://www.imdb.com/title/tt5323662/)
+
+Deaf representation has been noticeably growing in TV and film in recent years with noted appearances in big films like Marvel’s Eternals. A Silent Voice is a slice-of-life anime film from 2016 about a young man who is ostracized by his classmates after he bullies a deaf girl to the point where she moves away. Years later, he sets off on a path for redemption. The film includes some dark themes such as bullying and suicide but is an early example of a deaf main character and the day to day challenges they face.
+
+### [A Sign of Affection](https://www.imdb.com/title/tt30024091/)
+
+In stark comparison to A Silent Voice, this slice-of-life anime series is about another deaf girl and here infatuation with a guy who loves learning languages. It is a happier show that does a good job of presenting some of the communication challenges deaf people have in day to day life.
 
 ## Suggest something
 

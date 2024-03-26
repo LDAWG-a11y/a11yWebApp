@@ -37,7 +37,7 @@ Ideally you will have one statement for each distinct website or system. Sometim
 
 You should avoid writing a statement that covers multiple websites under different domains even if the multiple websites are designed on the same template. Ideally you will have one statement per domain. Multiple websites even if duplicates eventually diverge on content and will introduce unique issues, so having a single statement may list issues of one website that does not apply to the others, which can confuse users.
 
-<div class="callout__info"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cInfo"></use></svg><strong class="visually-hidden">Info: </strong></span><span class="callout__text">Subdomains such as library.westminster.ac.uk, which is a separate website but still part of the westminster.ac.uk domain would have its own statement separate to the main westminster.ac.uk statement.</span></div>
+<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">Subdomains such as library.westminster.ac.uk, which is a separate website but still part of the westminster.ac.uk domain would have its own statement separate to the main westminster.ac.uk statement.</span></div>
 
 ## Who checks accessibility statements
 

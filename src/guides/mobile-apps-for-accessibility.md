@@ -173,8 +173,8 @@ We have included apps to support people with different access needs, but some ap
 
 We will regularly check this page but if an app is no longer available, please contact us and we'll update the information.
 
-<div class="callout__info"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cInfo"></use></svg><strong class="visually-hidden">Info: </strong></span><span class="callout__text">Some apps are paid. Check the costs of using the app you are interest in. Some are; Free, Free to download with in-app purchases, including subscriptions, Paid to download, Paid to download with in-app purchases.</span></div>
+<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">Some apps are paid. Check the costs of using the app you are interest in. Some are; Free, Free to download with in-app purchases, including subscriptions, Paid to download, Paid to download with in-app purchases.</span></div>
 
-<div class="callout__info"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cInfo"></use></svg><strong class="visually-hidden">Info: </strong></span><span class="callout__text">Some apps will use up data quickly. Some apps will use a lot of data if you’re using the app when you are out. If you are using an app without Wi-Fi, check your settings to find out how much data each app is using.</span></div>
+<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">Some apps will use up data quickly. Some apps will use a lot of data if you’re using the app when you are out. If you are using an app without Wi-Fi, check your settings to find out how much data each app is using.</span></div>
 
-<div class="callout__info"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cInfo"></use></svg><strong class="visually-hidden">Info: </strong></span><span class="callout__text">Some apps will require location and camera access too.</span></div>
+<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">Some apps will require location and camera access too.</span></div>

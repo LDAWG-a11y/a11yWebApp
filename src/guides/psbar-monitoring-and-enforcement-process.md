@@ -101,7 +101,7 @@ These manual tests find issues such as keyboard functionality, visibility of key
 
 Tests are completed using different settings in the Google Chrome browser on Mac OSX with a 13 inch screen.
 
-<div class="callout__info"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cInfo"></use></svg><strong class="visually-hidden">Info: </strong></span><span class="callout__text">GDS expect your organisation to fully audit the website to find any other accessibility issues.</span></div>
+<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">GDS expect your organisation to fully audit the website to find any other accessibility issues.</span></div>
 
 With the introduction of [WCAG 2.2](https://www.w3.org/TR/WCAG22/), GDS published an [update to the regulations](https://www.legislation.gov.uk/uksi/2022/1097/made) in October 2022. GDS explained in their [government article](https://accessibility.blog.gov.uk/2022/12/09/some-changes-to-the-public-sector-digital-accessibility-regulations/) that there will be a grace period after WCAG 2.2 comes into effect, after which GDS will be requiring organisations to evidence compliance against WCAG 2.2. GDS have explained that there will be a 12 month grace period from the date of WCAG 2.2 release.
 
@@ -139,4 +139,4 @@ GDS will then retest your website to check that any accessibility issues listed 
 
 If GDS find outstanding issues from the report, they will ask you for timelines to fix them. Any issues that have not been fixed should be included in your accessibility statement. This will help users understand where they might find potential barriers when using your website and ways they can request other formats where necessary.
 
-<div class="callout__info"><span class="callout__icon"><svg width="24px" height="24px"><use href="#cInfo"></use></svg><strong class="visually-hidden">Info: </strong></span><span class="callout__text">After the 12 weeks, information regarding your website will be passed to the EHRC or ECNI. They will decide whether further action needs to be taken.</span></div>
+<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">After the 12 weeks, information regarding your website will be passed to the EHRC or ECNI. They will decide whether further action needs to be taken.</span></div>
