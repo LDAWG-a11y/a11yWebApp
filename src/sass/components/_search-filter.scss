@@ -134,10 +134,10 @@
 
 .search__option {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: auto auto;
   justify-content: space-between;
   align-items: center;
-  gap: $space-abs-lg;
+  gap: $space-abs-md;
   padding: $space-abs-sm $space-abs-xs;
   min-height: 2.75rem;
   font-family: 'Red Hat display', Helvetica, Verdana, sans-serif;
@@ -179,6 +179,7 @@
 }
 
 .search__type {
+  display: flex;
   border-radius: $radius-md;
   padding: $space-abs-xxxs $space-abs-xs;
   font-size: 1rem;
