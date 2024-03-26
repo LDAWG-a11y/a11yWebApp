@@ -2819,8 +2819,7 @@ body:has(dialog[open]) {
 }
 
 .search__option {
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
@@ -2861,7 +2860,7 @@ body:has(dialog[open]) {
 }
 
 .search__type {
-  display: flex;
+  flex: 0 0 auto;
   border-radius: 6px;
   padding: 2px 6px;
   font-size: 1rem;

@@ -133,8 +133,7 @@
 }
 
 .search__option {
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   gap: $space-abs-md;
@@ -179,7 +178,7 @@
 }
 
 .search__type {
-  display: flex;
+  flex: 0 0 auto;
   border-radius: $radius-md;
   padding: $space-abs-xxxs $space-abs-xs;
   font-size: 1rem;
