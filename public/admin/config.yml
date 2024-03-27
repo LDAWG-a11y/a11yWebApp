@@ -34,7 +34,7 @@ collections:
     public_folder: "/guideImg/profileImg"
     fields:
       - { label: "Username", name: "key", widget: "string", hint: "This is not displayed anywhere but the URL, it needs to be unique and can only contain alphanumeric characters, e.g: jBloggs1" }
-        name: "name"
+      - name: "name"
         widget: "list"
         fields: 
           - { label: "First Name", name: first, widget: string, hint: "Your first name"}
