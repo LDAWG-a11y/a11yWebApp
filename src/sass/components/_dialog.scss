@@ -150,8 +150,11 @@
 }
 
 .settings__legend {
+  display: block;
+  width: 100%;
   padding: $space-abs-xxs $space-abs-xxl;
   text-align: center;
+  
 }
 
 .settings__btns-wrapper {

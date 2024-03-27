@@ -21,6 +21,7 @@ search.addEventListener('keydown', (evt) => {
         if ((!currItem && evt.key === 'ArrowDown' || evt.key === 'Home')) {
           highlightCurrent(searchList.firstElementChild);
         } else if (currItem && evt.key === 'ArrowDown' && currItem.nextSibling) {
+          console.log( 'Test 1, currItem nextSibling' );
           highlightCurrent(currItem.nextElementSibling);
         } else if ((!currItem && evt.key === 'ArrowUp') || evt.key === 'End') {
           highlightCurrent(searchList.lastElementChild)
@@ -85,6 +86,7 @@ const togglePanel = (state) => {
 }
 
 const highlightCurrent = (currEl) => {
+  console.log( 'test 2 highlightCurrent' + currEl );
   search.setAttribute('aria-activedescendant', currEl.firstElementChild.id);
   currEl.setAttribute('data-current', '');
   currItem = currEl;

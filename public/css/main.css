@@ -2461,6 +2461,8 @@ pre[class][class*=language-] {
 }
 
 .settings__legend {
+  display: block;
+  width: 100%;
   padding: 4px 24px;
   text-align: center;
 }
