@@ -7,6 +7,7 @@ const sMsg = document.querySelector('#sMsg');
 const sFix = document.querySelector('#sFix');
 const sInfo = document.querySelector('.search__info--text');
 let arrFiltered = [];
+let displayedItems = [];
 let currItem;
 let isInvalid = false;
 const isSafari = navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1;
@@ -15,42 +16,40 @@ search.addEventListener('keydown', (evt) => {
   if (keys.includes(evt.key)) {
     if (evt.key === 'Tab') togglePanel('false');
     
-      if (searchList.querySelector('li') && evt.key !== 'Tab') {
-        evt.preventDefault();
-        evt.stopPropagation();
-        if ((!currItem && evt.key === 'ArrowDown' || evt.key === 'Home')) {
-          highlightCurrent(searchList.firstElementChild);
-        } else if (currItem && evt.key === 'ArrowDown' && currItem.nextSibling) {
-          console.log( 'Test 1, currItem nextSibling' );
-          highlightCurrent(currItem.nextElementSibling);
-        } else if ((!currItem && evt.key === 'ArrowUp') || evt.key === 'End') {
-          highlightCurrent(searchList.lastElementChild)
-        } else if (evt.key === 'ArrowUp' && currItem.previousSibling) {
-          highlightCurrent(currItem.previousElementSibling);
-        } 
+    if (searchList.querySelector('li') && evt.key !== 'Tab') {
+      evt.preventDefault();
+      if ((!currItem && evt.key === 'ArrowDown') || evt.key === 'Home') {
+        highlightCurrent(searchList.firstElementChild);
+      } else if (currItem && evt.key === 'ArrowDown') {
+        highlightCurrent(currItem.nextElementSibling);
+      } else if ((!currItem && evt.key === 'ArrowUp') || evt.key === 'End') {
+        highlightCurrent(searchList.lastElementChild)
+      } else if (evt.key === 'ArrowUp' && currItem.previousElementSibling) {
+        highlightCurrent(currItem.previousElementSibling);
+      } else if (currItem && evt.key !== 'Enter') {
+        currItem.scrollIntoView({ block: "nearest", inline: "nearest" });
+      }
 
-        if (currItem && evt.key !== 'Enter') {
-          currItem.scrollIntoView({ block: "nearest", inline: "nearest" });
-        }
+      search.value ? filterItems(search.value) : filterItems();
 
-        if (isSafari) {
-          let title = `Link, ${currItem.querySelector('.underline').textContent}, ${currItem.querySelector('.search__type').textContent}, `;
-          let count = `${currItem.getAttribute('data-pos')} of ${searchList.querySelectorAll('li').length}`;
-          sFix.textContent = title + count;
-        }
+      if (isSafari) {
+        let title = `Link, ${currItem.querySelector('.underline').textContent}, ${currItem.querySelector('.search__type').textContent}, `;
+        let count = `${currItem.getAttribute('data-pos')} of ${searchList.querySelectorAll('li').length}`;
+        sFix.textContent = title + count;
+      }
+  
+      if (currItem && evt.key === 'Enter') {
+        currItem.firstElementChild.click();
+      } else if (searchList.firstElementChild && evt.key === 'Enter') {
+        searchList.querySelectorAll('.underline').forEach(el => {
+          if (cleanStr(el.textContent) === cleanStr(search.value)) {
+            el.closest('a').click();
+          }
+        })
+      }
     
-        if (currItem && evt.key === 'Enter') {
-          currItem.firstElementChild.click();
-        } else if (searchList.firstElementChild && evt.key === 'Enter') {
-          searchList.querySelectorAll('.underline').forEach(el => {
-            if (cleanStr(el.textContent) === cleanStr(search.value)) {
-              el.closest('a').click();
-            }
-          })
-        }
-      
-       if (searchList.querySelectorAll('li').length === 1 && evt.key === 'Enter') {
-        searchList.querySelector('a').click();
+      if (searchList.querySelectorAll('li').length === 1 && evt.key === 'Enter') {
+      searchList.querySelector('a').click();
       }
     }
   }
@@ -86,13 +85,15 @@ const togglePanel = (state) => {
 }
 
 const highlightCurrent = (currEl) => {
-  console.log( 'test 2 highlightCurrent' + currEl );
-  search.setAttribute('aria-activedescendant', currEl.firstElementChild.id);
-  currEl.setAttribute('data-current', '');
-  currItem = currEl;
-  searchList.querySelectorAll('li').forEach(item => {
-    if (item !== currItem) item.removeAttribute('data-current');
-  })
+  displayedItems.forEach(li => {
+    if (li === currEl) {
+      li.setAttribute('data-current', '');
+      currItem = li;
+      search.setAttribute('aria-activedescendant', li.firstElementChild.id);
+    } else {
+      li.removeAttribute('data-current');
+    }
+  })  
 }
 
 const cleanStr = (str) => {
@@ -124,6 +125,7 @@ const filterItems = (term) => {
         <span class="underline">${item.title}</span><span class="search__type">${item.type}</span></a></li>`
       searchList.insertAdjacentHTML('beforeend', res);
     });
+    displayedItems.splice(0, displayedItems.length, ...searchList.querySelectorAll('li'));
 
     if (currItem) {
       if (searchList.querySelector(`#${currItem.firstElementChild.id}`)) {
@@ -155,14 +157,21 @@ const displayDetails = () => {
 }
 
 const announceDetailsNow = debounce(() => {
+  sMsg.textContent = '';
   sMsg.textContent = sInfo.textContent;
 }, 0);
 
 const announceDetailsSoon = debounce(() => {
-  if (isSafari && currItem) {
+  // if (isSafari && currItem) {
+  //   sMsg.textContent = '';
+  //   sMsg.textContent = `${sFix.textContent} - ${sInfo.textContent}`;
+  //   sFix.textContent = '';
+  // } else {
+  //   sMsg.textContent = sInfo.textContent;
+  // }
+  if (isSafari) {
     sMsg.textContent = `${sFix.textContent} - ${sInfo.textContent}`;
-    sFix.textContent = '';
   } else {
     sMsg.textContent = sInfo.textContent;
   }
-}, 750);
+}, 500);
