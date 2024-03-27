@@ -18,9 +18,11 @@ search.addEventListener('keydown', (evt) => {
     
     if (searchList.querySelector('li') && evt.key !== 'Tab') {
       evt.preventDefault();
+      
       if ((!currItem && evt.key === 'ArrowDown') || evt.key === 'Home') {
         highlightCurrent(searchList.firstElementChild);
-      } else if (currItem && evt.key === 'ArrowDown') {
+      } else if (currItem && evt.key === 'ArrowDown' && currItem.nextElementSibling) {
+        console.log( currItem );
         highlightCurrent(currItem.nextElementSibling);
       } else if ((!currItem && evt.key === 'ArrowUp') || evt.key === 'End') {
         highlightCurrent(searchList.lastElementChild)
@@ -85,8 +87,9 @@ const togglePanel = (state) => {
 const highlightCurrent = (currEl) => {
   displayedItems.forEach(li => {
     if (li === currEl) {
-      li.setAttribute('data-current', '');
       currItem = li;
+      console.log( currItem, '2' );
+      li.setAttribute('data-current', '');
       search.setAttribute('aria-activedescendant', li.firstElementChild.id);
     } else {
       li.removeAttribute('data-current');
@@ -166,5 +169,4 @@ const announceDetailsSoon = debounce(() => {
   } else {
     sMsg.textContent = sInfo.textContent;
   }
-
 }, 500);
