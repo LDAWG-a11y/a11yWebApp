@@ -391,7 +391,7 @@ button:not(.nav__btn--collab) {
 
 ul:not([class]),
 ol {
-  margin: 0 0 1.5em 0;
+  margin: 0 0 1.5em 1.25em;
 
   ul,
   ol {
@@ -404,7 +404,6 @@ ol {
 }
 
 ul:not([class]) {
-  margin-left: 1.25em;
 
   li {
     &::marker {

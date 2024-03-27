@@ -822,7 +822,7 @@ button:not(.nav__btn--collab) {
 
 ul:not([class]),
 ol {
-  margin: 0 0 1.5em 0;
+  margin: 0 0 1.5em 1.25em;
 }
 ul:not([class]) ul,
 ul:not([class]) ol,
@@ -835,9 +835,6 @@ ol > li {
   position: relative;
 }
 
-ul:not([class]) {
-  margin-left: 1.25em;
-}
 ul:not([class]) li::marker {
   content: "";
   color: transparent;
@@ -3067,9 +3064,6 @@ body:has(dialog[open]) {
 .toc__nav li,
 .toc__nav a {
   min-height: 2.75rem;
-}
-.toc__nav ol {
-  list-style-position: inside;
 }
 .toc__nav a {
   display: flex;
