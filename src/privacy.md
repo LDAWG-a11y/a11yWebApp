@@ -41,20 +41,20 @@ Website cookies are small text files that are used by a website to store informa
 
 We have limited control over 3rd party cookies and occasionally we may need to embed a tweet or a video to add context to our guides, as an example, when we provide a guide for adding quality captions in YouTube, we would embed a video within the guide, that may show the differences between auto-generated and manually edited captions, to discuss the differences and impact incorrect captions could have on users.
 
-### Can I see these 3rd party cookie policies?
+### 3rd party cookie policies
 
-Yes, of course. Twitter embeds cookies in an anonymous fasion, they do not use these cookies to identify you: [Twitter for Websites Privacy Policy](https://developer.twitter.com/en/docs/twitter-for-websites/privacy).
+Twitter embeds cookies in an anonymous fasion, they do not use these cookies to identify you: [Twitter for Websites Privacy Policy](https://developer.twitter.com/en/docs/twitter-for-websites/privacy).
 We will always embed YouTube videos with "privacy-Enhanced mode" which does not track you or personalise any content you see across the web: [YouTube's privacy-enhanced Mode](https://support.google.com/youtube/answer/171780?hl=en-GB).
 
-### Can I control my cookies?
+### Controlling your cookies
 
-Yes. You can use your browser settings to control cookies, in several ways:
+You can use your browser settings to control cookies, in several ways:
 
-* You can use Incognito, In private or Private browsing mode (the name will depend on the browser you are using)
+* You can use Incognito, In-private or Private browsing mode (the name will depend on the browser you are using)
 * You can block 3rd party cookies (Those that belong to a website other than the one you are visiting, such as embedded Twitter content etc)
 * You can block all cookies (This will likely log you out of every site you can access your account without signing in)
 
-### How do I change my browser's cookie settings?
+### Changing your browser's cookie settings
 
 Each browser has different ways of adjusting the settings, options may have slightly different names and they will likely appear in different locations in the menu options, please visit the page for the browser(s) you use to familiarise yourself with locating the correct settings for your preferences (each links to an external site):
 
@@ -66,4 +66,8 @@ Each browser has different ways of adjusting the settings, options may have slig
 
 ## Local Storage
 
-We add a non-cookie token to your browser's local storage, only if you interact with the Theme toggle settings, this value cannot be used to identify you in any way, it simply sets a key of 'data-theme' and a value of either 'light' or 'dark' if you choose one of those options, selecting the System option will completely remove that token from your device. This token is functional, it is required for a user's selected theme to persist across pages and in no way can it cause any harm to a user, nor can it be tracked in any way. This site will respect your operating system preferences, so as an example, a user who has Dark Theme as their operating system preference will initially see the dark theme of our site and this does not require any interaction with the theme selection control, nor will it store a token in your browser.
+We add a non-cookie token to your browser's local storage, only if you interact with any of the Site preferences toggle settings, these values cannot be used to identify you in any way, they simply set keys and values such as: 'data-pref--theme' and a value of either 'light' or 'dark' if you choose one of those options.
+
+Selecting the Unset option will completely remove that token from your device. This token is functional, it is required for a user's selected site preferences to persist across pages and in no way can it cause any harm to a user, nor can it be tracked in any way.
+
+This site will respect your operating system preferences, so as an example, a user who has Dark Theme as their operating system preference will initially see the dark theme of our site and this does not require any interaction with the theme selection control, nor will it store a token in your browser.

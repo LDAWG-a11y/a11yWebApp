@@ -8,16 +8,16 @@ hasCards: true
 ---
 <div class="panel gutter-btm--major">
   <h2>Hello and welcome</h2>
-  <p>To the Make Things Accessible website, a repository for guidance material and useful resources for organisations looking to improve their digital accessibility.</p>
-  <p>This project is a shared effort between a number of London-based universities looking to pool our efforts and knowledge on delivering accessible experiences for students and staff.</p>
+  <p>The Make Things Accessible website is a repository for guidance material and useful resources for organisations looking to improve their digital accessibility.</p>
+  <p>This project began as a shared effort between a number of London-based universities looking to pool our efforts and knowledge on delivering accessible experiences for students and staff. Make Things Accessible is continuing to grow with more contributors, turning this repository into a useful tool for everyone.</p>
   <p>The guidance material found on this website is aimed to help you complete accessibility related tasks whether that be better understanding of accessibility regulations, including accessibility requirements into procurement, conducting basic accessibility checks, and many other topics.</p>
   <p>Our guidance material is sorted into a number of ‘tags’ which can help you filter for relevant information. You can browse all material in the guidance section or filter for specific topics by selecting relevant ‘tags’.</p>
-  <p>If you can’t find what you are looking for and get stuck, we have helpful FAQs and Glossary pages which may offer assistance. If there are topics that we have not yet added but you think we should, something we have gotten wrong, or you want to contact us for any other reason please reach out.</p>
+  <p>If there are topics that we have not yet added but you think we should, something we have gotten wrong, or you want to contact us for any other reason please reach out.</p>
 </div>
 
 <div class="latest-articles gutter-btm--major">
   <h2 class="latest-articles__heading" id="latestGuidesHeading">Latest guides</h2>
-  <p class="latest-articles__intro">Our latest digital accessibility guides are displayed in this section, this will be updated each time we produce a new guide, alternatively, you can <a href="/guides/">view all guides here</a>.</p>
+  <p class="latest-articles__intro">Our latest digital accessibility guides are displayed in this section, this will be updated each time we produce a new guide, alternatively, you can <a href="/guides/">view all guides</a>.</p>
   <section class="latest-articles--scrollable" tabindex="0" aria-labelledby="latestGuidesHeading">
     <ul class="cards cards--scrollable">
       {%- for guide in collections.guides | reverse %}
@@ -31,24 +31,14 @@ hasCards: true
 </div>
 
 <div class="latest-articles">
-  <h2 class="latest-articles__heading" id="latestAAAHeading">Latest stories from AAA</h2>
-  <p class="latest-articles__intro">Make Things Accessible are proud to collaborate with Access and Assistance for All (AAA) a campaign run by the British Youth Council. The campaign aims to encourage education organisations to sign up to the charter, which encourages supporters to ensure learning is inclusive for all students
-    and make accommodations whenever necessary. Within the AAA section of this site, there are real student stories, which highlight some of the barriers current and previous students with disabilities have faced during their studies. there is a small selection of stories below, alternatively, you can view all <a href="/aaa/student-stories/">Student stories here</a>. You can also visit the <a href="/aaa/">AAA Home page</a>, to find out about the awesome work AAA doing to make learning more inclusive.
+  <h2 class="latest-articles__heading" id="latestAAAHeading">Collaborations</h2>
+  <p class="latest-articles__intro">
+    Make Things Accessible is turning into a growing community of good practice. We are proud to collaborate and support projects which help spread support for digital accessibility.</p>
   </p>
-  <!-- <section class="cards--scrollable" tabindex="0" aria-labelledby="latestAAAHeading">
-    <ul class="cards">
-      {% for card in collections.studentStoriesAAA | reverse %}
-        {% if loop.index < 5 %}
-          <li class="card__item">
-            <div class="card__text-wrapper">
-              <h3 class="card__title"><a href="{{ card.url }}" class="card__link">{{ card.data.title }}</a></h3>
-            </div>
-            <div class="card__img-wrapper">
-              {%- if card.data.img %}{% image card.data.img, '' %}{% else %}<img class="card__placeholder-img--aaa" src="/img/aaa-light_vpjlfm_c_scale,w_360.png" alt="">{% endif %}
-            </div>
-          </li>
-          {% endif %}
-      {% endfor %}
-    </ul>
-  </section> -->
+ <p>
+  Make Things Accessible is supporting projects like Access and Assistance for All (AAA) a British Youth Council campaign to encourage education organisations to ensure learning is inclusive for all students, and the Accessibility Passport in partnership with the RNIB to improve accessibility standards in IT procurement.
+ </p>
+ <p>
+  Make Things Accessible are always open to new projects and have many more things in the pipeline. If you are interested in working with us on an accessibility project you want to share for the benefit of the community, get in touch.
+ </p>
 </div>

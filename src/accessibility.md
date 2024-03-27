@@ -15,7 +15,18 @@ This website is run by the private individual George Rhodes and other accessibil
 
 ## How accessible this website is
 
-This website is very new and has not been tested for accessibility compliance yet. The website was built by accessibility professionals with accessibility in mind throughout development. We plan to test the website imminently and will be updating this statement with any identified accessibility issues.
+The website has recently undergone a significant UI update including the addition of further functionality.
+
+The website was built by accessibility professionals with accessibility in mind throughout development and we are confident that the Make Things Accessible website will offer you an accessible experience.
+
+With the new UI release, we have now included a range of Site preferences customisation controls to enable you to tailor your accessibility preferences. This is not a 3rd party overlay product, but a core set of tools built as part of the update to ensure we offer a smooth and integrated customisation experience.
+
+Within the site preferences you can adjust:
+
+- Themes (Light/Dark, and whole website/code blocks)
+- Motion and animation reduction
+- Improved links visibility
+- Text and paragraph font sizes, letter spacing, line height, paragraph spacing and word spacing preferences.
 
 ## Feedback and contact information
 
@@ -27,10 +38,8 @@ We are committed to making the website as accessible as possible in accordance w
 
 ## Compliance status
 
-This website is partially with the [Web Content Accessibility Guidelines 2.1 AA standard](https://www.allable.co.uk/research/accessibility-statements-v3), as we have not yet tested the website and there may be some issues.
+This website is partially with the [Web Content Accessibility Guidelines 2.2 AA standard](https://www.w3.org/TR/WCAG22/), as we have not yet tested the website and there may be some issues.
 
 ## Preparation of this accessibility statement
 
-This statement was prepared on 7th October 2022. It was last reviewed on 26th October 2022.
-
-This website has not yet been tested but was built by accessibility professionals with accessibility in mind throughout development. We plan to test the website imminently and will be updating this statement with any identified accessibility issues.
+This statement was first prepared on 7th October 2022. It was last reviewed and updated on 27th March 2024.

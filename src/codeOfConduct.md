@@ -13,7 +13,7 @@ toc: true
 
 ## Purpose
 
-MakeThingsAccessible has inclusivity as its core principle, we welcome contributions that promote or enhance inclusivity or participation in the digital world, built environments and physical products. Inclusivity is about all people, irrespective of individual differences and we expect all contributors to be respectful of others, at all times.
+Make Things Accessible has inclusivity as its core principle, we welcome contributions that promote or enhance inclusivity or participation in the digital world, built environments and physical products. Inclusivity is about all people, irrespective of individual differences and we expect all contributors to be respectful of others at all times.
 
 These guidelines aim to support a community where all people should feel safe to participate, introduce new ideas and inspire others, regardless of:
 * Background
@@ -36,7 +36,7 @@ These guidelines aim to support a community where all people should feel safe to
 
 This Code of Conduct outlines our expectations for all those who participate on our website, as well as the consequences for unacceptable behaviour.
 
-We invite all those who participate in MakeThingsAccessible to help us create safe and positive experiences for everyone.
+We invite all those who participate in Make Things Accessible to help us create safe and positive experiences for everyone.
 
 ## Encouraging and Recognising Participation
 
@@ -68,18 +68,21 @@ The following behaviours are considered harassment and are unacceptable on our w
 * Other forms of derogatory language
 
 ## Consequences of Unacceptable Behaviour
-Unacceptable behaviour from any community member, will not be tolerated.
-Anyone asked to stop unacceptable behaviour is expected to comply immediately.
-If a community member engages in unacceptable behaviour, the website administrators may take any action they deem appropriate, up to and including a permanent expulsion from the community without warning. We may remove your name and contact details from the website, by anonymising your content and all access permissions may be permanently revoked.
+Unacceptable behaviour from any community member, will not be tolerated. Anyone asked to stop unacceptable behaviour is expected to comply immediately.
+
+If a community member engages in unacceptable behaviour, the website administrators may take any action they deem appropriate, up to and including a permanent expulsion from the community without warning. We may remove your name and contact details from the website by anonymising your content, and all access permissions may be permanently revoked.
 
 ## Reporting Guidelines
-If you are subject to or witness unacceptable behaviour, or have any other concerns, please notify the conference conduct team as soon as possible by emailing info@makeThingsAccessible.com.
+If you are subject to or witness unacceptable behaviour, or have any other concerns, please notify the conference conduct team as soon as possible by emailing [info@makeThingsAccessible.com](mailto:info@makeThingsAccessible.com).
+
 Additionally, website administrators are available to help community members by providing any evidence to relevant law enforcement or to otherwise help those experiencing unacceptable behaviour feel safe.
 
 ## Addressing Grievances
-If you feel you have been falsely or unfairly accused of violating this Code of Conduct, you should notify the admin team by email at info@makeThingsAccessible.com with a concise description of your grievance. Your grievance will be handled fairly and respectfully.
+If you feel you have been falsely or unfairly accused of violating this Code of Conduct, you should notify the admin team by email at [info@makeThingsAccessible.com](mailto:info@makeThingsAccessible.com) with a concise description of your grievance. Your grievance will be handled fairly and respectfully.
 
 ## Scope
-We expect all community participants to abide by this Code of Conduct at all times when contributing to our website – as well as in all one-on-one communications through any public contact details
+We expect all community participants to abide by this Code of Conduct at all times when contributing to our website – as well as in all one-on-one communications through any public contact details.
+
 This Code of Conduct and its related procedures also applies to unacceptable behaviour occurring outside the scope of our website when such behaviour has the potential to adversely affect inclusivity and/or affects the safety and well-being of marginalised groups or individuals.
+
 Code of conduct modified from [Mozilla](https://www.mozilla.org/en-US/about/governance/policies/participation/) and [Mozilla’s ViewSource](https://viewsourceconf.org/code-of-conduct/)
