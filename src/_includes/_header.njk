@@ -5,7 +5,7 @@
   {% include "_main-logo.njk" %}  
 
   {%- if team === 'mta' %}
-    <div class="header__search-block btm__gutter--largest">
+    <search class="header__search-block btm__gutter--largest">
       <label id="sFilterLbl" for="sFilter" class="search__label">Search for Guides or Tags, by keyword</label>
       <div class="search__wrapper" data-expanded="false">
         <input class="search__input" id="sFilter" type="text" role="combobox" aria-activedescendant="" aria-autocomplete="list" aria-expanded="false" aria-controls="searchDialog" autocomplete="off">
@@ -17,6 +17,6 @@
         <div id="sFix" aria-live="polite" class="visually-hidden"></div>
         <div id="sMsg" aria-live="polite" class="visually-hidden"></div>
       </div>
-    </div>
+    </search>
   {%- endif %}
 </header>

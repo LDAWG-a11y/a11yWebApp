@@ -18,7 +18,6 @@ search.addEventListener('keydown', (evt) => {
     
     if (searchList.querySelector('li') && evt.key !== 'Tab') {
       evt.preventDefault();
-      evt.stopPropagation();
       
       if ((!currItem && evt.key === 'ArrowDown') || evt.key === 'Home') {
         highlightCurrent(searchList.firstElementChild);
