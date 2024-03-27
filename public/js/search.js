@@ -23,7 +23,6 @@ search.addEventListener('keydown', (evt) => {
       if ((!currItem && evt.key === 'ArrowDown') || evt.key === 'Home') {
         highlightCurrent(searchList.firstElementChild);
       } else if (currItem && evt.key === 'ArrowDown' && currItem.nextElementSibling) {
-        console.log( currItem );
         highlightCurrent(currItem.nextElementSibling);
       } else if ((!currItem && evt.key === 'ArrowUp') || evt.key === 'End') {
         highlightCurrent(searchList.lastElementChild)
@@ -64,7 +63,7 @@ document.addEventListener('click', (evt) => {
 
 search.addEventListener('focus', () => {
   togglePanel('true');
-  search.value ? filterItems(search.value) : filterItems();
+  search.value.length ? filterItems(search.value) : filterItems();
   headerSearchBlock.scrollIntoView(true);
   if (isInvalid) search.setAttribute('aria-activedescendant', 'sMsg');
 })
@@ -89,10 +88,8 @@ const highlightCurrent = (currEl) => {
   displayedItems.forEach(li => {
     if (li === currEl) {
       currItem = li;
-      li.setAttribute('data-current', '');
-      console.log( li, 'li' );
-      console.log( li.firstElementChild, 'fec' );
-      search.setAttribute('aria-activedescendant', li.firstElementChild.id);
+      currItem.setAttribute('data-current', '');
+      search.setAttribute('aria-activedescendant', `${currItem.firstElementChild.id}`);
     } else {
       li.removeAttribute('data-current');
     }
