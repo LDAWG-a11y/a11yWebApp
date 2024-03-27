@@ -18,6 +18,7 @@ search.addEventListener('keydown', (evt) => {
     
     if (searchList.querySelector('li') && evt.key !== 'Tab') {
       evt.preventDefault();
+      evt.stopPropagation();
       
       if ((!currItem && evt.key === 'ArrowDown') || evt.key === 'Home') {
         highlightCurrent(searchList.firstElementChild);
@@ -88,8 +89,9 @@ const highlightCurrent = (currEl) => {
   displayedItems.forEach(li => {
     if (li === currEl) {
       currItem = li;
-      console.log( currItem, '2' );
       li.setAttribute('data-current', '');
+      console.log( li, 'li' );
+      console.log( li.firstElementChild, 'fec' );
       search.setAttribute('aria-activedescendant', li.firstElementChild.id);
     } else {
       li.removeAttribute('data-current');

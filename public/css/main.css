@@ -849,6 +849,9 @@ ul:not([class]) li::before {
   transform: rotate(-45deg) translateY(50%);
   background-color: var(--v2--color-secondary);
 }
+ul:not([class]):has(+ h2) {
+  margin-bottom: 90px;
+}
 
 strong {
   font-family: "Red Hat display";

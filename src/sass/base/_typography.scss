@@ -422,10 +422,13 @@ ul:not([class]) {
       background-color: var(--v2--color-secondary);
     }
   }
+
+  &:has(+ h2) {
+    margin-bottom: $space-abs-bigger;
+  }
 }
 
 strong {
   font-family: 'Red Hat display';
   font-weight: 500;
 }
-
