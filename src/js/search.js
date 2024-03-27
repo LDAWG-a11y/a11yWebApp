@@ -30,8 +30,6 @@ search.addEventListener('keydown', (evt) => {
         currItem.scrollIntoView({ block: "nearest", inline: "nearest" });
       }
 
-      search.value ? filterItems(search.value) : filterItems();
-
       if (isSafari) {
         let title = `Link, ${currItem.querySelector('.underline').textContent}, ${currItem.querySelector('.search__type').textContent}, `;
         let count = `${currItem.getAttribute('data-pos')} of ${searchList.querySelectorAll('li').length}`;
@@ -162,16 +160,11 @@ const announceDetailsNow = debounce(() => {
 }, 0);
 
 const announceDetailsSoon = debounce(() => {
-  // if (isSafari && currItem) {
-  //   sMsg.textContent = '';
-  //   sMsg.textContent = `${sFix.textContent} - ${sInfo.textContent}`;
-  //   sFix.textContent = '';
-  // } else {
-  //   sMsg.textContent = sInfo.textContent;
-  // }
-  if (isSafari) {
+  if (isSafari && currItem) {
     sMsg.textContent = `${sFix.textContent} - ${sInfo.textContent}`;
+    sFix.textContent = '';
   } else {
     sMsg.textContent = sInfo.textContent;
   }
+
 }, 500);
