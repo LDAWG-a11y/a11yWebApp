@@ -20,6 +20,7 @@ Although good practice of promoting assistive technology can be found in college
 ## Our ask to Further Education Colleges:
 
 Click on the following sections to expand them:
+
 <div class="accs__container flex--start">
 {% include "_accordion-toggles.njk" %}
 
@@ -96,14 +97,14 @@ To get access to the charter template and a range of resources to support your c
 <div>
 
 To require all staff to look at the Access and Assistance for All webpages and read student stories, so that they can understand the importance of assistive technology and how it can benefit all students
-  
+
 Participants in our campaign have shared stories of their experiences with using assistive technology, which provides brilliant examples of how it can benefit students and give a wider range of people equal access to education, and help level the playing field. We would advise staff members to read these, to understand the practical aspects of assistive technology, [see our student stories](/aaa/student-stories/).
 
 </div>
 </div>
 </div>
 
-We recognise how many demands there are on colleges and aim to make signing up to these pledges as simple as possible so we are creating resources to support the implementation of all of these pledges. In order to do this we have produced role-specific guidance, [see our role-specific guidance](/aaa/roles/).
+We recognise how many demands there are on colleges and aim to make signing up to these pledges as simple as possible so we are creating resources to support the implementation of all of these pledges. In order to do this we have produced role-specific guidance, [see our role-specific guidance](/aaa/roles/). Additionally, to see the impacts of assistive technology, see [our student stories](/aaa/student-stories/).
 
 ### In return for signing up to the pledges you will:
 
