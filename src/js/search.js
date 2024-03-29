@@ -17,7 +17,7 @@ search.addEventListener('keydown', (evt) => {
     if (evt.key === 'Tab') togglePanel('false');
     
     if (searchList.querySelector('li') && evt.key !== 'Tab') {
-      evt.preventDefault();
+      
       
       if ((!currItem && evt.key === 'ArrowDown') || evt.key === 'Home') {
         highlightCurrent(searchList.firstElementChild);
@@ -30,6 +30,7 @@ search.addEventListener('keydown', (evt) => {
       } else if (currItem && evt.key !== 'Enter') {
         currItem.scrollIntoView({ block: "nearest", inline: "nearest" });
       }
+      evt.preventDefault();
 
       if (isSafari) {
         let title = `Link, ${currItem.querySelector('.underline').textContent}, ${currItem.querySelector('.search__type').textContent}, `;
