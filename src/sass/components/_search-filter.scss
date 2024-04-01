@@ -97,13 +97,11 @@
 .search__panel {
   position: absolute;
   top: calc(100% + .75rem);
-  border: 1px solid var(--v2--color-border--light);
+  border: 1px solid var(--v2--color-border--mid);
   border-radius: $radius-md;
-  
   background-color: var(--v2--color-bg);
   z-index: 5;
   box-shadow: var(--v2--shadow);
-  
 }
 
 .search__list {
@@ -189,11 +187,6 @@
   @include mq.mq($from:md) {
     font-size: 1.125rem;
   }
-}
-
-.search__info--text:empty
-#sFix:empty {
-  display: none;
 }
 
 .search__info--icon {
