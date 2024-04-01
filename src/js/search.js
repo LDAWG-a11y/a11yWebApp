@@ -1,13 +1,12 @@
 import { items } from '/js/collections.js';
 const headerSearchBlock = document.querySelector('.header__search-block');
-const keys = ['ArrowUp', 'ArrowDown', 'Enter', 'Tab', 'Home', 'End'];
+const keys = ['ArrowUp', 'ArrowDown', 'Home', 'End', 'Enter', 'Tab'];
 const search = document.querySelector('#sFilter');
 const searchList = document.querySelector('.search__list');
 const sMsg = document.querySelector('#sMsg');
-const sFix = document.querySelector('#sFix');
 const sInfo = document.querySelector('.search__info--text');
+const errorIcon = headerSearchBlock.querySelector('.search__info--icon');
 let arrFiltered = [];
-let displayedItems = [];
 let currItem;
 let isInvalid = false;
 const isSafari = navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1;
@@ -15,42 +14,16 @@ const isSafari = navigator.userAgent.indexOf('Safari') != -1 && navigator.userAg
 search.addEventListener('keydown', (evt) => {
   if (keys.includes(evt.key)) {
     if (evt.key === 'Tab') togglePanel('false');
-    
-    if (searchList.querySelector('li') && evt.key !== 'Tab') {
-      
-      
-      if ((!currItem && evt.key === 'ArrowDown') || evt.key === 'Home') {
-        highlightCurrent(searchList.firstElementChild);
-      } else if (currItem && evt.key === 'ArrowDown' && currItem.nextElementSibling) {
-        highlightCurrent(currItem.nextElementSibling);
-      } else if ((!currItem && evt.key === 'ArrowUp') || evt.key === 'End') {
-        highlightCurrent(searchList.lastElementChild)
-      } else if (evt.key === 'ArrowUp' && currItem.previousElementSibling) {
-        highlightCurrent(currItem.previousElementSibling);
-      } else if (currItem && evt.key !== 'Enter') {
-        currItem.scrollIntoView({ block: "nearest", inline: "nearest" });
-      }
-      evt.preventDefault();
+    if (evt.key !== 'Enter' || evt.key !== 'Tab') highlightCurrent(evt.key);
 
-      if (isSafari) {
-        let title = `Link, ${currItem.querySelector('.underline').textContent}, ${currItem.querySelector('.search__type').textContent}, `;
-        let count = `${currItem.getAttribute('data-pos')} of ${searchList.querySelectorAll('li').length}`;
-        sFix.textContent = title + count;
-      }
-  
-      if (currItem && evt.key === 'Enter') {
-        currItem.firstElementChild.click();
-      } else if (searchList.firstElementChild && evt.key === 'Enter') {
-        searchList.querySelectorAll('.underline').forEach(el => {
-          if (cleanStr(el.textContent) === cleanStr(search.value)) {
-            el.closest('a').click();
-          }
-        })
-      }
-    
-      if (searchList.querySelectorAll('li').length === 1 && evt.key === 'Enter') {
-      searchList.querySelector('a').click();
-      }
+    if (evt.key === 'Enter' && searchList.hasChildNodes()) {
+      searchList.querySelectorAll('.underline').forEach(el => {
+        if (cleanStr(el.textContent) === cleanStr(search.value)) {
+          el.closest('a').click();
+        }
+      })
+      if (currItem) currItem.firstElementChild.click();
+      if (searchList.querySelectorAll('li').length === 1) searchList.querySelector('a').click();
     }
   }
 })
@@ -84,30 +57,37 @@ const togglePanel = (state) => {
   }
 }
 
-const highlightCurrent = (currEl) => {
-  displayedItems.forEach(li => {
-    if (li === currEl) {
-      currItem = li;
+const highlightCurrent = (key) => {
+  if (!currItem) {
+    key === 'ArrowDown' || key === 'Home' ? currItem = searchList.firstElementChild : currItem = searchList.lastElementChild
+  } else {
+    if (key === 'ArrowDown' && currItem.nextElementSibling) currItem = currItem.nextElementSibling;
+    if (key === 'ArrowUp' && currItem.previousElementSibling) currItem = currItem.previousElementSibling;
+  }
+  currItem.scrollIntoView({ block: "nearest", inline: "nearest" });
+
+  searchList.querySelectorAll('li').forEach(li => {
+    if (li === currItem) {
       currItem.setAttribute('data-current', '');
-      search.setAttribute('aria-activedescendant', `${currItem.firstElementChild.id}`);
+      search.setAttribute('aria-activedescendant', currItem.firstElementChild.id);
+      if (isSafari) debounceSafari(currItem)
     } else {
       li.removeAttribute('data-current');
     }
   })  
 }
 
+const polyfillSafari = (currItem) => {
+  let title = `Link, ${currItem.querySelector('.underline').textContent}, ${currItem.querySelector('.search__type').textContent}, `;
+  let count = `${currItem.getAttribute('data-pos')} of ${searchList.querySelectorAll('li').length}`;
+  sMsg.textContent = '';
+  sMsg.textContent = `${title} ${count}`;
+}
+
 const cleanStr = (str) => {
   let newStr = str.replace('-', ' ').toLowerCase().trimStart();
   newStr = newStr.replace(/[\"'..,!]/g, '');
   return newStr;
-}
-
-function debounce( callback, delay ) {
-  let timeout;
-  return function() {
-    clearTimeout( timeout );
-    timeout = setTimeout( callback, delay );
-  }
 }
 
 const filterItems = (term) => {
@@ -125,7 +105,6 @@ const filterItems = (term) => {
         <span class="underline">${item.title}</span><span class="search__type">${item.type}</span></a></li>`
       searchList.insertAdjacentHTML('beforeend', res);
     });
-    displayedItems.splice(0, displayedItems.length, ...searchList.querySelectorAll('li'));
 
     if (currItem) {
       if (searchList.querySelector(`#${currItem.firstElementChild.id}`)) {
@@ -141,31 +120,42 @@ const filterItems = (term) => {
 const displayDetails = () => {
   if (searchList.querySelectorAll('li').length) {
     isInvalid = false;
-    sInfo.textContent = `Showing ${searchList.querySelectorAll('li').length} of ${arrFiltered.length} results`;
-    sInfo.closest('.search__info').querySelector('.search__info--icon').classList.add('visually-hidden');
   } else {
     isInvalid = true;
-    sInfo.textContent = 'No results match your search term!';
-    sInfo.closest('.search__info').querySelector('.search__info--icon').classList.remove('visually-hidden');
   }
-
-  if (isInvalid || search.value.length < 1) {
-    announceDetailsNow();
-  } else {
-    announceDetailsSoon();
-  }
+  isInvalid ? errorIcon.classList.remove('visually-hidden') : errorIcon.classList.add('visually-hidden');
+  debounceCount();
 }
 
-const announceDetailsNow = debounce(() => {
+const debounce = (mainFunction, delay) => {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      mainFunction(...args);
+    }, delay);
+  };
+};
+
+const announceCount = () => {
+  if (!isInvalid) {
+    sInfo.textContent = `Showing ${searchList.querySelectorAll('li').length} of ${arrFiltered.length} results`;
+  } else {
+    sInfo.textContent = 'No results match your search term!';
+  }
   sMsg.textContent = '';
   sMsg.textContent = sInfo.textContent;
-}, 0);
+};
 
-const announceDetailsSoon = debounce(() => {
-  if (isSafari && currItem) {
-    sMsg.textContent = `${sFix.textContent} - ${sInfo.textContent}`;
-    sFix.textContent = '';
-  } else {
-    sMsg.textContent = sInfo.textContent;
-  }
-}, 500);
+const debounceCount = debounce(announceCount, 500);
+const debounceSafari = debounce(polyfillSafari, 350);
+
+// TODO ==================================
+
+// REuse debounce
+// Handle when currItem disappears
+// Handle Safari
+// Handle showing n of n
+// Change border & perhaps shadow
+// Test FF
+// Test Enter & Tab as removed preventD()

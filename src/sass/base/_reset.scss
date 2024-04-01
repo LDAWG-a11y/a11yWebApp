@@ -72,17 +72,16 @@ input:focus-visible {
   }
 }
 
-input[type="text"]
-
 [data-pref--motion="none"] *,
 [data-pref--motion="none"] *::before,
 [data-pref--motion="none"] *::after {
   transition: all .0001ms !important;
   transition-delay: .0001ms !important;
+  transition: transform .0001ms !important;
   scroll-behavior: unset !important;
   animation-delay: .0001ms !important;
-  animation-duration: .0001ms !important;
-  animation: none !important;
+  // Prevents animation of cross/burger ===============================================
+  // animation-duration: .0001ms !important;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

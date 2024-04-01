@@ -423,15 +423,14 @@ input:focus-visible {
   }
 }
 
-input[type=text] [data-pref--motion=none] *,
+[data-pref--motion=none] *,
 [data-pref--motion=none] *::before,
 [data-pref--motion=none] *::after {
   transition: all 0.0001ms !important;
   transition-delay: 0.0001ms !important;
+  transition: transform 0.0001ms !important;
   scroll-behavior: unset !important;
   animation-delay: 0.0001ms !important;
-  animation-duration: 0.0001ms !important;
-  animation: none !important;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -2791,7 +2790,7 @@ body:has(dialog[open]) {
 .search__panel {
   position: absolute;
   top: calc(100% + 0.75rem);
-  border: 1px solid var(--v2--color-border--light);
+  border: 1px solid var(--v2--color-border--mid);
   border-radius: 6px;
   background-color: var(--v2--color-bg);
   z-index: 5;
@@ -2874,10 +2873,6 @@ body:has(dialog[open]) {
   .search__type {
     font-size: 1.125rem;
   }
-}
-
-.search__info--text:empty #sFix:empty {
-  display: none;
 }
 
 .search__info--icon {
