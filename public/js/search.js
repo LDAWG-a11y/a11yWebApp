@@ -64,17 +64,17 @@ const highlightCurrent = (key) => {
     if (key === 'ArrowDown' && currItem.nextElementSibling) currItem = currItem.nextElementSibling;
     if (key === 'ArrowUp' && currItem.previousElementSibling) currItem = currItem.previousElementSibling;
   }
-  currItem.scrollIntoView({ block: "nearest", inline: "nearest" });
 
   searchList.querySelectorAll('li').forEach(li => {
     if (li === currItem) {
-      currItem.setAttribute('data-current', '');
       search.setAttribute('aria-activedescendant', currItem.firstElementChild.id);
-      if (isSafari) debounceSafari(currItem)
+      currItem.setAttribute('data-current', '');
+      if (isSafari) debounceSafari(currItem);
     } else {
       li.removeAttribute('data-current');
     }
-  })  
+  }) 
+  currItem.scrollIntoView({ block: "nearest", inline: "nearest" });
 }
 
 const polyfillSafari = (currItem) => {
