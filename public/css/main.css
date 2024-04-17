@@ -1330,6 +1330,12 @@ body[modal-open] {
 :where(.has-js) .nav__menu-btn[aria-expanded=true] .nav__menu-bar::after {
   animation: up-rotate 350ms ease forwards;
 }
+[data-pref--motion=none] :where(.has-js) .nav__menu-btn[aria-expanded=true] .nav__menu-bar::before {
+  transform: rotate(45deg);
+}
+[data-pref--motion=none] :where(.has-js) .nav__menu-btn[aria-expanded=true] .nav__menu-bar::after {
+  transform: rotate(-45deg);
+}
 :where(.has-js) .nav__menu-btn[aria-expanded=false]:not([data-untouched]) .nav__menu-bar::before {
   animation: back-up-rotate 350ms ease forwards;
 }

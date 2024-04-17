@@ -188,6 +188,16 @@ a.nav__link {
         &::after {
           animation: up-rotate 350ms ease forwards;
         }
+
+        [data-pref--motion="none"] & {
+          &::before {
+            transform: rotate(45deg);
+          }
+
+          &::after {
+            transform: rotate(-45deg);
+          }
+        }
       }
     }
 
