@@ -148,7 +148,7 @@
     text-decoration: underline;
   }
 
-  .underline {
+  .search__text {
     transition: text-decoration-color 200ms ease, text-underline-offset 100ms ease;
   }
 
@@ -157,7 +157,7 @@
     background-color: var(--v2--color-interactive);
     color: var(--v2--color-bg--light);
 
-    .underline {
+    .search__text {
       text-underline-offset: 4px;
       text-decoration-color: var(--v2--color-bg--light);
     }
@@ -169,7 +169,7 @@
   }
 }
 
-.underline {
+.search__text {
   text-decoration: underline;
   text-decoration-color: var(--v2--color-secondary);
   text-underline-offset: 2px;

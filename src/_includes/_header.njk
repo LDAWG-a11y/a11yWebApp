@@ -5,17 +5,17 @@
   {% include "_main-logo.njk" %}  
 
   {%- if team === 'mta' %}
-    <search class="header__search-block btm__gutter--largest">
-      <label id="sFilterLbl" for="sFilter" class="search__label">Search for Guides or Tags, by keyword</label>
-      <div class="search__wrapper" data-expanded="false">
-        <input class="search__input" id="sFilter" type="text" role="combobox" aria-activedescendant="" aria-autocomplete="list" aria-expanded="false" aria-controls="searchDialog" autocomplete="off" aria-haspopup="dialog">
-        {% include '../svg/magnifier.svg' %}
-      </div>
-      <div class="search__panel" id="searchDialog" role="dialog" aria-labelledby="sFilterLbl">
-        <div class="search__info flex--middle"><span class="search__info--icon">{% include '../svg/warn.svg' %}</span><span class="search__info--text"></span></div>
-        <ul class="search__list"></ul>
-        <div id="sMsg" aria-live="polite" class="visually-hidden"></div>
-      </div>
-    </search>
+  <search class="header__search-block btm__gutter--largest">
+    <label id="sFilterLbl" for="sFilter" class="search__label">Search for Guides or Tags, by keyword</label>
+    <div class="search__wrapper" data-expanded="false">
+      <input class="search__input" id="sFilter" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="searchDialog" autocomplete="off" aria-haspopup="dialog">
+      {% include '../svg/magnifier.svg' %}
+    </div>
+    <div class="search__panel" id="searchDialog" role="dialog" aria-labelledby="sFilterLbl">
+      <div class="search__info flex--middle"><span class="search__info--icon"></span><span class="search__info--text" aria-hidden="true"></span></div>
+      <ul class="search__list"></ul>
+      <div id="sMsg" aria-live="polite" class="visually-hidden"></div>
+    </div>
+  </search>
   {%- endif %}
 </header>

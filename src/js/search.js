@@ -1,7 +1,7 @@
 import { items } from '/js/collections.js';
 const headerSearchBlock = document.querySelector('.header__search-block');
-const keys = ['ArrowUp', 'ArrowDown', 'Home', 'End', 'Enter', 'Tab'];
-const search = document.querySelector('#sFilter');
+const keys = ['ArrowUp', 'ArrowDown', 'Home', 'End', 'Enter', 'Escape', 'Tab'];
+const searchInput = document.querySelector('#sFilter');
 const searchList = document.querySelector('.search__list');
 const sMsg = document.querySelector('#sMsg');
 const sInfo = document.querySelector('.search__info--text');
@@ -9,79 +9,82 @@ const errorIcon = headerSearchBlock.querySelector('.search__info--icon');
 let arrFiltered = [];
 let currItem;
 let isInvalid = false;
-const isSafari = navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1;
-
-search.addEventListener('keydown', (evt) => {
-  if (keys.includes(evt.key)) {
-    if (evt.key === 'Tab') togglePanel('false');
-    if (evt.key !== 'Enter' || evt.key !== 'Tab') highlightCurrent(evt.key);
-
-    if (evt.key === 'Enter' && searchList.hasChildNodes()) {
-      searchList.querySelectorAll('.underline').forEach(el => {
-        if (cleanStr(el.textContent) === cleanStr(search.value)) {
-          el.closest('a').click();
-        }
-      })
-      if (currItem) currItem.firstElementChild.click();
-      if (searchList.querySelectorAll('li').length === 1) searchList.querySelector('a').click();
-    }
-  }
-})
-
-document.addEventListener('click', (evt) => {
-  if ((!evt.target.closest('.search__panel') && evt.target !== search ) && headerSearchBlock.hasAttribute('data-filter-expanded')) {
-    togglePanel('false');
-  }
-})
-
-search.addEventListener('focus', () => {
-  togglePanel('true');
-  search.value.length ? filterItems(search.value) : filterItems();
-  headerSearchBlock.scrollIntoView(true);
-  if (isInvalid) search.setAttribute('aria-activedescendant', 'sMsg');
-})
-
-search.addEventListener('input', () => {
-  filterItems(search.value);
-})
 
 const togglePanel = (state) => {
-  search.setAttribute('aria-expanded', state);
-  search.parentElement.setAttribute('data-expanded', state);
+  searchInput.setAttribute('aria-expanded', state);
+  searchInput.parentElement.setAttribute('data-expanded', state);
   if (state === 'true') {
     setTimeout(() => {
       headerSearchBlock.setAttribute('data-filter-expanded', '');
-    }, 250);
+    }, 100);
   } else {
     headerSearchBlock.removeAttribute('data-filter-expanded');
   }
 }
 
-const highlightCurrent = (key) => {
-  if (!currItem) {
-    key === 'ArrowDown' || key === 'Home' ? currItem = searchList.firstElementChild : currItem = searchList.lastElementChild
-  } else {
-    if (key === 'ArrowDown' && currItem.nextElementSibling) currItem = currItem.nextElementSibling;
-    if (key === 'ArrowUp' && currItem.previousElementSibling) currItem = currItem.previousElementSibling;
-  }
-
-  searchList.querySelectorAll('li').forEach(li => {
-    if (li === currItem) {
-      search.setAttribute('aria-activedescendant', currItem.firstElementChild.id);
-      currItem.setAttribute('data-current', '');
-      if (isSafari) debounceSafari(currItem);
-    } else {
-      li.removeAttribute('data-current');
+const updateDescendant = (item) => {
+  currItem = item;
+  searchList.querySelectorAll('.search__item').forEach(el => {
+    if (el !== item) {
+      el.removeAttribute('data-current')
+      el.removeAttribute('aria-selected')
     }
-  }) 
-  currItem.scrollIntoView({ block: "nearest", inline: "nearest" });
+  })
+  
+  item.setAttribute('data-current', '');
+  item.scrollIntoView({ block: "nearest", inline: "nearest" });
+  debounceDescendant();
 }
 
-const polyfillSafari = (currItem) => {
-  let title = `Link, ${currItem.querySelector('.underline').textContent}, ${currItem.querySelector('.search__type').textContent}, `;
-  let count = `${currItem.getAttribute('data-pos')} of ${searchList.querySelectorAll('li').length}`;
-  sMsg.textContent = '';
-  sMsg.textContent = `${title} ${count}`;
+const removeDescendant = () => {
+  currItem = '';
+  searchList.querySelector('[data-current]').removeAttribute('data-current')
+}
+
+searchInput.addEventListener('keydown', (evt) => {
+  if (evt.key === 'Tab') togglePanel('false')
+  if (keys.includes(evt.key) && arrFiltered.length) {
+    evt.preventDefault();
+    handleKeys(evt.key)
+  }
+})
+
+const handleKeys = (key) => {
+  let resultsLength = searchList.querySelectorAll('.search__option').length.toString();
+  
+  if (key === 'ArrowDown') {
+    if (!searchList.querySelector('[data-current]')) {
+      updateDescendant(searchList.querySelector('[data-pos="1"]'));
+    } else if (searchList.querySelector('[data-current]') && currItem.nextElementSibling) {
+      updateDescendant(currItem.nextElementSibling);
+    }
+  }
+  
+  if (key === 'ArrowUp') {
+    if (!currItem) {
+      updateDescendant(searchList.querySelector(`data-pos="${resultsLength}"`));
+    } else if (currItem && currItem.previousElementSibling) {
+      updateDescendant(currItem.previousElementSibling);
+    }
+  }
+  
+  if (key === 'Home') updateDescendant(searchList.querySelector('[data-pos="1"]'));
+  if (key === 'End') updateDescendant(searchList.querySelector(`[data-pos="${resultsLength}"]`));
+  if (key === 'Enter') navigateToPage();
+  if (key === 'Escape') removeDescendant();
+  if (key === 'Tab') togglePanel('false');
+}
+
+const navigateToPage = () => {
+  if (currItem) currItem.firstElementChild.click();
+  
+  if (!currItem && searchInput.value.length) {
+    searchList.querySelectorAll('.search__text').forEach(el => {
+      if (cleanStr(el.textContent) === cleanStr(searchInput.value)) {
+        el.closest('a').click();
+      }
+    })
+  }
 }
 
 const cleanStr = (str) => {
@@ -100,30 +103,32 @@ const filterItems = (term) => {
   
   if (arrFiltered.length) {
     arrFiltered.slice(0, 10).forEach((item, idx) => {
-      let res = `<li class="search__item" data-pos="${idx + 1}">
+      let results = `<li class="search__item" data-pos="${idx + 1}">
         <a class="search__option" id="${item.id}" href="${item.url}" tabindex="-1">
-        <span class="underline">${item.title}</span><span class="search__type">${item.type}</span></a></li>`
-      searchList.insertAdjacentHTML('beforeend', res);
+        <span class="search__text">${item.title}</span><span class="search__type">${item.type}</span></a></li>`
+      searchList.insertAdjacentHTML('beforeend', results);
     });
 
     if (currItem) {
       if (searchList.querySelector(`#${currItem.firstElementChild.id}`)) {
-        highlightCurrent(searchList.querySelector(`#${currItem.firstElementChild.id}`).parentElement);
+        updateDescendant(searchList.querySelector(`#${currItem.firstElementChild.id}`).parentElement);
       } else {
-        highlightCurrent(searchList.querySelector('[data-pos="1"]'));
+        updateDescendant(searchList.querySelector('[data-pos="1"]'));
+        debounceDescendant();
       }  
     }
   }
-  displayDetails();
+  displayCount();
 }
 
-const displayDetails = () => {
-  if (searchList.querySelectorAll('li').length) {
-    isInvalid = false;
-  } else {
-    isInvalid = true;
-  }
+const displayCount = () => {
+  searchList.querySelectorAll('li').length ? isInvalid = false : isInvalid = true;
   isInvalid ? errorIcon.classList.remove('visually-hidden') : errorIcon.classList.add('visually-hidden');
+  if (!isInvalid) {
+    sInfo.textContent = `Showing ${searchList.querySelectorAll('li').length} of ${arrFiltered.length} results`;
+  } else {
+    sInfo.textContent = 'No results match your search term!';
+  }
   debounceCount();
 }
 
@@ -138,24 +143,34 @@ const debounce = (mainFunction, delay) => {
 };
 
 const announceCount = () => {
-  if (!isInvalid) {
-    sInfo.textContent = `Showing ${searchList.querySelectorAll('li').length} of ${arrFiltered.length} results`;
-  } else {
-    sInfo.textContent = 'No results match your search term!';
-  }
-  sMsg.textContent = '';
   sMsg.textContent = sInfo.textContent;
 };
 
-const debounceCount = debounce(announceCount, 500);
-const debounceSafari = debounce(polyfillSafari, 350);
+const announceDescendant = () => {
+  sMsg.textContent = '';
+  let title = `Link, ${currItem.querySelector('.search__text').textContent}, ${currItem.querySelector('.search__type').textContent}, `;
+  let count = `${currItem.getAttribute('data-pos')} of ${searchList.querySelectorAll('li').length}`;
+  sMsg.textContent = `${title} ${count}`;
+}
 
-// TODO ==================================
+searchInput.addEventListener('focus', () => {
+  togglePanel('true');
+  searchInput.value.length ? filterItems(searchInput.value) : filterItems();
+  headerSearchBlock.scrollIntoView(true);
+  isInvalid ? searchInput.setAttribute('aria-invalid', 'true') : searchInput.removeAttribute('aria-invalid');
+  debounceCount();
+  if (currItem) debounceDescendant(currItem); 
+})
 
-// REuse debounce
-// Handle when currItem disappears
-// Handle Safari
-// Handle showing n of n
-// Change border & perhaps shadow
-// Test FF
-// Test Enter & Tab as removed preventD()
+document.addEventListener('click', (evt) => {
+  if ((!evt.target.closest('.search__panel') && evt.target !== searchInput ) && headerSearchBlock.hasAttribute('data-filter-expanded')) {
+    togglePanel('false');
+  }
+})
+
+searchInput.addEventListener('input', () => {
+  filterItems(searchInput.value);
+})
+
+const debounceCount = debounce(announceCount, 300);
+const debounceDescendant = debounce(announceDescendant, 300);
