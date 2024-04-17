@@ -431,6 +431,7 @@ input:focus-visible {
   transition: transform 0.0001ms !important;
   scroll-behavior: unset !important;
   animation-delay: 0.0001ms !important;
+  animation-duration: 0.0001ms !important;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -2836,14 +2837,14 @@ body:has(dialog[open]) {
 [data-pref--underline=yes] .search__option {
   text-decoration: underline;
 }
-.search__option .underline {
+.search__option .search__text {
   transition: text-decoration-color 200ms ease, text-underline-offset 100ms ease;
 }
 .search__option:hover, [data-current] .search__option {
   background-color: var(--v2--color-interactive);
   color: var(--v2--color-bg--light);
 }
-.search__option:hover .underline, [data-current] .search__option .underline {
+.search__option:hover .search__text, [data-current] .search__option .search__text {
   text-underline-offset: 4px;
   text-decoration-color: var(--v2--color-bg--light);
 }
@@ -2854,7 +2855,7 @@ body:has(dialog[open]) {
   }
 }
 
-.underline {
+.search__text {
   text-decoration: underline;
   text-decoration-color: var(--v2--color-secondary);
   text-underline-offset: 2px;

@@ -80,8 +80,7 @@ input:focus-visible {
   transition: transform .0001ms !important;
   scroll-behavior: unset !important;
   animation-delay: .0001ms !important;
-  // Prevents animation of cross/burger ===============================================
-  // animation-duration: .0001ms !important;
+  animation-duration: .0001ms !important;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
