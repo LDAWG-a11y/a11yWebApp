@@ -120,6 +120,10 @@
     &::after {
       background-color: var(--v2--color-bg);
       color: var(--v2--color-interactive);
+
+      @media (forced-colors: active) {
+        background-color: ButtonText;
+      }
     }
   }
 

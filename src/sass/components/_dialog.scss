@@ -1,7 +1,6 @@
 @use '../vendors/mq';
 
 .dialog {
-  
   margin: auto;
   border: 2px solid var(--v2--color-border--mid);
   border-radius: $radius-lg;
@@ -14,7 +13,7 @@
 
   &[open] {
     display: flex;
-  flex-direction: column;
+    flex-direction: column;
     animation: fadeInUp 750ms cubic-bezier(0.5, 1, 0.89, 1) both;
 
     &::backdrop {
@@ -50,11 +49,11 @@
   }
 }
 
-// [data-pref--motion="off"] {
-//   ::backdrop {
-//     transition: opacity .0001ms !important;
-//   }
-// }
+[data-pref--motion="off"] {
+  ::backdrop {
+    transition: opacity .0001ms !important;
+  }
+}
 
 // @starting-style {
 //   .dialog[open] {
@@ -90,10 +89,18 @@
 
 .dialog__header {
   justify-content: center;
+
+  @media (forced-colors: active) {
+    border-bottom: 2px solid var(--v2--color-text);
+  }
 }
 
 .dialog__footer {
   justify-content: flex-end;
+
+  @media (forced-colors: active) {
+    border-top: 2px solid var(--v2--color-text);
+  }
 }
 
 .dialog__title {

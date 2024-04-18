@@ -870,6 +870,17 @@ strong {
     margin-top: 40px;
   }
 }
+@media (min-width: 64em) and (forced-colors: active) {
+  .footer {
+    border: 2px solid CanvasText;
+    border-radius: 6px;
+  }
+}
+@media (forced-colors: active) {
+  .footer {
+    border-top: 2px solid CanvasText;
+  }
+}
 
 .footer__bottom {
   padding: 32px 8px 12px;
@@ -926,6 +937,11 @@ strong {
   .footer__contact-us a:hover, .footer__contact-us a:focus-visible {
     text-decoration-color: var(--v2--color-bg);
     text-underline-offset: 0.3em;
+  }
+}
+@media (min-width: 64em) and (forced-colors: active) {
+  .footer__contact-us {
+    border: none;
   }
 }
 .footer__contact-us div:first-of-type {
@@ -1163,6 +1179,11 @@ body[modal-open] {
     border-radius: 8px;
   }
 }
+@media (forced-colors: active) {
+  .nav {
+    border: 2px solid var(--v2--color-text);
+  }
+}
 
 .nav__list,
 .nav__list--level-2,
@@ -1255,6 +1276,13 @@ body[modal-open] {
     border-color: var(--v2--color-primary) transparent transparent transparent;
     transition: transform 300ms ease, border-color 300ms ease;
   }
+}
+@media (min-width: 48em) and (forced-colors: active) {
+  :where(.has-js) .nav__btn--collab::after {
+    border-color: ButtonText Canvas Canvas Canvas;
+  }
+}
+@media (min-width: 48em) {
   :where(.has-js) .nav__btn--collab[aria-expanded=false]::after {
     transform: rotate(0deg);
   }
@@ -1268,6 +1296,13 @@ body[modal-open] {
   :where(.has-js) .nav__btn--collab:focus-visible::after, :where(.has-js) .nav__btn--collab:hover::after {
     border-color: var(--v2--color-strong--on-primary) transparent transparent transparent;
   }
+}
+@media (min-width: 48em) and (forced-colors: active) {
+  :where(.has-js) .nav__btn--collab:focus-visible::after, :where(.has-js) .nav__btn--collab:hover::after {
+    border-color: ButtonText Canvas Canvas Canvas;
+  }
+}
+@media (min-width: 48em) {
   :where(.has-js) .nav__btn--collab:focus-visible {
     outline: 2px solid var(--v2--color-strong--on-primary);
   }
@@ -1298,6 +1333,13 @@ body[modal-open] {
   fill: var(--v2--color-strong--on-primary);
   transform: rotate(90deg);
 }
+@media (forced-colors: active) {
+  :where(.has-js) .nav__prefs-btn:focus-visible svg, :where(.has-js) .nav__prefs-btn:hover svg,
+  :where(.has-js) .nav__menu-btn:focus-visible svg,
+  :where(.has-js) .nav__menu-btn:hover svg {
+    fill: Buttontext;
+  }
+}
 :where(.has-js) .nav__prefs-btn:focus-visible .nav__menu-bar,
 :where(.has-js) .nav__prefs-btn:focus-visible .nav__menu-bar::before,
 :where(.has-js) .nav__prefs-btn:focus-visible .nav__menu-bar::after, :where(.has-js) .nav__prefs-btn:hover .nav__menu-bar,
@@ -1310,6 +1352,21 @@ body[modal-open] {
 :where(.has-js) .nav__menu-btn:hover .nav__menu-bar::before,
 :where(.has-js) .nav__menu-btn:hover .nav__menu-bar::after {
   background-color: var(--v2--color-strong--on-primary);
+}
+@media (forced-colors: active) {
+  :where(.has-js) .nav__prefs-btn:focus-visible .nav__menu-bar,
+  :where(.has-js) .nav__prefs-btn:focus-visible .nav__menu-bar::before,
+  :where(.has-js) .nav__prefs-btn:focus-visible .nav__menu-bar::after, :where(.has-js) .nav__prefs-btn:hover .nav__menu-bar,
+  :where(.has-js) .nav__prefs-btn:hover .nav__menu-bar::before,
+  :where(.has-js) .nav__prefs-btn:hover .nav__menu-bar::after,
+  :where(.has-js) .nav__menu-btn:focus-visible .nav__menu-bar,
+  :where(.has-js) .nav__menu-btn:focus-visible .nav__menu-bar::before,
+  :where(.has-js) .nav__menu-btn:focus-visible .nav__menu-bar::after,
+  :where(.has-js) .nav__menu-btn:hover .nav__menu-bar,
+  :where(.has-js) .nav__menu-btn:hover .nav__menu-bar::before,
+  :where(.has-js) .nav__menu-btn:hover .nav__menu-bar::after {
+    background-color: ButtonText;
+  }
 }
 :where(.has-js) .nav__prefs-btn:focus-visible,
 :where(.has-js) .nav__menu-btn:focus-visible {
@@ -1375,6 +1432,11 @@ body[modal-open] {
   transform: rotate(0deg);
   transition: background-color 300ms ease;
 }
+@media (forced-colors: active) {
+  :where(.has-js) .nav__menu-bar {
+    background-color: ButtonText;
+  }
+}
 :where(.has-js) .nav__menu-bar::before, :where(.has-js) .nav__menu-bar::after {
   content: "";
   position: absolute;
@@ -1386,6 +1448,11 @@ body[modal-open] {
   transform-origin: center;
   transform: rotate(0deg) scale(1);
   transition: background-color 300ms ease;
+}
+@media (forced-colors: active) {
+  :where(.has-js) .nav__menu-bar::before, :where(.has-js) .nav__menu-bar::after {
+    background-color: ButtonText;
+  }
 }
 :where(.has-js) .nav__menu-bar::before {
   top: 0.625rem;
@@ -1457,6 +1524,11 @@ body[modal-open] {
     padding: 24px 16px;
     width: 100%;
     text-align: left;
+  }
+}
+@media (min-width: 48em) and (forced-colors: active) {
+  :where(.has-js) .nav__list-sub-panel {
+    border: 2px solid CanvasText;
   }
 }
 @media (min-width: 64em) {
@@ -1591,6 +1663,11 @@ body[modal-open] {
 .accordion__btn:focus-visible::before, .accordion__btn:focus-visible::after, .accordion__btn:hover::before, .accordion__btn:hover::after {
   background-color: var(--v2--color-bg);
   color: var(--v2--color-interactive);
+}
+@media (forced-colors: active) {
+  .accordion__btn:focus-visible::before, .accordion__btn:focus-visible::after, .accordion__btn:hover::before, .accordion__btn:hover::after {
+    background-color: ButtonText;
+  }
 }
 .accordion__btn:focus-visible {
   outline: 2px solid var(--v2--color-interactive);
@@ -2379,6 +2456,10 @@ pre[class][class*=language-] {
     backdrop-filter: blur(0);
   }
 }
+[data-pref--motion=off] ::backdrop {
+  transition: opacity 0.0001ms !important;
+}
+
 .dialog__header,
 .dialog__footer {
   display: flex;
@@ -2407,9 +2488,19 @@ pre[class][class*=language-] {
 .dialog__header {
   justify-content: center;
 }
+@media (forced-colors: active) {
+  .dialog__header {
+    border-bottom: 2px solid var(--v2--color-text);
+  }
+}
 
 .dialog__footer {
   justify-content: flex-end;
+}
+@media (forced-colors: active) {
+  .dialog__footer {
+    border-top: 2px solid var(--v2--color-text);
+  }
 }
 
 .dialog__title {
@@ -2679,26 +2770,11 @@ body:has(dialog[open]) {
 
 .panel {
   position: relative;
+  border: 2px solid var(--v2--color-border--light);
   padding: 8px 6px;
   border-radius: 6px;
   background-color: var(--v2--color-bg--light);
   box-shadow: var(--v2--shadow);
-}
-@media (prefers-color-scheme: dark) {
-  .panel {
-    border: 2px solid var(--v2--color-border--light);
-  }
-}
-:root[data-pref--theme=dark] .panel {
-  border: 2px solid var(--v2--color-border--light);
-}
-@media (prefers-color-scheme: light) {
-  .panel {
-    border: none;
-  }
-}
-:root[data-pref--theme=light] .panel {
-  border: none;
 }
 @media (min-width: 38.75em) {
   .panel {
@@ -2770,6 +2846,11 @@ body:has(dialog[open]) {
   z-index: -1;
   transition: border-color 300ms ease;
 }
+@media (forced-colors: active) {
+  .search__wrapper::before {
+    border: none;
+  }
+}
 .search__wrapper:focus-within::before {
   border-color: var(--v2--color-interactive);
 }
@@ -2840,6 +2921,11 @@ body:has(dialog[open]) {
   color: var(--v2--color-interactive);
   transition: color 300ms ease, background-color 300ms ease;
 }
+@media (forced-colors: active) {
+  .search__option {
+    border: 2px solid Canvas;
+  }
+}
 [data-pref--underline=yes] .search__option {
   text-decoration: underline;
 }
@@ -2853,6 +2939,11 @@ body:has(dialog[open]) {
 .search__option:hover .search__text, [data-current] .search__option .search__text {
   text-underline-offset: 4px;
   text-decoration-color: var(--v2--color-bg--light);
+}
+@media (forced-colors: active) {
+  .search__option:hover, [data-current] .search__option {
+    border: 2px solid CanvasText;
+  }
 }
 @media (min-width: 48em) {
   .search__option {
@@ -2899,6 +2990,11 @@ body:has(dialog[open]) {
 @media (min-width: 48em) {
   .search__info {
     font-size: 1.125rem;
+  }
+}
+@media (forced-colors: active) {
+  .search__info {
+    border-bottom: 2px solid CanvasText;
   }
 }
 

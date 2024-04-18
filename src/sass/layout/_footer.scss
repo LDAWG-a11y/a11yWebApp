@@ -10,6 +10,15 @@
 
   @include mq.mq($from:lg) {
     margin-top: $space-abs-xxxxl;
+
+    @media (forced-colors: active) {
+      border: 2px solid CanvasText;
+      border-radius: $radius-md;
+    }
+  }
+
+  @media (forced-colors: active) {
+    border-top: 2px solid CanvasText;
   }
 }
 
@@ -68,6 +77,10 @@
         text-decoration-color: var(--v2--color-bg);
         text-underline-offset: .3em;
       }
+    }
+
+    @media (forced-colors: active) {
+      border: none;
     }
   }
 

@@ -13,6 +13,10 @@
   @include mq.mq($from:lg) {
     border-radius: $radius-lg;
   }
+
+  @media (forced-colors: active) {
+    border: 2px solid var(--v2--color-text);
+  }
 }
 
 .nav__list,
@@ -106,6 +110,10 @@ a.nav__link {
         border-width: .5rem .5rem 0 .5rem;
         border-color: var(--v2--color-primary) transparent transparent transparent;
         transition: transform 300ms ease, border-color 300ms ease;
+
+        @media (forced-colors: active) {
+          border-color: ButtonText Canvas Canvas Canvas;
+        }
       }
 
       &[aria-expanded="false"]::after {
@@ -123,6 +131,10 @@ a.nav__link {
 
         &::after {
           border-color: var(--v2--color-strong--on-primary) transparent transparent transparent;
+
+          @media (forced-colors: active) {
+            border-color: ButtonText Canvas Canvas Canvas;
+          }
         }
       }
 
@@ -154,12 +166,20 @@ a.nav__link {
       svg {
         fill: var(--v2--color-strong--on-primary);
         transform: rotate(90deg);
+
+        @media (forced-colors: active) {
+          fill: Buttontext;
+        }
       }
 
       .nav__menu-bar,
       .nav__menu-bar::before,
       .nav__menu-bar::after {
         background-color: var(--v2--color-strong--on-primary);
+
+        @media (forced-colors: active) {
+          background-color: ButtonText;
+        }
       }
     }
 
@@ -247,6 +267,10 @@ a.nav__link {
     transform: rotate(0deg);
     transition: background-color 300ms ease;
 
+    @media (forced-colors: active) {
+      background-color: ButtonText;
+    }
+
     &::before,
     &::after {
       content: "";
@@ -259,6 +283,10 @@ a.nav__link {
       transform-origin: center;
       transform: rotate(0deg) scale(1);
       transition: background-color 300ms ease;
+
+      @media (forced-colors: active) {
+        background-color: ButtonText;
+      }
     }
 
     &::before {
@@ -332,6 +360,10 @@ a.nav__link {
       padding: 24px 16px;
       width: 100%;
       text-align: left;
+
+      @media (forced-colors: active) {
+        border: 2px solid CanvasText;
+      }
     }
 
     @include mq.mq($from:lg) {
@@ -343,6 +375,8 @@ a.nav__link {
     @media (prefers-reduced-motion) {
       transition: grid-template-rows 0ms, visibility 0ms;
     }
+
+    
   }
 
   .nav__list--level-2 {

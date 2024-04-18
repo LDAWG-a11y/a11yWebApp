@@ -1,6 +1,6 @@
 import { items } from '/js/collections.js';
 const headerSearchBlock = document.querySelector('.header__search-block');
-const keys = ['ArrowUp', 'ArrowDown', 'Home', 'End', 'Enter', 'Escape', 'Tab'];
+const keys = ['ArrowUp', 'ArrowDown', 'Home', 'End', 'Enter', 'Escape'];
 const searchInput = document.querySelector('#sFilter');
 const searchList = document.querySelector('.search__list');
 const sMsg = document.querySelector('#sMsg');
