@@ -66,6 +66,10 @@
     border-radius: $radius-lg;
     z-index: -1;
     transition: border-color 300ms ease;
+
+    @media (forced-colors: active) {
+      border: none;
+    }
   }
 
   &:focus-within {
@@ -144,6 +148,10 @@
   color: var(--v2--color-interactive);
   transition: color 300ms ease, background-color 300ms ease;
 
+  @media (forced-colors: active) {
+    border: 2px solid Canvas;
+  }
+
   [data-pref--underline="yes"] & {
     text-decoration: underline;
   }
@@ -160,6 +168,10 @@
     .search__text {
       text-underline-offset: 4px;
       text-decoration-color: var(--v2--color-bg--light);
+    }
+
+    @media (forced-colors: active) {
+      border: 2px solid CanvasText;
     }
   }
 
@@ -205,6 +217,10 @@
 
   @include mq.mq($from:md) {
     font-size: 1.125rem;
+  }
+
+  @media (forced-colors: active) {
+    border-bottom: 2px solid CanvasText;
   }
 }
 
