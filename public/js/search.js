@@ -72,7 +72,6 @@ const handleKeys = (key) => {
   if (key === 'End') updateDescendant(searchList.querySelector(`[data-pos="${resultsLength}"]`));
   if (key === 'Enter') navigateToPage();
   if (key === 'Escape') removeDescendant();
-  if (key === 'Tab') togglePanel('false');
 }
 
 const navigateToPage = () => {

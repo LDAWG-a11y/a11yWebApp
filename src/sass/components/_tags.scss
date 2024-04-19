@@ -6,6 +6,10 @@
   gap: $space-abs-xxxs;
   margin-bottom: $space-abs-xxl;
   list-style: none;
+
+  @media (forced-colors: active) {
+    gap: $space-abs-xs;
+  }
 }
 
 .tag__item {
@@ -28,6 +32,10 @@
   color: var(--v2--color-bg);
   transition: background-color 300ms ease, color 300ms ease, text-underline-offset 200ms;
 
+  @media (forced-colors: active) {
+    border: none;
+  }
+
   [data-pref--underline] & {
     text-decoration: underline;
 
@@ -44,6 +52,10 @@
     color: var(--v2--color-interactive);
     background-color: var(--v2--color-bg);
 
+    @media (forced-colors: active) {
+      text-decoration: underline;
+    }
+
     .tag__count {
       border-color: var(--v2--color-interactive);
     }
@@ -55,6 +67,10 @@
     inset: 1px;
     border: 2px solid var(--v2--color-interactive);
     border-radius: $radius-xs;
+
+    @media (forced-colors: active) {
+      border-radius: $radius-md;
+    }
   }
 }
 
@@ -69,5 +85,10 @@
 
   @include mq.mq($from:md) {
     font-size: calc(var(--v2--current-small-font-size) - .125rem);
+  }
+
+  @media (forced-colors: active) {
+    padding: $space-abs-sm $space-abs-xs;
+    overflow: hidden;
   }
 }

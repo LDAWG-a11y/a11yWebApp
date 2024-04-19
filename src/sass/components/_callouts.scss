@@ -22,6 +22,10 @@
     border-radius: $radius-xl;
     padding: $space-abs-xxxl $space-abs-lg $space-abs-lg;
   }
+
+  @media (forced-colors: active) {
+    border: 1px solid CanvasText;
+  }
 }
 
 .callout__tip {
