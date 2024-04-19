@@ -420,6 +420,10 @@ ul:not([class]) {
       height: .5rem;
       transform: rotate(-45deg) translateY(50%);
       background-color: var(--v2--color-secondary);
+
+      @media (forced-colors: active) {
+        background-color: CanvasText;
+      }
     }
   }
 

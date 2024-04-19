@@ -406,8 +406,8 @@ summary:focus-visible,
 h1:focus-visible,
 input:focus,
 input:focus-visible {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+  outline: 3px solid transparent;
+  outline-offset: 1px;
 }
 @media (forced-colors: active) {
   a:focus,
@@ -848,6 +848,11 @@ ul:not([class]) li::before {
   height: 0.5rem;
   transform: rotate(-45deg) translateY(50%);
   background-color: var(--v2--color-secondary);
+}
+@media (forced-colors: active) {
+  ul:not([class]) li::before {
+    background-color: CanvasText;
+  }
 }
 ul:not([class]):has(+ h2) {
   margin-bottom: 90px;
@@ -2054,6 +2059,13 @@ blockquote:not(.twitter-tweet)::after {
     padding: 32px 16px 16px;
   }
 }
+@media (forced-colors: active) {
+  .callout__tip,
+  .callout__info,
+  .callout__warn {
+    border: 1px solid CanvasText;
+  }
+}
 
 .callout__tip {
   border-bottom: 6px solid var(--v2--color-tip);
@@ -3102,6 +3114,11 @@ body:has(dialog[open]) {
   margin-bottom: 24px;
   list-style: none;
 }
+@media (forced-colors: active) {
+  .tags {
+    gap: 6px;
+  }
+}
 
 .tag__item {
   display: inline-flex;
@@ -3123,6 +3140,11 @@ body:has(dialog[open]) {
   color: var(--v2--color-bg);
   transition: background-color 300ms ease, color 300ms ease, text-underline-offset 200ms;
 }
+@media (forced-colors: active) {
+  .tag__link {
+    border: none;
+  }
+}
 [data-pref--underline] .tag__link {
   text-decoration: underline;
 }
@@ -3135,6 +3157,11 @@ body:has(dialog[open]) {
   color: var(--v2--color-interactive);
   background-color: var(--v2--color-bg);
 }
+@media (forced-colors: active) {
+  .tag__link:hover, .tag__link:focus-visible {
+    text-decoration: underline;
+  }
+}
 .tag__link:hover .tag__count, .tag__link:focus-visible .tag__count {
   border-color: var(--v2--color-interactive);
 }
@@ -3144,6 +3171,11 @@ body:has(dialog[open]) {
   inset: 1px;
   border: 2px solid var(--v2--color-interactive);
   border-radius: 2px;
+}
+@media (forced-colors: active) {
+  .tag__link::before {
+    border-radius: 6px;
+  }
 }
 
 .tag__count {
@@ -3158,6 +3190,12 @@ body:has(dialog[open]) {
 @media (min-width: 48em) {
   .tag__count {
     font-size: calc(var(--v2--current-small-font-size) - 0.125rem);
+  }
+}
+@media (forced-colors: active) {
+  .tag__count {
+    padding: 8px 6px;
+    overflow: hidden;
   }
 }
 
@@ -4066,11 +4104,21 @@ body:has(dialog[open]) {
 .cms .cms__anchor:focus-visible {
   outline: 2px solid var(--v2--color-interactive);
 }
+@media (forced-colors: active) {
+  .cms .cms__anchor:focus-visible {
+    outline-offset: -2px;
+  }
+}
 .cms .cms__anchor:hover, .cms .cms__anchor:focus-visible {
   background-color: var(--v2--color-interactive);
 }
 .cms .cms__anchor:hover svg, .cms .cms__anchor:focus-visible svg {
   fill: var(--v2--color-bg);
+}
+@media (forced-colors: active) {
+  .cms .cms__anchor:hover svg, .cms .cms__anchor:focus-visible svg {
+    fill: LinkText;
+  }
 }
 @media (min-width: 48em) {
   .cms .cms__anchor {
