@@ -11,9 +11,9 @@ toc: true
 tags:
   - Procurement
 file:
-  - /public/docs/option-1-bespoke-system-requirements.docx
-  - /public/docs/option-2-customised-system-requirements.docx
   - /public/docs/option-3-cots-requirements.docx
+  - /public/docs/option-2-customised-system-requirements.docx
+  - /public/docs/option-1-bespoke-system-requirements.docx
 isGuide: true
 ---
 This accessibility in procurement guidance has been created in collaboration with RNIB (Royal National Institute of Blind People) to ensure consistent world leading accessibility standards are embedded within all products or services to benefit everyone involved in its delivery. This is part of an ongoing relationship to make the UK Higher Education sector more inclusive and accessible to all.
