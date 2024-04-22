@@ -80,7 +80,7 @@ Some organisations are creating ever more inaccessible personality test options 
 
 Not only are these images wholly reliant on perceived context but are in many cases so surreal that any professional context would be almost impossible to identify for any user let alone neurodivergent applicants. Three examples of these images have been provided below.
 
-![Three personality test examples. The three pictures are shown side by side with the buttons "Me" and "Not Me" below. The alt text for the individual images is presented in the text below.](/guideImg/selection.png)
+
 
 Our alt text attempts:
 
