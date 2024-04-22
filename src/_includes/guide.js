@@ -85,3 +85,15 @@ window.onresize = toggleTabStopOnTable;
 window.onresize = addTabStopToCodeBlock;
 toggleTabStopOnTable();
 addTabStopToCodeBlock();
+
+document.querySelectorAll('.callout__info').forEach(panel => {
+  panel.querySelector('.callout__icon').insertAdjacentHTML('afterbegin', '<svg width="24px" height="24px"><use href="#cInfo"></use></svg>')
+})
+
+document.querySelectorAll('.callout__tip').forEach(panel => {
+  panel.querySelector('.callout__icon').insertAdjacentHTML('afterbegin', '<svg width="24px" height="24px"><use href="#cTip"></use></svg>')
+})
+
+document.querySelectorAll('.callout__warn').forEach(panel => {
+  panel.querySelector('.callout__icon').insertAdjacentHTML('afterbegin', '<svg width="24px" height="24px"><use href="#cWarn"></use></svg>')
+})
