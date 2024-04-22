@@ -7,7 +7,7 @@ permalink: "/rnib/accessibility-passport/"
 summary: The Make Things Accessible website is operated by a number of
   London-based universities, sharing our knowledge on delivering accessible
   experiences for all
-team: rnib
+team: mta
 ---
 A cross-sector initiative to make it easier, cheaper, and quicker to consistently create accessible digital experiences in higher education.
  
