@@ -1612,7 +1612,7 @@ body[modal-open] {
 }
 
 .accordion--multiple + .accordion__panel {
-  margin: 0;
+  margin: 0.25rem;
 }
 
 .accordion__btn {

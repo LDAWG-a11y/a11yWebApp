@@ -21,7 +21,6 @@ accordions.forEach((accordion, idx) => {
   const accPanel = accordion.nextElementSibling;
   let initialState = 'false'
   if (accordion.closest('[data-pre-expanded]')) {
-    console.log( 'hit' );
     initialState = 'true'
   }
   accordion.setAttribute('data-no-accent', '');
@@ -30,6 +29,12 @@ accordions.forEach((accordion, idx) => {
   aria-controls="accPanel-${idx + 1}"
   aria-expanded="${initialState}">${accTitle}</button>`;
 
+  if (accPanel.firstElementChild.tagName !== 'div' ) {
+    const accPanelContents = accPanel.innerHTML;
+    accPanel.innerHTML = '';
+    accPanel.insertAdjacentHTML('afterbegin', `<div>${accPanelContents}</div>`)
+  }
+
   let accBtn = accordion.firstElementChild;
   accordion.setAttribute('data-open', `${initialState}`);
 
@@ -37,6 +42,10 @@ accordions.forEach((accordion, idx) => {
     toggleBool(accBtn, 'aria-expanded');
     toggleBool(accBtn.parentElement, 'data-open');
   });
+
+  if (accPanel.nextElementSibling === accordion || accPanel.hasAttribute('data-last')) {
+    accordion.classList.add('accordion--multiple');
+  }
 });
 
 accordions.forEach(accordion => {
