@@ -18,6 +18,8 @@ For example, if a supplier provides an accessibility roadmap it should be review
 
 If you do not have accessibility specialists to review your supplier responses, this guide should help you understand the types of responses you might receive from suppliers and what you should be looking for in different response and documentation types.
 
+Once you have read this guide, you may find more itemised support useful in scoring supplier responses. The MTA [Procurement scoring and maturity guide](https://www.makethingsaccessible.com/guides/procurement-scoring-and-maturity/) and template can help you to begin turning the learning from this guide into practical steps during your procurement process.
+
 <div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">This publication is issued as guidance only. It is not intended to provide legal or professional advice. All collaborators on this content accept no liability for any errors, omissions or any consequences, losses or damages arising from any use of, or reliance placed on, this publication. You should seek advice from a suitably qualified professional.</span></div>
 
 ## How to interpret accessibility responses
@@ -133,7 +135,9 @@ The range of poor responses you might receive from suppliers can be quite broad.
 * **We have Y overlay product, so this solves all our accessibility** – Obvious high risk given all MTA template questions specifically ask about overlays and highlight the problems with them in the [Overlay Fact Sheet](https://overlayfactsheet.com/#main) and [our own guide on Overlays and other fix-it products](https://www.makethingsaccessible.com/guides/overlays-and-other-fix-it-products/). We have seen suppliers respond to every question with a one line link to an overlay product before. Think about how different each question is and consider how lazy a response a one line overlay link is.
 * **Our product is customisable to you, we can’t give you documentation because it depends on your customisation, or what components you choose out of our library** – There is no guarantee that any component in their library is accessible. The supplier should be able to evidence that their pick and choose components are individually built to accessibility standards, or that their platform enables customers to build compliant platforms. Customisability is not an excuse for lack of due diligence.
 
-## Post procurement and contracts
+## Next steps, post procurement and contracts
+
+Once you have read this guide, you may find more itemised support useful in scoring supplier responses. The MTA [Procurement scoring and maturity guide](https://www.makethingsaccessible.com/guides/procurement-scoring-and-maturity/) and template can help you to begin turning the learning from this guide into practical steps during your procurement process.
 
 Once you have completed your tendering process and have decided to enter into an agreement with a supplier, it is important to keep accessibility compliance in the requirements.
 
