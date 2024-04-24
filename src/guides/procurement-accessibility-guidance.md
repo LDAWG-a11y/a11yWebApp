@@ -6,7 +6,7 @@ summary: Managing accessibility requirements at the procurement stage can help
   their product before you buy. There are some key questions you can ask and
   tell tale signs to watch out for to avoid suppliers that will put you at risk.
 author: grhodes
-date: 2022-10-28
+date: 2024-04-24
 toc: true
 tags:
   - Procurement
@@ -76,7 +76,7 @@ When you are putting together your requirements, you should make sure to include
 2. Supplier is offering their own product that will be “customised” to your requirements.
 3. Supplier is offering a Commercial Off the Shelf (COtS) Product.
 
-The 8 requirements listed below should be applicable in all cases. For further clarification on what responses are appropriate to each requirement for different system requirements, we have put together further guidance on scoring and maturity in procurement.
+The 8 requirements listed below should be applicable in all cases. For further clarification on what responses are appropriate to each requirement for different system requirements, we have put together further guidance on [scoring and maturity in procurement](https://www.makethingsaccessible.com/guides/procurement-scoring-and-maturity/).
 
 ### Option 1: Bespoke system to your specification
 
