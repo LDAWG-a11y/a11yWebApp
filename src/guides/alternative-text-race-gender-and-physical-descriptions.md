@@ -63,9 +63,7 @@ Let’s look at [another example](https://youtube.com/shorts/xI9EEryux9M?si=RCGl
   <details>
     <summary>Video transcript</summary>
 
-```
 Here’s the thing. If you are Latino / Latina you will understand this. It is a huge part of who I am.
-```
 
 There are so many different aspects to being Latino / Latina in everyday life. And I feel like people who comment stuff like this \[Gestures to visible comment on the screen which reads “No I get it your half white Latina but you make it your entire personality… WE GET IT] or say that I am trying so hard to be Latina only do it because of the way I look.
 
