@@ -58,7 +58,7 @@ Rashida Jones, the actress who plays Ann Perkins in the show has both African Am
 
 Let’s look at [another example](https://youtube.com/shorts/xI9EEryux9M?si=RCGlksNTTEDkrl2y). The woman in the video has very fair skin and long ginger hair. The initial assumption that many people make is that she is White but are often surprised to find out that she is Latina or Hispanic. In the video below, Ana Saia is addressing how she feels about these comments about her race. Apologies the video does not have captions. We have provided a transcript below.
 
-<iframe width="560" height="316" src="https://youtube.com/embed/xI9EEryux9M?si=RCGlksNTTEDkrl2y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="560" src="https://youtube.com/embed/xI9EEryux9M?si=RCGlksNTTEDkrl2y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
   <details>
     <summary>Video transcript</summary>
@@ -124,11 +124,11 @@ Sometimes, you will be selecting images with a range of different people in for 
 
 Because of this inclusive outlook, Adopt London considered the alternative text for the images they used throughout their new handbook and why those pictures were there. Throughout the handbook, there are what might be at first glance decorative images of various family units, used just to fill space within the handbook and provide some visual interest. But for a sighted user these images play an important role in representation. There are people of various races pictured as well as same sex couples. This was done to set the visual tone about their inclusivity, so why not do this for people who would use the alt text as well?
 
-![A male same-sex couple standing either side of their adopted son](src/guideImg/picture1.png)
+![A male same-sex couple standing either side of their adopted son](src/guideImg/same-sex-couple.png)
 
 A male same-sex couple standing either side of their adopted son
 
-![Young Black girl kissing adoptive Black mother on cheek](src/guideImg/picture2.png)
+![Young Black girl kissing adoptive Black mother on cheek](src/guideImg/black-parent.png)
 
 Young Black girl kissing adoptive Black mother on cheek
 
