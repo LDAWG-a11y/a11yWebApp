@@ -5,7 +5,7 @@ summary: Describing people in alternative text can require consideration and
   describing characteristics.
 author: grhodes
 date: 2024-04-29
-toc: false
+toc: true
 tags:
   - Images
   - Alt text
