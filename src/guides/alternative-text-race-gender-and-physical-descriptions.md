@@ -56,7 +56,7 @@ Rashida Jones as Ann Perkins (Credit: [NBC - © 2012 NBCUniversal Media, LLC](ht
 
 Rashida Jones, the actress who plays Ann Perkins in the show has both African American as well as Ashkenazi Jewish heritage, but without looking that up or asking the person directly, how would you go about describing the race of someone that does not fall into an obvious racial grouping?
 
-Let’s look at [another example](https://youtube.com/shorts/xI9EEryux9M?si=RCGlksNTTEDkrl2y). The woman in the video below has very fair skin and long ginger hair. The initial assumption that many people make is that she is White but are often surprised to find out that she is Latina or Hispanic. In the video below, Ana Saia is addressing how she feels about these comments about her race. Apologies the video does not have captions. We have provided a transcript below.
+Let’s look at [another example](https://youtube.com/shorts/xI9EEryux9M?si=RCGlksNTTEDkrl2y). The woman in the video has very fair skin and long ginger hair. The initial assumption that many people make is that she is White but are often surprised to find out that she is Latina or Hispanic. In the video below, Ana Saia is addressing how she feels about these comments about her race. Apologies the video does not have captions. We have provided a transcript below.
 
   <details>
     <summary>Video transcript</summary>
