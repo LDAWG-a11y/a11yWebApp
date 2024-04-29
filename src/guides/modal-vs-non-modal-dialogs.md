@@ -82,4 +82,6 @@ There are quite a few critical considerations for a modal dialog that are not re
 
 Well, why not? The page is "visually" unavailable, so it needs to be "technically" unavailable. Let's just say we have a sighted keyboard user, who tabs out of our modal, let's say it's a rather large modal, the backdrop has low opacity and there's lots of controls below. How would they see where their focus was, if there was a link below the modal? 
 
-If we had given making the underlying page
+What about if we have been good sports and prevented the underlying page from scrolling, how are they going to see their focus when it's out of the locked viewport?
+
+If a developer had given making the underlying page "hidden" from screen reader users by applying `aria-hidden="true"` to the rest of the page and hoping that would miraculously do all the heavy lifting for them, well then the experience isn't going to be acceptable to screen reader users, is it? Many of know that `aria-hidden="true"` does one thing and one thing only, it hides the element and its descendants from the accessibility tree, what it does not do is prevent a user focusing on an element. Only now the focused element has no name, role or value, it's not in the accessibility tree, so like everything else, it's just silence and therefore of no use to anybody who relies on audible cues.
