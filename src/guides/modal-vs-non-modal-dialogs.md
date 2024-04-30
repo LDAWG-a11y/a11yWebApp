@@ -60,17 +60,17 @@ love um or hate um (I hate um), cookies confirmation/acceptance widgets don't ap
 
 Let us assume we have a site that loads a cookies modal on our first visit, this modal overlays the page, rendering it "inactive" until we either "Accept" or "Deny" cookies. This is an example of something that is critical, they don't want us being on the fence about cookies, they need to know whether we're cool with them or not, they have a site with something we're likely interested in and the price of entry is accepting or denying cookies, everything is unavailable until we choose on of those options. Once we have chosen an option, the page would then be ready to read or interact with (after we have dismissed several other dialogs, to accept notifications, sign up to the newsletter, install the progressive web app, let them know our geographical location and let them know what colour socks we are wearing).
 
-There are of course other less annoying and intrusive ways to present to a user their cookies, but I don't think the message has filtered through to the cookie companies just yet.
+There are of course other less annoying and intrusive ways to present to a user their cookies, but I don't think the message has filtered through to the cookie devs just yet.
 
 ### An image gallery
 
-Sometimes these may be referred to as a "light box" style gallery, typically a user would select one image and be presented with that image and a bunch of controls to view or access its sibling images. These images would usually be part of a collection of some sort, say property photos, a graduation photoshoot or anything else. Upon opening these gallery widgets the underlying page is usually completely "invisible" or barely visible at all.The focus is on the gallery and the effect I guess is to remove all underlying distractions to peruse the images.
+Sometimes these may be referred to as a "light box" gallery, typically a user would select one image and be presented with that image and a bunch of controls in a larger view that covers the underlying page, so the user can view or access that image and its sibling images. These images would usually be part of a collection of some sort, say property photos, a graduation photoshoot or anything else. Upon opening these gallery widgets the underlying page is usually completely "invisible" or barely visible at all. The user's focus is drawn to the gallery.
 
 Again, as this completely blocks the underlying page, this is a good example of a modal dialog, the user is in the gallery, if they want out, they can dismiss it and the page below is not available to them until they do dismiss it.
 
 ### Overview of Modal dialogs
 
-Again, we could have continued on with many different examples, but I'm desperately trying to not waffle so much in my articles. I guess an easy way of thinking about a modal dialog is a page upon a page, that page does not have to be the same size, it can be much smaller, but crucially, it just means do something on this page to get back to the page below.
+Again, we could have continued on with many different examples, but I'm desperately trying to not waffle so much in my articles. I guess an easy way of thinking about a modal dialog is a floating page upon a page, that page does not have to be the same size, it can be much smaller, but crucially, it just means do something on this new floating page to get back to the page below.
 
 There are quite a few critical considerations for a modal dialog that are not required for their non-modal cousins:
 
@@ -80,8 +80,100 @@ There are quite a few critical considerations for a modal dialog that are not re
 
 ### Why trap a user inside a modal?
 
-Well, why not? The page is "visually" unavailable, so it needs to be "technically" unavailable. Let's just say we have a sighted keyboard user, who tabs out of our modal, let's say it's a rather large modal, the backdrop has low opacity and there's lots of controls below. How would they see where their focus was, if there was a link below the modal? 
+Well, why not? The page is "visually" unavailable, clicking on a control outside of the dialog will not action that control (it may close the dialog), so it needs to be unavailable to keyboard users, too. There are several ways to achieve this, we'll go over them later, first we'll look at a few considerations as to why we should trap focus:
 
-What about if we have been good sports and prevented the underlying page from scrolling, how are they going to see their focus when it's out of the locked viewport?
+* Let's just say we have a sighted keyboard user, who tabs out of our modal, let's say it's a rather large modal, the backdrop has low opacity and there's content and links underneath the dialog. How would the user see where their focus was when they focus on the link? 
+* What about if we have been good sports and prevented the underlying page from scrolling, how are they going to see their focus when it's below the locked portion of the viewport?
+* What if a screen reader user gets out of the dialog with their virtual cursor, only they are a sighted or partially sighted screen reader user and now they cannot visually track where their focus or cursor is?
+* What if when the dialog is open, it manipulates the underlying page, perhaps some functionality becomes disabled or hidden from the accessibility tree, that'd be a lot of confusing silence for a blind screen reader user.
+* Undoubtedly, there are more issues that could affect our users, but essentially, if the page is unavailable to pointing device users, then it must be unavailable to users of non-pointing devices.
 
-If a developer had given making the underlying page "hidden" from screen reader users by applying `aria-hidden="true"` to the rest of the page and hoping that would miraculously do all the heavy lifting for them, well then the experience isn't going to be acceptable to screen reader users, is it? Many of know that `aria-hidden="true"` does one thing and one thing only, it hides the element and its descendants from the accessibility tree, what it does not do is prevent a user focusing on an element. Only now the focused element has no name, role or value, it's not in the accessibility tree, so like everything else, it's just silence and therefore of no use to anybody who relies on audible cues.
+### OK, how do we trap focus
+
+As I said before, there are several ways to achieve this, we'll take a look at them and discuss the benefits:
+
+#### The old way
+
+Let's just assume we have a decent site structure, like so:
+
+```html
+<header>
+  <nav></nav>
+</header>
+<main>
+  <button id="modalTrigger">Open me!<button>
+</main>
+<footer></footer>
+<div role="dialog" aria-modal="true" aria-labelledby="dialogHeading">
+  <h1 id="dialogHeading" tabindex="-1">I'm open!</h1>
+</div>
+```
+
+Note: in the above, I would be sending programmatic focus to the heading, you can also send it to the close button or the first interactive element in the dialog if it makes sense but ensure a user won't miss any information.
+
+I'm not going to code the JavaScript for this, as there are better ways in 2024, so there's little benefit in me typing it all out.
+
+Essentially, what we would need to do is is add `aria-hidden="true"` to each landmark, to ensure it and its descendants are hidden from the accessibility tree. [`aria-modal="true"` does do that for the majority of browsers, but sadly not all](https://a11ysupport.io/tech/aria/aria-modal_attribute). Then, we would need to trap focus inside the dialog, by getting the first and last actionable elements and listening for the correct keypresses. If a user was focuses on the last element and presses <kbd>Tab</kbd> then we would `focus()` on the first actionable element. Conversely, if a user presses <kbd>Shift</kbd> and <kbd>Tab</kbd> whilst focused on the first actionable element, we could then move `focus()` to the last actionable element, so in essence, our user is trapped within.
+
+There is one caveat with the above, it prevents a user from tabbing back up into their browser's UI, so they cannot get into the address bar etc, until they close the dialog. The alternative would have been to walk the DOM, essentially loop through all descendants of the `<body>` element, except the dialog and then search for every single element that can receive focus (including custom widgets with `tabindex="0"`) and add `tabindex="-1"`, obviously we'd need to make them focusable again when the dialog closed, along with removing `aria-hidden` from the landmarks etc.
+
+#### A better way
+
+In recent times we have been treated with some useful new features, one of which was the `inert` property for HTML. This attribute has been kicking around since 2022, but it wasn't supported in Firefox until mid 2023 and back in 2022 we typically supported IE, so we had to still use a polyfill to get this to work properly.
+
+Essentially, what `inert` does is it not only removes the node it is applied to, along with all its descendants from the accessibility tree, but it also prevents any elements or descendants receiving focus. So in essence, we are killing two birds with one stone, neat, huh?
+
+Let's just use the HTML example I provided in the previous method and knock out a quick bit of JavaScript to show how we could do that:
+
+```javascript
+const landmarks = [document.querySelector('header'), document.querySelector('main'), document.querySelector('footer')];
+const trigger = document.getElementById('modalTrigger');
+const dialog = document.querySelector('[role="dialog"]');
+
+trigger.addEventListener('click', () => {
+  if (document.documentElement.hasAttribute('data-modal-open')) {
+    document.documentElement.removeAttribute('data-modal-open');
+    trigger.focus();
+    landmarks.forEach(lm => lm.removeAttribute('inert'));
+  } else {
+    document.documentElement.setAttribute('data-modal-open', '');
+    dialog.querySelector('#dialogHeading').focus();
+    landmarks.forEach(lm => lm.setAttribute('inert', ''));
+  }
+})
+```
+
+Obviously the above is not production-ready, it's just the most basic way of demonstrating the functionality, that I can think of, so what we are doing is:
+
+* Save our landmarks into an array
+* Get a reference to the button that opens the dialog
+* Get a reference to the dialog itself
+* Add an `eventListener()` to the button and then
+* If there is an attribute `data-modal-open` on the `html` element
+
+  * Remove the `data-modal-open` attribute
+  * Loop through our array of landmarks and remove the `inert` attribute from each
+  * Finally, `focus()` on the button that initially opened the dialog
+* If the data-modal-open attribute is not present on the `html` element
+
+  * Add `data-modal-open` to the `html` element
+  * Loop through our landmarks array and add the `inert` attribute
+  * Finally, `focus()` on the dialog's heading
+
+Then, assuming in our super basic example we have some CSS like so:
+
+```css
+html[data-modal-open] [role="dialog"] {
+  display: block;
+}
+
+html:not([data-modal-open]) [role="dialog"] {
+  display: none;
+}
+```
+
+We would then be responsibly hiding the dialog when closed and showing it when open. That's pretty straightforward, right? With useful attributes like inert, it's often difficult to understand how so many devs get dialogs wrong. Granted, this attribute won't work on older browsers, but there is this polyfill, which could be used only when necessary. Another consideration is of course site structure, I obviously created the optimal site structure for my demo, but in reality, that dialog could be nested within a landmark, there could be other landmarks, there may not be any landmarks at all and somebody is having to fish this dialog out of div soup. So there may be some DOM walking required, but this is just a basic example.
+
+#### But wait, there's more
+
+We have just one more way to discuss and this one is my new favourite, it's actually the easiest to implement too. Drum roll, introducing the <dialog> element, a native dialog brought to you by the good folks at W3C. Many of us will already be aware of this element and perhaps followed its progress for a while, at first it was broken and not fully supported, but like the good soldiers they are, the groups involved in this all got it over the line, to such a point where it is now pretty much "safe" to use. There are some little quirks and obviously older browsers won't support it, but you should really have a read of this post from Scott O'Hara
