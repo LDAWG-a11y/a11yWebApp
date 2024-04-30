@@ -106,6 +106,7 @@ Let's just assume we have a decent site structure, like so:
 <footer></footer>
 <div role="dialog" aria-modal="true" aria-labelledby="dialogHeading">
   <h1 id="dialogHeading" tabindex="-1">I'm open!</h1>
+  <button id="close">Close</button>
 </div>
 ```
 
@@ -129,17 +130,18 @@ Let's just use the HTML example I provided in the previous method and knock out 
 const landmarks = [document.querySelector('header'), document.querySelector('main'), document.querySelector('footer')];
 const trigger = document.getElementById('modalTrigger');
 const dialog = document.querySelector('[role="dialog"]');
+const closeBtn = document.getElementById('close');
 
 trigger.addEventListener('click', () => {
-  if (document.documentElement.hasAttribute('data-modal-open')) {
-    document.documentElement.removeAttribute('data-modal-open');
-    trigger.focus();
-    landmarks.forEach(lm => lm.removeAttribute('inert'));
-  } else {
-    document.documentElement.setAttribute('data-modal-open', '');
-    dialog.querySelector('#dialogHeading').focus();
-    landmarks.forEach(lm => lm.setAttribute('inert', ''));
-  }
+  document.documentElement.setAttribute('data-modal-open', '');
+  dialog.querySelector('#dialogHeading').focus();
+  landmarks.forEach(lm => lm.setAttribute('inert', ''));
+})
+
+closeBtn.addEventListener('click', () => {
+  document.documentElement.removeAttribute('data-modal-open');
+  landmarks.forEach(lm => lm.removeAttribute('inert'));
+  trigger.focus();
 })
 ```
 
@@ -148,17 +150,13 @@ Obviously the above is not production-ready, it's just the most basic way of dem
 * Save our landmarks into an array
 * Get a reference to the button that opens the dialog
 * Get a reference to the dialog itself
-* Add an `eventListener()` to the button and then
-* If there is an attribute `data-modal-open` on the `html` element
-
-  * Remove the `data-modal-open` attribute
-  * Loop through our array of landmarks and remove the `inert` attribute from each
-  * Finally, `focus()` on the button that initially opened the dialog
-* If the data-modal-open attribute is not present on the `html` element
+* get a reference to the close button
+* Add an `addEventListener()` to the button and then
 
   * Add `data-modal-open` to the `html` element
   * Loop through our landmarks array and add the `inert` attribute
   * Finally, `focus()` on the dialog's heading
+* I've added a close function, by listening to a click, on the close button, when that is actioned, we simply remove the data-modal-open attribute from the html element, remove the inert property from our landmarks and finally set focus on the initial trigger. I've just added this so you can check the DOM for opening and closing etc, I've not implemented light dismiss or anything
 
 Then, assuming in our super basic example we have some CSS like so:
 
@@ -172,8 +170,28 @@ html:not([data-modal-open]) [role="dialog"] {
 }
 ```
 
-We would then be responsibly hiding the dialog when closed and showing it when open. That's pretty straightforward, right? With useful attributes like inert, it's often difficult to understand how so many devs get dialogs wrong. Granted, this attribute won't work on older browsers, but there is this polyfill, which could be used only when necessary. Another consideration is of course site structure, I obviously created the optimal site structure for my demo, but in reality, that dialog could be nested within a landmark, there could be other landmarks, there may not be any landmarks at all and somebody is having to fish this dialog out of div soup. So there may be some DOM walking required, but this is just a basic example.
+We would then be responsibly hiding the dialog when closed and showing it when open. That's pretty straightforward, right? With useful attributes like `inert`, it's often difficult to understand how so many devs get dialogs wrong. Granted, this attribute won't work on older browsers, but there is this polyfill, which could be used only when necessary. Another consideration is of course site structure, I obviously created the optimal site structure for my demo, but in reality, that dialog could be nested within a landmark, there could be other landmarks, there may not be any landmarks at all and somebody is having to fish this dialog out of div soup. So there may be some DOM walking required, but this is just a basic example.
 
 #### But wait, there's more
 
-We have just one more way to discuss and this one is my new favourite, it's actually the easiest to implement too. Drum roll, introducing the <dialog> element, a native dialog brought to you by the good folks at W3C. Many of us will already be aware of this element and perhaps followed its progress for a while, at first it was broken and not fully supported, but like the good soldiers they are, the groups involved in this all got it over the line, to such a point where it is now pretty much "safe" to use. There are some little quirks and obviously older browsers won't support it, but you should really have a read of this post from Scott O'Hara
+We have just one more way to discuss and this one is my new favourite, it's actually the easiest to implement too. Drum roll, introducing the `<dialog>` element, a native dialog brought to you by the good folks at W3C. Many of us will already be aware of this element and perhaps followed its progress for a while, at first it was broken and not fully supported, but like the good soldiers they are, the groups involved in this all got it over the line, It's actually been usable for a while now. There are some little quirks and obviously older browsers won't support it, [but you should really have a read of this post from Scott O'Hara, who goes over any remaining quirks](https://www.scottohara.me/blog/2023/01/26/use-the-dialog-element.html).
+
+It's always nice to have a native HTML element that can do much of the heavy lifting for us, so we can keep our JavaScript file size down and have less to debug if and when something breaks. We still need some JavaScript for the `<dialog>` element, but that's mostly to open and close it.
+
+Before we build a little demo it's important to remember the distinction between modal and non-modal dialogs, as the opening method is a little different for each. If our dialog is non-modal, we use the `show()` method in our `addEventListener()` to open it, as the browser understands this to be a non-modal dialog, it won't trap focus etc, which is of course intentional. If we use the `showModal()` method, we get focus trapping, visibility and focus management for free, all we need really is an `addEventListener()`, so let's rustle something up.
+
+We need to modify our HTML for this, mostly swapping out the `<div>` for a `<dialog>` element, but also removing some redundant attributes.The accessible name does not appear to be required for the native HTML <dialog>, I'm just gonna keep it in, as your user doesn't care how you built it, just that it works and if role="dialog" requires an accessible name, then I'm just gonna keep things consistent.
+
+```html
+<header>
+  <nav></nav>
+</header>
+<main>
+  <button id="modalTrigger">Open me!</button>
+</main>
+<footer></footer>
+<dialog aria-labelledby="dialogHeading">
+  <h1 autofocus tabindex="-1">I'm open!</h1>
+  <button id="close">Close Me!</button>
+</dialog>
+```
