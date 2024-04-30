@@ -224,4 +224,18 @@ closeBtn.addEventListener('click', () => {
 
 In its most basic form, that is it. Of course, we may want to add light dismiss for clicking outside on the `::backdrop`, another nice freebie here is we already have dismiss on <kbd>Esc</kbd> press, but perhaps there are cases where that should not be an option, so I'm just guessing here, but if it were say a cookies dialog where an action is required, we could use the `preventDefault()` method on the `keydown` event, but I guess most of the time we would wanna keep that in.
 
-Just like the `inert` attribute, this is relatively new-ish, so older browsers won't get all of the goodness that comes for free, I haven't tested on older browsers, I guess anything that predates Scott's article will degrade in functionality and the further back you go, the more likely you are to get to the point where it simply does nothing.
+Just like the `inert` attribute, this is relatively new-ish, so older browsers won't get all of the goodness that comes for free, I haven't tested on older browsers, I guess anything that predates Scott's article will degrade in functionality and the further back you go, the closer you are to the point where it simply does nothing at all. But, that's a task I'm sure you can address with some polyfill or other.
+
+## Revisiting non-modal dialogs
+
+As I stated earlier, we can also use the <dialog> element on non-modal dialogs, we just need to use the .show() method, as opposed to .showModal(). I've knocked up a quick CodePen with three dialogs, as I don't need to use inert on a non-nodal dialog, as then it is modal.
+
+## Live CodePen examples
+
+I've used pretty much the same code as above, but I had to use unique IDs and what not, so some references change
+
+
+
+## Further reading
+
+This is almost as basic as I could do for this, I haven't animated it, I haven't styled it, added light dismiss and generally I've just provided a barebones example. But if you wish to make your dialog all shiny and fancy, then [this guide from Adam Argylle is pretty awesome for overcoming any issues you may face](https://web.dev/articles/building/a-dialog-component).
