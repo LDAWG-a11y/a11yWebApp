@@ -106,7 +106,7 @@ Let's just assume we have a decent site structure, like so:
 <footer></footer>
 <div role="dialog" aria-modal="true" aria-labelledby="dialogHeading">
   <h1 id="dialogHeading" tabindex="-1">I'm open!</h1>
-  <button id="close">Close</button>
+  <button id="close">Close me!</button>
 </div>
 ```
 
@@ -195,3 +195,33 @@ We need to modify our HTML for this, mostly swapping out the `<div>` for a `<dia
   <button id="close">Close Me!</button>
 </dialog>
 ```
+
+Notice I have added autofocus to the heading, my train of thought is the following:
+
+Sending focus to the `<dialog>` can be a tad noisy and potentially annoying for folk, as depending on how much content is in it, a screen reader will proceed to read it all out. I will concede here, I haven't actually tested that with users, but I have read Slack comments from screen reader users who state that and based upon just a few folks saying it, I'm rolling with that, as nobody could ever know what is better for screen reader users than actual screen reader users.
+
+As the `<dialog>` is pretty smart, it actually decides where to place focus, if you read Scott's article that I linked earlier, this was one of the last things to be resolved, before he wrote the article. If I do not manage `autofocus`, then focus will be sent to the first actionable element, which is the close button. As I have only one close button and it comes after the content, that does not make sense, as a user would have to go reversing up the dialog to get to the beginning. In my example which only contains two elements, this would not be the end of the world, but what if we had lots of text? What if the first interactive element was actually the Agree button and all the text above was a nefarious document that agreed to surrender your house, savings and favourite slippers to the company, in a legally-binding way? I exaggerate a bit, but accessing information sequentially is usually the best way to go, if it's something like agreeing to terms and conditions, if a screen reader user does not want to listen to all that drivel, as much as I don't wanna read it, they'll do what I do and just accept (silly me). If they do accept, it wouldn't be because we coded the dialog in a way that made the content easy to miss, it would be their choice to accept without consuming the information. You could of course add a close icon button at the top, too and then focus would automagically be sent to that.
+
+Very little JavaScript here, which is nice:
+
+```javascript
+const trigger = document.getElementById('modalTrigger');
+const dialog = document.querySelector('dialog');
+const closeBtn = document.getElementById('close');
+
+trigger.addEventListener('click', () => {
+  dialog.showModal();
+})  
+
+closeBtn.addEventListener('click', () => {
+  dialog.close();
+})
+```
+
+* We keep most of our variables which reference the bits we need, with the exception. of the landmarks array, we don't need that now
+* We strip down the contents of the `addEventListener()` for the `trigger` button, we just need the one magic method `.showModal()`
+* We strip out the contents of the `addEventListener()` for the `close` button, we just want the `.close()` method
+
+In its most basic form, that is it. Of course, we may want to add light dismiss for clicking outside on the `::backdrop`, another nice freebie here is we already have dismiss on <kbd>Esc</kbd> press, but perhaps there are cases where that should not be an option, so I'm just guessing here, but if it were say a cookies dialog where an action is required, we could use the `preventDefault()` method on the `keydown` event, but I guess most of the time we would wanna keep that in.
+
+Just like the `inert` attribute, this is relatively new-ish, so older browsers won't get all of the goodness that comes for free, I haven't tested on older browsers, I guess anything that predates Scott's article will degrade in functionality and the further back you go, the more likely you are to get to the point where it simply does nothing.
