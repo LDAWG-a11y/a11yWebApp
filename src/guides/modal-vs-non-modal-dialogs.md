@@ -234,8 +234,6 @@ As I stated earlier, we can also use the <dialog> element on non-modal dialogs, 
 
 I've used pretty much the same code as above, but I had to use unique IDs and what not, so some references change
 
-
-
 ## Further reading
 
 This is almost as basic as I could do for this, I haven't animated it, I haven't styled it, added light dismiss and generally I've just provided a barebones example. But if you wish to make your dialog all shiny and fancy, then [this guide from Adam Argylle is pretty awesome for overcoming any issues you may face](https://web.dev/articles/building/a-dialog-component).
