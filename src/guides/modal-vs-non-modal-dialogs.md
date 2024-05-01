@@ -14,19 +14,23 @@ isGuide: true
 ---
 ## Intro
 
-We often encounter dialogs that are used incorrectly or there appears some confusion about how to implement one correctly, we aim to help you understand the key differences between non-modal and modal dialogs in this guide.
+We often encounter dialogs that are used incorrectly or there appears some confusion about how to implement one correctly, this may be in part due to some misunderstandings around modal and non-modal dialogs. We'll explore some differences between the two types, especially around their behaviour and what effects, if any, they have on a user's current flow within the application.
 
 ## Modal vs Non-modal
 
-It's perhaps useful to understand "Modal" to be a state, as in the current state of the page is non-interactive, it is intended to be blocked from interaction so a user is directed into either selecting something in the overlaying dialog, or possibly closing it by canceling it.
+It's perhaps useful to understand "Modal" to be a state, as in this new floaty thing that has appeared on top of the page is a new context and at this moment in time, it is the only context available to the user. The page underneath is temporarily irrelevant until a user completes the action in the new context or dismisses it in some other way. The state here is the dialog has made the page below inactive.
 
 A Modal dialog would of course be a dialog that blocks out the underlying page and a Non-modal dialog would still allow page interaction.
 
-Sometimes the word "Modal" is used interchangeably with "Dialog", to mean either Modal or Non-modal, which is incorrect and perhaps some of the confusion stems from this misunderstanding? It's quite common to hear or read this, personally I often understand what the person actually means when they say "We need a modal for this", but that's only because I have some additional context and that combined with me knowing the differences usually helps me to figure out what they actually meant.
+Sometimes the word "Modal" is used interchangeably with "Dialog", to mean either Modal or Non-modal, which is an incorrect usage of the word and perhaps some of the confusion stems from this misunderstanding? It's quite common to hear or read this, personally I often understand what the person actually means when they say "We need a modal for this", but that's only when I have some additional context and that combined with me knowing the differences usually helps me to figure out what they actually meant. I guess that's a bit like when someone says "Can that be a header 2?", Me: "No, it cannot, it can be a heading 2 though", I jest, I am not that pedantic, I'd know what they meant and just do what they meant.
 
 ## Examples of Non-modal dialogs
 
-As Non-modal does not block interaction with the full page, these are often in some way connected to another user interface component or have little effect on the user's flow.
+As Non-modal does not block interaction with the full page, they can be understood to be optional or non-critical. Sometimes they may be some form of temporary alert, sometimes they may be part of another component, such as a search filter or chat widget, in any case, the underlying page should not be inactive, it should not be dimmed and scrolling of the page should not be locked.
+
+The reason why we should not dim the page below is because it is **not** inactive, therefore, we'd  cause confusion, create barriers and generally make things more difficult for our users, which we definitely don't want. If you have to convince some stakeholders you should not dim the page below, then sometimes we have to bring out the non-compliance guns. If the non-modal dialog dims the screen, then as the page below is not technically "inert" or inactive, then that blur effect or dimming will likely cause multiple elements to fail colour contrast criteria. 
+
+If somebody wants the screen dimmed and there's a valid use case for it, what they likely want is a modal dialog.
 
 ### A date picker
 
@@ -38,35 +42,39 @@ A Date Picker is a prime example of where a Non-modal dialog is typically used, 
 
 Similar to the Date Picker, this pattern would typically be an input that then displays a dialog containing suggestions or matches that filter the results, based upon the user's input. Again this would be non-modal, as there is no use in blocking interaction with the underlying page.
 
-An example of a combobox filter can be found on the ARIA Authoring Practices page.
+[An example of a combobox filter can be found on the ARIA Authoring Practices page.](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-autocomplete-list/)
 
-### A word of warning
+### A timeout alert
 
-As with all ARIA Authoring Practice examples, don't just go copying the code and calling it good. In fact, seldom should we do this at all for full patterns, because often we inherit somebody else's oversights, all ARIA Authoring patterns do come with a warning, for this very reason.
+Depending on implementation, an inactivity warning may appear as a dialog in a system, this may be for security purposes as the system has detected a period of inactivity. These particular alerts can of course be presented in multiple ways, one of which could be a simple alert. Visually it may appear above the page, it may not hijack a user's keyboard focus, but it may say something like "You will be logged out in 2 minutes, press any key to stay logged in". This pattern would not require a new context, as the user would not need to be forced into the dialog to press a key. 
 
 ### Overview of Non-modal dialogs
 
-We have provided just two examples above, there are of course many other valid use cases, but in essence they are often localised non-critical controls that do not obscure the page content and its controls and if they do obscure other parts of the page, they would typically auto-close when a user tabs out of them.
+We have provided just three examples above, there are of course many other valid use cases, but in essence they are often localised, non-critical or optional containers that do not obscure the whole page and they do not make it dimmed or inactive.
 
-It's an important distinction that a keyboard user can and should be able to tab away and continue on their journey. A user just viewing a page that does not want to use the Search Filter may focus on the input, which then expands the results and they should then of course be free to just tab away, so to speak, without their focus becoming trapped.
+It's an important distinction that a keyboard user can and should be able to continue without dismissing or completing an action within, just like a mouse user can and should be able to. 
 
 ## Examples of modal dialogs
 
-Typically a modal dialog will consist of two primary parts (depending on implementation), the actual dialog itself and the backdrop. The backdrop would usually visually subdue the underlying page, be this with a blur effect, a background colour with some opacity, a combination of the two and perhaps several other alternative styling techniques. Visually, this communicates to sighted users something along the lines of "Hey, this is the new page context, you need to do something in here and the stuff underneath is temporarily unavailable.
+Typically a modal dialog will consist of two primary parts (depending on implementation), the actual dialog itself and the backdrop. The backdrop would usually dim or visually subdue the underlying page, be this with a blur effect or a background colour with lower opacity etc. Visually, this communicates to sighted users something along the lines of "Hey, this is the new page context, we're just grabbing your attention, you need to do something in here and the stuff underneath is temporarily unavailable until you do".
 
 ### Cookies dialogs
 
-love um or hate um (I hate um), cookies confirmation/acceptance widgets don't appear to be going anywhere soon. Sometimes I ignore them, especially if they do not block too much of the page below, but sometimes, they are presented as a modal dialog. When presented as a modal they typically prevent us from accessing the page at all, until we give permission for them to snoop on us or target us with ads or uncheck a gazillion pre-checked checkboxes that give them "Legitimate interest" to snoop on us, who actually decides what parts of our privacy is legitimate, surely that should be us?
+Love um or hate um (I hate um), cookies confirmation/acceptance widgets don't appear to be going anywhere soon. Sometimes I ignore them, especially if they do not block too much of the page below, but sometimes, they are presented as a modal dialog. When presented as a modal they typically prevent us from accessing the page at all, until we give permission for them to snoop on us, target us with ads or uncheck a gazillion pre-checked checkboxes that give them "Legitimate interest" to snoop on us, who actually decides what parts of our privacy is legitimate, surely that should be us?
 
-Let us assume we have a site that loads a cookies modal on our first visit, this modal overlays the page, rendering it "inactive" until we either "Accept" or "Deny" cookies. This is an example of something that is critical, they don't want us being on the fence about cookies, they need to know whether we're cool with them or not, they have a site with something we're likely interested in and the price of entry is accepting or denying cookies, everything is unavailable until we choose on of those options. Once we have chosen an option, the page would then be ready to read or interact with (after we have dismissed several other dialogs, to accept notifications, sign up to the newsletter, install the progressive web app, let them know our geographical location and let them know what colour socks we are wearing).
+Let us assume we have a site that loads a cookies modal on our first visit, this modal overlays the page, rendering it "inactive" until we either "Accept" or "Deny" cookies. This is an example of something that is critical, they don't want us being on the fence about cookies, they need to know whether we're cool with them or not, they have a site with something we're likely interested in and the price of entry is accepting or denying cookies, everything is unavailable until we choose one of those options. Once we have chosen an option, the page would then be ready to read or interact with (after we have dismissed several other dialogs, to accept notifications, sign up to the newsletter, install the progressive web app, let them know our geographical location and let them know what colour socks we are wearing).
 
-There are of course other less annoying and intrusive ways to present to a user their cookies, but I don't think the message has filtered through to the cookie devs just yet.
+There are of course other less annoying and intrusive ways to implement cookies widgets, but I don't think the message has filtered through to the cookie devs just yet or their bosses prefer the shady practices and won't let them make it just as easy to dismiss, as it is to accept.
 
 ### An image gallery
 
 Sometimes these may be referred to as a "light box" gallery, typically a user would select one image and be presented with that image and a bunch of controls in a larger view that covers the underlying page, so the user can view or access that image and its sibling images. These images would usually be part of a collection of some sort, say property photos, a graduation photoshoot or anything else. Upon opening these gallery widgets the underlying page is usually completely "invisible" or barely visible at all. The user's focus is drawn to the gallery.
 
 Again, as this completely blocks the underlying page, this is a good example of a modal dialog, the user is in the gallery, if they want out, they can dismiss it and the page below is not available to them until they do dismiss it.
+
+### A re-authentication dialog
+
+If a session time out ended as we were busy with something else, but we had not finished the current task some applications may present a dialog that asks for the user's password and ID again, before they can continue doing what they were doing in a secure area of the site. These are definitely modal dialogs, as to log in, we must interact with them and everything below should be inactive, although sometimes we would be redirected to another page first, but hopefully you know what I mean?
 
 ### Overview of Modal dialogs
 
