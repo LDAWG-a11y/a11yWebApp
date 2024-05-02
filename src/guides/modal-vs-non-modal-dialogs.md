@@ -190,7 +190,7 @@ It's always nice to have a native HTML element that can do much of the heavy lif
 
 Before we build a little demo it's important to remember the distinction between modal and non-modal dialogs, as the opening method is a little different for each. If our `<dialog>` is non-modal, we use the `show()` method in our `addEventListener()` to open it, as the browser understands this to be a non-modal dialog, it won't trap focus etc, which is of course intentional. If we use the `showModal()` method, we get focus trapping and focus management for free, all we need really is an `addEventListener()`, so let's rustle something up.
 
-We need to modify our HTML for this, mostly swapping out the `<div>` for a `<dialog>` element, but also removing some redundant attributes. The accessible name does not appear to be required for the native HTML `<dialog>`, I'm just gonna keep it in, as your user doesn't care how you built it, just that it works and if `role="dialog"` requires an accessible name, then I'm not sure why this wouldn't, although the HTML spec and the ARIA spec aren't the same, so in this case i guess valid HTML perhaps isn't valid ARIA, either way, I'm putting it in as it makes sense to do that.
+We need to modify our HTML for this, mostly swapping out the `<div>` for a `<dialog>` element, but also removing some redundant attributes. The accessible name does not appear to be required for the native HTML `<dialog>`, I'm just gonna keep it in, as your user doesn't care how you built it, just that it works and if `role="dialog"` requires an accessible name, then I'm not sure why this wouldn't, although the HTML spec and the ARIA spec aren't the same, so in this case I guess valid HTML perhaps doesn't map to valid ARIA, either way, I'm putting it in as it makes sense to do that.
 
 ```html
 <header>
@@ -208,7 +208,7 @@ We need to modify our HTML for this, mostly swapping out the `<div>` for a `<dia
 
 Notice I have added `autofocus` to the heading, my train of thought is the following:
 
-Sending focus to the `<dialog>` can be a tad noisy and potentially annoying for folk, as depending on how much content is in it, a screen reader will proceed to read it all out. I will concede here, I haven't actually tested that with users, but I have read Slack comments from screen reader users who have stated don't send focus to the dialog. Based upon just a few folks stating that, I'm rolling with it, as nobody could ever know what is better for screen reader users than actual screen reader users.
+Sending focus to the `<dialog>` can be a tad noisy and potentially annoying for folk, as depending on how much content is in it, a screen reader will proceed to read it all out. I will concede here, I haven't actually tested that with users, but I have read comments from screen reader users who have stated don't send focus to the dialog. Based upon just a few folks stating that, I'm rolling with it, as they were screen reader users and they know what works best for them
 
 As the `<dialog>` is pretty smart, it actually decides where to place focus for you, if you read Scott's article that I linked earlier, this was one of the last things to be resolved, before he wrote the article. If I do not manage `autofocus`, then focus will be sent to the first actionable element, which is the close button. As I have only one close button and it comes after the content, that perhaps does not make sense, as a user would have to go reversing up the dialog to get to the beginning. In my example which only contains two elements, this would not be the end of the world, but what if we had lots of text? What if the first interactive element was actually the Agree button and all the text above was a nefarious document that agreed to surrender your house, savings and favourite slippers to the company, in a legally-binding way? I exaggerate a bit, but accessing information sequentially is usually the best way to go, if it's something like agreeing to terms and conditions, if a screen reader user does not want to listen to all that drivel, as much as I don't wanna read it, they'll do what I do and just accept (silly me). If they do accept, it wouldn't be because we coded the dialog in a way that made the content easy to miss, it would be their choice to accept without consuming the information. You could of course add a close icon button at the top, too and then focus would automagically be sent to that.
 
@@ -234,7 +234,7 @@ closeBtn.addEventListener('click', () => {
 
 In its most basic form, that is it. Of course, we may want to add light dismiss for clicking outside on the `::backdrop`, another nice freebie we get with the `<dialog>` is we already have dismiss on <kbd>Esc</kbd> press, which we also got for free. Perhaps there are cases where we may want to remove that functionality, if it were say a cookies dialog where an action is required, we could use the `preventDefault()` method on the `keydown` event for <kbd>Esc</kbd>, but we should only prevent that behaviour when a user must do something in the actual dialog.
 
-We also get quite a bit of CSS for free, from the browser's internal stylesheets, our dialog is conveniently positioned centrally on the screen for us and it will appear on the very top layer.
+We also get quite a bit of CSS for free, from the browser's internal stylesheets, our dialog is conveniently positioned centrally on the screen for us and it will appear on the very top layer., not only that, it "shows" and "hides" too, albeit, with no transition etc.
 
 Just like the `inert` attribute, this is relatively new-ish, so older browsers won't get all of the goodness that comes for free, I haven't tested on older browsers, I guess anything that predates Scott's article will degrade in functionality and the further back you go, the closer you are to the point where it simply does nothing at all. But, that's a task I'm sure you can address with some polyfill or other.
 
@@ -245,9 +245,31 @@ As I stated earlier, we can also use the `<dialog>` element on non-modal dialogs
 * It cannot be dismissed with <kbd>Esc</kbd>, so if that functionality were necessary for a non-modal dialog, it would have to be scripted manually
 * The non-dialog variant is centred horizontally, but not vertically using the browser's default styles, it would likely be required to position this manually in most cases
 
-## Live CodePen examples
+## CodePen examples
 
 I've used pretty much the same code as above, but I had to use unique IDs and what not, so some references change, but the logic is the same.
+
+<p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="oNOrjXz" data-preview="true" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/oNOrjXz">
+  Modal vs non-modal dialogs</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+## Wrapping up
+
+Sure, there are likely situations where it is not super clear whether the dialog you want is modal or non-modal, but a some things that should feature in your decision should be:
+
+* Does it dim the rest of the screen?
+* Does it require a user to agree to or confirm to something or some other important action?
+* Does it cover most of the page?
+* If it doesn't cover most of the page, is the page below inactive whilst the dialog is open?
+
+Those above would usually result in a modal dialog. If it belongs to an input or it is something that does not require a user's immediate attention and they can still interact with the page, then this sounds like non-modal.
+
+My examples are super basic, I didn't add click outside to close and I never added a dialog wrapper for the ARIA example, I just blurred the rest of the page, because I was being a bit lazy.
+
+I guess the message here is, if you are struggling with how to implement a modal dialog correctly and you do not need to support any browsers over a year old
 
 ## Further reading
 
@@ -256,3 +278,4 @@ This is almost as basic as I could do for this, I haven't animated it, I haven't
 * If you wish to make your dialog all shiny and fancy, then [this guide from Adam Argylle is pretty awesome for overcoming any issues you may face](https://web.dev/articles/building/a-dialog-component).
 * [HTML Spec: the dialog element](https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element)
 * [MDN the dialog element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)
+* [CanIUse the dialog element](https://caniuse.com/?search=dialog)
