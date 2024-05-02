@@ -242,11 +242,8 @@ Just like the `inert` attribute, this is relatively new-ish, so older browsers w
 
 As I stated earlier, we can also use the `<dialog>` element on non-modal dialogs, we just need to use the `.show()` method, as opposed to `.showModal()`. I've not really had much of a play with the non-modal variant until now and I've discovered some behaviours I was not aware of:
 
-* Setting `autofocus` to the heading of the non-modal variant does not work in Firefox, it does in Chrome and Safari, it also works fine for the modal variant. I guess this is a bug, I'll ask around
 * It cannot be dismissed with <kbd>Esc</kbd>, so if that functionality were necessary for a non-modal dialog, it would have to be scripted manually
-* The non-dialog variant is centred horizontally, but not vertically using the browser's default styles
-
-What I have done here, which i did not initially plan to do, is I have added this dialog directly after the button that displays it. Had I not done this it appeared as a statically positioned element, horizontally centred, below the footer, so it would likely be missed by a bunch of users.
+* The non-dialog variant is centred horizontally, but not vertically using the browser's default styles, it would likely be required to position this manually in most cases
 
 
 
