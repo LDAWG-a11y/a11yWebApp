@@ -245,8 +245,6 @@ As I stated earlier, we can also use the `<dialog>` element on non-modal dialogs
 * It cannot be dismissed with <kbd>Esc</kbd>, so if that functionality were necessary for a non-modal dialog, it would have to be scripted manually
 * The non-dialog variant is centred horizontally, but not vertically using the browser's default styles, it would likely be required to position this manually in most cases
 
-
-
 ## Live CodePen examples
 
 I've used pretty much the same code as above, but I had to use unique IDs and what not, so some references change, but the logic is the same.
@@ -257,3 +255,4 @@ This is almost as basic as I could do for this, I haven't animated it, I haven't
 
 * If you wish to make your dialog all shiny and fancy, then [this guide from Adam Argylle is pretty awesome for overcoming any issues you may face](https://web.dev/articles/building/a-dialog-component).
 * [HTML Spec: the dialog element](https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element)
+* [MDN the dialog element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)
