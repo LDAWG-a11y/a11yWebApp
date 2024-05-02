@@ -188,9 +188,9 @@ We have just one more way to discuss and this one is my new favourite, it's actu
 
 It's always nice to have a native HTML element that can do much of the heavy lifting for us, so we can keep our JavaScript file size down and have less to debug if and when something breaks. We still need some JavaScript for the `<dialog>` element, but that's mostly to open and close it.
 
-Before we build a little demo it's important to remember the distinction between modal and non-modal dialogs, as the opening method is a little different for each. If our dialog is non-modal, we use the `show()` method in our `addEventListener()` to open it, as the browser understands this to be a non-modal dialog, it won't trap focus etc, which is of course intentional. If we use the `showModal()` method, we get focus trapping, visibility and focus management for free, all we need really is an `addEventListener()`, so let's rustle something up.
+Before we build a little demo it's important to remember the distinction between modal and non-modal dialogs, as the opening method is a little different for each. If our `<dialog>` is non-modal, we use the `show()` method in our `addEventListener()` to open it, as the browser understands this to be a non-modal dialog, it won't trap focus etc, which is of course intentional. If we use the `showModal()` method, we get focus trapping and focus management for free, all we need really is an `addEventListener()`, so let's rustle something up.
 
-We need to modify our HTML for this, mostly swapping out the `<div>` for a `<dialog>` element, but also removing some redundant attributes. The accessible name does not appear to be required for the native HTML <dialog>, I'm just gonna keep it in, as your user doesn't care how you built it, just that it works and if `role="dialog"` requires an accessible name, then I'm not sure why this wouldn't, although the HTML spec and the ARIA spec aren't the same, so in this case i guess valid HTML perhaps isn't valid ARIA, either way, I'm putting it in as it makes sense to do that.
+We need to modify our HTML for this, mostly swapping out the `<div>` for a `<dialog>` element, but also removing some redundant attributes. The accessible name does not appear to be required for the native HTML `<dialog>`, I'm just gonna keep it in, as your user doesn't care how you built it, just that it works and if `role="dialog"` requires an accessible name, then I'm not sure why this wouldn't, although the HTML spec and the ARIA spec aren't the same, so in this case i guess valid HTML perhaps isn't valid ARIA, either way, I'm putting it in as it makes sense to do that.
 
 ```html
 <header>
@@ -232,13 +232,13 @@ closeBtn.addEventListener('click', () => {
 * We strip down the contents of the `addEventListener()` for the `trigger` button, we just need the one magic method `.showModal()`
 * We strip out the contents of the `addEventListener()` for the `close` button, we just want the `.close()` method
 
-In its most basic form, that is it. Of course, we may want to add light dismiss for clicking outside on the `::backdrop`, another nice freebie we get with the <dialog> is we already have dismiss on <kbd>Esc</kbd> press, which we also got for free. Perhaps there are cases where we may want to remove that functionality, if it were say a cookies dialog where an action is required, we could use the `preventDefault()` method on the `keydown` event, but we should only prevent that behaviour when a user must do something in the actual dialog.
+In its most basic form, that is it. Of course, we may want to add light dismiss for clicking outside on the `::backdrop`, another nice freebie we get with the `<dialog>` is we already have dismiss on <kbd>Esc</kbd> press, which we also got for free. Perhaps there are cases where we may want to remove that functionality, if it were say a cookies dialog where an action is required, we could use the `preventDefault()` method on the `keydown` event, but we should only prevent that behaviour when a user must do something in the actual dialog.
 
 Just like the `inert` attribute, this is relatively new-ish, so older browsers won't get all of the goodness that comes for free, I haven't tested on older browsers, I guess anything that predates Scott's article will degrade in functionality and the further back you go, the closer you are to the point where it simply does nothing at all. But, that's a task I'm sure you can address with some polyfill or other.
 
 ## Revisiting non-modal dialogs
 
-As I stated earlier, we can also use the <dialog> element on non-modal dialogs, we just need to use the `.show() `method, as opposed to `.showModal()`. I've knocked up a quick CodePen with three dialogs, as I don't need to use `inert` on a non-nodal dialog, as that would of course make it modal.
+As I stated earlier, we can also use the `<dialog>` element on non-modal dialogs, we just need to use the `.show() `method, as opposed to `.showModal()`. I've knocked up a quick CodePen with three dialogs, as I don't need to use `inert` on a non-nodal dialog, as that would of course make it modal.
 
 
 
