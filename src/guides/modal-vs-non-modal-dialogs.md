@@ -240,6 +240,8 @@ Just like the `inert` attribute, this is relatively new-ish, so older browsers w
 
 As I stated earlier, we can also use the <dialog> element on non-modal dialogs, we just need to use the `.show() `method, as opposed to `.showModal()`. I've knocked up a quick CodePen with three dialogs, as I don't need to use `inert` on a non-nodal dialog, as that would of course make it modal.
 
+
+
 ## Live CodePen examples
 
 I've used pretty much the same code as above, but I had to use unique IDs and what not, so some references change, but the logic is the same.
