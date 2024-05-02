@@ -269,7 +269,7 @@ Those above would usually result in a modal dialog. If it belongs to an input or
 
 My examples are super basic, I didn't add click outside to close and I never added a dialog wrapper for the ARIA example, I just blurred the rest of the page, because I was being a bit lazy.
 
-I guess the message here is, if you are struggling with how to implement a modal dialog correctly and you do not need to support any browsers over a year old
+I guess the message here is, if you are struggling with how to implement a modal dialog correctly and you do not need to support any browsers over a year old, then maybe the <dialog> element can help you out, as it handles so much out-of-the-box for us, we basically just need to listeners and styles. I've provided further reading resources below.
 
 ## Further reading
 
