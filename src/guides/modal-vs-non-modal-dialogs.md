@@ -5,7 +5,7 @@ summary: There are primarily two different types of dialog, one blocks access to
   allows interaction with the page content
 author: dlee
 date: 2024-04-29
-toc: false
+toc: true
 tags:
   - Component
   - HTML
@@ -91,7 +91,7 @@ There are quite a few critical considerations for a modal dialog that are not re
 
 Well, why not? The page is "visually" unavailable, clicking on a control outside of the dialog will not action that control (it may close the dialog), so it needs to be unavailable to keyboard users, too. There are several ways to achieve this, we'll go over them shortly, first we'll look at a few considerations as to why we should trap focus:
 
-* Let's just say we have a sighted keyboard user, who tabs out of our modal, let's say it's a rather large modal, the backdrop has low opacity and there's content and links underneath the dialog. How would the user see where their focus was when they focus on the link? 
+* Let's just say we have a sighted keyboard user, who tabs out of our dialog, let's say it's a rather large dialog, the backdrop has low opacity and there's content and links underneath the dialog. How would the user see where their focus was when they focus on the link? 
 * What about if we have been good sports and prevented the underlying page from scrolling, how are they going to see their focus when it's below the locked portion of the viewport?
 * What if a screen reader user gets out of the dialog with their virtual cursor, only they are a sighted or partially sighted screen reader user and now they cannot visually track where their focus or cursor is?
 * What if when the dialog is open, it manipulates the underlying page, perhaps some functionality becomes disabled or hidden from the accessibility tree, that'd be a lot of confusing silence for a blind screen reader user.
@@ -124,13 +124,13 @@ Note: in the above, I would be sending programmatic focus to the heading, you ca
 
 I'm not going to code the JavaScript for this, as there are better ways in 2024, so there's little benefit in me typing it all out.
 
-Essentially, what we would need to do is is add `aria-hidden="true"` to each landmark, to ensure it and its descendants are hidden from the accessibility tree. [aria-modal="true" does do that for the majority of browsers, but not all](https://a11ysupport.io/tech/aria/aria-modal_attribute). Then, we would need to trap focus inside the dialog, by getting the first and last actionable elements and listening for the correct keypresses. If a user was focuses on the last element and presses <kbd>Tab</kbd> then we would `focus()` on the first actionable element. Conversely, if a user presses <kbd>Shift</kbd> and <kbd>Tab</kbd> whilst focused on the first actionable element, we could then move `focus()` to the last actionable element, so in essence, our user is trapped within.
+Essentially, what we would need to do is is add `aria-hidden="true"` to each landmark, to ensure it and its descendants are hidden from the accessibility tree. [aria-modal="true" does do that for the majority of browsers, but not all](https://a11ysupport.io/tech/aria/aria-modal_attribute). Then, we would need to trap focus inside the dialog, by getting the first and last actionable elements and listening for the correct keypresses. If a user was focuses on the last element and presses <kbd>Tab</kbd> then we would `focus()` on the first actionable element. Conversely, if a user presses <kbd>Shift</kbd> and <kbd>Tab</kbd> whilst focused on the first actionable element, we could then move `focus()` to the last actionable element, so in essence, our user's focus is trapped, as we are forcing their focus to cycle through the dialog. This approach requires our users to either complete the action required or close the dialog and reactivate the underlying page.
 
 There is one caveat with the above, it prevents a user from tabbing back up into their browser's UI, so they cannot get into the address bar etc, until they close the dialog. The alternative would have been to walk the DOM, essentially loop through all descendants of the `<body>` element, except the dialog and then search for every single element that can receive focus (including custom widgets with `tabindex="0"`) and add `tabindex="-1"`, obviously we'd need to make them focusable again when the dialog closed, along with removing `aria-hidden` from the landmarks etc.
 
 #### A better way
 
-In recent times we have been treated with some useful new features, one of which was the `inert` property for HTML. This attribute has been kicking around since 2022, but it wasn't supported in Firefox until mid 2023 and back in 2022 we typically still supported IE, so we had to use a polyfill to get this to work properly.
+In recent times we have been treated with some useful new features, one of which was the [inert property for HTML](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inert). The `inert` attribute has been kicking around since 2022, but it wasn't supported in [Firefox until mid 2023](https://caniuse.com/?search=inert) and back in 2022 we typically still supported IE, so we had to use a polyfill to get this to work properly.
 
 Essentially, what `inert` does is it not only removes the node it is applied to, along with all its descendants from the accessibility tree, but it also prevents any elements or descendants receiving focus. So in essence, we are killing two birds with one stone, neat, huh?
 
@@ -166,7 +166,7 @@ Obviously the above is not production-ready, it's just the most basic way of dem
   * Add `data-modal-open` to the `<html>` element
   * Loop through our landmarks array and add the `inert` attribute to each item
   * Finally, `focus()` on the dialog's heading
-* I've added a close function, by listening to a click, on the Close button, when that is actioned, we simply remove the `data-modal-open` attribute from the `<html>` element, remove the inert property from our landmarks and finally set focus on the initial trigger. I've just added this so you can check the DOM for opening and closing etc, I've not implemented light dismiss or anything
+* I've added a close function, by listening to a click, on the Close button, when that is actioned, we simply remove the `data-modal-open` attribute from the `<html>` element, remove the inert property from our landmarks and finally set `focus()` on the initial trigger. I've just added this so you can check the DOM for opening and closing etc, I've not implemented light dismiss or anything
 
 Then, assuming in our super basic example we have some CSS like so:
 
@@ -184,7 +184,7 @@ We would then be accessibly hiding the dialog when closed and showing it when op
 
 #### But wait, there's more
 
-We have just one more way to discuss and this one is my new favourite, it's actually the easiest to implement too. Drum roll, introducing the `<dialog>` element, a native dialog brought to you by the good folks at W3C. Many of us will already be aware of this element and perhaps followed its progress for a while, at first it was broken and not fully supported, but like the good soldiers they are, the teams involved in this all got it over the line, It's actually been usable for a while now. There are some little quirks and obviously older browsers won't support it, [but you should really have a read of this post from Scott O'Hara, who goes over any remaining quirks](https://www.scottohara.me/blog/2023/01/26/use-the-dialog-element.html).
+We have just one more way to discuss and this one is my new favourite, it's actually the easiest to implement too. Drum roll, introducing the `<dialog>` element, a native dialog brought to you by the good folks at W3C. Many of us will already be aware of this element and perhaps followed its progress for a while, at first it was a bit broken and not fully supported, but like the good soldiers they are, the teams involved in this all got it over the line, It's actually been usable for a while now. There are some little quirks and obviously older browsers won't support it, [but you should really have a read of this post from Scott O'Hara, who goes over any remaining quirks](https://www.scottohara.me/blog/2023/01/26/use-the-dialog-element.html).
 
 It's always nice to have a native HTML element that can do much of the heavy lifting for us, so we can keep our JavaScript file size down and have less to debug if and when something breaks. We still need some JavaScript for the `<dialog>` element, but that's mostly to open and close it.
 
@@ -206,9 +206,9 @@ We need to modify our HTML for this, mostly swapping out the `<div>` for a `<dia
 </dialog>
 ```
 
-Notice I have added `autofocus` to the heading, my train of thought is the following:
+Notice I have added `autofocus` and `tabindex="-1"` to the heading, my train of thought is the following:
 
-Sending focus to the `<dialog>` can be a tad noisy and potentially annoying for folk, as depending on how much content is in it, a screen reader will proceed to read it all out. I will concede here, I haven't actually tested that with users, but I have read comments from screen reader users who have stated don't send focus to the dialog. Based upon just a few folks stating that, I'm rolling with it, as they were screen reader users and they know what works best for them
+Sending focus to the `<dialog>` can be a tad noisy and potentially annoying for folk, as depending on how much content is in it, a screen reader will proceed to read it all out. I will concede here, I haven't actually tested that with users, but I have read comments from screen reader users who have stated "don't send focus to the dialog". Based upon just a few folks stating that, I'm rolling with it, as they were screen reader users and they know what works best for them
 
 As the `<dialog>` is pretty smart, it actually decides where to place focus for you, if you read Scott's article that I linked earlier, this was one of the last things to be resolved, before he wrote the article. If I do not manage `autofocus`, then focus will be sent to the first actionable element, which is the close button. As I have only one close button and it comes after the content, that perhaps does not make sense, as a user would have to go reversing up the dialog to get to the beginning. In my example which only contains two elements, this would not be the end of the world, but what if we had lots of text? What if the first interactive element was actually the Agree button and all the text above was a nefarious document that agreed to surrender your house, savings and favourite slippers to the company, in a legally-binding way? I exaggerate a bit, but accessing information sequentially is usually the best way to go, if it's something like agreeing to terms and conditions, if a screen reader user does not want to listen to all that drivel, as much as I don't wanna read it, they'll do what I do and just accept (silly me). If they do accept, it wouldn't be because we coded the dialog in a way that made the content easy to miss, it would be their choice to accept without consuming the information. You could of course add a close icon button at the top, too and then focus would automagically be sent to that.
 
@@ -232,18 +232,18 @@ closeBtn.addEventListener('click', () => {
 * We strip down the contents of the `addEventListener()` for the `trigger` button, we just need the one magic method `.showModal()`
 * We strip out the contents of the `addEventListener()` for the `close` button, we just want the `.close()` method
 
-In its most basic form, that is it. Of course, we may want to add light dismiss for clicking outside on the `::backdrop`, another nice freebie we get with the `<dialog>` is we already have dismiss on <kbd>Esc</kbd> press, which we also got for free. Perhaps there are cases where we may want to remove that functionality, if it were say a cookies dialog where an action is required, we could use the `preventDefault()` method on the `keydown` event for <kbd>Esc</kbd>, but we should only prevent that behaviour when a user must do something in the actual dialog.
+In its most basic form, that is it. Of course, we may want to add light dismiss for clicking outside on the `::backdrop`, another nice freebie we get with the `<dialog>` is we already have dismiss on <kbd>Esc</kbd> press, which we also got for free. Perhaps there are cases where we may want to remove that functionality, if it were say a re-authentication dialog where an action is required, we could use the `preventDefault()` method on the `keydown` event for <kbd>Esc</kbd>, but we should only prevent that behaviour when a user absolutely must do something in the actual dialog.
 
-We also get quite a bit of CSS for free, from the browser's internal stylesheets, our dialog is conveniently positioned centrally on the screen for us and it will appear on the very top layer., not only that, it "shows" and "hides" too, albeit, with no transition etc.
+We also get quite a bit of CSS for free from the browser's internal stylesheets, our dialog is conveniently positioned centrally on the screen for us and it will appear on the very top layer., not only that, it "shows" and "hides" too, albeit, with no transition etc.
 
-Just like the `inert` attribute, this is relatively new-ish, so older browsers won't get all of the goodness that comes for free, I haven't tested on older browsers, I guess anything that predates Scott's article will degrade in functionality and the further back you go, the closer you are to the point where it simply does nothing at all. But, that's a task I'm sure you can address with some polyfill or other.
+Just like the `inert` attribute, this is relatively new-ish, so older browsers won't get all of the goodness that comes for free, I haven't tested on older browsers, I guess anything that predates Scott's article will degrade in functionality and the further back you go, the closer you are to the point where it simply does nothing at all. But, we can of course find a way of detecting features and what now and provide an alternative when `<dialog>` is unsupported.
 
 ## Revisiting non-modal dialogs
 
 As I stated earlier, we can also use the `<dialog>` element on non-modal dialogs, we just need to use the `.show()` method, as opposed to `.showModal()`. I've not really had much of a play with the non-modal variant until now and I've discovered some behaviours I was not aware of:
 
 * It cannot be dismissed with <kbd>Esc</kbd>, so if that functionality were necessary for a non-modal dialog, it would have to be scripted manually
-* The non-dialog variant is centred horizontally, but not vertically using the browser's default styles, it would likely be required to position this manually in most cases
+* The non-dialog variant is centred horizontally, but not vertically using the browser's default styles, it would likely be required to position this manually in most cases, but I guess this would be pretty much impossible for the browser to guess correctly
 
 ## CodePen examples
 
@@ -261,7 +261,7 @@ I've used pretty much the same code as above, but I had to use unique IDs and wh
 Sure, there are likely situations where it is not super clear whether the dialog you want is modal or non-modal, but a some things that should feature in your decision should be:
 
 * Does it dim the rest of the screen?
-* Does it require a user to agree to or confirm to something or some other important action?
+* Does it require a user to agree to or confirm to something or some other critical action?
 * Does it cover most of the page?
 * If it doesn't cover most of the page, is the page below inactive whilst the dialog is open?
 
@@ -269,7 +269,7 @@ Those above would usually result in a modal dialog. If it belongs to an input or
 
 My examples are super basic, I didn't add click outside to close and I never added a dialog wrapper for the ARIA example, I just blurred the rest of the page, because I was being a bit lazy.
 
-I guess the message here is, if you are struggling with how to implement a modal dialog correctly and you do not need to support any browsers over a year old, then maybe the <dialog> element can help you out, as it handles so much out-of-the-box for us, we basically just need to listeners and styles. I've provided further reading resources below.
+I guess the message here is, if you are struggling with how to implement a modal dialog correctly and you do not need to support any browsers over a year old, then maybe the `<dialog>` element can help you out, as it handles so much out-of-the-box for us, we basically just need to listeners and styles. If you can't use the `<dialog>`, then use `inert` and manage focus for opening and closing. I've provided further reading resources below.
 
 ## Further reading
 
