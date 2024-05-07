@@ -321,6 +321,16 @@
       <lastmod>2024-04-29T00:00:00.000Z</lastmod>
     </url>
   
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/modal-vs-non-modal-dialogs/</loc>
+      <lastmod>2024-04-29T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/accessibility-checker-and-accessibility-check/</loc>
+      <lastmod>2024-05-07T00:00:00.000Z</lastmod>
+    </url>
+  
       <url>
         <loc>https://www.makethingsaccessible.com/about/</loc>
         <lastmod>2024-02-06T09:40:51.825Z</lastmod>
@@ -518,6 +528,10 @@
       <lastmod>2024-02-06T09:40:51.825Z</lastmod>
     </url>
     <url>
+      <loc>https://www.makethingsaccessible.com/tags/libreoffice/</loc>
+      <lastmod>2024-02-06T09:40:51.825Z</lastmod>
+    </url>
+    <url>
       <loc>https://www.makethingsaccessible.com/tags/links/</loc>
       <lastmod>2024-02-06T09:40:51.825Z</lastmod>
     </url>
@@ -527,6 +541,10 @@
     </url>
     <url>
       <loc>https://www.makethingsaccessible.com/tags/meetings/</loc>
+      <lastmod>2024-02-06T09:40:51.825Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/microsoft/</loc>
       <lastmod>2024-02-06T09:40:51.825Z</lastmod>
     </url>
     <url>
@@ -559,6 +577,10 @@
     </url>
     <url>
       <loc>https://www.makethingsaccessible.com/tags/plain-english/</loc>
+      <lastmod>2024-02-06T09:40:51.825Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/powerpoint/</loc>
       <lastmod>2024-02-06T09:40:51.825Z</lastmod>
     </url>
     <url>
@@ -643,6 +665,10 @@
     </url>
     <url>
       <loc>https://www.makethingsaccessible.com/tags/wcag-2-2/</loc>
+      <lastmod>2024-02-06T09:40:51.825Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/word/</loc>
       <lastmod>2024-02-06T09:40:51.825Z</lastmod>
     </url>
 </urlset>
