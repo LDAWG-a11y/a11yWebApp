@@ -80,14 +80,14 @@ Content within the document written in a different language to the document’s 
 * Try to keep the table simple
 * If the table is complicated, can it be split into multiple tables or into lists?
 
-Other things to take into account for accessibility 
-Plain English
-•	Make sure sentences are short and concise, around 20-25 words
-•	Make sure words are kept simple
-•	Use common words. Complicated longer words (8 or 9 letters) will cause readers to skip shorter words (3,4, or 5 letters) that follow
-•	Use an Active voice rather than a Passive voice
-•	Where possible, use words containing one to two syllables
-•	Aim the language used at the level of a 9 year old as recommended by GOV.UK – remember in the UK, 7.1 million adults read at, or below, the level of an average 9 year old. WCAG 3.15 Reading Level (AAA) recommends providing a simplified version of the text if it requires a reading age of more than 12 years old
+## Other things to take into account for accessibility 
+### Plain English
+* Make sure sentences are short and concise, around 20-25 words
+* Make sure words are kept simple
+* Use common words. Complicated longer words (8 or 9 letters) will cause readers to skip shorter words (3,4, or 5 letters) that follow
+* Use an **Active** voice rather than a **Passive** voice
+* Where possible, use words containing one to two syllables
+* Aim the language used at the level of a 9 year old as recommended by GOV.UK – remember in the UK, 7.1 million adults read at, or below, the level of an average 9 year old. WCAG 3.15 Reading Level (AAA) recommends providing a simplified version of the text if it requires a reading age of more than 12 years old
 •	Use contractions, words made up of two short words joined with an apostrophe such as I’ve, can’t etc.
 •	Do not use double negatives
 •	Explain the unusual, to help give full information
