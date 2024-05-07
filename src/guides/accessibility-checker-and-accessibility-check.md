@@ -44,7 +44,7 @@ isGuide: true
       <td>Yes</td>
 	</tr>
 	<tr>
-      <th scope="row"Low contrast colours between text and background</th>
+      <th scope="row">Low contrast colours between text and background</th>
       <td>Yes</td>
       <td>Yes</td>
       <td>Yes</td>
