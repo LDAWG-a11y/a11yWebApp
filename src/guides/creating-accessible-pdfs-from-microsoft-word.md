@@ -62,19 +62,23 @@ isGuide: true
 * Only use images that support the text of the document
 * Try avoiding the use of an image instead of text
 * Make sure images have alt text unless they are decorative
-Language
+
+### Language
 Leading screen reader software is multilingual.
-Language of document
-•	The language of the document must be set so that screen readers will read the document using the correct language profile
-Language of part of document
-•	Content within the document written in a different language to the document’s default language must be identified
-Tables
-•	Do not use tables to control layout
-•	Use tables to communicate relationships between data
-•	Make sure headers are identified
-•	For WORD only - Provide a short descriptive caption for the table using Table Properties -> Alt Text
-•	Try to keep the table simple
-•	If the table is complicated, can it be split into multiple tables or into lists?
+
+#### Language of document
+The language of the document must be set so that screen readers will read the document using the correct language profile.
+
+#### Language of part of document
+Content within the document written in a different language to the document’s default language must be identified.
+
+### Tables
+* Do **not** use tables to control layout
+* Use tables to communicate relationships between data
+* Make sure headers are identified
+* For **WORD** only - Provide a short descriptive caption for the table using Table Properties -> Alt Text
+* Try to keep the table simple
+* If the table is complicated, can it be split into multiple tables or into lists?
 
 Other things to take into account for accessibility 
 Plain English
