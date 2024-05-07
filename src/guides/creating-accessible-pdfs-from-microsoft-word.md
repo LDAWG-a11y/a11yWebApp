@@ -93,32 +93,36 @@ Content within the document written in a different language to the document’s 
 * Explain the unusual, to help give full information
 
 ### Why use it?
-•	The use of Plain English helps all users, including those who’s English is not their main language, and those who have cognitive impairment
-•	If the content is easy to read, it will be easy to understand when converted into alternative formats such as braille, or being read aloud by a screen reader
-•	Clear content converts more easily into British Sign Language
-Further help
-•	Free services, guides, and resources to help are available from the Plain English Campaign
-•	Measure the readability of the text using Hemingway Editor
-Font
-•	Use a font that is “sans-serif” and clear such as Arial, Helvetica, or Verdana
-•	Minimum font-size of 12
-•	For continuous text, avoid using capitals - letters in lowercase are read more easily
-•	Do not use underlining and italics because they could make text harder to read
-•	Bold and large font can be helpful when emphasising and highlighting text
-•	Make sure that text is justified to the left, as this helps to make sure there is an even gap between words, and enables the start and end of each line to be found easily
-Colour
-•	Do NOT use colour by itself to show meaning
-•	Make sure that there is adequate contrast between background and text – use TPGi’s Colour Contrast Analyzer (CCA) to check contrast
+* The use of Plain English helps all users, including those who’s English is not their main language, and those who have cognitive impairment
+* If the content is easy to read, it will be easy to understand when converted into alternative formats such as braille, or being read aloud by a screen reader
+* Clear content converts more easily into British Sign Language
 
-Word Accessibility Checker
-Accessibility Checker tests Microsoft Word documents for accessibility issues and gives errors, warnings, tips, and intelligent servies.
-Errors
-•	All non-text content has alternative text (alt text)
-•	Tables specify column header information
-•	All sections have meaningful names
-•	Image or object is inline with the text
-•	Document access is not restricted
-•	All content control fields have titles
+### Further help
+* Free services, guides, and resources to help are available from the Plain English Campaign
+* Measure the readability of the text using Hemingway Editor
+
+### Font
+* Use a font that is “sans-serif” and clear such as Arial, Helvetica, or Verdana
+* Minimum font-size of 12
+* For continuous text, avoid using capitals - letters in lowercase are read more easily
+* Do not use underlining and italics because they could make text harder to read
+* Bold and large font can be helpful when emphasising and highlighting text
+* Make sure that text is justified to the left, as this helps to make sure there is an even gap between words, and enables the start and end of each line to be found easily
+
+### Colour
+* Do **NOT** use colour by itself to show meaning
+* Make sure that there is adequate contrast between background and text – use [TPGi’s Colour Contrast Analyzer (CCA)](https://www.tpgi.com/color-contrast-checker/) to check contrast
+
+## Word Accessibility Checker
+[Accessibility Checker](https://support.microsoft.com/en-gb/office/improve-accessibility-with-the-accessibility-checker-a16f6de0-2f39-4a2b-8bd8-5ad801426c7f) tests Microsoft Word documents for accessibility issues and gives errors, warnings, tips, and intelligent servies.
+
+### Errors
+* All non-text content has alternative text (alt text)
+* Tables specify column header information
+* All sections have meaningful names
+* Image or object is inline with the text
+* Document access is not restricted
+* All content control fields have titles
 
 Warnings
 •	Table has a simple structure
