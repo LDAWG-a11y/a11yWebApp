@@ -15,7 +15,7 @@ isGuide: true
 ---
 Third party content comes in all shapes and sizes. This could be documents which you are required to publish on your website in a certain template by law, comments from members of the public on ‘forum’ areas, or a wide range of other content.
 
-When considering whether third-party produced content is in scope or out of scope of the regulations, we consider 5 key questions to understand whether as a public sector body you would have had any opportunity to affect the level of accessibility of that third-party content.
+When considering whether third-party produced content is in scope or out of scope of the regulations, we consider 5 key questions to understand whether as a public sector body you would have had any opportunity to affect the level of accessibility of that third-party content. 
 
 ## What the regulations say
 
