@@ -36,14 +36,14 @@ isGuide: true
    * Sub-headings = Heading 2
    * Sub-sub-headings = Heading 3 etc.
 
-## Lists
+### Lists
 
-  •	Use the inbuilt document list controls within Microsoft Word to add ordered lists (numbers) and unordered lists (bullet points)
-  •	AT users can understand lists created as lists because of the way content is organised
-  •	Lists will communicate helpful information such as:
-  o	How many items the list has
-  o	Where the list starts and where the list finishes
-  o	Which list item the user is on
+* Use the inbuilt document list controls within Microsoft Word to add ordered lists (numbers) and unordered lists (bullet points)
+* AT users can understand lists created as lists because of the way content is organised
+* Lists will communicate helpful information such as:
+   * How many items the list has
+   * Where the list starts and where the list finishes
+   * Which list item the user is on
 
 Hyperlinks
 •	The destination of links should be communicated accurately and clearly
