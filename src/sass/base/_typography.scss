@@ -317,7 +317,8 @@ h6 {
 }
 
 p,
-ul:not([class]) > li {
+ul:not([class]),
+ol:not([class]) {
   max-width: 80rem;
   line-height: var(--v2--line-height);
 }

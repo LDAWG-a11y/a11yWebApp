@@ -749,7 +749,8 @@ h6 {
 }
 
 p,
-ul:not([class]) > li {
+ul:not([class]),
+ol:not([class]) {
   max-width: 80rem;
   line-height: var(--v2--line-height);
 }
@@ -4046,6 +4047,9 @@ body:has(dialog[open]) {
 .cms table td {
   word-break: keep-all;
   word-wrap: break-word;
+}
+.cms th[scope=row] {
+  text-align: left;
 }
 .cms th,
 .cms td {
