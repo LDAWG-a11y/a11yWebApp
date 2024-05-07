@@ -88,10 +88,11 @@ Content within the document written in a different language to the document’s 
 * Use an **Active** voice rather than a **Passive** voice
 * Where possible, use words containing one to two syllables
 * Aim the language used at the level of a 9 year old as recommended by GOV.UK – remember in the UK, 7.1 million adults read at, or below, the level of an average 9 year old. WCAG 3.15 Reading Level (AAA) recommends providing a simplified version of the text if it requires a reading age of more than 12 years old
-•	Use contractions, words made up of two short words joined with an apostrophe such as I’ve, can’t etc.
-•	Do not use double negatives
-•	Explain the unusual, to help give full information
-Why use it?
+* Use contractions, words made up of two short words joined with an apostrophe such as I’ve, can’t etc.
+* Do not use double negatives
+* Explain the unusual, to help give full information
+
+### Why use it?
 •	The use of Plain English helps all users, including those who’s English is not their main language, and those who have cognitive impairment
 •	If the content is easy to read, it will be easy to understand when converted into alternative formats such as braille, or being read aloud by a screen reader
 •	Clear content converts more easily into British Sign Language
