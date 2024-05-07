@@ -165,7 +165,7 @@ isGuide: true
 	</tr>
 	<tr>
       <th scope="row">Layout tables are structured for easy navigation</th>
-      <td>Yes (could not replicate) - Tip</td>
+      <td>Yes (could not replicate)</td>
       <td>No</td>
       <td>No</td>
 	</tr>
@@ -189,3 +189,5 @@ isGuide: true
 	</tr>
   </tbody>
 </table>
+
+
