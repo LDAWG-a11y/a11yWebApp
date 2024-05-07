@@ -124,25 +124,25 @@ Content within the document written in a different language to the document’s 
 * Document access is not restricted
 * All content control fields have titles
 
-Warnings
-•	Table has a simple structure
-•	Sufficient contrast between text and background
+### Warnings
+* Table has a simple structure
+* Sufficient contrast between text and background
 
-Tips
-•	Layout tables are structured for easy navigation
-•	Documents use heading styles
+### Tips
+* Layout tables are structured for easy navigation
+* Documents use heading styles
 
-Intelligent Services
-•	Suggested alternative text
+### Intelligent Services
+Suggested alternative text.
 
-Running the Accessibility Check
-•	Review menu -> Check Accessibility 
-•	The errors reported are:
-o	Missing Object Description (1)
-o	Missing Table Header (1)
-o	Image or Object Not Inline (1)
-•	The Warnings reported are:
-o	Use of Merged or Split Cells (2)
-o	Hard-to-Read Text Contrast (1)
-•	Intelligent Services:
-o	Review Auto-Generated Description (2)
+## Running the Accessibility Check
+* Review menu -> Check Accessibility 
+* The errors reported are:
+  * Missing Object Description (1)
+  * Missing Table Header (1)
+  * Image or Object Not Inline (1)
+* The Warnings reported are:
+  * Use of Merged or Split Cells (2)
+  * Hard-to-Read Text Contrast (1)
+* Intelligent Services:
+  * Review Auto-Generated Description (2)
