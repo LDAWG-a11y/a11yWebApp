@@ -190,4 +190,8 @@ isGuide: true
   </tbody>
 </table>
 
+## Useful links
 
+* [Rules for the Accessibility Checker](https://support.microsoft.com/en-gb/office/rules-for-the-accessibility-checker-651e08f2-0fc3-4e10-aaca-74b4a67101c1#:~:text=The%20Accessibility%20Checker%20verifies%20your,error%2C%20warning%2C%20or%20tip.) (external website)
+* [Make your Word documents accessible to people with disabilities](https://support.microsoft.com/en-gb/office/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d) (external website)
+* [LibreOffice Accessibility Check](https://help.libreoffice.org/latest/sq/text/swriter/01/accessibility_check.html) (external website)
