@@ -138,11 +138,11 @@ Suggested alternative text.
 ## Running the Accessibility Check
 * Review menu -> Check Accessibility 
 * The errors reported are:
-  * Missing Object Description (1)
-  * Missing Table Header (1)
-  * Image or Object Not Inline (1)
+   * Missing Object Description (1)
+   * Missing Table Header (1)
+   * Image or Object Not Inline (1)
 * The Warnings reported are:
-  * Use of Merged or Split Cells (2)
-  * Hard-to-Read Text Contrast (1)
+   * Use of Merged or Split Cells (2)
+   * Hard-to-Read Text Contrast (1)
 * Intelligent Services:
-  * Review Auto-Generated Description (2)
+   * Review Auto-Generated Description (2)
