@@ -99,7 +99,7 @@ isGuide: true
 	</tr>
 	<tr>
       <th scope="row">Use of styles and built-in headings</th>
-      <td>This is confusing because the “Rules” say that “Content is organized with headings and/or a Table of Contents (TOC)” and will display a Tip but the “make your Word documents accessible” says this has to be done visually</td>
+      <td>This is confusing because the “[Rules](https://support.microsoft.com/en-gb/office/rules-for-the-accessibility-checker-651e08f2-0fc3-4e10-aaca-74b4a67101c1#:~:text=The%20Accessibility%20Checker%20verifies%20your,error%2C%20warning%2C%20or%20tip.)” say that “Content is organized with headings and/or a Table of Contents (TOC)” and will display a Tip but the “[make your Word documents accessible](https://support.microsoft.com/en-gb/office/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d)” says this has to be done visually</td>
       <td>No</td>
       <td>Yes</td>
 	</tr>
