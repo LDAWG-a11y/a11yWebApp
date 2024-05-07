@@ -10,8 +10,6 @@ tags:
   - LibreOffice
   - Word
   - PowerPoint
-  - Accessibility Checker
-  - Accessibility Check
 isGuide: true
 ---
 <table>
