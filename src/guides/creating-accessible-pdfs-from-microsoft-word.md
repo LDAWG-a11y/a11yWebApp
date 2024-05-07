@@ -45,21 +45,23 @@ isGuide: true
    * Where the list starts and where the list finishes
    * Which list item the user is on
 
-Hyperlinks
-•	The destination of links should be communicated accurately and clearly
-•	Use URL shortening services such as Bitly or TinyURL if the document is to be printed, if not, make sure the link text is meaningful (link shorteners can be viewed as a security risk as the destination cannot be seen unless the link has been clicked!)
-•	Screen readers will generally provide a list of links so make sure the link text is meaningful
-•	Do not use “click here” or “More information” for all the link text because it will not be possible to distinguish the links from each other
-Alternative text for images (alt text)
-•	Alt text is used to convey the content of the image to those who can’t see it
-•	Screen readers will declare the image, then read the alt text
-•	Images that have no informative content and are purely decorative do not require alt text, but may require markup so that Assistive Technology understands that they should be ignored
-•	Remember to avoid punctuation as it is voiced
-•	MakeThingsAccessible has a guide to creating meaningful alternative text
-Image use
-•	Only use images that support the text of the document
-•	Try avoiding the use of an image instead of text
-•	Make sure images have alt text unless they are decorative
+### Hyperlinks
+* The destination of links should be communicated accurately and clearly
+* Use URL shortening services such as Bitly or TinyURL if the document is to be printed, if not, make sure the link text is meaningful (link shorteners can be viewed as a security risk as the destination cannot be seen unless the link has been clicked!)
+* Screen readers will generally provide a list of links so make sure the link text is meaningful
+* Do not use “click here” or “More information” for all the link text because it will not be possible to distinguish the links from each other
+
+### Alternative text for images (alt text)
+* Alt text is used to convey the content of the image to those who can’t see it
+* Screen readers will declare the image, then read the alt text
+* Images that have no informative content and are purely decorative do not require alt text, but may require markup so that Assistive Technology understands that they should be ignored
+* Remember to avoid punctuation as it is voiced
+* MakeThingsAccessible has a guide to creating meaningful alternative text
+
+### Image use
+* Only use images that support the text of the document
+* Try avoiding the use of an image instead of text
+* Make sure images have alt text unless they are decorative
 Language
 Leading screen reader software is multilingual.
 Language of document
