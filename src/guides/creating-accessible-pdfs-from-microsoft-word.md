@@ -305,6 +305,8 @@ To fix the errors in the Inspection Results, select the down arrow by each item 
 
 The error reported is “Missing Object Description” because the image does not have alt text set or is not marked as decorative.
 
+![Recommended actions add a description or mark as decorative](src/guideImg/26-recommended-actions-add-description.png)
+
 * Click on Add a description
 
  Alt text dialog box showing alt text field and checkbox for marking image as decorative, and a button to generate using AI a description
