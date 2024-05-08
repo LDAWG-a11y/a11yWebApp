@@ -681,19 +681,20 @@ Invalid use of a "TBody" structure element
 This error occurs because the PDF/UA standard requires all hyperlinks have alternative text.
 These 16 errors are coming from the Table of Contents
 
-•	When Word generates a Table of Contents (TOC), each item of the TOC is an active link that can be clicked on by a sighted user, or a link that a user of AT can follow
-•	Assuming the TOC contains meaningful text, which it should hopefully have…
-•	Go to the Preflight panel (search for Preflight in “Find text or tools” search in Acrobat
+\* When Word generates a Table of Contents (TOC), each item of the TOC is an active link that can be clicked on by a sighted user, or a link that a user of AT can follow
+\* Assuming the TOC contains meaningful text, which it should hopefully have…
+* Go to the Preflight panel (search for Preflight in “Find text or tools” search in Acrobat
 
-•	Make sure  is chosen and click on\
-•	Scroll down and under the Interactive elements and properties
+\* Make sure  is chosen and click on\
+* Scroll down and under the Interactive elements and properties
 
-•	The PDF standard wants a contents entry to be added to the link which will provide the alternate text, NOT put the alternate text in the Alternate Text field!
-•	Select   and then click on\
-•	Save a new version (just to be on the safe side)
+\* \*\*The PDF standard wants a contents entry to be added to the link which will provide the alternate text, NOT put the alternate text in the Alternate Text field!\*\*
+\* Select   and then click on\
+* Save a new version (just to be on the safe side)
 
-If links such as “Click here” were in the text rather than meaningful text, when the “fix” was run, it would technically pass but the text would be wrong and meaningless
-PDF/UA identifier missing
+\*\*If links such as “Click here” were in the text rather than meaningful text, when the “fix” was run, it would technically pass but the text would be wrong and meaningless\*\*
+
+\#### PDF/UA identifier missing
 The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this should be done at the end when the file actually is PDF/UA compliant.
 Note: this can be added to a file that is NOT compliant but this does not mean that the file will then be compliant.
 •	PAC 2024 gives an PDF/UA identifier missing error
