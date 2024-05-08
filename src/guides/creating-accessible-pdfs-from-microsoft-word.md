@@ -198,9 +198,17 @@ Use Word’s Heading styles to style the headings consistently.
 
   ![This should be a Heading 1](src/guideImg/5-heading-1.png)
 * click on the down arrow
+
+  ![Styles choices with down arrows](src/guideImg/6-styles-choices-with-down-arrows.png)
 * choose Modify 
+
+  ![Modify style modal](src/guideImg/7-modify-style.png)
 * Choose Format
+
+  ![Modify style format paragraph](src/guideImg/8-modify-style-format-paragraph.png)
 * and go to the paragraph tab
+
+  ![Paragraph modal](src/guideImg/9-paragraph-modal.png)
 * Amend “Outline level” from “Body Text” to “Level 1”
 * A hard return causes each line to become separate <H1> tags
 * To fix this, delete the hard Return, right click and  choose Paragraph
