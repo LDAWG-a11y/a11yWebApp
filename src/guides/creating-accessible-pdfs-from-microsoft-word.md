@@ -219,7 +219,9 @@ Use Word’s Heading styles to style the headings consistently.
    tags
 
   ![This is a all part of hard return heading 1](src/guideImg/10-this-is-a-all-part-of-hard-return-heading-1.png)
-* To fix this, delete the hard Return, right click and  choose Paragraph
+* To fix this, delete the hard Return, right click and choose Paragraph
+
+  ![Menu with paragraph](src/guideImg/11-menu-with-paragraph.png)
 * increase Right indent so that the paragraph will wrap correctly but only with the one <H1> tag
 * Make sure headings are in a sequential order, and do not miss levels
   Start with doing some things that aren’t checked for errors.
