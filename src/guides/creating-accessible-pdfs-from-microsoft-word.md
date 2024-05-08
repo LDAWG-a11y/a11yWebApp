@@ -322,14 +322,14 @@ The error reported is “Missing Object Description” because the image does no
 
 **Note**: the exported PDF failed on the logo in the Header not having alt-text so make sure that both Text Alternative and Description fields are filled.
 
-
+![Text alternative and description](src/guideImg/28-text-alternative-and-description.png)
 
 ### Missing Table Header
 
 The error reported is “Missing Table Header” because the top row is not set to a header.
 Select "first row as header"
 
-
+![Errors use first row as header](src/guideImg/29-errors-use-first-row-as-header.png)
 
 Image or Object Not Inline
 The error reported is “Image or Object Not Inline” because the image is not inline with the text.
