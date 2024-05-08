@@ -320,7 +320,7 @@ The error reported is “Missing Object Description” because the image does no
 * The Alt Text and Decorative options are also available by selecting the image, Right Click -> View Alt Text…
 * The alt-text “Make things accessible logo” was added
 
-**Note**: the exported PDF failed on the logo in the Header not having alt-text so make sure that both Text Alternative and Description fields are filled.
+**Note** the exported PDF failed on the logo in the Header not having alt-text so make sure that both Text Alternative and Description fields are filled.
 
 ![Text alternative and description](src/guideImg/28-text-alternative-and-description.png)
 
@@ -345,7 +345,8 @@ And
 
 The best way to fix this warning would be to split the table into two, one for the females and one for the males. 
   Females and Males tables separated into two tables with the headings set table headings
-•	This problem can also be sorted out in the exported PDF using Adobe Acrobat Pro but setting sub-headings in Adobe Acrobat Pro are time consuming to do
+
+**Note** This problem can also be sorted out in the exported PDF using Adobe Acrobat Pro but setting sub-headings in Adobe Acrobat Pro are time consuming to do
 
 Hard-to-Read Text Contrast
 This warning is because of the colour contrast between the text and the background
