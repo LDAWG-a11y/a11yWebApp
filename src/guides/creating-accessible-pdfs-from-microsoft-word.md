@@ -526,94 +526,158 @@ Report dialog box
 
 
 \### Fixing these issues
-•	Open file in Adobe Acrobat Pro
-•	Make sure that the file is saved at this point
-•	It is worth making various versions in case a change doesn’t allow rollback!
-Removing empty <P> tags
-•	NOTE – empty returns in Word become empty <P> tags in Adobe Acrobat (do not use them in Word, use Space Before and Space After feature in Word to achieve vertical spacing) 
-•	Artifact empty tags by selecting tag, right clicking and choosing “Change Tag to Artifact”
+\* Open file in Adobe Acrobat Pro
+\* Make sure that the file is saved at this point
+* It is worth making various versions in case a change doesn’t allow rollback!
 
-Figure element on a single page with no bounding box
+
+\#### Removing empty <P> tags
+\* \*\*Note\** – empty returns in Word become empty 
+
+```
+<P>
+```
+
+ tags in Adobe Acrobat (do not use them in Word, use Space Before and Space After feature in Word to achieve vertical spacing) 
+* Artifact empty tags by selecting tag, right clicking and choosing “Change Tag to Artifact”
+
+\#### Figure element on a single page with no bounding box
  No bounding box attribute
-•	Need to add bounding box find Figure tag (select the text next to the image, and “Find Tag from Selection” in the Accessibility tags … menu)
-•	 Right click on Figure tag and select Properties
-•	Copy Alt-Text (“A person with long curly hair wearing a cowboy hat and sunglasses”) and put the text somewhere safe
-•	Select the Image tag within the Figure
-•	Right click and “Change Tag to Artifact”
-•	Delete Figure tag
-•	Go to “Prepare for accessibility”, “Fix reading order”
-•	Marquee image 
+\* Need to add bounding box find Figure tag (select the text next to the image, and “Find Tag from Selection” in the Accessibility tags … menu)
+\*  Right click on Figure tag and select Properties
+\* Copy Alt-Text (“A person with long curly hair wearing a cowboy hat and sunglasses”) and put the text somewhere safe
+\* Select the Image tag within the Figure
+\* Right click and “Change Tag to Artifact”
+\* Delete Figure tag
+\* Go to “Prepare for accessibility”, “Fix reading order”
+\* Marquee image 
 
-•	Select Figure in “Reading Order”
+\* Select Figure in “Reading Order”
 
-•	If the following strange result happens! 
+\* If the following strange result happens! 
 
-•	Revert file back to saved version
+\* Revert file back to saved version
 
-•	Go to “Edit a PDF” button 
+\* Go to “Edit a PDF” button 
 
-This is something NOT normally done as the tag structure can be broken, and make sure NOT to actually edit any text.
-•	Marquee figure
+\*\*This is something NOT normally done as the tag structure can be broken, and make sure NOT to actually edit any text.\*\*
+* Marquee figure
 
-•	Right click on <Image> Copy Alt-Text (“A person with long curly hair wearing a cowboy hat and sunglasses”) and put the text somewhere safe
-•	Right click on image, choose Cut (image will disappear), right click choose Paste (image will reappear)
-•	Close Edit mode
-•	There is nothing in the Figure tag for that image
+\* Right click on <Image> Copy Alt-Text (“A person with long curly hair wearing a cowboy hat and sunglasses”) and put the text somewhere safe
+\* Right click on image, choose Cut (image will disappear), right click choose Paste (image will reappear)
+\* Close Edit mode
+* There is nothing in the Figure tag for that image
 
-•	Right click on empty tag and “Change Tag to Artifact”
-•	Delete Figure tag
-•	Go to “Prepare for accessibility”, “Fix reading order”
-•	Marquee image 
+\* Right click on empty tag and “Change Tag to Artifact”
+\* Delete Figure tag
+\* Go to “Prepare for accessibility”, “Fix reading order”
+\* Marquee image 
 
-•	Select Figure in “Reading Order”
+\* Select Figure in “Reading Order”
 
-•	Figure is tagged correctly
+\* Figure is tagged correctly
 
-•	The Figure tag is not in the correct place in the structure
+\* The Figure tag is not in the correct place in the structure
 
-•	And needs to be moved to the correct position
+\* And needs to be moved to the correct position
 
-•	Right click <Figure> tag and choose Properties and Copy Alt-Text (“A person with long curly hair wearing a cowboy hat and sunglasses”) into Alternate Text for Images
- Object properties dialog box
-•	Select “Edit Tag…” button and then open up the first <Dictionary> object, the BBox attribute has been added
+\* Right click <Figure> tag and choose Properties and Copy Alt-Text (“A person with long curly hair wearing a cowboy hat and sunglasses”) into Alternate Text for Images
+ 
+
+Object properties dialog box
+* Select “Edit Tag…” button and then open up the first <Dictionary> object, the BBox attribute has been added
 
 Tag element dialog box
-•	The Block attribute needs to be added, click on first Attribute Object, New Item, Key = Placement, Value = Block
+* The Block attribute needs to be added, click on first Attribute Object, New Item, Key = Placement, Value = Block
 
-•	If the Placement attribute is already there, change from Block to Inline (sometimes it might need to be changed TO Block!)
-Table header cell has no associated sub cells
-All tables require header cells which define the category(s) for the data cells within the table but this is NOT enough, scope needs to be applied too the header cells too. The “Table header cell has no associated sub cells” error occurs due to header cells that do not have the scope attribute applied to them
-•	For example this table does not have scope applied
+\* If the Placement attribute is already there, change from Block to Inline (sometimes it might need to be changed TO Block!)
 
-•	Open Table Editor by clicking on “Prepare for accessibility”, “Fix reading order”, select cell in table, and click on “Table Editor” button
-•	The top four cells have been defined as header cells
 
-•	Click on first header cell, shift + click on each of the other header cells, right click and chose “Table Cell Properties…”
+\#### Table header cell has no associated sub cells
+All tables require header cells which define the category(s) for the data cells within the table but this is NOT enough, scope needs to be applied too the header cells too. The “Table header cell has no associated sub cells” error occurs due to header cells that do not have the scope attribute applied to them.
+* For example this table does not have scope applied
 
-•	Set Scope to Column and OK
-•	Go through other tables and make sure that the Scope is set appropriately, either Column or Row, and also make sure that any cells that cover more than one column or row have their spans set correctly
-•	In the case of a table with an empty cell
+\* Open Table Editor by clicking on “Prepare for accessibility”, “Fix reading order”, select cell in table, and click on “Table Editor” button
+\* The top four cells have been defined as header cells
 
-•	Artifact the empty cell
+\* Click on first header cell, shift + click on each of the other header cells, right click and chose “Table Cell Properties…”
 
-•	 and delete it
+\* Set Scope to Column and OK
+\* Go through other tables and make sure that the Scope is set appropriately, either Column or Row, and also make sure that any cells that cover more than one column or row have their spans set correctly
+* In the case of a table with an empty cell
 
-•	Right click on <TH> and choose Properties
-•	Change the <TH> to a <TD> by 
+\* Artifact the empty cell
 
-•	And change from Table Header Cell (<TH>) to Table Data Cell
+\* and delete it
+
+\* Right click on 
+
+```
+<TH>
+```
+
+ and choose Properties
+•	Change the 
+
+```
+<TH>
+```
+
+ to a 
+
+```
+<TD>
+```
+
+ by 
+
+\* And change from Table Header Cell (
+
+```
+<TH>
+```
+
+) to Table Data Cell
 
 Invalid use of a "TBody" structure element
 
-•	Find the tag in Acrobat Accessibility tags
+\* Find the tag in Acrobat Accessibility tags
 
-•	This is happening because Word did not define a row header, and there is no <THead>. Word automatically made a <TBody> which it not valid without the <THead>
-•	Note: the <THead> <TBody> and <TFooter> are all optional tags, and are not required but if incorrectly used will cause errors to be reported
-•	To fix, move the rows out of the <TBody> 
+\* This is happening because Word did not define a row header, and there is no 
 
-•	Delete the empty <TBody> tag
+```
+<THead>
+```
 
-Alternative description missing for an annotation
+. Word automatically made a <TBody> which it not valid without the <THead>
+\* \*\*Note\** the 
+
+```
+<THead>
+
+<TBody>
+
+<TFooter>
+```
+
+  and  are all optional tags, and are not required but if incorrectly used will cause errors to be reported
+* To fix, move the rows out of the 
+
+```
+<TBody>
+```
+
+ 
+
+\* Delete the empty 
+
+```
+<TBody>
+```
+
+ tag
+
+\#### Alternative description missing for an annotation
 This error occurs because the PDF/UA standard requires all hyperlinks have alternative text.
 These 16 errors are coming from the Table of Contents
 
