@@ -210,7 +210,15 @@ Use Word’s Heading styles to style the headings consistently.
 
   ![Paragraph modal](src/guideImg/9-paragraph-modal.png)
 * Amend “Outline level” from “Body Text” to “Level 1”
-* A hard return causes each line to become separate <H1> tags
+* A hard return causes each line to become separate 
+
+  ```
+  <H1>
+  ```
+
+   tags
+
+  ![This is a all part of hard return heading 1](src/guideImg/10-this-is-a-all-part-of-hard-return-heading-1.png)
 * To fix this, delete the hard Return, right click and  choose Paragraph
 * increase Right indent so that the paragraph will wrap correctly but only with the one <H1> tag
 * Make sure headings are in a sequential order, and do not miss levels
