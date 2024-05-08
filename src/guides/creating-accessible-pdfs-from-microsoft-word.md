@@ -365,9 +365,9 @@ To fix this, select the text and change the text colour.
 * Select 
 * And checking or un-checking   
 
-Tables
-Setting headings in tables
-Inserting a table
+\### Tables
+#### Setting headings in tables
+##### Inserting a table
 •	Insert menu -> Tablemenu
 
 •	Select the number of rows and columns
