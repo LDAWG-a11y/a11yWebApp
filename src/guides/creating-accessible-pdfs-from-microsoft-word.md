@@ -238,16 +238,16 @@ Use Word’s Heading styles to style the headings consistently.
 
 #### Language of document
 
-•	Review -> Language -> Set Proofing Language
+* Review -> Language -> Set Proofing Language
 
-•	Note: it is set for the current document
+* Note: it is set for the current document
 
-Language of part of document
-•	Select text to be a different language
+#### Language of part of document
+* Select text to be a different language
 
-•	Review -> Language -> Set Proofing Language
+* Review -> Language -> Set Proofing Language
 
-•	Note: it is set for the current document
+* Note: it is set for the current document
 
 Title
 •	To add the Title, File menu -> Info and click in to the Title in the Properties section
