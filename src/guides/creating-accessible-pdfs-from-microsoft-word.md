@@ -309,9 +309,9 @@ The error reported is “Missing Object Description” because the image does no
 
 * Click on Add a description
 
-  ![Alt text pane](src/guideImg/27-alt-text-pane.png)
+  ![Alt text dialog box showing alt text field and checkbox for marking image as decorative, and a button to generate using AI a description](src/guideImg/27-alt-text-pane.png)
 
- Alt text dialog box showing alt text field and checkbox for marking image as decorative, and a button to generate using AI a description
+ 
 
 * The fields are used as follows:
 
