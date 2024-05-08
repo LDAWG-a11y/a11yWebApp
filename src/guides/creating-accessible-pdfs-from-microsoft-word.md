@@ -280,6 +280,10 @@ Use Word’s Heading styles to style the headings consistently.
   ![URL for make things accessible FAQs page](src/guideImg/21-url-for-make-things-accessible-faqs-page.png)
 * Right click and “Edit Hyperlink…” and change the “Text to Display” to text that is not the text of the url of the hyperlink
 * Adobe Acrobat will automatically make text that appears to be a hyperlink clickable as a hyperlink without it being a proper hyperlink in the PDF document so text like below
+
+  ![text that is a url but not a link in the original document](src/guideImg/22-text-that-is-a-url-but-not-a-link.png)
+
+
   text that is a url but not a link in the original document
 * Will be clickable in the exported PDF and should be made into a hyperlink in the original document using good link text
 
