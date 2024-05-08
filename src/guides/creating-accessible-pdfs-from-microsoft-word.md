@@ -273,6 +273,8 @@ Use Word’s Heading styles to style the headings consistently.
 
   ![Insert hyperlink modal](src/guideImg/19-insert-hyperlink-modal.png)
 * A ScreenTip can also be added by clicking on the “ScreenTop…” button so that text can be added that explains what clicking the link does
+
+  ![Set hyperlink screentip](src/guideImg/20-set-hyperlink-screentip.png)
 * Where the url link text is a full url
 * Right click and “Edit Hyperlink…” and change the “Text to Display” to text that is not the text of the url of the hyperlink
 * Adobe Acrobat will automatically make text that appears to be a hyperlink clickable as a hyperlink without it being a proper hyperlink in the PDF document so text like below
