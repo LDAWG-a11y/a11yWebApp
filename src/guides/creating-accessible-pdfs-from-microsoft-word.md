@@ -196,25 +196,22 @@ Use Word’s Heading styles to style the headings consistently.
 
 * If a Title tag which is not set as a heading but is required to be a Level 1 heading
 
+  ![This should be a Heading 1](src/guideImg/5-heading-1.png)
 * click on the down arrow
-
 * choose Modify 
-
 * Choose Format
-
 * and go to the paragraph tab
-
 * Amend “Outline level” from “Body Text” to “Level 1”
 * A hard return causes each line to become separate <H1> tags
-
 * To fix this, delete the hard Return, right click and  choose Paragraph
-
 * increase Right indent so that the paragraph will wrap correctly but only with the one <H1> tag
 * Make sure headings are in a sequential order, and do not miss levels
-Start with doing some things that aren’t checked for errors.
+  Start with doing some things that aren’t checked for errors.
 
 ### Language
+
 #### Language of document
+
 •	Review -> Language -> Set Proofing Language
 
 •	Note: it is set for the current document
