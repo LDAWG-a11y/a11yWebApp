@@ -696,35 +696,35 @@ These 16 errors are coming from the Table of Contents
 
 \#### PDF/UA identifier missing
 The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this should be done at the end when the file actually is PDF/UA compliant.
-Note: this can be added to a file that is NOT compliant but this does not mean that the file will then be compliant.
-•	PAC 2024 gives an PDF/UA identifier missing error
+\*\*Note this can be added to a file that is NOT compliant but this does not mean that the file will then be compliant.\*\*
+* PAC 2024 gives an PDF/UA identifier missing error
 
-•	Open the Preflight panel by searching for Preflight in the “Find text or tools” search box
-•	Make sure  is chosen and click on  
+\* Open the Preflight panel by searching for Preflight in the “Find text or tools” search box
+\* Make sure  is chosen and click on  
 
-•	In “Document info and Metadata” select  and click   Fix button
-•	Save new version of file (just to be on the safe side)
-•	Now there is not any errors in PAC 2024
+\* In “Document info and Metadata” select  and click   Fix button
+\* Save new version of file (just to be on the safe side)
+* Now there is not any errors in PAC 2024
 
-Useful links
-•	Accessible Document Basics
-•	How to handle blank data cells in accessible tables
-•	Rules for the Accessibility Checker
-•	Improve accessibility with the Accessibility Checker
-•	TPGi’s Colour Contrast Analyzer
-•	Writing for GOV.UK
-•	Plain English Campaign
-•	Hemingway Editor
-•	WebFX Readability Test
-•	Plain English – Advisory eLaHub
-•	WCAG 3.15 Reading Level (AAA)
-•	Creating meaningful alternative text
-•	Everything you need to know to write effective alt text
-•	PAC 2024
-•	Table Accessibility in Word and PowerPoint
-•	Make your Word documents accessible to people with disabilities
-•	Creating accessible tables in Microsoft Word
-•	Create accessible tables in Word
-•	Getting accessible templates for Office
+\## Useful links
+\* Accessible Document Basics
+\* How to handle blank data cells in accessible tables
+\* Rules for the Accessibility Checker
+\* Improve accessibility with the Accessibility Checker
+\* TPGi’s Colour Contrast Analyzer
+\* Writing for GOV.UK
+\* Plain English Campaign
+\* Hemingway Editor
+\* WebFX Readability Test
+\* Plain English – Advisory eLaHub
+\* WCAG 3.15 Reading Level (AAA)
+\* Creating meaningful alternative text
+\* Everything you need to know to write effective alt text
+\* PAC 2024
+\* Table Accessibility in Word and PowerPoint
+\* Make your Word documents accessible to people with disabilities
+\* Creating accessible tables in Microsoft Word
+\* Create accessible tables in Word
+* Getting accessible templates for Office
 
 ![]()
