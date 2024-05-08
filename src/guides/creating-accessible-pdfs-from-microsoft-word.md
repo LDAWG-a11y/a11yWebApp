@@ -310,9 +310,6 @@ The error reported is “Missing Object Description” because the image does no
 * Click on Add a description
 
   ![Alt text dialog box showing alt text field and checkbox for marking image as decorative, and a button to generate using AI a description](src/guideImg/27-alt-text-pane.png)
-
- 
-
 * The fields are used as follows:
 
   * Alt Text: used to enter a short description of the essential details of the selected object, and is available to be used by assistive technologies
@@ -332,6 +329,7 @@ Select "first row as header"
 ![Errors menu use first row as header](src/guideImg/29-errors-use-first-row-as-header.png)
 
 ### Image or Object Not Inline
+
 The error reported is “Image or Object Not Inline” because the image is not inline with the text.
 
 Either “Place this inline” with the text or mark as decorative, in this case the image has placed inline with the text – note how the image placement has changed
@@ -339,6 +337,7 @@ Either “Place this inline” with the text or mark as decorative, in this case
 If the image had been marked as decorative, the number of Auto-Generated Descriptions that would require reviewing would have been reduced by one
 
 ### Use of Merged or Split Cells
+
 The warning is because of the first cell which covers two rows
 
 And 
@@ -349,19 +348,20 @@ The best way to fix this warning would be to split the table into two, one for t
 **Note** This problem can also be sorted out in the exported PDF using Adobe Acrobat Pro but setting sub-headings in Adobe Acrobat Pro are time consuming to do
 
 ### Hard-to-Read Text Contrast
+
 This warning is because of the colour contrast between the text and the background
 
 To fix this, select the text and change the text colour.
 
 ### Review Auto-Generated Description
+
 * Verify description or mark as decorative, the first image is going to be marked as decorative, and and the second image is going to have the alt text verified. The Alt Text says:
-“A person with long curly hair wearing a cowboy hat and sunglasses
 
-Description automatically generated”
-
-As this is acceptable, delete the “Description automatically generated”
+  >   “A person with long curly hair wearing a cowboy hat and sunglasses
+  >
+  > Description automatically generated”
+* As this is acceptable, delete the “Description automatically generated”
 * Automatic Alt Text can be turned off or on by going to File menu and selecting Options (which is at the bottom)
-
 * Select 
 * And checking or un-checking   
 
