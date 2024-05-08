@@ -329,7 +329,7 @@ The error reported is “Missing Object Description” because the image does no
 The error reported is “Missing Table Header” because the top row is not set to a header.
 Select "first row as header"
 
-![Errors use first row as header](src/guideImg/29-errors-use-first-row-as-header.png)
+![Errors menu use first row as header](src/guideImg/29-errors-use-first-row-as-header.png)
 
 Image or Object Not Inline
 The error reported is “Image or Object Not Inline” because the image is not inline with the text.
