@@ -291,13 +291,15 @@ Use Word’s Heading styles to style the headings consistently.
 
 * Footnotes and endnote works in the same way but footnotes appear at the bottom of the page, and endnotes appear at end of document
 * Click where the link to the footnote is to go and click on the References tab
+
+  ![References tab](src/guideImg/24-references-tab.png)
 * Click “Insert Footnote” and Word adds reference, then creates area to add text of footnote. Inserting endnotes is done using the “Insert Endnote”. Footnotes and endnotes can be styled
 
 ## Fixing the issues
 
-To fix the errors in the Inspection Results
+To fix the errors in the Inspection Results, select the down arrow by each item and follow the Recommended Actions.
 
-Select the down arrow by each item and follow the Recommended Actions
+![Accessibility inspection results pane](src/guideImg/25-accessibility-inspection-results-pane.png)
 
 ### Missing Object Description
 
