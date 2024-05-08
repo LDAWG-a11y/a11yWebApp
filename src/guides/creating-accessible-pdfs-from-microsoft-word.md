@@ -146,3 +146,381 @@ Suggested alternative text.
    * Hard-to-Read Text Contrast (1)
 * Intelligent Services:
    * Review Auto-Generated Description (2)
+
+## General Word advice
+### Setting up Word to make accessible documents
+* Make sure that Hidden Characters   are turned on the Home tab (Paragraph section) and the Display Styles pane  
+
+•	Display Navigation pane (on View) 
+General Word advice
+Setting up Word to make accessible documents
+•	Make sure that Hidden Characters   are turned on the Home tab (Paragraph section) and the Display Styles pane  
+
+•	Display Navigation pane (on View)  
+
+Outline and Style levels
+
+Use Word’s Heading styles to style the headings consistently
+ 
+•	If a Title tag which is not set as a heading but is required to be a Level 1 heading
+ 
+•	click on the down arrow
+ 
+•	choose Modify 
+ 
+•	Choose Format
+ 
+•	and go to the paragraph tab
+ 
+•	Amend “Outline level” from “Body Text” to “Level 1”
+•	A hard return causes each line to become separate <H1> tags
+ 
+•	To fix this, delete the hard Return, right click and  choose Paragraph
+ 
+•	increase Right indent so that the paragraph will wrap correctly but only with the one <H1> tag
+•	Make sure headings are in a sequential order, and do not miss levels
+Start with doing some things that aren’t checked for errors.
+Language
+Language of document
+•	Review -> Language -> Set Proofing Language
+ 
+•	Note: it is set for the current document
+ 
+
+ 
+Language of part of document
+•	Select text to be a different language
+ 
+•	Review -> Language -> Set Proofing Language
+ 
+•	Note: it is set for the current document
+ 
+Title
+•	To add the Title, File menu -> Info and click in to the Title in the Properties section
+ 
+
+•	Copy the contents of the Title into the Subject field
+•	Add applicable SEO keywords into Tags field
+•	Delete Author and replace with generic author such as organisation name
+ 
+
+
+
+Hyperlinks
+•	To add a hyperlink, select the text that defines the hyperlink, right click and select Link, and choose the appklicable type of Link 
+ 
+•	A ScreenTip can also be added by clicking on the “ScreenTop…” button so that text can be added that explains what clicking the link does
+ 
+•	Where the url link text is a full url
+ 
+•	Right click and “Edit Hyperlink…” and change the “Text to Display” to text that is not the text of the url of the hyperlink
+•	Adobe Acrobat will automatically make text that appears to be a hyperlink clickable as a hyperlink without it being a proper hyperlink in the PDF document so text like below
+  text that is a url but not a link in the original document
+•	Will be clickable in the exported PDF and should be made into a hyperlink in the original document using good link text
+ 
+Footnotes and Endnotes
+•	Footnotes and endnote works in the same way but footnotes appear at the bottom of the page, and endnotes appear at end of document
+•	Click where the link to the footnote is to go and click on the References tab
+ 
+•	Click “Insert Footnote” and Word adds reference, then creates area to add text of footnote. Inserting endnotes is done using the “Insert Endnote”. Footnotes and endnotes can be styled
+ 
+Fixing the issues
+To fix the errors in the Inspection Results
+ 
+Select the down arrow by each item and follow the Recommended Actions
+Missing Object Description
+The error reported is “Missing Object Description” because the image does not have alt text set or is not marked as decorative.
+ 
+•	Click on Add a description
+
+ 
+
+ Alt text dialog box showing alt text field and checkbox for marking image as decorative, and a button to generate using AI a description
+•	The fields are used as follows:
+o	Alt Text: used to enter a short description of the essential details of the selected object, and is available to be used by assistive technologies
+o	Decorative: marks the object as purely decorative and is ignored by assistive technologies
+•	The Alt Text and Decorative options are also available by selecting the image, Right Click -> View Alt Text…
+•	The alt-text “Make things accessible logo” was added
+
+
+•	The exported PDF failed on the logo in the Header not having alt-text so make sure that both Text Alternative and Description fields are filled
+ 
+
+
+Missing Table Header
+The error reported is “Missing Table Header” because the top row is not set to a header.
+
+ 
+•	Use first row as header was selected
+Image or Object Not Inline
+The error reported is “Image or Object Not Inline” because the image is not inline with the text.
+ 
+•	Either “Place this inline” with the text or mark as decorative, in this case the image has placed inline with the text – note how the image placement has changed
+ 
+If the image had been marked as decorative, the number of Auto-Generated Descriptions that would require reviewing would have been reduced by one
+Use of Merged or Split Cells
+The warning is because of the first cell which covers two rows
+ 
+And 
+ 
+The best way to fix this warning would be to split the table into two, one for the females and one for the males. 
+  Females and Males tables separated into two tables with the headings set table headings
+•	This problem can also be sorted out in the exported PDF using Adobe Acrobat Pro but setting sub-headings in Adobe Acrobat Pro are time consuming to do
+
+
+Hard-to-Read Text Contrast
+This warning is because of the colour contrast between the text and the background
+ 
+To fix this, select the text and change the text colour.
+ 
+Review Auto-Generated Description
+•	Verify description or mark as decorative, the first image is going to be marked as decorative, and and the second image is going to have the alt text verified. The Alt Text says:
+“A person with long curly hair wearing a cowboy hat and sunglasses
+
+Description automatically generated”
+
+As this is acceptable, delete the “Description automatically generated”
+•	Automatic Alt Text can be turned off or on by going to File menu and selecting Options (which is at the bottom)
+ 
+•	Select 
+•	And checking or un-checking   
+
+
+ 
+Tables
+Setting headings in tables
+Inserting a table
+•	Insert menu -> Tablemenu
+
+ 
+
+•	Select the number of rows and columns
+•	To set the headings, right-click in the table and select  and make sure  is checked
+•	Click into the  
+•	Make sure that Header Row is checked
+ 
+•	Header Row makes the first row a header, First Column makes the first column a header
+
+•	To add column headings, click into first cell of the top row and write the heading, then tab into the other columns and add as required
+First Heading	Second Heading	Third Heading
+		
+•	
+Editing a table
+•	Make sure that   is available
+•	Right click and choose 
+Repeating heading when table splits across pages
+•	Right click on table and choose Table Properties, make sure  is checked
+•	To allow the table to split across pages and columns, make sure that  is checked
+Avoid newlines to create space
+•	Make sure that “Formatting Marks” are visible by going to Home and clicking  
+•	Females table with newline character after it. NOTE do not delete the newline character between tables before the following is done because the tables become merged
+•	 
+•	Right click in table, select Table Properties… and in Text wrapping, select Around, then click on Positioning, and amend in the Distance from surrounding text, the Bottom value
+ 
+
+•	The newline character can now be deleted
+  Females and males tables with no newline character between them
+•	If a space needs to be added back for example to put a Heading in, click in the last cell, use the keyboard shortcut Ctrl+Shift+Enter to Split Table, and the newline character will be put inbetween the tables. A new row can be created at the bottom of the original table, the content pasted in from the new table, and the new table deleted
+
+Avoid using empty table cells for formatting
+  Tables with empty cells
+•	There must never be blank heading cells so add an applicable title to the column heading (even if WCAG does allow for the first cell A1 to be blank)
+  Distance added, top row and first column made into Table Heading
+•	Different screen readers will announce empty cells in different ways so the best solutions are to use “Not applicable” or “No value”
+  Not applicable and No value used where appropriate to replace empty table cells
+
+Paragraphs
+Avoid newlines to create space
+•	Make sure that “Formatting Marks” are visible by selecting View menu, Formatting Marks (or Ctrl + F10)
+  text with newline formatting marks
+•	Delete unneeded newlines
+  text with newline formatting marks but extra lines deleted
+Footnotes and Endnotes
+•	Footnotes and Endnotes can be correctly defined and made accessible using Adobe Acrobat Pro but to get the Accessibility Check to pass footnotes and end notes must be put inline
+Creating a table of contents or TOC
+•	References tab, Table of Contents 
+  
+•	Choose to automatically build TOC or a customized TOC 
+  
+•	Because heading styles have been applied, Word uses them to create TOC 
+Artifacting objects
+•	Artifacting objects stops the screen reader from voicing them
+•	The Header and Footer feature in Word stops AT reading out content in the header and footer
+Adding bookmarks
+•	Click Save as PDF then “More options”, then click on Options then “Create bookmarks using Headings” – Note Word bookmarks can be created manually but that takes time and effort
+•	Alternative if Adobe Acrobat Pro is installed on the PC, in Word, click on Acrobat PDFMaker, Preferences, Bookmarks and check Convert Word Headings to Bookmarks. NOTE Headings 1-6 only get tagged because PDFs do not have heading 7 etc.
+
+
+Exporting to a PDF
+•	Save as PDF with the following options are selected (Create Bookmarks from Headings, Document properties, and Document Structure tags for accessibility), or
+•	Or if Adobe Acrobat Pro is installed, use the Acrobat tools in ribbon of Word
+•	In Preferences, make select Convert Document Information, Create Bookmarks, Add Links, Enable Accessibility and Reflow with tagged Adobe PDF
+Note Save as PDF” doesn’t add a <P> tag into each table row within the table that has the paths that make up the cell border, whereas Acrobat tools add a <P> tag into each table row within the table that has the paths that make up the cell border. The <P> tag into each table row within the table that has the paths that make up the cell border, requires artifaction in Adobe Acrobat Pro once the file is exported
+Artifacting objects
+Header and Footer objects are artifacted when exported to PDF
+Issues to consider
+•	Fonts error can occur due to Word not embedding fonts when using “Save as” to create the PDF
+•	If “Initial View Show Document Title” is not selected in PDF, “Check for accessibility” when run in Adobe Acrobat Pro is likely to fail the Title
+•	When PDFMaker puts <P> tags into tables, in Adobe Acrobat Pro Artifact the contents of the <P> tag -  click on <P> tag, click “Edit” Role Map, which maps artifact to <P> tag, delete item, rename <Artifact> to <H1> then select “Path” and Change Tag to Artifact so it is artifacted, delete tag
+•	If a Table splits over more than one page it will be a separate table on each page, fix this in Adobe Acrobat Pro by moving the rows on the second Table into the main table and then deleting the empty table. The other option is to change the table in Word so it doesn’t onto a second page
+Check for accessibility in Adobe Acrobat Pro PDF 
+•	“Walk” the Tag Tree by clicking on the first item in the tree, then using the down arrow key (and right arrow key to open the tag where applicable, list etc.) so that the order the PDF is read can be checked
+•	In this case everything is good but if it is not, the tags will need to be rearranged into the correct order
+•	Click on “All tools” menu, “Prepare for accessibility” and choose “Check for accessibility” and “Start Checking”
+•	The document has two issues, Logical Reading Order and Color contrast both need a manual check
+
+ 
+Check for accessibility in PAC 2024
+•	Open PAC 2024 and drag and drop the PDF file onto
+  Document selection tool
+•	The test will run and errors will be reported
+ 
+ PDF/UA warnings regarding structure tree
+•	Click on “Results in Detail” button which opens up 
+ 
+Report dialog box
+•	And drill down to the warnings
+  Figure element on a single page with no bounding box
+•	There is one error for bounding boxes on a Figure, and 34 errors for “Table header cell as no associated sub cells”, one error for PDF/UA identifier missing, one warning for ‘Invalid use of a “TBody” structure element‘, and one warning for ‘Possibly inappropriate use of a "Figure" structure element’
+•	There are 16 errors for “Alternative description missing for an annotation”
+•	There is 1 error for PDF/UA identifier missing
+Fixing these issues
+•	Open file in Adobe Acrobat Pro
+•	Make sure that the file is saved at this point
+•	It is worth making various versions in case a change doesn’t allow rollback!
+Removing empty <P> tags
+•	NOTE – empty returns in Word become empty <P> tags in Adobe Acrobat (do not use them in Word, use Space Before and Space After feature in Word to achieve vertical spacing) 
+•	Artifact empty tags by selecting tag, right clicking and choosing “Change Tag to Artifact”
+
+Figure element on a single page with no bounding box
+ No bounding box attribute
+•	Need to add bounding box find Figure tag (select the text next to the image, and “Find Tag from Selection” in the Accessibility tags … menu)
+•	 Right click on Figure tag and select Properties
+•	Copy Alt-Text (“A person with long curly hair wearing a cowboy hat and sunglasses”) and put the text somewhere safe
+•	Select the Image tag within the Figure
+•	Right click and “Change Tag to Artifact”
+•	Delete Figure tag
+•	Go to “Prepare for accessibility”, “Fix reading order”
+•	Marquee image 
+ 
+•	Select Figure in “Reading Order”
+ 
+•	If the following strange result happens! 
+ 
+•	Revert file back to saved version
+ 
+•	Go to “Edit a PDF” button 
+ 
+This is something NOT normally done as the tag structure can be broken, and make sure NOT to actually edit any text.
+•	Marquee figure
+ 
+•	Right click on <Image> Copy Alt-Text (“A person with long curly hair wearing a cowboy hat and sunglasses”) and put the text somewhere safe
+•	Right click on image, choose Cut (image will disappear), right click choose Paste (image will reappear)
+•	Close Edit mode
+•	There is nothing in the Figure tag for that image
+ 
+•	Right click on empty tag and “Change Tag to Artifact”
+•	Delete Figure tag
+•	Go to “Prepare for accessibility”, “Fix reading order”
+•	Marquee image 
+ 
+•	Select Figure in “Reading Order”
+ 
+•	Figure is tagged correctly
+ 
+•	The Figure tag is not in the correct place in the structure
+ 
+•	And needs to be moved to the correct position
+ 
+•	Right click <Figure> tag and choose Properties and Copy Alt-Text (“A person with long curly hair wearing a cowboy hat and sunglasses”) into Alternate Text for Images
+ Object properties dialog box
+•	Select “Edit Tag…” button and then open up the first <Dictionary> object, the BBox attribute has been added
+ 
+Tag element dialog box
+•	The Block attribute needs to be added, click on first Attribute Object, New Item, Key = Placement, Value = Block
+ 
+•	If the Placement attribute is already there, change from Block to Inline (sometimes it might need to be changed TO Block!)
+Table header cell has no associated sub cells
+All tables require header cells which define the category(s) for the data cells within the table but this is NOT enough, scope needs to be applied too the header cells too. The “Table header cell has no associated sub cells” error occurs due to header cells that do not have the scope attribute applied to them
+•	For example this table does not have scope applied
+ 
+•	Open Table Editor by clicking on “Prepare for accessibility”, “Fix reading order”, select cell in table, and click on “Table Editor” button
+•	The top four cells have been defined as header cells
+ 
+•	Click on first header cell, shift + click on each of the other header cells, right click and chose “Table Cell Properties…”
+ 
+•	Set Scope to Column and OK
+•	Go through other tables and make sure that the Scope is set appropriately, either Column or Row, and also make sure that any cells that cover more than one column or row have their spans set correctly
+•	In the case of a table with an empty cell
+ 
+ 
+•	Artifact the empty cell
+ 
+•	 and delete it
+ 
+•	Right click on <TH> and choose Properties
+•	Change the <TH> to a <TD> by 
+ 
+•	And change from Table Header Cell (<TH>) to Table Data Cell
+
+
+Invalid use of a "TBody" structure element
+ 
+•	Find the tag in Acrobat Accessibility tags
+ 
+•	This is happening because Word did not define a row header, and there is no <THead>. Word automatically made a <TBody> which it not valid without the <THead>
+•	Note: the <THead> <TBody> and <TFooter> are all optional tags, and are not required but if incorrectly used will cause errors to be reported
+•	To fix, move the rows out of the <TBody> 
+ 
+•	Delete the empty <TBody> tag
+ 
+
+Alternative description missing for an annotation
+This error occurs because the PDF/UA standard requires all hyperlinks have alternative text.
+These 16 errors are coming from the Table of Contents
+ 
+•	When Word generates a Table of Contents (TOC), each item of the TOC is an active link that can be clicked on by a sighted user, or a link that a user of AT can follow
+•	Assuming the TOC contains meaningful text, which it should hopefully have…
+•	Go to the Preflight panel (search for Preflight in “Find text or tools” search in Acrobat
+ 
+•	Make sure  is chosen and click on  
+•	Scroll down and under the Interactive elements and properties
+ 
+•	The PDF standard wants a contents entry to be added to the link which will provide the alternate text, NOT put the alternate text in the Alternate Text field!
+•	Select   and then click on   
+•	Save a new version (just to be on the safe side)
+ 
+If links such as “Click here” were in the text rather than meaningful text, when the “fix” was run, it would technically pass but the text would be wrong and meaningless
+PDF/UA identifier missing
+The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this should be done at the end when the file actually is PDF/UA compliant.
+Note: this can be added to a file that is NOT compliant but this does not mean that the file will then be compliant.
+•	PAC 2024 gives an PDF/UA identifier missing error
+ 
+•	Open the Preflight panel by searching for Preflight in the “Find text or tools” search box
+•	Make sure  is chosen and click on  
+ 
+•	In “Document info and Metadata” select  and click   Fix button
+•	Save new version of file (just to be on the safe side)
+•	Now there is not any errors in PAC 2024
+ 
+
+Useful links
+•	Accessible Document Basics
+•	How to handle blank data cells in accessible tables
+•	Rules for the Accessibility Checker
+•	Improve accessibility with the Accessibility Checker
+•	TPGi’s Colour Contrast Analyzer
+•	Writing for GOV.UK
+•	Plain English Campaign
+•	Hemingway Editor
+•	WebFX Readability Test
+•	Plain English – Advisory eLaHub
+•	WCAG 3.15 Reading Level (AAA)
+•	Creating meaningful alternative text
+•	Everything you need to know to write effective alt text
+•	PAC 2024
+•	Table Accessibility in Word and PowerPoint
+•	Make your Word documents accessible to people with disabilities
+•	Creating accessible tables in Microsoft Word
+•	Create accessible tables in Word
+•	Getting accessible templates for Office
