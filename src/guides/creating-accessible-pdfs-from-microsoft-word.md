@@ -283,37 +283,45 @@ Use Word’s Heading styles to style the headings consistently.
 
   ![text that is a url but not a link in the original document](src/guideImg/22-text-that-is-a-url-but-not-a-link.png)
 
-
   will be clickable in the exported PDF and should be made into a hyperlink in the original document using good link text
 
-Footnotes and Endnotes
-•	Footnotes and endnote works in the same way but footnotes appear at the bottom of the page, and endnotes appear at end of document
-•	Click where the link to the footnote is to go and click on the References tab
+  ![Link is now a link with proper link text](src/guideImg/23-link-is-now-a-link.png)
 
-•	Click “Insert Footnote” and Word adds reference, then creates area to add text of footnote. Inserting endnotes is done using the “Insert Endnote”. Footnotes and endnotes can be styled
+### Footnotes and Endnotes
 
-Fixing the issues
+* Footnotes and endnote works in the same way but footnotes appear at the bottom of the page, and endnotes appear at end of document
+* Click where the link to the footnote is to go and click on the References tab
+* Click “Insert Footnote” and Word adds reference, then creates area to add text of footnote. Inserting endnotes is done using the “Insert Endnote”. Footnotes and endnotes can be styled
+
+## Fixing the issues
+
 To fix the errors in the Inspection Results
 
 Select the down arrow by each item and follow the Recommended Actions
-Missing Object Description
+
+### Missing Object Description
+
 The error reported is “Missing Object Description” because the image does not have alt text set or is not marked as decorative.
 
-•	Click on Add a description
+* Click on Add a description
 
  Alt text dialog box showing alt text field and checkbox for marking image as decorative, and a button to generate using AI a description
-•	The fields are used as follows:
-o	Alt Text: used to enter a short description of the essential details of the selected object, and is available to be used by assistive technologies
-o	Decorative: marks the object as purely decorative and is ignored by assistive technologies
-•	The Alt Text and Decorative options are also available by selecting the image, Right Click -> View Alt Text…
-•	The alt-text “Make things accessible logo” was added
 
-•	The exported PDF failed on the logo in the Header not having alt-text so make sure that both Text Alternative and Description fields are filled
+* The fields are used as follows:
 
-Missing Table Header
+  * Alt Text: used to enter a short description of the essential details of the selected object, and is available to be used by assistive technologies
+  * Decorative: marks the object as purely decorative and is ignored by assistive technologies
+* The Alt Text and Decorative options are also available by selecting the image, Right Click -> View Alt Text…
+* The alt-text “Make things accessible logo” was added
+* The exported PDF failed on the logo in the Header not having alt-text so make sure that both Text Alternative and Description fields are filled
+
+### Missing Table Header
+
 The error reported is “Missing Table Header” because the top row is not set to a header.
+Select "first row as header"
 
-•	Use first row as header was selected
+
+
 Image or Object Not Inline
 The error reported is “Image or Object Not Inline” because the image is not inline with the text.
 
