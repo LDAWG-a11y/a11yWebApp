@@ -319,7 +319,10 @@ The error reported is “Missing Object Description” because the image does no
   * Decorative: marks the object as purely decorative and is ignored by assistive technologies
 * The Alt Text and Decorative options are also available by selecting the image, Right Click -> View Alt Text…
 * The alt-text “Make things accessible logo” was added
-* The exported PDF failed on the logo in the Header not having alt-text so make sure that both Text Alternative and Description fields are filled
+
+  **Note**: the exported PDF failed on the logo in the Header not having alt-text so make sure that both Text Alternative and Description fields are filled.
+
+
 
 ### Missing Table Header
 
