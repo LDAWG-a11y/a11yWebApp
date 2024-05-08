@@ -242,9 +242,13 @@ Use Word’s Heading styles to style the headings consistently.
   ![Set Proofing Language option](src/guideImg/12-set-proofing-language-option.png)
 * Note: it is set for the current document
 
+  ![Language modal](src/guideImg/13-language-modal.png)
+
 #### Language of part of document
 
 * Select text to be a different language
+
+  ![Two paragraphs of lorem ipsum](src/guideImg/14-two-paragraphs-of-lorem-ipsum-.png)
 * Review -> Language -> Set Proofing Language
 * Note: it is set for the current document
 
