@@ -258,18 +258,18 @@ I've used pretty much the same code as above, but I had to use unique IDs and wh
 
 ## Wrapping up
 
-Sure, there are likely situations where it is not super clear whether the dialog you want is modal or non-modal, but a some things that should feature in your decision should be:
+Sure, there are likely situations where it is not super clear whether the dialog you want is modal or non-modal, but some things that should feature in your decision should be:
 
 * Does it dim the rest of the screen?
-* Does it require a user to agree to or confirm to something or some other critical action?
+* Does it require a user to agree to or confirm something, or some other critical action?
 * Does it cover most of the page?
 * If it doesn't cover most of the page, is the page below inactive whilst the dialog is open?
 
-Those above would usually result in a modal dialog. If it belongs to an input or it is something that does not require a user's immediate attention and they can still interact with the page, then this sounds like non-modal.
+Those above would usually result in a modal dialog. If it belongs to an input or it is something that does not require a user's immediate attention and they can still interact with the underlying page, then this sounds like a non-modal dialog.
 
 My examples are super basic, I didn't add click outside to close and I never added a dialog wrapper for the ARIA example, I just blurred the rest of the page, because I was being a bit lazy.
 
-I guess the message here is, if you are struggling with how to implement a modal dialog correctly and you do not need to support any browsers over a year old, then maybe the `<dialog>` element can help you out, as it handles so much out-of-the-box for us, we basically just need to listeners and styles. If you can't use the `<dialog>`, then use `inert` and manage focus for opening and closing. I've provided further reading resources below.
+I guess the message here is, if you are struggling with how to implement a modal dialog correctly and you do not need to support any browsers over a year old, then maybe the `<dialog>` element can help you out. It handles so much out-of-the-box for us, we basically just need event handlers and styles. If you can't use the `<dialog>`, then use `inert` and manage focus for opening and closing. I've provided further reading resources below.
 
 ## Further reading
 
