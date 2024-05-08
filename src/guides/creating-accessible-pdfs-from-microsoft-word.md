@@ -510,20 +510,22 @@ Check for accessibility in Adobe Acrobat Pro PDF
 •	The document has two issues, Logical Reading Order and Color contrast both need a manual check
 
 \## Check for accessibility in PAC 2024
-•	Open PAC 2024 and drag and drop the PDF file onto
+\* Open PAC 2024 and drag and drop the PDF file onto
   Document selection tool
-•	The test will run and errors will be reported
+\* The test will run and errors will be reported
 
  PDF/UA warnings regarding structure tree
-•	Click on “Results in Detail” button which opens up 
+* Click on “Results in Detail” button which opens up 
 
 Report dialog box
-•	And drill down to the warnings
+\* nd drill down to the warnings
   Figure element on a single page with no bounding box
-•	There is one error for bounding boxes on a Figure, and 34 errors for “Table header cell as no associated sub cells”, one error for PDF/UA identifier missing, one warning for ‘Invalid use of a “TBody” structure element‘, and one warning for ‘Possibly inappropriate use of a "Figure" structure element’
-•	There are 16 errors for “Alternative description missing for an annotation”
-•	There is 1 error for PDF/UA identifier missing
-Fixing these issues
+\* There is one error for bounding boxes on a Figure, and 34 errors for “Table header cell as no associated sub cells”, one error for PDF/UA identifier missing, one warning for ‘Invalid use of a “TBody” structure element‘, and one warning for ‘Possibly inappropriate use of a "Figure" structure element’
+\* There are 16 errors for “Alternative description missing for an annotation”
+\* There is 1 error for PDF/UA identifier missing
+
+
+\### Fixing these issues
 •	Open file in Adobe Acrobat Pro
 •	Make sure that the file is saved at this point
 •	It is worth making various versions in case a change doesn’t allow rollback!
