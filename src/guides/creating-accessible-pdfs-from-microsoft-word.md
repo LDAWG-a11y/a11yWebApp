@@ -231,7 +231,6 @@ Use Word’s Heading styles to style the headings consistently.
    tag
 * Make sure headings are in a sequential order, and do not miss levels
 
-
   Start with doing some things that aren’t checked for errors.
 
 ### Language
@@ -240,29 +239,27 @@ Use Word’s Heading styles to style the headings consistently.
 
 * Review -> Language -> Set Proofing Language
 
+  ![Set Proofing Language option](src/guideImg/12-set-proofing-language-option.png)
 * Note: it is set for the current document
 
 #### Language of part of document
+
 * Select text to be a different language
-
 * Review -> Language -> Set Proofing Language
-
 * Note: it is set for the current document
 
 ### Title
-* To add the Title, File menu -> Info and click in to the Title in the Properties section
 
+* To add the Title, File menu -> Info and click in to the Title in the Properties section
 * Copy the contents of the Title into the Subject field
 * Add applicable SEO keywords into Tags field
 * Delete Author and replace with generic author such as organisation name
 
 ### Hyperlinks
+
 * To add a hyperlink, select the text that defines the hyperlink, right click and select Link, and choose the appklicable type of Link 
-
 * A ScreenTip can also be added by clicking on the “ScreenTop…” button so that text can be added that explains what clicking the link does
-
 * Where the url link text is a full url
-
 * Right click and “Edit Hyperlink…” and change the “Text to Display” to text that is not the text of the url of the hyperlink
 * Adobe Acrobat will automatically make text that appears to be a hyperlink clickable as a hyperlink without it being a proper hyperlink in the PDF document so text like below
   text that is a url but not a link in the original document
@@ -556,3 +553,5 @@ Useful links
 •	Creating accessible tables in Microsoft Word
 •	Create accessible tables in Word
 •	Getting accessible templates for Office
+
+![]()
