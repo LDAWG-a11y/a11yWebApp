@@ -184,42 +184,37 @@ Suggested alternative text.
     are turned on the Home tab (Paragraph section) and the Display Styles pane  
 
   ![Styles pane](src/guideImg/2-styles.png)
+* Display Navigation pane (on View) 
 
-•	Display Navigation pane (on View) 
+![Navigation pane set to be displayed](src/guideImg/3-navigation-pane.png)
 
-![Navigation pane checkbox](src/guideImg/3-navigation-pane.png)
+#### Outline and Style levels
 
+Use Word’s Heading styles to style the headings consistently.
 
-General Word advice
-Setting up Word to make accessible documents
-•	Make sure that Hidden Characters   are turned on the Home tab (Paragraph section) and the Display Styles pane  
+![editing heading styles](src/guideImg/4-headings.png)
 
-•	Display Navigation pane (on View)  
+* If a Title tag which is not set as a heading but is required to be a Level 1 heading
 
-Outline and Style levels
+* click on the down arrow
 
-Use Word’s Heading styles to style the headings consistently
+* choose Modify 
 
-•	If a Title tag which is not set as a heading but is required to be a Level 1 heading
+* Choose Format
 
-•	click on the down arrow
+* and go to the paragraph tab
 
-•	choose Modify 
+* Amend “Outline level” from “Body Text” to “Level 1”
+* A hard return causes each line to become separate <H1> tags
 
-•	Choose Format
+* To fix this, delete the hard Return, right click and  choose Paragraph
 
-•	and go to the paragraph tab
-
-•	Amend “Outline level” from “Body Text” to “Level 1”
-•	A hard return causes each line to become separate <H1> tags
-
-•	To fix this, delete the hard Return, right click and  choose Paragraph
-
-•	increase Right indent so that the paragraph will wrap correctly but only with the one <H1> tag
-•	Make sure headings are in a sequential order, and do not miss levels
+* increase Right indent so that the paragraph will wrap correctly but only with the one <H1> tag
+* Make sure headings are in a sequential order, and do not miss levels
 Start with doing some things that aren’t checked for errors.
-Language
-Language of document
+
+### Language
+#### Language of document
 •	Review -> Language -> Set Proofing Language
 
 •	Note: it is set for the current document
