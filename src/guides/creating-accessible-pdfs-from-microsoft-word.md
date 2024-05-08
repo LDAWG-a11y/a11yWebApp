@@ -348,22 +348,22 @@ The best way to fix this warning would be to split the table into two, one for t
 
 **Note** This problem can also be sorted out in the exported PDF using Adobe Acrobat Pro but setting sub-headings in Adobe Acrobat Pro are time consuming to do
 
-Hard-to-Read Text Contrast
+### Hard-to-Read Text Contrast
 This warning is because of the colour contrast between the text and the background
 
 To fix this, select the text and change the text colour.
 
-Review Auto-Generated Description
-•	Verify description or mark as decorative, the first image is going to be marked as decorative, and and the second image is going to have the alt text verified. The Alt Text says:
+### Review Auto-Generated Description
+* Verify description or mark as decorative, the first image is going to be marked as decorative, and and the second image is going to have the alt text verified. The Alt Text says:
 “A person with long curly hair wearing a cowboy hat and sunglasses
 
 Description automatically generated”
 
 As this is acceptable, delete the “Description automatically generated”
-•	Automatic Alt Text can be turned off or on by going to File menu and selecting Options (which is at the bottom)
+* Automatic Alt Text can be turned off or on by going to File menu and selecting Options (which is at the bottom)
 
-•	Select 
-•	And checking or un-checking   
+* Select 
+* And checking or un-checking   
 
 Tables
 Setting headings in tables
