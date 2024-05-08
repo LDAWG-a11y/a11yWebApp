@@ -331,13 +331,14 @@ Select "first row as header"
 
 ![Errors menu use first row as header](src/guideImg/29-errors-use-first-row-as-header.png)
 
-Image or Object Not Inline
+### Image or Object Not Inline
 The error reported is “Image or Object Not Inline” because the image is not inline with the text.
 
-•	Either “Place this inline” with the text or mark as decorative, in this case the image has placed inline with the text – note how the image placement has changed
+Either “Place this inline” with the text or mark as decorative, in this case the image has placed inline with the text – note how the image placement has changed
 
 If the image had been marked as decorative, the number of Auto-Generated Descriptions that would require reviewing would have been reduced by one
-Use of Merged or Split Cells
+
+### Use of Merged or Split Cells
 The warning is because of the first cell which covers two rows
 
 And 
