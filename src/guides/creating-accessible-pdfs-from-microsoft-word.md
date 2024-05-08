@@ -284,8 +284,7 @@ Use Word’s Heading styles to style the headings consistently.
   ![text that is a url but not a link in the original document](src/guideImg/22-text-that-is-a-url-but-not-a-link.png)
 
 
-  text that is a url but not a link in the original document
-* Will be clickable in the exported PDF and should be made into a hyperlink in the original document using good link text
+  will be clickable in the exported PDF and should be made into a hyperlink in the original document using good link text
 
 Footnotes and Endnotes
 •	Footnotes and endnote works in the same way but footnotes appear at the bottom of the page, and endnotes appear at end of document
