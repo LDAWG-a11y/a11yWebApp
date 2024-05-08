@@ -368,60 +368,66 @@ To fix this, select the text and change the text colour.
 \### Tables
 #### Setting headings in tables
 ##### Inserting a table
-•	Insert menu -> Tablemenu
+* Insert menu -> Tablemenu
 
-•	Select the number of rows and columns
-•	To set the headings, right-click in the table and select  and make sure  is checked
-•	Click into the\
-•	Make sure that Header Row is checked
+\* Select the number of rows and columns
+\* To set the headings, right-click in the table and select  and make sure  is checked
+* Click into the\
+* Make sure that Header Row is checked
 
-•	Header Row makes the first row a header, First Column makes the first column a header
+\* Header Row makes the first row a header, First Column makes the first column a header
 
-•	To add column headings, click into first cell of the top row and write the heading, then tab into the other columns and add as required
+\* To add column headings, click into first cell of the top row and write the heading, then tab into the other columns and add as required
 First Heading	Second Heading	Third Heading
 		
-•	
-Editing a table
-•	Make sure that   is available
-•	Right click and choose 
-Repeating heading when table splits across pages
-•	Right click on table and choose Table Properties, make sure  is checked
-•	To allow the table to split across pages and columns, make sure that  is checked
-Avoid newlines to create space
-•	Make sure that “Formatting Marks” are visible by going to Home and clicking\
-•	Females table with newline character after it. NOTE do not delete the newline character between tables before the following is done because the tables become merged
-•	 
-•	Right click in table, select Table Properties… and in Text wrapping, select Around, then click on Positioning, and amend in the Distance from surrounding text, the Bottom value
+##### Editing a table
+\* Make sure that   is available
+\* Right click and choose 
+##### Repeating heading when table splits across pages
+\* Right click on table and choose Table Properties, make sure  is checked
+\* To allow the table to split across pages and columns, make sure that  is checked
+##### Avoid newlines to create space
+\* Make sure that “Formatting Marks” are visible by going to Home and clicking\
+\* Females table with newline character after it. NOTE do not delete the newline character between tables before the following is done because the tables become merged
+	 
+\* Right click in table, select Table Properties… and in Text wrapping, select Around, then click on Positioning, and amend in the Distance from surrounding text, the Bottom value
 
-•	The newline character can now be deleted
+\* The newline character can now be deleted
   Females and males tables with no newline character between them
-•	If a space needs to be added back for example to put a Heading in, click in the last cell, use the keyboard shortcut Ctrl+Shift+Enter to Split Table, and the newline character will be put inbetween the tables. A new row can be created at the bottom of the original table, the content pasted in from the new table, and the new table deleted
+\* If a space needs to be added back for example to put a Heading in, click in the last cell, use the keyboard shortcut Ctrl+Shift+Enter to Split Table, and the newline character will be put inbetween the tables. A new row can be created at the bottom of the original table, the content pasted in from the new table, and the new table deleted
 
-Avoid using empty table cells for formatting
-  Tables with empty cells
-•	There must never be blank heading cells so add an applicable title to the column heading (even if WCAG does allow for the first cell A1 to be blank)
+\##### Avoid using empty table cells for formatting
+#####  Tables with empty cells
+\* There must never be blank heading cells so add an applicable title to the column heading (even if WCAG does allow for the first cell A1 to be blank)
   Distance added, top row and first column made into Table Heading
-•	Different screen readers will announce empty cells in different ways so the best solutions are to use “Not applicable” or “No value”
+\* Different screen readers will announce empty cells in different ways so the best solutions are to use “Not applicable” or “No value”
   Not applicable and No value used where appropriate to replace empty table cells
 
-Paragraphs
-Avoid newlines to create space
-•	Make sure that “Formatting Marks” are visible by selecting View menu, Formatting Marks (or Ctrl + F10)
+\### Paragraphs
+#### Avoid newlines to create space
+\* Make sure that “Formatting Marks” are visible by selecting View menu, Formatting Marks (or Ctrl + F10)
   text with newline formatting marks
-•	Delete unneeded newlines
+\* Delete unneeded newlines
   text with newline formatting marks but extra lines deleted
-Footnotes and Endnotes
-•	Footnotes and Endnotes can be correctly defined and made accessible using Adobe Acrobat Pro but to get the Accessibility Check to pass footnotes and end notes must be put inline
-Creating a table of contents or TOC
-•	References tab, Table of Contents 
 
-•	Choose to automatically build TOC or a customized TOC 
 
-•	Because heading styles have been applied, Word uses them to create TOC 
-Artifacting objects
-•	Artifacting objects stops the screen reader from voicing them
-•	The Header and Footer feature in Word stops AT reading out content in the header and footer
-Adding bookmarks
+\### Footnotes and Endnotes
+Footnotes and Endnotes can be correctly defined and made accessible using Adobe Acrobat Pro but to get the Accessibility Check to pass footnotes and end notes must be put inline.
+
+\### Creating a table of contents or TOC
+* References tab, Table of Contents 
+
+\* Choose to automatically build TOC or a customized TOC 
+
+\* Because heading styles have been applied, Word uses them to create TOC 
+
+
+\### Artifacting objects
+\* Artifacting objects stops the screen reader from voicing them
+\* The Header and Footer feature in Word stops AT reading out content in the header and footer
+
+
+\### Adding bookmarks
 •	Click Save as PDF then “More options”, then click on Options then “Create bookmarks using Headings” – Note Word bookmarks can be created manually but that takes time and effort
 •	Alternative if Adobe Acrobat Pro is installed on the PC, in Word, click on Acrobat PDFMaker, Preferences, Bookmarks and check Convert Word Headings to Bookmarks. NOTE Headings 1-6 only get tagged because PDFs do not have heading 7 etc.
 
