@@ -250,18 +250,28 @@ Use Word’s Heading styles to style the headings consistently.
 
   ![Two paragraphs of lorem ipsum](src/guideImg/14-two-paragraphs-of-lorem-ipsum-.png)
 * Review -> Language -> Set Proofing Language
+
+  ![Set proofing language in language menu](src/guideImg/15-set-proofing-language-in-language-menu.png)
 * Note: it is set for the current document
+
+  ![Language modal showing set language](src/guideImg/13-language-modal.png)
 
 ### Title
 
-* To add the Title, File menu -> Info and click in to the Title in the Properties section
+* To add the Title, File menu -> Info and click into the Title in the Properties section
+
+  ![Properties section showing size, pages, words, title, tags and comments](src/guideImg/17-properties-section.png)
 * Copy the contents of the Title into the Subject field
 * Add applicable SEO keywords into Tags field
 * Delete Author and replace with generic author such as organisation name
 
+  ![Properties section showing size, pages, words, title, tags, comments, and author](src/guideImg/18-properties-section-author.png)
+
 ### Hyperlinks
 
-* To add a hyperlink, select the text that defines the hyperlink, right click and select Link, and choose the appklicable type of Link 
+* To add a hyperlink, select the text that defines the hyperlink, right click and select Link, and choose the applicable type of Link 
+
+  ![Insert hyperlink modal](src/guideImg/19-insert-hyperlink-modal.png)
 * A ScreenTip can also be added by clicking on the “ScreenTop…” button so that text can be added that explains what clicking the link does
 * Where the url link text is a full url
 * Right click and “Edit Hyperlink…” and change the “Text to Display” to text that is not the text of the url of the hyperlink
