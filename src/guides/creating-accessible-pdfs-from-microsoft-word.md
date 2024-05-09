@@ -379,6 +379,8 @@ To fix this, select the text and change the text colour.
 
   ![Options in the file menu](src/guideImg/37-options-file-menu.png)
 * Select 
+
+  ![Accessibility button](src/guideImg/38-accessibility-button.png)
 * And checking or un-checking   
 
 \### Tables
