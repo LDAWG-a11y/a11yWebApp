@@ -574,11 +574,11 @@ Header and Footer objects are artifacted when exported to PDF.
 
 * If a Table splits over more than one page it will be a separate table on each page, fix this in Adobe Acrobat Pro by moving the rows on the second Table into the main table and then deleting the empty table. The other option is to change the table in Word so it doesn’t onto a second page
 
-Check for accessibility in Adobe Acrobat Pro PDF 
-•	“Walk” the Tag Tree by clicking on the first item in the tree, then using the down arrow key (and right arrow key to open the tag where applicable, list etc.) so that the order the PDF is read can be checked
-•	In this case everything is good but if it is not, the tags will need to be rearranged into the correct order
-•	Click on “All tools” menu, “Prepare for accessibility” and choose “Check for accessibility” and “Start Checking”
-•	The document has two issues, Logical Reading Order and Color contrast both need a manual check
+## Check for accessibility in Adobe Acrobat Pro PDF 
+* “Walk” the Tag Tree by clicking on the first item in the tree, then using the down arrow key (and right arrow key to open the tag where applicable, list etc.) so that the order the PDF is read can be checked
+* In this case everything is good but if it is not, the tags will need to be rearranged into the correct order
+* Click on “All tools” menu, “Prepare for accessibility” and choose “Check for accessibility” and “Start Checking”
+* The document has two issues, Logical Reading Order and Color contrast both need a manual check
 
 ## Check for accessibility in PAC 2024
 
