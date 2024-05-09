@@ -12,8 +12,6 @@ file:
   - /public/docs/word-un-accessible.docx
 isGuide: true
 ---
-![]()
-
 ## Before starting
 
 * Make sure Microsoft Word is up-to-date
