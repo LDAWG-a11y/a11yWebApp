@@ -411,20 +411,14 @@ To fix this, select the text and change the text colour.
   ![Header row checked](src/guideImg/44-header-row-checked.png)
 * Header Row makes the first row a header, First Column makes the first column a header
 * To add column headings, click into first cell of the top row and write the heading, then tab into the other columns and add as required
-<table>
-  <tr>
-    <th>First Heading</th><th>Second Heading</th><th>Third Heading</th>
-  </tr>
-  <tr>
-    <td></td><td></td><td></td>
-  </tr>
-</table>
-  		
-  		
 
 ##### Editing a table
 
-* Make sure that   is available
+* Make sure that  
+
+  ![Table design](src/guideImg/43-table-design.png)
+
+   is available
 * Right click and choose 
 
 ##### Repeating heading when table splits across pages
