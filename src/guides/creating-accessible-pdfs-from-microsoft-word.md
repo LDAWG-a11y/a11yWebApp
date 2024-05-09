@@ -418,8 +418,10 @@ To fix this, select the text and change the text colour.
 
   ![Table design](src/guideImg/43-table-design.png)
 
-   is available
+   is available 
 * Right click and choose 
+
+  ![Table properties](src/guideImg/45-table-properties.png)
 
 ##### Repeating heading when table splits across pages
 
