@@ -782,5 +782,3 @@ The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this
 * Creating accessible tables in Microsoft Word
 * Create accessible tables in Word
 * Getting accessible templates for Office
-
-![]()
