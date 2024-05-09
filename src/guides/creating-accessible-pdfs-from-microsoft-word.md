@@ -436,9 +436,11 @@ To fix this, select the text and change the text colour.
 
 * Make sure that “Formatting Marks” are visible by going to Home and clicking 
 
-  ![Hidden characters](src/guideImg/01-hidden-characters.png)
-* Females table with newline character after it. NOTE do not delete the newline character between tables before the following is done because the tables become merged
-  	 
+  ![Hidden characters button](src/guideImg/01-hidden-characters.png)
+* Females table with newline character after it. **NOTE** do not delete the newline character between tables before the following is done because the tables become merged
+
+
+  ![Females table with newline character after it](src/guideImg/47-females-table-with-newline-character-after-it.png)
 * Right click in table, select Table Properties… and in Text wrapping, select Around, then click on Positioning, and amend in the Distance from surrounding text, the Bottom value
 * The newline character can now be deleted
   Females and males tables with no newline character between them
