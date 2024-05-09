@@ -434,7 +434,9 @@ To fix this, select the text and change the text colour.
 
 ##### Avoid newlines to create space
 
-* Make sure that “Formatting Marks” are visible by going to Home and clicking\
+* Make sure that “Formatting Marks” are visible by going to Home and clicking 
+
+  ![Hidden characters](src/guideImg/01-hidden-characters.png)
 * Females table with newline character after it. NOTE do not delete the newline character between tables before the following is done because the tables become merged
   	 
 * Right click in table, select Table Properties… and in Text wrapping, select Around, then click on Positioning, and amend in the Distance from surrounding text, the Bottom value
@@ -571,7 +573,7 @@ Check for accessibility in Adobe Acrobat Pro PDF
 
 Report dialog box
 
-* nd drill down to the warnings
+* and drill down to the warnings
   Figure element on a single page with no bounding box
 * There is one error for bounding boxes on a Figure, and 34 errors for “Table header cell as no associated sub cells”, one error for PDF/UA identifier missing, one warning for ‘Invalid use of a “TBody” structure element‘, and one warning for ‘Possibly inappropriate use of a "Figure" structure element’
 * There are 16 errors for “Alternative description missing for an annotation”
