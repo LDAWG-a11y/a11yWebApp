@@ -452,6 +452,8 @@ To fix this, select the text and change the text colour.
 
 ##### Avoid using empty table cells for formatting
 
+![Tables with empty cells](src/guideImg/50-tables-with-empty-cells.png)
+
 ##### Tables with empty cells
 
 * There must never be blank heading cells so add an applicable title to the column heading (even if WCAG does allow for the first cell A1 to be blank)
