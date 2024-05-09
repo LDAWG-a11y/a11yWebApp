@@ -334,9 +334,11 @@ The error reported is “Image or Object Not Inline” because the image is not 
 
 ![Photo of person wearing an Aussie bush hat within non-inline text](src/guideImg/30-photo-of-person-non-inline-text.png)
 
-Either “Place this inline” with the text or mark as decorative, in this case the image has placed inline with the text – note how the image placement has changed
+Either “Place this inline” with the text or mark as decorative, in this case the image has placed inline with the text – note how the image placement has changed.
 
-If the image had been marked as decorative, the number of Auto-Generated Descriptions that would require reviewing would have been reduced by one
+![Photo of person wearing an Aussie bush hat within inline text](src/guideImg/31-photo-of-person-inline-text.png)
+
+If the image had been marked as decorative, the number of Auto-Generated Descriptions that would require reviewing would have been reduced by one.
 
 ### Use of Merged or Split Cells
 
