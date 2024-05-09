@@ -457,8 +457,7 @@ To fix this, select the text and change the text colour.
   ![Distance added, top row and first column made into Table Heading](src/guideImg/51-distance-added-top-row-first-column-made-into-table-heading.png)
 * Different [screen readers will announce empty cells in different ways](https://www.accessibilityunraveled.com/pdf-remediation/how-to-handle-blank-data-cells-in-accessible-tables/) so the best solutions are to use “Not applicable” or “No value”
 
-
-  ![Not applicable and No value used where appropriate to replace empty table cells]()
+  ![Not applicable and No value used where appropriate to replace empty table cells](src/guideImg/52-not-applicable-and-no-value-used.png)
 
 ### Paragraphs
 
@@ -466,12 +465,8 @@ To fix this, select the text and change the text colour.
 
 * Make sure that “Formatting Marks” are visible by selecting View menu, Formatting Marks (or Ctrl + F10)
 
-
   ![Text with newline formatting marks](src/guideImg/53-text-with-newline-formatting-marks.png)
-
-
 * Delete unneeded newlines
-
 
   ![Text with newline formatting marks but extra lines deleted](src/guideImg/54-text-with-newline-formatting-marks-but-extra-lines-deleted.png)
 
@@ -572,7 +567,8 @@ Header and Footer objects are artifacted when exported to PDF.
 
 * If a Table splits over more than one page it will be a separate table on each page, fix this in Adobe Acrobat Pro by moving the rows on the second Table into the main table and then deleting the empty table. The other option is to change the table in Word so it doesn’t onto a second page
 
-## Check for accessibility in Adobe Acrobat Pro PDF 
+## Check for accessibility in Adobe Acrobat Pro PDF
+
 * “Walk” the Tag Tree by clicking on the first item in the tree, then using the down arrow key (and right arrow key to open the tag where applicable, list etc.) so that the order the PDF is read can be checked
 * In this case everything is good but if it is not, the tags will need to be rearranged into the correct order
 * Click on “All tools” menu, “Prepare for accessibility” and choose “Check for accessibility” and “Start Checking”
