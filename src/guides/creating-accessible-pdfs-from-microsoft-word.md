@@ -403,7 +403,9 @@ To fix this, select the text and change the text colour.
   ![Repeat as header row at the top of each page](src/guideImg/42-repeat-header-row-top-each-page.png)
 
    is checked
-* Click into the\
+* Click into the 
+
+  ![Table Design](src/guideImg/43-table-design.png)
 * Make sure that Header Row is checked
 * Header Row makes the first row a header, First Column makes the first column a header
 * To add column headings, click into first cell of the top row and write the heading, then tab into the other columns and add as required
