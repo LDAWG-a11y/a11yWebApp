@@ -381,7 +381,11 @@ To fix this, select the text and change the text colour.
 * Select 
 
   ![Accessibility button](src/guideImg/38-accessibility-button.png)
-* And checking or un-checking   
+* And checking or un-checking  
+
+  ![Automatically generate alt text for me](src/guideImg/39-automatically-generate-alt-text-for-me.png)
+
+   
 
 \### Tables
 
