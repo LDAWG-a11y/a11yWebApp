@@ -442,6 +442,8 @@ To fix this, select the text and change the text colour.
 
   ![Females table with newline character after it](src/guideImg/47-females-table-with-newline-character-after-it.png)
 * Right click in table, select Table Properties… and in Text wrapping, select Around, then click on Positioning, and amend in the Distance from surrounding text, the Bottom value
+
+  ![Table properties and table positioning dialog boxes](src/guideImg/48-table-properties-table-positioning-dialog-boxes.png)
 * The newline character can now be deleted
   Females and males tables with no newline character between them
 * If a space needs to be added back for example to put a Heading in, click in the last cell, use the keyboard shortcut Ctrl+Shift+Enter to Split Table, and the newline character will be put inbetween the tables. A new row can be created at the bottom of the original table, the content pasted in from the new table, and the new table deleted
