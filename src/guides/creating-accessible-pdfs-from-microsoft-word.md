@@ -394,7 +394,11 @@ To fix this, select the text and change the text colour.
 
   ![Insert table dialog](src/guideImg/40-insert-table-dialog.png)
 * Select the number of rows and columns
-* To set the headings, right-click in the table and select  and make sure  is checked
+* To set the headings, right-click in the table and select 
+
+  ![Table properties](src/guideImg/41-table-properties.png)
+
+   and make sure  is checked
 * Click into the\
 * Make sure that Header Row is checked
 * Header Row makes the first row a header, First Column makes the first column a header
