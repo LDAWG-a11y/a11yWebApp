@@ -351,7 +351,9 @@ And
 ![First header row has merged cells](src/guideImg/33-first-header-row-has-merged-cells.png)
 
 The best way to fix this warning would be to split the table into two, one for the females and one for the males. 
-  Females and Males tables separated into two tables with the headings set table headings
+  
+
+![Females and Males tables separated into two tables with the headings set as table headings](src/guideImg/34-females-males-tables-separated.png)
 
 **Note** This problem can also be sorted out in the exported PDF using Adobe Acrobat Pro but setting sub-headings in Adobe Acrobat Pro are time consuming to do
 
