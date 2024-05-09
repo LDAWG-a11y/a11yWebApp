@@ -210,9 +210,9 @@ Use Word’s Heading styles to style the headings consistently.
 * Amend “Outline level” from “Body Text” to “Level 1”
 * A hard return causes each line to become separate 
 
-  ```
+  `
   <H1>
-  ```
+  `
 
    tags
 
@@ -222,9 +222,9 @@ Use Word’s Heading styles to style the headings consistently.
   ![Menu with paragraph](src/guideImg/11-menu-with-paragraph.png)
 * increase Right indent so that the paragraph will wrap correctly but only with the one 
 
-  ```
+  `
   <H1>
-  ```
+  `
 
    tag
 * Make sure headings are in a sequential order, and do not miss levels
@@ -501,21 +501,21 @@ Footnotes and Endnotes can be correctly defined and made accessible using Adobe 
 * In Preferences, make select Convert Document Information, Create Bookmarks, Add Links, Enable Accessibility and Reflow with tagged Adobe PDF
   **Note** "Save as PDF” doesn’t add a 
 
-```
+`
 <P>
-```
+`
 
  tag into each table row within the table that has the paths that make up the cell border, whereas Acrobat tools add a 
 
-```
+`
 <P>
-```
+`
 
  tag into each table row within the table that has the paths that make up the cell border. The 
 
-```
+`
 <P>
-```
+`
 
  tag into each table row within the table that has the paths that make up the cell border, requires artifaction in Adobe Acrobat Pro once the file is exported. 
 
@@ -529,39 +529,39 @@ Header and Footer objects are artifacted when exported to PDF.
 * If “Initial View Show Document Title” is not selected in PDF, “Check for accessibility” when run in Adobe Acrobat Pro is likely to fail the Title
 * When PDFMaker puts 
 
-```
+`
 <P>
-```
+`
 
  tags into tables, in Adobe Acrobat Pro Artifact the contents of the 
 
-```
+`
 <P>
-```
+`
 
  tag -  click on 
 
-```
+`
 <P>
-```
+`
 
  tag, click “Edit” Role Map, which maps artifact to 
 
-```
+`
 <P>
-```
+`
 
  tag, delete item, rename 
 
-```
+`
 <Artifact>
-```
+`
 
  to 
 
-```
+`
 <H1>
-```
+`
 
  then select “Path” and Change Tag to Artifact so it is artifacted, delete tag
 
@@ -602,9 +602,9 @@ Report dialog box
 
 * **Note** – empty returns in Word become empty 
 
-```
+`
 <P>
-```
+`
 
  tags in Adobe Acrobat (do not use them in Word, use Space Before and Space After feature in Word to achieve vertical spacing) 
 
@@ -668,31 +668,31 @@ All tables require header cells which define the category(s) for the data cells 
 * and delete it
 * Right click on 
 
-```
+`
 <TH>
-```
+`
 
  and choose Properties
 
 * Change the 
 
-```
+`
 <TH>
-```
+`
 
  to a 
 
-```
+`
 <TD>
-```
+`
 
  by 
 
 * And change from Table Header Cell (
 
-```
+`
 <TH>
-```
+`
 
 ) to Table Data Cell
 
@@ -701,35 +701,35 @@ Invalid use of a "TBody" structure element
 * Find the tag in Acrobat Accessibility tags
 * This is happening because Word did not define a row header, and there is no 
 
-```
+`
 <THead>
-```
+`
 
 . Word automatically made a <TBody> which it not valid without the <THead>
 
 * **Note** the 
 
-```
+`
 <THead>
 
 <TBody>
 
 <TFooter>
-```
+`
 
   and  are all optional tags, and are not required but if incorrectly used will cause errors to be reported
 
 * To fix, move the rows out of the 
 
-```
+`
 <TBody>
-```
+`
 
 * Delete the empty 
 
-```
+`
 <TBody>
-```
+`
 
  tag
 
