@@ -214,7 +214,7 @@ Use Word’s Heading styles to style the headings consistently.
   <H1>
   `
 
-   tags
+   tags!
 
   ![This is a all part of hard return heading 1](src/guideImg/10-this-is-a-all-part-of-hard-return-heading-1.png)
 * To fix this, delete the hard Return, right click and choose Paragraph
