@@ -365,6 +365,8 @@ This warning is because of the colour contrast between the text and the backgrou
 
 To fix this, select the text and change the text colour.
 
+![Lorem ipsum text with good colour contrast to the background](src/guideImg/36-lorem-ipsum-text-with-good-colour-contrast.png)
+
 ### Review Auto-Generated Description
 
 * Verify description or mark as decorative, the first image is going to be marked as decorative, and and the second image is going to have the alt text verified. The Alt Text says:
