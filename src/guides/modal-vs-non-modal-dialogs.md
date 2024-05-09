@@ -275,8 +275,6 @@ Those above would usually result in a modal dialog.
 
 </figure>
 
-
-
 If the dialog belongs to an input or it is something that does not require a user's immediate attention and they can still interact with the underlying page, then this sounds like a non-modal dialog.
 
 My examples are super basic, I didn't add click outside to close and I never added a dialog wrapper for the ARIA example, I just blurred the rest of the page, because I was being a bit lazy.
