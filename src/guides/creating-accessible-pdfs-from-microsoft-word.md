@@ -460,7 +460,7 @@ To fix this, select the text and change the text colour.
 
 
   ![Distance added, top row and first column made into Table Heading](src/guideImg/51-distance-added-top-row-first-column-made-into-table-heading.png)
-* Different screen readers will announce empty cells in different ways so the best solutions are to use “Not applicable” or “No value”
+* Different [screen readers will announce empty cells in different ways](https://www.accessibilityunraveled.com/pdf-remediation/how-to-handle-blank-data-cells-in-accessible-tables/) so the best solutions are to use “Not applicable” or “No value”
   Not applicable and No value used where appropriate to replace empty table cells
 
 ### Paragraphs
