@@ -12,6 +12,10 @@ tags:
   - PowerPoint
 isGuide: true
 ---
+Microsoft Office has a tool to check for accessibility in Word and PowerPoint called Accessibility Checker,  and LibreOffice has a tool to check for accessibility in Writer called Accessibility Check.
+
+There are slight differences in what the tools check for, but they need to be used when producing accessible documents, especially if the documents are to be the basis for creating PDFs from Word, PowerPoint, or Writer.
+
 <table>
   <caption>Differences between Accessibility Checker and Accessibility Check</caption>
   <thead>
