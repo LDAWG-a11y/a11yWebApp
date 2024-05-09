@@ -348,6 +348,8 @@ The warning is because of the first cell which covers two rows
 
 And 
 
+![First header row has merged cells](src/guideImg/33-first-header-row-has-merged-cells.png)
+
 The best way to fix this warning would be to split the table into two, one for the females and one for the males. 
   Females and Males tables separated into two tables with the headings set table headings
 
