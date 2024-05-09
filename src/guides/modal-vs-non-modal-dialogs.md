@@ -271,7 +271,7 @@ Those above would usually result in a modal dialog.
 
 ![George being a good sport and recreating a meme with an image of himself. The meme is of a book cover, which originally had the title Identifying Wood and a bearded chap who looked very serious was holding a piece of wood and looking at it very closely through some small magnifying glass or microscope. George recreated this image by adorning a similar shirt and tie to the serios chap and replace the title with Identifying Modals. George also wore a pair of specs, similar to the other chap and held a magnifying glass closely to what appears to be a plastic icosahedron, this was likely 3D printed by George. The caption It's a modal has also been added. The aim of the meme is to indicate somebody is examining something very closely, in order to determine what others would have already correctly assumed the object to be. I have to say, I do not know whay George selected a 3D geometric shape, but it's still funny.](src/guideImg/dl_george_modals_meme.png)
 
-<figcaption><a href="https://knowyourmeme.com/memes/identifying-wood">Th meme's meaning can be accessed here</a></figcaption>
+<figcaption><a href="https://knowyourmeme.com/memes/identifying-wood">The meaning of the above meme starring George, can be accessed here</a></figcaption>
 
 </figure>
 
