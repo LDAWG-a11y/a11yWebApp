@@ -376,6 +376,8 @@ To fix this, select the text and change the text colour.
   > Description automatically generated”
 * As this is acceptable, delete the “Description automatically generated”
 * Automatic Alt Text can be turned off or on by going to File menu and selecting Options (which is at the bottom)
+
+  ![Options in the file menu](src/guideImg/37-options-file-menu.png)
 * Select 
 * And checking or un-checking   
 
