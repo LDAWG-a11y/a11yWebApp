@@ -426,7 +426,11 @@ To fix this, select the text and change the text colour.
 ##### Repeating heading when table splits across pages
 
 * Right click on table and choose Table Properties, make sure  is checked
-* To allow the table to split across pages and columns, make sure that  is checked
+* To allow the table to split across pages and columns, make sure that 
+
+  ![Repeat as header row at the top of each page](src/guideImg/46-repeat-header-row-top-each-page.png)
+
+   is checked
 
 ##### Avoid newlines to create space
 
