@@ -473,7 +473,9 @@ To fix this, select the text and change the text colour.
 
 
 * Delete unneeded newlines
-  text with newline formatting marks but extra lines deleted
+
+
+  ![Text with newline formatting marks but extra lines deleted](src/guideImg/54-text-with-newline-formatting-marks-but-extra-lines-deleted.png)
 
 ### Footnotes and Endnotes
 
