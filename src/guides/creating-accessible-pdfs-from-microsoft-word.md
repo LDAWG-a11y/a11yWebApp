@@ -351,7 +351,6 @@ And
 ![First header row has merged cells](src/guideImg/33-first-header-row-has-merged-cells.png)
 
 The best way to fix this warning would be to split the table into two, one for the females and one for the males. 
-  
 
 ![Females and Males tables separated into two tables with the headings set as table headings](src/guideImg/34-females-males-tables-separated.png)
 
@@ -385,8 +384,6 @@ To fix this, select the text and change the text colour.
 
   ![Automatically generate alt text for me](src/guideImg/39-automatically-generate-alt-text-for-me.png)
 
-   
-
 ### Tables
 
 #### Setting headings in tables
@@ -395,17 +392,15 @@ To fix this, select the text and change the text colour.
 
 * Insert menu -> Tablemenu
 
+  ![Insert table dialog](src/guideImg/40-insert-table-dialog.png)
 * Select the number of rows and columns
 * To set the headings, right-click in the table and select  and make sure  is checked
-
 * Click into the\
 * Make sure that Header Row is checked
-
 * Header Row makes the first row a header, First Column makes the first column a header
-
 * To add column headings, click into first cell of the top row and write the heading, then tab into the other columns and add as required
-First Heading	Second Heading	Third Heading
-		
+  First Heading	Second Heading	Third Heading
+  		
 
 ##### Editing a table
 
@@ -421,9 +416,8 @@ First Heading	Second Heading	Third Heading
 
 * Make sure that “Formatting Marks” are visible by going to Home and clicking\
 * Females table with newline character after it. NOTE do not delete the newline character between tables before the following is done because the tables become merged
-	 
+  	 
 * Right click in table, select Table Properties… and in Text wrapping, select Around, then click on Positioning, and amend in the Distance from surrounding text, the Bottom value
-
 * The newline character can now be deleted
   Females and males tables with no newline character between them
 * If a space needs to be added back for example to put a Heading in, click in the last cell, use the keyboard shortcut Ctrl+Shift+Enter to Split Table, and the newline character will be put inbetween the tables. A new row can be created at the bottom of the original table, the content pasted in from the new table, and the new table deleted
@@ -447,29 +441,31 @@ First Heading	Second Heading	Third Heading
   text with newline formatting marks but extra lines deleted
 
 ### Footnotes and Endnotes
+
 Footnotes and Endnotes can be correctly defined and made accessible using Adobe Acrobat Pro but to get the Accessibility Check to pass footnotes and end notes must be put inline.
 
 ### Creating a table of contents or TOC
 
 * References tab, Table of Contents 
-
 * Choose to automatically build TOC or a customized TOC 
-
 * Because heading styles have been applied, Word uses them to create TOC 
 
 ### Artifacting objects
+
 * Artifacting objects stops the screen reader from voicing them
 * The Header and Footer feature in Word stops AT reading out content in the header and footer
 
 ### Adding bookmarks
+
 * Click Save as PDF then “More options”, then click on Options then “Create bookmarks using Headings” – Note Word bookmarks can be created manually but that takes time and effort
 * Alternative if Adobe Acrobat Pro is installed on the PC, in Word, click on Acrobat PDFMaker, Preferences, Bookmarks and check Convert Word Headings to Bookmarks. NOTE Headings 1-6 only get tagged because PDFs do not have heading 7 etc.
 
 ## Exporting to a PDF
+
 * Save as PDF with the following options are selected (Create Bookmarks from Headings, Document properties, and Document Structure tags for accessibility), or
 * Or if Adobe Acrobat Pro is installed, use the Acrobat tools in ribbon of Word
 * In Preferences, make select Convert Document Information, Create Bookmarks, Add Links, Enable Accessibility and Reflow with tagged Adobe PDF
-**Note** Save as PDF” doesn’t add a 
+  **Note** Save as PDF” doesn’t add a 
 
 ```
 <P>
@@ -490,12 +486,13 @@ Footnotes and Endnotes can be correctly defined and made accessible using Adobe 
  tag into each table row within the table that has the paths that make up the cell border, requires artifaction in Adobe Acrobat Pro once the file is exported. 
 
 ## Artifacting objects
+
 Header and Footer objects are artifacted when exported to PDF. 
 
 ## Issues to consider
+
 * Fonts error can occur due to Word not embedding fonts when using “Save as” to create the PDF
 * If “Initial View Show Document Title” is not selected in PDF, “Check for accessibility” when run in Adobe Acrobat Pro is likely to fail the Title
-
 * When PDFMaker puts 
 
 ```
@@ -543,6 +540,7 @@ Check for accessibility in Adobe Acrobat Pro PDF
 •	The document has two issues, Logical Reading Order and Color contrast both need a manual check
 
 ## Check for accessibility in PAC 2024
+
 * Open PAC 2024 and drag and drop the PDF file onto
   Document selection tool
 * The test will run and errors will be reported
@@ -552,6 +550,7 @@ Check for accessibility in Adobe Acrobat Pro PDF
 * Click on “Results in Detail” button which opens up 
 
 Report dialog box
+
 * nd drill down to the warnings
   Figure element on a single page with no bounding box
 * There is one error for bounding boxes on a Figure, and 34 errors for “Table header cell as no associated sub cells”, one error for PDF/UA identifier missing, one warning for ‘Invalid use of a “TBody” structure element‘, and one warning for ‘Possibly inappropriate use of a "Figure" structure element’
@@ -559,12 +558,13 @@ Report dialog box
 * There is 1 error for PDF/UA identifier missing
 
 ### Fixing these issues
+
 * Open file in Adobe Acrobat Pro
 * Make sure that the file is saved at this point
-
 * It is worth making various versions in case a change doesn’t allow rollback!
 
 #### Removing empty <P> tags
+
 * **Note** – empty returns in Word become empty 
 
 ```
@@ -576,47 +576,37 @@ Report dialog box
 * Artifact empty tags by selecting tag, right clicking and choosing “Change Tag to Artifact”
 
 #### Figure element on a single page with no bounding box
+
  No bounding box attribute
+
 * Need to add bounding box find Figure tag (select the text next to the image, and “Find Tag from Selection” in the Accessibility tags … menu)
-*  Right click on Figure tag and select Properties
+* Right click on Figure tag and select Properties
 * Copy Alt-Text (“A person with long curly hair wearing a cowboy hat and sunglasses”) and put the text somewhere safe
 * Select the Image tag within the Figure
 * Right click and “Change Tag to Artifact”
 * Delete Figure tag
 * Go to “Prepare for accessibility”, “Fix reading order”
 * Marquee image 
-
 * Select Figure in “Reading Order”
-
 * If the following strange result happens! 
-
 * Revert file back to saved version
-
 * Go to “Edit a PDF” button 
 
 **This is something NOT normally done as the tag structure can be broken, and make sure NOT to actually edit any text.**
 
 * Marquee figure
-
 * Right click on <Image> Copy Alt-Text (“A person with long curly hair wearing a cowboy hat and sunglasses”) and put the text somewhere safe
 * Right click on image, choose Cut (image will disappear), right click choose Paste (image will reappear)
 * Close Edit mode
-
 * There is nothing in the Figure tag for that image
-
 * Right click on empty tag and “Change Tag to Artifact”
 * Delete Figure tag
 * Go to “Prepare for accessibility”, “Fix reading order”
 * Marquee image 
-
 * Select Figure in “Reading Order”
-
 * Figure is tagged correctly
-
 * The Figure tag is not in the correct place in the structure
-
 * And needs to be moved to the correct position
-
 * Right click <Figure> tag and choose Properties and Copy Alt-Text (“A person with long curly hair wearing a cowboy hat and sunglasses”) into Alternate Text for Images
 
 Object properties dialog box
@@ -626,28 +616,21 @@ Object properties dialog box
 Tag element dialog box
 
 * The Block attribute needs to be added, click on first Attribute Object, New Item, Key = Placement, Value = Block
-
 * If the Placement attribute is already there, change from Block to Inline (sometimes it might need to be changed TO Block!)
 
 #### Table header cell has no associated sub cells
+
 All tables require header cells which define the category(s) for the data cells within the table but this is NOT enough, scope needs to be applied too the header cells too. The “Table header cell has no associated sub cells” error occurs due to header cells that do not have the scope attribute applied to them.
 
 * For example this table does not have scope applied
-
 * Open Table Editor by clicking on “Prepare for accessibility”, “Fix reading order”, select cell in table, and click on “Table Editor” button
 * The top four cells have been defined as header cells
-
 * Click on first header cell, shift + click on each of the other header cells, right click and chose “Table Cell Properties…”
-
 * Set Scope to Column and OK
 * Go through other tables and make sure that the Scope is set appropriately, either Column or Row, and also make sure that any cells that cover more than one column or row have their spans set correctly
-
 * In the case of a table with an empty cell
-
 * Artifact the empty cell
-
 * and delete it
-
 * Right click on 
 
 ```
@@ -655,6 +638,7 @@ All tables require header cells which define the category(s) for the data cells 
 ```
 
  and choose Properties
+
 * Change the 
 
 ```
@@ -680,7 +664,6 @@ All tables require header cells which define the category(s) for the data cells 
 Invalid use of a "TBody" structure element
 
 * Find the tag in Acrobat Accessibility tags
-
 * This is happening because Word did not define a row header, and there is no 
 
 ```
@@ -688,6 +671,7 @@ Invalid use of a "TBody" structure element
 ```
 
 . Word automatically made a <TBody> which it not valid without the <THead>
+
 * **Note** the 
 
 ```
@@ -715,40 +699,35 @@ Invalid use of a "TBody" structure element
  tag
 
 #### Alternative description missing for an annotation
+
 This error occurs because the PDF/UA standard requires all hyperlinks have alternative text.
 These 16 errors are coming from the Table of Contents
 
 * When Word generates a Table of Contents (TOC), each item of the TOC is an active link that can be clicked on by a sighted user, or a link that a user of AT can follow
 * Assuming the TOC contains meaningful text, which it should hopefully have…
-
 * Go to the Preflight panel (search for Preflight in “Find text or tools” search in Acrobat
-
 * Make sure  is chosen and click on\
-
 * Scroll down and under the Interactive elements and properties
-
 * **The PDF standard wants a contents entry to be added to the link which will provide the alternate text, NOT put the alternate text in the Alternate Text field!**
 * Select   and then click on\
-
 * Save a new version (just to be on the safe side)
 
 **If links such as “Click here” were in the text rather than meaningful text, when the “fix” was run, it would technically pass but the text would be wrong and meaningless**
 
 #### PDF/UA identifier missing
+
 The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this should be done at the end when the file actually is PDF/UA compliant.
 **Note this can be added to a file that is NOT compliant but this does not mean that the file will then be compliant.**
 
 * PAC 2024 gives an PDF/UA identifier missing error
-
 * Open the Preflight panel by searching for Preflight in the “Find text or tools” search box
 * Make sure  is chosen and click on  
-
 * In “Document info and Metadata” select  and click   Fix button
 * Save new version of file (just to be on the safe side)
-
 * Now there is not any errors in PAC 2024
 
 ## Useful links
+
 * Accessible Document Basics
 * How to handle blank data cells in accessible tables
 * Rules for the Accessibility Checker
@@ -767,7 +746,6 @@ The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this
 * Make your Word documents accessible to people with disabilities
 * Creating accessible tables in Microsoft Word
 * Create accessible tables in Word
-
 * Getting accessible templates for Office
 
 ![]()
