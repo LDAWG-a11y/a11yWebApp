@@ -499,7 +499,7 @@ Footnotes and Endnotes can be correctly defined and made accessible using Adobe 
 * Save as PDF with the following options are selected (Create Bookmarks from Headings, Document properties, and Document Structure tags for accessibility), or
 * Or if Adobe Acrobat Pro is installed, use the Acrobat tools in ribbon of Word
 * In Preferences, make select Convert Document Information, Create Bookmarks, Add Links, Enable Accessibility and Reflow with tagged Adobe PDF
-  **Note** Save as PDF” doesn’t add a 
+  **Note** "Save as PDF” doesn’t add a 
 
 ```
 <P>
