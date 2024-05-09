@@ -445,7 +445,9 @@ To fix this, select the text and change the text colour.
 
   ![Table properties and table positioning dialog boxes](src/guideImg/48-table-properties-table-positioning-dialog-boxes.png)
 * The newline character can now be deleted
-  Females and males tables with no newline character between them
+
+
+  ![Females and males tables with no newline character between them](src/guideImg/49-females-males-tables-no-newline-character-between-them.png)
 * If a space needs to be added back for example to put a Heading in, click in the last cell, use the keyboard shortcut Ctrl+Shift+Enter to Split Table, and the newline character will be put inbetween the tables. A new row can be created at the bottom of the original table, the content pasted in from the new table, and the new table deleted
 
 ##### Avoid using empty table cells for formatting
