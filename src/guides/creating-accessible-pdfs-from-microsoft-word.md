@@ -439,13 +439,11 @@ To fix this, select the text and change the text colour.
   ![Hidden characters button](src/guideImg/01-hidden-characters.png)
 * Females table with newline character after it. **NOTE** do not delete the newline character between tables before the following is done because the tables become merged
 
-
   ![Females table with newline character after it](src/guideImg/47-females-table-with-newline-character-after-it.png)
 * Right click in table, select Table Properties… and in Text wrapping, select Around, then click on Positioning, and amend in the Distance from surrounding text, the Bottom value
 
   ![Table properties and table positioning dialog boxes](src/guideImg/48-table-properties-table-positioning-dialog-boxes.png)
 * The newline character can now be deleted
-
 
   ![Females and males tables with no newline character between them](src/guideImg/49-females-males-tables-no-newline-character-between-them.png)
 * If a space needs to be added back for example to put a Heading in, click in the last cell, use the keyboard shortcut Ctrl+Shift+Enter to Split Table, and the newline character will be put inbetween the tables. A new row can be created at the bottom of the original table, the content pasted in from the new table, and the new table deleted
@@ -458,17 +456,22 @@ To fix this, select the text and change the text colour.
 
 * There must never be blank heading cells so add an applicable title to the column heading (even if [WCAG does allow for the first cell A1 to be blank](https://www.w3.org/WAI/tutorials/tables/))
 
-
   ![Distance added, top row and first column made into Table Heading](src/guideImg/51-distance-added-top-row-first-column-made-into-table-heading.png)
 * Different [screen readers will announce empty cells in different ways](https://www.accessibilityunraveled.com/pdf-remediation/how-to-handle-blank-data-cells-in-accessible-tables/) so the best solutions are to use “Not applicable” or “No value”
-  Not applicable and No value used where appropriate to replace empty table cells
+
+
+  ![Not applicable and No value used where appropriate to replace empty table cells]()
 
 ### Paragraphs
 
 #### Avoid newlines to create space
 
 * Make sure that “Formatting Marks” are visible by selecting View menu, Formatting Marks (or Ctrl + F10)
-  text with newline formatting marks
+
+
+  ![Text with newline formatting marks](src/guideImg/53-text-with-newline-formatting-marks.png)
+
+
 * Delete unneeded newlines
   text with newline formatting marks but extra lines deleted
 
