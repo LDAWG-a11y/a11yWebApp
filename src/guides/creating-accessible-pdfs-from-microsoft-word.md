@@ -359,7 +359,9 @@ The best way to fix this warning would be to split the table into two, one for t
 
 ### Hard-to-Read Text Contrast
 
-This warning is because of the colour contrast between the text and the background
+This warning is because of the colour contrast between the text and the background.
+
+![Lorem ipsum text with poor colour contrast to the background](src/guideImg/35-lorem-ipsum-text-with-poor-colour-contrast.png)
 
 To fix this, select the text and change the text colour.
 
