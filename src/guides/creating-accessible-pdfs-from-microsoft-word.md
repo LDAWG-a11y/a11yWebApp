@@ -344,6 +344,8 @@ If the image had been marked as decorative, the number of Auto-Generated Descrip
 
 The warning is because of the first cell which covers two rows
 
+![First cell of a row within a table which covers the row below too](src/guideImg/32-first-cell-row-covers-row-below.png)
+
 And 
 
 The best way to fix this warning would be to split the table into two, one for the females and one for the males. 
