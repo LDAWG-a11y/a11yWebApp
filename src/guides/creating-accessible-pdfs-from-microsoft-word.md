@@ -208,25 +208,14 @@ Use Word’s Heading styles to style the headings consistently.
 
   ![Paragraph modal](src/guideImg/9-paragraph-modal.png)
 * Amend “Outline level” from “Body Text” to “Level 1”
-* A hard return causes each line to become separate 
-
-  `
-  <H1>
-  `
-
-   tags!
-
-  ![This is a all part of hard return heading 1](src/guideImg/10-this-is-a-all-part-of-hard-return-heading-1.png)
+* A hard return causes each line to become separate `<h1>` tags!
+* ![This is a all part of hard return heading 1](src/guideImg/10-this-is-a-all-part-of-hard-return-heading-1.png)
 * To fix this, delete the hard Return, right click and choose Paragraph
 
   ![Menu with paragraph](src/guideImg/11-menu-with-paragraph.png)
 * increase Right indent so that the paragraph will wrap correctly but only with the one 
 
-  `
-  <H1>
-  `
-
-   tag
+  `<h1>` tag
 * Make sure headings are in a sequential order, and do not miss levels
 
   Start with doing some things that aren’t checked for errors.
@@ -499,25 +488,7 @@ Footnotes and Endnotes can be correctly defined and made accessible using Adobe 
 * Save as PDF with the following options are selected (Create Bookmarks from Headings, Document properties, and Document Structure tags for accessibility), or
 * Or if Adobe Acrobat Pro is installed, use the Acrobat tools in ribbon of Word
 * In Preferences, make select Convert Document Information, Create Bookmarks, Add Links, Enable Accessibility and Reflow with tagged Adobe PDF
-  **Note** "Save as PDF” doesn’t add a 
-
-`
-<P>
-`
-
- tag into each table row within the table that has the paths that make up the cell border, whereas Acrobat tools add a 
-
-`
-<P>
-`
-
- tag into each table row within the table that has the paths that make up the cell border. The 
-
-`
-<P>
-`
-
- tag into each table row within the table that has the paths that make up the cell border, requires artifaction in Adobe Acrobat Pro once the file is exported. 
+  **Note** "Save as PDF” doesn’t add a `<P>` tag into each table row within the table that has the paths that make up the cell border, whereas Acrobat tools add a `<P>` tag into each table row within the table that has the paths that make up the cell border. The `<P>` tag into each table row within the table that has the paths that make up the cell border, requires artifaction in Adobe Acrobat Pro once the file is exported. 
 
 ## Artifacting objects
 
@@ -527,44 +498,7 @@ Header and Footer objects are artifacted when exported to PDF.
 
 * Fonts error can occur due to Word not embedding fonts when using “Save as” to create the PDF
 * If “Initial View Show Document Title” is not selected in PDF, “Check for accessibility” when run in Adobe Acrobat Pro is likely to fail the Title
-* When PDFMaker puts 
-
-`
-<P>
-`
-
- tags into tables, in Adobe Acrobat Pro Artifact the contents of the 
-
-`
-<P>
-`
-
- tag -  click on 
-
-`
-<P>
-`
-
- tag, click “Edit” Role Map, which maps artifact to 
-
-`
-<P>
-`
-
- tag, delete item, rename 
-
-`
-<Artifact>
-`
-
- to 
-
-`
-<H1>
-`
-
- then select “Path” and Change Tag to Artifact so it is artifacted, delete tag
-
+* When PDFMaker puts `<P>` tags into tables, in Adobe Acrobat Pro Artifact the contents of the `<P>` tag -  click on `<P>` tag, click “Edit” Role Map, which maps artifact to `<P>` tag, delete item, rename `<Artifact>` to `<H1>` then select “Path” and Change Tag to Artifact so it is artifacted, delete tag
 * If a Table splits over more than one page it will be a separate table on each page, fix this in Adobe Acrobat Pro by moving the rows on the second Table into the main table and then deleting the empty table. The other option is to change the table in Word so it doesn’t onto a second page
 
 ## Check for accessibility in Adobe Acrobat Pro PDF
@@ -600,14 +534,7 @@ Report dialog box
 
 #### Removing empty <P> tags
 
-* **Note** – empty returns in Word become empty 
-
-`
-<P>
-`
-
- tags in Adobe Acrobat (do not use them in Word, use Space Before and Space After feature in Word to achieve vertical spacing) 
-
+* **Note** – empty returns in Word become empty `<P>` tags in Adobe Acrobat (do not use them in Word, use Space Before and Space After feature in Word to achieve vertical spacing) 
 * Artifact empty tags by selecting tag, right clicking and choosing “Change Tag to Artifact”
 
 #### Figure element on a single page with no bounding box
@@ -666,72 +593,13 @@ All tables require header cells which define the category(s) for the data cells 
 * In the case of a table with an empty cell
 * Artifact the empty cell
 * and delete it
-* Right click on 
-
-`
-<TH>
-`
-
- and choose Properties
-
-* Change the 
-
-`
-<TH>
-`
-
- to a 
-
-`
-<TD>
-`
-
- by 
-
-* And change from Table Header Cell (
-
-`
-<TH>
-`
-
-) to Table Data Cell
-
-Invalid use of a "TBody" structure element
-
+* Right click on `<TH>` and choose Properties
+* Change the `<TH>` to a `<TD>` by 
+* And change from Table Header Cell (`<TH>`) to Table Data Cell Invalid use of a "TBody" structure element
 * Find the tag in Acrobat Accessibility tags
-* This is happening because Word did not define a row header, and there is no 
-
-`
-<THead>
-`
-
-. Word automatically made a <TBody> which it not valid without the <THead>
-
-* **Note** the 
-
-`
-<THead>
-
-<TBody>
-
-<TFooter>
-`
-
-  and  are all optional tags, and are not required but if incorrectly used will cause errors to be reported
-
-* To fix, move the rows out of the 
-
-`
-<TBody>
-`
-
-* Delete the empty 
-
-`
-<TBody>
-`
-
- tag
+* This is happening because Word did not define a row header, and there is no `<THead>`. Word automatically made a `<TBody>` which it not valid without the `<THead>` **Note** the `<THead><TBody><TFooter>` and  are all optional tags, and are not required but if incorrectly used will cause errors to be reported
+* To fix, move the rows out of the `<TBody>`
+* Delete the empty `<TBody>` tag
 
 #### Alternative description missing for an annotation
 
