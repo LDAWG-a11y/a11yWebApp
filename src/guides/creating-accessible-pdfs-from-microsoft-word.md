@@ -407,6 +407,8 @@ To fix this, select the text and change the text colour.
 
   ![Table Design](src/guideImg/43-table-design.png)
 * Make sure that Header Row is checked
+
+  ![Header row checked](src/guideImg/44-header-row-checked.png)
 * Header Row makes the first row a header, First Column makes the first column a header
 * To add column headings, click into first cell of the top row and write the heading, then tab into the other columns and add as required
   First Heading	Second Heading	Third Heading
