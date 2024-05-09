@@ -484,6 +484,8 @@ Footnotes and Endnotes can be correctly defined and made accessible using Adobe 
 ### Creating a table of contents or TOC
 
 * References tab, Table of Contents 
+
+  ![Table of Contents](src/guideImg/55-table-of-contents.png)
 * Choose to automatically build TOC or a customized TOC 
 * Because heading styles have been applied, Word uses them to create TOC 
 
