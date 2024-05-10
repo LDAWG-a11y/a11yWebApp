@@ -423,7 +423,7 @@ To fix this, select the text and change the text colour.
 
 * Right click on table and choose Table Properties, make sure 
 
-  ![Repeat as header row at the top of each page](src/guideImg/46-repeat-header-row-top-each-page.png)
+  ![Repeat as header row at the top of each page](src/guideImg/42-repeat-header-row-top-each-page.png)
 
    is checked
 * To allow the table to split across pages and columns, make sure that 
