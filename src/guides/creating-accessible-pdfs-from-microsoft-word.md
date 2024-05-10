@@ -203,7 +203,7 @@ Use Word’s Heading styles to style the headings consistently.
   ![Modify style modal](src/guideImg/7-modify-style.png)
 * Choose Format
 
-  ![Modify style format paragraph](src/guideImg/8-modify-style-format-paragraph.png)
+  ![Modify style format paragraph](src/guideImg/13-language-modal.png)
 * and go to the paragraph tab
 
   ![Paragraph modal](src/guideImg/9-paragraph-modal.png)
