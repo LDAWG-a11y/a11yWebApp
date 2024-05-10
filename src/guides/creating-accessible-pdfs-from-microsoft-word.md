@@ -421,10 +421,14 @@ To fix this, select the text and change the text colour.
 
 ##### Repeating heading when table splits across pages
 
-* Right click on table and choose Table Properties, make sure  is checked
-* To allow the table to split across pages and columns, make sure that 
+* Right click on table and choose Table Properties, make sure 
 
   ![Repeat as header row at the top of each page](src/guideImg/46-repeat-header-row-top-each-page.png)
+
+   is checked
+* To allow the table to split across pages and columns, make sure that 
+
+  ![Allow row to break across tables](src/guideImg/46.5-allow-row-to-break-across-tables.png)
 
    is checked
 
