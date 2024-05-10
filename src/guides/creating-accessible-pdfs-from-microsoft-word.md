@@ -241,7 +241,7 @@ Use Word’s Heading styles to style the headings consistently.
   ![Set proofing language in language menu](src/guideImg/15-set-proofing-language-in-language-menu.png)
 * Note: it is set for the current document
 
-  ![Language modal showing set language](src/guideImg/13-language-modal.png)
+  ![Language modal showing set language](src/guideImg/16-language-modal-showing-set-language.png)
 
 ### Title
 
