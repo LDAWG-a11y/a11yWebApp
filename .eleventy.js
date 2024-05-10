@@ -35,7 +35,7 @@ module.exports = eleventyConfig => {
 
   const markdownItEleventyImgConfig = {
     imgOptions: {
-      widths: [1200, 900, 600, 300],
+      widths: [1200, 900, 600, 450, 300],
       urlPath: '/guideImg/',
       outputDir: './public/guideImg/',
       formats: ['webp', 'png'],
