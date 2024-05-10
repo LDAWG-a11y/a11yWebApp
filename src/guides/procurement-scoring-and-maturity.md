@@ -8,7 +8,7 @@ toc: false
 tags:
   - Procurement
 file:
-  - /public/docs/mta-procurement-scoring-template.xlsx
+  - /public/docs/mta_procurement_scoring_template_v1.2.xlsx
 isGuide: true
 ---
 Make Things Accessible contains several guides to help both customers and suppliers to improve accessibility requirements and evidence during procurement processes.
@@ -27,7 +27,7 @@ We hope that this will be a useful tool for everyone involved, and that this wil
 
 ## Using the scoring matrix
 
-[Download the scoring matrix template](/docs/mta-procurement-scoring-template.xlsx)
+[Download the scoring matrix template](/docs/mta_procurem…oring_template_v1.2.xlsx)
 
 The template is presented as an Excel spreadsheet.
 
@@ -46,4 +46,4 @@ The reason for this is to help differentiate what types of responses are applica
 
 Because not all questions are equally impactful to the final accessibility of a service, we have not yet created a comprehensive weighting guide. Scores here should be taken individually as marks of a certain broad level of quality, not compared against each other. For example, a score of 2 for compliance is significantly more impacting than a score of 2 noting the presence of an existing accessibility statement. Totalling the scores as a metric is not recommended.
 
-<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">This publication is issued as guidance only. It is not intended to provide legal or professional advice. All collaborators on this content accept no liability for any errors, omissions or any consequences, losses or damages arising from any use of, or reliance placed on, this publication. You should seek advice from a suitably qualified professional.</span></div>
+<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">undefined</span></div>
