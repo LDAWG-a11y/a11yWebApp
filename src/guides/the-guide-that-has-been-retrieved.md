@@ -1,5 +1,5 @@
 ---
-title: The guide that has been retrieved
+title: Creating accessible PDFs from Microsoft Word
 summary: A guide to creating accessible PDFs from Microsoft Word
 author: swilkinson
 date: 2024-05-13
