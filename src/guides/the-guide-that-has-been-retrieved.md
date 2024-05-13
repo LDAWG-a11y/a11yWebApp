@@ -526,8 +526,6 @@ Header and Footer objects are artifacted when exported to PDF.
 * [Open PAC 2024](https://pac.pdf-accessibility.org/en) and drag and drop the PDF file onto
 
   ![Document selection tool](src/guideImg/57-document-selection-tool.png)
-
-
 * The test will run and errors will be reported
 
   ![PDF/UA warnings regarding structure tree](src/guideImg/58-pdf-ua-warnings-regarding-structure-tree.png)
@@ -537,9 +535,6 @@ Header and Footer objects are artifacted when exported to PDF.
 * Click on “Results in Detail” button which opens up 
 
   ![Report dialog box](src/guideImg/59-report-dialog-box.png)
-
-
-
 * and drill down to the warnings
   Figure element on a single page with no bounding box
 * There is one error for bounding boxes on a Figure, and 34 errors for “Table header cell as no associated sub cells”, one error for PDF/UA identifier missing, one warning for ‘Invalid use of a “TBody” structure element‘, and one warning for ‘Possibly inappropriate use of a "Figure" structure element’
@@ -552,7 +547,7 @@ Header and Footer objects are artifacted when exported to PDF.
 * Make sure that the file is saved at this point
 * It is worth making various versions in case a change doesn’t allow rollback!
 
-#### Removing empty <P> tags
+#### Removing empty `<P>` tags
 
 * **Note** – empty returns in Word become empty `<P>` tags in Adobe Acrobat (do not use them in Word, use Space Before and Space After feature in Word to achieve vertical spacing) 
 * Artifact empty tags by selecting tag, right clicking and choosing “Change Tag to Artifact”
