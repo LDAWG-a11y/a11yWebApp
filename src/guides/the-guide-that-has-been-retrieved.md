@@ -591,7 +591,9 @@ Header and Footer objects are artifacted when exported to PDF.
 * Right click on `<Image>` Copy Alt-Text (“A person with long curly hair wearing a cowboy hat and sunglasses”) and put the text somewhere safe
 * Right click on image, choose Cut (image will disappear), right click choose Paste (image will reappear)
 * Close Edit mode
-* There is nothing in the Figure tag for that image
+* There is nothing in the `<Figure>` tag for that image
+
+  ![Empty figure tag](src/guideImg/69-empty-figure-tag.png)
 * Right click on empty tag and “Change Tag to Artifact”
 * Delete Figure tag
 * Go to “Prepare for accessibility”, “Fix reading order”
