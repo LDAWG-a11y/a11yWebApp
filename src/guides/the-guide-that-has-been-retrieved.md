@@ -641,6 +641,8 @@ All tables require header cells which define the category(s) for the data cells 
 
   ![Adobe Acrobat table editor showing cells and which ones are headers](src/guideImg/79-adobe-acrobat-table-editor-showing-cells-and-which-ones-are-headers.png)
 * Click on first header cell, shift + click on each of the other header cells, right click and chose “Table Cell Properties…”
+
+  ![Scope is set to none and therefor not defined in table cell properties dialog box](src/guideImg/80-scope-is-set-to-none-and-therefor-not-defined-in-table-cell-properties-dialog-box.png)
 * Set Scope to Column and OK
 * Go through other tables and make sure that the Scope is set appropriately, either Column or Row, and also make sure that any cells that cover more than one column or row have their spans set correctly
 * In the case of a table with an empty cell
