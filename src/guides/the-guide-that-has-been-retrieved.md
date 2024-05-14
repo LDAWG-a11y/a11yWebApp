@@ -604,6 +604,8 @@ Header and Footer objects are artifacted when exported to PDF.
 
   ![Reading order pane](src/guideImg/71-reading-order-pane.png)
 * Figure is tagged correctly
+
+  ![Correctly tagged image](src/guideImg/72-correctly-tagged-image.png)
 * The Figure tag is not in the correct place in the structure
 * And needs to be moved to the correct position
 * Right click <Figure> tag and choose Properties and Copy Alt-Text (“A person with long curly hair wearing a cowboy hat and sunglasses”) into Alternate Text for Images
