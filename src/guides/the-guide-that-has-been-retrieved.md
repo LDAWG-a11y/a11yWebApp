@@ -573,7 +573,7 @@ Header and Footer objects are artifacted when exported to PDF.
   ![Reading Order](src/guideImg/64-reading-order.png)
 * If the following strange result happens! 
 
-  ![Things are selected that are not expected to be including the table and image]()
+  ![Things are selected that are not expected to be including the table and image](src/guideImg/65-Things-are-selected-that-are-not-expected-to-be.png)
 * Revert file back to saved version
 
   ![Revert file in main menu](src/guideImg/66-revert-file-in-main-menu.png)
