@@ -571,6 +571,8 @@ Header and Footer objects are artifacted when exported to PDF.
 
   ![A person with long curly hair wearing a cowboy hat and sunglasses](src/guideImg/63-a-person-with-long-curly-hair-wearing-a-cowboy-hat-and-sunglasses.png)
 * Select Figure in “Reading Order”
+
+  ![Reading Order](src/guideImg/64-reading-order.png)
 * If the following strange result happens! 
 * Revert file back to saved version
 * Go to “Edit a PDF” button 
