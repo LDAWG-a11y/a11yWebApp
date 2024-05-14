@@ -612,9 +612,11 @@ Header and Footer objects are artifacted when exported to PDF.
 * And needs to be moved to the correct position
 
   ![Figure tag in correct position in tag tree](src/guideImg/74-figure-tag-correct-position-tag-tree.png)
-* Right click `<Figure>` tag and choose Properties and Copy Alt-Text (“A person with long curly hair wearing a cowboy hat and sunglasses”) into Alternate Text for Images
+* Right click `<Figure>` tag and choose Properties and Copy Alt-Text (“A person with long curly hair wearing a owboy hat and sunglasses”) into Alternate Text for Images
 
-Object properties dialog box
+  ![Object properties dialog box](src/guideImg/75-object-properties-dialog-box.png)
+
+
 
 * Select “Edit Tag…” button and then open up the first `<Dictionary>` object, the BBox attribute has been added
 
