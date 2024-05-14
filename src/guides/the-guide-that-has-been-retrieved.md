@@ -556,7 +556,9 @@ Header and Footer objects are artifacted when exported to PDF.
 
 #### Figure element on a single page with no bounding box
 
- No bounding box attribute
+ 
+
+![No bounding box attribute](src/guideImg/62-no-bounding-box-attribute.png)
 
 * Need to add bounding box find Figure tag (select the text next to the image, and “Find Tag from Selection” in the Accessibility tags … menu)
 * Right click on Figure tag and select Properties
