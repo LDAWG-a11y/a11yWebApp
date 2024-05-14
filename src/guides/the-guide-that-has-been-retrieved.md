@@ -648,6 +648,7 @@ All tables require header cells which define the category(s) for the data cells 
 * In the case of a table with an empty cell
 
   ![A table with empty cells](src/guideImg/81-a-table-with-empty-cells.png)
+* ![Row of table showing empty paragraph tags in the tags tree]()
 * Artifact the empty cell
 * and delete it
 * Right click on `<TH>` and choose Properties
