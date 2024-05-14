@@ -586,6 +586,8 @@ Header and Footer objects are artifacted when exported to PDF.
 **This is something NOT normally done as the tag structure can be broken, and make sure NOT to actually edit any text.**
 
 * Marquee figure
+
+  ![image of a person with long curly hair wearing a cowboy hat being marqueed](src/guideImg/68-image-being-marqueed.png)
 * Right click on <Image> Copy Alt-Text (“A person with long curly hair wearing a cowboy hat and sunglasses”) and put the text somewhere safe
 * Right click on image, choose Cut (image will disappear), right click choose Paste (image will reappear)
 * Close Edit mode
