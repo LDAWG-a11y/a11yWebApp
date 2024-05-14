@@ -646,6 +646,8 @@ All tables require header cells which define the category(s) for the data cells 
 * Set Scope to Column and OK
 * Go through other tables and make sure that the Scope is set appropriately, either Column or Row, and also make sure that any cells that cover more than one column or row have their spans set correctly
 * In the case of a table with an empty cell
+
+  ![A table with empty cells](src/guideImg/81-a-table-with-empty-cells.png)
 * Artifact the empty cell
 * and delete it
 * Right click on `<TH>` and choose Properties
