@@ -581,6 +581,8 @@ Header and Footer objects are artifacted when exported to PDF.
   ![Revert file in main menu](src/guideImg/66-revert-file-in-main-menu.png)
 * Go to “Edit a PDF” button 
 
+  ![Edit a PDF button](src/guideImg/67-edit-a-pdf-button.png)
+
 **This is something NOT normally done as the tag structure can be broken, and make sure NOT to actually edit any text.**
 
 * Marquee figure
