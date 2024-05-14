@@ -616,7 +616,7 @@ Header and Footer objects are artifacted when exported to PDF.
 
 Object properties dialog box
 
-* Select “Edit Tag…” button and then open up the first <Dictionary> object, the BBox attribute has been added
+* Select “Edit Tag…” button and then open up the first `<Dictionary>` object, the BBox attribute has been added
 
 Tag element dialog box
 
