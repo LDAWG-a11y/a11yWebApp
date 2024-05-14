@@ -620,9 +620,13 @@ Header and Footer objects are artifacted when exported to PDF.
 
 * Select “Edit Tag…” button and then open up the first `<Dictionary>` object, the BBox attribute has been added
 
-Tag element dialog box
+  ![Tag element dialog box](src/guideImg/76-tag-element-dialog-box.png)
+
+
 
 * The Block attribute needs to be added, click on first Attribute Object, New Item, Key = Placement, Value = Block
+
+  ![Placement block added](src/guideImg/77-placement-block-added.png)
 * If the Placement attribute is already there, change from Block to Inline (sometimes it might need to be changed TO Block!)
 
 #### Table header cell has no associated sub cells
