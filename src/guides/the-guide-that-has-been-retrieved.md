@@ -601,6 +601,8 @@ Header and Footer objects are artifacted when exported to PDF.
 
   ![image of a person with long curly hair wearing a cowboy hat and sunglasses marqueed](src/guideImg/70-image-marqueed.png)
 * Select Figure in “Reading Order”
+
+  ![Reading order pane](src/guideImg/71-reading-order-pane.png)
 * Figure is tagged correctly
 * The Figure tag is not in the correct place in the structure
 * And needs to be moved to the correct position
