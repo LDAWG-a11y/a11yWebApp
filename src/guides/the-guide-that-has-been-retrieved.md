@@ -568,6 +568,8 @@ Header and Footer objects are artifacted when exported to PDF.
 * Delete Figure tag
 * Go to “Prepare for accessibility”, “Fix reading order”
 * Marquee image 
+
+  ![A person with long curly hair wearing a cowboy hat and sunglasses](src/guideImg/63-a-person-with-long-curly-hair-wearing-a-cowboy-hat-and-sunglasses.png)
 * Select Figure in “Reading Order”
 * If the following strange result happens! 
 * Revert file back to saved version
