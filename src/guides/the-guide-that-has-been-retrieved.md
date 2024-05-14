@@ -606,7 +606,7 @@ Header and Footer objects are artifacted when exported to PDF.
   ![Correctly tagged image](src/guideImg/72-correctly-tagged-image.png)
 * The Figure tag is not in the correct place in the structure
 
-  ![Incorrectly positioned figure tag](src/guideImg/73-incorrectly-positioned-figure-tag.png)
+  ![Incorrectly positioned figure tag](src/guideImg/73-Incorrectly-positioned-figure-tag.png)
 * And needs to be moved to the correct position
 
   ![Figure tag in correct position in tag tree](src/guideImg/74-figure-tag-correct-position-tag-tree.png)
