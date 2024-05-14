@@ -556,8 +556,6 @@ Header and Footer objects are artifacted when exported to PDF.
 
 #### Figure element on a single page with no bounding box
 
- 
-
 ![No bounding box attribute](src/guideImg/62-no-bounding-box-attribute.png)
 
 * Need to add bounding box find Figure tag (select the text next to the image, and “Find Tag from Selection” in the Accessibility tags … menu)
@@ -615,15 +613,9 @@ Header and Footer objects are artifacted when exported to PDF.
 * Right click `<Figure>` tag and choose Properties and Copy Alt-Text (“A person with long curly hair wearing a owboy hat and sunglasses”) into Alternate Text for Images
 
   ![Object properties dialog box](src/guideImg/75-object-properties-dialog-box.png)
-
-
-
 * Select “Edit Tag…” button and then open up the first `<Dictionary>` object, the BBox attribute has been added
 
   ![Tag element dialog box](src/guideImg/76-tag-element-dialog-box.png)
-
-
-
 * The Block attribute needs to be added, click on first Attribute Object, New Item, Key = Placement, Value = Block
 
   ![Placement block added](src/guideImg/77-placement-block-added.png)
@@ -649,7 +641,7 @@ All tables require header cells which define the category(s) for the data cells 
 
   ![A table with empty cells](src/guideImg/81-a-table-with-empty-cells.png)
 * ![Row of table showing empty paragraph tags in the tags tree]()
-* Artifact the empty cell
+* Artifact the empty cell 
 * and delete it
 * Right click on `<TH>` and choose Properties
 * Change the `<TH>` to a `<TD>` by 
