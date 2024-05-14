@@ -52,14 +52,49 @@ What about motion? The media query we apply in CSS is called `prefers-reduced-mo
 
 ## Okay, how did you build it?
 
-Okay, so the mind set here was to develop these preferences using JavaScript and LocalStorage, pretty standard fare, really. But, as many of us know that oftentimes we want to add new features to something, perhaps a user may request something that helps them a little, perhaps there is something obvious I have missed, perhaps WCAG will introduce new ideas when version 3.0 starts to take its final form?
+Okay, so my mind set here was to develop these preferences using JavaScript and LocalStorage, pretty standard fare really. Essentially just using a similar pattern to what what we did for the site theme switcher, but just that little more extensible. As is common with websites oftentimes we want to add new features at a later date, perhaps a user may request something that helps them a little, perhaps there is something obvious I have missed, perhaps WCAG will introduce new ideas when version 3.0 starts to take its final form?
 
-So, the idea was to create reusable functionality, that will likely ever only require CSS modifications and not have to faff around refactoring the JavaScript to add a new preference.
+So, the idea was to create reusable functionality, that will likely ever only require CSS modifications and not require any faffing around refactoring the JavaScript to add a new preference, I guess a fire-and-forget approach was what I wanted to achieve.
 
 ### My approach
 
-I wanted this reusable function to be fire-and-forget, I didn't want to be tampering with it should I need to add a new preference, at a later date. I just wanted to have to change the CSS to accommodate any future additions to the preferences. Which in my mind made perfect sense, as at the basic level, all we really do is add a data-attribute or class to the `<html>` or `<body>` element in most cases.
+At the basic level, all we really do is add a data-attribute or class to the `<html>` or `<body>` element in most cases, so we have a handy hook for our CSS, so this isn't really anything revolutionary in that respect.
 
-So, I thought a good way to do that will be to simply check LocalStorage like we would for a theme, add any necessary data-attributes, add the correct state to the modal's buttons and then let CSS handle the presentation. In order to achieve this, I simply need to ensure that any new group of controls follows the same naming convention as the existing ones.
+First we'll create the buttons that toggle our preference, we're just going to create one preference to start with, as then I can demonstrate how easy it is to add another, a little later on. the first example will be for changing our site's font size:
 
-I'm not saying this is the best way, there are loads of folks out there that know more about JS than I ever will, but it is the best way I could think of for this use case. Disclaimer, I was pretty impressed with myself when i got it working correctly.
+```html
+<fieldset class="settings__fieldset">
+  <legend class="settings__legend">Font size</legend>
+    <button class="settings__btn--f-size-large btn btn--default" aria-pressed="false" data-pref="f-size large">Large<span></span></button>
+    <button class="settings__btn--f-size-unset btn btn--default" aria-pressed="false" data-pref="f-size unset">Unset<span></span></button>
+    <button class="settings__btn--f-size-largest btn btn--default" aria-pressed="false" data-pref="f-size largest">Largest<span></span></button>
+</fieldset>
+```
+
+* We wrap our controls in a `fieldset`, so we have a programmatic grouping association
+* We add a `legend`, as users tend to want to know what something is going to do before they interact with it
+* We add our three buttons:
+
+  * One for large text
+  * One for resetting or unsetting font size back to the site's default
+  * One for largest text
+* We add some very specific class names and data-attributes
+
+  * Each button's class must start with the same prefix, we're using `settings__btn--`, as we use the [BEM CSS methodology](https://getbem.com/) (mostly)
+  * We add a data-attribute to each called `data-pref` and the value of each is an identifier and a value, which are space separated. So for us `f-size` simply means font size and the value is either `large`, `largest` or `unset`, which you may have noticed matches our class names if they were concatenated into one string, e.g: `settings__btn--f-size-unset`, so we just stitch on the identifier to our initial class name prefix, add a hyphen and then finally add the value
+* We then add `aria-pressed` to each button, as we require a state to inform users programmatically that the element is a toggle-able button and it is either pressed or it isn't, this is just the page load state, once JS does its magic, we determine which button has been pressed, as one and only one must always be the current font size, if a user has never selected anything, then that will of course be default (unset)
+
+Obviously you can use any class names and data attribute names you wish, they just need to be consistent as will become apparent later
+
+Now let's just get a JS reference to the elements we will be using in our functions:
+
+```javascript
+const prefGroups = document.querySelectorAll('.settings__fieldset');
+const prefsBtns = prefGroups.querySelectorAll('button[class^="settings__btn"]');
+```
+
+Pretty basic stuff:
+
+We just store a reference to all of the `fieldset` elements in the document that have the class name `settings__fieldset`, we store this as `prefGroups`
+
+Finally, we grab store a reference to to all of the buttons in one of those fieldset containers, I just used the handy
