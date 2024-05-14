@@ -550,6 +550,8 @@ Header and Footer objects are artifacted when exported to PDF.
 #### Removing empty `<P>` tags
 
 * **Note** – empty returns in Word become empty `<P>` tags in Adobe Acrobat (do not use them in Word, use Space Before and Space After feature in Word to achieve vertical spacing) 
+
+  ![Tag tree showing empty p tags](src/guideImg/61-tag-tree-showing-empty-p-tags.png)
 * Artifact empty tags by selecting tag, right clicking and choosing “Change Tag to Artifact”
 
 #### Figure element on a single page with no bounding box
