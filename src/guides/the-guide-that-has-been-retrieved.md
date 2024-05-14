@@ -634,8 +634,12 @@ Header and Footer objects are artifacted when exported to PDF.
 All tables require header cells which define the category(s) for the data cells within the table but this is NOT enough, scope needs to be applied too the header cells too. The “Table header cell has no associated sub cells” error occurs due to header cells that do not have the scope attribute applied to them.
 
 * For example this table does not have scope applied
+
+  ![Table with no scope applied and PAC 2024 showing which table cell has a problem](src/guideImg/78-table-with-no-scope-applied-pac-2024-showing-problem.png)
 * Open Table Editor by clicking on “Prepare for accessibility”, “Fix reading order”, select cell in table, and click on “Table Editor” button
 * The top four cells have been defined as header cells
+
+  ![Adobe Acrobat table editor showing cells and which ones are headers](src/guideImg/79-adobe-acrobat-table-editor-showing-cells-and-which-ones-are-headers.png)
 * Click on first header cell, shift + click on each of the other header cells, right click and chose “Table Cell Properties…”
 * Set Scope to Column and OK
 * Go through other tables and make sure that the Scope is set appropriately, either Column or Row, and also make sure that any cells that cover more than one column or row have their spans set correctly
