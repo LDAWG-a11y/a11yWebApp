@@ -182,6 +182,8 @@ Suggested alternative text.
     are turned on the Home tab (Paragraph section) and the Display Styles pane  
 
   ![Styles pane](src/guideImg/2-styles.png)
+
+
 * Display Navigation pane (on View) 
 
 ![Navigation pane set to be displayed](src/guideImg/3-navigation-pane.png)
@@ -720,6 +722,11 @@ The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this
    is chosen and click on  
 
   ![Spanner button](src/guideImg/93-Spanner-button.png)
+
+![Adobe Acrobat Preflight panel](src/guideImg/91-Adobe-Acrobat-Preflight-panel.png)
+
+\    
+
 * In “Document info and Metadata” select  and click   Fix button
 * Save new version of file (just to be on the safe side)
 * Now there is not any errors in PAC 2024
