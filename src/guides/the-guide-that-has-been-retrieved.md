@@ -739,6 +739,10 @@ The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this
 
   ![No warnings and no failures in PAC 2024](src/guideImg/98-no-warnings-failures-pac-2024.png)
 
+## Downloadable Microsoft Word version
+
+Crrei 
+
 ## Useful links
 
 * [Accessible Document Basics](https://www.makethingsaccessible.com/guides/accessible-document-basics/)
