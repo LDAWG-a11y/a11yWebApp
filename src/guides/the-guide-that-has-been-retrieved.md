@@ -702,14 +702,16 @@ These 16 errors are coming from the Table of Contents
   ![Fix button](src/guideImg/95-Fix-button.png)
 * Save a new version (just to be on the safe side)
 
-**If links such as “Click here” were in the text rather than meaningful text, when the “fix” was run, it would technically pass but the text would be wrong and meaningless**
+**If links such as “Click here” were in the text rather than meaningful text, when the “fix” was run, it would technically pass but the text would be wrong and meaningless.**
 
 #### PDF/UA identifier missing
 
 The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this should be done at the end when the file actually is PDF/UA compliant.
-**Note this can be added to a file that is NOT compliant but this does not mean that the file will then be compliant.**
+**Note: this can be added to a file that is NOT compliant but this does not mean that the file will then be compliant.**
 
 * PAC 2024 gives an PDF/UA identifier missing error
+
+  ![PDF/UA identifier missing error in PAC 2024](src/guideImg/96-PDF-UA-identifier-missing-error-PAC-2024.png)
 * Open the Preflight panel by searching for Preflight in the “Find text or tools” search box
 * Make sure  is chosen and click on  
 * In “Document info and Metadata” select  and click   Fix button
