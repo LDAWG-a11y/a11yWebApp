@@ -683,7 +683,11 @@ These 16 errors are coming from the Table of Contents
 * Make sure  is chosen and click on\
 * Scroll down and under the Interactive elements and properties
 * **The PDF standard wants a contents entry to be added to the link which will provide the alternate text, NOT put the alternate text in the Alternate Text field!**
-* Select   and then click on\
+* Select  
+
+  ![PDF Standardsv](src/guideImg/92-PDF-Standards.png)
+
+   and then click on\
 * Save a new version (just to be on the safe side)
 
 **If links such as “Click here” were in the text rather than meaningful text, when the “fix” was run, it would technically pass but the text would be wrong and meaningless**
