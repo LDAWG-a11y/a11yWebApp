@@ -739,7 +739,7 @@ The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this
 
 ## Downloadable Microsoft Word version
 
-Creating accessible PDFs from Microsoft Word **(Word 2.09MB)**
+[Creating accessible PDFs from Microsoft Word](https://www.makethingsaccessible.com/public/docs/creating-accessible-pdfs-from-microsoft-word.docx) **(Word 2.09MB)**
 
 ## Useful links
 
