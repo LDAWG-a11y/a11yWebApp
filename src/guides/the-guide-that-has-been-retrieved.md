@@ -537,7 +537,9 @@ Header and Footer objects are artifacted when exported to PDF.
 
   ![Report dialog box](src/guideImg/59-report-dialog-box.png)
 * and drill down to the warnings
-  Figure element on a single page with no bounding box
+
+
+  ![Figure element on a single page with no bounding box](src/guideImg/60-figure-element-single-page-no-bounding-box.png)
 * There is one error for bounding boxes on a Figure, and 34 errors for “Table header cell as no associated sub cells”, one error for PDF/UA identifier missing, one warning for ‘Invalid use of a “TBody” structure element‘, and one warning for ‘Possibly inappropriate use of a "Figure" structure element’
 * There are 16 errors for “Alternative description missing for an annotation”
 * There is 1 error for PDF/UA identifier missing
