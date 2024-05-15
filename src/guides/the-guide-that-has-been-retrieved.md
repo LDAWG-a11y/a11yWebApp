@@ -530,14 +530,10 @@ Header and Footer objects are artifacted when exported to PDF.
 * The test will run and errors will be reported
 
   ![PDF/UA warnings regarding structure tree](src/guideImg/58-pdf-ua-warnings-regarding-structure-tree.png)
-
- 
-
 * Click on “Results in Detail” button which opens up 
 
   ![Report dialog box](src/guideImg/59-report-dialog-box.png)
 * and drill down to the warnings
-
 
   ![Figure element on a single page with no bounding box](src/guideImg/60-figure-element-single-page-no-bounding-box.png)
 * There is one error for bounding boxes on a Figure, and 34 errors for “Table header cell as no associated sub cells”, one error for PDF/UA identifier missing, one warning for ‘Invalid use of a “TBody” structure element‘, and one warning for ‘Possibly inappropriate use of a "Figure" structure element’
@@ -654,7 +650,7 @@ All tables require header cells which define the category(s) for the data cells 
 * Right click on `<TH>` and choose Properties
 * Change the `<TH>` to a `<TD>` by 
 
-  ![Object properties dialog, tag tab and type](src/guideImg/85-Object-properties-dialog- tag-tab-type.png)
+  ![Object properties dialog, tag tab and type](src/guideImg/85-object-properties-dialog-tag-tab-type.png)
 * And change from Table Header Cell (`<TH>`) to Table Data Cell 
 
 #### Invalid use of a "TBody" structure element
@@ -694,7 +690,6 @@ These 16 errors are coming from the Table of Contents
 * Scroll down and under the Interactive elements and properties
 
   ![Create content entry for link annotations](src/guideImg/94-create-content-entry-link-annotations.png)
-
 * **The PDF standard wants a contents entry to be added to the link which will provide the alternate text, DO NOT put the alternate text in the Alternate Text field!**
 * Select  
 
