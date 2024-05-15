@@ -645,6 +645,8 @@ All tables require header cells which define the category(s) for the data cells 
 
   ![Empty cell in the paragraph tag in the table header in the tag tree](src/guideImg/83-empty-cell-in-the-paragraph-tag-table-header-in-tag-tree.png)
 * and delete it
+
+  ![Empty tag has been deleted in the table header cell](src/guideImg/84-Empty-tag-been-deleted-in-table-header-cell.png)
 * Right click on `<TH>` and choose Properties
 * Change the `<TH>` to a `<TD>` by 
 * And change from Table Header Cell (`<TH>`) to Table Data Cell Invalid use of a "TBody" structure element
