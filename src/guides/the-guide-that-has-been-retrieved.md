@@ -737,6 +737,8 @@ The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this
 * Save new version of file (just to be on the safe side)
 * Now there is not any errors in PAC 2024
 
+  ![No warnings and no failures in PAC 2024](src/guideImg/98-no-warnings-failures-pac-2024.png)
+
 ## Useful links
 
 * Accessible Document Basics
