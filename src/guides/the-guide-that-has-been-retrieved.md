@@ -531,7 +531,7 @@ Header and Footer objects are artifacted when exported to PDF.
 
   ![PDF/UA warnings regarding structure tree](src/guideImg/58-pdf-ua-warnings-regarding-structure-tree.png)
 
- PDF/UA warnings regarding structure tree
+ 
 
 * Click on “Results in Detail” button which opens up 
 
