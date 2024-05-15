@@ -713,7 +713,11 @@ The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this
 
   ![PDF/UA identifier missing error in PAC 2024](src/guideImg/96-PDF-UA-identifier-missing-error-PAC-2024.png)
 * Open the Preflight panel by searching for Preflight in the “Find text or tools” search box
-* Make sure  is chosen and click on  
+* Make sure 
+
+  ![PDF/UA identifier missing error in PAC 2024](src/guideImg/92-PDF-Standards.png)
+
+   is chosen and click on  
 * In “Document info and Metadata” select  and click   Fix button
 * Save new version of file (just to be on the safe side)
 * Now there is not any errors in PAC 2024
