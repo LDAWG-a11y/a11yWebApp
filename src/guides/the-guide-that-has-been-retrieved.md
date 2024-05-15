@@ -718,6 +718,8 @@ The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this
   ![PDF/UA identifier missing error in PAC 2024](src/guideImg/92-PDF-Standards.png)
 
    is chosen and click on  
+
+  ![Spanner button](src/guideImg/93-Spanner-button.png)
 * In “Document info and Metadata” select  and click   Fix button
 * Save new version of file (just to be on the safe side)
 * Now there is not any errors in PAC 2024
