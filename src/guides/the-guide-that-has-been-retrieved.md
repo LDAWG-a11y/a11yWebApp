@@ -643,7 +643,7 @@ All tables require header cells which define the category(s) for the data cells 
 * In the case of a table with an empty cell
 
   ![A table with empty cells](src/guideImg/81-a-table-with-empty-cells.png)
-* ![Row of table showing empty paragraph tags in the tags tree](src/guideImg/82-row-of-table-showing-empty-paragraph-tags-in-the-tags-tree.png)
+  ![Row of table showing empty paragraph tags in the tags tree](src/guideImg/82-row-of-table-showing-empty-paragraph-tags-in-the-tags-tree.png)
 * Artifact the empty cell 
 
   ![Empty cell in the paragraph tag in the table header in the tag tree](src/guideImg/83-empty-cell-in-the-paragraph-tag-table-header-in-tag-tree.png)
