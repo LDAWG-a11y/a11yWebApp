@@ -741,22 +741,23 @@ The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this
 
 ## Useful links
 
-* Accessible Document Basics
-* How to handle blank data cells in accessible tables
-* Rules for the Accessibility Checker
-* Improve accessibility with the Accessibility Checker
-* TPGi’s Colour Contrast Analyzer
-* Writing for GOV.UK
-* Plain English Campaign
-* Hemingway Editor
-* WebFX Readability Test
-* Plain English – Advisory eLaHub
-* WCAG 3.15 Reading Level (AAA)
-* Creating meaningful alternative text
-* Everything you need to know to write effective alt text
-* PAC 2024
-* Table Accessibility in Word and PowerPoint
-* Make your Word documents accessible to people with disabilities
-* Creating accessible tables in Microsoft Word
-* Create accessible tables in Word
-* Getting accessible templates for Office
+* [Accessible Document Basics](https://www.makethingsaccessible.com/guides/accessible-document-basics/)
+* [How to handle blank data cells in accessible tables](https://www.accessibilityunraveled.com/pdf-remediation/how-to-handle-blank-data-cells-in-accessible-tables/) (external website)
+* [Accessibility Checker and Accessibility Check](https://www.makethingsaccessible.com/guides/accessibility-checker-and-accessibility-check/)
+* Rules for the Accessibility Checker (external website)
+* Improve accessibility with the Accessibility Checker (external website)
+* TPGi’s Colour Contrast Analyzer (external website)
+* Writing for GOV.UK (external website)
+* Plain English Campaign (external website)
+* Hemingway Editor (external website)
+* WebFX Readability Test (external website)
+* Plain English – Advisory eLaHub (external website)
+* WCAG 3.15 Reading Level (AAA) (external website)
+* Creating meaningful alternative text (external website)
+* Everything you need to know to write effective alt text (external website)
+* PAC 2024 (external website)
+* Table Accessibility in Word and PowerPoint (external website)
+* Make your Word documents accessible to people with disabilities (external website)
+* Creating accessible tables in Microsoft Word (external website)
+* Create accessible tables in Word (external website)
+* Getting accessible templates for Office (external website)
