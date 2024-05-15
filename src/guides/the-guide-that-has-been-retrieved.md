@@ -10,6 +10,7 @@ tags:
   - PDF
 file:
   - /public/docs/word-un-accessible.docx
+  - /public/docs/creating-accessible-pdfs-from-microsoft-word.docx
 isGuide: true
 ---
 ## Before starting
@@ -182,8 +183,6 @@ Suggested alternative text.
     are turned on the Home tab (Paragraph section) and the Display Styles pane  
 
   ![Styles pane](src/guideImg/2-styles.png)
-
-
 * Display Navigation pane (on View) 
 
 ![Navigation pane set to be displayed](src/guideImg/3-navigation-pane.png)
@@ -682,8 +681,6 @@ These 16 errors are coming from the Table of Contents
 * Go to the Preflight panel (search for Preflight in “Find text or tools” search in Acrobat
 
   ![Adobe Acrobat Preflight panel](src/guideImg/91-adobe-acrobat-preflight-panel.png)
-
-
 * Make sure 
 
   ![PDF Standardsv](src/guideImg/92-PDF-Standards.png)
@@ -691,9 +688,10 @@ These 16 errors are coming from the Table of Contents
    is chosen and then click on 
 
   ![Spanner button](src/guideImg/93-Spanner-button.png)
-*  Scroll down and under the Interactive elements and properties
+* Scroll down and under the Interactive elements and properties
 
   ![Create content entry for link annotations](src/guideImg/94-create-content-entry-link-annotations.png)
+
 * **The PDF standard wants a contents entry to be added to the link which will provide the alternate text, DO NOT put the alternate text in the Alternate Text field!**
 * Select  
 
@@ -741,7 +739,7 @@ The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this
 
 ## Downloadable Microsoft Word version
 
-Crrei 
+Creating accessible PDFs from Microsoft Word **(Word 2.09MB)**
 
 ## Useful links
 
