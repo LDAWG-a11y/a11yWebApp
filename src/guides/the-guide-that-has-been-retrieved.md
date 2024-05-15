@@ -494,15 +494,15 @@ Footnotes and Endnotes can be correctly defined and made accessible using Adobe 
 
 ### Adding bookmarks
 
-* Click Save as PDF then “More options”, then click on Options then “Create bookmarks using Headings” – Note Word bookmarks can be created manually but that takes time and effort
-* Alternative if Adobe Acrobat Pro is installed on the PC, in Word, click on Acrobat PDFMaker, Preferences, Bookmarks and check Convert Word Headings to Bookmarks. NOTE Headings 1-6 only get tagged because PDFs do not have heading 7 etc.
+* Click Save as PDF then “More options”, then click on Options then “Create bookmarks using Headings” – **Note:** Word bookmarks can be created manually but that takes time and effort
+* Alternative if Adobe Acrobat Pro is installed on the PC, in Word, click on Acrobat PDFMaker, Preferences, Bookmarks and check Convert Word Headings to Bookmarks. **Note:** Headings 1-6 only get tagged because PDFs do not have heading 7 etc.
 
 ## Exporting to a PDF
 
 * Save as PDF with the following options are selected (Create Bookmarks from Headings, Document properties, and Document Structure tags for accessibility), or
 * Or if Adobe Acrobat Pro is installed, use the Acrobat tools in ribbon of Word
 * In Preferences, make select Convert Document Information, Create Bookmarks, Add Links, Enable Accessibility and Reflow with tagged Adobe PDF
-  **Note** "Save as PDF” doesn’t add a `<P>` tag into each table row within the table that has the paths that make up the cell border, whereas Acrobat tools add a `<P>` tag into each table row within the table that has the paths that make up the cell border. The `<P>` tag into each table row within the table that has the paths that make up the cell border, requires artifaction in Adobe Acrobat Pro once the file is exported. 
+  **Note:** "Save as PDF” doesn’t add a `<P>` tag into each table row within the table that has the paths that make up the cell border, whereas Acrobat tools add a `<P>` tag into each table row within the table that has the paths that make up the cell border. The `<P>` tag into each table row within the table that has the paths that make up the cell border, requires artifaction in Adobe Acrobat Pro once the file is exported. 
 
 ## Artifacting objects
 
