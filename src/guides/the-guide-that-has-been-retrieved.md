@@ -690,6 +690,8 @@ These 16 errors are coming from the Table of Contents
 
   ![Spanner button](src/guideImg/93-Spanner-button.png)
 *  Scroll down and under the Interactive elements and properties
+
+  ![Create content entry for link annotations](src/guideImg/94-create-content-entry-link-annotations.png)
 * **The PDF standard wants a contents entry to be added to the link which will provide the alternate text, NOT put the alternate text in the Alternate Text field!**
 
 Save a new version (just to be on the safe side)
