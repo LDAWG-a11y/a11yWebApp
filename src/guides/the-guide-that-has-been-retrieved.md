@@ -678,6 +678,8 @@ These 16 errors are coming from the Table of Contents
 * When Word generates a Table of Contents (TOC), each item of the TOC is an active link that can be clicked on by a sighted user, or a link that a user of AT can follow
 * Assuming the TOC contains meaningful text, which it should hopefully have…
 * Go to the Preflight panel (search for Preflight in “Find text or tools” search in Acrobat
+
+  ![Adobe Acrobat Preflight panel](src/guideImg/91-adobe-acrobat-preflight-panel.png)
 * Make sure  is chosen and click on\
 * Scroll down and under the Interactive elements and properties
 * **The PDF standard wants a contents entry to be added to the link which will provide the alternate text, NOT put the alternate text in the Alternate Text field!**
