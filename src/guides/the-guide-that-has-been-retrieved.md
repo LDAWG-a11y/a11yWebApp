@@ -727,7 +727,13 @@ The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this
 
 \    
 
-* In “Document info and Metadata” select  and click   Fix button
+* In “Document info and Metadata” select 
+
+  ![Set PDF/UA-1 entry](src/guideImg/97-Set-PDF-UA-1-entry.png)
+
+   and click 
+
+  ![Fix button](src/guideImg/95-Fix-button.png)
 * Save new version of file (just to be on the safe side)
 * Now there is not any errors in PAC 2024
 
