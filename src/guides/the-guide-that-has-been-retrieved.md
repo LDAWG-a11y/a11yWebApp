@@ -651,7 +651,12 @@ All tables require header cells which define the category(s) for the data cells 
 * Change the `<TH>` to a `<TD>` by 
 
   ![Object properties dialog, tag tab and type](src/guideImg/85-Object-properties-dialog- tag-tab-type.png)
-* And change from Table Header Cell (`<TH>`) to Table Data Cell Invalid use of a "TBody" structure element
+* And change from Table Header Cell (`<TH>`) to Table Data Cell 
+
+#### Invalid use of a "TBody" structure element
+
+![PAC 2024 showing where the invalid use of tbody structure element is in document](src/guideImg/86-invalid-use-of-tbody-structure-element.png)
+
 * Find the tag in Acrobat Accessibility tags
 * This is happening because Word did not define a row header, and there is no `<THead>`. Word automatically made a `<TBody>` which it not valid without the `<THead>` **Note** the `<THead><TBody><TFooter>` and  are all optional tags, and are not required but if incorrectly used will cause errors to be reported
 * To fix, move the rows out of the `<TBody>`
