@@ -687,7 +687,9 @@ These 16 errors are coming from the Table of Contents
 
   ![PDF Standardsv](src/guideImg/92-PDF-Standards.png)
 
-   and then click on\
+   and then click on 
+
+  ![Spanner button](src/guideImg/93-Spanner-button.png)
 * Save a new version (just to be on the safe side)
 
 **If links such as “Click here” were in the text rather than meaningful text, when the “fix” was run, it would technically pass but the text would be wrong and meaningless**
