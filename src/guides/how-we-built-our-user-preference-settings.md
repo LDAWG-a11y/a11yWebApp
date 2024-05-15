@@ -93,8 +93,34 @@ const prefGroups = document.querySelectorAll('.settings__fieldset');
 const prefsBtns = prefGroups.querySelectorAll('button[class^="settings__btn"]');
 ```
 
-Pretty basic stuff:
+These are the two main variables we need:
 
-We just store a reference to all of the `fieldset` elements in the document that have the class name `settings__fieldset`, we store this as `prefGroups`
+* We just store a reference to all of the `<fieldset>` elements in the document that have the class name `.settings__fieldset`, we store this as `prefGroups`
+* Finally, we store a reference to to all of the `<button>`s in one of those `<fieldset>` containers, I just used the handy CSS starts with Wildcard selector, just in case we had any other buttons in the `<fieldset>`, as an example, we have accordions in ours, so we just need to find any `<button>` within the `<fieldset>` that has a class that starts with "`settings__btn`". We store those buttons as `prefBtns`
 
-Finally, we grab store a reference to to all of the buttons in one of those fieldset containers, I just used the handy
+Now we will add the functionality:
+
+```javascript
+// Loop through all prefBtns
+prefsBtns.forEach(btn => {
+// Listen for click events
+   btn.addEventListener('click', () => {
+// When clicked toggle aria-pressed to true
+   btn.setAttribute('aria-pressed', 'true');
+// Get the identifier and value from the data attribute and split at the space character
+   const pref = btn.getAttribute('data-pref').split(' ');
+// If the value [1] of the clicked btn is not 'unset', add a data attribute to the html element
+// prefix 'data-pref--' and add the identifier [0], then the value becomes value [1] of the
+// button's data-attribute value [1]
+   if (pref[1] !== 'unset') {
+     document.documentElement.setAttribute(`data-pref--${pref[0]}`, pref[1]);
+// Let's just add that same data attribute & value to localStorage
+     window.localStorage.setItem(`data-pref--${pref[0]}`, pref[1]);
+// If the value [1] is unset, remove the attribute from the html element and remove the entry
+// From local storage
+   } else {
+      document.documentElement.removeAttribute(`data-pref--${pref[0]}`);
+      window.localStorage.removeItem(`data-pref--${pref[0]}`);
+   }
+  
+```
