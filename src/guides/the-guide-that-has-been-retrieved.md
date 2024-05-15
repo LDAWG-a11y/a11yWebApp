@@ -660,8 +660,10 @@ All tables require header cells which define the category(s) for the data cells 
 * Find the tag in Acrobat Accessibility tags
 
   ![TBody tag in tags tree](src/guideImg/87-tbody-tag-tags-tree.png)
-* This is happening because Word did not define a row header, and there is no `<THead>`. Word automatically made a `<TBody>` which it not valid without the `<THead>` **Note** the `<THead><TBody><TFooter>` and  are all optional tags, and are not required but if incorrectly used will cause errors to be reported
-* To fix, move the rows out of the `<TBody>`
+* This is happening because Word did not define a row header, and there is no `<THead>`. Word automatically made a `<TBody>` which it not valid without the `<THead>` **Note:** the `<THead><TBody><TFooter>` and  are all optional tags, and are not required but if incorrectly used will cause errors to be reported
+* **To fix**, move the rows out of the `<TBody>`
+
+  ![Tbody tag within table row tag](src/guideImg/88-tbody-tag-within-table-row-tag.png)
 * Delete the empty `<TBody>` tag
 
 #### Alternative description missing for an annotation
