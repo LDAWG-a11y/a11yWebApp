@@ -666,6 +666,8 @@ All tables require header cells which define the category(s) for the data cells 
   ![Tbody tag within table row tag](src/guideImg/88-tbody-tag-within-table-row-tag.png)
 * Delete the empty `<TBody>` tag
 
+  ![Empty tbody tag deleted from table row](src/guideImg/89-empty-tbody-tag-deleted-from-table-row.png)
+
 #### Alternative description missing for an annotation
 
 This error occurs because the PDF/UA standard requires all hyperlinks have alternative text.
