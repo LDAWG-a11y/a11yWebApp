@@ -27,7 +27,7 @@ We hope that this will be a useful tool for everyone involved, and that this wil
 
 ## Using the scoring matrix
 
-[Download the scoring matrix template](/docs/mta_procurem…oring_template_v1.2.xlsx)
+[Download the scoring matrix template](/docs/mta_procurement_scoring_template_v1.2.xlsx)
 
 The template is presented as an Excel spreadsheet.
 
@@ -45,5 +45,3 @@ For each example response in each score cell we have marked them with one of fou
 The reason for this is to help differentiate what types of responses are applicable in different procurement situations. For example, “Bespoke” tagged responses are only applicable in the event you are trying to procure a bespoke built system rather than an existing product. The “Any” tagged responses are applicable in all cases.
 
 Because not all questions are equally impactful to the final accessibility of a service, we have not yet created a comprehensive weighting guide. Scores here should be taken individually as marks of a certain broad level of quality, not compared against each other. For example, a score of 2 for compliance is significantly more impacting than a score of 2 noting the presence of an existing accessibility statement. Totalling the scores as a metric is not recommended.
-
-<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">undefined</span></div>
