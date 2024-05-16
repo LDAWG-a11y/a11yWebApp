@@ -43,7 +43,9 @@ While Title is the only field that is required, it is worth adding Tags for SEO,
 
   * Master Layout title = Heading 1
   * Layout Master title = Heading 2
-* Check if there is a parent slide called Slide Master by selecting View  menu and choosing  Slide Master button
+* Check if there is a parent slide called Slide Master by selecting View  menu and choosing
+
+  ![Slide Master button](src/guideImg/3-slide-master-button.png)
 * The slides below the Slide Master are the Layout Master
 * On the Slide Master there is a Title and Footers checkboxes
 * If the presentation does not have Master and Layout slides, right click on the main slide, select Layout and select Title Slide
