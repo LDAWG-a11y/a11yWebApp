@@ -97,9 +97,9 @@ While Title is the only field that is required, it is worth adding Tags for SEO,
 ### Hyperlinks
 
 * The destination of links should be communicated accurately and clearly
-* Use URL shortening services such as Bitly (external website) or TinyURL (external website) if the document is to be printed, if not, make sure the link text is meaningful (link shorteners can be viewed as a security risk as the destination cannot be seen unless the link has been clicked!)
+* Use URL shortening services such as [Bitly](https://bitly.com/pages/landing/bringing-us-all-a-bit-closer) (external website) or [TinyURL](https://tinyurl.com/app) (external website) if the document is to be printed, if not, make sure the link text is meaningful (link shorteners can be viewed as a security risk as the destination cannot be seen unless the link has been clicked!)
 * Screen readers will generally provide a list of links so make sure the link text is meaningful
-* Do not use “click here” or “More information” for all the link text because it will not be possible to distinguish the links from each other
+* Do not use “click here” or “more information” for all the link text because it will not be possible to distinguish the links from each other
 
 ### Alternative text for images (alt text)
 
@@ -107,7 +107,7 @@ While Title is the only field that is required, it is worth adding Tags for SEO,
 * Screen readers will declare the image, then read the alt text
 * Images that have no informative content and are purely decorative do not require alt text, but may require markup so that Assistive Technology understands that they should be ignored
 * Remember to avoid punctuation as it is voiced
-* MakeThingsAccessible has a guide to creating meaningful alternative text
+* [MakeThingsAccessible](https://www.makethingsaccessible.com/) has a guide to [creating meaningful alternative text](https://www.makethingsaccessible.com/guides/creating-meaningful-alternative-text/)
 
 ### Image use
 
@@ -129,7 +129,7 @@ Content within the document written in a different language to the document’s 
 
 ### Tables
 
-* Do not use tables to control layout
+* Do **not** use tables to control layout
 * Use tables to communicate relationships between data
 * Make sure headers are identified
 * Try to keep the table simple
@@ -142,9 +142,9 @@ Content within the document written in a different language to the document’s 
 * Make sure sentences are short and concise, around 20-25 words
 * Make sure words are kept simple
 * Use common words. Complicated longer words (8 or 9 letters) will cause readers to skip shorter words (3,4, or 5 letters) that follow
-* Use an Active voice rather than a Passive voice
+* Use an **Active** voice rather than a **Passive** voice
 * Where possible, use words containing one to two syllables
-* Aim the language used at the level of a 9 year old as recommended by GOV.UK (external website)– remember in the UK, 7.1 million adults read at, or below, the level of an average 9 year old. WCAG 3.15 Reading Level (AAA) (external website) recommends providing a simplified version of the text if it requires a reading age of more than 12 years old
+* Aim the language used at the level of a 9 year old as [recommended by GOV.UK](https://www.gov.uk/guidance/content-design/writing-for-gov-uk) (external website)– remember in the UK, 7.1 million adults read at, or below, the level of an average 9 year old. [WCAG 3.15 Reading Level (AAA)](https://www.w3.org/WAI/WCAG22/quickref/?versions=2.1#reading-level) (external website) recommends providing a simplified version of the text if it requires a reading age of more than 12 years old
 * Use contractions, words made up of two short words joined with an apostrophe such as I’ve, can’t etc.
 * Do not use double negatives
 * Explain the unusual, to help give full information
@@ -157,8 +157,8 @@ Content within the document written in a different language to the document’s 
 
 ### Further help
 
-* Free services, guides, and resources to help are available from the Plain English Campaign (external website)
-* Measure the readability of the text using Hemingway Editor (external website)
+* Free services, guides, and resources to help are available from the [Plain English Campaign](https://www.plainenglish.co.uk/) (external website)
+* Measure the readability of the text using [Hemingway Editor](https://hemingwayapp.com/) (external website)
 
 ### Font
 
@@ -172,11 +172,11 @@ Content within the document written in a different language to the document’s 
 ### Colour
 
 * Do NOT use colour by itself to show meaning
-* Make sure that there is adequate contrast between background and text – use TPGi’s Colour Contrast Analyzer (CCA) (external website) to check contrast
+* Make sure that there is adequate contrast between background and text – use [TPGi’s Colour Contrast Analyzer (CCA)](https://www.tpgi.com/color-contrast-checker/) (external website) to check contrast
 
 ## PowerPoint Accessibility Checker
 
-Accessibility Checker (external website) tests Microsoft PowerPoint documents for accessibility issues and gives errors, warnings, tips, and intelligent services.
+[Accessibility Checker](https://support.microsoft.com/en-gb/office/improve-accessibility-with-the-accessibility-checker-a16f6de0-2f39-4a2b-8bd8-5ad801426c7f) (external website) tests Microsoft PowerPoint documents for accessibility issues and gives errors, warnings, tips, and intelligent services.
 
 ### Errors
 
@@ -230,7 +230,7 @@ Suggested alternative text.
 Note: 
 
 * A PDF created by PowerPoint may not have any heading structure, caused by document authors not using headings in the original document
-* PowerPoint creates a <Sect> tag for each slide of the document when it created the PDF, and they may be many <Sect> tags containing other tags such as <P> on each slide.
+* PowerPoint creates a `<Sect>` tag for each slide of the document when it created the PDF, and they may be many `<Sect>` tags containing other tags such as `<P>` on each slide.
 
 #### Language of document
 
