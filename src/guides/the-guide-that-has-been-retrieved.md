@@ -53,7 +53,7 @@ An example file, [Word-un-accessible.docx](https://www.makethingsaccessible.com/
 * The destination of links should be communicated accurately and clearly
 * Use URL shortening services such as [Bitly](https://bitly.com/pages/landing/bringing-us-all-a-bit-closer) (external website) or [TinyURL](https://tinyurl.com/app) (external website) if the document is to be printed, if not, make sure the link text is meaningful (link shorteners can be viewed as a security risk as the destination cannot be seen unless the link has been clicked!)
 * Screen readers will generally provide a list of links so make sure the link text is meaningful
-* Do not use “click here” or “More information” for all the link text because it will not be possible to distinguish the links from each other
+* Do not use “click here” or “more information” for all the link text because it will not be possible to distinguish the links from each other
 
 ### Alternative text for images (alt text)
 
