@@ -49,7 +49,7 @@ While Title is the only field that is required, it is worth adding Tags for SEO,
 * The slides below the Slide Master are the Layout Master
 
   ![Slide master and layout master slides](src/guideImg/4-slide-master-and-layout-master-slides.png)
-* On the Slide Master there is a Title and Footers checkboxes
+* On the Slide Master there are Title and Footers checkboxes
 
   ![Master layout including title and footers](src/guideImg/5-master-layout-including-title-and-footers.png)
 * If the presentation does not have Master and Layout slides, right click on the main slide, select Layout and select Title Slide
