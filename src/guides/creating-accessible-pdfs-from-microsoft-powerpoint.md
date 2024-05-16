@@ -171,7 +171,7 @@ Content within the document written in a different language to the document’s 
 
 ### Colour
 
-* Do NOT use colour by itself to show meaning
+* Do **NOT** use colour by itself to show meaning
 * Make sure that there is adequate contrast between background and text – use [TPGi’s Colour Contrast Analyzer (CCA)](https://www.tpgi.com/color-contrast-checker/) (external website) to check contrast
 
 ## PowerPoint Accessibility Checker
@@ -238,6 +238,8 @@ Note:
 
   ![File menu showing account, feedback, and options](src/guideImg/14-file-menu-showing-account-feedback-and-options.png)
 * Select the Language
+
+  ![PowerPoint options including general, proofing, save, and language](src/guideImg/15-powerpoint-options-including-general-proofing-save-and-language.png)
 * Select the default language required, then  
 
 #### Language of part of document
