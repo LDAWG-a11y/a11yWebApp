@@ -260,6 +260,8 @@ The Accessibility Checker does not test for the title in PowerPoint so this need
 * Add applicable SEO keywords into Tags field
 * Delete Author and replace with generic author such as organisation name
 
+  ![Author make things accessible](src/guideImg/18-author-make-things-accessible.png)
+
 ### Tables
 
 #### Tips for accessible tables
