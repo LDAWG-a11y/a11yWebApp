@@ -276,6 +276,8 @@ The Accessibility Checker does not test for the title in PowerPoint so this need
 #### Inserting a table
 
 * Insert menu -> Table
+
+  ![Insert table menu](src/guideImg/19-insert-table-menu.png)
 * Make sure Header Row is selected in Table Design, and the First Column if the first column is also headings
 
 Note: Scope must be fixed using Adobe Acrobat Pro
