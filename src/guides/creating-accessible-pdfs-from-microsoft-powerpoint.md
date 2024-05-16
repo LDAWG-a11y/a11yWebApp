@@ -304,7 +304,11 @@ The Accessibility Checker does not test for the title in PowerPoint so this need
 
 ##### PowerPoint 365
 
-* Select the table needing alt-text and when   is showing, right-click, then select\
+* Select the table needing alt-text and when 
+
+  ![Four arrows](src/guideImg/23-four-arrows.png)
+
+   is showing, right-click, then select\
   Lists
 * Bulleted lists (which can be images) and numbered lists are aailble
 * On Home tab, select the appropriate icon  
