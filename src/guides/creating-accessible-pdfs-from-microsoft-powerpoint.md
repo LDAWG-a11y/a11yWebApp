@@ -333,6 +333,8 @@ The Accessibility Checker does not test for the title in PowerPoint so this need
 * Text has now changed 
 * Click on   to add text that explains what clicking the link does
 
+  ![Set hyperlink screentip dialog box](src/guideImg/29-set-hyperlink-screentip-dialog-box.png)
+
 Note: Adobe Acrobat will automatically make text that appears to be a hyperlink clickable as a hyperlink without it being a proper hyperlink in the PDF document so text like below
   text that is a url but not a link in the original document will be clickable in the exported PDF and should be made into a hyperlink in the original document using good link text
 
