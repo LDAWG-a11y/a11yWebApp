@@ -359,7 +359,9 @@ Use [Colour Contrast Analyser (CCA)](https://www.tpgi.com/color-contrast-checker
 * Do not use more than one colour when denoting the difference between specific content and the rest of the document 
 
   ![Text with red text to highlight an important phrase](src/guideImg/32-text-with-red-text-to-highlight-an-important-phrase.png)
-* Amend the red text to black and make it bold
+* Amend the red text to black and make it bold 
+
+  ![Text with red text replaced with bold black text to highlight the important phrase](src/guideImg/33-text-with-bold-text-to-highlight-an-important-phrase.png)
 
 ## Fixing the issues
 
