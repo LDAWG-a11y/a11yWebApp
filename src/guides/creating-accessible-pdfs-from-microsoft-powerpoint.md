@@ -67,7 +67,7 @@ While Title is the only field that is required, it is worth adding Tags for SEO,
 ### Hyperlinks
 
 * The destination of links should be communicated accurately and clearly
-* Use URL shortening services such as Bitly or TinyURL if the document is to be printed, if not, make sure the link text is meaningful (link shorteners can be viewed as a security risk as the destination cannot be seen unless the link has been clicked!)
+* Use URL shortening services such as Bitly (external website) or TinyURL (external website) if the document is to be printed, if not, make sure the link text is meaningful (link shorteners can be viewed as a security risk as the destination cannot be seen unless the link has been clicked!)
 * Screen readers will generally provide a list of links so make sure the link text is meaningful
 * Do not use “click here” or “More information” for all the link text because it will not be possible to distinguish the links from each other
 
@@ -114,7 +114,7 @@ Content within the document written in a different language to the document’s 
 * Use common words. Complicated longer words (8 or 9 letters) will cause readers to skip shorter words (3,4, or 5 letters) that follow
 * Use an Active voice rather than a Passive voice
 * Where possible, use words containing one to two syllables
-* Aim the language used at the level of a 9 year old as recommended by GOV.UK (external website)– remember in the UK, 7.1 million adults read at, or below, the level of an average 9 year old. WCAG 3.15 Reading Level (AAA) recommends providing a simplified version of the text if it requires a reading age of more than 12 years old
+* Aim the language used at the level of a 9 year old as recommended by GOV.UK (external website)– remember in the UK, 7.1 million adults read at, or below, the level of an average 9 year old. WCAG 3.15 Reading Level (AAA) (external website) recommends providing a simplified version of the text if it requires a reading age of more than 12 years old
 * Use contractions, words made up of two short words joined with an apostrophe such as I’ve, can’t etc.
 * Do not use double negatives
 * Explain the unusual, to help give full information
@@ -127,9 +127,11 @@ Content within the document written in a different language to the document’s 
 
 ### Further help
 
-* Free services, guides, and resources to help are available from the Plain English Campaign
-* Measure the readability of the text using Hemingway Editor
-  Font
+* Free services, guides, and resources to help are available from the Plain English Campaign (external website)
+* Measure the readability of the text using Hemingway Editor (external website)
+
+### Font
+
 * Use a font that is “sans-serif” and clear such as Arial, Helvetica, or Verdana
 * Minimum font-size of 12
 * For continuous text, avoid using capitals - letters in lowercase are read more easily
@@ -140,11 +142,11 @@ Content within the document written in a different language to the document’s 
 ### Colour
 
 * Do NOT use colour by itself to show meaning
-* Make sure that there is adequate contrast between background and text – use TPGi’s Colour Contrast Analyzer (CCA) to check contrast
+* Make sure that there is adequate contrast between background and text – use TPGi’s Colour Contrast Analyzer (CCA) (external website) to check contrast
 
 ## PowerPoint Accessibility Checker
 
-Accessibility Checker tests Microsoft PowerPoint documents for accessibility issues and gives errors, warnings, tips, and intelligent services.
+Accessibility Checker (external website) tests Microsoft PowerPoint documents for accessibility issues and gives errors, warnings, tips, and intelligent services.
 
 ### Errors
 
@@ -274,11 +276,11 @@ Note: Adobe Acrobat will automatically make text that appears to be a hyperlink 
 
 ### Colour contrast
 
-Use Colour Contrast Analyser (CCA) to test the text colour contrast manually and change any colours that fail.
+Use Colour Contrast Analyser (CCA) (external website) to test the text colour contrast manually and change any colours that fail.
 
 ### Using colour for meaning
 
-* Do not use more than one colour when denoting the difference between specofic content and the rest of the document.
+* Do not use more than one colour when denoting the difference between specific content and the rest of the document.
 * Amend the red text to black and make it bold
 
 ## Fixing the issues
@@ -324,7 +326,7 @@ This is because the embedded video does not have subtitles.
 This cannot be fixed as it is an external third party video. Options include:
 
 * contacting the owner of the video and asking if they will add subtitles
-* creating a transcript of the video and adding the transcript immediately below the video, I used https://soundtype.ai/ downloaded to my mobile phone to do this
+* creating a transcript of the video and adding the transcript immediately below the video, I used https://soundtype.ai/ (external website) downloaded to my mobile phone to do this
 * removing the video from the presentation, if the two previous suggestions are not available	
 
 #### Hard-to-Read Text Contrast
