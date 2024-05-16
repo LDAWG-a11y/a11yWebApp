@@ -254,6 +254,8 @@ Note:
 The Accessibility Checker does not test for the title in PowerPoint so this needs to be done manually.
 
 * To add the Title, File menu -> Info and click into the Title in the Properties section
+
+  ![Document properties](src/guideImg/17-document-properties.png)
 * Copy the contents of the Title into the Subject field
 * Add applicable SEO keywords into Tags field
 * Delete Author and replace with generic author such as organisation name
