@@ -323,7 +323,7 @@ The Accessibility Checker does not test for the title in PowerPoint so this need
 
 #### Hyperlink text is the same as the link address
 
-url text as a full url
+![url text as a full url](src/guideImg/26-url-text-as-a-full-url.png)
 
 * The link text is the full url
 * Right click and “Edit Link”
