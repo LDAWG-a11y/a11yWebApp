@@ -64,8 +64,10 @@ While Title is the only field that is required, it is worth adding Tags for SEO,
 
 #### Making sure there is a Title element for each slide
 
-* Often elements do not have a proper Title in the reading order and might be given something such as “Rectangle1” or “TextBox1. Labelling the title textbox correctly as a Title attribute within the Selection Pane enables the AT to understand the hierarchy of the information on the slide better
+* Often elements do not have a proper Title in the reading order and might be given something such as “Rectangle1” or “TextBox1". Labelling the title textbox correctly as a Title attribute within the Selection Pane enables the AT to understand the hierarchy of the information on the slide better
 * Open Selection Pane on the Home tab, click on “Select” and choose Selection Pane
+
+  ![Select menu](src/guideImg/9-select-menu.png)
 * The Selection Pane displays the objects on the slide and the order they are in currently – note, the order of the objects goes from the bottom to the top
 * The objects can have their order changed by dragging and dropping into the right order. 
 * The order can also be controlled using the   “Check Accessibility” in the Review menu and selecting the  Reading Order Pane – note the Reading Order pane goes from the top to the bottom
