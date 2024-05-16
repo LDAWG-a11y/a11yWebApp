@@ -296,7 +296,11 @@ The Accessibility Checker does not test for the title in PowerPoint so this need
 * Select the table needing alt-text and right-click, then select 
 
   ![Format shape](src/guideImg/21-format-shape.png)
-* In the Format Shape,   there is an Alt-Text option
+* In the Format Shape, 
+
+  ![Format shape button](src/guideImg/22-format-shape-button.png)
+
+   there is an Alt-Text option
 
 ##### PowerPoint 365
 
