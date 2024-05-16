@@ -462,7 +462,7 @@ This failed because even though the document had a Title, Author and Keywords, t
 
 #### Color contrast
 
-Go through the document with Colour Contrast Analyser (CCA) to make sure all the contrasts are still ok.
+Go through the document with Colour Contrast Analyser (CCA) (external website) to make sure all the contrasts are still ok.
 
 ### Tables
 
