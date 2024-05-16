@@ -352,11 +352,13 @@ The Accessibility Checker does not test for the title in PowerPoint so this need
 
 ### Colour contrast
 
-Use Colour Contrast Analyser (CCA) (external website) to test the text colour contrast manually and change any colours that fail.
+Use [Colour Contrast Analyser (CCA)](https://www.tpgi.com/color-contrast-checker/) (external website) to test the text colour contrast manually and change any colours that fail.
 
 ### Using colour for meaning
 
-* Do not use more than one colour when denoting the difference between specific content and the rest of the document.
+* Do not use more than one colour when denoting the difference between specific content and the rest of the document 
+
+  ![Text with red text to highlight an important phrase](src/guideImg/32-text-with-red-text-to-highlight-an-important-phrase.png)
 * Amend the red text to black and make it bold
 
 ## Fixing the issues
