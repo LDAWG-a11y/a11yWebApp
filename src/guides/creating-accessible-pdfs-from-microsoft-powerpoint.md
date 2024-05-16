@@ -76,7 +76,11 @@ While Title is the only field that is required, it is worth adding Tags for SEO,
 
   ![Check accessibility menu](src/guideImg/11-check-accessibility-menu.png)
 
-   “Check Accessibility” in the Review menu and selecting the  Reading Order Pane – note the Reading Order pane goes from the top to the bottom
+   “Check Accessibility” in the Review menu and selecting the 
+
+  ![Reading Order Pane](src/guideImg/12-reading-order-pane.png)
+
+   – note the Reading Order pane goes from the top to the bottom
 
 ### Lists
 
