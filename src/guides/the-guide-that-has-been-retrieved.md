@@ -21,7 +21,7 @@ isGuide: true
 
 ## Demo file
 
-* An example file, [Word-un-accessible.docx](https://www.makethingsaccessible.com/public/docs/creating-accessible-pdfs-from-microsoft-word.docx) **(DOCX 126KB)**, has been created which has issues that need to be corrected
+An example file, [Word-un-accessible.docx](https://www.makethingsaccessible.com/public/docs/creating-accessible-pdfs-from-microsoft-word.docx) **(DOCX 126KB)**, has been created which has issues that need to be corrected.
 
 ## Making documents correctly
 
