@@ -60,6 +60,8 @@ While Title is the only field that is required, it is worth adding Tags for SEO,
   ![Page title text in the wrong place](src/guideImg/7-page-title-text-in-the-wrong-place.png)
 * Move that text into the Title section using Cut and Paste
 
+  ![Page title and subtitle text in the correct places](src/guideImg/8-page-title-and-subtitle-text-in-the-correct-places.png)
+
 #### Making sure there is a Title element for each slide
 
 * Often elements do not have a proper Title in the reading order and might be given something such as “Rectangle1” or “TextBox1. Labelling the title textbox correctly as a Title attribute within the Selection Pane enables the AT to understand the hierarchy of the information on the slide better
