@@ -53,6 +53,8 @@ While Title is the only field that is required, it is worth adding Tags for SEO,
 
   ![Master layout including title and footers](src/guideImg/5-master-layout-including-title-and-footers.png)
 * If the presentation does not have Master and Layout slides, right click on the main slide, select Layout and select Title Slide
+
+  ![Layout then office theme and title slide ](src/guideImg/6-layout-then-office-theme-and-title-slide.png)
 * If the slide contains text that seems to be Title text but is not within the Title Section
 * Move that text into the Title section using Cut and Paste
 
