@@ -235,6 +235,8 @@ Note:
 #### Language of document
 
 * Go to File menu and select Options (which is at the bottom)
+
+  ![File menu showing account, feedback, and options](src/guideImg/14-file-menu-showing-account-feedback-and-options.png)
 * Select the Language
 * Select the default language required, then  
 
