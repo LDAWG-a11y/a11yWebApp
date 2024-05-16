@@ -56,6 +56,8 @@ While Title is the only field that is required, it is worth adding Tags for SEO,
 
   ![Layout then office theme and title slide ](src/guideImg/6-layout-then-office-theme-and-title-slide.png)
 * If the slide contains text that seems to be Title text but is not within the Title Section
+
+  ![Page title text in the wrong place](src/guideImg/7-page-title-text-in-the-wrong-place.png)
 * Move that text into the Title section using Cut and Paste
 
 #### Making sure there is a Title element for each slide
