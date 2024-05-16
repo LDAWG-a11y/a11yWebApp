@@ -327,7 +327,9 @@ The Accessibility Checker does not test for the title in PowerPoint so this need
 
 * The link text is the full url
 * Right click and “Edit Link”
-* Change the Text to display field to be descriptive text
+* Change the Text to display field to be descriptive text 
+
+  ![Edit hyperlink dialogue box](src/guideImg/27-edit-hyperlink-dialogue-box.png)
 * Text has now changed 
 * Click on   to add text that explains what clicking the link does
 
