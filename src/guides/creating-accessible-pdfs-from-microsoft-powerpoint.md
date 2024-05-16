@@ -280,7 +280,9 @@ The Accessibility Checker does not test for the title in PowerPoint so this need
   ![Insert table menu](src/guideImg/19-insert-table-menu.png)
 * Make sure Header Row is selected in Table Design, and the First Column if the first column is also headings
 
-Note: Scope must be fixed using Adobe Acrobat Pro
+  ![Table style options menu](src/guideImg/20-table-style-options-menu.png)
+
+**Note: Scope must be fixed using Adobe Acrobat Pro.**
 
 #### Editing a table
 
