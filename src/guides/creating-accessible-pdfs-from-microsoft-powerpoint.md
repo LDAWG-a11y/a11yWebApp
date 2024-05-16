@@ -16,11 +16,11 @@ isGuide: true
 
 * Make sure Microsoft PowerPoint is up-to-date
 * Make sure that Adobe Acrobat Pro is up-to-date
-* Download [PAC 2024](https://pac.pdf-accessibility.org/en) (external website)
+* Download [PAC 2024](https://https://www.makethingsaccessible.com/pac.pdf-accessibility.org/en) (external website)
 
 ## Demo file
 
-An example file, [Powerpoint-Example.pptx](/public/docs/powerpoint-example.pptx) **(PPTX 7MB)**, has been created which has issues that need to be corrected.
+An example file, [Powerpoint-Example.pptx](https://www.makethingsaccessible.com/public/docs/powerpoint-example.pptx) **(PPTX 7MB)**, has been created which has issues that need to be corrected.
 
 ## Making documents correctly
 
