@@ -333,7 +333,11 @@ The Accessibility Checker does not test for the title in PowerPoint so this need
 * Text has now changed 
 
   ![Make things accessible about page link text](src/guideImg/28-make-things-accessible-about-page-link-textx.png)
-* Click on   to add text that explains what clicking the link does
+* Click on 
+
+  ![Screentip button](src/guideImg/28a-screentip-button.png)
+
+   to add text that explains what clicking the link does
 
   ![Set hyperlink screentip dialog box](src/guideImg/29-set-hyperlink-screentip-dialog-box.png)
 
