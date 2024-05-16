@@ -308,10 +308,16 @@ The Accessibility Checker does not test for the title in PowerPoint so this need
 
   ![Four arrows](src/guideImg/23-four-arrows.png)
 
-   is showing, right-click, then select\
-  Lists
-* Bulleted lists (which can be images) and numbered lists are aailble
-* On Home tab, select the appropriate icon  
+   is showing, right-click, then select 
+
+  ![View alt text](src/guideImg/24-view-alt-text.png)
+
+### Lists
+
+* Bulleted lists (which can be images) and numbered lists are available
+* On Home tab, select the appropriate icon 
+
+  ![Unordered and ordered list buttons](src/guideImg/25-unordered-and-ordered-list-buttons.png)
 
 ### Hyperlinks
 
