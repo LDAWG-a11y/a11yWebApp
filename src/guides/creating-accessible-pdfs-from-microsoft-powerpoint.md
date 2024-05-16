@@ -30,7 +30,9 @@ While Title is the only field that is required, it is worth adding Tags for SEO,
 
 ### Headings
 
-* Use the Title and Sub-Title placeholders because Microsoft PowerPoint does not have headings like Microsoft Word. 
+* Use the Title and Sub-Title placeholders because Microsoft PowerPoint does not have headings like Microsoft Word
+
+  ![Headings and body fonts](src/guideImg/1-headings-and-body-fonts.png)
 * In a new blank presentation, there will be these two options on a new page
 
 #### Master slides
