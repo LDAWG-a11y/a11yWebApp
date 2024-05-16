@@ -35,6 +35,8 @@ While Title is the only field that is required, it is worth adding Tags for SEO,
   ![Headings and body fonts](src/guideImg/1-headings-and-body-fonts.png)
 * In a new blank presentation, there will be these two options on a new page
 
+  ![Click to add title and click to add subtitle](src/guideImg/2-click-to-add-title-and-click-to-add-subtitle.png)
+
 #### Master slides
 
 * The slide content should be outlined in the headings, which helps AT users comprehend the page layout and navigate to interesting content:
