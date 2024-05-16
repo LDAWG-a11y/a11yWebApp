@@ -240,7 +240,9 @@ Note:
 * Select the Language
 
   ![PowerPoint options including general, proofing, save, and language](src/guideImg/15-powerpoint-options-including-general-proofing-save-and-language.png)
-* Select the default language required, then  
+* Select the default language required, then 
+
+  ![Set as preferred](src/guideImg/16-set-as-preferred.png)
 
 #### Language of part of document
 
