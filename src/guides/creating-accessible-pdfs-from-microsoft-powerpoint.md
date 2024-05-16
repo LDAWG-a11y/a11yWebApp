@@ -71,8 +71,12 @@ While Title is the only field that is required, it is worth adding Tags for SEO,
 * The Selection Pane displays the objects on the slide and the order they are in currently – **note: the order of the objects goes from the bottom to the top**
 
   ![Selection pane showing objects on the slide](src/guideImg/10-selection-pane-showing-objects-on-the-slide.png)
-* The objects can have their order changed by dragging and dropping into the right order. 
-* The order can also be controlled using the   “Check Accessibility” in the Review menu and selecting the  Reading Order Pane – note the Reading Order pane goes from the top to the bottom
+* The objects can have their order changed by dragging and dropping into the right order
+* The order can also be controlled using the 
+
+  ![Check accessibility menu](src/guideImg/11-check-accessibility-menu.png)
+
+   “Check Accessibility” in the Review menu and selecting the  Reading Order Pane – note the Reading Order pane goes from the top to the bottom
 
 ### Lists
 
