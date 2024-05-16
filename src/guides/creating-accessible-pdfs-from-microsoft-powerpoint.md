@@ -80,7 +80,9 @@ While Title is the only field that is required, it is worth adding Tags for SEO,
 
   ![Reading Order Pane](src/guideImg/12-reading-order-pane.png)
 
-   – note the Reading Order pane goes from the top to the bottom
+   – **note: the Reading Order pane goes from the top to the bottom**
+
+  ![Reading order pane showing title, subtitle and textbox](src/guideImg/13-reading-order-pane-showing-title-subtitle-and-textbox.png)
 
 ### Lists
 
