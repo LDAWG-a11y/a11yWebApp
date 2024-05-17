@@ -228,7 +228,9 @@ The error reported is “Missing alternative or description text” because the 
 * The Text Alternative (Text), Description (Alt Text), and Decorative options are also available by selecting the image, Right Click -> Properties, Options, Accessibility 
 
   ![Image dialog box with the options tab selected and the accessibility fields](src/guideImg/7-image-dialog-box-with-the-options-tab-selected.png)
-* The exported PDF failed on the logo in the Header not having alt-text so make sure that both Text Alternative and Description fields are filled
+* The exported PDF failed on the logo in the Header not having alt-text so make sure that both Text Alternative and Description fields are filled 
+
+  ![Text Alternative and Description completed](src/guideImg/8-text-alternative-and-description-completed.png)
 
 ### Tables
 
