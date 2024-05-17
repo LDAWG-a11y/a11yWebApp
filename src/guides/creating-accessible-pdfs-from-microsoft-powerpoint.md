@@ -474,26 +474,38 @@ This is because there is more than one slide with the same title.
 
 This is because there is more than one section with the same title.
 
-* Select down-arrow on object name, then select “Rename Section”
+* Select down-arrow on object name, then select “Rename Section” 
+
+  ![Duplicate section name recommended actions](src/guideImg/48-duplicate-section-name-recommended-actions.png)
 * Make the section name unique
 
 ### Intelligent Services
 
 #### Review Auto-Generated Description
 
-* Select down-arrow on object name, then select “Approve description”
-* Verify description or mark as decorative, the first image is going to be marked as decorative, and and the second image is going to have the alt text verified. The Alt Text says:
-  “A close up of a logo
+> * Select down-arrow on object name, then select “Approve description” 
+>
+>   ![Review auto-generated description recommended actions](src/guideImg/49-review-auto-generated-description-recommended-actions.png)
+> * Verify description or mark as decorative, the first image is going to be marked as decorative, and and the second image is going to have the alt text verified. The Alt Text says:
+>   “A close up of a logo
+>
+> Description automatically generated”
 
-Description automatically generated”
-
-As this is not acceptable, it has been set to Make things accessible logo
+* As this is not acceptable, it has been set to "Make things accessible logo"
 
 #### Auto-Generated Description turning on or off
 
-* Automatic Alt Text can be turned off or on by going to File menu and selecting Options (which is at the bottom)
+* Automatic Alt Text can be turned off or on by going to File menu and selecting Options (which is at the bottom) 
+
+  ![Account, feedback and options](src/guideImg/50-account-feedback-and-options.png)
 * Select 
-* And checking or un-checking   
+
+  ![Accessibility](src/guideImg/51-accessibility.png)
+* And checking or un-checking 
+
+  ![Automatically generate alt text for me](src/guideImg/52-automatically-generate-alt-text-for-me.png)
+
+    
 
 ### Reading order
 
