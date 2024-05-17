@@ -440,9 +440,15 @@ This warning is because of the colour contrast between the text and the backgrou
 This is because cells within the table are merged or split.
 The options are to remove these cells from the table by simplifying the table, in this case the table
 
+![Table with merged cells](src/guideImg/42-table-with-merged-cells.png)
+
 Was split into two separate tables
 
-But these simpler tables still have merged cells where the title is – potentially the numbering could be removed and included at the start of each sentence, or the heading split into two cells with a heading of chapter (or something similar).
+![Tables split into two tables so merged cells are not an issue](src/guideImg/43-tables-split-into-two-tables-so-merged-cells-are-not-an-issue.png)
+
+But these simpler tables still have merged cells where the title is – potentially the numbering could be removed and included at the start of each sentence, or the heading split into two cells with a heading of chapter (or something similar)
+
+![Extra column heading added so there are no merged cells](src/guideImg/44-extra-column-heading-added-so-there-are-no-merged-cells.png)
 
 #### Check Reading Order
 
