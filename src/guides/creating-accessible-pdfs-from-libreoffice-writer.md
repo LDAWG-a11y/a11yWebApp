@@ -426,7 +426,7 @@ Note: to be able to remediate PDFs, Adobe Acrobat Pro or equivalent PDF editing 
 * [WCAG 3.15 Reading Level (AAA)](https://www.w3.org/WAI/WCAG22/quickref/?versions=2.1#reading-level) (external website)
 * [Accessible Document Basics](https://www.makethingsaccessible.com/guides/accessible-document-basics/)
 * [Creating meaningful alternative text](https://www.makethingsaccessible.com/guides/creating-meaningful-alternative-text/)
-* Creating meaningful alternative text Alt Text in LibreOffice (external website)
+* [Alt Text in LibreOffice](https://help.libreoffice.org/24.2/en-GB/text/shared/01/05190100.html?System=WIN&DbPAR=WRITER&HID=cui/ui/objecttitledescdialog/dialog-action_area5#bm_id1826227) (external website)
 * Using Tables within LibreOffice Writer (external website)
 * Working with Tables in LibreOffice (external website)
 * How to handle blank data cells in accessible tables (external website)
