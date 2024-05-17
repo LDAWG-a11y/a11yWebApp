@@ -270,8 +270,9 @@ The first error being reported is “Table:  “Table1” contains merges or spl
 
   
 
-* This problem can be sorted out by splitting the table into two tables, one for females and one for males, and Table Heading added to columns and rows
-  Females and Males tables separated into two tables with the headings set table headings
+* This problem can be sorted out by splitting the table into two tables, one for females and one for males, and Table Heading added to columns and rows 
+
+  ![Females and Males tables separated into two tables with the headings set table headings](src/guideImg/12-females-and-males-tables-separated-into-two-tables-with-the-headings-set-table-headings.png)
 * This problem can also be sorted out in the exported PDF using Adobe Acrobat Pro
 
 ##### The text formatting conveys additional meaning
