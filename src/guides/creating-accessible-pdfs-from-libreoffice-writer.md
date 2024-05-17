@@ -201,7 +201,7 @@ The error reported is “Document title not set” as this is a required field f
   ![Enter document title in document title dialog box](src/guideImg/3-enter-document-title-in-document-title-dialog-box.png)
 * Go to File menu -> Properties… and then Description tab 
 
-  ![Description tab of properties dialog box showing title filled in]()
+  ![Description tab of properties dialog box showing title filled in](src/guideImg/4-description-tab-of-properties-dialog-box-showing-title-filled-in.png)
 * Copy the contents of the Title into the Subject field
 * Add applicable SEO keywords into Keywords field
 * Add Contributor
