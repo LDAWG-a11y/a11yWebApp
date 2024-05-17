@@ -282,8 +282,9 @@ The second error being reported is “Formatting: The text formatting conveys ad
 
 ![7:32 showing as the text formatting conveys additional meaning](src/guideImg/13-7-32-showing-as-the-text-formatting.png)
 
-* To fix this error, set the text to Body Text
-  Times within table set to Body Text from Table Contents
+* To fix this error, set the text to Body Text 
+
+  ![Times within table set to Body Text from Table Contents](src/guideImg/14-times-within-table-set-to-body-text-from-table-contents.png)
 * Then set the times back to the Table Contents style
 
 ##### Avoid newlines to create space
