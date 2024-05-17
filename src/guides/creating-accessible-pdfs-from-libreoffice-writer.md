@@ -179,8 +179,6 @@ Note: sometimes you may need to save and close and reopen the document to get th
    by “Document default language is not set” or Tools menu -> Options, Languages and Locales -> General 
 
   ![Options dialog, languages and locales, general showing user interface language, locale settings and default language for documents](src/guideImg/2-options-dialog-languages-and-locales.png)
-
-
 * Tools -> Options, Language -> For All Text -> language required
 
 #### Language of part of document
@@ -294,10 +292,14 @@ The second error being reported is “Formatting: The text formatting conveys ad
   ![Females table with newline character after it](src/guideImg/15-females-table-with-newline-character-after-it.png)
 * Delete the newline character after the table 
 
-  ![Females and males tables with no newline character between them](src/guideImg/16-females-and-males-tables-with-no-newline-character-between-them.png)
-* To change space between the tables, open Table Properties, go to Table tab and amend the Spacing Below
-  Table spacing properties
-  Tables separated using table spacing properties
+  ![Females and males tables with no newline character between them]()
+* To change space between the tables, open Table Properties, go to Table tab and amend the Spacing Below 
+
+  ![](src/guideImg/17-table-spacing-properties.png)
+
+![Tables separated using table spacing properties](src/guideImg/18-tables-separated-using-table-spacing-properties.png)
+
+##### \    
 
 ##### Avoid using empty table cells for formatting
 
