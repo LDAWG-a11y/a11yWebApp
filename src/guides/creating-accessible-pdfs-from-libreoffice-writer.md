@@ -225,8 +225,9 @@ The error reported is “Missing alternative or description text” because the 
   * Text: used to enter a short description of the essential details of the selected object, and is available to be used by assistive technologies
   * Alt Text: allows the entry of a longer description for objects that are too complex or contain too much detail to be described adequately in the short Text field, and is available to be used by assistive technologies
   * Decorative: marks the object as purely decorative and is ignored by assistive technologies
-* The Text Alternative (Text), Description (Alt Text), and Decorative options are also available by selecting the image, Right Click -> Properties, Options, Accessibility
-  Image dialog box with the options tab selected and the accessibility fields
+* The Text Alternative (Text), Description (Alt Text), and Decorative options are also available by selecting the image, Right Click -> Properties, Options, Accessibility 
+
+  ![Image dialog box with the options tab selected and the accessibility fields](src/guideImg/7-image-dialog-box-with-the-options-tab-selected.png)
 * The exported PDF failed on the logo in the Header not having alt-text so make sure that both Text Alternative and Description fields are filled
 
 ### Tables
