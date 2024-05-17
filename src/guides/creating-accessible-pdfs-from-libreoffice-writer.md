@@ -213,8 +213,13 @@ The error reported is “Document title not set” as this is a required field f
 
 The error reported is “Missing alternative or description text” because the images do not have alt text set or are not marked as decorative.
 
-* Click on the   button by “Image name”
-  Alt text dialog box showing text field, alt text field and checkbox for marking image as decorative
+* Click on the 
+
+  ![Fix button](src/guideImg/1-fix-button.png)
+
+   by “Image name” 
+
+  ![Alt text dialog box showing text field, alt text field and checkbox for marking image as decorative](src/guideImg/6-alt-text-dialog-box-showing-text-field.png)
 * The fields are used as follows:
 
   * Text: used to enter a short description of the essential details of the selected object, and is available to be used by assistive technologies
