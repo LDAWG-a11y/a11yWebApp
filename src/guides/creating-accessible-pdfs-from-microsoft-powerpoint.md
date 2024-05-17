@@ -10,6 +10,7 @@ tags:
   - PDF
 file:
   - /public/docs/powerpoint-example.pptx
+  - /public/docs/creating-accessible-pdfs-from-microsoft-powerpoint.docx
 isGuide: true
 ---
 ## Before starting
@@ -710,7 +711,7 @@ The document has now fully passed PAC 2024.
 
 ## Downloadable Microsoft Word version
 
-[Creating accessible PDFs from Microsoft Powerpoint](https://www.makethingsaccessible.com/public/docs/creating-accessible-pdfs-from-microsoft-word.docx) **(Word 2.09MB)**
+[Creating accessible PDFs from Microsoft Powerpoint](https://www.makethingsaccessible.com/public/docs/creating-accessible-pdfs-from-microsoft-powerpoint.docx) **(Word 2.09MB)**
 
 ## Useful links
 
