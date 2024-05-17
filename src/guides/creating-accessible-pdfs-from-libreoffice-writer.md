@@ -264,8 +264,11 @@ Right click on table and choose Table Properties, Text Flow tab and make sure th
 
 ##### Table1” contains merges or splits
 
-The first error being reported is “Table:  “Table1” contains merges or splits”
-  Single complex table with females and males
+The first error being reported is “Table:  “Table1” contains merges or splits” 
+
+![Single complex table with females and males](src/guideImg/11-single-complex-table-with-females-and-males.png)
+
+  
 
 * This problem can be sorted out by splitting the table into two tables, one for females and one for males, and Table Heading added to columns and rows
   Females and Males tables separated into two tables with the headings set table headings
