@@ -172,8 +172,16 @@ Note: sometimes you may need to save and close and reopen the document to get th
 
 #### Language of document
 
-* Click on the   button by “Document default language is not set” or Tools menu -> Options, Languages and Locales -> General
-  Options dialog, languages and locales, general showing user interface language, locale settings and default language for documents
+* Click on the 
+
+  ![Fix button](src/guideImg/1-fix-button.png)
+
+   by “Document default language is not set” or Tools menu -> Options, Languages and Locales -> General 
+
+  ![Options dialog, languages and locales, general showing user interface language, locale settings and default language for documents](src/guideImg/2-options-dialog-languages-and-locales.png)
+
+
+
 * Tools -> Options, Language -> For All Text -> language required
 
 #### Language of part of document
