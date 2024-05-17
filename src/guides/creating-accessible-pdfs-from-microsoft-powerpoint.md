@@ -582,7 +582,7 @@ This failed because even though the document had a Title, Author and Keywords, t
 
 #### Color contrast
 
-Go through the document with Colour Contrast Analyser (CCA) (external website) to make sure all the contrasts are still ok.
+Go through the document with [Colour Contrast Analyser (CCA)](https://www.tpgi.com/color-contrast-checker/) (external website) to make sure all the contrasts are still ok.
 
 ### Tables
 
@@ -689,8 +689,6 @@ Table summaries used to be required to describe the table, the number of columns
    and then click on 
 
   ![Fix button](src/guideImg/95-Fix-button.png)
-
-    
 * Save new version of document 
 
 ### PDF/UA identifier
