@@ -345,7 +345,6 @@ The Accessibility Checker does not test for the title in PowerPoint so this need
 
 ![Text that is a url but not a link in the original document](src/guideImg/30-text-that-is-a-url-but-not-a-link-in-the-original-document.png)
 
-
  will be clickable in the exported PDF and should be made into a hyperlink in the original document using good link text 
 
 ![Link is now a link with proper link text](src/guideImg/31-link-is-now-a-link-with-proper-link-text.png)
@@ -374,8 +373,6 @@ This error is because the object requires Alt-text.
 * Select down-arrow on object name 
 
   ![Missing object description - recommended actions](src/guideImg/34-missing-object-description-recommended-actions.png)
-
-   
 * Either “Add a description” if the object requires alt-text or “Mark as Decorative” to artifact the image
 * Alternatively, right click on object and choose “View Alt Text…” to enter Alt-text or mark as decorative
 
@@ -487,10 +484,10 @@ This is because there is more than one section with the same title.
 
    ![Review auto-generated description recommended actions](src/guideImg/49-review-auto-generated-description-recommended-actions.png)
 * Verify description or mark as decorative, the first image is going to be marked as decorative, and and the second image is going to have the alt text verified. The Alt Text says:
->   “A close up of a logo
->
-> Description automatically generated”
 
+  >   “A close up of a logo
+  >
+  > Description automatically generated”
 * As this is not acceptable, it has been set to "Make things accessible logo"
 
 #### Auto-Generated Description turning on or off
@@ -505,15 +502,11 @@ This is because there is more than one section with the same title.
 
   ![Automatically generate alt text for me](src/guideImg/52-automatically-generate-alt-text-for-me.png)
 
-    
-
 ### Reading order
 
 * Open up the Reading Order pane by choosing the Accessibility tab and then selecting 
 
   ![Reading order pane button](src/guideImg/53-reading-order-pane-button.png)
-
-   
 * Go through each slide and make sure that the reading order is correct
 
 ## Exporting to a PDF
@@ -607,15 +600,13 @@ The “1” cell and “Curabitur at rhoncus tellus” cells will need to have s
 * Click on “Table Editor” 
 
   ![Table Editor button](src/guideImg/55-table-editor-button.png)
-
-   
 * Select cell, right-click, “Table Cell Properties”
 * Set the cell to the correct type “Header Cell” if it’s a header, “Data Cell” if it is not
 * Sets correct spans 
 
   ![Setting row and column spans in table cell properties](src/guideImg/56-setting-row-and-column-spans-in-table-cell-properties.png)
 
-  	 
+
 * The table should look like this once complete 
 
   ![Completed table with correct spans](src/guideImg/57-completed-table-with-correct-spans.png)
