@@ -401,8 +401,12 @@ This is because the slide has not had a title added.
 
 This is because a section has been added but not been renamed from the default.
 
-* Select down-arrow on object name, then select “Rename Section”
-* Change text within Section name
+* Select down-arrow on object name, then select “Rename Section” 
+
+  ![Default section name recommended actions](src/guideImg/37-default-section-name-recommended-actions.png)
+* Change text within Section name 
+
+  ![Rename section dialog box](src/guideImg/38-rename-section-dialog-box.png)
 
 ### Warnings
 
