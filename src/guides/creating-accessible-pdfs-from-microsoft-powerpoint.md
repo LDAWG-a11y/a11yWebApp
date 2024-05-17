@@ -372,6 +372,10 @@ Use [Colour Contrast Analyser (CCA)](https://www.tpgi.com/color-contrast-checker
 This error is because the object requires Alt-text.
 
 * Select down-arrow on object name 
+
+  ![Missing object description - recommended actions](src/guideImg/34-missing-object-description-recommended-actions.png)
+
+   
 * Either “Add  a description” if the object requires alt-text or “Mark as Decorative” to artifact the image
 * Alternatively, right click on object and choose “View Alt Text…” to enter Alt-text or mark as decorative
 
