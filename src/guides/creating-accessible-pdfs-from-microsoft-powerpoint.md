@@ -622,7 +622,11 @@ The “1” cell and “Curabitur at rhoncus tellus” cells will need to have s
 
 #### Summary
 
-Table summaries used to be required to describe the table, the number of columns and rows etc. for AT so that it can announce this information. It is no longer necessary and the  and the fact it was skipped is not a failure and it could be ignored.
+Table summaries used to be required to describe the table, the number of columns and rows etc. for AT so that it can announce this information. It is no longer necessary and the 
+
+![Exclamation mark in a yellow warning triangle](src/guideImg/58-exclamation-mark-in-a-yellow-warning-triangle.png)
+
+ and the fact it was skipped is not a failure and it could be ignored.
 
 ##### If nothing has been done on the table at all
 
@@ -664,6 +668,8 @@ Table summaries used to be required to describe the table, the number of columns
 ## Fixing the errors found in PAC 2024
 
 ### Table header cell has no associated subcells
+
+![PAC 2024 showing table header cell which does not have an associated subcell](src/guideImg/59-pac-2024-showing-table-header-cell-which-does-not-have-an-associated-subcell.png)
 
 * Prepare for accessibility, Fix reading order
 * Select table, Table Editor
