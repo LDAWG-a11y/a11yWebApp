@@ -697,7 +697,11 @@ Table summaries used to be required to describe the table, the number of columns
 This should only be added when the document passes everything else.
 
 * Search for Pre in the “Find text or tools” search box
-* In “Document info and Metadata” select  and click Fix button
+* In “Document info and Metadata” select 
+
+  ![Set PDF/UA-1 entry](src/guideImg/97-Set-PDF-UA-1-entry.png)
+
+   and click Fix button
 * Save new version of document 
 
 The document has now fully passed PAC 2024
