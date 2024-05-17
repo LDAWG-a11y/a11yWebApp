@@ -509,7 +509,11 @@ This is because there is more than one section with the same title.
 
 ### Reading order
 
-* Open up the Reading Order pane by choosing the Accessibility tab and then selecting  
+* Open up the Reading Order pane by choosing the Accessibility tab and then selecting 
+
+  ![Reading order pane button](src/guideImg/53-reading-order-pane-button.png)
+
+   
 * Go through each slide and make sure that the reading order is correct
 
 ## Exporting to a PDF
@@ -591,6 +595,8 @@ Go through the document with Colour Contrast Analyser (CCA) (external website) t
 #### Regularity
 
 A regularity failure is because the table does not have the same number of cells in each row or in each column. In this case because there are only two columns of headers, but two columns inside each header column.
+
+![Table which does not have the same number of cells in each column or row](src/guideImg/54-table-which-does-not-have-the-same-number-of-cells-in-each-column-or-row.png)
 
  To fix this a span will need to be added to the “Cras aliquam convallis felis” cell and to the “Phasellus sagittis nunc quis mauris” cell so that each cell covers two columns.
 The “1” cell and “Curabitur at rhoncus tellus” cells will need to have spans added covering four rows.
