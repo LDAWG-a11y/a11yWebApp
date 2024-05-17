@@ -376,14 +376,16 @@ This error is because the object requires Alt-text.
   ![Missing object description - recommended actions](src/guideImg/34-missing-object-description-recommended-actions.png)
 
    
-* Either “Add  a description” if the object requires alt-text or “Mark as Decorative” to artifact the image
+* Either “Add a description” if the object requires alt-text or “Mark as Decorative” to artifact the image
 * Alternatively, right click on object and choose “View Alt Text…” to enter Alt-text or mark as decorative
 
 #### Missing Table Header
 
 This is because the table does not have a header row.
 
-* Select down-arrow on object name, then select “Insert Header Row”
+* Select down-arrow on object name, then select “Insert Header Row” 
+
+  ![Missing table header recommended actions](src/guideImg/35-missing-table-header-recommended-actions.png)
 * If there is not a row that should be the header, or “Use first row as header” if there is
 
 #### Missing Slide Title
