@@ -278,7 +278,9 @@ The first error being reported is “Table:  “Table1” contains merges or spl
 ##### The text formatting conveys additional meaning
 
 The second error being reported is “Formatting: The text formatting conveys additional meaning”
-  7:32 showing as the text formatting conveys additional meaning
+  
+
+![7:32 showing as the text formatting conveys additional meaning](src/guideImg/13-7-32-showing-as-the-text-formatting.png)
 
 * To fix this error, set the text to Body Text
   Times within table set to Body Text from Table Contents
