@@ -289,8 +289,9 @@ The second error being reported is “Formatting: The text formatting conveys ad
 
 ##### Avoid newlines to create space
 
-* Make sure that “Formatting Marks” are visible by selecting View menu, Formatting Marks (or Ctrl + F10)
-  Females table with newline character after it
+* Make sure that “Formatting Marks” are visible by selecting View menu, Formatting Marks (or Ctrl + F10) 
+
+  ![Females table with newline character after it](src/guideImg/15-females-table-with-newline-character-after-it.png)
 * Delete the newline character after the table
   Females and males tables with no newline character between them
 * To change space between the tables, open Table Properties, go to Table tab and amend the Spacing Below
