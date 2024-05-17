@@ -383,16 +383,18 @@ This error is because the object requires Alt-text.
 
 This is because the table does not have a header row.
 
-* Select down-arrow on object name, then select “Insert Header Row” 
+* Select down-arrow on object name, then select “Insert Header Row” if there is not a row that should be the header
 
   ![Missing table header recommended actions](src/guideImg/35-missing-table-header-recommended-actions.png)
-* If there is not a row that should be the header, or “Use first row as header” if there is
+* Or “Use first row as header” if there is
 
 #### Missing Slide Title
 
 This is because the slide has not had a title added.
 
-* Select down-arrow on object name, then select “Edit Slide Title”
+* Select down-arrow on object name, then select “Edit Slide Title” 
+
+  ![Missing slide title recommended actions](src/guideImg/36-missing-slide-title-recommended-actions.png)
 * Click “Click to add title” and add title
 
 #### Default Section Name
