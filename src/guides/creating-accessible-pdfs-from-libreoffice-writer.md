@@ -290,16 +290,12 @@ The second error being reported is “Formatting: The text formatting conveys ad
 * Make sure that “Formatting Marks” are visible by selecting View menu, Formatting Marks (or Ctrl + F10) 
 
   ![Females table with newline character after it](src/guideImg/15-females-table-with-newline-character-after-it.png)
-* Delete the newline character after the table 
-
-  ![Females and males tables with no newline character between them]()
+* Delete the newline character after the table   
 * To change space between the tables, open Table Properties, go to Table tab and amend the Spacing Below 
 
-  ![](src/guideImg/17-table-spacing-properties.png)
+  ![Females and males tables with no newline character between them](src/guideImg/17-table-spacing-properties.png)
 
-![Tables separated using table spacing properties](src/guideImg/18-tables-separated-using-table-spacing-properties.png)
-
-##### \    
+ ![Tables separated using table spacing properties](src/guideImg/18-tables-separated-using-table-spacing-properties.png)
 
 ##### Avoid using empty table cells for formatting
 
