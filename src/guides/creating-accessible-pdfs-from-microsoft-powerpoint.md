@@ -418,12 +418,14 @@ This is because the embedded video does not have subtitles.
 This cannot be fixed as it is an external third party video. Options include:
 
 * contacting the owner of the video and asking if they will add subtitles
-* creating a transcript of the video and adding the transcript immediately below the video, I used https://soundtype.ai/ (external website) downloaded to my mobile phone to do this
+* creating a transcript of the video and adding the transcript immediately below the video, I used <https://soundtype.ai/> (external website) downloaded to my mobile phone to do this
 * removing the video from the presentation, if the two previous suggestions are not available	
 
 #### Hard-to-Read Text Contrast
 
 This warning is because of the colour contrast between the text and the background
+
+![Very light colour text on a pink background](src/guideImg/39-very-light-colour-text-on-a-pink-background.png)
 
 * Select down-arrow on object name, then select “Change Colors”
 * Select a colour that has enough of a colour contrast
