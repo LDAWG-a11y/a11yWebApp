@@ -181,7 +181,6 @@ Note: sometimes you may need to save and close and reopen the document to get th
   ![Options dialog, languages and locales, general showing user interface language, locale settings and default language for documents](src/guideImg/2-options-dialog-languages-and-locales.png)
 
 
-
 * Tools -> Options, Language -> For All Text -> language required
 
 #### Language of part of document
@@ -193,8 +192,13 @@ Note: sometimes you may need to save and close and reopen the document to get th
 
 The error reported is “Document title not set” as this is a required field for accessibility.
 
-* Click on the   button by “Document title is not set”
-  Enter document title in document title dialog box
+* Click on the 
+
+  ![Fix button](src/guideImg/1-fix-button.png)
+
+   by “Document title is not set” 
+
+  ![Enter document title in document title dialog box](src/guideImg/3-enter-document-title-in-document-title-dialog-box.png)
 * Go to File menu -> Properties… and then Description tab
   Description tab of properties dialog box showing title filled in
 * Copy the contents of the Title into the Subject field
