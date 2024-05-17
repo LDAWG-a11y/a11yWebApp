@@ -452,8 +452,12 @@ But these simpler tables still have merged cells where the title is – potentia
 
 #### Check Reading Order
 
-* Select down-arrow on object name, then select “Verify object order”
-* The Reading Order pane allows objects to be dragged into the correct reading order - Text box 4 and Textbox 5 were in the incorrect places.
+* Select down-arrow on object name, then select “Verify object order” 
+
+  ![Check reading order recommended actions](src/guideImg/45-check-reading-order-recommended-actions.png)
+* The Reading Order pane allows objects to be dragged into the correct reading order - Text box 4 and Textbox 5 were in the incorrect places 
+
+  ![Reading order pane](src/guideImg/46-reading-order-pane.png)
 
 ### Tips
 
@@ -461,7 +465,9 @@ But these simpler tables still have merged cells where the title is – potentia
 
 This is because there is more than one slide with the same title.
 
-* Select down-arrow on object name, then select “Edit Slide Title”
+* Select down-arrow on object name, then select “Edit Slide Title” 
+
+  ![Duplicate slide title recommended actions](src/guideImg/47-duplicate-slide-title-recommended-actions.png)
 * Make the title unique
 
 #### Duplicate Section Name
