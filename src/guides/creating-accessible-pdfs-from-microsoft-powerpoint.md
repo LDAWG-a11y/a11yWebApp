@@ -605,8 +605,6 @@ The “1” cell and “Curabitur at rhoncus tellus” cells will need to have s
 * Sets correct spans 
 
   ![Setting row and column spans in table cell properties](src/guideImg/56-setting-row-and-column-spans-in-table-cell-properties.png)
-
-
 * The table should look like this once complete 
 
   ![Completed table with correct spans](src/guideImg/57-completed-table-with-correct-spans.png)
@@ -669,12 +667,29 @@ Table summaries used to be required to describe the table, the number of columns
 
 ### Alternative description for annotations
 
-In the Link Properties, the “Select Action” was “Execute a menu item”
+![PAC 2024 link failing alternative description for annotations](src/guideImg/60-pac-2024-link-failing-alternative-description-for-annotations.png)
 
+* In the Link Properties, the “Select Action” was “Execute a menu item” 
+
+  ![Link properties select action execute a menu item](src/guideImg/61-link-properties-select-action-execute-a-menu-item.png)
 * This was amended to “Open a web link”, then search for Pre in the “Find text or tools” search box
-* Choose   and click on  
+* Choose 
+
+  ![PDF Standards](src/guideImg/92-PDF-Standards.png)
+
+   and click on 
+
+  ![Spanner button](src/guideImg/93-Spanner-button.png)
 * Under “Interactive elements and properties”
-* Select   and then click on   
+* Select 
+
+  ![Create content entry for link annotations](src/guideImg/94-Create-content-entry-link-annotations.png)
+
+   and then click on 
+
+  ![Fix button](src/guideImg/95-Fix-button.png)
+
+    
 * Save new version of document 
 
 ### PDF/UA identifier
