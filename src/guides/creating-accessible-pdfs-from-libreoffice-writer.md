@@ -205,8 +205,9 @@ The error reported is “Document title not set” as this is a required field f
 * Copy the contents of the Title into the Subject field
 * Add applicable SEO keywords into Keywords field
 * Add Contributor
-* Add Publisher
-  Title, subject, keywords, contributor and publisher fields all completed
+* Add Publisher 
+
+  ![Title, subject, keywords, contributor and publisher fields all completed](src/guideImg/5-title-subject-keywords-contributor-and-publisher-fields-all-completed.png)
 
 ### Alt text
 
