@@ -427,9 +427,13 @@ This warning is because of the colour contrast between the text and the backgrou
 
 ![Very light colour text on a pink background](src/guideImg/39-very-light-colour-text-on-a-pink-background.png)
 
-* Select down-arrow on object name, then select “Change Colors”
+* Select down-arrow on object name, then select “Change Colors” 
+
+  ![Hard-to-read text contrast recommended actions](src/guideImg/40-hard-to-read-text-contrast-recommended-actions.png)
 * Select a colour that has enough of a colour contrast
-* To fix this, select the text and change the text colour.
+* To fix this, select the text and change the text colour 
+
+  ![Dark colour text on a pink background](src/guideImg/41-dark-colour-text-on-a-pink-background.png)
 
 #### Use of Merged or Split Cells
 
