@@ -604,12 +604,21 @@ The “1” cell and “Curabitur at rhoncus tellus” cells will need to have s
 * Prepare for accessibility menu
 * Fix Reading order
 * Click into table
-* Click on “Table Editor”  
+* Click on “Table Editor” 
+
+  ![Table Editor button](src/guideImg/55-table-editor-button.png)
+
+   
 * Select cell, right-click, “Table Cell Properties”
 * Set the cell to the correct type “Header Cell” if it’s a header, “Data Cell” if it is not
-* Sets correct spans
+* Sets correct spans 
+
+  ![Setting row and column spans in table cell properties](src/guideImg/56-setting-row-and-column-spans-in-table-cell-properties.png)
+
   	 
-* The table should look like this once complete
+* The table should look like this once complete 
+
+  ![Completed table with correct spans](src/guideImg/57-completed-table-with-correct-spans.png)
 
 #### Summary
 
