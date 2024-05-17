@@ -9,8 +9,8 @@ tags:
   - PowerPoint
   - PDF
 file:
-  - /public/docs/powerpoint-example.pptx
   - /public/docs/creating-accessible-pdfs-from-microsoft-powerpoint.docx
+  - /public/docs/powerpoint-example.pptx
 isGuide: true
 ---
 ## Before starting
