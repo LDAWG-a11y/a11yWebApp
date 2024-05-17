@@ -704,7 +704,9 @@ This should only be added when the document passes everything else.
    and click Fix button
 * Save new version of document 
 
-The document has now fully passed PAC 2024
+The document has now fully passed PAC 2024.
+
+![The PDF/UA requirements checked by PAC are fulfilled](src/guideImg/62-the-pdf-ua-requirements-checked-by-pac-are-fulfilled.png)
 
 ## Downloadable Microsoft Word version
 
