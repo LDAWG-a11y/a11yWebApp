@@ -238,7 +238,11 @@ The error reported is “Missing alternative or description text” because the 
 
 ##### Inserting a table
 
-* Table menu -> Insert Table
+* Table menu -> Insert Table 
+
+  ![Insert table dialog box](src/guideImg/9-insert-table-dialog-box.png)
+
+
   Insert table dialog box with column and row fields, options, including setting Heading, and Repeat heading rows on new page as well as setting the table styles
 * Checking the Heading means that the top row cells are now styled as Table Heading
 * If the table is going to go more than one page, select “Repeat heading rows on new pages” or select “Don’t split table over pages” to stop this from happening
