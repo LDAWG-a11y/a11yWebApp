@@ -19,7 +19,7 @@ isGuide: true
 
 ## Demo file
 
-An example file, LibreOffice-un-accessible.odt (ODT 164KB), has been created which has issues that need to be corrected.
+An example file, LibreOffice-un-accessible.odt **(ODT 164KB)**, has been created which has issues that need to be corrected.
 
 ## Making documents correctly
 
