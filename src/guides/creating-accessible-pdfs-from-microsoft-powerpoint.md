@@ -483,10 +483,10 @@ This is because there is more than one section with the same title.
 
 #### Review Auto-Generated Description
 
-> * Select down-arrow on object name, then select “Approve description” 
->
->   ![Review auto-generated description recommended actions](src/guideImg/49-review-auto-generated-description-recommended-actions.png)
-> * Verify description or mark as decorative, the first image is going to be marked as decorative, and and the second image is going to have the alt text verified. The Alt Text says:
+* Select down-arrow on object name, then select “Approve description” 
+
+   ![Review auto-generated description recommended actions](src/guideImg/49-review-auto-generated-description-recommended-actions.png)
+* Verify description or mark as decorative, the first image is going to be marked as decorative, and and the second image is going to have the alt text verified. The Alt Text says:
 >   “A close up of a logo
 >
 > Description automatically generated”
