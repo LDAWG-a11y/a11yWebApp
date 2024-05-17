@@ -254,8 +254,11 @@ The error reported is “Missing alternative or description text” because the 
 
 ##### Repeating heading when table splits across pages
 
-Right click on table and choose Table Properties, Text Flow tab and make sure that “Allow the table to split across pages and columns”, “Allow row to break across pages and columns”, and “Repeat heading” are checked
-  Allow the table to split across pages and columns, Allow row to break across pages and columns, and repeat heading are checked
+Right click on table and choose Table Properties, Text Flow tab and make sure that “Allow the table to split across pages and columns”, “Allow row to break across pages and columns”, and “Repeat heading” are checked 
+
+![Allow the table to split across pages and columns, allow row to break across pages and columns, and repeat heading are checked](src/guideImg/10-allow-the-table.png)
+
+  
 
 #### Fixing errors
 
