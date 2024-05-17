@@ -405,7 +405,7 @@ Note: to be able to remediate PDFs, Adobe Acrobat Pro or equivalent PDF editing 
 * Select “Edit Tag…” button and then open up the first <Dictionary> object
   Tag element dialog box
 * Find the Placement attribute and select it
-* Change from Block to Inline (sometimes it might need to be changed TO Block!)
+* Change from Block to Inline (sometimes it might need to be changed **TO** Block!)
 * Hit the   PAC 2021 refresh button
 * “The PDF/UA requirements checked by PAC are fulfilled.”
 
