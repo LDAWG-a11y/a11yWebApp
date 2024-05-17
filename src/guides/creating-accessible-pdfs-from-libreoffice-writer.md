@@ -400,9 +400,9 @@ Note: to be able to remediate PDFs, Adobe Acrobat Pro or equivalent PDF editing 
 * Open Accessibility tags pane
 * Find page and select some text by the image, and then click on the “…” and “Find Tag from Selection” so that the correct image can be found in the Accessibility tags pane
   Figure and image in accessibility pane
-* Right click <Figure> tag and choose Properties
+* Right click `<Figure>` tag and choose Properties
   Object properties dialog box
-* Select “Edit Tag…” button and then open up the first <Dictionary> object
+* Select “Edit Tag…” button and then open up the first `<Dictionary>` object
   Tag element dialog box
 * Find the Placement attribute and select it
 * Change from Block to Inline (sometimes it might need to be changed **TO** Block!)
