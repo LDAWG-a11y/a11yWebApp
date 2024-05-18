@@ -10,7 +10,7 @@ tags:
   - Statement
   - Regulations
   - PSBAR
-file: /docs/draft-accessibility-statement-2023-wcag-2.2.docx
+file: /public/docs/draft_accessibility_statement_2024_wcag-2.2.docx
 isGuide: true
 ---
 You have decided to write a [Public Sector Bodies Accessibility Regulations (PSBAR)](https://www.makethingsaccessible.com/guides/what-are-the-public-sector-bodies-accessibility-regulations/) compliant accessibility statement. To write a correct statement there are a few pieces of information you will need in advance and a specific template you must adhere to for UK requirements.
@@ -37,11 +37,13 @@ If you have a dedicated team that supports alternative formats that is different
 
 Finally, try where possible to give information about how long users might have to wait for a response. For some services users may need a response urgently if there are deadlines or time constraints. Knowing if they are likely to get a response in a given time can be helpful for users to know whether they should use this contact route or find a more direct contact method elsewhere if they do need to escalate.
 
-## The template
+## The template[](/docs/draft-accessibility-statement-2023-wcag-2.2.docx)
 
-[Download the WCAG 2.1 accessibility statement template](/docs/draft-accessibility-statement-2023-wcag-2.2.docx)
+[Download the WCAG 2.2 accessibility statement template](docs/draft_accessibility_statement_2024_wcag-2.2.docx)
 
-[Download the WCAG 2.2 accessibility statement template](/docs/draft-accessibility-statement-2023-wcag-2.2.docx)
+[](docs/draft_accessibility_statement_2024_wcag-2.2.docx)
+
+<div class="callout__info"><span class="callout__icon"><strong class="visually-hidden">Info: </strong></span><span class="callout__text">Note that GDS have updated the statement template recently to combine feedback and reporting sections and provide additional instructions on compliance status. The 2.2 template has been updated to reflect this.</span></div>
 
 In the UK there is a specific template and several pieces of required legal wording that must go into an accessibility statement. The template provided by the UK Government through the Government Digital Service (GDS) who are the monitoring body for the regulations is in the form of a [sample statement for a fictional website](https://www.gov.uk/government/publications/sample-accessibility-statement/sample-accessibility-statement-for-a-fictional-public-sector-website).
 
