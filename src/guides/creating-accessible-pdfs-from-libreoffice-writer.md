@@ -379,7 +379,9 @@ Select text to be used as heading and style as appropriate.
 
 #### Text contrast is too low
 
- Contrast between text and background is too low
+ 
+
+![Contrast between text and background is too low](src/guideImg/35-contrast-between-text-and-background-is-too-low.png)
 
 * Select text and change the text colour
   text is now of a colour that is not too low
