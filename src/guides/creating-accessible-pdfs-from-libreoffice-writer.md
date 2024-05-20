@@ -353,7 +353,7 @@ Select text to be used as heading and style as appropriate.
 
 #### Hyperlink text is the same as the link address
 
-url text as a full url
+![url text as a full url](src/guideImg/30-url-text-as-a-full-url.png)
 
 * The link text is the full url
 * Right click and “Edit Hyperlink…”
