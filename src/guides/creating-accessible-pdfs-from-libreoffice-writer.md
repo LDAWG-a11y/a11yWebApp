@@ -338,7 +338,9 @@ Select text to be used as heading and style as appropriate.
 
   ![Number styling set to 1, 2, 3...](src/guideImg/25-number-styling-set-to-1-2-3.png)
 * The headings will now be a properly created numbered list – this will apply to all headings at (in this instance as shown in the Level field) level 2
-  Numbered list of headings
+
+
+  ![Numbered list of headings](src/guideImg/26-numbered-list-of-headings.png)
 * Numbered list of headings is removed in the fixed document and replaced with appropriate Headings
 
 #### Simulated numbering “1. 2….” when it is just a list
