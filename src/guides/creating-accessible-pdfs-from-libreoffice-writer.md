@@ -361,7 +361,9 @@ Select text to be used as heading and style as appropriate.
 
   ![Hyperlink settings in the Hyperlink dialog box](src/guideImg/31-hyperlink-settings-in-the-hyperlink-dialog-box.png)
 * Change the Text field to be descriptive text
-  Text amended to Frequently Asked Questions (FAQs)
+
+
+  ![Text amended to Frequently Asked Questions (FAQs)](src/guideImg/32-text-amended-to-frequently-asked-questions-faqs.png)
 * Adobe Acrobat will automatically make text that appears to be a hyperlink clickable as a hyperlink without it being a proper hyperlink in the PDF document so text like below
   text that is a url but not a link in the original document
 * Will be clickable in the exported PDF and should be made into a hyperlink in the original document using good link text
