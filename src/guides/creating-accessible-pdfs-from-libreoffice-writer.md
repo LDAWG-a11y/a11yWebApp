@@ -487,7 +487,11 @@ Note: to be able to remediate PDFs, Adobe Acrobat Pro or equivalent PDF editing 
   ![Tag element dialog box](src/guideImg/48-tag-element-dialog-box.png)
 * Find the Placement attribute and select it
 * Change from Block to Inline (sometimes it might need to be changed **TO** Block!)
-* Hit the   PAC 2021 refresh button
+* Hit the 
+
+  ![PAC 2021 refresh button](src/guideImg/50-pac-2021-refresh-button.png)
+
+   
 * “The PDF/UA requirements checked by PAC are fulfilled.”
 
 ## Downloadable Microsoft Word version
