@@ -8,6 +8,8 @@ tags:
   - LibreOffice
   - Writer
   - PDF
+file:
+  - /public/docs/libreoffice-un-accessible.odt
 isGuide: true
 ---
 ## Before starting
@@ -19,7 +21,7 @@ isGuide: true
 
 ## Demo file
 
-An example file, LibreOffice-un-accessible.odt **(ODT 164KB)**, has been created which has issues that need to be corrected.
+An example file, [LibreOffice-un-accessible.odt](/public/docs/libreoffice-un-accessible.odt) **(ODT 164KB)**, has been created which has issues that need to be corrected.
 
 ## Making documents correctly
 
