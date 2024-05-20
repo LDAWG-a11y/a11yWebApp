@@ -345,7 +345,9 @@ Select text to be used as heading and style as appropriate.
 
 #### Simulated numbering “1. 2….” when it is just a list
 
-  Numbered list created manually
+  
+
+![Numbered list created manually](src/guideImg/27-numbered-list-created-manually.png)
 
 * Delete numbers
   Numbers deleted from list
