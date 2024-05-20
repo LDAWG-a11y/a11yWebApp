@@ -319,7 +319,9 @@ Select text to be used as heading and style as appropriate.
 
 #### Simulated numbering “1. 2….” when headings are involved
 
-  Headings with handwritten numbers
+  
+
+![Headings with handwritten numbers](src/guideImg/22-headings-with-handwritten-numbers.png)
 
 * Delete the numbers
 * Set each heading to the same level as this is a list, they need to be the same
