@@ -354,7 +354,9 @@ Select text to be used as heading and style as appropriate.
 
   ![Numbers deleted from list](src/guideImg/28-numbers-deleted-from-list.png)
 * Select lines of text and use Ordered List button to create ordered list
-  Correctly created ordered list
+
+
+  ![Correctly created ordered list](src/guideImg/29-correctly-created-ordered-list.png)
 
 ### Hyperlinks
 
