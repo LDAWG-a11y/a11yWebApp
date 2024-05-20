@@ -58,16 +58,16 @@ So, the idea was to create reusable functionality, that will likely ever only re
 
 ### My approach
 
-At the basic level, all we really do is add a data-attribute or class to the `<html>` or `<body>` element in most cases, so we have a handy hook for our CSS, so this isn't really anything revolutionary in that respect.
+At the basic level, all we really do is add a data-attribute or class to the `<html>` or `<body>` element in most cases, so we have a handy hook for our CSS, so this isn't really anything revolutionary.
 
 First we'll create the buttons that toggle our preference, we're just going to create one preference to start with, as then I can demonstrate how easy it is to add another, a little later on. the first example will be for changing our site's font size:
 
 ```html
 <fieldset class="settings__fieldset">
   <legend class="settings__legend">Font size</legend>
-    <button class="settings__btn--f-size-large btn btn--default" aria-pressed="false" data-pref="f-size large">Large<span></span></button>
-    <button class="settings__btn--f-size-unset btn btn--default" aria-pressed="false" data-pref="f-size unset">Unset<span></span></button>
-    <button class="settings__btn--f-size-largest btn btn--default" aria-pressed="false" data-pref="f-size largest">Largest<span></span></button>
+  <button aria-pressed="false" data-pref="f-size large">Large</button>
+  <button aria-pressed="false" data-pref="f-size unset">Unset</button>
+  <button aria-pressed="false" data-pref="f-size largest">Largest</button>
 </fieldset>
 ```
 
@@ -78,25 +78,20 @@ First we'll create the buttons that toggle our preference, we're just going to c
   * One for large text
   * One for resetting or unsetting font size back to the site's default
   * One for largest text
-* We add some very specific class names and data-attributes
+* We add some very specific data-attributes
 
-  * Each button's class must start with the same prefix, we're using `settings__btn--`, as we use the [BEM CSS methodology](https://getbem.com/) (mostly)
-  * We add a data-attribute to each called `data-pref` and the value of each is an identifier and a value, which are space separated. So for us `f-size` simply means font size and the value is either `large`, `largest` or `unset`, which you may have noticed matches our class names if they were concatenated into one string, e.g: `settings__btn--f-size-unset`, so we just stitch on the identifier to our initial class name prefix, add a hyphen and then finally add the value
-* We then add `aria-pressed` to each button, as we require a state to inform users programmatically that the element is a toggle-able button and it is either pressed or it isn't, this is just the page load state, once JS does its magic, we determine which button has been pressed, as one and only one must always be the current font size, if a user has never selected anything, then that will of course be default (unset)
+  * We add a data-attribute to each called `data-pref` and the value of each is an identifier and a value, which are space separated. So for us `f-size` simply means font size and the value is either `large`, `largest` or `unset`
+* We then add `aria-pressed` to each button, as we require a state to inform users programmatically that the element is a toggle-able button. in the HTML, we're just setting them all as `false` as we will eventually listen for a page `load` event and set `true` to the correct one. In this implementation, there will always be one which has the value set to `true`
 
-Obviously you can use any class names and data attribute names you wish, they just need to be consistent as will become apparent later
+Obviously you can use class names and any data attribute names you wish, they just need to be consistent as will become apparent later
 
-Now let's just get a JS reference to the elements we will be using in our functions:
+Now let's just get a JS reference to the button elements we will be using in our functions:
 
 ```javascript
-const prefGroups = document.querySelectorAll('.settings__fieldset');
-const prefsBtns = prefGroups.querySelectorAll('button[class^="settings__btn"]');
+const prefsBtns = document.querySelectorAll('[data-pref]');
 ```
 
-These are the two main variables we need:
-
-* We just store a reference to all of the `<fieldset>` elements in the document that have the class name `.settings__fieldset`, we store this as `prefGroups`
-* Finally, we store a reference to to all of the `<button>`s in one of those `<fieldset>` containers, I just used the handy CSS starts with Wildcard selector, just in case we had any other buttons in the `<fieldset>`, as an example, we have accordions in ours, so we just need to find any `<button>` within the `<fieldset>` that has a class that starts with "`settings__btn`". We store those buttons as `prefBtns`
+We store a reference to to all of the `<button>`s , we can just use the `data-pref` attribute to get that collection
 
 Now we will add the functionality:
 
@@ -122,5 +117,30 @@ prefsBtns.forEach(btn => {
       document.documentElement.removeAttribute(`data-pref--${pref[0]}`);
       window.localStorage.removeItem(`data-pref--${pref[0]}`);
    }
+// We send the clicked button to an as yet unwritten function, comment this out if
+// you're coding along
+     togglePrefsBtns(btn);
+  })
+})
   
 ```
+
+Hopefully that makes sense? If you are following a long in a code editor, you will notice that we are now adding our data attribute to the `<html> `element and if you look in `localStorage`, we are also adding it there. If we select "Unset" we remove the attribute from the `<html>` element and `localStorage`.
+
+Next we will make sure that when one button is clicked, it's sibling buttons are set to `aria-pressed="false"`, so we're just gonna build a small function, we called it in the previous step and we hadn't declared it, so let's do that now.
+
+```javascript
+// Declare our function that accepts the clicked button, from the previous step
+const togglePrefsBtns = (btn) => {
+// Get the closest fieldset (its parent) and search for all buttons inside
+  btn.closest('.settings__fieldset').querySelectorAll('button').forEach(prefBtn => {
+// get all buttons in the fieldset that aren't the clicked button
+    if (prefBtn !== btn) {
+// Set aria-pressed to false
+      prefBtn.setAttribute('aria-pressed', 'false');
+    }
+  })
+}
+```
+
+So, now we can only have one button per group set to aria-pressed="true", which was the goal
