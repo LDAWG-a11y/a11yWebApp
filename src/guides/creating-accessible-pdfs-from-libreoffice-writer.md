@@ -402,7 +402,9 @@ Select text to be used as heading and style as appropriate.
 
 #### The text formatting conveys additional meaning
 
-  paragraph that is erroring with the text formatting conveys additional meaning
+  
+
+![paragraph that is erroring with the text formatting conveys additional meaning](src/guideImg/39-paragraph-that-is-erroring-with-the-text-formatting-conveys-additional-meaning.png)
 
 * Select text and chose “Clear Formatting”
 * Set text to required style (in this case “Body Text”)
