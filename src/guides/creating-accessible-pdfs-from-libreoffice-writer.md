@@ -424,7 +424,11 @@ Footnotes and Endnotes can be correctly defined and made accessible using Adobe 
 
   ![Insert menu showing Table of Contents and Index, Table of Contents, Index or Bibliography...](src/guideImg/40-insert-menu-showing-table-of-contents-and-index-bibliography.png)
 * Gives you the options to automatically build TOC or create a customized TOC 
-  Table of Contents, Index or Bibliography dialog box 
+
+
+  ![Table of Contents, Index or Bibliography dialog box](src/guideImg/41-table-of-contents-index-bibliography-dialog-box.png)
+
+   
 * Because heading styles have been applied, Writer uses them to create TOC 
 
 ## Artifacting objects
