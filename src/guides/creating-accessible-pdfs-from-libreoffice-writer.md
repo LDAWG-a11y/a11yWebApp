@@ -411,7 +411,7 @@ Select text to be used as heading and style as appropriate.
 
 #### Blinking text
 
-Select text and go to Styles menu, and choose “Clear Formatting”. 
+Select text and go to Styles menu and choose “Clear Formatting”. 
 
 ### Footnotes and Endnotes
 
@@ -420,7 +420,9 @@ Footnotes and Endnotes can be correctly defined and made accessible using Adobe 
 ### Creating a table of contents or TOC
 
 * Insert menu, Table of Contents and Index, Table of Contents, Index or Bibliography…
-  Insert menu showing Table of Contents and Index, Table of Contents, Index or Bibliography...
+
+
+  ![Insert menu showing Table of Contents and Index, Table of Contents, Index or Bibliography...](src/guideImg/40-insert-menu-showing-table-of-contents-and-index-bibliography.png)
 * Gives you the options to automatically build TOC or create a customized TOC 
   Table of Contents, Index or Bibliography dialog box 
 * Because heading styles have been applied, Writer uses them to create TOC 
