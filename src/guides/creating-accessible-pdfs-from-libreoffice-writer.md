@@ -464,7 +464,9 @@ Note: to be able to remediate PDFs, Adobe Acrobat Pro or equivalent PDF editing 
 
   ![Report dialog box](src/guideImg/44-report-dialog-box.png)
 * And drill down to the warnings
-  Possibly inappropriate use of a "Figure" structure element
+
+
+  ![Possibly inappropriate use of a Figure structure element](src/guideImg/45-possibly-inappropriate-use-of-a-figure-structure-element.png)
 * There are two warnings for ‘Possibly inappropriate use of a "Figure" structure element’, one in Structure Tree and the other in WCAG 4.1.1 Parsing
 
 ### Fixing this issue
