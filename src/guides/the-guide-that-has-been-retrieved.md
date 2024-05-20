@@ -21,7 +21,7 @@ isGuide: true
 
 ## Demo file
 
-An example file, [Word-un-accessible.docx](https://www.makethingsaccessible.com/public/docs/creating-accessible-pdfs-from-microsoft-word.docx) **(DOCX 126KB)**, has been created which has issues that need to be corrected.
+An example file, [Word-un-accessible.docx](/docs/creating-accessible-pdfs-from-microsoft-word.docx) **(DOCX 126KB)**, has been created which has issues that need to be corrected.
 
 ## Making documents correctly
 
@@ -737,7 +737,7 @@ The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this
 
 ## Downloadable Microsoft Word version
 
-[Creating accessible PDFs from Microsoft Word](https://www.makethingsaccessible.com/public/docs/creating-accessible-pdfs-from-microsoft-word.docx) **(Word 2.09MB)**
+[Creating accessible PDFs from Microsoft Word](/docs/creating-accessible-pdfs-from-microsoft-word.docx) **(Word 2.09MB)**
 
 ## Useful links
 
