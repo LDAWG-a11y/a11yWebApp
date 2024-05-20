@@ -522,4 +522,3 @@ Note: to be able to remediate PDFs, Adobe Acrobat Pro or equivalent PDF editing 
 * [Exporting to a PDF](https://help.libreoffice.org/latest/en-US/text/shared/01/ref_pdf_export.html) (external website)
 * [Possibly inappropriate use of a "Figure" structure element when using PAC 2021](https://www.youtube.com/watch?v=11jqU2WbKno) (external website)
 * [Accessibility Checker and Accessibility Check](https://www.makethingsaccessible.com/guides/accessibility-checker-and-accessibility-check/)
-*
