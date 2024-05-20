@@ -326,7 +326,9 @@ Select text to be used as heading and style as appropriate.
 * Delete the numbers
 * Set each heading to the same level as this is a list, they need to be the same
 * Select the text
-  All the text is selected that is to be numbered headings
+
+
+  ![All the text is selected that is to be numbered headings](src/guideImg/23-all-the-text-is-selected-that-is-to-be-numbered-headings.png)
 * Select Tools menu and “Heading Numbering…”
   Heading numbering dialog box
 * Change number to relevant styling
