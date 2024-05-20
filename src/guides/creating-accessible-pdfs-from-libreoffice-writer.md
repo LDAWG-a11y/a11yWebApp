@@ -396,7 +396,9 @@ Select text to be used as heading and style as appropriate.
 
   ![text with newline formatting marks](src/guideImg/37-text-with-newline-formatting-marks.png)
 * Delete unneeded newlines
-  text with newline formatting marks but extra lines deleted
+
+
+  ![text with newline formatting marks but extra lines deleted](src/guideImg/38-text-with-newline-formatting-marks-but-extra-lines-deleted.png)
 
 #### The text formatting conveys additional meaning
 
