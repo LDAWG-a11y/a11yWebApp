@@ -365,7 +365,9 @@ Select text to be used as heading and style as appropriate.
 
   ![Text amended to Frequently Asked Questions (FAQs)](src/guideImg/32-text-amended-to-frequently-asked-questions-faqs.png)
 * Adobe Acrobat will automatically make text that appears to be a hyperlink clickable as a hyperlink without it being a proper hyperlink in the PDF document so text like below
-  text that is a url but not a link in the original document
+
+
+  ![text that is a url but not a link in the original document](src/guideImg/33-text-that-is-a-url-but-not-a-link-in-the-original-document.png)
 * Will be clickable in the exported PDF and should be made into a hyperlink in the original document using good link text
   Note: ScreenTips are not able to set unlike Microsoft Word
 
