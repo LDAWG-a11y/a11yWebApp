@@ -350,7 +350,9 @@ Select text to be used as heading and style as appropriate.
 ![Numbered list created manually](src/guideImg/27-numbered-list-created-manually.png)
 
 * Delete numbers
-  Numbers deleted from list
+
+
+  ![Numbers deleted from list](src/guideImg/28-numbers-deleted-from-list.png)
 * Select lines of text and use Ordered List button to create ordered list
   Correctly created ordered list
 
