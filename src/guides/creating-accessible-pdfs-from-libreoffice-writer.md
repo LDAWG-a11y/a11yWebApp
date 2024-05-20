@@ -456,7 +456,9 @@ Note: to be able to remediate PDFs, Adobe Acrobat Pro or equivalent PDF editing 
 
   ![Document selection tool](src/guideImg/42-document-selection-tool.png)
 * The test will run and errors will be reported
-  PDF/UA warnings regarding structure tree
+
+
+  ![PDF/UA warnings regarding structure tree](src/guideImg/43-pdf-ua-warnings-regarding-structure-tree.png)
 * Click on “Results in Detail” button which opens up 
   Report dialog box
 * And drill down to the warnings
