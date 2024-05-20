@@ -460,7 +460,9 @@ Note: to be able to remediate PDFs, Adobe Acrobat Pro or equivalent PDF editing 
 
   ![PDF/UA warnings regarding structure tree](src/guideImg/43-pdf-ua-warnings-regarding-structure-tree.png)
 * Click on “Results in Detail” button which opens up 
-  Report dialog box
+
+
+  ![Report dialog box](src/guideImg/44-report-dialog-box.png)
 * And drill down to the warnings
   Possibly inappropriate use of a "Figure" structure element
 * There are two warnings for ‘Possibly inappropriate use of a "Figure" structure element’, one in Structure Tree and the other in WCAG 4.1.1 Parsing
