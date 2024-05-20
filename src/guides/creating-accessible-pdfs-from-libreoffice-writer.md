@@ -330,7 +330,9 @@ Select text to be used as heading and style as appropriate.
 
   ![All the text is selected that is to be numbered headings](src/guideImg/23-all-the-text-is-selected-that-is-to-be-numbered-headings.png)
 * Select Tools menu and “Heading Numbering…”
-  Heading numbering dialog box
+
+
+  ![Heading numbering dialog box](src/guideImg/24-heading-numbering-dialog-box.png)
 * Change number to relevant styling
   Number styling set to 1, 2, 3...
 * The headings will now be a properly created numbered list – this will apply to all headings at (in this instance as shown in the Level field) level 2
