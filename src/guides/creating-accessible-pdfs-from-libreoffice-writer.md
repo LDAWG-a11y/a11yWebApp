@@ -10,6 +10,7 @@ tags:
   - PDF
 file:
   - /public/docs/libreoffice-un-accessible.odt
+  - /public/docs/creating-accessible-pdfs-from-libreoffice-writer.docx
 isGuide: true
 ---
 ## Before starting
@@ -498,7 +499,7 @@ Note: to be able to remediate PDFs, Adobe Acrobat Pro or equivalent PDF editing 
 
 ## Downloadable Microsoft Word version
 
-[Creating accessible PDFs from LibreOffice Writer](https://www.makethingsaccessible.com/public/docs/creating-accessible-pdfs-from-microsoft-word.docx) **(Word 2.09MB)**
+[Creating accessible PDFs from LibreOffice Writer](/public/docs/creating-acc…-libreoffice-writer.docx) **(Word 1028KB)**
 
 ## Useful links
 
