@@ -22,7 +22,7 @@ isGuide: true
 
 ## Demo file
 
-An example file, [LibreOffice-un-accessible.odt](/public/docs/libreoffice-un-accessible.odt) **(ODT 164KB)**, has been created which has issues that need to be corrected.
+An example file, [LibreOffice-un-accessible.odt](/docs/libreoffice-un-accessible.odt) **(ODT 164KB)**, has been created which has issues that need to be corrected.
 
 ## Making documents correctly
 
@@ -349,7 +349,6 @@ Select text to be used as heading and style as appropriate.
   ![Numbers deleted from list](src/guideImg/28-numbers-deleted-from-list.png)
 * Select lines of text and use Ordered List button to create ordered list
 
-
   ![Correctly created ordered list](src/guideImg/29-correctly-created-ordered-list.png)
 
 ### Hyperlinks
@@ -361,18 +360,14 @@ Select text to be used as heading and style as appropriate.
 * The link text is the full url
 * Right click and “Edit Hyperlink…”
 
-
   ![Hyperlink settings in the Hyperlink dialog box](src/guideImg/31-hyperlink-settings-in-the-hyperlink-dialog-box.png)
 * Change the Text field to be descriptive text
-
 
   ![Text amended to Frequently Asked Questions (FAQs)](src/guideImg/32-text-amended-to-frequently-asked-questions-faqs.png)
 * Adobe Acrobat will automatically make text that appears to be a hyperlink clickable as a hyperlink without it being a proper hyperlink in the PDF document so text like below
 
-
   ![text that is a url but not a link in the original document](src/guideImg/33-text-that-is-a-url-but-not-a-link-in-the-original-document.png)
 * Will be clickable in the exported PDF and should be made into a hyperlink in the original document using good link text
-
 
   **Note: ScreenTips are not able to set unlike Microsoft Word** 
 
@@ -382,12 +377,9 @@ Select text to be used as heading and style as appropriate.
 
 #### Text contrast is too low
 
- 
-
 ![Contrast between text and background is too low](src/guideImg/35-contrast-between-text-and-background-is-too-low.png)
 
 * Select text and change the text colour
-
 
   ![text is now of a colour that is not too low](src/guideImg/36-text-is-now-of-a-colour-that-is-not-too-low.png)
 * [TPGi’s Colour Contrast Analyzer](https://www.tpgi.com/color-contrast-checker/) (external website) can be used to check the contrast between the text colour and the background
@@ -396,16 +388,12 @@ Select text to be used as heading and style as appropriate.
 
 * Make sure that “Formatting Marks” are visible by selecting View menu, Formatting Marks (or Ctrl + F10)
 
-
   ![text with newline formatting marks](src/guideImg/37-text-with-newline-formatting-marks.png)
 * Delete unneeded newlines
-
 
   ![text with newline formatting marks but extra lines deleted](src/guideImg/38-text-with-newline-formatting-marks-but-extra-lines-deleted.png)
 
 #### The text formatting conveys additional meaning
-
-  
 
 ![paragraph that is erroring with the text formatting conveys additional meaning](src/guideImg/39-paragraph-that-is-erroring-with-the-text-formatting-conveys-additional-meaning.png)
 
@@ -424,14 +412,10 @@ Footnotes and Endnotes can be correctly defined and made accessible using Adobe 
 
 * Insert menu, Table of Contents and Index, Table of Contents, Index or Bibliography…
 
-
   ![Insert menu showing Table of Contents and Index, Table of Contents, Index or Bibliography...](src/guideImg/40-insert-menu-showing-table-of-contents-and-index-bibliography.png)
 * Gives you the options to automatically build TOC or create a customized TOC 
 
-
   ![Table of Contents, Index or Bibliography dialog box](src/guideImg/41-table-of-contents-index-bibliography-dialog-box.png)
-
-   
 * Because heading styles have been applied, Writer uses them to create TOC 
 
 ## Artifacting objects
@@ -456,18 +440,14 @@ Note: to be able to remediate PDFs, Adobe Acrobat Pro or equivalent PDF editing 
 
 * Open PAC 2024 and drag and drop the PDF file onto
 
-
   ![Document selection tool](src/guideImg/42-document-selection-tool.png)
 * The test will run and errors will be reported
-
 
   ![PDF/UA warnings regarding structure tree](src/guideImg/43-pdf-ua-warnings-regarding-structure-tree.png)
 * Click on “Results in Detail” button which opens up 
 
-
   ![Report dialog box](src/guideImg/44-report-dialog-box.png)
 * And drill down to the warnings
-
 
   ![Possibly inappropriate use of a Figure structure element](src/guideImg/45-possibly-inappropriate-use-of-a-figure-structure-element.png)
 * There are two warnings for ‘Possibly inappropriate use of a "Figure" structure element’, one in Structure Tree and the other in WCAG 4.1.1 Parsing
@@ -478,14 +458,11 @@ Note: to be able to remediate PDFs, Adobe Acrobat Pro or equivalent PDF editing 
 * Open Accessibility tags pane
 * Find page and select some text by the image, and then click on the “…” and “Find Tag from Selection” so that the correct image can be found in the Accessibility tags pane
 
-
   ![Figure and image in accessibility pane](src/guideImg/46-figure-and-image-in-accessibility-pane.png)
 * Right click `<Figure>` tag and choose Properties
 
-
   ![Object properties dialog box](src/guideImg/47-object-properties-dialog-box.png)
 * Select “Edit Tag…” button and then open up the first `<Dictionary>` object
-
 
   ![Tag element dialog box](src/guideImg/48-tag-element-dialog-box.png)
 * Find the Placement attribute and select it
@@ -493,13 +470,11 @@ Note: to be able to remediate PDFs, Adobe Acrobat Pro or equivalent PDF editing 
 * Hit the 
 
   ![PAC 2021 refresh button](src/guideImg/50-pac-2021-refresh-button.png)
-
-   
 * “The PDF/UA requirements checked by PAC are fulfilled.”
 
 ## Downloadable Microsoft Word version
 
-[Creating accessible PDFs from LibreOffice Writer](/public/docs/creating-acc…-libreoffice-writer.docx) **(Word 1028KB)**
+[Creating accessible PDFs from LibreOffice Writer](/docs/creating-acc…-libreoffice-writer.docx) **(Word 1028KB)**
 
 ## Useful links
 
