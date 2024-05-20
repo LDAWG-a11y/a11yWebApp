@@ -478,7 +478,9 @@ Note: to be able to remediate PDFs, Adobe Acrobat Pro or equivalent PDF editing 
 
   ![Figure and image in accessibility pane](src/guideImg/46-figure-and-image-in-accessibility-pane.png)
 * Right click `<Figure>` tag and choose Properties
-  Object properties dialog box
+
+
+  ![Object properties dialog box](src/guideImg/47-object-properties-dialog-box.png)
 * Select “Edit Tag…” button and then open up the first `<Dictionary>` object
   Tag element dialog box
 * Find the Placement attribute and select it
