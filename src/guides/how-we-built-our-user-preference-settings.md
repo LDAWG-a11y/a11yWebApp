@@ -143,4 +143,30 @@ const togglePrefsBtns = (btn) => {
 }
 ```
 
-So, now we can only have one button per group set to aria-pressed="true", which was the goal
+So, now we can only have one button per group set to aria-pressed="true", which was the goal, we're almost done now, we just need to handle the page loads and initial states.
+
+So it makes sense that preferences will persist across pages and of course on repeat visits. If a user finds it more comfortable having larger text, then I'm sure we can all agree it would be a huge annoyance to have to set that on every page they visited and on every repeat visit. As it stands, when we click a button, we add a data attribute and store that same data attribute in `localStorage`, if we refresh the page, we no longer have the data attribute, but we do have the `localStorage` entry, so we just need to utilise that on a page load event, so let's tackle that last step now.
+
+```javascript
+window.onload = () => {
+  const userStoredPrefs = {...localStorage};
+  for (const prop in userStoredPrefs) {
+    if (prop.startsWith('data-pref-')) {
+      document.documentElement.setAttribute(`${prop}`, userStoredPrefs[prop]);
+    }
+  }
+
+  for (const userPref of document.documentElement.attributes) {
+    if (userPref.name.includes('data-pref--')) {
+      let prefType = userPref.name.split('--');
+      settingsModal.querySelector(`.settings__btn--${prefType[1]}-${userPref.value}`).setAttribute('aria-pressed', 'true');
+    }
+  }
+
+  settingsModal.querySelectorAll('.settings__btns-wrapper').forEach(group => {
+    if (!group.querySelector('button[aria-pressed="true"]')) {
+      group.querySelector('[data-pref~="unset"').setAttribute('aria-pressed', 'true');
+    }
+  })
+}
+```
