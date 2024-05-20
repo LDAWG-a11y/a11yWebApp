@@ -452,7 +452,9 @@ Note: to be able to remediate PDFs, Adobe Acrobat Pro or equivalent PDF editing 
 ## Check for accessibility in PAC 2024
 
 * Open PAC 2024 and drag and drop the PDF file onto
-  Document selection tool
+
+
+  ![Document selection tool](src/guideImg/42-document-selection-tool.png)
 * The test will run and errors will be reported
   PDF/UA warnings regarding structure tree
 * Click on “Results in Detail” button which opens up 
