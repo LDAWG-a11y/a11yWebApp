@@ -384,13 +384,17 @@ Select text to be used as heading and style as appropriate.
 ![Contrast between text and background is too low](src/guideImg/35-contrast-between-text-and-background-is-too-low.png)
 
 * Select text and change the text colour
-  text is now of a colour that is not too low
+
+
+  ![text is now of a colour that is not too low](src/guideImg/36-text-is-now-of-a-colour-that-is-not-too-low.png)
 * [TPGi’s Colour Contrast Analyzer](https://www.tpgi.com/color-contrast-checker/) (external website) can be used to check the contrast between the text colour and the background
 
 #### Avoid newlines to create space
 
 * Make sure that “Formatting Marks” are visible by selecting View menu, Formatting Marks (or Ctrl + F10)
-  text with newline formatting marks
+
+
+  ![text with newline formatting marks](src/guideImg/37-text-with-newline-formatting-marks.png)
 * Delete unneeded newlines
   text with newline formatting marks but extra lines deleted
 
