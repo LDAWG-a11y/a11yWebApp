@@ -357,7 +357,9 @@ Select text to be used as heading and style as appropriate.
 
 * The link text is the full url
 * Right click and “Edit Hyperlink…”
-  Hyperlink settings in the Hyperlink dialog box
+
+
+  ![Hyperlink settings in the Hyperlink dialog box](src/guideImg/31-hyperlink-settings-in-the-hyperlink-dialog-box.png)
 * Change the Text field to be descriptive text
   Text amended to Frequently Asked Questions (FAQs)
 * Adobe Acrobat will automatically make text that appears to be a hyperlink clickable as a hyperlink without it being a proper hyperlink in the PDF document so text like below
