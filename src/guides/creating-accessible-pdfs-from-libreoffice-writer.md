@@ -319,38 +319,29 @@ Select text to be used as heading and style as appropriate.
 
 #### Simulated numbering “1. 2….” when headings are involved
 
-  
-
 ![Headings with handwritten numbers](src/guideImg/22-headings-with-handwritten-numbers.png)
 
 * Delete the numbers
 * Set each heading to the same level as this is a list, they need to be the same
 * Select the text
 
-
   ![All the text is selected that is to be numbered headings](src/guideImg/23-all-the-text-is-selected-that-is-to-be-numbered-headings.png)
 * Select Tools menu and “Heading Numbering…”
-
 
   ![Heading numbering dialog box](src/guideImg/24-heading-numbering-dialog-box.png)
 * Change number to relevant styling
 
-
   ![Number styling set to 1, 2, 3...](src/guideImg/25-number-styling-set-to-1-2-3.png)
 * The headings will now be a properly created numbered list – this will apply to all headings at (in this instance as shown in the Level field) level 2
-
 
   ![Numbered list of headings](src/guideImg/26-numbered-list-of-headings.png)
 * Numbered list of headings is removed in the fixed document and replaced with appropriate Headings
 
 #### Simulated numbering “1. 2….” when it is just a list
 
-  
-
 ![Numbered list created manually](src/guideImg/27-numbered-list-created-manually.png)
 
 * Delete numbers
-
 
   ![Numbers deleted from list](src/guideImg/28-numbers-deleted-from-list.png)
 * Select lines of text and use Ordered List button to create ordered list
