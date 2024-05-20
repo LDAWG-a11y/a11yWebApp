@@ -474,7 +474,7 @@ Note: to be able to remediate PDFs, Adobe Acrobat Pro or equivalent PDF editing 
 
 ## Downloadable Microsoft Word version
 
-[Creating accessible PDFs from LibreOffice Writer](/docs/creating-acc…-libreoffice-writer.docx) **(Word 1028KB)**
+[Creating accessible PDFs from LibreOffice Writer](/docs/creating-accessible-pdfs-from-libreoffice-writer.docx) **(Word 1028KB)**
 
 ## Useful links
 
