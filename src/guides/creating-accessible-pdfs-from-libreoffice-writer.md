@@ -334,7 +334,9 @@ Select text to be used as heading and style as appropriate.
 
   ![Heading numbering dialog box](src/guideImg/24-heading-numbering-dialog-box.png)
 * Change number to relevant styling
-  Number styling set to 1, 2, 3...
+
+
+  ![Number styling set to 1, 2, 3...](src/guideImg/25-number-styling-set-to-1-2-3.png)
 * The headings will now be a properly created numbered list – this will apply to all headings at (in this instance as shown in the Level field) level 2
   Numbered list of headings
 * Numbered list of headings is removed in the fixed document and replaced with appropriate Headings
