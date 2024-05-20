@@ -474,7 +474,9 @@ Note: to be able to remediate PDFs, Adobe Acrobat Pro or equivalent PDF editing 
 * Open file in Adobe Acrobat
 * Open Accessibility tags pane
 * Find page and select some text by the image, and then click on the “…” and “Find Tag from Selection” so that the correct image can be found in the Accessibility tags pane
-  Figure and image in accessibility pane
+
+
+  ![Figure and image in accessibility pane](src/guideImg/46-figure-and-image-in-accessibility-pane.png)
 * Right click `<Figure>` tag and choose Properties
   Object properties dialog box
 * Select “Edit Tag…” button and then open up the first `<Dictionary>` object
