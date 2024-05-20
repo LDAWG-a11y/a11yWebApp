@@ -369,7 +369,11 @@ Select text to be used as heading and style as appropriate.
 
   ![text that is a url but not a link in the original document](src/guideImg/33-text-that-is-a-url-but-not-a-link-in-the-original-document.png)
 * Will be clickable in the exported PDF and should be made into a hyperlink in the original document using good link text
-  Note: ScreenTips are not able to set unlike Microsoft Word
+
+
+  **Note: ScreenTips are not able to set unlike Microsoft Word** 
+
+  ![link is now a link with proper link text](src/guideImg/34-link-is-now-a-link-with-proper-link-text.png)
 
 ### Paragraphs
 
