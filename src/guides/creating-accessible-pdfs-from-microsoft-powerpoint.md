@@ -21,7 +21,7 @@ isGuide: true
 
 ## Demo file
 
-An example file, [Powerpoint-Example.pptx](https://www.makethingsaccessible.com/public/docs/powerpoint-example.pptx) **(PPTX 7MB)**, has been created which has issues that need to be corrected.
+An example file, [Powerpoint-Example.pptx](https://www.makethingsaccessible.com/docs/powerpoint-example.pptx) **(PPTX 7MB)**, has been created which has issues that need to be corrected.
 
 ## Making documents correctly
 
@@ -709,7 +709,7 @@ The document has now fully passed PAC 2024.
 
 ## Downloadable Microsoft Word version
 
-[Creating accessible PDFs from Microsoft Powerpoint](https://www.makethingsaccessible.com/public/docs/creating-accessible-pdfs-from-microsoft-powerpoint.docx) **(Word 2.09MB)**
+[Creating accessible PDFs from Microsoft Powerpoint](https://www.makethingsaccessible.com/docs/creating-accessible-pdfs-from-microsoft-powerpoint.docx) **(Word 2.09MB)**
 
 ## Useful links
 
