@@ -81,7 +81,7 @@ First we'll create the buttons that toggle our preference, we're just going to c
 * We add some very specific data-attributes
 
   * We add a data-attribute to each called `data-pref` and the value of each is an identifier and a value, which are space separated. So for us `f-size` simply means font size and the value is either `large`, `largest` or `unset`
-* We then add `aria-pressed` to each button, as we require a state to inform users programmatically that the element is a toggle-able button. in the HTML, we're just setting them all as `false` as we will eventually listen for a page `load` event and set `true` to the correct one. In this implementation, there will always be one which has the value set to `true`
+* We add `aria-pressed` to each button, as we require a state to inform users programmatically that the element is a toggle-able button. in the HTML, we're just setting them all as `false` as we will eventually listen for a page `load` event and set `true` to the correct one. In this implementation, there will always be one which has the value set to `true`
 
 Obviously you can use class names and any data attribute names you wish, they just need to be consistent as will become apparent later
 
@@ -191,7 +191,7 @@ window.onload = () => {
 
 Well, that's our JS done. I'll put my obligatory disclaimer in here that I do not consider myself a JS ninja, so undoubtedly a "Tech bro" with a Tesla and loads of Bitcoin could improve that in some way. We can be safe in the knowledge that they would have just used React and ignored accessibility altogether, so at least mine works properly \[insert cry/laugh emoji].
 
-It's difficult to explain exactly what I did above in a concise way, considering I'm trying to find the common ground between explaining to two audiences, one of which may be JS ninjas and the other may know a little or not very much. I guess the easiest way to explain is:
+It's difficult to explain exactly what I did above in a concise way, considering I'm trying to find the common ground between explaining to two audiences, one of which may be JS ninjas and the other may know a little or nothing about JS, but are here to learn. I guess the easiest way to explain is:
 
 * Wait for page load to complete
 * Grab any preference settings from local storage and add set thme on the `<html>` element only if it starts with our prefix 'data-pref--''
