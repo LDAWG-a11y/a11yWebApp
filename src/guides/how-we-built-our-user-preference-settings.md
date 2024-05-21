@@ -148,25 +148,55 @@ So, now we can only have one button per group set to aria-pressed="true", which 
 So it makes sense that preferences will persist across pages and of course on repeat visits. If a user finds it more comfortable having larger text, then I'm sure we can all agree it would be a huge annoyance to have to set that on every page they visited and on every repeat visit. As it stands, when we click a button, we add a data attribute and store that same data attribute in `localStorage`, if we refresh the page, we no longer have the data attribute, but we do have the `localStorage` entry, so we just need to utilise that on a page load event, so let's tackle that last step now.
 
 ```javascript
+// wait for the page load to complete
 window.onload = () => {
+// Get all items from local storage
   const userStoredPrefs = {...localStorage};
+// Loop through all of the properties
   for (const prop in userStoredPrefs) {
-    if (prop.startsWith('data-pref-')) {
+// discard any property that does not start with our prefix 'data-pref--'
+    if (prop.startsWith('data-pref--')) {
+// Set the data attribute to be the property and the value on the HTML element
       document.documentElement.setAttribute(`${prop}`, userStoredPrefs[prop]);
     }
   }
 
+// Loop through all of the attributes that are present on the HTML element
   for (const userPref of document.documentElement.attributes) {
-    if (userPref.name.includes('data-pref--')) {
+// Discard those that do not start with our prefix
+    if (userPref.name.startsWith('data-pref--')) {
+// Split our attribute at the double htphen so we can get our identifier
       let prefType = userPref.name.split('--');
-      settingsModal.querySelector(`.settings__btn--${prefType[1]}-${userPref.value}`).setAttribute('aria-pressed', 'true');
+// Find the button that has an attribute that matches, for our font size we are searching for
+// data-pref="f-size [actual value]" and then adding the value after a space, for largest text 
+// our query selector will actually be: data-pref="f-size largest", as we have manipulated
+// the string. so we set that matching button to aria-pressed="true"
+      document.querySelector(`[data-pref="${prefType[1]} ${userPref.value}`).setAttribute('aria-pressed', 'true');
     }
   }
 
-  settingsModal.querySelectorAll('.settings__btns-wrapper').forEach(group => {
+// Finally, what if a user has not selected a button, well then we need to set aria-pressed="true", to
+// our default (Unset).
+// Loop through all of our groups (the fieldsets)
+  document.querySelectorAll('.settings__fieldset').forEach(group => {
+// Search within each group, if any group does NOT have a button that has aria-pressed="true"
+// then find any button in that group that is a pref button, that has a value of "unset"
+// we do this with the CSS wildcard selector * and a value of "Unset" and simply set aria-pressed="true"
     if (!group.querySelector('button[aria-pressed="true"]')) {
-      group.querySelector('[data-pref~="unset"').setAttribute('aria-pressed', 'true');
+      group.querySelector('[data-pref*="unset"').setAttribute('aria-pressed', 'true');
     }
   })
 }
 ```
+
+Well, that's our JS done. I'll put my obligatory disclaimer in here that I do not consider myself a JS ninja, so undoubtedly a "Tech bro" with a Tesla and loads of Bitcoin could improve that in some way. We can be safe in the knowledge that they would have just used React and ignored accessibility altogether, so at least mine works properly \[insert cry/laugh emoji].
+
+It's difficult to explain exactly what I did above in a concise way, considering I'm trying to find the common ground between explaining to two audiences, one of which may be JS ninjas and the other may know a little or not very much. I guess the easiest way to explain is:
+
+* Wait for page load to complete
+* Grab any preference settings from local storage and add set thme on the `<html>` element only if it starts with our prefix 'data-pref--''
+* Then loop through all of the `<html>` attributes, just getting the ones that start with our prefix and manipulating the attribute and its value so we end up with an exact match for its corresponding button
+* When we get that match, press that button
+* Then after that has happened, search within all groups (fieldsets) that don't have a "pressed" button and just set the default (Unset) to be the pressed button
+
+So, just one thing missing at this stage, we need a way to visually identify which `<button>` is pressed, all is good for screen reader users, but those that aren't having the accessibility information announced to them don't know which is pressed, so let's fix that now, with CSS:
