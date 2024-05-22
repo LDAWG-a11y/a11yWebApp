@@ -200,3 +200,24 @@ It's difficult to explain exactly what I did above in a concise way, considering
 * Then after that has happened, search within all groups (fieldsets) that don't have a "pressed" button and just set the default (Unset) to be the pressed button
 
 So, just one thing missing at this stage, we need a way to visually identify which `<button>` is pressed, all is good for screen reader users, but those that aren't having the accessibility information announced to them don't know which is pressed, so let's fix that now, with CSS:
+
+```css
+button {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+button::before,
+button::after {
+  content: "";
+  position: absolute;
+}
+
+[aria-pressed="false"] {
+  
+}
+
+[aria-pressed="true"] {
+}
+```
