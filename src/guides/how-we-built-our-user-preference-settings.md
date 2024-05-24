@@ -405,5 +405,64 @@ That was it, within just a few minutes we have a second user preference set up, 
 </fieldset>
 
 <!-- New preference -->
-
+<fieldset class="settings__fieldset">
+  <legend class="settings__legend">Highlight colour (interactive controls colour)</legend>
+  <button aria-pressed="false" data-pref="h-color unset">Unset (purple)</button>
+  <button aria-pressed="false" data-pref="h-color black">Black</button>
+  <button aria-pressed="false" data-pref="h-color red">Red</button>
+  <button aria-pressed="false" data-pref="h-color blue">Blue</button>
+</fieldset>
 ```
+
+In the above code example:
+
+* I have added a 4th button to the group, again, nothing smart here, it was just a copy and paste again
+* I have changed the `<legend>`, as one would expect
+* I have changed both the identifier and the value, for each data attribute and of course, changed the contents of each button
+
+Twitter have a similar thing to the above, that enables a user to change the colour of links and buttons, etc, so this is a rough example of that. Don't just go copy and pasting this one, as there is every chance it will cause low contrast issues on a real site, unless you are real careful with the colour options you provide. We don't have this option in our preferences, it would likely take a little bit of trial and error to get it right, but it's important that it is right, as otherwise it may be useless to some folks who would actually benefit. Anyway, let's just add our final bits of CSS (we only need a little bit here, three declarations for our three new buttons that do not 'Unset' anything. We already created a custom property, earlier for the colour of interactive controls:
+
+```css
+/* Just add three new declartions, one for each new colour */
+[data-pref--h-color="black"] {
+  --colour-interactive: #1f1f1f;
+}
+
+[data-pref--h-color="red"] {
+  --colour-interactive: #c10202;
+}
+
+[data-pref--h-color="blue"] {
+  --colour-interactive: #0256c1;
+}
+```
+
+Again, it didn't take long to create a totally new user preference, just a tiny bit of CSS and a little additional HTML, both of which we can basically copy, paste and then modify.
+
+## The complete CodePen
+
+<p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="ZENpbyN" data-pen-title="Reusable user preference settings" data-preview="true" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+
+  <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/ZENpbyN">
+
+  Reusable user preference settings</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
+
+  on <a href="https://codepen.io">CodePen</a>.</span>
+
+</p>
+
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+## Wrapping up
+
+Hopefully I have explained well enough to help you understand the process? The key takeaway is just consistently naming things, so the identifier part of a button's data attribute's value is the bit that needs to be consistent, within that group. We could have taken another approach, where the whole data attribute on the button had a value that was the full data attribute, maybe that approach is better? I just went for this one.
+
+We do have one issue with what we have done, it's more of a final polish issue than anything else. As we can change visual aspects, we will likely get a brief moment where the initial style displays and then the user selected style overrides it, which is a bit janky. So, there is of course a way to get around that and it requires running a small snippet of JS in the `<head>` section of the site. Essentially, we would be looping through all of those key/value pairs we have in localStorage and adding the necessary data attributes before we construct the DOM. We do exactly that for our theme, in that we check for the theme data attribute, very early on, apply the attribute and then the page builds. I did try to do this for all of our preference settings whilst in development, but it actually added quite a bit of a delay to the render times. i do need to look deeper into that, at some point. I can't take the credit for the useful snippet in the `<head>` section, as I just modified something from [Adam Argyle's guide on Web.Dev (caution, it does have some auto-playing media)](https://web.dev/articles/building/a-theme-switch-component). Obviously that would need modifying a little, this is the snippet that does it for our theme:
+
+```javascript
+if (localStorage.getItem('data-pref--theme')) {
+  document.documentElement.setAttribute('data-pref--theme', localStorage.getItem('data-pref--theme'))
+}
+```
+
+We're just checking for the presence of an item in local storage data-pref--theme and then adding the correct attribute and value to the `<html>` element. As I stated, i did try looping through the items for all of our preferences here, but it was a little slower and I couldn't cope with not having 4 * 100s in Lighthouse, as it would annoy me.
