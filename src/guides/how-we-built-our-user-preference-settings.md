@@ -63,6 +63,8 @@ At the basic level, all we really do is add a data-attribute or class to the `<h
 First we'll create the buttons that toggle our preference, we're just going to create one preference to start with, as then I can demonstrate how easy it is to add another, a little later on. the first example will be for changing our site's font size:
 
 ```html
+<h1>User preferences</h1>
+
 <fieldset class="settings__fieldset">
   <legend class="settings__legend">Font size</legend>
   <button aria-pressed="false" data-pref="f-size large">Large</button>
@@ -82,6 +84,7 @@ First we'll create the buttons that toggle our preference, we're just going to c
 
   * We add a data-attribute to each called `data-pref` and the value of each is an identifier and a value, which are space separated. So for us `f-size` simply means font size and the value is either `large`, `largest` or `unset`
 * We add `aria-pressed` to each button, as we require a state to inform users programmatically that the element is a toggle-able button. in the HTML, we're just setting them all as `false` as we will eventually listen for a page `load` event and set `true` to the correct one. In this implementation, there will always be one which has the value set to `true`
+* We also have a `<h1>` in there, as at some point you will likely think "But I don't want all the text to be exactly the same size, that would be silly" and you would of course be right. I'll show you a quick way of solving that, later
 
 Obviously you can use class names and any data attribute names you wish, they just need to be consistent as will become apparent later
 
@@ -189,35 +192,138 @@ window.onload = () => {
 }
 ```
 
-Well, that's our JS done. I'll put my obligatory disclaimer in here that I do not consider myself a JS ninja, so undoubtedly a "Tech bro" with a Tesla and loads of Bitcoin could improve that in some way. We can be safe in the knowledge that they would have just used React and ignored accessibility altogether, so at least mine works properly \[insert cry/laugh emoji].
+Well, that's our done. I'll put my obligatory disclaimer in here that I do not consider myself a JS ninja, so undoubtedly a "Tech bro" with a Tesla and loads of Bitcoin could improve that in some way. We can be safe in the knowledge that they would have just used React and ignore accessibility altogether, so at least ours works properly \[insert cry/laugh emoji].
 
-It's difficult to explain exactly what I did above in a concise way, considering I'm trying to find the common ground between explaining to two audiences, one of which may be JS ninjas and the other may know a little or nothing about JS, but are here to learn. I guess the easiest way to explain is:
+It's difficult to explain exactly what I did above in a concise way, considering I'm trying to find the common ground between explaining to two audiences, one of which may be JS ninjas and the other may know a little or nothing about JS, but are here to learn. I guess the easiest way to summarise is:
 
 * Wait for page load to complete
-* Grab any preference settings from local storage and add set thme on the `<html>` element only if it starts with our prefix 'data-pref--''
+* Grab any preference settings from local storage and add set theme on the `<html>` element only if it starts with our prefix `data-pref--`
 * Then loop through all of the `<html>` attributes, just getting the ones that start with our prefix and manipulating the attribute and its value so we end up with an exact match for its corresponding button
 * When we get that match, press that button
 * Then after that has happened, search within all groups (fieldsets) that don't have a "pressed" button and just set the default (Unset) to be the pressed button
 
-So, just one thing missing at this stage, we need a way to visually identify which `<button>` is pressed, all is good for screen reader users, but those that aren't having the accessibility information announced to them don't know which is pressed, so let's fix that now, with CSS:
+So, just one thing missing at this stage, we need a way to visually identify which `<button>` is pressed, as all is good for screen reader users, but those that aren't having the accessibility information announced to them don't know which is pressed, let's fix that now, I'm just going to use CSS psuedo elements:
 
 ```css
+/* Set a few custom properties on the ROOT element, we will use these soon */
+:root {
+  --default-f-size: 1.25rem;
+  --colour-interactive: rebeccapurple;
+  --colour-bg: white;
+}
+
+/* Some very basic font styling, using our default font size custom property, we set this
+   on the HTML element, so we can use REM units correctly */
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--default-f-size);
+}
+
+/* We use the calc() function, with our custom property, for elements that have a different font size */
+h1 {
+  font-size: calc(var(--default-f-size) * 1.5);
+}
+
+/* Give the fieldset and its contents a little breathing space */
+fieldset {
+  display: flex;
+  gap: .75rem;
+  padding: 1rem;
+}
+
+/* Add some styles to make it look OK and set a relative position */
 button {
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  border: 2px solid var(--colour-interactive);
+  border-radius: 4px;
+  padding: .25rem 2rem .25rem 1.25rem;
+  font: inherit;
+  color: var(--colour-bg);
+  background-color: var(--colour-interactive);
+  transition: background-color 250ms ease-in, color 250ms ease-in, outline-color 250ms ease-in;
+  cursor: pointer;
 }
 
-button::before,
-button::after {
+/* Create the shared declarations for the two cross parts */
+[aria-pressed="false"]::before,
+[aria-pressed="false"]::after {
   content: "";
   position: absolute;
+  right: 1rem;
+  width: .25rem;
+  height: 1rem;
+  background-color: var(--colour-bg);
 }
 
-[aria-pressed="false"] {
-  
+/* Rotate the two elements in opposite directions to create a cross */
+[aria-pressed="false"]::before {
+  transform: rotate(45deg);
 }
 
-[aria-pressed="true"] {
+[aria-pressed="false"]::after {
+  transform: rotate(-45deg);
+}
+
+/* Create a checkmark, using the border hack (bottom and right */
+[aria-pressed="true"]::before {
+  content: "";
+  position: absolute;
+  right: .625rem;
+  bottom: .625rem;
+  display: inline-block;
+  transform: rotate(45deg);
+  height: .8rem;
+  width: .4rem;
+  border-bottom: .25rem solid var(--colour-bg);
+  border-right: .25rem solid var(--colour-bg);
+}
+
+/* Add a suitable focus outline */
+button:focus {
+  outline: 3px solid var(--colour-interactive);
+  outline-offset: 2px;
+}
+
+/* Inverse the font colour and background colour on hover and focus */
+button:focus,
+button:hover {
+  color: var(--colour-interactive);
+  background-color: var(--colour-bg);
+}
+
+/* Inverse the colour of the cross icon and add a small transition */
+[aria-pressed="false"]:focus::before,
+[aria-pressed="false"]:focus::after,
+[aria-pressed="false"]:hover::before,
+[aria-pressed="false"]:hover::after {
+  background-color: var(--colour-interactive);
+  transition: background-color 250ms ease-in;
+}
+
+/* Inverse the colours of the checkmark and also add a small transition */
+[aria-pressed="true"]:focus::before,
+[aria-pressed="true"]:hover::before {
+  border-bottom: .25rem solid var(--colour-interactive);
+  border-right: .25rem solid var(--colour-interactive);
+  transition: border-color 250ms ease-in;
 }
 ```
+
+So, that's the CSS pretty much wrapped up. Our buttons look OK, we're not going all out on style, as you will obviously want to use your own styling. The only change we need to make now is to get this actually working, we will need a tiny bit of additional CSS for that:
+
+```css
+/* We just override the variables when our data attributes are present on the HTML element
+   these are just arbritary values, just to demonstrate. We need one for each value
+   that gets stored. remember our 'Unset' value never gets stored anywhere */
+[data-pref--f-size="large"] {
+  --default-f-size: 1.5rem;
+}
+
+[data-pref--f-size="largest"] {
+  --default-f-size: 2rem;
+}
+```
+
+It's as easy as that. There are of course issues we have not addressed here, I haven't made it responsive, i haven't factored in High Contrast Mode
