@@ -5,7 +5,7 @@ summary: "The user preference settings we developed aim to give granular control
   provide users with controls that can adjust the presentation, usability and
   accessibility of the site, so it is presented in a way that works for them. "
 author: dlee
-date: 2024-04-23
+date: 2024-05-24
 toc: false
 tags:
   - Case study
