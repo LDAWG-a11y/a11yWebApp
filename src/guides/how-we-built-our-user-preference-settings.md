@@ -71,6 +71,10 @@ First we'll create the buttons that toggle our preference, we're just going to c
   <button aria-pressed="false" data-pref="f-size unset">Unset</button>
   <button aria-pressed="false" data-pref="f-size largest">Largest</button>
 </fieldset>
+
+<!-- Add some lorem ipsum, below -->
+
+<p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis, beatae! Aperiam veritatis accusantium repudiandae perspiciatis sint quibusdam, illum ut impedit deleniti, atque laboriosam aut voluptatem optio possimus officiis voluptates rerum.</p>
 ```
 
 * We wrap our controls in a `fieldset`, so we have a programmatic grouping association
@@ -326,4 +330,80 @@ So, that's the CSS pretty much wrapped up. Our buttons look OK, we're not going 
 }
 ```
 
-It's as easy as that. There are of course issues we have not addressed here, I haven't made it responsive, i haven't factored in High Contrast Mode
+It's as easy as that. There are of course issues we have not addressed here, I haven't made it responsive, i haven't factored in High Contrast Mode and we haven't really considered specificity, although as we are simply inheriting the font size from the root element, we should be good. I'm not usually a fan of the CSS `!important` property, but using it for user overrides seems like a great use of it to me.
+
+If you have been following along, you will now notice that when we select a `<button>` other than 'Unset', all of the text, including the `<h1>` changes size, which was of course the goal.
+
+### Reusing our functionality
+
+Earlier I did promise to demonstrate how to reuse this, with relative ease, so let's just make a couple of new user preferences now. First we will need to add some HTML, the way I do this, is I simply copy and then paste from our existing `<fieldset>` group and then modify it:
+
+```html
+<!-- Initial preferences group -->
+<fieldset class="settings__fieldset">
+  <legend class="settings__legend">Font size</legend>
+  <button aria-pressed="false" data-pref="f-size large">Large</button>
+  <button aria-pressed="false" data-pref="f-size unset">Unset</button>
+  <button aria-pressed="false" data-pref="f-size largest">Largest</button>
+</fieldset>
+
+<!-- New preferences group -->
+<fieldset class="settings__fieldset">
+  <legend class="settings__legend">Line height</legend>
+  <button aria-pressed="false" data-pref="l-height large">Large</button>
+  <button aria-pressed="false" data-pref="l-height unset">Unset</button>
+  <button aria-pressed="false" data-pref="l-height largest">Largest</button>
+</fieldset>
+```
+
+In the above, I have just changed the identifier part of our data attributes' values on the new group we copy and pasted. Pretty straightforward, right?
+
+Now we just need a little touch of CSS, I'm just going to add to existing style declarations and add two new ones, the comments should make that clear. i just don't want to paste in all of the code and overcomplicate things for you.
+
+```css
+ :root {
+  --default-f-size: 1.25rem;
+  --colour-interactive: rebeccapurple;
+  --colour-bg: white;
+  /* Just add the line below */
+   --line-height: 1.5;
+}
+
+/* Add the following two declarations to the stylesheet */
+[data-pref--l-height="large"] {
+  --line-height 1.75;
+}
+
+[data-pref--l-height="largest"] {
+  --line-height 2;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--default-f-size);
+  /* Add the following line */
+  line-height: var(--line-height);
+}
+```
+
+That was it, within just a few minutes we have a second user preference set up, as we did all of the ground work earlier.We'll add one more, this time we will make a more complex one, by adding an additional button:
+
+```html
+<!-- Old preferences -->
+<fieldset class="settings__fieldset">
+  <legend class="settings__legend">Font size</legend>
+  <button aria-pressed="false" data-pref="f-size large">Large</button>
+  <button aria-pressed="false" data-pref="f-size unset">Unset</button>
+  <button aria-pressed="false" data-pref="f-size largest">Largest</button>
+</fieldset>
+
+<fieldset class="settings__fieldset">
+  <legend class="settings__legend">Line height</legend>
+  <button aria-pressed="false" data-pref="l-height large">Large</button>
+  <button aria-pressed="false" data-pref="l-height unset">Unset</button>
+  <button aria-pressed="false" data-pref="l-height largest">Largest</button>
+</fieldset>
+
+<!-- New preference -->
+
+```
