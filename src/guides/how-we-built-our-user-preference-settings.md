@@ -104,46 +104,67 @@ Now we will add the functionality:
 
 ```javascript
 // Loop through all prefBtns
+
 prefsBtns.forEach(btn => {
+  
 // Listen for click events
+  
    btn.addEventListener('click', () => {
+     
 // When clicked toggle aria-pressed to true
+     
    btn.setAttribute('aria-pressed', 'true');
+     
 // Get the identifier and value from the data attribute and split at the space character
-   const pref = btn.getAttribute('data-pref').split(' ');
+   
+     const pref = btn.getAttribute('data-pref').split(' ');
+     
 // If the value [1] of the clicked btn is not 'unset', add a data attribute to the html element
 // prefix 'data-pref--' and add the identifier [0], then the value becomes value [1] of the
 // button's data-attribute value [1]
+     
    if (pref[1] !== 'unset') {
      document.documentElement.setAttribute(`data-pref--${pref[0]}`, pref[1]);
-// Let's just add that same data attribute & value to localStorage
+
+     // Let's just add that same data attribute & value to localStorage
+     
      window.localStorage.setItem(`data-pref--${pref[0]}`, pref[1]);
-// If the value [1] is unset, remove the attribute from the html element and remove the entry
+
+     // If the value [1] is unset, remove the attribute from the html element and remove the entry
 // From local storage
+     
    } else {
       document.documentElement.removeAttribute(`data-pref--${pref[0]}`);
       window.localStorage.removeItem(`data-pref--${pref[0]}`);
    }
 // We send the clicked button to an as yet unwritten function, comment this out if
 // you're coding along
+     
      togglePrefsBtns(btn);
   })
 })
   
 ```
 
-Hopefully that makes sense? If you are following a long in a code editor, you will notice that we are now adding our data attribute to the `<html> `element and if you look in `localStorage`, we are also adding it there. If we select "Unset" we remove the attribute from the `<html>` element and `localStorage`.
+Hopefully that makes sense? If you are following a long in a code editor, you will notice that we are now adding our data attribute to the `<html>`element and if you look in `localStorage`, we are also adding it there. If we select "Unset" we remove the attribute from the `<html>` element and `localStorage`.
 
 Next we will make sure that when one button is clicked, it's sibling buttons are set to `aria-pressed="false"`, so we're just gonna build a small function, we called it in the previous step and we hadn't declared it, so let's do that now.
 
 ```javascript
 // Declare our function that accepts the clicked button, from the previous step
+
 const togglePrefsBtns = (btn) => {
+  
 // Get the closest fieldset (its parent) and search for all buttons inside
+  
   btn.closest('.settings__fieldset').querySelectorAll('button').forEach(prefBtn => {
-// get all buttons in the fieldset that aren't the clicked button
+
+    // get all buttons in the fieldset that aren't the clicked button
+    
     if (prefBtn !== btn) {
+      
 // Set aria-pressed to false
+      
       prefBtn.setAttribute('aria-pressed', 'false');
     }
   })
@@ -156,28 +177,43 @@ So it makes sense that preferences will persist across pages and of course on re
 
 ```javascript
 // wait for the page load to complete
+
 window.onload = () => {
+  
 // Get all items from local storage
+  
   const userStoredPrefs = {...localStorage};
+  
 // Loop through all of the properties
+  
   for (const prop in userStoredPrefs) {
+    
 // discard any property that does not start with our prefix 'data-pref--'
+    
     if (prop.startsWith('data-pref--')) {
+      
 // Set the data attribute to be the property and the value on the HTML element
+     
       document.documentElement.setAttribute(`${prop}`, userStoredPrefs[prop]);
     }
   }
 
 // Loop through all of the attributes that are present on the HTML element
+  
   for (const userPref of document.documentElement.attributes) {
 // Discard those that do not start with our prefix
+    
     if (userPref.name.startsWith('data-pref--')) {
+      
 // Split our attribute at the double htphen so we can get our identifier
+      
       let prefType = userPref.name.split('--');
+      
 // Find the button that has an attribute that matches, for our font size we are searching for
 // data-pref="f-size [actual value]" and then adding the value after a space, for largest text 
 // our query selector will actually be: data-pref="f-size largest", as we have manipulated
 // the string. so we set that matching button to aria-pressed="true"
+      
       document.querySelector(`[data-pref="${prefType[1]} ${userPref.value}`).setAttribute('aria-pressed', 'true');
     }
   }
@@ -185,10 +221,13 @@ window.onload = () => {
 // Finally, what if a user has not selected a button, well then we need to set aria-pressed="true", to
 // our default (Unset).
 // Loop through all of our groups (the fieldsets)
+  
   document.querySelectorAll('.settings__fieldset').forEach(group => {
-// Search within each group, if any group does NOT have a button that has aria-pressed="true"
+
+    // Search within each group, if any group does NOT have a button that has aria-pressed="true"
 // then find any button in that group that is a pref button, that has a value of "unset"
 // we do this with the CSS wildcard selector * and a value of "Unset" and simply set aria-pressed="true"
+    
     if (!group.querySelector('button[aria-pressed="true"]')) {
       group.querySelector('[data-pref*="unset"').setAttribute('aria-pressed', 'true');
     }
@@ -210,6 +249,7 @@ So, just one thing missing at this stage, we need a way to visually identify whi
 
 ```css
 /* Set a few custom properties on the ROOT element, we will use these soon */
+
 :root {
   --default-f-size: 1.25rem;
   --colour-interactive: rebeccapurple;
@@ -218,17 +258,20 @@ So, just one thing missing at this stage, we need a way to visually identify whi
 
 /* Some very basic font styling, using our default font size custom property, we set this
    on the HTML element, so we can use REM units correctly */
+
 html {
   font-family: Arial, Helvetica, sans-serif;
   font-size: var(--default-f-size);
 }
 
 /* We use the calc() function, with our custom property, for elements that have a different font size */
+
 h1 {
   font-size: calc(var(--default-f-size) * 1.5);
 }
 
 /* Give the fieldset and its contents a little breathing space */
+
 fieldset {
   display: flex;
   gap: .75rem;
@@ -236,6 +279,7 @@ fieldset {
 }
 
 /* Add some styles to make it look OK and set a relative position */
+
 button {
   position: relative;
   display: inline-flex;
@@ -251,6 +295,7 @@ button {
 }
 
 /* Create the shared declarations for the two cross parts */
+
 [aria-pressed="false"]::before,
 [aria-pressed="false"]::after {
   content: "";
@@ -262,6 +307,7 @@ button {
 }
 
 /* Rotate the two elements in opposite directions to create a cross */
+
 [aria-pressed="false"]::before {
   transform: rotate(45deg);
 }
@@ -271,6 +317,7 @@ button {
 }
 
 /* Create a checkmark, using the border hack (bottom and right */
+
 [aria-pressed="true"]::before {
   content: "";
   position: absolute;
@@ -285,12 +332,14 @@ button {
 }
 
 /* Add a suitable focus outline */
+
 button:focus {
   outline: 3px solid var(--colour-interactive);
   outline-offset: 2px;
 }
 
 /* Inverse the font colour and background colour on hover and focus */
+
 button:focus,
 button:hover {
   color: var(--colour-interactive);
@@ -298,6 +347,7 @@ button:hover {
 }
 
 /* Inverse the colour of the cross icon and add a small transition */
+
 [aria-pressed="false"]:focus::before,
 [aria-pressed="false"]:focus::after,
 [aria-pressed="false"]:hover::before,
@@ -307,6 +357,7 @@ button:hover {
 }
 
 /* Inverse the colours of the checkmark and also add a small transition */
+
 [aria-pressed="true"]:focus::before,
 [aria-pressed="true"]:hover::before {
   border-bottom: .25rem solid var(--colour-interactive);
@@ -321,6 +372,7 @@ So, that's the CSS pretty much wrapped up. Our buttons look OK, we're not going 
 /* We just override the variables when our data attributes are present on the HTML element
    these are just arbritary values, just to demonstrate. We need one for each value
    that gets stored. remember our 'Unset' value never gets stored anywhere */
+
 [data-pref--f-size="large"] {
   --default-f-size: 1.5rem;
 }
@@ -340,6 +392,7 @@ Earlier I did promise to demonstrate how to reuse this, with relative ease, so l
 
 ```html
 <!-- Initial preferences group -->
+
 <fieldset class="settings__fieldset">
   <legend class="settings__legend">Font size</legend>
   <button aria-pressed="false" data-pref="f-size large">Large</button>
@@ -348,6 +401,7 @@ Earlier I did promise to demonstrate how to reuse this, with relative ease, so l
 </fieldset>
 
 <!-- New preferences group -->
+
 <fieldset class="settings__fieldset">
   <legend class="settings__legend">Line height</legend>
   <button aria-pressed="false" data-pref="l-height large">Large</button>
@@ -365,11 +419,14 @@ Now we just need a little touch of CSS, I'm just going to add to existing style 
   --default-f-size: 1.25rem;
   --colour-interactive: rebeccapurple;
   --colour-bg: white;
+   
   /* Just add the line below */
+   
    --line-height: 1.5;
 }
 
 /* Add the following two declarations to the stylesheet */
+
 [data-pref--l-height="large"] {
   --line-height 1.75;
 }
@@ -381,7 +438,9 @@ Now we just need a little touch of CSS, I'm just going to add to existing style 
 html {
   font-family: Arial, Helvetica, sans-serif;
   font-size: var(--default-f-size);
+  
   /* Add the line below */
+  
   line-height: var(--line-height);
 }
 ```
@@ -390,6 +449,7 @@ That was it, within just a few minutes we have a second user preference set up, 
 
 ```html
 <!-- Old preferences -->
+
 <fieldset class="settings__fieldset">
   <legend class="settings__legend">Font size</legend>
   <button aria-pressed="false" data-pref="f-size large">Large</button>
@@ -405,6 +465,7 @@ That was it, within just a few minutes we have a second user preference set up, 
 </fieldset>
 
 <!-- New preference -->
+
 <fieldset class="settings__fieldset">
   <legend class="settings__legend">Highlight colour (interactive controls colour)</legend>
   <button aria-pressed="false" data-pref="h-color unset">Unset (purple)</button>
@@ -424,6 +485,7 @@ Twitter has a similar thing to the above, that enables a user to change the colo
 
 ```css
 /* Just add three new declartions, one for each new colour */
+
 [data-pref--h-color="black"] {
   --colour-interactive: #1f1f1f;
 }
