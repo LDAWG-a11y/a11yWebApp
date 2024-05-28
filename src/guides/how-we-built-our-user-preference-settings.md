@@ -98,7 +98,7 @@ Now let's just get a JS reference to the button elements we will be using in our
 const prefsBtns = document.querySelectorAll('[data-pref]');
 ```
 
-We store a reference to to all of the `<button>`s , we can just use the `data-pref` attribute to get that collection
+We store a reference to to all of the `<button>`s , we can just use the `data-pref` attribute to get that collection.
 
 Now we will add the functionality:
 
@@ -146,7 +146,7 @@ prefsBtns.forEach(btn => {
   
 ```
 
-Hopefully that makes sense? If you are following a long in a code editor, you will notice that we are now adding our data attribute to the `<html>`element and if you look in `localStorage`, we are also adding it there. If we select "Unset" we remove the attribute from the `<html>` element and `localStorage`.
+Hopefully that makes sense? If you are following along in a code editor, you will notice that we are now adding our data attribute to the `<html>`element and if you look in `localStorage`, we are also adding it there. If we select "Unset" we remove the attribute from the `<html>` element and `localStorage`.
 
 Next we will make sure that when one button is clicked, it's sibling buttons are set to `aria-pressed="false"`, so we're just gonna build a small function, we called it in the previous step and we hadn't declared it, so let's do that now.
 
@@ -243,7 +243,7 @@ It's difficult to explain exactly what I did above in a concise way, considering
 * Grab any preference settings from local storage and set matching data attributes on the `<html>` element only if they start with our prefix `data-pref--`
 * Then loop through all of the `<html>` attributes, just getting the ones that start with our prefix and manipulating the attribute and its value so we end up with an exact match for its corresponding button
 * When we get that match, change the value of `aria-pressed` to `true`
-* Then after that has happened, search within all groups (fieldsets) that don't have a "pressed" button and just set the default (Unset) to be the pressed button (this is just belt and braces, as the HTML already handles that, on page load)
+* Then after that has happened, search within all groups (fieldsets) that don't have a "pressed" button and just set the default (Unset) to be the pressed button (this is just belt and braces, as the HTML already handles that, on page load).
 
 So, just one thing missing at this stage, we need a way to visually identify which `<button>` is pressed, as all is good for screen reader users, but those that aren't having the accessibility information announced to them don't know which is `<button>` pressed, let's fix that now, I'm just going to use CSS psuedo elements:
 
@@ -479,9 +479,9 @@ In the above code example:
 
 * I have added a 4th button to the new group, again, nothing smart here, it was just a copy and paste again
 * I have changed the `<legend>`, as one would expect
-* I have changed both the identifier and the value, for each data attribute and of course, changed the contents of each button
+* I have changed both the identifier and the value, for each data attribute and of course, changed the contents of each button.
 
-Twitter has a similar thing to the above, that enables a user to change the colour of links and buttons, etc, so this is a rough example of that. Don't just go copy and pasting this one, as there is every chance it will cause low contrast issues on a real site, unless you are real careful with the colour options you provide. We don't have this option in our preferences, it would likely take a little bit of trial and error to get it right, but it's important that it is right, as otherwise it may be useless to some folks who would actually benefit. Anyway, let's just add our final bits of CSS (we only need a little bit here, three declarations for our three new buttons that do not 'Unset' anything. We already created a custom property, earlier for the colour of interactive controls, so the only thing we need to do, is override the colour when the relevant attribute is on the `<html>` element
+Twitter has a similar thing to the above, that enables a user to change the colour of links and buttons, etc, so this is a rough example of that. Don't just go copy and pasting this one, as there is every chance it will cause low contrast issues on a real site, unless you are real careful with the colour options you provide. We don't have this option in our preferences, it would likely take a little bit of trial and error to get it right, but it's important that it is right, as otherwise it may be useless to some folks who would actually benefit. Anyway, let's just add our final bits of CSS (we only need a little bit here, three declarations for our three new buttons that do not 'Unset' anything. We already created a custom property, earlier for the colour of interactive controls, so the only thing we need to do, is override the colour when the relevant attribute is on the `<html>` element.
 
 ```css
 /* Just add three new declartions, one for each new colour */
