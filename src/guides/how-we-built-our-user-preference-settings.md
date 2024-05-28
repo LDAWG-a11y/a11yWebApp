@@ -88,7 +88,7 @@ First we'll create the buttons that toggle our preference, we're just going to c
 
   * We add a data-attribute to each called `data-pref` and the value of each is an identifier and a value, which are space separated. So for us `f-size` simply means font size and the value is either `large`, `largest` or `unset`
 * We add `aria-pressed` to each button, as we require a state to programmatically inform users that the element is a toggle-able button and it's current state. In the HTML, we're just setting them all as `false` as we will eventually listen for a page `load` event and set `true` to the correct one. In this implementation, there will always be one which has the value set to `true`
-* We also have a `<h1>` in there, as at some point you will likely think "But I don't want all the text to be exactly the same size, that would be silly" and you would of course be right. I'll show you a quick way of solving that, later
+* We also have a `<h1>` in there, as at some point you will likely think "But I don't want all the text to be exactly the same size, that would be silly" and you would of course be right. I'll show you a quick way of solving that later.
 
 Obviously you can use class names and any data attribute names you wish, they just need to be consistent as will become apparent later
 
