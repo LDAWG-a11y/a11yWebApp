@@ -46,13 +46,13 @@ I'm knocking on a little bit now, my vision is not as good as it once was. When 
 
 Go to an optician, I hear you say? I did before and I just could not get on with the glasses, so I returned them. I did get a bigger phone though, which helps (I'm not stubborn, honest), but now I'm pretty much at the limit of how big a phone can be and I doubt an iPad would fit in my pockets, so I'll have to get some more glasses in the near future.
 
-Obviously I didn't implement the ability to adjust the text size for me, I did it for our users, there is a similar feature on Twitter (nope, I'm still not calling it by it's new name), whereby I can increase the font size. I actually do use that and it helps the text become more readable to me. Obviously I am not the only person that benefits from that option, a whole host of folks likely do, whether that be due to a visual disability, a reading disability, getting a bit old or just just because they prefer it that way.
+Obviously I didn't implement the ability to adjust the text size for me, I did it for our users, there is a similar feature on Twitter (nope, I'm still not calling it by it's new name), whereby I can increase the font size. I actually do use that and it helps the text become more readable to me. Obviously I am not the only person that benefits from that option, a whole host of folks likely do, whether that be due to a visual disability, a reading disability, getting a bit old or just because they prefer it that way.
 
 What about motion? The media query we apply in CSS is called `prefers-reduced-motion`, it's not called `prefers-no-motion`, but what if a user does actually prefer no motion? Some folks undoubtedly will want the ability to turn off all motion and transitions, so we provide that as an option. Can this be done in the browser? Well we definitely could with a portable stylesheet or a bookmarklet, but I'm unaware of a setting that turns off all motion, so if this option benefits just one user, it was worth it to us.
 
 ## Okay, how did you build it?
 
-Okay, so my mind set here was to develop these preferences using JavaScript and LocalStorage, pretty standard fare really. Essentially just using a similar pattern to what what we did for the site theme switcher, but just that little more extensible. As is common with websites oftentimes, we want to add new features at a later date, perhaps a user may request something that helps them a little, perhaps there is something obvious I have missed, perhaps WCAG will introduce new ideas when version 3.0 starts to take its final form?
+Okay, so my mind set here was to develop these preferences using JavaScript and LocalStorage, pretty standard fare really. Essentially just using a similar pattern to what we did for the site theme switcher, but just that little more extensible. As is common with websites oftentimes, we want to add new features at a later date, perhaps a user may request something that helps them a little, perhaps there is something obvious I have missed, perhaps WCAG will introduce new ideas when version 3.0 starts to take its final form.
 
 So, the idea was to create reusable functionality, that will likely ever only require CSS modifications and not require any faffing around refactoring the JavaScript to add a new preference, I guess a fire-and-forget approach was what I wanted to achieve.
 
@@ -88,9 +88,9 @@ First we'll create the buttons that toggle our preference, we're just going to c
 
   * We add a data-attribute to each called `data-pref` and the value of each is an identifier and a value, which are space separated. So for us `f-size` simply means font size and the value is either `large`, `largest` or `unset`
 * We add `aria-pressed` to each button, as we require a state to programmatically inform users that the element is a toggle-able button and it's current state. In the HTML, we're just setting them all as `false` as we will eventually listen for a page `load` event and set `true` to the correct one. In this implementation, there will always be one which has the value set to `true`
-* We also have a `<h1>` in there, as at some point you will likely think "But I don't want all the text to be exactly the same size, that would be silly" and you would of course be right. I'll show you a quick way of solving that, later
+* We also have a `<h1>` in there, as at some point you will likely think "But I don't want all the text to be exactly the same size, that would be silly" and you would of course be right. I'll show you a quick way of solving that later.
 
-Obviously you can use class names and any data attribute names you wish, they just need to be consistent as will become apparent later
+Obviously you can use class names and any data attribute names you wish, they just need to be consistent as will become apparent later.
 
 Now let's just get a JS reference to the button elements we will be using in our functions:
 
@@ -98,7 +98,7 @@ Now let's just get a JS reference to the button elements we will be using in our
 const prefsBtns = document.querySelectorAll('[data-pref]');
 ```
 
-We store a reference to to all of the `<button>`s , we can just use the `data-pref` attribute to get that collection
+We store a reference to to all of the `<button>`s , we can just use the `data-pref` attribute to get that collection.
 
 Now we will add the functionality:
 
@@ -146,7 +146,7 @@ prefsBtns.forEach(btn => {
   
 ```
 
-Hopefully that makes sense? If you are following a long in a code editor, you will notice that we are now adding our data attribute to the `<html>`element and if you look in `localStorage`, we are also adding it there. If we select "Unset" we remove the attribute from the `<html>` element and `localStorage`.
+Hopefully that makes sense? If you are following along in a code editor, you will notice that we are now adding our data attribute to the `<html>`element and if you look in `localStorage`, we are also adding it there. If we select "Unset" we remove the attribute from the `<html>` element and `localStorage`.
 
 Next we will make sure that when one button is clicked, it's sibling buttons are set to `aria-pressed="false"`, so we're just gonna build a small function, we called it in the previous step and we hadn't declared it, so let's do that now.
 
@@ -243,7 +243,7 @@ It's difficult to explain exactly what I did above in a concise way, considering
 * Grab any preference settings from local storage and set matching data attributes on the `<html>` element only if they start with our prefix `data-pref--`
 * Then loop through all of the `<html>` attributes, just getting the ones that start with our prefix and manipulating the attribute and its value so we end up with an exact match for its corresponding button
 * When we get that match, change the value of `aria-pressed` to `true`
-* Then after that has happened, search within all groups (fieldsets) that don't have a "pressed" button and just set the default (Unset) to be the pressed button (this is just belt and braces, as the HTML already handles that, on page load)
+* Then after that has happened, search within all groups (fieldsets) that don't have a "pressed" button and just set the default (Unset) to be the pressed button (this is just belt and braces, as the HTML already handles that, on page load).
 
 So, just one thing missing at this stage, we need a way to visually identify which `<button>` is pressed, as all is good for screen reader users, but those that aren't having the accessibility information announced to them don't know which is `<button>` pressed, let's fix that now, I'm just going to use CSS psuedo elements:
 
@@ -479,9 +479,9 @@ In the above code example:
 
 * I have added a 4th button to the new group, again, nothing smart here, it was just a copy and paste again
 * I have changed the `<legend>`, as one would expect
-* I have changed both the identifier and the value, for each data attribute and of course, changed the contents of each button
+* I have changed both the identifier and the value, for each data attribute and of course, changed the contents of each button.
 
-Twitter has a similar thing to the above, that enables a user to change the colour of links and buttons, etc, so this is a rough example of that. Don't just go copy and pasting this one, as there is every chance it will cause low contrast issues on a real site, unless you are real careful with the colour options you provide. We don't have this option in our preferences, it would likely take a little bit of trial and error to get it right, but it's important that it is right, as otherwise it may be useless to some folks who would actually benefit. Anyway, let's just add our final bits of CSS (we only need a little bit here, three declarations for our three new buttons that do not 'Unset' anything. We already created a custom property, earlier for the colour of interactive controls, so the only thing we need to do, is override the colour when the relevant attribute is on the `<html>` element
+Twitter has a similar thing to the above, that enables a user to change the colour of links and buttons, etc, so this is a rough example of that. Don't just go copy and pasting this one, as there is every chance it will cause low contrast issues on a real site, unless you are real careful with the colour options you provide. We don't have this option in our preferences, it would likely take a little bit of trial and error to get it right, but it's important that it is right, as otherwise it may be useless to some folks who would actually benefit. Anyway, let's just add our final bits of CSS (we only need a little bit here, three declarations for our three new buttons that do not 'Unset' anything. We already created a custom property, earlier for the colour of interactive controls, so the only thing we need to do, is override the colour when the relevant attribute is on the `<html>` element.
 
 ```css
 /* Just add three new declartions, one for each new colour */
