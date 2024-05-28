@@ -52,7 +52,7 @@ What about motion? The media query we apply in CSS is called `prefers-reduced-mo
 
 ## Okay, how did you build it?
 
-Okay, so my mind set here was to develop these preferences using JavaScript and LocalStorage, pretty standard fare really. Essentially just using a similar pattern to what we did for the site theme switcher, but just that little more extensible. As is common with websites oftentimes, we want to add new features at a later date, perhaps a user may request something that helps them a little, perhaps there is something obvious I have missed, perhaps WCAG will introduce new ideas when version 3.0 starts to take its final form?
+Okay, so my mind set here was to develop these preferences using JavaScript and LocalStorage, pretty standard fare really. Essentially just using a similar pattern to what we did for the site theme switcher, but just that little more extensible. As is common with websites oftentimes, we want to add new features at a later date, perhaps a user may request something that helps them a little, perhaps there is something obvious I have missed, perhaps WCAG will introduce new ideas when version 3.0 starts to take its final form.
 
 So, the idea was to create reusable functionality, that will likely ever only require CSS modifications and not require any faffing around refactoring the JavaScript to add a new preference, I guess a fire-and-forget approach was what I wanted to achieve.
 
@@ -90,7 +90,7 @@ First we'll create the buttons that toggle our preference, we're just going to c
 * We add `aria-pressed` to each button, as we require a state to programmatically inform users that the element is a toggle-able button and it's current state. In the HTML, we're just setting them all as `false` as we will eventually listen for a page `load` event and set `true` to the correct one. In this implementation, there will always be one which has the value set to `true`
 * We also have a `<h1>` in there, as at some point you will likely think "But I don't want all the text to be exactly the same size, that would be silly" and you would of course be right. I'll show you a quick way of solving that later.
 
-Obviously you can use class names and any data attribute names you wish, they just need to be consistent as will become apparent later
+Obviously you can use class names and any data attribute names you wish, they just need to be consistent as will become apparent later.
 
 Now let's just get a JS reference to the button elements we will be using in our functions:
 
