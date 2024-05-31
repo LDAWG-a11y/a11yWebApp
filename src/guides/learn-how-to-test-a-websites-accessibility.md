@@ -154,7 +154,7 @@ Consume everything, read it in your usual way and then with a screen reader, alw
 * Use your automated tools, remember they only test a snapshot of how the site is, at the moment you run the scan, they cannot open widgets for you, open them manually and test again
 * If you understand HTML and/or ARIA, feel free to examine the DOM, feel free to validate the HTML at [the HTML validator](https://validator.w3.org/), which may highlight some issues
 * Don't get too hung up on the tools, they can only get you so far
-* Record your notes, just type them up somewhere, for comparison later
+* Record your notes, just type them up somewhere, for comparison later, don't even worry too much if you don't know which SC to fail something against, just do what you can
 * We have tonnes of guides on here now, feel free to consult them, if you find a component that smalls funny, or indeed, any other accessibility-related websites
 * Take your time, it's not a race, it's a learning exercise
 
