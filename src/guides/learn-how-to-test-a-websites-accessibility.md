@@ -117,6 +117,24 @@ For the most part, you can use whatever browser you want, as long as it is a cur
 
 ### Be comfortable with your choices
 
-It can be overwhelming at first, so many new tools to use all at once, so much to learn. This is why I have reduced the tools I'm going to use, down to the bare minimum, so I don't overwhelm you with too much, if you are new to the game. I tend to use more tools than this, more browsers and more devices, but this is what I would consider to be an absolute minimum, for this guide. 
+It can be overwhelming at first, so many new tools to use all at once and so much to learn. This is why I have reduced the tools I'm going to use down to the bare minimum, so I don't overwhelm you with too much, if you are new to the game. I tend to use more tools than this, more browsers and more devices, but this is what I would consider to be an absolute minimum, for this guide. 
 
 ### I don't know how to use a screen reader, or even a keyboard
+
+That's not a problem. We can link you to some handy guides that will show the keyboard strokes for each screen reader. I wouldn't get too wrapped up in all of the shortcuts, at this stage, we will just need the basic navigation commands.
+
+* In all three screen readers and standard keyboard-only navigation the <kbd>Tab</kbd> key will move from one interactive items (links, inputs and buttons, etc), to the next. the "next" item will typically be determined by the DOM order, but can also be manipulated via scripting or even CSS.
+* In order to "reverse" back up the page, the <kbd>Shift</kbd> key should be held down and then pressing <kbd>Tab</kbd> will reverse the direction. This also applies to standard keyboard navigation and all three screen readers
+* <kbd>Enter</kbd> and <kbd>Space</kbd> will fire the "click" event on an interactive item, a `<button>` will repond to both those keys, a link will only respond to <kbd>Enter</kbd>. Again, this applies to both standard keyboard navigation and all three screen readers
+* <kbd>Esc</kbd>, **should**, close items such as modal dialogs and other components that you may encounter, especially those that overlay other content
+* Some items may be "composite widgets", a composite widget would typically be a single <kbd>Tab</kbd> stop and then navigation between its sibling controls would require using the cursor (Arrow) keys. Tis also applies for screen reader and keyboard-only navigation
+
+#### Full keyboard controls for each screen reader
+
+Take note of the "modifier" key/key combination, you may need this to navigate some elements or you may need to manually switch "modes" in JAWS or NVDA (VoiceOver does not have a manual "mode" switch).
+
+* [NVDA - Keyboard shortcuts, Deque](https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts)
+* [JAWS - Keyboard shortcuts, Deque](https://dequeuniversity.com/screenreaders/jaws-keyboard-shortcuts)
+* [VoiceOver - Keyboard shortcuts, Deque](https://dequeuniversity.com/screenreaders/voiceover-keyboard-shortcuts)
+
+
