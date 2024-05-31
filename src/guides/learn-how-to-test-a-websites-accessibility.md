@@ -143,7 +143,7 @@ Take note of the "modifier" key/key combination, you may need this to navigate s
 
 Pretty much, yeah. just a couple of things to consider:
 
-Consume everything, read it in your usual way and then with a screen reader, always read along with the screen reader
+Consume everything, read it in your usual way and then with a screen reader, always read along with the screen reader. I'm trying desperately not to give the game away, but these are some friendly tips:
 
 * Look and/or listen for unexpected behaviour
 * Pay attention to important colours, their contrast, their size (if interactive)
@@ -156,6 +156,7 @@ Consume everything, read it in your usual way and then with a screen reader, alw
 * Don't get too hung up on the tools, they can only get you so far
 * Record your notes, just type them up somewhere, for comparison later, don't even worry too much if you don't know which SC to fail something against, just do what you can
 * We have tonnes of guides on here now, feel free to consult them, if you find a component that smalls funny, or indeed, any other accessibility-related websites
+* You tested an element on one page, it now appears on another, it looks the same, but is is?
 * Take your time, it's not a race, it's a learning exercise
 
 ### One final word of warning
