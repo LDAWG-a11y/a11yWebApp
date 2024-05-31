@@ -137,4 +137,33 @@ Take note of the "modifier" key/key combination, you may need this to navigate s
 * [JAWS - Keyboard shortcuts, Deque](https://dequeuniversity.com/screenreaders/jaws-keyboard-shortcuts)
 * [VoiceOver - Keyboard shortcuts, Deque](https://dequeuniversity.com/screenreaders/voiceover-keyboard-shortcuts)
 
+<div class="callout__tip"><span class="callout__icon"><strong class="visually-hidden">Tip: </strong></span><span class="callout__text">For some reason it is necessary to enable "Tab key navigation" on a Mac, so if you haven't already done this, then click the Apple icon > System settings > Keyboard and then toggle "Keyboard navigation" switch, to the On position. If that doesn;t work, your browser may have a control switched Off</span></div>
 
+### So, we good to go?
+
+Pretty much, yeah. just a couple of things to consider:
+
+Consume everything, read it in your usual way and then with a screen reader, always read along with the screen reader
+
+* Look and/or listen for unexpected behaviour
+* Pay attention to important colours, their contrast, their size (if interactive)
+* Test fully with a keyboard only, does everything work?
+* Test fully with a screen reader, anything to report?
+* Adjust the browser size, adjust the zoom levels. test again when you have adjusted the sizes, does everything act the way you expect?
+* Can you complete all actions?
+* Use your automated tools, remember they only test a snapshot of how the site is, at the moment you run the scan, they cannot open widgets for you, open them manually and test again
+* If you understand HTML and/or ARIA, feel free to examine the DOM, feel free to validate the HTML at [the HTML validator](https://validator.w3.org/), which may highlight some issues
+* Don't get too hung up on the tools, they can only get you so far
+* Record your notes, just type them up somewhere, for comparison later
+* We have tonnes of guides on here now, feel free to consult them, if you find a component that smalls funny, or indeed, any other accessibility-related websites
+* Take your time, it's not a race, it's a learning exercise
+
+### One final word of warning
+
+Be as alert as you can be, explore as deeply as you can. There are several issues on the test site that are intentionally difficult to find, some are quite deceptive, some will intentionally sail through pretty much any checking tool's scans. Remember, it's the gotchas that getcha, muahahaha.
+
+### I'm ready to go, give me the link
+
+Do not proceed beyond this point until you feel you are done, give it your best shot, but don't look at the answers below, find answers elsewhere, by all means, just not from below. Don't cheat, have fun and we'll go over it when in the next section:
+
+HERE'S THE LINK FOR MAKING THIS ACCESSIBLE
