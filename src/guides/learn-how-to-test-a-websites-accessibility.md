@@ -158,6 +158,7 @@ Consume everything, read it in your usual way and then with a screen reader, alw
 * We have tonnes of guides on here now, feel free to consult them, if you find a component that smalls funny, or indeed, any other accessibility-related websites
 * You tested an element on one page, it now appears on another, it looks the same, but is is?
 * Take your time, it's not a race, it's a learning exercise
+* There's a bonus problem, not a WCAG issue, but an issue, nonetheless
 
 ### One final word of warning
 
