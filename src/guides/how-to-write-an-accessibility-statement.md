@@ -39,7 +39,7 @@ Finally, try where possible to give information about how long users might have 
 
 ## The template[](/docs/draft-accessibility-statement-2023-wcag-2.2.docx)
 
-[Download the WCAG 2.2 accessibility statement template](docs/draft_accessibility_statement_2024_wcag-2.2.docx)
+[Download the WCAG 2.2 accessibility statement template](/docs/draft_accessibility_statement_2024_wcag-2.2.docx)
 
 [](docs/draft_accessibility_statement_2024_wcag-2.2.docx)
 
