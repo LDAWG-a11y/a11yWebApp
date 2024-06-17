@@ -10,7 +10,8 @@ tags:
   - Statement
   - Regulations
   - PSBAR
-file: /public/docs/draft_accessibility_statement_2024_wcag-2.2.docx
+file:
+  - /public/docs/draft_accessibility_statement_2024_wcag-2.2_06_24_update.docx
 isGuide: true
 ---
 You have decided to write a [Public Sector Bodies Accessibility Regulations (PSBAR)](https://www.makethingsaccessible.com/guides/what-are-the-public-sector-bodies-accessibility-regulations/) compliant accessibility statement. To write a correct statement there are a few pieces of information you will need in advance and a specific template you must adhere to for UK requirements.
@@ -39,7 +40,7 @@ Finally, try where possible to give information about how long users might have 
 
 ## The template[](/docs/draft-accessibility-statement-2023-wcag-2.2.docx)
 
-[Download the WCAG 2.2 accessibility statement template](/docs/draft_accessibility_statement_2024_wcag-2.2.docx)
+[Download the WCAG 2.2 accessibility statement template](/docs/draft_accessibility_statement_2024_wcag-2.2_06_24_update.docx)
 
 [](docs/draft_accessibility_statement_2024_wcag-2.2.docx)
 
