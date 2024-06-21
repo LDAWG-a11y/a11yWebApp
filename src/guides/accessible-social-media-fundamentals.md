@@ -3,7 +3,7 @@ title: Accessible social media fundamentals
 summary: Social media is a now growing aspect of communicating with audiences.
   By designing accessible communications into your campaigns, you can embed good
   practices and engage more people across all platforms.
-author: grhodes
+author: gmann1
 date: 2024-06-04
 toc: false
 tags:
