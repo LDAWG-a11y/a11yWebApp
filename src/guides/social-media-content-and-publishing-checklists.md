@@ -2,7 +2,7 @@
 title: Social media content and publishing checklists
 summary: To help remind you of things to check when creating and posting
   accessible social media content we have created a pair of checklists.
-author: grhodes
+author: gmann1
 date: 2024-06-04
 toc: false
 tags:
