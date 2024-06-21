@@ -1,7 +1,7 @@
 ---
 title: Social media and your responsibilities
 summary: Where does social media sit within accessibility regulations and obligations?
-author: grhodes
+author: gmann1
 date: 2024-06-04
 toc: false
 tags:
