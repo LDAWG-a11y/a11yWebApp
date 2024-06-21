@@ -2,6 +2,7 @@
 title: Tom
 summary: Tom is a member of the Young Voices Team within the Education Team at
   the Thomas Pocklington Trust. This is his student story.
+img: src/aaaAssets/4e434b91-6edf-4674-8e2a-d53126d1312f.jpeg
 date: 2024-06-21
 toc: false
 isGuide: true
