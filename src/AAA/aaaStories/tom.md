@@ -7,6 +7,8 @@ date: 2024-06-21
 toc: false
 isGuide: true
 ---
+![](src/aaaAssets/4e434b91-6edf-4674-8e2a-d53126d1312f.jpeg)
+
 I am a 17-year-old student currently enrolled in a T-Level course in Digital and Creative Industries. Additionally, I am a member of the Young Voices Team within the Education Team at the Thomas Pocklington Trust.
 
 Throughout my education, I have encountered several barriers due to my visual impairment. These challenges include the need for enlarged texts and access to a laptop or iPad for note-taking. In computing lessons, the use of two monitors has also been essential for me.
