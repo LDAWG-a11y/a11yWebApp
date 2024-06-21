@@ -331,6 +331,41 @@
       <lastmod>2024-05-07T00:00:00.000Z</lastmod>
     </url>
   
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/creating-accessible-pdfs-from-microsoft-word/</loc>
+      <lastmod>2024-05-13T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/creating-accessible-pdfs-from-microsoft-powerpoint/</loc>
+      <lastmod>2024-05-16T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/creating-accessible-pdfs-from-libreoffice-writer/</loc>
+      <lastmod>2024-05-17T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/how-we-built-our-user-preference-settings/</loc>
+      <lastmod>2024-05-24T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/accessible-social-media-fundamentals/</loc>
+      <lastmod>2024-06-04T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/social-media-and-your-responsibilities/</loc>
+      <lastmod>2024-06-04T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://www.makethingsaccessible.com/guides/social-media-content-and-publishing-checklists/</loc>
+      <lastmod>2024-06-04T00:00:00.000Z</lastmod>
+    </url>
+  
       <url>
         <loc>https://www.makethingsaccessible.com/about/</loc>
         <lastmod>2024-02-06T09:40:51.825Z</lastmod>
@@ -620,6 +655,10 @@
       <lastmod>2024-02-06T09:40:51.825Z</lastmod>
     </url>
     <url>
+      <loc>https://www.makethingsaccessible.com/tags/social-media/</loc>
+      <lastmod>2024-02-06T09:40:51.825Z</lastmod>
+    </url>
+    <url>
       <loc>https://www.makethingsaccessible.com/tags/statement/</loc>
       <lastmod>2024-02-06T09:40:51.825Z</lastmod>
     </url>
@@ -669,6 +708,10 @@
     </url>
     <url>
       <loc>https://www.makethingsaccessible.com/tags/word/</loc>
+      <lastmod>2024-02-06T09:40:51.825Z</lastmod>
+    </url>
+    <url>
+      <loc>https://www.makethingsaccessible.com/tags/writer/</loc>
       <lastmod>2024-02-06T09:40:51.825Z</lastmod>
     </url>
 </urlset>
