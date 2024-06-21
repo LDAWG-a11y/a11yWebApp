@@ -2,12 +2,12 @@
 title: Tom
 summary: Tom is a member of the Young Voices Team within the Education Team at
   the Thomas Pocklington Trust. This is his student story.
-img: src/aaaAssets/4e434b91-6edf-4674-8e2a-d53126d1312f.jpeg
+img: src/aaaAssets/tom.jpg
 date: 2024-06-21
 toc: false
 isGuide: true
 ---
-![](src/aaaAssets/4e434b91-6edf-4674-8e2a-d53126d1312f.jpeg)
+![](src/aaaAssets/tom.jpg)
 
 I am a 17-year-old student currently enrolled in a T-Level course in Digital and Creative Industries. Additionally, I am a member of the Young Voices Team within the Education Team at the Thomas Pocklington Trust.
 
