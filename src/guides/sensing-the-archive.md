@@ -115,21 +115,21 @@ Even for relatively basic documents such as the John Blanke wage slip, the chang
 
 The original documents and their associated tactile alternatives have been listed below:
 
-![Peterloo Massacre engraving 1819 (left) and OpTaCartography tactile alternative (right)](src/guideImg/peterloo-pair.png)
+![Peterloo Massacre engraving 1819 (left) and Optacartography tactile alternative (right)](src/guideImg/peterloo-pair.png)
 
-Peterloo Massacre engraving 1819 (left) and OpTaCartography tactile alternative (right)
+Peterloo Massacre engraving 1819 (left) and Optacartography tactile alternative (right)
 
-![Inclesmoor map 1450 (left) and OpTaCartography tactile alternative (right)](src/guideImg/inclesmoor-pair.png)
+![Inclesmoor map 1450 (left) and Optacartography tactile alternative (right)](src/guideImg/inclesmoor-pair.png)
 
-Inclesmoor map 1450 (left) and OpTaCartography tactile alternative (right)
+Inclesmoor map 1450 (left) and Optacartography tactile alternative (right)
 
-![Meeting at Carberry Hill 1567 (left) and OpTaCartography tactile alternative (right)](src/guideImg/carberry-pair.png)
+![Meeting at Carberry Hill 1567 (left) and Optacartography tactile alternative (right)](src/guideImg/carberry-pair.png)
 
-Meeting at Carberry Hill 1567 (left) and OpTaCartography tactile alternative (right)
+Meeting at Carberry Hill 1567 (left) and Optacartography tactile alternative (right)
 
-![John Blanke wage slip 1507 (left) and OpTaCartography tactile alternative (right)](src/guideImg/wage-slip-pair.png)
+![John Blanke wage slip 1507 (left) and Optacartography tactile alternative (right)](src/guideImg/wage-slip-pair.png)
 
-John Blanke wage slip 1507 (left) and OpTaCartography tactile alternative (right)
+John Blanke wage slip 1507 (left) and Optacartography tactile alternative (right)
 
 ### Organising the visit
 
