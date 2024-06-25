@@ -11,11 +11,11 @@ title: Access and Assistance for All
 usesCMS: true
 team: aaa
 ---
-Access and Assistance for All (AAA) is a campaign that aims to increase access to assistive technology across further education colleges as well as raising awareness of how to make resources accessible by design so they are compatible with assistive technology. The British Youth Council's (BYC's) youth-led campaign group consists of 15 young regional champions from across England, along with our partners at University College of London (UCL) and the Kent and Medway Progression Federation (KMPF).
+Access and Assistance for All (AAA) is a campaign that aims to increase access to assistive technology across further education colleges as well as raising awareness of how to make resources accessible by design so they are compatible with assistive technology. The youth-led campaign group consists of 15 young regional champions from across England, and is supported by the Thomas Pocklington Trust  along with our partners, including University College of London (UCL)
 
 ## Why is this campaign needed?
 
-Although good practice of promoting assistive technology can be found in colleges, young people at the British Youth Council highlighted some poor learning experiences they had had due to a lack of support with assistive technology in College. [Research by the Thomas Pocklington Trust](https://www.pocklington-trust.org.uk/student-support/professionals/technology-and-accessibility-in-fe-research/) evidenced that colleges are failing in their compliance with website regulations with few focussing on inclusion, accessibility and anticipatory adjustments. Follow-up research a year on has seen some improvements but 63% of college accessibility statements are still poor.
+Although good practice of promoting assistive technology can be found in colleges, young people highlighted some poor learning experiences they had had due to a lack of support with assistive technology in College. [Research by the Thomas Pocklington Trust](https://www.pocklington-trust.org.uk/student-support/professionals/technology-and-accessibility-in-fe-research/) evidenced that colleges are failing in their compliance with website regulations with few focussing on inclusion, accessibility and anticipatory adjustments. Follow-up research a year on has seen some improvements but 63% of college accessibility statements are still poor.
 
 ## Our ask to Further Education Colleges:
 
