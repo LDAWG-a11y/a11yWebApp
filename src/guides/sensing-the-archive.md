@@ -60,13 +60,13 @@ They then got an archival document box full of different material samples, such 
 
 ![Students matching the archival material with the correct description.](src/guideImg/students-matching-archival-material.jpg)
 
-Students matching the archival material with the correct description.
+Students matching the archival material with the correct description. © The National Archives
 
 Students were divided into four groups, and each given a historical document to become ‘experts’ on. Students were first introduced to their document through the corresponding tactile image. These were four 3D-printed tactile versions of our documents that had been created through a collaboration with George. Students were given minimal context at this point, and just asked to explore these mystery documents with some guiding questions from the teachers at their table.
 
 ![Students exploring the tactile images.](src/guideImg/students-interacting-with-tactile-diagrams.png)
 
-Students exploring the tactile images.
+Students exploring the tactile images. © The National Archives
 
 Students were then given bags with hints in them that could give them ideas about the context of their document. These hints included small tactile objects that were related to the document – for example, a model of a trumpet for trumpet-player John Blanke’s wage slip. The bags also contained sound buttons that played recorded sounds when pressed. For example, the group investigating a document related to the Peterloo massacre heard a recording of protesters demanding universal suffrage. One group had a smell pot in their bag, containing some burnt peat to demonstrate that the medieval map they were investigating depicted peatlands.
 
@@ -82,7 +82,7 @@ The workshop ended with an original document showcase. Each group got to explore
 
 ![Students touching the original documents.](src/guideImg/students-touching-original-document.jpg)
 
-Students touching the original documents.
+Students touching the original documents. © The National Archives
 
 ### Tactile Formats
 
@@ -117,19 +117,19 @@ The original documents and their associated tactile alternatives have been liste
 
 ![Peterloo Massacre engraving 1819 (left) and Optacartography tactile alternative (right)](src/guideImg/peterloo-pair.png)
 
-Peterloo Massacre engraving 1819 (left) and Optacartography tactile alternative (right)
+Peterloo Massacre engraving 1819 (left) © The National Archives and Optacartography tactile alternative (right)
 
 ![Inclesmoor map 1450 (left) and Optacartography tactile alternative (right)](src/guideImg/inclesmoor-pair.png)
 
-Inclesmoor map 1450 (left) and Optacartography tactile alternative (right)
+Inclesmoor map 1450 (left) © The National Archives and Optacartography tactile alternative (right)
 
 ![Meeting at Carberry Hill 1567 (left) and Optacartography tactile alternative (right)](src/guideImg/carberry-pair.png)
 
-Meeting at Carberry Hill 1567 (left) and Optacartography tactile alternative (right)
+Meeting at Carberry Hill 1567 (left) © The National Archives and Optacartography tactile alternative (right)
 
 ![John Blanke wage slip 1507 (left) and Optacartography tactile alternative (right)](src/guideImg/wage-slip-pair.png)
 
-John Blanke wage slip 1507 (left) and Optacartography tactile alternative (right)
+John Blanke wage slip 1507 (left) © The National Archives and Optacartography tactile alternative (right)
 
 ### Organising the visit
 
