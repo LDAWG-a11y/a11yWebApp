@@ -87,7 +87,7 @@ To use the Access and Assistance for All template to promote and display a perso
 
 Having a personalised charter that is spread across the school and displayed openly ensures that students and parents/carers are made aware of what accessibility support they can access, and can also provide clear evidence of progress being made towards ensuring that a school or college is more accessible.
 
-To get access to the charter template and a range of resources to support your college please email us at accessforallcampaign@gmail.com
+To get access to the charter template and a range of resources to support your college please email us at [EducationPolicy@pocklington.org.uk](mailto:EducationPolicy@pocklington.org.uk)
 
 </div>
 </div>
@@ -112,4 +112,4 @@ We recognise how many demands there are on colleges and aim to make signing up t
 2. Be listed as a supporter, on our [Supporters page](/aaa/supporters/) and have the option to share any good practice that you are already doing
 3. Show your commitment to improving accessibility through the use of our supporters’ logo
 
-If you are interested about learning more on how to do this or register your interest please contact us at [accessforallcampaign@gmail.com](mailto:accessforallcampaign@gmail.com).
+If you are interested about learning more on how to do this or register your interest please contact us at [EducationPolicy@pocklington.org.uk](mailto:EducationPolicy@pocklington.org.uk).
