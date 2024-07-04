@@ -22,9 +22,11 @@ I've built a website for a fictional company and brace yourselves, I have intent
 
 * Show the differences between the results of accessibility checkers
 * Create an inaccessible site, with a perfect automated checker score
-* And, perhaps there are examples out there that will fulfil the same purpose of this one
+* And, perhaps there are examples out there that fulfil the same purpose of this one
 
 You'd be right in thinking this exercise probably made me feel a little dirty, it goes against everything I have been doing for several years. But it also kinda felt fun, in an odd kind of way, not an evil genius kind of feeling, but more of a "Jeez, people actually get paid to write code like this on actual websites" kind of way. Yeah, that was a thinly veiled dig at devs that do not care, come at me.
+
+I honestly found it really difficult to create the site, it messed with my mind a bit, in that I spent a heap of time scratching my head thinking how do people even get this wrong, it's often more work to get it wrong, than get it right.
 
 ## So, what it is the purpose?
 
@@ -32,7 +34,7 @@ So at Westminster, we are about to start running some training sessions for a gr
 
 * We'd spend quite some time looking for one that contained enough failures to align with our training plan
 * If we found one that we did not have total control over, there is every chance the site could change, which would make this guide age, pretty quickly
-* We'd then have to build an accessible version of that site, as an example of how to fix it
+* We'd then have to build an accessible version of that site, as an example of how it being "fixed"
 * We'd have to be super careful about which site we chose, as we could quite easily get our employer in a spot of legal bother and potentially be disciplined for doing so
 
 A custom-built small website that contains just enough accessibility issues to start folks off identifying issues on a site seemed the safest bet. This site won't change, there will be absolutely no changes to the code, whatsoever. This enables us and potentially you, to have an unchanging platform to conduct this training on, in the hope of getting somewhat consistent results.
@@ -42,7 +44,7 @@ There is of course a lot of nuance to accessibility testing, in that it is highl
 One important distinction that can result in two different people having a slightly different results, is where they align themselves on "WCAG purity":
 
 * The folks at the lower end of that scale may just fail everything they believe or know to be an accessibility barrier, irrespective of whether it actually fails a WCAG success criterion (SC)
-* The folks in the middle of that scale will likely know something is not explicitly a failure due to loopholes or wording and still write the issue up. But they will explain that they are aware the wording of the success criterion "technically" allows this, but the "intent" of the success criterion combined with the obvious accessibility issue does not make this a non-issue and it should be addressed with a suitable level of priority
+* The folks in the middle of that scale will likely know something is not explicitly a failure due to loopholes or wording and still write the issue up. But they will explain that they are aware the wording of the success criterion "technically" allows this, but the "intent" of the success criterion combined with the obvious accessibility issue does not make this a non-issue and it should be addressed with a suitable level of priority. There is of course some overlap here, in that sometimes it may appear that something fails due to ambiguous wording and these folks may believe it to be a failure and write it up as such.
 * The purists, these are folks that typically understand every bit of nuance, every pitfall and every loophole in the WCAG docs. Their reports will typically follow WCAG to the letter, they will likely write up other defects in advisories or similar
 
 When I first started testing websites, I was definitely at the low end of that scale, I was one of those "Which SC can I fail this against" folks. I believe my intent was pure, I wasn't failing things because the website would be better for me, I was failing them to make the website usable to people with disabilities. But, credibility is a thing, as I learned from highly-experienced others in the field, by reading their comments discussions or posts on various platforms. I began to understand this wasn't actually helping as much as I thought it was. The main concern here was, if I just failed something against a SC criterion just because it seemed the closest fit and I was called out on it, by a vendor, the rest of my report and myself could lose all credibility. [](https://www.youtube.com/watch?v=rBCR66aJZZc)
@@ -69,13 +71,13 @@ Nope. This isn't a competition, don't put yourself under pressure, find what you
 
 ### What do I need?
 
-There's quite a bit of flexibility here
+There's quite a bit of flexibility here:
 
-* Firstly, and most importantly, a desktop or laptop, I wouldn't advise using a phone or tablet for this
+* Firstly, and most importantly, a desktop or laptop, I wouldn't advise using a just phone or tablet for this, although you can of course use them in addition to an actual computer (heads up, I haven't tested this on a mobile or tablet, so you may find stuff I haven't recorded)
 * A keyboard or an alternative input device that uses the keyboard API (Voice input software etc)
 * A semi-automated or automated testing tool
 * A browser
-* A screen reader that works with your chosen browser
+* A screen reader that works best with your chosen browser
 * A way to test colour contrast
 * The ability to resize your browser window and zoom
 * Access to the WCAG 2.2 docs
@@ -112,7 +114,7 @@ For the most part, you can use whatever browser you want, as long as it is a cur
 
 #### Resources
 
-* [WCAG 2.2 Qucikref, I've filtered this to only show Level A and Level AA](https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_customize&levels=aaa), that's not because AAA isn't important, it's just that in the trenches you will mostly be fighting against Level AA conformance, because "Minimum legal compliance", yuck. That's not to say that's always the case, but mostly it is
+* [WCAG 2.2 Qucikref, I've filtered this to only show Level A and Level AA](https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_customize&levels=aaa), that's not because AAA isn't important, it's just that in the trenches you will mostly be fighting against Level AA enemy combatants (AKA legal conformance), because "Minimum legal compliance", yuck. That's not to say that's always the case, but mostly it is
 * I'm not using this, but if you are just starting out, you may find the [A11y project's Accessibility Checklist](https://www.a11yproject.com/checklist/) to be useful to know what to test for
 
 ### Be comfortable with your choices
@@ -125,13 +127,12 @@ That's not a problem. We can link you to some handy guides that will show the ke
 
 * In all three screen readers and standard keyboard-only navigation the <kbd>Tab</kbd> key will move from one interactive items (links, inputs and buttons, etc), to the next. the "next" item will typically be determined by the DOM order, but can also be manipulated via scripting or even CSS.
 * In order to "reverse" back up the page, the <kbd>Shift</kbd> key should be held down and then pressing <kbd>Tab</kbd> will reverse the direction. This also applies to standard keyboard navigation and all three screen readers
-* <kbd>Enter</kbd> and <kbd>Space</kbd> will fire the "click" event on an interactive item, a `<button>` will repond to both those keys, a link will only respond to <kbd>Enter</kbd>. Again, this applies to both standard keyboard navigation and all three screen readers
+* <kbd>Enter</kbd> and <kbd>Space</kbd> will fire the "click" event on an interactive item, a `<button>` will respond to both those keys, a link will only respond to <kbd>Enter</kbd>. Again, this applies to both standard keyboard navigation and all three screen readers
 * <kbd>Esc</kbd>, **should**, close items such as modal dialogs and other components that you may encounter, especially those that overlay other content
-* Some items may be "composite widgets", a composite widget would typically be a single <kbd>Tab</kbd> stop and then navigation between its sibling controls would require using the cursor (Arrow) keys. Tis also applies for screen reader and keyboard-only navigation
 
 #### Full keyboard controls for each screen reader
 
-Take note of the "modifier" key/key combination, you may need this to navigate some elements or you may need to manually switch "modes" in JAWS or NVDA (VoiceOver does not have a manual "mode" switch).
+Take note of the "modifier" key combination, you will need this to, read non-interactive elements, navigate some elements or you may need to manually switch "modes" in JAWS or NVDA (VoiceOver does not have a manual "mode" switch).
 
 * [NVDA - Keyboard shortcuts, Deque](https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts)
 * [JAWS - Keyboard shortcuts, Deque](https://dequeuniversity.com/screenreaders/jaws-keyboard-shortcuts)
@@ -143,22 +144,40 @@ Take note of the "modifier" key/key combination, you may need this to navigate s
 
 Pretty much, yeah. just a couple of things to consider:
 
-Consume everything, read it in your usual way and then with a screen reader, always read along with the screen reader. I'm trying desperately not to give the game away, but these are some friendly tips:
+Consume everything, read it in your usual way and then with a screen reader, always read along with the screen reader. I'm trying desperately not to give the game away, but here are some friendly tips, which should be especially useful for those of you that are newer to the field:
 
 * Look and/or listen for unexpected behaviour
-* Pay attention to important colours, their contrast, their size (if interactive)
-* Test fully with a keyboard only, does everything work?
+* Pay attention to colours and their contrast
+* Test fully with a keyboard only, does everything work, can you see where you are and does anything odd happen?
 * Test fully with a screen reader, anything to report?
-* Adjust the browser size, adjust the zoom levels. test again when you have adjusted the sizes, does everything act the way you expect?
+* Adjust the browser size, adjust the zoom levels, test again when you have adjusted the sizes (320px width & 256px height is an absolute must), does everything act the way you expect?
 * Can you complete all actions?
-* Use your automated tools, remember they only test a snapshot of how the site is, at the moment you run the scan, they cannot open widgets for you, open them manually and test again
+* Use your automated tools, remember they only test a snapshot of how the site is at the moment you run the scan, they cannot open widgets for you, open them manually and test again
 * If you understand HTML and/or ARIA, feel free to examine the DOM, feel free to validate the HTML at [the HTML validator](https://validator.w3.org/), which may highlight some issues
-* Don't get too hung up on the tools, they can only get you so far
+* Don't get too hung up on the tools, they can only get you so far and honestly, they won't get you far at all, here
 * Record your notes, just type them up somewhere, for comparison later, don't even worry too much if you don't know which SC to fail something against, just do what you can
-* We have tonnes of guides on here now, feel free to consult them or indeed, any other accessibility-related websites, if you find a component that smells funny
+* We have tonnes of guides on here now, feel free to consult them or indeed, any other accessibility-related websites, if you find a anything that smells funny
 * You tested an element on one page, it now appears on another, it looks the same, but is is?
 * Take your time, it's not a race, it's a learning exercise
-* There's a bonus problem, not a WCAG issue, but an issue, nonetheless
+
+### How should I structure my findings?
+
+There are a multitude of formats that accessibility professionals use to write a report, some may write a brief description in a spreadsheet, some may write a lengthier one, others may use word processing software such as MS Word or Google Docs, etc. As I am going to provide the answers in a particular structure, it would likely be most useful if you did the same, here's the structure I'll use:
+
+* Site wide
+
+  * This will include things like theming, and issues that appear outside of the browser window, but in both of those cases, it's only site wide if it appears on more than one page
+* Header
+
+  * The site header should be tested on each page it appears and anything you record should be placed in that section. This site is very small, so whilst the header and/or its contents may appear identical across pages, give it a closer look
+* Footer
+
+  * Just like the header, pay attention to this across pages, it may be different in some way, anything that is displayed as a result of interacting within the footer should also be in this section
+* Page
+
+  * For each page (the bit between the header and footer and anything that is displayed as a result of interacting within the 'page'), record your results in a section for that particular page, so "Home page", "About page" and so forth
+
+We use a word document, just because that's our preference. You can write it on paper if you so wish, the only thing you should follow is the structure, just to make comparing a little more logical.
 
 ### One final word of warning
 
@@ -166,6 +185,10 @@ Be as alert as you can be, explore as deeply as you can. There are several issue
 
 ### I'm ready to go, give me the link
 
-Do not proceed beyond this point until you feel you are done, give it your best shot, but don't look at the answers below, find answers elsewhere, by all means, just not from below. Don't cheat, have fun and we'll go over it when in the next section:
+LINK TO MAKING THIS ACCESSIBLE
 
-HERE'S THE LINK FOR MAKING THIS ACCESSIBLE
+### I've finished, I'm ready to compare
+
+You should only access the following page if you are done with testing. Avoid the temptation to look at the answers until you feel you are done, I used to sneak a peak at the answers in my puzzle books as a kid and I didn't really learn a great deal when i was doing that, i was simply a cheat.
+
+LINK TO ANSWERS PAGE
