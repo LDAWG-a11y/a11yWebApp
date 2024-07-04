@@ -138,7 +138,7 @@ Take note of the "modifier" key combination, you will need this to, read non-int
 * [JAWS - Keyboard shortcuts, Deque](https://dequeuniversity.com/screenreaders/jaws-keyboard-shortcuts)
 * [VoiceOver - Keyboard shortcuts, Deque](https://dequeuniversity.com/screenreaders/voiceover-keyboard-shortcuts)
 
-<div class="callout__tip"><span class="callout__icon"><strong class="visually-hidden">Tip: </strong></span><span class="callout__text">For some reason it is necessary to enable "Tab key navigation" on a Mac, so if you haven't already done this, then click the Apple icon > System settings > Keyboard and then toggle "Keyboard navigation" switch, to the On position. If that doesn;t work, your browser may have a control switched Off</span></div>
+<div class="callout__tip"><span class="callout__icon"><strong class="visually-hidden">Tip: </strong></span><span class="callout__text">For some reason it is necessary to enable "Tab key navigation" on a Mac, so if you haven't already done this, then click the Apple icon > System settings > Keyboard and then toggle "Keyboard navigation" switch, to the On position. If that doesn't work, your browser may have a control switched Off</span></div>
 
 ### So, we good to go?
 
