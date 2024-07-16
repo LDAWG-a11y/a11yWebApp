@@ -323,6 +323,15 @@ ol:not([class]) {
   line-height: var(--v2--line-height);
 }
 
+p,
+ul:not([class]),
+ol:not([class]),
+dd {
+  [data-pref--l-width="increased"] & {
+    max-width: 55ch;
+  }
+}
+
 p {
   &:not(:last-of-type) {
     margin-bottom: var(--v2--paragraph-spacing);
