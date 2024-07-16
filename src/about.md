@@ -11,6 +11,7 @@ summary: The Make Things Accessible website is operated by a number of
 
 <div class="panel gutter-btm--major">
   <h2>Our mission</h2>
+
   As digital accessibility professionals we are always asked where people can find useful resources to help with a range of accessibility questions. Make Things Accessible is the answer to that question.
 
   This project began as a shared effort between a number of London-based universities looking to pool our efforts and knowledge on delivering accessible experiences for students and staff. Make Things Accessible is continuing to grow with more contributors, turning this repository into a useful tool for everyone.
@@ -20,6 +21,7 @@ summary: The Make Things Accessible website is operated by a number of
 
 
 <h2>Our partners</h2>
+
 As the Make Things Accessible project started as a London-based university collaboration, we note our initial supporters which include digital accessibility professionals from the following universities:
 
 * University of Westminster
