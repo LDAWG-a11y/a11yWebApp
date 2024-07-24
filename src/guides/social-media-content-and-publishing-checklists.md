@@ -13,11 +13,14 @@ file:
   - /public/docs/sm_posting_checklist.docx
 isGuide: true
 ---
-Social media is a now growing aspect of communicating with audiences. By designing accessible communications into your campaigns, you can embed good practices and engage more people across all platforms.
+Social media is a growing aspect of communicating with audiences. By designing accessible communications into your campaigns, you embed good practices and will engage more people across all platforms.
 
-Creating accessible social media content shares a lot of good practice with creating accessible content in other forms, but there are some additional things to think about when publishing content to social media platforms.
+Creating accessible social media content shares a lot of good practice with creating accessible content in other forms, but there are additional things to think about when publishing content to social media platforms.
 
-To help remind you of things to check when creating and posting accessible social media content we have provided the following two checklists. The first focuses on things to consider when creating content ready for sharing social media, such as preparing alt text, planned use of emojis etc. The second focuses on steps to post accessible content including a few pointers for some of the most common social media platforms.
+Below are two lists to help remind you of things to check when creating and posting accessible social media content. 
+
+1. Creating content checklist: such as preparing alt text, creating graphics, planned use of emojis etc. 
+2. Posting accessible content, including a few pointers for some of the most common social media platforms.
 
 We also have other useful resources including:
 
@@ -32,42 +35,45 @@ The aim in creating accessible social media content is that every user can under
 
 * If you are using the correct format for your content or message?
 
-  * Consider the amount of information you will be putting into your content, character limits and appropriateness of the platform are good indicators
+  * Consider the amount of information you will be putting into your content. Character limits and appropriateness of the platform are good indicators.
 * Which image will you use?
 
   * Photos allow for easier alternative text, are more simple and therefore clearer but are not always the most appropriate or adaptable
-  * Graphics can be tailor made, particularly in line with your branding but there are more accessibility considerations
+  * Graphics have more accessibility considerations:
 
-    * Check the colour contrast if text is present
-    * Overlapping images with text; image needs to be transparent enough
-    * Legible text fonts
-    * Not overcrowding the image with several different elements
+    * Check the colour contrast of elements, text and objects.
+    * Avoid overlapping images with text; the text needs a solid colour behind it.
+    * Use legible, sans-serif text fonts.
+    * Avoid overcrowding the image with several different elements.
 * Have you created a video?
 
-  * You must include subtitles or upload to a platform that includes them
+  * You must include subtitles or upload to a platform that includes them.
 
-    * YouTube is a great resource for this, but it is not always accurate
-    * Embedding them into the video ensures the captions are correct
+    * YouTube is a great resource for this, but it is not always accurate.
+    * Embedding them into the video ensures the captions are correct, but this means they can't be turned on and off by the user.
   * Does it include music?
 
-    * If you are choosing to use music as well as a voiceover, be mindful that it is a piece that is not too ‘busy’ and a good quiet volume otherwise there’s the possibility of causing a sensory overload or at least being distracting from the information you do want to walk about
+    * If you use music, be mindful that it is a piece that is not too ‘busy’ and at an appropriate volume. Otherwise there’s the possibility of causing a sensory overload.
+    * If you are also using a voiceover with background music, having a low volume level is important. It can be distracting if the music is too loud to actually hear the voiceover. 
 * Created a story, reel or short?
 
-  * These are short videos, sometimes no longer than ten seconds
+  * These are short videos, sometimes no longer than ten seconds.
 
-    * Place your subtitles correctly, not over any other information and not too close to the sides as to not crop out any words
-    * Solid colour background for the text
-    * Correct colour contrast for text and background
-    * Don’t use illegible fonts
+    * Place your subtitles correctly, not over any other information and not too close to the sides as to not crop out any words.
+    * Solid colour background for the text.
+    * Correct colour contrast for text and background.
+    * Don’t use illegible fonts.
   * Stickers for links, locations, or hashtags
 
-    * You have the option to rename them, name them something sensible
-    * Don’t place them on the edge of the screen where people are likely to tap to the next story or at the bottom of the screen where someone can message you, there’s a higher chance of clicking the wrong thing
-* Writing Captions - Writing captions is a fun process! Just keep these things in mind to make them accessible;
+    * You have the option to write in your own text, make it contextual and descriptive.
+    * Don’t place them on the edge of the screen where people are likely to tap to the next story or at the bottom of the screen where someone can message you. There’s a higher chance of clicking the wrong thing
+* Writing Captions - writing captions is a fun process! Just keep these things in mind to make them accessible;
 
-  * Use plain, inclusive language, so avoid any idioms or abbreviations that might not make sense to a non-native speaker
-  * Hashtags: don’t make them too long and be sure to use camel case
-  * Only use one or two emoji’s, that clearly cannot be misinterpreted, as a number are ambiguous in meaning. Emojipedia.
+  * Use plain, inclusive language.
+
+    * Avoid using any idioms or abbreviations without an explanation of what they are. They might not make sense to a non-native speaker.
+  * HHashtags: don’t make them too long by using only three or four words. Be sure to capitalise the first letter of each word, for example: #MakeThingsAccessible.
+  * Only use one or two emoji’s, that clearly cannot be misinterpreted. Use [Emojipedia](https://emojipedia.org/) to find the meanings and names of emojis.
   * Use meaningful links (as in they can be understood when read out loud out of content) rather than the URL. 
   * Also check that your platform can actually posts links (Instagram cannot post links within captions so it is best to use a link organiser like Link Tree.)
 
