@@ -1,7 +1,7 @@
 ---
 title: Accessible social media fundamentals
-summary: Social media is an ever-growing aspect of communicating with audiences.
-  By designing accessible communications into your campaigns, you embed good
+summary: Social media is a growing aspect of communicating with audiences. By
+  designing accessible communications into your campaigns, you embed good
   practices and will engage more people across all platforms.
 author: gmann1
 date: 2024-06-04
@@ -13,7 +13,7 @@ file:
   - /public/docs/sm_fundamentals.docx
 isGuide: true
 ---
-Social media is an ever-growing aspect of communicating with audiences. By designing accessible communications into your campaigns, you embed good practices and will engage more people across all platforms.
+Social media is a growing aspect of communicating with audiences. By designing accessible communications into your campaigns, you embed good practices and will engage more people across all platforms.
 
 Creating accessible social media content shares a lot of good practice with creating accessible content in other forms, but there are additional things to think about when publishing content to social media platforms.
 
