@@ -58,12 +58,12 @@ As an aside, we will have to put this in a form, with a submit button, as we nee
 As always, we will start with the good old HTML (I don't know why I always say this as starting with CSS or JS would be pretty challenging, right?):
 
 ```html
-<form>
+<form class="form">
   <div class="form__control">
     <label class="input__label" for="pWord">
-      <span class="input__label-text">Password</span>
-      <span class="input__label-tip">
-        <span>Between 8 and 16 characters in length</span>
+      <span class="input__label-text">Password (required)</span>
+      <span class="input__label-reqs">
+        <span>At least 8 characters in length</span>
         <span>Must contain at least 1 number</span>
         <span>Must contain at least 1 lowercase letter</span>
         <span>Must contain at least 1 uppercase letter</span>
@@ -74,13 +74,15 @@ As always, we will start with the good old HTML (I don't know why I always say t
         class="input--password"
         id="pWord"
         type="password"
+        required
         autocomplete="current-password"
-        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8, 16}$"
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$"
       >
     </div>
   </div>
   <button class="form__submit" type="submit">Submit</button>
 </form>
+<div id="announce" aria-live="assertive"></div>
 ```
 
 Hopefully nothing unexpected in there, I'll summarise it below, in case you're curious:
@@ -89,7 +91,92 @@ Hopefully nothing unexpected in there, I'll summarise it below, in case you're c
 * We're showing our password requirements, in text, after the primary label of "Password", it's always better to be up front with any requirements, as nobody will appreciate having to cause an error to find them out. We could have used `aria-describedby`, pointing to a container below the input, but that is more likely to be missed, especially on devices where the on-screen keyboard may pop up and obscure them
 * We're wrapping the `input` in a `<div>` as when we add the button we need this to align the `<input>` and `<button>`
 * We have the `autocomplete="current-password"` as this is a part of a login form, although if you were creating this for a registration form, you'd need to use `new-password` as the value
-* I'm cheating a little and just using the `pattern` attribute to add those password requirements, which is obviously not the most robust way of doing that on its own, but as always, we don't have a backend
-* Finally, we have a submit button
+* I'm cheating a little and just using the `pattern` attribute to add those password requirements, which is obviously not the most robust way of validating on its own, but as always, we don't have a backend and I don't want to have to write a full JS validation... sorry, not sorry
+* We have a submit button
+* Finally, we have an empty live region, I'm going for aria-live="assertive", here. The reason being we're only going to inject an alert into here, when the button is pressed and given that a password reveal could be a security issue, we're going to tell our users straightaway. It's usually not ideal to use assertive, due to the interruptive nature, but this is possibly a good use case for anybody using a screen reader that has accidentally clicked it
 
 Obviously, at this stage, it looks a hot mess, so let's tackle the first part of our styling now:
+
+```css
+/* basic styles */
+
+ *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  font-size: 1.125rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+/* End basic styles */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid grey;
+  border-radius: 6px;
+  padding: 1rem .5rem;
+  max-width: 26rem;
+}
+
+.form__control {
+  width: 100%;
+  max-width: 25rem;
+}
+
+.input__label-text,
+.input__label-reqs > * {
+  display: block;
+}
+
+.input__label-text {
+  font-size: 1.375rem;
+  font-weight: bold;
+}
+
+.input__label-reqs {
+  display: block;
+  margin-bottom: .75rem;
+}
+
+.input--password {
+  margin-bottom: 1rem;
+  display: block;
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: .25rem;
+  width: 100%;
+}
+
+.input--password:focus,
+.form__submit:focus-visible {
+  outline: 2px solid rebeccapurple;
+  outline-offset: 2px;
+}
+
+.form__submit {
+  border: none;
+  padding: .375rem;
+  border-radius: 4px;
+  background-color: rebeccapurple;
+  color: white;
+}
+```
+
+Nothing spectacular in the CSS, we're just making it look reasonably OK. Perhaps the only thing of note are the password requirements. They are just lines of text here, they can't be in a list as they are inside the `<label>` element and it is against the HTML spec to add a list inside that element. We could have made them look like list items, but then they wouldn't be marked up correctly, which is a 1.3.1 Info and Relationships issue, albeit a quite trivial one. We could have put an actual list between the `<label>` and `<input>` and then used `aria-describedby`, but even then, the list would not be communicated as such, to a screen reader user who is focused on the password field, as semantics are not exposed to that attribute.
+
+The above is as always, a case of "Test with actual users", this is something where the words of wisdom from actual screen reader users may highlight some nuance or provide you with a better approach that I failed to consider. Well, that wraps up the basic implementation of our password field, this is what users without JS enabled will experience
