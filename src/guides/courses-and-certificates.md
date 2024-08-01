@@ -61,7 +61,7 @@ Online Self-Paced Web Accessibility Classes:
 
 ### Section 508 (United States)
 
-[Section 508 Certification](https://www.section508.gov/training-home/#Onlinetraining).
+[Section 508 Certification](https://www.section508.gov/training-home/#Onlinetraining) (external website).
 
 ## Webinars
 
