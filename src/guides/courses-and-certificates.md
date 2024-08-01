@@ -32,9 +32,9 @@ isGuide: true
 
 * WIXLearn - [Accessibility 101: Build your accessible website](https://www.wix.com/learn/courses/site-essentials/build-your-accessible-website) 
 
-[](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights)
+### [](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights)YouTube courses
 
-*
+* [Build a Website Accessibility Tester With JavaScript & Pa11y](https://www.youtube.com/watch?v=MO4vEAu3hKE)
 
 ### Periodically available
 
