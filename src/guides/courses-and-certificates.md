@@ -32,8 +32,6 @@ isGuide: true
 
 * WIXLearn - [Accessibility 101: Build your accessible website](https://www.wix.com/learn/courses/site-essentials/build-your-accessible-website) 
 
-
-
 [](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights)
 
 *
@@ -62,9 +60,12 @@ Online Self-Paced Web Accessibility Classes:
 ### coursera
 
 * [Testing for Web Accessibility With Accessibility Insights](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights)[](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/)
-*   [Test Accessibility of Your Design with WAVE](https://www.coursera.org/projects/test-accessibility-design-wave)
+* [Test Accessibility of Your Design with WAVE](https://www.coursera.org/projects/test-accessibility-design-wave)
+* [](https://www.coursera.org/projects/test-accessibility-design-wave)
 
+### egghead.io
 
+* [Auditing React Apps for Accessibility](https://egghead.io/courses/auditing-react-apps-for-accessibility-08733265)
 
 ### Udemy
 
