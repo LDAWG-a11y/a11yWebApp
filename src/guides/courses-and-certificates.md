@@ -73,3 +73,5 @@ Online Self-Paced Web Accessibility Classes:
 ## YouTube
 
 *
+
+## Browser extensions and marklets
