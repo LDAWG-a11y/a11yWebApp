@@ -54,7 +54,7 @@ Online Self-Paced Web Accessibility Classes:
 * [Certified Professional in Web Accessibility (CPWA)](<Certified Professional in Web Accessibility (CPWA)>) (external website)
 * [Accessible Document Specialist (ADS)](<Accessible Document Specialist (ADS)>) (external website)
 
-### Section 508
+### Section 508 (United States)
 
 [Section 508 Certification](https://www.section508.gov/training-home/#Onlinetraining).
 
