@@ -75,3 +75,17 @@ Online Self-Paced Web Accessibility Classes:
 *
 
 ## Browser extensions and marklets
+
+Chrome
+
+
+
+Mozilla Firefox
+
+
+
+Edge
+
+
+
+Opera
