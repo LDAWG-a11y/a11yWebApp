@@ -20,7 +20,7 @@ isGuide: true
 * Disability Awareness: [Introduction to disability awareness](https://disabilityawareness.com.au/elearning/disability-awareness/) (external website)
 * Google via Udacity: [Web Accessibility](https://www.udacity.com/course/web-accessibility--ud891) (external website)
 * OCAD University: [Understanding Web Accessibility](https://legacy.idrc.ocadu.ca/policy/idrc-and-aoda/441-idrcs-self-paced-course) (external website)
-* [Class Central Learn Accessibility](https://www.classcentral.com/course/independent-learn-accessibility-137866) (external website)
+* Google Developers [Class Central Learn Accessibility](https://www.classcentral.com/course/independent-learn-accessibility-137866) (external website)
 *
 
 ### Periodically available
