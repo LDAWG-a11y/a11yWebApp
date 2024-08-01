@@ -22,7 +22,7 @@ isGuide: true
 * Google Developers via web.dev: [Learn Accessibility](https://web.dev/learn/accessibility/) (external website)
 * OCAD University: [Understanding Web Accessibility](https://legacy.idrc.ocadu.ca/policy/idrc-and-aoda/441-idrcs-self-paced-course) (external website)
 *
-*
+* GTx: [Information and Communication Technology (ICT) Accessibility](https://www.edx.org/learn/information-technology/the-georgia-institute-of-technology-information-and-communication-technology-ict-accessibility) (external website)
 
 ### Periodically available
 
