@@ -37,7 +37,7 @@ Over twenty digital accessibility courses (external website).
 
 ### Sara Soueidan
 
-Online video course for web designers and developers (external website).
+[Online video course for web designers and developers](https://practical-accessibility.today/) (external website).
 
 ## Certification
 
