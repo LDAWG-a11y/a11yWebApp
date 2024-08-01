@@ -24,9 +24,15 @@ isGuide: true
 *
 * GTx: [Information and Communication Technology (ICT) Accessibility](https://www.edx.org/learn/information-technology/the-georgia-institute-of-technology-information-and-communication-technology-ict-accessibility) (external website)
 
-Wix
+### Microsoft
+
+* [Gaming accessibility fundamentals](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/)
+
+### Wix
 
 * WIXLearn - [Accessibility 101: Build your accessible website](https://www.wix.com/learn/courses/site-essentials/build-your-accessible-website) 
+
+
 
 ### Periodically available
 
@@ -47,9 +53,9 @@ Online Self-Paced Web Accessibility Classes:
 
 * [iOS App Development: Accessibility](https://www.linkedin.com/learning/ios-app-development-accessibility/)
 
-### Microsoft
+[](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/)
 
-* [Gaming accessibility fundamentals](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/)
+*
 
 ### Udemy
 
