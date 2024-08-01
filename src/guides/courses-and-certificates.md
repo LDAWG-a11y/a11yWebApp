@@ -45,7 +45,7 @@ Online Self-Paced Web Accessibility Classes:
 
 ### Microsoft
 
-
+* [Gaming accessibility fundamentals](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/)
 
 ### Udemy
 
