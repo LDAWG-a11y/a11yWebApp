@@ -52,7 +52,8 @@ Online Self-Paced Web Accessibility Classes:
 ### LinkedInLearning
 
 * [iOS App Development: Accessibility](https://www.linkedin.com/learning/ios-app-development-accessibility/)
-* [Android App Development: Accessibility](linkedin.com/learning/android-app-development-accessibility/)[](https://www.linkedin.com/learning/ios-app-development-accessibility/)
+* [Android App Development: Accessibility](linkedin.com/learning/android-app-development-accessibility/)
+* [React: Accessibility](linkedin.com/learning/react-accessibility/accessibility-in-react)[](linkedin.com/learning/android-app-development-accessibility/)[](https://www.linkedin.com/learning/ios-app-development-accessibility/)
 
 [](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/)
 
