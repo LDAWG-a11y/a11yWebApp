@@ -1,10 +1,15 @@
 ---
-title: Courses and certificates
-summary: This guide provides useful information on accessibility courses and
-  certificates
+title: Courses, certificates, browser extensions, and YouTube channels
+summary: This guide provides useful information on accessibility courses,
+  certificates, browser extensions and accessibility YouTube channels
 author: swilkinson
 date: 2022-12-22
 toc: true
+tags:
+  - courses
+  - " certification"
+  - browser extensions
+  - YouTube channels
 isGuide: true
 ---
 ### Free courses
