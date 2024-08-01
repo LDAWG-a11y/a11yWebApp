@@ -62,7 +62,9 @@ Online Self-Paced Web Accessibility Classes:
 ### coursera
 
 * [Testing for Web Accessibility With Accessibility Insights](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights)[](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/)
-*
+*   [Test Accessibility of Your Design with WAVE](https://www.coursera.org/projects/test-accessibility-design-wave)
+
+
 
 ### Udemy
 
