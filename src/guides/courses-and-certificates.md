@@ -38,9 +38,9 @@ Online Self-Paced Web Accessibility Classes:
 
 ### Udemy
 
-* Introduction to Web Accessibility WCAG 2.1 by Ross Mullen (external website)
-* Master the 9 new WCAG 2.2 success criteria by Ross Mullen (external website)
-* Introduction to WAI-ARIA for Beginners by Stefany Newman (external website)
+* [Introduction to Web Accessibility WCAG 2.1](https://www.udemy.com/course/introduction-to-web-accessibility-wcag21/) by Ross Mullen (external website)
+* [Master the 9 new WCAG 2.2 success criteria](https://www.udemy.com/course/master-the-wcag-22-criteria/) by Ross Mullen (external website)
+* [Introduction to WAI-ARIA for Beginners](https://www.udemy.com/course/introduction-to-wai-aria-for-beginners/) by Stefany Newman (external website)
 
 ### Funka Academy
 
