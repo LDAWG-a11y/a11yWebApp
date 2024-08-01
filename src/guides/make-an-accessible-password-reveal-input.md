@@ -80,7 +80,7 @@ As always, we will start with the good old HTML (I don't know why I always say t
       >
     </div>
   </div>
-  <button class="form__submit" type="submit">Submit</button>
+  <button class="form__submit" id="submit" type="submit">Submit</button>
 </form>
 <div id="announce" aria-live="assertive"></div>
 ```
@@ -179,4 +179,67 @@ input {
 
 Nothing spectacular in the CSS, we're just making it look reasonably OK. Perhaps the only thing of note are the password requirements. They are just lines of text here, they can't be in a list as they are inside the `<label>` element and it is against the HTML spec to add a list inside that element. We could have made them look like list items, but then they wouldn't be marked up correctly, which is a 1.3.1 Info and Relationships issue, albeit a quite trivial one. We could have put an actual list between the `<label>` and `<input>` and then used `aria-describedby`, but even then, the list would not be communicated as such, to a screen reader user who is focused on the password field, as semantics are not exposed to that attribute.
 
-The above is as always, a case of "Test with actual users", this is something where the words of wisdom from actual screen reader users may highlight some nuance or provide you with a better approach that I failed to consider. Well, that wraps up the basic implementation of our password field, this is what users without JS enabled will experience
+The above is as always, a case of "Test with actual users", this is something where the words of wisdom from actual screen reader users may highlight some nuance or provide you with a better approach that I failed to consider. Well, that wraps up the basic implementation of our password field, this is what users without JS enabled will experience.
+
+Firstly, we need to add a tiny bit of JS to the <head> section in our HTML to provide us with a hook for our JS and CSS (you may have something similar, already?):
+
+```html
+<head>
+  <!-- Head stuff -->
+  <script type="module">
+    document.documentElement.setAttribute('data-has-js', '')
+  </script>
+</head>
+```
+
+Nothing special there, we're just adding a data attribute to the <html> element, if the browser supports JS modules. Modules are relatively new, in the grand scheme of things, so we're just using this to ensure that the browser supports ES6, as modules and ES6 were supported at roughly the same time. You may have tooling on your site that allows you to support newer JS with polyfills and whatnot, but this is just how we're doing it here, for simplicity.
+
+Now we'll address the JS functionality, which is actually pretty straightforward:
+
+```javascript
+
+```
+
+A quick overview of the above JS:
+
+* We get references to all of the elements we need
+
+  * `inputWrapper` - which will contain the input and button
+  * `pWord` - the password input
+  * `submit` - the form submit button
+  * `announce` - our live region that will announce the password display status
+  * `toggleBtnHTML` - a new string of HTML that contains the button markup, including an eye icon in SVG format and some visually hidden text, for the button's accessible name
+* We're using `aria-pressed` on the button, so remember not to change the accessible name as that will be confusing for our users
+* We're using `aria-controls="[IDRef of password field]"`, to at least do our bit in saying this button controls another element (yeah, I know, it's not widely supported, but it's still the proper attribute)
+* We need to use `type="button"` on our `<button>`, otherwise when we click it, it will attempt to submit the form, so we need to be explicit that it is not a submit button
+* We then insert our string of HTML into the `inputWrapper`, with `insertAdjacentHTML`, so it becomes actual HTML, I'm doing this `beforeend`, which means it will injected after everything else within the `inputWrapper` and therefore come after the `<input>` in the page's sequential tab order. I have seen an approach where with a bit of flexbox ordering, the button comes before the input in the DOM, but after the input visually. I expect the rationale there was to inform a screen reader user of its presence, before they encounter the input? That can be a good call, but again, let actual users dictate the best approach there, I'm keeping it simple and doing so not knowing what actual screen readers would prefer
+* Now we need to get a reference to the button, we only had a reference to the string of HTML before, but now it's an element we can store that reference in `toggleBtn`
+* The password and the new button are so tightly related that I'm manipulating their wrapping element to become a `role="group"` and getting that group's accessible name from the `<input>`, is this overkill? I have to say I am unsure, in my mind I'm building that relationship where the screen reader support for `aria-controls` falls down and I'm providing a screen reader user a decent clue that there is more than just the input in this group, which may be beneficial to them. You got it, test with your users, they count here and I don't
+* Finally, we just have some conditional logic, that is ran when our new button is clicked, if the button's `aria-pressed` value is `false`
+
+  * Set `aria-pressed="true"`
+  * Change the `type` attribute of the password field to `text`
+  * Inform a user their password is shown, using our live region
+* And if that `aria-pressed` value was `true`, when it was clicked, we need to do the inverse of the above, but this time we are using a function `setPasswordDefaults`, as we will need to reuse that functionality and we don't want to repeat ourselves
+
+  * Set `aria-pressed="false"`, so the button returns to its original unpressed state
+  * Change the `type` attribute of the password field back to password, so it is securely hidden again
+  * Inform a user their password is now hidden
+
+That wasn't too much hard work, hopefully it makes sense? we still have a couple of bits to do, but the actual toggle works and everything is announced correctly. Let's ensure that we address that security issue that stores passwords in the browser's autocomplete history, we just need a small bit of JS for that:
+
+```javascript
+submit.addEventListener('click', () => {
+  if (pWord.checkValidity() && pWord.getAttribute('type') === 'text') {
+    setPasswordDefaults();
+  }
+  // do validation and/or redirect stuff here
+})
+```
+
+So, just a simple click handler on our submit button where we are checking two things:
+
+* We're checking the field is valid, with `checkValidity()`, which will return a boolean value, in this case, we want it to be `true`, before we proceed
+* We also check whether the password field has its `type` attribute set to `text`
+
+When both of those conditions are `true`, we call the `setPasswordDefaults()` function (I told you we would reuse that), to flip everything back to the more secure defaults, before then doing whatever we need in our auth process. Remember, my validation approach is brittle by design, here. I'm just using the easiest way of doing this, with HTML5 validation, as I just want to provide a "working" example
