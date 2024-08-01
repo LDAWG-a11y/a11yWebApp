@@ -34,6 +34,10 @@ isGuide: true
 
 
 
+### coursera
+
+* [Testing for Web Accessibility With Accessibility Insights](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights)
+
 ### Periodically available
 
 * FutureLearn with UAL Creative Computing Institute: [Introduction to UX and Accessible Design](https://www.futurelearn.com/courses/introduction-to-ux-and-accessible-design) (external website)
