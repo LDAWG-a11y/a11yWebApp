@@ -33,7 +33,9 @@ Online Self-Paced Web Accessibility Classes:
 
 ### Udemy
 
-Over twenty digital accessibility courses (external website).
+* Introduction to Web Accessibility WCAG 2.1 by Ross Mullen (external website)
+* Master the 9 new WCAG 2.2 success criteria by Ross Mullen (external website)
+* Introduction to WAI-ARIA for Beginners by Stefany Newman (external website)
 
 ### Funka Academy
 
@@ -44,6 +46,15 @@ Over twenty digital accessibility courses (external website).
 [Online video course for web designers and developers](https://practical-accessibility.today/) (external website).
 
 ## Certification
+
+### International Association of Accessibility Professionals (IAAP)
+
+* [Certified Professional in Accessibility Core Competencies (CPACC)](https://www.accessibilityassociation.org/s/certified-professional) (external website)
+* [Web Accessibility Specialist (WAS)](https://www.accessibilityassociation.org/s/wascertification) (external website)
+* [Certified Professional in Web Accessibility (CPWA)](<Certified Professional in Web Accessibility (CPWA)>) (external website)
+* [Accessible Document Specialist (ADS)](<Accessible Document Specialist (ADS)>) (external website)
+
+
 
 ## Webinars
 
