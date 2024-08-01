@@ -20,6 +20,8 @@ isGuide: true
 * Disability Awareness: [Introduction to disability awareness](https://disabilityawareness.com.au/elearning/disability-awareness/) (external website)
 * Google via Udacity: [Web Accessibility](https://www.udacity.com/course/web-accessibility--ud891) (external website)
 * OCAD University: [Understanding Web Accessibility](https://legacy.idrc.ocadu.ca/policy/idrc-and-aoda/441-idrcs-self-paced-course) (external website)
+* [Class Central Learn Accessibility](https://www.classcentral.com/course/independent-learn-accessibility-137866) (external website)
+*
 
 ### Periodically available
 
@@ -41,6 +43,8 @@ Online Self-Paced Web Accessibility Classes:
 * [Introduction to Web Accessibility WCAG 2.1](https://www.udemy.com/course/introduction-to-web-accessibility-wcag21/) by Ross Mullen (external website)
 * [Master the 9 new WCAG 2.2 success criteria](https://www.udemy.com/course/master-the-wcag-22-criteria/) by Ross Mullen (external website)
 * [Introduction to WAI-ARIA for Beginners](https://www.udemy.com/course/introduction-to-wai-aria-for-beginners/) by Stefany Newman (external website)
+
+A11Y collective
 
 ### Funka Academy
 
@@ -74,18 +78,24 @@ Online Self-Paced Web Accessibility Classes:
 
 *
 
-## Browser extensions and marklets
+## Browser extensions and Bookmarklets
 
-Chrome
+### Chrome
 
+*
 
+### Mozilla Firefox
 
-Mozilla Firefox
+*
 
+### Edge
 
+*
 
-Edge
+### Opera
 
+*
 
+### Safari
 
-Opera
+*
