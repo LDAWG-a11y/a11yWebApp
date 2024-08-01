@@ -7,7 +7,7 @@ date: 2022-12-22
 toc: true
 isGuide: true
 ---
-## Free courses
+### Free courses
 
 ### Always available
 
@@ -54,7 +54,9 @@ Online Self-Paced Web Accessibility Classes:
 * [Certified Professional in Web Accessibility (CPWA)](<Certified Professional in Web Accessibility (CPWA)>) (external website)
 * [Accessible Document Specialist (ADS)](<Accessible Document Specialist (ADS)>) (external website)
 
+### Section 508
 
+[Section 508 Certification](https://www.section508.gov/training-home/#Onlinetraining).
 
 ## Webinars
 
