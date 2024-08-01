@@ -24,6 +24,10 @@ isGuide: true
 *
 * GTx: [Information and Communication Technology (ICT) Accessibility](https://www.edx.org/learn/information-technology/the-georgia-institute-of-technology-information-and-communication-technology-ict-accessibility) (external website)
 
+Wix
+
+* WIXLearn - [Accessibility 101: Build your accessible website](https://www.wix.com/learn/courses/site-essentials/build-your-accessible-website) 
+
 ### Periodically available
 
 * FutureLearn with UAL Creative Computing Institute: [Introduction to UX and Accessible Design](https://www.futurelearn.com/courses/introduction-to-ux-and-accessible-design) (external website)
@@ -41,7 +45,7 @@ Online Self-Paced Web Accessibility Classes:
 
 ### LinkedInLearning
 
-*
+* [iOS App Development: Accessibility](https://www.linkedin.com/learning/ios-app-development-accessibility/)
 
 ### Microsoft
 
