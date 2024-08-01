@@ -34,9 +34,9 @@ isGuide: true
 
 
 
-### coursera
+[](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights)
 
-* [Testing for Web Accessibility With Accessibility Insights](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights)
+*
 
 ### Periodically available
 
@@ -59,8 +59,9 @@ Online Self-Paced Web Accessibility Classes:
 * [Android App Development: Accessibility](linkedin.com/learning/android-app-development-accessibility/)
 * [React: Accessibility](linkedin.com/learning/react-accessibility/accessibility-in-react)[](linkedin.com/learning/android-app-development-accessibility/)[](https://www.linkedin.com/learning/ios-app-development-accessibility/)
 
-[](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/)
+### coursera
 
+* [Testing for Web Accessibility With Accessibility Insights](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights)[](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/)
 *
 
 ### Udemy
