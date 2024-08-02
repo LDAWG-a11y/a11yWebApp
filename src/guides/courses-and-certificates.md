@@ -103,6 +103,10 @@ Online Self-Paced Web Accessibility Classes:
 
 [Over twenty digital accessibility courses](https://www.funka.com/en/funka-academy/) (external website).
 
+### Pluralsight
+
+[Meeting Web Accessibility Guidelines (Section 508/ WCAG 2.1)](hhttps://www.pluralsight.com/courses/web-accessibility-meeting-guidelines) (external website)
+
 ## Certification
 
 ### International Association of Accessibility Professionals (IAAP)
