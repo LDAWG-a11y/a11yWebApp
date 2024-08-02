@@ -62,7 +62,8 @@ Online Self-Paced Web Accessibility Classes:
 
 * [Testing for Web Accessibility With Accessibility Insights](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights)[](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/)
 * [Test Accessibility of Your Design with WAVE](https://www.coursera.org/projects/test-accessibility-design-wave)
-* [Introduction to Accessibility and Universal Design](coursera.org/learn/introduction-to-accessibility-and-universal-design)[](https://www.coursera.org/projects/test-accessibility-design-wave)
+* [Introduction to Accessibility and Universal Design](coursera.org/learn/introduction-to-accessibility-and-universal-design)
+* [](coursera.org/learn/introduction-to-accessibility-and-universal-design)[](https://www.coursera.org/projects/test-accessibility-design-wave)
 
 ### egghead.io
 
@@ -75,7 +76,17 @@ Online Self-Paced Web Accessibility Classes:
 * [Introduction to WAI-ARIA for Beginners](https://www.udemy.com/course/introduction-to-wai-aria-for-beginners/) by Stefany Newman (external website)
 * [How To Design for Accessibility: for UX Designers (WCAG 2.2)](https://www.udemy.com/course/the-ux-designers-accessibility-guide/)
 
-A11Y collective
+### A11Y collective
+
+* The [accessible development bundle](https://www.a11y-collective.com/product/the-accessible-development-bundle/) () which can also be bought separately:
+
+  * [Web accessibility, the basics](https://www.a11y-collective.com/product/web-accessibility-the-basics/)
+  * [](https://www.a11y-collective.com/product/web-accessibility-the-basics/)[Accessible code](https://www.a11y-collective.com/product/accessible-code/)
+  * [](https://www.a11y-collective.com/product/accessible-code/)[Advanced Accessible Components](https://www.a11y-collective.com/product/advanced-accessible-components/)
+  * [](https://www.a11y-collective.com/product/advanced-accessible-components/)[ARIA explained](https://www.a11y-collective.com/product/aria-explained/)
+* [](https://www.a11y-collective.com/product/web-accessibility-the-basics/) [Accessible design, the basics](https://www.a11y-collective.com/product/accessible-design-the-basics/)
+* [Writing accessible content for the web](https://www.a11y-collective.com/product/writing-accessible-content-for-the-web/)
+* [The A11Y Collective essentials](https://www.a11y-collective.com/product/the-a11y-collective-essentials/)
 
 ### Funka Academy
 
