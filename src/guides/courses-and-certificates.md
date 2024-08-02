@@ -18,7 +18,6 @@ isGuide: true
 
 * World Wide Web Consortium (W3C): [Introduction to Web Accessibility](https://www.w3.org/blog/2019/12/free-online-course-introduction-to-web-accessibility/) (external website)
 * Disability Awareness: [Introduction to disability awareness](https://disabilityawareness.com.au/elearning/disability-awareness/) (external website)
-* Google via Udacity: [Web Accessibility](https://www.udacity.com/course/web-accessibility--ud891) (external website)
 * Google Developers via web.dev: [Learn Accessibility](https://web.dev/learn/accessibility/) (external website)
 * OCAD University: [Understanding Web Accessibility](https://legacy.idrc.ocadu.ca/policy/idrc-and-aoda/441-idrcs-self-paced-course) (external website)
 * A11Y collective: [Web Accessibility, the business case](https://www.a11y-collective.com/product/masterclass-web-accessbility-the-business-case/) (external website)
@@ -90,6 +89,10 @@ Online Self-Paced Web Accessibility Classes:
 * [Master the 9 new WCAG 2.2 success criteria](https://www.udemy.com/course/master-the-wcag-22-criteria/) by Ross Mullen (external website)
 * [Introduction to WAI-ARIA for Beginners](https://www.udemy.com/course/introduction-to-wai-aria-for-beginners/) by Stefany Newman (external website)
 * [How To Design for Accessibility: for UX Designers (WCAG 2.2)](https://www.udemy.com/course/the-ux-designers-accessibility-guide/) (external website)
+
+### Udacity
+
+Google via Udacity: [Web Accessibility](https://www.udacity.com/course/web-accessibility--ud891) (external website)
 
 ### A11Y collective
 
