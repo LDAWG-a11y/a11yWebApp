@@ -55,6 +55,18 @@ Free courses
 
 ## Paid courses
 
+### A11Y collective
+
+* The [accessible development bundle](https://www.a11y-collective.com/product/the-accessible-development-bundle/) (external website) which can also be bought separately:
+
+  * [Web accessibility, the basics](https://www.a11y-collective.com/product/web-accessibility-the-basics/) (external website)
+  * [](https://www.a11y-collective.com/product/web-accessibility-the-basics/)[Accessible code](https://www.a11y-collective.com/product/accessible-code/) (external website)
+  * [](https://www.a11y-collective.com/product/accessible-code/)[Advanced Accessible Components](https://www.a11y-collective.com/product/advanced-accessible-components/) (external website)
+  * [](https://www.a11y-collective.com/product/advanced-accessible-components/)[ARIA explained](https://www.a11y-collective.com/product/aria-explained/) (external website)
+* [](https://www.a11y-collective.com/product/web-accessibility-the-basics/) [Accessible design, the basics](https://www.a11y-collective.com/product/accessible-design-the-basics/) (external website)
+* [Writing accessible content for the web](https://www.a11y-collective.com/product/writing-accessible-content-for-the-web/) (external website)
+* [The A11Y Collective essentials](https://www.a11y-collective.com/product/the-a11y-collective-essentials/) (external website)
+
 ### coursera
 
 * [Testing for Web Accessibility With Accessibility Insights](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights) (external website)[](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/)
@@ -75,51 +87,9 @@ Online Self-Paced Web Accessibility Classes:
 
 * [Auditing React Apps for Accessibility](https://egghead.io/courses/auditing-react-apps-for-accessibility-08733265) (external website)
 
-### LinkedInLearning
+### Funka Academy
 
-* [iOS App Development: Accessibility](https://www.linkedin.com/learning/ios-app-development-accessibility/) (external website)
-* [Android App Development: Accessibility](linkedin.com/learning/android-app-development-accessibility/) (external website)
-* [React: Accessibility](linkedin.com/learning/react-accessibility/accessibility-in-react) (external website)
-* [Creating Accessible Documents in Microsoft Office](linkedin.com/learning/creating-accessible-documents-in-microsoft-office/) (external website)
-* [Accessibility for Web Design](https://www.linkedin.com/learning/accessibility-for-web-design/making-the-digital-world-accessible) (external website)
-* [UX Foundations: Accessibility](https://www.linkedin.com/learning/ux-foundations-accessibility/) (external website)
-* [Simplifying Web Development with Accessibility Best Practices](https://www.linkedin.com/learning/simplifying-web-development-with-accessibility-best-practices) (external website)
-* [WordPress: Accessibility](https://www.linkedin.com/learning/wordpress-accessibility-revision/accessibility-in-wordpress) (external website)[](linkedin.com/learning/react-accessibility/accessibility-in-react)[](linkedin.com/learning/android-app-development-accessibility/)[](https://www.linkedin.com/learning/ios-app-development-accessibility/)
-
-### Sara Soueidan
-
-[Online video course for web designers and developers](https://practical-accessibility.today/) (external website).[](coursera.org/learn/introduction-to-accessibility-and-universal-design)[](https://www.coursera.org/projects/test-accessibility-design-wave)
-
-
-
-### treehouse
-
-* [Web Accessibility Compliance](https://teamtreehouse.com/library/web-accessibility-compliance) (external website)
-* [Accessibility For Web Developers Course](https://teamtreehouse.com/library/accessibility-for-web-developers) (external website)
-* [Accessibility for UX Designers](https://teamtreehouse.com/library/accessibility-for-ux-designers-2) (external website)
-
-### Udemy
-
-* [Introduction to Web Accessibility WCAG 2.1](https://www.udemy.com/course/introduction-to-web-accessibility-wcag21/) by Ross Mullen (external website)
-* [Master the 9 new WCAG 2.2 success criteria](https://www.udemy.com/course/master-the-wcag-22-criteria/) by Ross Mullen (external website)
-* [Introduction to WAI-ARIA for Beginners](https://www.udemy.com/course/introduction-to-wai-aria-for-beginners/) by Stefany Newman (external website)
-* [How To Design for Accessibility: for UX Designers (WCAG 2.2)](https://www.udemy.com/course/the-ux-designers-accessibility-guide/) (external website)
-
-### Udacity
-
-Google via Udacity: [Web Accessibility](https://www.udacity.com/course/web-accessibility--ud891) (external website)
-
-### A11Y collective
-
-* The [accessible development bundle](https://www.a11y-collective.com/product/the-accessible-development-bundle/) (external website) which can also be bought separately:
-
-  * [Web accessibility, the basics](https://www.a11y-collective.com/product/web-accessibility-the-basics/) (external website)
-  * [](https://www.a11y-collective.com/product/web-accessibility-the-basics/)[Accessible code](https://www.a11y-collective.com/product/accessible-code/) (external website)
-  * [](https://www.a11y-collective.com/product/accessible-code/)[Advanced Accessible Components](https://www.a11y-collective.com/product/advanced-accessible-components/) (external website)
-  * [](https://www.a11y-collective.com/product/advanced-accessible-components/)[ARIA explained](https://www.a11y-collective.com/product/aria-explained/) (external website)
-* [](https://www.a11y-collective.com/product/web-accessibility-the-basics/) [Accessible design, the basics](https://www.a11y-collective.com/product/accessible-design-the-basics/) (external website)
-* [Writing accessible content for the web](https://www.a11y-collective.com/product/writing-accessible-content-for-the-web/) (external website)
-* [The A11Y Collective essentials](https://www.a11y-collective.com/product/the-a11y-collective-essentials/) (external website)
+[Over twenty digital accessibility courses](https://www.funka.com/en/funka-academy/) (external website).
 
 ### FutureLearn
 
@@ -134,18 +104,42 @@ Google via Udacity: [Web Accessibility](https://www.udacity.com/course/web-acces
 * FutureLearn with University of Southampton: [Digital Accessibility: Enabling Participation in the Information Society](https://www.futurelearn.com/courses/digital-accessibility) (external website)
 * [Software Development Fundamentals: Web Accessibility and CSS](https://www.futurelearn.com/courses/software-development-fundamentals-web-accessibility-css) (external website)
 
-### Funka Academy
+### LinkedInLearning
 
-[Over twenty digital accessibility courses](https://www.funka.com/en/funka-academy/) (external website).
+* [iOS App Development: Accessibility](https://www.linkedin.com/learning/ios-app-development-accessibility/) (external website)
+* [Android App Development: Accessibility](linkedin.com/learning/android-app-development-accessibility/) (external website)
+* [React: Accessibility](linkedin.com/learning/react-accessibility/accessibility-in-react) (external website)
+* [Creating Accessible Documents in Microsoft Office](linkedin.com/learning/creating-accessible-documents-in-microsoft-office/) (external website)
+* [Accessibility for Web Design](https://www.linkedin.com/learning/accessibility-for-web-design/making-the-digital-world-accessible) (external website)
+* [UX Foundations: Accessibility](https://www.linkedin.com/learning/ux-foundations-accessibility/) (external website)
+* [Simplifying Web Development with Accessibility Best Practices](https://www.linkedin.com/learning/simplifying-web-development-with-accessibility-best-practices) (external website)
+* [WordPress: Accessibility](https://www.linkedin.com/learning/wordpress-accessibility-revision/accessibility-in-wordpress) (external website)[](linkedin.com/learning/react-accessibility/accessibility-in-react)[](linkedin.com/learning/android-app-development-accessibility/)[](https://www.linkedin.com/learning/ios-app-development-accessibility/)
 
 ### Pluralsight
 
 * [Meeting Web Accessibility Guidelines (Section 508/ WCAG 2.1)](hhttps://www.pluralsight.com/courses/web-accessibility-meeting-guidelines) (external website)
 * [UX Accessibility](https://www.pluralsight.com/courses/ux-accessibility) (external website)
 
-Trailhead Salesforce
+### Sara Soueidan
 
+[Online video course for web designers and developers](https://practical-accessibility.today/) (external website).[](coursera.org/learn/introduction-to-accessibility-and-universal-design)[](https://www.coursera.org/projects/test-accessibility-design-wave)
 
+### treehouse
+
+* [Web Accessibility Compliance](https://teamtreehouse.com/library/web-accessibility-compliance) (external website)
+* [Accessibility For Web Developers Course](https://teamtreehouse.com/library/accessibility-for-web-developers) (external website)
+* [Accessibility for UX Designers](https://teamtreehouse.com/library/accessibility-for-ux-designers-2) (external website)
+
+### Udacity
+
+Google via Udacity: [Web Accessibility](https://www.udacity.com/course/web-accessibility--ud891) (external website)
+
+### Udemy
+
+* [Introduction to Web Accessibility WCAG 2.1](https://www.udemy.com/course/introduction-to-web-accessibility-wcag21/) by Ross Mullen (external website)
+* [Master the 9 new WCAG 2.2 success criteria](https://www.udemy.com/course/master-the-wcag-22-criteria/) by Ross Mullen (external website)
+* [Introduction to WAI-ARIA for Beginners](https://www.udemy.com/course/introduction-to-wai-aria-for-beginners/) by Stefany Newman (external website)
+* [How To Design for Accessibility: for UX Designers (WCAG 2.2)](https://www.udemy.com/course/the-ux-designers-accessibility-guide/) (external website)
 
 ## Certification
 
