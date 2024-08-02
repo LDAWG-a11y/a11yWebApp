@@ -12,3 +12,4 @@ isGuide: true
 * [AbilityNet](https://www.youtube.com/@abilitynet) (external website)
 * [Accessibility Talks](https://www.youtube.com/@AccessibilityTalks) (external website)
 * [Government Digital Service](https://www.youtube.com/@GovernmentDigitalService) (external website)
+* [International Association of Accessibility Professionals (IAAP)](https://www.youtube.com/@UnitedInAccessibility) (external website)
