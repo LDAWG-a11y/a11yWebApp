@@ -45,8 +45,7 @@ isGuide: true
 
 ### Periodically available
 
-* FutureLearn with UAL Creative Computing Institute: [Introduction to UX and Accessible Design](https://www.futurelearn.com/courses/introduction-to-ux-and-accessible-design) (external website)
-* FutureLearn with University of Southampton: [Digital Accessibility: Enabling Participation in the Information Society](https://www.futurelearn.com/courses/digital-accessibility) (external website)
+*
 * [CurtinX: Disability and Digital Media: Accessibility, Representation and Inclusion](https://www.edx.org/learn/dei-diversity-equity-inclusion/curtin-university-disability-and-digital-media-accessibility-representation-and-inclusion) (external website)
 
 ## Paid courses
@@ -108,7 +107,11 @@ Google via Udacity: [Web Accessibility](https://www.udacity.com/course/web-acces
 
 ### FutureLearn
 
-[Online Teaching: Accessibility and Inclusive Learning](https://www.futurelearn.com/microcredentials/online-teaching-accessibility-and-inclusive-learning) (external website)
+* [Online Teaching: Accessibility and Inclusive Learning](https://www.futurelearn.com/microcredentials/online-teaching-accessibility-and-inclusive-learning) (external website)
+
+  #### Periodically available
+* FutureLearn with UAL Creative Computing Institute: [Introduction to UX and Accessible Design](https://www.futurelearn.com/courses/introduction-to-ux-and-accessible-design) (external website)
+* FutureLearn with University of Southampton: [Digital Accessibility: Enabling Participation in the Information Society](https://www.futurelearn.com/courses/digital-accessibility) (external website)
 
 ### Funka Academy
 
