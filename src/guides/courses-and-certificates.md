@@ -55,9 +55,13 @@ Free courses
 
 ## Paid courses
 
-### Sara Soueidan
+### coursera
 
-[Online video course for web designers and developers](https://practical-accessibility.today/) (external website).
+* [Testing for Web Accessibility With Accessibility Insights](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights) (external website)[](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/)
+* [Test Accessibility of Your Design with WAVE](https://www.coursera.org/projects/test-accessibility-design-wave) (external website)
+* [Introduction to Accessibility and Universal Design](coursera.org/learn/introduction-to-accessibility-and-universal-design) (external website)
+* [Microsoft - UX Design in Practice: Accessibility and Collaboration](https://www.coursera.org/learn/ux-design-in-practice-accessibility-and-collaboration) (external website)
+* [Fundamentals of Document Accessibilit](https://www.coursera.org/projects/fundamentals-of-document-accessibility)y (external website)
 
 ### Deque University
 
@@ -66,6 +70,10 @@ Online Self-Paced Web Accessibility Classes:
 * [International Association of Accessibility Professionals (IAAP) Certified Professional in Accessibility Core Competencies (CPACC)](https://dequeuniversity.com/curriculum/courses/iaap-cpacc) (external website)
 * [International Association of Accessibility Professionals (IAAP) Web Accessibility Specialist (WAS)](https://dequeuniversity.com/curriculum/packages/iaap-was) (external website)
 * [International Association of Accessibility Professionals (IAAP) Accessible Document Specialist (ADS)](https://dequeuniversity.com/curriculum/packages/documents) (external website)
+
+### egghead.io
+
+* [Auditing React Apps for Accessibility](https://egghead.io/courses/auditing-react-apps-for-accessibility-08733265) (external website)
 
 ### LinkedInLearning
 
@@ -78,17 +86,11 @@ Online Self-Paced Web Accessibility Classes:
 * [Simplifying Web Development with Accessibility Best Practices](https://www.linkedin.com/learning/simplifying-web-development-with-accessibility-best-practices) (external website)
 * [WordPress: Accessibility](https://www.linkedin.com/learning/wordpress-accessibility-revision/accessibility-in-wordpress) (external website)[](linkedin.com/learning/react-accessibility/accessibility-in-react)[](linkedin.com/learning/android-app-development-accessibility/)[](https://www.linkedin.com/learning/ios-app-development-accessibility/)
 
-### coursera
+### Sara Soueidan
 
-* [Testing for Web Accessibility With Accessibility Insights](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights) (external website)[](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/)
-* [Test Accessibility of Your Design with WAVE](https://www.coursera.org/projects/test-accessibility-design-wave) (external website)
-* [Introduction to Accessibility and Universal Design](coursera.org/learn/introduction-to-accessibility-and-universal-design) (external website)
-* [Microsoft - UX Design in Practice: Accessibility and Collaboration](https://www.coursera.org/learn/ux-design-in-practice-accessibility-and-collaboration) (external website)
-* [Fundamentals of Document Accessibilit](https://www.coursera.org/projects/fundamentals-of-document-accessibility)y (external website)[](coursera.org/learn/introduction-to-accessibility-and-universal-design)[](https://www.coursera.org/projects/test-accessibility-design-wave)
+[Online video course for web designers and developers](https://practical-accessibility.today/) (external website).[](coursera.org/learn/introduction-to-accessibility-and-universal-design)[](https://www.coursera.org/projects/test-accessibility-design-wave)
 
-### egghead.io
 
-* [Auditing React Apps for Accessibility](https://egghead.io/courses/auditing-react-apps-for-accessibility-08733265) (external website)
 
 ### treehouse
 
