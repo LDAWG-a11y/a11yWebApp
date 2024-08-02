@@ -24,7 +24,7 @@ isGuide: true
 * A11Y collective: [Web Accessibility, the business case](https://www.a11y-collective.com/product/masterclass-web-accessbility-the-business-case/) (external website)
 * A11Y collective: [Try-out Class](https://www.a11y-collective.com/product/try-out-class/) (external website)
 * GTx: [Information and Communication Technology (ICT) Accessibility](https://www.edx.org/learn/information-technology/the-georgia-institute-of-technology-information-and-communication-technology-ict-accessibility) (external website)
-*
+* Code Academy - [Learn CSS: Accessibility](https://www.codecademy.com/learn/learn-css-accessibility) (external website)
 
 ### Microsoft
 
