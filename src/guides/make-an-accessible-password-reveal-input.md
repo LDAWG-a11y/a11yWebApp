@@ -364,14 +364,6 @@ I'd be happy to implement any changes that came about during user testing, the g
 
 ## Codepen
 
-<p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="RwzVbbO" data-pen-title="Accessible password reveal" data-preview="true" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-
-  <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/RwzVbbO">
-
-  Accessible password reveal</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
-
-  on <a href="https://codepen.io">CodePen</a>.</span>
-
-</p>
+<p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="RwzVbbO" data-pen-title="Accessible password reveal" data-preview="true" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"></p>
 
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
