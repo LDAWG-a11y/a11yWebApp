@@ -8,8 +8,6 @@ toc: true
 tags:
   - courses
   - " certification"
-  - browser extensions
-  - YouTube channels
 isGuide: true
 ---
 ## Free courses
