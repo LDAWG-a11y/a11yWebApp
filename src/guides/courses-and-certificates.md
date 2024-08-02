@@ -32,6 +32,10 @@ isGuide: true
 * [Gaming accessibility fundamentals](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/) (external website)
 *
 
+### OpenLearn
+
+* [Accessibility of eLearning](https://www.open.edu/openlearn/education-development/education-careers/accessibility-elearning/) (external website)
+
 ### Wix
 
 * WIXLearn - [Accessibility 101: Build your accessible website](https://www.wix.com/learn/courses/site-essentials/build-your-accessible-website) (external website)
