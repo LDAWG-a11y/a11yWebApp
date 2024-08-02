@@ -28,8 +28,9 @@ isGuide: true
 ### Microsoft
 
 * [Accessibility fundamentals](https://learn.microsoft.com/en-us/training/paths/accessibility-fundamental/) (external website)
+* [Accessibility: Build the foundation for inclusive learning](https://learn.microsoft.com/en-us/training/courses/accessibility-build-foundation-inclusive-learning) (external website)
+* Accessibility, special education, and online learning: Supporting equity in a remote learning environment (external website)
 * [Gaming accessibility fundamentals](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/) (external website)
-*
 
 ### OpenLearn
 
