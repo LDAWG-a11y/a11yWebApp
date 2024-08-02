@@ -109,6 +109,7 @@ Google via Udacity: [Web Accessibility](https://www.udacity.com/course/web-acces
 
 * [Online Teaching: Accessibility and Inclusive Learning](https://www.futurelearn.com/microcredentials/online-teaching-accessibility-and-inclusive-learning) (external website)
 * [Introduction to UX and Accessible Design](https://www.futurelearn.com/courses/introduction-to-ux-and-accessible-design) (external website)
+* [Inclusive Learning with Microsoft Accessibility Tools](https://www.futurelearn.com/courses/make-learning-more-inclusive-with-microsoft-accessibility-tools-sc) (external website)
 
 #### Periodically available
 
