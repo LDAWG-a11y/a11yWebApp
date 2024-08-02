@@ -91,6 +91,7 @@ Online Self-Paced Web Accessibility Classes:
 
 * [Web Accessibility Compliance](https://teamtreehouse.com/library/web-accessibility-compliance) (external website)
 * [Accessibility For Web Developers Course](https://teamtreehouse.com/library/accessibility-for-web-developers) (external website)
+* [Accessibility for UX Designers](https://teamtreehouse.com/library/accessibility-for-ux-designers-2) (external website)
 
 ### Udemy
 
