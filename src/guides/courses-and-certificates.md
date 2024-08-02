@@ -61,7 +61,8 @@ Online Self-Paced Web Accessibility Classes:
 * [iOS App Development: Accessibility](https://www.linkedin.com/learning/ios-app-development-accessibility/) (external website)
 * [Android App Development: Accessibility](linkedin.com/learning/android-app-development-accessibility/) (external website)
 * [React: Accessibility](linkedin.com/learning/react-accessibility/accessibility-in-react) (external website)
-* [Creating Accessible Documents in Microsoft Office](linkedin.com/learning/creating-accessible-documents-in-microsoft-office/) (external website)[](linkedin.com/learning/react-accessibility/accessibility-in-react)[](linkedin.com/learning/android-app-development-accessibility/)[](https://www.linkedin.com/learning/ios-app-development-accessibility/)
+* [Creating Accessible Documents in Microsoft Office](linkedin.com/learning/creating-accessible-documents-in-microsoft-office/) (external website)
+* [Accessibility for Web Design](https://www.linkedin.com/learning/accessibility-for-web-design/making-the-digital-world-accessible) (external website)[](linkedin.com/learning/react-accessibility/accessibility-in-react)[](linkedin.com/learning/android-app-development-accessibility/)[](https://www.linkedin.com/learning/ios-app-development-accessibility/)
 
 ### coursera
 
