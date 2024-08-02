@@ -12,3 +12,4 @@ isGuide: true
 * [AbilityNet](https://abilitynet.org.uk/free-tech-support-and-info/webinars) (external website)
 * [Hassell Inclusion](https://www.hassellinclusion.com/webinars/) (external website)
 * [TPGi](https://www.tpgi.com/events/on-demand-webinars/) (external website)
+* MagicEdTech [MagicaA11y Live](https://www.magicedtech.com/magica11y-live/) (external website)
