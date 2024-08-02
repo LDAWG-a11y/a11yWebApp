@@ -47,6 +47,7 @@ isGuide: true
 ### [](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights)YouTube courses
 
 * [Build a Website Accessibility Tester With JavaScript & Pa11y](https://www.youtube.com/watch?v=MO4vEAu3hKE) (external website)
+* [Accessibility in VS Code](https://www.youtube.com/watch?v=9biCDjSSwqw) (external website)
 
 ### Periodically available
 
