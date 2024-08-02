@@ -50,7 +50,6 @@ isGuide: true
 
 ### Periodically available
 
-*
 * [CurtinX: Disability and Digital Media: Accessibility, Representation and Inclusion](https://www.edx.org/learn/dei-diversity-equity-inclusion/curtin-university-disability-and-digital-media-accessibility-representation-and-inclusion) (external website)
 
 ## Paid courses
