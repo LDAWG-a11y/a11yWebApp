@@ -24,6 +24,7 @@ isGuide: true
 * A11Y collective: [Web Accessibility, the business case](https://www.a11y-collective.com/product/masterclass-web-accessbility-the-business-case/) (external website)
 * A11Y collective: [Try-out Class](https://www.a11y-collective.com/product/try-out-class/) (external website)
 * GTx: [Information and Communication Technology (ICT) Accessibility](https://www.edx.org/learn/information-technology/the-georgia-institute-of-technology-information-and-communication-technology-ict-accessibility) (external website)
+*
 
 ### Microsoft
 
@@ -41,6 +42,7 @@ isGuide: true
 
 * FutureLearn with UAL Creative Computing Institute: [Introduction to UX and Accessible Design](https://www.futurelearn.com/courses/introduction-to-ux-and-accessible-design) (external website)
 * FutureLearn with University of Southampton: [Digital Accessibility: Enabling Participation in the Information Society](https://www.futurelearn.com/courses/digital-accessibility) (external website)
+* [CurtinX: Disability and Digital Media: Accessibility, Representation and Inclusion](https://www.edx.org/learn/dei-diversity-equity-inclusion/curtin-university-disability-and-digital-media-accessibility-representation-and-inclusion) (external website)
 
 ## Paid courses
 
