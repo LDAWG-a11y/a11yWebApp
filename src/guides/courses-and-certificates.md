@@ -48,6 +48,7 @@ isGuide: true
 
 * [Build a Website Accessibility Tester With JavaScript & Pa11y](https://www.youtube.com/watch?v=MO4vEAu3hKE) (external website)
 * [Accessibility in VS Code](https://www.youtube.com/watch?v=9biCDjSSwqw) (external website)
+* freeCodeCamp: [Learn Accessibility - Full a11y Tutorial](https://www.youtube.com/watch?v=e2nkq3h1P68) (external website)
 
 ### Periodically available
 
