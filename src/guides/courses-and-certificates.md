@@ -87,6 +87,10 @@ Online Self-Paced Web Accessibility Classes:
 
 * [Auditing React Apps for Accessibility](https://egghead.io/courses/auditing-react-apps-for-accessibility-08733265) (external website)
 
+### treehouse
+
+[Web Accessibility Compliance](https://teamtreehouse.com/library/web-accessibility-compliance) (external website)
+
 ### Udemy
 
 * [Introduction to Web Accessibility WCAG 2.1](https://www.udemy.com/course/introduction-to-web-accessibility-wcag21/) by Ross Mullen (external website)
