@@ -15,3 +15,4 @@ isGuide: true
 * [International Association of Accessibility Professionals (IAAP)](https://www.youtube.com/@UnitedInAccessibility) (external website)
 * [PCR Digital](https://www.youtube.com/@PCRDigital) (external website)
 * [CHAX Accessibility Unraveled](https://www.youtube.com/@PDFA) (external website)
+* [The Accessibility Guy](https://www.youtube.com/@TheAccessibilityGuy) (external website)
