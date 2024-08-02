@@ -48,6 +48,10 @@ isGuide: true
 
 ## Paid courses
 
+### Sara Soueidan
+
+[Online video course for web designers and developers](https://practical-accessibility.today/) (external website).
+
 ### Deque University
 
 Online Self-Paced Web Accessibility Classes:
@@ -98,10 +102,6 @@ Online Self-Paced Web Accessibility Classes:
 ### Funka Academy
 
 [Over twenty digital accessibility courses](https://www.funka.com/en/funka-academy/) (external website).
-
-### Sara Soueidan
-
-[Online video course for web designers and developers](https://practical-accessibility.today/) (external website).
 
 ## Certification
 
