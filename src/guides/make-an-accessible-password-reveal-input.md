@@ -4,7 +4,7 @@ summary: Password reveals are useful for many of us, if we type in a password,
   but think we may have mistyped it, it's useful to check. How do we make this
   accessible to everybody? Let us take a look
 author: dlee
-date: 2024-07-24
+date: 2024-08-02
 toc: false
 tags:
   - HTML
