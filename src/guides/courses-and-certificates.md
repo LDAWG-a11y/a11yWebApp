@@ -38,6 +38,7 @@ Free courses
 ### Salesforce Trailhead
 
 * [Get Started with Web Accessibility](https://trailhead.salesforce.com/content/learn/trails/get-started-with-web-accessibility) (external website)
+* [Embed Equality in Your Business](https://trailhead.salesforce.com/content/learn/trails/embed-equality-in-your-business) (external website)
 
 ### Wix
 
