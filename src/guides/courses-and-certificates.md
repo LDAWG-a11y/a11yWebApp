@@ -106,6 +106,10 @@ Google via Udacity: [Web Accessibility](https://www.udacity.com/course/web-acces
 * [Writing accessible content for the web](https://www.a11y-collective.com/product/writing-accessible-content-for-the-web/) (external website)
 * [The A11Y Collective essentials](https://www.a11y-collective.com/product/the-a11y-collective-essentials/) (external website)
 
+### FutureLearn
+
+[Online Teaching: Accessibility and Inclusive Learning](https://www.futurelearn.com/microcredentials/online-teaching-accessibility-and-inclusive-learning) (external website)
+
 ### Funka Academy
 
 [Over twenty digital accessibility courses](https://www.funka.com/en/funka-academy/) (external website).
