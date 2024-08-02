@@ -27,7 +27,7 @@ Free courses
 
 ### Microsoft
 
-*
+* [Accessibility fundamentals](https://learn.microsoft.com/en-us/training/paths/accessibility-fundamental/) (external website)
 * [Gaming accessibility fundamentals](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/) (external website)
 *
 
