@@ -12,7 +12,7 @@ tags:
   - YouTube channels
 isGuide: true
 ---
-Free courses
+## Free courses
 
 ### Always available
 
