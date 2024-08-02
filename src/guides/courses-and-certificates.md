@@ -81,7 +81,8 @@ Online Self-Paced Web Accessibility Classes:
 * [Testing for Web Accessibility With Accessibility Insights](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights) (external website)[](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/)
 * [Test Accessibility of Your Design with WAVE](https://www.coursera.org/projects/test-accessibility-design-wave) (external website)
 * [Introduction to Accessibility and Universal Design](coursera.org/learn/introduction-to-accessibility-and-universal-design) (external website)
-* [Microsoft - UX Design in Practice: Accessibility and Collaboration](https://www.coursera.org/learn/ux-design-in-practice-accessibility-and-collaboration) (external website)[](coursera.org/learn/introduction-to-accessibility-and-universal-design)[](https://www.coursera.org/projects/test-accessibility-design-wave)
+* [Microsoft - UX Design in Practice: Accessibility and Collaboration](https://www.coursera.org/learn/ux-design-in-practice-accessibility-and-collaboration) (external website)
+* [Fundamentals of Document Accessibilit](https://www.coursera.org/projects/fundamentals-of-document-accessibility)y (external website)[](coursera.org/learn/introduction-to-accessibility-and-universal-design)[](https://www.coursera.org/projects/test-accessibility-design-wave)
 
 ### egghead.io
 
