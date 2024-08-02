@@ -122,6 +122,7 @@ Online Self-Paced Web Accessibility Classes:
 
 * [Meeting Web Accessibility Guidelines (Section 508/ WCAG 2.1)](hhttps://www.pluralsight.com/courses/web-accessibility-meeting-guidelines) (external website)
 * [UX Accessibility](https://www.pluralsight.com/courses/ux-accessibility) (external website)
+* [Accessibility: Testing and Screen Reader Use](https://www.pluralsight.com/courses/accessibility-testing-and-screen-reader) (external website)
 
 ### Sara Soueidan
 
