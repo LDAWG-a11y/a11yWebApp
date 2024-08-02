@@ -135,7 +135,8 @@ Google via Udacity: [Web Accessibility](https://www.udacity.com/course/web-acces
 
 ### Pluralsight
 
-[Meeting Web Accessibility Guidelines (Section 508/ WCAG 2.1)](hhttps://www.pluralsight.com/courses/web-accessibility-meeting-guidelines) (external website)
+* [Meeting Web Accessibility Guidelines (Section 508/ WCAG 2.1)](hhttps://www.pluralsight.com/courses/web-accessibility-meeting-guidelines) (external website)
+* [UX Accessibility](https://www.pluralsight.com/courses/ux-accessibility) (external website)
 
 Trailhead Salesforce
 
