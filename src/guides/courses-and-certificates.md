@@ -37,7 +37,7 @@ isGuide: true
 * [Accessibility of eLearning](https://www.open.edu/openlearn/education-development/education-careers/accessibility-elearning/) (external website)
 * [Accessibility and inclusion in digital health](https://www.open.edu/openlearn/health-sports-psychology/accessibility-and-inclusion-digital-health/) (external website)
 * [Assistive technologies and online learning](https://www.open.edu/openlearn/education-development/assistive-technologies-and-online-learning/)
-* Diversity and inclusion in the workplace
+* [Diversity and inclusion in the workplace](https://www.open.edu/openlearn/money-business/diversity-and-inclusion-the-workplace/)
 
 ### Salesforce Trailhead
 
