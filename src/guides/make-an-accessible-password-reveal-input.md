@@ -58,7 +58,7 @@ As an aside, we will have to put this in a form, with a submit button, as we nee
 As always, we will start with the good old HTML (I don't know why I always say this as starting with CSS or JS would be pretty challenging, right?):
 
 ```html
-<form class="form">
+<form class="form" onsubmit="return false;">
   <div class="form__control">
     <label class="input__label" for="pWord">
       <span class="input__label-text">Password (required)</span>
@@ -82,11 +82,12 @@ As always, we will start with the good old HTML (I don't know why I always say t
   </div>
   <button class="form__submit" id="submit" type="submit">Submit</button>
 </form>
-<div id="announce" aria-live="assertive"></div>
+<div class="visually-hidden" id="announce" aria-live="assertive"></div>
 ```
 
 Hopefully nothing unexpected in there, I'll summarise it below, in case you're curious:
 
+* I'm adding `onsubmit="return false;"` to the `<form>` element, as in Codepen, it replaces the contents of the output container, which may be a bit annoying, so we'll just do nothing in our demo
 * We'll wrap both the `<label>` and the `<input>` in a `<div class="form__contol">`, just for styling purposes
 * We're showing our password requirements, in text, after the primary label of "Password", it's always better to be up front with any requirements, as nobody will appreciate having to cause an error to find them out. We could have used `aria-describedby`, pointing to a container below the input, but that is more likely to be missed, especially on devices where the on-screen keyboard may pop up and obscure them
 * We're wrapping the `input` in a `<div>` as when we add the button we need this to align the `<input>` and `<button>`
@@ -122,6 +123,16 @@ input {
 }
 
 /* End basic styles */
+
+.visually-hidden {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+}
 
 .form {
   display: flex;
@@ -159,12 +170,13 @@ input {
   border: 2px solid black;
   border-radius: 4px;
   padding: .25rem;
+  min-height: 2.5rem;
   width: 100%;
 }
 
 .input--password:focus,
 .form__submit:focus-visible {
-  outline: 2px solid rebeccapurple;
+  outline: 3px solid rebeccapurple;
   outline-offset: 2px;
 }
 
@@ -181,23 +193,61 @@ Nothing spectacular in the CSS, we're just making it look reasonably OK. Perhaps
 
 The above is as always, a case of "Test with actual users", this is something where the words of wisdom from actual screen reader users may highlight some nuance or provide you with a better approach that I failed to consider. Well, that wraps up the basic implementation of our password field, this is what users without JS enabled will experience.
 
-Firstly, we need to add a tiny bit of JS to the <head> section in our HTML to provide us with a hook for our JS and CSS (you may have something similar, already?):
+Firstly, we need to add a tiny bit of JS to the <head> section in our HTML to provide us with a hook for our CSS (you may have something similar, already?):
 
 ```html
 <head>
   <!-- Head stuff -->
-  <script type="module">
+  <script>
     document.documentElement.setAttribute('data-has-js', '')
   </script>
 </head>
 ```
 
-Nothing special there, we're just adding a data attribute to the <html> element, if the browser supports JS modules. Modules are relatively new, in the grand scheme of things, so we're just using this to ensure that the browser supports ES6, as modules and ES6 were supported at roughly the same time. You may have tooling on your site that allows you to support newer JS with polyfills and whatnot, but this is just how we're doing it here, for simplicity.
+Nothing special there, we're just adding a data attribute to the `<html>` element, when JS is available. We're not actually going into tooling here and making sure that the JS we use is supported on the browser, this is something you'd need to do yourself.
 
 Now we'll address the JS functionality, which is actually pretty straightforward:
 
 ```javascript
+const inputWrapper = document.querySelector('.input__wrapper');
+const pWord = document.getElementById('pWord');
+const submit = document.getElementById('submit');
+const announce = document.getElementById('announce');
+const toggleBtnHTML = `<button class="input__toggle" type="button" id="toggle" aria-pressed="false" aria-controls="pWord">
+<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M59.715 28.969C59.238 28.176 47.863 9.594 30 9.594S.762 28.176.285 28.969a2.013 2.013 0 0 0 0 2.062C.762 31.824 12.137 50.406 30 50.406s29.238-18.582 29.715-19.375a2.013 2.013 0 0 0 0-2.062ZM30 46.399C16.66 46.398 6.973 33.741 4.398 30 6.968 26.25 16.628 13.602 30 13.602c13.34 0 23.027 12.656 25.602 16.402C53.032 33.75 43.372 46.398 30 46.398Zm0 0"/><path d="M30 16.496c-7.445 0-13.504 6.059-13.504 13.504 0 7.445 6.059 13.504 13.504 13.504 7.445 0 13.504-6.059 13.504-13.504 0-7.445-6.059-13.504-13.504-13.504Zm0 23c-5.238 0-9.496-4.262-9.496-9.496 0-5.238 4.258-9.496 9.496-9.496s9.496 4.258 9.496 9.496c0 5.234-4.258 9.496-9.496 9.496Zm0 0"/><path d="M30 24.824a5.175 5.175 0 1 0 0 10.348 5.174 5.174 0 1 0 0-10.348Zm0 0"/></svg>
+<span class="visually-hidden">Show password</span>
+</button>`;
 
+
+inputWrapper.insertAdjacentHTML('beforeend', toggleBtnHTML);
+const toggleBtn = document.getElementById('toggle');
+inputWrapper.setAttribute('role', 'group');
+inputWrapper.setAttribute('aria-labelledby', 'pWord');
+
+toggleBtn.addEventListener('click', () => {
+  if (toggleBtn.getAttribute('aria-pressed') === 'false') {
+    toggleBtn.setAttribute('aria-pressed', 'true');
+    pWord.setAttribute('type', 'text');
+    announce.textContent = 'Your password is shown!';
+  } else {
+    setPasswordDefaults(false);
+  }
+})
+
+function setPasswordDefaults(ignore) {
+  toggleBtn.setAttribute('aria-pressed', 'false');
+  pWord.setAttribute('type', 'password');
+  if (!ignore) {
+    announce.textContent = 'Your password is hidden!';
+  }
+}
+
+submit.addEventListener('click', () => {
+  if (pWord.checkValidity() && pWord.getAttribute('type') === 'text') {
+    setPasswordDefaults(true);
+  }
+  // do validation and/or redirect stuff here
+})
 ```
 
 A quick overview of the above JS:
@@ -211,8 +261,8 @@ A quick overview of the above JS:
   * `toggleBtnHTML` - a new string of HTML that contains the button markup, including an eye icon in SVG format and some visually hidden text, for the button's accessible name
 * We're using `aria-pressed` on the button, so remember not to change the accessible name as that will be confusing for our users
 * We're using `aria-controls="[IDRef of password field]"`, to at least do our bit in saying this button controls another element (yeah, I know, it's not widely supported, but it's still the proper attribute)
-* We need to use `type="button"` on our `<button>`, otherwise when we click it, it will attempt to submit the form, so we need to be explicit that it is not a submit button
-* We then insert our string of HTML into the `inputWrapper`, with `insertAdjacentHTML`, so it becomes actual HTML, I'm doing this `beforeend`, which means it will injected after everything else within the `inputWrapper` and therefore come after the `<input>` in the page's sequential tab order. I have seen an approach where with a bit of flexbox ordering, the button comes before the input in the DOM, but after the input visually. I expect the rationale there was to inform a screen reader user of its presence, before they encounter the input? That can be a good call, but again, let actual users dictate the best approach there, I'm keeping it simple and doing so not knowing what actual screen readers would prefer
+* We need to use `type="button"` on our new `<button>`, otherwise when we click it, it will attempt to submit the form, so we need to be explicit that it is not a submit button
+* We then insert our string of HTML into the `inputWrapper`, with `insertAdjacentHTML`, so it becomes actual HTML, I'm doing this `beforeend`, which means it will injected after everything else within the `inputWrapper` and therefore come after the `<input>` in the page's sequential tab order. I have seen an approach where, with a bit of flexbox ordering, the button comes before the input in the DOM, but after the input visually. I expect the rationale there was to inform a screen reader user of its presence, before they encounter the input? That can be a good call, but again, let actual users dictate the best approach there, I'm keeping it simple and doing so not knowing what actual screen readers would prefer
 * Now we need to get a reference to the button, we only had a reference to the string of HTML before, but now it's an element we can store that reference in `toggleBtn`
 * The password and the new button are so tightly related that I'm manipulating their wrapping element to become a `role="group"` and getting that group's accessible name from the `<input>`, is this overkill? I have to say I am unsure, in my mind I'm building that relationship where the screen reader support for `aria-controls` falls down and I'm providing a screen reader user a decent clue that there is more than just the input in this group, which may be beneficial to them. You got it, test with your users, they count here and I don't
 * Finally, we just have some conditional logic, that is ran when our new button is clicked, if the button's `aria-pressed` value is `false`
@@ -220,18 +270,18 @@ A quick overview of the above JS:
   * Set `aria-pressed="true"`
   * Change the `type` attribute of the password field to `text`
   * Inform a user their password is shown, using our live region
-* And if that `aria-pressed` value was `true`, when it was clicked, we need to do the inverse of the above, but this time we are using a function `setPasswordDefaults`, as we will need to reuse that functionality and we don't want to repeat ourselves
+* And if that `aria-pressed` value was `true`, when it was clicked, we need to do the inverse of the above, but this time we are using a function `setPasswordDefaults`, as we will need to reuse that functionality and we don't want to repeat ourselves, we're also gonna add an argument as we don't want the message to be announced on successful submit, as typically, a redirect will occur and hearing half a message may be a bit alarming
 
   * Set `aria-pressed="false"`, so the button returns to its original unpressed state
-  * Change the `type` attribute of the password field back to password, so it is securely hidden again
-  * Inform a user their password is now hidden
+  * Change the `type` attribute of the password field back to `password`, so it is securely hidden again
+  * Inform a user their password is now hidden (only if our`!ignore` argument evaluates to `false`)
 
 That wasn't too much hard work, hopefully it makes sense? we still have a couple of bits to do, but the actual toggle works and everything is announced correctly. Let's ensure that we address that security issue that stores passwords in the browser's autocomplete history, we just need a small bit of JS for that:
 
 ```javascript
 submit.addEventListener('click', () => {
   if (pWord.checkValidity() && pWord.getAttribute('type') === 'text') {
-    setPasswordDefaults();
+    setPasswordDefaults(true);
   }
   // do validation and/or redirect stuff here
 })
@@ -242,4 +292,73 @@ So, just a simple click handler on our submit button where we are checking two t
 * We're checking the field is valid, with `checkValidity()`, which will return a boolean value, in this case, we want it to be `true`, before we proceed
 * We also check whether the password field has its `type` attribute set to `text`
 
-When both of those conditions are `true`, we call the `setPasswordDefaults()` function (I told you we would reuse that), to flip everything back to the more secure defaults, before then doing whatever we need in our auth process. Remember, my validation approach is brittle by design, here. I'm just using the easiest way of doing this, with HTML5 validation, as I just want to provide a "working" example
+When both of those conditions are `true`, we call the `setPasswordDefaults(true)` function (I told you we would reuse that), to flip everything back to the more secure defaults, before then doing whatever we need in our auth process, we're passing through `true` here, as we don't want to inject the live region with any text. Remember, my validation approach is brittle by design, here. I'm just using the easiest way of doing this, with HTML5 validation, as I just want to provide a "working" example, but in reality we would use something other than just HTML5 validation, ideally both JS and some of that backend stuff that some people use.
+
+So, that's all of the functionality done, everything works as we intended it to, it's progressively enhanced, so our users that may have disabled JS will still get that minimum viable experience and the users that do have JS enabled get the additional functionality.
+
+One last thing to do, we made it look a bit naff, as we don't have any styles related to the button, so let's smarten it up a bit:
+
+I've done the final few CSS declarations, but I'm not totally happy with the focus indicators for the adjacent elements, I dislike how they overlap the other element, if this were me building this for production, I'd come up with something a little nicer, but it works and it is obvious where focus is.
+
+Also note that I added a small animation to the eye icon, just because it's little and not jarring so it shouldn't cause any issues at all. The CSS I'm adding here can simply go at the end of the earlier CSS file
+
+```css
+.has-js .input__wrapper {
+  display: flex;
+}
+
+.has-js .input--password {
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.input__toggle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rebeccapurple;
+  border-radius: 0 4px 4px 0;
+  height: 2.5rem;
+  background-color: rebeccapurple;
+}
+
+.input__toggle::before {
+  content: "";
+  position: absolute;
+  height: 2.5rem;
+  width: 0;
+  border-left: 4px solid white;
+  transform: rotate(45deg) scaleY(0);
+  transition: transform 300ms ease-in;
+}
+
+.input__toggle[aria-pressed="true"]::before {
+  transform: rotate(45deg) scaleY(1);
+}
+
+.input__toggle svg {
+  height: 2rem;
+  width: 2rem;
+  fill: white;
+}
+
+.input__toggle:focus-visible {
+  outline: 3px solid rebeccapurple;
+  outline-offset: 2px;
+}
+```
+
+So, that's it and there we have it, pretty simple and straightforward, but it works well.
+
+## Final considerations
+
+There are definitely some things to consider here, maybe there are improvements to be made? If i were in a position to use this on a project and I had colleagues on my team that were native screen reader users or we had some budget to pay for user testing I'd want to know if three of my assumptions were correct or I could do better:
+
+* Does the `role="group"` add any value or is it a bit of overkill?
+* Would it be more useful if the `<button>` came before the `<input>` in the focus order?
+* Was using `aria-live="assertive"` a good call?
+
+I'd be happy to be wrong on any of those and would of course make any necessary changes required after feedback. 
+
+## Codepen
