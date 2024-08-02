@@ -1,5 +1,5 @@
 ---
-title: Courses, certificates, browser extensions, and YouTube channels
+title: Accessibility courses and certification
 summary: This guide provides useful information on accessibility courses,
   certificates, browser extensions and accessibility YouTube channels
 author: swilkinson
