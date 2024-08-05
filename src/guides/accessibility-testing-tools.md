@@ -36,6 +36,12 @@ isGuide: true
 
 ### Edge
 
+* [Accessibility Insights for Web](https://chromewebstore.google.com/detail/accessibility-insights-fo/pbjjkligggfmakdaogkfomddhfmpjeni) (external website) - accessibility testing tool
+* [axe DevTools](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Web Accessibility Testing (external website) - accessibility testing tool
+* [HeadingsMap](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) (external website) -  - accessibility testing tool
+* [WAVE Evaluation Tool](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) (external website) - accessibility testing tool
+* [webhint](https://chromewebstore.google.com/detail/webhint/gccemnpihkbgkdmoogenkbkckppadcag) (external website) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
+
 ### Opera
 
 ### Firefox
