@@ -175,6 +175,3 @@ Google via Udacity: [Web Accessibility](https://www.udacity.com/course/web-acces
 ### Section 508 (United States)
 
 [Section 508 Certification](https://www.section508.gov/training-home/#Onlinetraining) (external website).
-
-
-
