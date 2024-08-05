@@ -182,28 +182,3 @@ Google via Udacity: [Web Accessibility](https://www.udacity.com/course/web-acces
 * [Hassell Inclusion](https://www.hassellinclusion.com/webinars/) (external website)
 * [TPGi](https://www.tpgi.com/events/on-demand-webinars/) (external website)
 
-## YouTube
-
-*
-
-## Browser extensions and Bookmarklets
-
-### Chrome
-
-*
-
-### Mozilla Firefox
-
-*
-
-### Edge
-
-*
-
-### Opera
-
-*
-
-### Safari
-
-*
