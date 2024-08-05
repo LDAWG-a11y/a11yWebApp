@@ -8,6 +8,8 @@ tags:
   - YouTube
 isGuide: true
 ---
+## YouTube Channels
+
 * [A11y Bytes](https://www.youtube.com/@A11yBytes) (external website)
 * [AbilityNet](https://www.youtube.com/@abilitynet) (external website)
 * [Accessibility Talks](https://www.youtube.com/@AccessibilityTalks) (external website)
@@ -17,3 +19,7 @@ isGuide: true
 * [CHAX Accessibility Unraveled](https://www.youtube.com/@PDFA) (external website)
 * [The Accessibility Guy](https://www.youtube.com/@TheAccessibilityGuy) (external website)
 * [Web Accessibility Education](https://www.youtube.com/@WebAccessibility) (external website)
+
+## Podcasts
+
+TPGI have a great list of [accessibility podcasts](https://www.tpgi.com/digital-accessibility-podcasts/) (external website).
