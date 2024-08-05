@@ -36,12 +36,16 @@ isGuide: true
 
 ### Edge
 
-* [Accessibility Insights for Web](https://chromewebstore.google.com/detail/accessibility-insights-fo/pbjjkligggfmakdaogkfomddhfmpjeni) (external website) - accessibility testing tool
+* [Accessibility Insights for Web](https://microsoftedge.microsoft.com/addons/detail/accessibility-insights-fo/ghbhpcookfemncgoinjblecnilppimih?hl=en-GB) (external website) - accessibility testing tool
 * [ARC Toolkit](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) (external website) - accessibility testing tool
 * [axe DevTools](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Web Accessibility Testing (external website) - accessibility testing tool
 * [HeadingsMap](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) (external website) -  - accessibility testing tool
+* [IBM Equal Access Accessibility Checker](https://chromewebstore.google.com/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp) (external website) - accessibility testing tool
+* [LERA](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc) (external website) - accessibility testing and reporting tool
+* [Stylus](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) (external website) - create, edit, and manage personalised CSS stylesheets
 * [WAVE Evaluation Tool](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) (external website) - accessibility testing tool
 * [webhint](https://chromewebstore.google.com/detail/webhint/gccemnpihkbgkdmoogenkbkckppadcag) (external website) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
+* [Web Developer](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) (external website) - adds a toolbar button with various web developer tools
 
 ### Opera
 
