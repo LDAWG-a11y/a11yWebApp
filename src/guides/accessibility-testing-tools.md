@@ -84,7 +84,7 @@ Adding [Chrome extension to Opera](https://help.opera.com/en/latest/customizatio
 
 * [ARC Toolkit](https://addons.mozilla.org/en-GB/firefox/addon/arc-toolkit/) (external website) - accessibility testing tool
 * [axe DevTools](https://addons.mozilla.org/en-GB/firefox/addon/axe-devtools/) - Web Accessibility Testing (external website) - accessibility testing tool
-* [HeadingsMap](https://addons.mozilla.org/en-GB/firefox/addon/headingsmap/) (external website) -  - accessibility testing tool
+* [HeadingsMap](https://addons.mozilla.org/en-GB/firefox/addon/headingsmap/) (external website)  - accessibility testing tool
 * [IBM Equal Access Accessibility Checker](https://addons.mozilla.org/en-GB/firefox/addon/accessibility-checker/) (external website) - accessibility testing tool
 * [Landmark Navigation via Keyboard or Pop-up](https://addons.mozilla.org/en-GB/firefox/addon/landmarks/) (external website) - navigate web pages via WAI-ARIA 
 * [Lighthouse](https://addons.mozilla.org/en-GB/firefox/addon/google-lighthouse/) (external website) - accessibility testing tool
@@ -135,12 +135,13 @@ p{ margin-bottom: 2em !important;}
 
 ## Javascript bookmarklets (can be used by all browsers)
 
+* Adrian Roselli [24 x 24](https://adrianroselli.com/2022/05/24x24-pixel-cursor-bookmarklet.html) (external website) 
+* 24px SVG Circle Curse (external website) 
+* H (external website) 
+* Headings (external website) 
+* Sally (external website) 
+* Paul J Adam's JavaScript Bookmarklets for Accessibility Testing (external website) 
 
 
-Testing frameworks
 
 ## Screen readers
-
-
-
-## Code validation
