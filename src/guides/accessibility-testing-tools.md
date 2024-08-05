@@ -21,7 +21,7 @@ isGuide: true
 
 * [Accessibility Insights for Web](https://chromewebstore.google.com/detail/accessibility-insights-fo/pbjjkligggfmakdaogkfomddhfmpjeni) (external website)
 * [Alt or not](https://chromewebstore.google.com/detail/alt-or-not/bhbbijphceaijfpppmdjmjalnogkhamc) (external website) - Easily see alt text on Twitter
-* ARC Toolkit (external website)
+* [ARC Toolkit](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) (external website)
 * axe DevTools - Web Accessibility Testing (external website)
 * ChromeLens (external website)
 * HeadingsMap (external website)
@@ -36,14 +36,8 @@ isGuide: true
 
 ### Edge
 
-
-
 ### Opera
 
-
-
 ### Firefox
-
-
 
 ## Bookmarklets
