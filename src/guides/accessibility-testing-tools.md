@@ -130,18 +130,15 @@ select:focus {
 }
 
 p{ margin-bottom: 2em !important;}
-
 ```
 
 ## Javascript bookmarklets (can be used by all browsers)
 
-* Adrian Roselli [24 x 24](https://adrianroselli.com/2022/05/24x24-pixel-cursor-bookmarklet.html) (external website) 
-* 24px SVG Circle Curse (external website) 
+* Adrian Roselli - [24 x 24 and 24px SVG Circle Cursor](https://adrianroselli.com/2022/05/24x24-pixel-cursor-bookmarklet.html) (external website) 
+* [ANDI](https://www.ssa.gov/accessibility/andi/help/install.html) - (external website)
 * H (external website) 
 * Headings (external website) 
 * Sally (external website) 
 * Paul J Adam's JavaScript Bookmarklets for Accessibility Testing (external website) 
-
-
 
 ## Screen readers
