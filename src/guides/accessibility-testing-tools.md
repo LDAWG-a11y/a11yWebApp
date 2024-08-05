@@ -75,6 +75,7 @@ Adding [Chrome extension to Opera](https://help.opera.com/en/latest/customizatio
 * [HeadingsMap](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) (external website) -  - accessibility testing tool
 * [IBM Equal Access Accessibility Checker](https://microsoftedge.microsoft.com/addons/detail/ibm-equal-access-accessib/ompccpejakabkmfepbijnagedbdfldka?hl=en-GB) (external website) - accessibility testing tool
 * [LERA](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc) (external website) - accessibility testing and reporting tool
+* [Lighthouse](https://chromewebstore.google.com/detail/blipmdconlkpinefehnmjammfjpmpbjk) (external website) - accessibility testing tool
 * [Stylus](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) (external website) - create, edit, and manage personalised CSS stylesheets
 * [WAVE Evaluation Tool](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) (external website) - accessibility testing tool
 * [Web Disability Simulator](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) (external website) - simulates how people with disabilities experience the web
