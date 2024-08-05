@@ -57,7 +57,15 @@ isGuide: true
 
 ### Opera
 
+### Opera Store
 
+
+
+#### Chrome store
+
+Adding Chrome extension to Opera
+
+* [Accessibility Insights for Web](https://microsoftedge.microsoft.com/addons/detail/accessibility-insights-fo/ghbhpcookfemncgoinjblecnilppimih?hl=en-GB) (external website) - accessibility testing tool
 
 ### Firefox
 
