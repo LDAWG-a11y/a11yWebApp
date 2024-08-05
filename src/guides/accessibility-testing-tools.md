@@ -84,7 +84,7 @@ Adding [Chrome extension to Opera](https://help.opera.com/en/latest/customizatio
 
 * [ARC Toolkit](https://addons.mozilla.org/en-GB/firefox/addon/arc-toolkit/) (external website) - accessibility testing tool
 * [axe DevTools](https://addons.mozilla.org/en-GB/firefox/addon/axe-devtools/) - Web Accessibility Testing (external website) - accessibility testing tool
-* [HeadingsMap](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) (external website) -  - accessibility testing tool
+* [HeadingsMap](https://addons.mozilla.org/en-GB/firefox/addon/headingsmap/) (external website) -  - accessibility testing tool
 
 ### Safari
 
