@@ -32,7 +32,7 @@ isGuide: true
 * [WAVE Evaluation Tool](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) (external website) - accessibility testing tool
 * [Web Developer](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) (external website) - adds a toolbar button with various web developer tools
 * [Web Disability Simulator](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) (external website) - simulates how people with disabilities experience the web
-* webhint (external website) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
+* [webhint](https://chromewebstore.google.com/detail/webhint/gccemnpihkbgkdmoogenkbkckppadcag) (external website) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
 
 ### Edge
 
