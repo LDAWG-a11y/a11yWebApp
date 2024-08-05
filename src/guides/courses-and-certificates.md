@@ -121,10 +121,10 @@ Online Self-Paced Web Accessibility Classes:
 * [Inclusive Learning Design](https://www.linkedin.com/learning/inclusive-learning-design/) (external website)
 * [Simplifying Web Development with Accessibility Best Practices](https://www.linkedin.com/learning/simplifying-web-development-with-accessibility-best-practices) (external website)
 * [WordPress: Accessibility](https://www.linkedin.com/learning/wordpress-accessibility-revision/accessibility-in-wordpress) (external website)
-* EPUB Accessibility Using InDesign (external website)
+* [EPUB Accessibility Using InDesign](https://www.linkedin.com/learning/epub-accessibility-using-indesign/) (external website)
 * [Digital Accessibility for the Modern Workplace](https://www.linkedin.com/learning/digital-accessibility-for-the-modern-workplace-with-audio-descriptions/) (external website)
 *
-* Supporting Coworkers with Disabilities (external website)
+* [Supporting Coworkers with Disabilities](https://www.linkedin.com/learning/supporting-workers-with-disabilities/) (external website)
 * Supporting Accessibility in a Hybrid Workplace (external website)[](linkedin.com/learning/react-accessibility/accessibility-in-react)[](linkedin.com/learning/android-app-development-accessibility/)[](https://www.linkedin.com/learning/ios-app-development-accessibility/)
 
 ### Pluralsight
