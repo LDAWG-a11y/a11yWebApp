@@ -19,7 +19,19 @@ isGuide: true
 
 ### Chrome
 
-
+* Accessibility Insights for Web (external website)
+* ARC Toolkit (external website)
+* axe DevTools - Web Accessibility Testing (external website)
+* ChromeLens (external website)
+* HeadingsMap (external website)
+* IBM Equal Access Accessibility Checker (external website)
+* Landmark Navigation via Keyboard or Pop-up (external website)
+* LERA (external website)
+* Stylus (external website)
+* WAVE Evaluation Tool (external website)
+* Web Developer (external website)
+* Web Disability Simulator (external website)
+* webhint (external website)
 
 ### Edge
 
