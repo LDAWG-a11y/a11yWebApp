@@ -23,7 +23,7 @@ isGuide: true
 * [Alt or not](https://chromewebstore.google.com/detail/alt-or-not/bhbbijphceaijfpppmdjmjalnogkhamc) (external website) - Easily see alt text on Twitter
 * [ARC Toolkit](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) (external website)
 * [axe DevTools](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Web Accessibility Testing (external website)
-* ChromeLens (external website)
+* [ChromeLens](https://chromewebstore.google.com/detail/chromelens/idikgljglpfilbhaboonnpnnincjhjkd) (external website)
 * HeadingsMap (external website)
 * IBM Equal Access Accessibility Checker (external website)
 * Landmark Navigation via Keyboard or Pop-up (external website)
