@@ -40,4 +40,8 @@ isGuide: true
 
 ### Firefox
 
+### Code for Stylus
+
+
+
 ## Bookmarklets
