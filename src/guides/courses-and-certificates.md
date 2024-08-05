@@ -114,6 +114,7 @@ Online Self-Paced Web Accessibility Classes:
 * [Creating Accessible Documents in Microsoft Office](linkedin.com/learning/creating-accessible-documents-in-microsoft-office/) (external website)
 * [Accessibility for Web Design](https://www.linkedin.com/learning/accessibility-for-web-design/making-the-digital-world-accessible) (external website)
 * [UX Foundations: Accessibility](https://www.linkedin.com/learning/ux-foundations-accessibility/) (external website)
+* [UX Foundations: Usability Testing](https://www.linkedin.com/learning/ux-foundations-usability-testing/) (external website)
 * [Simplifying Web Development with Accessibility Best Practices](https://www.linkedin.com/learning/simplifying-web-development-with-accessibility-best-practices) (external website)
 * [WordPress: Accessibility](https://www.linkedin.com/learning/wordpress-accessibility-revision/accessibility-in-wordpress) (external website)
 * [Digital Accessibility for the Modern Workplace](https://www.linkedin.com/learning/digital-accessibility-for-the-modern-workplace-with-audio-descriptions/) (external website)[](linkedin.com/learning/react-accessibility/accessibility-in-react)[](linkedin.com/learning/android-app-development-accessibility/)[](https://www.linkedin.com/learning/ios-app-development-accessibility/)
