@@ -129,7 +129,7 @@ Online Self-Paced Web Accessibility Classes:
 * [Simplifying Web Development with Accessibility Best Practices](https://www.linkedin.com/learning/simplifying-web-development-with-accessibility-best-practices/) (external website)
 * [Accessible Video: Caption, Search, and Compliance Strategies](https://www.linkedin.com/learning/accessible-video-caption-search-and-compliance-strategies/) (external website)
 * [Making a Case for Accessibility in Your Organization](https://www.linkedin.com/learning/making-a-case-for-accessibility-in-your-organization/) (external website)
-* Accessibility-First Design (external website)
+* [Accessibility-First Design](https://www.linkedin.com/learning/accessibility-first-design/) (external website)
 * Designing Accessible Components In Figma (external website)
 * Practical Accessibility for Designers (external website)
 * [Supporting Coworkers with Disabilities](https://www.linkedin.com/learning/supporting-workers-with-disabilities/) (external website)
