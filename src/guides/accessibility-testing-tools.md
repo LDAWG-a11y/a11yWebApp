@@ -86,6 +86,7 @@ Adding [Chrome extension to Opera](https://help.opera.com/en/latest/customizatio
 * [axe DevTools](https://addons.mozilla.org/en-GB/firefox/addon/axe-devtools/) - Web Accessibility Testing (external website) - accessibility testing tool
 * [HeadingsMap](https://addons.mozilla.org/en-GB/firefox/addon/headingsmap/) (external website) -  - accessibility testing tool
 * [IBM Equal Access Accessibility Checker](https://addons.mozilla.org/en-GB/firefox/addon/accessibility-checker/) (external website) - accessibility testing tool
+* [Landmark Navigation via Keyboard or Pop-up](https://addons.mozilla.org/en-GB/firefox/addon/landmarks/) (external website) - navigate web pages via WAI-ARIA 
 
 ### Safari
 
