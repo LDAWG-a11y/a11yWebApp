@@ -139,6 +139,6 @@ p{ margin-bottom: 2em !important;}
 * [H123](https://hinderlingvolkart.github.io/h123/) (external website) 
 * [Headings](https://pauljadam.com/bookmarklets/headings.html) (external website) 
 * [Sally](https://sa11y.netlify.app/) (external website) 
-* Paul J Adam's JavaScript Bookmarklets for Accessibility Testing (external website) 
+* Paul J Adam's [JavaScript Bookmarklets for Accessibility Testing](https://pauljadam.com/bookmarklets/index.html) (external website) 
 
 ## Screen readers
