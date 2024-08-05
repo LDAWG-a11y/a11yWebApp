@@ -41,6 +41,8 @@ isGuide: true
 * [Accessibility Insights for Web](https://microsoftedge.microsoft.com/addons/detail/accessibility-insights-fo/ghbhpcookfemncgoinjblecnilppimih?hl=en-GB) (external website) - accessibility testing tool
 * [axe DevTools](https://microsoftedge.microsoft.com/addons/detail/axe-devtools-web-access/kcenlimkmjjkdfcaleembgmldmnnlfkn?hl=en-GB) - Web Accessibility Testing (external website) - accessibility testing tool
 * [HeadingsMap](https://microsoftedge.microsoft.com/addons/detail/headingsmap/bokekiiaddinealohkmhjcgfanndmcgo?hl=en-GB) (external website) -  - accessibility testing tool
+* [IBM Equal Access Accessibility Checker](https://microsoftedge.microsoft.com/addons/detail/ibm-equal-access-accessib/ompccpejakabkmfepbijnagedbdfldka?hl=en-GB) (external website) - accessibility testing tool
+* [Landmark Navigation via Keyboard or Pop-up](https://microsoftedge.microsoft.com/addons/detail/landmark-navigation-via-k/oemdnnhhfhdhilalibobndhoahcaiboe?hl=en-GB) (external website) - navigate web pages via WAI-ARIA landmarks, using the keyboard or a pop-up menu
 * [webhint](https://microsoftedge.microsoft.com/addons/detail/webhint/mlgfbihcfnkaenjpdcngdnhcpkdmcdee?hl=en-GB) (external website) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
 
 #### Chrome store
