@@ -16,3 +16,21 @@ tags:
 isGuide: true
 ---
 ## Browser extensions, plugins, and add-ons
+
+### Chrome
+
+
+
+### Edge
+
+
+
+### Opera
+
+
+
+### Firefox
+
+
+
+## Bookmarklets
