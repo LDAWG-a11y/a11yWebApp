@@ -24,7 +24,7 @@ isGuide: true
 * [ARC Toolkit](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) (external website)
 * [axe DevTools](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Web Accessibility Testing (external website)
 * [HeadingsMap](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) (external website)
-* IBM Equal Access Accessibility Checker (external website)
+* [IBM Equal Access Accessibility Checker](https://chromewebstore.google.com/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp) (external website)
 * Landmark Navigation via Keyboard or Pop-up (external website)
 * LERA (external website)
 * Stylus (external website)
@@ -40,7 +40,5 @@ isGuide: true
 ### Firefox
 
 ### Code for Stylus
-
-
 
 ## Bookmarklets
