@@ -127,7 +127,7 @@ Online Self-Paced Web Accessibility Classes:
 * [Accessibility for Managers and Non-Designers](https://www.linkedin.com/learning/accessibility-for-managers-and-non-designers/) (external website)
 * [Designing with the WCAG 2.2 Guidelines](https://www.linkedin.com/learning/designing-with-the-wcag-2-2-guidelines/) (external website)
 * [Simplifying Web Development with Accessibility Best Practices](https://www.linkedin.com/learning/simplifying-web-development-with-accessibility-best-practices/) (external website)
-* Accessible Video: Caption, Search, and Compliance Strategies (external website)
+* [Accessible Video: Caption, Search, and Compliance Strategies](https://www.linkedin.com/learning/accessible-video-caption-search-and-compliance-strategies/) (external website)
 * Making a Case for Accessibility in Your Organization (external website)
 * Accessibility-First Design (external website)
 * Designing Accessible Components In Figma (external website)
