@@ -73,7 +73,7 @@ isGuide: true
 
 * [Testing for Web Accessibility With Accessibility Insights](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights) (external website)[](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/)
 * [Test Accessibility of Your Design with WAVE](https://www.coursera.org/projects/test-accessibility-design-wave) (external website)
-* [Introduction to Accessibility and Universal Design](coursera.org/learn/introduction-to-accessibility-and-universal-design) (external website)
+* [Introduction to Accessibility and Universal Design](https://www.coursera.org/learn/introduction-to-accessibility-and-universal-design) (external website)
 * [Microsoft - UX Design in Practice: Accessibility and Collaboration](https://www.coursera.org/learn/ux-design-in-practice-accessibility-and-collaboration) (external website)
 * [Fundamentals of Document Accessibilit](https://www.coursera.org/projects/fundamentals-of-document-accessibility)y (external website)
 
@@ -111,9 +111,9 @@ Online Self-Paced Web Accessibility Classes:
 * [Creating Accessible PDFs](https://www.linkedin.com/learning/creating-accessible-pdfs-14445392/) (external website)
 * [Advanced Accessible PDFs](https://www.linkedin.com/learning/advanced-accessible-pdfs-21974253/) (external website)
 * [iOS App Development: Accessibility](https://www.linkedin.com/learning/ios-app-development-accessibility/) (external website)
-* [Android App Development: Accessibility](linkedin.com/learning/android-app-development-accessibility/) (external website)
-* [React: Accessibility](linkedin.com/learning/react-accessibility/accessibility-in-react) (external website)
-* [Creating Accessible Documents in Microsoft Office](linkedin.com/learning/creating-accessible-documents-in-microsoft-office/) (external website)
+* [Android App Development: Accessibility](https://www.linkedin.com/learning/android-app-development-accessibility/) (external website)
+* [React: Accessibility](https://www.linkedin.com/learning/react-accessibility/accessibility-in-react) (external website)
+* [Creating Accessible Documents in Microsoft Office](https://www.linkedin.com/learning/creating-accessible-documents-in-microsoft-office/) (external website)
 * [Microsoft Office Accessibility for Beginners](https://www.linkedin.com/learning/microsoft-office-accessibility-for-beginners/) (external website)
 * [Accessibility for Web Design](https://www.linkedin.com/learning/accessibility-for-web-design/making-the-digital-world-accessible) (external website)
 * [UX Foundations: Accessibility](https://www.linkedin.com/learning/ux-foundations-accessibility/) (external website)
@@ -133,7 +133,7 @@ Online Self-Paced Web Accessibility Classes:
 * [Designing Accessible Components In Figma](https://www.linkedin.com/learning/designing-accessible-components-in-figma/) (external website)
 * [Practical Accessibility for Designers](https://www.linkedin.com/learning/practical-accessibility-for-designers/) (external website)
 * [Supporting Coworkers with Disabilities](https://www.linkedin.com/learning/supporting-workers-with-disabilities/) (external website)
-* S[upporting Accessibility in a Hybrid Workplace](https://www.linkedin.com/learning/supporting-accessibility-in-a-hybrid-workplace/) (external website)[](linkedin.com/learning/react-accessibility/accessibility-in-react)[](linkedin.com/learning/android-app-development-accessibility/)[](https://www.linkedin.com/learning/ios-app-development-accessibility/)
+* [Supporting Accessibility in a Hybrid Workplace](https://www.linkedin.com/learning/supporting-accessibility-in-a-hybrid-workplace/) (external website)
 
 ### Pluralsight
 
