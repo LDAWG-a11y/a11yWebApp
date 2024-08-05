@@ -90,6 +90,7 @@ Adding [Chrome extension to Opera](https://help.opera.com/en/latest/customizatio
 * [Lighthouse](https://addons.mozilla.org/en-GB/firefox/addon/google-lighthouse/) (external website) - accessibility testing tool
 * [Stylus](https://addons.mozilla.org/en-GB/firefox/addon/styl-us/) (external website) - create, edit, and manage personalised CSS stylesheets
 * [Web Developer](https://addons.mozilla.org/en-GB/firefox/addon/web-developer/) (external website) - adds a toolbar button with various web developer tools
+* [webhint](https://addons.mozilla.org/en-GB/firefox/addon/webhint/) (external website) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
 
 ### Safari
 
