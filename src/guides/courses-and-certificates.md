@@ -1,6 +1,7 @@
 ---
 title: Accessibility courses and certification
-summary: This guide provides useful information on accessibility courses, certificates
+summary: This guide provides useful information on accessibility courses and
+  certificates
 author: swilkinson
 date: 2022-12-22
 toc: true
