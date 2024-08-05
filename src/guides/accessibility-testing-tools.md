@@ -25,7 +25,7 @@ isGuide: true
 * [axe DevTools](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Web Accessibility Testing (external website)
 * [HeadingsMap](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) (external website)
 * [IBM Equal Access Accessibility Checker](https://chromewebstore.google.com/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp) (external website)
-* Landmark Navigation via Keyboard or Pop-up (external website)
+* [Landmark Navigation via Keyboard or Pop-up](https://chromewebstore.google.com/detail/landmark-navigation-via-k/ddpokpbjopmeeiiolheejjpkonlkklgp) (external website)
 * LERA (external website)
 * Stylus (external website)
 * WAVE Evaluation Tool (external website)
