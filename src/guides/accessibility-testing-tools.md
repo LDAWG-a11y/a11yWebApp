@@ -68,6 +68,7 @@ Adding an [extension from Chrome store](https://support.microsoft.com/en-gb/micr
 Adding [Chrome extension to Opera](https://help.opera.com/en/latest/customization/#:~:text=Add%20Chrome%20extensions%20to%20Opera&text=Click%20the%20Add%20to%20Opera,can%20use%20them%20right%20away.).
 
 * [Accessibility Insights for Web](https://microsoftedge.microsoft.com/addons/detail/accessibility-insights-fo/ghbhpcookfemncgoinjblecnilppimih?hl=en-GB) (external website) - accessibility testing tool
+* [Alt or not](https://chromewebstore.google.com/detail/alt-or-not/bhbbijphceaijfpppmdjmjalnogkhamc) (external website) - see alt text on Twitter/X
 * [ARC Toolkit](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) (external website) - accessibility testing tool
 * [axe DevTools](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Web Accessibility Testing (external website) - accessibility testing tool
 * [Stylus](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) (external website) - create, edit, and manage personalised CSS stylesheets
