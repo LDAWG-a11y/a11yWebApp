@@ -124,7 +124,7 @@ Online Self-Paced Web Accessibility Classes:
 * [WordPress: Accessibility](https://www.linkedin.com/learning/wordpress-accessibility-revision/accessibility-in-wordpress) (external website)
 * [EPUB Accessibility Using InDesign](https://www.linkedin.com/learning/epub-accessibility-using-indesign/) (external website)
 * [Digital Accessibility for the Modern Workplace](https://www.linkedin.com/learning/digital-accessibility-for-the-modern-workplace-with-audio-descriptions/) (external website)
-* Accessibility for Managers and Non-Designers (external website)
+* [Accessibility for Managers and Non-Designers](https://www.linkedin.com/learning/accessibility-for-managers-and-non-designers/) (external website)
 * Designing with the WCAG 2.2 Guidelines (external website)
 * Simplifying Web Development with Accessibility Best Practices (external website)
 * Accessible Video: Caption, Search, and Compliance Strategies (external website)
