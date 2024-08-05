@@ -40,6 +40,10 @@ isGuide: true
 
 ### Firefox
 
+### Safari
+
+
+
 ### Code for Stylus
 
 ## Bookmarklets
