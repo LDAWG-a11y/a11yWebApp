@@ -133,12 +133,14 @@ p{ margin-bottom: 2em !important;}
 
 ```
 
-## Code validation
-
 ## Javascript bookmarklets (can be used by all browsers)
 
-Figma plugins
+
 
 Testing frameworks
 
 ## Screen readers
+
+
+
+## Code validation
