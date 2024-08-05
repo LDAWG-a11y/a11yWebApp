@@ -94,6 +94,8 @@ Adding [Chrome extension to Opera](https://help.opera.com/en/latest/customizatio
 
 ### Safari
 
+[a11yTools - Web Accessibility](https://apps.apple.com/us/app/a11ytools-web-accessibility/id1364813335?mt=12) (external website) - collection of HTML Web Accessibility Testing Tools
+
 ### Code for Stylus
 
 ## Code validation
