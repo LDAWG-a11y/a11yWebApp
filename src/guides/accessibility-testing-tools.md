@@ -137,7 +137,7 @@ p{ margin-bottom: 2em !important;}
 * Adrian Roselli - [24 x 24 and 24px SVG Circle Cursor](https://adrianroselli.com/2022/05/24x24-pixel-cursor-bookmarklet.html) (external website) 
 * [ANDI](https://www.ssa.gov/accessibility/andi/help/install.html) - (external website)
 * [H123](https://hinderlingvolkart.github.io/h123/) (external website) 
-* Headings (external website) 
+* [Headings](https://pauljadam.com/bookmarklets/headings.html) (external website) 
 * [Sally](https://sa11y.netlify.app/) (external website) 
 * Paul J Adam's JavaScript Bookmarklets for Accessibility Testing (external website) 
 
