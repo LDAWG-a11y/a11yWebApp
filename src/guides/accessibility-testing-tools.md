@@ -61,7 +61,7 @@ Adding an [extension from Chrome store](https://support.microsoft.com/en-gb/micr
 
 ### Opera Store
 
-
+* [Landmark Navigation via Keyboard or Pop-up](https://addons.opera.com/en/extensions/details/landmarks/) (external website) - navigate web pages via WAI-ARIA landmarks, using the keyboard or a pop-up menu
 
 #### Chrome store
 
