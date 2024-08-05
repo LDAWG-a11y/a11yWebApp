@@ -175,10 +175,5 @@ Google via Udacity: [Web Accessibility](https://www.udacity.com/course/web-acces
 
 [Section 508 Certification](https://www.section508.gov/training-home/#Onlinetraining) (external website).
 
-## Webinars
 
-* [Government Communication Service](https://gcs.civilservice.gov.uk/webinars/digital-accessibility-for-government-communicators/) (external website)
-* [AbilityNet](https://abilitynet.org.uk/free-tech-support-and-info/webinars) (external website)
-* [Hassell Inclusion](https://www.hassellinclusion.com/webinars/) (external website)
-* [TPGi](https://www.tpgi.com/events/on-demand-webinars/) (external website)
 
