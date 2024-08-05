@@ -30,8 +30,8 @@ isGuide: true
 * [Stylus](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) (external website) - create, edit, and manage personalised CSS stylesheets
 * [WAVE Evaluation Tool](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) (external website) - accessibility testing tool
 * [Web Developer](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) (external website) - adds a toolbar button with various web developer tools
-* Web Disability Simulator (external website)
-* webhint (external website)
+* Web Disability Simulator (external website) - simulates how people with disabilities experience the web
+* webhint (external website) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
 
 ### Edge
 
