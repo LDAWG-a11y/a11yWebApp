@@ -45,6 +45,7 @@ isGuide: true
 * [Landmark Navigation via Keyboard or Pop-up](https://microsoftedge.microsoft.com/addons/detail/landmark-navigation-via-k/oemdnnhhfhdhilalibobndhoahcaiboe?hl=en-GB) (external website) - navigate web pages via WAI-ARIA landmarks, using the keyboard or a pop-up menu
 * [WAVE Evaluation Tool](https://microsoftedge.microsoft.com/addons/detail/wave-evaluation-tool/khapceneeednkiopkkbgkibbdoajpkoj?hl=en-GB) (external website) - accessibility testing tool
 * [webhint](https://microsoftedge.microsoft.com/addons/detail/webhint/mlgfbihcfnkaenjpdcngdnhcpkdmcdee?hl=en-GB) (external website) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
+* [Web Developer](https://microsoftedge.microsoft.com/addons/detail/web-developer/ilbdhapjffldgngebmnkdodohjapjccm?hl=en-GB) (external website) - adds a toolbar button with various web developer tools
 
 #### Chrome store
 
@@ -53,7 +54,7 @@ isGuide: true
 * [LERA](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc) (external website) - accessibility testing and reporting tool
 * [Stylus](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) (external website) - create, edit, and manage personalised CSS stylesheets
 * [](https://microsoftedge.microsoft.com/addons/detail/wave-evaluation-tool/khapceneeednkiopkkbgkibbdoajpkoj?hl=en-GB)
-* [Web Developer](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) (external website) - adds a toolbar button with various web developer tools
+*
 
 ### Opera
 
