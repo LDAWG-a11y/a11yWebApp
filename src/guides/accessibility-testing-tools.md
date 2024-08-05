@@ -82,6 +82,10 @@ Adding [Chrome extension to Opera](https://help.opera.com/en/latest/customizatio
 
 ### Firefox
 
+* [ARC Toolkit](https://addons.mozilla.org/en-GB/firefox/addon/arc-toolkit/) (external website) - accessibility testing tool
+* [axe DevTools](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Web Accessibility Testing (external website) - accessibility testing tool
+* [HeadingsMap](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) (external website) -  - accessibility testing tool
+
 ### Safari
 
 ### Code for Stylus
