@@ -18,6 +18,7 @@ isGuide: true
 * [PCR Digital](https://www.youtube.com/@PCRDigital) (external website)
 * [CHAX Accessibility Unraveled](https://www.youtube.com/@PDFA) (external website)
 * [The Accessibility Guy](https://www.youtube.com/@TheAccessibilityGuy) (external website)
+* [TPGI Webinars](https://www.youtube.com/@TPGi2021) (external website)
 * [Web Accessibility Education](https://www.youtube.com/@WebAccessibility) (external website)
 
 ## Podcasts
