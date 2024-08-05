@@ -88,6 +88,7 @@ Adding [Chrome extension to Opera](https://help.opera.com/en/latest/customizatio
 * [IBM Equal Access Accessibility Checker](https://addons.mozilla.org/en-GB/firefox/addon/accessibility-checker/) (external website) - accessibility testing tool
 * [Landmark Navigation via Keyboard or Pop-up](https://addons.mozilla.org/en-GB/firefox/addon/landmarks/) (external website) - navigate web pages via WAI-ARIA 
 * [Lighthouse](https://addons.mozilla.org/en-GB/firefox/addon/google-lighthouse/) (external website) - accessibility testing tool
+* [Stylus](https://addons.mozilla.org/en-GB/firefox/addon/styl-us/) (external website) - create, edit, and manage personalised CSS stylesheets
 
 ### Safari
 
