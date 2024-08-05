@@ -98,6 +98,28 @@ Adding [Chrome extension to Opera](https://help.opera.com/en/latest/customizatio
 
 ### Code for Stylus
 
+Create the following two styles. Focus Style adds a focus indicator so that things which don't have an indicator but should can be easily found, and 
+
+#### Focus Style
+
+```
+/* ==UserStyle== 
+@name           19/10/2022, 14:04:48
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    A new userstyle
+@author         Me
+==/UserStyle== */
+
+a:focus, 
+button:focus, 
+[tabinex="0"]:focus, 
+input:focus, 
+select:focus { 
+    outline: 3px dotted hotpink !important; 
+} 
+```
+
 ## Code validation
 
 ## Javascript bookmarklets (can be used by all browsers)
