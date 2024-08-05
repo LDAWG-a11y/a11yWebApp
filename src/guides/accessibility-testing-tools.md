@@ -98,7 +98,7 @@ Adding [Chrome extension to Opera](https://help.opera.com/en/latest/customizatio
 
 ### Code for Stylus
 
-Create the following two styles. "Focus Style" adds a focus indicator so that things which don't have an indicator but should can be easily found, and "Testing WCAG 1.4.12 Text Spacing"
+Create the following two styles. "Focus Style" adds a focus indicator so that things which don't have an indicator but should can be easily found, and "Testing WCAG 1.4.12 Text Spacing" can be used to make sure that the text spacing is not constrained by CSS.
 
 #### Focus Style
 
@@ -122,7 +122,16 @@ select:focus {
 
 #### Testing WCAG 1.4.12 Text Spacing
 
+```
+* { 
+    line-height: 1.5 !important;
+    letter-spacing: 0.12em !important;
+    word-spacing: 0.16em !important;
+}
 
+p{ margin-bottom: 2em !important;}
+
+```
 
 ## Code validation
 
