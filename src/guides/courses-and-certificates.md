@@ -125,7 +125,7 @@ Online Self-Paced Web Accessibility Classes:
 * [Digital Accessibility for the Modern Workplace](https://www.linkedin.com/learning/digital-accessibility-for-the-modern-workplace-with-audio-descriptions/) (external website)
 *
 * [Supporting Coworkers with Disabilities](https://www.linkedin.com/learning/supporting-workers-with-disabilities/) (external website)
-* Supporting Accessibility in a Hybrid Workplace (external website)[](linkedin.com/learning/react-accessibility/accessibility-in-react)[](linkedin.com/learning/android-app-development-accessibility/)[](https://www.linkedin.com/learning/ios-app-development-accessibility/)
+* S[upporting Accessibility in a Hybrid Workplace](https://www.linkedin.com/learning/supporting-accessibility-in-a-hybrid-workplace/) (external website)[](linkedin.com/learning/react-accessibility/accessibility-in-react)[](linkedin.com/learning/android-app-development-accessibility/)[](https://www.linkedin.com/learning/ios-app-development-accessibility/)
 
 ### Pluralsight
 
