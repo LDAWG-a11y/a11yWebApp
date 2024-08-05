@@ -108,6 +108,8 @@ Online Self-Paced Web Accessibility Classes:
 
 ### LinkedInLearning
 
+* [Creating Accessible PDFs](https://www.linkedin.com/learning/creating-accessible-pdfs-14445392/) (external website)
+* [Advanced Accessible PDFs](https://www.linkedin.com/learning/advanced-accessible-pdfs-21974253/) (external website)
 * [iOS App Development: Accessibility](https://www.linkedin.com/learning/ios-app-development-accessibility/) (external website)
 * [Android App Development: Accessibility](linkedin.com/learning/android-app-development-accessibility/) (external website)
 * [React: Accessibility](linkedin.com/learning/react-accessibility/accessibility-in-react) (external website)
@@ -116,9 +118,14 @@ Online Self-Paced Web Accessibility Classes:
 * [UX Foundations: Accessibility](https://www.linkedin.com/learning/ux-foundations-accessibility/) (external website)
 * [UX Foundations: Usability Testing](https://www.linkedin.com/learning/ux-foundations-usability-testing/) (external website)
 * [Foundations of Accessible Elearning](https://www.linkedin.com/learning/foundations-of-accessible-elearning/c) (external website)
+* [Inclusive Learning Design](https://www.linkedin.com/learning/inclusive-learning-design/) (external website)
 * [Simplifying Web Development with Accessibility Best Practices](https://www.linkedin.com/learning/simplifying-web-development-with-accessibility-best-practices) (external website)
 * [WordPress: Accessibility](https://www.linkedin.com/learning/wordpress-accessibility-revision/accessibility-in-wordpress) (external website)
-* [Digital Accessibility for the Modern Workplace](https://www.linkedin.com/learning/digital-accessibility-for-the-modern-workplace-with-audio-descriptions/) (external website)[](linkedin.com/learning/react-accessibility/accessibility-in-react)[](linkedin.com/learning/android-app-development-accessibility/)[](https://www.linkedin.com/learning/ios-app-development-accessibility/)
+* EPUB Accessibility Using InDesign (external website)
+* [Digital Accessibility for the Modern Workplace](https://www.linkedin.com/learning/digital-accessibility-for-the-modern-workplace-with-audio-descriptions/) (external website)
+*
+* Supporting Coworkers with Disabilities (external website)
+* Supporting Accessibility in a Hybrid Workplace (external website)[](linkedin.com/learning/react-accessibility/accessibility-in-react)[](linkedin.com/learning/android-app-development-accessibility/)[](https://www.linkedin.com/learning/ios-app-development-accessibility/)
 
 ### Pluralsight
 
