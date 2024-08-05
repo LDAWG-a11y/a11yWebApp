@@ -19,7 +19,7 @@ isGuide: true
 
 ### Chrome
 
-* Accessibility Insights for Web (external website)
+* [Accessibility Insights for Web](https://chromewebstore.google.com/detail/accessibility-insights-fo/pbjjkligggfmakdaogkfomddhfmpjeni) (external website)
 * ARC Toolkit (external website)
 * axe DevTools - Web Accessibility Testing (external website)
 * ChromeLens (external website)
