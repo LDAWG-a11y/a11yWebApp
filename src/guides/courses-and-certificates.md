@@ -114,6 +114,7 @@ Online Self-Paced Web Accessibility Classes:
 * [Android App Development: Accessibility](linkedin.com/learning/android-app-development-accessibility/) (external website)
 * [React: Accessibility](linkedin.com/learning/react-accessibility/accessibility-in-react) (external website)
 * [Creating Accessible Documents in Microsoft Office](linkedin.com/learning/creating-accessible-documents-in-microsoft-office/) (external website)
+* [Microsoft Office Accessibility for Beginners](https://www.linkedin.com/learning/microsoft-office-accessibility-for-beginners/) (external website)
 * [Accessibility for Web Design](https://www.linkedin.com/learning/accessibility-for-web-design/making-the-digital-world-accessible) (external website)
 * [UX Foundations: Accessibility](https://www.linkedin.com/learning/ux-foundations-accessibility/) (external website)
 * [UX Foundations: Usability Testing](https://www.linkedin.com/learning/ux-foundations-usability-testing/) (external website)
@@ -123,7 +124,14 @@ Online Self-Paced Web Accessibility Classes:
 * [WordPress: Accessibility](https://www.linkedin.com/learning/wordpress-accessibility-revision/accessibility-in-wordpress) (external website)
 * [EPUB Accessibility Using InDesign](https://www.linkedin.com/learning/epub-accessibility-using-indesign/) (external website)
 * [Digital Accessibility for the Modern Workplace](https://www.linkedin.com/learning/digital-accessibility-for-the-modern-workplace-with-audio-descriptions/) (external website)
-*
+* Accessibility for Managers and Non-Designers (external website)
+* Designing with the WCAG 2.2 Guidelines (external website)
+* Simplifying Web Development with Accessibility Best Practices (external website)
+* Accessible Video: Caption, Search, and Compliance Strategies (external website)
+* Making a Case for Accessibility in Your Organization (external website)
+* Accessibility-First Design (external website)
+* Designing Accessible Components In Figma (external website)
+* Practical Accessibility for Designers (external website)
 * [Supporting Coworkers with Disabilities](https://www.linkedin.com/learning/supporting-workers-with-disabilities/) (external website)
 * S[upporting Accessibility in a Hybrid Workplace](https://www.linkedin.com/learning/supporting-accessibility-in-a-hybrid-workplace/) (external website)[](linkedin.com/learning/react-accessibility/accessibility-in-react)[](linkedin.com/learning/android-app-development-accessibility/)[](https://www.linkedin.com/learning/ios-app-development-accessibility/)
 
