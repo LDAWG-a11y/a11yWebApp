@@ -77,6 +77,7 @@ Adding [Chrome extension to Opera](https://help.opera.com/en/latest/customizatio
 * [LERA](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc) (external website) - accessibility testing and reporting tool
 * [Stylus](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) (external website) - create, edit, and manage personalised CSS stylesheets
 * [WAVE Evaluation Tool](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) (external website) - accessibility testing tool
+* [Web Disability Simulator](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) (external website) - simulates how people with disabilities experience the web
 
 ### Firefox
 
