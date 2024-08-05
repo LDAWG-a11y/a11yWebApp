@@ -20,12 +20,12 @@ isGuide: true
 ### Chrome
 
 * [Accessibility Insights for Web](https://chromewebstore.google.com/detail/accessibility-insights-fo/pbjjkligggfmakdaogkfomddhfmpjeni) (external website) - accessibility testing tool
-* [Alt or not](https://chromewebstore.google.com/detail/alt-or-not/bhbbijphceaijfpppmdjmjalnogkhamc) (external website) - easily see alt text on Twitter
+* [Alt or not](https://chromewebstore.google.com/detail/alt-or-not/bhbbijphceaijfpppmdjmjalnogkhamc) (external website) - see alt text on Twitter/X
 * [ARC Toolkit](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) (external website) - accessibility testing tool
 * [axe DevTools](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Web Accessibility Testing (external website) - accessibility testing tool
 * [HeadingsMap](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) (external website) -  - accessibility testing tool
 * [IBM Equal Access Accessibility Checker](https://chromewebstore.google.com/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp) (external website) - accessibility testing tool
-* [Landmark Navigation via Keyboard or Pop-up](https://chromewebstore.google.com/detail/landmark-navigation-via-k/ddpokpbjopmeeiiolheejjpkonlkklgp) (external website)
+* [Landmark Navigation via Keyboard or Pop-up](https://chromewebstore.google.com/detail/landmark-navigation-via-k/ddpokpbjopmeeiiolheejjpkonlkklgp) (external website) - navigate web pages via WAI-ARIA landmarks, using the keyboard or a pop-up menu
 * [LERA](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc) (external website) - accessibility testing tool
 * [Stylus](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) (external website) - create, edit, and manage personalised CSS stylesheets
 * WAVE Evaluation Tool (external website) - accessibility testing tool
