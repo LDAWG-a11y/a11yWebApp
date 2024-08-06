@@ -8,7 +8,7 @@ toc: true
 tags:
   - Testing
   - Tools
-  - Extensions
+  - Browser extensions
 isGuide: true
 ---
 ## Browser extensions, plugins, and add-ons
