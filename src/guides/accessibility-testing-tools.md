@@ -7,6 +7,7 @@ date: 2024-08-06
 toc: true
 tags:
   - Testing
+  - Tools
 isGuide: true
 ---
 ## Browser extensions, plugins, and add-ons
