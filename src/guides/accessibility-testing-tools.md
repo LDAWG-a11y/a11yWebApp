@@ -6,13 +6,11 @@ author: swilkinson
 date: 2024-08-06
 toc: true
 tags:
-  - testing
-  - tools
-  - extensions
-  - bookmarklets
-  - add-ons
-  - plugins
-  - screen readers
+  - Testing
+  - Tools
+  - Browser Extensions
+  - Browser Bookmarklets
+  - Screen reader
 isGuide: true
 ---
 ## Browser extensions, plugins, and add-ons
