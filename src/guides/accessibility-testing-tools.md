@@ -58,7 +58,7 @@ Adding an [extension from Chrome store](https://support.microsoft.com/en-gb/micr
 * [ARC Toolkit](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) (external website) - accessibility testing tool
 * [IBM Equal Access Accessibility Checker](https://chromewebstore.google.com/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp) (external website) - accessibility testing tool
 * [LERA](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc) (external website) - accessibility testing and reporting tool
-* [Stylus](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) (external website) - create, edit, and manage personalised CSS stylesheets
+* [Stylus](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) (external website) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator](#stylus)
 * [Web Disability Simulator](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) (external website) - simulates how people with disabilities experience the web
 
 ### Opera
@@ -80,7 +80,7 @@ Adding [Chrome extension to Opera](https://help.opera.com/en/latest/customizatio
 * [IBM Equal Access Accessibility Checker](https://microsoftedge.microsoft.com/addons/detail/ibm-equal-access-accessib/ompccpejakabkmfepbijnagedbdfldka?hl=en-GB) (external website) - accessibility testing tool
 * [LERA](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc) (external website) - accessibility testing and reporting tool
 * [Lighthouse](https://chromewebstore.google.com/detail/blipmdconlkpinefehnmjammfjpmpbjk) (external website) - accessibility testing tool
-* [Stylus](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) (external website) - create, edit, and manage personalised CSS stylesheets
+* [Stylus](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) (external website) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator](#stylus)
 * [WAVE Evaluation Tool](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) (external website) - accessibility testing tool
 * [Web Disability Simulator](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) (external website) - simulates how people with disabilities experience the web
 
@@ -92,7 +92,7 @@ Adding [Chrome extension to Opera](https://help.opera.com/en/latest/customizatio
 * [IBM Equal Access Accessibility Checker](https://addons.mozilla.org/en-GB/firefox/addon/accessibility-checker/) (external website) - accessibility testing tool
 * [Landmark Navigation via Keyboard or Pop-up](https://addons.mozilla.org/en-GB/firefox/addon/landmarks/) (external website) - navigate web pages via WAI-ARIA 
 * [Lighthouse](https://addons.mozilla.org/en-GB/firefox/addon/google-lighthouse/) (external website) - accessibility testing tool
-* [Stylus](https://addons.mozilla.org/en-GB/firefox/addon/styl-us/) (external website) - create, edit, and manage personalised CSS stylesheets
+* [Stylus](https://addons.mozilla.org/en-GB/firefox/addon/styl-us/) (external website) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator](#stylus)
 * [Web Developer](https://addons.mozilla.org/en-GB/firefox/addon/web-developer/) (external website) - adds a toolbar button with various web developer tools
 * [webhint](https://addons.mozilla.org/en-GB/firefox/addon/webhint/) (external website) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
 
