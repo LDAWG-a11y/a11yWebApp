@@ -107,14 +107,6 @@ Create the following two styles. "Focus Style" adds a focus indicator so that th
 #### Focus Style
 
 ```
-/* ==UserStyle== 
-@name           19/10/2022, 14:04:48
-@namespace      github.com/openstyles/stylus
-@version        1.0.0
-@description    A new userstyle
-@author         Me
-==/UserStyle== */
-
 a:focus, 
 button:focus, 
 [tabinex="0"]:focus, 
