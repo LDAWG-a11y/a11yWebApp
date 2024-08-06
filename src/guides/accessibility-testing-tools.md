@@ -5,7 +5,8 @@ summary: This is a list of useful accessibility tools including browser
 author: swilkinson
 date: 2024-08-06
 toc: true
-tags: []
+tags:
+  - Testing
 isGuide: true
 ---
 ## Browser extensions, plugins, and add-ons
