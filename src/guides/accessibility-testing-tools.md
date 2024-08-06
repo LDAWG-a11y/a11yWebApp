@@ -17,7 +17,7 @@ We are often asked about tools that can help with testing web pages for accessib
 
 The screen readers are required when testing web pages to determine how they interact when a user utilises assistive technology.
 
-<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">Warning: The following software is not endorsed by MakeThingsAccessible and you install and use it at your own risk.</span></div>
+<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">undefined</span></div>
 
 ## Browser extensions, plugins, and add-ons
 
@@ -100,7 +100,7 @@ Adding [Chrome extension to Opera](https://help.opera.com/en/latest/customizatio
 
 [a11yTools - Web Accessibility](https://apps.apple.com/us/app/a11ytools-web-accessibility/id1364813335?mt=12) (external website) - collection of HTML Web Accessibility Testing Tools
 
-### Code for Stylus
+<h3 id="stylus">Code for Stylus</h3>
 
 Create the following two styles. "Focus Style" adds a focus indicator so that things which don't have an indicator but should can be easily found, and "Testing WCAG 1.4.12 Text Spacing" can be used to make sure that the text spacing is not constrained by CSS.
 
