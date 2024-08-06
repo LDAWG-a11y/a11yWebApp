@@ -4,15 +4,13 @@ summary: This is a list of useful accessibility tools including browser
   extensions, add-ons, plugins, bookmarklets and other useful itmes
 author: swilkinson
 date: 2024-08-06
-toc: false
+toc: true
 tags:
-  - testing
-  - tools
-  - extensions
-  - bookmarklets
-  - add-ons
-  - plugins
-  - screen readers
+  - Testing
+  - Tools
+  - Browser extensions
+  - Bookmarklets
+  - Screen reader
 isGuide: true
 ---
 ## Browser extensions, plugins, and add-ons
