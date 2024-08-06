@@ -164,10 +164,10 @@ p{ margin-bottom: 2em !important;}
 
 ### TalkBack
 
-* Talkback accessibility help (external website) 
-* Gestures (external website) 
-* Keyboard shortcuts (external website) 
+* [Talkback accessibility help](https://support.google.com/accessibility/android/topic/3529932) (external website) 
+* [Gestures](https://support.google.com/accessibility/android/answer/6151827) (external website) 
+* [Keyboard shortcuts](https://support.google.com/accessibility/android/answer/6110948) (external website) 
 
 #### Narrator
 
-Complete guide to Narrator (external website).
+[Complete guide to Narrator](https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1) (external website).
