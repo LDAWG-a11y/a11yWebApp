@@ -10,6 +10,7 @@ tags:
   - Tools
   - Browser extensions
   - Bookmarklets
+  - Screen reader
 isGuide: true
 ---
 ## Browser extensions, plugins, and add-ons
