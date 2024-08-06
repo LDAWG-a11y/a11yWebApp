@@ -8,6 +8,9 @@ toc: true
 tags:
   - Courses
   - Certification
+  - Training
+  - Learning
+  - Professional development
 isGuide: true
 ---
 We are often asked about courses that can help with understanding digital accessibility whether web pages, or documents such as PDFs, and certification that can be used to prove understanding of this area.
