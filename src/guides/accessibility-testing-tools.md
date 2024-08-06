@@ -21,7 +21,7 @@ isGuide: true
 * [Alt or not](https://chromewebstore.google.com/detail/alt-or-not/bhbbijphceaijfpppmdjmjalnogkhamc) (external website) - see alt text on Twitter/X
 * [ARC Toolkit](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) (external website) - accessibility testing tool
 * [axe DevTools](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Web Accessibility Testing (external website) - accessibility testing tool
-* [HeadingsMap](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) (external website) -  - accessibility testing tool
+* [HeadingsMap](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) (external website) - shows all the headings in a sidebar
 * [IBM Equal Access Accessibility Checker](https://chromewebstore.google.com/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp) (external website) - accessibility testing tool
 * [Landmark Navigation via Keyboard or Pop-up](https://chromewebstore.google.com/detail/landmark-navigation-via-k/ddpokpbjopmeeiiolheejjpkonlkklgp) (external website) - navigate web pages via WAI-ARIA landmarks, using the keyboard or a pop-up menu
 * [LERA](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc) (external website) - accessibility testing and reporting tool
@@ -38,7 +38,7 @@ isGuide: true
 
 * [Accessibility Insights for Web](https://microsoftedge.microsoft.com/addons/detail/accessibility-insights-fo/ghbhpcookfemncgoinjblecnilppimih?hl=en-GB) (external website) - accessibility testing tool
 * [axe DevTools](https://microsoftedge.microsoft.com/addons/detail/axe-devtools-web-access/kcenlimkmjjkdfcaleembgmldmnnlfkn?hl=en-GB) - Web Accessibility Testing (external website) - accessibility testing tool
-* [HeadingsMap](https://microsoftedge.microsoft.com/addons/detail/headingsmap/bokekiiaddinealohkmhjcgfanndmcgo?hl=en-GB) (external website) -  - accessibility testing tool
+* [HeadingsMap](https://microsoftedge.microsoft.com/addons/detail/headingsmap/bokekiiaddinealohkmhjcgfanndmcgo?hl=en-GB) (external website) - shows all the headings in a sidebar
 * [IBM Equal Access Accessibility Checker](https://microsoftedge.microsoft.com/addons/detail/ibm-equal-access-accessib/ompccpejakabkmfepbijnagedbdfldka?hl=en-GB) (external website) - accessibility testing tool
 * [Landmark Navigation via Keyboard or Pop-up](https://microsoftedge.microsoft.com/addons/detail/landmark-navigation-via-k/oemdnnhhfhdhilalibobndhoahcaiboe?hl=en-GB) (external website) - navigate web pages via WAI-ARIA landmarks, using the keyboard or a pop-up menu
 * [WAVE Evaluation Tool](https://microsoftedge.microsoft.com/addons/detail/wave-evaluation-tool/khapceneeednkiopkkbgkibbdoajpkoj?hl=en-GB) (external website) - accessibility testing tool
@@ -70,7 +70,7 @@ Adding [Chrome extension to Opera](https://help.opera.com/en/latest/customizatio
 * [Alt or not](https://chromewebstore.google.com/detail/alt-or-not/bhbbijphceaijfpppmdjmjalnogkhamc) (external website) - see alt text on Twitter/X
 * [ARC Toolkit](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) (external website) - accessibility testing tool
 * [axe DevTools](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Web Accessibility Testing (external website) - accessibility testing tool
-* [HeadingsMap](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) (external website) -  - accessibility testing tool
+* [HeadingsMap](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) (external website) - shows all the headings in a sidebar
 * [IBM Equal Access Accessibility Checker](https://microsoftedge.microsoft.com/addons/detail/ibm-equal-access-accessib/ompccpejakabkmfepbijnagedbdfldka?hl=en-GB) (external website) - accessibility testing tool
 * [LERA](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc) (external website) - accessibility testing and reporting tool
 * [Lighthouse](https://chromewebstore.google.com/detail/blipmdconlkpinefehnmjammfjpmpbjk) (external website) - accessibility testing tool
@@ -82,7 +82,7 @@ Adding [Chrome extension to Opera](https://help.opera.com/en/latest/customizatio
 
 * [ARC Toolkit](https://addons.mozilla.org/en-GB/firefox/addon/arc-toolkit/) (external website) - accessibility testing tool
 * [axe DevTools](https://addons.mozilla.org/en-GB/firefox/addon/axe-devtools/) - Web Accessibility Testing (external website) - accessibility testing tool
-* [HeadingsMap](https://addons.mozilla.org/en-GB/firefox/addon/headingsmap/) (external website)  - accessibility testing tool
+* [HeadingsMap](https://addons.mozilla.org/en-GB/firefox/addon/headingsmap/) (external website) - shows all the headings in a sidebar
 * [IBM Equal Access Accessibility Checker](https://addons.mozilla.org/en-GB/firefox/addon/accessibility-checker/) (external website) - accessibility testing tool
 * [Landmark Navigation via Keyboard or Pop-up](https://addons.mozilla.org/en-GB/firefox/addon/landmarks/) (external website) - navigate web pages via WAI-ARIA 
 * [Lighthouse](https://addons.mozilla.org/en-GB/firefox/addon/google-lighthouse/) (external website) - accessibility testing tool
