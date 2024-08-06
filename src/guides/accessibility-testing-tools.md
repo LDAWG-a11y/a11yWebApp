@@ -17,7 +17,7 @@ We are often asked about tools that can help with testing web pages for accessib
 
 The screen readers are required when testing web pages to determine how they interact when a user utilises assistive technology.
 
-<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">undefined</span></div>
+<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">The quality of the following courses and certification is not verified by MakeThingsAccessible and you use them at your own risk.</span></div>
 
 ## Browser extensions, plugins, and add-ons
 
