@@ -142,3 +142,32 @@ p{ margin-bottom: 2em !important;}
 * Paul J Adam's [JavaScript Bookmarklets for Accessibility Testing](https://pauljadam.com/bookmarklets/index.html) (external website) 
 
 ## Screen readers
+
+### NVDA
+
+[NVDA download](https://www.nvaccess.org/download/) (external website).
+
+#### Potentially useful addons
+
+* NVDA Focus Highlight addon (external website) 
+* NVDA Speech History addon (external website) 
+
+### JAWS
+
+* JAWS download (external website) 
+* Surfing the Internet JAWS! (external website) 
+
+### VoiceOver
+
+* User guide (external website) 
+* Command Charts (external website) 
+
+### TalkBack
+
+* Talkback accessibility help (external website) 
+* Gestures (external website) 
+* Keyboard shortcuts (external website) 
+
+#### Narrator
+
+Complete guide to Narrator (external website).
