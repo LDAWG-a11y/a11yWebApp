@@ -75,6 +75,10 @@ The following courses include free and paid for courses on digital accessibility
 * [Writing accessible content for the web](https://www.a11y-collective.com/product/writing-accessible-content-for-the-web/) (external website)
 * [The A11Y Collective essentials](https://www.a11y-collective.com/product/the-a11y-collective-essentials/) (external website)
 
+### British Sign Language
+
+[Introducing British Sign Language](https://www.british-sign.co.uk/learn-online-british-signQ-language-course/) (external website).
+
 ### coursera
 
 * [Testing for Web Accessibility With Accessibility Insights](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights) (external website)[](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/)
