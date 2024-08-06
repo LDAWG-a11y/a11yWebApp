@@ -3,7 +3,7 @@ title: Accessibility testing tools
 summary: This is a list of useful accessibility tools including browser
   extensions, add-ons, plugins, bookmarklets and other useful itmes
 author: swilkinson
-date: 2024-08-05
+date: 2024-08-06
 toc: false
 tags:
   - testing
