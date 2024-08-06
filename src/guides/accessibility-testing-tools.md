@@ -9,6 +9,7 @@ tags:
   - Testing
   - Tools
   - Browser extensions
+  - Bookmarklets
 isGuide: true
 ---
 ## Browser extensions, plugins, and add-ons
