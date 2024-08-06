@@ -149,18 +149,18 @@ p{ margin-bottom: 2em !important;}
 
 #### Potentially useful addons
 
-* NVDA Focus Highlight addon (external website) 
-* NVDA Speech History addon (external website) 
+* [NVDA Focus Highlight addon](https://addons.nvda-project.org/addons/focusHighlight.en.html) (external website) 
+* [NVDA Speech History addon](https://addons.nvda-project.org/addons/speech_history.en.html) (external website) 
 
 ### JAWS
 
-* JAWS download (external website) 
-* Surfing the Internet JAWS! (external website) 
+* [JAWS download](https://support.freedomscientific.com/Downloads/JAWS) (external website) 
+* [Surfing the Internet JAWS!](https://support.freedomscientific.com/SurfsUp/1-StartHere.htm) (external website) 
 
 ### VoiceOver
 
-* User guide (external website) 
-* Command Charts (external website) 
+* [User guide](https://support.apple.com/en-gb/guide/voiceover/welcome/10) (external website) 
+* [Command charts](https://help.apple.com/voiceover/command-charts/#1st-level-commands) (external website) 
 
 ### TalkBack
 
