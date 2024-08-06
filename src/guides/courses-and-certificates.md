@@ -8,6 +8,9 @@ toc: true
 tags:
   - Courses
   - Certification
+  - Training
+  - Learning
+  - Professional development
 isGuide: true
 ---
 We are often asked about courses that can help with understanding digital accessibility whether web pages, or documents such as PDFs, and certification that can be used to prove understanding of this area.
@@ -74,6 +77,10 @@ The following courses include free and paid for courses on digital accessibility
 * [](https://www.a11y-collective.com/product/web-accessibility-the-basics/) [Accessible design, the basics](https://www.a11y-collective.com/product/accessible-design-the-basics/) (external website)
 * [Writing accessible content for the web](https://www.a11y-collective.com/product/writing-accessible-content-for-the-web/) (external website)
 * [The A11Y Collective essentials](https://www.a11y-collective.com/product/the-a11y-collective-essentials/) (external website)
+
+### British Sign Language
+
+[Introducing British Sign Language](https://www.british-sign.co.uk/learn-online-british-signQ-language-course/) (external website).
 
 ### coursera
 
