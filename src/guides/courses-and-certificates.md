@@ -6,8 +6,8 @@ author: swilkinson
 date: 2024-08-05
 toc: true
 tags:
-  - courses
-  - " certification"
+  - Courses
+  - Certification
 isGuide: true
 ---
 ## Free courses
