@@ -13,7 +13,7 @@ tags:
   - Professional development
 isGuide: true
 ---
-We are often asked about courses that can help with understanding digital accessibility whether web pages, or documents such as PDFs, and certification that can be used to prove understanding of this area.
+We are often asked about courses that can help with understanding digital accessibility, whether web pages or documents such as PDFs, and about certification that can be used to prove understanding of this area.
 
 The following courses include free and paid for courses on digital accessibility, PDF remediation, diversity and equality, British Sign Language, and inclusive learning, and the certification covers general digital accessibility, web specific digital accessibility, and PDF accessibility.
 
