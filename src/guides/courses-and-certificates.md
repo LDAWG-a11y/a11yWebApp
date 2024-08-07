@@ -195,4 +195,4 @@ Umbraco Training: [Accessibility](https://umbraco.com/training/course-details/ac
 
 ## Suggest something
 
-If you have any suggestions for other courses that you think we should include and should be added to this list, please contact us at [info@makethingsaccessible.com](mailto:info@makethingsaccessible.com)
+If you have any suggestions for other courses that you think we should include and add to this list, please contact us at [info@makethingsaccessible.com](mailto:info@makethingsaccessible.com)
