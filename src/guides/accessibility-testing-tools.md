@@ -130,6 +130,14 @@ p{ margin-bottom: 2em !important;}
 
 ## Javascript bookmarklets (can be used by all browsers)
 
+Bookmarklets are browser bookmarks that execute JavaScript instead of opening a webpage, and may also be referred to as favlets, bookmark applets, or JavaScript bookmarks.
+
+Bookmarklets are available natively in all major browsers, including Mozilla Firefox and Chromium-based browsers such as Chrome, Edge, or Brave.
+
+Bookmarklets are used by right-clicking the bookmarklet and choosing "Bookmark Link" or by dragging the link into the bookmark bar so that it can be accessed easily (useful if the bookmarklet is to be used a lot).
+
+If you wish to write your own bookmarklet, [freeCodeCamp](https://www.freecodecamp.org/) (external website) has a guide on [What are bookmarklets? How to use JavaScript to Make  a Bookmarklet in Chromium and Firefox](https://www.freecodecamp.org/news/what-are-bookmarklets/) (external website).
+
 * Adrian Roselli - [24 x 24 and 24px SVG Circle Cursor](https://adrianroselli.com/2022/05/24x24-pixel-cursor-bookmarklet.html) (external website) 
 * [ANDI](https://www.ssa.gov/accessibility/andi/help/install.html) - (external website)
 * [H123](https://hinderlingvolkart.github.io/h123/) (external website) 
@@ -167,3 +175,7 @@ p{ margin-bottom: 2em !important;}
 #### Narrator
 
 [Complete guide to Narrator](https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1) (external website).
+
+## Suggest something
+
+If you have any suggestions for other tools that you think we should use and should be added to this list, please contact us at [info@makethingsaccessible.com](mailto:info@makethingsaccessible.com)
