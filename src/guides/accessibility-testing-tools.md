@@ -176,6 +176,25 @@ If you wish to write your own bookmarklet, [freeCodeCamp](https://www.freecodeca
 
 [Complete guide to Narrator](https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1) (external website).
 
+## Colour contrast checkers
+
+### Palette generation tools
+
+* [Adobe Color](https://color.adobe.com/create/color-accessibility) (external website) - interactive tool for testing colour combinations
+* [Color Safe](http://colorsafe.co/) (external website) - tool for generating text colours based on a selected background colour
+
+### Compliance checkers
+
+#### Browser extensions
+
+* [Edge: WCAG Color contrast checker](https://microsoftedge.microsoft.com/addons/detail/wcag-color-contrast-check/idahaggnlnekelhgplklhfpchbfdmkjp)  (external website) 
+* [Firefox: WCAG Contrast checker](https://addons.mozilla.org/firefox/addon/wcag-contrast-checker/)  (external website) 
+* [Chrome: Colour Contrast Checker](https://chrome.google.com/webstore/detail/colour-contrast-checker/nmmjeclfkgjdomacpcflgdkgpphpmnfe)  (external website) 
+
+#### Applications
+
+[Colour Contrast Analyser (CCA)](https://www.tpgi.com/color-contrast-checker/) (external website) .
+
 ## Suggest something
 
 If you have any suggestions for other tools that you think we should use and should be added to this list, please contact us at [info@makethingsaccessible.com](mailto:info@makethingsaccessible.com)
