@@ -192,3 +192,7 @@ Umbraco Training: [Accessibility](https://umbraco.com/training/course-details/ac
 ### Section 508 (United States)
 
 [Section 508 Certification](https://www.section508.gov/training-home/#Onlinetraining) (external website).
+
+## Suggest something
+
+If you have any suggestions for other courses that you think we should include and should be added to this list, please contact us at [info@makethingsaccessible.com](mailto:info@makethingsaccessible.com)
