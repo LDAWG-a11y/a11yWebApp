@@ -130,7 +130,7 @@ p{ margin-bottom: 2em !important;}
 
 ## Javascript bookmarklets (can be used by all browsers)
 
-Bookmarklets are browser bookmarks that execute JavaScript instead of opening a webpage, and may also be referred to as bookmark applets, favlets, or JavaScript bookmarks.
+Bookmarklets are browser bookmarks that execute JavaScript instead of opening a webpage, and may also be referred to as favlets, bookmark applets,  or JavaScript bookmarks.
 
 Bookmarklets are available natively in all major browsers, including Mozilla Firefox and Chromium-based browsers such as Chrome, Edge, or Brave.
 
