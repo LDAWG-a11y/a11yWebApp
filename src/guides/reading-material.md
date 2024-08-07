@@ -7,6 +7,7 @@ date: 2022-10-13
 toc: false
 tags:
   - Resource
+  - Books
 isGuide: true
 ---
 We often get asked if we have any good recommendations for accessibility or disability related books, TV shows or other resources. The best place to look for a lot of day to day practical references is online and we have links to other useful sites and resources spread throughout our guidance articles.
@@ -51,7 +52,13 @@ Susi Miller
 
 Richard Dunn and Roy Hirst
 
+### [Web Accessibility Cookbook](https://accessibility-cookbook.com/)
 
+Manuel Matuzovic
+
+### [What Every Engineer Should Know About Digital Accessibility](https://www.routledge.com/What-Every-Engineer-Should-Know-About-Digital-Accessibility/Horton-Sloan/p/book/9781032263861)
+
+Sarah Horton and David Sloan
 
 ## Watch list
 
