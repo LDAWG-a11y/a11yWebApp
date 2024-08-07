@@ -132,7 +132,7 @@ p{ margin-bottom: 2em !important;}
 
 Bookmarklets are browser bookmarks that execute JavaScript instead of opening a webpage, and may also be referred to as bookmark applets, favlets, or JavaScript bookmarks.
 
-Bookmarklets are available natively in all major browsers, including Mozilla Firefox and Chromium-based browsers like Chrome, Edge, or Brave.
+Bookmarklets are available natively in all major browsers, including Mozilla Firefox and Chromium-based browsers such as Chrome, Edge, or Brave.
 
 If you wish to write your own bookmarklet, [freeCodeCamp](https://www.freecodecamp.org/) (external website) has a guide on [What are bookmarklets? How to use JavaScript to Make  a Bookmarklet in Chromium and Firefox](https://www.freecodecamp.org/news/what-are-bookmarklets/) (external website).
 
