@@ -17,7 +17,7 @@ We are often asked about courses that can help with understanding digital access
 
 The following courses include free and paid for courses on digital accessibility, PDF remediation, diversity and equality, British Sign Language, and inclusive learning, and the certification covers general digital accessibility, web specific digital accessibility, and PDF accessibility.
 
-<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">The quality of the following courses and certification is not verified by MakeThingsAccessible and you use them at your own risk.</span></div>
+<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">Warning: The quality of the following courses and certification is not verified by MakeThingsAccessible and you use them at your own risk.</span></div>
 
 ## Free courses
 
