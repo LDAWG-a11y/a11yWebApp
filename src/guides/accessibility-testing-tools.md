@@ -167,3 +167,7 @@ p{ margin-bottom: 2em !important;}
 #### Narrator
 
 [Complete guide to Narrator](https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1) (external website).
+
+## Suggest something
+
+If you have any suggestions for other tools that you think we should use and should be added to this list, please contact us at [info@makethingsaccessible.com](mailto:info@makethingsaccessible.com)
