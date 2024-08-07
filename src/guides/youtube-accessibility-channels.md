@@ -11,7 +11,7 @@ isGuide: true
 ---
 We are often asked about YouTube channels and podcasts about digital accessibility, diversity and inclusivity.
 
-<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">MakeThingsAccessible do not necessarily endorse the opinions of the YouTube channels.</span></div>
+<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">Warning: MakeThingsAccessible do not necessarily endorse the opinions of the YouTube channels.</span></div>
 
 ## YouTube Channels
 
