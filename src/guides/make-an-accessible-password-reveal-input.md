@@ -199,12 +199,12 @@ Firstly, we need to add a tiny bit of JS to the `<head>` section in our HTML to 
 <head>
   <!-- Head stuff -->
   <script>
-    document.documentElement.setAttribute('data-has-js', '')
+    document.documentElement.classList.add('has-js');
   </script>
 </head>
 ```
 
-Nothing special there, we're just adding a data attribute to the `<html>` element, when JS is available. We're not actually going into tooling here and making sure that the JS we use is supported on the browser, this is something you'd need to do yourself.
+Nothing special there, we're just adding a class to the `<html>` element, when JS is available. We're not actually going into tooling here and making sure that the JS we use is supported on the browser, this is something you'd need to do yourself.
 
 Now we'll address the JS functionality, which is actually pretty straightforward:
 
