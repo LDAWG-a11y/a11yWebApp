@@ -14,15 +14,15 @@ isGuide: true
 ---
 ## Intro
 
-Much like their cousins the accordions a Show More widget is just a disclosure widget under the hood. It's a relatively simple construct, in that it is comprised of a button which will toggle the visibility of some previously hidden content. Often these widgets have a button that has visible text such as "Reveal More", "Show More", "Continue Reading" or "Read More", I'm sure there are other naming conventions I am missing, too. Just because I want to refer to this widget with one name, throughout this article, I'm going to call it a "Show More" widget, i actually gave this way more consideration than you may expect, too.
+Much like their cousins the accordions a Show More widget is just a disclosure widget under the hood. It's a relatively simple construct, in that it is comprised of a button which will toggle the visibility of some previously hidden content. Often these widgets have a button that has visible text such as "Reveal More", "Show More", "Continue Reading" or "Read More", I'm sure there are other naming conventions I am missing, too. Just because I want to refer to this widget with one name, throughout this article, I'm going to call it a "Show More" widget, I actually gave this way more consideration than you may expect, too.
 
 There are of course some significant differences, which mean we have some additional considerations, let us just list a few, before we proceed:
 
 * The teaser part of the widget wouldn't be interactive like it is with an accordion, it would typically be static content, usually this would be text, enough of a snippet to perhaps entice a user into reading or consuming the hidden content
-* There would then be an isolated button, which toggles the visibility of the remainder of the content, this would typically come after the teaser text, in our example, this button will be called "Show More", but there are of course many other alternatives and I have to admit, I can't find any supporting evidence to say which is the best naming convention
+* There would then be an isolated button, which toggles the visibility of the remainder of the content, this would typically come after the teaser text, in our example, this button will be called "Show More", but there are of course many other alternatives and I have to admit, I can't find any supporting evidence to say which is the better naming convention
 * Focus management requires a little bit of extra consideration, as we need to manage that logically. With an accordion, we'd typically leave focus in situ, on the button element, but with a Show More that may not be very helpful, depending on the button's position after we disclose that new content
-* Do we offer users the ability to "Show Less"? I think that makes perfect sense, if it can be expanded, then to me it should also be collapsible. Every time I have ever built a disclosure widget, I have always offered a way to hide that newly disclosed content again, because if it benefitted users in some way by being initially collapsed, then once it is expanded that same benefit should be afforded to our users to collapse it again. Fatigue is a thing, having to scroll through tonnes of content could be tiring or uncomfortable for some users, it could also increase cognitive load for some, too. I'm sure if we drilled down deeply, we'd find many more negative affects
-* As we are going to offer a way to collapse it again, we do need to consider the button's visible label (AccName), as "Show More" will stop making sense, once more stuff is actually shown. We could of course use `aria-pressed`, but as we will be using aria-expanded this could perhaps be a bit verbose. How many states do we need on a single button, what value is to be had from telling our users the button is both pressed and expanded or not pressed and collapsed? [Obviously, both elements are supported on the button element in the ARIA 1.2 spec](https://www.w3.org/TR/wai-aria-1.2/#button), but it doesn't appear to obviously state that more than one state is encouraged. there can also be an issue with changing the AccName of a button, in that in some instances that change of AccName isn't passed to the Accessibility Tree, or the AT being used. So, given that we would not ordinarily use `aria-pressed` on a disclosure and we still need the widget's controls to make sense, we're just going to use two buttons, obviously only one will ever be present at any given time, as always, I'm open to suggestions and critique, so feel free to get in touch if I'm wrong
+* Do we offer users the ability to "Show Less"? I think that makes perfect sense, if it can be expanded, then to me it should also be collapsible. Every time I have ever built a disclosure widget, I have always offered a way to hide that newly disclosed content again, as if it benefitted users in some way by being initially collapsed, then once it is expanded that same benefit should be afforded to our users to collapse it again. Fatigue is a thing, having to scroll through tonnes of content could be tiring or uncomfortable for some users, it could also increase cognitive load for some, too. I'm sure if we drilled down deeply, we'd find many more negative affects
+* As we are going to offer a way to collapse it again, we do need to consider the button's visible label (AccName), as "Show More" will stop making sense, once more stuff is actually shown. I'm not going to go too deeply into that here, but at the end I will explain my rationale on what I have done
 
 I'm quite satisfied those are the main differences, sure we'll likely encounter some nuance, along the way, but as long as we understand basic disclosure widgets and are aware of these extra considerations, we'll figure any unforeseen stuff out, along the way. I'm just gonna throw it out there that I have never actually built one of these before, I've tested them and yup, they were 'Meh' and I've told folks how to fix them, but I didn't actually build one. Not to worry though, I understand the concept and I know enough to be able to consider all users in my approach, so we'll be golden.
 
@@ -105,4 +105,122 @@ The first bit of JS we want is a small script to go in the site's `<head>` secti
 </head>
 ```
 
-So, without further ado, here's the JS:
+So, without further ado, here's the main JS:
+
+```javascript
+const articles = document.querySelectorAll('.article');
+const showMoreHTML = `<div class="flex-c"><button class="article__show-btn" data-shown="false">Show more</button></div>`;
+
+articles.forEach(article => {
+  article.insertAdjacentHTML('beforeend', showMoreHTML);
+  article.setAttribute('data-expanded', 'false');
+});
+
+document.querySelectorAll('.article__show-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (btn.getAttribute('data-shown') === 'false') {
+      btn.closest('.article').setAttribute('data-expanded', 'true');
+      btn.setAttribute('data-shown', 'true');
+      btn.textContent = 'Show less';
+      btn.closest('.article').querySelector('.article__content').focus();
+    } else {
+      btn.closest('.article').setAttribute('data-expanded', 'false');
+      btn.setAttribute('data-shown', 'false');
+      btn.textContent = 'Show more';
+    }
+  })
+})  
+```
+
+A quick explainer of the above:
+
+* We grab a reference to each article with `articles`
+* We create a string that is the button's HTML, with `showMoreHTML`
+* We loop through our articles
+* We insert (`insertAdjacentHTML`) the button's HTML string before the end (`'beforeend'`)of the `article`, so it is the last item in the article element
+* We set a data attribute `data-expanded="false"`, as this will be our hook for the later CSS (We could have done this in the CMS)
+* We loop through the new `<button>` elements assigning `btn` as each item in the loop
+* Add an event listener to each button that fires on a `click` event
+* Conditionally check whether the `btn` has the `data-shown="false"` attribute and value and if it has:
+
+  * Set the `data-expanded` attribute on the article to `true`
+  * Set the `btn`'s `data-shown` attribute to `true`
+  * Change the text within the `btn` to 'Show less'
+  * Find the related `article__content` add set `focus()` on it
+* If the button has data-shown set to true, we are just returning everything back to its initial state
+
+  * The article's `data-expanded` attribute set back to `false`
+  * The `btn`'s `data-shown` attribute back to `false`
+  * Set the `btn` text back to 'Show more'
+
+And that is that done, not a great deal of JS to get our head's around there, hopefully just a simple one. There are a few bits I want to go over, but we'll just add the CSS here, first, as I don't tend to explain that bit in any great depth.
+
+```css
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.flex-c {
+  display: flex;
+  justify-content: center;
+}
+
+.articles {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.article {
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: .5rem;
+  max-width: 55rem;
+}
+
+.has-js article[data-expanded="false"] .article__content {
+  display: none;
+}
+
+.article__content:focus {
+  outline: 2px solid rebeccapurple;
+  outline-offset: 2px;
+}
+
+.article__show-btn {
+  margin-top: .5rem;
+  border: 2px solid rebeccapurple;
+  border-radius: 2rem;
+  padding: .25rem 1rem;
+  font-size: 1rem;
+  background-color: rebeccapurple;
+  color: white;
+}
+
+.article__show-btn:focus-visible {
+  outline: 2px solid rebeccapurple;
+  outline-offset: 2px;
+}
+```
+
+The only bit that is worth mentioning here is the following  `.has-js article[data-expanded="false"] .article__content {display: none;}`, this is the bit that hides the content and as we have our `has-js` class, it will only actually hide that content if JS is available. If there is no JS available, then the user gets just the text, which is exactly what we wanted or at least what we set out to achieve, anyway.
+
+## My thought processes
+
+In our example, the button is always at the end of the container, so this button would of course come after the newly revealed content after it has been displayed. That's obviously a big No No, as this could disorientate users, as newly revealed content must come next in the sequential focus order. But, what if there are no interactive items in our container, does the focus order matter? No, but the reading sequence does, so logic dictates we need to manage focus when the element expands and put it in the most sensible place. In or example we have a teaser and the remainder of the content, we make an assumption that whatever was in the teaser was enough to want our user to show the rest of the content, so they click our button. As they have "read" the teaser, let's just send focus to the remainder of the content, so they do not lose their place or have to "read" anything twice. we're trying to provide the best experience for our users and this of course removes a heap of potentially confusing situations that would occur, if we didn't manage focus correctly. The primary users who benefit here are of course screen reader users.
+
+You may have noticed I have not used aria-expanded on or button that errm, expands? Some of you may know why and others may think "This joker doesn't know what he is doing" and you'd be right (I joke). Bear with me, I do actually know a decent bit of stuff, I promise. If we have an accordion, we would not change the visible label as that is also the heading text, right? So we of course use aria-expanded to inform a user of "state". If we had a navigation button, we may have the AccName "Menu" and we are using a noun to inform a user what that is, so we would of course need to use aria-expanded, as again, that adds supplementary information on the element's current "state". In our example, we're using verbs "Show more" and "Show less", they are self-explanatory and adding aria-expanded could make things a little confusing or overly verbose. The expanded "state" becomes irrelevant when we use self-explanatory labels as, for example "Show more, collapsed" and "Show less, expanded", sounds a little confusing, right? Like many, I learn from elsewhere and I have read this [article by Sarah Higley a few times, Playing with State](https://sarahmhigley.com/writing/playing-with-state/), I may appear to have deviated away from Sarah's recommendation of only change the name of play/pause buttons, but for everything else, change state. But I have done that intentionally, I'd hope Sarah would agree with me, but I don't personally know her, so I am not going to ask, but I do learn a great deal from her superior wisdom.
+
+In Sarah's article you may have noticed that Sarah recommends not changing the AccName of buttons because that AccName change is not always reliably passed to assistive technologies. The "state" change is, but not the AccName recalculation. This doesn't apply to us, here as the issue with that is only evident when focus remains on that button. Sarah does go on to mention this, towards the end of her article, in that if the element has focus, changing state is much more reliable and changes to the AccName may not be passed to the AT. As we are managing focus, we don't need to worry about that. [There is of course an Adrian Roselli article cautioning against changing the AccName or AccDesc of buttons etc](https://adrianroselli.com/2020/12/be-careful-with-dynamic-accessible-names.html),
