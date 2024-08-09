@@ -36,42 +36,73 @@ There is an argument that they can neatly tuck stuff away on a content-heavy pag
 
 So, let's go with our minimal viable experience and as always, I'll progressively enhance this. I'm going to just use text and if the user or user agent has JS disabled, they will just get the text, no fancy interaction, just the text.
 
-I'm just going to play it safe and use Lorem Ipsum, which isn't engaging, by design, but I don't know what else to use. Just as a sort of funny aside, I was building a component on a previous job before and as I am easily entertained, I sometimes write unconventional things in my `console.log`s and also use stuff other than Lorem Ipsum. One time, I found a Samuel L. Jackson Ipsum generator, which, you guessed it, generated many words that Sam the Man says in his many films. This was a little entertaining to me, whilst I was working locally, but I almost submitted it in a pull request, because I forgot. Fortunately, by some miracle of the universe, I realised just as I was about to do a push, I got a glimpse of an F-bomb on my feature and managed to remove all trace of that, before I actually sent my code to GitHub, phew. So, the moral of that pointless story is: don't be a Darren, just play it safe with good old Lorem Ipsum. I definitely don't do this any more, so we won't be seeing any of those shenanigans in my content or code.
+I'm just going to play it safe and use Lorem Ipsum, which isn't engaging, by design, but I don't know what else to use. Just as a sort of funny aside, I was building a component on a previous job before and as I am easily entertained, I sometimes write unconventional things in my `console.log`s and also used to use stuff other than Lorem Ipsum. One time, I found a Samuel L. Jackson Ipsum generator, which, you guessed it, generated many words that Sam the Man says in his many films. This was a little entertaining to me, whilst I was working locally, but I almost submitted it in a pull request, because I forgot. Fortunately, by some miracle of the universe, I realised just as I was about to do a push, I got a glimpse of an F-bomb on my feature and managed to remove all trace of that, before I actually sent my code to GitHub, phew. So, the moral of that pointless story is: don't be a Darren, just play it safe with good old Lorem Ipsum. I definitely don't do this any more, so we won't be seeing any of those shenanigans in my content or code.
 
 ```html
 <h1>All the articles on the same page</h1>
 
-<article class="article">
-  <h2 class="article__title">My first article</h2>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quos voluptates ratione culpa nemo numquam nobis dignissimos eius eaque non similique, asperiores doloribus, ab quod fuga, corporis molestiae ea autem harum iste suscipit commodi! Corporis odio eligendi in mollitia ipsum aperiam atque, dolorum, cumque dignissimos deserunt, modi libero impedit dicta!</p>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus magni blanditiis assumenda, eos labore vel atque sit officiis eum voluptatum! In nisi ut earum rerum pariatur vero fuga nihil commodi? Neque, fugit. Magni sint dignissimos nisi dolorem delectus cumque quia mollitia laudantium culpa? Delectus quam id placeat iste ipsa porro?</p>
-</article>
+<div class="articles">
+  <article class="article">
+    <h2 class="article__title">My first article</h2>
+    <p class="article__teaser">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quos voluptates ratione culpa nemo numquam nobis dignissimos eius eaque non similique.</p>
+    <div class="article__content" tabindex="-1">
+      <p>Asperiores doloribus, ab quod fuga, corporis molestiae ea autem harum iste suscipit commodi! Corporis odio eligendi in mollitia ipsum aperiam atque, dolorum, cumque dignissimos deserunt, modi libero impedit dicta!</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus magni blanditiis assumenda, eos labore vel atque sit officiis eum voluptatum! In nisi ut earum rerum pariatur vero fuga nihil commodi? Neque, fugit. Magni sint dignissimos nisi dolorem delectus cumque quia mollitia laudantium culpa? Delectus quam id placeat iste ipsa porro?</p>
+    </div>
+  </article>
 
-<article class="article">
-  <h2 class="article__title">My second article</h2>
-  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores cumque doloribus exercitationem nulla omnis obcaecati, quam ducimus repellendus voluptatum mollitia nemo pariatur eaque illum, dignissimos debitis! Repellat fuga obcaecati, quae et saepe odio sequi repellendus itaque exercitationem quaerat odit culpa suscipit ea praesentium at cupiditate sed quibusdam beatae repudiandae voluptates.</p>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam saepe reiciendis eius, accusantium quia aliquid maxime deleniti enim consectetur esse id, ipsa praesentium dolor doloremque rerum quidem ut iusto a distinctio quasi vitae quam facilis. In voluptates fugiat enim culpa aliquid nemo nisi modi ipsum, corporis saepe. Accusamus, nemo tempora.</p>
-</article>
+  <article class="article">
+    <h2 class="article__title">My second article</h2>
+    <p class="article__teaser">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores cumque doloribus exercitationem nulla omnis obcaecati, quam ducimus repellendus voluptatum mollitia nemo pariatur eaque illum.</p>
+    <div class="article__content" tabindex="-1">
+      <p>Dignissimos debitis! Repellat fuga obcaecati, quae et saepe odio sequi repellendus itaque exercitationem quaerat odit culpa suscipit ea praesentium at cupiditate sed quibusdam beatae repudiandae voluptates.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam saepe reiciendis eius, accusantium quia aliquid maxime deleniti enim consectetur esse id, ipsa praesentium dolor doloremque rerum quidem ut iusto a distinctio quasi vitae quam facilis. In voluptates fugiat enim culpa aliquid nemo nisi modi ipsum, corporis saepe. Accusamus, nemo tempora.</p>
+    </div>
+  </article>
 
-<article class="article">
-  <h2 class="article__title">My third article</h2>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, magni. Dicta ipsa, dolorum minus id cum quibusdam placeat accusamus labore tenetur sed ipsum assumenda veritatis, quo ad expedita neque explicabo excepturi commodi deleniti? Doloribus consequatur voluptate sed quos exercitationem fuga id eaque perspiciatis voluptas voluptatum, asperiores vitae porro saepe repellendus!</p>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere nobis consequatur cumque, mollitia aperiam aliquid inventore. Sequi ipsam cum harum maxime perspiciatis facilis dignissimos repudiandae quasi! Accusantium quod id doloremque aspernatur harum ipsam, repellat dolorum magnam consequatur fugiat sed sequi fugit eligendi molestias voluptatem quaerat recusandae debitis temporibus assumenda expedita?</p>
-</article>
+  <article class="article">
+    <h2 class="article__title">My third article</h2>
+    <p class="article__teaser">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, magni. Dicta ipsa, dolorum minus id cum quibusdam placeat accusamus labore tenetur sed ipsum assumenda veritatis.</p>
+    <div class="article__content" tabindex="-1">
+      <p>Quo ad expedita neque explicabo excepturi commodi deleniti? Doloribus consequatur voluptate sed quos exercitationem fuga id eaque perspiciatis voluptas voluptatum, asperiores vitae porro saepe repellendus!</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere nobis consequatur cumque, mollitia aperiam aliquid inventore. Sequi ipsam cum harum maxime perspiciatis facilis dignissimos repudiandae quasi! Accusantium quod id doloremque aspernatur harum ipsam, repellat dolorum magnam consequatur fugiat sed sequi fugit eligendi molestias voluptatem quaerat recusandae debitis temporibus assumenda expedita?</p>
+    </div>
+  </article>
+</div>
 ```
 
-There we go, pretty straightforward stuff, for now. 
+There we go, pretty straightforward stuff, for now. So, just to be clear, in most cases we would have a content management system (CMS) doing a bit of the heavy lifting for us, in that we could get it to output the HTML we wanted, for later JS manipulation. Admittedly, I'm not fully sure of what the editor would give the author in the back office of that CMS, so I've made a couple of what I believe to be reasonable assumptions:
 
-* So, we have a `<h1>`, which just provides a page title
+* There would be a way for the author to set the teaser part of the text, this could be a separate input or text selection
+* There would be a way to add the rest of the text, either that would be an additional input or it would be the unselected text
+
+I did consider just doing all of that our end, with JS, but then that seemed a little more brittle, as we would have to extract a certain amount of characters or words and unless we knew the cutoff the author wanted, we could cutoff too much or too little. We could, of course make the assumption that the author can select a portion of text and we receive a data attribute that has a number, that number would be equivalent to the character count of the teaser and then we could just extract those characters. perhaps this is how it would actually work? In a real life situation we would be furnished with that information from the CMS implementation team and we would be able to act accordingly. We're just simplifying the process here, as this is just a demo.
+
+So, here's what we have in our HTML:
+
+* We'll wrap all the articles in a container, just to make limiting the width and centering that little easier
 * We have three articles which we will soon manipulate with JS
 
   * Each article has a distinct heading
-  * Each article has two paragraphs of text and each of those paragraphs contain exactly 50 words of good old Lorem Ipsum
+  * Our teaser comes next, I've used a `<p>` tag with the class `article__teaser`, which is of course a block-level element, so the to-be-revealed content will be new paragraphs. This may not be the desired result, in which case we'd use `<span>` elements within paragraphs and have to do a little more DOM manipulation than we're going to do here
+  * We're wrapping the to-be-revealed content in a `<div>` with a `article__content` class
+  * I've added a `tabindex="-1"` to the article__content elements, for later focus management
+  * Each `article__content` holds some text, in our case just a couple of short paragraphs of good old Lorem Ipsum
 
 I've just gone for three articles as one seemed quite lazy on my behalf, two probably seemed enough, but as I was uncertain, I went for three, for good measure. I also added two paragraphs to each, as we will be manipulating a potion of the first one and having two paragraphs helps me to build something that won't break in a slightly different use case.
 
-We're going to tackle the JS next and we'll add the pretty styles at the end. Remember I said i have never actually built one of these before? Just because I'm a bit stubborn, I'm not even going to look at anybody else's efforts, no research, no looking at anybody else's code, I'm just going to have a stab at it, for fun.
+We're going to tackle the JS next and we'll add the pretty styles at the end. Remember I said I have never actually built one of these before? Just because I'm a bit stubborn, I'm not even going to look at anybody else's efforts, no research, no looking at anybody else's code, I'm just going to have a stab at it, for fun.
 
-This is going to be by no means bulletproof, it will be accessible, but it won't be ready to plonk in a content management system (CMS) as we'd need to consider a bit more, such as the author being able to make a selection, to set their own "teaser", etc. That would actually be quite cool to take a stab at, but I feel I may be over-complicating things a bit (not that i ever do that, honest), so what I will do, is simply extract the first 30 words from the paragraph, for no other reason than 30 seems like a fun number to use here. In production on a CMS, this hard-coded value would be brittle, as those first 30 words may come from more than one paragraph or other element. So, I do know all of this, but I feel like a basic implementation is for the best in this guide. We're essentially only concerned in the mechanics and accessibility, so it should go without saying, don't just go plonking this in a CMS, as it'll end up breaking.
+The first bit of JS we want is a small script to go in the site's `<head>` section, to add a class to the `<html>` element, for when JS is available:
+
+```html
+<head>
+<!-- head stuff -->
+<script>
+  document.documentElement.classList.add('has-js');
+</script>
+<!-- Other head stuff -->
+</head>
+```
 
 So, without further ado, here's the JS:
