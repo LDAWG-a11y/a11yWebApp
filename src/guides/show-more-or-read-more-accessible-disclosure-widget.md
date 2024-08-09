@@ -4,7 +4,7 @@ summary: Show, Reveal or Read More widgets typically reveal a small teaser and a
   button, they disclose additional content, should that button be clicked. Let's
   build one, accessibly
 author: dlee
-date: 2024-08-07
+date: 2024-08-09
 toc: false
 tags:
   - HTML
