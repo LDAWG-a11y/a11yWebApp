@@ -6,11 +6,20 @@ date: 2024-08-02
 toc: false
 tags:
   - webinars
+  - Groups
+  - Resource
 isGuide: true
 ---
-* [Government Communication Service](https://gcs.civilservice.gov.uk/webinars/digital-accessibility-for-government-communicators/) (external website)
-* [AbilityNet](https://abilitynet.org.uk/free-tech-support-and-info/webinars) (external website)
-* [deque Accessibility Webinars](https://www.deque.com/resources/type/webinars/) (external website)
-* [Hassell Inclusion](https://www.hassellinclusion.com/webinars/) (external website)
-* [TPGi](https://www.tpgi.com/events/on-demand-webinars/) (external website)
-* MagicEdTech [MagicaA11y Live](https://www.magicedtech.com/magica11y-live/) (external website)
+We are often asked about webinars and groups about digital accessibility, diversity and inclusivity, and there are many covering a multitude of areas.
+
+<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">Inclusion on this list does not constitute endorsement for the opinions or actions of any of the webinars and groups featured here.</span></div>
+
+* [The A11Y Global Collective (external website)](https://www.meetup.com/a11ycollective/)
+* [](https://gcs.civilservice.gov.uk/webinars/digital-accessibility-for-government-communicators/)[AbilityNet (external website)](https://abilitynet.org.uk/free-tech-support-and-info/webinars) 
+* [deque Accessibility Webinars (external website)](https://www.deque.com/resources/type/webinars/) 
+* [Government Communication Service (external website)](https://gcs.civilservice.gov.uk/webinars/digital-accessibility-for-government-communicators/) 
+* [Hassell Inclusion (external website)](https://www.hassellinclusion.com/webinars/) 
+* MagicEdTech [MagicaA11y Live (external website)](https://www.magicedtech.com/magica11y-live/) 
+* [TPGi (external website)](https://www.tpgi.com/events/on-demand-webinars/) 
+* [WordPress Accessibility Meetup (external website)](https://www.meetup.com/wordpress-accessibility-meetup-group/)
+*
