@@ -24,4 +24,3 @@ We are often asked about webinars and groups about digital accessibility, divers
 * [Texthelp (external website)](https://www.texthelp.com/en-gb/resources/webinars/)
 * [TPGi (external website)](https://www.tpgi.com/events/on-demand-webinars/) 
 * [WordPress Accessibility Meetup (external website)](https://www.meetup.com/wordpress-accessibility-meetup-group/)
-*
