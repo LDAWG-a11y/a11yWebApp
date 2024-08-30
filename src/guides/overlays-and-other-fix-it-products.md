@@ -86,6 +86,7 @@ If you have further useful sources to suggest to help inform on the state of ove
 * [Adrian Roselli – #AudioEye will get you sued](https://adrianroselli.com/2023/02/audioeye-will-get-you-sued.html)
 * [Adrian Roselli – #AudioEye is suing me](https://adrianroselli.com/2023/05/audioeye-is-suing-me.html)
 * [Adrian Roselli - #AudioEye has dropped its suit against me](https://adrianroselli.com/2024/01/audioeye-has-dropped-its-suit-against-me.html)
+* [Adrian Roselli - #UserWay will get you sued](https://adrianroselli.com/2021/09/userway-will-get-you-sued.html)
 * [Anna E. Cook - There’s no such thing as fully automated web accessibility](https://uxdesign.cc/theres-no-such-thing-as-fully-automated-web-accessibility-260d6f4632a8)
 * [Koena - Koena given formal notice by FACIL’iti](https://koena.net/en/koena-given-formal-notice-by-faciliti/)
 * [National Federation of the Blind – National convention sponsorship statement regarding AccessiBe](https://nfb.org/about-us/press-room/national-convention-sponsorship-statement-regarding-accessibe)
