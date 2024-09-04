@@ -17,6 +17,7 @@ We are often asked about webinars and groups about digital accessibility, divers
 * [3Play (external website)](https://www.3playmedia.com/learn/webinars/)
 * [The A11Y Global Collective (external website)](https://www.meetup.com/a11ycollective/)
 * [](https://gcs.civilservice.gov.uk/webinars/digital-accessibility-for-government-communicators/)[AbilityNet (external website)](https://abilitynet.org.uk/free-tech-support-and-info/webinars) 
+* [access ingenuity (external website)](https://accessingenuity.com/blogs/access-ingenuity-webinars)
 * [deque Accessibility Webinars (external website)](https://www.deque.com/resources/type/webinars/) 
 * [Government Communication Service (external website)](https://gcs.civilservice.gov.uk/webinars/digital-accessibility-for-government-communicators/) 
 * [Hassell Inclusion (external website)](https://www.hassellinclusion.com/webinars/) 
