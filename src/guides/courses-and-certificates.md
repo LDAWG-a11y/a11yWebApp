@@ -23,21 +23,21 @@ The following courses include free and paid for courses on digital accessibility
 
 ### Always available
 
-* World Wide Web Consortium (W3C): [Introduction to Web Accessibility](https://www.w3.org/blog/2019/12/free-online-course-introduction-to-web-accessibility/) (external website)
-* Disability Awareness: [Introduction to disability awareness](https://disabilityawareness.com.au/elearning/disability-awareness/) (external website)
-* Google Developers via web.dev: [Learn Accessibility](https://web.dev/learn/accessibility/) (external website)
-* OCAD University: [Understanding Web Accessibility](https://legacy.idrc.ocadu.ca/policy/idrc-and-aoda/441-idrcs-self-paced-course) (external website)
-* A11Y collective: [Web Accessibility, the business case](https://www.a11y-collective.com/product/masterclass-web-accessbility-the-business-case/) (external website)
-* A11Y collective: [Try-out Class](https://www.a11y-collective.com/product/try-out-class/) (external website)
-* GTx: [Information and Communication Technology (ICT) Accessibility](https://www.edx.org/learn/information-technology/the-georgia-institute-of-technology-information-and-communication-technology-ict-accessibility) (external website)
-* Code Academy - [Learn CSS: Accessibility](https://www.codecademy.com/learn/learn-css-accessibility) (external website)
+* World Wide Web Consortium (W3C): [Introduction to Web Accessibility (external website)](https://www.w3.org/blog/2019/12/free-online-course-introduction-to-web-accessibility/) 
+* Disability Awareness: [Introduction to disability awareness (external website)](https://disabilityawareness.com.au/elearning/disability-awareness/) 
+* Google Developers via web.dev: [Learn Accessibility (external website)](https://web.dev/learn/accessibility/) 
+* OCAD University: [Understanding Web Accessibility (external website)](https://legacy.idrc.ocadu.ca/policy/idrc-and-aoda/441-idrcs-self-paced-course) 
+* A11Y collective: [Web Accessibility, the business case (external website)](https://www.a11y-collective.com/product/masterclass-web-accessbility-the-business-case/) 
+* A11Y collective: [Try-out Class (external website)](https://www.a11y-collective.com/product/try-out-class/) 
+* GTx: [Information and Communication Technology (ICT) Accessibility (external website)](https://www.edx.org/learn/information-technology/the-georgia-institute-of-technology-information-and-communication-technology-ict-accessibility) 
+* Code Academy - [Learn CSS: Accessibility (external website)](https://www.codecademy.com/learn/learn-css-accessibility) 
 
 ### Microsoft
 
-* [Accessibility fundamentals](https://learn.microsoft.com/en-us/training/paths/accessibility-fundamental/) (external website)
-* [Gaming accessibility fundamentals](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/) (external website)
-* [Accessibility: Build the foundation for inclusive learning](https://learn.microsoft.com/en-us/training/courses/accessibility-build-foundation-inclusive-learning) (external website)
-* [Accessibility, special education, and online learning: Supporting equity in a remote learning environment](https://learn.microsoft.com/en-us/training/courses/accessibility-special-education-online-learning-equity) (external website)
+* [Accessibility fundamentals (external website)](https://learn.microsoft.com/en-us/training/paths/accessibility-fundamental/) 
+* [Gaming accessibility fundamentals (external website)](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/) 
+* [Accessibility: Build the foundation for inclusive learning (external website)](https://learn.microsoft.com/en-us/training/courses/accessibility-build-foundation-inclusive-learning) 
+* [Accessibility, special education, and online learning: Supporting equity in a remote learning environment (external website)](https://learn.microsoft.com/en-us/training/courses/accessibility-special-education-online-learning-equity) 
 
 ### OpenLearn
 
