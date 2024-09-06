@@ -86,113 +86,113 @@ The following courses include free and paid for courses on digital accessibility
 
 ### coursera
 
-* [Testing for Web Accessibility With Accessibility Insights](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights) (external website)[](https://learn.microsoft.com/en-us/training/paths/gaming-accessibility-fundamentals/)
-* [Test Accessibility of Your Design with WAVE](https://www.coursera.org/projects/test-accessibility-design-wave) (external website)
-* [Introduction to Accessibility and Universal Design](https://www.coursera.org/learn/introduction-to-accessibility-and-universal-design) (external website)
-* [Microsoft - UX Design in Practice: Accessibility and Collaboration](https://www.coursera.org/learn/ux-design-in-practice-accessibility-and-collaboration) (external website)
-* [Fundamentals of Document Accessibilit](https://www.coursera.org/projects/fundamentals-of-document-accessibility)y (external website)
+* [Testing for Web Accessibility With Accessibility Insights (external website)](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights) 
+* [Test Accessibility of Your Design with WAVE (external website)](https://www.coursera.org/projects/test-accessibility-design-wave) 
+* [Introduction to Accessibility and Universal Design (external website)](https://www.coursera.org/learn/introduction-to-accessibility-and-universal-design) 
+* [Microsoft - UX Design in Practice: Accessibility and Collaboration (external website)](https://www.coursera.org/learn/ux-design-in-practice-accessibility-and-collaboration) 
+* [Fundamentals of Document Accessibility (external website)](https://www.coursera.org/projects/fundamentals-of-document-accessibility)
 
 ### Deque University
 
 Online Self-Paced Web Accessibility Classes:
 
-* [International Association of Accessibility Professionals (IAAP) Certified Professional in Accessibility Core Competencies (CPACC)](https://dequeuniversity.com/curriculum/courses/iaap-cpacc) (external website)
-* [International Association of Accessibility Professionals (IAAP) Web Accessibility Specialist (WAS)](https://dequeuniversity.com/curriculum/packages/iaap-was) (external website)
-* [International Association of Accessibility Professionals (IAAP) Accessible Document Specialist (ADS)](https://dequeuniversity.com/curriculum/packages/documents) (external website)
+* [International Association of Accessibility Professionals (IAAP) Certified Professional in Accessibility Core Competencies (CPACC) (external website)](https://dequeuniversity.com/curriculum/courses/iaap-cpacc) 
+* [International Association of Accessibility Professionals (IAAP) Web Accessibility Specialist (WAS) (external website)](https://dequeuniversity.com/curriculum/packages/iaap-was) 
+* [International Association of Accessibility Professionals (IAAP) Accessible Document Specialist (ADS) (external website)](https://dequeuniversity.com/curriculum/packages/documents)
 
 ### egghead.io
 
-* [Auditing React Apps for Accessibility](https://egghead.io/courses/auditing-react-apps-for-accessibility-08733265) (external website)
+* [Auditing React Apps for Accessibility (external website)](https://egghead.io/courses/auditing-react-apps-for-accessibility-08733265)
 
 ### Funka Academy
 
-[Over twenty digital accessibility courses](https://www.funka.com/en/funka-academy/) (external website).
+[Over twenty digital accessibility courses (external website)](https://www.funka.com/en/funka-academy/).
 
 ### FutureLearn
 
-* [Online Teaching: Accessibility and Inclusive Learning](https://www.futurelearn.com/microcredentials/online-teaching-accessibility-and-inclusive-learning) (external website)
-* [Introduction to UX and Accessible Design](https://www.futurelearn.com/courses/introduction-to-ux-and-accessible-design) (external website)
-* [Inclusive Learning with Microsoft Accessibility Tools](https://www.futurelearn.com/courses/make-learning-more-inclusive-with-microsoft-accessibility-tools-sc) (external website)
-* [Create Accessible Interfaces](https://www.futurelearn.com/courses/create-accessible-interfaces) (external website)[](https://www.futurelearn.com/courses/software-development-fundamentals-web-accessibility-css)
+* [Online Teaching: Accessibility and Inclusive Learning (external website)](https://www.futurelearn.com/microcredentials/online-teaching-accessibility-and-inclusive-learning) 
+* [Introduction to UX and Accessible Design (external website)](https://www.futurelearn.com/courses/introduction-to-ux-and-accessible-design) 
+* [Inclusive Learning with Microsoft Accessibility Tools (external website)](https://www.futurelearn.com/courses/make-learning-more-inclusive-with-microsoft-accessibility-tools-sc) 
+* [Create Accessible Interfaces (external website)](https://www.futurelearn.com/courses/create-accessible-interfaces) 
 
 #### Periodically available
 
-* FutureLearn with UAL Creative Computing Institute: [Introduction to UX and Accessible Design](https://www.futurelearn.com/courses/introduction-to-ux-and-accessible-design) (external website)
-* FutureLearn with University of Southampton: [Digital Accessibility: Enabling Participation in the Information Society](https://www.futurelearn.com/courses/digital-accessibility) (external website)
-* [Software Development Fundamentals: Web Accessibility and CSS](https://www.futurelearn.com/courses/software-development-fundamentals-web-accessibility-css) (external website)
+* FutureLearn with UAL Creative Computing Institute: [Introduction to UX and Accessible Design (external website)](https://www.futurelearn.com/courses/introduction-to-ux-and-accessible-design)
+* FutureLearn with University of Southampton: [Digital Accessibility: Enabling Participation in the Information Society (external website)](https://www.futurelearn.com/courses/digital-accessibility)
+* [Software Development Fundamentals: Web Accessibility and CSS (external website)](https://www.futurelearn.com/courses/software-development-fundamentals-web-accessibility-css)
 
 ### LinkedInLearning
 
-* [Creating Accessible PDFs](https://www.linkedin.com/learning/creating-accessible-pdfs-14445392/) (external website)
-* [Advanced Accessible PDFs](https://www.linkedin.com/learning/advanced-accessible-pdfs-21974253/) (external website)
-* [iOS App Development: Accessibility](https://www.linkedin.com/learning/ios-app-development-accessibility/) (external website)
-* [Android App Development: Accessibility](https://www.linkedin.com/learning/android-app-development-accessibility/) (external website)
-* [React: Accessibility](https://www.linkedin.com/learning/react-accessibility/accessibility-in-react) (external website)
-* [Creating Accessible Documents in Microsoft Office](https://www.linkedin.com/learning/creating-accessible-documents-in-microsoft-office/) (external website)
-* [Microsoft Office Accessibility for Beginners](https://www.linkedin.com/learning/microsoft-office-accessibility-for-beginners/) (external website)
-* [Accessibility for Web Design](https://www.linkedin.com/learning/accessibility-for-web-design/making-the-digital-world-accessible) (external website)
-* [UX Foundations: Accessibility](https://www.linkedin.com/learning/ux-foundations-accessibility/) (external website)
-* [UX Foundations: Usability Testing](https://www.linkedin.com/learning/ux-foundations-usability-testing/) (external website)
-* [Foundations of Accessible Elearning](https://www.linkedin.com/learning/foundations-of-accessible-elearning/c) (external website)
-* [Inclusive Learning Design](https://www.linkedin.com/learning/inclusive-learning-design/) (external website)
-* [Simplifying Web Development with Accessibility Best Practices](https://www.linkedin.com/learning/simplifying-web-development-with-accessibility-best-practices) (external website)
-* [WordPress: Accessibility](https://www.linkedin.com/learning/wordpress-accessibility-revision/accessibility-in-wordpress) (external website)
-* [EPUB Accessibility Using InDesign](https://www.linkedin.com/learning/epub-accessibility-using-indesign/) (external website)
-* [Digital Accessibility for the Modern Workplace](https://www.linkedin.com/learning/digital-accessibility-for-the-modern-workplace-with-audio-descriptions/) (external website)
-* [Accessibility for Managers and Non-Designers](https://www.linkedin.com/learning/accessibility-for-managers-and-non-designers/) (external website)
-* [Designing with the WCAG 2.2 Guidelines](https://www.linkedin.com/learning/designing-with-the-wcag-2-2-guidelines/) (external website)
-* [Simplifying Web Development with Accessibility Best Practices](https://www.linkedin.com/learning/simplifying-web-development-with-accessibility-best-practices/) (external website)
-* [Accessible Video: Caption, Search, and Compliance Strategies](https://www.linkedin.com/learning/accessible-video-caption-search-and-compliance-strategies/) (external website)
-* [Making a Case for Accessibility in Your Organization](https://www.linkedin.com/learning/making-a-case-for-accessibility-in-your-organization/) (external website)
-* [Accessibility-First Design](https://www.linkedin.com/learning/accessibility-first-design/) (external website)
-* [Designing Accessible Components In Figma](https://www.linkedin.com/learning/designing-accessible-components-in-figma/) (external website)
-* [Practical Accessibility for Designers](https://www.linkedin.com/learning/practical-accessibility-for-designers/) (external website)
-* [Supporting Coworkers with Disabilities](https://www.linkedin.com/learning/supporting-workers-with-disabilities/) (external website)
-* [Supporting Accessibility in a Hybrid Workplace](https://www.linkedin.com/learning/supporting-accessibility-in-a-hybrid-workplace/) (external website)
+* [Creating Accessible PDFs (external website)](https://www.linkedin.com/learning/creating-accessible-pdfs-14445392/) 
+* [Advanced Accessible PDFs (external website)](https://www.linkedin.com/learning/advanced-accessible-pdfs-21974253/) 
+* [iOS App Development: Accessibility (external website)](https://www.linkedin.com/learning/ios-app-development-accessibility/) 
+* [Android App Development: Accessibility (external website)](https://www.linkedin.com/learning/android-app-development-accessibility/) 
+* [React: Accessibility (external website)](https://www.linkedin.com/learning/react-accessibility/accessibility-in-react) 
+* [Creating Accessible Documents in Microsoft Office (external website)](https://www.linkedin.com/learning/creating-accessible-documents-in-microsoft-office/) 
+* [Microsoft Office Accessibility for Beginners (external website)](https://www.linkedin.com/learning/microsoft-office-accessibility-for-beginners/) 
+* [Accessibility for Web Design (external website)](https://www.linkedin.com/learning/accessibility-for-web-design/making-the-digital-world-accessible) 
+* [UX Foundations: Accessibility (external website)](https://www.linkedin.com/learning/ux-foundations-accessibility/) 
+* [UX Foundations: Usability Testing (external website)](https://www.linkedin.com/learning/ux-foundations-usability-testing/) 
+* [Foundations of Accessible Elearning (external website)](https://www.linkedin.com/learning/foundations-of-accessible-elearning/c) 
+* [Inclusive Learning Design (external website)](https://www.linkedin.com/learning/inclusive-learning-design/) 
+* [Simplifying Web Development with Accessibility Best Practices (external website)](https://www.linkedin.com/learning/simplifying-web-development-with-accessibility-best-practices) 
+* [WordPress: Accessibility (external website)](https://www.linkedin.com/learning/wordpress-accessibility-revision/accessibility-in-wordpress) 
+* [EPUB Accessibility Using InDesign (external website)](https://www.linkedin.com/learning/epub-accessibility-using-indesign/) 
+* [Digital Accessibility for the Modern Workplace (external website)](https://www.linkedin.com/learning/digital-accessibility-for-the-modern-workplace-with-audio-descriptions/) 
+* [Accessibility for Managers and Non-Designers (external website)](https://www.linkedin.com/learning/accessibility-for-managers-and-non-designers/) 
+* [Designing with the WCAG 2.2 Guidelines (external website)](https://www.linkedin.com/learning/designing-with-the-wcag-2-2-guidelines/) 
+* [Simplifying Web Development with Accessibility Best Practices (external website)](https://www.linkedin.com/learning/simplifying-web-development-with-accessibility-best-practices/) 
+* [Accessible Video: Caption, Search, and Compliance Strategies (external website)](https://www.linkedin.com/learning/accessible-video-caption-search-and-compliance-strategies/) 
+* [Making a Case for Accessibility in Your Organization (external website)](https://www.linkedin.com/learning/making-a-case-for-accessibility-in-your-organization/) 
+* [Accessibility-First Design (external website)](https://www.linkedin.com/learning/accessibility-first-design/) 
+* [Designing Accessible Components In Figma (external website)](https://www.linkedin.com/learning/designing-accessible-components-in-figma/) 
+* [Practical Accessibility for Designers (external website)](https://www.linkedin.com/learning/practical-accessibility-for-designers/) 
+* [Supporting Coworkers with Disabilities (external website)](https://www.linkedin.com/learning/supporting-workers-with-disabilities/) 
+* [Supporting Accessibility in a Hybrid Workplace (external website)](https://www.linkedin.com/learning/supporting-accessibility-in-a-hybrid-workplace/) 
 
 ### Pluralsight
 
-* [Meeting Web Accessibility Guidelines (Section 508/ WCAG 2.1)](hhttps://www.pluralsight.com/courses/web-accessibility-meeting-guidelines) (external website)
-* [UX Accessibility](https://www.pluralsight.com/courses/ux-accessibility) (external website)
-* [Accessibility: Testing and Screen Reader Use](https://www.pluralsight.com/courses/accessibility-testing-and-screen-reader) (external website)
+* [Meeting Web Accessibility Guidelines (Section 508/ WCAG 2.1) (external website)](hhttps://www.pluralsight.com/courses/web-accessibility-meeting-guidelines) 
+* [UX Accessibility (external website)](https://www.pluralsight.com/courses/ux-accessibility) 
+* [Accessibility: Testing and Screen Reader Use (external website)](https://www.pluralsight.com/courses/accessibility-testing-and-screen-reader) 
 
 ### Sara Soueidan
 
-[Online video course for web designers and developers](https://practical-accessibility.today/) (external website).[](coursera.org/learn/introduction-to-accessibility-and-universal-design)[](https://www.coursera.org/projects/test-accessibility-design-wave)
+[Online video course for web designers and developers (external website)](https://practical-accessibility.today/) 
 
 ### treehouse
 
-* [Web Accessibility Compliance](https://teamtreehouse.com/library/web-accessibility-compliance) (external website)
-* [Accessibility For Web Developers Course](https://teamtreehouse.com/library/accessibility-for-web-developers) (external website)
-* [Accessibility for UX Designers](https://teamtreehouse.com/library/accessibility-for-ux-designers-2) (external website)
+* [Web Accessibility Compliance (external website)](https://teamtreehouse.com/library/web-accessibility-compliance) 
+* [Accessibility For Web Developers Course (external website)](https://teamtreehouse.com/library/accessibility-for-web-developers) 
+* [Accessibility for UX Designers (external website)](https://teamtreehouse.com/library/accessibility-for-ux-designers-2) 
 
 ### Udacity
 
-Google via Udacity: [Web Accessibility](https://www.udacity.com/course/web-accessibility--ud891) (external website)
+Google via Udacity: [Web Accessibility (external website)](https://www.udacity.com/course/web-accessibility--ud891) 
 
 ### Udemy
 
-* [Introduction to Web Accessibility WCAG 2.1](https://www.udemy.com/course/introduction-to-web-accessibility-wcag21/) by Ross Mullen (external website)
-* [Master the 9 new WCAG 2.2 success criteria](https://www.udemy.com/course/master-the-wcag-22-criteria/) by Ross Mullen (external website)
-* [Introduction to WAI-ARIA for Beginners](https://www.udemy.com/course/introduction-to-wai-aria-for-beginners/) by Stefany Newman (external website)
-* [How To Design for Accessibility: for UX Designers (WCAG 2.2)](https://www.udemy.com/course/the-ux-designers-accessibility-guide/) (external website)
+* [Introduction to Web Accessibility WCAG 2.1 (external website)](https://www.udemy.com/course/introduction-to-web-accessibility-wcag21/) by Ross Mullen 
+* [Master the 9 new WCAG 2.2 success criteria (external website)](https://www.udemy.com/course/master-the-wcag-22-criteria/) by Ross Mullen 
+* [Introduction to WAI-ARIA for Beginners (external website)](https://www.udemy.com/course/introduction-to-wai-aria-for-beginners/) by Stefany Newman 
+* [How To Design for Accessibility: for UX Designers (WCAG 2.2) (external website)](https://www.udemy.com/course/the-ux-designers-accessibility-guide/) 
 
 ### Umbraco
 
-Umbraco Training: [Accessibility](https://umbraco.com/training/course-details/accessibility/?gad_source=1&gclid=Cj0KCQjw8MG1BhCoARIsAHxSiQlDb8JERHVy1sJly0Q_oEcbnOD3RvMKBntiFI93B7UEUFEMvdBSzrgaAiOVEALw_wcB) (external website).
+Umbraco Training: [Accessibility (external website)](https://umbraco.com/training/course-details/accessibility/?gad_source=1&gclid=Cj0KCQjw8MG1BhCoARIsAHxSiQlDb8JERHVy1sJly0Q_oEcbnOD3RvMKBntiFI93B7UEUFEMvdBSzrgaAiOVEALw_wcB) .
 
 ## Certification
 
 ### International Association of Accessibility Professionals (IAAP)
 
-* [Certified Professional in Accessibility Core Competencies (CPACC)](https://www.accessibilityassociation.org/s/certified-professional) (external website)
-* [Web Accessibility Specialist (WAS)](https://www.accessibilityassociation.org/s/wascertification) (external website)
-* [Certified Professional in Web Accessibility (CPWA)](<Certified Professional in Web Accessibility (CPWA)>) (external website)
-* [Accessible Document Specialist (ADS)](<Accessible Document Specialist (ADS)>) (external website)
+* [Certified Professional in Accessibility Core Competencies (CPACC) (external website)](https://www.accessibilityassociation.org/s/certified-professional) 
+* [Web Accessibility Specialist (WAS) (external website)](https://www.accessibilityassociation.org/s/wascertification) 
+* [Certified Professional in Web Accessibility (CPWA) (external website)](<Certified Professional in Web Accessibility (CPWA)>) 
+* [Accessible Document Specialist (ADS) (external website)](<Accessible Document Specialist (ADS)>) 
 
 ### Section 508 (United States)
 
-[Section 508 Certification](https://www.section508.gov/training-home/#Onlinetraining) (external website).
+[Section 508 Certification (external website)](https://www.section508.gov/training-home/#Onlinetraining).
 
 ## Suggest something
 
