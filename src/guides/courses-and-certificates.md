@@ -187,8 +187,8 @@ Umbraco Training: [Accessibility (external website)](https://umbraco.com/trainin
 
 * [Certified Professional in Accessibility Core Competencies (CPACC) (external website)](https://www.accessibilityassociation.org/s/certified-professional) 
 * [Web Accessibility Specialist (WAS) (external website)](https://www.accessibilityassociation.org/s/wascertification) 
-* [Certified Professional in Web Accessibility (CPWA) (external website)](<Certified Professional in Web Accessibility (CPWA)>) 
-* [Accessible Document Specialist (ADS) (external website)](<Accessible Document Specialist (ADS)>) 
+* [Certified Professional in Web Accessibility (CPWA) (external website)](https://www.accessibilityassociation.org/s/certified-professional-web-accessibility) 
+* [Accessible Document Specialist (ADS) (external website)](https://www.accessibilityassociation.org/s/accessible-document-specialist) 
 
 ### Section 508 (United States)
 
