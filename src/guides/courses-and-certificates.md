@@ -31,6 +31,7 @@ The following courses include free and paid for courses on digital accessibility
 * A11Y collective: [Try-out Class (external website)](https://www.a11y-collective.com/product/try-out-class/) 
 * GTx: [Information and Communication Technology (ICT) Accessibility (external website)](https://www.edx.org/learn/information-technology/the-georgia-institute-of-technology-information-and-communication-technology-ict-accessibility) 
 * Code Academy - [Learn CSS: Accessibility (external website)](https://www.codecademy.com/learn/learn-css-accessibility) 
+* Piccia Neri - [Accessibility Primer (external website)](https://piccianeri.com/free-accessibility-primer-course/) (with a eye to typography)
 
 ### Microsoft
 
