@@ -42,43 +42,43 @@ The following courses include free and paid for courses on digital accessibility
 
 ### OpenLearn
 
-* [Accessibility of eLearning](https://www.open.edu/openlearn/education-development/education-careers/accessibility-elearning/) (external website)
-* [Accessibility and inclusion in digital health](https://www.open.edu/openlearn/health-sports-psychology/accessibility-and-inclusion-digital-health/) (external website)
-* [Assistive technologies and online learning](https://www.open.edu/openlearn/education-development/assistive-technologies-and-online-learning/)
-* [Diversity and inclusion in the workplace](https://www.open.edu/openlearn/money-business/diversity-and-inclusion-the-workplace/)
+* [Accessibility of eLearning (external website)](https://www.open.edu/openlearn/education-development/education-careers/accessibility-elearning/) 
+* [Accessibility and inclusion in digital health (external website)](https://www.open.edu/openlearn/health-sports-psychology/accessibility-and-inclusion-digital-health/) 
+* [Assistive technologies and online learning (external website)](https://www.open.edu/openlearn/education-development/assistive-technologies-and-online-learning/)
+* [Diversity and inclusion in the workplace (external website)](https://www.open.edu/openlearn/money-business/diversity-and-inclusion-the-workplace/)
 
 ### Salesforce Trailhead
 
-* [Get Started with Web Accessibility](https://trailhead.salesforce.com/content/learn/trails/get-started-with-web-accessibility) (external website)
-* [Embed Equality in Your Business](https://trailhead.salesforce.com/content/learn/trails/embed-equality-in-your-business) (external website)
+* [Get Started with Web Accessibility (external website)](https://trailhead.salesforce.com/content/learn/trails/get-started-with-web-accessibility) 
+* [Embed Equality in Your Business (external website)](https://trailhead.salesforce.com/content/learn/trails/embed-equality-in-your-business) 
 
 ### Wix
 
-* WIXLearn - [Accessibility 101: Build your accessible website](https://www.wix.com/learn/courses/site-essentials/build-your-accessible-website) (external website)
+* WIXLearn - [Accessibility 101: Build your accessible website (external website)](https://www.wix.com/learn/courses/site-essentials/build-your-accessible-website)
 
-### [](https://www.coursera.org/projects/testing-for-web-accessibility-with-accessibility-insights)YouTube courses
+### YouTube courses
 
-* [Build a Website Accessibility Tester With JavaScript & Pa11y](https://www.youtube.com/watch?v=MO4vEAu3hKE) (external website)
-* [Accessibility in VS Code](https://www.youtube.com/watch?v=9biCDjSSwqw) (external website)
-* freeCodeCamp: [Learn Accessibility - Full a11y Tutorial](https://www.youtube.com/watch?v=e2nkq3h1P68) (external website)
+* [Build a Website Accessibility Tester With JavaScript & Pa11y (external website)](https://www.youtube.com/watch?v=MO4vEAu3hKE) 
+* [Accessibility in VS Code (external website)](https://www.youtube.com/watch?v=9biCDjSSwqw) 
+* freeCodeCamp: [Learn Accessibility - Full a11y Tutorial (external website)](https://www.youtube.com/watch?v=e2nkq3h1P68) 
 
 ### Periodically available
 
-* [CurtinX: Disability and Digital Media: Accessibility, Representation and Inclusion](https://www.edx.org/learn/dei-diversity-equity-inclusion/curtin-university-disability-and-digital-media-accessibility-representation-and-inclusion) (external website)
+* [CurtinX: Disability and Digital Media: Accessibility, Representation and Inclusion (external website)](https://www.edx.org/learn/dei-diversity-equity-inclusion/curtin-university-disability-and-digital-media-accessibility-representation-and-inclusion) 
 
 ## Paid courses
 
 ### A11Y collective
 
-* The [accessible development bundle](https://www.a11y-collective.com/product/the-accessible-development-bundle/) (external website) which can also be bought separately:
+* The [accessible development bundle (external website)](https://www.a11y-collective.com/product/the-accessible-development-bundle/) which can also be bought separately:
 
-  * [Web accessibility, the basics](https://www.a11y-collective.com/product/web-accessibility-the-basics/) (external website)
-  * [](https://www.a11y-collective.com/product/web-accessibility-the-basics/)[Accessible code](https://www.a11y-collective.com/product/accessible-code/) (external website)
-  * [](https://www.a11y-collective.com/product/accessible-code/)[Advanced Accessible Components](https://www.a11y-collective.com/product/advanced-accessible-components/) (external website)
-  * [](https://www.a11y-collective.com/product/advanced-accessible-components/)[ARIA explained](https://www.a11y-collective.com/product/aria-explained/) (external website)
-* [](https://www.a11y-collective.com/product/web-accessibility-the-basics/) [Accessible design, the basics](https://www.a11y-collective.com/product/accessible-design-the-basics/) (external website)
-* [Writing accessible content for the web](https://www.a11y-collective.com/product/writing-accessible-content-for-the-web/) (external website)
-* [The A11Y Collective essentials](https://www.a11y-collective.com/product/the-a11y-collective-essentials/) (external website)
+  * [Web accessibility, the basics (external website)](https://www.a11y-collective.com/product/web-accessibility-the-basics/) 
+  * [Accessible code (external website)](https://www.a11y-collective.com/product/accessible-code/) 
+  * [Advanced Accessible Components (external website)](https://www.a11y-collective.com/product/advanced-accessible-components/) 
+  * [ARIA explained (external website)](https://www.a11y-collective.com/product/aria-explained/) 
+* [Accessible design, the basics (external website)](https://www.a11y-collective.com/product/accessible-design-the-basics/) 
+* [Writing accessible content for the web (external website)](https://www.a11y-collective.com/product/writing-accessible-content-for-the-web/) 
+* [The A11Y Collective essentials (external website)](https://www.a11y-collective.com/product/the-a11y-collective-essentials/) 
 
 ### British Sign Language
 
