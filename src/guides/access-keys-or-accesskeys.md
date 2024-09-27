@@ -18,11 +18,11 @@ Web browser Access Keys were developed to enable a computer user to go to a part
 
 ## History
 
-In 1999 [Access Keys](https://en.wikipedia.org/wiki/Access_key) were first introduced and most browsers now support them.
+In 1999 [Access Keys (external website)](https://en.wikipedia.org/wiki/Access_key) were first introduced and most browsers now support them.
 
 ## UK Government accesskeys standard
 
-The UK Government published in May 2002 the [Building in universal accessibility + checklist](https://webarchive.nationalarchives.gov.uk/ukgwa/20100703000205/http://archive.cabinetoffice.gov.uk/e-government/resources/handbook/html/2-4.asp) (which was archived on 3 July 2010) and defined the [UK Government accesskeys standard](https://webarchive.nationalarchives.gov.uk/ukgwa/20100703000205/http://archive.cabinetoffice.gov.uk/e-government/resources/handbook/html/2-4.asp#2.4.4) which recommends the following keys and their use:
+The UK Government published in May 2002 the [Building in universal accessibility + checklist (external website)](https://webarchive.nationalarchives.gov.uk/ukgwa/20100703000205/http://archive.cabinetoffice.gov.uk/e-government/resources/handbook/html/2-4.asp) (which was archived on 3 July 2010) and defined the [UK Government accesskeys standard (external website)](https://webarchive.nationalarchives.gov.uk/ukgwa/20100703000205/http://archive.cabinetoffice.gov.uk/e-government/resources/handbook/html/2-4.asp#2.4.4) which recommends the following keys and their use:
 
 <table>
   <caption>UK Government accesskeys</caption>
@@ -178,17 +178,17 @@ Remember access keys are a fallback for things that do not have a standard activ
 
 ## Useful links
 
-* [Access Keys](https://en.wikipedia.org/wiki/Access_key)
-* [WHATWG community HTML Living Standard](https://html.spec.whatwg.org/multipage/)
-* [WHATWG community The accesskey attribute](https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute) 
-* [W3C Accesskey](https://www.w3.org/WAI/PF/HTML/wiki/Accesskey)
-* [Shared Techniques wiki for the W3C Mobile Web Initative Best Practices AccessKeys](https://www.w3.org/2005/MWI/BPWG/techs/AccessKeys.html)
-* [W3 Schools Global Access Keys](https://www.w3schools.com/tags/att_global_accesskey.asp)
-* [MDN Web Docs Access Key](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey)
-* [WebAim Accesskey](https://webaim.org/techniques/keyboard/accesskey)
-* [Why Access Keys Are Mostly Useless for Accessibility Purposes](https://www.thesitewizard.com/webdesign/access-keys-are-useless.shtml)
-* [Usable Accessibility: Making Web Sites Work Well for People with Disabilities](https://www.uxmatters.com/mt/archives/2009/02/usable-accessibility-making-web-sites-work-well-for-people-with-disabilities.php)
-* [Time to revisit accesskey?](https://tink.uk/time-to-revisit-accesskey/)
-* [WUHCAG - Keyboard (2.1.1 – Level A)](https://www.wuhcag.com/keyboard/)
-* [UK Government accesskeys standard](https://webarchive.nationalarchives.gov.uk/ukgwa/20100703000205/http://archive.cabinetoffice.gov.uk/e-government/resources/handbook/html/2-4.asp#2.4.4)
-* [HOBO SEO Consultancy - UK Government Access Keys Standard For Websites](<HOBO SEO Consultancy - UK Government Access Keys Standard For Websites>)
+* [Access Keys (external website)](https://en.wikipedia.org/wiki/Access_key)
+* [WHATWG community HTML Living Standard (external website)](https://html.spec.whatwg.org/multipage/)
+* [WHATWG community The accesskey attribute (external website)](https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute) 
+* [W3C Accesskey (external website)](https://www.w3.org/WAI/PF/HTML/wiki/Accesskey)
+* [Shared Techniques wiki for the W3C Mobile Web Initative Best Practices AccessKeys (external website)](https://www.w3.org/2005/MWI/BPWG/techs/AccessKeys.html)
+* [W3 Schools Global Access Keys (external website)](https://www.w3schools.com/tags/att_global_accesskey.asp)
+* [MDN Web Docs Access Key (external website)](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey)
+* [WebAim Accesskey (external website)](https://webaim.org/techniques/keyboard/accesskey)
+* [Why Access Keys Are Mostly Useless for Accessibility Purposes (external website)](https://www.thesitewizard.com/webdesign/access-keys-are-useless.shtml)
+* [Usable Accessibility: Making Web Sites Work Well for People with Disabilities (external website)](https://www.uxmatters.com/mt/archives/2009/02/usable-accessibility-making-web-sites-work-well-for-people-with-disabilities.php)
+* [Time to revisit accesskey? (external website)](https://tink.uk/time-to-revisit-accesskey/)
+* [WUHCAG - Keyboard (2.1.1 – Level A) (external website)](https://www.wuhcag.com/keyboard/)
+* [UK Government accesskeys standard (external website)](https://webarchive.nationalarchives.gov.uk/ukgwa/20100703000205/http://archive.cabinetoffice.gov.uk/e-government/resources/handbook/html/2-4.asp#2.4.4)
+* [HOBO SEO Consultancy - UK Government Access Keys Standard For Websites (external website)](<HOBO SEO Consultancy - UK Government Access Keys Standard For Websites>)
