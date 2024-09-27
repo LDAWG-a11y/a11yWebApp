@@ -15,17 +15,17 @@ isGuide: true
 
 This guide provides useful information on when to use captions and transcripts, and how to write captions and transcripts that are both meaningful and understandable for all users.
 
-Captions and subtitles can often be used to describe the same thing, so we will use captions to refer to [monolingual subtitles](https://www.web-translations.com/blog/audiovisual-content-monolingual-subtitles/) (external website) – spoken audio that is in the same language (same-language subtitles), and subtitles for [intralingual subtitles](https://www.web-translations.com/blog/audiovisual-content-interlingual-subtitles/) (external website) - spoken audio that is translated into a different language.
+Captions and subtitles can often be used to describe the same thing, so we will use captions to refer to [monolingual subtitles (external website)](https://www.web-translations.com/blog/audiovisual-content-monolingual-subtitles/) – spoken audio that is in the same language (same-language subtitles), and subtitles for [intralingual subtitles (external website)](https://www.web-translations.com/blog/audiovisual-content-interlingual-subtitles/) - spoken audio that is translated into a different language.
 
 Subtitles are not always an accommodation required for accessibility, but captions are needed for accessibility.
 
-Please note that what the UK calls subtitles are called “closed captions” or “subtitles for the deaf and hard of hearing (SDH)” In the USA, and [Ofcom discovered that 7.5 million people in the UK (18% of the population) used closed captions](https://www.3playmedia.com/blog/who-uses-closed-captions-not-just-the-deaf-or-hard-of-hearing/) (external website), and of that 7.5 million, only 1.5 million were d/Deaf or hard of hearing.
+Please note that what the UK calls subtitles are called “closed captions” or “subtitles for the deaf and hard of hearing (SDH)” In the USA, and [Ofcom discovered that 7.5 million people in the UK (18% of the population) used closed captions (external website)](https://www.3playmedia.com/blog/who-uses-closed-captions-not-just-the-deaf-or-hard-of-hearing/), and of that 7.5 million, only 1.5 million were d/Deaf or hard of hearing.
 
 ## What are captions and transcripts for
 
 We use captions to provide the content of audio (whether audio only or video) to those who are Deaf, and other people who cannot hear audio.
 
-Remember that they can be used by those who can process written information better than they can process audio. This could be someone with dyspraxia or autism. 3Play Media says in an article that [80% of people who use close captions are not hard of hearing](http://www.3playmedia.com/2014/05/27/ofcom-study-80-people-who-use-closed-captions-are-not-hard-hearing/) (external website).
+Remember that they can be used by those who can process written information better than they can process audio. This could be someone with dyspraxia or autism. 3Play Media says in an article that [80% of people who use close captions are not hard of hearing (external website)](http://www.3playmedia.com/2014/05/27/ofcom-study-80-people-who-use-closed-captions-are-not-hard-hearing/).
 
 In the United States, one in eight people have a functional hearing limitation and this will only increase as the average age increases.
 
@@ -98,17 +98,17 @@ Has the video any audio information that helps understand the visual information
 
 ## Automated captions do not meet requirements
 
-Unless the text has been checked completely and is fully accurate it will not meet accessibility requirements or user needs. YouTube has an approximately 60-70% accuracy. This means that [1 in 3 words can be wrong](https://itss.d.umn.edu/centers-locations/media-hub/media-accessibility-services/captioning-and-captioning-services/correct) (external website). Rhett & Link’s YouTube video (external website) is a great example of what uncorrected captions are like.
+Unless the text has been checked completely and is fully accurate it will not meet accessibility requirements or user needs. YouTube has an approximately 60-70% accuracy. This means that [1 in 3 words can be wrong (external website)](https://itss.d.umn.edu/centers-locations/media-hub/media-accessibility-services/captioning-and-captioning-services/correct). [Rhett & Link’s YouTube video (external website)](https://www.youtube.com/watch?v=wY0F31G-i9Y&list=PLA220BA20D4D3DE46&index=4) is a great example of what uncorrected captions are like.
 
 Remember, missing one word that is in the spoken audio could contradict the content.
 
 ## Tools and skills
 
-A transcription of an audio file is not easy especially if you do not have the skill or software as adding timestamps to the captions are simple but monotonous and requires the knowledge of which non-verbal information to include and [describe](https://www.makethingsaccessible.com/guides/audio-description-basics/#basic-principles) (external website).
+A transcription of an audio file is not easy especially if you do not have the skill or software as adding timestamps to the captions are simple but monotonous and requires the knowledge of which non-verbal information to include and [describe (external website)](https://www.makethingsaccessible.com/guides/audio-description-basics/#basic-principles).
 
 ## Caption creation
 
-The Web Video Text Tracks or [WebVTT](https://www.w3.org/TR/webvtt/) (external website) format is the most common format, and other formats include [SRT or SubRip](https://en.wikipedia.org/wiki/SubRip) (external website), and Timed Text Markup Language or [TTML](https://www.w3.org/TR/ttml2/) (external website).
+The Web Video Text Tracks or [WebVTT (external website)](https://www.w3.org/TR/webvtt/)  format is the most common format, and other formats include [SRT or SubRip (external website)](https://en.wikipedia.org/wiki/SubRip), and Timed Text Markup Language or [TTML (external website)](https://www.w3.org/TR/ttml2/).
 
 ### Example file with identified speakers
 
@@ -140,9 +140,9 @@ Please note: You cannot edit other people’s YouTube videos; you only edit your
 4. Provide information about other audio information, such as significant sound effects. Add these descriptions of sound in square brackets, for example \[music] or \[laughter], to help people understand what is occurring
 5. Ensure the captions are in sync with the audio
 
-[Google's Edit Captions documentation](https://support.google.com/youtube/answer/2734705) (external website),has instructions and the video [How To Edit Automatic Captions in YouTube](https://www.youtube.com/watch?v=Jyl9dsNkyoY) (external website), provide a walkthrough of the process.
+[Google's Edit Captions documentation (external website)](https://support.google.com/youtube/answer/2734705),has instructions and the video [How To Edit Automatic Captions in YouTube (external website)](https://www.youtube.com/watch?v=Jyl9dsNkyoY), provide a walkthrough of the process.
 
-You can also [replace or hide automatic captions](https://www.3playmedia.com/blog/remove-automatic-captions-youtube-videos/) (external website).
+You can also [replace or hide automatic captions (external website)](https://www.3playmedia.com/blog/remove-automatic-captions-youtube-videos/).
 
 #### Captioning tools
 
@@ -156,21 +156,21 @@ Transcripts are read by Google which makes it possible for Google to index and r
 
 Users need to be able to easily understand that a transcript is available, and be able to easily get to the transcript. I would recommend putting the transcript itself or a link to the transcript right underneath the video.
 
-* For any videos embedded on your website, include the transcript on the same page: [example text transcript with description of visuals](https://www.w3.org/WAI/perspective-videos/captions/#transcript) (external website) at the bottom of same page as the video
-* With regards videos hosted elsewhere, have the transcript on a separate web page: [example podcast transcript on separate page](https://www.w3.org/WAI/highlights/200606wcag2interview.html) (external website)
+* For any videos embedded on your website, include the transcript on the same page: [example text transcript with description of visuals (external website)](https://www.w3.org/WAI/perspective-videos/captions/#transcript) at the bottom of same page as the video
+* With regards videos hosted elsewhere, have the transcript on a separate web page: [example podcast transcript on separate page (external website)](https://www.w3.org/WAI/highlights/200606wcag2interview.html)
 
 Please note: the example transcript above is provided as plain text on a simple page, which is easily accessed. It is not a hidden as it can be on YouTube.
 
 Remember to include a link back to the original page provided on the top of the transcript so that users can go back to easily.
 
-* [W3C video notes](https://www.w3.org/2008/06/video-notes#q6)  (external website)
-* [Deque University text transcript tips](https://dequeuniversity.com/tips/text-transcript) (external website)
+* [W3C video notes (external website)](https://www.w3.org/2008/06/video-notes#q6)  
+* [Deque University text transcript tips (external website)](https://dequeuniversity.com/tips/text-transcript)
 
 ## Subtitles
 
-* [BBC Subtitle Guidelines](https://www.bbc.co.uk/accessibility/forproducts/guides/subtitles/) (external website)
-* [How do I create subtitles? - Academy Guides BBC](https://www.bbc.com/academy-guides/how-do-i-create-subtitles) (external website)
-* [Ofcom guidelines](https://www.ofcom.org.uk/__data/assets/pdf_file/0025/212776/provision-of-tv-access-services-guidelines.pdf) (PDF on external website)
+* [BBC Subtitle Guidelines (external website)](https://www.bbc.co.uk/accessibility/forproducts/guides/subtitles/)
+* [How do I create subtitles? - Academy Guides BBC (external website)](https://www.bbc.com/academy-guides/how-do-i-create-subtitles)
+* [Ofcom guidelines (external website)](https://www.ofcom.org.uk/__data/assets/pdf_file/0025/212776/provision-of-tv-access-services-guidelines.pdf)
 
 ## Wrapping up
 
@@ -178,13 +178,13 @@ Hopefully this guide has helped you to understand a bit more of using captions a
 
 ## Useful links
 
-* [Localising Audiovisual Content: Monolingual Subtitles](https://www.web-translations.com/blog/audiovisual-content-monolingual-subtitles/) (external website)
-* [Localising Audiovisual Content: Interlingual Subtitles](https://www.web-translations.com/blog/audiovisual-content-interlingual-subtitles/) (external website)
-* [Captions/Subtitles](https://www.w3.org/WAI/media/av/captions/) (external website)
-* [Captions, Transcripts, and Audio Descriptions](https://webaim.org/techniques/captions/) (external website)
-* [A guide to using subtitles, captions and transcripts for accessibility](https://business.scope.org.uk/article/subtitles-closed-captions-transcripts-and-accessibility/) (external website)
-* [Guide to Transcripts and Captions](https://www.ucop.edu/electronic-accessibility/_files/transcripts-captions-guidelines.pdf) (PDF 35kb)(external website)
-* [How Many People Use Captions and Subtitles?](https://www.3playmedia.com/blog/who-uses-closed-captions-not-just-the-deaf-or-hard-of-hearing/) (external website)
-* [Resources from StageText](https://www.stagetext.org/for-venues/resources/) (external website)
-* [A Guide to the Visual Language of Closed Captions and Subtitles](https://www.linkedin.com/pulse/guide-visual-language-closed-captions-subtitles-gareth-ford-williams/) (external website)
-* [Create closed captions for a video - Microsoft PowerPoint](https://support.microsoft.com/en-us/office/create-closed-captions-for-a-video-b1cfb30f-5b00-4435-beeb-2a25e115024b#PickTab=Windows) (external website)
+* [Localising Audiovisual Content: Monolingual Subtitles (external website)](https://www.web-translations.com/blog/audiovisual-content-monolingual-subtitles/) 
+* [Localising Audiovisual Content: Interlingual Subtitles (external website)](https://www.web-translations.com/blog/audiovisual-content-interlingual-subtitles/) 
+* [Captions/Subtitles (external website)](https://www.w3.org/WAI/media/av/captions/) 
+* [Captions, Transcripts, and Audio Descriptions (external website)](https://webaim.org/techniques/captions/)
+* [A guide to using subtitles, captions and transcripts for accessibility (external website)](https://business.scope.org.uk/article/subtitles-closed-captions-transcripts-and-accessibility/)
+* [Guide to Transcripts and Captions (external website)](https://www.ucop.edu/electronic-accessibility/_files/transcripts-captions-guidelines.pdf) (PDF 35kb)
+* [How Many People Use Captions and Subtitles? (external website)](https://www.3playmedia.com/blog/who-uses-closed-captions-not-just-the-deaf-or-hard-of-hearing/) 
+* [Resources from StageText (external website)](https://www.stagetext.org/for-venues/resources/)
+* [A Guide to the Visual Language of Closed Captions and Subtitles (external website)](https://www.linkedin.com/pulse/guide-visual-language-closed-captions-subtitles-gareth-ford-williams/)
+* [Create closed captions for a video - Microsoft PowerPoint (external website)](https://support.microsoft.com/en-us/office/create-closed-captions-for-a-video-b1cfb30f-5b00-4435-beeb-2a25e115024b#PickTab=Windows)
