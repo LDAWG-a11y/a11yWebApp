@@ -417,7 +417,7 @@ This is because the embedded video does not have subtitles.
 This cannot be fixed as it is an external third party video. Options include:
 
 * contacting the owner of the video and asking if they will add subtitles
-* creating a transcript of the video and adding the transcript immediately below the video, I used <https://soundtype.ai/> (external website) downloaded to my mobile phone to do this
+* creating a transcript of the video and adding the transcript immediately below the video, I used [https://soundtype.ai/ (external website)](https://soundtype.ai/) downloaded to my mobile phone to do this
 * removing the video from the presentation, if the two previous suggestions are not available	
 
 #### Hard-to-Read Text Contrast
@@ -717,7 +717,7 @@ The document has now fully passed PAC 2024.
 * [Accessible Document Basics](https://www.makethingsaccessible.com/guides/accessible-document-basics/)
 * [How to handle blank data cells in accessible tables (external website)](https://www.accessibilityunraveled.com/pdf-remediation/how-to-handle-blank-data-cells-in-accessible-tables/) 
 * [Accessibility Checker and Accessibility Check](https://www.makethingsaccessible.com/guides/accessibility-checker-and-accessibility-check/)
-* [Rules for the Accessibility Checke (external website)r](https://support.microsoft.com/en-gb/office/rules-for-the-accessibility-checker-651e08f2-0fc3-4e10-aaca-74b4a67101c1)
+* [Rules for the Accessibility Checker (external website)](https://support.microsoft.com/en-gb/office/rules-for-the-accessibility-checker-651e08f2-0fc3-4e10-aaca-74b4a67101c1)
 * [Improve accessibility with the Accessibility Checker (external website)](https://support.microsoft.com/en-gb/office/improve-accessibility-with-the-accessibility-checker-a16f6de0-2f39-4a2b-8bd8-5ad801426c7f)
 * [TPGi’s Colour Contrast Analyzer (external website)](https://www.tpgi.com/color-contrast-checker/)
 * [Writing for GOV.UK (external website)](https://www.gov.uk/guidance/content-design/writing-for-gov-uk)
