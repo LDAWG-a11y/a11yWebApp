@@ -353,7 +353,7 @@ The Accessibility Checker does not test for the title in PowerPoint so this need
 
 ### Colour contrast
 
-Use [Colour Contrast Analyser (CCA) (external website)](https://www.tpgi.com/color-contrast-checker/) (external website) to test the text colour contrast manually and change any colours that fail.
+Use [Colour Contrast Analyser (CCA) (external website)](https://www.tpgi.com/color-contrast-checker/) to test the text colour contrast manually and change any colours that fail.
 
 ### Using colour for meaning
 
