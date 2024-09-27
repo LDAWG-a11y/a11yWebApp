@@ -15,10 +15,10 @@ isGuide: true
 ---
 ## Before starting
 
-* Make sure that your version of LibreOffice is Version 7 or above – check by going Help -> About LibreOffice, or if not installed, [download LibreOffice](https://www.libreoffice.org/download/download-libreoffice/) (external website)
+* Make sure that your version of LibreOffice is Version 7 or above – check by going Help -> About LibreOffice, or if not installed, [download LibreOffice (external website)](https://www.libreoffice.org/download/download-libreoffice/)
 * Older versions may require the tool to be turned on as an Advanced option (“Enable experimental features (may be unstable)”) but it is inbuilt in more recent versions
 * Make sure that Adobe Acrobat Pro is up-to-date
-* Download [PAC 2024](https://pac.pdf-accessibility.org/en) (external website)
+* Download [PAC 2024 (external website)](https://pac.pdf-accessibility.org/en)
 
 ## Demo file
 
@@ -52,7 +52,7 @@ While Title is the only field that is required in an accessible PDF, it is worth
 ### Hyperlinks
 
 * The destination of links should be communicated accurately and clearly
-* Use URL shortening services such as [Bitly](https://bitly.com/pages/landing/bringing-us-all-a-bit-closer) (external website) or [TinyURL](https://tinyurl.com/app) (external website) if the document is to be printed, if not, make sure the link text is meaningful (link shorteners can be viewed as a security risk as the destination cannot be seen unless the link has been clicked!)
+* Use URL shortening services such as [Bitly (external website)](https://bitly.com/pages/landing/bringing-us-all-a-bit-closer) or [TinyURL (external website)](https://tinyurl.com/app) if the document is to be printed, if not, make sure the link text is meaningful (link shorteners can be viewed as a security risk as the destination cannot be seen unless the link has been clicked!)
 * Screen readers will generally provide a list of links so make sure the link text is meaningful
 * Do not use “click here” or “More information” for all the link text because it will not be possible to distinguish the links from each other
 
@@ -99,7 +99,7 @@ Content within the document written in a different language to the document’s 
 * Use common words. Complicated longer words (8 or 9 letters) will cause readers to skip shorter words (3,4, or 5 letters) that follow
 * Use an **Active** voice rather than a **Passive** voice
 * Where possible, use words containing one to two syllables
-* Aim the language used at the level of a 9 year old as [recommended by GOV.UK](https://www.gov.uk/guidance/content-design/writing-for-gov-uk) (external website) – remember in the UK, 7.1 million adults read at, or below, the level of an average 9 year old. [WCAG 3.15 Reading Level (AAA)](https://www.w3.org/WAI/WCAG22/quickref/?versions=2.1#reading-level) (external website) recommends providing a simplified version of the text if it requires a reading age of more than 12 years old
+* Aim the language used at the level of a 9 year old as [recommended by GOV.UK (external website)](https://www.gov.uk/guidance/content-design/writing-for-gov-uk) – remember in the UK, 7.1 million adults read at, or below, the level of an average 9 year old. [WCAG 3.15 Reading Level (AAA) (external website)](https://www.w3.org/WAI/WCAG22/quickref/?versions=2.1#reading-level) recommends providing a simplified version of the text if it requires a reading age of more than 12 years old
 * Use contractions, words made up of two short words joined with an apostrophe such as I’ve, can’t etc.
 * Do not use double negatives
 * Explain the unusual, to help give full information
@@ -112,8 +112,8 @@ Content within the document written in a different language to the document’s 
 
 ### Further help
 
-* Free services, guides, and resources to help are available from the [Plain English Campaign](https://www.plainenglish.co.uk/) (external website)
-* Measure the readability of the text using [Hemingway Editor](https://hemingwayapp.com/) (external website)
+* Free services, guides, and resources to help are available from the [Plain English Campaign (external website)](https://www.plainenglish.co.uk/)
+* Measure the readability of the text using [Hemingway Editor (external website)](https://hemingwayapp.com/)
 
 ### Font
 
@@ -127,11 +127,11 @@ Content within the document written in a different language to the document’s 
 ### Colour
 
 * Do NOT use colour by itself to show meaning
-* Make sure that there is adequate contrast between background and text – use [TPGi’s Colour Contrast Analyzer (CCA)](https://www.tpgi.com/color-contrast-checker/) (external website) to check contrast
+* Make sure that there is adequate contrast between background and text – use [TPGi’s Colour Contrast Analyzer (CCA) (external website)](https://www.tpgi.com/color-contrast-checker/) to check contrast
 
 ## LibreOffice Accessibility Check
 
-[Accessibility Check](https://help.libreoffice.org/latest/sq/text/swriter/01/accessibility_check.html) (external website) tests LibreOffice Writer documents for the following potential accessibility issues:
+[Accessibility Check (external website)](https://help.libreoffice.org/latest/sq/text/swriter/01/accessibility_check.html) tests LibreOffice Writer documents for the following potential accessibility issues:
 
 * Check that the document title is set
 * Check that the document language is set, or that all styles that are in use, have the language set
@@ -303,7 +303,7 @@ The second error being reported is “Formatting: The text formatting conveys ad
 * There must never be blank heading cells so add an applicable title to the column heading even if [WCAG does allow for the first cell A1 to be blank](https://www.w3.org/WAI/tutorials/tables/) (external website) 
 
   ![Distance added, top row and first column made into Table Heading](src/guideImg/20-distance-added-top-row-and-first-column-made-into-table-heading.png)
-* Different [screen readers will announce empty cells in different ways](https://www.accessibilityunraveled.com/pdf-remediation/how-to-handle-blank-data-cells-in-accessible-tables/) (external website) so the best solutions are to use “Not applicable” or “No value” 
+* Different [screen readers will announce empty cells in different ways (external website)](https://www.accessibilityunraveled.com/pdf-remediation/how-to-handle-blank-data-cells-in-accessible-tables/) so the best solutions are to use “Not applicable” or “No value” 
 
   ![Not applicable and No value used where appropriate to replace empty table cells](src/guideImg/21-not-applicable-and-no-value-used-where-appropriate-to-replace-empty-table-cells.png)
 
@@ -382,7 +382,7 @@ Select text to be used as heading and style as appropriate.
 * Select text and change the text colour
 
   ![text is now of a colour that is not too low](src/guideImg/36-text-is-now-of-a-colour-that-is-not-too-low.png)
-* [TPGi’s Colour Contrast Analyzer](https://www.tpgi.com/color-contrast-checker/) (external website) can be used to check the contrast between the text colour and the background
+* [TPGi’s Colour Contrast Analyzer (external website)](https://www.tpgi.com/color-contrast-checker/) can be used to check the contrast between the text colour and the background
 
 #### Avoid newlines to create space
 
@@ -478,22 +478,22 @@ Note: to be able to remediate PDFs, Adobe Acrobat Pro or equivalent PDF editing 
 
 ## Useful links
 
-* [LibreOffice](https://www.libreoffice.org/download/download-libreoffice/) (external website)
-* [PAC 2024](https://pac.pdf-accessibility.org/en) (external website)
-* [TPGi’s Colour Contrast Analyzer](https://www.tpgi.com/color-contrast-checker/) (external website)
-* [Writing for GOV.UK](https://www.gov.uk/guidance/content-design/writing-for-gov-uk) (external website)
-* [Plain English Campaign](https://www.plainenglish.co.uk/) (external website)
-* [Hemingway Editor](https://hemingwayapp.com/) (external website)
-* [WebFX Readability Test](https://www.webfx.com/tools/read-able/) (external website)
-* [Plain English – Advisory eLaHub](https://www.elahub.net/9-readability/) (external website)
-* [WCAG 3.15 Reading Level (AAA)](https://www.w3.org/WAI/WCAG22/quickref/?versions=2.1#reading-level) (external website)
+* [LibreOffice (external website)](https://www.libreoffice.org/download/download-libreoffice/)
+* [PAC 2024 (external website)](https://pac.pdf-accessibility.org/en)
+* [TPGi’s Colour Contrast Analyzer (external website)](https://www.tpgi.com/color-contrast-checker/)
+* [Writing for GOV.UK (external website)](https://www.gov.uk/guidance/content-design/writing-for-gov-uk)
+* [Plain English Campaign (external website)](https://www.plainenglish.co.uk/)
+* [Hemingway Editor (external website)](https://hemingwayapp.com/)
+* [WebFX Readability Test (external website)](https://www.webfx.com/tools/read-able/) 
+* [Plain English – Advisory eLaHub (external website)](https://www.elahub.net/9-readability/)
+* [WCAG 3.15 Reading Level (AAA) (external website)](https://www.w3.org/WAI/WCAG22/quickref/?versions=2.1#reading-level)
 * [Accessible Document Basics](https://www.makethingsaccessible.com/guides/accessible-document-basics/)
 * [Creating meaningful alternative text](https://www.makethingsaccessible.com/guides/creating-meaningful-alternative-text/)
-* [Alt Text in LibreOffice](https://help.libreoffice.org/24.2/en-GB/text/shared/01/05190100.html?System=WIN&DbPAR=WRITER&HID=cui/ui/objecttitledescdialog/dialog-action_area5#bm_id1826227) (external website)
-* [Using Tables within LibreOffice Writer](https://books.libreoffice.org/en/WG73/WG7313-Tables.html) (external website)
-* [Working with Tables in LibreOffice](https://wiki.documentfoundation.org/images/1/1d/WG4009-WorkingWithTables.odt) (external website)
-* [How to handle blank data cells in accessible tables](https://www.accessibilityunraveled.com/pdf-remediation/how-to-handle-blank-data-cells-in-accessible-tables/) (external website)
-* [Accessibility Check](https://help.libreoffice.org/latest/sq/text/swriter/01/accessibility_check.html) (external website)
-* [Exporting to a PDF](https://help.libreoffice.org/latest/en-US/text/shared/01/ref_pdf_export.html) (external website)
-* [Possibly inappropriate use of a "Figure" structure element when using PAC 2021](https://www.youtube.com/watch?v=11jqU2WbKno) (external website)
-* [Accessibility Checker and Accessibility Check](https://www.makethingsaccessible.com/guides/accessibility-checker-and-accessibility-check/)
+* [Alt Text in LibreOffice (external website)](https://help.libreoffice.org/24.2/en-GB/text/shared/01/05190100.html?System=WIN&DbPAR=WRITER&HID=cui/ui/objecttitledescdialog/dialog-action_area5#bm_id1826227) 
+* [Using Tables within LibreOffice Writer (external website)](https://books.libreoffice.org/en/WG73/WG7313-Tables.html)
+* [Working with Tables in LibreOffice (external website)](https://wiki.documentfoundation.org/images/1/1d/WG4009-WorkingWithTables.odt)
+* [How to handle blank data cells in accessible tables (external website)](https://www.accessibilityunraveled.com/pdf-remediation/how-to-handle-blank-data-cells-in-accessible-tables/)
+* [Accessibility Check (external website)](https://help.libreoffice.org/latest/sq/text/swriter/01/accessibility_check.html)
+* [Exporting to a PDF (external website)](https://help.libreoffice.org/latest/en-US/text/shared/01/ref_pdf_export.html)
+* [Possibly inappropriate use of a "Figure" structure element when using PAC 2021 (external website)](https://www.youtube.com/watch?v=11jqU2WbKno)
+* [Accessibility Checker and Accessibility Check (external website)](https://www.makethingsaccessible.com/guides/accessibility-checker-and-accessibility-check/)
