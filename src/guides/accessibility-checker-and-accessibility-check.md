@@ -101,7 +101,7 @@ There are slight differences in what the tools check for, but they need to be us
 	</tr>
 	<tr>
       <th scope="row">Use of styles and built-in headings</th>
-      <td>This is confusing because the <a href="https://support.microsoft.com/en-gb/office/rules-for-the-accessibility-checker-651e08f2-0fc3-4e10-aaca-74b4a67101c1#ID0EDL">Rules</a> say that “Content is organized with headings and/or a Table of Contents (TOC)” and will display a Tip but the <a href="https://support.microsoft.com/en-gb/office/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d">make your Word documents accessible</a> says this has to be done visually</td>
+      <td>This is confusing because the [Rules (external website)](https://support.microsoft.com/en-gb/office/rules-for-the-accessibility-checker-651e08f2-0fc3-4e10-aaca-74b4a67101c1#ID0EDL) say that “Content is organized with headings and/or a Table of Contents (TOC)” and will display a Tip but the [make your Word documents accessible (external website)](https://support.microsoft.com/en-gb/office/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d) says this has to be done visually</td>
       <td>No</td>
       <td>Yes</td>
 	</tr>
@@ -194,5 +194,5 @@ There are slight differences in what the tools check for, but they need to be us
 
 ## Useful links
 
-* [Rules for the Accessibility Checker](https://support.microsoft.com/en-gb/office/rules-for-the-accessibility-checker-651e08f2-0fc3-4e10-aaca-74b4a67101c1) (external website) 
-* [LibreOffice Accessibility Check](https://help.libreoffice.org/latest/sq/text/swriter/01/accessibility_check.html) (external website)
+* [Rules for the Accessibility Checker (external website) ](https://support.microsoft.com/en-gb/office/rules-for-the-accessibility-checker-651e08f2-0fc3-4e10-aaca-74b4a67101c1) 
+* [LibreOffice Accessibility Check (external website) ](https://help.libreoffice.org/latest/sq/text/swriter/01/accessibility_check.html)
