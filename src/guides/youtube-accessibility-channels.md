@@ -28,7 +28,7 @@ We are often asked about YouTube channels and podcasts about digital accessibili
 * [CHAX Accessibility Unraveled (external website)](https://www.youtube.com/@PDFA) 
 * [OklahomaABLETech (external website)](https://www.youtube.com/@OklahomaABLETech) 
 * [The Accessibility Guy (external website)](https://www.youtube.com/@TheAccessibilityGuy) 
-* [TPGI Webinars (external website)](https://www.youtube.com/@TPGi2021) (external website)
+* [TPGI Webinars (external website)](https://www.youtube.com/@TPGi2021)
 * [Web Accessibility Education](https://www.youtube.com/@WebAccessibility) 
 * [Government digital service (external website)](https://www.youtube.com/@GovernmentDigitalService) – with videos on WCAG 2.2 and the [impact to the UK public sector (external website)](https://www.youtube.com/watch?v=H6AW6rx91U4).
 * [freeCodeCamp.org (external website)](https://www.youtube.com/@freecodecamp) – technical training videos, including a [web accessibility seminar (external website)](https://www.youtube.com/watch?v=e2nkq3h1P68).
