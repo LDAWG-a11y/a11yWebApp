@@ -417,7 +417,7 @@ This is because the embedded video does not have subtitles.
 This cannot be fixed as it is an external third party video. Options include:
 
 * contacting the owner of the video and asking if they will add subtitles
-* creating a transcript of the video and adding the transcript immediately below the video, I used <https://soundtype.ai/> (external website) downloaded to my mobile phone to do this
+* creating a transcript of the video and adding the transcript immediately below the video, I used [https://soundtype.ai/ (external website)](https://soundtype.ai/) downloaded to my mobile phone to do this
 * removing the video from the presentation, if the two previous suggestions are not available	
 
 #### Hard-to-Read Text Contrast
