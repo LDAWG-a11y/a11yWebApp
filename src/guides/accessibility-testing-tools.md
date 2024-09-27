@@ -32,7 +32,7 @@ The screen readers are required when testing web pages to determine how they int
 * [Landmark Navigation via Keyboard or Pop-up (external website)](https://chromewebstore.google.com/detail/landmark-navigation-via-k/ddpokpbjopmeeiiolheejjpkonlkklgp) - navigate web pages via WAI-ARIA landmarks, using the keyboard or a pop-up menu
 * [LERA (external website)](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc) - accessibility testing and reporting tool
 * [Lighthouse (external website)](https://chromewebstore.google.com/detail/blipmdconlkpinefehnmjammfjpmpbjk) - accessibility testing tool
-* [Stylus (external website)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator](#stylus)
+* [Stylus (external website)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator (external website)](#stylus)
 * [WAVE Evaluation Tool (external website)](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) - accessibility testing tool
 * [Web Developer (external website)](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) - adds a toolbar button with various web developer tools
 * [Web Disability Simulator (external website)](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) - simulates how people with disabilities experience the web
@@ -80,7 +80,7 @@ Adding [Chrome extension to Opera (external website)](https://help.opera.com/en/
 * [IBM Equal Access Accessibility Checker (external website)](https://microsoftedge.microsoft.com/addons/detail/ibm-equal-access-accessib/ompccpejakabkmfepbijnagedbdfldka?hl=en-GB) - accessibility testing tool
 * [LERA (external website)](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc)  accessibility testing and reporting tool
 * [Lighthouse (external website)](https://chromewebstore.google.com/detail/blipmdconlkpinefehnmjammfjpmpbjk) - accessibility testing tool
-* [Stylus (external website)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator](#stylus)
+* [Stylus (external website)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator (external website)](#stylus)
 * [WAVE Evaluation Tool (external website)](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) - accessibility testing tool
 * [Web Disability Simulator (external website)](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) - simulates how people with disabilities experience the web
 
@@ -136,7 +136,7 @@ Bookmarklets are available natively in all major browsers, including Mozilla Fir
 
 Bookmarklets are used by right-clicking the bookmarklet and choosing "Bookmark Link" or by dragging the link into the bookmark bar so that it can be accessed easily (useful if the bookmarklet is to be used a lot).
 
-If you wish to write your own bookmarklet, [freeCodeCamp](https://www.freecodecamp.org/) (external website) has a guide on [What are bookmarklets? How to use JavaScript to Make  a Bookmarklet in Chromium and Firefox](https://www.freecodecamp.org/news/what-are-bookmarklets/) (external website).
+If you wish to write your own bookmarklet, [freeCodeCamp (external website)](https://www.freecodecamp.org/) has a guide on [What are bookmarklets? How to use JavaScript to Make  a Bookmarklet in Chromium and Firefox (external website)](https://www.freecodecamp.org/news/what-are-bookmarklets/).
 
 * Adrian Roselli - [24 x 24 and 24px SVG Circle Cursor (external website)](https://adrianroselli.com/2022/05/24x24-pixel-cursor-bookmarklet.html) 
 * [ANDI (external website)](https://www.ssa.gov/accessibility/andi/help/install.html)
@@ -170,7 +170,7 @@ If you wish to write your own bookmarklet, [freeCodeCamp](https://www.freecodeca
 
 * [Talkback accessibility help (external website)](https://support.google.com/accessibility/android/topic/3529932) 
 * [Gestures (external website)](https://support.google.com/accessibility/android/answer/6151827) 
-* [Keyboard shortcuts (external website)](https://support.google.com/accessibility/android/answer/6110948) (external website) 
+* [Keyboard shortcuts (external website)](https://support.google.com/accessibility/android/answer/6110948) 
 
 #### Narrator
 
