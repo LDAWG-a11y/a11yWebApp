@@ -32,7 +32,7 @@ The screen readers are required when testing web pages to determine how they int
 * [Landmark Navigation via Keyboard or Pop-up (external website)](https://chromewebstore.google.com/detail/landmark-navigation-via-k/ddpokpbjopmeeiiolheejjpkonlkklgp) - navigate web pages via WAI-ARIA landmarks, using the keyboard or a pop-up menu
 * [LERA (external website)](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc) - accessibility testing and reporting tool
 * [Lighthouse (external website)](https://chromewebstore.google.com/detail/blipmdconlkpinefehnmjammfjpmpbjk) - accessibility testing tool
-* [Stylus (external website)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator](#stylus)
+* [Stylus (external website)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator (external website)](#stylus)
 * [WAVE Evaluation Tool (external website)](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) - accessibility testing tool
 * [Web Developer (external website)](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) - adds a toolbar button with various web developer tools
 * [Web Disability Simulator (external website)](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) - simulates how people with disabilities experience the web
@@ -80,7 +80,7 @@ Adding [Chrome extension to Opera (external website)](https://help.opera.com/en/
 * [IBM Equal Access Accessibility Checker (external website)](https://microsoftedge.microsoft.com/addons/detail/ibm-equal-access-accessib/ompccpejakabkmfepbijnagedbdfldka?hl=en-GB) - accessibility testing tool
 * [LERA (external website)](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc)  accessibility testing and reporting tool
 * [Lighthouse (external website)](https://chromewebstore.google.com/detail/blipmdconlkpinefehnmjammfjpmpbjk) - accessibility testing tool
-* [Stylus (external website)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator](#stylus)
+* [Stylus (external website)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator (external website)](#stylus)
 * [WAVE Evaluation Tool (external website)](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) - accessibility testing tool
 * [Web Disability Simulator (external website)](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) - simulates how people with disabilities experience the web
 
