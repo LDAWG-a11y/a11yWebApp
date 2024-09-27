@@ -300,7 +300,7 @@ The second error being reported is “Formatting: The text formatting conveys ad
 
 ##### Tables with empty cells
 
-* There must never be blank heading cells so add an applicable title to the column heading even if [WCAG does allow for the first cell A1 to be blank](https://www.w3.org/WAI/tutorials/tables/) (external website) 
+* There must never be blank heading cells so add an applicable title to the column heading even if [WCAG does allow for the first cell A1 to be blank (external website)](https://www.w3.org/WAI/tutorials/tables/) 
 
   ![Distance added, top row and first column made into Table Heading](src/guideImg/20-distance-added-top-row-and-first-column-made-into-table-heading.png)
 * Different [screen readers will announce empty cells in different ways (external website)](https://www.accessibilityunraveled.com/pdf-remediation/how-to-handle-blank-data-cells-in-accessible-tables/) so the best solutions are to use “Not applicable” or “No value” 
