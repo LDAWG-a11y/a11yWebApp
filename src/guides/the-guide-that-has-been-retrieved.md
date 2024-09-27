@@ -17,7 +17,7 @@ isGuide: true
 
 * Make sure Microsoft Word is up-to-date
 * Make sure that Adobe Acrobat Pro is up-to-date
-* [Download PAC 2024 (external website)] (https://pac.pdf-accessibility.org/en)
+* [Download PAC 2024 (external website)](https://pac.pdf-accessibility.org/en)
 
 ## Demo file
 
@@ -458,7 +458,7 @@ To fix this, select the text and change the text colour.
 * There must never be blank heading cells so add an applicable title to the column heading, even if [WCAG does allow for the first cell A1 to be blank](https://www.w3.org/WAI/tutorials/tables/) (external website)
 
   ![Distance added, top row and first column made into Table Heading](src/guideImg/51-distance-added-top-row-first-column-made-into-table-heading.png)
-* Different [screen readers will announce empty cells in different ways](https://www.accessibilityunraveled.com/pdf-remediation/how-to-handle-blank-data-cells-in-accessible-tables/) (external website) so the best solutions are to use “Not applicable” or “No value”
+* Different [screen readers will announce empty cells in different ways (external website)](https://www.accessibilityunraveled.com/pdf-remediation/how-to-handle-blank-data-cells-in-accessible-tables/) so the best solutions are to use “Not applicable” or “No value”
 
   ![Not applicable and No value used where appropriate to replace empty table cells](src/guideImg/52-not-applicable-and-no-value-used.png)
 
