@@ -53,7 +53,7 @@ The screen readers are required when testing web pages to determine how they int
 
 #### Chrome store
 
-Adding an [extension from Chrome store](https://support.microsoft.com/en-gb/microsoft-edge/add-turn-off-or-remove-extensions-in-microsoft-edge-9c0ec68c-2fbc-2f2c-9ff0-bdc76f46b026#:~:text=Add%20an%20extension%20to%20Microsoft%20Edge%20from%20the%20Chrome%20Web%20Store).
+Adding an [extension from Chrome store (external website)](https://support.microsoft.com/en-gb/microsoft-edge/add-turn-off-or-remove-extensions-in-microsoft-edge-9c0ec68c-2fbc-2f2c-9ff0-bdc76f46b026#:~:text=Add%20an%20extension%20to%20Microsoft%20Edge%20from%20the%20Chrome%20Web%20Store).
 
 * [ARC Toolkit (external website)](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) - accessibility testing tool
 * [IBM Equal Access Accessibility Checker (external website)](https://chromewebstore.google.com/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp) - accessibility testing tool
