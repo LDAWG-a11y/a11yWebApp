@@ -17,7 +17,7 @@ isGuide: true
 
 * Make sure Microsoft Word is up-to-date
 * Make sure that Adobe Acrobat Pro is up-to-date
-* Download PAC 2024
+* [Download PAC 2024 (external website)] (https://pac.pdf-accessibility.org/en)
 
 ## Demo file
 
@@ -51,7 +51,7 @@ An example file, [Word-un-accessible.docx](/docs/creating-accessible-pdfs-from-m
 ### Hyperlinks
 
 * The destination of links should be communicated accurately and clearly
-* Use URL shortening services such as [Bitly](https://bitly.com/pages/landing/bringing-us-all-a-bit-closer) (external website) or [TinyURL](https://tinyurl.com/app) (external website) if the document is to be printed, if not, make sure the link text is meaningful (link shorteners can be viewed as a security risk as the destination cannot be seen unless the link has been clicked!)
+* Use URL shortening services such as [Bitly (external website)](https://bitly.com/pages/landing/bringing-us-all-a-bit-closer) or [TinyURL (external website)](https://tinyurl.com/app) if the document is to be printed, if not, make sure the link text is meaningful (link shorteners can be viewed as a security risk as the destination cannot be seen unless the link has been clicked!)
 * Screen readers will generally provide a list of links so make sure the link text is meaningful
 * Do not use “click here” or “more information” for all the link text because it will not be possible to distinguish the links from each other
 
@@ -99,7 +99,7 @@ Content within the document written in a different language to the document’s 
 * Use common words. Complicated longer words (8 or 9 letters) will cause readers to skip shorter words (3,4, or 5 letters) that follow
 * Use an **Active** voice rather than a **Passive** voice
 * Where possible, use words containing one to two syllables
-* Aim the language used at the level of a 9 year old as [recommended by GOV.UK](https://www.gov.uk/guidance/content-design/writing-for-gov-uk) (external website) – remember in the UK, 7.1 million adults read at, or below, the level of an average 9 year old. [WCAG 3.15 Reading Level (AAA)](https://www.w3.org/WAI/WCAG22/quickref/?versions=2.1#reading-level) (external website) recommends providing a simplified version of the text if it requires a reading age of more than 12 years old
+* Aim the language used at the level of a 9 year old as [recommended by GOV.UK (external website)](https://www.gov.uk/guidance/content-design/writing-for-gov-uk) – remember in the UK, 7.1 million adults read at, or below, the level of an average 9 year old. [WCAG 3.15 Reading Level (AAA) (external website)](https://www.w3.org/WAI/WCAG22/quickref/?versions=2.1#reading-level) recommends providing a simplified version of the text if it requires a reading age of more than 12 years old
 * Use contractions, words made up of two short words joined with an apostrophe such as I’ve, can’t etc.
 * Do not use double negatives
 * Explain the unusual, to help give full information
@@ -112,8 +112,8 @@ Content within the document written in a different language to the document’s 
 
 ### Further help
 
-* Free services, guides, and resources to help are available from the [Plain English Campaign](https://www.plainenglish.co.uk/) (external website)
-* Measure the readability of the text using [Hemingway Editor](https://hemingwayapp.com/) (external website)
+* Free services, guides, and resources to help are available from the [Plain English Campaign (external website)](https://www.plainenglish.co.uk/)
+* Measure the readability of the text using [Hemingway Editor (external website)](https://hemingwayapp.com/)
 
 ### Font
 
@@ -127,11 +127,11 @@ Content within the document written in a different language to the document’s 
 ### Colour
 
 * Do **NOT** use colour by itself to show meaning
-* Make sure that there is adequate contrast between background and text – use [TPGi’s Colour Contrast Analyzer (CCA)](https://www.tpgi.com/color-contrast-checker/) (external website) to check contrast
+* Make sure that there is adequate contrast between background and text – use [TPGi’s Colour Contrast Analyzer (CCA) (external website)](https://www.tpgi.com/color-contrast-checker/) to check contrast
 
 ## Word Accessibility Checker
 
-[Accessibility Checker](https://support.microsoft.com/en-gb/office/improve-accessibility-with-the-accessibility-checker-a16f6de0-2f39-4a2b-8bd8-5ad801426c7f) (external website) tests Microsoft Word documents for accessibility issues and gives errors, warnings, tips, and intelligent servies.
+[Accessibility Checker (external website)](https://support.microsoft.com/en-gb/office/improve-accessibility-with-the-accessibility-checker-a16f6de0-2f39-4a2b-8bd8-5ad801426c7f) tests Microsoft Word documents for accessibility issues and gives errors, warnings, tips, and intelligent services.
 
 ### Errors
 
@@ -524,7 +524,7 @@ Header and Footer objects are artifacted when exported to PDF.
 
 ## Check for accessibility in PAC 2024
 
-* [Open PAC 2024](https://pac.pdf-accessibility.org/en) and drag and drop the PDF file onto
+* [Open PAC 2024 (external website)](https://pac.pdf-accessibility.org/en) and drag and drop the PDF file onto
 
   ![Document selection tool](src/guideImg/57-document-selection-tool.png)
 * The test will run and errors will be reported
@@ -609,7 +609,7 @@ Header and Footer objects are artifacted when exported to PDF.
 * And needs to be moved to the correct position
 
   ![Figure tag in correct position in tag tree](src/guideImg/74-figure-tag-correct-position-tag-tree.png)
-* Right click `<Figure>` tag and choose Properties and Copy Alt-Text (“A person with long curly hair wearing a owboy hat and sunglasses”) into Alternate Text for Images
+* Right click `<Figure>` tag and choose Properties and Copy Alt-Text (“A person with long curly hair wearing a cowboy hat and sunglasses”) into Alternate Text for Images
 
   ![Object properties dialog box](src/guideImg/75-object-properties-dialog-box.png)
 * Select “Edit Tag…” button and then open up the first `<Dictionary>` object, the BBox attribute has been added
@@ -742,22 +742,22 @@ The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this
 ## Useful links
 
 * [Accessible Document Basics](https://www.makethingsaccessible.com/guides/accessible-document-basics/)
-* [How to handle blank data cells in accessible tables](https://www.accessibilityunraveled.com/pdf-remediation/how-to-handle-blank-data-cells-in-accessible-tables/) (external website)
+* [How to handle blank data cells in accessible tables (external website)](https://www.accessibilityunraveled.com/pdf-remediation/how-to-handle-blank-data-cells-in-accessible-tables/)
 * [Accessibility Checker and Accessibility Check](https://www.makethingsaccessible.com/guides/accessibility-checker-and-accessibility-check/)
-* [Rules for the Accessibility Checker](https://support.microsoft.com/en-gb/office/rules-for-the-accessibility-checker-651e08f2-0fc3-4e10-aaca-74b4a67101c1) (external website)
-* [Improve accessibility with the Accessibility Checker](https://support.microsoft.com/en-gb/office/improve-accessibility-with-the-accessibility-checker-a16f6de0-2f39-4a2b-8bd8-5ad801426c7f) (external website)
-* [TPGi’s Colour Contrast Analyzer](https://www.tpgi.com/color-contrast-checker/) (external website)
-* [Writing for GOV.UK](https://www.gov.uk/guidance/content-design/writing-for-gov-uk) (external website)
-* [Plain English Campaign](https://www.plainenglish.co.uk/) (external website)
-* [Hemingway Editor](https://hemingwayapp.com/) (external website)
-* [WebFX Readability Test](https://www.webfx.com/tools/read-able/) (external website)
-* [Plain English – Advisory eLaHub](https://www.elahub.net/9-readability/) (external website)
-* [WCAG 3.15 Reading Level (AAA)](https://www.w3.org/WAI/WCAG22/quickref/?versions=2.1#reading-level) (external website)
+* [Rules for the Accessibility Checker (external website)](https://support.microsoft.com/en-gb/office/rules-for-the-accessibility-checker-651e08f2-0fc3-4e10-aaca-74b4a67101c1)
+* [Improve accessibility with the Accessibility Checker (external website)](https://support.microsoft.com/en-gb/office/improve-accessibility-with-the-accessibility-checker-a16f6de0-2f39-4a2b-8bd8-5ad801426c7f)
+* [TPGi’s Colour Contrast Analyzer (external website)](https://www.tpgi.com/color-contrast-checker/)
+* [Writing for GOV.UK (external website)](https://www.gov.uk/guidance/content-design/writing-for-gov-uk)
+* [Plain English Campaign (external website)](https://www.plainenglish.co.uk/)
+* [Hemingway Editor (external website)](https://hemingwayapp.com/)
+* [WebFX Readability Test (external website)](https://www.webfx.com/tools/read-able/) 
+* [Plain English – Advisory eLaHub (external website)](https://www.elahub.net/9-readability/)
+* [WCAG 3.15 Reading Level (AAA) (external website)](https://www.w3.org/WAI/WCAG22/quickref/?versions=2.1#reading-level)
 * [Creating meaningful alternative text](https://www.makethingsaccessible.com/guides/creating-meaningful-alternative-text/)
-* [Everything you need to know to write effective alt text](https://support.microsoft.com/en-gb/office/everything-you-need-to-know-to-write-effective-alt-text-df98f884-ca3d-456c-807b-1a1fa82f5dc2) (external website)
-* [PAC 2024](https://pac.pdf-accessibility.org/en) (external website)
-* [Table Accessibility in Word and PowerPoint](https://accessibility.psu.edu/microsoftoffice/microsofttableheaders/) (external website)
-* [Make your Word documents accessible to people with disabilities](https://support.microsoft.com/en-gb/office/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d) (external website)
-* [Creating accessible tables in Microsoft Word](https://kb.iu.edu/d/aqjl) (external website)
-* [Create accessible tables in Word](https://support.microsoft.com/en-gb/office/video-create-accessible-tables-in-word-cb464015-59dc-46a0-ac01-6217c62210e5#:~:text=To%20designate%20a%20row%20as,break%20across%20pages%20is%20unchecked.) (external website)
-* [Getting accessible templates for Office](https://support.microsoft.com/en-gb/office/get-accessible-templates-for-office-ca086caa-2bd2-4ac8-8c12-4cd495bd4d76) (external website)
+* [Everything you need to know to write effective alt text (external website)](https://support.microsoft.com/en-gb/office/everything-you-need-to-know-to-write-effective-alt-text-df98f884-ca3d-456c-807b-1a1fa82f5dc2)
+* [PAC 2024 (external website)](https://pac.pdf-accessibility.org/en)
+* [Table Accessibility in Word and PowerPoint (external website)](https://accessibility.psu.edu/microsoftoffice/microsofttableheaders/)
+* [Make your Word documents accessible to people with disabilities (external website)](https://support.microsoft.com/en-gb/office/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d)
+* [Creating accessible tables in Microsoft Word (external website)](https://kb.iu.edu/d/aqjl)
+* [Create accessible tables in Word (external website)](https://support.microsoft.com/en-gb/office/video-create-accessible-tables-in-word-cb464015-59dc-46a0-ac01-6217c62210e5#:~:text=To%20designate%20a%20row%20as,break%20across%20pages%20is%20unchecked.)
+* [Getting accessible templates for Office (external website)](https://support.microsoft.com/en-gb/office/get-accessible-templates-for-office-ca086caa-2bd2-4ac8-8c12-4cd495bd4d76)
