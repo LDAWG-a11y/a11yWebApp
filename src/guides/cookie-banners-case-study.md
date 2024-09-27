@@ -152,7 +152,7 @@ No advisories.
 
 <h3 class="accordion">GOV.UK</h3><div class="accordion__panel">
 
-GOV.UK is fully compliant with WCAG 2.2 AA standards.
+[GOV.UK (external website)](https://www.gov.uk/) is fully compliant with WCAG 2.2 AA standards.
 
 </div>
 
