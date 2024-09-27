@@ -136,7 +136,7 @@ Bookmarklets are available natively in all major browsers, including Mozilla Fir
 
 Bookmarklets are used by right-clicking the bookmarklet and choosing "Bookmark Link" or by dragging the link into the bookmark bar so that it can be accessed easily (useful if the bookmarklet is to be used a lot).
 
-If you wish to write your own bookmarklet, [freeCodeCamp](https://www.freecodecamp.org/) (external website) has a guide on [What are bookmarklets? How to use JavaScript to Make  a Bookmarklet in Chromium and Firefox](https://www.freecodecamp.org/news/what-are-bookmarklets/) (external website).
+If you wish to write your own bookmarklet, [freeCodeCamp (external website)](https://www.freecodecamp.org/) has a guide on [What are bookmarklets? How to use JavaScript to Make  a Bookmarklet in Chromium and Firefox (external website)](https://www.freecodecamp.org/news/what-are-bookmarklets/).
 
 * Adrian Roselli - [24 x 24 and 24px SVG Circle Cursor (external website)](https://adrianroselli.com/2022/05/24x24-pixel-cursor-bookmarklet.html) 
 * [ANDI (external website)](https://www.ssa.gov/accessibility/andi/help/install.html)
