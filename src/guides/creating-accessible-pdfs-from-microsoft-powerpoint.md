@@ -583,7 +583,7 @@ This failed because even though the document had a Title, Author and Keywords, t
 
 #### Color contrast
 
-Go through the document with [Colour Contrast Analyser (CCA)](https://www.tpgi.com/color-contrast-checker/) (external website) to make sure all the contrasts are still ok.
+Go through the document with [Colour Contrast Analyser (CCA) (external website)](https://www.tpgi.com/color-contrast-checker/) to make sure all the contrasts are still ok.
 
 ### Tables
 
