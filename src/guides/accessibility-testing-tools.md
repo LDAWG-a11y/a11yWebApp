@@ -170,7 +170,7 @@ If you wish to write your own bookmarklet, [freeCodeCamp (external website)](htt
 
 * [Talkback accessibility help (external website)](https://support.google.com/accessibility/android/topic/3529932) 
 * [Gestures (external website)](https://support.google.com/accessibility/android/answer/6151827) 
-* [Keyboard shortcuts (external website)](https://support.google.com/accessibility/android/answer/6110948) (external website) 
+* [Keyboard shortcuts (external website)](https://support.google.com/accessibility/android/answer/6110948) 
 
 #### Narrator
 
