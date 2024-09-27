@@ -16,60 +16,60 @@ We are often asked about YouTube channels and podcasts about digital accessibili
 
 ## YouTube Channels
 
-* [A11y Bytes](https://www.youtube.com/@A11yBytes) (external website)
-* [AbilityNet](https://www.youtube.com/@abilitynet) (external website)
-* [Accessibility Talks](https://www.youtube.com/@AccessibilityTalks) (external website)
-* [AXSChat](https://www.youtube.com/channel/UCtXmNJEMGmHK9VArQNnvxAw) (external website)
-* [Ben Myers](https://www.youtube.com/@BenDMyers) (external website)
-* [Chrome for Developers](https://www.youtube.com/@ChromeDevs) (external website)
-* [Crystal Preston-Watson](https://www.youtube.com/@CrystalPrestonWatson) (external website)
-* [](https://www.youtube.com/@GovernmentDigitalService)[International Association of Accessibility Professionals (IAAP)](https://www.youtube.com/@UnitedInAccessibility) (external website)
-* [PCR Digital](https://www.youtube.com/@PCRDigital) (external website)
-* [CHAX Accessibility Unraveled](https://www.youtube.com/@PDFA) (external website)
-* [OklahomaABLETech](https://www.youtube.com/@OklahomaABLETech) (external website)
-* [The Accessibility Guy](https://www.youtube.com/@TheAccessibilityGuy) (external website)
-* [TPGI Webinars](https://www.youtube.com/@TPGi2021) (external website)
-* [Web Accessibility Education](https://www.youtube.com/@WebAccessibility) (external website)
-* [Government digital service](https://www.youtube.com/@GovernmentDigitalService) – with videos on WCAG 2.2 and the [impact to the UK public sector](https://www.youtube.com/watch?v=H6AW6rx91U4).
-* [freeCodeCamp.org](https://www.youtube.com/@freecodecamp) – technical training videos, including a [web accessibility seminar](https://www.youtube.com/watch?v=e2nkq3h1P68).
-* [MicrosoftEnable](https://www.youtube.com/@MSFTEnable) – Microsoft accessibility focussed channel, includes great demonstration videos like the [BingO Bakery](https://www.youtube.com/watch?v=HE2R86EZPMA), showing the importance of headings, landmarks and tabs.
-* [NNgroup](https://www.youtube.com/@NNgroup) – User Experience research with an [interesting video about overlays](https://www.youtube.com/watch?v=mvKTItqsOCg).
-* [Tharindu Liyanagunawardena](https://www.youtube.com/@tharinduliyanagunawardena7209) – digital accessibility tutorials
+* [A11y Bytes (external website)](https://www.youtube.com/@A11yBytes)
+* [AbilityNet (external website)](https://www.youtube.com/@abilitynet)
+* [Accessibility Talks (external website)](https://www.youtube.com/@AccessibilityTalks) 
+* [AXSChat (external website)](https://www.youtube.com/channel/UCtXmNJEMGmHK9VArQNnvxAw) 
+* [Ben Myers (external website)](https://www.youtube.com/@BenDMyers)
+* [Chrome for Developers (external website)](https://www.youtube.com/@ChromeDevs)
+* [Crystal Preston-Watson (external website)](https://www.youtube.com/@CrystalPrestonWatson)
+* [International Association of Accessibility Professionals (IAAP) (external website)](https://www.youtube.com/@UnitedInAccessibility)
+* [PCR Digital (external website)](https://www.youtube.com/@PCRDigital)
+* [CHAX Accessibility Unraveled (external website)](https://www.youtube.com/@PDFA) 
+* [OklahomaABLETech (external website)](https://www.youtube.com/@OklahomaABLETech) 
+* [The Accessibility Guy (external website)](https://www.youtube.com/@TheAccessibilityGuy) 
+* [TPGI Webinars (external website)](https://www.youtube.com/@TPGi2021) (external website)
+* [Web Accessibility Education](https://www.youtube.com/@WebAccessibility) 
+* [Government digital service (external website)](https://www.youtube.com/@GovernmentDigitalService) – with videos on WCAG 2.2 and the [impact to the UK public sector (external website)](https://www.youtube.com/watch?v=H6AW6rx91U4).
+* [freeCodeCamp.org (external website)](https://www.youtube.com/@freecodecamp) – technical training videos, including a [web accessibility seminar (external website)](https://www.youtube.com/watch?v=e2nkq3h1P68).
+* [MicrosoftEnable (external website)](https://www.youtube.com/@MSFTEnable) – Microsoft accessibility focussed channel, includes great demonstration videos like the [BingO Bakery (external website)](https://www.youtube.com/watch?v=HE2R86EZPMA), showing the importance of headings, landmarks and tabs.
+* [NNgroup (external website)](https://www.youtube.com/@NNgroup) – User Experience research with an [interesting video about overlays (external website)](https://www.youtube.com/watch?v=mvKTItqsOCg).
+* [Tharindu Liyanagunawardena (external website)](https://www.youtube.com/@tharinduliyanagunawardena7209) – digital accessibility tutorials
 
 ### Accessibility Advocacy
 
-* [AbilityNet](https://www.youtube.com/@abilitynet) – Accessibility charity, wide range of topics
-* [Harben Girma](https://www.youtube.com/@haben_girma) – Accessibility advocate
-* [Mike Oliver interview](https://www.youtube.com/watch?v=wBAv5MrAhAw) – coined the social model of disability
+* [AbilityNet (external website)](https://www.youtube.com/@abilitynet) – Accessibility charity, wide range of topics
+* [Harben Girma (external website)](https://www.youtube.com/@haben_girma) – Accessibility advocate
+* [Mike Oliver interview (external website)](https://www.youtube.com/watch?v=wBAv5MrAhAw) – coined the social model of disability
 
 ### Blind and vision impaired
 
-* [The Blind Woodsman and Honeybee](https://www.youtube.com/@theblindwoodsmanandhoneybee) – blind woodworker
-* [Disney’s Frozen trailer with audio description](https://www.youtube.com/watch?v=O7j4_aP8dWA)
+* [The Blind Woodsman and Honeybee (external website)](https://www.youtube.com/@theblindwoodsmanandhoneybee) – blind woodworker
+* [Disney’s Frozen trailer with audio description (external website)](https://www.youtube.com/watch?v=O7j4_aP8dWA)
 
 ### Deafness and British Sign Language (BSL)
 
-* [Commanding Hands](https://www.youtube.com/@CommandingHands) – BSL tutorials
-* [The Deaf Academy](https://www.youtube.com/@TheDeafAcademy) – specialist school and college
-* [Interesting example of deafness and communication in gameplay in the Spider-Man 2 (PS5) game.](https://www.youtube.com/watch?v=QSaUvZfHgk4)
+* [Commanding Hands (external website)](https://www.youtube.com/@CommandingHands) – BSL tutorials
+* [The Deaf Academy (external website)](https://www.youtube.com/@TheDeafAcademy) – specialist school and college
+* [Interesting example of deafness and communication in gameplay in the Spider-Man 2 (PS5) game (external website)](https://www.youtube.com/watch?v=QSaUvZfHgk4)
 
 ### Limb Loss and Mobility
 
-* [Ian Davis](https://www.youtube.com/@missingpartsclub) – Amputee and prosthetic hand builder
-* [Jessica Kellgren-Fozard](https://www.youtube.com/@jessicaoutofthecloset) – Chronic illness
-* [Limb Loss Boss](https://www.youtube.com/@LimbLossBoss) – Double leg amputee
-* [Wheels2Walking](https://www.youtube.com/@Wheels2Walking) – Wheelchair use and paralysis
+* [Ian Davis (external website)](https://www.youtube.com/@missingpartsclub) – Amputee and prosthetic hand builder
+* [Jessica Kellgren-Fozard (external website)](https://www.youtube.com/@jessicaoutofthecloset) – Chronic illness
+* [Limb Loss Boss (external website)](https://www.youtube.com/@LimbLossBoss) – Double leg amputee
+* [Wheels2Walking (external website)](https://www.youtube.com/@Wheels2Walking) – Wheelchair use and paralysis
 
 ### Neurodiversity
 
-* [I Believe In You Publishing](https://www.youtube.com/@I-believe-in-you-publishing) – Speaks about dyslexia advocacy
-* [Joe Wells](https://www.youtube.com/@joewellscomic) – Autistic comedian
-* [Zara Beth](https://www.youtube.com/@Zara_Beth) – Neurodiversity and wheelchair use
-* [ND Mode – Neurodiversity in the Workplace, BBC spoons video](https://www.youtube.com/watch?v=2Mez9THUoyc)
+* [I Believe In You Publishing (external website)](https://www.youtube.com/@I-believe-in-you-publishing) – Speaks about dyslexia advocacy
+* [Joe Wells (external website)](https://www.youtube.com/@joewellscomic) – Autistic comedian
+* [Zara Beth (external website)](https://www.youtube.com/@Zara_Beth) – Neurodiversity and wheelchair use
+* [ND Mode – Neurodiversity in the Workplace, BBC spoons video (external website)](https://www.youtube.com/watch?v=2Mez9THUoyc)
 
 ## Podcasts
 
-TPGI have a great list of [accessibility podcasts](https://www.tpgi.com/digital-accessibility-podcasts/) (external website).
+TPGI have a great list of [accessibility podcasts (external website)](https://www.tpgi.com/digital-accessibility-podcasts/).
 
 ## Suggest something
 
