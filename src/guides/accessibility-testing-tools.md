@@ -92,7 +92,7 @@ Adding [Chrome extension to Opera (external website)](https://help.opera.com/en/
 * [IBM Equal Access Accessibility Checker (external website)](https://addons.mozilla.org/en-GB/firefox/addon/accessibility-checker/) - accessibility testing tool
 * [Landmark Navigation via Keyboard or Pop-up (external website)](https://addons.mozilla.org/en-GB/firefox/addon/landmarks/) - navigate web pages via WAI-ARIA 
 * [Lighthouse (external website)](https://addons.mozilla.org/en-GB/firefox/addon/google-lighthouse/) - accessibility testing tool
-* [Stylus (external website)](https://addons.mozilla.org/en-GB/firefox/addon/styl-us/) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator](#stylus)
+* [Stylus (external website)](https://addons.mozilla.org/en-GB/firefox/addon/styl-us/) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator (external website)](#stylus)
 * [Web Developer (external website)](https://addons.mozilla.org/en-GB/firefox/addon/web-developer/) - adds a toolbar button with various web developer tools
 * [webhint (external website)](https://addons.mozilla.org/en-GB/firefox/addon/webhint/) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
 
