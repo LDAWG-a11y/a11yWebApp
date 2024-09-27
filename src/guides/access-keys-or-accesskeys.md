@@ -166,7 +166,7 @@ You can tell Jaws and NVDA to route the next key to the browser:
 
 Good usability allows the website design to provide flexibility, and user controls will help make a website accessible, and while there are always going to be trade-offs, this will enable the adjustment of the interface to match users’ requirements, and work with their accessibility settings, assistive technology, and adaptive strategies.
 
-We would recommend due to the noted accessibility concerns of access keys that they are not used, but if you are going to use accesskeys use the GOV.UK standard or if it does not apply:
+We would recommend due to the noted accessibility concerns of access keys that they are not used, but if you are going to use accesskeys use the [GOV.UK (external website)](https://webarchive.nationalarchives.gov.uk/ukgwa/20100703000205/http://archive.cabinetoffice.gov.uk/e-government/resources/handbook/html/2-4.asp#2.4.4) standard or if it does not apply:
 
 * Determine commonly used or important links on your website
 * Place the links into a numbered list `<ol>`
@@ -191,4 +191,4 @@ Remember access keys are a fallback for things that do not have a standard activ
 * [Time to revisit accesskey? (external website)](https://tink.uk/time-to-revisit-accesskey/)
 * [WUHCAG - Keyboard (2.1.1 – Level A) (external website)](https://www.wuhcag.com/keyboard/)
 * [UK Government accesskeys standard (external website)](https://webarchive.nationalarchives.gov.uk/ukgwa/20100703000205/http://archive.cabinetoffice.gov.uk/e-government/resources/handbook/html/2-4.asp#2.4.4)
-* [HOBO SEO Consultancy - UK Government Access Keys Standard For Websites (external website)](<HOBO SEO Consultancy - UK Government Access Keys Standard For Websites>)
+* [HOBO SEO Consultancy - UK Government Access Keys Standard For Websites (external website)](https://www.hobo-web.co.uk/uk-gov-access-keys/)
