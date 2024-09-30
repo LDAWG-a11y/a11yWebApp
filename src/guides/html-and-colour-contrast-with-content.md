@@ -79,25 +79,25 @@ If this method is to be acceptable:
 
 ### Offline tools
 
-* [Colour contrast analyser (for Windows and Mac)](http://www.paciellogroup.com/resources/contrastAnalyser) (external website)
-* [Contraste for Mac](https://contrasteapp.com/) (external website)
-* [Leonardo](https://leonardocolor.io/) Adobe open source project (external website)
+* [Colour contrast analyser (for Windows and Mac) (external website)](http://www.paciellogroup.com/resources/contrastAnalyser) 
+* [Contraste for Mac (external website)](https://contrasteapp.com/)
+* [Leonardo] (external website)(https://leonardocolor.io/) Adobe open source project
 
 ### Online tools
 
-* [Colour contrast checker (WebAIM)](http://webaim.org/resources/contrastchecker/) (external website)
-* [Colour contrast check (snook.ca)](http://snook.ca/technical/colour_contrast/colour.html) (external website)
-* [Tanaguru contrast finder](http://contrast-finder.tanaguru.com/) (external website)
-* [Contrast ratio](https://contrast-ratio.com/) (external website)
-* [Chrome DevTools colour picker](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#contrast) (external website)
-* [Juicy Studios Luminosity Colour Contrast Ratio Analyser](https://juicystudio.com/services/luminositycontrastratio.php) (external website)
-* [Monsido Color Contrast Checker](https://monsido.com/tools/contrast-checker) (external website)
-* [Material Color Tool](https://material.io/resources/color/) (external website)
+* [Colour contrast checker (WebAIM) (external website)](http://webaim.org/resources/contrastchecker/) 
+* [Colour contrast check (snook.ca) (external website)](http://snook.ca/technical/colour_contrast/colour.html) 
+* [Tanaguru contrast finder (external website)](http://contrast-finder.tanaguru.com/)
+* [Contrast ratio (external website)](https://contrast-ratio.com/)
+* [Chrome DevTools colour picker (external website)](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#contrast)
+* [Juicy Studios Luminosity Colour Contrast Ratio Analyser (external website)](https://juicystudio.com/services/luminositycontrastratio.php)
+* [Monsido Color Contrast Checker (external website)](https://monsido.com/tools/contrast-checker)
+* [Material Color Tool (external website)](https://material.io/resources/color/)
 
 ### Mobile tools
 
-* [UserLight Color Contrast iOS app](https://itunes.apple.com/na/app/color-contrast/id1095478187?mt=8) (external website)
-* [Google Android Accessibility Scanner](https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en) (external website)
+* [UserLight Color Contrast iOS app (external website)](https://itunes.apple.com/na/app/color-contrast/id1095478187?mt=8)
+* [Google Android Accessibility Scanner (external website)](https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en)
 
 ## Wrapping up
 
@@ -105,8 +105,8 @@ Hopefully this guide has helped you to understand a bit more of using colour con
 
 ## Useful links
 
-* [Mozilla Developer Network Web docs color contrast](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Color_contrast) (external website)
-* [WebAIM Understanding WCAG 2 Contrast and Color Requirements](https://webaim.org/articles/contrast/) (external website)
-* [BBC Mobile Accessibility Guidelines Colour contrast](https://www.bbc.co.uk/accessibility/forproducts/guides/mobile/colour-contrast/) (external website)
-* [Digital.Govt.NZ Colour and contrast](https://www.digital.govt.nz/standards-and-guidance/design-and-ux/accessibility/colour-and-contrast/) (external website)
-* [Creating Color Contrast Guidelines to Meet WCAG 2.1 and Beyond](https://medium.com/salesforce-ux/creating-color-contrast-guidelines-to-meet-wcag-2-1-and-beyond-99cee77a7657) (external website)
+* [Mozilla Developer Network Web docs color contrast (external website)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Color_contrast)
+* [WebAIM Understanding WCAG 2 Contrast and Color Requirements (external website)](https://webaim.org/articles/contrast/)
+* [BBC Mobile Accessibility Guidelines Colour contrast (external website)](https://www.bbc.co.uk/accessibility/forproducts/guides/mobile/colour-contrast/)
+* [Digital.Govt.NZ Colour and contrast (external website)](https://www.digital.govt.nz/standards-and-guidance/design-and-ux/accessibility/colour-and-contrast/)
+* [Creating Color Contrast Guidelines to Meet WCAG 2.1 and Beyond (external website)](https://medium.com/salesforce-ux/creating-c (external website)
