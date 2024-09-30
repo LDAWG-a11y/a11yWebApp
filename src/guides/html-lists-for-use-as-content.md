@@ -121,8 +121,8 @@ Note: Unless the type of the list number matters such as legal or technical docu
 	</tbody>
 </table>
 
-* [D﻿eveloper Mozilla Ordered List](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol) (external website)
-* [D﻿eveloper Mozilla List Style Type](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type) (external website)
+* [D﻿eveloper Mozilla Ordered List (external website)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol)
+* [D﻿eveloper Mozilla List Style Type (external website)](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type)
 
 #### type="1"
 
@@ -688,9 +688,9 @@ If you wish to force VoiceOver to read out "List of X items" then you will need 
 
 This is not a recommendation and there are different views on whether VoiceOver should work this way, and whether VoiceOver should be forced to read a list by adding `<ul role="list">`.
 
-* Scott O'Hara on [lists and Safari](https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html) (external link)
-* Scott O'Hara on ["Fixing" Lists](https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html) (external link)
-* Smashing Magazine - [adding roles that duplicate](https://www.smashingmagazine.com/2022/09/wai-aria-guide/#adding-roles-that-duplicate-html) (external link)
+* Scott O'Hara on [lists and Safari (external website)](https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html)
+* Scott O'Hara on ["Fixing" Lists (external website)](https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html)
+* Smashing Magazine - [adding roles that duplicate (external website)](https://www.smashingmagazine.com/2022/09/wai-aria-guide/#adding-roles-that-duplicate-html) 
 
 ### Using CSS to produce lists with 1.1.1 numbers
 
@@ -756,6 +756,6 @@ Hopefully this guide has helped you to understand a bit more of using HTML lists
 
 ### Useful links
 
-* [W﻿3C Lists](https://www.w3.org/TR/html4/struct/lists.html) (external link)
-* [D﻿eveloper Mozilla Ordered Lists](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol) (external link)
-* [W﻿3Schools HTML Lists](https://www.w3schools.com/html/html_lists.asp) (external link)
+* [W﻿3C Lists (external website)](https://www.w3.org/TR/html4/struct/lists.html)
+* [D﻿eveloper Mozilla Ordered Lists (external website)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol)
+* [W﻿3Schools HTML Lists (external website)](https://www.w3schools.com/html/html_lists.asp) 
