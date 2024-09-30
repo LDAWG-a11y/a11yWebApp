@@ -32,7 +32,6 @@ The following courses include free and paid for courses on digital accessibility
 * GTx: [Information and Communication Technology (ICT) Accessibility (external website)](https://www.edx.org/learn/information-technology/the-georgia-institute-of-technology-information-and-communication-technology-ict-accessibility) 
 * Code Academy - [Learn CSS: Accessibility (external website)](https://www.codecademy.com/learn/learn-css-accessibility) 
 * Piccia Neri - [Accessibility Primer (external website)](https://piccianeri.com/free-accessibility-primer-course/) (with a eye to typography)
-* [Deque - What is Digital Accessibility? (external website)](https://www.youtube.com/watch?v=grrx2Lva7T0)
 
 ### Microsoft
 
@@ -47,7 +46,6 @@ The following courses include free and paid for courses on digital accessibility
 * [Accessibility and inclusion in digital health (external website)](https://www.open.edu/openlearn/health-sports-psychology/accessibility-and-inclusion-digital-health/) 
 * [Assistive technologies and online learning (external website)](https://www.open.edu/openlearn/education-development/assistive-technologies-and-online-learning/)
 * [Diversity and inclusion in the workplace (external website)](https://www.open.edu/openlearn/money-business/diversity-and-inclusion-the-workplace/)
-* [MSFTEnable (external website)](https://www.youtube.com/user/MSFTEnable)
 
 ### Salesforce Trailhead
 
@@ -63,6 +61,9 @@ The following courses include free and paid for courses on digital accessibility
 * [Build a Website Accessibility Tester With JavaScript & Pa11y (external website)](https://www.youtube.com/watch?v=MO4vEAu3hKE) 
 * [Accessibility in VS Code (external website)](https://www.youtube.com/watch?v=9biCDjSSwqw) 
 * freeCodeCamp: [Learn Accessibility - Full a11y Tutorial (external website)](https://www.youtube.com/watch?v=e2nkq3h1P68) 
+* [Deque - What is Digital Accessibility? (external website)](https://www.youtube.com/watch?v=grrx2Lva7T0)
+* [Microsoft - MSFTEnable (external website)](https://www.youtube.com/user/MSFTEnable)
+* [Adam Barragato - Making Accessible Word Documents Accessible PDFs (external website)](https://www.youtube.com/watch?v=kvZN4WgsE3k)
 
 ### Periodically available
 
