@@ -81,7 +81,7 @@ If this method is to be acceptable:
 
 * [Colour contrast analyser (for Windows and Mac) (external website)](http://www.paciellogroup.com/resources/contrastAnalyser) 
 * [Contraste for Mac (external website)](https://contrasteapp.com/)
-* [Leonardo] (external website)(https://leonardocolor.io/) Adobe open source project
+* [Leonardo (external website)] (https://leonardocolor.io/) Adobe open source project
 
 ### Online tools
 
