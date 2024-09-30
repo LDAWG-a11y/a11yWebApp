@@ -60,7 +60,7 @@ The following courses include free and paid for courses on digital accessibility
 
 ### YouTube courses
 
-* [AbilityNet (external website)](https://www.youtube.com/@abilitynet/playlists)
+* [AbilityNet Youtube playlists (external website)](https://www.youtube.com/@abilitynet/playlists)
 * Adam Barragato [Making Accessible Word Documents Accessible PDFs (external website)](https://www.youtube.com/watch?v=kvZN4WgsE3k)
 * [Build a Website Accessibility Tester With JavaScript & Pa11y (external website)](https://www.youtube.com/watch?v=MO4vEAu3hKE) 
 * [Accessibility in VS Code (external website)](https://www.youtube.com/watch?v=9biCDjSSwqw) 
