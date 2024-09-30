@@ -109,4 +109,4 @@ Hopefully this guide has helped you to understand a bit more of using colour con
 * [WebAIM Understanding WCAG 2 Contrast and Color Requirements (external website)](https://webaim.org/articles/contrast/)
 * [BBC Mobile Accessibility Guidelines Colour contrast (external website)](https://www.bbc.co.uk/accessibility/forproducts/guides/mobile/colour-contrast/)
 * [Digital.Govt.NZ Colour and contrast (external website)](https://www.digital.govt.nz/standards-and-guidance/design-and-ux/accessibility/colour-and-contrast/)
-* [Creating Color Contrast Guidelines to Meet WCAG 2.1 and Beyond (external website)](https://medium.com/salesforce-ux/creating-c (external website)
+* [Creating Color Contrast Guidelines to Meet WCAG 2.1 and Beyond (external website)](https://medium.com/salesforce-ux/creating-color-contrast-guidelines-to-meet-wcag-2-1-and-beyond-99cee77a7657)
