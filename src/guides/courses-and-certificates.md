@@ -47,6 +47,7 @@ The following courses include free and paid for courses on digital accessibility
 * [Accessibility and inclusion in digital health (external website)](https://www.open.edu/openlearn/health-sports-psychology/accessibility-and-inclusion-digital-health/) 
 * [Assistive technologies and online learning (external website)](https://www.open.edu/openlearn/education-development/assistive-technologies-and-online-learning/)
 * [Diversity and inclusion in the workplace (external website)](https://www.open.edu/openlearn/money-business/diversity-and-inclusion-the-workplace/)
+* [MSFTEnable (external website)](https://www.youtube.com/user/MSFTEnable)
 
 ### Salesforce Trailhead
 
