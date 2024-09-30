@@ -37,6 +37,7 @@ The screen readers are required when testing web pages to determine how they int
 * [Web Developer (external website)](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) - adds a toolbar button with various web developer tools
 * [Web Disability Simulator (external website)](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) - simulates how people with disabilities experience the web
 * [webhint (external website)](https://chromewebstore.google.com/detail/webhint/gccemnpihkbgkdmoogenkbkckppadcag) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
+* [WCAG Color contrast checker (external website)](https://chromewebstore.google.com/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf) - checks the color contrast between the foreground and background of the elements that are in the page according to the WCAG 2.2
 
 ### Edge
 
@@ -50,6 +51,7 @@ The screen readers are required when testing web pages to determine how they int
 * [WAVE Evaluation Tool (external website)](https://microsoftedge.microsoft.com/addons/detail/wave-evaluation-tool/khapceneeednkiopkkbgkibbdoajpkoj?hl=en-GB) - accessibility testing tool
 * [webhint (external website)](https://microsoftedge.microsoft.com/addons/detail/webhint/mlgfbihcfnkaenjpdcngdnhcpkdmcdee?hl=en-GB) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
 * [Web Developer (external website)](https://microsoftedge.microsoft.com/addons/detail/web-developer/ilbdhapjffldgngebmnkdodohjapjccm?hl=en-GB) - adds a toolbar button with various web developer tools
+* [WCAG Color contrast checker (external website)](https://microsoftedge.microsoft.com/addons/detail/wcag-color-contrast-check/idahaggnlnekelhgplklhfpchbfdmkjp) - checks the color contrast between the foreground and background of the elements that are in the page according to the WCAG 2.2
 
 #### Chrome store
 
@@ -95,6 +97,7 @@ Adding [Chrome extension to Opera (external website)](https://help.opera.com/en/
 * [Stylus (external website)](https://addons.mozilla.org/en-GB/firefox/addon/styl-us/) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator (external website)](#stylus)
 * [Web Developer (external website)](https://addons.mozilla.org/en-GB/firefox/addon/web-developer/) - adds a toolbar button with various web developer tools
 * [webhint (external website)](https://addons.mozilla.org/en-GB/firefox/addon/webhint/) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
+* [WCAG Color contrast checker (external website)](https://addons.mozilla.org/en-US/firefox/addon/wcag-contrast-checker/) - checks the color contrast between the foreground and background of the elements that are in the page according to the WCAG 2.2
 
 ### Safari
 
