@@ -92,6 +92,7 @@ Adding [Chrome extension to Opera (external website)](https://help.opera.com/en/
 ### Firefox
 
 * [ARC Toolkit (external website)](https://addons.mozilla.org/en-GB/firefox/addon/arc-toolkit/) - accessibility testing tool
+* [ARIA DevTools (external website)](https://addons.mozilla.org/en-GB/firefox/addon/aria-devtools/) - spot missing ARIA labels, misused ARIA roles, and incomplete keyboard support
 * [axe DevTools (external website)](https://addons.mozilla.org/en-GB/firefox/addon/axe-devtools/) - Web Accessibility Testing - accessibility testing tool
 * [HeadingsMap (external website)](https://addons.mozilla.org/en-GB/firefox/addon/headingsmap/) - shows all the headings in a sidebar
 * [IBM Equal Access Accessibility Checker (external website)](https://addons.mozilla.org/en-GB/firefox/addon/accessibility-checker/) - accessibility testing tool
