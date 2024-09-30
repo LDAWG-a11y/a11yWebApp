@@ -25,7 +25,7 @@ Assisted Technology (AT), plugins, and web browsers use them to provide navigati
 
 Headings are not used for stylistic formatting such as making text BIG or bold.
 
-* [H﻿ow not to use headings](https://www.wearediagram.com/blog/how-not-to-use-html-headings) (external website)
+* [H﻿ow not to use headings (external website)](https://www.wearediagram.com/blog/how-not-to-use-html-headings)
 
 ## Heading ranks
 
@@ -134,5 +134,5 @@ Hopefully this guide has helped you to understand a bit more of using HTML heade
 
 ## Useful links
 
-* [WWW Consortium](https://www.w3.org/WAI/tutorials/page-structure/headings/) (external website)
-* [W3Schools](https://www.w3schools.com/html/html_headings.asp>) (external website)
+* [WWW Consortium (external website)](https://www.w3.org/WAI/tutorials/page-structure/headings/)
+* [W3Schools (external website)](https://www.w3schools.com/html/html_headings.asp>) 
