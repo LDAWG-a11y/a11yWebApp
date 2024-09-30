@@ -201,7 +201,8 @@ If you wish to write your own bookmarklet, [freeCodeCamp (external website)](htt
 
 #### Applications
 
-[Colour Contrast Analyser (CCA) (external website)](https://www.tpgi.com/color-contrast-checker/).
+* [Colour Contrast Analyser (CCA) (external website)](https://www.tpgi.com/color-contrast-checker/)
+* [Photosensitive Epilepsy Analysis Tool (PEAT) (external website)](https://trace.umd.edu/peat/)
 
 ## Suggest something
 
