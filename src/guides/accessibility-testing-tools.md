@@ -85,6 +85,7 @@ Adding [Chrome extension to Opera (external website)](https://help.opera.com/en/
 * [Stylus (external website)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator (external website)](#stylus)
 * [WAVE Evaluation Tool (external website)](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) - accessibility testing tool
 * [Web Disability Simulator (external website)](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) - simulates how people with disabilities experience the web
+* [WCAG Color contrast checker (external website)](https://chromewebstore.google.com/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf) - checks the color contrast between the foreground and background of the elements that are in the page according to the WCAG 2.2
 
 ### Firefox
 
