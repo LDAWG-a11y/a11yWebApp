@@ -26,6 +26,7 @@ The screen readers are required when testing web pages to determine how they int
 * [Accessibility Insights for Web (external website)](https://chromewebstore.google.com/detail/accessibility-insights-fo/pbjjkligggfmakdaogkfomddhfmpjeni) - accessibility testing tool
 * [Alt or not (external website)](https://chromewebstore.google.com/detail/alt-or-not/bhbbijphceaijfpppmdjmjalnogkhamc) - see alt text on Twitter/X
 * [ARC Toolkit (external website)](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) - accessibility testing tool
+* [ARIA DevTools (external website)](https://chromewebstore.google.com/detail/aria-devtools/dneemiigcbbgbdjlcdjjnianlikimpck?hl=en) - spot missing ARIA labels, misused ARIA roles, and incomplete keyboard support
 * [axe DevTools (external website)](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Web Accessibility Testing - accessibility testing tool
 * [HeadingsMap (external website)](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) - shows all the headings in a sidebar
 * [IBM Equal Access Accessibility Checker (external website)](https://chromewebstore.google.com/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp) - accessibility testing tool
@@ -58,6 +59,7 @@ The screen readers are required when testing web pages to determine how they int
 Adding an [extension from Chrome store (external website)](https://support.microsoft.com/en-gb/microsoft-edge/add-turn-off-or-remove-extensions-in-microsoft-edge-9c0ec68c-2fbc-2f2c-9ff0-bdc76f46b026#:~:text=Add%20an%20extension%20to%20Microsoft%20Edge%20from%20the%20Chrome%20Web%20Store).
 
 * [ARC Toolkit (external website)](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) - accessibility testing tool
+* [ARIA DevTools (external website)](https://chromewebstore.google.com/detail/aria-devtools/dneemiigcbbgbdjlcdjjnianlikimpck) - spot missing ARIA labels, misused ARIA roles, and incomplete keyboard support
 * [IBM Equal Access Accessibility Checker (external website)](https://chromewebstore.google.com/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp) - accessibility testing tool
 * [LERA (external website)](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc) - accessibility testing and reporting tool
 * [Stylus (external website)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator (external website)](#stylus)
@@ -77,6 +79,7 @@ Adding [Chrome extension to Opera (external website)](https://help.opera.com/en/
 * [Accessibility Insights for Web (external website)](https://microsoftedge.microsoft.com/addons/detail/accessibility-insights-fo/ghbhpcookfemncgoinjblecnilppimih?hl=en-GB) - accessibility testing tool
 * [Alt or not (external website)](https://chromewebstore.google.com/detail/alt-or-not/bhbbijphceaijfpppmdjmjalnogkhamc) - see alt text on Twitter/X
 * [ARC Toolkit (external website)](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) - accessibility testing tool
+* [ARIA DevTools (external website)](https://chromewebstore.google.com/detail/aria-devtools/dneemiigcbbgbdjlcdjjnianlikimpck) - spot missing ARIA labels, misused ARIA roles, and incomplete keyboard support
 * [axe DevTools (external website)](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Web Accessibility Testing - accessibility testing tool
 * [HeadingsMap (external website)](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) - shows all the headings in a sidebar
 * [IBM Equal Access Accessibility Checker (external website)](https://microsoftedge.microsoft.com/addons/detail/ibm-equal-access-accessib/ompccpejakabkmfepbijnagedbdfldka?hl=en-GB) - accessibility testing tool
@@ -90,6 +93,7 @@ Adding [Chrome extension to Opera (external website)](https://help.opera.com/en/
 ### Firefox
 
 * [ARC Toolkit (external website)](https://addons.mozilla.org/en-GB/firefox/addon/arc-toolkit/) - accessibility testing tool
+* [ARIA DevTools (external website)](https://addons.mozilla.org/en-GB/firefox/addon/aria-devtools/) - spot missing ARIA labels, misused ARIA roles, and incomplete keyboard support
 * [axe DevTools (external website)](https://addons.mozilla.org/en-GB/firefox/addon/axe-devtools/) - Web Accessibility Testing - accessibility testing tool
 * [HeadingsMap (external website)](https://addons.mozilla.org/en-GB/firefox/addon/headingsmap/) - shows all the headings in a sidebar
 * [IBM Equal Access Accessibility Checker (external website)](https://addons.mozilla.org/en-GB/firefox/addon/accessibility-checker/) - accessibility testing tool
@@ -197,7 +201,8 @@ If you wish to write your own bookmarklet, [freeCodeCamp (external website)](htt
 
 #### Applications
 
-[Colour Contrast Analyser (CCA) (external website)](https://www.tpgi.com/color-contrast-checker/).
+* [Colour Contrast Analyser (CCA) (external website)](https://www.tpgi.com/color-contrast-checker/)
+* [Photosensitive Epilepsy Analysis Tool (PEAT) (external website)](https://trace.umd.edu/peat/)
 
 ## Suggest something
 
