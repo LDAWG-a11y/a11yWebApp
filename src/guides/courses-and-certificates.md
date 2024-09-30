@@ -29,9 +29,11 @@ The following courses include free and paid for courses on digital accessibility
 * OCAD University: [Understanding Web Accessibility (external website)](https://legacy.idrc.ocadu.ca/policy/idrc-and-aoda/441-idrcs-self-paced-course) 
 * A11Y collective: [Web Accessibility, the business case (external website)](https://www.a11y-collective.com/product/masterclass-web-accessbility-the-business-case/) 
 * A11Y collective: [Try-out Class (external website)](https://www.a11y-collective.com/product/try-out-class/) 
+* edX: W3C [W3Cx: Introduction to Web Accessibility (external website)](https://www.edx.org/learn/web-accessibility/the-world-wide-web-consortium-w3c-introduction-to-web-accessibility) 
 * GTx: [Information and Communication Technology (ICT) Accessibility (external website)](https://www.edx.org/learn/information-technology/the-georgia-institute-of-technology-information-and-communication-technology-ict-accessibility) 
 * Code Academy - [Learn CSS: Accessibility (external website)](https://www.codecademy.com/learn/learn-css-accessibility) 
 * Piccia Neri - [Accessibility Primer (external website)](https://piccianeri.com/free-accessibility-primer-course/) (with a eye to typography)
+* WebAim - [Introduction to Web Accessibility (external website)](https://webaim.org/intro/index#video) (with a eye to typography)
 
 ### Microsoft
 
@@ -61,9 +63,10 @@ The following courses include free and paid for courses on digital accessibility
 * [Build a Website Accessibility Tester With JavaScript & Pa11y (external website)](https://www.youtube.com/watch?v=MO4vEAu3hKE) 
 * [Accessibility in VS Code (external website)](https://www.youtube.com/watch?v=9biCDjSSwqw) 
 * freeCodeCamp: [Learn Accessibility - Full a11y Tutorial (external website)](https://www.youtube.com/watch?v=e2nkq3h1P68) 
-* [Deque - What is Digital Accessibility? (external website)](https://www.youtube.com/watch?v=grrx2Lva7T0)
-* [Microsoft - MSFTEnable (external website)](https://www.youtube.com/user/MSFTEnable)
-* [Adam Barragato - Making Accessible Word Documents Accessible PDFs (external website)](https://www.youtube.com/watch?v=kvZN4WgsE3k)
+* Deque [What is Digital Accessibility? (external website)](https://www.youtube.com/watch?v=grrx2Lva7T0)
+* Microsoft [MSFTEnable (external website)](https://www.youtube.com/user/MSFTEnable)
+Microsoft [Introduction to Disability and Accessibility (external website)](https://www.youtube.com/watch?v=GGB_xreE3OU)
+* Adam Barragato [Making Accessible Word Documents Accessible PDFs (external website)](https://www.youtube.com/watch?v=kvZN4WgsE3k)
 
 ### Periodically available
 
