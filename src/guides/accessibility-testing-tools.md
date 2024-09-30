@@ -202,3 +202,4 @@ If you wish to write your own bookmarklet, [freeCodeCamp (external website)](htt
 ## Suggest something
 
 If you have any suggestions for other tools that you think we should use and should be added to this list, please contact us at [info@makethingsaccessible.com](mailto:info@makethingsaccessible.com)
+
