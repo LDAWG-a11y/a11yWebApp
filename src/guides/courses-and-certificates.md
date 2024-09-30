@@ -99,6 +99,7 @@ Online Self-Paced Web Accessibility Classes:
 * [International Association of Accessibility Professionals (IAAP) Certified Professional in Accessibility Core Competencies (CPACC) (external website)](https://dequeuniversity.com/curriculum/courses/iaap-cpacc) 
 * [International Association of Accessibility Professionals (IAAP) Web Accessibility Specialist (WAS) (external website)](https://dequeuniversity.com/curriculum/packages/iaap-was) 
 * [International Association of Accessibility Professionals (IAAP) Accessible Document Specialist (ADS) (external website)](https://dequeuniversity.com/curriculum/packages/documents)
+* [What is Digital Accessibility? (external website)](https://www.youtube.com/watch?v=grrx2Lva7T0)
 
 ### egghead.io
 
@@ -193,6 +194,12 @@ Umbraco Training: [Accessibility (external website)](https://umbraco.com/trainin
 ### Section 508 (United States)
 
 [Section 508 Certification (external website)](https://www.section508.gov/training-home/#Onlinetraining).
+
+## CPACC useful websites
+* 100 Days of A11y - [Certified Professional in Accessibility Core Competencies (CPACC) (external website)](https://100daysofa11y.com/cpacc/) 
+* Brainscape - [CPACC (external website)](https://www.brainscape.com/subjects/cpacc) 
+* [CPACC Final Review (external website)](https://jeopardylabs.com/play/cpacc-final-review-3) 
+* [CPACC Final Review (external website)](https://www.goconqr.com/en/quiz/20551632/cpacc-exam-study-quiz)
 
 ## Suggest something
 
