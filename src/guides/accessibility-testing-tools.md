@@ -59,6 +59,7 @@ The screen readers are required when testing web pages to determine how they int
 Adding an [extension from Chrome store (external website)](https://support.microsoft.com/en-gb/microsoft-edge/add-turn-off-or-remove-extensions-in-microsoft-edge-9c0ec68c-2fbc-2f2c-9ff0-bdc76f46b026#:~:text=Add%20an%20extension%20to%20Microsoft%20Edge%20from%20the%20Chrome%20Web%20Store).
 
 * [ARC Toolkit (external website)](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) - accessibility testing tool
+* [ARIA DevTools (external website)](https://chromewebstore.google.com/detail/aria-devtools/dneemiigcbbgbdjlcdjjnianlikimpck) - spot missing ARIA labels, misused ARIA roles, and incomplete keyboard support
 * [IBM Equal Access Accessibility Checker (external website)](https://chromewebstore.google.com/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp) - accessibility testing tool
 * [LERA (external website)](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc) - accessibility testing and reporting tool
 * [Stylus (external website)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator (external website)](#stylus)
