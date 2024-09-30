@@ -60,13 +60,15 @@ The following courses include free and paid for courses on digital accessibility
 
 ### YouTube courses
 
+* Adam Barragato [Making Accessible Word Documents Accessible PDFs (external website)](https://www.youtube.com/watch?v=kvZN4WgsE3k)
 * [Build a Website Accessibility Tester With JavaScript & Pa11y (external website)](https://www.youtube.com/watch?v=MO4vEAu3hKE) 
 * [Accessibility in VS Code (external website)](https://www.youtube.com/watch?v=9biCDjSSwqw) 
 * freeCodeCamp: [Learn Accessibility - Full a11y Tutorial (external website)](https://www.youtube.com/watch?v=e2nkq3h1P68) 
 * Deque [What is Digital Accessibility? (external website)](https://www.youtube.com/watch?v=grrx2Lva7T0)
 * Microsoft [MSFTEnable (external website)](https://www.youtube.com/user/MSFTEnable)
 Microsoft [Introduction to Disability and Accessibility (external website)](https://www.youtube.com/watch?v=GGB_xreE3OU)
-* Adam Barragato [Making Accessible Word Documents Accessible PDFs (external website)](https://www.youtube.com/watch?v=kvZN4WgsE3k)
+
+* Smarter Digital Services [A Summer of Accessibility (external website)](https://www.youtube.com/playlist?list=PLJ3A9-8GNSSi5B49M2AMeb2n4FpoopL22)
 
 ### Periodically available
 
