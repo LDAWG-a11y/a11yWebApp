@@ -32,6 +32,7 @@ The following courses include free and paid for courses on digital accessibility
 * GTx: [Information and Communication Technology (ICT) Accessibility (external website)](https://www.edx.org/learn/information-technology/the-georgia-institute-of-technology-information-and-communication-technology-ict-accessibility) 
 * Code Academy - [Learn CSS: Accessibility (external website)](https://www.codecademy.com/learn/learn-css-accessibility) 
 * Piccia Neri - [Accessibility Primer (external website)](https://piccianeri.com/free-accessibility-primer-course/) (with a eye to typography)
+* [Deque - What is Digital Accessibility? (external website)](https://www.youtube.com/watch?v=grrx2Lva7T0)
 
 ### Microsoft
 
@@ -99,7 +100,6 @@ Online Self-Paced Web Accessibility Classes:
 * [International Association of Accessibility Professionals (IAAP) Certified Professional in Accessibility Core Competencies (CPACC) (external website)](https://dequeuniversity.com/curriculum/courses/iaap-cpacc) 
 * [International Association of Accessibility Professionals (IAAP) Web Accessibility Specialist (WAS) (external website)](https://dequeuniversity.com/curriculum/packages/iaap-was) 
 * [International Association of Accessibility Professionals (IAAP) Accessible Document Specialist (ADS) (external website)](https://dequeuniversity.com/curriculum/packages/documents)
-* [What is Digital Accessibility? (external website)](https://www.youtube.com/watch?v=grrx2Lva7T0)
 
 ### egghead.io
 
