@@ -42,7 +42,7 @@ To make an accessible table that will scroll horizontally on a mobile, you need 
 
 where `“mycaption”` references the `<caption id="mycaption">` that should be inside the table. The tabindex satisfies WCAG Success Criteria 2.1.1 Keyboard, and the aria-labelledby satisfies 4.1.2 Name, Role, Value. For the CSS, apply overflow: auto to the table, and don’t forget to apply a focus style.
 
-* [Under-engineered responsive tables](https://adrianroselli.com/2020/11/under-engineered-responsive-tables.html) (Adrian Roselli) (external website)
+* [Under-engineered responsive tables (external website)](https://adrianroselli.com/2020/11/under-engineered-responsive-tables.html) (Adrian Roselli)
 
 ## Adding scope to tables
 
@@ -1501,4 +1501,4 @@ Hopefully this guide has helped you to understand a bit more of using HTML table
 
 ## Useful links
 
-* [W3C HTML tables tutorial](https://www.w3.org/WAI/tutorials/tables/) (external website)
+* [W3C HTML tables tutorial (external website)](https://www.w3.org/WAI/tutorials/tables/)
