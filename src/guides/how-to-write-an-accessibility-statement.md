@@ -928,4 +928,4 @@ There are several exemptions within the Public Sector Bodies Accessibility Regul
 
 Many people are not as familiar with the exemptions available to them and often claim disproportionate burden for something when it is already exempted. We encourage everyone to check what exemptions may apply before making any disproportionate burden claims.
 
-For a list of exemptions, what they apply to and where you might use them, read our exemptions guide.
+For a list of exemptions, what they apply to and where you might use them, read our [exemptions guide](https://www.makethingsaccessible.com/guides/psbar-exemptions/) and [3rd party responsibilities guide](https://www.makethingsaccessible.com/guides/3rd-party-content-responsibilities/).
