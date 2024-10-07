@@ -16,7 +16,7 @@ It is divided into 5 sections - Welcome, Background, Core principles, Recommenda
 
 We hope it proves useful as you embed digital accessibility across your organisation. It has been created as an open educational resource with no budget, no admin support or other resources... just a lot of goodwill from some passionate people. These include (in alphabetical order):
 
-* Alistair McNaught (Director, A[listair McNaught Consultancy Ltd](https://www.learningapps.co.uk/moodle/xertetoolkits/play.php?template_id=2196)) - lead author supported by the following contributors, editors and critical friends.
+* Alistair McNaught (Director, [Alistair McNaught Consultancy Ltd](https://www.learningapps.co.uk/moodle/xertetoolkits/play.php?template_id=2196)) - lead author supported by the following contributors, editors and critical friends.
 * Amy Low (Service Delivery Director and Head of Accessibility, [AbilityNet](https://abilitynet.org.uk/)),
 * Ben Watson, (Head of Digital Accessibility, UCL),
 * George Rhodes (Digital Accessibility Lead, University of Westminster),
