@@ -58,7 +58,7 @@ So, for the most part, the accessible mechanisms are going to be required on the
 
 ## Accessible mechanisms best practices examples
 
-Full disclaimer here, I'm not going to do a code-along thing, on this occasion and the reasons for that are:
+Full disclaimer here, I'm not going to do a code-along thing on this occasion and the reasons for that are:
 
 * Some of this stuff is backend stuff and whilst I could probably figure it out, it's not really an area I have enough headspace for
 * As always, I'm going to be putting the examples on CodePen and I can't use backend stuff on there
