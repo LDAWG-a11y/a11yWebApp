@@ -12,6 +12,10 @@ team: aaa
 ---
 <a href="https://kmpf.org/" class="supporters__link"><img src="/aaaAssets/kmpf.png" alt="Kent and Medway Progression Federation"></a>
 
+![](/aaaAssets/new-friars-college.jpg)
+
+<a href="https://www.newfriarscollege.org.uk/" class="supporters__link"><img src="/aaaAssets/new-friars-college.jpg" alt="New Friars College"></a>
+
 <a href="https://www.hee.nhs.uk/our-work/choices-college-supported-internships" class="supporters__link"><img src="/aaaAssets/choices_logo.png" alt="Choices College"></a>
 
 <a href="https://www.ucl.ac.uk/" class="supporters__link"><img src="/aaaAssets/UCL_logo.png" alt="University of Central London"></a>
