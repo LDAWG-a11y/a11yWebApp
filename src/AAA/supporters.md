@@ -16,7 +16,7 @@ team: aaa
 
 <a href="https://www.oldham.ac.uk/" class="supporters__link"><img src="/aaaAssets/oldham-college-logo.jpg" alt="Oldham College"></a>
 
-<a href="https://www.newfriarscollege.org.uk/" class="supporters__link"><img src="/aaaAssets/new-friars-college.jpg" alt="New Friars College"></a>
+<a href="https://www.newfriarscollege.org.uk/" class="supporters__link"><img src="/aaaAssets/nf2.jpg" alt="New Friars College"></a>
 
 <a href="https://www.hee.nhs.uk/our-work/choices-college-supported-internships" class="supporters__link"><img src="/aaaAssets/choices_logo.png" alt="Choices College"></a>
 
