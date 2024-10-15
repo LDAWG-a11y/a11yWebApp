@@ -11,7 +11,13 @@ title: Access and Assistance for All
 usesCMS: true
 team: aaa
 ---
-Access and Assistance for All (AAA) is a campaign that aims to increase access to assistive technology across further education colleges as well as raising awareness of how to make resources accessible by design so they are compatible with assistive technology. The youth-led campaign group consists of 15 young regional champions from across England, and is supported by the Thomas Pocklington Trust  along with our partners, including University College of London (UCL)
+Access and Assistance for All (AAA) is a campaign that aims to increase access to assistive technology across further education colleges as well as raising awareness of how to make resources accessible by design so they are compatible with assistive technology. The youth-led campaign group consists of 12 young regional champions from across England, and is supported by the Thomas Pocklington Trust along with our partners, including University College of London (UCL).\
+\
+The Champions created this short animated video to explain what the campaign is about. 
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/r2yRs4DejyA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
+
+To support the campaign or for more information contact: [EducationPolicy@pocklington.org.uk](mailto:EducationPolicy@pocklington.org.uk)
 
 ## Why is this campaign needed?
 
@@ -74,7 +80,7 @@ To promote comprehensive information about assistive technology and how to acces
 
 There are many forms of both physical and digital assistive technology that can aid students throughout their education, and these could potentially be of huge benefit to students, so should be promoted (even non-disabled people can benefit from assistive technology! Spellcheck, auto-complete and even basic organisational systems originated as assistive technology, and can be beneficial to all when implemented correctly). There are also sites, such as [My Computer My Way](https://mcmw.abilitynet.org.uk/), which can show you how to setup the many free digital accessibility solutions already available on most devices.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/r2yRs4DejyA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
+
 
 </div>
 </div>
