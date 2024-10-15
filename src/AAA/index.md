@@ -11,7 +11,9 @@ title: Access and Assistance for All
 usesCMS: true
 team: aaa
 ---
-Access and Assistance for All (AAA) is a campaign that aims to increase access to assistive technology across further education colleges as well as raising awareness of how to make resources accessible by design so they are compatible with assistive technology. The youth-led campaign group consists of 15 young regional champions from across England, and is supported by the Thomas Pocklington Trust  along with our partners, including University College of London (UCL)
+Access and Assistance for All (AAA) is a campaign that aims to increase access to assistive technology across further education colleges as well as raising awareness of how to make resources accessible by design so they are compatible with assistive technology. The youth-led campaign group consists of 12 young regional champions from across England, and is supported by the Thomas Pocklington Trust  along with our partners, including University College of London (UCL). 
+
+To support the campaign contact:  [EducationPolicy@pocklington.org.uk](mailto:EducationPolicy@pocklington.org.uk).
 
 ## Why is this campaign needed?
 
