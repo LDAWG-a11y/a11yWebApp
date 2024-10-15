@@ -12,7 +12,9 @@ team: aaa
 ---
 <a href="https://kmpf.org/" class="supporters__link"><img src="/aaaAssets/kmpf.png" alt="Kent and Medway Progression Federation"></a>
 
-![](/aaaAssets/new-friars-college.jpg)
+![]()
+
+<a href="https://www.oldham.ac.uk/" class="supporters__link"><img src="/aaaAssets/oldham-college-logo.jpg" alt="Oldham College"></a>
 
 <a href="https://www.newfriarscollege.org.uk/" class="supporters__link"><img src="/aaaAssets/new-friars-college.jpg" alt="New Friars College"></a>
 
