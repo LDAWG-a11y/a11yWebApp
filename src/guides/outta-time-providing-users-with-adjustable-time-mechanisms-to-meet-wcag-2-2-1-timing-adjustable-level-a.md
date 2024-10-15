@@ -45,8 +45,32 @@ I'll summarise the WCAG exceptions, just to refresh our memories:
 
 * If a user can **turn off** the timer altogether and they encounter this timer before they encounter it, then this is an accessible mechanism. Let's imagine we have a site and in the User Account Settings, for some reason we only let that user look at their own personal info for 10 minutes, because for some ridiculous reason, we think that is somehow good, we could provide a control, on the page, which precedes the main content and it could be a toggle or a checkbox "Keep me logged in" or words to that effect. This would give the users all of the time they need to do whatever they wanted or needed to do. This is a pretty simple mechanism that can make the world of difference to our users
 * If a user can again encounter a control of some sorts that precedes the main content that enables them to **adjust** the timeout by at least 10 times its original duration, this too would be an accessible mechanism, again, it could be a checkbox or toggle switch, etc and it could have a label such as "Extend my time limit to 100 minutes" (using the original 10 minute example * 10)
-* If a user can extend the timeout with a simple action (the WCAG example gives pressing the <kbd>Space</kbd> key as a simple action and they are given at least 20 seconds to press that key and upon pressing that key, it extends the timeout to 10 times its original duration, then this too is an accessible mechanism. This could of course be a dialog that:
+* If a user can **extend** the timeout with a simple action (the WCAG example gives pressing the <kbd>Space</kbd> key as a simple action and they are given at least 20 seconds to press that key and upon pressing that key, it extends the timeout to 10 times its original duration, then this too is an accessible mechanism. This could of course be a dialog that:
 
   * Appears on screen visually, with a text instruction, my interpretation is it is just one key to press, not move focus to a dialog and then expect a user to find the 'Extend' button, a simple key press only
   * Is also announced via an ARIA alert, such as a live region, so screen reader users are aware of the requirement, but also consider screen magnifying users, they may be just looking at a small portion of the screen, they need to be aware something has changes and something requires their immediate attention
-  * But, consider the device type a user is accessing the site on, don't tell a user on an iPad to press <kbd>Space</space>
+  * But, consider the device type a user is accessing the site on, don't tell a user on an iPad to press <kbd>Space</kbd>, because they may or may not have a keyboard
+* If there is a real-time-exception, such as an auction or ticket purchase, etc, then this hard-imposed time limit is necessary, so in these circumstances, we do not need to provide any user with more time
+* If the timer is **essential**, it does not require an accessible mechanism as the time limit is part of the system, this I have to say is the least clear of the exceptions, I guess it could mean live content, but I am inclined to think this is also the exception that some sectors will relay on as their exception, online banking for instance, has legal requirements set that they must implement, allowing a user to stay logged in forever or even a for a few hours of inactivity may put the bank at risk of breaking their legal obligations, but also the user at risk of having their account emptied
+* If the timer is at least 20 hours, then there is no need to supply an additional mechanisms
+
+So, for the most part, the accessible mechanisms are going to be required on the majority of sites, so we will take a look at those first and then we will dig a little deeper with the Essential Exceptions and Real-Time Exceptions.
+
+## Accessible mechanisms best practices examples
+
+Full disclaimer here, I'm not going to do a code-along thing, on this occasion and the reasons for that are:
+
+* Some of this stuff is backend stuff and whilst I could probably figure it out, it's not really an area I have enough headspace for
+* As always, I'm going to be putting the examples on CodePen and I can't use backend stuff on there
+* I'm just cobbling something together, this is not going to be production-ready code or anything like that, it's just a working demo, nothing more
+* And anything else you can think of to keep me away from PHP and other backend languages :)
+
+### Example 1, turn off the timer
+
+### Example 2, adjust the timer
+
+### Example 3, extend the timer
+
+#### Example 4, plenty of time?
+
+## Timer exceptions
