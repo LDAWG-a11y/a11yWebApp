@@ -65,11 +65,21 @@ Full disclaimer here, I'm not going to do a code-along thing on this occasion an
 * I'm just cobbling something together, this is not going to be production-ready code or anything like that, it's just a working demo, nothing more
 * And anything else you can think of to keep me away from PHP and other backend languages :)
 
-### Example 1, turn off the timer
+### The timer non-exceptions
 
-### Example 2, adjust the timer
+There will be some common features on each of these examples:
 
-### Example 3, extend the timer
+* Each will have a countdown timer at the top of the screen
+* The countdown timer will always start at 61 seconds, which yes, is a very low number (and an odd one), but I cannot tell you how many hundreds of hours I have wasted staring at screens, waiting for a timer to reappear, only for somebody to call me and I miss it again or whatever, so we're going short in our examples.
+* There will be a toggle switch at the top, the toggle's initial position "default" is the inaccessible thing we may find in the wild, switching the toggle to "fix" will just add the magic we need, the reason I'm doing this is just to demo how bad something is and then how it can be made much better
+
+#### Example 1, turn off the timer
+
+A straightforward one to start with, we're going to have a page with two fields and a button, there is a period of inactivity timer which is 61 seconds, I've gone for such a low number as I've lost count of the number of hours I've spent staring at a screen waiting for it to appear again. I'm going to place the timer in the corner on each 
+
+#### Example 2, adjust the timer
+
+#### Example 3, extend the timer
 
 #### Example 4, plenty of time?
 
