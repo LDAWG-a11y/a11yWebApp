@@ -25,3 +25,5 @@ team: aaa
 <a href="https://www.barnsley.ac.uk/" class="supporters__link"><img src="/aaaAssets/bc-logo-lb-no-strap.png" alt="Barnsley College"></a>
 
 <a href="https://www.bradfordcollege.ac.uk/" class="supporters__link"><img src="/aaaAssets/bradford-college.jpg" alt="Bradford College"></a>
+
+<a href="https://www.theoaks.ac.uk/" class="supporters__link"><img src="/aaaAssets/the-oaks-logo-block-pink.jpg" alt="The Oaks Specialist College"></a>
