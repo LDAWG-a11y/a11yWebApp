@@ -7,7 +7,7 @@ date: 2023-05-17
 toc: false
 isAAAStory: true
 ---
-![Coleen]()
+![charlotte.jpg](Charlotte)
 
 Hi, my name is Charlotte. I'm 23 years old, I studied Law at University and I recently passed my Solicitors Qualifying Exams. I'm a Youth Champion for the Access and Assistance Campaign.
 
