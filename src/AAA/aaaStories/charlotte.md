@@ -2,6 +2,7 @@
 title: Charlotte
 summary: Charlotte is Youth Champion for the Access and Assistance Campaign,
   this is her story.
+img: src/aaaAssets/charlotte.jpg
 date: 2024-10-16
 toc: false
 isGuide: true
