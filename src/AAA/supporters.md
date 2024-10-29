@@ -27,3 +27,5 @@ team: aaa
 <a href="https://www.theoaks.ac.uk/" class="supporters__link"><img src="/aaaAssets/the-oaks-logo-block-pink.jpg" alt="The Oaks Specialist College"></a>
 
 <a href="https://www.buckscollegegroup.ac.uk/" class="supporters__link"><img src="/aaaAssets/buckscollegegroup-logo-web.png" alt=""></a>
+
+<a href="https://www.pocklington.org.uk/" class="supporters__link"><img src="/aaaAssets/TPT_logo.png" alt=""></a>
