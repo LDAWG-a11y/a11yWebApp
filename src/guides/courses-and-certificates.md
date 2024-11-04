@@ -39,7 +39,7 @@ The following courses include free and paid for courses on digital accessibility
 
 #### ARK - Accessibility Resources and Know-How
 
-ARK is AHEAD's home for digital accessibility resources and know-how in tertiary education. When each course is completed you will automatically receive a Digital Badge and if you wish to complete the first 3 then you receive a Digital Accessibility Master Badge for your dedication to accessibility.
+[ARK](https://www.ahead.ie/ark) is [AHEAD's](https://www.ahead.ie/) home for digital accessibility resources and know-how in tertiary education. When each course is completed you will automatically receive a Digital Badge and if you wish to complete the first 3 then you receive a Digital Accessibility Master Badge for your dedication to accessibility.
 
 * [An Introduction to Digital Accessibility for Educators (external website)](https://www.ahead.ie/Digital-Accessibility-for-Educators) 
 * [Digital accessibility - a Whole Institution Approach (external website)](https://www.ahead.ie/Whole-Institution-Approach-to-Accessibility) 
@@ -80,8 +80,7 @@ ARK is AHEAD's home for digital accessibility resources and know-how in tertiary
 * freeCodeCamp: [Learn Accessibility - Full a11y Tutorial (external website)](https://www.youtube.com/watch?v=e2nkq3h1P68) 
 * Deque [What is Digital Accessibility? (external website)](https://www.youtube.com/watch?v=grrx2Lva7T0)
 * Microsoft [MSFTEnable (external website)](https://www.youtube.com/user/MSFTEnable)
-Microsoft [Introduction to Disability and Accessibility (external website)](https://www.youtube.com/watch?v=GGB_xreE3OU)
-
+  Microsoft [Introduction to Disability and Accessibility (external website)](https://www.youtube.com/watch?v=GGB_xreE3OU)
 * Smarter Digital Services [A Summer of Accessibility (external website)](https://www.youtube.com/playlist?list=PLJ3A9-8GNSSi5B49M2AMeb2n4FpoopL22)
 
 ### Periodically available
@@ -217,6 +216,7 @@ Umbraco Training: [Accessibility (external website)](https://umbraco.com/trainin
 [Section 508 Certification (external website)](https://www.section508.gov/training-home/#Onlinetraining).
 
 ## CPACC useful websites
+
 * 100 Days of A11y - [Certified Professional in Accessibility Core Competencies (CPACC) (external website)](https://100daysofa11y.com/cpacc/) 
 * Brainscape - [CPACC (external website)](https://www.brainscape.com/subjects/cpacc) 
 * [CPACC Final Review (external website)](https://jeopardylabs.com/play/cpacc-final-review-3) 
