@@ -35,6 +35,19 @@ The following courses include free and paid for courses on digital accessibility
 * Piccia Neri - [Accessibility Primer (external website)](https://piccianeri.com/free-accessibility-primer-course/) (with a eye to typography)
 * WebAim - [Introduction to Web Accessibility (external website)](https://webaim.org/intro/index#video) (with a eye to typography)
 
+### AHEAD Ireland
+
+#### ARK - Accessibility Resources and Know-How
+
+ARK is AHEAD's home for digital accessibility resources and know-how in tertiary education. When each course is completed you will automatically receive a Digital Badge and if you wish to complete the first 3 then you receive a Digital Accessibility Master Badge for your dedication to accessibility.
+
+* [An Introduction to Digital Accessibility for Educators (external website)](https://www.ahead.ie/Digital-Accessibility-for-Educators) 
+* [Digital accessibility - a Whole Institution Approach (external website)](https://www.ahead.ie/Whole-Institution-Approach-to-Accessibility) 
+* [Developing a Web Accessibility Statement (external website)](https://www.ahead.ie/Develop-an-Accessibility-Statement) 
+* [Designing Course Layouts for Learner Success (external website)](https://www.ahead.ie/ARK-Designing-Courses) 
+* [Universal Design for Learning - Getting Started (external website)](https://www.ahead.ie/ARK-UDL) 
+* [Disability 101 - Awareness, Inclusion and Equity (external website)](https://www.ahead.ie/ARK-DA101) 
+
 ### Microsoft
 
 * [Accessibility fundamentals (external website)](https://learn.microsoft.com/en-us/training/paths/accessibility-fundamental/) 
