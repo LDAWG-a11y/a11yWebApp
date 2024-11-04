@@ -31,7 +31,7 @@ We do not use tables for the layout of content.
 ## Captions
 
 A caption acts as a heading for a table. Most screen readers will disclose the content of captions, and the captions will help users to discover a table and comprehend it's meaning and then they can decide if they want to read it. If the AT user uses “Tables Mode”, the captions are the main instrument used to identify tables.
- 
+
 ```html
 <caption>Bin collections</caption>
 ```
@@ -1502,3 +1502,4 @@ Hopefully this guide has helped you to understand a bit more of using HTML table
 ## Useful links
 
 * [W3C HTML tables tutorial (external website)](https://www.w3.org/WAI/tutorials/tables/)
+* [Adrian Roselli: Talkin' Tables (external website)](https://www.youtube.com/watch?v=xaIjHF7FHv8)
