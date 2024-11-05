@@ -99,4 +99,4 @@ The part of the report showing the page highlights the issue
 
 ![Report showing the link to the FAQs that is missing the reference to its tag element](src/guideImg/13-highlighted-issue.png)
 
-This helps the user in tracking down the issue in Grackle PDF or other PDF editing software.
+This helps the user in tracking down the issue in [Grackle PDF](https://www.grackledocs.com/en/products-services/grackle-pdf/) or other PDF editing software.
