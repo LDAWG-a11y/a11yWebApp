@@ -35,9 +35,14 @@ There’s no errors in the PDF/UA and WCAG sections and in the Quality section t
 
 There is empty whitespace such as 
 
+![Empty white space in link within TOCI](src/guideImg/2-toci-whitespace.png)
+
 and 
 
-“TOCI” element does not contain a “Link” element that points to another element
+![empty paragraphs](src/guideImg/3-empty-paragraph.png)
+
+### “TOCI” element does not contain a “Link” element that points to another element
+
 TOCI objects without Link - OBJR links
 
 And
