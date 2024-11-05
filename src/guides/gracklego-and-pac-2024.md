@@ -55,15 +55,31 @@ And
 
 Unfortunately, PAC 2024 is not able to point out which, if any, table is possibly incomplete due to missing a TH or TD element.
 
-Grackle Go
+## Grackle Go
 
-I uploaded the file to Grackle Go by   and selecting the PDF file
+I uploaded the file to Grackle Go by 
 
-I then clicked   which created a scan and submitted the file
+![Choose files button](src/guideImg/5.5-choose-files.png)
 
-I had to wait for a little while for the scan to show Completed, don’t forget to hit the   
+and selecting the PDF file
+
+![Grackle Go having chosen the file](src/guideImg/6-grackle-go.png)
+
+I then clicked 
+
+![Create scan button](src/guideImg/7-create-scan.png)
+
+ which created a scan and submitted the file
+
+![PDF submitted for scan](src/guideImg/8-submitted.png)
+
+I had to wait for a little while for the scan to show Completed, don’t forget to hit the 
+
+![Refresh button](src/guideImg/8.5-refresh.png)
 
 The Scan Results report can then be accessed by clicking on the Filename link
+
+![Scan results](src/guideImg/10-scan-results.png)
 
 The Scan Results show details about the file including what application was used to generate the PDF, and both the “original file” and the report (put report here) can be downloaded using the following buttons
 
