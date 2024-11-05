@@ -70,6 +70,7 @@ The following courses include free and paid for courses on digital accessibility
 ### Wix
 
 * WIXLearn - [Accessibility 101: Build your accessible website (external website)](https://www.wix.com/learn/courses/site-essentials/build-your-accessible-website)
+* WIXLearn - [Accessibility certification (external website)](https://www.wix.com/learn/certification/accessibility)
 
 ### YouTube courses
 
