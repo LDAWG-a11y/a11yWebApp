@@ -45,11 +45,18 @@ and
 
 TOCI objects without Link - OBJR links
 
+![TOCI with no Link - OBJR and only Contents](src/guideImg/4-toci-without-link.png)
+
 And
 
-“Table” structure is possible incomplete due to a missing “TH” or “TD” element
+![TOCI with no Link - OBJR and only whitespace](src/guideImg/5-toci-without-link.png)
+
+#### “Table” structure is possible incomplete due to a missing “TH” or “TD” element
+
 Unfortunately, PAC 2024 is not able to point out which, if any, table is possibly incomplete due to missing a TH or TD element.
+
 Grackle Go
+
 I uploaded the file to Grackle Go by   and selecting the PDF file
 
 I then clicked   which created a scan and submitted the file
