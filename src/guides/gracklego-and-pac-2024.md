@@ -21,7 +21,7 @@ The PAC 2024 validator is downloaded and installed on the user’s Windows PC.
 
 ## PAC 2024
 
-I took a file (Word-un-accessible.pdf) and ran it through PAC 2024
+I took a file ([Word-un-accessible.pdf](/public/docs/word-un-accessible.pdf)) and ran it through PAC 2024
 
 There’s no errors in the PDF/UA and WCAG sections and in the Quality section there are 26 warnings, which included ’Tagged text consists of only whitespace’ (23) – ‘Tagged text consists of only whitespace, and its location can only be approximated’, ‘“TOCI” elements contain “Link” elements’ (2) – ‘“TOCI” element does not contain a “Link” element that points to another element’, and ‘Completeness of “Table” elements’ – ‘“Table” structure is possible incomplete due to a missing “TH” or “TD” element’.
 Note that the Quality Checks are not official technical criteria, and they are not required to be green for the PDF to be accessible, they serve as an indicator of potential errors.
