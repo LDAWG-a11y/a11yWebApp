@@ -77,13 +77,17 @@ I had to wait for a little while for the scan to show Completed, don’t forget 
 
 ![Refresh button](src/guideImg/8.5-refresh.png)
 
+![Scan completed](src/guideImg/9-completed.png)
+
 The Scan Results report can then be accessed by clicking on the Filename link
 
 ![Scan results](src/guideImg/10-scan-results.png)
 
 The Scan Results show details about the file including what application was used to generate the PDF, and both the “original file” and the report (put report here) can be downloaded using the following buttons
 
-The Word-un-accessible.pdf file passed with an Accessible Grade of A but I have also tested GoogleDocs-un-accessible.pdf which fails with an Accessible Grade of F.
+![Download report and download original file buttons](src/guideImg/11-download.png)
+
+The [Word-un-accessible.pdf](/public/docs/word-un-accessible.pdf) file passed with an Accessible Grade of A but I have also tested [GoogleDocs-un-accessible.pdf](/public/docs/googledocs-un-accessible.pdf) which fails with an Accessible Grade of F.
 The report breaks down into Basic Requirements, Logical Structure, and Metadata and Settings with each part showing passes, warnings, and failures. 
 When a particular issue is selected
 
