@@ -88,9 +88,15 @@ The Scan Results show details about the file including what application was used
 ![Download report and download original file buttons](src/guideImg/11-download.png)
 
 The [Word-un-accessible.pdf](/public/docs/word-un-accessible.pdf) file passed with an Accessible Grade of A but I have also tested [GoogleDocs-un-accessible.pdf](/public/docs/googledocs-un-accessible.pdf) which fails with an Accessible Grade of F.
+
 The report breaks down into Basic Requirements, Logical Structure, and Metadata and Settings with each part showing passes, warnings, and failures. 
+
 When a particular issue is selected
 
+![Logical structure, nesting links and link object missing reference](src/guideImg/12-logical-structure.png)
+
 The part of the report showing the page highlights the issue
+
+![Report showing the link to the FAQs that is missing the reference to its tag element](src/guideImg/13-highlighted-issue.png)
 
 This helps the user in tracking down the issue in Grackle PDF or other PDF editing software.
