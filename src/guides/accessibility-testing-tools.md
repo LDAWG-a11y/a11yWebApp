@@ -190,6 +190,7 @@ If you wish to write your own bookmarklet, [freeCodeCamp (external website)](htt
 
 * [Adobe Color (external website)](https://color.adobe.com/create/color-accessibility) - interactive tool for testing colour combinations
 * [Color Safe (external website)](http://colorsafe.co/) - tool for generating text colours based on a selected background colour
+* [Contrast Finder (external website)](https://app.contrast-finder.org/) - tests the contrast and also suggests new colours with valid contrast ratios
 
 ### Compliance checkers
 
@@ -207,4 +208,3 @@ If you wish to write your own bookmarklet, [freeCodeCamp (external website)](htt
 ## Suggest something
 
 If you have any suggestions for other tools that you think we should use and should be added to this list, please contact us at [info@makethingsaccessible.com](mailto:info@makethingsaccessible.com)
-
