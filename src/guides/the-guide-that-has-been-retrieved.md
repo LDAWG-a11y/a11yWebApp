@@ -8,6 +8,7 @@ tags:
   - Microsoft
   - Word
   - PDF
+  - Documents
 file:
   - /public/docs/creating-accessible-pdfs-from-microsoft-word.docx
   - /public/docs/word-un-accessible.docx
