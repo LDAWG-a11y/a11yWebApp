@@ -8,6 +8,7 @@ tags:
   - LibreOffice
   - Writer
   - PDF
+  - Documents
 file:
   - /public/docs/libreoffice-un-accessible.odt
   - /public/docs/creating-accessible-pdfs-from-libreoffice-writer.docx
