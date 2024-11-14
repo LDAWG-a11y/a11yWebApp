@@ -152,6 +152,7 @@ If you wish to write your own bookmarklet, [freeCodeCamp (external website)](htt
 * [Headings (external website)](https://pauljadam.com/bookmarklets/headings.html)
 * [Sally (external website)](https://sa11y.netlify.app/) 
 * Paul J Adam's [JavaScript Bookmarklets for Accessibility Testing (external website)](https://pauljadam.com/bookmarklets/index.html) 
+* Andrew A. Lee's [text spacing bookmarklet (external website)](https://codepen.io/drewlee/pen/zYYoGvM)
 
 ## Screen readers
 
