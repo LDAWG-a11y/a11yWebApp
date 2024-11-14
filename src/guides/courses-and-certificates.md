@@ -102,6 +102,10 @@ The following courses include free and paid for courses on digital accessibility
 * [Writing accessible content for the web (external website)](https://www.a11y-collective.com/product/writing-accessible-content-for-the-web/) 
 * [The A11Y Collective essentials (external website)](https://www.a11y-collective.com/product/the-a11y-collective-essentials/) 
 
+### British Computer Society (BCS)
+
+[Enhancing accessibility through inclusive design (external website)](https://www.bcs.org/qualifications-and-certifications/online-it-professional-development-courses/enhancing-accessibility-through-inclusive-design/).
+
 ### British Sign Language
 
 [Introducing British Sign Language](https://www.british-sign.co.uk/learn-online-british-signQ-language-course/) (external website).
