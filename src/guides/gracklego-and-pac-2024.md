@@ -8,6 +8,7 @@ tags:
   - PDF
   - Validation
   - Remediation
+  - Documents
 file:
   - /public/docs/googledocs-un-accessible.pdf
   - /public/docs/word-un-accessible.pdf
