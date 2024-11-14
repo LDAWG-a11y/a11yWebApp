@@ -8,6 +8,7 @@ tags:
   - Microsoft
   - PowerPoint
   - PDF
+  - Documents
 file:
   - /public/docs/creating-accessible-pdfs-from-microsoft-powerpoint.docx
   - /public/docs/powerpoint-example.pptx
