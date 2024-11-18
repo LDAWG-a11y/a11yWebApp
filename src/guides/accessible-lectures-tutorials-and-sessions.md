@@ -64,8 +64,7 @@ To have subtitles for a Slide Show presentation, from the top menu select Slide 
 
 Participants who require captioning may wish to use an app on their smartphone or tablet to provide speech to text functionality. Below are some suggested apps that can be used:
 
-* [Otter.ai](https://otter.ai/) helps you capture, find, and share important information from meetings, lecturers, interviews, everyday conversation and generate text with audio on to your phone or web browser. Users can search, play, edit and share conversations via this app.
-* [Web Captioner](https://webcaptioner.com/) is a speech to text transcription appears in seconds on your phone or web browser and its free.
+* [Otter.ai](https://otter.ai/) helps you capture, find, and share important information from meetings, lecturers, interviews, everyday conversation and generate text with audio on to your phone or web browser. Users can search, play, edit and share conversations via this app.[](https://webcaptioner.com/)
 * [Dictation.io](https://dictation.io/) is a free website that allows speech to text without downloading or installing it. All you need is the internet connection to use it and Google servers in real time.
 
 ## Further information
