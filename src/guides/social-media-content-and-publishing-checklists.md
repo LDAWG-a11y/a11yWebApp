@@ -22,9 +22,7 @@ To help remind you of things to check when creating and posting accessible socia
 We also have other useful resources including:
 
 * [Accessible social media fundamentals](https://www.makethingsaccessible.com/guides/accessible-social-media-fundamentals/)
-* [Social media, regulations and your responsibilities](https://www.makethingsaccessible.com/guides/social-media-and-your-responsibilities/)
-
-Download the [creation checklist](/docs/sm_creation_checklist.docx) and the [posting checklist](/docs/sm_posting_checklist.docx) as Word templates.
+* [Social media, regulations and your responsibilities](https://www.makethingsaccessible.com/guides/social-media-and-your-responsibilities/)[](/docs/sm_creation_checklist.docx)[](/docs/sm_posting_checklist.docx)
 
 ## Creation checklist
 
