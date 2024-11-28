@@ -24,9 +24,7 @@ We also have other useful resources including:
 * [Accessible social media creation and posting checklists](https://www.makethingsaccessible.com/guides/social-media-content-and-publishing-checklists/)
 * [Social media, regulations and your responsibilities](https://www.makethingsaccessible.com/guides/social-media-and-your-responsibilities/)
 
-## Social media fundamentals
-
-[Download these fundamentals as a Word template](/docs/sm_fundamentals.docx).
+## Social media fundamentals[](/docs/sm_fundamentals.docx)
 
 ### 1. Write in plain English
 
