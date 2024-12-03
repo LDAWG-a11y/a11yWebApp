@@ -29,3 +29,7 @@ team: aaa
 <a href="https://www.buckscollegegroup.ac.uk/" class="supporters__link"><img src="/aaaAssets/buckscollegegroup-logo-web.png" alt=""></a>
 
 <a href="https://www.pocklington.org.uk/" class="supporters__link"><img src="/aaaAssets/TPT_logo.png" alt=""></a>
+
+<a href="https://www.hopwood.ac.uk/" class="supporters__link"><img src="/aaaAssets/hopwood.jpg" alt=""></a>
+
+<a href="https://rmt.org/glasshouse/" class="supporters__link"><img src="/aaaAssets/glasshouse.png" alt=""></a>
