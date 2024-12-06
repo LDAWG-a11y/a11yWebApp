@@ -30,9 +30,7 @@ For example:
 The relevant sections of The Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility Regulations 2018 are as follows:
 
 > “These Regulations apply to a website or mobile application of a public sector body…” - **Part 1 General – Application 4**
-
-
-
+>
 > “‘public sector body’ means—
 >
 > 1. the State;
@@ -41,9 +39,7 @@ The relevant sections of The Public Sector Bodies (Websites and Mobile Applicati
 > 4. associations formed by one or more of the authorities in paragraph (2) or one or more of the bodies in paragraph (3), if those associations are established for the specific purpose of meeting needs in the general interest, **not having an industrial or commercial character**;”
 >
 > **\- Part 1 General – Interpretation 3**
-
-
-
+>
 > “‘bodies governed by public law’ means bodies that have all of the following characteristics—
 >
 > 1. they are established for the specific purpose of meeting needs in the general interest, **not having an industrial or commercial character**;
@@ -64,7 +60,7 @@ However, services LATCos provide can still be within scope of PSBAR on an indivi
 
 In this way LATCos become just like any other 3rd party supplier, where it would be the council who must demonstrate that they have contracts or service provisions that require the LATCo to deliver accessible services in line with council legal responsibilities. There should be procurement evidence (apart from [Teckal exemptions](https://www.cipfa.org/policy-and-guidance/articles/teckal-the-basics-explained)) or contract evidence that the council is choosing paid for services that comply with accessibility standards.
 
-Given that the LATCo is now a commercial supplier, they must content with other commercial entities to offer the most accessible services if they wish to sell to other councils.
+Given that the LATCo is now a commercial supplier, they must contend with other commercial entities to offer the most accessible services if they wish to sell to other councils.
 
 <div class="callout__info"><span class="callout__icon"></span><span class="callout__text">In summary, LATCos exist under PSBAR in the same way as any other commercial 3rd party which has been contracted to provide services to, or on behalf of another public sector body.</span></div>
 
