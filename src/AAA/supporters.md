@@ -37,3 +37,5 @@ team: aaa
 <a href="https://nasen.org.uk/" class="supporters__link"><img src="/aaaAssets/nasen.png" alt=""></a>
 
 <a href="https://www.northamptoncollege.ac.uk/" class="supporters__link"><img src="/aaaAssets/northampton-college-logo.jpg" alt=""></a>
+
+<a href="https://www.midkent.ac.uk/" class="supporters__link"><img src="/aaaAssets/midkent-college.png" alt=""></a>
