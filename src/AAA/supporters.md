@@ -39,3 +39,5 @@ team: aaa
 <a href="https://www.northamptoncollege.ac.uk/" class="supporters__link"><img src="/aaaAssets/northampton-college-logo.jpg" alt=""></a>
 
 <a href="https://www.midkent.ac.uk/" class="supporters__link"><img src="/aaaAssets/midkent-college.png" alt=""></a>
+
+<a href="https://college.sense.org.uk/" class="supporters__link"><img src="/aaaAssets/sense_primary_without_strapline_rgb_png.png" alt=""></a>
