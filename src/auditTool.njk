@@ -18,9 +18,9 @@ extraWide: true
     <ul>
       <li>The counter tallies at the top are not required, as the default is zero for each</li>
       <li>The Critical, High, Medium and Low are tallied up in the Total WCAG column</li>
-      <li>Each row on the "WCAG 2.1 conformance details" table has a links to the specific success criterion, that link <span id="newTabInstruction">opens in a new tab</span></li>
+      <li>Each row on the "WCAG 2.1 conformance details" table has a link to the specific success criterion, that link <span id="newTabInstruction">opens in a new tab</span></li>
       <li>Each row in the WCAG table contains a set of radio buttons, for the conformance level, these are unchecked by default and 1 radio per row must be checked to generate any text</li>
-      <li>If "Partially supports" or "Does not support" are checked, then the "Comment" input in the adjacent cell becomes required as you'd need to explain the issue, visible error message will indicate this and of course, this can be picked up by assitive technologies</li>
+      <li>If "Partially supports" or "Does not support" are checked, then the "Comment" input in the adjacent cell becomes required as you'd need to explain the issue, a visible error message will indicate this and of course, this can be picked up by assitive technologies</li>
       <li>If "Supports" is checked, the "Comment" is optional, if you leave the comment blank, the generated text will set a default of "No issues detected", otherwise your comment will be part of the generated text</li>
       <li>If "Not applicable" is checked, again the "Comment" is optional and the default will be "No content in scope applicable"</li>
       <li>We generate 4 blocks of data:
@@ -31,10 +31,10 @@ extraWide: true
           <li>The same pattern happens for the VPAT Level AA table</li>
         </ul> 
       </li>
-      <li>At the moment, this tool doesn't save your data, after some testing it will save to Local Storage</li>
-      <li>The "Reset" control at the moment is a link, that resets browser history, this will be a button once we have added the Local Storage functionality</li>
+      <li>At the moment, this tool doesn't save your data, at a later date it will save to Local Storage, once we implement that functionality</li>
+      <li>The "Reset" control at the moment is a link, which only resets browser history, this will be a button once we have added the Local Storage functionality</li>
     </ul>
-    <p>We have report templates in Microsoft Word, so for the VPAT tables, we highlight the data cells for the "Conformance level" column and the "Remarks and "Explanations" column and paste then paste it in. We don't generate the whole table or the first column</p>
+    <p>We have report templates in Microsoft Word, so for the VPAT tables, we highlight the data cells within the Word document for the "Conformance level" column and the "Remarks and "Explanations" column and then paste it in, after we have copied the text from this tool. We don't generate the whole table or the first column</p>
     <h3>Accessibility</h3>
     <p>This tool has been built with accessibility-first principals, which required a few little assumptions to be made along the way:</p>
     <ul>
@@ -63,7 +63,6 @@ extraWide: true
         <th scope="col">Medium priority</th>
         <th scope="col">Low priority</th>
         <th scope="col">Weakness</th>
-        <th scope="col">Advisory</th>
         <th scope="col">Total WCAG failures</th>
       </tr>
     </thead>
@@ -113,15 +112,6 @@ extraWide: true
             <label for="weakTotal" class="visually-hidden counter-table__result-label--weak">Weaknesses count</label>
             <output id="weakTotal" class="counter-table__result counter-table__result--weak" data-pass="true">0</output>
             <button id="btnAddWeak" class="counter-table__btn counter-table__btn--add"><span class="visually-hidden">Add weakness</span></button>
-          </fieldset>
-        </td>
-        <td>
-          <fieldset class="counter-table__group">
-            <legend class="visually-hidden">Advisories counter</legend>
-            <button id="btnMinusAdv" class="counter-table__btn counter-table__btn--minus"><span class="visually-hidden">Minus advisory</span></button>
-            <label for="advTotal" class="visually-hidden counter-table__result-label--adv">Advisories count</label>
-            <output id="advTotal" class="counter-table__result counter-table__result--adv" data-pass="true">0</output>
-            <button id="btnAddAdv" class="counter-table__btn counter-table__btn--add"><span class="visually-hidden">Add advisory</span></button>
           </fieldset>
         </td>
         <td><span id="wcagTotal" class="counter-table__total" data-pass="true">0</span></td>
