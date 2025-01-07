@@ -7,7 +7,6 @@ const highTotal = document.querySelector('#highTotal');
 const medTotal = document.querySelector('#medTotal');
 const lowTotal = document.querySelector('#lowTotal');
 const weakTotal = document.querySelector('#weakTotal');
-const advTotal = document.querySelector('#advTotal');
 const wcagTotal =  document.querySelector('#wcagTotal');
 
 counterBtn.forEach(btn => {
@@ -138,7 +137,7 @@ const generateSummaryParagraph = () => {
   }
 
   const totalIssuesText = `<p style="font: 12pt Arial, sans-serif;">
-  The ${totalWCAGIssues} identified issue${totalWCAGIssues != 1 ? 's' : ''}, ${parseInt(weakTotal.value)} weakness${parseInt(weakTotal.value) != 1 ? 'es' : ''} and ${parseInt(advTotal.value)} advisor${parseInt(advTotal.value) != 1 ? 'ies' : 'y'} ${totalWCAGIssues > 0 ? `reflects a failure against ${totalSCsFailed} WCAG 2.1 AA success criteria as detailed above. The issue priority breakdown is, as follows:` : ''}</p>`
+  The ${totalWCAGIssues} identified issue${totalWCAGIssues != 1 ? 's' : ''}, and ${parseInt(weakTotal.value)} weakness${parseInt(weakTotal.value) != 1 ? 'es' : ''} ${totalWCAGIssues > 0 ? `reflects a failure against ${totalSCsFailed} WCAG 2.2 AA success criteria as detailed above. The issue priority breakdown is, as follows:` : ''}</p>`
   document.querySelector('#sectionTotals').insertAdjacentHTML('afterbegin', totalIssuesText);
   totalWCAGIssues > 0 ? document.querySelector('#sectionTotals').insertAdjacentHTML('beforeend', issueListItems) : ''; 
 }
