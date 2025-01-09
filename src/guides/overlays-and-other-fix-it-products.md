@@ -49,6 +49,7 @@ We advise everyone to prioritise accessibility by default for their websites, an
 2. The UK regulation monitoring body states that overlays are not considered when monitoring for compliance. Therefore, any spend on an overlay product will not help to meet UK legal requirements.
 3. [WebAIM](https://webaim.org/) a respected accessibility company recently [published evidence](https://twitter.com/webaim/status/1664660562180194308) that certain overlay products may manipulate page content to suppress detection of accessibility errors.
 4. In recent conferences, representatives from the US Department of justice have referred to the use of overlays for compliance as “legal suicide”, which is very strong language to represent multiple cases of these overlays now in legal disputes because of false compliance claims they made to customers.
+5. The [FTC has ordered one overlay company to pay $1 million in fines](https://www.ftc.gov/news-events/news/press-releases/2025/01/ftc-order-requires-online-marketer-pay-1-million-deceptive-claims-its-ai-product-could-make-websites) due to false advertising, misleading claims and material connections to online viewers.
 
 ## Questioning suppliers about overlays
 
