@@ -38,19 +38,7 @@ team: aaa
 
 <a href="https://www.northamptoncollege.ac.uk/" class="supporters__link"><img src="/aaaAssets/northampton-college-logo.jpg" alt=""></a>
 
-<a href="https://www.midkent.ac.uk/" class="supporters__link"><img src="/aaaAssets/midkent-college.png" alt=""></a>
 
-<a href="https://college.sense.org.uk/" class="supporters__link"><img src="/aaaAssets/sense_primary_without_strapline_rgb_png.png" alt=""></a>
-
-<a href="https://www.nottinghamcollege.ac.uk/" class="supporters__link"><img src="/aaaAssets/nottingham.png" alt=""></a>
-
-
-  <details>
-    <summary>Video transcript</summary>
-
-    undefined
-
-  </details>
   
 
 <a href="https://www.capel.ac.uk/" class="supporters__link"><img src="/aaaAssets/capel-manor.png" alt=""></a>
