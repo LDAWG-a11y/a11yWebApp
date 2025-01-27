@@ -6,7 +6,7 @@ summary: Setting time limits on websites can be problematic for many users, in
   due to their disability, especially if there is not a mechanism to extend or
   turn off the time limit
 author: dlee
-date: 2024-10-15
+date: 2025-01-27
 toc: false
 tags:
   - HTML
