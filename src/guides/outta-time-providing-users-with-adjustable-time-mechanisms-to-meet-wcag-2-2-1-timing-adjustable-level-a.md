@@ -86,14 +86,6 @@ Remember, this is just a "working" example, it's not meant for copying the code 
 
 <p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="emObypB" data-pen-title="Accessible timeout mechanisms" data-preview="true" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
 
-  <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/emObypB">
-
-  Accessible timeout mechanisms</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
-
-  on <a href="https://codepen.io">CodePen</a>.</span>
-
-</p>
-
 <script async src="https://public.codepenassets.com/embed/index.js"></script>
 
 ## Wrapping up
