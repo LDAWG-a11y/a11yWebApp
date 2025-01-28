@@ -45,3 +45,5 @@ team: aaa
 <a href="https://www.midkent.ac.uk/" class="supporters__link"><img src="/aaaAssets/midkent-college.png" alt=""></a>
 
 <a href="https://www.nottinghamcollege.ac.uk/" class="supporters__link"><img src="/aaaAssets/nottingham.png" alt=""></a>
+
+<a href="https://shcg.ac.uk/" class="supporters__link"><img src="/aaaAssets/shcg.svg" alt=""></a>
