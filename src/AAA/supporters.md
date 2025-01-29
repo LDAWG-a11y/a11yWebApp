@@ -47,3 +47,5 @@ team: aaa
 <a href="https://www.nottinghamcollege.ac.uk/" class="supporters__link"><img src="/aaaAssets/nottingham.png" alt=""></a>
 
 <a href="https://shcg.ac.uk/" class="supporters__link"><img src="/aaaAssets/shcg.svg" alt=""></a>
+
+<a href="https://www.gloscol.ac.uk/" class="supporters__link"><img src="/aaaAssets/gc.png" alt=""></a>
