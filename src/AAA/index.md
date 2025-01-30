@@ -6,20 +6,20 @@ summary: The Access and Assistance for All campaign aims to raise awareness
   learners with disabilities
 layout: collaborators.njk
 permalink: aaa/
-date: Last Modified
+date: 2025-01-30
 title: Access and Assistance for All
 usesCMS: true
 team: aaa
 ---
-Access and Assistance for All (AAA) is a campaign that aims to increase access to assistive technology across further education colleges as well as raising awareness of how to make resources accessible by design so they are compatible with assistive technology. The youth-led campaign group consists of 12 young regional champions from across England, and is supported by the Thomas Pocklington Trust along with our partners, including University College of London (UCL).\
+Access and Assistance for All (AAA) is a campaign that aims to increase access to assistive technology across further education colleges as well as raising awareness of how to make resources accessible by design so they are compatible with assistive technology. The campaign was initiated and designed by young regional champions from across England with the support of UCL and other partner organisations. The campaign is now co-ordinated by and embedded within the work of Thomas Pocklington Trust.
+
+To support Access and Assistance For All or for more information please contact Thomas Pocklington Trust: [EducationPolicy@pocklington.org.uk](<>)\
 \
-The Champions created this short animated video to explain what the campaign is about. 
+This video, created by youth champions provides an overview of the benefits of assisitve technology:
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/r2yRs4DejyA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
 
-To support the campaign or for more information contact: [EducationPolicy@pocklington.org.uk](mailto:EducationPolicy@pocklington.org.uk)
-
-## Why is this campaign needed?
+Why is this campaign needed?
 
 Although good practice of promoting assistive technology can be found in colleges, young people highlighted some poor learning experiences they had had due to a lack of support with assistive technology in College. [Research by the Thomas Pocklington Trust](https://www.pocklington-trust.org.uk/student-support/professionals/technology-and-accessibility-in-fe-research/) evidenced that colleges are failing in their compliance with website regulations with few focussing on inclusion, accessibility and anticipatory adjustments. Follow-up research a year on has seen some improvements but 63% of college accessibility statements are still poor.
 
@@ -80,8 +80,6 @@ To promote comprehensive information about assistive technology and how to acces
 
 There are many forms of both physical and digital assistive technology that can aid students throughout their education, and these could potentially be of huge benefit to students, so should be promoted (even non-disabled people can benefit from assistive technology! Spellcheck, auto-complete and even basic organisational systems originated as assistive technology, and can be beneficial to all when implemented correctly). There are also sites, such as [My Computer My Way](https://mcmw.abilitynet.org.uk/), which can show you how to setup the many free digital accessibility solutions already available on most devices.
 
-
-
 </div>
 </div>
 
@@ -116,6 +114,6 @@ We recognise how many demands there are on colleges and aim to make signing up t
 
 1. Take a positive and meaningful step to provide a more inclusive learning environment for all your students with better outcomes for individuals and your college as a whole
 2. Be listed as a supporter, on our [Supporters page](/aaa/supporters/) and have the option to share any good practice that you are already doing
-3. Show your commitment to improving accessibility through the use of our supporters’ logo
+3. Be able to show your commitment to improving accessibility through the use of our supporters’ logo
 
-If you are interested about learning more on how to do this or register your interest please contact us at [EducationPolicy@pocklington.org.uk](mailto:EducationPolicy@pocklington.org.uk).
+If you are interested please contact us at [EducationPolicy@pocklington.org.uk](mailto:EducationPolicy@pocklington.org.uk).
