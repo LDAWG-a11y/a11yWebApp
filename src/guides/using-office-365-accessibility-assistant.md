@@ -89,7 +89,7 @@ The Assistant is set to be expanded across more Microsoft 365 apps with the obje
 • Screen readers will declare the image, then read the alt text
 • Images that have no informative content and are purely decorative do not require alt text, but may require markup so that Assistive Technology understands that they should be ignored
 • Remember to avoid punctuation as it is voiced
-• MakeThingsAccessible has a guide to creating meaningful alternative text
+• MakeThingsAccessible has a guide to[ creating meaningful alternative text](https://www.makethingsaccessible.com/guides/creating-meaningful-alternative-text/)
 
 #### Image use
 
