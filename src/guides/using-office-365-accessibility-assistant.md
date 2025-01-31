@@ -31,7 +31,7 @@ The Accessibility Assistant works in the same way as the spellchecker and will f
 
 ### Accessibility Assistant pane
 
-This pane has a simple, well-organised interface, similar to Microsoft Editor (external website), with explanations that provide help to fix issues in plain-language, and as the user goes through the list, they are taken to the location of the problem,  as the pane advocates a solution.
+This pane has a simple, well-organised interface, similar to [Microsoft Editor (external website)](https://www.microsoft.com/en-gb/microsoft-365/microsoft-editor), with explanations that provide help to fix issues in plain-language, and as the user goes through the list, they are taken to the location of the problem,  as the pane advocates a solution.
 
 ### Availability within Office 365
 
