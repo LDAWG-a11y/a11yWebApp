@@ -51,7 +51,7 @@ The Assistant is set to be expanded across more Microsoft 365 apps with the obje
 
 ### Demo file
 
-• An example file, Word-un-accessible.docx (DOCX 126KB), has been created which has issues that need to be corrected
+• An example file, [Word-un-accessible.docx](https://www.makethingsaccessible.com/docs/creating-accessible-pdfs-from-microsoft-word.docx) **(DOCX 126KB)**, has been created which has issues that need to be corrected
 
 ### Making documents correctly
 
