@@ -53,13 +53,13 @@ The Assistant is set to be expanded across more Microsoft 365 apps with the obje
 
 • An example file, [Word-un-accessible.docx](https://www.makethingsaccessible.com/docs/creating-accessible-pdfs-from-microsoft-word.docx) **(DOCX 126KB)**, has been created which has issues that need to be corrected
 
-### Making documents correctly
+## Making documents correctly
 
-#### Title, Author etc.
+### Title, Author etc.
 
 • While Title is the only field that is required, it is worth adding Tags for SEO, Subject, and right click on Author(s)’s name to “Remove Person” if you do not wish their name all over the internet – replace Author with organisation name
 
-#### Headings
+### Headings
 
 * Use the headings built into Microsoft Word
 * The page content should be outlined in the headings, which helps AT users comprehend the page layout and navigate to interesting content:
@@ -68,23 +68,24 @@ The Assistant is set to be expanded across more Microsoft 365 apps with the obje
   * Sub-headings = Heading 2
   * Sub-sub-headings = Heading 3 etc.
 
-#### Lists
+### Lists
 
-• Use the inbuilt document list controls within Microsoft Word to add ordered lists (numbers) and unordered lists (bullet points)
-• AT users can understand lists created as lists because of the way content is organised
-• Lists will communicate helpful information such as:
- **How many items the list has**
- Where the list starts and where the list finishes
-\*\* Which list item the user is on
+* Use the inbuilt document list controls within Microsoft Word to add ordered lists (numbers) and unordered lists (bullet points)
+* AT users can understand lists created as lists because of the way content is organised
+* Lists will communicate helpful information such as:
 
-#### Hyperlinks
+  * How many items the list has
+  * Where the list starts and where the list finishes
+  * Which list item the user is on
 
-• The destination of links should be communicated accurately and clearly
-• Use URL shortening services such as [Bitly (external website)](https://bitly.com/pages/landing/bringing-us-all-a-bit-closer) or [TinyURL (external website)](https://tinyurl.com/app) if the document is to be printed, if not, make sure the link text is meaningful (link shorteners can be viewed as a security risk as the destination cannot be seen unless the link has been clicked!)
-• Screen readers will generally provide a list of links so make sure the link text is meaningful
-• Do not use “click here” or “More information” for all the link text because it will not be possible to distinguish the links from each other
+### Hyperlinks
 
-#### Alternative text for images (alt text)
+* The destination of links should be communicated accurately and clearly
+* Use URL shortening services such as [Bitly (external website)](https://bitly.com/pages/landing/bringing-us-all-a-bit-closer) or [TinyURL (external website)](https://tinyurl.com/app) if the document is to be printed, if not, make sure the link text is meaningful (link shorteners can be viewed as a security risk as the destination cannot be seen unless the link has been clicked!)
+* Screen readers will generally provide a list of links so make sure the link text is meaningful
+* Do not use “click here” or “More information” for all the link text because it will not be possible to distinguish the links from each other
+
+### Alternative text for images (alt text)
 
 • Alt text is used to convey the content of the image to those who can’t see it
 • Screen readers will declare the image, then read the alt text
@@ -92,45 +93,47 @@ The Assistant is set to be expanded across more Microsoft 365 apps with the obje
 • Remember to avoid punctuation as it is voiced
 • MakeThingsAccessible has a guide to[ creating meaningful alternative text](https://www.makethingsaccessible.com/guides/creating-meaningful-alternative-text/)
 
-#### Image use
+### Image use
 
 • Only use images that support the text of the document
 • Try avoiding the use of an image instead of text
 • Make sure images have alt text unless they are decorative
 
-#### Language
+### Language
 
 Leading screen reader software is multilingual.
 
-##### Language of document
+#### Language of document
 
 • The language of the document must be set so that screen readers will read the document using the correct language profile
 
-##### Language of part of document
+#### Language of part of document
 
 • Content within the document written in a different language to the document’s default language must be identified
 
-#### Tables
+### Tables
 
-• Do not use tables to control layout
+• Do **not** use tables to control layout
 • Use tables to communicate relationships between data
 • Make sure headers are identified
 • For WORD only - Provide a short descriptive caption for the table using Table Properties -> Alt Text
-•	Try to keep the table simple
-•	If the table is complicated, can it be split into multiple tables or into lists?
-Other things to take into account for accessibility 
-Plain English
-•	Make sure sentences are short and concise, around 20-25 words
-•	Make sure words are kept simple
-•	Use common words. Complicated longer words (8 or 9 letters) will cause readers to skip shorter words (3,4, or 5 letters) that follow
-•	Use an Active voice rather than a Passive voice
-•	Where possible, use words containing one to two syllables
-•	Aim the language used at the level of a 9 year old as recommended by GOV.UK – remember in the UK, 7.1 million adults read at, or below, the level of an average 9 year old. WCAG 3.15 Reading Level (AAA) recommends providing a simplified version of the text if it requires a reading age of more than 12 years old
-•	Use contractions, words made up of two short words joined with an apostrophe such as I’ve, can’t etc.
-•	Do not use double negatives
-•	Explain the unusual, to help give full information
+• Try to keep the table simple
+• If the table is complicated, can it be split into multiple tables or into lists?
 
-##### Why use it?
+
+## Other things to take into account for accessibility 
+### Plain English
+• Make sure sentences are short and concise, around 20-25 words
+• Make sure words are kept simple
+• Use common words. Complicated longer words (8 or 9 letters) will cause readers to skip shorter words (3,4, or 5 letters) that follow
+• Use an Active voice rather than a Passive voice
+• Where possible, use words containing one to two syllables
+• Aim the language used at the level of a 9 year old as recommended by GOV.UK – remember in the UK, 7.1 million adults read at, or below, the level of an average 9 year old. WCAG 3.15 Reading Level (AAA) recommends providing a simplified version of the text if it requires a reading age of more than 12 years old
+• Use contractions, words made up of two short words joined with an apostrophe such as I’ve, can’t etc.
+• Do not use double negatives
+• Explain the unusual, to help give full information
+
+#### Why use it?
 
 • The use of Plain English helps all users, including those who’s English is not their main language, and those who have cognitive impairment
 • If the content is easy to read, it will be easy to understand when converted into alternative formats such as braille, or being read aloud by a screen reader
@@ -141,7 +144,7 @@ Plain English
 • Free services, guides, and resources to help are available from the Plain English Campaign
 • Measure the readability of the text using Hemingway Editor
 
-#### Font
+### Font
 
 • Use a font that is “sans-serif” and clear such as Arial, Helvetica, or Verdana
 • Minimum font-size of 12
@@ -153,13 +156,13 @@ Colour
 • Do NOT use colour by itself to show meaning
 Make sure that there is adequate contrast between background and text – use TPGi’s Colour Contrast Analyzer (CCA) to check contrast
 
-#### Word Accessibility Assistant
+## Word Accessibility Assistant
 
 I went to Review and then selected Check Accessibility in the Accessibility section of the toolbar.
 
 The Accessibility Assistant then checked my document.
 
-#### Color and Contrast
+### Color and Contrast
 
 • Hard-to-read text contrast – 1
 I clicked on   and the relevant text is highlighted
@@ -170,7 +173,7 @@ I selected the black, double clicked on it and the status changed to
 
 Note: the button is disabled as the issue is fixed.
 
-#### Media and Illustrations
+### Media and Illustrations
 
 • Missing alt text – 3
 I clicked on  and it took me to the first image with an issue
@@ -185,7 +188,7 @@ I was shown an automatically generated description
 I modified this text to say Australian bush hat and then approved it.
 The final image I marked as decorative and the status changed to 
 
-#### Tables
+### Tables
 
 • Missing table header - 1
 • Use of merged or split cells – 2
@@ -207,17 +210,17 @@ I have the option to split cells
 
 If you are not experienced with tables in Adobe Acrobat Pro (or other PDF remediation software), to fix this in real life I would split the table into a female table and a male table and then apply a heading to each table, which I have done. 
 
-#### Document Structure
+### Document Structure
 
 • No headings in document - passed
 
-#### Document Access
+### Document Access
 
 • Restricted access – passed
 
-#### Running the (old) Accessibility Checker vs Accessibility Assistant
+## Running the (old) Accessibility Checker vs Accessibility Assistant
 
-##### Accessibility Checker
+### Accessibility Checker
 
 • The errors reported are:
  **Missing Object Description (1)**
@@ -229,7 +232,7 @@ If you are not experienced with tables in Adobe Acrobat Pro (or other PDF remedi
 • Intelligent Services:**
  Review Auto-Generated Description (2)
 
-##### Accessibility Checker
+### Accessibility Checker
 
 This found the following:
 • Hard-to-read text contrast (1)
@@ -237,7 +240,7 @@ This found the following:
 • Missing table header (1)
 • Use of merged or split cells (2)
 
-#### Exporting to a PDF
+## Exporting to a PDF
 
 • Save as PDF with the following options are selected (Convert document information, Enable Accessibility and Reflow with tagged Adobe PDF, Create Bookmarks - Convert Word Headings to Bookmarks, Convert Comments), or
 • Or if Adobe Acrobat Pro is installed, use the Acrobat tools in ribbon of Word
@@ -245,18 +248,18 @@ This found the following:
 
 Note: Save as PDF” doesn’t add a <P> tag into each table row within the table that has the paths that make up the cell border, whereas Acrobat tools add a <P> tag into each table row within the table that has the paths that make up the cell border. The <P> tag into each table row within the table that has the paths that make up the cell border, requires artifaction in Adobe Acrobat Pro once the file is exported.
 
-#### Artifacting objects
+### Artifacting objects
 
 Header and Footer objects are artifacted when exported to PDF.
 
-#### Issues to consider
+### Issues to consider
 
 • Fonts error can occur due to Word not embedding fonts when using “Save as” to create the PDF
 • If “Initial View Show Document Title” is not selected in PDF, “Check for accessibility” when run in Adobe Acrobat Pro is likely to fail the Title
 • When PDFMaker puts <P> tags into tables, in Adobe Acrobat Pro Artifact the contents of the <P> tag -  click on <P> tag, click “Edit” Role Map, which maps artifact to <P> tag, delete item, rename <Artifact> to <H1> then select “Path” and Change Tag to Artifact so it is artifacted, delete tag
 • If a Table splits over more than one page it will be a separate table on each page, fix this in Adobe Acrobat Pro by moving the rows on the second Table into the main table and then deleting the empty table. The other option is to change the table in Word so it doesn’t onto a second page
 
-#### PAC 2024
+## PAC 2024
 
 Open PAC 2024 and drag and drop the PDF file onto
   Document selection tool
@@ -264,13 +267,13 @@ The test will run and errors will be reported
 
 Click on “Results in Detail” button and drill down into the details
 
-#### Fixing these issues
+### Fixing these issues
 
 • Open file in Adobe Acrobat Pro
 • Make sure that the file is saved at this point
 • It is worth making various versions in case a change doesn’t allow rollback!
 
-##### Alternative description missing for an annotation
+#### Alternative description missing for an annotation
 
 This error occurs because the PDF/UA standard requires all hyperlinks have alternative text.
 Go to the Preflight panel (search for Preflight in “Find text or tools” search in Acrobat)
@@ -283,14 +286,14 @@ Select   and then click on\
 Save a new version (just to be on the safe side)
 If links such as “Click here” were in the text rather than meaningful text, when the “fix” was run, it would technically pass but the text would be wrong and meaningless.
 
-##### Title missing in document’s XMP metadata
+#### Title missing in document’s XMP metadata
 
 This error occurs the document has not got a title set.
 Go to Menu -> Document properties
 
 Add a Title, Subject and any applicable keywords.
 
-##### PDF/UA identifier missing
+#### PDF/UA identifier missing
 
 The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this should be done at the end when the file actually is PDF/UA compliant.
 Note: this can be added to a file that is NOT compliant but this does not mean that the file will then be compliant.
