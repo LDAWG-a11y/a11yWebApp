@@ -61,11 +61,12 @@ The Assistant is set to be expanded across more Microsoft 365 apps with the obje
 
 #### Headings
 
-• Use the headings built into Microsoft Word
-• The page content should be outlined in the headings, which helps AT users comprehend the page layout and navigate to interesting content:
- **Main heading = Heading 1**
- Sub-headings = Heading 2
-\*\* Sub-sub-headings = Heading 3 etc.
+* Use the headings built into Microsoft Word
+* The page content should be outlined in the headings, which helps AT users comprehend the page layout and navigate to interesting content:
+
+  * Main heading = Heading 1 
+  * Sub-headings = Heading 2
+  * Sub-sub-headings = Heading 3 etc.
 
 #### Lists
 
