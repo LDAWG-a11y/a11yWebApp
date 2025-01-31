@@ -47,7 +47,7 @@ The Assistant is set to be expanded across more Microsoft 365 apps with the obje
 
 • Make sure Microsoft Word is up-to-date
 • Make sure that Adobe Acrobat Pro is up-to-date
-• Download PAC 2024
+• Download [PAC 2024 (external website)](https://pac.pdf-accessibility.org/en)
 
 ### Demo file
 
