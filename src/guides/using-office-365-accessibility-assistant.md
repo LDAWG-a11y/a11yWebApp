@@ -120,9 +120,10 @@ Leading screen reader software is multilingual.
 • Try to keep the table simple
 • If the table is complicated, can it be split into multiple tables or into lists?
 
+## Other things to take into account for accessibility
 
-## Other things to take into account for accessibility 
 ### Plain English
+
 • Make sure sentences are short and concise, around 20-25 words
 • Make sure words are kept simple
 • Use common words. Complicated longer words (8 or 9 letters) will cause readers to skip shorter words (3,4, or 5 letters) that follow
@@ -222,15 +223,18 @@ If you are not experienced with tables in Adobe Acrobat Pro (or other PDF remedi
 
 ### Accessibility Checker
 
-• The errors reported are:
- **Missing Object Description (1)**
- Missing Table Header (1)
- **Image or Object Not Inline (1)
-• The Warnings reported are:**
- Use of Merged or Split Cells (2)
- **Hard-to-Read Text Contrast (1)
-• Intelligent Services:**
- Review Auto-Generated Description (2)
+The errors reported are:
+
+* Missing Object Description (1)
+* Missing Table Header (1)
+* Image or Object Not Inline (1)
+* The Warnings reported are:
+
+  * Use of Merged or Split Cells (2)
+  * Hard-to-Read Text Contrast (1)
+* Intelligent Services:
+
+  * Review Auto-Generated Description (2)
 
 ### Accessibility Checker
 
