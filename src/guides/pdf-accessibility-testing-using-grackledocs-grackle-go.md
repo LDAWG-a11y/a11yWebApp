@@ -10,7 +10,7 @@ tags:
   - Documents
 isGuide: true
 ---
-I logged into GrackleDocs Grackle GO (external website) and went to the dashboard.
+I logged into [GrackleDocs Grackle GO (external website)](https://www.grackledocs.com/en/products-services/grackle-go-2/) and went to the dashboard.
 
 I then uploaded the PDFs I wished to test.
 
