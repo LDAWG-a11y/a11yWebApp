@@ -14,7 +14,7 @@ isGuide: true
 ---
 ## Accessibility Assistant
 
-Microsoft’s Accessibility Checker (external website) was introduced in Office 2010 and improved over the years but was only available for Word and PowerPoint. Accessibility Checker checks for different things depending whether Word or PowerPoint is being used.
+Microsoft’s [Accessibility Checker (external website)](https://support.microsoft.com/en-gb/office/improve-accessibility-with-the-accessibility-checker-a16f6de0-2f39-4a2b-8bd8-5ad801426c7f) was introduced in Office 2010 and improved over the years but was only available for Word and PowerPoint. Accessibility Checker checks for different things depending whether Word or PowerPoint is being used.
 
 In March 2023 Accessibility Assistant (external website) for Microsoft 365 was launched and this has three important innovations: 
 • improved defaults so the issues are prevented before they occur
