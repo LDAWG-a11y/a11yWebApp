@@ -140,7 +140,7 @@ I also added the Adrian Roselli 24x24 [bookmarklet (external website)](https://a
 
 ## Auditing a website
 
-Unlike with my laptop where I was struggling to use the laptop with LibreOffice to edit my audit document, LibreOffice Writer was working well.
+Unlike with my laptop, where I was struggling to use the laptop with LibreOffice to edit my audit document, LibreOffice Writer was working well.
 
 ## Auditing PDFs
 
@@ -154,10 +154,10 @@ While there is software that can read or edit PDFs on Linux, I’ve not found an
 
 • [Accessibility testing tools](https://www.makethingsaccessible.com/guides/accessibility-testing-tools/)
 • [Basic Orca Tutorial (external website)](https://www.youtube.com/watch?v=ieo20UtUobw)
-• GrackleDocs Grackle GO (external website)
-• Installing Firefox on your Raspberry Pi (external website)
-• Introduction to Orca Screen reader for Linux (external website)
-• Latest Raspberry Pi OS update – May 2020 (external website)
-• Orca Screen Reader (external website)
-• Raspberry Pi OS Accessibility articles (external website)
-• Survey of Screen-Readers in Linux Operating Systems (external website)
+• [GrackleDocs Grackle GO (external website)](https://www.grackledocs.com/en/products-services/grackle-go-2/)
+• [Installing Firefox on your Raspberry Pi (external website)](https://linuxhaxor.net/code/install_firefox_raspberry_pi.html)
+• [Introduction to Orca Screen reader for Linux (external website)](https://www.youtube.com/watch?v=mDVG0DfwuxQ)
+• [Latest Raspberry Pi OS update – May 2020 (external website)](https://www.raspberrypi.com/news/latest-raspberry-pi-os-update-may-2020/)
+• [Orca Screen Reader (external website)](https://help.gnome.org/users/orca/stable/index.html.en)
+• [Raspberry Pi OS Accessibility articles (external website)](https://www.raspberrypi.org/blog/tag/accessibility/)
+• [Survey of Screen-Readers in Linux Operating Systems (external website)](https://accessinghigherground.org/survey-of-screen-readers-inlinux-operating-systems/)
