@@ -152,10 +152,7 @@ While there is software that can read or edit PDFs on Linux, I’ve not found an
 
 ## Useful links
 
-• Accessibility Insights for Web (external website)
-• Alt or not (external website) 
-• ARC Toolkit (external website)
-• axe DevTools (external website)
+• [Accessibility testing tools](https://www.makethingsaccessible.com/guides/accessibility-testing-tools/)
 • Basic Orca Tutorial (external website)
 • GrackleDocs Grackle GO (external website)
 • HeadingsMap (external website) 
