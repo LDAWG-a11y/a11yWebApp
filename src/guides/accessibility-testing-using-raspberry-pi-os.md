@@ -20,9 +20,9 @@ I installed [Raspberry Pi OS (bullseye) (external website)](https://www.raspberr
 ## Screen readers
 
 Windows has Jaws and NVDA, IOS has Voiceover, and Android has Talkback, but these are not available for Raspberry Pi OS. There are several screen readers available for Raspberry Pi OS:
-• Orca Screen Reader (external website) – good for graphical environments
-• Fenrir (external website) - good for command line (ideal for Raspberry Pi OS as it takes up little SD card space or RAM)
-• Emacspeak (external website) - good for command line
+• [Orca Screen Reader (external website)](https://help.gnome.org/users/orca/stable/index.html.en) – good for graphical environments
+• [Fenrir (external website)](https://github.com/chrys87/fenrir) - good for command line (ideal for Raspberry Pi OS as it takes up little SD card space or RAM)
+• [Emacspeak (external website)](https://github.com/tvraman/emacspeak) - good for command line
 
 ### Installing screen readers on Raspberry Pi OS
 
