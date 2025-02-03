@@ -155,7 +155,7 @@ Leading screen reader software is multilingual.
 • Make sure that text is justified to the left, as this helps to make sure there is an even gap between words, and enables the start and end of each line to be found easily
 Colour
 • Do NOT use colour by itself to show meaning
-Make sure that there is adequate contrast between background and text – use TPGi’s Colour Contrast Analyzer (CCA) to check contrast
+Make sure that there is adequate contrast between background and text – use [TPGi’s Colour Contrast Analyzer (CCA) (external website)](https://www.tpgi.com/color-contrast-checker/) to check contrast
 
 ## Word Accessibility Assistant
 
