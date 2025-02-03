@@ -364,6 +364,8 @@ Open [PAC 2024 (external website)](https://pac.pdf-accessibility.org/en) and dra
 
 Click on “Results in Detail” button and drill down into the details
 
+![PAC 2024 results in detail. Logical structure - alternative descriptions - alternative description missing for annotations 1. metadata and settings - metadata PDF/UA identifier missing and title missing in documents XMP metadata, and document settings "DisplayDocTitle" entry is not set](src/guideImg/21-pac-2024-results-details.png)
+
 ### Fixing these issues
 
 • Open file in Adobe Acrobat Pro
