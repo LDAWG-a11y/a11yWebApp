@@ -198,9 +198,14 @@ I clicked on
 
  and it took me to the first image with an issue
 
+![Make things accessible image has missing alt text](src/guideImg/8-accessibility-assistant-missing-alt-text-mta.png)
+
 And in the Accessibility Assistant pane, a “Missing alt text” field appeared where the image description can be entered.
 
-NOTE: As well as manually entering the image description, Accessibility Assistant will generate the description too, and the image can also be marked as decorative.
+![Accessibility assistance media and illustrations - missing alt text](src/guideImg/9-accessibility-assistant-missing-alt-text-field.png)
+
+**NOTE: As well as manually entering the image description, Accessibility Assistant will generate the description too, and the image can also be marked as decorative.**
+
 For the second image
 
 I was shown an automatically generated description
