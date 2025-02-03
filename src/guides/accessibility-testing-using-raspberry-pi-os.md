@@ -95,19 +95,23 @@ The Magnifier button appears down in the bottom right corner of the taskbar by t
 
 The Magnifier in use
 
-Browsers
-Chrome extensions on Chromium
+![](src/guideImg/6-magnifier-in-use.png)
+
+## Browsers
+
+### Chrome extensions on Chromium
+
 I had to login to the Chrome Web Store and then I was able to install Chrome extensions on Chromium.
 The Chrome extensions I installed:
-• Accessibility Insights for Web (external website) - accessibility testing tool
-• Alt or not (external website) - see alt text on Twitter/X
-• ARC Toolkit (external website) - accessibility testing tool
-• axe DevTools (external website) - Web Accessibility Testing - accessibility testing tool
-• HeadingsMap (external website) - shows all the headings in a sidebar
-• WAVE Evaluation Tool (external website) 
-• Web Developer (external website) 
+• [Accessibility Insights for Web (external website)](https://chromewebstore.google.com/detail/accessibility-insights-fo/pbjjkligggfmakdaogkfomddhfmpjeni) - accessibility testing tool
+• [Alt or not (external website)](https://chromewebstore.google.com/detail/alt-or-not/bhbbijphceaijfpppmdjmjalnogkhamc) - see alt text on Twitter/X
+• [ARC Toolkit (external website)](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) - accessibility testing tool
+• [axe DevTools (external website)](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Web Accessibility Testing - accessibility testing tool
+• [HeadingsMap (external website)](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) - shows all the headings in a sidebar
+• [WAVE Evaluation Tool (external website)](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) 
+• [Web Developer (external website)](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) 
 
-Sadly Stylus (external website)  was not available for the version of Chromium even though I’d updated my Raspberry Pi OS and checked I’d got the latest version of Chromium.
+Sadly [Stylus (external website)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)  was not available for the version of Chromium even though I’d updated my Raspberry Pi OS and checked I’d got the latest version of Chromium.
 Chrome extensions on Firefox
 I went to the Add/Remove Software and searched for Firefox and added it to Raspberry Pi OS.
 
