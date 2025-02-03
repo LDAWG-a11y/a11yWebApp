@@ -138,13 +138,20 @@ I added the [Focus Style](<https://www.makethingsaccessible.com/guides/accessibi
 
 I also added the Adrian Roselli 24x24 [bookmarklet (external website)](https://adrianroselli.com/2022/05/24x24-pixel-cursor-bookmarklet.html).
 
-Auditing a website
+## Auditing a website
+
 Unlike with my laptop where I was struggling to use the laptop with LibreOffice to edit my audit document, LibreOffice Writer was working well.
-Auditing PDFs
+
+## Auditing PDFs
+
 As PAC 2024 does not currently work on Raspberry Pi OS, and wouldn’t work under WINE on ARM, I used Grackle GO to audit the PDFs I found during my website audit.
-Remediating PDFs
+
+## Remediating PDFs
+
 While there is software that can read or edit PDFs on Linux, I’ve not found any that will remediate PDFs to a level that they can pass PAC 2024.
-Useful links
+
+## Useful links
+
 • Accessibility Insights for Web (external website)
 • Alt or not (external website) 
 • ARC Toolkit (external website)
