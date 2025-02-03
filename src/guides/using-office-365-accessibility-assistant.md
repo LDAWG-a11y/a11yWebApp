@@ -426,9 +426,26 @@ The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this
 PAC 2024 gives an PDF/UA identifier missing error
 
 Open the Preflight panel by searching for Preflight in the “Find text or tools” search box
-Make sure  is chosen and click on  
 
-In “Document info and Metadata” select  and click\
+Make sure 
+
+![PDF Standards](src/guideImg/21.5-2-pac-2024-pdf-standards.png)
+
+ is chosen and click on  
+
+![Spanner button](src/guideImg/21.5-3-pac-2024-spanner.png)
+
+![Adobe Acrobat Preflight panel](src/guideImg/21.5-1-pac-2024-preflight-pdfua.png)
+
+In “Document info and Metadata” select 
+
+![Set PDF/UA-1 entry](src/guideImg/23.5-set-pdf-us-entry.png)
+
+ and click 
+
+![Fix button](src/guideImg/95-Fix-button.png)
+
+\
 Save new version of file (just to be on the safe side)
 Now there are not any errors in PAC 2024
 
