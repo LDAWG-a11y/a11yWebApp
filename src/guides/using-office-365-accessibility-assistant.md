@@ -208,7 +208,11 @@ And in the Accessibility Assistant pane, a “Missing alt text” field appeared
 
 For the second image
 
+![Second image without alt text showing a man with long curly hair wearing an Australian bush hat and sunglasses](src/guideImg/10-accessibility-assistant-missing-alt-text-bush-hat.png)
+
 I was shown an automatically generated description
+
+
 
 I modified this text to say Australian bush hat and then approved it.
 The final image I marked as decorative and the status changed to 
