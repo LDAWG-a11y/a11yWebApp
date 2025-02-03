@@ -35,13 +35,26 @@ sudo apt install orca
 ```
 
 Orca should be able to be opened or closed by Alt + F2, which opens the equivalent to the Windows dialog box and then orca entered as a command, then Enter.
+
 When Orca Screen Reader is running the preferences can be accessed using “Orca Modifier” + Space, where the “Orca Modifier” is the Insert key on a desktop, and the Caps Lock key on a laptop. 
+
 I found Alt + F2 was not working so I used Ctrl + Alt + T to open a terminal window and typed 
+
+```
 orca 
+```
+
 and as Alt + F2 was not working, I typed 
+
+```
 orca -s 
+```
+
 as a command in the terminal window, then Enter (this works even if the screen reader is off).
+
 I then checked in the General tab to make sure that Keyboard Layout was set to Desktop (which it was).
+
+
 
 I then went into the Voice tab and using the Rate slider, I made the speech quicker.
 
