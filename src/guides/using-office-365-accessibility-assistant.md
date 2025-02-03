@@ -239,13 +239,25 @@ And highlighted where the header should be. I was given two options
 
 As this is not a layout table, I will select 
 
+![Use first row as header button](src/guideImg/14.5-accessibility-assistant-missing-table-header-table-options.png)
+
 And the status changed to 
+
+![missing table header passed](src/guideImg/15-accessibility-assistant-missing-table-header-passed.png)
 
 I then selected
 
+![use of merged or split cells 2](src/guideImg/16-accessibility-assistant-use-of-merged-or-split-cells.png)
+
 And the merged cell was highlighted
 
+![table showing highlighted merged cell](src/guideImg/17-accessibility-assistant-use-of-merged-or-split-cells-highlighted-cells.png)
+
 I have the option to split cells
+
+![split cells button](src/guideImg/18-accessibility-assistant-use-of-merged-or-split-cells-split-cells.png)
+
+![table showing highlighted merged cells](src/guideImg/19-accessibility-assistant-use-of-merged-or-split-cells-highlighted-cells.png)
 
 If you are not experienced with tables in Adobe Acrobat Pro (or other PDF remediation software), to fix this in real life I would split the table into a female table and a male table and then apply a heading to each table, which I have done. 
 
