@@ -112,19 +112,23 @@ The Chrome extensions I installed:
 • [Web Developer (external website)](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) 
 
 Sadly [Stylus (external website)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)  was not available for the version of Chromium even though I’d updated my Raspberry Pi OS and checked I’d got the latest version of Chromium.
-Chrome extensions on Firefox
+
+### Chrome extensions on Firefox
+
 I went to the Add/Remove Software and searched for Firefox and added it to Raspberry Pi OS.
 
+![Add remove software Firefox](src/guideImg/1-firefox-install.png)
+
 I then installed the following Firefox extensions:
-• ARC Toolkit (external website) - accessibility testing tool
-• ARIA DevTools (external website) - spot missing ARIA labels, misused ARIA roles, and incomplete keyboard support
-• axe DevTools (external website) - Web Accessibility Testing - accessibility testing tool
-• HeadingsMap (external website) - shows all the headings in a sidebar
-• Landmark Navigation via Keyboard or Pop-up (external website) - navigate web pages via WAI-ARIA
-• Stylus (external website) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be added to test spacing and show focus indicator
-• Web Developer (external website) - adds a toolbar button with various web developer tools
-• webhint (external website) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
-• WCAG Color contrast checker (external website) - checks the color contrast between the foreground and background of the elements that are in the page according to the WCAG 2.2
+• [ARC Toolkit (external website)](https://addons.mozilla.org/en-GB/firefox/addon/arc-toolkit/) - accessibility testing tool
+• [ARIA DevTools (external website)](https://addons.mozilla.org/en-GB/firefox/addon/aria-devtools/) - spot missing ARIA labels, misused ARIA roles, and incomplete keyboard support
+• [axe DevTools (external website)](https://addons.mozilla.org/en-GB/firefox/addon/axe-devtools/) - Web Accessibility Testing - accessibility testing tool
+• [HeadingsMap (external website)](https://addons.mozilla.org/en-GB/firefox/addon/headingsmap/) - shows all the headings in a sidebar
+• [Landmark Navigation via Keyboard or Pop-up (external website)](https://addons.mozilla.org/en-GB/firefox/addon/landmarks/) - navigate web pages via WAI-ARIA
+• [Stylus (external website)](https://addons.mozilla.org/en-GB/firefox/addon/styl-us/) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator](https://www.makethingsaccessible.com/guides/accessibility-testing-tools/#stylus)
+• [Web Developer (external website)](https://addons.mozilla.org/en-GB/firefox/addon/web-developer/) - adds a toolbar button with various web developer tools
+• [webhint (external website)](https://addons.mozilla.org/en-GB/firefox/addon/webhint/) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
+• [WCAG Color contrast checker (external website)](https://addons.mozilla.org/en-US/firefox/addon/wcag-contrast-checker/) - checks the color contrast between the foreground and background of the elements that are in the page according to the WCAG 2.2
 
 Code for Stylus
 I added the Focus Style and Testing WCAG 1.4.12 Text Spacing CSS in Stylus.
