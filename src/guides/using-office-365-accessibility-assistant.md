@@ -445,9 +445,11 @@ In “Document info and Metadata” select
 
 ![Fix button](src/guideImg/95-Fix-button.png)
 
-\
-Save new version of file (just to be on the safe side)
+Save new version of file (just to be on the safe side).
+
 Now there are not any errors in PAC 2024
+
+![It's possible that some PDF/UA requirements aren't met](src/guideImg/24-pac-2024-no-errors.png)
 
 ## Useful links
 
