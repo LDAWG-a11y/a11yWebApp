@@ -312,7 +312,43 @@ Header and Footer objects are artifacted when exported to PDF.
 
 • Fonts error can occur due to Word not embedding fonts when using “Save as” to create the PDF
 • If “Initial View Show Document Title” is not selected in PDF, “Check for accessibility” when run in Adobe Acrobat Pro is likely to fail the Title
-• When PDFMaker puts <P> tags into tables, in Adobe Acrobat Pro Artifact the contents of the <P> tag -  click on <P> tag, click “Edit” Role Map, which maps artifact to <P> tag, delete item, rename <Artifact> to <H1> then select “Path” and Change Tag to Artifact so it is artifacted, delete tag
+• When PDFMaker puts 
+
+```
+<P>
+```
+
+ tags into tables, in Adobe Acrobat Pro Artifact the contents of the 
+
+```
+<P>
+```
+
+ tag -  click on 
+
+```
+<P>
+```
+
+ tag, click “Edit” Role Map, which maps artifact to 
+
+```
+<P>
+```
+
+ tag, delete item, rename 
+
+```
+<Artifact>
+```
+
+ to 
+
+```
+<H1>
+```
+
+ then select “Path” and Change Tag to Artifact so it is artifacted, delete tag
 • If a Table splits over more than one page it will be a separate table on each page, fix this in Adobe Acrobat Pro by moving the rows on the second Table into the main table and then deleting the empty table. The other option is to change the table in Word so it doesn’t onto a second page
 
 ## PAC 2024
