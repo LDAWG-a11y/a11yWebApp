@@ -170,7 +170,10 @@ The Accessibility Assistant then checked my document.
 ### Color and Contrast
 
 • Hard-to-read text contrast – 1
-I clicked on   and the relevant text is highlighted
+I clicked on 
+![Hard to read text contrast](src/guideImg/3-accessibility-assistant-hard-to-read-text-contrast.png)
+
+ and the relevant text is highlighted
 
 And a suggestion of 3 colours appears in the Accessibility Assistant pane
 
@@ -184,7 +187,7 @@ Note: the button is disabled as the issue is fixed.
 
 I clicked on 
 
-![Hard to read text contrast](src/guideImg/3-accessibility-assistant-hard-to-read-text-contrast.png)
+
 
  and it took me to the first image with an issue
 
