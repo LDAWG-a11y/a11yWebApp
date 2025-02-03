@@ -184,6 +184,8 @@ And a suggestion of 3 colours appears in the Accessibility Assistant pane
 
 I selected the black, double clicked on it and the status changed to
 
+![Hard-to-read text contrast passed](src/guideImg/6-accessibility-assistant-hard-to-read-text-contrast-passed.png)
+
 Note: the button is disabled as the issue is fixed.
 
 ### Media and Illustrations
