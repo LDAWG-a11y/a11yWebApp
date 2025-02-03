@@ -181,7 +181,12 @@ Note: the button is disabled as the issue is fixed.
 ### Media and Illustrations
 
 • Missing alt text – 3
-I clicked on  and it took me to the first image with an issue
+
+I clicked on 
+
+![Hard to read text contrast](src/guideImg/3-accessibility-assistant-hard-to-read-text-contrast.png)
+
+ and it took me to the first image with an issue
 
 And in the Accessibility Assistant pane, a “Missing alt text” field appeared where the image description can be entered.
 
