@@ -411,6 +411,8 @@ Go to Menu -> Document properties
 
 ![Menu document properties](src/guideImg/22-menu-document-properties.png)
 
+![document properties with title, subject and keywords](src/guideImg/23-document-properties.png)
+
 Add a Title, Subject and any applicable keywords.
 
 #### PDF/UA identifier missing
