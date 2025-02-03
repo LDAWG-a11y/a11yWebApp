@@ -130,8 +130,9 @@ I then installed the following Firefox extensions:
 • [Firefox webstore - webhint (external website)](https://addons.mozilla.org/en-GB/firefox/addon/webhint/) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
 • [Firefox webstore - WCAG Color contrast checker (external website)](https://addons.mozilla.org/en-US/firefox/addon/wcag-contrast-checker/) - checks the color contrast between the foreground and background of the elements that are in the page according to the WCAG 2.2
 
-Code for Stylus
-I added the Focus Style and Testing WCAG 1.4.12 Text Spacing CSS in Stylus.
+### Code for Stylus
+
+I added the [Focus Style](<https://www.makethingsaccessible.com/guides/accessibility-testing-tools/#:~:text=Accessibility Testing Tools-,Code for Stylus,-Create the following>) and [Testing WCAG 1.4.12 Text Spacing](<https://www.makethingsaccessible.com/guides/accessibility-testing-tools/#:~:text=dotted hotpink !important%3B %0A}-,Testing WCAG 1.4.12 Text Spacing,-* { %0A line-height%3A 1.5>) CSS in Stylus.
 JavaScript Bookmarklets
 I also added the Adrian Roselli 24x24 bookmarklet (external website).
 
