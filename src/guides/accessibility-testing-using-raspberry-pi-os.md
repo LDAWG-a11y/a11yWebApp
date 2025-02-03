@@ -13,7 +13,7 @@ isGuide: true
 ---
 ## Raspberry Pi OS
 
-**Note: I’m mostly a Windows user so if anyone has any tips or suggestions, I will gratefully receive them.**
+**Note: I’m mostly a Windows user so if anyone has any tips or suggestions for using Raspberry Pi OS for digital accessibility testing and remediation, I will gratefully receive them.**
 
 I installed [Raspberry Pi OS (bullseye) (external website)](https://www.raspberrypi.com/software/) on to an 8GB Raspberry Pi 4 to test how well I could use Raspberry Pi OS to audit websites and remediate documents.
 
