@@ -377,7 +377,17 @@ Click on “Results in Detail” button and drill down into the details
 This error occurs because the PDF/UA standard requires all hyperlinks have alternative text.
 Go to the Preflight panel (search for Preflight in “Find text or tools” search in Acrobat)
 
-Make sure  is chosen and click on\
+![Adobe Acrobat Preflight panel](src/guideImg/21.5-1-pac-2024-preflight-pdfua.png)
+
+Make sure 
+
+![PDF Standards](src/guideImg/21.5-2-pac-2024-pdf-standards.png)
+
+ is chosen and click on 
+
+![Spanner button](src/guideImg/21.5-3-pac-2024-spanner.png)
+
+\
 Scroll down and under the Interactive elements and properties
 
 The PDF standard wants a contents entry to be added to the link which will provide the alternate text, DO NOT put the alternate text in the Alternate Text field!
