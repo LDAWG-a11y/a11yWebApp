@@ -353,7 +353,7 @@ Header and Footer objects are artifacted when exported to PDF.
 
 ## PAC 2024
 
-Open PAC 2024 and drag and drop the PDF file onto
+Open [PAC 2024 (external website)](https://pac.pdf-accessibility.org/en) and drag and drop the PDF file onto
   Document selection tool
 The test will run and errors will be reported
 
