@@ -387,8 +387,9 @@ Make sure
 
 ![Spanner button](src/guideImg/21.5-3-pac-2024-spanner.png)
 
-\
 Scroll down and under the Interactive elements and properties
+
+![Create content entry for link annotations](src/guideImg/21.5-3-pac-2024-create-content-entry-for-link-annotations.png)
 
 The PDF standard wants a contents entry to be added to the link which will provide the alternate text, DO NOT put the alternate text in the Alternate Text field!
 Select   and then click on\
