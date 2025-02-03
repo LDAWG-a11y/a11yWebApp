@@ -354,7 +354,6 @@ Header and Footer objects are artifacted when exported to PDF.
 ## PAC 2024
 
 Open [PAC 2024 (external website)](https://pac.pdf-accessibility.org/en) and drag and drop the PDF file onto
- 
 
 ![Document selection tool](src/guideImg/42-document-selection-tool.png)
 
@@ -409,6 +408,8 @@ Save a new version (just to be on the safe side)
 
 This error occurs the document has not got a title set.
 Go to Menu -> Document properties
+
+![Menu document properties](src/guideImg/22-menu-document-properties.png)
 
 Add a Title, Subject and any applicable keywords.
 
