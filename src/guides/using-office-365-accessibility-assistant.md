@@ -218,6 +218,8 @@ I modified this text to say Australian bush hat and then approved it.
 
 The final image I marked as **decorative** and the status changed to 
 
+![Missing alt text passed](src/guideImg/11-accessibility-assistant-missing-alt-text-passed.png)
+
 ### Tables
 
 • Missing table header - 1
