@@ -224,7 +224,10 @@ The final image I marked as **decorative** and the status changed to
 
 • Missing table header - 1
 • Use of merged or split cells – 2
+
 I started with the missing table header and clicked on
+
+![Missing table header button](src/guideImg/12-accessibility-assistant-missing-table-header.png)
 
 Which showed me the table which was missing a header
 
