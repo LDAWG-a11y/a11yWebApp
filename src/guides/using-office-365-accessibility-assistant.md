@@ -391,10 +391,19 @@ Scroll down and under the Interactive elements and properties
 
 ![Create content entry for link annotations](src/guideImg/21.5-3-pac-2024-create-content-entry-for-link-annotations.png)
 
-The PDF standard wants a contents entry to be added to the link which will provide the alternate text, DO NOT put the alternate text in the Alternate Text field!
-Select   and then click on\
+**The PDF standard wants a contents entry to be added to the link which will provide the alternate text, DO NOT put the alternate text in the Alternate Text field!**
+
+Select 
+
+![Create content entry for link annotations](src/guideImg/21.5-3-pac-2024-create-content-entry-for-link-annotations.png)
+
+ and then click on 
+
+![Fix button](src/guideImg/21.5-5-pac-2024-spanner-fix.png)
+
 Save a new version (just to be on the safe side)
-If links such as “Click here” were in the text rather than meaningful text, when the “fix” was run, it would technically pass but the text would be wrong and meaningless.
+
+**If links such as “Click here” were in the text rather than meaningful text, when the “fix” was run, it would technically pass but the text would be wrong and meaningless.**
 
 #### Title missing in document’s XMP metadata
 
