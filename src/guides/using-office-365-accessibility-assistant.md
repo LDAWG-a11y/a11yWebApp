@@ -261,6 +261,8 @@ I have the option to split cells
 
 If you are not experienced with tables in Adobe Acrobat Pro (or other PDF remediation software), to fix this in real life I would split the table into a female table and a male table and then apply a heading to each table, which I have done. 
 
+![Females table and Males table](src/guideImg/19-two-tables.png)
+
 ### Document Structure
 
 • No headings in document - passed
