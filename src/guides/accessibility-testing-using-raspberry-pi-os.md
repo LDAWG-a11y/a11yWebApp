@@ -64,16 +64,34 @@ I then went into the Voice tab and using the Rate slider, I made the speech quic
 
 I would normally use TPGi’s [Colour Contrast Analyser (external website)](https://www.tpgi.com/color-contrast-checker/) in Windows, so I installed [Gpick (external website)](https://www.gpick.org/) which I used alongside the [Contrast Finder (external website)](https://app.contrast-finder.org/?lang=en) website to allow me to manually check for colour contrast.
 
-GPick Colour Contrast Checker
-To install Gpick, I followed the same installation steps using the terminal and sudo apt install gpick
-Other tools
-Magnifier
+### GPick Colour Contrast Checker
+
+To install Gpick, I followed the same installation steps using the terminal and 
+
+```
+sudo apt install gpick
+```
+
+## Other tools
+
+### Magnifier
+
 I installed the screen magnifier tool so that I could test using this.
+
+```
 sudo apt update
 sudo apt install mage
+```
+
 It can also be installed using “Add/Remove Software”
 
+![add remove software magnifier](src/guideImg/4-magnifier.png)
+
+![Installing packages - please wait...](src/guideImg/5-installing-packages.png)
+
 The Magnifier button appears down in the bottom right corner of the taskbar by the clock
+
+![Magnifier in the taskbar](src/guideImg/5.5-magnifier-button.png)
 
 The Magnifier in use
 
