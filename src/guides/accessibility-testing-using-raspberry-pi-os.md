@@ -3,7 +3,7 @@ title: Accessibility testing using Raspberry Pi OS
 summary: Can a Raspberry Pi be used for accessibility testing and document remediation?
 author: swilkinson
 date: 2025-02-03
-toc: false
+toc: true
 tags:
   - Testing
   - Screen reader
