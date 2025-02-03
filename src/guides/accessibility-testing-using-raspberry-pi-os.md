@@ -133,7 +133,9 @@ I then installed the following Firefox extensions:
 ### Code for Stylus
 
 I added the [Focus Style](<https://www.makethingsaccessible.com/guides/accessibility-testing-tools/#:~:text=Accessibility Testing Tools-,Code for Stylus,-Create the following>) and [Testing WCAG 1.4.12 Text Spacing](<https://www.makethingsaccessible.com/guides/accessibility-testing-tools/#:~:text=dotted hotpink !important%3B %0A}-,Testing WCAG 1.4.12 Text Spacing,-* { %0A line-height%3A 1.5>) CSS in Stylus.
-JavaScript Bookmarklets
+
+### JavaScript Bookmarklets
+
 I also added the Adrian Roselli 24x24 bookmarklet (external website).
 
 Auditing a website
