@@ -153,15 +153,11 @@ While there is software that can read or edit PDFs on Linux, I’ve not found an
 ## Useful links
 
 • [Accessibility testing tools](https://www.makethingsaccessible.com/guides/accessibility-testing-tools/)
-• Basic Orca Tutorial (external website)
+• [Basic Orca Tutorial (external website)](https://www.youtube.com/watch?v=ieo20UtUobw)
 • GrackleDocs Grackle GO (external website)
-• HeadingsMap (external website) 
 • Installing Firefox on your Raspberry Pi (external website)
 • Introduction to Orca Screen reader for Linux (external website)
 • Latest Raspberry Pi OS update – May 2020 (external website)
 • Orca Screen Reader (external website)
 • Raspberry Pi OS Accessibility articles (external website)
-• Stylus (external website) 
 • Survey of Screen-Readers in Linux Operating Systems (external website)
-• WAVE Evaluation Tool (external website) 
-• Web Developer (external website)
