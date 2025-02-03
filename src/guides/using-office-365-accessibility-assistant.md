@@ -212,10 +212,11 @@ For the second image
 
 I was shown an automatically generated description
 
-
+![Accessibility assistant missing alt text showing auto generated alt text -  A person with long curly hair wearing a cowboy hat and sunglasses](src/guideImg/10.5-accessibility-assistant-missing-alt-text-cowboy-hat.png)
 
 I modified this text to say Australian bush hat and then approved it.
-The final image I marked as decorative and the status changed to 
+
+The final image I marked as **decorative** and the status changed to 
 
 ### Tables
 
