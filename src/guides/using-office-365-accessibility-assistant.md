@@ -186,13 +186,15 @@ I selected the black, double clicked on it and the status changed to
 
 ![Hard-to-read text contrast passed](src/guideImg/6-accessibility-assistant-hard-to-read-text-contrast-passed.png)
 
-Note: the button is disabled as the issue is fixed.
+**Note: the button is disabled as the issue is fixed.**
 
 ### Media and Illustrations
 
 • Missing alt text – 3
 
 I clicked on 
+
+![missing alt text 3](src/guideImg/7-accessibility-assistant-missing-alt-text.png)
 
  and it took me to the first image with an issue
 
