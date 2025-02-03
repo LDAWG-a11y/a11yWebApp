@@ -54,12 +54,15 @@ as a command in the terminal window, then Enter (this works even if the screen r
 
 I then checked in the General tab to make sure that Keyboard Layout was set to Desktop (which it was).
 
-
+![screen reader preferences with the keyboard layout set to desktop](src/guideImg/2-orca-screen-reader-preferences.png)
 
 I then went into the Voice tab and using the Rate slider, I made the speech quicker.
 
-Colour Contrast Checkers
-I would normally use TPGi’s Colour Contrast Analyser (external website) in Windows, so I installed Gpick (external website) which I used alongside the Contrast Finder (external website) website to allow me to manually check for colour contrast.
+![screen reader preferences with the keyboard layout set to desktop](src/guideImg/3-orca-screen-reader-voice-type-settings.png)
+
+## Colour Contrast Checkers
+
+I would normally use TPGi’s [Colour Contrast Analyser (external website)](https://www.tpgi.com/color-contrast-checker/) in Windows, so I installed [Gpick (external website)](https://www.gpick.org/) which I used alongside the [Contrast Finder (external website)](https://app.contrast-finder.org/?lang=en) website to allow me to manually check for colour contrast.
 
 GPick Colour Contrast Checker
 To install Gpick, I followed the same installation steps using the terminal and sudo apt install gpick
