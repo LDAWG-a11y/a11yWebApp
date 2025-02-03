@@ -165,6 +165,8 @@ I went to Review and then selected Check Accessibility in the Accessibility sect
 
 The Accessibility Assistant then checked my document.
 
+![Accessibility Assistant results](src/guideImg/2-accessibility-assistant-results.png)
+
 ### Color and Contrast
 
 • Hard-to-read text contrast – 1
