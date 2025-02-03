@@ -231,7 +231,11 @@ I started with the missing table header and clicked on
 
 Which showed me the table which was missing a header
 
+![Table with Jon, Paul, and Andrew](src/guideImg/13-accessibility-assistant-missing-table-header-table.png)
+
 And highlighted where the header should be. I was given two options
+
+![Accessibility assistant, use first row as header or mark as layout table](src/guideImg/14-accessibility-assistant-missing-table-header-table-options.png)
 
 As this is not a layout table, I will select 
 
