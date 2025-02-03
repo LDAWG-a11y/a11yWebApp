@@ -171,6 +171,7 @@ The Accessibility Assistant then checked my document.
 
 • Hard-to-read text contrast – 1
 I clicked on 
+
 ![Hard to read text contrast](src/guideImg/3-accessibility-assistant-hard-to-read-text-contrast.png)
 
  and the relevant text is highlighted
@@ -186,8 +187,6 @@ Note: the button is disabled as the issue is fixed.
 • Missing alt text – 3
 
 I clicked on 
-
-
 
  and it took me to the first image with an issue
 
