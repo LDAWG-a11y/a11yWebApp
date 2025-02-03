@@ -144,7 +144,7 @@ Unlike with my laptop where I was struggling to use the laptop with LibreOffice 
 
 ## Auditing PDFs
 
-As PAC 2024 does not currently work on Raspberry Pi OS, and wouldn’t work under WINE on ARM, I used Grackle GO to audit the PDFs I found during my website audit.
+As PAC 2024 does not currently work on Raspberry Pi OS, and wouldn’t work under WINE on ARM, I used [Grackle GO to audit the PDFs](https://www.makethingsaccessible.com/guides/pdf-accessibility-testing-using-grackledocs-grackle-go/) I found during my website audit.
 
 ## Remediating PDFs
 
