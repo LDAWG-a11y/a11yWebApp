@@ -176,7 +176,11 @@ I clicked on
 
  and the relevant text is highlighted
 
+![text with poor colour contrast in Word document highlighted](src/guideImg/4-accessibility-assistant-hard-to-read-text-contrast-highlighted.png)
+
 And a suggestion of 3 colours appears in the Accessibility Assistant pane
+
+![Accessibility assistant color and contrast - hard-to-read text contrast](src/guideImg/5-accessibility-assistant-hard-to-read-text-contrast-suggestions.png)
 
 I selected the black, double clicked on it and the status changed to
 
