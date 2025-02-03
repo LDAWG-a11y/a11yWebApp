@@ -415,6 +415,8 @@ Go to Menu -> Document properties
 
 Add a Title, Subject and any applicable keywords.
 
+![title, subject and keywords completed](src/guideImg/23-document-properties-filled.png)
+
 #### PDF/UA identifier missing
 
 The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this should be done at the end when the file actually is PDF/UA compliant.
