@@ -420,8 +420,11 @@ Add a Title, Subject and any applicable keywords.
 #### PDF/UA identifier missing
 
 The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this should be done at the end when the file actually is PDF/UA compliant.
-Note: this can be added to a file that is NOT compliant but this does not mean that the file will then be compliant.
+
+**Note: this can be added to a file that is NOT compliant but this does not mean that the file will then be compliant.**
+
 PAC 2024 gives an PDF/UA identifier missing error
+
 Open the Preflight panel by searching for Preflight in the “Find text or tools” search box
 Make sure  is chosen and click on  
 
