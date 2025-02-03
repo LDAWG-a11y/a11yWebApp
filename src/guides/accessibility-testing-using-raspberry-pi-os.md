@@ -121,14 +121,14 @@ I went to the Add/Remove Software and searched for Firefox and added it to Raspb
 
 I then installed the following Firefox extensions:
 • [Firefox webstore - ARC Toolkit (external website)](https://addons.mozilla.org/en-GB/firefox/addon/arc-toolkit/) - accessibility testing tool
-• [Firefox webstore ARIA DevTools (external website)](https://addons.mozilla.org/en-GB/firefox/addon/aria-devtools/) - spot missing ARIA labels, misused ARIA roles, and incomplete keyboard support
-• [Firefox webstore axe DevTools (external website)](https://addons.mozilla.org/en-GB/firefox/addon/axe-devtools/) - Web Accessibility Testing - accessibility testing tool
-• [Firefox webstore HeadingsMap (external website)](https://addons.mozilla.org/en-GB/firefox/addon/headingsmap/) - shows all the headings in a sidebar
-• [Firefox webstore Landmark Navigation via Keyboard or Pop-up (external website)](https://addons.mozilla.org/en-GB/firefox/addon/landmarks/) - navigate web pages via WAI-ARIA
-• [Firefox webstore Stylus (external website)](https://addons.mozilla.org/en-GB/firefox/addon/styl-us/) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator](https://www.makethingsaccessible.com/guides/accessibility-testing-tools/#stylus)
-• [Firefox webstore Web Developer (external website)](https://addons.mozilla.org/en-GB/firefox/addon/web-developer/) - adds a toolbar button with various web developer tools
-• [Firefox webstore webhint (external website)](https://addons.mozilla.org/en-GB/firefox/addon/webhint/) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
-• [Firefox webstore WCAG Color contrast checker (external website)](https://addons.mozilla.org/en-US/firefox/addon/wcag-contrast-checker/) - checks the color contrast between the foreground and background of the elements that are in the page according to the WCAG 2.2
+• [Firefox webstore - ARIA DevTools (external website)](https://addons.mozilla.org/en-GB/firefox/addon/aria-devtools/) - spot missing ARIA labels, misused ARIA roles, and incomplete keyboard support
+• [Firefox webstore - axe DevTools (external website)](https://addons.mozilla.org/en-GB/firefox/addon/axe-devtools/) - Web Accessibility Testing - accessibility testing tool
+• [Firefox webstore - HeadingsMap (external website)](https://addons.mozilla.org/en-GB/firefox/addon/headingsmap/) - shows all the headings in a sidebar
+• [Firefox webstore - Landmark Navigation via Keyboard or Pop-up (external website)](https://addons.mozilla.org/en-GB/firefox/addon/landmarks/) - navigate web pages via WAI-ARIA
+• [Firefox webstore - Stylus (external website)](https://addons.mozilla.org/en-GB/firefox/addon/styl-us/) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator](https://www.makethingsaccessible.com/guides/accessibility-testing-tools/#stylus)
+• [Firefox webstore - Web Developer (external website)](https://addons.mozilla.org/en-GB/firefox/addon/web-developer/) - adds a toolbar button with various web developer tools
+• [Firefox webstore - webhint (external website)](https://addons.mozilla.org/en-GB/firefox/addon/webhint/) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
+• [Firefox webstore - WCAG Color contrast checker (external website)](https://addons.mozilla.org/en-US/firefox/addon/wcag-contrast-checker/) - checks the color contrast between the foreground and background of the elements that are in the page according to the WCAG 2.2
 
 Code for Stylus
 I added the Focus Style and Testing WCAG 1.4.12 Text Spacing CSS in Stylus.
