@@ -453,10 +453,10 @@ Now there are not any errors in PAC 2024
 
 ## Useful links
 
-• A Microsoft 365 accessibility assistant will make content easier to see (external website)
-• An Evolution in Microsoft Office Accessibility (external website)
-• Create inclusive content with the new Accessibility Assistant in Microsoft 365 (external website)
-• Improve accessibility in your documents with the Accessibility Assistant (external website)
+• [A Microsoft 365 accessibility assistant will make content easier to see (external website)](https://www.pcworld.com/article/1536120/a-microsoft-365-accessibility-assistant-will-make-content-easier-to-see.html)
+• [An Evolution in Microsoft Office Accessibility (external website)](https://webaim.org/blog/an-evolution-in-microsoft-office-accessibility/)
+• [Create inclusive content with the new Accessibility Assistant in Microsoft 365 (external website)](https://www.microsoft.com/en-us/microsoft-365/blog/2023/03/08/create-inclusive-content-with-the-new-accessibility-assistant-in-microsoft-365/)
+• [Improve accessibility in your documents with the Accessibility Assistant (external website)](https://support.microsoft.com/en-gb/topic/improve-accessibility-in-your-documents-with-the-accessibility-assistant-f01562ca-0119-40ad-8dd6-f6223df50bef)
 • Microsoft 365’s newest assistant will point out when you make stuff less accessible (external website)
 • Microsoft 365 blog (external website)
 • Support Page for SharePoint Pages Authoring Accessibility Assistant (external website)
