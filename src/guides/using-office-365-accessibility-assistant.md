@@ -161,6 +161,8 @@ Make sure that there is adequate contrast between background and text – use [T
 
 I went to Review and then selected Check Accessibility in the Accessibility section of the toolbar.
 
+![Check Accessibility button in the Review section of the toolbar](src/guideImg/1-review-accessibility.png)
+
 The Accessibility Assistant then checked my document.
 
 ### Color and Contrast
