@@ -23,72 +23,72 @@ The screen readers are required when testing web pages to determine how they int
 
 ### Chrome
 
-* [Accessibility Insights for Web (external website)](https://chromewebstore.google.com/detail/accessibility-insights-fo/pbjjkligggfmakdaogkfomddhfmpjeni) - accessibility testing tool
-* [Alt or not (external website)](https://chromewebstore.google.com/detail/alt-or-not/bhbbijphceaijfpppmdjmjalnogkhamc) - see alt text on Twitter/X
-* [ARC Toolkit (external website)](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) - accessibility testing tool
-* [ARIA DevTools (external website)](https://chromewebstore.google.com/detail/aria-devtools/dneemiigcbbgbdjlcdjjnianlikimpck?hl=en) - spot missing ARIA labels, misused ARIA roles, and incomplete keyboard support
-* [axe DevTools (external website)](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Web Accessibility Testing - accessibility testing tool
-* [HeadingsMap (external website)](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) - shows all the headings in a sidebar
-* [IBM Equal Access Accessibility Checker (external website)](https://chromewebstore.google.com/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp) - accessibility testing tool
-* [Landmark Navigation via Keyboard or Pop-up (external website)](https://chromewebstore.google.com/detail/landmark-navigation-via-k/ddpokpbjopmeeiiolheejjpkonlkklgp) - navigate web pages via WAI-ARIA landmarks, using the keyboard or a pop-up menu
-* [LERA (external website)](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc) - accessibility testing and reporting tool
-* [Lighthouse (external website)](https://chromewebstore.google.com/detail/blipmdconlkpinefehnmjammfjpmpbjk) - accessibility testing tool
-* [Stylus (external website)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator (external website)](#stylus)
-* [WAVE Evaluation Tool (external website)](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) - accessibility testing tool
-* [Web Developer (external website)](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) - adds a toolbar button with various web developer tools
-* [Web Disability Simulator (external website)](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) - simulates how people with disabilities experience the web
-* [webhint (external website)](https://chromewebstore.google.com/detail/webhint/gccemnpihkbgkdmoogenkbkckppadcag) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
-* [WCAG Color contrast checker (external website)](https://chromewebstore.google.com/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf) - checks the color contrast between the foreground and background of the elements that are in the page according to the WCAG 2.2
+* [Chrome webstore - Accessibility Insights for Web (external website)](https://chromewebstore.google.com/detail/accessibility-insights-fo/pbjjkligggfmakdaogkfomddhfmpjeni) - accessibility testing tool
+* [Chrome webstore - Alt or not (external website)](https://chromewebstore.google.com/detail/alt-or-not/bhbbijphceaijfpppmdjmjalnogkhamc) - see alt text on Twitter/X
+* [Chrome webstore - ARC Toolkit (external website)](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) - accessibility testing tool
+* [Chrome webstore - ARIA DevTools (external website)](https://chromewebstore.google.com/detail/aria-devtools/dneemiigcbbgbdjlcdjjnianlikimpck?hl=en) - spot missing ARIA labels, misused ARIA roles, and incomplete keyboard support
+* [Chrome webstore - axe DevTools (external website)](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Web Accessibility Testing - accessibility testing tool
+* [Chrome webstore - HeadingsMap (external website)](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) - shows all the headings in a sidebar
+* [Chrome webstore - IBM Equal Access Accessibility Checker (external website)](https://chromewebstore.google.com/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp) - accessibility testing tool
+* [Chrome webstore - Landmark Navigation via Keyboard or Pop-up (external website)](https://chromewebstore.google.com/detail/landmark-navigation-via-k/ddpokpbjopmeeiiolheejjpkonlkklgp) - navigate web pages via WAI-ARIA landmarks, using the keyboard or a pop-up menu
+* [Chrome webstore - LERA (external website)](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc) - accessibility testing and reporting tool
+* [Chrome webstore - Lighthouse (external website)](https://chromewebstore.google.com/detail/blipmdconlkpinefehnmjammfjpmpbjk) - accessibility testing tool
+* [Stylus (external website)](Chrome webstore - https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator (external website)](#stylus)
+* [Chrome webstore - WAVE Evaluation Tool (external website)](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) - accessibility testing tool
+* [Chrome webstore - Web Developer (external website)](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) - adds a toolbar button with various web developer tools
+* [Chrome webstore - Web Disability Simulator (external website)](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) - simulates how people with disabilities experience the web
+* [Chrome webstore - webhint (external website)](https://chromewebstore.google.com/detail/webhint/gccemnpihkbgkdmoogenkbkckppadcag) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
+* [Chrome webstore - WCAG Color contrast checker (external website)](https://chromewebstore.google.com/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf) - checks the color contrast between the foreground and background of the elements that are in the page according to the WCAG 2.2
 
 ### Edge
 
 #### Microsoft store
 
-* [Accessibility Insights for Web (external website)](https://microsoftedge.microsoft.com/addons/detail/accessibility-insights-fo/ghbhpcookfemncgoinjblecnilppimih?hl=en-GB) - accessibility testing tool
-* [axe DevTools (external website)](https://microsoftedge.microsoft.com/addons/detail/axe-devtools-web-access/kcenlimkmjjkdfcaleembgmldmnnlfkn?hl=en-GB) - Web Accessibility Testing - accessibility testing tool
-* [HeadingsMap (external website)](https://microsoftedge.microsoft.com/addons/detail/headingsmap/bokekiiaddinealohkmhjcgfanndmcgo?hl=en-GB) - shows all the headings in a sidebar
-* [IBM Equal Access Accessibility Checker (external website)](https://microsoftedge.microsoft.com/addons/detail/ibm-equal-access-accessib/ompccpejakabkmfepbijnagedbdfldka?hl=en-GB) - accessibility testing tool
-* [Landmark Navigation via Keyboard or Pop-up (external website)](https://microsoftedge.microsoft.com/addons/detail/landmark-navigation-via-k/oemdnnhhfhdhilalibobndhoahcaiboe?hl=en-GB) - navigate web pages via WAI-ARIA landmarks, using the keyboard or a pop-up menu
-* [WAVE Evaluation Tool (external website)](https://microsoftedge.microsoft.com/addons/detail/wave-evaluation-tool/khapceneeednkiopkkbgkibbdoajpkoj?hl=en-GB) - accessibility testing tool
-* [webhint (external website)](https://microsoftedge.microsoft.com/addons/detail/webhint/mlgfbihcfnkaenjpdcngdnhcpkdmcdee?hl=en-GB) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
-* [Web Developer (external website)](https://microsoftedge.microsoft.com/addons/detail/web-developer/ilbdhapjffldgngebmnkdodohjapjccm?hl=en-GB) - adds a toolbar button with various web developer tools
-* [WCAG Color contrast checker (external website)](https://microsoftedge.microsoft.com/addons/detail/wcag-color-contrast-check/idahaggnlnekelhgplklhfpchbfdmkjp) - checks the color contrast between the foreground and background of the elements that are in the page according to the WCAG 2.2
+* [Edge webstore - Accessibility Insights for Web (external website)](https://microsoftedge.microsoft.com/addons/detail/accessibility-insights-fo/ghbhpcookfemncgoinjblecnilppimih?hl=en-GB) - accessibility testing tool
+* [Edge webstore - axe DevTools (external website)](https://microsoftedge.microsoft.com/addons/detail/axe-devtools-web-access/kcenlimkmjjkdfcaleembgmldmnnlfkn?hl=en-GB) - Web Accessibility Testing - accessibility testing tool
+* [Edge webstore - HeadingsMap (external website)](https://microsoftedge.microsoft.com/addons/detail/headingsmap/bokekiiaddinealohkmhjcgfanndmcgo?hl=en-GB) - shows all the headings in a sidebar
+* [Edge webstore - IBM Equal Access Accessibility Checker (external website)](https://microsoftedge.microsoft.com/addons/detail/ibm-equal-access-accessib/ompccpejakabkmfepbijnagedbdfldka?hl=en-GB) - accessibility testing tool
+* [Edge webstore - Landmark Navigation via Keyboard or Pop-up (external website)](https://microsoftedge.microsoft.com/addons/detail/landmark-navigation-via-k/oemdnnhhfhdhilalibobndhoahcaiboe?hl=en-GB) - navigate web pages via WAI-ARIA landmarks, using the keyboard or a pop-up menu
+* [Edge webstore - WAVE Evaluation Tool (external website)](https://microsoftedge.microsoft.com/addons/detail/wave-evaluation-tool/khapceneeednkiopkkbgkibbdoajpkoj?hl=en-GB) - accessibility testing tool
+* [Edge webstore - webhint (external website)](https://microsoftedge.microsoft.com/addons/detail/webhint/mlgfbihcfnkaenjpdcngdnhcpkdmcdee?hl=en-GB) - tests websites for issues with accessibility, browser compatibility, security, performance etc.
+* [Edge webstore - Web Developer (external website)](https://microsoftedge.microsoft.com/addons/detail/web-developer/ilbdhapjffldgngebmnkdodohjapjccm?hl=en-GB) - adds a toolbar button with various web developer tools
+* [Edge webstore - WCAG Color contrast checker (external website)](https://microsoftedge.microsoft.com/addons/detail/wcag-color-contrast-check/idahaggnlnekelhgplklhfpchbfdmkjp) - checks the color contrast between the foreground and background of the elements that are in the page according to the WCAG 2.2
 
 #### Chrome store
 
 Adding an [extension from Chrome store (external website)](https://support.microsoft.com/en-gb/microsoft-edge/add-turn-off-or-remove-extensions-in-microsoft-edge-9c0ec68c-2fbc-2f2c-9ff0-bdc76f46b026#:~:text=Add%20an%20extension%20to%20Microsoft%20Edge%20from%20the%20Chrome%20Web%20Store).
 
-* [ARC Toolkit (external website)](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) - accessibility testing tool
-* [ARIA DevTools (external website)](https://chromewebstore.google.com/detail/aria-devtools/dneemiigcbbgbdjlcdjjnianlikimpck) - spot missing ARIA labels, misused ARIA roles, and incomplete keyboard support
-* [IBM Equal Access Accessibility Checker (external website)](https://chromewebstore.google.com/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp) - accessibility testing tool
-* [LERA (external website)](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc) - accessibility testing and reporting tool
-* [Stylus (external website)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator (external website)](#stylus)
-* [Web Disability Simulator (external website)](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) - simulates how people with disabilities experience the web
+* [Chrome webstore - ARC Toolkit (external website)](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) - accessibility testing tool
+* [Chrome webstore - ARIA DevTools (external website)](https://chromewebstore.google.com/detail/aria-devtools/dneemiigcbbgbdjlcdjjnianlikimpck) - spot missing ARIA labels, misused ARIA roles, and incomplete keyboard support
+* [Chrome webstore - IBM Equal Access Accessibility Checker (external website)](https://chromewebstore.google.com/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp) - accessibility testing tool
+* [Chrome webstore - LERA (external website)](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc) - accessibility testing and reporting tool
+* [Chrome webstore - Stylus (external website)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator (external website)](#stylus)
+* [Chrome webstore - Web Disability Simulator (external website)](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) - simulates how people with disabilities experience the web
 
 ### Opera
 
 #### Opera Store
 
-* [Landmark Navigation via Keyboard or Pop-up (external website)](https://addons.opera.com/en/extensions/details/landmarks/) - navigate web pages via WAI-ARIA landmarks, using the keyboard or a pop-up menu
-* [Web Developer (external website)](https://addons.opera.com/en/extensions/details/web-developer/) - adds a toolbar button with various web developer tools
+* [Opera webstore - Landmark Navigation via Keyboard or Pop-up (external website)](https://addons.opera.com/en/extensions/details/landmarks/) - navigate web pages via WAI-ARIA landmarks, using the keyboard or a pop-up menu
+* [Opera webstore - Web Developer (external website)](https://addons.opera.com/en/extensions/details/web-developer/) - adds a toolbar button with various web developer tools
 
 #### Chrome store
 
 Adding [Chrome extension to Opera (external website)](https://help.opera.com/en/latest/customization/#:~:text=Add%20Chrome%20extensions%20to%20Opera&text=Click%20the%20Add%20to%20Opera,can%20use%20them%20right%20away.).
 
-* [Accessibility Insights for Web (external website)](https://microsoftedge.microsoft.com/addons/detail/accessibility-insights-fo/ghbhpcookfemncgoinjblecnilppimih?hl=en-GB) - accessibility testing tool
-* [Alt or not (external website)](https://chromewebstore.google.com/detail/alt-or-not/bhbbijphceaijfpppmdjmjalnogkhamc) - see alt text on Twitter/X
-* [ARC Toolkit (external website)](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) - accessibility testing tool
-* [ARIA DevTools (external website)](https://chromewebstore.google.com/detail/aria-devtools/dneemiigcbbgbdjlcdjjnianlikimpck) - spot missing ARIA labels, misused ARIA roles, and incomplete keyboard support
-* [axe DevTools (external website)](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Web Accessibility Testing - accessibility testing tool
-* [HeadingsMap (external website)](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) - shows all the headings in a sidebar
-* [IBM Equal Access Accessibility Checker (external website)](https://microsoftedge.microsoft.com/addons/detail/ibm-equal-access-accessib/ompccpejakabkmfepbijnagedbdfldka?hl=en-GB) - accessibility testing tool
-* [LERA (external website)](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc)  accessibility testing and reporting tool
-* [Lighthouse (external website)](https://chromewebstore.google.com/detail/blipmdconlkpinefehnmjammfjpmpbjk) - accessibility testing tool
-* [Stylus (external website)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator (external website)](#stylus)
-* [WAVE Evaluation Tool (external website)](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) - accessibility testing tool
-* [Web Disability Simulator (external website)](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) - simulates how people with disabilities experience the web
-* [WCAG Color contrast checker (external website)](https://chromewebstore.google.com/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf) - checks the color contrast between the foreground and background of the elements that are in the page according to the WCAG 2.2
+* [Chrome webstore - Accessibility Insights for Web (external website)](https://chromewebstore.google.com/detail/accessibility-insights-fo/pbjjkligggfmakdaogkfomddhfmpjeni) - accessibility testing tool
+* [Chrome webstore - Alt or not (external website)](https://chromewebstore.google.com/detail/alt-or-not/bhbbijphceaijfpppmdjmjalnogkhamc) - see alt text on Twitter/X
+* [Chrome webstore - ARC Toolkit (external website)](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) - accessibility testing tool
+* [Chrome webstore - ARIA DevTools (external website)](https://chromewebstore.google.com/detail/aria-devtools/dneemiigcbbgbdjlcdjjnianlikimpck) - spot missing ARIA labels, misused ARIA roles, and incomplete keyboard support
+* [Chrome webstore - axe DevTools (external website)](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Web Accessibility Testing - accessibility testing tool
+* [Chrome webstore - HeadingsMap (external website)](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) - shows all the headings in a sidebar
+* [Chrome webstore - IBM Equal Access Accessibility Checker (external website)](https://chromewebstore.google.com/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp) - accessibility testing tool
+* [Chrome webstore - LERA (external website)](https://chromewebstore.google.com/detail/lera/neninfnjnhknniefcpognoooalfdaofc)  accessibility testing and reporting tool
+* [Chrome webstore - Lighthouse (external website)](https://chromewebstore.google.com/detail/blipmdconlkpinefehnmjammfjpmpbjk) - accessibility testing tool
+* [Chrome webstore - Stylus (external website)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) - create, edit, and manage personalised CSS stylesheets. Custom CSS can be [added to test spacing and show focus indicator (external website)](#stylus)
+* [Chrome webstore - WAVE Evaluation Tool (external website)](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) - accessibility testing tool
+* [Chrome webstore - Web Disability Simulator (external website)](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) - simulates how people with disabilities experience the web
+* [Chrome webstore - WCAG Color contrast checker (external website)](https://chromewebstore.google.com/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf) - checks the color contrast between the foreground and background of the elements that are in the page according to the WCAG 2.2
 
 ### Firefox
 
