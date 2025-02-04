@@ -12,7 +12,7 @@ team: aaa
 ---
 Thank you to all the brilliant colleges and organisations who are supporting the campaign and improving accessibility within their institutions.  If you would like to join our growing group of supporters please contact Thomas Pocklington Trust at EducationPolicy@pocklington.org.uk\
 \
-[This video from Oldham College](https://www.youtube.com/watch?v=vZP1ubYtuhY&feature=youtu.be) beautifully shows the transformative effect that supporting Access and Assistance For All can have.
+[This video from Oldham College](https://www.youtube.com/watch?v=UBG4nK-ogqc) beautifully shows the transformative effect that supporting Access and Assistance For All can have.
 
 Supporters include:
 
