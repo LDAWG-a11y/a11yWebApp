@@ -82,6 +82,7 @@ And the relevant software was installed, then I clicked Close on the Changes app
 \###Emacspeak Screen Reader
 
 I followed the same steps in the Synaptic Package Manager as I did with Fenrir, but searched for Emacspeak, sadly the install failed, and I had to remove it.
+
 I’m going to use Orca for the testing as I’m used to using a GUI.
 
 GPick Colour Contrast Checker
