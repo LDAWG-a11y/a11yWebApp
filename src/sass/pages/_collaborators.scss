@@ -26,3 +26,9 @@ p:has(+ .supporters__wrapper) {
     }
   }
 }
+
+.aaa-video-iframe {
+  display: flex;
+  justify-content: center;
+  margin: $space-abs-lg 0;
+}

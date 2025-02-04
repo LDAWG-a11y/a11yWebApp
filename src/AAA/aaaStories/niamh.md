@@ -1,6 +1,6 @@
 ---
 title: Niamh
-summary: Niamh is a participant in the BYC's Access and Assistance for All
+summary: Niamh is a participant in the Access and Assistance for All
   campaign. This is her student story.
 date: 2023-05-17
 toc: false

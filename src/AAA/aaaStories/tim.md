@@ -1,6 +1,6 @@
 ---
 title: Tim
-summary: Tim is a participant in the BYC's Access and Assistance for All
+summary: Tim is a participant in the Access and Assistance for All
   campaign. This is his student story, about how he overcame some of the
   challenges of dyslexia.
 date: 2023-05-17
