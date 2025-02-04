@@ -40,16 +40,28 @@ The Orca Screen Reader comes as part of the accessibility package of Linux Mint 
 
 Orca can be opened or closed using the Windows key + Alt + S directly, or Alt + F2, which opens the equivalent to the Windows dialog box and then orca entered as a command, then Enter.
 
+![Enter a command dialog box](src/guideImg/1-command.png)
+
 Orca can also be started by going into the Accessibility settings and the Visual tab where the Screen reader can be toggled on and off. 
 
+![Screen reader toggle within Visual tab on Accessibility](src/guideImg/2-accessibility-dialog-box.png)
+
 When Orca Screen Reader is running the preferences can be accessed using “Orca Modifier” + Space, where the “Orca Modifier” is the Insert key on a desktop, and the Caps Lock key on a laptop. 
+
+![Screen Reader Preferences](src/guideImg/3-orca-preferences.png)
 
 This may not work, so Alt + F2, which opens the equivalent to the Windows dialog box and then 
 orca -s entered as a command, then Enter (this works even if the screen reader is off).
 
+![Enter a command dialog box](src/guideImg/1-command.png)
+
 I then checked in the General tab to make sure that Keyboard Layout was set to Laptop (which it was).
 
+![Screen Reader Preferences dialog general tab](src/guideImg/4-keyboard-layout.png)
+
 I then went into the Voice tab and using the Rate slider, I made the speech quicker.
+
+![](src/guideImg/5-screen-reader-speed.png)
 
 Fenrir Screen Reader
 To install Fenrir, I opened up the Synaptic Package Manager, Searched for Fenrir
