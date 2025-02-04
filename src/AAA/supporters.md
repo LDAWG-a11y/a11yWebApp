@@ -14,11 +14,7 @@ Thank you to all the brilliant colleges and organisations who supporting the cam
 \
 [This video from Oldham College](https://www.youtube.com/watch?v=vZP1ubYtuhY&feature=youtu.be) beautifully shows the transformative effect that supporting Access and Assistance For All can have.
 
-Supporters include
-
-
-
-
+Supporters include:
 
 [](https://www.youtube.com/watch?v=vZP1ubYtuhY&feature=youtu.be)[](https://www.youtube.com/watch?v=vZP1ubYtuhY&feature=youtu.be)
 
