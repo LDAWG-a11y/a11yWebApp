@@ -137,8 +137,7 @@ pkill orca
 
 Ctrl + H will put the PC into High Contrast mode when at the Login screen – I couldn’t see any difference to be honest!
 
-### 
-Chrome browser extensions
+### Chrome browser extensions
 
 The Chrome extensions I installed:
 • [Accessibility Insights for Web (external website)](https://chromewebstore.google.com/detail/accessibility-insights-fo/pbjjkligggfmakdaogkfomddhfmpjeni) - accessibility testing tool
@@ -150,7 +149,7 @@ The Chrome extensions I installed:
 • [WAVE Evaluation Tool (external website)](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) 
 • [Web Developer (external website)](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) 
 
-Code for Stylus
+### Code for Stylus
 
 I added the Focus Style and Testing WCAG 1.4.12 Text Spacing CSS in Stylus.
 JavaScript Bookmarklets
