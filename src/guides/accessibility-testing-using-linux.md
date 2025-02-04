@@ -11,7 +11,7 @@ tags:
   - Tools
 isGuide: true
 ---
-### **Note: I’m mostly a Windows user so if anyone has any tips or suggestions, I will gratefully receive them.**
+**Note: I’m mostly a Windows user so if anyone has any tips or suggestions, I will gratefully receive them.**
 
 ## Linux Mint Cinnamon
 
@@ -155,16 +155,22 @@ I added the [Focus Style](https://www.makethingsaccessible.com/guides/accessibil
 
 ### JavaScript Bookmarklets
 
-I also added the Adrian Roselli 24x24 bookmarklet.
+I also added the Adrian Roselli 24x24 [bookmarklet](https://www.makethingsaccessible.com/guides/accessibility-testing-tools/#:~:text=dotted%20hotpink%20!important%3B%20%0A%7D-,Testing%20WCAG%201.4.12%20Text%20Spacing,-*%20%7B%20%0A%20%20%20%20line%2Dheight%3A%201.5).
 
-Auditing a website
+### Auditing a website
+
 Using Xfce was far more successful as my laptop was running as it should be, and I was able to test the website and audit the report.
-Auditing PDFs
+
+### Auditing PDFs
+
 As PAC 2024 does not currently work on Linux, even under WINE, I used Grackle Go to audit the PDF I found during my website audit.
-Remediating PDFs
+
+### Remediating PDFs
+
 While there is software that can read or edit PDFs on Linux, I’ve not found any that will remediate PDFs to a level that they can pass PAC 2024.
 
-Useful links
+### Useful links
+
 • Accessibility Insights for Web (external website)
 • Alt or not (external website) 
 • ARC Toolkit (external website)
