@@ -105,14 +105,37 @@ To use Orca Screen Reader within Xcfe, you go to Accessibility and tick the chec
 
 I was not able to open and close Orca using the normal keys and discovered that the Keyboard Layout was set to Desktop
 
-I set the Keyboard Layout to Laptop
+![Setting keyboard layout in screen reader preferences Linux Xfce](src/guideImg/11-keyboard-layout-xfce.png)
+
+I set the Keyboard Layout to Laptop.
+
 Orca can normally be opened or closed using the Windows key + Alt + S directly but I was unable to get that command to work in Xfce – it worked really well in Cinnamon!
+
 So I used Alt + F2, which opens the equivalent to the Windows dialog box and then orca entered as a command, then Enter.
 
-When Orca is running the preferences can be accessed by Alt + F2 and entering orca -s. 
+![Application Finder dialog box](src/guideImg/12-command-xfce.png)
 
-To turn off Orca, I used pkill orca.
+When Orca is running the preferences can be accessed by Alt + F2 and entering  
+
+```
+orca -s
+```
+
+![Screen reader preferences dialog box](src/guideImg/13-orca-preferences-xfce.png)
+
+
 I then went into the Voice tab and using the Rate slider, I made the speech quicker.
+
+
+
+![Screen reader preferences Voice tab](src/guideImg/13-orca-speed-xfce.png)
+
+To turn off Orca, I used Alt + F2 (to open the dialog box and entered 
+
+
+```
+pkill orca
+```
 
 High Contrast
 Ctrl + H will put the PC into High Contrast mode when at the Login screen – I couldn’t see any difference tbh!
