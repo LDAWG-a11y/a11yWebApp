@@ -101,7 +101,7 @@ The Orca Screen Reader comes as part of the accessibility package of Linux Mint 
 
 To use Orca Screen Reader within Xcfe, you go to Accessibility and tick the checkbox “Enable assistive technologies”
 
-
+![Assistive technologies, start with session, enable assistive technologies](src/guideImg/10-accesibility.png)
 
 I was not able to open and close Orca using the normal keys and discovered that the Keyboard Layout was set to Desktop
 
