@@ -123,23 +123,23 @@ orca -s
 
 ![Screen reader preferences dialog box](src/guideImg/13-orca-preferences-xfce.png)
 
-
 I then went into the Voice tab and using the Rate slider, I made the speech quicker.
-
-
 
 ![Screen reader preferences Voice tab](src/guideImg/13-orca-speed-xfce.png)
 
 To turn off Orca, I used Alt + F2 (to open the dialog box and entered 
 
-
 ```
 pkill orca
 ```
 
-High Contrast
-Ctrl + H will put the PC into High Contrast mode when at the Login screen – I couldn’t see any difference tbh!
-Chrome extensions
+### High Contrast
+
+Ctrl + H will put the PC into High Contrast mode when at the Login screen – I couldn’t see any difference to be honest!
+
+### 
+Chrome browser extensions
+
 The Chrome extensions I installed:
 • Accessibility Insights for Web (external website) - accessibility testing tool
 • Alt or not (external website) - see alt text on Twitter/X
