@@ -11,7 +11,7 @@ tags:
   - Tools
 isGuide: true
 ---
-**Note: I’m mostly a Windows user so if anyone has any tips or suggestions, I will gratefully receive them.**
+### **Note: I’m mostly a Windows user so if anyone has any tips or suggestions, I will gratefully receive them.**
 
 ## Linux Mint Cinnamon
 
@@ -32,9 +32,9 @@ There are several screen readers available for Linux:
 
 I would normally use TPGi’s [Colour Contrast Analyser (external website)](https://www.tpgi.com/color-contrast-checker/) in Windows, so I installed [Gpick (external website)](https://www.gpick.org/) which I used alongside the [Contrast Finder (external website)](https://app.contrast-finder.org/?lang=en) website to allow me to manually check for colour contrast.
 
-## Installing screen readers on Linux Mint Cinnamon
+### Installing screen readers on Linux Mint Cinnamon
 
-### Orca Screen Reader
+#### Orca Screen Reader
 
 The Orca Screen Reader comes as part of the accessibility package of Linux Mint and does not need to be installed.
 
@@ -63,7 +63,7 @@ I then went into the Voice tab and using the Rate slider, I made the speech quic
 
 ![Voice tab on Screen Reader Preferences ](src/guideImg/5-screen-reader-speed.png)
 
-### Fenrir Screen Reader
+#### Fenrir Screen Reader
 
 To install Fenrir, I opened up the Synaptic Package Manager, Searched for Fenrir
 
@@ -79,27 +79,29 @@ And the relevant software was installed, then I clicked Close on the Changes app
 
 ![Changes applied dialog box](src/guideImg/9-changes-applied.png)
 
-\###Emacspeak Screen Reader
+#### Emacspeak Screen Reader
 
 I followed the same steps in the Synaptic Package Manager as I did with Fenrir, but searched for Emacspeak, sadly the install failed, and I had to remove it.
 
 I’m going to use Orca for the testing as I’m used to using a GUI.
 
-## GPick Colour Contrast Checker
+### GPick Colour Contrast Checker
 
 To install Gpick, I followed the same installation steps using the Synaptic Package Manager, and I searched for Gpick.
 
-## Auditing a website
+### Auditing a website
 
 I was struggling to use the laptop with LibreOffice open to edit my audit document, so I ended up using GoogleDocs (external website) to edit the audit document to speed things up, but it was still too slow to be used effectively so, I downloaded and installed Linux Mint Xfce.
 
-Linux Mint Xfce
+## Linux Mint Xfce
 
-Orca Screen Reader
-
+### Orca Screen Reader
 
 The Orca Screen Reader comes as part of the accessibility package of Linux Mint and does not need to be installed.
+
 To use Orca Screen Reader within Xcfe, you go to Accessibility and tick the checkbox “Enable assistive technologies”
+
+
 
 I was not able to open and close Orca using the normal keys and discovered that the Keyboard Layout was set to Desktop
 
