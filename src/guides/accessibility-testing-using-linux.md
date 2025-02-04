@@ -73,9 +73,11 @@ I then clicked on the check box and selected Mark for Installation and selected 
 
 Then I clicked Apply, then I clicked Apply in the Apply the following changes? dialog box
 
-
+![Apply the following changes dialog box](src/guideImg/8-apply-the-following-changes.png)
 
 And the relevant software was installed, then I clicked Close on the Changes applied dialog box
+
+![Changes applied dialog box](src/guideImg/9-changes-applied.png)
 
 \###Emacspeak Screen Reader
 
