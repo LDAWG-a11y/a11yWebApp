@@ -141,15 +141,17 @@ Ctrl + H will put the PC into High Contrast mode when at the Login screen – I 
 Chrome browser extensions
 
 The Chrome extensions I installed:
-• Accessibility Insights for Web (external website) - accessibility testing tool
-• Alt or not (external website) - see alt text on Twitter/X
-• ARC Toolkit (external website) - accessibility testing tool
-• axe DevTools (external website) - Web Accessibility Testing - accessibility testing tool
+• [Accessibility Insights for Web (external website)](https://chromewebstore.google.com/detail/accessibility-insights-fo/pbjjkligggfmakdaogkfomddhfmpjeni) - accessibility testing tool
+• [Alt or not (external website)](https://chromewebstore.google.com/detail/alt-or-not/bhbbijphceaijfpppmdjmjalnogkhamc) - see alt text on Twitter/X
+• [ARC Toolkit (external website)](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) - accessibility testing tool
+• [axe DevTools (external website)](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Web Accessibility Testing - accessibility testing tool
 • HeadingsMap (external website) - shows all the headings in a sidebar
-• Stylus (external website) – - create, edit, and manage personalised CSS stylesheets. I added custom CSS to test spacing and show focus indicator (external website)
-• WAVE Evaluation Tool (external website) 
-• Web Developer (external website) 
+• [Stylus (external website)](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) – - create, edit, and manage personalised CSS stylesheets. I added custom CSS [to test spacing and show focus indicator (external website)](https://www.makethingsaccessible.com/guides/accessibility-testing-tools/#stylus)
+• [WAVE Evaluation Tool (external website)](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) 
+• [Web Developer (external website)](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) 
+
 Code for Stylus
+
 I added the Focus Style and Testing WCAG 1.4.12 Text Spacing CSS in Stylus.
 JavaScript Bookmarklets
 I also added the Adrian Roselli 24x24 bookmarklet.
