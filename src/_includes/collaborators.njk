@@ -9,6 +9,12 @@
     {% include "_header.njk" %}
     <main class="main">
       <h1 id="h1" class="main__title btm__gutter--largest" tabindex="-1">{{ title }}</h1>
+      {% if aaaSupporters %}
+        <p>Thank you to all the brilliant colleges and organisations who are supporting the campaign and improving accessibility within their institutions. 
+          If you would like to join our growing group of supporters please contact Thomas Pocklington Trust at <a href="mailto:EducationPolicy@pocklington.org.uk">EducationPolicy@pocklington.org.uk</a></p>
+        <p>This video from Oldham College beautifully shows the transformational effect that supporting Access and Assistance For All can have.</p>
+        <iframe class="gutter-btm--minor" width="560" height="315" src="https://www.youtube-nocookie.com/embed/UBG4nK-ogqc?si=EDfavF37x6LboPda" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      {% endif %}
       {% if toc %}
         {% include "_toc.njk" %}
       {% endif %}

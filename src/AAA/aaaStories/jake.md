@@ -1,6 +1,6 @@
 ---
 title: Jake
-summary: Jake Harrison is a participant in the BYC's Access and Assistance for
+summary: Jake Harrison is a participant in the Access and Assistance for
   All campaign. This is his student story, about how you can make sure that your
   leaning content is inclusive for people with hearing impairments.
 date: 2023-05-17

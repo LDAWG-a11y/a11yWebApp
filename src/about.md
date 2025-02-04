@@ -34,7 +34,7 @@ As the Make Things Accessible project started as a London-based university colla
 * Queen Mary University London
 * SOAS University of London
 * Bloomsbury Learning Exchange
-* British Youth Council (Access and Assistance for All)
+* Access and Assistance for All
 
 As Make Things Accessible has grown we now partner with even more collaborators. Individual project areas and resources will note their various contributors individually.
 
