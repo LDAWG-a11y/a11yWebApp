@@ -49,3 +49,5 @@ team: aaa
 <a href="https://shcg.ac.uk/" class="supporters__link"><img src="/aaaAssets/shcg.svg" alt=""></a>
 
 <a href="https://www.gloscol.ac.uk/" class="supporters__link"><img src="/aaaAssets/gc.png" alt=""></a>
+
+<a href="https://www.stpiers.org.uk/" class="supporters__link"><img src="/aaaAssets/st-piers.png" alt=""></a>
