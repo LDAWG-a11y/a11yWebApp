@@ -144,7 +144,7 @@ The Chrome extensions I installed:
 • [Alt or not (external website)](https://chromewebstore.google.com/detail/alt-or-not/bhbbijphceaijfpppmdjmjalnogkhamc) - see alt text on Twitter/X
 • [ARC Toolkit (external website)](https://chromewebstore.google.com/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce) - accessibility testing tool
 • [axe DevTools (external website)](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Web Accessibility Testing - accessibility testing tool
-• HeadingsMap (external website) - shows all the headings in a sidebar
+• [HeadingsMap (external website)](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) - shows all the headings in a sidebar
 • [Stylus (external website)](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) – - create, edit, and manage personalised CSS stylesheets. I added custom CSS [to test spacing and show focus indicator (external website)](https://www.makethingsaccessible.com/guides/accessibility-testing-tools/#stylus)
 • [WAVE Evaluation Tool (external website)](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) 
 • [Web Developer (external website)](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) 
