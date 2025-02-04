@@ -15,7 +15,7 @@ Access and Assistance for All (AAA) is a campaign that aims to increase access t
 
 To support Access and Assistance For All or for more information please contact Thomas Pocklington Trust: [EducationPolicy@pocklington.org.uk](<>)\
 \
-This video, created by youth champions provides an overview of the benefits of assisitve technology:
+This video, created by youth champions provides an overview of the benefits of assistive technology:
 
 <iframe width="360" height="215" src="https://www.youtube-nocookie.com/embed/r2yRs4DejyA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
 
