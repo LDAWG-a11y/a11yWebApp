@@ -19,17 +19,25 @@ I installed [Linux Mint (external website)](https://linuxmint.com/) (Cinnamon) o
 
 I was then able to install some [Chrome extensions](https://www.makethingsaccessible.com/guides/accessibility-testing-tools/#:~:text=and%20add%2Dons-,Chrome,-Accessibility%20Insights%20for) to help with auditing websites.
 
-Screen readers
+## Screen readers
 
-Windows has Jaws and NVDA, IOS has Voiceover, and Android has Talkback, but these are not available for Linux. There are several screen readers available for Linux:
-• Orca Screen Reader (external website) – good for graphical environments
-• Fenrir (external website) - good for command line (ideal for Raspberry Pi OS as it takes up little SD card space or RAM)
-• Emacspeak (external website) - good for command line
-Colour Contrast Checkers
+Windows has Jaws and NVDA, IOS has Voiceover, and Android has Talkback, but these are not available for Linux. 
+
+There are several screen readers available for Linux:
+• [Orca Screen Reader (external website)](https://help.gnome.org/users/orca/stable/index.html.en) – good for graphical environments
+• [Fenrir (external website)](https://github.com/chrys87/fenrir) - good for command line (ideal for Raspberry Pi OS as it takes up little SD card space or RAM)
+• [Emacspeak (external website)](https://github.com/tvraman/emacspeak) - good for command line
+
+## Colour Contrast Checkers
+
 I would normally use TPGi’s Colour Contrast Analyser (external website) in Windows, so I installed Gpick (external website) which I used alongside the Contrast Finde (external website) website to allow me to manually check for colour contrast.
-Installing screen readers on Linux Mint Cinnamon
-Orca Screen Reader
+
+## Installing screen readers on Linux Mint Cinnamon
+
+### Orca Screen Reader
+
 The Orca Screen Reader comes as part of the accessibility package of Linux Mint and does not need to be installed.
+
 Orca can be opened or closed using the Windows key + Alt + S directly, or Alt + F2, which opens the equivalent to the Windows dialog box and then orca entered as a command, then Enter.
 
 Orca can also be started by going into the Accessibility settings and the Visual tab where the Screen reader can be toggled on and off. 
