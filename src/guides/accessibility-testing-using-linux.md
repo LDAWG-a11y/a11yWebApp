@@ -85,9 +85,12 @@ I followed the same steps in the Synaptic Package Manager as I did with Fenrir, 
 
 I’m going to use Orca for the testing as I’m used to using a GUI.
 
-GPick Colour Contrast Checker
+## GPick Colour Contrast Checker
+
 To install Gpick, I followed the same installation steps using the Synaptic Package Manager, and I searched for Gpick.
-Auditing a website
+
+## Auditing a website
+
 I was struggling to use the laptop with LibreOffice open to edit my audit document, so I ended up using GoogleDocs (external website) to edit the audit document to speed things up, but it was still too slow to be used effectively so, I downloaded and installed Linux Mint Xfce.
 Linux Mint Xfce
 Orca Screen Reader
