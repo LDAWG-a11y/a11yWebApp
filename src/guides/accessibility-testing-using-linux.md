@@ -19,7 +19,7 @@ I installed [Linux Mint (external website)](https://linuxmint.com/) (Cinnamon) o
 
 I was then able to install some [Chrome extensions](https://www.makethingsaccessible.com/guides/accessibility-testing-tools/#:~:text=and%20add%2Dons-,Chrome,-Accessibility%20Insights%20for) to help with auditing websites.
 
-## Screen readers
+### Screen readers
 
 Windows has Jaws and NVDA, IOS has Voiceover, and Android has Talkback, but these are not available for Linux. 
 
@@ -28,9 +28,9 @@ There are several screen readers available for Linux:
 • [Fenrir (external website)](https://github.com/chrys87/fenrir) - good for command line (ideal for Raspberry Pi OS as it takes up little SD card space or RAM)
 • [Emacspeak (external website)](https://github.com/tvraman/emacspeak) - good for command line
 
-## Colour Contrast Checkers
+### Colour Contrast Checkers
 
-I would normally use TPGi’s Colour Contrast Analyser (external website) in Windows, so I installed Gpick (external website) which I used alongside the Contrast Finde (external website) website to allow me to manually check for colour contrast.
+I would normally use TPGi’s [Colour Contrast Analyser (external website)](https://www.tpgi.com/color-contrast-checker/) in Windows, so I installed [Gpick (external website)](https://www.gpick.org/) which I used alongside the [Contrast Finder (external website)](https://app.contrast-finder.org/?lang=en) website to allow me to manually check for colour contrast.
 
 ## Installing screen readers on Linux Mint Cinnamon
 
@@ -92,8 +92,12 @@ To install Gpick, I followed the same installation steps using the Synaptic Pack
 ## Auditing a website
 
 I was struggling to use the laptop with LibreOffice open to edit my audit document, so I ended up using GoogleDocs (external website) to edit the audit document to speed things up, but it was still too slow to be used effectively so, I downloaded and installed Linux Mint Xfce.
+
 Linux Mint Xfce
+
 Orca Screen Reader
+
+
 The Orca Screen Reader comes as part of the accessibility package of Linux Mint and does not need to be installed.
 To use Orca Screen Reader within Xcfe, you go to Accessibility and tick the checkbox “Enable assistive technologies”
 
