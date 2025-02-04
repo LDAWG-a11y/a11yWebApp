@@ -151,8 +151,10 @@ The Chrome extensions I installed:
 
 ### Code for Stylus
 
-I added the Focus Style and Testing WCAG 1.4.12 Text Spacing CSS in Stylus.
-JavaScript Bookmarklets
+I added the [Focus Style](https://www.makethingsaccessible.com/guides/accessibility-testing-tools/#:~:text=Accessibility%20Testing%20Tools-,Code%20for%20Stylus,-Create%20the%20following) and [Testing WCAG 1.4.12 Text Spacing CSS](https://www.makethingsaccessible.com/guides/accessibility-testing-tools/#:~:text=dotted%20hotpink%20!important%3B%20%0A%7D-,Testing%20WCAG%201.4.12%20Text%20Spacing,-*%20%7B%20%0A%20%20%20%20line%2Dheight%3A%201.5) in Stylus.
+
+### JavaScript Bookmarklets
+
 I also added the Adrian Roselli 24x24 bookmarklet.
 
 Auditing a website
