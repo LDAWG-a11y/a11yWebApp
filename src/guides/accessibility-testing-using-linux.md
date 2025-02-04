@@ -61,17 +61,24 @@ I then checked in the General tab to make sure that Keyboard Layout was set to L
 
 I then went into the Voice tab and using the Rate slider, I made the speech quicker.
 
-![](src/guideImg/5-screen-reader-speed.png)
+![Voice tab on Screen Reader Preferences ](src/guideImg/5-screen-reader-speed.png)
 
-Fenrir Screen Reader
+### Fenrir Screen Reader
+
 To install Fenrir, I opened up the Synaptic Package Manager, Searched for Fenrir
 
+![Synaptic Package Manager having searched for Fenrir](src/guideImg/6-synaptic-package-manager.png)
+
 I then clicked on the check box and selected Mark for Installation and selected Mark in the Mark additional required changes? dialog box. 
+
 Then I clicked Apply, then I clicked Apply in the Apply the following changes? dialog box
+
+
 
 And the relevant software was installed, then I clicked Close on the Changes applied dialog box
 
-Emacspeak Screen Reader
+\###Emacspeak Screen Reader
+
 I followed the same steps in the Synaptic Package Manager as I did with Fenrir, but searched for Emacspeak, sadly the install failed, and I had to remove it.
 I’m going to use Orca for the testing as I’m used to using a GUI.
 
