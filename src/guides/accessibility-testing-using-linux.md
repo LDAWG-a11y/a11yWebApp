@@ -163,7 +163,7 @@ Using Xfce was far more successful as my laptop was running as it should be, and
 
 ### Auditing PDFs
 
-As PAC 2024 does not currently work on Linux, even under WINE, I used Grackle Go to audit the PDF I found during my website audit.
+As [PAC 2024 (external website)](https://pac.pdf-accessibility.org/en) does not currently work on Linux, even under WINE, I used [Grackle Go](https://www.makethingsaccessible.com/guides/pdf-accessibility-testing-using-grackledocs-grackle-go/) to audit the PDF I found during my website audit.
 
 ### Remediating PDFs
 
