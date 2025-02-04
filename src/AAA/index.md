@@ -17,10 +17,9 @@ To support Access and Assistance For All or for more information please contact 
 \
 This video, created by youth champions provides an overview of the benefits of assisitve technology:
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/r2yRs4DejyA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
+<iframe width="360" height="215" src="https://www.youtube-nocookie.com/embed/r2yRs4DejyA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
 
 ### Why is this campaign needed?
-
 
 Although good practice of promoting assistive technology can be found in colleges, young people highlighted some poor learning experiences they had had due to a lack of support with assistive technology in College. [Research by the Thomas Pocklington Trust](https://www.pocklington-trust.org.uk/student-support/professionals/technology-and-accessibility-in-fe-research/) evidenced that colleges are failing in their compliance with website regulations with few focussing on inclusion, accessibility and anticipatory adjustments. Follow-up research a year on has seen some improvements but 63% of college accessibility statements are still poor.
 
