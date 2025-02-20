@@ -19,10 +19,7 @@ Creating accessible social media content shares a lot of good practice with crea
 
 This fundamentals guide is a quick reference tool to share six core considerations when creating accessible social media content. Keep these on hand when writing your own content, share these with colleagues, or even embed them into social media policies at your organisation.
 
-We also have other useful resources including:
-
-* [Accessible social media creation and posting checklists](https://www.makethingsaccessible.com/guides/social-media-content-and-publishing-checklists/)
-* [Social media, regulations and your responsibilities](https://www.makethingsaccessible.com/guides/social-media-and-your-responsibilities/)
+Please also see our other useful resource: [Social media, regulations and your responsibilities.](https://www.makethingsaccessible.com/guides/social-media-and-your-responsibilities/)
 
 ## Social media fundamentals[](/docs/sm_fundamentals.docx)
 
