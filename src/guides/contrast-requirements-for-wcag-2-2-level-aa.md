@@ -24,6 +24,8 @@ We're looking at all three together as whilst Contrast (Minimum) and Non-text Co
 
 In this guide there will be a lot of "This meets the requirement", this isn't me advocating for something that just meets a specific requirement, but I have to state when something passes and when it doesn't. So, just to be clear that just scraping through the contrast checker for a specific thing is seldom a good idea I'm going to include some "Best practice" type solutions for each section, but as always, they won't be the definitive "Best practices" they'll just be much better than the bare minimum, and, as always, that's because there are often multiple ways of doing something accessibly and also because what works for some users may not work as well for others.
 
+The next section is going to be a bit of a primer which is aimed at folks that may not be too comfortable with the DevTools and getting CSS values, so if you wish to avoid the waffle and you know this stuff, you may wanna skip that bit.
+
 ### WCAG thresholds
 
 Just before we start to discuss the individual SCs, we'll just take a moment to understand what WCAG means when it sets a threshold value for an element, it's important to know and understand this as it performs part of the test.
@@ -64,4 +66,4 @@ In the above screen shot I've placed a series of arrows and boxes which outline 
 
 ### Finding contrast issues
 
-There are dozens if not hundreds of ways to find the contrast of an element and its background, I don't really want to focus on this too much, as sometimes I'll use WebAIM and others I'll use Color Contrast Analyser, the latter being the better as you don't have to go digging around in the CSS and potentially converting colour formats to Hex so you can paste the values in to WebAIM. The other obvious benefit is you can just select the picker and drag it anywhere across your desktops, but again, it's unlikely there is a keyboard alternative that offers that level of precision (I haven't checked), so whatever tool, browser extension or website you use, just use that if you are comfortable with it
+There are dozens if not hundreds of ways to find the contrast of an element and its background, I don't really want to focus on this too much, as sometimes I'll use WebAIM and others I'll use Color Contrast Analyser, the latter being the better as you don't have to go digging around in the CSS and potentially converting colour formats to Hex so you can paste the values in to WebAIM. The other obvious benefit is you can just select the picker and drag it anywhere across your desktops, but again, it's unlikely there is a keyboard alternative that offers that level of precision (I haven't checked), so whatever tool, browser extension or website you use, just use that if you are comfortable with it. If you want to get Color Contrast Analyser, you can [download it from TPGi, directly](https://www.tpgi.com/color-contrast-checker/).
