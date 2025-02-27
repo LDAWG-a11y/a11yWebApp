@@ -24,7 +24,7 @@ We're looking at all three together as whilst Contrast (Minimum) and Non-text Co
 
 In this guide there will be a lot of "This meets the requirement", this isn't me advocating for something that just meets a specific requirement, but I have to state when something passes and when it doesn't. So, just to be clear that just scraping through the contrast checker for a specific thing is seldom a good idea I'm going to include some "Best practice" type solutions for each section, but as always, they won't be the definitive "Best practices" they'll just be much better than the bare minimum, and, as always, that's because there are often multiple ways of doing something accessibly and also because what works for some users may not work as well for others.
 
-## WCAG thresholds
+### WCAG thresholds
 
 Just before we start to discuss the individual SCs, we'll just take a moment to understand what WCAG means when it sets a threshold value for an element, it's important to know and understand this as it performs part of the test.
 
@@ -36,7 +36,7 @@ The thresholds we are going to look at here are absolute, there is no confusion 
 * Text size requirements. Again, WCAG gives us some minimum values here and there is no wiggle room, no discretion, we can't just pass something because it's so close the difference may be negligible to most humans, but those minimum values exist. So where WCAG says text that is sized at least 18.66px, you guessed it, it doesn't mean 18.65px, it means 18.66px and no less
 * Bold font requirements. This may be a little trickier to determine due to the vast number of fonts and styles available on the web. Some "Bold" fonts may actually be much thinner than some "Regular" fonts, so it's quite a difficult metric to understand as how it looks visually can often be misleading. We can at least get the values from a page's CSS though and sometimes be prepared to think "Huh, how is that bold?" type thoughts. In this case, we only really have a single source of the truth and if the CSS says it's bold, then we can't fail it, but we can of course write it as an advisory, weakness, suggestion or whatever else you call your "Passes WCAG, but is naff" issues. CSS will either provide a named font-wight of "bold" or "bolder" or a numerical value of at least 700, as in CSS 700 equates "Bold", so anything that is 700 or higher satisfies the font weight requirement.
 
-## Finding the correct size and weight values
+### Finding the correct size and weight values
 
 CSS has tonnes of units for most aspects of the interface, we're not consigned to just using pixels, we can use "em", "rem", "vw", "mm", "cm" and loads more, just for height and width alone, colours may use Hex, RGB, HSL and more.
 
@@ -61,3 +61,7 @@ If, in the CSS panel we click "computed" (it's called this in Chrome, Safari and
 ![Annotated screen shot of the Make Things Accessible Home page, with the DevTools open. The annotations are arrows, which show the elements panel, the span node that contains the text, the Computed properties pane and finally the computed values for font size and weigh are highlighted.](src/guideImg/screenshot-1.png)
 
 In the above screen shot I've placed a series of arrows and boxes which outline key controls or information points, which in essence is Elements > the DOM node ( a `<span>`) > the Computed pane and finally the CSS properties and values for both `font-size` and `font-weight`. We have the values 72px for the font's size and 900 for the font's weight. Obviously both these values far exceed the minimum requirement for not only Level AA, but also Level AAA (we do try). But now we know the actual size and weight of the text that means something, we know anything above 700 for weight is considered "Bold" and we also know 72px is a very large font, but that information may have been super useful on another site, as it may have failed and we may have been tasked with finding problems to help put right.
+
+### Finding contrast issues
+
+There are dozens if not hundreds of ways to find the contrast of an element and its background, I don't really want to focus on this too much, as sometimes I'll use WebAIM and others I'll use Color Contrast Analyser, the latter being the better as you don't have to go digging around in the CSS and potentially converting colour formats to Hex so you can paste the values in to WebAIM. The other obvious benefit is you can just select the picker and drag it anywhere across your desktops, but again, it's unlikely there is a keyboard alternative that offers that level of precision (I haven't checked), so whatever tool, browser extension or website you use, just use that if you are comfortable with it
