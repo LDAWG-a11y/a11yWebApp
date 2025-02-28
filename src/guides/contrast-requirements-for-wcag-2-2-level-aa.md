@@ -66,4 +66,78 @@ In the above screen shot I've placed a series of arrows and boxes which outline 
 
 ### Finding contrast issues
 
-There are dozens if not hundreds of ways to find the contrast of an element and its background, I don't really want to focus on this too much, as sometimes I'll use WebAIM and others I'll use Color Contrast Analyser, the latter being the better as you don't have to go digging around in the CSS and potentially converting colour formats to Hex so you can paste the values in to WebAIM. The other obvious benefit is you can just select the picker and drag it anywhere across your desktops, but again, it's unlikely there is a keyboard alternative that offers that level of precision (I haven't checked), so whatever tool, browser extension or website you use, just use that if you are comfortable with it. If you want to get Color Contrast Analyser, you can [download it from TPGi, directly](https://www.tpgi.com/color-contrast-checker/).
+There are dozens of ways to find the contrast of an element and its background, I don't really want to focus on this too much, as sometimes I'll use [WebAIM's Contrast Checker](https://webaim.org/resources/contrastchecker/) and others I'll use [TPGi's Color Contrast Analyser](https://www.tpgi.com/color-contrast-checker/), the latter being the better as you don't have to go digging around in the CSS and potentially converting colour formats to Hex so you can paste the values in to WebAIM. The other obvious benefit is you can just select the picker and drag it anywhere across your desktops, but again, it's unlikely there is a keyboard alternative that offers that level of precision (I haven't checked), so whatever tool, browser extension or website you use, just use that if you are comfortable with it.
+
+## A quick warning, before we start
+
+All of the examples I am going to create will be actual examples using HTML and CSS. I'm going down this route, as opposed to using screenshots just so you can inspect the code or use tools you are familiar with, you may even wish to determine which semi-automated checkers pick up some issues and which don't. Obviously many of these elements will fail WCAG, many will have absolute (px) font sizes and they'll generally be rubbish, but in order to know what is bad, I gotta give you the bad stuff, I guess. Most of the interactive elements will be somewhat redundant, unless explicitly stated, a button won't do anything, a link won't go anywhere and an input won't do anything with the text you may errm, input, unless there is an instruction to do something to cause a change in state, etc.
+
+## 1.4.3 Contrast (Minimum)
+
+We're starting with this one as it is perhaps the least complex of the three, there is not a great deal to reveal here as this particular SC applies only to text and images of text.
+
+### Summary
+
+Text and informational images of text have a minimum contrast of 4.5:1 against its background, except for:
+
+* Text that is both of a size of at least 18.66px and has a font weight of bold
+* Text that has a font size of at least 24px (any font-weight is technically permitted)
+* Incidental text, photos that contain text, graphics where the text isn't relevant to the image's subject, or decorative text
+* Logos, yup, your company logo doesn't have to pass any contrast requirements
+* Text that forms part of an inactive user interface component
+
+#### Summary explained
+
+##### Size and weight of text and images of text
+
+* So, text that is 23.99px and smaller and has a font-weight lower than bold (or lower than 700) must have a contrast ratio of 4.5:1 against its background.
+* Text that is between 18.66px and 23.99px and has a font weight of bold (700) or greater only needs to have a contrast of 3:1 to comply with WCAG
+* Any text that is 24px or greater, irrespective of font-weight only needs a 3:1 contrast against its background
+
+The good thing with these is when you are testing actual text and you know the values, most tools will tell you that they pass or fail at given size and/or weight combinations. where this does get a bit hairy is testing the size and/or weight of images of text. The DevTools can't help us here as it is an image and that means we can't find out the text size, font-family or the font-weight using the inspector. We can test the background and text colour with Color Contrast Analyser, as it does allow us to use the grab colour information from anywhere on our screen(s) (desktops).
+
+So, what do we do when we discover some text that has a contrast of 3.5:1, as an example and we suspect it either lacks sufficient weight or size? Good question. Well the first thing we should do is determine if this image of text actually needs to be an image or could it just be actual text? If we could achieve the exact same result (or close enough, but accessible) by using actual text as opposed to an image then we simply fail it against [SC 1.4.5 Images of Text (AA)](https://www.w3.org/WAI/WCAG22/quickref/?showtechniques=2411#images-of-text). If it is something that cannot be recreated with web technologies, such as a photograph of an historical document, or whatever and the the purpose of the image to show the actual document. In this case we need to determine if there is a suitable text alternative close by.If there is not a visible actual text alternative which at the very least includes a verbatim. If the document was in old cursive, faded handwriting and the pages were yellowed with age, or whatever, and it was clear that the contrast was low, I'd be expecting and requesting that a text-alternative be present close by and this would be text that can be accessed by everybody, not just alt text and if that weren't the case, I would fail it against [1.1.1 Non-text Content (A)](https://www.w3.org/WAI/WCAG22/quickref/?showtechniques=2411#non-text-content), if it had alt text, I would mention this as a good point, but would emphasise it does not provide a suitable alternative to low-vision users.
+
+Those two SC's will pretty much cover most instances where we have reason to believe that the text has an inadequate weight or size for its given contrast ratio. I've never personally had to measure a font on the screen using ruler browser extensions or opening it up in Photoshop, fingers crossed that remains the same.
+
+##### Incidental text
+
+This basically means text that really doesn't matter, it doesn't add any information or value to the image or in the case of a photograph, it's just there, we have no control over text in a high street background, when the subject of the photo is a person shopping. In this case as long as the image had decent alt text that stated who was in the image, what they were doing (shopping?) and where they were (Oxford St, London), that would be sufficient, it's irrelevant that there's text in the background that would fail.
+
+##### Logos
+
+Company logos do not need to have adequate contrast against their background for the purposes of WCAG  so if it has ultra low contrast, you don't have a WCAG issue, you may have a branding/design issue, but you definitely still have an accessibility issue as folk may just walk right by your shop as your logo isn't the attention-grabber your designers hoped it would be. Again, just alt text is fine here, but just know, decent contrast is useful in the real world, too.
+
+##### Inactive user interface component
+
+What is an "inactive user interface component"?, well, if it has the HTML disabled attribute then that is definitely inactive. Just adding `aria-disabled="true"` isn't the same as the disabled attribute, as it would still receive focus and a keyboard user may get a little confused. I interpret this to mean either using the "disabled" attribute, or rolling your own, so I would expect it to:
+
+* Not do anything at all or accept any form of input
+* Cannot receive focus (`tabindex="-1"`)
+* Is hidden from the accessibility tree (`aria-hidden="true"`)
+
+You could add aria-disabled="true" to the above, but that wouldn't be exposed as the element is hidden from the accessibility tree anyway. Anything else is kinda inactive but not actually inactive.
+
+As with most accessibility topics, there's an [Adrian Roselli article that discusses why disabling controls is mostly bad practice](https://adrianroselli.com/2024/02/dont-disable-form-controls.html). So, if you're building or designing a page, then typically you want to try other options before disabling inputs, but that's not the purpose of this article.
+
+### Text contrast examples
+
+Let's take a look at some examples I have rustled up
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</td>
+
+<th>Text element</td>
+
+<th>Pass fail</td>
+
+</thead>
+
+<tbody>
+
+<tr>CM1</tr>
