@@ -122,22 +122,4 @@ As with most accessibility topics, there's an [Adrian Roselli article that discu
 
 ### Text contrast examples
 
-Let's take a look at some examples I have rustled up
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>ID</td>
-
-<th>Text element</td>
-
-<th>Pass fail</td>
-
-</thead>
-
-<tbody>
-
-<tr>CM1</tr>
+Let's take a look at some examples I have rustled up:
