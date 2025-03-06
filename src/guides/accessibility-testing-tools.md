@@ -193,7 +193,7 @@ If you wish to write your own bookmarklet, [freeCodeCamp (external website)](htt
 * [Adobe Color (external website)](https://color.adobe.com/create/color-accessibility) - interactive tool for testing colour combinations
 * [Color Safe (external website)](http://colorsafe.co/) - tool for generating text colours based on a selected background colour
 * [Contrast Finder (external website)](https://app.contrast-finder.org/) - tests the contrast and also suggests new colours with valid contrast ratios
-*[Accessible Color Palette Generator (external website)](https://thisisfranciswu.com/enterprise-ui-palette-generator/) - automates the generation of accessible enterprise UI color palettes
+* [Accessible Color Palette Generator (external website)](https://thisisfranciswu.com/enterprise-ui-palette-generator/) - automates the generation of accessible enterprise UI color palettes
 
 ### Compliance checkers
 
