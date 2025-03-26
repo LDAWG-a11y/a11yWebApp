@@ -29,7 +29,7 @@ The following courses include free and paid for courses on digital accessibility
 * OCAD University: [Understanding Web Accessibility (external website)](https://legacy.idrc.ocadu.ca/policy/idrc-and-aoda/441-idrcs-self-paced-course) 
 * A11Y collective: [Web Accessibility, the business case (external website)](https://www.a11y-collective.com/product/masterclass-web-accessbility-the-business-case/) 
 * A11Y collective: [Try-out Class (external website)](https://www.a11y-collective.com/product/try-out-class/) 
-* Department of Education: [Training (external website)](https://accessibility.education.gov.uk/training)
+* Department of Education (UK): [Training (external website)](https://accessibility.education.gov.uk/training)
 * edX: W3C [W3Cx: Introduction to Web Accessibility (external website)](https://www.edx.org/learn/web-accessibility/the-world-wide-web-consortium-w3c-introduction-to-web-accessibility) 
 * GTx: [Information and Communication Technology (ICT) Accessibility (external website)](https://www.edx.org/learn/information-technology/the-georgia-institute-of-technology-information-and-communication-technology-ict-accessibility) 
 * Code Academy - [Learn CSS: Accessibility (external website)](https://www.codecademy.com/learn/learn-css-accessibility) 
