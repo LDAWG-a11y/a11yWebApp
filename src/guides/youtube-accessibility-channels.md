@@ -23,6 +23,7 @@ We are often asked about YouTube channels and podcasts about digital accessibili
 * [Ben Myers (external website)](https://www.youtube.com/@BenDMyers)
 * [Chrome for Developers (external website)](https://www.youtube.com/@ChromeDevs)
 * [Crystal Preston-Watson (external website)](https://www.youtube.com/@CrystalPrestonWatson)
+* [EqualizeDigital (external website)](https://www.youtube.com/@EqualizeDigital)
 * [International Association of Accessibility Professionals (IAAP) (external website)](https://www.youtube.com/@UnitedInAccessibility)
 * [PCR Digital (external website)](https://www.youtube.com/@PCRDigital)
 * [CHAX Accessibility Unraveled (external website)](https://www.youtube.com/@PDFA) 
