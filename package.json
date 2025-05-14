@@ -1,11 +1,11 @@
 {
-  "name": "a11ywebapp",
+   "name": "a11ywebapp",
   "version": "2.0.0",
   "description": "",
   "main": ".eleventy.js",
   "scripts": {
-    "watch:sass": "sass --watch --no-source-map src/css:public/css",
-    "build:sass": "sass --no-source-map src/css:public/css",
+    "watch:sass": "sass --watch --no-source-map src/sass:public/css",
+    "build:sass": "sass --no-source-map src/sass:public/css",
     "watch:eleventy": "npx eleventy --serve",
     "build:eleventy": "eleventy",
     "postbuild": "lightningcss --minify --targets '> 0.25%, not IE 11' public/css/*.css -o public/css/*.css",
