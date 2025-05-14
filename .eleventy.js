@@ -7,14 +7,21 @@ const slugify = require('slugify');
 const pluginTOC = require('eleventy-plugin-toc');
 const path = require('path');
 const { minify } = require("terser");
+const eleventySass = require("@11tyrocks/eleventy-plugin-sass-lightningcss");
+
+module.exports = (eleventyConfig) => {
+  // If you already have a config, add just the following line
+  eleventyConfig.addPlugin(eleventySass);
+};
 
 module.exports = eleventyConfig => {
   const { DateTime } = require('luxon');
   const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
   eleventyConfig.amendLibrary("md", mdLib => mdLib.enable("code"));
+  eleventyConfig.addPlugin(eleventySass);
 
   eleventyConfig.addWatchTarget('./src/sass');
-  eleventyConfig.addPassthroughCopy('./src/css');
+  // eleventyConfig.addPassthroughCopy('./src/css');
   eleventyConfig.addPassthroughCopy('./src/js');
   eleventyConfig.addPassthroughCopy('src/img');
   eleventyConfig.addPassthroughCopy('src/guideImg');
