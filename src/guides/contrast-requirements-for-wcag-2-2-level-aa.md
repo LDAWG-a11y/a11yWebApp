@@ -24,7 +24,6 @@ We're looking at all three together as whilst Contrast (Minimum) and Non-text Co
 
 In this guide there will be a lot of "This meets the requirement" type language, this isn't me advocating for something that just meets a specific requirement, but I have to state when something passes and when it doesn't. So, just to be clear that just scraping through the contrast checker for a specific thing is seldom a wise strategy. I'm going to include some "Best practice" type advice too, but as always, they won't be the definitive "Best practices" they'll just be much better than the bare minimum, and, as always, that's because there are often multiple ways of achieving something accessibly, but mostly because what works well for some users may not work as well for others.
 
-
 ### WCAG thresholds
 
 Before we start to discuss the individual SCs, we'll just take a moment to understand what WCAG means when it sets a threshold value. It's important to know and understand this as it performs part of the tests.
@@ -37,7 +36,7 @@ The thresholds we are going to look at here are absolute, there is no confusion 
 * Text size requirements. Again, WCAG gives us some minimum values here and there is no wiggle room, no discretion, we can't just pass something because it's so close the difference may be negligible to most humans, but those minimum values exist. So where WCAG says text that is sized at least 18.66px*, you guessed it, it doesn't mean 18.65px, it means at least 18.66px and no less
 * Bold font requirements. This may be a little trickier to determine due to the vast number of fonts and styles available on the web. Some "Bold" fonts may actually be much thinner than some "Regular" fonts, so it's quite a difficult metric to understand as how it looks visually can often be misleading. We can at least get the values from a page's CSS though and sometimes be prepared to think "Huh, how is that bold?". In this case, we only really have a single source of the truth and if the CSS says it's bold, then we can't fail it, but we can of course write it as an advisory, weakness, suggestion or whatever else you call your "Passes WCAG, but is naff" issues. CSS will either provide a named font-weight of "bold" or "bolder" or a numerical value of at least 700, as in CSS 700 equates "Bold", so anything that is 700 or higher satisfies the font weight requirement.
 
-*I'm using pixels instead of points, I explain why, in the next section
+\*I'm using pixels instead of points, I explain why, in the next section
 
 In the Understanding Docs, which I linked to for each SC, at the start, often there will be reference to "Adjacent color(s)", which typically means the background of the the element in question, although, it can mean any feature that delineates the element from the internal or external background, such as borders and shadows, etc.
 
@@ -60,7 +59,6 @@ I primarily use Chrome (I know) during my initial reading the code phase, I'm a 
 So, let's say we find  some font that looks a little thin, low-ish contrast and it's not that large, whatever the reason, it's enough to make us suspicious enough to look into it. Generally, I'd open the DevTools (see, Chrome-centric) and take a look at the CSS in the Elements Panel, and I would locate the element in question to look at the values in the Styles pane.
 
 I pondered how far I should go into the DevTools, Inspector, Developer Tools or whatever you call them in other browsers. I do not have a disability that effects my motility or sight, so I am able to visually locate something and then right click it, when I do this it opens the DevTools pretty much exactly where I want it. I'll be honest, I have no idea how to achieve the same with a keyboard, I don't think that exact behaviour is possible? I know I can open the DevTools with a keyboard, but when I use the keyboard shortcuts to do this it always opens on the `<body>` element which means you may have to trawl through `<div>` soup that is comparable in depth to the Mariana Trench, which, if that is the only way, is clearly rubbish. Using the search function in the DevTools may help, but for that you would of course need to know what the elements was called, so it would need a text label, this can be done with the regular "Find" shortcut <kbd>CMD</kbd> and <kbd>F</kbd> (Mac) or <kbd>CTRL</kbd> and <kbd>F</kbd> (Windows). Given that I have no control over how the DevTools opens or where it highlights a relevant node and I cannot find a way to replicate mouse behaviour on keyboard, I'm just going to skip over that bit, as I don't want to say "Right click on this button, choose 'inspect' and now look at the highlighted node in the DevTools", as that is obviously just catering for users that don't have a disability that prevents them from doing that. I will assume that everybody knows how to open the DevTools or Inspector, though.
-
 
 Take our Home page, let's say for some reason we wanted to get the colour and size of the part of the heading that is purple "Make Things Accessible". Here's a screen shot of our Home page and the DevTools open:
 
@@ -112,22 +110,25 @@ What is an "inactive user interface component"?, well, if it has the HTML "disab
 
 As with most accessibility topics, there's an [Adrian Roselli article that discusses why disabling controls is mostly bad practice](https://adrianroselli.com/2024/02/dont-disable-form-controls.html). So, if you're building or designing a page, then typically you want to try other options before disabling inputs or buttons, but that's not the purpose of this article, but you should read Adrian's article, as Adrian is very wise.
 
-## 1.4.3 Contrast (Minimum)
+## 1.4.3 Contrast (Minimum) (AA)
 
 We're starting with this one as it is perhaps the least complex of the three, there is not a great deal to reveal here as this particular SC applies only to text and images of text.
 
 ### Summary
 
 Text and informational images of text must at least meet the minimum contrast ratios for their size, except for the following:
+
 * Incidental text, photos that contain irrelevant text, graphics where the text isn't relevant to the image's subject, or decorative text
 * Logos, yup, your company logo doesn't have to pass any contrast requirements
 * Text that forms part of an inactive user interface component
 
 Text that meets one of the following two criteria for "large text" must have a contrast ratio of at least 3:1:
+
 * Text that is both of a size of at least 18.66px and has a font weight of bold
 * Text that has a font size of at least 24px (any font-weight is permitted)
 
 Text that is not "Large text", we'll call it "Regular text" must have a minimum contrast of 4.5:1, regular text is either:
+
 * All text below 18.66px, irresprective of weight
 * All text between 18.66px and 24px that has a font weight lower than bold or 700
 
@@ -259,7 +260,6 @@ Let's take a look at some examples I have rustled up:
 I've chosen colours that are either close to passing or close to failing for good reason, some folks may discover this article one day and think "Wow, I can't tell the difference". This of course matters a lot when selecting colours to use, as oftentimes just doing enough to pass a particular requirement is not accessible to everybody. It can be quite easy to think "WCAG says this is accessible", but that's not actually what WCAG says, it may say something is "conformant" in that it passes a particular SC, but accessibility is obviously about people and just scraping the minimum will certainly make using your site easier for more people, but not as many people as it could. So, please do consider this when selecting colour palettes and what not.
 
 * In the table of examples, for those accessing the site visually, you may have noticed that CM1 and CM2 barely look any different (well, they don't to me) and that is the case for CM3 and CM4, but as I have previously explained, this will mostly come down to your monitor. On my larger external display the difference in size is barely noticeable, however, it does appear more noticeable if I drag the window over to my MacBook, presumably as it is a higher resolution and perhaps a brighter display. These are things to consider, if we are working in web development or design, etc, chances are we have relatively decent kit, especially if it is supplied to us, but outside of tech, folk are using lower resolution screens and less high-tech devices, so this will need considering, too.
-
 * CM10 and CM11 use placeholder text, again, they are similar colours, and in this instance, it is not just the placeholder that is supplying the visible label, as that is bad and we all know that, right? But, placeholder text can of course be problematic, as both instances are quite dark and both float around the conformant notch, folk can actually be tricked by this, as the fields look pre-populated, if one of our users has both a vision disability and a cognitive disability, and an input like this was amongst several other inputs, it does have the potential to confuse them or cause them to receive a submission error, etc. I would personally avoid placeholder text, although, sometimes, we don't really get a choice. Hopefully, now we are armed with the knowledge that placeholder text must pass contrast requirements, which can result in the input looking pre-filled, maybe we can use this information to explain to those who can facilitate the change why it's often not a great idea.
 
 ### Scraping the minimum
@@ -267,6 +267,7 @@ I've chosen colours that are either close to passing or close to failing for goo
 Quite often when we request that text contrast is increased on a UI and the fix is made we retest the site/app and the contrast is something like 4.52:1. Yes this passes, but that doesn't make it "accessible", some folks will genuinely still struggle to read that comfortably and as always, WCAG is the floor, not the ceiling. So, it really is better to not just begrudgingly move the contrast needle just past the "compliant" notch. I wouldn't suggest putting peddle to the metal and doing pure black on white (contrast 21:1), as some folk have disabilities that make that too difficult to read or cause them migraines, etc. There is possibly a "Goldlocks Zone" for contrast and whilst I don't know if there is an agreed range, based upon actual user testing, I personally look at the Level AAA contrast requirement <a href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced">1.4.6 Contrast (Enhanced)</a> as a decent guideline, which requires a 7:1 contrast ratio and a 4.5 contrast ratio for "regular" text and "large" text, respectively. But, again, as us humans are so diverse, there is not going to be a range that works for absolutely everyone, because disabilities are diverse, too.
 
 #### Common gotcha
+
 Often when somebody seemingly begrudgingly fixes something and the new contrast barely scrapes the minimum, it tends to do so on the primary background colour. It's pretty much nailed on that somewhere on the site, if not today, then in the future, somebody will add a container for some text that uses a slightly different background, to add emphasis, draw attention to it or to make it look "nice", only now that text fails, so scraping the minimum wasn't really the smartest move. Had that text have had a 5:1 contrast ratio, that very light background likely wouldn't have caused the failure, but, what do us accessibility folks know, huh?
 
 <div style=" margin-bottom: 1rem; border: 1px solid #757575; background-color: #F6F4F4; padding: 1rem; border-radius: 6px;">
@@ -274,7 +275,6 @@ Often when somebody seemingly begrudgingly fixes something and the new contrast 
   <p>Dave the Designer, 2025</p>
 </div>
 <p>As our pretend designer only just scraped the minimum contrast requirement, they did so for a pure white background. But as is often the case, they then used that colour against a wispy grey background to draw attention to some text. The result is then 4.23:1 contrast &#x1F926;</p>
-
 
 ## 1.4.11 Non-text Contrast (AA)
 
@@ -288,13 +288,14 @@ Non-text Contrast applies to, you guessed it, elements that provide information 
 * Data visualisations (graphs and charts)
 * Any other meaningful graphical elements that provide information or meaning
 
-
 ### Summary explained
 
 As the contrast requirement is 3:1 here, then of course 2.99:1 is still a fail. There is some nuance to this SC and it's important to understand what that is, just so you don't go failing something and then have somebody else try to discredit you for your misinterpretation, I'll explain some:
 
 #### Icons
+
 If an icon is used in place of a text label or to otherwise communicate information that is necessary for understanding a part of the UI, then contrast must pass the 3:1 minimum. Examples could be:
+
 * A magnifying glass instead of the word "Search" on a search input, then that icon becomes the defacto label for that control and it must have a minimum contrast of 3:1
 * The three bars that create the hamburger icon for navigation menus are often the only way of identifying the purpose of that button, therefore they too must have a minimum contrast of 3:1
 * A checkmark to indicate a step in a process is complete
@@ -303,12 +304,15 @@ If an icon is used in place of a text label or to otherwise communicate informat
 * Stylistic characters, such as asterisks, arrows and other ASCII characters that are used in place of an actual graphic
 
 #### Borders
+
 If a border is the only way of identifying a control, then that border must have a minimum contrast of 3:1, some examples could be:
+
 * An input that has a background colour that matches that of the page background and is empty, the border would be the only way to identify where to click so it must have a minimum contrast of 3:1, you should of course also be able to click the `<label>` but, that isn't always the case, either
 * Drop zones, if a part of the UI has some draggable elements that can only be dragged to specific places, then the borders of these drop zones need to make it clear the element can be dragged to these positions
 * Graphical items that have a low contrast, such as custom-made emoji, yellow/gold stars on a rating system, warning signs, 'away' chat indicator, etc. many of these would typically be yellow and if the page were white, then we would have an issue, so they must have a border to delineate them from the page background (notice how I said "custom" when referring to emoji? Typically when the user agent or opwerating system styles something, it's not a WCAG failure, but, just because it doesn't fail, it doesn't mean we can't do better and we should)
 
 #### Focus indicators
+
 If when an element has a visible focus indicator that either adds or subtracts a graphical feature to an element when it receives focus, then that visual element (additional pixels?) must have a minimum 3:1 contrast, some examples are:
 
 * Focus rings created by outlines, box-shadows or borders, etc
@@ -516,28 +520,22 @@ It's impossible to cover everything here, but I've created a large number of exa
 Perhaps there is quite a bit to unpack, here? maybe if you are relatively new, there are a couple of surprises?
 
 * Looking at NT1 and NT2, it is the graphical part of the image (In our case, the phone handset shape) that needs to meet the minimum contrast requirement, if and only if that is the only way of understanding something. Let's assume we have a poorly formatted phone number, in regular text (not using the `<a>` element), a continuous string of numerical-only digits that have no spaces or other delimitters and the NT1 icon is adjacent to it. Many folk would be able to work out the poor design and think "oh, this is a phone number", as they can make out the icon, but, what if our user struggles with lower contrast? They will likely struggle with this and it of course fails. In hindsight, I should have used a different icon, as realistically, the icon for a phone or email, etc may not be the sole way of identifying that the text is a method of contact, as an example, if it were in a footer, under a heading "Get in Touch" or whatever, many people would be familiar enough with phone numbers to determine this is in fact a phone number. That doesn't make it accessible, of course, so use a higher contrast like NT2 with alt text and format your number correctly.
-
 * NT3 and NT4 show inputs where the only way of identifyling them is the border, that border whether a full or partial border must pass the 3:1 contrast requirement against the background. NT3 fails and NT4 passes, although to me, I can't tell the difference. I'm intentionally using thin borders, in reality, where I get artistic licence, I'd use a thicker border and higher contrast.
-
 * NT5 and NT6 show buttons with text contents, both actually pass, the text is irrelevant for this SC (although it does pass 1.4.3 Contrast (Minimum)). The "hit area" or the actual button's boundary does not have to pass against the page background, so despite NT5 having a very low contrast background, it still passes. My examples are not great, but not entirely an edge case, oftentimes the text inside the button will be a bit descriptive or the surrounding text will offer that additional context. Maybe a question here, such as "How was your experience?", with the buttons sitting on a line below is sufficient to understand they are buttons for the majority of users? Still, I would certainly advocate for buttons more like NT6 where it is clear it is a button. I haven't included checkboxes, radio buttons or toggles, etc, but as they are non-text elements and do not contain text, their borders, checked icons, thumbs, tracks and other parts that are needed to understand the component, its state and how to operate it will of course require a minimum 3:1 contrast.
-
 * NT7 and NT8, much like NT1 and NT2 show a failing icon and a passing icon, although this time in buttons, respectively. In all fairness, there is little between these and none are great, we'd obviously want to make that contrast much higher so folks can actually see the icon and make a guess about its purpose.
-
 * NT9 and NT10 are inputs that both pass. This may come as a surprise to some, as I have removed all focus indicators from the NT9 input. The caret (the blinking line) is actually sufficient to pass this SC, which I think is a little tragic, as it's not exactly prominent and if I never added horizontal padding to the input, then that thin blinking line would be butted right up to the input's left border, making it even more difficult to identify. A nice focus ring and/or other prominent design elements can help our users clearly determine where focus is, like NT10
-
 * NT11 and NT12 are buttons, it's the focus indicator we're interested in, here. We are adding something to the buttons when they receive focus, in this case, a focus ring, so as we are adding something, this is the SC that we need. NT11 fails due to having sub 3:1 contrast and NT12 passes with a very good contrast.
-
 * NT13 and NT14 have link text that is the same colour as the body text (yuck), they are, however, underlined, which is something, I guess. I have changed the colour of the underline using CSS, as that underline is "Non-text" then it needs to have at least a 3:1 contrast against its background. NT13 does not, but NT14 does, so only NT14 passes and NT13 does not. But, make your links pop out, make it clear thay are links, use a different colour and other styling aspects to help users easily identify them.
-
 * Finally, we have NT15 and NT16, both are images of charts. I went for trendlines for this one, although it would apply to charts with multiple data points, such as bar charts, pie charts and all the other types of chart. The actual bars, slices, lines or whatever, must have a minimum contrast of 3:1 against their background for this SC. There are some flaky exceptions where items are labelled, but then those labels would need to pass 1.4.3 Contrast (Minimum), so if someone doesn't like meeting contrast requirements, just remind them their labels must pass and for smaller text, they will require a higher contrast than this SC requires. Obviously if the purpose of a chart is to get "at-a-glance" data, as opposed to wading through a big data dump of a table, then, having contrast that is decent would go a long way to making that data glanceable (I actually thought I was making up a new word, there, turns out it's an actual word already).
 
 This isn't a comprehensive list of graphical elements, if you have read the understanding docs, you will notice they mention some elements that I don't, such as rating stars (contrast against background), text-based symbols and other elements. I have omitted some as they will be discussed, later and others are self-explanatory.
 
-## 1.4.1 Use of Color
+## 1.4.1 Use of Color (A)
 
 "Color is not the only way of distinguishing information". This one is particularly interesting, as unlike Contrast (Minimum) and Non-text Contrast, this can apply to both "graphical" elements and text, so initially it appears there is a lot of overlap with this one, but once you gain a decent understanding of it, it doesn't seem to overlap as much, if it all. I like to view this particular SC in a way that firstly, the element I am interested in has to pass one of the other two contrast SCs first, then, this one comes into play if and only if the colour is being used to convey something, such as a state, or differentiating between its colour and a related or close by element's colour, etc.
 
 ### Summary
+
 Colour alone must not be used as the only way of conveying information. Colour (hue) is not lightness, so having a contrast of 3:1 from the element we are comparing against or this element's former state actually passes, as a contrast ratio of 3:1 uses lightness to calculate the contrast.
 
 * Text that changes colour to indicate a state, such as errors in a form field, green for good or amber for away, etc
