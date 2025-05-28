@@ -12,7 +12,7 @@ team: mta
 A cross-sector initiative to make it easier, cheaper, and quicker to consistently create accessible digital experiences in higher education.
  
 ## The story so far
-The Accessibility Passport is a collaboration between the University of Westminster, University College London (UCL), RNIB (Royal National Institute of Blind People), and the GDI Hub.
+The Accessibility Passport is a collaboration between the University of Westminster, University College London (UCL), RNIB (Royal National Institute of Blind People), Ability Net, and the GDI Hub.
  
 The first output of Accessibility Passport is our procurement guides and templates. These are intended to ensure that we ask the same questions of suppliers when procuring new digital systems and measure their responses consistently.
  
@@ -51,4 +51,5 @@ To keep up to date join our email list [Accessibility Passport JISC Sign up](htt
   <a class="supporters__link" href="https://www.ucl.ac.uk/"><img src="/guideImg/UCL_logo.png" height="120" width="405" alt="University College London">
   <a class="supporters__link" href="https://www.rnib.org.uk/"><img src="/guideImg/rnib-logo.0f50786c3db3.png" height="163" width="220" alt="Royal National Institute for the Blind">
   <a class="supporters__link" href="https://www.disabilityinnovation.com/"><img src="/guideImg/gdi-hub-logo.png" height="120" width="233" alt="Global Disability Innovation Hub">
+  <a class="supporters__link logo_background--light" href="https://abilitynet.org.uk/"><img src="/guideImg/abilityNetLogo.png" height="120" width="233" alt="Ability Net">
 </div>
