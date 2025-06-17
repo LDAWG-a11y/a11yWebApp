@@ -17,7 +17,7 @@ It is not only websites that must be made accessible, It is all of the content o
 
 You may work with 3rd party content creators to deliver bespoke assets for you to use in different ways across your digital estate and digital communication channels. When getting 3rd party creators to produce content, it is vital that accessibility is included into the requirements to stop you “buying in problems”.
 
-Public Sector Bodies have a responsibility under the [Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility Regulations 2018 (PSBAR)](https://www.makethingsaccessible.com/guides/what-are-the-public-sector-bodies-accessibility-regulations/), and the Public Sector Equality Duty, and all organisations have a responsibility under the Equality Act 2010 to ensure that the digital content they own is accessible. We have an equal duty to not discriminate against members of the public or our staff because of disability. We do this by making sure digital content meet the required standards, with clear evidence to support compliance with our legal responsibilities. 
+Public sector bodies have a responsibility under the [Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility Regulations 2018 (PSBAR)](https://www.makethingsaccessible.com/guides/what-are-the-public-sector-bodies-accessibility-regulations/), and the Public Sector Equality Duty, and all organisations have a responsibility under the Equality Act 2010 to ensure that the digital content they own is accessible. We have an equal duty to not discriminate against members of the public or our staff because of disability. We do this by making sure digital content meet the required standards, with clear evidence to support compliance with our legal responsibilities. 
 
 There are many complexities when it comes to UK public sector accessibility regulation responsibilities and 3rd parties. We have more information on these complexities in our [3rd party content responsibilities guide](https://www.makethingsaccessible.com/guides/3rd-party-content-responsibilities/).
 
@@ -67,7 +67,7 @@ The format types we are broadly referring to:      
 * Videos, audio, animations, and multimedia content.
 * Mixed formats including those above which may or may not be delivered as HTML or print media.
 
-The content situations we are broadly referring to though this is a non-exhaustive list, and any content created that is to be shared through any of digital channels should be accessible:
+The broad content situations we are referring to are a non-exhaustive list, and any content created that is to be shared through any of digital channels should be accessible:
 
 * Long documents – reports, research documents, books, journals, articles, slide decks and presentations
 * Promotional or ‘glossy’ documents – prospectuses, brochures, leaflets
@@ -120,7 +120,7 @@ Comply with the WCAG relevant success criteria of EN 301 549
 
   * Tagging and appropriate reading order (PDFs)
   * Lists – Correct use of programmatic lists
-  * Links – With human readable descriptive text and not use colour to differentiate from surrounding text
+  * Links – With human readable descriptive text and not using colour to differentiate from surrounding text
   * Headings – Hierarchical heading structure using programmatic headings
   * Tables – Used for tabular data not layout purposes
   * Bookmarks (longer PDFs) – Structure created from headings
@@ -144,7 +144,7 @@ Comply with the WCAG relevant success criteria of EN 301 549
 * Supplier to provide examples of comparable previous work
 * What methods or tools does the supplier use to check and confirm accessibility compliance?
 * Will the content pass accessibility reporting within their final format? Eg. Word or Adobe automatic checker?
-* Will the content meet higher standards? PAC / PDF UA?
+* Will the content meet higher standards? PAC or PDF/UA?
 * Does the supplier have the [IAAP Accessible Document Specialist certification](https://www.accessibilityassociation.org/s/accessible-document-specialist)
 
 ### Images and Branding
@@ -161,7 +161,7 @@ Branding, promotional assets, and social media assets – logos, colour schemes,
 
 #### Expectations
 
-* Appropriate resolutions and cross platform compatible formats. For example avoidance of HEIC files.
+* Appropriate resolutions and cross platform compatible formats. For example, avoidance of HEIC files.
 * Comply with the WCAG relevant success criteria of EN 301 549
 
   * Image alt text – Descriptive and context relevant.
@@ -254,10 +254,12 @@ When receiving responses from suppliers, they may reference different standards 
 
 * PSBAR – [Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility Regulations 2018 (PSBAR)](https://www.makethingsaccessible.com/guides/what-are-the-public-sector-bodies-accessibility-regulations/) which requires evidence of compliance with WCAG 2.2.       
   [EU Web Accessibility Directive](https://www.makethingsaccessible.com/guides/procurement-accessibility-guidance/%E2%80%A2%09EU%20Web%20Accessibility%20Directive) – The EU equivalent of PSBAR. Differs between EU members states but all require evidence of compliance with WCAG (under the banner of the EN 301 549 harmonised standard) and an accessibility statement.
-* [EU Accessibility Act 2019](https://ec.europa.eu/social/main.jsp?catId=1202#:~:text=The%20European%20accessibility%20act%20is,EU%20leading%20to%20costs%20reduction) – Will require evidence of compliance with WCAG 2.1 or better and other standards for physical accessibility for electrical hardware as well.
+* [EU Accessibility Act 2019 (EAA)](https://ec.europa.eu/social/main.jsp?catId=1202#:~:text=The%20European%20accessibility%20act%20is,EU%20leading%20to%20costs%20reduction) – Will require evidence of compliance with WCAG 2.1 or better and other standards for physical accessibility for electrical hardware as well.
+* [EN 301 549](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf) - European harmonised standard which is in the process of revision to align with the EAA and WCAG 2.2 and that this will be the primary standard to refer to for EAA conformance for digital content going forward.
 * [Section 508](https://www.section508.gov/) – The American standards which require evidence of WCAG compliance for 2.0 or better.
 * [WCAG ](https://www.w3.org/TR/WCAG22/)– The Web Content Accessibility Guidelines. The underlying technical standards that all others refer back to.
-* [PDF/UA ](https://www.adobe.com/uk/acrobat/resources/document-files/pdf-types/pdf-ua.html)– Enhanced standard for PDFs so that users with disabilities can use the same PDF files and get the same level of value.
+* [PDF/UA ](https://www.adobe.com/uk/acrobat/resources/document-files/pdf-types/pdf-ua.html)– An ISO standard for PDF accessibility. This is a useful complement to WCAG for PDFs, but does cover all of the WCAG success criteria, so should not be considered a full alternative for WCAG conformance for PDFs.
+* [EN 17161:2019](https://accessible-eu-centre.ec.europa.eu/content-corner/digital-library/en-171612019-design-all-accessibility-following-design-all-approach-products-goods-and-services_en) - The Design for All standard. Alongside EN 301 549, this is another European standard that is being revised to harmonise with the EAA. This is a process standard for organisations which specifies requirements and recommendations to enable them to design, develop and provide accessible products.
 
 ### Review supplier information
 
