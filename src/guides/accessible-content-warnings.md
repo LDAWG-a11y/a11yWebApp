@@ -21,10 +21,10 @@ It's fair to say that on the web we sometimes may need to show imagery or moving
 * Animated content, this one may cause some users to feel nausea, dizziness, migraines, distractions or a plethora of other significant and physically uncomfortable conditions
 * Phobia-inducing content, some folks have phobias and these phobias can cause fear, panic, stress, anxiety and other unsettling emotional responses that have can significantly imapct our users
 * Nudity or sexual content, some of our users may not wish to see such imagery or it is inappropriate for them to have it displayed on their screen at this time. Its purpose may be completely inoccuous, as it could be art, but they may have their child shoulder-surfing, they may be at work, or they just may not want to see it at all
-* Violence and gore, we often encounter these types of imagery in online news articles and social media posts, they can at times be very explicit in nature, the aftermaths of natural disasters or accidents, crime scenes, the effects of war or other types of conflict, animal cruelty, medical procedures and many other types of imagery that may contain blood, death, severe injuries and many other types of gory content that could unsettle some users
+* Violence and gore, we often encounter these types of images in online news articles and social media posts, they can at times be very explicit in nature, the aftermaths of natural disasters or accidents, crime scenes, the effects of war or other types of conflict, animal cruelty, medical procedures and many other types of imagery that may contain blood, death, severe injuries and many other types of gory content that could unsettle some users
 * Emotional imagary, some images are published to ellicit an emotional response from users, perhaps the intention of the publisher is well-meaning, maybe they are trying to raise awareness of something, or encourage people to donate to the cause to help people, but some users may have lived through similar trauma or experiences and just seeing this type of imagery could trigger psychological episodes, cause them to relive or remember certain experiences, or cause other significantly traumatic feelings
 
-That's just some of the things that may cause a variety of adverse effects to our users, there are likely more. The purpose of this guide isn't to say "Thou cannot show these things on the web", because that is never the purpose, the majority of imagery on reputable sites have their place on the web and whilst some users may not want to see them, some users do and accessibility is all about choice and options, it's about allowing people to access content and sites in a way that works for them. So, as developers, designers, content editors and accessibility specialists we should be making our own judgement calls about what should be initially shown or not. Also, remember that context is key, if there were a site called Top 100 Gruesome Injuries, then it goes without saying that many of the images will be quite unpleasant and a user would typically nope out of even visiting the site. Just a reminder, though, we should always prevent flashing imagery from autoplaying, even if we are working on a site called Strobes R Us, at least give the user a flow interupting modal that warns them the site is full of flashing content, as there are unfortunately people out there that will maliciously share links to flashing content, in an effort to cause users to have seizures, so no matter what, never autoplay those.
+That's just some of the things that may cause a variety of adverse effects to our users, there are likely more. The purpose of this guide isn't to say "Thou cannot show these things on the web", because that is never the purpose, the majority of imagery on reputable sites have their place on the web and whilst some users may not want to see them, some users do and accessibility is all about choice and options, it's about allowing people to access content and sites in a way that works for them. So, as developers, designers, content editors and accessibility specialists we should be making our own judgement calls about what should be initially shown or not. Also, remember that context is key, if there were a site called Top 100 Gruesome Injuries, then it goes without saying that many of the images will be unpleasant and a user would typically nope out of even visiting the site. Just a reminder, though, we should always prevent flashing imagery from autoplaying, even if we are working on a site called Strobes R Us, at least give the user a flow interupting modal that warns them the site is full of flashing content, as there are unfortunately people out there that will maliciously share links to flashing content, in an effort to cause users to have seizures, so no matter what, never autoplay those.
 
 ## How do we solve this problem?
 
@@ -34,11 +34,16 @@ Often my guides are a direct result of something I have recently tested, I find 
 
 I recently discovered a card type component that had an image that was considered "graphic" and it was obscured from the initial view. I looked at the code and decided it would benefit from a few enhancements, to ensure it is accessible. As this item is relatively obscure, I didn't find any examples in the wild, I'm sure there are many out there, but the internet is huge and I didn't find any good examples.
 
-Now, this is one of my "How would I solve it?" guides, I am not saying this is the defcato solution, it may well be that somebody more knowledgeable could come up with a better way and if that's you, cool, feel free to get in touch and I'll update the article. In any instance, it will consider all users and will be operable to all. There are some unresolved questions I have that could be the catalyst for further discussion and perhaps improvement, but this is the kind of information that can only be learned from people with disabilities, so pay some folks to answer those questions.
+Now, this is one of my "How would I solve it?" guides, I am not saying this is the defcato solution, it may well be that somebody more knowledgeable could come up with a better way and if that's you, cool, feel free to get in touch and I'll update the article. In any instance, it will consider all users and will be operable to all. There were a couple of questions I asked myself that could be the catalyst for further discussion and perhaps improvement, but this is the kind of information that can only be learned from people with disabilities, so pay some folks to answer those questions.
 
-So, initially, we will take a card component, we will assume it is on a news site of some sort and it has some type of disturbing image. I'm not going to put a disturbing image in there, I will just look for a non-offensive meme.
+So, initially, we will take a card component, we will assume it is on a news site of some sort and it has some type of disturbing image. I'm not going to use a truly disturbing image, there is no blood, no gore and what I came up with is absolutely my best effort at a light-hearted "something like, but harmless" set of images.
 
-We will then modify that component to contain animated imagery, I'll find a slow moving GIF
+I'm not a fan of AI, but I used it to generate some images, I asked it to generate a before and after image of a teddy bear, the before image is the pristine bear, the after is showing our bear, damaged in "battle". I excluded all of the images where the bear had limb-differences, etc, I used one where it has several holes, that appear charred a little. I then took a static image and used a different AI platform to make an animated image of our bear, I asked that the bear be slowly waving. I have genuinely tried to be as inoffensive as I can, there is no symbolism or hidden meaning, it is just a fictitious bear, that has been in a fictitious battle, with some fictitious other toys. Our bear is the hero in these fictitious images, the only reactions I am going for here are:
+
+* Trying to make some folk experience a little humour, at my randomly thought of scenario
+* The kind of "Aww poor Teddy" response someone may say to a damaged teddy bear
+
+I just wanted to show something using an inamimate object, that is loosely based upon battle as a concept, not any particular battle, I'm not making any political stances, I'm just using images that if anything are more loosely based upon movies I watched as a kid, such as "Toy Soldiers" and "Toys". As we are assuming our site is a news site, the images were selected to help illutrstae that there could be a non-graphic image and a graphic image, in as harmless a way as possible.
 
 Then we will look at how we can show or obscure multiple images at once, maybe the article that the card linked to had multiple graphic images and it would be a bit of unnecessary effort to individually reveal them all
 
@@ -88,11 +93,7 @@ Just so I don't have to keep typing "Card with obscure and reveal image function
 
 I'm not going to go into much detail, here, as I linked Heydon's book and I wouldn't be able to articulate anything to his standard, anyway. But that is our base card, let's consider our first conundrum:
 
-
-
 <div class="callout__tip"><span class="callout__icon"><strong class="visually-hidden">Tip: </strong></span><span class="callout__text">The first interesting question is how do we progressively enhance this? Without JS, how do we hide and show the image, whilst also making that accessibility info available to AT users? Without JS we're limited in functionality, a checkbox doesn't sound perfect, but it's something and it feels better that using a details and summary element</span></div>
-
-
 
 So, before we move on to CSS, we'll add that checkbox on an enhanced card, we'll also add a container that can hold some text and obscure the image and change all of our placeholder text, etc.
 
@@ -168,6 +169,9 @@ body {
 }
 
 .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1rem;
   list-style: none;
 }
 
@@ -423,7 +427,7 @@ A quick summary:
 
 * As any image that is worth obscuring starts obscured, we want to obscure the image in the default state
 * If our handy data-attribute has a value of \`image\`, I'm using a \`backdrop-filter\` and the value is \`blur(14px)\`, which you guessed it, blurs the underlying image, I also add \`opacity\` as I wanted a slight transition
-* When our data attribute's value is \`motion\`, we definitely don't want to use the blur effect here, as blurred motion is still motion, so we substitute it for a solid background colour
+* When our data attribute's value is \`motion\`, we definitely don't want to use the blur effect here, as blurred motion is still motion, so we substitute it for a solid background colour, this is enough to satisfy WCAG 2.2.2 Pause, Stop, Hide (A), as we are of course providing controls that enable users to reveal
 * Our text warning is actually the only thing that "hides", the overlay part is simply changing fron its blurred or solid background to transparent or having full opacity
 * The selectors are a little complex, but in essence we are getting the content type (image or motion), then getting the container that holds our checkbox and SVG, we than want to only apply our change in style when the CSS pseudo class \`:checked\` is present on the checkbox, then we need the sibling of our wrapper, which contains the overlay and the image and finally, we drill down into the overlay, which is where the style change is applied
 
@@ -481,4 +485,137 @@ I simply do not know the answer, I do not know if I am "solutioneering" (searchn
 
 ## What about a single control for many images?
 
-There rea certainly situations where there may be many images from a particular incident, all of a similar nature, or there may be many cards on a page that have our contnet warning on them. So, some folk may not want any of the images to be obscured, so revealing all of those could be unnecessary effort. Some users will undoubtedly appreciate having the granularity that a control on each card or image would provide. So, let's do both, we don't need to change any of our card code for this, we just need a standalone control.
+What if we have many images, moving or static on a single page? Not everybody runs the risk of becoming distressed by images and not everybody is affected by motion or strobing effects. Let us imagine there are 20 cards or whatever that are obscured, some users may find this frustrating, having to reveal each one, independantly, so a reveal all control makes sense, right?
+
+Before we cobble something together, let us just think a little about this. We may have a user that is unaffected by distressing images, they may be visiting our site  to see those images, to understand the effects of what has happened in a tragedy or something, but, this person may also have photosensitive epilepsy, so whilst they want to reveal all of the static images, they certainly don't want to reveal moving images, which may contain strobing, such as gunfire, or multiple flashes from reporters' cameras. By considering the fact that we have two different types of content that can be hidden and users can experience negative effects from one type, both types or none at all, then it makes sense to provide that level of granularity, doesn't it? What we will make is three controls:
+
+* The first will toggle the visibility of all static images and static images only
+* The second will toggle the visibility of all moving images and moving images only
+* The third will of course toggle the visibility of all images
+
+I think the above provides our users with the best level of options, as they can toggle any of the two types of image, all images and of course should they only be affected by anything more specific than moving or static, they can at least operate the control on each image. I am not goind to progressively enhance this, because whilst I could certainly get three checkboxes to hide and reveal in a similar fashion to what our JS version will do, I cannot manipulate the state of the independent checkboxes on each on card, without JS. So the checked/unchecked states of each card's control has the potential to become confusing. So this is purely an enhancement that is only available when the user has JS, I believe I have done everything I can for users that opt to view without JS and now I've hit the hard limit of what I can achieve with CSS and HTML alone, without the potential for unnecessary confusion. so, let's jump in:
+
+The HTML
+
+```erb
+<fieldset class="group-image__controls">
+  <legend class="group-image__label">Content warning controls</legend>
+  <button class="group-image__btn" aria-pressed="false" data-group="graphic">
+    Show all graphic images 
+    <span class="group-image__btn-icon"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M59.715 28.969C59.238 28.176 47.863 9.594 30 9.594S.762 28.176.285 28.969a2.013 2.013 0 0 0 0 2.062C.762 31.824 12.137 50.406 30 50.406s29.238-18.582 29.715-19.375a2.013 2.013 0 0 0 0-2.062ZM30 46.399C16.66 46.398 6.973 33.741 4.398 30 6.968 26.25 16.628 13.602 30 13.602c13.34 0 23.027 12.656 25.602 16.402C53.032 33.75 43.372 46.398 30 46.398Zm0 0"/><path d="M30 16.496c-7.445 0-13.504 6.059-13.504 13.504 0 7.445 6.059 13.504 13.504 13.504 7.445 0 13.504-6.059 13.504-13.504 0-7.445-6.059-13.504-13.504-13.504Zm0 23c-5.238 0-9.496-4.262-9.496-9.496 0-5.238 4.258-9.496 9.496-9.496s9.496 4.258 9.496 9.496c0 5.234-4.258 9.496-9.496 9.496Zm0 0"/><path d="M30 24.824a5.175 5.175 0 1 0 0 10.348 5.174 5.174 0 1 0 0-10.348Zm0 0"/></svg></span>
+  </button>
+  <button class="group-image__btn" aria-pressed="false" data-group="motion">
+  Show all moving images 
+  <span class="group-image__btn-icon"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M59.715 28.969C59.238 28.176 47.863 9.594 30 9.594S.762 28.176.285 28.969a2.013 2.013 0 0 0 0 2.062C.762 31.824 12.137 50.406 30 50.406s29.238-18.582 29.715-19.375a2.013 2.013 0 0 0 0-2.062ZM30 46.399C16.66 46.398 6.973 33.741 4.398 30 6.968 26.25 16.628 13.602 30 13.602c13.34 0 23.027 12.656 25.602 16.402C53.032 33.75 43.372 46.398 30 46.398Zm0 0"/><path d="M30 16.496c-7.445 0-13.504 6.059-13.504 13.504 0 7.445 6.059 13.504 13.504 13.504 7.445 0 13.504-6.059 13.504-13.504 0-7.445-6.059-13.504-13.504-13.504Zm0 23c-5.238 0-9.496-4.262-9.496-9.496 0-5.238 4.258-9.496 9.496-9.496s9.496 4.258 9.496 9.496c0 5.234-4.258 9.496-9.496 9.496Zm0 0"/><path d="M30 24.824a5.175 5.175 0 1 0 0 10.348 5.174 5.174 0 1 0 0-10.348Zm0 0"/></svg></span>
+</button>
+  <button class="group-image__btn" aria-pressed="false" data-group="all">
+    Show all imagery 
+    <span class="group-image__btn-icon"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M59.715 28.969C59.238 28.176 47.863 9.594 30 9.594S.762 28.176.285 28.969a2.013 2.013 0 0 0 0 2.062C.762 31.824 12.137 50.406 30 50.406s29.238-18.582 29.715-19.375a2.013 2.013 0 0 0 0-2.062ZM30 46.399C16.66 46.398 6.973 33.741 4.398 30 6.968 26.25 16.628 13.602 30 13.602c13.34 0 23.027 12.656 25.602 16.402C53.032 33.75 43.372 46.398 30 46.398Zm0 0"/><path d="M30 16.496c-7.445 0-13.504 6.059-13.504 13.504 0 7.445 6.059 13.504 13.504 13.504 7.445 0 13.504-6.059 13.504-13.504 0-7.445-6.059-13.504-13.504-13.504Zm0 23c-5.238 0-9.496-4.262-9.496-9.496 0-5.238 4.258-9.496 9.496-9.496s9.496 4.258 9.496 9.496c0 5.234-4.258 9.496-9.496 9.496Zm0 0"/><path d="M30 24.824a5.175 5.175 0 1 0 0 10.348 5.174 5.174 0 1 0 0-10.348Zm0 0"/></svg></span>
+  </button>
+</fieldset>
+```
+
+* We want to group our controls, here, as they all have a relationship to one another, so the `<fieldset>` element provides us with that programmtic grouping
+* We then add a group label, which makes it clear what the controls are for, so we reach for the `<legend>` element
+* As we cannot progressively enhance this part properly, we have no need to break the second rule of ARIA, so we will just use proper `<button>\` elements, with the \`aria-pressed` attribute, which we will of course need to change with JS
+* For consistency, I'm going to use exactly the same icon in these three buttons, as I have used on the independent controls, for each card. They all contain an explicit and unique text label, but we need a visual indicator to show when a button is pressed or not, so to me, it makes sense to use the same icon, as it is communicating the same thing, albeit for multiple items, there is a little nuance, here, as we will have an additional state, I'll explain this later
+* I've also added a data attribute to each, with a unique value that represents what will change, as we'll need to modify the states of these buttons, if a user interacts with any of the individual card controls and this will just provide a specific hook for doing so
+* Also, what I haven't shown in the HTML is I am going to duplicate all three cards, as I need more than one of each type to explain our third state and demo how that will work
+
+Obviously this isn't production ready code, not that it's "bad", just that in reality, I'd either be using a templating language, such as Nunjucks and/or I would use the `<use>` tag, to include the svg we keep defining over and over. The primary benefit to that being it tidies up the HTML a bit, maybe it's a little faster or maybe it isn't, I doubt either way would cause any noticeable speed differences, as we are just using vanialla web technologies, so we don't have to import JS and CSS frameworks, which we would then expect our users to download.
+
+### Now let's style these buttons
+
+As I don't want to have to edit the CSS we already have, I'm going to just style these separately, in reality, much of what I'm doing here could be reduced by combing selectors, I'll do that for the CodePen, so I'll also omit the WHCM style, for now, as I've done it once and I'll just combine that for the finished prototypes.
+
+```css
+.no-js .group-image__controls {
+  display: none;
+}
+
+.group-image__controls {
+  display: grid;
+  justify-content: end;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: .75rem;
+  margin-bottom: 2rem;
+  padding: .5rem .75rem;
+  max-width: 52rem;
+}
+
+.group-image__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rebeccapurple;
+  border-radius: 6px;
+  padding: .5rem 1.25rem;
+  background-color: rebeccapurple;
+  color: #fff;
+  transition: color 300ms ease-in, background-color 300ms ease-in, outline 300ms ease-in;
+  cursor: pointer;
+}
+
+.group-image__btn:hover,
+.group-image__btn:focus {
+  color: rebeccapurple;
+  background-color: #fff;
+}
+
+.group-image__btn:focus-visible {
+  outline: 2px solid rebeccapurple;
+  outline-offset: 2px;
+}
+
+.group-image__btn-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: .5rem;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.group-image__btn-icon::before {
+  content: "";
+  position: absolute;
+  height: calc(100% - .25rem);
+  width: 4px;
+  transform: rotate(45deg) scaleY(0);
+  background-color: #fff;
+  z-index: 5;
+  pointer-events: none;
+  transition: all 300ms ease-in;
+}
+
+.group-image__btn:hover .group-image__btn-icon::before,
+.group-image__btn:focus .group-image__btn-icon::before {
+  background-color: rebeccapurple;
+}
+
+.group-image__btn:hover svg, 
+.group-image__btn:focus svg {
+  fill: rebeccapurple;
+}
+
+[aria-pressed="true"] .group-image__btn-icon::before {
+  transform: rotate(45deg) scaleY(1);
+}
+
+[aria-pressed="mixed"] .group-image__btn-icon::before {
+  transform: rotate(90deg) scaleY(1.1);
+}
+
+.group-image__btn-icon svg {
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: #fff;
+  transition: fill 300ms ease-in;
+}
+```
+
+Not a great deal to discuss here, as it's pretty much similar to what we have done previously, but just a couple of points:
+
+* Assuming we have a way to detect that JS didn't load, usually a class on the `<html>\` element, then we don't want to display this widget at all, there is no point, as it won't work, so \`display: none;` prevents any confusion for our users
+* We now have a style for \`aria-pressed="mixed"\` as that is the third state we need, essentially, as the buttons control multiple items, that each individually have their own controls, we need a third state when neither all images or no images are revealed, because neither \`true\` or \`false\` is entirely accurate, so we have \`mixed\` and that is exactly the purpose of that value. Honestly, the best I could come up with here was a horizontal line through the eye icon, so I adjust the rotation a further 45deg and I also make it scale a tiny bit more. It's perfectly imperfect, I know. If I could do SVG wizardry and animate them, I'd probably make the eye half open, or squint or something, but I'm really not that cool, so we'll have to roll with the horizontal line, which does look sufficiently different to indicate a third state, how users perceive or understand that, I'm not sure, but tri-state checkboxes often have the horizontal line, and that's my reasoning for that.
