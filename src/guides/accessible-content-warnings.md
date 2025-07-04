@@ -830,3 +830,11 @@ I think that sums it up, I have made similar controls before, but just for 1-dim
 </p>
 
 <script async src="https://public.codepenassets.com/embed/index.js"></script>
+
+## Wrapping up
+
+We have finished our image visibility toggle functionality, we also added the abilty to reveal or hide multiple, based upon image type, motion or graphic imagery. It's not perfect, as we are not hiding it from screen reader users and I don't even know if we should, I suspect we should with some images, but I'd want to get this right before adding it into a guide, so we will reach out to folk and get their feedback.
+
+It could also have done with a little code refactor and some minor CSS adding, but as is often the case, time becomes a factor and more testing beckons.
+
+At the very least, hopefully this serves as a decent foundation for any similar funcionality you may have been wanting to implemement. Rememeber to have those conversations if the images you need to obscure are extremely graphic and of course, rememeber to do your own testing.
