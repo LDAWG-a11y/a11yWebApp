@@ -817,4 +817,16 @@ So this actually turned out a little more difficult than I'd expected as there w
 
 I think that sums it up, I have made similar controls before, but just for 1-dimensional collections, such as a group of accordions, this requires just two types of button "Expand all" and "Collapse all", and I was only controlling the state of a collection of items that were all the same. This was certainly a little more challenging, three buttons, controlling two types of collection or both collections and maintaining logical and correct states through all of the moving parts, at all times. It was a fun challenge, though, I'm sure the code could be reduced and refactored a little, but it works and this is just a proof of concept. But it was definitely a fun exercise.
 
-The CodePen
+## The CodePen
+
+<p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="NPqZyWJ" data-pen-title="Toggle image visibility cards" data-preview="true" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+
+  <span>See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/NPqZyWJ">
+
+  Toggle image visibility cards</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
+
+  on <a href="https://codepen.io">CodePen</a>.</span>
+
+</p>
+
+<script async src="https://public.codepenassets.com/embed/index.js"></script>
