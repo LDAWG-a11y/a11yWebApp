@@ -4,7 +4,7 @@ summary: Let's consider unsettling, triggering, flashing, animated or graphic
   content, how do we accessibly hide it, until a user wants to see it? let's
   build one
 author: dlee
-date: 2025-06-18
+date: 2025-07-04
 toc: true
 tags:
   - HTML
@@ -533,7 +533,7 @@ I think the above provides our users with the best level of options, as they can
 
 * We want to group our controls, here, as they all have a relationship to one another, so the `<fieldset>` element provides us with that programmtic grouping
 * We then add a group label, which makes it clear what the controls are for, so we reach for the `<legend>` element
-* As we cannot progressively enhance this part properly, we have no need to break the second rule of ARIA, so we will just use proper `<button>\` elements, with the \`aria-pressed` attribute, which we will of course need to change with JS
+* As we cannot progressively enhance this part properly, we have no need to break the second rule of ARIA, so we will just use proper `<button>\` elements, with the \`aria-pressed\` attribute, which we will of course need to change with JS
 * For consistency, I'm going to use exactly the same icon in these three buttons, as I have used on the independent controls, for each card. They all contain an explicit and unique text label, but we need a visual indicator to show when a button is pressed or not, so to me, it makes sense to use the same icon, as it is communicating the same thing, albeit for multiple items, there is a little nuance, here, as we will have an additional state, I'll explain this later
 * I've also added a data attribute to each, with a unique value that represents what will change, as we'll need to modify the states of these buttons, if a user interacts with any of the individual card controls and this will just provide a specific hook for doing so
 * Also, what I haven't shown in the HTML is I am going to copy and paste all three cards, as I need more than one of each type to explain our third state and demo how that will work
@@ -697,7 +697,7 @@ As I don't want to have to edit the CSS we already have, I'm going to just style
 
 Not a great deal to discuss here, as it's pretty much similar to what we have done previously, but just a couple of points:
 
-* Assuming we have a way to detect that JS didn't load, usually a class on the `<html>\` element, then we don't want to display this widget at all, there is no point, as it won't work, so \`display: none;` is what we need here
+* Assuming we have a way to detect that JS didn't load, usually a class on the `<html>\` element, then we don't want to display this widget at all, there is no point, as it won't work, so \`display: none;\` is what we need here
 * We now have a style for \`aria-pressed="mixed"\` as that is the third state we need, essentially, as the buttons control multiple items, that each individually have their own controls, we need a third state when neither all images or no images (of that type, or in the case of the button that toggles all, all imagery) are revealed, because neither \`true\` or \`false\` is entirely accurate, so we have \`mixed\` and that is exactly the purpose of that value. Honestly, the best I could come up with here was a horizontal line through the eye icon, so I adjust the rotation a further 45deg and I also make it scale a tiny bit more. It's perfectly imperfect, I know. If I could do SVG wizardry and animate them, I'd probably make the eye half open, or squint or something, but I'm really not that cool, so we'll have to roll with the horizontal line, which does look sufficiently different to indicate a third state, how users perceive or understand that, I'm not sure, but tri-state checkboxes often have the horizontal line whn their state in "indeterminate", and that's my reasoning for that
 
 ### Now let's get um working
