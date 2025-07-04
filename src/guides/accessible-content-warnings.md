@@ -533,7 +533,7 @@ I think the above provides our users with the best level of options, as they can
 
 * We want to group our controls, here, as they all have a relationship to one another, so the `<fieldset>` element provides us with that programmtic grouping
 * We then add a group label, which makes it clear what the controls are for, so we reach for the `<legend>` element
-* As we cannot progressively enhance this part properly, we have no need to break the second rule of ARIA, so we will just use proper `<button>\` elements, with the \`aria-pressed\` attribute, which we will of course need to change with JS
+* As we cannot progressively enhance this part properly, we have no need to break the second rule of ARIA, so we will just use proper `<button>` elements, with the \`aria-pressed\` attribute, which we will of course need to change with JS
 * For consistency, I'm going to use exactly the same icon in these three buttons, as I have used on the independent controls, for each card. They all contain an explicit and unique text label, but we need a visual indicator to show when a button is pressed or not, so to me, it makes sense to use the same icon, as it is communicating the same thing, albeit for multiple items, there is a little nuance, here, as we will have an additional state, I'll explain this later
 * I've also added a data attribute to each, with a unique value that represents what will change, as we'll need to modify the states of these buttons, if a user interacts with any of the individual card controls and this will just provide a specific hook for doing so
 * Also, what I haven't shown in the HTML is I am going to copy and paste all three cards, as I need more than one of each type to explain our third state and demo how that will work
