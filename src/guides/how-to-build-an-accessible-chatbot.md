@@ -4,7 +4,7 @@ summary: Chatbots are now common place, seldom are they accessible, they are
   often designed without any considerations for people with disabilities, so
   let's fix that
 author: dlee
-date: 2025-07-15
+date: 2025-07-17
 toc: true
 tags:
   - HTML
@@ -42,6 +42,8 @@ I rarely build a page to put my demos on, but on this occasion, I feel it's kind
     *,
     *::before,
     *::after {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
@@ -59,7 +61,7 @@ I rarely build a page to put my demos on, but on this occasion, I feel it's kind
       line-height: 1.5;
     }
 
-   button,
+    button,
     textarea {
       font: inherit;
     }
@@ -100,7 +102,7 @@ I rarely build a page to put my demos on, but on this occasion, I feel it's kind
       display: flex;
       justify-content: flex-end;
       margin-bottom: 2.5rem;
-      padding: 1.5rem 1rem;
+      padding:  1.5rem .25rem;
       background-color: azure;
     }
 
@@ -110,29 +112,36 @@ I rarely build a page to put my demos on, but on this occasion, I feel it's kind
       list-style: none;
     }
 
-    main {
+    .main {
       margin-bottom: 2.5rem;
-      padding: 1.5rem 1rem;
+      padding: 1.5rem .25rem;
     }
 
-    footer {
-      padding: 1.5rem 1rem;
+    .footer {
+      padding:  1.5rem .25rem 6.5rem;
       background-color: azure;
     }
 
     @media (min-width: 30em) {
-      footer {
+      .nav,
+      .main,
+      .footer {
+        padding: 1.5rem 1rem;;
+      }
+
+      .footer {
         display: flex;
         justify-content: space-between;
         gap: 1.5rem;
+        padding-bottom: 6.5rem;
       }
     }
   </style>
 
   <body>
     <header>
-      <a href="#main" class="skip-link skip-link--main">Skip to main content</a>
-      <a href="chatTrigger" class="skip-link skip-link--chat">Skip to chat-button</a>
+      <a href="#main" class="skip-link">Skip to main content</a>
+      <a href="chatTrigger" class="skip-link">Skip to chat-button</a>
       <nav class="nav">
         <ul class="nav__list">
           <li><a href="#">Home</a></li>
@@ -141,7 +150,7 @@ I rarely build a page to put my demos on, but on this occasion, I feel it's kind
         </ul>
       </nav>
     </header>
-    <main id="main">
+    <main class="main" id="main">
       <h1>Hi, I'm Bob</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sint ex possimus dolor ipsa eos quae, placeat tenetur similique. Et amet iste, expedita minus, incidunt nulla vel odio aut ad, sunt doloribus reprehenderit soluta quae eveniet fugit voluptate reiciendis corrupti! Facere ipsum amet eligendi corrupti harum suscipit voluptates, vitae ex?</p>
       <h2>Why do they call me Boring Bob?</h2>
@@ -149,7 +158,7 @@ I rarely build a page to put my demos on, but on this occasion, I feel it's kind
       <h2>What do I sell?</h2>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, doloribus. Fugiat neque officia sapiente sit aspernatur culpa excepturi voluptate atque laboriosam consequuntur, omnis esse debitis sequi eum at impedit iusto assumenda ab dicta dolores. Amet iure praesentium earum, incidunt illum facilis. Voluptates ut, consequatur quae non corrupti ad sequi incidunt?</p>
     </main>
-    <footer>
+    <footer class="footer">
       <div class="footer__primary">
         <h2>Accessibility Statement</h2>
         <p>I gave it a good go!</p>
@@ -240,12 +249,7 @@ If JS isn't available, don't show the trigger button or the panel, as they won't
 * Position: fixed; I've placed mine in the bottom right corner, as that seems to be convention and it is always locked to that position in the viewport, not the page, the bit that is displayed at any given time
 * I added a decent focus indicator
 * the rest is just styles to make it look the way it does, it's not perfect, it's not the fanciest, but we're not here for design lessons, well, if you are, you might be in the wrong place
-* One issue with this, I haven't really done anything to prevent it blocking content, this will likely be a big issue on sites that have a tonne of stuff in the footer, especially on mobile or whilst zoomed. I'm not going to address that, here, but it's an easy fix, just calculate the height from the bottom of the page to the top of where the outline is, when focused, then add that as padding to the bottom of the footer, for us, that would be 99px, as:
-
-  * We have a position of bottom: 1rem, which means 1rem (16px) from the bottom of the page
-  * The height is 5rem, so 80px, we used box-sizing: border-box, so we don't need to worry about borders
-  * Our outline is 3px
-  * Add those all together and we get 99px, but I like to work in rems, 16 * 6 is 96px, we still need to account for the outline (although, not really necessary, but we'll add a little extra anyway, 6.5rem, should do it. yup, it doesn't look great, i'll leave you to fight your designer, I'll hold your coat. Seriously, though, the padding can be added to the body, this was just a quick and dirty fix, showing I do consider these things
+* One potential issue that I have crudely "solved" is as the chat trigger button floats above the page, on its own layer it could potentially obscure content or controls when a user scrolls to the buttom. My quick and dirty fix for this was simply to calculate the number of pixels to the top of the button, from the bottom of the viewport. This was easily done by getting the size of the button (5rem/80px) and the `bottom` position I set for the element (1rem/16px), which gives a total of 6rem or 96px. I simply added a small buffer to that value, to give me a 6.5rem value, which I applied to the footer's padding-bottom;, so our trigger cannot really interfere with anything, as such. It will of course often obscure or partially obscure something, but the page can be scrolled and scrolling a page is pretty standard fare. We have just made sure it has enough space at the bottom to come to rest without hiding anything. There are nicer ways of doing this, but this works for our demo
 
 ## Let's make the basic chat panel
 
@@ -254,26 +258,34 @@ Straight into the HTML, here, as I am aware I waffle:
 ```eex
 <dialog class="chat__panel" aria-labelledby="chatTitle" open>
   <div class="chat__upper">
-    <button class="chat__settings-btn"><span class="visually-hidden">Settings</span></button>
     <h1 class="chat__title" id="chatTitle">Chat Assistant</h1>
+    <button class="chat__settings-btn"><span class="visually-hidden">Settings</span></button>
     <button class="chat__close-btn"><span class="visually-hidden">Close</span></button>
   </div>
   <div class="chat__window" role="log" aria-labelledby=”cLog”>
     <h2 class="chat__window-title" id="cLog">Chat log</h2>
   </div>
   <div class="chat__lower">
-    <input type="text" class="chat__input">
-    <button type="button" class="chat__submit"><span class="visually-hidden">Send</span></button>
+    <label class="chat__input-label" for="chatInput">Ask us...</label>
+    <textarea type="text" id="chatInput" class="chat__input"></textarea>
+    <button type="button" class="chat__submit"><span class="visually-hidden">Send</span>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 32 32">
+      <path d="M10.648 29.523a.517.517 0 0 0 .809.426l3.563-2.43-4.372-2.085ZM31.832 2.098a.517.517 0 0 0-.578-.086L.512 17.094a.912.912 0 0 0-.512.828.922.922 0 0 0 .52.82l8.105 3.86 16.2-13.317L10.632 23.56l10.094 4.808a.908.908 0 0 0 1.242-.488l9.996-25.211a.513.513 0 0 0-.133-.57Zm0 0"/>
+    </svg>
+  </button>
   </div>
 </dialog>
 ```
 
-Quick explainer (this is incomplete):
+Quick explainer:
 
 * I'm using a `<dialog>` as I want to group all of the things together, so that relationship is evident, an expandable chat widget does have dialog-type behaviour, in that it is on the highest layer of the UI and will therefore, at least visually block elements underneath. We could go for a modal dialog, however, I'm reluctant to go down that route, there are times where I may be speaking to a customer service agent, asking for help, and I need to actually interact with the page, as they are helping me. Perhaps something I want is out of stock, perhaps they suggest a slightly different model/colour and I want to stay in the same window, but learn about their suggestion (I appreciate this is problematic on a phone). I am only basing this on my own experiences, but being able to interact with the underlying page, whilst speaking through chat seems like something that would be common, for all mannaer of reasons, right? The chat is self-contained, it can and should stay current, be functional and not lose state or data, across pages, so a <dialog> seems like a sensible call.
 * A `<dialog>` needs a name, so I've added an `aria-labelledby` attribute, the IDRef of which points to the dialog's main heading
-* I have added the \`open\` attribute as a temporary measure, this is just so I can see the element and style it, we will remove it when we add the JS functionality
+* I have added the `open` attribute as a temporary measure, this is just so I can see the element and style it, we will remove it when we add the JS functionality
 * I've added a few containers:
 
-  * A container at the top which will hold the main heading, a visually hidden text node "Chat log" for the panel, a settings button and a close button
-  * A `.Chat__window `container, which has `role="log"` and an AccName, which is pointing to the "Chat log
+  * A container at the top which will hold the main heading, a text node "Chat log" for the panel, a settings button and a close button
+  * A `.Chat__window `container, which has `role="log"` and an AccName, which is pointing to the "Chat log" node, this particular container will only hold the actual conversational parts of our widget, so questions, answers and quick questions, etc. The `role="log"` element needs that AccName, we don't need to display that AccName and as `aria-labelledby` completely ignores `display: none;`, etc, we'll use that, to reduce repetition, also, because I'm hoping it won't be announced as part of the spoken output of conversations, I can't see why it would be, but we'll figure that out when we get there. The reason I have used [`role="log"`](https://www.w3.org/TR/wai-aria-1.2/#log) is because it is a live region, it has an implied `aria-live="polite"` (We do not need to explicitly state it), it will announce new entries (Q&As) and it provides a meaningful sequence of the log in general. Whilst this role has several uses, it was of course designed for this usage
+  * We have a `<textarea>` element in the bottom container which alllows our users to ask questions in multiline format, we'll make the height or the rows adjust up to a certain height, to assist in readability. As a question may have several lines of text and a user may want to edit something, it wouldn't be a great experience if they had to do this in a single line input. We have a `<label>`, of course, as knowing what something is actually called is probably kinda useful to users &#x1F60F . Finally there is a button with the paper aeroplane icon as an SVG, which again, is the typical icon one would expect most users to be familiar with, as it is very common, we have a visually hidden AccName in there "Send"
+
+The above is not quite complete, honestly, I don't have a plan or design sketched out for these things, so it's likely that I may need to modify something, a little later if I discover we need something else to increase usability for everyone. Anyway, I'm going to add some basic styles, just to get it looking half-decent and like a chat widget:
