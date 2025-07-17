@@ -59,8 +59,8 @@ I rarely build a page to put my demos on, but on this occasion, I feel it's kind
       line-height: 1.5;
     }
 
-    button,
-    input {
+   button,
+    textarea {
       font: inherit;
     }
 
@@ -176,8 +176,6 @@ No progressive enhancement on this one, I'm afraid, sure we could get the chat t
 
 We already have `position: relative`; on our `<body>` element, that's all we need to stick this in a bottom corner, so let's get the HTML written.
 
-
-
 ```ecr
 <button class="chat__trigger" aria-expanded="false" aria-haspopup="dialog" id="chatTrigger" accesskey="0">
   <span class="chat__trigger-label">Chat</span>
@@ -190,11 +188,11 @@ We already have `position: relative`; on our `<body>` element, that's all we nee
 Naturally, we want a button, as it will do button things, as opposed to link things, I'll just go over the bits I have done:
 
 * I have an ID that matches the one I set for the Skip to Chat link, so that woulks now
-* I have added an `accesskey="0"` attribute, I genuinely do not know which specific key is best to use, here, there is certainly an argument for some consistency across the web, but finding websites with accessible chatbots is somewhat taxing, to say the least. I have gone for "0" as I quite unashamedly went on Adrian Roselli's site, knowing he has implementted Access Keys, and just looked at what characters he was using. He uses "0" for the accessibility statement, I have used that for chat, only because is appears a safe key to use, please, do your own research and don't forget to tell users which key it actually is, I'll add a slight modification to ours, shortly
+* I have added an `accesskey="0"` attribute, I genuinely do not know which specific key is best to use, here, there is certainly an argument for some consistency across the web, but finding websites with accessible chatbots is somewhat taxing, to say the least. I have gone for "0" as I quite unashamedly went on Adrian Roselli's site, knowing he has implementted Access Keys, and just looked at what characters he was using. He uses "0" for the accessibility statement, I have used that for chat, only because it appears a safe key to use, please, do your own research and don't forget to tell users which key it actually is, I'll add a slight modification to ours, shortly
 * I have a text node which is both exposed and visible, this provides the accessible name (AccName) "Chat", as, errm, that's what it is, right? No faffing about with ARIA and I'm not adding any hidden text in there
 * I have an SVG icon, just a typical chat bubble I scrounged from the web, I've hidden it from AT, as it serves no purpose, it's purely aesthetic and nobody needs repeating content, nobody needs repeating content, sorry 
 
-<div class="callout__info"><span class="callout__icon"><strong class="visually-hidden">Info: </strong></span><span class="callout__text">In the interests of transparency, I initially added aria-haspopup="dialog", but then removed it, after reading through the entirety of a 5 year old W3C GitHub issue, I removed it, as initially screen readers such as JAWS did not announce it was a dialog, then they fixed it, but then the group decided it should not be used in that context. For my demo, "Chat" is perhaps sufficiently obvious, but if you have a chatbot that has a human name, like "Dave" or "Maggie", then I think visually hidden text is the only option you have, such as "Dave, opens chat window", or whatever. I don't particularly like that approach, as I'd rather just have one button and I know not to change the AccName, *insert shrug emoji. Also, I know that VoiceControl on MacOS will only do something if the user knows the full AccName, which of course they won't if we hide part of it. But I totally understand the W3C has to battle with getting many vendors to implement things in a consistent manner and that appears to be the boss fight part of the role.</span></div>
+<div class="callout__info"><span class="callout__icon"><strong class="visually-hidden">Info: </strong></span><span class="callout__text">In the interests of transparency, I initially added aria-haspopup="dialog", but then removed it, after reading through the entirety of a 5 year old W3C GitHub issue, I removed it, as initially screen readers such as JAWS did not announce it was a dialog, then they fixed it, but then the group decided it should not be used in that context. For my demo, "Chat" is perhaps sufficiently obvious, but if you have a chatbot that has a human name, like "Dave" or "Maggie", then I think visually hidden text is the only option you have, such as "Dave, opens chat window", or whatever. I don't particularly like that approach, as I'd rather just have one button and I know not to change the AccName, *insert shrug emoji. Also, I know that VoiceControl on MacOS will only do something if the user knows the full AccName, which of course they won't if we hide part of it. But I totally understand the W3C has to battle with getting many vendors to implement things in a consistent manner and that appears to be the boss fight part of the role</span></div>
 
 That's that, I'll pop the CSS below, I'm not doing a line-by-line explanation for that, I'll just outline a few key bits
 
@@ -255,10 +253,13 @@ Straight into the HTML, here, as I am aware I waffle:
 
 ```eex
 <dialog class="chat__panel" aria-labelledby="chatTitle" open>
-  <h1 class="chat__title">Chat Assistant</h1>
   <div class="chat__upper">
+    <button class="chat__settings-btn"><span class="visually-hidden">Settings</span></button>
+    <h1 class="chat__title" id="chatTitle">Chat Assistant</h1>
+    <button class="chat__close-btn"><span class="visually-hidden">Close</span></button>
   </div>
-  <div class="chat__window">
+  <div class="chat__window" role="log" aria-labelledby=”cLog”>
+    <h2 class="chat__window-title" id="cLog">Chat log</h2>
   </div>
   <div class="chat__lower">
     <input type="text" class="chat__input">
@@ -269,5 +270,10 @@ Straight into the HTML, here, as I am aware I waffle:
 
 Quick explainer (this is incomplete):
 
-* I'm using a `<dialog>` as I want to group all of the things together, so that relationship is evident, an expandable chat widget does have dialog-type behaviour, in that it is on the highest layer of the UI and will therefore, at least visually block elements underneath. We could go for a modal dialog, however, I'm reluctant to go down that route, there are times where I may be speaking to a customer service agent, asking for help, and I need to actually interact with the page, as they are helping me. Perhaps something I want is out of stock, perhaps they suggest a slightly different model/colour and I want to stay in the same window, but learn about their suggestion. I am only basing this on my own experiences, but being able to interact with the underlying page, whilst speaking through chat seems like something that would be common, for all mannaer of reasons, right? The chat is self-contained, it can and should stay current, be functional and not lose state or data, across p
+* I'm using a `<dialog>` as I want to group all of the things together, so that relationship is evident, an expandable chat widget does have dialog-type behaviour, in that it is on the highest layer of the UI and will therefore, at least visually block elements underneath. We could go for a modal dialog, however, I'm reluctant to go down that route, there are times where I may be speaking to a customer service agent, asking for help, and I need to actually interact with the page, as they are helping me. Perhaps something I want is out of stock, perhaps they suggest a slightly different model/colour and I want to stay in the same window, but learn about their suggestion (I appreciate this is problematic on a phone). I am only basing this on my own experiences, but being able to interact with the underlying page, whilst speaking through chat seems like something that would be common, for all mannaer of reasons, right? The chat is self-contained, it can and should stay current, be functional and not lose state or data, across pages, so a <dialog> seems like a sensible call.
 * A `<dialog>` needs a name, so I've added an `aria-labelledby` attribute, the IDRef of which points to the dialog's main heading
+* I have added the \`open\` attribute as a temporary measure, this is just so I can see the element and style it, we will remove it when we add the JS functionality
+* I've added a few containers:
+
+  * A container at the top which will hold the main heading, a visually hidden text node "Chat log" for the panel, a settings button and a close button
+  * A `.Chat__window `container, which has `role="log"` and an AccName, which is pointing to the "Chat log
