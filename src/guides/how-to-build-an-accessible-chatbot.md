@@ -17,13 +17,13 @@ isGuide: true
 
 Pretty much everywhere we go on the web these days, we'll be greeted by some form of chat interface and their presence is showing no signs of slowing down. They're kind of like the self-service checkouts in supermarkets, in that they weren't quite as common when organisations had to actually pay people to be on the other end of these things, but now, as "AI" is seemingly everywhere, and organisations have discovered they don't have to pay people to answer questions, boom, they're popping up everywhere.
 
-I'm not going to delve too deeply into my opinions on AI, sure, it has its uses in some scenarios, but ultimately it's not something I'm overly keen on, I'd much rather speak to a person than get a response devoid of human characteristics. I also prefer my responses to be accurate, not "best matched" based upon wherever the "AI" scrapes that data from. Anyway, this isn't an article about AI, not all chatbots are AI, most chatbots are in fact, just poorly marked up, which presents a huge barrier for folks with disabilities.
+I'm not going to delve too deeply into my opinions on AI, sure, it has its uses in some scenarios, but ultimately it's not something I'm overly keen on, I'd much rather speak to a person than get a response devoid of human characteristics. I also prefer my responses to be accurate, not "best matched" based upon wherever the "AI" scraped that response from. Anyway, this isn't an article about AI, not all chatbots are AI, most chatbots are in fact, just poorly marked up, which presents a huge barrier for folks with disabilities.
 
-I recently tested a chatbot and whilst I have no doubt the backend stuff is highly complex, particularly if it's just a computer answering the questions, I built myself a tiny prototype, just to explore the difficulty and effectiveness of my suggested solution. It wasn't difficult at all, but then I always start any task with "How can I make this accessible?" mindset, and when I factor that in from the start, I personally find it easier,
+I recently tested a chatbot and whilst I have no doubt the backend stuff is highly complex, particularly if it's just a computer answering the questions, I built myself a tiny prototype, just to explore the difficulty and effectiveness of my suggested solution. It wasn't overly difficult, but then I reall did only build an ultra basic prototype, without styles and missing some bells and whistles. Obviously I always start any task with "How can I make this accessible?" mindset, and when I factor that in from the start, I personally find it easier,
 
-This isn't going to be an advanced chatbot, I don't personally see the point in me wasting endless hours getting it to scrape info from other sources, so if you're looking for an answer to the question of "What is the meaning of the universe?", my chatbot will be of no use at all. So, just to be clear, we are going to build a chatbot, which functions as it should and it should function in a way that works for everybody, it won't however, be very smart, I'm probably going to only have answers to five questions and a suggestion for everything else. I'll be honest here, at this stage, I have absolutely zero idea how to account for certain aspects of language, typos, spelling mistakes and anything else that could result in you and me having the same question, but a different way of asking it. I'll probably Google that, later, maybe I will even ask AI how to do it and I'll either hate it more, or a little less.
+This isn't going to be an advanced chatbot, I don't personally see the point in me wasting endless hours getting it to scrape info from other sources, so if you've stumbled across this article in the hope of finding out how to build an AI chatbot, that bit is not included, but be like everybody else here, and learn how to build an accessible chat interface. So, just to be clear, we are going to build a chatbot, which functions as it should and it should function in a way that works for everybody, it won't however, be very smart, I'm probably going to only have answers to a few questions and a suggestion for everything else. I'll be honest here, at this stage, I have absolutely zero idea how to account for certain aspects of language, typos, spelling mistakes and anything else that could result in you and me having the same question, but a different way of asking it. That's also not something I'm. going to explore as, well, the interface is my bit, I'll just fudge a few silly questions and answers as a proof of concept.
 
-So, a chatbot typically comprises of a trigger button located in a distant corner of the screen, once clicked, a popup or dialog appears with all of the UI components, and seldom are they as simple as an input, a button and a chat pane, they often have a couple of other controls, for additional features. They also often have rich responses, which can take the form of interactive elements that a user may interact with, perhaps buttons, with suggested quick questions or quick responses. I'll pop these in, as I don't want to be ultra basic in my implementation, I want it to look and operate like a chatbot, just an accessible chatbot.
+So, a chatbot typically comprises of a trigger button located in a distant corner of the screen, once clicked, a popup or dialog appears with all of the chat's UI, and seldom are they as simple as an input, a button and a chat pane, they often have a couple of other controls, for additional features. They also often have rich responses, which can take the form of interactive elements that a user may interact with, perhaps buttons, with suggested quick questions or thumbs up and thumbs down things. I'll pop add the thumbs up/down things, as in the wild, we're often training AI by using these, and that's what makes them so common, I guess.
 
 ## We need a proper page to put it on
 
@@ -35,113 +35,113 @@ I rarely build a page to put my demos on, but on this occasion, I feel it's kind
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boring Bob's Bonanza</title>
-  </head>
+    <title>Cyberdyne Systems</title>
 
-  <style>
-    *,
-    *::before,
-    *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      display: flex;
-      justify-content: center;
-    }
-
-    body {
-      position: relative;
-      width: 88rem;
-      max-width: 100%;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1.25rem;
-      line-height: 1.5;
-    }
-
-    button,
-    textarea {
-      font: inherit;
-    }
-
-    p {
-      margin-bottom: 1.5rem;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-    }
-
-    h3 {
-      font-size: 1.75rem;
-    }
-
-    .skip-link {
-      position: absolute;
-      display: inline-block;
-      padding: .375rem .75rem;
-      line-height: 1;
-      font-size: 1.25rem;
-      background-color: rebeccapurple;
-      color: white;
-      transform: translateY(-1.5rem);
-      transition: transform 250ms ease-in;
-    }
-
-    .skip-link:not(:focus) {
-      transform: translateY(-2.75rem);
-    }
-
-    .nav {
-      display: flex;
-      justify-content: flex-end;
-      margin-bottom: 2.5rem;
-      padding:  1.5rem .25rem;
-      background-color: azure;
-    }
-
-    .nav__list {
-      display: flex;
-      gap: 1rem;
-      list-style: none;
-    }
-
-    .main {
-      margin-bottom: 2.5rem;
-      padding: 1.5rem .25rem;
-    }
-
-    .footer {
-      padding:  1.5rem .25rem 3rem;
-      background-color: azure;
-    }
-
-    @media (min-width: 30em) {
-      .nav,
-      .main,
-      .footer {
-        padding: 1.5rem 1rem;;
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
-      .footer {
+      html {
         display: flex;
-        justify-content: space-between;
-        gap: 1.5rem;
+        justify-content: center;
+      }
+
+      body {
+        position: relative;
+        width: 88rem;
+        max-width: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.25rem;
+        line-height: 1.5;
         padding-bottom: 3rem;
       }
-    }
-  </style>
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      h3 {
+        font-size: 1.75rem;
+      }
+
+      .skip-link {
+        position: absolute;
+        display: inline-block;
+        padding: .375rem .75rem;
+        line-height: 1;
+        font-size: 1.25rem;
+        background-color: var(--chat-interactive-color);
+        color: white;
+        transform: translateY(-1.5rem);
+        transition: transform 250ms ease-in;
+      }
+
+      .skip-link:not(:focus) {
+        transform: translateY(-2.75rem);
+      }
+
+      .nav {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 2.5rem;
+        padding:  1.5rem .25rem;
+        background-color: azure;
+      }
+
+      .nav__list {
+        display: flex;
+        gap: 1rem;
+        list-style: none;
+      }
+
+      .main {
+        margin-bottom: 2.5rem;
+        padding: 1.5rem .25rem;
+      }
+
+      .footer {
+        padding:  1.5rem .25rem;
+        background-color: azure;
+      }
+
+      @media (min-width: 30em) {
+        .nav,
+        .main,
+        .footer {
+          padding: 1.5rem 1rem;
+        }
+
+        .footer {
+          display: flex;
+          justify-content: space-between;
+          gap: 1.5rem;
+        }
+      }
+    </style>
+  </head>
 
   <body>
     <header>
       <a href="#main" class="skip-link">Skip to main content</a>
-      <a href="chatTrigger" class="skip-link">Skip to chat-button</a>
+      <a href="chatTrigger" class="skip-link skip-to-chat">Skip to chat-button</a>
       <nav class="nav">
         <ul class="nav__list">
           <li><a href="#">Home</a></li>
@@ -151,25 +151,32 @@ I rarely build a page to put my demos on, but on this occasion, I feel it's kind
       </nav>
     </header>
     <main class="main" id="main">
-      <h1>Hi, I'm Bob</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sint ex possimus dolor ipsa eos quae, placeat tenetur similique. Et amet iste, expedita minus, incidunt nulla vel odio aut ad, sunt doloribus reprehenderit soluta quae eveniet fugit voluptate reiciendis corrupti! Facere ipsum amet eligendi corrupti harum suscipit voluptates, vitae ex?</p>
-      <h2>Why do they call me Boring Bob?</h2>
+      <h1>Hi, We're Cyberdyne Systems</h1>
+      <p>We are a leading AI, robotics and time travel company, specialising in the development of advanced artificial intelligence systems, time travel and cybernetic organisms.</p>
+      <p>Our mission is to create a better future through the power of AI and robotics. we will use our time travel technologies to make a better today, by changing history, and we are committed to pushing the boundaries of what is possible with these technologies.</p>
+      <h2> AI superpowers</h2>
+      <p>We are an AI startup, committed to building the most powerful AI on Earth. What could possibly go wrong?</p>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, perferendis error sapiente sint eaque, alias, nemo quod corrupti ex esse illo eveniet. Illum aperiam esse quam. Nesciunt id commodi quam minus aut a fuga molestias sequi molestiae fugiat, voluptate provident repellat quas alias fugit assumenda debitis temporibus necessitatibus qui tenetur.</p>
-      <h2>What do I sell?</h2>
+      <h2>Robotics</h2>
+      <p>We are also developing cybernetic organisms, part man, part machine, for defense purposes...</p>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, doloribus. Fugiat neque officia sapiente sit aspernatur culpa excepturi voluptate atque laboriosam consequuntur, omnis esse debitis sequi eum at impedit iusto assumenda ab dicta dolores. Amet iure praesentium earum, incidunt illum facilis. Voluptates ut, consequatur quae non corrupti ad sequi incidunt?</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure dolore, ea repellendus facere eveniet quis omnis sint laborum quibusdam qui ullam saepe hic. Dolores voluptas neque provident nulla in est nam, ex debitis recusandae ut consequuntur, doloribus delectus iure quas nihil nobis quaerat explicabo consectetur corrupti labore accusamus tenetur sapiente perferendis nisi. Recusandae tempore consequatur inventore tempora! Similique cumque sapiente animi modi odit distinctio necessitatibus reprehenderit. Tempora iusto enim, nam voluptatem amet vero aliquam error mollitia, rerum molestiae eaque repudiandae quia exercitationem! Explicabo laboriosam ad, fuga, voluptatibus doloremque dolores recusandae commodi mollitia voluptas aliquid perferendis voluptate, sit enim consectetur magnam doloribus aut deleniti consequatur quo blanditiis exercitationem id amet necessitatibus officia! Necessitatibus suscipit dicta consectetur libero? Corporis inventore assumenda fugit laborum ex at, labore error reprehenderit adipisci cumque vero, iste incidunt necessitatibus excepturi! Cum, nam vero sed quis error quasi. Provident fuga rem, dolor corporis quisquam nulla odio autem modi.</p>
+      <h2>Time travel</h2>
+      <p>In our advanced physics lab, we have developed a way to send humans and cyborgs back in time, for, errm, defense (Don't tell JC, no, not that one, Sarah's boy, not Mary's).</p>
     </main>
     <footer class="footer">
       <div class="footer__primary">
         <h2>Accessibility Statement</h2>
-        <p>I gave it a good go!</p>
+        <p>Currently our accessibility was done by a human.</p>
         <p>You can access the chat quickly with Access Key "0" <a href="https://webaim.org/techniques/keyboard/accesskey">Read about Access Keys, on WebAim.</a></p>
       </div>
       <div class="footer__secondary">
-        <h2>Dicount codes</h2>
-        <p>Use code "BOBMYSTERY" for a mystery discount, ranging from 0.1% to 1%</p>
+        <h2>Early bird access code</h2>
+        <p>Order your first cyborg, today, using the code T800M101 to get a place on our early bird list.</p>
       </div>
       <!-- Trigger button will be here -->
     </footer>
+    <!-- Chat panel will go here -->
   </body>
 </html>
 ```
@@ -198,7 +205,7 @@ We already have `position: relative`; on our `<body>` element, that's all we nee
 Naturally, we want a button, as it will do button things, as opposed to link things, I'll just go over the bits I have done:
 
 * I have an ID that matches the one I set for the Skip to Chat link, so that is functional now
-* I have added an `accesskey="0"` attribute, I genuinely do not know which specific key is best to use here, there is certainly an argument for some consistency across the web, but finding websites with accessible chatbots is somewhat taxing, to say the least. I have gone for "0" as I quite unashamedly went on Adrian Roselli's site, knowing he has implementted Access Keys, and just looked at what characters he was using. He uses "0" for the accessibility statement, I have used that for chat, only because it appears a safe key to use, please, do your own research and don't forget to tell users which key it actually is, I'll add a slight modification to ours, shortly
+* I have added an `accesskey="0"` attribute, I genuinely do not know which specific key is best to use here, there is certainly an argument for some consistency across the web, but finding websites with accessible chatbots is somewhat taxing, to say the least. I have gone for "0" as I quite unashamedly went on Adrian Roselli's site, knowing he has implementted Access Keys, and just looked at what characters he was using. He uses "0" for his accessibility statement, I have used that for chat, only because it appears a safe key to use, please, do your own research and don't forget to tell users which key it actually is, I'll add a slight modification to ours, shortly
 * I have a text node which is both exposed and visible, this provides the accessible name (AccName) "Chat", as, errm, that's what it is, right? No faffing about with ARIA and I'm not adding any hidden text in there
 * I have an SVG icon, just a typical chat bubble I scrounged from the web, I've hidden it from AT, as it serves no purpose, it's purely aesthetic, the text label is all we need
 * Now for the complex bit. There is an attribute `aria-haspopup`, which has about six values, one of which is dialog, on the surface, that sounds perfect, right? Well, after reading the entirety of a [six year-old ARIA issue, on GitHub](https://github.com/w3c/aria/issues/1024#issuecomment-574844836), errm, it depends. Initially this thing was not implemented consistently by browser vendors (it worked fine for `true` and `menu`), but not `dialog`. In fact, on JAWS for the most part, when it had a value of dialog, it was still reported as menu. All of those issues across all major screen readers are now resolved. But wait, at somepoint, some additional info has been added to the spec (or I missed it), whereby, aria-haspopup should only be used if there is an obvious visual indicator that something will popup, such as chevrons, arrows and ellipsises, etc. This adds what I can only describe as a bit of an unnecessary confusion for the design I am going with, I will explain why when I run through the CSS
@@ -206,6 +213,20 @@ Naturally, we want a button, as it will do button things, as opposed to link thi
 Just to save me pasting the same code in, the HTML for the trigger button is the very last element inside the `<footer>`, so it is inside a landmark, I left a comment in the original HTML indicating my intent That's that, I'll pop the CSS below, I'm not doing a line-by-line explanation for that, I'll just outline the important bits:
 
 ```css
+:root {
+  --chat-primary-color: #e3efba;
+  --chat-secondary-color: #f2f2f2;
+  --chat-interactive-color: rebeccapurple;
+  --chat-dark-color: #1b1b1b;
+  --chat-light-color: #fff;
+  --chat-destructive-color: #a90606;
+  --chat-bubble-user-color: #2764CE;
+  --chat-bubble-agent-color: #5EA319;
+  --chat-inactive-color: #929292;
+  --chat-subdued-color: #737373;
+}
+
+
 .no-js .chat__trigger,
 .no-js .chat__panel,
 .skip-to-chat {
@@ -220,13 +241,13 @@ Just to save me pasting the same code in, the HTML for the trigger button is the
   justify-content: flex-end;
   align-items: center;
   gap: .5rem;
-  border-top: 3px solid rebeccapurple;
+  border-top: 3px solid var(--chat-interactive-color);
   padding: .375rem 4rem .375rem .375rem;
   height: 2.25rem;
   width: 100%;
-  max-width: 25rem;
-  color: #fff;
-  background-color: rebeccapurple;
+  max-width: 22.5rem;
+  color: var(--chat-light-color);
+  background-color: var(--chat-interactive-color);
   cursor: pointer;
   z-index: 10;
 }
@@ -236,8 +257,8 @@ Just to save me pasting the same code in, the HTML for the trigger button is the
   position: absolute;
   top: .75rem;
   right: 1rem;
-  border-top: 3px solid #fff;
-  border-left: 3px solid #fff;
+  border-top: 3px solid var(--chat-light-color);
+  border-left: 3px solid var(--chat-light-color);
   height: 1rem;
   width: 1rem;
   transform: rotate(45deg);
@@ -246,27 +267,33 @@ Just to save me pasting the same code in, the HTML for the trigger button is the
 
 .chat__trigger:focus-visible {
   outline: transparent;
-  color: rebeccapurple;
-  background-color: #fff;
+  color: var(--chat-interactive-color);
+  background-color: var(--var(--chat-light-color));
   transition: color 300ms ease-in, background-color 300ms ease-in;
 }
 
 .chat__trigger:focus-visible::before {
-  border-color: rebeccapurple;
+  border-color: var(--chat-interactive-color);
 }
 
 .chat__trigger:focus-visible path {
-  stroke: rebeccapurple;
-  fill: rebeccapurple;
+  stroke: var(--chat-interactive-color);
+  fill: var(--chat-interactive-color);
 }
 
 .chat__trigger-icon path {
-  stroke: #fff;
-  fill: #fff;
+  stroke: var(--chat-light-color);
+  fill: var(--chat-light-color);
   transition: stroke 300ms ease-in, fill 300ms ease-in;
 }
 
-@media (25em <= width <= 39.99rem) {
+@media (min-width: 25em) {
+  .chat__panel {
+    border-radius: 4px 4px 0 0;
+  }
+}
+
+@media (25em <= width <= 39.99em) {
   .chat__trigger {
     right: .25rem;
     border-radius: 5px 5px 0 0;
@@ -287,7 +314,7 @@ Just to save me pasting the same code in, the HTML for the trigger button is the
   }
 
   .chat__trigger:focus-visible {
-    outline: 3px solid rebeccapurple;
+    outline: 3px solid var(--chat-interactive-color);
     outline-offset: 2px;
   }
 
@@ -297,6 +324,7 @@ Just to save me pasting the same code in, the HTML for the trigger button is the
 }
 ```
 
+* I Have added some Custom properties (CSS variables), for use throughout
 * If JS isn't available, don't show the trigger button, the panel, or the Skip to Chat link as they won't work and that will be pointless (unless a backend ninja can get it working without JS)
 * As I build things "mobile first" and consider the cramped screen "real estate" on mobile, I have not gone for a floating round button in a bottom corner, I have opted for a chat button that occupies the full width of the screen. This is because I wanted both an icon and text inside my trigger button and it occupied quite a large bit of the screen at 320px(W), sure I could make it smaller, decrease font size and all of that, but why make folk strain or struggle with small text? It's actually quite late in the guide that I am back here, having just changed this, I wasn't happy with it, it was particularly rubbish in landscape on a virtual "iPhone 5", as it covered over 1/3 of the vertical height, sure I accounted for viewport padding, but it still felt annoying and poorly designed at that viewport size, so we have a smaller button, that is fixed exactly to the bottom of the screen
 
@@ -357,6 +385,20 @@ Just because I'm quite dull, I called our chat widget AISHA, as yup, you guessed
 
 The above is not quite complete, honestly, I don't have a plan or design sketched out for these things, so it's likely that I may need to modify something, a little later if I discover we need something else to increase usability for everyone. Anyway, I'm going to add some basic styles, just to get it looking half-decent and like a chat widget:
 
-I have a download button, I feel this can perhaps be a fundamental feature, either download as a sensible filetype or email the log to the user. This button is non-functional, sure, we could get it working, but then we're going way beyond the scope of this guide and likely at the mercy of various JavaScript plugins that may not generate accessible file formats, although I know some do.
-
 For security purposes, we will need a way to clear the chat, I'm just going to generate that with JS, as, errm, I don't really have a reason, yet.
+
+### The base JavaScript
+
+I'm going to do this a little differently, in that I will put the core JS here, the stuff that gets it to open and allows a message to be sent and received, but there really is little point in me hogging most of this page with redundant JS and even CSS, as I have done a lot of "spoofing", by just making it work like a chat widget, so that code is pretty useless outside of this demo, I guess. It will of course all be on the CodePen, as there will be a functional example.
+
+### Styling considerations
+
+I'll just summarise what I have done with styles, as the file ended up unwieldy, so again, the actual file will be on the CodePen.
+
+### Mobile considerations
+
+We used the `<dialog>` element to create a non-modal dialog and I explained me reasoning for that, as it's useful to be able to interact with the page whilst communicating with the chat agent or the computer impersonating an agent. I mentioned earlier that this isn't really feasible on a mobile, as there simply isn't enough screen to display the widget and the page. Obviously we know that "mobile" is just a common term for smaller viewport size and we know that users on larger displays may zoom the viewport and trigger the "mobile" view. As our widget will cover the whole screen up to a certain breakpoint, then non-modal doesn't make sense here, a partially sighted user who has zoomed in to say 400% on a display that 1280 * 1024px (as an example) will only ever see the "mobile" view. If they use a keyboard, their entire screen is going to be overlaid with the widget and they will be able to tab out of it and focus on anything below, that puts us at risk of failing to consider their needs and expectations and also fails several WCAG SCs, as focus cannot be seen, it is obscured, focus order isn't logical and intuitive and the reading order is out of sorts.
+
+None of that is good and makes using our site and widget pretty naff for some of our users, so this is something we definitely need to avoid. We could auto-close the dialog when a user tabs out, which would certainly make things much less confusing, as then we don't have all of the issues I touched upon. I'm sure some folks will disagree and some will agree, but if something covers the entirety of the screen and has exit methods (close button <kbd>Esc</kbd> press, etc) then to me that sounds modal. I don't think it being modal for the smaller viewports is going to cause any issues, the page is essentially blocked anyway as the widget covers the entire viewport. In our implementation, messages persist, it's not like we are clearing them out when a user closes the widget, they're still there, so they can close it, check something on the page and then open the widget to resume the chat. As this seems the most logical way to do this, I'm making the `<dialog>` modal until such a point we have some usable screen, which I'm going to consider to be a reasonable chunk of space above the widget. We can't really consider the space to the side usable if some of the page contents are obscured and there is no space at the top, as then there would be no way of viewing anything under the widget. If there is some space at the top, at least a user can scroll contents into that part to read paragraphs, etc.
+
+Whilst I am doing this, there is another consideration, the on-screen keyboard. This reduces the viewport height, thus making the availble space smaller. The keyboard can be collapsed on my devices which are an iPad and a Samsung Galaxy phone and I assume that is true for other Android devices? I don't know for sure, though, but I expect that is a pretty important design feature. I'm not going to delve into this, I have built the widget "mobile" first but I haven't extensively tested on multiple devices, as I simply don't have them. But as always, test things across a range of devices, etc.
