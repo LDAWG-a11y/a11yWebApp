@@ -27,339 +27,92 @@ So, a chatbot typically comprises of a trigger button located in a distant corne
 
 ## We need a proper page to put it on
 
-I rarely build a page to put my demos on, but on this occasion, I feel it's kinda important, as a chat trigger button is usually in a bottom corner and last in the sequential focus order, so, it can take a massive amount of effort to get there. Sure, tabbing in reverse is a thing, but not everybody can see it, so they may only discover it right at the end, or not at all. Also, why make folk go up in reverse? I know there are shortcuts to get back to the address bar and stuff, which would obviously save having to reverse tab through all of your bookmarks and extensions and what not, but still, it doesn't hurt to add a couple of easy ways to get to the chat, does it? The page is just going to be fluff, there will be links, they won't go anywhere (other than back to the top of the page), it'll just be nonsense and only exists to highlight an issue, I'm not going to explain anything about this basic page of fluff, just the two shortcut features we will add. So, without further ado, our page:
+I rarely build a page to put my demos on, but on this occasion, I feel it's kinda important, as a chat trigger button is usually in a bottom corner and last in the sequential focus order, so, it can take a massive amount of effort to get there. Sure, tabbing in reverse is a thing, but not everybody can see the chat trigger, so they may only discover it right at the end, or not at all. Also, why make folk go up in reverse? I know there are shortcuts to get back to the address bar and stuff, which would obviously save having to reverse tab through all of your bookmarks and extensions and what not, but still, it doesn't hurt to add a couple of easy ways to get to the chat, does it? The page is just going to be fluff, there will be links, they won't go anywhere (other than back to the top of the page), it'll just be nonsense and only exists as a placeholder page to pop the chat on. I'm not going to include the code for this, as it's largely pointless.
 
-```eex
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyberdyne Systems</title>
-
-    <style>
-      *,
-      *::before,
-      *::after {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html {
-        display: flex;
-        justify-content: center;
-      }
-
-      body {
-        position: relative;
-        width: 88rem;
-        max-width: 100%;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 1.25rem;
-        line-height: 1.5;
-        padding-bottom: 3rem;
-      }
-
-      button,
-      textarea {
-        font: inherit;
-      }
-
-      p {
-        margin-bottom: 1.5rem;
-      }
-
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      h2 {
-        font-size: 2rem;
-      }
-
-      h3 {
-        font-size: 1.75rem;
-      }
-
-      .skip-link {
-        position: absolute;
-        display: inline-block;
-        padding: .375rem .75rem;
-        line-height: 1;
-        font-size: 1.25rem;
-        background-color: var(--chat-interactive-color);
-        color: white;
-        transform: translateY(-1.5rem);
-        transition: transform 250ms ease-in;
-      }
-
-      .skip-link:not(:focus) {
-        transform: translateY(-2.75rem);
-      }
-
-      .nav {
-        display: flex;
-        justify-content: flex-end;
-        margin-bottom: 2.5rem;
-        padding:  1.5rem .25rem;
-        background-color: azure;
-      }
-
-      .nav__list {
-        display: flex;
-        gap: 1rem;
-        list-style: none;
-      }
-
-      .main {
-        margin-bottom: 2.5rem;
-        padding: 1.5rem .25rem;
-      }
-
-      .footer {
-        padding:  1.5rem .25rem;
-        background-color: azure;
-      }
-
-      @media (min-width: 30em) {
-        .nav,
-        .main,
-        .footer {
-          padding: 1.5rem 1rem;
-        }
-
-        .footer {
-          display: flex;
-          justify-content: space-between;
-          gap: 1.5rem;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <header>
-      <a href="#main" class="skip-link">Skip to main content</a>
-      <a href="chatTrigger" class="skip-link skip-to-chat">Skip to chat-button</a>
-      <nav class="nav">
-        <ul class="nav__list">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Why?</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main class="main" id="main">
-      <h1>Hi, We're Cyberdyne Systems</h1>
-      <p>We are a leading AI, robotics and time travel company, specialising in the development of advanced artificial intelligence systems, time travel and cybernetic organisms.</p>
-      <p>Our mission is to create a better future through the power of AI and robotics. we will use our time travel technologies to make a better today, by changing history, and we are committed to pushing the boundaries of what is possible with these technologies.</p>
-      <h2> AI superpowers</h2>
-      <p>We are an AI startup, committed to building the most powerful AI on Earth. What could possibly go wrong?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, perferendis error sapiente sint eaque, alias, nemo quod corrupti ex esse illo eveniet. Illum aperiam esse quam. Nesciunt id commodi quam minus aut a fuga molestias sequi molestiae fugiat, voluptate provident repellat quas alias fugit assumenda debitis temporibus necessitatibus qui tenetur.</p>
-      <h2>Robotics</h2>
-      <p>We are also developing cybernetic organisms, part man, part machine, for defense purposes...</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, doloribus. Fugiat neque officia sapiente sit aspernatur culpa excepturi voluptate atque laboriosam consequuntur, omnis esse debitis sequi eum at impedit iusto assumenda ab dicta dolores. Amet iure praesentium earum, incidunt illum facilis. Voluptates ut, consequatur quae non corrupti ad sequi incidunt?</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure dolore, ea repellendus facere eveniet quis omnis sint laborum quibusdam qui ullam saepe hic. Dolores voluptas neque provident nulla in est nam, ex debitis recusandae ut consequuntur, doloribus delectus iure quas nihil nobis quaerat explicabo consectetur corrupti labore accusamus tenetur sapiente perferendis nisi. Recusandae tempore consequatur inventore tempora! Similique cumque sapiente animi modi odit distinctio necessitatibus reprehenderit. Tempora iusto enim, nam voluptatem amet vero aliquam error mollitia, rerum molestiae eaque repudiandae quia exercitationem! Explicabo laboriosam ad, fuga, voluptatibus doloremque dolores recusandae commodi mollitia voluptas aliquid perferendis voluptate, sit enim consectetur magnam doloribus aut deleniti consequatur quo blanditiis exercitationem id amet necessitatibus officia! Necessitatibus suscipit dicta consectetur libero? Corporis inventore assumenda fugit laborum ex at, labore error reprehenderit adipisci cumque vero, iste incidunt necessitatibus excepturi! Cum, nam vero sed quis error quasi. Provident fuga rem, dolor corporis quisquam nulla odio autem modi.</p>
-      <h2>Time travel</h2>
-      <p>In our advanced physics lab, we have developed a way to send humans and cyborgs back in time, for, errm, defense (Don't tell JC, no, not that one, Sarah's boy, not Mary's).</p>
-    </main>
-    <footer class="footer">
-      <div class="footer__primary">
-        <h2>Accessibility Statement</h2>
-        <p>Currently our accessibility was done by a human.</p>
-        <p>You can access the chat quickly with Access Key "0" <a href="https://webaim.org/techniques/keyboard/accesskey">Read about Access Keys, on WebAim.</a></p>
-      </div>
-      <div class="footer__secondary">
-        <h2>Early bird access code</h2>
-        <p>Order your first cyborg, today, using the code T800M101 to get a place on our early bird list.</p>
-      </div>
-      <!-- Trigger button will be here -->
-    </footer>
-    <!-- Chat panel will go here -->
-  </body>
-</html>
-```
-
-So, the only bit of note in the above code block is the shortcut to the chat widget, a 'skip to chat' link, that does exactly what it says on the tin (well, it will do when there is a chat trigger).
-
-Just for this basic page, I've combined CSS and HTML into the same file, as nobody is going to want to use it.
-
-We will pop in an additional shortcut, some of you may know where this is going, all will be revealed.
+I have added a "Skip to chat link" at the top of the page, it acts exactly the same as a skip link, in fact, it is adjacent to one, but it is just a useful shortcut to the chat trigger.
 
 ## Let's build the trigger button
 
-No progressive enhancement on this one I'm afraid, sure we could get the chat to open and stuff, but then what? Maybe it's possible with some fancy backend stuff?  I honestly don't know, that's not my wheelhouse, I just build the fromtend stuff, if a backend ninja tells me they can do it without JS, then great. in any instance I would of course provide an alternative contact method, so phone, email, socials, whatever and the user can choose one of those if backend isn't possible.
+No progressive enhancement on this one I'm afraid, sure we could get the chat to open and stuff, but then what? Maybe it's possible with some fancy backend stuff?  I honestly don't know, that's not my wheelhouse, I just build the fromtend stuff, if a backend ninja tells me they can do it without JS, then great. in any instance I would of course provide an alternative contact method, so phone, email, socials, whatever and the user can choose one of those ifthe  backend wizardry isn't possible.
 
-We already have `position: relative`; on our `<body>` element, that's all we need to stick this in a bottom corner, so let's get the HTML written.
+We'd  have `position: relative`; on our `<body>` element, that's all we need to stick this in a bottom corner, so let's get the HTML written.
 
 ```ecr
-<button class="chat__trigger" id="chatTrigger" accesskey="0" aria-haspopup="dialog" aria-expanded="false">
-  <svg class="chat__trigger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-    <path d="M4.016 17.84c.316.32.476.758.433 1.203a16.33 16.33 0 0 1-.601 3c2.097-.484 3.375-1.047 3.953-1.34.328-.168.71-.207 1.062-.11 1.024.27 2.078.41 3.137.407 5.996 0 10.5-4.21 10.5-9S17.996 3 12 3 1.5 7.215 1.5 12c0 2.203.926 4.246 2.516 5.84m-.739 5.86c-.355.07-.71.132-1.07.19-.3.051-.527-.261-.406-.542.129-.313.254-.633.363-.953l.004-.016c.371-1.078.676-2.32.789-3.48C1.113 17.054 0 14.64 0 12 0 6.203 5.371 1.5 12 1.5S24 6.203 24 12s-5.371 10.5-12 10.5a13.374 13.374 0 0 1-3.52-.46c-.78.394-2.46 1.112-5.203 1.66"/>
-  </svg>
-  <span class="chat__trigger-label">Chat</span>
-</button>
+<footer>
+<!-- footer stuff -->
+  <button class="chat__trigger" id="chatTrigger" accesskey="9" aria-haspopup="dialog" aria-expanded="false" aria-controls="chatPanel">
+    <svg class="chat__trigger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M4.016 17.84c.316.32.476.758.433 1.203a16.33 16.33 0 0 1-.601 3c2.097-.484 3.375-1.047 3.953-1.34.328-.168.71-.207 1.062-.11 1.024.27 2.078.41 3.137.407 5.996 0 10.5-4.21 10.5-9S17.996 3 12 3 1.5 7.215 1.5 12c0 2.203.926 4.246 2.516 5.84m-.739 5.86c-.355.07-.71.132-1.07.19-.3.051-.527-.261-.406-.542.129-.313.254-.633.363-.953l.004-.016c.371-1.078.676-2.32.789-3.48C1.113 17.054 0 14.64 0 12 0 6.203 5.371 1.5 12 1.5S24 6.203 24 12s-5.371 10.5-12 10.5a13.374 13.374 0 0 1-3.52-.46c-.78.394-2.46 1.112-5.203 1.66"/>
+    </svg>
+    <span class="chat__trigger-label">Chat</span>
+  </button>
+</footer>
+<span class="message__container visually-hidden" aria-live="polite"></span>
 ```
 
 Naturally, we want a button, as it will do button things, as opposed to link things, I'll just go over the bits I have done:
 
+* I'm positioning the trigger as the last element inside the `<footer>`, so it is locatable within a landmark
 * I have an ID that matches the one I set for the Skip to Chat link, so that is functional now
-* I have added an `accesskey="0"` attribute, I genuinely do not know which specific key is best to use here, there is certainly an argument for some consistency across the web, but finding websites with accessible chatbots is somewhat taxing, to say the least. I have gone for "0" as I quite unashamedly went on Adrian Roselli's site, knowing he has implementted Access Keys, and just looked at what characters he was using. He uses "0" for his accessibility statement, I have used that for chat, only because it appears a safe key to use, please, do your own research and don't forget to tell users which key it actually is, I'll add a slight modification to ours, shortly
-* I have a text node which is both exposed and visible, this provides the accessible name (AccName) "Chat", as, errm, that's what it is, right? No faffing about with ARIA and I'm not adding any hidden text in there
-* I have an SVG icon, just a typical chat bubble I scrounged from the web, I've hidden it from AT, as it serves no purpose, it's purely aesthetic, the text label is all we need
-* Now for the complex bit. There is an attribute `aria-haspopup`, which has about six values, one of which is dialog, on the surface, that sounds perfect, right? Well, after reading the entirety of a [six year-old ARIA issue, on GitHub](https://github.com/w3c/aria/issues/1024#issuecomment-574844836), errm, it depends. Initially this thing was not implemented consistently by browser vendors (it worked fine for `true` and `menu`), but not `dialog`. In fact, on JAWS for the most part, when it had a value of dialog, it was still reported as menu. All of those issues across all major screen readers are now resolved. But wait, at somepoint, some additional info has been added to the spec (or I missed it), whereby, aria-haspopup should only be used if there is an obvious visual indicator that something will popup, such as chevrons, arrows and ellipsises, etc. This adds what I can only describe as a bit of an unnecessary confusion for the design I am going with, I will explain why when I run through the CSS
+* I have added an `accesskey="9"` attribute, I genuinely do not know which specific key is best to use here, there is certainly an argument for some consistency across the web, but finding websites with accessible chatbots is somewhat taxing, to say the least. I have gone for "9" as I quite unashamedly went on Adrian Roselli's site, knowing he has implementted Access Keys, and just looked at what characters he was using. He uses "9" for his Feedback Form, I have used that for chat, because it is a safe key to use, but mostly on our pretend site, this is the contact method, so the closest fit.Don't forget to tell users which key it actually is
+* I have a text node which is both exposed and visible, this provides the accessible name (AccName) "Chat", as, errm, that's what it is, right? No faffing about with ARIA
+* I have an SVG icon, just a typical chat bubble I scrounged from the web, I've hidden it from AT, as it serves no purpose, it's purely aesthetic, the text label is all we need, in my implementation, the chat trigger differs significantly on smaller and larger viewports, it's a full width button fixed to the bottom on smaller viewports and a typical round floaty, bottom-right corner button on larger viewports, just because of the different visuals, I hide the chat icon on smaller screens, as I thought it looked naff, obviously the text remains, though
+* Now for the complex bit. There is an attribute `aria-haspopup`, which has several possible values, one of which is \`dialog\`, on the surface, that sounds perfect, right? Well, after reading the entirety of a [six year-old ARIA issue, on GitHub](https://github.com/w3c/aria/issues/1024#issuecomment-574844836), errm, it depends. Initially this thing was not implemented consistently by browser vendors (it worked fine for `true` and `menu`), but not `dialog`. In fact, on JAWS for the most part, when it had a value of dialog, it was still reported as menu. All of those issues across all major screen readers are now resolved. But wait, at somepoint, some additional info has been added to the spec (or I missed it), whereby, \`aria-haspopup\` should only be used if there is an obvious visual indicator that something will popup, such as chevrons, arrows and ellipsises, etc. This adds what I can only describe as a bit of an unnecessary confusion for the design I am going with. I am adding an accordion below, which explains my rationale for using it. I'm honestly not saying you should, I just think my case requires it on smaller screens, but then on larger screens it doesn't due to my "design", so if you wish to read about that, open the accordion below and discover the inner workings of my tiny mind:
 
-Just to save me pasting the same code in, the HTML for the trigger button is the very last element inside the `<footer>`, so it is inside a landmark, I left a comment in the original HTML indicating my intent That's that, I'll pop the CSS below, I'm not doing a line-by-line explanation for that, I'll just outline the important bits:
+<h3 class="accordion">Rationale for aria-haspopup</h3>
+        <div class="accordion__panel">
+          <div>
+            As I build things "mobile first" and consider the cramped screen "real estate" on mobile, I have not gone for a floating round button in a bottom corner, I have opted for a chat button that occupies the full width of the screen, fixed to the bottom. This "design" is relatively common, but not as common as the floating button. I added an extra visual affordance, a chevron, to indicate the panel will popup. The panel is a `<dialog>\`, so my use of \`aria-haspopup="dialog"` is legitimate, here.
 
-```css
-:root {
-  --chat-primary-color: #e3efba;
-  --chat-secondary-color: #f2f2f2;
-  --chat-interactive-color: rebeccapurple;
-  --chat-dark-color: #1b1b1b;
-  --chat-light-color: #fff;
-  --chat-destructive-color: #a90606;
-  --chat-bubble-user-color: #2764CE;
-  --chat-bubble-agent-color: #5EA319;
-  --chat-inactive-color: #929292;
-  --chat-subdued-color: #737373;
-}
+The spec says the attribute SHOULD only be used if there is a visual indicator, and it includes chevrons as an example.
 
+Now, when we view on the larger viewport, I do not show the chevron and that is a choice that I made for aesthetic purposes. Taking the wording of the ARIA 1.2 and 1.3 spec "If there is no visual indication that an element will trigger a popup, authors are advised to consider whether use of `aria-haspopup` is necessary, and avoid using it when it's not.", I am advised to consider whether it is necessary, on larger screens, here is my justification:
 
-.no-js .chat__trigger,
-.no-js .chat__panel,
-.skip-to-chat {
-  display: none !important;
-}
+* The button itself is functionally identical, it does not operate any differently at all, on any viewport, it just looks a little different
+* Across all viewports, the chat panel is functionally the same, it expands/pops up, it has the same roles, states and properties, they have small visual differences, but the differences stop there
+* The chevron on a smaller screen is an affordance, a visual cue that informs a user that something will pop up, as the visible label is "chat", it will be clear that a chat interace will expand and/or popup into view
+* The absense of a chevron on a larger screen does not actually remove this visual affordance, in my view, this is because the floating button exists on a layer which is on top of all primary content layers, it has a small shadow to appear elevated, it is fixed to the bottom-right corner, content can scroll underneath it and it contains a chat icon, in a circular button. Chat interfaces are common, users know and expect that these things will pop up and/or expand above everything else, in the top most layer. The affordance may not be as explicit as a chevron, but it is strongly implied and in my view, therefore, expected
+* Consistency is a fundamental aspect of accessible web development, controls should have the same names across pages, links should be clear and consistently names, help should be consistently placed across screens, and much more. Not every screen reader user is blind, some low vision users will adjust the zoom level on a per site basis, sites with a smaller base font will be zoomed more, sites with a larger base font may be zoomed less. We would be providing two different sets of cues for 2 identical use cases if I stripped out the \`aria-haspopup\` property on larger screens. A user that is audibly provided that information on their laptop, at home, who then accesses later, on their phone receives an inconsistent experience, for two views that are functionally identical. This could be further complicated if the user zooms in higher on one page, then zooms out on another, they then access the control and are given completely different ARIA information, yet nothing has actually changed
 
-.chat__trigger {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: .5rem;
-  border-top: 3px solid var(--chat-interactive-color);
-  padding: .375rem 4rem .375rem .375rem;
-  height: 2.25rem;
-  width: 100%;
-  max-width: 22.5rem;
-  color: var(--chat-light-color);
-  background-color: var(--chat-interactive-color);
-  cursor: pointer;
-  z-index: 10;
-}
+I'll never be as smart as some of the folk that work on standards and specs, and I'm cool with that, I'll just continue to learn and always do my best. The spec doesn't really consider my implementation, in fact, it can't account for every possible pattern. Should I be alerted to the fact a screen reader user or ideally, several screen reader users stated my usage of this is not helpful, I'd hold my hands up and make it better, equally, I would do so should an ARIA purist pull me up on it. That would of course beg the question, why does the \`dialog\` value even exist? I believe my implementation is correct, I researched it, a lot, I read the thread I mentioned, ARIA 1.2 and 1.3 and further searched, I tested and honestly, without personally knowing any screen reader users, I'm unsure what else I could do to validate my usage of the property, at this stage. It is only a recommendation, we haven't failed anything, not that is ever the most important aspect of accessibility, the most important bit to me, is always people.
 
-.chat__trigger::before {
-  content: "";
-  position: absolute;
-  top: .75rem;
-  right: 1rem;
-  border-top: 3px solid var(--chat-light-color);
-  border-left: 3px solid var(--chat-light-color);
-  height: 1rem;
-  width: 1rem;
-  transform: rotate(45deg);
-  transition: border-color 300ms ease-in;
-}
+If you use those attributes, please do so with a little caution, if you think I am wrong and wish to school me, please do get in touch, our email address is at the bottom of each page.
+          </div>
+        </div>
 
-.chat__trigger:focus-visible {
-  outline: transparent;
-  color: var(--chat-interactive-color);
-  background-color: var(--var(--chat-light-color));
-  transition: color 300ms ease-in, background-color 300ms ease-in;
-}
-
-.chat__trigger:focus-visible::before {
-  border-color: var(--chat-interactive-color);
-}
-
-.chat__trigger:focus-visible path {
-  stroke: var(--chat-interactive-color);
-  fill: var(--chat-interactive-color);
-}
-
-.chat__trigger-icon path {
-  stroke: var(--chat-light-color);
-  fill: var(--chat-light-color);
-  transition: stroke 300ms ease-in, fill 300ms ease-in;
-}
-
-@media (min-width: 25em) {
-  .chat__panel {
-    border-radius: 4px 4px 0 0;
-  }
-}
-
-@media (25em <= width <= 39.99em) {
-  .chat__trigger {
-    right: .25rem;
-    border-radius: 5px 5px 0 0;
-  }
-}
-
-@media (min-width: 40em) {
-  .chat__trigger {
-    bottom: 1rem;
-    right: 1rem;
-    flex-direction: column;
-    gap: .2rem;
-    border-radius: 50%;
-    padding: .375rem;
-    height: 5rem;
-    width: 5rem;
-    box-shadow: -1px 1px 5px 4px rgba(46, 44, 48, 0.25);
-  }
-
-  .chat__trigger:focus-visible {
-    outline: 3px solid var(--chat-interactive-color);
-    outline-offset: 2px;
-  }
-
-  .chat__trigger::before {
-    display: none;
-  }
-}
-```
-
-* I Have added some Custom properties (CSS variables), for use throughout
-* If JS isn't available, don't show the trigger button, the panel, or the Skip to Chat link as they won't work and that will be pointless (unless a backend ninja can get it working without JS)
-* As I build things "mobile first" and consider the cramped screen "real estate" on mobile, I have not gone for a floating round button in a bottom corner, I have opted for a chat button that occupies the full width of the screen. This is because I wanted both an icon and text inside my trigger button and it occupied quite a large bit of the screen at 320px(W), sure I could make it smaller, decrease font size and all of that, but why make folk strain or struggle with small text? It's actually quite late in the guide that I am back here, having just changed this, I wasn't happy with it, it was particularly rubbish in landscape on a virtual "iPhone 5", as it covered over 1/3 of the vertical height, sure I accounted for viewport padding, but it still felt annoying and poorly designed at that viewport size, so we have a smaller button, that is fixed exactly to the bottom of the screen
-
-  * This is where it gets confusing. So, you may notice I have created an up arrow/chevron which indicates our `dialog` will popup, I provided this visual affordance as it isn't uncommon, it makes sense and it provides users with a robust indication of what will happen: the chat will popup. So reading the spec, the guidance is to use `aria-haspop="dialog"`, as that is what we are using, remember this is a property, not a state, so should be used in conjunction with `aria-expanded`, to inform unsighted users of the current state. All good so far, right?
-  * Well, I did not intend to have anything other than a circular button in the bottom right corner, which would of course contain the same text and chat bobble icon. I have no intention of adding a chevron here, as it will look too busy, it isn't something I have ever seen and a floating circle button, positioned in the bottom right hand corner, with our icon and text, seems to provide all of the visual affordances a user could need. It's a very common pattern. So, now I am doing away with the arrow, in favour of a conventional circular button, the guidance indicated I should not use `aria-haspopup`. Consider this scenario, a low vison user that uses a screen reader, has a quick tab through our page, they hear the information that this button is collapsed and has a dialog. They then zoom in enough to trigger the mobile view, the buttons shape and position change, but it is by no means anything drastic, it's still obviously the same control. Only now they focus on it, they have no idea it will open a dialog and there is no state, either
-  * What do we do here? Sure, I am buiding this thing, I am designing (if you could call it that) and building it and I can do whatever I want regarding styles and stuff. I could easily change some aspect so it displays consistently (same shape, similar position) on all viewports, but that would be too easy, right? For what it is worth, I don't have any particular preference, I only changed the chat trigger to a circular button at the last hour, because it didn't feel like a very good user experience. i identified a problem, I came up with what I believe is a logical solution and now I face a conundrum. Do I use JS to remove the ARIA from the button when the viewport hits my chosen breakpoint (it's easy to do) or do i just roll with what I have, as technically, it's the same button that opens the same dialog, that does exactly the same thing across all viewports. Whilst there is no chevron for the circular button, there are affordances, albeit more discreet. The shape, floatiness, position, size, icon, text, shadow all make it visually obvious what will happen. It's obvious because these things are popping up (sigh) everywhere, users learn from sites, they have expectations, they expect things to work similarly ocross all sites. Due to the ubiquitous nature of this pattern, the majority of users will expect a panel of some description to pop up, within said panel, they can ask questions and receive answers
-  * I'm going to apprehensively leave the attributes in. As this particular ARIA is only going to be communicated to screen reader users (it isn't going to affect anybody else) and I honestly do not know what to do for the best, here, logic says that nothing materially changes, some minor visual changes occur, but the functionality is identical and being consistent across our UIs helps meet user expectations. This is by no means me decididing what is best, I just find the attribute to be a little confusing and I'm certainly not a "know it all", but I do have decent reading comprehension and I haven't just designed a new pattern that doesn't exist elsewhere, because it does exist. So, I'm gonna stick with what I have, as always, I'm happy to discuss or even be schooled by a screen reader user or ARIA afficionado, my intent is to provide a consistent UI, the spec I rely on cannot cover pattern, so I am left in what appears to be a grey area. It does not fail any SC, however, its use may be superfluous or overly verbose and I cannot reach out to a bunch of screen reader users to get the only opinion that actually counts, so, I'm leaving it as is, I'm doing so with the best intentions and I'm more than happy to be schooled
-* I added a decent focus indicator (colour inversion)
-* The rest is just styles to make it look the way it does, it's not perfect, it's not the fanciest, but we're not here for design lessons, well, if you are, you might be in the wrong place
-* One potential issue that I have crudely "solved" is I have added an extra bit of `padding` to the `<footer>`'s bottom, which ensures a user can scroll down a little further, so the position: fixed; trigger button does not obscure any content at all
+I'm not going to provide the CSS, here and my justification for that is I made the mistake of not planning out the component. I changed many things, added multiple new features and generally made a mess of my CSS, so I don't want to show it off. I say that, but there will of course be a CodePen and all of the code is there, even though it isn't pretty.
 
 ## Let's make the chat panel
 
 Straight into the HTML, here, as I am aware I waffle:
 
 ```eex
-<dialog class="chat__panel" aria-labelledby="chatTitle" id="chatPanel" open>
+ <dialog class="chat__panel" aria-labelledby="chatTitle" id="chatPanel" data-clean>
   <div class="chat__upper">
     <h1 class="chat__title" id="chatTitle">AISHA Chat</h1>
-    <button class="chat__download-btn">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M20.383 15.297v5.48H3.613v-5.48H.391v7.094c0 .886.722 1.609 1.613 1.609h19.988c.895 0 1.617-.719 1.617-1.61v-7.093ZM11.703 14.75 7.09 9.176s-.703-.664.058-.664H9.75V.395S9.645 0 10.242 0h3.66c.43 0 .418.332.418.332v8.012h2.403c.922 0 .226.695.226.695s-3.926 5.211-4.472 5.758c-.395.398-.774-.047-.774-.047Zm0 0"/>
-      </svg>
-      <span class="visually-hidden">Download</span>
-    </button>
     <button class="chat__close-btn" id="chatCloseBtn"><span class="visually-hidden">Minimise</span></button>
+    <button class="chat__delete-btn" id="chatDeleteBtn" aria-controls="confPanel" aria-expanded="false">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+        <path d="M10.398 14.398H12V27.2h-1.602ZM15.2 14.398h1.6V27.2h-1.6ZM20 14.398h1.602V27.2H20Zm0 0" style="stroke:none;fill-rule:nonzero;fill-opacity:1"/>
+        <path d="M26.398 3.2H20V1.601C20 .715 19.285 0 18.398 0h-4.796C12.715 0 12 .715 12 1.602v1.597H5.602C4.715 3.2 4 3.918 4 4.801V8c0 .883.715 1.602 1.602 1.602v20.796c0 .887.714 1.602 1.597 1.602h17.602c.883 0 1.597-.715 1.597-1.602V9.602C27.285 9.602 28 8.882 28 8V4.8c0-.882-.715-1.6-1.602-1.6ZM13.602 1.601h4.796v1.597h-4.796ZM24.8 30.398H7.199V9.602h17.602ZM26.398 8H5.602V4.8h20.796Zm0 0" style="stroke:none;fill-rule:nonzero;fill-opacity:1"/>
+      </svg>
+      <span class="visually-hidden">Delete chat</span>
+    </button>
+    <div class="chat__confirm-panel" id="confPanel">
+      <p>Are you sure you want to delete this chat?</p>
+      <button class="chat__confirm-btn" id="confirmYes">Yes</button>
+      <button class="chat__confirm-btn" id="confirmNo">No</button>
+    </div>
   </div>
-  <div class="chat__window" role="log" aria-labelledby=”cLog”>
+  <div class="chat__window" role="log" aria-labelledby=”cLog” tabindex="0">
     <h2 class="chat__window-title" id="cLog">Chat log</h2>
+    <div class="chat__bubbles"></div>
   </div>
   <div class="chat__lower">
-    <label class="chat__input-label" for="chatInput">Ask us anything...</label>
+    <label class="chat__input-label" for="chatInput">Ask me anything...</label>
     <div class="chat__input-wrapper">
       <textarea type="text" id="chatInput" class="chat__input"></textarea>
-      <button type="button" class="chat__submit"><span class="visually-hidden">Send</span>
+      <button type="button" class="chat__submit" id="sendQ"><span class="visually-hidden">Send</span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 32 32">
           <path d="M10.648 29.523a.517.517 0 0 0 .809.426l3.563-2.43-4.372-2.085ZM31.832 2.098a.517.517 0 0 0-.578-.086L.512 17.094a.912.912 0 0 0-.512.828.922.922 0 0 0 .52.82l8.105 3.86 16.2-13.317L10.632 23.56l10.094 4.808a.908.908 0 0 0 1.242-.488l9.996-25.211a.513.513 0 0 0-.133-.57Zm0 0"/>
         </svg>
