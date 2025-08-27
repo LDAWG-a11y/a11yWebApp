@@ -4,7 +4,7 @@ summary: Chatbots are now common place, seldom are they accessible, they are
   often designed without any considerations for people with disabilities, so
   let's fix that
 author: dlee
-date: 2025-07-17
+date: 2025-08-27
 toc: true
 tags:
   - HTML
@@ -19,11 +19,13 @@ Pretty much everywhere we go on the web these days, we'll be greeted by some for
 
 I'm not going to delve too deeply into my opinions on AI, sure, it has its uses in some scenarios, but ultimately it's not something I'm overly keen on, I'd much rather speak to a person than get a response devoid of human characteristics. I also prefer my responses to be accurate, not "best matched" based upon wherever the "AI" scraped that response from. Anyway, this isn't an article about AI, not all chatbots are AI, most chatbots are in fact, just poorly marked up, which presents a huge barrier for folks with disabilities.
 
-I recently tested a chatbot and whilst I have no doubt the backend stuff is highly complex, particularly if it's just a computer answering the questions, I built myself a tiny prototype, just to explore the difficulty and effectiveness of my suggested solution. It wasn't overly difficult, but then I reall did only build an ultra basic prototype, without styles and missing some bells and whistles. Obviously I always start any task with "How can I make this accessible?" mindset, and when I factor that in from the start, I personally find it easier,
+I recently tested a chatbot and whilst I have no doubt the backend stuff is highly complex, particularly if it's just a computer answering the questions, I built myself a tiny prototype, just to explore the difficulty and effectiveness of my suggested solution. It wasn't overly difficult, but then I really did only build an ultra basic prototype, without styles and missing many bells and whistles. Obviously I always start any task with "How can I make this accessible?" mindset, and when I factor that in from the start, I personally find it easier,
 
-This isn't going to be an advanced chatbot, I don't personally see the point in me wasting endless hours getting it to scrape info from other sources, so if you've stumbled across this article in the hope of finding out how to build an AI chatbot, that bit is not included, but be like everybody else here, and learn how to build an accessible chat interface. So, just to be clear, we are going to build a chatbot, which functions as it should and it should function in a way that works for everybody, it won't however, be very smart, I'm probably going to only have answers to a few questions and a suggestion for everything else. I'll be honest here, at this stage, I have absolutely zero idea how to account for certain aspects of language, typos, spelling mistakes and anything else that could result in you and me having the same question, but a different way of asking it. That's also not something I'm. going to explore as, well, the interface is my bit, I'll just fudge a few silly questions and answers as a proof of concept.
+This isn't going to be an advanced chatbot, I don't personally see the point in me wasting endless hours getting it to scrape info from other sources, so if you've stumbled across this article in the hope of finding out how to build an AI chatbot, that bit is not included, but be like everybody else here, and learn how to build an accessible chat interface. So, just to be clear, we are going to build a chatbot, which functions as it should and it should function in a way that works for everybody, it won't however, be very smart, I'm only going to have answers to a few pre set questions and a suggestion for everything else. I'll be honest here, I have absolutely zero idea how to account for certain aspects of language, typos, spelling mistakes and anything else that could result in you and me having the same question, but a different way of asking it. That's also not something I'm. going to explore as, well, the interface is my bit, I'll just fudge a few silly questions and answers as a proof of concept.
 
-So, a chatbot typically comprises of a trigger button located in a distant corner of the screen, once clicked, a popup or dialog appears with all of the chat's UI, and seldom are they as simple as an input, a button and a chat pane, they often have a couple of other controls, for additional features. They also often have rich responses, which can take the form of interactive elements that a user may interact with, perhaps buttons, with suggested quick questions or thumbs up and thumbs down things. I'll pop add the thumbs up/down things, as in the wild, we're often training AI by using these, and that's what makes them so common, I guess.
+Because I felt like I needed a theme or something, for my chat bot, and I like to be a little different, were not going to be asking about fruit or cats, I'll theme it a little based upon the Terminator movies franchise, just because it seemed fun to do that, with my fake AI chatbot.
+
+So, a chatbot typically comprises of a trigger button located in a distant corner of the screen, once clicked, a popup or dialog appears with all of the chat's UI, and seldom are they as simple as an input, a button and a chat pane, they often have a couple of other controls, for additional features. They also often have rich responses, which can take the form of interactive elements that a user may interact with, perhaps buttons, with suggested quick questions or thumbs up and thumbs down things. I'll add the thumbs up/down things, as in the wild, we're often training AI by using these, and that's what makes them so common, I guess.
 
 ## We need a proper page to put it on
 
@@ -57,6 +59,7 @@ Naturally, we want a button, as it will do button things, as opposed to link thi
 * I have added an `accesskey="9"` attribute, I genuinely do not know which specific key is best to use here, there is certainly an argument for some consistency across the web, but finding websites with accessible chatbots is somewhat taxing, to say the least. I have gone for "9" as I quite unashamedly went on Adrian Roselli's site, knowing he has implementted Access Keys, and just looked at what characters he was using. He uses "9" for his Feedback Form, I have used that for chat, because it is a safe key to use, but mostly on our pretend site, this is the contact method, so the closest fit.Don't forget to tell users which key it actually is
 * I have a text node which is both exposed and visible, this provides the accessible name (AccName) "Chat", as, errm, that's what it is, right? No faffing about with ARIA
 * I have an SVG icon, just a typical chat bubble I scrounged from the web, I've hidden it from AT, as it serves no purpose, it's purely aesthetic, the text label is all we need, in my implementation, the chat trigger differs significantly on smaller and larger viewports, it's a full width button fixed to the bottom on smaller viewports and a typical round floaty, bottom-right corner button on larger viewports, just because of the different visuals, I hide the chat icon on smaller screens, as I thought it looked naff, obviously the text remains, though
+* You may notice there is a live region present, which is outside of the chat panel, this isn't for the responses, this is for when the chatbot is closed. At least in my experience, when there is a human on the other end, often they take ages to reply on eCommerce sites, obviously they are helping multiple customers at the same time, so responses aren't instant, so I usually continue browsing whilst I await my response. In that situation, we would need both a viual indicator (badge) and an announcement for screen reader users, this is all that live region is there for
 * Now for the complex bit. There is an attribute `aria-haspopup`, which has several possible values, one of which is \`dialog\`, on the surface, that sounds perfect, right? Well, after reading the entirety of a [six year-old ARIA issue, on GitHub](https://github.com/w3c/aria/issues/1024#issuecomment-574844836), errm, it depends. Initially this thing was not implemented consistently by browser vendors (it worked fine for `true` and `menu`), but not `dialog`. In fact, on JAWS for the most part, when it had a value of dialog, it was still reported as menu. All of those issues across all major screen readers are now resolved. But wait, at somepoint, some additional info has been added to the spec (or I missed it), whereby, \`aria-haspopup\` should only be used if there is an obvious visual indicator that something will popup, such as chevrons, arrows and ellipsises, etc. This adds what I can only describe as a bit of an unnecessary confusion for the design I am going with. I am adding an accordion below, which explains my rationale for using it. I'm honestly not saying you should, I just think my case requires it on smaller screens, but then on larger screens it doesn't due to my "design", so if you wish to read about that, open the accordion below and discover the inner workings of my tiny mind:
 
 <h3 class="accordion">Rationale for aria-haspopup</h3>
@@ -103,7 +106,7 @@ Straight into the HTML, here, as I am aware I waffle:
       <legend>Are you sure you want to delete this chat?</legend>
       <button class="chat__confirm-btn" id="confirmYes">Yes</button>
       <button class="chat__confirm-btn" id="confirmNo">No</button>
-    </div>
+    </fieldset>
   </div>
   <div class="chat__window" role="log" aria-labelledby=”cLog” tabindex="0">
     <h2 class="chat__window-title" id="cLog">Chat log</h2>
@@ -127,33 +130,179 @@ Quick explainer:
 
 * I'm using a `<dialog>` as I want to group all of the things together, so that relationship is evident, an expandable chat widget does have dialog-type behaviour, in that it is on the highest layer of the UI and will therefore, at least visually block elements underneath. We could go for a modal dialog, however, I'm reluctant to go down that route, there are times where I may be speaking to a customer service agent, asking for help, and I need to actually interact with the page, as they are helping me check or locate something. Perhaps something I want is out of stock, perhaps they suggest a slightly different model/colour and I want to stay in the same window, but learn about their suggestion (I appreciate this is problematic on a phone). I am only basing this on my own experiences, but being able to interact with the underlying page, whilst speaking through chat seems like something that would be common, for all manner of reasons, right? The chat is self-contained, it can and should stay current, be functional and not lose state or data, across pages, so a `<dialog>` seems like a sensible call.
 * A `<dialog>` needs a name, so I've added an `aria-labelledby` attribute, the IDRef of which points to the dialog's main heading
-* I have added the `open` attribute as a temporary measure, this is just so I can see the element and style it, we will remove it when we add the JS functionality
 * I've added a few containers:
 
   * A container at the top which will hold the main heading, and two buttons, one to minimise the chat, and one to delete the chat. I felt the Delete button to be important, there are tonnes of reasons why a user may wish to delete their chat history, surprise birthday presents, privacy, safety, whatever
   * As Delete chat is a destructive action, we don't want to insta-delete everything, as sometimes buttons are hit by mistake. I'm not one for ads and other intrusions, I block everything I can, but those ones that get through often cause the page to jump around, I "accidentally" accept cookies sometimes, as I was attempting to click something, and bang, what a coincidence, the "Accept all cookies" button popped up exactly where the main call to action is (if I were a sceptic, which I am, I would say that is absolutely intentional from some shady developers/product teams, they know what they are doing, but I delete my cookies anyway). So, we have a small disclosure that asks if the user is sure they want to delete all of the chat, with a Yes and No button, we wrap those in a fieldset as they are of course related
-  * A `.Chat__window`container, which has `role="log"` and an AccName, which is pointing to ta visually hidden heading, this particular container will only hold the actual conversational parts of our widget, so questions, answers and quick responses/suggestions, etc. The `role="log"` element needs that AccName, we don't need to display that AccName and as `aria-labelledby` completely ignores `display: none;`, etc, we'll use that, to reduce repetition, also, because I'm hoping it won't be announced as part of the spoken output of conversations, I can't see why it would be, but we'll figure that out when we get there. The reason I have used [`role="log"`](https://www.w3.org/TR/wai-aria-1.2/#log) is because it is a live region, it has an implied `aria-live="polite"` (We do not need to explicitly state it), it will announce new entries (Q&As) and it provides a meaningful sequence of the log in general. Whilst this role has several uses, it was of course designed for this usage. I have also added a tabindex="0" to this element, as that enables a user to scroll the region, as it will have overflow after a couple of responses
-  * We have a wrapper that wraps the input field and <button>, this is just for styling purposes
-  * We have a `<textarea>` element in the bottom container which alllows our users to ask questions in multiline format, we'll make the height or the rows adjust up to a certain height, to assist in readability. As a question may have several lines of text and a user may want to edit something, it wouldn't be a great experience if they had to do this in a single line input. We have a `<label>`, of course, as knowing what something is actually called is probably kinda useful to users &#x1F60F . Finally there is a button with the paper aeroplane icon as an SVG, which again, is the typical icon one would expect most users to be familiar with, as it is very common, we have a visually hidden AccName in there "Send"
+  * A `.Chat__window`container, which has `role="log"` and an AccName, which is pointing to ta visually hidden heading, this particular container will only hold the actual conversational parts of our widget, so questions, answers and quick responses/suggestions, etc. The `role="log"` element needs that AccName, we don't need to display that AccName and as `aria-labelledby` completely ignores `display: none;`, etc, we'll use that, to reduce repetition. The reason I have used [`role="log"`](https://www.w3.org/TR/wai-aria-1.2/#log) is because it is a live region, it has an implied `aria-live="polite"` (We do not need to explicitly state it), it will announce new entries (Q&As) and it provides a meaningful sequence of the log in general. Whilst this role has several uses, it was of course designed for this usage. I have also added a `tabindex="0"` to this element, as that enables a keyboard user to scroll the region, as it will have overflow after a couple of responses
+  * We have a wrapper that wraps the input field and `<button>`, this is just for styling purposes
+  * We have a `<textarea>` element in the bottom container which alllows our users to ask questions in multiline format, we'll make the height or the rows adjust up to a certain height, to assist in readability. As a question may have several lines of text and a user may want to edit something, it wouldn't be a great experience if they had to do this in a single line input. We have a `<label>`, of course, as knowing what something is actually called is probably kinda useful to users. Finally there is a button with an SVG paper aeroplane icon, which again, is the typical icon one would expect most users to be familiar with, as it is commonplace, we have a visually hidden AccName in there "Send"
+
+<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">If ypou are brave enough to delve into my messy CSS, you will discover I have used the `field-sizing` CSS property, which increases the height of the input, when new lines of text are added, up until the hard limit I set on the element itself. This is to save me adding that functionality with JavaScript, it does not work in Firefox or Safari, at this moment in time (no surprises there), it is available in Safari Technology Preview, at the time of writing, so presumably, it will be supported in regular Safari before the next mass extinction event</span></div>
 
 Just because I'm quite dull, I called our chat widget AISHA, as yup, you guessed it, it begins with AI. I ddn't put too much thought into this, but Artificial Intelligence Should Have Accessibility was the best I could come up with. I know it's not the AI that should have it in this case, just the widget, but I felt like I had to have some thinly veiled dig at the majority of these widgets.
 
-The above is not quite complete, honestly, I don't have a plan or design sketched out for these things, so it's likely that I may need to modify something, a little later if I discover we need something else to increase usability for everyone. Anyway, I'm going to add some basic styles, just to get it looking half-decent and like a chat widget:
-
-For security purposes, we will need a way to clear the chat, I'm just going to generate that with JS, as, errm, I don't really have a reason, yet.
-
 ### The base JavaScript
 
-I'm going to do this a little differently, in that I will put the core JS here, the stuff that gets it to open and allows a message to be sent and received, but there really is little point in me hogging most of this page with redundant JS and even CSS, as I have done a lot of "spoofing", by just making it work like a chat widget, so that code is pretty useless outside of this demo, I guess. It will of course all be on the CodePen, as there will be a functional example.
+I'm going to do this a little differently, in that I will put the core JS here, the stuff that gets it to open and allows a message to be sent and received, but there really is little point in me hogging most of this page with redundant JS and even CSS, as I have done a lot of "spoofing", by just making it work like a chat widget, so that code is pretty useless outside of this demo, I guess. It will of course all be on the CodePen, as there will be a functional example. For my purposes, this is literally proof-of-concept/prototype, my code is messy, I'd build it much better next time, I would of course plan it out, which makes building it a lot more logical. Anyway, here's the core bits of code:
+
+```javascript
+// Some variable for reuse
+
+const chatTrigger = document.getElementById('chatTrigger');
+const chatPanel = document.getElementById('chatPanel');
+const questionInput = document.getElementById('chatInput');
+const msgBox = document.querySelector('.message__container');
+const chatWindow = document.querySelector('.chat__window');
+const chatLabel = document.querySelector('.chat__trigger-label');
+const chatCloseBtn = document.getElementById('chatCloseBtn');
+const chatDeleteBtn = document.getElementById('chatDeleteBtn');
+let typingTime = 3000;
+let aishaTyping = false;
+let cIdx = 1;
+let disableSend = false
+let currTime = new Date();
+let screenWidth = window.matchMedia('(width <= 39.99em)');
+let smallViewport = screenWidth.matches;
+
+
+// Handle the clicks on the trigger, delegate to the open or close function
+// based upon the crrent state of aria-expanded
+chatTrigger.addEventListener('click', () => {
+  if (chatTrigger.getAttribute('aria-expanded') === 'false') {
+    openChat()
+  } else {
+    closeChat()
+  }
+})
+
+// Open the chat, if it's the first time, call the welcome() function
+// Check for a notification, if it's there, remove it
+const openChat = () => {
+  chatTrigger.setAttribute('aria-expanded', 'true');
+  chatPanel.show();
+
+  questionInput.focus();
+  document.body.setAttribute('data-chat', 'open');
+  msgBox.innerText = '';
+  if (chatWindow.hasAttribute('data-notification')) {
+    document.querySelector('.chat__badge').remove();
+    chatLabel.innerText = 'Chat';
+  }
+  if (chatPanel.hasAttribute('data-clean')) {
+    welcome();
+  }
+}
+
+// Close the chat
+const closeChat = () => {
+  chatTrigger.setAttribute('aria-expanded', 'false');
+  document.body.setAttribute('data-chat', 'closed');
+  chatPanel.close();
+}
+
+chatCloseBtn.addEventListener('click', () => {
+  closeChat();
+})
+
+// Handle clicking on the delete button, which just shows the confirm actions
+chatDeleteBtn.addEventListener('click', () => {
+  chatDeleteBtn.getAttribute('aria-expanded') === 'false' ? chatDeleteBtn.setAttribute('aria-expanded', 'true') : chatDeleteBtn.setAttribute('aria-expanded', 'false')
+})
+
+// Handle the confirm buttons and call the deleteChat() function if Yes was clicked
+document.querySelectorAll('.chat__confirm-btn').forEach((btn) => {
+  btn.addEventListener('click', (evt) => {
+    if (evt.target.id === 'confirmYes') {
+      deleteChat();
+    }
+    chatDeleteBtn.setAttribute('aria-expanded', 'false');
+    chatDeleteBtn.focus();
+  })
+});
+
+// Delete everything, set chat back to initial state
+const deleteChat = () => {
+  chatBubbles.innerHTML = '';
+  cIdx = 1;
+  questionInput.value = '';
+  questionInput.focus();
+  questionSendBtn.removeAttribute('disabled');
+  disableSend = false;
+  aishaTyping = false;
+  chatWindow.removeAttribute('data-rich-response');
+  chatPanel.setAttribute('data-clean', '');
+  welcome();
+}
+
+// Listen for any changes to the viewport size, we are only interested in large or small
+screenWidth.onchange = (evt) => {
+  if (evt.matches) {
+    smallViewport = true;
+  } else {
+    smallViewport = false;
+  }
+}
+
+// If a user is viewing on a smaller viewport, the panel covers the screen, so after a small
+// delay, I'm auto closing the panel if they tab out, but only on smaller screens
+chatPanel.addEventListener('focusout', (evt) => {
+  if (document.body.getAttribute('data-chat') === 'open' && smallViewport) {
+    if (chatPanel.contains(evt.relatedTarget)) return;
+    setTimeout(() => {
+      closeChat();
+    }, 1500);
+  }
+})
+
+// Close the panel if a user presses Esc
+// if there focus is inside the panel when they press Esc, move it to the trigger, else, leave it wherever it is
+window.addEventListener('keydown', (evt) => {
+  if (evt.key === 'Escape' && document.body.getAttribute('data-chat') === 'open') {
+    if (document.activeElement.closest('.chat__panel')) chatTrigger.focus()
+    closeChat();
+  }
+})
+```
+
+
+
+### Functionality
+
+* Pressing <kbd>Enter</kbd> whilst focus is within the input, will submit the question, so no need to tab to the Send button
+* I have implemented a fake delay for responses, each response takes three seconds (with one exception)
+* During the delay, a typing indicator appears, with hidden text "AISHA is typing", this is announced as it is within the \`role="log" region\`. rememeber a computer response could in theory be near instantaneous, whereas a human may take time to type their response
+* I have done somethings slightly unconventional, as this is a basic implementation:
+
+  * Only one question can be submitted at once, the button will not send a second question until a response has been received, this is something that is somethimes prevalent when you go through the virtual assistant parts of a chat, which then ultimately directs you to the correct type of human agent, etc. Obviously this would be a silly choice on an instant messaging widget, as they are not turn-based exchanges. The only reason I have gone down this route is because I wanted to keep it simple(ish), I'd have to build a message queue and a response queue, a user could in theory be like my child when she's trying to grab my attention and send 163 one word messages, in a barrage of rapid annoyance, that will each say "Dad", then when I finally have chance to type my reply "Yes x", she will then say "What time is tea\[dinner]", I was literally in the kitchen, making it, it took me about 12 seconds to get to my phone and from upstairs she sends 100s of messages in that 12 seconds (insert_eye_roll_emoji). So, unless your widget is turn-based, which is rare, don't fudge it, like me
+  * Because I have enforced a turn-based approach, my exchanges are within landmarks, the AccName of which is the user question (which is a `<h3>\`, because much like an FAQ, that's pretty conventional). That will only really work for turn-based, otherwise it'll end up a mess when the sequence of questions/responses is not linear. We could of course auto-quote questions adn then build a response with that quote as the heading question, with the response below, although wether this is a good idea would need further investigation and testing. Not all chat widgets are for questions and responses, so for an instant messaging platform a landmark would not be a sensible option, but some form of heading structure would enable a screen reader user to bring up the Rotor/Elements panel and search for things based upon headings. I looked at many chatbots, most were trash, the MS Teams (Web GUI) chat does use headings, for all chat bubbles which are \`<h4>` elements. Some smart folk work at MS, I have to assume these smart folk have had some input in Teams and this is a good idea? Who knows, though.
+  * I have added a date, then only for user questions I have added a time, in reality, this could be better, we could add the date for each new day, then the time for all messages
+  * I add in visible text, "AISHA" and "You" to the corresponding messages, it's all fine and well, sticking to convention and using visual affordances to indicate who said what, but blind people cannot see those, so
+  * When an agent response includes Quick Responses "Yes" or "No" type buttons, etc, those buttons will the be removed from the panel and turned into text replies
+  * There is one question which I have multiplied the response time by three, so it will take nine seconds, this is just to give you a chance to close the chat panel and see or hear the notification, it only works for this one question
+* I have added a soft dismiss, so pressing <kbd>Esc</kbd> whilst the panel is open will close it. If focus is within the panel, we need to manage that, so we send it to the only logical place, the trigger element. We don't want to interfere with focus if a user is elsewhere on the page, though, so we just leave it in situ. A user may have focused on something under the panel, they press <kbd>Esc</kbd>, to close it, we don't want to hijack focus and force our user into finding their place gain, so the only thing we do, is close it
+* Pressing the Send button will return focus back to the input if and only if the user actually submitted a question
+* We scroll the agent response into view, so it can be seen
+* As we are using \`role="log"\` responses are announced, however, in my testing the full response is not always announced, this is prevalent for those responses that include interactive responses, such as buttons, etc. I believe this is because of my functions, where I generate additional responses, also, I have my screen reader speed on default, for some reason, which is actually very slow. So, this is something that should be investigated further, remember, this is an example and definitely not a polished, production-ready widget. A screen reader user can of course <kbd>Tab</kbd> back into the window and listen to to responses in full
 
 ### Styling considerations
 
 I'll just summarise what I have done with styles, as the file ended up unwieldy, so again, the actual file will be on the CodePen.
 
+* We need a focus indicator on all interactive elements
+* I have made several visual changes to indicate the difference between user messages and agent responses:
+
+  * Agent responses are green, user questions blue
+  * User questions have bold text
+  * Agent responses are left-aligned speech bubbles, user questions are right-aligned bubbles
+* All contrast for icons and text is compliant
+
 ### Mobile considerations
 
-We used the `<dialog>` element to create a non-modal dialog and I explained me reasoning for that, as it's useful to be able to interact with the page whilst communicating with the chat agent or the computer impersonating an agent. I mentioned earlier that this isn't really feasible on a mobile, as there simply isn't enough screen to display the widget and the page. Obviously we know that "mobile" is just a common term for smaller viewport size and we know that users on larger displays may zoom the viewport and trigger the "mobile" view. As our widget will cover the whole screen up to a certain breakpoint, then non-modal doesn't make sense here, a partially sighted user who has zoomed in to say 400% on a display that 1280 * 1024px (as an example) will only ever see the "mobile" view. If they use a keyboard, their entire screen is going to be overlaid with the widget and they will be able to tab out of it and focus on anything below, that puts us at risk of failing to consider their needs and expectations and also fails several WCAG SCs, as focus cannot be seen, it is obscured, focus order isn't logical and intuitive and the reading order is out of sorts.
+We used the `<dialog>` element to create a non-modal dialog and I explained my reasoning for that, as it's useful to be able to interact with the page whilst communicating with the chat agent or the computer impersonating an agent. I mentioned earlier that this isn't really feasible on a mobile, as there simply isn't enough screen to display the widget and the page, together. Obviously we know that "mobile" is just a common term for smaller viewport size and we know that users on larger displays may zoom the viewport and trigger the "mobile" view. As our widget will cover the whole screen up to a certain breakpoint, what value does it have if it remains open, when a user tabs out? I can't think of any, so I have implemented an auto-close feature, only when the screen is "small", because otherwise a sighted keyboard user isn't going to be able to track keyboard focus and they'd need to close it to interact with the page, anyway. i do this after a small 1.5s delay. I'm definitely not precious, here, maybe there is a better way? This only happens when we detect the viewport as being "small", as it makes sense to leave it open on larger displays.
 
-None of that is good and makes using our site and widget pretty naff for some of our users, so this is something we definitely need to avoid. We could auto-close the dialog when a user tabs out, which would certainly make things much less confusing, as then we don't have all of the issues I touched upon. I'm sure some folks will disagree and some will agree, but if something covers the entirety of the screen and has exit methods (close button <kbd>Esc</kbd> press, etc) then to me that sounds modal. I don't think it being modal for the smaller viewports is going to cause any issues, the page is essentially blocked anyway as the widget covers the entire viewport. In our implementation, messages persist, it's not like we are clearing them out when a user closes the widget, they're still there, so they can close it, check something on the page and then open the widget to resume the chat. As this seems the most logical way to do this, I'm making the `<dialog>` modal until such a point we have some usable screen, which I'm going to consider to be a reasonable chunk of space above the widget. We can't really consider the space to the side usable if some of the page contents are obscured and there is no space at the top, as then there would be no way of viewing anything under the widget. If there is some space at the top, at least a user can scroll contents into that part to read paragraphs, etc.
+## The CodePen
 
-Whilst I am doing this, there is another consideration, the on-screen keyboard. This reduces the viewport height, thus making the availble space smaller. The keyboard can be collapsed on my devices which are an iPad and a Samsung Galaxy phone and I assume that is true for other Android devices? I don't know for sure, though, but I expect that is a pretty important design feature. I'm not going to delve into this, I have built the widget "mobile" first but I haven't extensively tested on multiple devices, as I simply don't have them. But as always, test things across a range of devices, etc.
+This has taken a significant amount of time and research, I've looked at dozens of chat widgets, tested with screen readers and other AT, and I failed to plan, so I found myself shoehorning functionality in, adding new stylistic elements and honestly, my code feels pretty gross, I'm ashamed, but at this stage, I cannot justify refactoring it all, as I have several tasks on my backlog, unrelated to MTA. That being said, this is a primer, it's intended to open discussion between teams, and provide a decent starting point for a better implementation, I have explained how some things would not work in many situations and there is definitely no one-size fits all approach for chat widgets, the internal structure and semantics will vary depending on application. 
+
+It will likely be possible to break this, or get it acting a little odd. So, so you can test, I will provide the questions that are set to provide a response, each is case insensitive
