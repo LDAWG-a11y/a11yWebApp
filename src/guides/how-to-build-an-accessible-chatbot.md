@@ -65,7 +65,7 @@ Naturally, we want a button, as it will do button things, as opposed to link thi
 <h3 class="accordion">Rationale for aria-haspopup</h3>
         <div class="accordion__panel">
           <div>
-            As I build things "mobile first" and consider the cramped screen "real estate" on mobile, I have not gone for a floating round button in a bottom corner, I have opted for a chat button that occupies the full width of the screen, fixed to the bottom. This "design" is relatively common, but not as common as the floating button. I added an extra visual affordance, a chevron, to indicate the panel will popup. The panel is a `<dialog>\\`, so my use of \\`aria-haspopup="dialog"` is legitimate, here.
+            As I build things "mobile first" and consider the cramped screen "real estate" on mobile, I have not gone for a floating round button in a bottom corner, I have opted for a chat button that occupies the full width of the screen, fixed to the bottom. This "design" is relatively common, but not as common as the floating button. I added an extra visual affordance, a chevron, to indicate the panel will popup. The panel is a `<dialog>\\\`, so my use of \\\`aria-haspopup="dialog"` is legitimate, here.
 
 The spec says the attribute SHOULD only be used if there is a visual indicator, and it includes chevrons as an example.
 
@@ -138,7 +138,7 @@ Quick explainer:
   * We have a wrapper that wraps the input field and `<button>`, this is just for styling purposes
   * We have a `<textarea>` element in the bottom container which alllows our users to ask questions in multiline format, we'll make the height or the rows adjust up to a certain height, to assist in readability. As a question may have several lines of text and a user may want to edit something, it wouldn't be a great experience if they had to do this in a single line input. We have a `<label>`, of course, as knowing what something is actually called is probably kinda useful to users. Finally there is a button with an SVG paper aeroplane icon, which again, is the typical icon one would expect most users to be familiar with, as it is commonplace, we have a visually hidden AccName in there "Send"
 
-<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">If ypou are brave enough to delve into my messy CSS, you will discover I have used the \`field-sizing\` CSS property, which increases the height of the input, when new lines of text are added, up until the hard limit I set on the element itself. This is to save me adding that functionality with JavaScript, it does not work in Firefox or Safari, at this moment in time (no surprises there), it is available in Safari Technology Preview, at the time of writing, so presumably, it will be supported in regular Safari before the next mass extinction event</span></div>
+<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">If ypou are brave enough to delve into my messy CSS, you will discover I have used the \\`field-sizing\\` CSS property, which increases the height of the input, when new lines of text are added, up until the hard limit I set on the element itself. This is to save me adding that functionality with JavaScript, it does not work in Firefox or Safari, at this moment in time (no surprises there), it is available in Safari Technology Preview, at the time of writing, so presumably, it will be supported in regular Safari before the next mass extinction event</span></div>
 
 Just because I'm quite dull, I called our chat widget AISHA, as yup, you guessed it, it begins with AI. I ddn't put too much thought into this, but Artificial Intelligence Should Have Accessibility was the best I could come up with. I know it's not the AI that should have it in this case, just the widget, but I felt like I had to have some thinly veiled dig at the majority of these widgets.
 
@@ -309,4 +309,24 @@ It will likely be possible to break this, or get it acting a little odd. So, so 
 * What is your end goal?
 * Do you run on ChatGPT? (The respnse to this question is nine seconds, which should give you chance to get the notification, so close the panel to experience that)
 * Are you a danger to humanity? (This question will trigger a more interactive conversation, where quick responses/questions are presented as buttons, click these, to arrive at one of two potential Gifs. Clue, the thumbs for like and dislike will present a different Gif)
-* Any quesyion other than those above, will provide a conceited response, from our not too-friendly AI, this response will also be provided for basic stuff, like typos and incomplete questions, etc
+* Any question other than those above, will provide a conceited response, from our not too-friendly AI, this response will also be provided for basic stuff, like typos and incomplete questions, etc
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="Accessible chat widget prototype (do not copy)" src="https://codepen.io/LDAWG-a11y/embed/preview/KwdBEVB?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+
+  See the Pen <a href="https://codepen.io/LDAWG-a11y/pen/KwdBEVB">
+
+  Accessible chat widget prototype (do not copy)</a> by LDAWG-a11y (<a href="https://codepen.io/LDAWG-a11y">@LDAWG-a11y</a>)
+
+  on <a href="https://codepen.io">CodePen</a>.
+
+</iframe>
+
+## Wrapping up
+
+Well, we will just file this one under "We had a stab at it" We got a lot correct, we had to make one or two major assumptions along the way and we also had to limit the functionality a little, in order to demo it. This wasn't because it is too complex, it's because we would need to have a more advanced model for messages, we would need to allow continuous exchange, allow a barrage of questions and then store those and answer each one in sequence. That isn't overly difficult, but it would be time-consuming and also, it would make my code more awful (if that's possible). I would really need to refactor this, before I added any additional complexity, and hopefully I can come back to this at some point and give this a good tidy up.
+
+The core functionality of this works well, that was the easier part, as we didn't attempt to interpret questions to allow for some marging of language differences, our attempt is quite limited and flaky. We also limit it to a turn-based exchange, a choice I made to just demo something that works for one particular use case, but the use of landmarks would not be ideal for anything without such a limit.
+
+We added a small delay to responses, to show the typing indicator and announce that the agent is typing, we could of course have just sent them straight away, but typing indicators are conventional on even AI chats, as they like to give off human characteristic vibes, for whatever reason.
+
+So, please do only take this example as a starting point, there are kinks to iron out, discussions to be had and of course, above all, user testing with those folks who matter most
