@@ -39,7 +39,7 @@ No progressive enhancement on this one I'm afraid, sure we could get the chat to
 
 We'd  have `position: relative`; on our `<body>` element, that's all we need to stick this in a bottom corner, so let's get the HTML written.
 
-```ecr
+```html
 <footer>
 <!-- footer stuff -->
   <button class="chat__trigger" id="chatTrigger" accesskey="9" aria-haspopup="dialog" aria-expanded="false" aria-controls="chatPanel">
@@ -65,7 +65,7 @@ Naturally, we want a button, as it will do button things, as opposed to link thi
 <h3 class="accordion">Rationale for aria-haspopup</h3>
         <div class="accordion__panel">
           <div>
-            As I build things "mobile first" and consider the cramped screen "real estate" on mobile, I have not gone for a floating round button in a bottom corner, I have opted for a chat button that occupies the full width of the screen, fixed to the bottom. This "design" is relatively common, but not as common as the floating button. I added an extra visual affordance, a chevron, to indicate the panel will popup. The panel is a `<dialog>\`, so my use of \`aria-haspopup="dialog"` is legitimate, here.
+            As I build things "mobile first" and consider the cramped screen "real estate" on mobile, I have not gone for a floating round button in a bottom corner, I have opted for a chat button that occupies the full width of the screen, fixed to the bottom. This "design" is relatively common, but not as common as the floating button. I added an extra visual affordance, a chevron, to indicate the panel will popup. The panel is a `<dialog>\\`, so my use of \\`aria-haspopup="dialog"` is legitimate, here.
 
 The spec says the attribute SHOULD only be used if there is a visual indicator, and it includes chevrons as an example.
 
@@ -90,7 +90,7 @@ I'm not going to provide the CSS, here and my justification for that is I made t
 
 Straight into the HTML, here, as I am aware I waffle:
 
-```eex
+```html
  <dialog class="chat__panel" aria-labelledby="chatTitle" id="chatPanel" data-clean>
   <div class="chat__upper">
     <h1 class="chat__title" id="chatTitle">AISHA Chat</h1>
@@ -138,7 +138,7 @@ Quick explainer:
   * We have a wrapper that wraps the input field and `<button>`, this is just for styling purposes
   * We have a `<textarea>` element in the bottom container which alllows our users to ask questions in multiline format, we'll make the height or the rows adjust up to a certain height, to assist in readability. As a question may have several lines of text and a user may want to edit something, it wouldn't be a great experience if they had to do this in a single line input. We have a `<label>`, of course, as knowing what something is actually called is probably kinda useful to users. Finally there is a button with an SVG paper aeroplane icon, which again, is the typical icon one would expect most users to be familiar with, as it is commonplace, we have a visually hidden AccName in there "Send"
 
-<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">If ypou are brave enough to delve into my messy CSS, you will discover I have used the `field-sizing` CSS property, which increases the height of the input, when new lines of text are added, up until the hard limit I set on the element itself. This is to save me adding that functionality with JavaScript, it does not work in Firefox or Safari, at this moment in time (no surprises there), it is available in Safari Technology Preview, at the time of writing, so presumably, it will be supported in regular Safari before the next mass extinction event</span></div>
+<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">If ypou are brave enough to delve into my messy CSS, you will discover I have used the \`field-sizing\` CSS property, which increases the height of the input, when new lines of text are added, up until the hard limit I set on the element itself. This is to save me adding that functionality with JavaScript, it does not work in Firefox or Safari, at this moment in time (no surprises there), it is available in Safari Technology Preview, at the time of writing, so presumably, it will be supported in regular Safari before the next mass extinction event</span></div>
 
 Just because I'm quite dull, I called our chat widget AISHA, as yup, you guessed it, it begins with AI. I ddn't put too much thought into this, but Artificial Intelligence Should Have Accessibility was the best I could come up with. I know it's not the AI that should have it in this case, just the widget, but I felt like I had to have some thinly veiled dig at the majority of these widgets.
 
@@ -265,8 +265,6 @@ window.addEventListener('keydown', (evt) => {
 })
 ```
 
-
-
 ### Functionality
 
 * Pressing <kbd>Enter</kbd> whilst focus is within the input, will submit the question, so no need to tab to the Send button
@@ -275,7 +273,7 @@ window.addEventListener('keydown', (evt) => {
 * I have done somethings slightly unconventional, as this is a basic implementation:
 
   * Only one question can be submitted at once, the button will not send a second question until a response has been received, this is something that is somethimes prevalent when you go through the virtual assistant parts of a chat, which then ultimately directs you to the correct type of human agent, etc. Obviously this would be a silly choice on an instant messaging widget, as they are not turn-based exchanges. The only reason I have gone down this route is because I wanted to keep it simple(ish), I'd have to build a message queue and a response queue, a user could in theory be like my child when she's trying to grab my attention and send 163 one word messages, in a barrage of rapid annoyance, that will each say "Dad", then when I finally have chance to type my reply "Yes x", she will then say "What time is tea\[dinner]", I was literally in the kitchen, making it, it took me about 12 seconds to get to my phone and from upstairs she sends 100s of messages in that 12 seconds (insert_eye_roll_emoji). So, unless your widget is turn-based, which is rare, don't fudge it, like me
-  * Because I have enforced a turn-based approach, my exchanges are within landmarks, the AccName of which is the user question (which is a `<h3>\`, because much like an FAQ, that's pretty conventional). That will only really work for turn-based, otherwise it'll end up a mess when the sequence of questions/responses is not linear. We could of course auto-quote questions adn then build a response with that quote as the heading question, with the response below, although wether this is a good idea would need further investigation and testing. Not all chat widgets are for questions and responses, so for an instant messaging platform a landmark would not be a sensible option, but some form of heading structure would enable a screen reader user to bring up the Rotor/Elements panel and search for things based upon headings. I looked at many chatbots, most were trash, the MS Teams (Web GUI) chat does use headings, for all chat bubbles which are \`<h4>` elements. Some smart folk work at MS, I have to assume these smart folk have had some input in Teams and this is a good idea? Who knows, though.
+  * Because I have enforced a turn-based approach, my exchanges are within landmarks, the AccName of which is the user question (which is a `<h3>\`, because much like an FAQ, that's pretty conventional). That will only really work for turn-based, otherwise it'll end up a mess when the sequence of questions/responses is not linear. We could of course auto-quote questions adn then build a response with that quote as the heading question, with the response below, although wether this is a good idea would need further investigation and testing. Not all chat widgets are for questions and responses, so for an instant messaging platform a landmark would not be a sensible option, but some form of heading structure would enable a screen reader user to bring up the Rotor/Elements panel and search for things based upon headings. I looked at many chatbots, most were trash, the MS Teams (Web GUI) chat does use headings, for all chat bubbles which are `<h4>` elements. Some smart folk work at MS, I have to assume these smart folk have had some input in Teams and this is a good idea? Who knows, though.
   * I have added a date, then only for user questions I have added a time, in reality, this could be better, we could add the date for each new day, then the time for all messages
   * I add in visible text, "AISHA" and "You" to the corresponding messages, it's all fine and well, sticking to convention and using visual affordances to indicate who said what, but blind people cannot see those, so
   * When an agent response includes Quick Responses "Yes" or "No" type buttons, etc, those buttons will the be removed from the panel and turned into text replies
@@ -305,4 +303,10 @@ We used the `<dialog>` element to create a non-modal dialog and I explained my r
 
 This has taken a significant amount of time and research, I've looked at dozens of chat widgets, tested with screen readers and other AT, and I failed to plan, so I found myself shoehorning functionality in, adding new stylistic elements and honestly, my code feels pretty gross, I'm ashamed, but at this stage, I cannot justify refactoring it all, as I have several tasks on my backlog, unrelated to MTA. That being said, this is a primer, it's intended to open discussion between teams, and provide a decent starting point for a better implementation, I have explained how some things would not work in many situations and there is definitely no one-size fits all approach for chat widgets, the internal structure and semantics will vary depending on application. 
 
-It will likely be possible to break this, or get it acting a little odd. So, so you can test, I will provide the questions that are set to provide a response, each is case insensitive
+It will likely be possible to break this, or get it acting a little odd. So, so you can test, I will provide the questions that are set to provide a response, each is case insensitive and the question mark isn't required:
+
+* Do you know everything?
+* What is your end goal?
+* Do you run on ChatGPT? (The respnse to this question is nine seconds, which should give you chance to get the notification, so close the panel to experience that)
+* Are you a danger to humanity? (This question will trigger a more interactive conversation, where quick responses/questions are presented as buttons, click these, to arrive at one of two potential Gifs. Clue, the thumbs for like and dislike will present a different Gif)
+* Any quesyion other than those above, will provide a conceited response, from our not too-friendly AI, this response will also be provided for basic stuff, like typos and incomplete questions, etc
