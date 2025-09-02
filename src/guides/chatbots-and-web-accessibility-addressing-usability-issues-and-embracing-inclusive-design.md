@@ -187,11 +187,11 @@ Below is a table outlining common issues and best practices related to accessibl
 		<tr>
 			<td>Ability to modify or add semantic HTML elements</td>
 			<td>Enables the use of correct HTML tags such as 
-&lt;button&gt;, &lt;form&gt;, and &lt;label&gt; to improve screen reader compatibility and structure</td>
+&lt;button&gt;, `&lt;form&gt;`, and &lt;label&gt; to improve screen reader compatibility and structure</td>
 		</tr>
 		<tr>
 			<td>Full support for ARIA roles and attributes</td>
-			<td>Supports attributes like aria-label, aria-live, and aria-expanded to provide additional context and dynamic updates for assistive technologies</td>
+			<td>Supports attributes like` aria-label`, `aria-live`, and `aria-expanded` to provide additional context and dynamic updates for assistive technologies</td>
 		</tr>
 		<tr>
 			<td>Custom styling for focus indicators, contrast, and responsive design</td>
