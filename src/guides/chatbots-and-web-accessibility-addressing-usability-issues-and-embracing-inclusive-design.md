@@ -16,7 +16,6 @@ isGuide: true
 
 Chatbots have become a common feature on websites, assisting users in finding information, completing tasks, or accessing customer support. While they offer convenience and automation, they often fall short in terms of accessibility.
 
-
 Many chatbots fail to support screen readers, lack proper keyboard navigation, or use overlay elements that interfere with a site's usability. As digital services aim to be more inclusive, it is essential that chatbots are designed with accessibility in mind.
 
 This article explores common usability issues with chatbots, outlines best practices for designing accessible chat experiences, highlights challenges associated with overlays, and draws inspiration from widely used messaging platforms to improve accessibility for all users.
@@ -86,7 +85,6 @@ Below is a table outlining common issues and best practices related to overlay d
 ### Lack of Keyboard Accessibility
 
 Keyboard navigation is essential because many users, including those with motor impairments, rely on keyboards instead of a mouse to interact with digital content. Ensuring that chatbots are fully operable via keyboard allows these users to navigate, input information, and engage with chatbot features effectively.
-
 
 Below is a table outlining common issues and best practices related to keyboard navigation design:
 
@@ -320,7 +318,7 @@ Chatbots have the potential to simplify online interactions but only if they are
 
 ## An example of an accessible chatbot
 
-My colleage, Darren has created an accessible chatbot example, which considers many aspects discussed in this article. The guide walks you through the process of creating an accessible chatbot, although the example component is based upon a turn-based application, but further considerations are available for alternative implementations, for your consideration.
+[My colleage, Darren has created an accessible chatbot example](https://deploy-preview-885--inquisitive-heliotrope-510c6d.netlify.app/guides/how-to-build-an-accessible-chatbot/), which considers many aspects discussed in this article. The guide walks you through the process of creating an accessible chatbot, although the example component is based upon a turn-based application, but further considerations are available for alternative implementations, for your consideration.
 
 ## References
 
