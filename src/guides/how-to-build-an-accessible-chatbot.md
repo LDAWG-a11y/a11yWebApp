@@ -27,6 +27,10 @@ Because I felt like I needed a theme or something, for my chat bot, and I like t
 
 So, a chatbot typically comprises of a trigger button located in a distant corner of the screen, once clicked, a popup or dialog appears with all of the chat's UI, and seldom are they as simple as an input, a button and a chat pane, they often have a couple of other controls, for additional features. They also often have rich responses, which can take the form of interactive elements that a user may interact with, perhaps buttons, with suggested quick questions or thumbs up and thumbs down things. I'll add the thumbs up/down things, as in the wild, we're often training AI by using these, and that's what makes them so common, I guess.
 
+### Want a chatbot primer?
+
+My colleague, Marufa has done a great case study, delving into several popular chat applications and outlining some common issues.
+
 ## We need a proper page to put it on
 
 I rarely build a page to put my demos on, but on this occasion, I feel it's kinda important, as a chat trigger button is usually in a bottom corner and last in the sequential focus order, so, it can take a massive amount of effort to get there. Sure, tabbing in reverse is a thing, but not everybody can see the chat trigger, so they may only discover it right at the end, or not at all. Also, why make folk go up in reverse? I know there are shortcuts to get back to the address bar and stuff, which would obviously save having to reverse tab through all of your bookmarks and extensions and what not, but still, it doesn't hurt to add a couple of easy ways to get to the chat, does it? The page is just going to be fluff, there will be links, they won't go anywhere (other than back to the top of the page), it'll just be nonsense and only exists as a placeholder page to pop the chat on. I'm not going to include the code for this, as it's largely pointless.
@@ -65,7 +69,7 @@ Naturally, we want a button, as it will do button things, as opposed to link thi
 <h3 class="accordion">Rationale for aria-haspopup</h3>
         <div class="accordion__panel">
           <div>
-            As I build things "mobile first" and consider the cramped screen "real estate" on mobile, I have not gone for a floating round button in a bottom corner, I have opted for a chat button that occupies the full width of the screen, fixed to the bottom. This "design" is relatively common, but not as common as the floating button. I added an extra visual affordance, a chevron, to indicate the panel will popup. The panel is a `<dialog>`, so my use of `aria-haspopup="dialog"` is legitimate, here.
+            As I build things "mobile first" and consider the cramped screen "real estate" on mobile, I have not gone for a floating round button in a bottom corner, I have opted for a chat button that occupies the full width of the screen, fixed to the bottom. This "design" is relatively common, but not as common as the floating button. I added an extra visual affordance, a chevron, to indicate the panel will popup. The panel is a `<dialog>\`, so my use of \`aria-haspopup="dialog"` is legitimate, here.
 
 The spec says the attribute SHOULD only be used if there is a visual indicator, and it includes chevrons as an example.
 
