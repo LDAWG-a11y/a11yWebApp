@@ -56,8 +56,7 @@ Below is a table outlining common issues and best practices related to pop-up de
 
 Overlays are panels or boxes that appear on top of the main content, but without opening a new page. They are often used for things like chat windows, forms, or image galleries. A chatbot overlay might expand from a corner of the screen and cover part of the page while staying in view as the user scrolls.
 
-Unlike pop-ups, overlays are usually more interactive and remain open until the user
-closes them.
+Unlike pop-ups, overlays are usually more interactive and remain open until the user closes them.
 
 Below is a table outlining common issues and best practices related to overlay design:
 
@@ -79,7 +78,7 @@ Below is a table outlining common issues and best practices related to overlay d
     </tr>
     <tr>
       <td>Screen readers may not recognise them correctly without the right code.</td>
-      <td>Use proper accessibility roles like `role="dialog"` and ensure the focus moves into and out of the overlay smoothly.</td>
+      <td>Use proper accessibility roles like <code>role="dialog"</code> and ensure the focus moves into and out of the overlay smoothly.</td>
     </tr>
   </tbody>
 </table>
@@ -87,6 +86,8 @@ Below is a table outlining common issues and best practices related to overlay d
 ### Lack of Keyboard Accessibility
 
 Keyboard navigation is essential because many users, including those with motor impairments, rely on keyboards instead of a mouse to interact with digital content. Ensuring that chatbots are fully operable via keyboard allows these users to navigate, input information, and engage with chatbot features effectively.
+
+
 Below is a table outlining common issues and best practices related to keyboard navigation design:
 
 <table>
@@ -187,7 +188,7 @@ Below is a table outlining common issues and best practices related to accessibl
   <tbody>
 		<tr>
 			<td>Ability to modify or add semantic HTML elements</td>
-			<td>Enables the use of correct HTML tags such as `<button>`, `<form>`, and `<label>` to improve screen reader compatibility and structure</td>
+			<td>Enables the use of correct HTML tags such as <code><button></code>, <code><form></code>, and <code><label></code> to improve screen reader compatibility and structure</td>
 		</tr>
 		<tr>
 			<td>Full support for ARIA roles and attributes</td>
@@ -304,7 +305,7 @@ Below is a table outlining common issues and best practices for clear notificati
 		</tr>
 		<tr>
 			<td>Notifications can be overly disruptive or unclear</td>
-			<td>Use ARIA live regions with polite settings, such as `aria-live="polite"`, to announce updates without interrupting the user</td>
+			<td>Use ARIA live regions with polite settings, such as <code>aria-live="polite"</code>, to announce updates without interrupting the user</td>
 		</tr>
 		<tr>
 			<td>Lack of personalisation for accessibility needs</td>
