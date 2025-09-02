@@ -15,12 +15,11 @@ isGuide: true
 ## Introduction
 
 Chatbots have become a common feature on websites, assisting users in finding information, completing tasks, or accessing customer support. While they offer convenience and automation, they often fall short in terms of accessibility.
+
+
 Many chatbots fail to support screen readers, lack proper keyboard navigation, or use overlay elements that interfere with a site's usability. As digital services aim to be more inclusive, it is essential that chatbots are designed with accessibility in mind.
 
-This article explores common usability issues with chatbots, outlines best practices
-for designing accessible chat experiences, highlights challenges associated
-with overlays, and draws inspiration from widely used messaging platforms to
-improve accessibility for all users.
+This article explores common usability issues with chatbots, outlines best practices for designing accessible chat experiences, highlights challenges associated with overlays, and draws inspiration from widely used messaging platforms to improve accessibility for all users.
 
 ## Common Usability Issues with Chatbots
 
@@ -80,7 +79,7 @@ Below is a table outlining common issues and best practices related to overlay d
     </tr>
     <tr>
       <td>Screen readers may not recognise them correctly without the right code.</td>
-      <td>Use proper accessibility roles like role="dialog" and ensure the focus moves into and out of the overlay smoothly.</td>
+      <td>Use proper accessibility roles like `role="dialog"` and ensure the focus moves into and out of the overlay smoothly.</td>
     </tr>
   </tbody>
 </table>
@@ -188,7 +187,7 @@ Below is a table outlining common issues and best practices related to accessibl
   <tbody>
 		<tr>
 			<td>Ability to modify or add semantic HTML elements</td>
-			<td>Enables the use of correct HTML tags such as `<button>\`, \`<form>\`, and \`<label>` to improve screen reader compatibility and structure</td>
+			<td>Enables the use of correct HTML tags such as `<button>`, `<form>`, and `<label>` to improve screen reader compatibility and structure</td>
 		</tr>
 		<tr>
 			<td>Full support for ARIA roles and attributes</td>
@@ -305,7 +304,7 @@ Below is a table outlining common issues and best practices for clear notificati
 		</tr>
 		<tr>
 			<td>Notifications can be overly disruptive or unclear</td>
-			<td>Use ARIA live regions with polite settings, such as \`aria-live="polite"\`, to announce updates without interrupting the user</td>
+			<td>Use ARIA live regions with polite settings, such as `aria-live="polite"`, to announce updates without interrupting the user</td>
 		</tr>
 		<tr>
 			<td>Lack of personalisation for accessibility needs</td>
@@ -317,6 +316,10 @@ Below is a table outlining common issues and best practices for clear notificati
 ## Conclusion
 
 Chatbots have the potential to simplify online interactions but only if they are accessible to all users. Many current implementations fall short by using inaccessible overlays, lacking proper keyboard and screen reader support, or failing to provide clear communication cues. By adopting inclusive design principles, conducting thorough user testing with assistive technologies, and learning from successful messaging platforms, we can build chatbot experiences that are truly user-friendly and accessible for everyone. Designers and developers should prioritize accessibility testing and inclusive design to ensure chatbot technology benefits everyone.
+
+## An example of an accessible chatbot
+
+My colleage, Darren has created an accessible chatbot example, which considers many aspects discussed in this article. The guide walks you through the process of creating an accessible chatbot, although the example component is based upon a turn-based application, but further considerations are available for alternative implementations, for your consideration.
 
 ## References
 
