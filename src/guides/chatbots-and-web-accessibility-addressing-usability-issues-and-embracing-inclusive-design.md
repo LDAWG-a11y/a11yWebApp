@@ -186,7 +186,8 @@ Below is a table outlining common issues and best practices related to accessibl
   <tbody>
 		<tr>
 			<td>Ability to modify or add semantic HTML elements</td>
-			<td>Enables the use of correct HTML tags such as <code><button></code>, <code><form></code>, and <code><label></code> to improve screen reader compatibility and structure</td>
+			<td>Enables the use of correct HTML tags such as 
+&lt;button>&gt;, &lt;<form>&gt;, and &lt;<label>&gt; to improve screen reader compatibility and structure</td>
 		</tr>
 		<tr>
 			<td>Full support for ARIA roles and attributes</td>
