@@ -29,7 +29,7 @@ So, a chatbot typically comprises of a trigger button located in a distant corne
 
 ### Want a chatbot primer?
 
-My colleague, Marufa has done a great case study, delving into several popular chat applications and outlining some common issues.
+[My colleague, Marufa has done a great case study,](https://www.makethingsaccessible.com/guides/chatbots-and-web-accessibility-addressing-usability-issues-and-embracing-inclusive-design/) delving into several popular chat applications and outlining some common issues.
 
 ## We need a proper page to put it on
 
@@ -69,7 +69,7 @@ Naturally, we want a button, as it will do button things, as opposed to link thi
 <h3 class="accordion">Rationale for aria-haspopup</h3>
         <div class="accordion__panel">
           <div>
-            As I build things "mobile first" and consider the cramped screen "real estate" on mobile, I have not gone for a floating round button in a bottom corner, I have opted for a chat button that occupies the full width of the screen, fixed to the bottom. This "design" is relatively common, but not as common as the floating button. I added an extra visual affordance, a chevron, to indicate the panel will popup. The panel is a `<dialog>\`, so my use of \`aria-haspopup="dialog"` is legitimate, here.
+            As I build things "mobile first" and consider the cramped screen "real estate" on mobile, I have not gone for a floating round button in a bottom corner, I have opted for a chat button that occupies the full width of the screen, fixed to the bottom. This "design" is relatively common, but not as common as the floating button. I added an extra visual affordance, a chevron, to indicate the panel will popup. The panel is a `<dialog>\\`, so my use of \\`aria-haspopup="dialog"` is legitimate, here.
 
 The spec says the attribute SHOULD only be used if there is a visual indicator, and it includes chevrons as an example.
 
