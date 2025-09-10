@@ -22,7 +22,7 @@ isGuide: true
 
 ## Demo file
 
-An example file, [Word-un-accessible.docx](/docs/creating-accessible-pdfs-from-microsoft-word.docx) **(DOCX 126KB)**, has been created which has issues that need to be corrected.
+An example file, [Word-un-accessible.docx](/docs/word-un-accessible.docx) **(DOCX 126KB)**, has been created which has issues that need to be corrected.
 
 ## Making documents correctly
 
