@@ -13,4 +13,6 @@ isGuide: true
 ---
 [The ICT Accessibility Lab at the ZHAW School of Engineering](http://accessibility.zhaw.ch/) have developed [PAVE](https://pave-pdf.org/) and made it available free of charge for personal use, as long as the PDF file is no larger than 5Mb.
 
-I used the example file, [Word-un-accessible.docx](/docs/word-un-accessible.docx) **(DOCX 126KB)**, from the [Creating accessible PDFs from Microsoft Word guide](/guides/creating-accessible-pdfs-from-microsoft-word/), and saved it as [demo one](/docs/not-run-acce…lity-checker-in-word.pdf) **(PDF 131KB)** without fixing any accessibility issues in Microsoft Word.
+I used the example file, [Word-un-accessible.docx](/docs/word-un-accessible.docx) **(DOCX 126KB)**, from the [Creating accessible PDFs from Microsoft Word guide](/guides/creating-accessible-pdfs-from-microsoft-word/), and saved it as [demo one](/docs/not-run-accessibility-checker-in-Word.pdf) **(PDF 131KB)** without fixing any accessibility issues in Microsoft Word.
+
+
