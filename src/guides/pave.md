@@ -1,5 +1,5 @@
 ---
-title: PAVE
+title: Creating an accessible PDF using PAVE
 summary: PAVE is free online software that "can make your PDF documents
   accessible" for personal use.
 author: swilkinson
