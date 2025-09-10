@@ -64,3 +64,7 @@ I clicked on the edit properties link
 I added a Title, Subject, and Keywords, and also changed the Author to MakeThingsAccessible.
 
 ![Properties form with fields for title, language, author, subject, keywords and save button with the fields completed](src/guideImg/7.title-properties-fixed.png)
+
+Then I clicked 
+
+![Save button](src/guideImg/8.title-properties-fixed-save-button.png)
