@@ -36,3 +36,6 @@ I ran this file against [PAC 2024](https://pac.pdf-accessibility.org/en) and got
   ![Start PAVE](src/guideImg/1.start.png)
 * I was then taken to the 
 * ![Upload file page](src/guideImg/2.upload-file-1.png)
+* I then clicked 
+
+  ![Upload file - click to upload a new file and begin the accessibility validation process.](src/guideImg/3.upload-file-2.png)
