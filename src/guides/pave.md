@@ -68,3 +68,8 @@ I added a Title, Subject, and Keywords, and also changed the Author to MakeThing
 Then I clicked 
 
 ![Save button](src/guideImg/8.title-properties-fixed-save-button.png)
+
+and the Document Properties are fixed.
+
+#### Some headings are not in the right order
+
