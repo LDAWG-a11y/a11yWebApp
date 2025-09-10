@@ -15,4 +15,5 @@ isGuide: true
 
 I used the example file, [Word-un-accessible.docx](/docs/word-un-accessible.docx) **(DOCX 126KB)**, from the [Creating accessible PDFs from Microsoft Word guide](/guides/creating-accessible-pdfs-from-microsoft-word/), and saved it as [demo one](/docs/not-run-accessibility-checker-in-Word.pdf) **(PDF 131KB)** without fixing any accessibility issues in Microsoft Word.
 
+I ran this file against [PAC 2024](https://pac.pdf-accessibility.org/en) and got the following errors:
 
