@@ -88,3 +88,7 @@ I then clicked on the arrow for Page 4
 I then clicked on to the 
 
 ![Reading order tab](src/guideImg/12.issue-details-reading-order.png)
+
+Which shows all the tags in reading order
+
+![Reading order tab showing all tags in their reading order](src/guideImg/13.issue-details-reading-order-tab.png)
