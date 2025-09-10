@@ -45,3 +45,14 @@ I ran this file against [PAC 2024](https://pac.pdf-accessibility.org/en) and got
 * Selected the file and then got the results
 
   ![Results of running PAVE](src/guideImg/4.results.png)
+
+### Automatic correction
+* PAVE was already able to automatically correct 46 issues.
+
+### Manual correction
+* Title missing
+* Some headings are not in the right order
+* Table has no headers
+
+#### Fixing Title missing
+These can be 
