@@ -54,7 +54,7 @@ I ran this file against [PAC 2024](https://pac.pdf-accessibility.org/en) and got
 * Table has no headers
 
 #### Fixing Title missing
+![Title missing section including edit properties link](src/guideImg/5.fix-title.png)
 
 These can be 
 
-![Title missing section including edit properties link](src/guideImg/5.fix-title.png)
