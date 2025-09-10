@@ -34,25 +34,27 @@ I ran this file against [PAC 2024](https://pac.pdf-accessibility.org/en) and got
 * Click on 
 
   ![Start PAVE](src/guideImg/1.start.png)
-
 * I was then taken to the 
   ![Upload file page](src/guideImg/2.upload-file-1.png)
-
 * I then clicked 
 
   ![Upload file - click to upload a new file and begin the accessibility validation process.](src/guideImg/3.upload-file-2.png)
-
 * Selected the file and then got the results
 
   ![Results of running PAVE](src/guideImg/4.results.png)
 
 ### Automatic correction
+
 * PAVE was already able to automatically correct 46 issues.
 
 ### Manual correction
+
 * Title missing
 * Some headings are not in the right order
 * Table has no headers
 
 #### Fixing Title missing
+
 These can be 
+
+![Title missing section including edit properties link](src/guideImg/5.fix-title.png)
