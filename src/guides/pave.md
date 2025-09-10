@@ -59,6 +59,8 @@ I ran this file against [PAC 2024](https://pac.pdf-accessibility.org/en) and got
 
 I clicked on the edit properties link
 
-![Title properties](src/guideImg/6.title-properties.png)
+![t](src/guideImg/6.title-properties.png)
 
 I added a Title, Subject, and Keywords, and also changed the Author to MakeThingsAccessible.
+
+![Properties form with fields for title, language, author, subject, keywords and save button with the fields completed](src/guideImg/7.title-properties-fixed.png)
