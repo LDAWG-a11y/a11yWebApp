@@ -57,7 +57,7 @@ I ran this file against [PAC 2024](https://pac.pdf-accessibility.org/en) and got
 
 ![Title missing section including edit properties link](src/guideImg/5.fix-title.png)
 
-I clicked on the edit properties link
+I clicked on the Edit Properties link
 
 ![t](src/guideImg/6.title-properties.png)
 
