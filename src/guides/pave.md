@@ -76,3 +76,9 @@ and the Document Properties are fixed.
 I clicked on 
 
 ![Show issue details](src/guideImg/9.show-issue-details.png)
+
+Green elements are already tagged in the reading order and red elements are currently untagged. In this case pages 1,2, and 3 are fixed and 4, 5, and 6 have issues that require fixing.
+
+
+
+
