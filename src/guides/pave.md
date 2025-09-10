@@ -34,3 +34,5 @@ I ran this file against [PAC 2024](https://pac.pdf-accessibility.org/en) and got
 * Click on 
 
   ![Start button](src/guideImg/1.start.png)
+* I was then taken to the 
+* ![Upload file page](src/guideImg/2.upload-file-1.png)
