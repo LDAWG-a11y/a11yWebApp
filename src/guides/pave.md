@@ -79,6 +79,4 @@ I clicked on
 
 Green elements are already tagged in the reading order and red elements are currently untagged. In this case pages 1,2, and 3 are fixed and 4, 5, and 6 have issues that require fixing.
 
-
-
-
+![issue details showing all 6 pages of the document with red tags on pages that need fixing](src/guideImg/10.issue-details.png)
