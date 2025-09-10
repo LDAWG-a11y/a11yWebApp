@@ -73,3 +73,6 @@ and the Document Properties are fixed.
 
 #### Some headings are not in the right order
 
+I clicked on 
+
+![Show issue details](src/guideImg/9.show-issue-details.png)
