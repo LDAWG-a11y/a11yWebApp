@@ -84,3 +84,7 @@ Green elements are already tagged in the reading order and red elements are curr
 I then clicked on the arrow for Page 4
 
 ![Arrow button](src/guideImg/11.issue-details-arrow.png)
+
+I then clicked on to the 
+
+![Reading order tab](src/guideImg/12.issue-details-reading-order.png)
