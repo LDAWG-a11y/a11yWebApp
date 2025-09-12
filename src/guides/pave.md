@@ -81,6 +81,12 @@ Green elements are already tagged in the reading order and red elements are curr
 
 ![issue details showing all 6 pages of the document with red tags on pages that need fixing](src/guideImg/10.issue-details.png)
 
+I then clicked on the "disclosure widget" for page 4
+
+![disclosure widget for Page 4 issues that need fixing](src/guideImg/10-1.issue-details-disclosure-widget.png)
+
+
+
 I then clicked on the arrow for Page 4
 
 ![Arrow button](src/guideImg/11.issue-details-arrow.png)
