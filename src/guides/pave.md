@@ -154,6 +154,12 @@ This issue was fixed so I moved on to Page 6 which had this issue.
 
 ![Missing link alternate description](src/guideImg/10-40.issue-details-page-6.png)
 
+Hovering over "Missing link alternate description" shows
+
+![Link which has missing alternate description](src/guideImg/10-41.issue-details-page-6-main-page.png)
+
+
+
 
 
 <strong>Hello</strong>
