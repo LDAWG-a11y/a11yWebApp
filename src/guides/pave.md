@@ -150,6 +150,10 @@ I amended the Heading level 4 to Heading level 1 as it is actually the first hea
 
 I then clicked on the SAVE button.
 
+This issue was fixed so I moved on to Page 6 which had this issue.
+
+![Missing link alternate description](src/guideImg/10-40.issue-details-page-6.png)
+
 
 
 <strong>Hello</strong>
