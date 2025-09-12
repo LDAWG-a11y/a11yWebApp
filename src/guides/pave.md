@@ -135,7 +135,9 @@ I then went to Page 5 which had the error
 
 ![Invalid heading order](src/guideImg/10-30.issue-details-invalid-heading-order.png)
 
+Which I could see when I hovered over the "Invalid heading order"
 
+![Heading 4 highlighted in red on the page of the PDF](src/guideImg/10-31.issue-details-invalid-heading-order-main-page.png)
 
 
 
