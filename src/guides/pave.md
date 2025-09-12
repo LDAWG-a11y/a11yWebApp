@@ -140,6 +140,13 @@ Which I could see when I hovered over the "Invalid heading order"
 ![Heading 4 highlighted in red on the page of the PDF](src/guideImg/10-31.issue-details-invalid-heading-order-main-page.png)
 
 
+I clicked on "Invalid heading order" and the Tagging appeared
+
+![Tagging showing element type Heading, heading level and content language](src/guideImg/10-32.issue-details-invalid-heading-order-tagging.png)
+
+
+
+
 
 <strong>Hello</strong>
 
