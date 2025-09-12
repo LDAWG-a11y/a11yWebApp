@@ -113,6 +113,10 @@ I clicked back on
 
 ![Issue Details tab](src/guideImg/10-7.issue-details-tab.png)
 
+And I am left with one issue on the page
+
+![Table has no headers](src/guideImg/10-8.issue-details-table-has-no-headers.png)
+
 
 
 I then clicked on the arrow for Page 4
