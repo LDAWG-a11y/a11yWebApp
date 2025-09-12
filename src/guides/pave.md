@@ -97,7 +97,7 @@ And the relevant heading was highlighted
 
 ![Heading 2 highlighted in red](src/guideImg/10-3.issue-details-disclosure-widget-header-hover-main-page.png)
 
-
+I then clicked on the "Invalid first heading level" text
 
 I then clicked on the arrow for Page 4
 
