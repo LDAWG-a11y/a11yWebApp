@@ -105,6 +105,12 @@ And the tagging appeared
 
 ![Tagging with select element type, select content language, done and Save button](src/guideImg/10-5.issue-details-invalid-first-heading-level-tagging.png)
 
+I changed the element type from Heading 2 to Heading 1 and clicked on the SAVE button.
+
+![Tagging with element amended to Heading 1](src/guideImg/10-6.issue-details-invalid-first-heading-level-tagging-amended.png)
+
+
+
 I then clicked on the arrow for Page 4
 
 ![Arrow button](src/guideImg/11.issue-details-arrow.png)
