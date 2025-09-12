@@ -162,7 +162,7 @@ I opened up Tagging
 
 ![Tagging for Link](src/guideImg/10-41.issue-details-page-6-tagging.png)
 
-
+I entered alternative text and clicked on the SAVE button.
 
 
 
