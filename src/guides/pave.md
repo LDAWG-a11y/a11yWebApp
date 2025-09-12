@@ -85,6 +85,12 @@ I then clicked on the "disclosure widget" for page 4
 
 ![disclosure widget for Page 4 issues that need fixing](src/guideImg/10-1.issue-details-disclosure-widget.png)
 
+This shows what issues are on that page.
+
+![disclosure widget for Page 4 issues that need fixing open showing invalid first heading level and table has no headers](src/guideImg/10-2.issue-details-disclosure-widget-open.png)
+
+
+
 
 
 I then clicked on the arrow for Page 4
