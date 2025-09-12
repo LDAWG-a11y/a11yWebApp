@@ -158,6 +158,11 @@ Hovering over "Missing link alternate description" shows
 
 ![Link which has missing alternate description](src/guideImg/10-41.issue-details-page-6-main-page.png)
 
+I opened up Tagging 
+
+![Tagging for Link](src/guideImg/10-41.issue-details-page-6-tagging.png)
+
+
 
 
 
