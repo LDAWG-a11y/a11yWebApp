@@ -143,6 +143,7 @@ Online Self-Paced Web Accessibility Classes:
 * [Create Accessible Interfaces (external website)](https://www.futurelearn.com/courses/create-accessible-interfaces) 
 
 #### Karen McCall
+
 * [Featured Courses and Publications (external website)](https://karen-mccall.teachable.com/)
 
 #### Periodically available
