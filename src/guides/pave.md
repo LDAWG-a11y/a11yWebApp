@@ -121,6 +121,14 @@ Hovering over "Table has no headers" And it showed which table had the issue
 
 ![table with content highlighted red](src/guideImg/10-9.issue-details-table-has-no-headers-main.png)
 
+I then clicked on "Reading Order" and looked through the tags until I found the relevant table
+
+![Reading order tags showing table that needs a header](src/guideImg/10-10.issue-details-table-reading-order.png)
+
+
+
+
+
 I then clicked on the arrow for Page 4
 
 ![Arrow button](src/guideImg/11.issue-details-arrow.png)
