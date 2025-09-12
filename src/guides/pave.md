@@ -128,6 +128,18 @@ I then clicked on "Reading Order" and looked through the tags until I found the 
 
 
 
+I clicked on the Edit button on the 
+
+
+I then went to Page 5 which had the error 
+
+![Invalid heading order](src/guideImg/10-30.issue-details-invalid-heading-order.png)
+
+
+
+
+
+<strong>Hello</strong>
 
 I then clicked on the arrow for Page 4
 
