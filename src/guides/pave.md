@@ -89,7 +89,13 @@ This shows what issues are on that page.
 
 ![disclosure widget for Page 4 issues that need fixing open showing invalid first heading level and table has no headers](src/guideImg/10-2.issue-details-disclosure-widget-open.png)
 
+I then hovered my mouse over
 
+![Heading order invalid heading level](src/guideImg/10-3.issue-details-disclosure-widget-header-hover.png)
+
+And the relevant heading was highlighted
+
+![Heading 2 highlighted in red](src/guideImg/10-3.issue-details-disclosure-widget-header-hover-main-page.png)
 
 
 
