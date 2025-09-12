@@ -144,7 +144,11 @@ I clicked on "Invalid heading order" and the Tagging appeared
 
 ![Tagging showing element type Heading, heading level and content language](src/guideImg/10-32.issue-details-invalid-heading-order-tagging.png)
 
+I amended the Heading level 4 to Heading level 1 as it is actually the first heading on that page.
 
+![Tagging amended to Heading level 1](src/guideImg/10-33.issue-details-invalid-heading-order-tagging-amended.png)
+
+I then clicked on the SAVE button.
 
 
 
