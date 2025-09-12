@@ -99,6 +99,10 @@ And the relevant heading was highlighted
 
 I then clicked on the "Invalid first heading level" text
 
+![Invalid first heading level](src/guideImg/10-4.issue-details-disclosure-widget-header-invalid-first-heading-level.png)
+
+
+
 I then clicked on the arrow for Page 4
 
 ![Arrow button](src/guideImg/11.issue-details-arrow.png)
