@@ -101,7 +101,9 @@ I then clicked on the "Invalid first heading level" text
 
 ![Invalid first heading level](src/guideImg/10-4.issue-details-disclosure-widget-header-invalid-first-heading-level.png)
 
+And the tagging appeared
 
+![Tagging with select element type, select content language, done and Save button](src/guideImg/10-5.issue-details-invalid-first-heading-level-tagging.png)
 
 I then clicked on the arrow for Page 4
 
