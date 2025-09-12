@@ -117,7 +117,9 @@ And I am left with one issue on the page
 
 ![Table has no headers](src/guideImg/10-8.issue-details-table-has-no-headers.png)
 
+Hovering over "Table has no headers" And it showed which table had the issue
 
+![table with content highlighted red](src/guideImg/10-9.issue-details-table-has-no-headers-main.png)
 
 I then clicked on the arrow for Page 4
 
