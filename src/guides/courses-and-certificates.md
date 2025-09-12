@@ -142,6 +142,9 @@ Online Self-Paced Web Accessibility Classes:
 * [Inclusive Learning with Microsoft Accessibility Tools (external website)](https://www.futurelearn.com/courses/make-learning-more-inclusive-with-microsoft-accessibility-tools-sc) 
 * [Create Accessible Interfaces (external website)](https://www.futurelearn.com/courses/create-accessible-interfaces) 
 
+#### Karen McCall
+* [Featured Courses and Publications (external website)](https://karen-mccall.teachable.com/)
+
 #### Periodically available
 
 * FutureLearn with UAL Creative Computing Institute: [Introduction to UX and Accessible Design (external website)](https://www.futurelearn.com/courses/introduction-to-ux-and-accessible-design)
