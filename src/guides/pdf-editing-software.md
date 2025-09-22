@@ -170,3 +170,4 @@ isGuide: true
 	</tr>
 </table>​
 
+Please contact us if you find any other PDF editing software that is not listed.
