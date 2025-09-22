@@ -166,7 +166,7 @@ isGuide: true
 		<td>Yes</td>
 		<td>Yes</td>
 		<td>Yes</td>
-		<td>Contacted Scribus but not heard anything yet</td>
+		<td>Contacted Stirling but not heard anything yet</td>
 	</tr>
 </table>​
 
