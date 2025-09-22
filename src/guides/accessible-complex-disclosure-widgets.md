@@ -1,5 +1,5 @@
 ---
-title: Accessible complex disclosure widgets
+title: Accessible nav drawer disclosure widgets
 summary: This guide will build slightly more complex disclosusre widgets than
   the basic accessible disclosure widgets guide, we'll explore various trypes of
   navigation drawers or side panels
@@ -16,11 +16,11 @@ isGuide: true
 ---
 ## Intro
 
-If you read my older guide on creating "basic" accessible disclosure widgets, then the aim of this guide is to take it up a notch or two, by building variations of a pattern that is a little more complex, the nav drawer. Nav drawers are very common, especially on complex web apps, as there are often multiple navigation features to access the many features these systems have.
+If you read my older guide on creating "basic" accessible disclosure widgets, then the aim of this guide is to take it up a notch, by building variations of a pattern that is a little more complex, the nav drawer. Nav drawers are very common, especially on complex web apps, as there are often multiple navigation elements to access the many features these systems have.
 
 As appears to often be the case, this guide has come about to me encountering several nav drawers, whilst testing, over the last couple of months.
 
-So, what is a nav drawer? Put into simple terms, it's just a side navigation that slides out into the visible part of the viewport when a user clicks the trigger control. Technically, nav drawer can also appear from the top or bottom of the viewport, but, we pushed down from the top in the "Basic" article, also, I'm probably over-selling it a little here, by saying that side drawers are "complex", they do come with additional challenges and considerations for us like-minded folks that will put accessibility first in everything we build, but at they're not a "boss level" challenge, like some UI patterns. So, to make my claim of "complex" a little less of an overreach, we'll discuss and build some different variations, just to spice things up a little.
+So, what is a nav drawer? Put into simple terms, it's usually a side navigation that slides out into the visible part of the viewport when a user clicks the trigger control. Technically, nav drawer can also appear from the top or bottom of the viewport, but, we pushed down from the top in the "Basic" article, also, I'm probably over-selling it a little here, by saying that side drawers are a little more complex, they do come with additional challenges and considerations for us like-minded folks that will put accessibility first in everything we build, but athey're not a "boss level" challenge, like some UI patterns. So, to make my claim of "complex" a little less of an overreach, we'll discuss and build some different variations, just to spice things up a little.
 
 ## Types of drawer effect
 
@@ -53,23 +53,22 @@ Nothing spectacular going on there, a nice clear simple layout, nothing that is 
     <title>Document</title>
   </head>
    <body>
-    <div class="site">
-      <header class="header">
-        <a href="main" class="skip-link">Skip to content</a>
-        <nav class="nav" aria-labelledby="primaryNavLabel">
-          <h2 id="primaryNavLabel" style="display: none;">Primary</h2>
-          <div class="nav__top">
-            <ul class="nav__list">
-              <li class="nav__item"><a href="#" class="nav__link">Item 1</a></li>
-              <li class="nav__item"><a href="#" class="nav__link">Item 2</a></li>
-              <li class="nav__item"><a href="#" class="nav__link">Item 3</a></li>
-            </ul>
-          </div>
-        </nav>
-        <div class="drawer">
+    <header class="header">
+      <a href="main" class="skip-link">Skip to content</a>
+      <nav class="nav" aria-labelledby="primaryNavLabel">
+        <h2 id="primaryNavLabel" style="display: none;">Primary</h2>
+        <div class="nav__top">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#" class="nav__link">Item 1</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Item 2</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Item 3</a></li>
+          </ul>
+        </div>
+      </nav>
+        <div class="drawer" id="drawer">
+          <button class="nav__trigger" aria-expanded="false" aria-controls="sideNav">Menu</button>
           <nav class="nav__drawer" id="sideNav" aria-labelledby="sideNavLabel">
             <h2 id="sideNavLabel" style="display: none;">Secondary</h2>
-            <button class="nav__trigger" aria-expanded="false" aria-controls="sideNav">Menu</button>
             <ul class="nav__drawer-list">
               <li class="nav__drawer-item"><a href="#" class="nav__drawer-link">Item 4</a></li>
               <li class="nav__drawer-item"><a href="#" class="nav__drawer-link">Item 5</a></li>
@@ -83,15 +82,20 @@ Nothing spectacular going on there, a nice clear simple layout, nothing that is 
           </nav>
         </div>
       </header>
-      <main class="main" id="main">
-        <h1>Lorem ipsum</h1>
-        <!-- Lorem ipsum removed for brevity -->
-      </main>
-      <footer class="footer">
+      <div class="site">
+        <main class="main" id="main">
+          <h1>Lorem ipsum</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ipsam iusto harum natus corporis reiciendis enim cupiditate recusandae officia commodi sed dicta, repellendus, maiores iure, voluptatem autem officiis aspernatur quia saepe temporibus quas assumenda rerum quisquam. Aut repellendus nam dignissimos eveniet at ex beatae saepe eum eaque eius. Repellat, vero.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eveniet, minima necessitatibus est quidem quaerat impedit quibusdam. Quia placeat non veritatis iusto dolorum fugiat iste, laboriosam repellendus minima perspiciatis nobis quasi sequi et, illum ipsam laudantium iure perferendis odit sed!</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, obcaecati distinctio, assumenda iste provident velit at dolor modi esse iure blanditiis. Voluptates hic sit perspiciatis, facilis quis, laudantium at quas repudiandae dolorum esse recusandae nesciunt porro delectus accusamus amet obcaecati? Distinctio voluptatibus saepe harum? Eius autem quasi fuga praesentium error!</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed laboriosam voluptates officiis ad laborum, corrupti, nam cum nesciunt incidunt eveniet qui cumque saepe neque? Quisquam totam minima facilis odio officia. Quisquam, numquam! Dignissimos quasi voluptatibus maiores nemo adipisci eum vitae atque eius illum deserunt veniam ad ducimus omnis, eligendi vero quos praesentium debitis aut nulla magni! Harum sed modi quae error deserunt, incidunt natus. Exercitationem.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis veniam a recusandae fugiat asperiores repellendus maiores voluptatum inventore quaerat. Similique unde dolorum omnis ullam debitis beatae ipsa ex. Dignissimos incidunt architecto ipsam asperiores ab a exercitationem dolores voluptas ipsa error amet corrupti et tenetur, enim molestiae fugit illo maxime temporibus sed! Suscipit quia ab placeat?</p>
+        </main>
+      </div>
+        <footer class="footer">
       <p>MTA drawer 2025</p>
       <a href="#">Item 12</a>
     </footer>
-    </div>
   </body>
 </html>
 ```
@@ -100,7 +104,8 @@ Nothing spectacular going on there, a nice clear simple layout, nothing that is 
 
 * We have a `no-js` class on the `html` element, we will remove this later, with JS, so basically, if JS can remove it, it's loaded/available
 * As we have more than one `nav` element, we need to give them names, so using a`ria-labelledby="[Ref_of_hidden_text_node]"`, we give the top `nav` the AccName of "Primary" and the lower `nav` (will be a drawer) an AccName of "Secondary". These nodes are in the above HTML and both have `display: none;` set, remember that `aria-labelledby` ignores that setting, by design, which I find to be super handy for situations just like this. I don't normally write styles in my HTML, as separation of concerns and CSS specificity, etc, but this doesn't make me feel icky, as I don't want anybody to ever see that text
-*
+* The entirety of our drawer is wrapped in a `<div id="drawer">` element, we'll grab this with JS, as we will need to move it to a more suitable place in the DOM
+* All of the standard disclosure stuff is the same as the Basic Disclosure Widgets guide, we have a `<button aria-expanded="false" aria-controls="sideNav">`, that latter attribute points to the ID of the secondary `<nav>` element and we'll toggle the `aria-expanded `state, when we need to
 
 #### The CSS
 
@@ -123,8 +128,12 @@ Just add this in the HTML's <head> section, I believe it's better to add it afte
 
 ##### Nothing spectacular, here
 
-we're simply removing the class no-js and then adding a new one, has-js, this can only happen if the user, user-agent or whatver else hasn't blocked JS
+We're simply removing the class no-js and then adding a new one, has-js, this can only happen if the user, user-agent or whatver else hasn't blocked JS
 
 #### Moving the entire drawer in the DOM
 
-I gave this one a little thought, and for the drawer to push the page or squish it, it needs to be on the same layer, so that rules out position: absolute; etc, as it would just slide over the top and we're going for a push effect, first. I'm not 100% sure whether this can be achieved without moving it to another location in the DOM, I do concede though, i haven't thrown everything at it to test my theory, I just thought about it and didn't have any lightbulbs illuminating around my head, so I thought, I'll just move it.
+I gave this one a little thought, and for the drawer to push the page or squish it, it needs to be on the same layer, so that rules out position: absolute; etc, as it would just slide over the top and we're going for a push effect, first. I'm kind of limited by my idea of having it only push the `<main>` container to the side, I don't want it to effect the `<header>` or `<footer>` elements, they can be the tracks our "drawer" glides on, I guess.
+
+There is one consideration, here, visually, our toggle will still appear in the `<header>`, but progrmmatically, it will no longer be there. I am having the drawer on the right side of the viewport so we need to consider focus order and ensure it is logical and intuitive. That means that a user would tab through the links in the primary navigation, then to the trigger, if they open the drawer, they will then tab through its interactive elements before moving to the `<main>` landmark, otherwise, they will just move to the `<main> `landmark, as the drawer's contents will be properly hidden. Our secondary navigation was previously in the `<header>`, which made perfect sense, now it isn't. Is this an issue? Perhaps not, a `<nav>` is afterall a landmark, which can be in the main parts of the page, the footer, anywhere, really, but, visually, it still is.
+
+I'm going to use aria-owns="\[ID_Ref_Of_Drawer]", just to make it a child of the <header>, so my hoisting it about in the DOM makes exactly the same sense and has exactly the same programmatic structure as before, it's almost like I didn't move it at all
