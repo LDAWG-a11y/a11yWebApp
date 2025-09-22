@@ -162,7 +162,7 @@ isGuide: true
 		<td>Not PDF editor - for precise positing of text for printing</td>
 	</tr>
 	<tr>
-		<th scope="row"><a href="https://www.scribus.net/downloads/">Stirling PDF (external website)</a></th>
+		<th scope="row"><a href="https://www.stirlingpdf.com/">Stirling PDF (external website)</a></th>
 		<td>Yes</td>
 		<td>Yes</td>
 		<td>Yes</td>
