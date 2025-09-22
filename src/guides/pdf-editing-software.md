@@ -159,7 +159,7 @@ isGuide: true
 		<td>Yes</td>
 		<td>Yes</td>
 		<td>Yes</td>
-		<td>Not PDF editor - for precise positing of text for printing</td>
+		<td>Not a PDF editor - for precise positioning of text for printing</td>
 	</tr>
 	<tr>
 		<th scope="row"><a href="https://www.stirlingpdf.com/">Stirling PDF (external website)</a></th>
