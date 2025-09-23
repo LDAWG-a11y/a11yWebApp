@@ -2,7 +2,7 @@
 title: Creating accessible PDFs from LibreOffice Writer
 summary: A guide to creating accessible PDFs from LibreOffice Writer
 author: swilkinson
-date: 2024-05-17
+date: 2023-05-17
 toc: true
 tags:
   - LibreOffice
