@@ -3,7 +3,7 @@ title: Accessibility Checker and Accessibility Check
 summary: Differences between Microsoft Word and PowerPoint Accessibility Checker
   and LibreOffice Writer Accessibility Check
 author: swilkinson
-date: 2024-05-07
+date: 2025-09-23
 toc: false
 tags:
   - Microsoft
