@@ -132,8 +132,113 @@ We're simply removing the class no-js and then adding a new one, has-js, this ca
 
 #### Moving the entire drawer in the DOM
 
-I gave this one a little thought, and for the drawer to push the page or squish it, it needs to be on the same layer, so that rules out position: absolute; etc, as it would just slide over the top and we're going for a push effect, first. I'm kind of limited by my idea of having it only push the `<main>` container to the side, I don't want it to effect the `<header>` or `<footer>` elements, they can be the tracks our "drawer" glides on, I guess.
+I gave this one a little thought, and for the drawer to push the page or squish it, iit will be easier to have it on the same layer, so that rules out position: absolute; etc, as it would just slide over the top and we're going for a push effect. We could probably animate both the drawer and the main content, to give the same effect, without moving the drawer, but that seems like it might be a bit more effort, I'm not saying that effort isn't worth it, but as this is a guide and my primary concerns are accessibility and the end result, I'm confident in my ability to get this quicker way right. I'm kind of limited by my idea of having it only push the `<main>` container to the side, I don't want it to effect the `<header>` or `<footer>` elements, they can be the tracks our "drawer" glides on, I guess. This effect is just personal preference and has no impact on accessibility, so feel free to use any slide-in/out effect or layout you prefer.
 
-There is one consideration, here, visually, our toggle will still appear in the `<header>`, but progrmmatically, it will no longer be there. I am having the drawer on the right side of the viewport so we need to consider focus order and ensure it is logical and intuitive. That means that a user would tab through the links in the primary navigation, then to the trigger, if they open the drawer, they will then tab through its interactive elements before moving to the `<main>` landmark, otherwise, they will just move to the `<main> `landmark, as the drawer's contents will be properly hidden. Our secondary navigation was previously in the `<header>`, which made perfect sense, now it isn't. Is this an issue? Perhaps not, a `<nav>` is afterall a landmark, which can be in the main parts of the page, the footer, anywhere, really, but, visually, it still is.
+There is one consideration, here, visually, our toggle will still appear in the `<header>`, but progrmmatically, it will no longer be there. I am having the drawer on the right side of the viewport so we need to consider focus order and ensure it is logical and intuitive. That means that a user would tab through the links in the primary navigation, then to the trigger `<button>`, then, if they open the drawer, they will then tab through its interactive elements before moving to the `<main>` landmark's link (I just added one), otherwise, they will just move from the trigger straight to the `<main>` landmark, as our drawer's contents will be properly hidden. Our secondary navigation was previously in the `<header>` for the no JS layout, which made perfect sense, now it isn't. Is this an issue? Probably not, a `<nav>` is still a landmark, which can be in the main parts of the page, the footer, anywhere, really, but, visually, it still is inside the `<header>`. Maybe it makes more sense to users if it is in the `<header>`? maybe it doesn't actually matter? 
 
-I'm going to use aria-owns="\[ID_Ref_Of_Drawer]", just to make it a child of the <header>, so my hoisting it about in the DOM makes exactly the same sense and has exactly the same programmatic structure as before, it's almost like I didn't move it at all
+What we do know is that if we have any kind of expando widget, when a user clicks the trigger then the next focusable element MUST be inside that newly opened panel (unless it has no focusable elements, of course), as this is the logical and intuitive tab order, we're not building mazes, we're making UIs, with predictable paths for reaching UI components or content. So:
+
+* When the drawer is closed, nothing inside receives focus, it's properly hidden
+* When the drawer is opened, a user can tab through the links within, directly from the trigger button, when they reach the final link in the drawer, the next tab stop will be inside the main content
+* As we are pushing the main content to the side and not overlaying it, we don't need to worry about 2.4.7 Focus Visible or 2.4.11 Focus not Obscured (Minimum), as nothing we have done could cover anything (this is the primary reason I personally prefer this pattern)
+
+I'm adding a couple of screenshots with arrows indicating the focus path for those of you who learn better from pictures, I'll include both the closed and open drawer states:
+
+![Screenshot of the page we are building, the drawer is closed, there is a typical hamburger menu positioned at the far right of the header. The arrows I have added indicate the tab sequence is Primary links (x3) > Hmaburger button > Link inside the main content](src/guideImg/screenshot-1.png)
+
+![Screenshot showing the nav drawer open, the drawer opens from the right, directly below the hamburger button, my arrows indicate the tab sequence to be Primary nav links (x 3) > Hamburger button > secondary nav (the drawer) links (x 8) > The link in the main content container](src/guideImg/screenshot-2.png)
+
+In the images I show the tab sequence I am going for, this is the only sequence that makes sense for this particular layout, in my view, as anything else would not be intuitive, so how did I achieve that? Let's look at some code, I'll start with the JS:
+
+```javascript
+const drawer = document.getElementById(`drawer`).outerHTML;
+document.getElementById('drawer').remove();
+document.querySelector('.main').insertAdjacentHTML('beforebegin', drawer);
+```
+
+1. Firstly I'm grabbing the entire drawer's HTML and storing it in a variable or indeed a constant if you just cringed at me calling a `const` a variable
+2. Now that we have stored it, we can delete the original HTML as we don't need that anymore
+3. Finally, we want to insert that stored HTML into the position that makes most sense, I'm adding it before the `<main>` content, even though visually, it appears to the right of it, this is for a good reason:
+
+   * Because I am adding it before the main content, that means I get the desired/expected focus order for free, had I added it after the main content, then I'd have needed to manually manage focus with more JS and why do that?
+
+So, at this stage, everything would be flipped, right? Our drawer would be on the left and I'd already committed to putting it on the right side of the viewport. this is super easy to solve. In the HTML you may have noticed I had put a wapper `.site` around the `<main>`, this was for this very reason, I needed a container to flip the drawer and the <main> around in, visually, so what I did to that `.site `container was added the following CSS:
+
+```css
+.site {
+  display: flex;
+  flex-direction: column;
+} 
+
+.has-js .site {
+  flex-direction: row-reverse;
+}
+```
+
+I'll quickly explain the above:
+
+1. The first selector just sets the `flex` layout and as this is default (No JS), I'm just setting it as a `column`, although I didn't need to do anything there, as that contain only holds the `<main>` when there is no JS
+2. In my second CSS declaration, this is where the magic happens, I'm only running this declartion if JS is available, with the `.has-js` class, then I'm simply setting the `flex-direction` to `row-reverse`, which visually flips the layout, but does not interfere with the focus order. Remember, we got the focus order for free by adding it before the `<main>,` so now I can animate my panel sliding in and out, preserving the correct focus order, whilst having it on the right of the page and that took a trivial amount of JS and CSS. Please do be aware using the reverse attributes in CSS can often make things worse, depending on how and why it is used, the current layout and several other factors, so please use with caution, if you're just learning about this. In our example, it's perfectly safe to use in this way
+
+So, when I animate my drawer, I said I wanted it to push or squish the main content, didn't I and that was my reasoning for doing the above? Had I attempted to animate both the drawer and the main content, the drawer would still have been in the `<header>`, so as I am taking the path of least resistance for me, as a dev, then I personally feel that I should make every effort to ensure it works exactly the same as it would have done for everybody, had I spent that little bit more time. Shortcuts are cool and stuff, but only when they achieve exactly the same result as doing it the slightly longer way, right? So, my drawer is visually in the header (well the trigger is), but programmatically it isn't, can I add that relationship back, with ARIA?, Sure I can:
+
+I'm going to use `aria-owns="[ID_Ref_Of_Drawer]"`, just to make it a child of the `<header>`, so my hoisting it about in the DOM makes exactly the same sense and has exactly the same programmatic structure as before, it's almost like I didn't move it at all. Think of my `<header>` as the parent and my drawer as the child (that's exactly what they were, anyway), well, the time as come for the child to move out, they have the keys to their own place, it's only around the corner, so off they go, the parent is still the parent, right? A parent doesn't just stop being a parent when their kid(s) moves out, so in this case, the kid has moved out, but that relationship didn't end, they probably have phones, we have `aria-owns`, sorry,
+
+```javascript
+document.querySelector('.header').setAttribute('aria-owns', 'drawer');
+```
+
+Pretty straighforward, Im just adding `aria-owns` with an `ID_Ref` of the drawer element, to the `<header>`, I didn't even need to do that with JS, I could have added that ARIA attribute in HTML, it wouldn't have caused a problem, as that relationship was already implied, we would have just been explicit about it.
+
+We need to make the drawer actually open and close, so a basic event listener will do that for us:
+
+```javascript
+ const trigger = document.querySelector('.nav__trigger');
+
+
+trigger.addEventListener('click', () => {
+  trigger.removeAttribute('data-untouched');
+  trigger.getAttribute('aria-expanded') == 'false' ? trigger.setAttribute('aria-expanded', 'true') : trigger.setAttribute('aria-expanded', 'false');
+});
+```
+
+1. We're getting a reference to our trigger `<button>`, holding it in a `trigger` `const`
+2. Then we assign `addEventListener` for `'click' `events to the `trigger`
+3. When a user clicks the element, we remove a data attribute data-untouched, this is just what I added to prevent the `@keyframes` animation of the hamburger menu playing on page load (bit out of scope, but that's how I do it)
+4. Finally, we have a ternary operator to flip the state of `aria-expanded` on each `click` event
+
+I'll give the important parts of the CSS, here, as it's important to highlight that bit as it does the majority of the heavy lifting:
+
+```css
+/* Our "drawer" was full width when there was no JS, that's how i did that */
+.no-js .nav__drawer {
+  width: 100%;
+}
+
+/* When there is JS, our initial state is display: none; and width: 0;
+We also want the drawer to be 100% height of the parent. we then set transitions and 
+I am allowing discrete transitions, because, whaey, we can now transition display properties*/
+.has-js .nav__drawer {
+  display: none;
+  min-height: 100%;
+  width: 0;
+  transition: display 500ms allow-discrete, width 500ms ease-in;
+}
+
+/* The drawer can only ever have aria-expanded="true" set if JS is available, so 
+I'm setting a display property as flex 9block works, too) and i want my drawer to be 20rem wide
+I then have to set a starting-style, as transtitioning display: none; to flex; requires
+I use this to animate everything else*/
+.nav__trigger[aria-expanded="true"] + .nav__drawer {
+  display: flex;
+  width: 20rem;
+
+  @starting-style {
+    width: 0;
+  }
+}
+```
+
+Those are the important bits, this just slides the drawer in and out, most of my other CSS is basic styling, focus and hover styles and the animation for the hamburger, etc.
+
+So, that is actually done, the only thing
