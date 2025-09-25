@@ -105,7 +105,7 @@ Nothing spectacular going on there, a nice clear simple layout, nothing that is 
 * We have a `no-js` class on the `html` element, we will remove this later, with JS, so basically, if JS can remove it, it's loaded/available
 * As we have more than one `nav` element, we need to give them names, so using a`ria-labelledby="[Ref_of_hidden_text_node]"`, we give the top `nav` the AccName of "Primary" and the lower `nav` (will be a drawer) an AccName of "Secondary". These nodes are in the above HTML and both have `display: none;` set, remember that `aria-labelledby` ignores that setting, by design, which I find to be super handy for situations just like this. I don't normally write styles in my HTML, as separation of concerns and CSS specificity, etc, but this doesn't make me feel icky, as I don't want anybody to ever see that text
 * The entirety of our drawer is wrapped in a `<div id="drawer">` element, we'll grab this with JS, as we will need to move it to a more suitable place in the DOM
-* All of the standard disclosure stuff is the same as the Basic Disclosure Widgets guide, we have a `<button aria-expanded="false" aria-controls="sideNav">`, that latter attribute points to the ID of the secondary `<nav>` element and we'll toggle the `aria-expanded `state, when we need to
+* All of the standard disclosure stuff is the same as the Basic Disclosure Widgets guide, we have a `<button aria-expanded="false" aria-controls="sideNav">`, that latter attribute points to the ID of the secondary `<nav>` element and we'll toggle the `aria-expanded`state, when we need to
 
 #### The CSS
 
@@ -162,7 +162,7 @@ document.querySelector('.main').insertAdjacentHTML('beforebegin', drawer);
 
    * Because I am adding it before the main content, that means I get the desired/expected focus order for free, had I added it after the main content, then I'd have needed to manually manage focus with more JS and why do that?
 
-So, at this stage, everything would be flipped, right? Our drawer would be on the left and I'd already committed to putting it on the right side of the viewport. this is super easy to solve. In the HTML you may have noticed I had put a wapper `.site` around the `<main>`, this was for this very reason, I needed a container to flip the drawer and the <main> around in, visually, so what I did to that `.site `container was added the following CSS:
+So, at this stage, everything would be flipped, right? Our drawer would be on the left and I'd already committed to putting it on the right side of the viewport. this is super easy to solve. In the HTML you may have noticed I had put a wapper `.site` around the `<main>`, this was for this very reason, I needed a container to flip the drawer and the `<main>` around in, visually, so what I did to that `.site`container was added the following CSS:
 
 ```css
 .site {
@@ -190,6 +190,12 @@ document.querySelector('.header').setAttribute('aria-owns', 'drawer');
 
 Pretty straighforward, Im just adding `aria-owns` with an `ID_Ref` of the drawer element, to the `<header>`, I didn't even need to do that with JS, I could have added that ARIA attribute in HTML, it wouldn't have caused a problem, as that relationship was already implied, we would have just been explicit about it.
 
+Just to show how that attribute affected the accessibility tree, i have a screenshot:
+
+![Screenshot shows the accessibility tree open in the DevTools, after recreating the programmtic relationship that I initially severed, the button and the draw are both programmatically back in the header](src/guideImg/screenshot-3.png)
+
+If I were to remove that attribute, our drawer would be between the `<header>` and `<main>` not just in the DOM, but also in the A11y tree, with it, we have technically put it back as far as accessibility is concerned. I guess I have just cleaned up after myself, maybe it's not totally necessary, it's not the kind of thing I would write up as a failure, but I'm always open to comments
+
 We need to make the drawer actually open and close, so a basic event listener will do that for us:
 
 ```javascript
@@ -203,7 +209,7 @@ trigger.addEventListener('click', () => {
 ```
 
 1. We're getting a reference to our trigger `<button>`, holding it in a `trigger` `const`
-2. Then we assign `addEventListener` for `'click' `events to the `trigger`
+2. Then we assign `addEventListener` for `'click'`events to the `trigger`
 3. When a user clicks the element, we remove a data attribute data-untouched, this is just what I added to prevent the `@keyframes` animation of the hamburger menu playing on page load (bit out of scope, but that's how I do it)
 4. Finally, we have a ternary operator to flip the state of `aria-expanded` on each `click` event
 
@@ -241,4 +247,19 @@ I use this to animate everything else*/
 
 Those are the important bits, this just slides the drawer in and out, most of my other CSS is basic styling, focus and hover styles and the animation for the hamburger, etc.
 
-So, that is actually done, the only thing
+So, this is kind of done, you have all of the HTML and JS that I have used, but we still have a quite glaring problem:
+
+#### What about mobile?
+
+Obviously it's best practice to build "mobile" first and I didn't do that, here. There was a reason for this, not because I'm building it, but because I'm writing about how to build it and by talking about the proble I have created, I can then show you the solution.
+
+So, we're pushing the entire contents to the side, which works great on a larger display, but at a viewport computed to 320px width, there is no space for the page contents. We could have written a media query to set the width of the drawer ro be a maximum of 18rem (288px), as opposed to the 20rem (320px) we used, but then obviously every single word has to wrap and break, images and what not all get too squished and the whole thing generally looks a hot mess. The pattern we built is actually my favourite pattern, but it falls down on "mobile" and I know that, so we need a kind of hybrid approach:
+
+* If the screen is "large enough" (some arbrtary breakpoint), we'll do push to the side
+* If the screen is "too small" to be usable, we'll slide out on a new layer
+
+So, if we slide a panel out, that covers the entire of the viewport we do of course run the risks associated with escaping the container with the <kbd>Tab</kbd> key or virtual cursor and failing 2.4.7, 2.4.11. Is it a modal? It certainly quacks like one, doesn't it? It covers the whole page, blocking interaction and exists on the top-most layer. But, it's exactly the same component on both "mobile" and desktop, so should we change the ARIA to be modal? I have to admit, I'm not 100% sure, here, if taken in isolation on a smaller viewport, then every instinct I have would say "modal", but taken with the larger screen layout and everything inbetween I have enough doubt to question myself. It's not for me to decide what is best, here, it's simple enough for me to do, but would I be doing it for the right reasons? I'd need disabled people's advice here, which unfortunately I cannot get, so, I'm not going to make it modal, I'll leave that as an unanswered question. I will provide a little snippet of JS to show how we could do that and I'll also add an auto-close feature, just to prevent any tabbing underneath, obviously I can't do anything about the virtual cursor, but I can add light dismiss.
+
+I'm also not going to implement something else which I think would be great:
+
+On very large screens we could do away with the button, completely, we could just always show the drawer as open. It makes sense to have a toggle up to a point, but I limit the width of my sites anyway, so the line length isn't too problematic for folk with reading disabilities, etc, is there any point in hiding it when we have adequate void space around the page's <body>? There isn't, is there? A little media query can handle that, we wouldn't need any JS.
