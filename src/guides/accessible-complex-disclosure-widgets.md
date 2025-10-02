@@ -51,10 +51,6 @@ Nothing spectacular going on there, a nice clear simple layout, nothing that is 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-      document.querySelector('html').classList.remove('no-js');
-      document.querySelector('html').classList.add('has-js');
-    </script>
   </head>
   <body>
     <header class="header">
@@ -112,8 +108,10 @@ Nothing spectacular going on there, a nice clear simple layout, nothing that is 
 ##### A quick summary of the HTML
 
 * We have a `no-js` class on the `html` element, we will remove this later, with JS, so basically, if JS can remove it, it's loaded/available
-* As we have more than one `nav` element, we need to give them names, so using a`ria-labelledby="[Ref_of_hidden_text_node]"`, we give the top `nav` the AccName of "Primary" and the lower `nav` (will be a drawer) an AccName of "Secondary". These nodes are in the above HTML and both have `display: none;` set, remember that `aria-labelledby` ignores that setting, by design, which I find to be super handy for situations just like this. I don't normally write styles in my HTML, as separation of concerns and CSS specificity, etc, but this doesn't make me feel icky, as I don't want anybody to ever see that text
-* The entirety of our drawer is wrapped in a `<div id="drawer">` element, we'll grab this with JS, as we will need to move it to a more suitable place in the DOM
+* As we have more than one `nav` element, we need to give them names, so using a`ria-labelledby="[Ref_of_hidden_text_node]"`, we give the top navigation the AccName of "Primary" and the lower navigation (will be a drawer) an AccName of "Secondary". These naming nodes are in the above HTML and both have `display: none;` set, remember that `aria-labelledby` ignores that all methods of "hiding", by design, which I find to be super handy for situations just like this. I don't normally write styles in my HTML, as separation of concerns and CSS specificity, etc, but this doesn't make me feel icky, as I don't want anybody to ever see that text
+* We have a `<button>` which will act as the trigger for our drawer, we will of course only show this when JS is available
+* Our Drawer isn't a child of our Secondary `<nav>` element, which means that relationship isn't programmatically determinible, the `<button>` is inside it, but the drawer isn't. If the button is inside it, then the thing it controls should be. We do use `aria-controls` on the `<button>` which technically creates that relationship, but only in a technical sense, not so much in a useful to AT sense, as screenreader support is virtually non-existent. Sure, we could have added the drawer inside the `<nav>`, which is where it should be, but due to the layout, everything got a little overly-complex when I initially started buiding this, as I was having to abslutely position the button so it remained in the `<header>`, which in itself, isn't a problem, it's just that we'd need to know our `<nav>`'s height, at all times, so the positioning always looked consistent. As I was moving the entire drawer with JS, anyway I just found it easier to move it half-way to where I finally wanted it for no JS and then recreate that relationship with ARIA. So, what I did was I added `aria-owns="drawer"` to the Secondary `<nav>` element, which allows me to move things around in the DOM, break relationships, but then put that relationship back with this nifty property. I initially added that property with JS, but only when I actually moved stuff around, but then I encountered a bit of layout complexity, so I took the path of least resistance and recreated the relationship
+* The entirety of our drawer is wrapped in a `<div class="nav__drawer" id="drawer">` element, we'll grab this with JS, as we will need to move it to a more suitable place in the DOM
 * All of the standard disclosure stuff is the same as the Basic Disclosure Widgets guide, we have a `<button aria-expanded="false" aria-controls="sideNav">`, that latter attribute points to the ID of the secondary `<nav>` element and we'll toggle the `aria-expanded`state, when we need to
 
 #### The CSS
@@ -122,11 +120,11 @@ I'm going to omit the CSS, again, as everything gets to unwieldy, I'm also build
 
 ### Let's progressively enhance it
 
-First things, first, we need to remove the no-js class from the html element and add a has-js class. We don't technically need both, but it just makes it a smidge easier to style things, for both possibilities, I guess.
+First things, first, we need to remove the `.no-js` class from the `<html>` element and add a `.has-js` class. We don't technically need both, but it just makes it a smidge easier to style things, for both possibilities, I guess.
 
 #### JS Swapping the JS class
 
-Just add this in the HTML's <head> section, I believe it's better to add it after the title, encoding and links to other resources, such as CSS, fonts and whatever else you may link to in your <head> section>, for performance reasons.
+Just add this in the HTML's `<head>` section, I believe it's better to add it after the title, encoding and links to other resources, such as CSS, fonts and whatever else you may link to in your <head> section>, for performance reasons.
 
 ```javascript
 <script>
@@ -137,7 +135,7 @@ Just add this in the HTML's <head> section, I believe it's better to add it afte
 
 ##### Nothing spectacular, here
 
-We're simply removing the class no-js and then adding a new one, has-js, this can only happen if the user, user-agent or whatver else hasn't blocked JS
+We're simply removing the class `no-js` and then adding a new one, `has-js`, this can only happen if the user, user-agent or whatver else hasn't blocked JS
 
 #### Moving the entire drawer in the DOM
 
