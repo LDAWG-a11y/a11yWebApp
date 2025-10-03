@@ -112,7 +112,8 @@ Nothing spectacular going on there, a nice clear simple layout, nothing that is 
 * We have a `<button>` which will act as the trigger for our drawer, we will of course only show this when JS is available
 * Our Drawer isn't a child of our Secondary `<nav>` element, which means that relationship isn't programmatically determinible, the `<button>` is inside it, but the drawer isn't. If the button is inside it, then the thing it controls should be. We do use `aria-controls` on the `<button>` which technically creates that relationship, but only in a technical sense, not so much in a useful to AT sense, as screenreader support is virtually non-existent. Sure, we could have added the drawer inside the `<nav>`, which is where it should be, but due to the layout, everything got a little overly-complex when I initially started buiding this, as I was having to abslutely position the button so it remained in the `<header>`, which in itself, isn't a problem, it's just that we'd need to know our `<nav>`'s height, at all times, so the positioning always looked consistent. As I was moving the entire drawer with JS, anyway I just found it easier to move it half-way to where I finally wanted it for no JS and then recreate that relationship with ARIA. So, what I did was I added `aria-owns="drawer"` to the Secondary `<nav>` element, which allows me to move things around in the DOM, break relationships, but then put that relationship back with this nifty property. I initially added that property with JS, but only when I actually moved stuff around, but then I encountered a bit of layout complexity, so I took the path of least resistance and recreated the relationship
 * The entirety of our drawer is wrapped in a `<div class="nav__drawer" id="drawer">` element, we'll grab this with JS, as we will need to move it to a more suitable place in the DOM
-* All of the standard disclosure stuff is the same as the Basic Disclosure Widgets guide, we have a `<button aria-expanded="false" aria-controls="sideNav">`, that latter attribute points to the ID of the secondary `<nav>` element and we'll toggle the `aria-expanded`state, when we need to
+* All of the standard disclosure stuff is the same as the Basic Disclosure Widgets guide, we have a `<button aria-expanded="false" aria-controls="sideNav">`, that latter attribute points to the ID of the secondary `<nav>` element and we'll toggle the `aria-expanded`state, when we need to. The following screenshot shows that we have the exact relationship we wanted, after using a little ARIA:
+  ![Screenshot shows the accessibility tree open in the DevTools, after recreating the programmtic relationship that I initially severed, the button and the draw are both programmatically back in the header](src/guideImg/screenshot-3.png)
 
 #### The CSS
 
@@ -158,14 +159,12 @@ I'm adding a couple of screenshots with arrows indicating the focus path for tho
 In the images I show the tab sequence I am going for, this is the only sequence that makes sense for this particular layout, in my view, as anything else would not be intuitive, so how did I achieve that? Let's look at some code, I'll start with the JS:
 
 ```javascript
-const drawer = document.getElementById(`drawer`).outerHTML;
-document.getElementById('drawer').remove();
-document.querySelector('.main').insertAdjacentHTML('beforebegin', drawer);
+const drawer = document.querySelector(`#drawer`);
+document.querySelector('.site').prepend(drawer);
 ```
 
-1. Firstly I'm grabbing the entire drawer's HTML and storing it in a variable or indeed a constant if you just cringed at me calling a `const` a variable
-2. Now that we have stored it, we can delete the original HTML from the DOM as we don't need that anymore
-3. Finally, we want to insert that stored HTML string into the position that makes most sense, I'm adding it before the `<main>` content, even though visually, it appears to the right of it, this is for a good reason:
+1. Firstly I'm grabbing the entire drawer element and storing it in a variable or indeed a constant if you just cringed at me calling a `const` a variable
+2. Finally, we want to `prepend` that stored element into the position that makes most sense, I'm adding it before the `<main>` content, inside the .`site` container, even though visually, it appears to the right of it, this is for a good reason:
 
    * Because I am adding it before the main content, that means I get the desired/expected focus order for free, had I added it after the main content, then I'd have needed to manually manage focus with more JS and why do that?
 
@@ -175,11 +174,15 @@ So, at this stage, everything would be flipped, right? Our drawer would be on th
 @media screen and (min-width: 48em) {
   .site {
     display: flex;
-    flex-direction: column;
   } 
 
   .has-js .site {
+    position: static;
     flex-direction: row-reverse;
+  }
+  
+  .nav__drawer {
+    position: static;
   }
 }
 ```
@@ -188,17 +191,12 @@ I'll quickly explain the above:
 
 1. Firstly, I add a media query, as I always build things "mobile-first", the 48em value is 768px, this is just an example of a tablet size, although in the real world, I'd probably increase this value a decent bit
 2. The first selector just sets the `flex` layout and as this is default (No JS), I'm just setting it as a `column`, although I didn't need to do anything there, as that container only holds the `<main>` when there is no JS
-3. In my second CSS declaration, this is where the magic happens, I'm only running this declartion if JS is available, with the `.has-js` class, then I'm simply setting the `flex-direction` to `row-reverse`, which visually flips the layout, but does not interfere with the focus order. Remember, we got the focus order for free by adding it before the `<main>,` so now I can animate my panel sliding in and out, preserving the correct focus order, whilst having it on the right of the page and that took a trivial amount of JS and CSS. Please do be aware sometimes reversing the layout of things in CSS columns or rows can cause illogical focus or reading orders, that's not the case here, though, but be sure to check anything you flip with a keyboard and also a screen reader/keboard combo
-
-![Screenshot shows the accessibility tree open in the DevTools, after recreating the programmtic relationship that I initially severed, the button and the draw are both programmatically back in the header](src/guideImg/screenshot-3.png)
-
-
+3. In my second CSS declaration, this is where the magic happens, I'm only running this declartion if JS is available, with the `.has-js` class, then I'm simply setting the `flex-direction` to `row-reverse`, which visually flips the layout, but does not interfere with the focus order. Remember, we got the focus order for free by adding it before the `<main>,` so now I can animate my panel sliding in and out, preserving the correct focus order, whilst having it on the right of the page and that took a trivial amount of JS and CSS. Please do be aware sometimes reversing the layout of things in CSS columns or rows can cause illogical focus or reading orders, that's not the case here, though, but be sure to check anything you flip with a keyboard and also a screen reader/keboard combo. I also set position: static; as I want the default flow, here and I actually used position: relative; for the "mobile" view
 
 We need to make the drawer actually open and close, so a basic event listener will do that for us:
 
 ```javascript
- const trigger = document.querySelector('.nav__trigger');
-
+const trigger = document.querySelector('.nav__trigger');
 
 trigger.addEventListener('click', () => {
   trigger.removeAttribute('data-untouched');
@@ -258,7 +256,21 @@ So, we're pushing the entire contents to the side, which works great on a larger
 
 So, if we slide a panel out, that covers the entire of the viewport we do of course run the risks associated with escaping the container with the <kbd>Tab</kbd> key or virtual cursor and failing 2.4.7, 2.4.11. Is it a modal? It certainly quacks like one, doesn't it? It covers the whole page, blocking interaction and exists on the top-most layer. But, it's exactly the same component on both "mobile" and desktop, so should we change the ARIA to be modal? I have to admit, I'm not 100% sure, here, if taken in isolation on a smaller viewport, then every instinct I have would say "modal", but taken with the larger screen layout and everything inbetween I have enough doubt to question myself. It's not for me to decide what is best, here, it's simple enough for me to do, but would I be doing it for the right reasons? I'd need disabled people's advice here, which unfortunately I cannot get, so, I'm not going to make it modal, I'll leave that as an unanswered question. I will provide a little snippet of JS to show how we could do that and I'll also add an auto-close feature, just to prevent any tabbing underneath, obviously I can't do anything about the virtual cursor, but I can add light dismiss.
 
-A simple media query
+So, remember our main bits for pushing the main content out were in a CSS media query? These bits aren't, so they will, in essence apply to all viewports up until that first breakpoint:
+
+```css
+.has-js .site {
+  position: relative;
+}
+
+.has-js .nav__drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+```
+
+ In the above, we are simply setting the parent container .site, to position relative
 
 #### Another possible enhancement?
 
