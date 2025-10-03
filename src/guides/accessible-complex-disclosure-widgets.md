@@ -139,14 +139,14 @@ We're simply removing the class `no-js` and then adding a new one, `has-js`, thi
 
 #### Moving the entire drawer in the DOM
 
-I gave this one a little thought, and for the drawer to push the page or squish it, iit will be easier to have it on the same layer, so that rules out position: absolute; etc, as it would just slide over the top and we're going for a push effect. We could probably animate both the drawer and the main content, to give the same effect, without moving the drawer, but that seems like it might be a bit more effort, I'm not saying that effort isn't worth it, but as this is a guide and my primary concerns are accessibility and the end result, I'm confident in my ability to get this quicker way right. I'm kind of limited by my idea of having it only push the `<main>` container to the side, I don't want it to effect the `<header>` or `<footer>` elements, they can be the tracks our "drawer" glides on, I guess. This effect is just personal preference and has no impact on accessibility, so feel free to use any slide-in/out effect or layout you prefer.
+I gave this one a little thought, and for the drawer to push the page or squish it, iit will be easier to have it on the same layer, so that rules out `position: absolute;` etc, as it would just slide over the top and we're going for a push effect. We could probably animate both the drawer and the main content, to give the same effect, without moving the drawer, but that seems like it might be a bit brittle.So the only way we can realistically achieve the effect I am going for is to move the drawer into the `.site` wrapper I added.
 
-There is one consideration, here, visually, our toggle will still appear in the `<header>`, but progrmmatically, it will no longer be there. I am having the drawer on the right side of the viewport so we need to consider focus order and ensure it is logical and intuitive. That means that a user would tab through the links in the primary navigation, then to the trigger `<button>`, then, if they open the drawer, they will then tab through its interactive elements before moving to the `<main>` landmark's link (I just added one), otherwise, they will just move from the trigger straight to the `<main>` landmark, as our drawer's contents will be properly hidden. Our secondary navigation was previously in the `<header>` for the no JS layout, which made perfect sense, now it isn't. Is this an issue? Probably not, a `<nav>` is still a landmark, which can be in the main parts of the page, the footer, anywhere, really, but, visually, it still is inside the `<header>`. Maybe it makes more sense to users if it is in the `<header>`? maybe it doesn't actually matter? 
+There is one consideration, here, our toggle will still be placed in the `<header>`, and the drawer is not and as I want my drawer to be on the right side of the viewport that could create a potential problem with focus order, which needs to be logical and intuitive. We need to ensure that when we move the drawer to the `.site` wrapper, that it precedes the `.main` content, which would then mean it appears on the left, by default. This would of course not be logical or intuitive, as when a button expands a widget, that widget's content must be next in the page's sequential focus order or reading order if there are no interactive elements.
 
-What we do know is that if we have any kind of expando widget, when a user clicks the trigger then the next focusable element MUST be inside that newly opened panel (unless it has no focusable elements, of course), as this is the logical and intuitive tab order, we're not building mazes, we're making UIs, with predictable paths for reaching UI components or content. So:
+So, our primary objactives are as follows:
 
 * When the drawer is closed, nothing inside receives focus, it's properly hidden
-* When the drawer is opened, a user can tab through the links within, directly from the trigger button, when they reach the final link in the drawer, the next tab stop will be inside the main content
+* When the drawer is opened, a user can <kbd>tab</kbd> through the links within, directly from the trigger `<button>`, when they reach the final link in the drawer, the next tab stop will be inside the main content
 * As we are pushing the main content to the side and not overlaying it, we don't need to worry about 2.4.7 Focus Visible or 2.4.11 Focus not Obscured (Minimum), as nothing we have done could cover anything (this is the primary reason I personally prefer this pattern)
 
 I'm adding a couple of screenshots with arrows indicating the focus path for those of you who learn better from pictures, I'll include both the closed and open drawer states:
@@ -164,44 +164,35 @@ document.querySelector('.main').insertAdjacentHTML('beforebegin', drawer);
 ```
 
 1. Firstly I'm grabbing the entire drawer's HTML and storing it in a variable or indeed a constant if you just cringed at me calling a `const` a variable
-2. Now that we have stored it, we can delete the original HTML as we don't need that anymore
-3. Finally, we want to insert that stored HTML into the position that makes most sense, I'm adding it before the `<main>` content, even though visually, it appears to the right of it, this is for a good reason:
+2. Now that we have stored it, we can delete the original HTML from the DOM as we don't need that anymore
+3. Finally, we want to insert that stored HTML string into the position that makes most sense, I'm adding it before the `<main>` content, even though visually, it appears to the right of it, this is for a good reason:
 
    * Because I am adding it before the main content, that means I get the desired/expected focus order for free, had I added it after the main content, then I'd have needed to manually manage focus with more JS and why do that?
 
-So, at this stage, everything would be flipped, right? Our drawer would be on the left and I'd already committed to putting it on the right side of the viewport. this is super easy to solve. In the HTML you may have noticed I had put a wapper `.site` around the `<main>`, this was for this very reason, I needed a container to flip the drawer and the `<main>` around in, visually, so what I did to that `.site`container was added the following CSS:
+So, at this stage, everything would be flipped, right? Our drawer would be on the left and I'd already committed to putting it on the right side of the viewport. This is super easy to solve, with the following CSS:
 
 ```css
-.site {
-  display: flex;
-  flex-direction: column;
-} 
+@media screen and (min-width: 48em) {
+  .site {
+    display: flex;
+    flex-direction: column;
+  } 
 
-.has-js .site {
-  flex-direction: row-reverse;
+  .has-js .site {
+    flex-direction: row-reverse;
+  }
 }
 ```
 
 I'll quickly explain the above:
 
-1. The first selector just sets the `flex` layout and as this is default (No JS), I'm just setting it as a `column`, although I didn't need to do anything there, as that contain only holds the `<main>` when there is no JS
-2. In my second CSS declaration, this is where the magic happens, I'm only running this declartion if JS is available, with the `.has-js` class, then I'm simply setting the `flex-direction` to `row-reverse`, which visually flips the layout, but does not interfere with the focus order. Remember, we got the focus order for free by adding it before the `<main>,` so now I can animate my panel sliding in and out, preserving the correct focus order, whilst having it on the right of the page and that took a trivial amount of JS and CSS. Please do be aware using the reverse attributes in CSS can often make things worse, depending on how and why it is used, the current layout and several other factors, so please use with caution, if you're just learning about this. In our example, it's perfectly safe to use in this way
-
-So, when I animate my drawer, I said I wanted it to push or squish the main content, didn't I and that was my reasoning for doing the above? Had I attempted to animate both the drawer and the main content, the drawer would still have been in the `<header>`, so as I am taking the path of least resistance for me, as a dev, then I personally feel that I should make every effort to ensure it works exactly the same as it would have done for everybody, had I spent that little bit more time. Shortcuts are cool and stuff, but only when they achieve exactly the same result as doing it the slightly longer way, right? So, my drawer is visually in the header (well the trigger is), but programmatically it isn't, can I add that relationship back, with ARIA?, Sure I can:
-
-I'm going to use `aria-owns="[ID_Ref_Of_Drawer]"`, just to make it a child of the `<header>`, so my hoisting it about in the DOM makes exactly the same sense and has exactly the same programmatic structure as before, it's almost like I didn't move it at all. Think of my `<header>` as the parent and my drawer as the child (that's exactly what they were, anyway), well, the time as come for the child to move out, they have the keys to their own place, it's only around the corner, so off they go, the parent is still the parent, right? A parent doesn't just stop being a parent when their kid(s) moves out, so in this case, the kid has moved out, but that relationship didn't end, they probably have phones, we have `aria-owns`, sorry,
-
-```javascript
-document.querySelector('.header').setAttribute('aria-owns', 'drawer');
-```
-
-Pretty straighforward, Im just adding `aria-owns` with an `ID_Ref` of the drawer element, to the `<header>`, I didn't even need to do that with JS, I could have added that ARIA attribute in HTML, it wouldn't have caused a problem, as that relationship was already implied, we would have just been explicit about it.
-
-Just to show how that attribute affected the accessibility tree, i have a screenshot:
+1. Firstly, I add a media query, as I always build things "mobile-first", the 48em value is 768px, this is just an example of a tablet size, although in the real world, I'd probably increase this value a decent bit
+2. The first selector just sets the `flex` layout and as this is default (No JS), I'm just setting it as a `column`, although I didn't need to do anything there, as that container only holds the `<main>` when there is no JS
+3. In my second CSS declaration, this is where the magic happens, I'm only running this declartion if JS is available, with the `.has-js` class, then I'm simply setting the `flex-direction` to `row-reverse`, which visually flips the layout, but does not interfere with the focus order. Remember, we got the focus order for free by adding it before the `<main>,` so now I can animate my panel sliding in and out, preserving the correct focus order, whilst having it on the right of the page and that took a trivial amount of JS and CSS. Please do be aware sometimes reversing the layout of things in CSS columns or rows can cause illogical focus or reading orders, that's not the case here, though, but be sure to check anything you flip with a keyboard and also a screen reader/keboard combo
 
 ![Screenshot shows the accessibility tree open in the DevTools, after recreating the programmtic relationship that I initially severed, the button and the draw are both programmatically back in the header](src/guideImg/screenshot-3.png)
 
-If I were to remove that attribute, our drawer would be between the `<header>` and `<main>` not just in the DOM, but also in the A11y tree, with it, we have technically put it back as far as accessibility is concerned. I guess I have just cleaned up after myself, maybe it's not totally necessary, it's not the kind of thing I would write up as a failure, but I'm always open to comments
+
 
 We need to make the drawer actually open and close, so a basic event listener will do that for us:
 
@@ -258,15 +249,19 @@ So, this is kind of done, you have all of the HTML and JS that I have used, but 
 
 #### What about mobile?
 
-Obviously it's best practice to build "mobile" first and I didn't do that, here. There was a reason for this, not because I'm building it, but because I'm writing about how to build it and by talking about the proble I have created, I can then show you the solution.
+Obviously it's best practice to build "mobile" first and I didn't mention that, here. There was a reason for this, not because I didn't do it, but because I'm writing about how to build it and by talking about the problem I have created, I can then show you the solution.
 
 So, we're pushing the entire contents to the side, which works great on a larger display, but at a viewport computed to 320px width, there is no space for the page contents. We could have written a media query to set the width of the drawer ro be a maximum of 18rem (288px), as opposed to the 20rem (320px) we used, but then obviously every single word has to wrap and break, images and what not all get too squished and the whole thing generally looks a hot mess. The pattern we built is actually my favourite pattern, but it falls down on "mobile" and I know that, so we need a kind of hybrid approach:
 
-* If the screen is "large enough" (some arbrtary breakpoint), we'll do push to the side
-* If the screen is "too small" to be usable, we'll slide out on a new layer
+* If the screen is "large enough" (some arbrtary breakpoint), we'll do the push to the side effect
+* If the screen is "too small" to look decent when the `.main` is squished, we'll slide out on a new layer, above the top
 
 So, if we slide a panel out, that covers the entire of the viewport we do of course run the risks associated with escaping the container with the <kbd>Tab</kbd> key or virtual cursor and failing 2.4.7, 2.4.11. Is it a modal? It certainly quacks like one, doesn't it? It covers the whole page, blocking interaction and exists on the top-most layer. But, it's exactly the same component on both "mobile" and desktop, so should we change the ARIA to be modal? I have to admit, I'm not 100% sure, here, if taken in isolation on a smaller viewport, then every instinct I have would say "modal", but taken with the larger screen layout and everything inbetween I have enough doubt to question myself. It's not for me to decide what is best, here, it's simple enough for me to do, but would I be doing it for the right reasons? I'd need disabled people's advice here, which unfortunately I cannot get, so, I'm not going to make it modal, I'll leave that as an unanswered question. I will provide a little snippet of JS to show how we could do that and I'll also add an auto-close feature, just to prevent any tabbing underneath, obviously I can't do anything about the virtual cursor, but I can add light dismiss.
 
-I'm also not going to implement something else which I think would be great:
+A simple media query
 
-On very large screens we could do away with the button, completely, we could just always show the drawer as open. It makes sense to have a toggle up to a point, but I limit the width of my sites anyway, so the line length isn't too problematic for folk with reading disabilities, etc, is there any point in hiding it when we have adequate void space around the page's <body>? There isn't, is there? A little media query can handle that, we wouldn't need any JS.
+#### Another possible enhancement?
+
+On very large screens we could do away with the button, completely, we could just always show the drawer as open. It makes sense to have a toggle up to a certain point, but I limit the width of my sites anyway, so the line length isn't too problematic for folk with reading disabilities, etc. Is there any point in hiding it when we have adequate void space around the page's `<body>`? I guess that would totally depend on wht was inside the drawer, but let's assume the contents are as important as the primary navigation, categories in a store, topics on a blog, that kind of thing, then I don't think hiding the drawer when there is enough space to show it, benefits anybody.
+
+A little media query can handle that, we wouldn't need any JS. We could just hide the `<button>` at a suitably large enough viewport and then remove animations and the display: none; property. As I typically limit the width of my sites to around 75rem (1200px) if they are "single column" type sites and a standard Full HD monitor has a viewport width of 1920px we end up in a situation where hiding the drawer becomes sort of perfunctory and ill-thought-out. We usually hide things in disclosures, etc, to make use of available screen real estate and to avoid overwhelming users with too much secondary information. If these links were important on this site, or indeed they were actions or settings of some form
