@@ -90,11 +90,7 @@ Nothing spectacular going on there, a nice clear simple layout, nothing that is 
     <div class="site">
       <main class="main" id="main">
         <h1>Lorem ipsum</h1>
-        <p>Lorem ipsum <a href="#">dolor sit</a> amet consectetur adipisicing elit. Pariatur ipsam iusto harum natus corporis reiciendis enim cupiditate recusandae officia commodi sed dicta, repellendus, maiores iure, voluptatem autem officiis aspernatur quia saepe temporibus quas assumenda rerum quisquam. Aut repellendus nam dignissimos eveniet at ex beatae saepe eum eaque eius. Repellat, vero.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eveniet, minima  as I necessitatibus est quidem quaerat impedit quibusdam. Quia placeat non veritatis iusto dolorum fugiat iste, laboriosam repellendus minima perspiciatis nobis quasi sequi et, illum ipsam laudantium iure perferendis odit sed!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, obcaecati distinctio, assumenda iste provident velit at dolor modi esse iure blanditiis. Voluptates hic sit perspiciatis, facilis quis, laudantium at quas repudiandae dolorum esse recusandae nesciunt porro delectus accusamus amet obcaecati? Distinctio voluptatibus saepe harum? Eius autem quasi fuga praesentium error!</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed laboriosam voluptates officiis ad laborum, corrupti, nam cum nesciunt incidunt eveniet qui cumque saepe neque? Quisquam totam minima facilis odio officia. Quisquam, numquam! Dignissimos quasi voluptatibus maiores nemo adipisci eum vitae atque eius illum deserunt veniam ad ducimus omnis, eligendi vero quos praesentium debitis aut nulla magni! Harum sed modi quae error deserunt, incidunt natus. Exercitationem.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis veniam a recusandae fugiat asperiores repellendus maiores voluptatum inventore quaerat. Similique unde dolorum omnis ullam debitis beatae ipsa ex. Dignissimos incidunt architecto ipsam asperiores ab a exercitationem dolores voluptas ipsa error amet corrupti et tenetur, enim molestiae fugit illo maxime temporibus sed! Suscipit quia ab placeat?</p>
+        <!-- Lorem ipsum removed for brevity -->
       </main>
     </div>
     <footer class="footer">
