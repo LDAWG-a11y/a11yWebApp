@@ -88,7 +88,7 @@ Nothing spectacular going on there, a nice clear simple layout, nothing that is 
       </div>
     </header>
     <div class="site">
-      <main class="main" id="main">
+      <main class="main" id="#main">
         <h1>Lorem ipsum</h1>
         <!-- Lorem ipsum removed for brevity -->
       </main>
@@ -275,8 +275,53 @@ So, remember our main bits for pushing the main content out were in a CSS media 
 
  In the above, we are simply setting the parent container .site, to position relative
 
+#### Bonus?
+
+In my implementation I have three links in the Primary nav, then the <button> is advacent to those. When the viewport is very small (less than 370px width) our links wrap and it looks a little unsightly. This is likely to be more of an issue on a real world site, as my link names are just "Item 1", "Item 2", etc, whereas real world sites may have links with longer names.
+
+We could solve this solely with CSS, by stacking the links in a column, with flexbox, however, in my experience designers don't often like the stacked effect, so it is quite common to move a couple of links into the Secondary navigation.
+
+I'm just moving one, purely as a demo, I'm not suggesting this is the best solution, as I'd personally just stack them, however, seldom do we have the clout to influence design changes, so we just roll with the current design.
+
+```javascript
+let screenWidth = window.matchMedia('(width <= 48em)');
+let smallViewport = screenWidth.matches;
+
+screenWidth.onchange = (evt) => {
+  if (evt.matches) {
+    smallViewport = true;
+    shuffleNav()
+  } else {
+    smallViewport = false;
+    shuffleNav()
+  }
+}
+
+const shuffleNav = () => {
+  const overflowItem = document.querySelector('.nav__item--overflow');
+  if (smallViewport) {
+      drawer.querySelector('.nav__drawer-list').prepend(overflowItem);
+  } else {
+      mainNav.appendChild(overflowItem);
+  }
+}
+
+shuffleNav();
+```
+
+* Set a couple of variables, the first uses `matchMedia()` to get out our CSS breakpoint, which I'd earlier set at `48em`
+
+  * The Second returns a `true` of `false` value, `true` if the sceen width is less than 48em and `false` otherwise
+* We need to monitor the `onchange` event of that variable and update it accordingly, we also call a function `shuffleNav()`
+* Inside `shuffleNav() `we grab the item we want to move (you'd need to loop through the list items if you wanted to move more) `.nav__item--overflow`, if `smallViewport` is true, we `prepend()` the list within the drawer with that item
+* Else we pop it back into the Primary nav
+
+This is only going to be useful if the Primary and Secondary navigations are somewhat similar, so if the Secondary were a list of movies and the nav was called Movies, then moving the "About us" link into there wouldn't make any sense.
+
+If I were building a site and I had full artistic licence, and encountered this problem, I'd solve it with CSS, but here I'm just showing how we may go about it if the design dictated a horizontal Primary nav that moved elements into the Secondary nav.
+
 #### Another possible enhancement?
 
 On very large screens we could do away with the button, completely, we could just always show the drawer as open. It makes sense to have a toggle up to a certain point, but I limit the width of my sites anyway, so the line length isn't too problematic for folk with reading disabilities, etc. Is there any point in hiding it when we have adequate void space around the page's `<body>`? I guess that would totally depend on wht was inside the drawer, but let's assume the contents are as important as the primary navigation, categories in a store, topics on a blog, that kind of thing, then I don't think hiding the drawer when there is enough space to show it, benefits anybody.
 
-A little media query can handle that, we wouldn't need any JS. We could just hide the `<button>` at a suitably large enough viewport and then remove animations and the display: none; property. As I typically limit the width of my sites to around 75rem (1200px) if they are "single column" type sites and a standard Full HD monitor has a viewport width of 1920px we end up in a situation where hiding the drawer becomes sort of perfunctory and ill-thought-out. We usually hide things in disclosures, etc, to make use of available screen real estate and to avoid overwhelming users with too much secondary information. If these links were important on this site, or indeed they were actions or settings of some form
+A little media query can handle that, we wouldn't need any JS. We could just hide the `<button>` at a suitably large enough viewport and then remove animations and the display: none; property. As I typically limit the width of my sites to around `75rem` (1200px) if they are "single column" type sites and a standard Full HD monitor has a viewport width of 1920px we end up in a situation where hiding the drawer becomes sort of perfunctory and ill-thought-out. We usually hide things in disclosures, etc, to make use of available screen real estate and to avoid overwhelming users with too much secondary information. If these links were important on this site, or indeed they were actions or settings of some form. Just a little media query for that:
