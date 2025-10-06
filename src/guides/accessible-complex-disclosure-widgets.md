@@ -30,7 +30,9 @@ I don't know if I am using the correct terminology for these, I haven't research
 2. The overlay drawer, this will simply overlay the main page, it will sit on top and not effect it in any way, other than obscuring part of it
 3. The fixed icon drawer, this will always show an icon for each link or control within, in a narrow side panel, but should a user click the trigger, then drawer will slide into view and show the icons along with text labels. Honestly, I'm a less keen on these, I think CSS Tricks used this pattern, way back when, sure, it's kinda OK if you're sighted, use a pointing device and have some idea what the icons mean, but, what is the point in hiding just the labels? everything has to still be in the focus order, so expanding/collapsing serves no purpose to blind screen reader users and in reality, the iconography isn't likely to be universally understood, so what the benefit actually is, I have no idea. Still, we'll build one, anyway as I like to thing of my guides as a foundation for further exploration or discussion, as opposed to a "Thou must" thing.
 
-## Let's build our drawers
+## Let's build our first two drawers
+
+I'm cheating a little, here. I'm building both the push to the side and the overlay styles in one. I will explain why later on.
 
 As always (well where possible) we will start with minimum viable product, that is completely usable, without JS and then progressively enhance our mock page, where JS is available.
 
@@ -61,7 +63,7 @@ Nothing spectacular going on there, a nice clear simple layout, nothing that is 
           <ul class="nav__list">
             <li class="nav__item"><a href="#" class="nav__link">Item 1</a></li>
             <li class="nav__item"><a href="#" class="nav__link">Item 2</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Item 3</a></li>
+            <li class="nav__item nav__item--overflow"><a href="#" class="nav__link">Item 3</a></li>
           </ul>
         </nav>
         <nav class="nav__side" id="sideNav" aria-labelledby="sideNavLabel" aria-owns="drawer">
@@ -116,7 +118,7 @@ Nothing spectacular going on there, a nice clear simple layout, nothing that is 
 
 Just a little note on the above screenshot:
 
-As I stated, I used `aria-owns` to recreate the relationship, as I had opted to move stuff around in the DOM. Would it be a failure if that attribute were omitted? No, I wouldn't fail it as the `<button> `is in the `<nav>` and the `<button>` uses `aria-controls="[ID_of_drawer]",` so there is a "programmatic" relationship there, already. Is it the relationship we want? Hmm, both attributes seem to have spotty support, so at this stage, it probably isn't making a huge amount of difference, if any at all. As an example, using VoiceOver and Safari, should I expand the drawer and then tab through it, into the main content, then reverse back into it the expectation would be something like "Link, item 11, navigation, Secondary", but that doesn't happen, I only get the "navigation, Secondary" info when I reverse all the way up to the button. Remember, this is Safari and VoiceOver, so that may not be representative of other browser/screen reader combos, we'll test them a little later.
+As I stated, I used `aria-owns` to recreate the relationship, as I had opted to move stuff around in the DOM. Would it be a failure if that attribute were omitted? No, I wouldn't fail it as the `<button>` is in the `<nav>` and the `<button>` uses `aria-controls="[ID_of_drawer]"`, so there is a "programmatic" relationship there, already. Is it the relationship we want? Hmm, both attributes seem to have spotty support, so at this stage, it probably isn't making a huge amount of difference, if any at all. As an example, using VoiceOver and Safari, should I expand the drawer and then tab through it, into the main content, then reverse back into it the expectation would be something like "Link, item 11, navigation, Secondary", but that doesn't happen, I only get the "navigation, Secondary" info when I reverse all the way up to the button. Remember, this is Safari and VoiceOver, so that may not be representative of other browser/screen reader combos, we'll test them a little later.
 
 #### The CSS
 
@@ -192,9 +194,9 @@ So, at this stage, everything would be flipped, right? Our drawer would be on th
 
 I'll quickly explain the above:
 
-1. Firstly, I add a media query, as I always build things "mobile-first", the 48em value is 768px, this is just an example of a tablet size, although in the real world, I'd probably increase this value a decent bit
-2. The first selector just sets the `flex` layout and as this is default (No JS), I'm just setting it as a `column`, although I didn't need to do anything there, as that container only holds the `<main>` when there is no JS
-3. In my second CSS declaration, this is where the magic happens, I'm only running this declartion if JS is available, with the `.has-js` class, then I'm simply setting the `flex-direction` to `row-reverse`, which visually flips the layout, but does not interfere with the focus order. Remember, we got the focus order for free by adding it before the `<main>,` so now I can animate my panel sliding in and out, preserving the correct focus order, whilst having it on the right of the page and that took a trivial amount of JS and CSS. Please do be aware sometimes reversing the layout of things in CSS columns or rows can cause illogical focus or reading orders, that's not the case here, though, but be sure to check anything you flip with a keyboard and also a screen reader/keboard combo. I also set position: static; as I want the default flow, here and I actually used position: relative; for the "mobile" view
+1. Firstly, I add a media query, as I always build things "mobile-first", the `48em` value is 768px, this is just an example of a tablet size, although in the real world, I'd probably increase this value a decent bit
+2. The first selector just sets the `flex` layout and that container only holds the `<main>` when there is no JS
+3. In my second CSS declaration, this is where the magic happens, I'm only running this declartion if JS is available, with the `.has-js` class, then I'm simply setting the `flex-direction` to `row-reverse`, which visually flips the layout, but does not interfere with the focus order. Remember, we got the focus order for free by adding it before the `<main>,` so now I can animate my panel sliding in and out, preserving the correct focus order, whilst having it on the right of the page and that took a trivial amount of JS and CSS. Please do be aware sometimes reversing the layout of things in CSS columns or rows can cause illogical focus or reading orders, that's not the case here, though, but be sure to check anything you flip with a keyboard and also a screen reader/keboard combo. I also set `position: static;` as I want the default flow, here and I actually used `position: relative;` for the "mobile" view
 
 We need to make the drawer actually open and close, so a basic event listener will do that for us:
 
@@ -203,26 +205,28 @@ const trigger = document.querySelector('.nav__trigger');
 
 trigger.addEventListener('click', () => {
   trigger.removeAttribute('data-untouched');
-  trigger.getAttribute('aria-expanded') == 'false' ? trigger.setAttribute('aria-expanded', 'true') : trigger.setAttribute('aria-expanded', 'false');
+  trigger.getAttribute('aria-expanded') === 'false' ? trigger.setAttribute('aria-expanded', 'true') : trigger.setAttribute('aria-expanded', 'false');
 });
 ```
 
 1. We're getting a reference to our trigger `<button>`, holding it in a `trigger` `const`
 2. Then we assign `addEventListener` for `'click'`events to the `trigger`
-3. When a user clicks the element, we remove a data attribute data-untouched, this is just what I added to prevent the `@keyframes` animation of the hamburger menu playing on page load (bit out of scope, but that's how I do it)
-4. Finally, we have a ternary operator to flip the state of `aria-expanded` on each `click` event
+3. When a user clicks the element, we remove a data attribute `data-untouched`, this is just what I added to prevent the `@keyframes` animation of the hamburger menu playing on page load (bit out of scope, but that's how I do it)
+4. Finally, we have an ternary operator to flip the state of `aria-expanded` on each `click` event, each click just checks what ithe current value of `aria-expanded` is and then applies the opposite state, either `true` or `false`
 
 I'll give the important parts of the CSS, here, as it's important to highlight that bit as it does the majority of the heavy lifting:
 
 ```css
-/* Our "drawer" was full width when there was no JS, that's how i did that */
 .no-js .nav__drawer {
   width: 100%;
 }
 
-/* When there is JS, our initial state is display: none; and width: 0;
-We also want the drawer to be 100% height of the parent. we then set transitions and 
-I am allowing discrete transitions, because, whaey, we can now transition display properties*/
+.no-js .nav__drawer-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem
+}
+
 .has-js .nav__drawer {
   display: none;
   min-height: 100%;
@@ -230,19 +234,29 @@ I am allowing discrete transitions, because, whaey, we can now transition displa
   transition: display 500ms allow-discrete, width 500ms ease-in;
 }
 
-/* The drawer can only ever have aria-expanded="true" set if JS is available, so 
-I'm setting a display property as flex 9block works, too) and i want my drawer to be 20rem wide
-I then have to set a starting-style, as transtitioning display: none; to flex; requires
-I use this to animate everything else*/
-.nav__trigger[aria-expanded="true"] + .nav__drawer {
-  display: flex;
+ .header:has(.nav__trigger[aria-expanded="true"]) + .site .nav__drawer {
+  display: block;
   width: 20rem;
 
   @starting-style {
     width: 0;
   }
-}
+} 
 ```
+
+the above explained:
+
+* If there is no JS, then we display the drawer with `width: 100%;` and as it's inside the `<header>` it will take up all of the availble width in there
+* Our second declaration sets `display: flex;` awhen there is no JS nd allows the elements to `wrap` when the viewport gets too narrow to accomodate all items within, we also add a small `gap`
+* Our third declaration sets the default properties for the drawer, we don't want it to show and we don't want any width, so we set `display: none; `and `width: 0;` respectively
+* In our final declaration, we use a nifty selector to get at both the `<button>` and the drawer, we couldn't use just a regular sibling selector `+`, like we would for most expando widgets, as these elements aren't siblings. In English, that selector just means:
+
+  * If the `.header` has an item called `.nav__trigger`, with an attribute called a`ria-expanded` and that value is `true`
+  * Get the `.header`'s sibling, the `.site container` and then find the element inside there called `.nav__drawer `and do the following:
+
+    * Set `display:` to `block`, set `width` to `20rem`, then I added the `@starting-style `rule, to set the initial value of the `width`, I only used this as it's now possible to animate `display: block;` if we use that rule and set the initial width of an element. I haven't used this too much, so I'm still learning
+
+
 
 Those are the important bits, this just slides the drawer in and out, most of my other CSS is basic styling, focus and hover styles and the animation for the hamburger, etc.
 
@@ -325,3 +339,55 @@ If I were building a site and I had full artistic licence, and encountered this 
 On very large screens we could do away with the button, completely, we could just always show the drawer as open. It makes sense to have a toggle up to a certain point, but I limit the width of my sites anyway, so the line length isn't too problematic for folk with reading disabilities, etc. Is there any point in hiding it when we have adequate void space around the page's `<body>`? I guess that would totally depend on wht was inside the drawer, but let's assume the contents are as important as the primary navigation, categories in a store, topics on a blog, that kind of thing, then I don't think hiding the drawer when there is enough space to show it, benefits anybody.
 
 A little media query can handle that, we wouldn't need any JS. We could just hide the `<button>` at a suitably large enough viewport and then remove animations and the display: none; property. As I typically limit the width of my sites to around `75rem` (1200px) if they are "single column" type sites and a standard Full HD monitor has a viewport width of 1920px we end up in a situation where hiding the drawer becomes sort of perfunctory and ill-thought-out. We usually hide things in disclosures, etc, to make use of available screen real estate and to avoid overwhelming users with too much secondary information. If these links were important on this site, or indeed they were actions or settings of some form. Just a little media query for that:
+
+```css
+ @media screen and (min-width: 75em) {
+  .nav__trigger {
+    display: none;
+  }
+
+  .has-js .nav__drawer {
+    display: block;
+    width: 20rem;
+  }
+}
+```
+
+Nothing really surprising, in the above snippet:
+
+Our media query is 75em (1200px) and only within that media query do we do the following:
+
+* Hide the `<button>`
+* Force the drawer to be open, irrespective of the `.show` class, we used earlier, to do this, we simply set `display: block;` and `width: 20rem;`, as we did earlier, when the drawer was open and the `.show` class was apended
+
+### That's about it for the fist two drawer styles
+
+Obviously I haven't gone over all of the CSS, but that is vailable on the Codepen's working example. We managed to use the push to the side style effectively, whilst not killing the accessibility, as is often the case. It wasn't complex, I found it easy to achieve, it did take a little thought, though, as initially I tried a slightly different approach and then realised there was a better way. Obviously a little thought is no effort whatsoever and it's the bare minimum disabled people should be able to expect when using our sites, alsthough, sadly, this is seldom the case.
+
+#### Is our drawer perfect?
+
+Is anything? Well, we did everything we needed to do, we have a solid and sensible focus order, we hide the drawer accessibly when it's collapsed, we toggle the state of aria-expanded when the <button> is clicked and the relationships make sense, although Safari and VoiceOver didn't do as I expected when I reversed back into the drawer's content, it didn't tell me I was in "navigation, Secondary", which is a little disappointing.
+
+Running the same test with NVDA and Chrome (I have AssistivLabs, and this is my only option), I do in fact hear what I expected to hear when I reverse <kbd>Tab</kbd> into the drawer, I hear "Banner landmark, Secondary navigation landmark, list...", which is exactly what I expected to happen for VoiceOver and Safari. I don't have JAWS, so sadly I'm unable to test that, once I get to the end of this guide, I will test with TalkBack and Chrome on my phone, I'll also test on my iPad with VoiceOver and Safari, but I think we know what the outcome of that will be, don't we?
+
+I'm reluctant to say how helpful the presence of this property is, it's certainly intended for this kind of use case, where our HTML has a broken DOM structure and we need to programmitically add it back in. As our moving of the drawer wasn't too much of a wrangle, so even without it, it's possible that its presence may not make a huge difference? Obviously I cannot speak on behalf of screen reader users, so only they can answer that.
+
+I have added a screenshot of NVDA's Speech Viewer, showing the output is what I said it is, just so you know I did actually test that.
+
+![Screenshot of NVDA's Speech Viewer, confirming the expected output from using the aria-owns property does work as intended and informs a user that they are back in the Secondary navigation, should they reverse back into the drawer](src/guideImg/dl-nvda-drawer.png)
+
+## Our third drawer type
+
+I assume we're all familiar with that Schrödinger bloke? Well he was a physicist and did a thought-experiment called Schrödinger's Cat, which is something to do with quantum physics. Essentially, there's a cat in a box, along with some nasty stuff and at one point, due to quantum mechanics the cat has two states, it's both dead and alive, simultaneously. What has this got to do with nav drawers, I hear you ask?
+
+Well, our next pattern is something that Schrödinger fella would be interested in, in fact, if he were still kicking about and was somehow involved in web dev or A11y, then I'm 99.99% certain he would have named this pattern Schrödinger's nav.
+
+This particular nav can be both expanded and collapsed, at the same time, it's what we in the physics community call a paradox, something that contradicts itself. I jest, I am not in the physics community and most of my quantum physics knowledge comes from Avengers movies, I just thought this was a light-hearted way to introduce the next nav drawer.
+
+So, this drawer can be fully open, or ajar, but never fully closed, so when it is closed, is it expanded, collapsed ot both? The drawer was popular quite some time ago, and appears to be making a bit of a comeback. When the drawer is as closed as it gets, it's still keyboard accessible, the focus order remains the same, it just does away with the text labels and just shows the icons. If you can see the icons and the iconography is good enough for you to understand their meaning, cool, this may be kind of useful, I guess. I mean it saves a grand total of one click, but at what cost?
+
+If a user uses a keyboard only, then they can focus on the button, they can choose to open it fully or keep it "ajar", one would hope that there was a way of skipping over the items within, when it's "ajar", but seldom is that the case.
+
+Now, if our user is blind, they cannot see the icons, but they can focus on them, they should of course be able to hear the AccName's of each item, irrespective of whether the drawer is open a little bit, or a lot. The very purpose of that button may well be very confusing and this is why I made the Schrödinger reference. We know that people with disabilities face barriers across many aspects of life, we know some of these barriers are on websites and we can summise that sometimes these users will have no choice other to to accept something simply does not work for them. I do not know how often this happens, but I guess it can be a lot. So the button for this drawer will have absolutely no effect whatsoever for a blind screen reader user, nothing will change, apart from the aria-expanded state on the button, if it is present. Should we use aria-expanded on this element? Does it have an appropriate value, like aria-epanded="ajar" or aria-expanded="sort of"? No, it doesn't and the ARIA spec states "it can be applied to a <button> that controls visibility of a section of the page", amongst other similar uses. It would be difficult to say it is not visible when it is partly visible, wouldn't it? Like, it's still there, sighted users can still see it and unsighted users can still tab through it and hear the AccNames, so what would the purpose of the state be? I don't believe it has any purpose here, as I struggle to understand how it helps.
+
+I'm going to attempt to make this a little less confusing, before I get stuck in, I'm going to use exactly the same HTML, i will change a couple of tiny bits, but I'll show that, when I do. i'm putting this on a separate Codepen, initially I was going to provide a toggle, to switch between types, but then I just thought I'll do this one as a standalone. I'm not going to make the "mobile" version of this one, as it would have to be the same as the previous mobile version, as 40 or so pixels is a lot of space on a smaller viewport. It would of course need the aria-expanded state then, just i don't believe it does on larger viewports.
