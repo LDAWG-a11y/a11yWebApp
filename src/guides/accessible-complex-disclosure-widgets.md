@@ -390,4 +390,75 @@ If a user uses a keyboard only, then they can focus on the button, they can choo
 
 Now, if our user is blind, they cannot see the icons, but they can focus on them, they should of course be able to hear the AccName's of each item, irrespective of whether the drawer is open a little bit, or a lot. The very purpose of that button may well be very confusing and this is why I made the Schrödinger reference. We know that people with disabilities face barriers across many aspects of life, we know some of these barriers are on websites and we can summise that sometimes these users will have no choice other to to accept something simply does not work for them. I do not know how often this happens, but I guess it can be a lot. So the button for this drawer will have absolutely no effect whatsoever for a blind screen reader user, nothing will change, apart from the aria-expanded state on the button, if it is present. Should we use aria-expanded on this element? Does it have an appropriate value, like aria-epanded="ajar" or aria-expanded="sort of"? No, it doesn't and the ARIA spec states "it can be applied to a <button> that controls visibility of a section of the page", amongst other similar uses. It would be difficult to say it is not visible when it is partly visible, wouldn't it? Like, it's still there, sighted users can still see it and unsighted users can still tab through it and hear the AccNames, so what would the purpose of the state be? I don't believe it has any purpose here, as I struggle to understand how it helps.
 
-I'm going to attempt to make this a little less confusing, before I get stuck in, I'm going to use exactly the same HTML, i will change a couple of tiny bits, but I'll show that, when I do. i'm putting this on a separate Codepen, initially I was going to provide a toggle, to switch between types, but then I just thought I'll do this one as a standalone. I'm not going to make the "mobile" version of this one, as it would have to be the same as the previous mobile version, as 40 or so pixels is a lot of space on a smaller viewport. It would of course need the aria-expanded state then, just i don't believe it does on larger viewports.
+I'm going to attempt to make this a little less confusing, before I get stuck in, I'm going to slightly modify the previous HTML. I'm putting this on a separate Codepen, initially I was going to provide a toggle, to switch between types, but then I just thought I'll do this one as a standalone. I'm not going to make the "mobile" version of this one, as it would have to be the same as the previous mobile version, as around 50 pixels in width would be required for an "ajar" drawer, which is a lot of space on a smaller viewport.
+
+### The HTML
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="#main" class="skip-link">Skip to content</a>
+      <div class="nav__wrapper">
+        <nav class="nav" aria-labelledby="primaryNavLabel">
+          <h2 id="primaryNavLabel" style="display: none;">Primary</h2>
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#" class="nav__link">Item 1</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Item 2</a></li>
+            <li class="nav__item nav__item--overflow"><a href="#" class="nav__link">Item 3</a></li>
+          </ul>
+        </nav>
+        <nav class="nav__side" id="sideNav" aria-labelledby="sideNavLabel" aria-owns="drawer">
+          <h2 id="sideNavLabel" style="display: none;">Secondary</h2>
+          <button class="nav__trigger" id="trigger" aria-controls="drawer" aria-pressed="false" data-untouched>
+          <span class="visually-hidden">Show labels</span>
+          </button>
+        </nav>
+      </div>
+      <div class="nav__drawer" id="drawer">
+        <ul class="nav__drawer-list">
+          <li class="nav__drawer-item"><a href="#" class="nav__drawer-link">Item 4</a></li>
+          <li class="nav__drawer-item"><a href="#" class="nav__drawer-link">Item 5</a></li>
+          <li class="nav__drawer-item"><a href="#" class="nav__drawer-link">Item 6</a></li>
+          <li class="nav__drawer-item"><a href="#" class="nav__drawer-link">Item 7</a></li>
+          <li class="nav__drawer-item"><a href="#" class="nav__drawer-link">Item 8</a></li>
+          <li class="nav__drawer-item"><a href="#" class="nav__drawer-link">Item 9</a></li>
+          <li class="nav__drawer-item"><a href="#" class="nav__drawer-link">Item 10</a></li>
+          <li class="nav__drawer-item"><a href="#" class="nav__drawer-link">Item 11</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="site">
+      <main class="main" id="main">
+        <h1>Lorem ipsum</h1>
+        <!-- Lorem ipsum removed for brevity -->
+      </main>
+    </div>
+    <footer class="footer">
+      <p>MTA drawer 2025</p>
+      <a href="#">Item 12</a>
+    </footer>  
+  </body>
+</html>
+```
+
+I've made some relatively minor changes to the above:
+
+* I have removed aria-expanded, as it no longer makes sense as we can never have technically collapsed, just sort-of collapsed.
+* I have added aria-pressed="false", which is a better fit, here, it indicates a state and on its own it is non-descriptive, it is explicit with the current state, it is either pressed or it is not, and it does not imply what either state does, it leaves that to the AccName
+* I have changed the AccName from "Menu" to "Display labels", as that along with the state offers an indication of the control's purpose. I would recommend exploring a better name than that, initially I thought "Show labels", but I quickly remembered that is the exact voice command to show AccNames with VoiceControl on MacOS, which may have caused an issue?
+* I removed the <span> element I used to create the hamburger icon, because whilst that icon has a strong affordance, I think an arrow of sorts will be a better fit, here
+
+This gives us our base HTML, we will add icons, later. So, is this better? Well, it's a thought-experiment and we're attempting to make this somewhat odd pattern as accessible as we can, but, it seems a little better. We no longer have that situation where a screen reader user will encounter a <button> that "expands", and they then discover that nothing has changed for them, in which case, they would likely be left wondering whether they were excluded from accessing whatever it was that expanded, due to poor code or whatever.
+
+My AccName likely isn't perfect, but it does provide information that at least indicates the <button> changes something visually. I have no doubt this could be improved upon, but I'd want to get that improved AccName from the people who it affects and that would mostly be screen reader users and voice input users, so please do feel free to improve that should you be forced to create this pattern.
+
+This time, I'm going to make it slide in from the right, just because I did left last time.
+
+### The important CSS
