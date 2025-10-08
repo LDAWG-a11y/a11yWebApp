@@ -248,15 +248,13 @@ the above explained:
 
 * If there is no JS, then we display the drawer with `width: 100%;` and as it's inside the `<header>` it will take up all of the availble width in there
 * Our second declaration sets `display: flex;` awhen there is no JS nd allows the elements to `wrap` when the viewport gets too narrow to accomodate all items within, we also add a small `gap`
-* Our third declaration sets the default properties for the drawer, we don't want it to show and we don't want any width, so we set `display: none; `and `width: 0;` respectively
+* Our third declaration sets the default properties for the drawer, we don't want it to show and we don't want any width, so we set `display: none;`and `width: 0;` respectively
 * In our final declaration, we use a nifty selector to get at both the `<button>` and the drawer, we couldn't use just a regular sibling selector `+`, like we would for most expando widgets, as these elements aren't siblings. In English, that selector just means:
 
   * If the `.header` has an item called `.nav__trigger`, with an attribute called a`ria-expanded` and that value is `true`
-  * Get the `.header`'s sibling, the `.site container` and then find the element inside there called `.nav__drawer `and do the following:
+  * Get the `.header`'s sibling, the `.site container` and then find the element inside there called `.nav__drawer`and do the following:
 
-    * Set `display:` to `block`, set `width` to `20rem`, then I added the `@starting-style `rule, to set the initial value of the `width`, I only used this as it's now possible to animate `display: block;` if we use that rule and set the initial width of an element. I haven't used this too much, so I'm still learning
-
-
+    * Set `display:` to `block`, set `width` to `20rem`, then I added the `@starting-style`rule, to set the initial value of the `width`, I only used this as it's now possible to animate `display: block;` if we use that rule and set the initial width of an element. I haven't used this too much, so I'm still learning
 
 Those are the important bits, this just slides the drawer in and out, most of my other CSS is basic styling, focus and hover styles and the animation for the hamburger, etc.
 
@@ -327,7 +325,7 @@ shuffleNav();
 
   * The Second returns a `true` of `false` value, `true` if the sceen width is less than 48em and `false` otherwise
 * We need to monitor the `onchange` event of that variable and update it accordingly, we also call a function `shuffleNav()`
-* Inside `shuffleNav() `we grab the item we want to move (you'd need to loop through the list items if you wanted to move more) `.nav__item--overflow`, if `smallViewport` is true, we `prepend()` the list within the drawer with that item
+* Inside `shuffleNav()`we grab the item we want to move (you'd need to loop through the list items if you wanted to move more) `.nav__item--overflow`, if `smallViewport` is true, we `prepend()` the list within the drawer with that item
 * Else we pop it back into the Primary nav
 
 This is only going to be useful if the Primary and Secondary navigations are somewhat similar, so if the Secondary were a list of movies and the nav was called Movies, then moving the "About us" link into there wouldn't make any sense.
@@ -450,15 +448,71 @@ I'm going to attempt to make this a little less confusing, before I get stuck in
 
 I've made some relatively minor changes to the above:
 
-* I have removed aria-expanded, as it no longer makes sense as we can never have technically collapsed, just sort-of collapsed.
-* I have added aria-pressed="false", which is a better fit, here, it indicates a state and on its own it is non-descriptive, it is explicit with the current state, it is either pressed or it is not, and it does not imply what either state does, it leaves that to the AccName
-* I have changed the AccName from "Menu" to "Display labels", as that along with the state offers an indication of the control's purpose. I would recommend exploring a better name than that, initially I thought "Show labels", but I quickly remembered that is the exact voice command to show AccNames with VoiceControl on MacOS, which may have caused an issue?
-* I removed the <span> element I used to create the hamburger icon, because whilst that icon has a strong affordance, I think an arrow of sorts will be a better fit, here
+* I have moved `aria-owns` to the `<header>` element, I have done so as I actually move the `<button> `and its `<nav>` parent this time, when JS is available, so to maintain that relationship after I yanked it out of the `<header>` I add the property there and everything sounds the same, well, apart from with VoiceOver, but again, I don't think this is an issue and in other implementations, this drawer may not ever be part of the `<header>`, so it may not be necessary at all
+* I haveremoved `aria-expanded,` as it no longer makes sense as we can never have technically collapsed, just sort-of collapsed.
+* I have added `aria-pressed="false",` which is a better fit, here, it indicates a state and on its own it is non-descriptive, it is explicit with the current state, it is either pressed or it is not, and it does not imply what either state does, it leaves that to the AccName
+* I have changed the AccName from "Menu" to "Display labels", as that along with the state offers an indication of the control's purpose. I would recommend exploring a better name than that, initially I thought "Show labels", but I quickly remembered that is the exact voice command to show AccNames with VoiceControl on MacOS, which could potentially cause an issue, if the microphone doesn't pick up the "click" keyword?
+* I removed the `<span> `element I used to create the hamburger icon, because whilst that icon has a strong affordance, I think an arrow of sorts will be a better fit, here
 
-This gives us our base HTML, we will add icons, later. So, is this better? Well, it's a thought-experiment and we're attempting to make this somewhat odd pattern as accessible as we can, but, it seems a little better. We no longer have that situation where a screen reader user will encounter a <button> that "expands", and they then discover that nothing has changed for them, in which case, they would likely be left wondering whether they were excluded from accessing whatever it was that expanded, due to poor code or whatever.
+This gives us our base HTML, I will add icons, later, i'm not putting the markup for those in here, as they're just random Font Awesome icons. So, is this better? Well, it's a thought-experiment and we're attempting to make this somewhat odd pattern as accessible as we can, but, it seems a little better. We no longer have that situation where a screen reader user will encounter a `<button>` that "expands", and they then discover that nothing has changed for them, in which case, they would likely be left wondering whether they were excluded from accessing whatever it was that expanded, due to poor code or whatever.
 
-My AccName likely isn't perfect, but it does provide information that at least indicates the <button> changes something visually. I have no doubt this could be improved upon, but I'd want to get that improved AccName from the people who it affects and that would mostly be screen reader users and voice input users, so please do feel free to improve that should you be forced to create this pattern.
+My AccName likely isn't perfect, but it does provide information that at least indicates the `<button> `changes something visually. I have no doubt this could be improved upon, but I'd want to get that improved AccName from the people who it affects and that would mostly be screen reader users and voice input users, so please do feel free to improve that should you be forced to create this pattern.
 
 This time, I'm going to make it slide in from the right, just because I did left last time.
 
 ### The important CSS
+
+```css
+.has-js .site {
+  display: flex;
+  flex-direction: row;
+} 
+
+.has-js .nav__side {
+  position: relative;
+  padding-top: 3.75rem;
+  background-color: var(--color-primary-dark);
+}
+
+.has-js .nav__drawer {
+  min-height: 100%;
+  width: 3.5rem;
+  transition: width 500ms ease-in;
+  overflow-x: hidden;
+}
+
+.nav__trigger[aria-pressed="true"] + .nav__drawer {
+  width: 20rem;
+}  
+```
+
+The above, explained:
+
+* As with before, we use the flexbox layout, although this time, we don't set the `flex-direction;` to `row-reverse`, instead we simply use `row`;. This is because I want this pattern to slide in from the right
+* I wanted to have my open/close `<button>` to stay on the right edge of the drawer, so it would follow that right edge when it opens fully, so I set the `position:` to `relative;` in the full CSS, I set the .`nav__trigger` to `position: absolute`, and add both `right` and `top` values to achive that effect
+* I set the `wdth` of the drawer to `3.5rem`, which seemed "ajar" enough to have decent sized icons, my target size has a `height` and `width` of `2.5rem` (40px), which isn't quite Level AAA (44px), but it's not far off and certainly better than Level AA's requirement (24px). I hide the overflow on the horizontal axis (`overflow-x:`), as I don't hide the text labels, I leave them in place and just prevent them from being squished or escaping their container, to have them sort of swipe into view
+* Finally, when the button is clicked and the value of `aria-pressed` is `"true"`, I then set the `width` to `20rem`, I do have an animation on this, which runs for `.5s`, as that is typical of a drawer effect. remember that this is a component in isolation, I haven't added any `reduce-motion` media queries in this example, but this is something you should do. Here on MTA, we have some quite granular controls for User Preferences, disabling motion is one of them
+
+### A sprinkle of JS
+
+I'm just doing the bare minimum, here:
+
+```javascript
+const drawer = document.querySelector(`.nav__side`);
+document.querySelector('.site').prepend(drawer);
+
+trigger.addEventListener('click', () => {
+  trigger.removeAttribute('data-untouched');
+  trigger.getAttribute('aria-pressed') === 'false' ? trigger.setAttribute('aria-pressed', 'true') : trigger.setAttribute('aria-pressed', 'false');
+});
+```
+
+* This time, i get a reference to the whole `.nav__side` element, as I need to move the whole thing
+* I `prepend() `to exactly the same place as before, the `.site` wrapper
+* I add an `eventListener()` to the trigger and use a ternary operator to toggle the value of `aria-pressed`
+
+### Is This drawer perfect?
+
+Firstly, let me state that i'm not overly keen on this pattern, arguably, it does have a place on the web or in apps, but that would depend on the site, etc. From a sighted user's persective, I'd only find this useful on a site I visited often, as over time, i'd probably learn what the icons meant, but even then, simply expanding a panel has never seemed like "effort" to me, so I do struggle to understand what the actual benefit is here. As I work in accessibility, I understand how websites can be problematic, I know that additional complexity can introduce new barries or cause confusion and honestly, for me, a non-disabled person having to click one button to show the navigation items isn't a problem at all, so if this pattern is confusing to some disabled people, then it's not a benefit at all and I'd happily click one button every time I visited a site if it meant that the site was easier to use for people with disabilities. I do not know how confusing this pattern is in the real world, maybe less than I assume, maybe more?
+
+I have seen a variation of this pattern where hovering or focusing over the icons when the drawer is "ajar" display a small tooltip with the actual text label inside. This is quite like Adobe apps, such as photoshop, etc and I can see how that would be somewhat useful for at-a-glance stuff, changing tools and what not. How useful is it on a website? probably useful, the one I tested was done well, again, though, I just prefer drawers that fully close, in real life (furniture) and on the web, maybe I'm just old, i dunno.
