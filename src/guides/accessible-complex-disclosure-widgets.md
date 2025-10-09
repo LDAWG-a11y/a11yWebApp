@@ -390,6 +390,12 @@ Now, if our user is blind, they cannot see the icons, but they can focus on them
 
 I'm going to attempt to make this a little less confusing, before I get stuck in, I'm going to slightly modify the previous HTML. I'm putting this on a separate Codepen, initially I was going to provide a toggle, to switch between types, but then I just thought I'll do this one as a standalone. I'm not going to make the "mobile" version of this one, as it would have to be the same as the previous mobile version, as around 50 pixels in width would be required for an "ajar" drawer, which is a lot of space on a smaller viewport.
 
+A couple of screenshots of what we are going for:
+
+![](src/guideImg/dl-sidenavnarrow.png "Screenshot of the final draer in its as-close-to-collapsed state as it gets. It is a narrow vertical bar that contains a double chevron at the top, that chevron points in the direction the element will expand into. It then contains eight picked at random icons, each of which is a link, one of those is focused to demo the focus style matches the reduced width.")
+
+![Screenshot showing the same nav as before, in its fully open state. Adjacent to each of the icons is their respective text labels, an item has focus showing a revised focus indicator that fits the new wider width. The double chevron that previously pointed towards tha main content has now rotated 180 degrees, to again show the diraection of travel, the chevron button remains on the right-most edge of the drawer.](src/guideImg/dl-sidenavfullwidth.png)
+
 ### The HTML
 
 ```html
@@ -536,3 +542,17 @@ We covered quite a bit:
 * I also reastblished a relationship with `aria-owns,` which in many cases won't actually be necessary, depending on each nav's purpose, but I did it for mine as an example of how it works, just not on Apple devices, but Apple be Apple-ing I guess
 
 I feel that the combination of push to the side for larger viewports and overlay for smaller is better for websites is the better pattern, for accessibility purposes. If we had a complex web app, maybe Schrödinger's nav has a place there, but as always, I can't speak for disabled people, so their input is the only input that matters, but it's not difficult to see how it could be confusing to some.
+
+### The Codepens
+
+#### Example 1 (includes the push aside and overlay for mobile effect):
+
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="VYebgyM" data-pen-title="Accessible Side Drawer Nav (Example 1)" data-preview="true" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+
+#### Example 2 (Schrödinger's nav)
+
+<script async src="https://public.codepenassets.com/embed/index.js"></script>
+
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="LEGyqBL" data-pen-title="Accessible Side Nav Drawer (example 2)" data-preview="true" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+
+<script async src="https://public.codepenassets.com/embed/index.js"></script>
