@@ -118,7 +118,7 @@ The following screenshot shows that we have the exact relationship we wanted, af
 
 Just a little note on the above screenshot:
 
-As I stated, I used `aria-owns` to recreate the relationship, as I had opted to move stuff around in the DOM. Would it be a failure if that attribute were omitted? No, I wouldn't fail it as the `<button>` is in the `<nav>` and the `<button>` uses `aria-controls="[ID_of_drawer]"`, so there is a "programmatic" relationship there, already. Is it the relationship we want? Hmm, both attributes seem to have spotty support, so at this stage, it probably isn't making a huge amount of difference, if any at all. As an example, using VoiceOver and Safari, should I expand the drawer and then tab through it, into the main content, then reverse back into it. the expectation would be something like "Link, item 11, navigation, Secondary", but that doesn't happen, I only get the "navigation, Secondary" info when I reverse all the way up to the button. Remember, this is Safari and VoiceOver, so that may not be representative of other browser/screen reader combos, we'll test them a little later.
+As I stated, I used `aria-owns` to recreate the relationship, as I had opted to move stuff around in the DOM. Would it be a failure if that attribute were omitted? No, I wouldn't fail it as the `<button>` is in the `<nav>` and the `<button>` uses `aria-controls="[ID_of_drawer]"`, so there is a "programmatic" relationship there, already. Is it the relationship we want? Hmm, both attributes seem to have spotty support, so at this stage, it probably isn't making a huge amount of difference, if any at all. As an example, using VoiceOver and Safari, should I expand the drawer and then <kbd>Tab</kbd> through it, into the main content, then reverse back into it. the expectation would be something like "Link, item 11, navigation, Secondary", but that doesn't happen, I only get the "navigation, Secondary" info when I reverse all the way up to the button. Remember, this is Safari and VoiceOver, so that may not be representative of other browser/screen reader combos, we'll test them a little later. Using the same combo and using the virtual cursor, as opposed to the <kbd>Tab</kbd> key, confirms I am in fact leaving the banner and the nav elements, so the `aria-owns` property is not working, here.
 
 #### The CSS
 
@@ -556,3 +556,29 @@ I feel that the combination of push to the side for larger viewports and overlay
 <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="LEGyqBL" data-pen-title="Accessible Side Nav Drawer (example 2)" data-preview="true" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
 
 <script async src="https://public.codepenassets.com/embed/index.js"></script>
+
+### The results of mobile testing aria-owns
+
+#### Talkback and Chrome (Samsung Galaxy phone)
+
+My testing on TalkBack did not give any favouable results, as such. The Push to the side example worked well enough, however, I wasn't provided with any landmark info, which is often the case with talkBack, despite me setting Verbosity to High. Still the pattern was usable.
+
+The second pattern was quite horrific, the reading sequence was out, I could access the links in the drawer before I accessed the button that fully opens it, which does not represent the DOM order. I know I had absolutely positioned this and wondered if this could be the culprit. As I'm accessing my local host through my Mac's IP address and the corresponding port, I'm able to make changes to the CSS, etc, and have those update on my iPad. Removing the display properties had no effect, the order was always wrong. It's worth pointing out that I didn't flip the order with this one, so the reading sequence should follow the DOM order. I removed several CSS properties, such as all display properties and overflow-x, and it's still out of sequence. This would of course take a debugging session to figure out, but as I don't particularly recommend this pattern, I'll leave that to you. As an aside, another odd quirk was the icons often disappear on the drawer when it is "ajar", something I later discovered also happens on my iPad.
+
+#### VoiceOver and Safari (iPad)
+
+Quite surprisingly everything was announced perfectly on VoiceOver iPadOS, with Safari. When I swiped back into the nav, on the first pattern.
+
+The second pattern was giving me the same issues as on TalkBack, disappearing icons, switching the focus order to skip the button that controls the width of the panel, etc.
+
+#### The problem
+
+Initially I commented all CSS out, to determine whether this was a CSS related bug and it turned out the behaviour did not change, on both Android and iPadOS. That meant it could only possibly be the HTML, during my debugging, I removed the `aria-owns `property and suddlenly my reading/focus sequence were as I had written them in the DOM. This is quite interesting, as whilst I thought I was creating a relationship that I severed, I actually made things much worse for mobile users.
+
+It worked exactly as expected in NVDA and Chrome, I wanted to know how VoiceOver would fare with Chrome, just to determine where the problem lies, and it's actually Safari, as opposed to VoiceOver, as Chrome was fine.
+
+#### The solution
+
+The solution here is simply not to use `aria-owns`, it did work well on the first, on mobile devices and a desktop device, I do not know whether moving it on to the header for the Schrödinger's Nav pattern caused some unintended side effect? It shouldn't do this, but here we are. Given the problems it has caused and the time I spent debugging and testing, where I came away knowing what caused the issue, but not why, I'd avoid using this property altogether on both main patterns. The small bit of value it adds, simply isn't worth the mess it causes on touchscreen devices. We need to strike a balance and if something breaks for one set of users, then it's not worth considering. Without using it, I would amend the first pattern, I'd want to make sure both the `<button>` and the drawer contents are in the `<nav> `together, instead of using ARIA. Having got this far, I wish I hadn't gone down that route, now, but, perhaps it's useful to see someone attempt to fix something and then later backtrack when they discover it breaks for others? That's just the nature of the field, I guess, lots of competing platforms, vendors and AT software, some have quirks, some outright refuse to play nicely with certain parts of the ARIA spec or other platforms, etc.
+
+TL;DR, Avoid the Schrödinger's Nav pattern, don't use `aria-owns` on either, as it's a bit woolly on touchscreens
