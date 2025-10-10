@@ -4,7 +4,7 @@ summary: This guide will build slightly more complex disclosusre widgets than
   the basic accessible disclosure widgets guide, we'll explore various trypes of
   navigation drawers or side panels
 author: dlee
-date: 2025-10-09
+date: 2025-10-10
 toc: true
 tags:
   - HTML
@@ -108,7 +108,7 @@ Nothing spectacular going on there, a nice clear simple layout, nothing that is 
 * We have a `no-js` class on the `html` element, we will remove this later, with JS, so basically, if JS can remove it, it's loaded/available
 * As we have more than one `nav` element, we need to give them names, so using `aria-labelledby="[Ref_of_hidden_text_node]"`, we give the top navigation the AccName of "Primary" and the lower navigation (will be a drawer) an AccName of "Secondary". These naming nodes are in the above HTML and both have `display: none;` set, remember that `aria-labelledby` ignores that all methods of "hiding", by design, which I find to be super handy for situations just like this. I don't normally write styles in my HTML, due to separation of concerns and CSS specificity, etc, but this doesn't make me feel icky, as I don't want anybody to ever see that text
 * We have a `<button>` which will act as the trigger for our drawer, we will of course only show this when JS is available
-* Our Drawer isn't a child of our Secondary `<nav>` element, which means that relationship isn't programmatically determinible, the `<button>` is inside it, but the drawer isn't. If the button is inside it, then the thing it controls should be. We do use `aria-controls` on the `<button>` which technically creates that relationship, but only in a technical sense, not so much in a useful to AT sense, as screenreader support is virtually non-existent. Sure, we could have added the drawer inside the `<nav>`, which is where it should be, but due to the layout, everything got a little overly-complex when I initially started building this, as I was having to add `position: absolute;` to the `<button>` so it remained in the `<header>`, which in itself, isn't a problem, it's just that we'd need to know our `<nav>`'s height, at all times, so the positioning always looked consistent. As I was moving the entire drawer with JS, anyway I just found it easier to move it half-way to where I finally wanted it for no JS and then recreate that relationship with ARIA. So, what I did was I added `aria-owns="drawer"` to the Secondary `<nav>` element, which allows me to move things around in the DOM, break relationships, but then put that relationship back with this nifty property. I initially added that property with JS, but only when I actually moved stuff around, but then I encountered a bit of layout complexity, so I took the path of least resistance and recreated the relationship irrespective of whether JS is vailable or not, as I severed it for both.
+* Our Drawer isn't a child of our Secondary `<nav>` element, which means that relationship isn't programmatically determinible, the `<button>` is inside it, but the drawer isn't. If the button is inside it, then the thing it controls should be. We do use `aria-controls` on the `<button>` which technically creates that relationship, but only in a technical sense, not so much in a useful to AT sense, as screenreader support is virtually non-existent. Sure, we could have added the drawer inside the `<nav>`, which is where it should be, but due to the layout, everything got a little overly-complex when I initially started building this, as I was having to add `position: absolute;` to the `<button>` so it appeared visually, in the `<header>`, which in itself, isn't a problem and I didn't want to do that, although, in retrospect, I should have.. As I was moving the entire drawer with JS, anyway I just found it easier to move it half-way to where I finally wanted it for no JS and then recreate that relationship with ARIA. So, what I did was I added `aria-owns="drawer"` to the Secondary `<nav>` element, which allows me to move things around in the DOM, break relationships, but then put that relationship back with this nifty property. I initially added that property with JS, but only when I actually moved stuff around, but then I encountered a bit of layout complexity, so I took the path of least resistance and recreated the relationship irrespective of whether JS is vailable or not, as I severed it for both.
 * The entirety of our drawer is wrapped in a `<div class="nav__drawer" id="drawer">` element, we'll grab this with JS, as we will need to move it to a more suitable place in the DOM
 * All of the standard disclosure stuff is the same as the Basic Disclosure Widgets guide, we have a `<button aria-expanded="false" aria-controls="sideNav">`, that latter attribute points to the ID of the secondary `<nav>` element and we'll toggle the `aria-expanded`state, when we need to. 
 
@@ -120,6 +120,8 @@ Just a little note on the above screenshot:
 
 As I stated, I used `aria-owns` to recreate the relationship, as I had opted to move stuff around in the DOM. Would it be a failure if that attribute were omitted? No, I wouldn't fail it as the `<button>` is in the `<nav>` and the `<button>` uses `aria-controls="[ID_of_drawer]"`, so there is a "programmatic" relationship there, already. Is it the relationship we want? Hmm, both attributes seem to have spotty support, so at this stage, it probably isn't making a huge amount of difference, if any at all. As an example, using VoiceOver and Safari, should I expand the drawer and then tab through it, into the main content, then reverse back into it. the expectation would be something like "Link, item 11, navigation, Secondary", but that doesn't happen, I only get the "navigation, Secondary" info when I reverse all the way up to the button. Remember, this is Safari and VoiceOver, so that may not be representative of other browser/screen reader combos, we'll test them a little later.
 
+<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">Please read the whole guide before using the aria-owns property, I eventually recommend not using it, the reasons for which are explained at the end.</span></div>
+
 #### The CSS
 
 I'm going to omit the CSS, again, as everything gets to unwieldy, I'm also building this thing as I type, so I'm constantly adding or modifying the CSS. It will of course be available in the CodePen, at the end.
@@ -130,7 +132,7 @@ First things, first, we need to remove the `.no-js` class from the `<html>` elem
 
 #### JS Swapping the JS class
 
-Just add this in the HTML's `<head>` section, I believe it's better to add it after the title, encoding and links to other resources, such as CSS, fonts and whatever else you may link to in your <head> section>, for performance reasons.
+Just add this in the HTML's `<head>` section, I believe it's better to add it after the title, encoding and links to other resources, such as CSS, fonts and whatever else you may link to in your `<head>`section, for performance reasons.
 
 ```javascript
 <script>
@@ -409,34 +411,62 @@ A couple of screenshots of what we are going for:
   <body>
     <header class="header">
       <a href="#main" class="skip-link">Skip to content</a>
-      <div class="nav__wrapper">
-        <nav class="nav" aria-labelledby="primaryNavLabel">
-          <h2 id="primaryNavLabel" style="display: none;">Primary</h2>
-          <ul class="nav__list">
-            <li class="nav__item"><a href="#" class="nav__link">Item 1</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Item 2</a></li>
-            <li class="nav__item nav__item--overflow"><a href="#" class="nav__link">Item 3</a></li>
-          </ul>
-        </nav>
-        <nav class="nav__side" id="sideNav" aria-labelledby="sideNavLabel" aria-owns="drawer">
-          <h2 id="sideNavLabel" style="display: none;">Secondary</h2>
-          <button class="nav__trigger" id="trigger" aria-controls="drawer" aria-pressed="false" data-untouched>
-          <span class="visually-hidden">Show labels</span>
-          </button>
-        </nav>
-      </div>
-      <div class="nav__drawer" id="drawer">
-        <ul class="nav__drawer-list">
-          <li class="nav__drawer-item"><a href="#" class="nav__drawer-link">Item 4</a></li>
-          <li class="nav__drawer-item"><a href="#" class="nav__drawer-link">Item 5</a></li>
-          <li class="nav__drawer-item"><a href="#" class="nav__drawer-link">Item 6</a></li>
-          <li class="nav__drawer-item"><a href="#" class="nav__drawer-link">Item 7</a></li>
-          <li class="nav__drawer-item"><a href="#" class="nav__drawer-link">Item 8</a></li>
-          <li class="nav__drawer-item"><a href="#" class="nav__drawer-link">Item 9</a></li>
-          <li class="nav__drawer-item"><a href="#" class="nav__drawer-link">Item 10</a></li>
-          <li class="nav__drawer-item"><a href="#" class="nav__drawer-link">Item 11</a></li>
+      <nav class="nav" aria-labelledby="primaryNavLabel">
+        <h2 id="primaryNavLabel" style="display: none;">Primary</h2>
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#" class="nav__link">Item 1</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Item 2</a></li>
+          <li class="nav__item nav__item--overflow"><a href="#" class="nav__link">Item 3</a></li>
         </ul>
-      </div>
+      </nav>
+      <nav class="nav__side" id="sideNav" aria-labelledby="sideNavLabel" aria-owns="drawer">
+        <h2 id="sideNavLabel" style="display: none;">Secondary</h2>
+        <button class="nav__trigger" id="trigger" aria-controls="drawer" aria-pressed="false" data-untouched>
+          <span class="visually-hidden">Show labels</span>
+        </button>
+        <ul class="nav__drawer-list">
+          <li class="nav__drawer-item">
+            <a href="#" class="nav__drawer-link">
+              <i class="fa fa-solid fa-house"></i><span>Home</span>
+            </a>
+          </li>
+          <li class="nav__drawer-item">
+            <a href="#" class="nav__drawer-link">
+              <i class="fa fa-solid fa-calendar"></i><span>Calendar</span>
+            </a>
+          </li>
+          <li class="nav__drawer-item">
+            <a href="#" class="nav__drawer-link">
+              <i class="fa fa-solid fa-truck"></i><span>Delivery</span>
+            </a>
+          </li>
+          <li class="nav__drawer-item">
+            <a href="#" class="nav__drawer-link">
+              <i class="fa fa-solid fa-envelope"></i><span>Messages</span>
+            </a>
+          </li>
+          <li class="nav__drawer-item">
+            <a href="#" class="nav__drawer-link">
+              <i class="fa fa-solid fa-ticket"></i><span>Your tickets</span>
+            </a>
+          </li>
+          <li class="nav__drawer-item">
+            <a href="#" class="nav__drawer-link">
+              <i class="fa fa-solid fa-heart"></i><span>Favourites</span>
+            </a>
+          </li>
+          <li class="nav__drawer-item">
+            <a href="#" class="nav__drawer-link">
+              <i class="fa fa-solid fa-credit-card"></i><span>Your payments</span>
+            </a>
+          </li>
+          <li class="nav__drawer-item">
+            <a href="#" class="nav__drawer-link">
+              <i class="fa fa-solid fa-file-export"></i><span>Your data</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </header>
     <div class="site">
       <main class="main" id="main">
@@ -454,13 +484,14 @@ A couple of screenshots of what we are going for:
 
 I've made some relatively minor changes to the above:
 
-* I have moved `aria-owns` to the `<header>` element, I have done so as I actually move the `<button>` and its `<nav>` parent this time, when JS is available, so to maintain that relationship after I yanked it out of the `<header>` I add the property there and everything sounds the same, well, apart from with VoiceOver, but again, I don't think this is an issue and in other implementations, this drawer may not ever be part of the `<header>`, so it may not be necessary to use that property at all
+* I have removed `aria-owns` completely for this pattern, I explain why at the end
 * I have removed `aria-expanded`, as it no longer makes sense as we can never have technically collapsed, just sort-of collapsed.
 * I have added `aria-pressed="false"`, which is a better fit, here, it indicates a state and on its own it is non-descriptive, it is explicit with the current state, it is either pressed or it is not (`true` or `false`), but it does not imply what either state does, it leaves that to author's to provide a good AccName
+* I removed the `.nav__drawer` wrapper and the `.nav__wrapper` elements, as we don't need those extra `<div>`'s here
 * I have changed the AccName from "Menu" to "Display labels", as that along with the state offers an indication of the control's purpose. I would recommend exploring a better name than that, initially I thought "Show labels", but I quickly remembered that is the exact voice command to show AccNames with VoiceControl on MacOS, which could potentially cause an issue, if the microphone doesn't pick up the initial "click" keyword?
 * I removed the `<span>` element I used to create the hamburger icon, because whilst that icon has a strong affordance, I think an arrow of sorts will be a better fit, here
 
-This gives us our base HTML, I will add icons, later, which will then mean I need to give the links actual names, as opposed to "Item 4", etc, I'm not putting the markup for any of that in here, as they're just random Font Awesome icons and somewhat matching names. So, is this better? Well, it's a thought-experiment and we're attempting to make this somewhat odd pattern as accessible as we can, but, it seems a little better. We no longer have that situation where a screen reader user will encounter a `<button>` that "expands", and they then discover that nothing has changed for them, in which case, they would likely be left wondering whether they were excluded from accessing whatever it was that expanded, due to poor code or whatever.
+This gives us our base HTML, so, is this better? Well, it's a thought-experiment and we're attempting to make this somewhat odd pattern as accessible as we can, but, it seems a little better. We no longer have that situation where a screen reader user will encounter a `<button>` that "expands", and they then discover that nothing has changed for them, in which case, they would likely be left wondering whether they were excluded from accessing whatever it was that "expanded", due to poor code or whatever.
 
 My AccName likely isn't perfect, but it does provide information that at least indicates the `<button>` changes something visually, as "display" obviously means "show" and that may be just enough for users to understand this control changes something visually, and there is not in fact, something inaccessible to them, somewhere. I have no doubt this could be improved upon, but I'd want to get that improved AccName from the people who it affects and that would mostly be screen reader users and voice input users, so please do feel free to have those discussions to improve that should you be involved in creating this pattern.
 
@@ -499,6 +530,8 @@ The above, explained:
 * I set the `width` of the drawer to `3.5rem`, which seemed "ajar" enough to have decent sized icons, my target size has a `height` and `width` of `2.5rem` (40px), which isn't quite Level AAA (44px), but it's not far off and certainly better than Level AA's requirement (24px). I hide the overflow on the horizontal axis (`overflow-x:`), as I don't hide the text labels, I leave them in place and just prevent them from being squished or escaping their container, to have them sort of swipe into view
 * Finally, when the button is clicked and the value of `aria-pressed` is `"true"`, I then set the `width` to `20rem`, I do have an animation on this, which runs for `.5s`, as that is typical of a drawer effect. remember that this is a component in isolation, I haven't added any `reduce-motion` media queries in this example, but this is something you should do. Here on MTA, we have some quite granular controls for User Preferences, disabling motion completely is one of them
 
+<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">Please read the whole guide before using the aria-owns property, I eventually recommend not using it, the reasons for which are explained at the end.</span></div>
+
 ### A sprinkle of JS
 
 I'm just doing the bare minimum, here:
@@ -523,7 +556,7 @@ Firstly, let me state that i'm not overly keen on this pattern, arguably, it doe
 
 I have seen a variation of this pattern where hovering or focusing over the icons when the drawer is "ajar" displayed a small tooltip with the actual text label inside. This is quite like Adobe apps, such as photoshop, etc and I can see how that would be somewhat useful for at-a-glance stuff, changing tools and what not. How useful is it on a website? probably useful to some? The one I tested was done well, again, though, I just prefer drawers that fully close, in real life (furniture) and on the web, maybe I'm just old, I dunno. The addition of the tooltips on both hover and focus did make it that little better for some users, I guess, as an example, a keyboard-only user would see the text labels, screen magnifier users would see the text labels on hover so there are some improvements. It still wasn't good enough to completely do away with the confusing trigger, as voice input users won't be hovering and whilst they can issue commands such as "Press tab" to focus on elements, sequentially, I'm sure they'd much rather just say "Click, home", etc, and they'd need to see the labels for that. Sure, they can get their software to "Show labels", or they can fully open the drawer, but it feels like these users have an additional step over all others. How much of an issue that is will of course be something we could learn from those users.
 
-I feel like I have deviated from "convention" a little, my drawer definitely expands, yet I haven't used `aria-expanded`, I opted for `aria-pressed`, instead. Some folk may say "This is wrong and the gods of ARIA will banish thee to an eternity of `<div>`soup (which somedays, i think they already have), but that's cool, because having conversations about these things is great, we all learn from one another. I believe I have made the right call, as collapsed is both dead and alive, simultaneously and my mate Schrödinger would agree, if he were in a position to do so. 
+I feel like I have deviated from "convention" a little, my drawer definitely expands, yet I haven't used `aria-expanded`, I opted for `aria-pressed`, instead. Some folk may say "This is wrong and the gods of ARIA will banish thee to an eternity of `<div>` soup (which somedays, i think they already have), but that's cool, because having conversations about these things is great, we all learn from one another. I believe I have made the right call, as collapsed is both dead and alive, simultaneously and my mate Schrödinger would agree, if he were in a position to do so. 
 
 The reason I moved the whole drawer and `<button>` with JS, this time was focus order. Had I put the trigger in the top left of the page, which way would a user expect focus to initially go, horizontal through the Primary nav, or vertical through the "ajar" or "fully" open drawer? Had it been vertical, then a user would have to <kbd>Tab</kbd> through the entirety of the drawer to reach the Primary nav and as it is Primary (most important), it makes sense that this should come first. But, if the focus order went Trigger > primary nav Item 1 > item 2... then into the drawer, then we have an illogical focus order, as the controlling element and the controlled panel have unrelated items between them. Part of this was caused by positioning the drawer on the left, which is something to consider, so pulling the trigger down with the nav seemed like the only logical solution.
 
@@ -556,3 +589,35 @@ I feel that the combination of push to the side for larger viewports and overlay
 <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="LEGyqBL" data-pen-title="Accessible Side Nav Drawer (example 2)" data-preview="true" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
 
 <script async src="https://public.codepenassets.com/embed/index.js"></script>
+
+### The results of mobile testing aria-owns
+
+#### Talkback and Chrome (Samsung Galaxy phone)
+
+I encountered problems when testing with TalkBack for the Schrödinger's Nav pattern, initially I had used the `aria-owns` property, which oddly caused an irregular focus order. The links within the drawer received focus before the trigger, which was not reflected in the DOM order.
+
+Additionally I had an issue where when only the icons are displayed, and I "focused" on them, the "focus" indicator pushed the icons off the screen, making them disappear. The reason why this was happening was because the virtual focus indicator seemingly attempts to centre an element to view it all, this sent me down a rabbit hole that I didn't enjoy.
+
+The first example of the regular push to the side nav was actually OK. Although TalkBack didn't announce landmarks, despite me having High verbosity settings, but this is actually often/always the case, at least on my Samsung phone.
+
+I was able to solve the disappearing icon issue, here.
+
+
+
+#### VoiceOver and Safari (iPad)
+
+Quite surprisingly everything was announced perfectly on VoiceOver iPadOS, with Safari, when I swiped back into the nav, on the first pattern.
+
+The second pattern was giving me the same issues as on TalkBack.
+
+I didn't solve the disappearing icon issue, here. I spent ages trying to resolve it, and ran out of time. I don't particularly recommend this pattern, anyway, so I'll leave that unresolved.
+
+#### The problem
+
+As part of my debugging process I commented all CSS out, to determine whether this was a CSS related bug and it turned out the behaviour did not change, on both Android and iPadOS. That meant it could only possibly be the HTML (JS had only moved an element and I was certain everything was fine there), during my debugging, I removed the `aria-owns` property and suddlenly my reading/focus sequence followed the DOM order. This is quite interesting, as whilst I thought I was creating a relationship that I initially severed, I actually made things much worse for touch device users.
+
+It worked exactly as expected in NVDA and Chrome, I wanted to know how VoiceOver would fare with Chrome, just to determine where the problem lies, and it's actually Safari, as opposed to VoiceOver, as Chrome was fine and reported landmarks, correctly. This knowledge doesn't really help in any way, as Chrome and VoiceOver isn't a "recommended" pairing, and I have no power to fix Safari on MacOS.
+
+#### The solution
+
+The solution here is simply not to use `aria-owns`, especially for the Schrödinger's Nav pattern as it caused some unintended side effects. It shouldn't do this, but here we are. Given the problems it has caused and the time I spent debugging and testing, where I came away knowing what caused the issue, but not why, I'd avoid using this property altogether on Schrödinger's Nav and probably avoid it on the regular pattern, just to be safe. The small bit of value it adds, simply isn't worth the mess it causes on touchscreen devices. We need to always strike a balance and if something breaks for one set of users, then it's not worth considering. Without using it, I would amend the first pattern, I'd want to make sure both the `<button>` and the drawer contents are in the `<nav>` together, instead of using ARIA to reinstate the relationship. Whilst it may have been useful to desktop users, that small benefit isn't worth it for the issues it causes touchscreen users, in my opinion, I want things I build to just work for everybody.
