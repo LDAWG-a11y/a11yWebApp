@@ -602,8 +602,6 @@ The first example of the regular push to the side nav was actually OK. Although 
 
 I was able to solve the disappearing icon issue, here.
 
-
-
 #### VoiceOver and Safari (iPad)
 
 Quite surprisingly everything was announced perfectly on VoiceOver iPadOS, with Safari, when I swiped back into the nav, on the first pattern.
