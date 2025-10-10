@@ -4,7 +4,7 @@ summary: This guide will build slightly more complex disclosusre widgets than
   the basic accessible disclosure widgets guide, we'll explore various trypes of
   navigation drawers or side panels
 author: dlee
-date: 2025-10-09
+date: 2025-10-10
 toc: true
 tags:
   - HTML
@@ -120,6 +120,8 @@ Just a little note on the above screenshot:
 
 As I stated, I used `aria-owns` to recreate the relationship, as I had opted to move stuff around in the DOM. Would it be a failure if that attribute were omitted? No, I wouldn't fail it as the `<button>` is in the `<nav>` and the `<button>` uses `aria-controls="[ID_of_drawer]"`, so there is a "programmatic" relationship there, already. Is it the relationship we want? Hmm, both attributes seem to have spotty support, so at this stage, it probably isn't making a huge amount of difference, if any at all. As an example, using VoiceOver and Safari, should I expand the drawer and then tab through it, into the main content, then reverse back into it. the expectation would be something like "Link, item 11, navigation, Secondary", but that doesn't happen, I only get the "navigation, Secondary" info when I reverse all the way up to the button. Remember, this is Safari and VoiceOver, so that may not be representative of other browser/screen reader combos, we'll test them a little later.
 
+<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">Please read the whole guide before using the aria-owns property, I eventually recommend not using it, the reasons for which are explained at the end.</span></div>
+
 #### The CSS
 
 I'm going to omit the CSS, again, as everything gets to unwieldy, I'm also building this thing as I type, so I'm constantly adding or modifying the CSS. It will of course be available in the CodePen, at the end.
@@ -130,7 +132,7 @@ First things, first, we need to remove the `.no-js` class from the `<html>` elem
 
 #### JS Swapping the JS class
 
-Just add this in the HTML's `<head>` section, I believe it's better to add it after the title, encoding and links to other resources, such as CSS, fonts and whatever else you may link to in your <head> section>, for performance reasons.
+Just add this in the HTML's `<head>` section, I believe it's better to add it after the title, encoding and links to other resources, such as CSS, fonts and whatever else you may link to in your `<head>`section, for performance reasons.
 
 ```javascript
 <script>
@@ -499,6 +501,8 @@ The above, explained:
 * I set the `width` of the drawer to `3.5rem`, which seemed "ajar" enough to have decent sized icons, my target size has a `height` and `width` of `2.5rem` (40px), which isn't quite Level AAA (44px), but it's not far off and certainly better than Level AA's requirement (24px). I hide the overflow on the horizontal axis (`overflow-x:`), as I don't hide the text labels, I leave them in place and just prevent them from being squished or escaping their container, to have them sort of swipe into view
 * Finally, when the button is clicked and the value of `aria-pressed` is `"true"`, I then set the `width` to `20rem`, I do have an animation on this, which runs for `.5s`, as that is typical of a drawer effect. remember that this is a component in isolation, I haven't added any `reduce-motion` media queries in this example, but this is something you should do. Here on MTA, we have some quite granular controls for User Preferences, disabling motion completely is one of them
 
+<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">Please read the whole guide before using the aria-owns property, I eventually recommend not using it, the reasons for which are explained at the end.</span></div>
+
 ### A sprinkle of JS
 
 I'm just doing the bare minimum, here:
@@ -556,3 +560,29 @@ I feel that the combination of push to the side for larger viewports and overlay
 <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="LEGyqBL" data-pen-title="Accessible Side Nav Drawer (example 2)" data-preview="true" data-user="LDAWG-a11y" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
 
 <script async src="https://public.codepenassets.com/embed/index.js"></script>
+
+### The results of mobile testing aria-owns
+
+#### Talkback and Chrome (Samsung Galaxy phone)
+
+My testing on TalkBack did not give any favouable results, as such. The Push to the side example worked well enough, however, I wasn't provided with any landmark info, which is often the case with TalkBack, despite me setting Verbosity to High. Still the pattern was usable.
+
+The second pattern was quite horrific, the reading sequence was out, I could access the links in the drawer before I accessed the button that fully opens it, which does not represent the DOM order. I knew I had absolutely positioned this and wondered if this could be the culprit. As I'm accessing my local host through my Mac's IP address and the corresponding port, I'm able to make changes to the CSS, etc, and have those update on my iPad. Removing the display properties had no effect, the order was always wrong. It's worth pointing out that I didn't flip the order with this one, so the reading sequence should follow the DOM order. I removed several CSS properties, such as all `display` properties and `overflow-x,` and it was still out of sequence. This of course took a debugging session to figure out, which I will explain, shortly.
+
+#### VoiceOver and Safari (iPad)
+
+Quite surprisingly everything was announced perfectly on VoiceOver iPadOS, with Safari, when I swiped back into the nav, on the first pattern.
+
+The second pattern was giving me the same issues as on TalkBack, disappearing icons, switching the focus order to skip the button that controls the width of the panel, etc.
+
+#### The problem
+
+As part of my debugging process I commented all CSS out, to determine whether this was a CSS related bug and it turned out the behaviour did not change, on both Android and iPadOS. That meant it could only possibly be the HTML (JS had only moved an element and I was certain everything was fine there), during my debugging, I removed the `aria-owns` property and suddlenly my reading/focus sequence followed the DOM order. This is quite interesting, as whilst I thought I was creating a relationship that I initially severed, I actually made things much worse for touch device users.
+
+It worked exactly as expected in NVDA and Chrome, I wanted to know how VoiceOver would fare with Chrome, just to determine where the problem lies, and it's actually Safari, as opposed to VoiceOver, as Chrome was fine and reported landmarks, correctly. This knowledge doesn't really help in any way, as Chrome and VoiceOver isn't a "recommended" pairing, and I have no power to fix Safari on MacOS.
+
+#### The solution
+
+The solution here is simply not to use `aria-owns`, it did work well on the first, on mobile devices and a desktop device, I do not know whether moving it on to the header for the Schrödinger's Nav pattern caused some unintended side effect? It shouldn't do this, but here we are. Given the problems it has caused and the time I spent debugging and testing, where I came away knowing what caused the issue, but not why, I'd avoid using this property altogether on both main patterns. The small bit of value it adds, simply isn't worth the mess it causes on touchscreen devices. We need to strike a balance and if something breaks for one set of users, then it's not worth considering. Without using it, I would amend the first pattern, I'd want to make sure both the `<button>` and the drawer contents are in the `<nav>` together, instead of using ARIA. Having got this far, I wish I hadn't gone down that route, now, but, perhaps it's useful to see someone attempt to fix something and then later backtrack when they discover it breaks for others? That's just the nature of the field, I guess, lots of competing platforms, vendors and AT software, some have quirks, some outright refuse to play nicely with certain parts of the ARIA spec or other platforms, etc.
+
+TL;DR, Don't use aria-owns on either pattern. It didn't appear to break anything on the first pattern, but remember I didn't test with JAWS as I do not have access to that, maybe you do? Whilst using aria-owns did mostly work as intended on the first pattern without unintended side effects, it's likely best to avoid it here. For the second main pattern, definitely don't use it. I didn't fully debug the disappearing icons on touch devices, but I'm pretty sure I know what is causing that, screen readers have their own focus indicators, the focus indicator was perhaps pushing the icons out of the visible space, as it was "focused" on the full link, the text of that link has an opacity: 0; set. If I were to debug this, my goto here would be using transform: scaleX(); and setting the width of link to the exact size of the icon when the drawer is ajar. I'm fairly sure that would work, but I've
