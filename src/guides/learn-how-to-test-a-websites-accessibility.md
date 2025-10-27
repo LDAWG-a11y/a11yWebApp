@@ -22,7 +22,7 @@ I've built a website for a fictional company and brace yourselves, I have intent
 
 * Show the differences between the results of accessibility checkers
 * Create an inaccessible site, with a perfect automated checker score
-* And, perhaps there are examples out there that fulfil the same purpose of this one
+* And, finally there are examples out there that fulfil the same purpose of this one
 
 You'd be right in thinking this exercise probably made me feel a little dirty, it goes against everything I have been doing for several years. But it also kinda felt fun, in an odd kind of way, not an evil genius kind of feeling, but more of a "Jeez, people actually get paid to write code like this on actual websites" kind of way. Yeah, that was a thinly veiled dig at devs that do not care, come at me.
 
@@ -34,10 +34,10 @@ So at Westminster, we are about to start running some training sessions for a gr
 
 * We'd spend quite some time looking for one that contained enough failures to align with our training plan
 * If we found one that we did not have total control over, there is every chance the site could change, which would make this guide age, pretty quickly
-* We'd then have to build an accessible version of that site, as an example of how it being "fixed"
+* We'd then likely have to build an accessible version of that site, as an example of how it should be when "fixed"
 * We'd have to be super careful about which site we chose, as we could quite easily get our employer in a spot of legal bother and potentially be disciplined for doing so
 
-A custom-built small website that contains just enough accessibility issues to start folks off identifying issues on a site seemed the safest bet. This site won't change, there will be absolutely no changes to the code, whatsoever. This enables us and potentially you, to have an unchanging platform to conduct this training on, in the hope of getting somewhat consistent results.
+A custom-built small website that contains just enough accessibility issues to start folks off with identifying issues on a site seemed the safest bet. This site won't change, there will be absolutely no changes to the code, whatsoever. This enables us and potentially you, to have an unchanging platform to conduct this training on, in the hope of getting consistent results.
 
 There is of course a lot of nuance to accessibility testing, in that it is highly unlikely that two auditors given the same platform, will write up exactly the same issues. This is, in part due to interpretation of various success criteria, two people will interpret some of the more ambiguous aspects differently. It is also in part due to their levels of knowledge, the tools they use, their experience and multiple other factors.
 
@@ -61,7 +61,7 @@ Unfortunately, as the purpose of the test site is to be inaccessible, it will no
 
 ## So, let's dive in
 
-Firstly, this isn't a test, as such. You definitely don't need to submit your report to us, we won't be marking and providing feedback on anything. If you find one of our interpretations are wrong, we will of course fix that and provide that information on the guide.
+Firstly, this isn't a test, as such. Please don't submit your report to us, we won't be marking and providing feedback on anything, as we do not have the time. If you find one of our interpretations are wrong, we will of course fix that and provide that information on the guide.
 
 Secondly, there are only two rules, the first being "Thou shalt follow this guide in order" and the second being "There are no other rules". You are free to test with whatever tools, assistive technologies and manual methods you see fit. If you find one tool that finds every single issue, awesome, use that and please do share it with us. I jest, you won't find a single tool to get you through this, that's just wishful thinking.
 
@@ -73,7 +73,7 @@ Nope. This isn't a competition, don't put yourself under pressure, find what you
 
 There's quite a bit of flexibility here:
 
-* Firstly, and most importantly, a desktop or laptop, I wouldn't advise using a just phone or tablet for this, although you can of course use them in addition to an actual computer (heads up, I haven't tested this on a mobile or tablet, so you may find stuff I haven't recorded)
+* Firstly, and most importantly, a desktop or laptop, I wouldn't advise using just phone or tablet for this, although you can of course use them in addition to an actual computer 
 * A keyboard or an alternative input device that uses the keyboard API (Voice input software etc)
 * A semi-automated or automated testing tool
 * A browser
@@ -98,10 +98,10 @@ I will obviously test the horrors I have created and record them, so this is wha
 
 #### Browsers
 
-Primarily, I will be using Chrome, but once I need to fire up a screen reader, I will be using Safari, if you are using Windows you can use [NVDA (free)](https://www.nvaccess.org/download/) and Firefox or [JAWS (Paid or possible free trial)](https://support.freedomscientific.com/Downloads/JAWS) and Chrome. It's important that you get the "pairings" right, so just to be super clear:
+Primarily, I will be using Chrome, but once I need to fire up a screen reader, I will be using Safari, if you are using Windows you can use [NVDA (free)](https://www.nvaccess.org/download/) and Chrome (This can change due to the results of the annual WebAIM Survey, so please do check that is the recommended pairing, if you are accessing in 2026 and beyond) or [JAWS (Paid or possible free trial)](https://support.freedomscientific.com/Downloads/JAWS) and Chrome. It's important that you get the "pairings" right, so just to be super clear:
 
 * Safari and VoiceOver (MacOS)
-* NVDA and Firefox (Windows)
+* NVDA and Chrome (Windows) (may change again, in the future)
 * JAWS and Chrome (Windows)
 
 For the most part, you can use whatever browser you want, as long as it is a current browser, such as Safari, Firefox, Edge, Chrome etc. You shouldn't dust off your Internet Explorer install, because pretty much everything will be broken, in every conceivable way. But once you are using a screen reader, make sure you are using the advised pairings from above. You only need one screen reader, we're not comparing those.
@@ -112,9 +112,11 @@ For the most part, you can use whatever browser you want, as long as it is a cur
 * Chrome DevTools (this is accessed by either pressing F12 on a webpage or right-clicking and selecting "Inspect"), the process is the same for other browsers, however, they may have an slightly different wording in the context menus. I provided install guides in the previously linked guides, if you are unsure.
 * [Colour Contrast Analyser,](https://www.tpgi.com/color-contrast-checker/) this is an installable tool, if you cannot install software on your work machine (like me), then you can use either a colour contrast checker extension, from your chosen browser's extensions store or better still, the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/), which is web-based
 
+I will identify which tools or methods I used to find the issue
+
 #### Resources
 
-* [WCAG 2.2 Qucikref, I've filtered this to only show Level A and Level AA](https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_customize&levels=aaa), that's not because AAA isn't important, it's just that in the trenches you will mostly be fighting against Level AA enemy combatants (AKA legal conformance), because "Minimum legal compliance", yuck. That's not to say that's always the case, but mostly it is
+* [WCAG 2.2 Qucikref, I've filtered this to only show Level A and Level AA](https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_customize&levels=aaa), that's not because AAA isn't important, it's just that in the trenches you will mostly be fighting against Level AA enemy combatants (AKA legal conformance), the AAA stuff is usually the clandestine operatives we don't encounter (sad, but true)
 * I'm not using this, but if you are just starting out, you may find the [A11y project's Accessibility Checklist](https://www.a11yproject.com/checklist/) to be useful to know what to test for
 
 ### Be comfortable with your choices
@@ -127,7 +129,7 @@ That's not a problem. We can link you to some handy guides that will show the ke
 
 * In all three screen readers and standard keyboard-only navigation the <kbd>Tab</kbd> key will move from one interactive items (links, inputs and buttons, etc), to the next. the "next" item will typically be determined by the DOM order, but can also be manipulated via scripting or even CSS.
 * In order to "reverse" back up the page, the <kbd>Shift</kbd> key should be held down and then pressing <kbd>Tab</kbd> will reverse the direction. This also applies to standard keyboard navigation and all three screen readers
-* <kbd>Enter</kbd> and <kbd>Space</kbd> will fire the "click" event on an interactive item, a `<button>` will respond to both those keys, a link will only respond to <kbd>Enter</kbd>. Again, this applies to both standard keyboard navigation and all three screen readers
+* <kbd>Enter</kbd> and <kbd>Space</kbd> will fire the "click" event on some interactive itema, a `<button>` will respond to both those keys, a link will only respond to <kbd>Enter</kbd>. Again, this applies to both standard keyboard navigation and all three screen readers
 * <kbd>Esc</kbd>, **should**, close items such as modal dialogs and other components that you may encounter, especially those that overlay other content
 
 #### Full keyboard controls for each screen reader
@@ -167,17 +169,21 @@ There are a multitude of formats that accessibility professionals use to write a
 * Site wide
 
   * This will include things like theming, and issues that appear outside of the browser window, but in both of those cases, it's only site wide if it appears on more than one page
-* Header
+  * Header
 
-  * The site header should be tested on each page it appears and anything you record should be placed in that section. This site is very small, so whilst the header and/or its contents may appear identical across pages, give it a closer look
-* Footer
+    * The site header should be tested on each page it appears and anything you record should be placed in that section. This site is very small, so whilst the header and/or its contents may appear identical across pages, give it a closer look
+  * Footer
 
-  * Just like the header, pay attention to this across pages, it may be different in some way, anything that is displayed as a result of interacting within the footer should also be in this section
+    * Just like the header, pay attention to this across pages, it may be different in some way, anything that is displayed as a result of interacting within the footer should also be in this section
 * Page
 
   * For each page (the bit between the header and footer and anything that is displayed as a result of interacting within the 'page'), record your results in a section for that particular page, so "Home page", "About page" and so forth
 
+Please don't get too hung up on the structure part, if you record something in a different section, that's not wrong, I'm sure many accessibility professionals record things in different ways, using different structures. The structure isn't as important as finding issues
+
 We use a word document, just because that's our preference. You can write it on paper if you so wish, the only thing you should follow is the structure, just to make comparing a little more logical.
+
+I will include a report that I have written for testing the site, just for you to compare
 
 ### One final word of warning
 
@@ -189,6 +195,6 @@ LINK TO MAKING THIS ACCESSIBLE
 
 ### I've finished, I'm ready to compare
 
-You should only access the following page if you are done with testing. Avoid the temptation to look at the answers until you feel you are done, I used to sneak a peak at the answers in my puzzle books as a kid and I didn't really learn a great deal when i was doing that, i was simply a cheat.
+You should only access the following page if you are done with testing. Avoid the temptation to look at the answers until you feel you are done, I used to sneak a peak at the answers in my puzzle books as a kid and I didn't really learn a great deal when I was doing that, I was simply a cheat.
 
 LINK TO ANSWERS PAGE
