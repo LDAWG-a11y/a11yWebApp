@@ -1,5 +1,5 @@
 ---
-title: Learn how to test a website's accessibility
+title: Learn how to test a website's accessibility (Part 1)
 summary: This practical digital accessibility guide will help you learn how to
   test for WCAG failures, using any tools of your choice, as well as manual
   testing. We have created an inaccessible site, to help you along
