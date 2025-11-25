@@ -8,7 +8,7 @@ summary: The Public Sector Bodies (Websites and Mobile Applications (No.2)
   event of 3rd party products causing accessibility complaints is to include
   accessibility requirements into contracts.
 author: grhodes
-date: 2022-11-25
+date: 2025-11-25
 toc: true
 tags:
   - Procurement
