@@ -14,7 +14,8 @@ tags:
   - Procurement
   - Contracts
 file:
-  - /public/docs/mta-contract-wording-template.docx
+  - /public/docs/mta-contract-wording-template-v1.2.docx
+  - /public/docs/mta-contract-wording-template-v1.2-with-guidance.docx
 isGuide: true
 ---
 The [Public Sector Bodies (Websites and Mobile Applications (No.2) Accessibility Regulations 2018](https://www.legislation.gov.uk/uksi/2018/952/pdfs/uksi_20180952_en.pdf) places all legal burden on the public sector body. Suppliers are not directly held responsible for the accessibility of their products that you decide to use.
@@ -32,17 +33,21 @@ With no direct recourse in the regulations to hold suppliers responsible, it is 
 
 ## Contract clauses template
 
-[Download a copy of the contract wording template](/docs/mta-contract-wording-template.docx)
+[Download a copy of the contract wording template - latest update V1.2 25/11/2025](/docs/mta-contract-wording-template-v1.2.docx)
+
+[Download a copy of the template with guidance comments](/docs/mta-contract-wording-template-v1.2-with-guidance.docx)[](/docs/mta-contract-wording-template.docx)
 
 This contract wording has been created in collaboration with RNIB (Royal National Institute of Blind People) and several London Universities to ensure consistent world leading accessibility standards are embedded within all products or services as part of all procurement process to benefit everyone involved in its delivery. This is part of an ongoing relationship to make the UK Higher Education sector more inclusive and accessible to all.
 
 We hope that the template will be of use to others, but as with any contract, these clauses may be negotiated by both parties, and we suggest that you still seek your own legal advice before use.
 
+Two versions of the template have been provided. The first without additional comments, and the second with guidance comments meant to help both customers and suppliers understand why they may wish to include certain clauses.
+
 <div class="callout__warn"><span class="callout__icon"></span><span class="callout__text">This publication is issued as guidance only. It is not intended to provide legal or professional advice. All collaborators on this content accept no liability for any errors, omissions or any consequences, losses or damages arising from any use of, or reliance placed on, this publication. You need to ensure that any contractual terms are appropriate for your organisation. You should seek advice from a suitably qualified professional.</span></div>
 
 ### The MTA template
 
-<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">Note that content in the example below marked in square brackets [ ] refers to content you would replace with your own information. In the download this is also visibly highlighted.</span></div>
+<div class="callout__info"><span class="callout__icon"></span><span class="callout__text">Note that content in the example below marked in square brackets \[ ] refers to content you would replace with your own information. In the download this is also visibly highlighted.</span></div>
 
 It is Agreed as follows:
 
@@ -70,8 +75,10 @@ In this Agreement (including the Introduction) unless the context otherwise requ
 1. ensure the SaaS Services strictly conform with the requirements of the WCAG, the ATAG and applicable Accessibility Regulations;
 2. Where not compliant produce an Accessibility Roadmap for **\[The Customer’s]** approval within **\[15]** Business Days of the Commencement Date;
 3. subject to **\[The Customer’s]** approval, promptly implement and comply with the Accessibility Roadmap;
-4. comply with applicable Accessibility Regulations;
-5. ensure that the entirety of the SaaS Services are accessible, including ensuring that the SaaS Services encompasses all components of the digital or other system for use by **\[The Customer]**, including the following:
+
+   1. Provide **\[The Customer’s]** digital accessibility responsible officer with access to the final product at least **\[20]** working days before any agreed “go live” or delivery date to allow for compliance testing of roadmap changes.
+   2. As part of the roadmap, before the “pre-go live” reaudit, **\[The Supplier]** will provide **\[The Customer’s]** digital accessibility responsible officer with an itemised list of which issues on the roadmap have been resolved. 
+4. ensure that the entirety of the SaaS Services are accessible, including ensuring that the SaaS Services encompasses all components of the digital or other system for use by **\[The Customer]**, including the following:
 
    1. external facing screens;
    2. internal facing screens;
@@ -82,7 +89,7 @@ In this Agreement (including the Introduction) unless the context otherwise requ
 
 2.2 **\[The Supplier]** acknowledges and agrees that **\[The Customer’s]** approval of the Accessibility Roadmap shall not act as an endorsement of the Accessibility Roadmap and shall not relieve **\[The Supplier]** of its responsibility for ensuring that the SaaS Services are provided to the standard required by this Clause.
 
-2.3 Upon request by **\[The Customer]**, **\[The Supplier]** shall provide **\[The Customer]** with information for **\[The Customer]** to:
+2.3 Upon written request by **\[The Customer]**, **\[The Supplier]** shall provide **\[The Customer]** with information for **\[The Customer]** to in a time frame no longer than three (3) months:
 
 1. assess whether **\[The Supplier]** has complied with this Clause;  
 2. produce an Accessibility Statement;
