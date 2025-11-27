@@ -38,7 +38,7 @@ My silly analogy demonstrates what can happen when things are labelled incorrect
 
 Where developers often go wrong is by giving screen reader users too much information, such as visually hidden instructions and this can and often does cause an issue for voice input users. Let's take this example code:
 
-```
+```html
 <nav>
   <img src="/logo.png" alt="ACME logo">
   <button 
@@ -135,13 +135,13 @@ A word is made up of letters, for those letters to form that word, each letter m
 
 Now, lets consider what letters are:
 
-Letters are in their base form, shapes, those of us looking at letters will recognise them to be a letter and know which letter it is by its shape? Braille users will feel raised dots and know which letter it is by the position of the dots and how many they are, etc
+Letters are in their base form, shapes, those of us looking at letters will recognise them to be a letter and know which letter it is by its shape? Braille users will feel raised dots and know which letter it is by the position of the dots and the pattern they are in.
 
-Why is this important? Well, as letters are shapes and those shapes need to be in a correct sequence to form a word, this is a useful thought-process as to whether the visible label is in the AccName. We can consider the Accname to be the typical shape sorting cube a small child will use at home and at nursery and the visible label to be the shape. the shape will need to fit into the cube's cut-out, in order to pass.
+Why is this important? Well, as letters are shapes and those shapes need to be in a correct sequence to form a word, this is a useful thought-process as to whether the visible label is in the AccName. We can consider the AccName to be the typical shape sorting cube a small child will use at home and at nursery and the visible label to be the shape. The shape will need to fit into the cube's cut-out, much like the visible label will need to fit inside the AccName.
 
 ![An AI-generated image of an upset toddler, the toddler is trying to get a trinagle shape into the circular cut out of the shape sorting cube. The triangle doesn't fit, as it is bigger than the circular cut out, the triangle has the word 'Menu' labelled on it, there is a label pointing to the circle that says 'Click this button to access the site navigation' and I attempted to make this connection with the button i created earlier.](src/guideImg/dl-lin-child-shape.png)
 
-I used AI for that image, I wanted the shape to be an outline of the word "menu" and the cutout to be an outline of the text "Click this button to access the site navigation", but I couldn't quite get it to do exactly as I wanted. Still, it works well, as a light-hearted image highlighting the child's frustration at that shape not fitting anywhere in their cube. They just want to complete their task, but poor design and lack of quality control testing has introduced a barrier. This is exactly how websites with AccName mismatches are, they cause frustration, lack consideration for voice input users and have clearly not been tested properly, otherwise, they would just work.
+I used AI for that image, I wanted the shape to be an outline of the word "menu" and the cutout to be an outline of the text "Click this button to access the site navigation", but I couldn't quite get it to do exactly as I wanted. I also didn't want the child to look so upset, I wanted confused. Still, it works well, as a light-hearted image highlighting the child's frustration at that shape not fitting anywhere in their cube. They just want to complete their task, but poor design and lack of quality control (testing) has introduced a barrier. This is exactly how websites with AccName mismatches are, they cause frustration, lack consideration for voice input users and have clearly not been tested properly, otherwise, they would just work.
 
 We know that the sequence of visible characters must be present in the AccName, but just to make sure we understand that fully, let's consider a few things:
 
@@ -151,18 +151,18 @@ We know that the sequence of visible characters must be present in the AccName, 
 * AccName = "Profile Menu" & Visible label = "Profile": PASS. The word "Menu" is featured in the AccName and the visible label features first (WCAG Best Practice)
 * AccName = "Username" & Visible label = "Username": PASS. This would be an actual "Best Practice", as say what you see would work perfectly here
 
-Does letter case matter? is "menu" the same as "Menu" or even "MENU"? I am by no means an expert, here, but, in my experience "menu" and "Menu" do not matter, because how would the software know I was pronouncing a word with a capital M at the beginning, verses one that doesn't and vice versa? It can't know that, can it? My pronunciation does change, so the software does its fuzzy search, I guess, it will convert my voice to text, it will then look up that text in the Accessibility Tree and find the matching node. How it does that, I have to say, i am not 100% sure. Does it do something similar to what I would do with JS if I needed to match two strings of text? If I need to match some input string against a set of known strings (like our search input), what I do is first convert the to be tested input string to lowercase and also the existing list of strings to lowercase, like so:
+Does letter case matter? is "menu" the same as "Menu" or even "MENU"? I am by no means an expert, here, but, in my experience "menu" and "Menu" do not matter, because how would the software know I was pronouncing a word with a capital M at the beginning, verses one that doesn't and vice versa? I have never personally experienced an issue where the letters being all in uppercase in the AccName have caused an issue because the software has interpreted it as an initialism, etc. Voice input software isn't my usual input modality, I do use it for testing, but beyond that, i don't use it, so my experience is quite limited.
+
+## An issue with mismatches
+
+We have already discussed the issues when the visible label isn't present in the AccName, even looking at how the sequence being broken with a space is a failure, but we also need to look a little beyond that, we need to consider how different tools operate. 
+
+I do not have all voice input software at my disposal, I do not have access to Dragon, which I know many users use as their main voice input software.
+
+I want to speak specifically about VoiceControl, the voice input software that comes built in with MacOS and iOS devices. It used to be the case that VoiceControl expected the user to announce the full AccName, so commanding "Click, Submit" would not work for an this type of button:
 
 ```
-const sentence = "The quick brown fox jumps over the lazy dog.";
-
-const word = "FOX";
-
-console.log(
-  `The word "${word}" ${
-    sentence.toLowerCase().includes(word.toLowerCase()) ? "is" : "is not"
-  } in the sentence`,
-);
+<button type="submit" aria-label="Submit the form">Submit</button>
 ```
 
-So, I modified some code for the includes() method, on MDN, as I wanted to test that my sword tring was present in the sentence string. i canged the case of my word "fox" to all uppercase, knowing full well that it would not match anymore, like it did in the original example. I then added toLowerCase() to bothe the word and the sentence, so we wouldn't run into a casing issue anymore. I suspect that this is something like (although way more advanced) what happens under the hood, I genuinely do not know. As I do not have access to every voice input software available, I cannot say for certain, but using VoiceAccess on a Mac, I was able to successfully get the software to click controls that were the same word, but different cases. This leads me to suspect that case does not matter, but, full caps words can be read out as acronyms/initialisms on screen readers, so be wary of that. "MENU" has n
+WCAG state in their best practice that the visible label should be at the beginning of the string, yet, this did not used to work, as VoiceControl was a bit of an outlier in that it expected the full string to be spoken. It has recently been fixed, in that Voice Control now expected the visible label to be present at the beginning of the AccName, which aligns with WCAG's best practice.
