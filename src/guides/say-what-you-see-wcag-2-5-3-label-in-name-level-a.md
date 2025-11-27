@@ -146,12 +146,30 @@ I used AI for that image, I wanted the shape to be an outline of the word "menu"
 We know that the sequence of visible characters must be present in the AccName, but just to make sure we understand that fully, let's consider a few things:
 
 * AccName = "Click this button to access the site navigation" & Visible label = "Menu": FAIL. That sequence of letters does not feature in the Accname
-* AccName = "Our fab outdoor activities" Visble label = "About": FAIL. That sequence of letters does not feature in the Accname, it sort of does, but it doesn't. the last two characters of "fab" and the first three of "outdoor" do indeed speall "about", however, the sequence is interupted by a space, so the sequence doesn't match, remember my rubbish AI image, if i had been successful in getting the image I wanted, then imaginge how the outline of the cutout in the sorting cube would be imapacted by the space, the "about" shape would not fit, would it?
-* AccName = "Site Menu & Visible label = "Menu": FAIL. That sequence of letters does not feature in the Accname. PASS, the word "Menu" is present in the AccName, so this techically passes (it's not a best practice though)
+* AccName = "Our fab outdoor activities" Visble label = "About": FAIL. That sequence of letters does not feature in the AccName, it sort of does, but it doesn't. the last two characters of "fab" and the first three of "outdoor" do indeed spell "about", however, the sequence is interupted by a space and that space was there to separate words, so we cannot alter the meaning of bits of chopped up words to satisfy this SC, which we wouldn't do, anyway, but it's just an example
+* AccName = "Site Menu" & Visible label = "Menu": Pass. The word "Menu" is present in the AccName, so this techically passes (it's not a best practice though)
 * AccName = "Profile Menu" & Visible label = "Profile": PASS. The word "Menu" is featured in the AccName and the visible label features first (WCAG Best Practice)
 * AccName = "Username" & Visible label = "Username": PASS. This would be an actual "Best Practice", as say what you see would work perfectly here
 
-Does letter case matter? is "menu" the same as "Menu" or even "MENU"? I am by no means an expert, here, but, in my experience "menu" and "Menu" do not matter, because how would the software know I was pronouncing a word with a capital M at the beginning, verses one that doesn't and vice versa? I have never personally experienced an issue where the letters being all in uppercase in the AccName have caused an issue because the software has interpreted it as an initialism, etc. Voice input software isn't my usual input modality, I do use it for testing, but beyond that, i don't use it, so my experience is quite limited.
+Does letter case matter? is "menu" the same as "Menu" or even "MENU"? I am by no means an expert, here, but, in my experience "menu" and "Menu" do not matter, because how would the software know I was pronouncing a word with a capital M at the beginning, verses one that doesn't and vice versa? This is something that WCAG also note in the Understanding Document, in that, the first letters of words capitalised does not matter. It does not seem to mention whether all caps matters, and I suspect that this could be due to an all caps word can sometimes effect the meaning in human language? I have never personally experienced an issue where the letters being all in uppercase in the AccName have caused an issue because the software has interpreted it as an initialism/acronym, etc. Voice input software isn't my usual input modality, I do use it for testing, but beyond that, I don't use it, so my experience is quite limited. I know that sometimes screen readers will output initialisms/acronys as opposed to the word, as they would parse it as the initialism/acronym, so whilst I cannot say for certain whether this is an issue or not, always air on the side of caution and follow WCAG's advice "When in doubt, where a meaningful visible label exists, match the string exactly for the accessible name".
+
+So the key takeaway here is that the sequence of letters, as presented visually, MUST appear in that exact same order in the AccName. Whilst we do not typically pronounce punctuation, we do provide other audible cues to indicate it, such as short or longer pauses for commas and full stops (periods), respectively, we do not ask a question like this "do we, question mark" so these can be ignored, as can other punctuation symbols, such as colons, ellipses and what not, which is also mentioned in the Understanding Document. A space is a form of punctuation and whilst it does interupt a string, it does not necessarily change the meaning. It's quite common that company names are two or more words with no space, even product names are and they often use kebab case (hyphenated words) or Pascal case (no spaces, each word starts with a capital, including the first word). Let's take the example of VoiceOver, a prime example of pascal case for Apple's screen reader, let's consider this link:
+
+```
+<a href="https://support.apple.com/en-gb/guide/voiceover/welcome/mac" aria-label="VoiceOver">Voice Over</a>
+```
+
+Using Voice Control (oddly not pascal case, but proper nouns), should I command "Click, voice over" (as I ordinarily would), it still works as expected, as that space has not affected the meaning. People do not all speak at the same speed, so the software seemingly accounts for this, to an extent. Should i increase the pause between words, though, nothing happens. I am saying what I see, in that i am leaving a pause between two words, as that is exactly what I see. Let's see how the inverse works, with the following code
+
+```
+<a href="https://support.apple.com/en-gb/guide/voiceover/welcome/mac" aria-label="Voice Over">VoiceOver</a>
+```
+
+Now if I say "Click, VoiceOver" a bit fast, nothing happens, should i slow it down a bit to account for the hidden pause, then it works. Does the sequence affect the meaning, given our very limited tests? I think the meaning remains the same, irrespective of the pause, however, it does affect operation, in that I ran into problems in both cases. Noted, I only used one voice input software, so my test is far from empirical, I also used the one that has a parent company that often requires their customers to do things a little differently (holding a phone and stuff), so perhaps I was destnied to find an issue? Okay, I agree, so let's use some others:
+
+#### Voice Access on Android
+
+using the same limited tests as I did for Voice Control, I did not face the same problem. So the space did not affect the operation, here. 
 
 ## An issue with mismatches
 
@@ -165,4 +183,8 @@ I want to speak specifically about VoiceControl, the voice input software that c
 <button type="submit" aria-label="Submit the form">Submit</button>
 ```
 
-WCAG state in their best practice that the visible label should be at the beginning of the string, yet, this did not used to work, as VoiceControl was a bit of an outlier in that it expected the full string to be spoken. It has recently been fixed, in that Voice Control now expected the visible label to be present at the beginning of the AccName, which aligns with WCAG's best practice.
+WCAG state in their best practice that the visible label should be at the beginning of the string, yet, this did not used to work, as VoiceControl was a bit of an outlier in that it expected the full string to be spoken. It has recently been "fixed", in that Voice Control now expected the visible label to be present at the beginning of the AccName, which aligns with WCAG's best practice. I believe most voice inputs software just expect the visible label to be present anywhere in the AccName string, so there is of course a difference.
+
+Going back to my earlier recommendation, if we can just label a control with text and not use hidden text such as ARIA/visibly hidden text to modilfy or append the visible label in a non-visual manner, then that will always be the optimal strategy. There are occasions where this isn't always possible and we may need to append a control's AccName with additional text, but this is something we should do as a last resort.
+
+Back to Catchphrase
