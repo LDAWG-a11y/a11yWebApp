@@ -154,18 +154,45 @@ I wanted the shape to be an outline of the word "menu" and the cutout to be an o
 We know that the sequence of visible characters must be present in the AccName, but just to make sure we understand that fully, let's consider some other examples:
 
 <table>
-<thead>
-<tr>
-<th>Visble label</th>
-<tr>
-</thead>
+  <thead>
+    <tr>
+      <th>Visble label</th>
+      <th>AccName</th>
+      <th>Pas/Fail</th>
+     <tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Menu</td>
+      <td>Click this button to access the site navigation</td>
+      <td>Fail: The word "Menu" does not feature in the AccName</td>
+    </tr>
+    <tr>
+      <td>Our fab outdoor activities</td>
+      <td>About</td>
+      <td>Fail: The sequence of letters that forms the word about does not feature in the AccName, it sort of does, but it doesn't. the last two characters of "fab" and the first three of "outdoor" do indeed spell "about", however, the sequence is interupted by a space and that space was there to separate words, so we cannot create meaning from coincidences</td>
+    </tr>
+    <tr>
+      <td>Site Menu</td>
+      <td>Menu</td>
+      <td>Pass: The word "Menu" is present in the AccName, so this techically passes (it's not a best practice though)</td>
+    </tr>
+    <tr>
+      <td>Profile Menu</td>
+      <td>Profile</td>
+      <td>Pass: The word "Menu" is featured in the AccName and the visible label features first (WCAG Best Practice)</td>
+    </tr>
+    <tr>
+      <td>Username</td>
+      <td>Username</td>
+      <td>Pass: This would be an actual "Best Practice", as say what you see would work perfectly here</td>
+    </tr>
+  </tbody>
 </table>
 
-* AccName = "Click this button to access the site navigation" & Visible label = "Menu": FAIL. That sequence of letters does not feature in the Accname
-* AccName = "Our fab outdoor activities" Visble label = "About": FAIL. That sequence of letters does not feature in the AccName, it sort of does, but it doesn't. the last two characters of "fab" and the first three of "outdoor" do indeed spell "about", however, the sequence is interupted by a space and that space was there to separate words, so we cannot alter the meaning of bits of chopped up words to satisfy this SC, which we wouldn't do, anyway, but it's just an example
-* AccName = "Site Menu" & Visible label = "Menu": Pass. The word "Menu" is present in the AccName, so this techically passes (it's not a best practice though)
-* AccName = "Profile Menu" & Visible label = "Profile": PASS. The word "Menu" is featured in the AccName and the visible label features first (WCAG Best Practice)
-* AccName = "Username" & Visible label = "Username": PASS. This would be an actual "Best Practice", as say what you see would work perfectly here
+
+* AccName = "" & Visible label = "": 
+* AccName = "" & Visible label = "Username": PASS: 
 
 Does letter case matter? is "menu" the same as "Menu" or even "MENU"? I am by no means an expert, here, but, in my experience "menu" and "Menu" do not matter, because how would the software know I was pronouncing a word with a capital M at the beginning, verses one that doesn't and vice versa? This is something that WCAG also note in the Understanding Document, in that, the first letters of words capitalised does not matter. It does not seem to mention whether all caps matters, and I suspect that this could be due to an all caps word can sometimes effect the meaning in human language? I have never personally experienced an issue where the letters being all in uppercase in the AccName have caused an issue because the software has interpreted it as an initialism/acronym, etc. Voice input software isn't my usual input modality, I do use it for testing, but beyond that, I don't use it, so my experience is quite limited. I know that sometimes screen readers will output initialisms/acronys as opposed to the word, as they would parse it as the initialism/acronym, so whilst I cannot say for certain whether this is an issue or not, always err on the side of caution and follow WCAG's advice "When in doubt, where a meaningful visible label exists, match the string exactly for the accessible name".
 
