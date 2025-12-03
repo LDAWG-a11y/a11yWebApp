@@ -8,7 +8,7 @@ date: 2025-12-02
 toc: false
 tags:
   - ARIA
-  - Assistive Technology
+  - Assistive technology
   - Best practice
 isGuide: true
 ---
