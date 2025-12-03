@@ -128,7 +128,7 @@ So, for `aria-label` and `aria-labelledby` to unleash their full power, they hav
 
 Let's consider this monstrosity of HTML:
 
-```
+```html
 <button>
   What's
   <span>my</span>
@@ -158,7 +158,7 @@ The problem with this is it could create unnecessary pauses for screen reader us
 
 So, all contents are only ever computed as contents, irrespective of where the descendant nodes get their name from and anything that has a higher precedence will neuter all contents, a quick demo being:
 
-```
+```html
 <label for="btnLbl">This is my name</label>
 
 <button id="btnLbl">
@@ -253,13 +253,13 @@ Does letter case matter? is "menu" the same as "Menu" or even "MENU"? I am by no
 
 So the key takeaway here is that the sequence of letters, as presented visually, MUST appear in that exact same order in the AccName. Whilst we do not typically pronounce punctuation, we do provide other audible cues to indicate it, such as short or longer pauses for commas, and spaces or full stops (periods), respectively. We do not ask a question like this: "do we, question mark" so these can be ignored, as can other punctuation symbols, such as colons, ellipses and what not, which is also mentioned in the Understanding Document. A space is a form of punctuation and whilst it does interupt a string, it does not necessarily change the meaning. It's quite common that company names are two or more words with no spaces, even product names often are and they may use kebab case (hyphenated words) or Pascal case (no spaces, each word starts with a capital, including the first word). Let's take the example of VoiceOver, a prime example of Pascal case for Apple's screen reader, let's consider this link:
 
-```
+```html
 <a href="https://support.apple.com/en-gb/guide/voiceover/welcome/mac" aria-label="VoiceOver">Voice Over</a>
 ```
 
 Using Voice Control (is this the only time Apple didn't use Pascal case?), should I command "Click, VoiceOver" (as I ordinarily would), it works as expected, as that space has not affected the meaning. People do not all speak at the same speed, so the software seemingly accounts for this, to an extent. Should I increase the pause between words, though, nothing happens. I am saying what I see, in that I am leaving a pause between two words, as that is exactly what I see. Let's see how the inverse works, with the following code
 
-```
+```html
 <a href="https://support.apple.com/en-gb/guide/voiceover/welcome/mac" aria-label="Voice Over">VoiceOver</a>
 ```
 
@@ -308,7 +308,7 @@ I do not have all voice input software at my disposal, I do not have access to D
 
 I want to speak specifically about Voice Control, the voice input software that comes built in with MacOS and iOS devices. It used to be the case that Voice Control expected the user to announce the full AccName, so commanding "Click, Submit" would not work for a bitton marked up like the one in the code example below:
 
-```
+```html
 <button type="submit" aria-label="Submit the form">Submit</button>
 ```
 
