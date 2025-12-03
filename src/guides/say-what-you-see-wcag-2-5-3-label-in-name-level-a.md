@@ -316,8 +316,6 @@ WCAG state in their best practice that the visible label should be at the beginn
 
 Going back to my earlier recommendation, if we can just label a control with text and not use hidden text such as ARIA/visiually hidden text to modilfy or append the visible label in a non-visual manner, then that will always be the optimal strategy. There are occasions where this isn't always possible and we may need to append a control's AccName with additional text, but this is something we should do as a last resort.
 
-## Back to Catchphrase
-
 ## Wrapping up
 
 In order to avoid creating this problem for users we can mostly simplify controls, in that if they have a text label, and that text label is adequate on its own to understand the control, then let that visible text be the AccName. We seldom need to neuter the AccName with ARIA, although there are of course times where information that is presented visually may require an AccName to be formed from more than one node, a date picker may be an example of where just "17" may not be sufficient as the AccName, if the cell has some other information clearly obvious information, perhaps, availability or whatever. None of this really matters for more traditional controls, such as a nav menu, profile menus, accordions and other elements that don't really need compound AccNames.
