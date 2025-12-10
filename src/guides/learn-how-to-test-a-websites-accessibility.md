@@ -16,7 +16,7 @@ isGuide: true
 
 This guide is going to be a little different than what I would usually do, typically my guides would focus on a singular component or pattern. This time, we're going to be doing an introduction to web accessibility testing.
 
-There will be limited hand-holding here, it's not going to be a case of me finding a website and identifying the issues, to walk you through, we're going for something a little different, a little spicier, even. 
+There will be limited hand-holding here, it's not going to be a case of me finding a website and identifying the issues, to walk you through, we're going for something a little different.
 
 I've built a website for a fictional company and brace yourselves, I have intentionally made it inaccessible. Why would you do that? I hear you say. Well, firstly it's not a new idea, there's quite a few examples around the web, folks make them for various reasons:
 
@@ -33,8 +33,8 @@ I honestly found it really difficult to create the site, it messed with my mind 
 So at Westminster, we are about to start running some training sessions for a group of colleagues, these colleagues want to learn how to identify WCAG issues, as well as other common accessibility barriers. We could have taken a site that's already in the public domain:
 
 * We'd spend quite some time looking for one that contained enough failures to align with our training plan
-* If we found one that we did not have total control over, there is every chance the site could change, which would make this guide age, pretty quickly
-* We'd then likely have to build an accessible version of that site, as an example of how it should be when "fixed"
+* If we found a site in the wild, obviously we'd have no control over it, there is every chance the site could change, which would make this guide age, pretty quickly
+* We'd then likely have to build an accessible version of that site, as an example of how it should be when "fixed", because we would encourage participants in the training to take note of the difference with AT, etc
 * We'd have to be super careful about which site we chose, as we could quite easily get our employer in a spot of legal bother and potentially be disciplined for doing so
 
 A custom-built small website that contains just enough accessibility issues to start folks off with identifying issues on a site seemed the safest bet. This site won't change, there will be absolutely no changes to the code, whatsoever. This enables us and potentially you, to have an unchanging platform to conduct this training on, in the hope of getting consistent results.
@@ -49,7 +49,7 @@ One important distinction that can result in two different people having a sligh
 
 When I first started testing websites, I was definitely at the low end of that scale, I was one of those "Which SC can I fail this against" folks. I believe my intent was pure, I wasn't failing things because the website would be better for me, I was failing them to make the website usable to people with disabilities. But, credibility is a thing, as I learned from highly-experienced others in the field, by reading their comments discussions or posts on various platforms. I began to understand this wasn't actually helping as much as I thought it was. The main concern here was, if I just failed something against a SC criterion just because it seemed the closest fit and I was called out on it, by a vendor, the rest of my report and myself could lose all credibility. [](https://www.youtube.com/watch?v=rBCR66aJZZc)
 
-Nowadays, I find myself just past the middle of that scale. We do have Advisories and even "Weaknesses", but sometimes these can be overlooked, so I explain my rationale, the effects on a user and I state that whilst it does not "technically" fail, it is still an issue and my interpretation of the spirit of the SC and/or user expectation means that the issue should be prioritised, accordingly. This way, I'm not at risk of a vendor calling me a clueless clown (If you are an actual circus clown and I have offended you in some way, sorry) and dismissing the rest of my report. I can't be called out, that way, as I have stated I know what the SC says and I either believe something to be a loophole, open to interpretation or just not in the spirit of the particular SC.
+Nowadays, I find myself just past the middle of that scale. We do have "Weaknesses" in our reports, where we put non-WCAG issues. I explain my rationale, the effects on a user and/or their AT and I state that whilst it does not "technically" fail WCAG, it is still an accessibility issue. WCAG is not the be all and end all of accessibility, it's a minimum standard for "compliance", in many territories, not some magical standard that catches every aspect of user needs. Here, though, we will just be using WCAG, as other stuff would perhaps be at more risk of being subjective.
 
 Anyway, less about me. So the purpose of this test is not so much to determine who interprets what in which way, it's main objective is to simply to provide a decent chunk of accessibility issues, on an unchanging platform to assist with learning or training.
 
@@ -61,27 +61,27 @@ Unfortunately, as the purpose of the test site is to be inaccessible, it will no
 
 ## So, let's dive in
 
-Firstly, this isn't a test, as such. Please don't submit your report to us, we won't be marking and providing feedback on anything, as we do not have the time. If you find one of our interpretations are wrong, we will of course fix that and provide that information on the guide.
+Firstly, this isn't a test, as such. Please don't submit your report to us, we won't be marking or providing feedback on anything, as we do not have the time. If you find one of our interpretations are wrong, we will of course fix that and provide that information on the guide.
 
 Secondly, there are only two rules, the first being "Thou shalt follow this guide in order" and the second being "There are no other rules". You are free to test with whatever tools, assistive technologies and manual methods you see fit. If you find one tool that finds every single issue, awesome, use that and please do share it with us. I jest, you won't find a single tool to get you through this, that's just wishful thinking.
 
 ### Do I need to find all of the issues?
 
-Nope. This isn't a competition, don't put yourself under pressure, find what you can and then when you cannot find anymore, compare your findings, with ours. This is more applicable if you are just starting out, we all have to start somewhere, we mostly all get stuff wrong and sometimes we can go down a rabbit hole learning about something we haven't previously encountered.
+Nope. This isn't a competition, don't put yourself under pressure, find what you can and then when you cannot find anymore, compare your findings, with ours. This is more applicable if you are just starting out, we all have to start somewhere, we mostly all get stuff wrong and sometimes, we can go down a rabbit hole learning about something we haven't previously encountered.
 
 ### What do I need?
 
 There's quite a bit of flexibility here:
 
 * Firstly, and most importantly, a desktop or laptop, I wouldn't advise using just phone or tablet for this, although you can of course use them in addition to an actual computer 
-* A keyboard or an alternative input device that uses the keyboard API (Voice input software etc)
-* A semi-automated or automated testing tool
+* A keyboard or an alternative input device that uses the keyboard API (Voice input software, switches  etc)
+* A semi-automated or automated testing tool can help
 * A browser
 * A screen reader that works best with your chosen browser
 * A way to test colour contrast
 * The ability to resize your browser window and zoom
-* Access to the WCAG 2.2 docs
-* A way to record your issues
+* Access to the [WCAG 2.2 docs](https://www.w3.org/TR/WCAG22/)
+* A way to record your issues (we use Word)
 
 If you unfamiliar with semi-automated tools, [we have this introduction to semi-automated tools, which should help](https://www.makethingsaccessible.com/guides/semi-automated-accessibility-testing-tools/).
 
@@ -98,7 +98,7 @@ I will obviously test the horrors I have created and record them, so this is wha
 
 #### Browsers
 
-Primarily, I will be using Chrome, but once I need to fire up a screen reader, I will be using Safari, if you are using Windows you can use [NVDA (free)](https://www.nvaccess.org/download/) and Chrome (This can change due to the results of the annual WebAIM Survey, so please do check that is the recommended pairing, if you are accessing in 2026 and beyond) or [JAWS (Paid or possible free trial)](https://support.freedomscientific.com/Downloads/JAWS) and Chrome. It's important that you get the "pairings" right, so just to be super clear:
+Primarily, I will be using Chrome, but once I need to fire up a screen reader, I will be using Safari, if you are using Windows you can use [NVDA (free)](https://www.nvaccess.org/download/) and Chrome (This can change due to the results of the annual WebAIM Survey, so please do check that is still the recommended pairing, (if you are accessing in 2026 and beyond) or [JAWS (Paid or possible free trial)](https://support.freedomscientific.com/Downloads/JAWS) and Chrome. It's important that you get the "pairings" right, so just to be super clear:
 
 * Safari and VoiceOver (MacOS)
 * NVDA and Chrome (Windows) (may change again, in the future)
@@ -164,22 +164,22 @@ Consume everything, read it in your usual way and then with a screen reader, alw
 
 ### How should I structure my findings?
 
-There are a multitude of formats that accessibility professionals use to write a report, some may write a brief description in a spreadsheet, some may write a lengthier one, others may use word processing software such as MS Word or Google Docs, etc. As I am going to provide the answers in a particular structure, it would likely be most useful if you did the same, here's the structure I'll use:
+There are a multitude of formats that accessibility professionals use to write a report, some may write a brief description in a spreadsheet, some may write a lengthier one, others may use word processing software such as MS Word or Google Docs, etc, but just use whatever you have access to, or a comfortable with. As I am going to provide the answers in a particular structure, it would likely be most useful if you did the same, here's the structure I'll use:
 
 * Site wide
 
-  * This will include things like theming, and issues that appear outside of the browser window, but in both of those cases, it's only site wide if it appears on more than one page
+  * Anything that is in the <head> section that appears on more than one page (I say this, as there's a clue in there, somewhere)
+  * Anything in the `<header>` and/or primary `<nav>` (if it appears on more thanone page)
+  * Anything in the `<footer>` (if it appears on more than one page)
+  * Anything to do with the site structure (if it appears on more than one page)
+  * The theme, if a particular colour is used throughout the site and for whatever reason this colour often fails contrast requirements (if it appears on more than one page)
+  * Anything that is or should be present on all pages
   * Header
+* Pages
 
-    * The site header should be tested on each page it appears and anything you record should be placed in that section. This site is very small, so whilst the header and/or its contents may appear identical across pages, give it a closer look
-  * Footer
+  * For each page create a section, that section should be the name of each page and would list all of the issues that are specific to that page. So, if you were to find something between the <head> and <footer> on a given page, record that there, equally, if you find something outside of the <header> and <footer> that is only present on that specific page, also record that there
 
-    * Just like the header, pay attention to this across pages, it may be different in some way, anything that is displayed as a result of interacting within the footer should also be in this section
-* Page
-
-  * For each page (the bit between the header and footer and anything that is displayed as a result of interacting within the 'page'), record your results in a section for that particular page, so "Home page", "About page" and so forth
-
-Please don't get too hung up on the structure part, if you record something in a different section, that's not wrong, I'm sure many accessibility professionals record things in different ways, using different structures. The structure isn't as important as finding issues
+Please don't get too hung up structuring your findings, if you record something in a different section, that's not necessarily wrong, I'm sure many accessibility professionals record things in different ways, using different structures. The structure isn't as important as finding issues. Sometimes I end up with something recurring across several pages that could have been in the sitewide issues, I try to keep them in our format, but sometimes testing can lead you down rabbit holes and we're all human, sometimes we can forget we had encountered an issue on a previous page, especially when the site has lots of issues and pages, etc.
 
 We use a word document, just because that's our preference. You can write it on paper if you so wish, the only thing you should follow is the structure, just to make comparing a little more logical.
 
@@ -191,10 +191,61 @@ Be as alert as you can be, explore as deeply as you can. There are several issue
 
 ### I'm ready to go, give me the link
 
+I have added a toggle switch, which will fix the issues, using JS and/or CSS, don't test this, it's not part of the site, it's there to learn how some things could be resolved. Ideally, you wouldn't use this until you have tested all pages, as some changes are visual changes and may give the game away. When that switch is toggled to the "fixed" position, it will apply across all pages, I have added a modal which will fire on page load, when the switch is toggled to fixed, it simply asks if you want to continue accessing the fixed site, select "no" and the fixes are gone, select "Yes" and evrything will be in the fixed state. I felt this was a useful addition, as some folks may wish to check the answers after testing each page.
+
 LINK TO MAKING THIS ACCESSIBLE
 
-### I've finished, I'm ready to compare
+### I've finished testing, I'm ready to compare
 
-You should only access the following page if you are done with testing. Avoid the temptation to look at the answers until you feel you are done, I used to sneak a peak at the answers in my puzzle books as a kid and I didn't really learn a great deal when I was doing that, I was simply a cheat.
+Each accordion below will include the issues in that specific setion, using our format.
 
-LINK TO ANSWERS PAGE
+## Sitewide issues
+
+<h3 class="accordion">Sitewide answers</h3>
+        <div class="accordion__panel">
+          <div>
+
+\* There is no secondary navigation present, the only method of navigation is the primary navigation in the site's header, this fails SC 2.4.5 Multiple ways (AA). This is something  I would find on "Visual inspection", I would actively look for a secondary navigation as none of the tools I use help me, here. Perhaps paid solutions do, but I'm happy just looking for a secondary naviagtion
+
+* The solution I opted for was to add the same links to the footer, this is a quick easy fix, easier than creating a search function and probably on par with adding all of the links to the Home page's main content or creating a site map
+* The "H" key was mapped to advance focus to the so-called halp dialog, as "H" was used without requiring a modifier, too, then this fails SC 2.1.4 Character Key Shortcuts (A), this may have been difficult to find, if you had typed a "H" at any point, you probably would have noticed, otherwise, it could have easily been missed. Ordinarily, if a dev team implements shortcuts, then they will at least somewhere mention them in most instances, I have actually found mention of them in comments of the site's HTML, and nowhere else, i have also discovered failures by accident, by typing into form inputs. The issue with this SC is screen readers map use of printable character keys for shortcuts, in this case, "H" would navigate to the next heading
+
+  * The solution I opted for was to map the "9" key (commonly used for "Help") with the accesskey attribute, as that requires modifier keys which will depend on operating system and/or browser. Another solution could have just been to do away with the shortcut. What I never did, which I absolutely would in the real world, is tell people that this shortcut exists, otherwise, there's little point in having it, also, that instruction would need to be in visible text, not ARIA, because then it would still exclude the majority of folks
+* The colour of the focus indicator fails contrast requirements on all pages. This colour was selected as it is close to the 3:1 minimum, but close is not a pass and the threshold requires a contrast of at least 3:1 in order to pass 1.4.11 Non-text Contrast (AA). I would find this by using a combination of visual inspection and a tool to validate my suspicions, such as Color Contrast Analyzer. I would test the colour against every background it featured on
+* Mobile button: 2.5.3 Label in Name (contains image with text “Menu”, accessible name calculates to “Site navigation"
+
+  * o   Changed text to “Menu” to match AccName (You would have a strong argument to get the developer to change the image of text to actual text, under 1.4.5 Images of Text, as it does not need to be an image
+  * Current page indicator: 1.4.11 Non-text Contrast (Indicator has colour of #EE6C4D and background is #E0FBFC, which results in a contrast ratio of 2.81:1, should be 3:1min)
+
+    o   Changed to blue
+  * Help button: 1.4.10 Reflow (Help
+    button is not available at 320px screen width)
+
+    o   Popup thing shows at all
+    viewports
+
+
+
+
+
+
+
+
+
+
+  * 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    \    </div>
+          </div>
