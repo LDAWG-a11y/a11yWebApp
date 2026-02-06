@@ -1,10 +1,10 @@
 ---
-title: Learn how to test a website's accessibility
+title: Accessibility testing training tool guide
 summary: This practical digital accessibility guide will help you learn how to
   test for WCAG failures, using any tools of your choice, as well as manual
   testing. We have created an inaccessible site, to help you along
 author: dlee
-date: 2024-05-31
+date: 2026-02-06
 toc: false
 tags:
   - Testing
@@ -14,9 +14,7 @@ isGuide: true
 ---
 ## Intro
 
-This guide is going to be a little different than what I would usually do, typically my guides would focus on a singular component or pattern. This time, we're going to be doing an introduction to web accessibility testing.
-
-There will be limited hand-holding here, it's not going to be a case of me finding a website and identifying the issues, to walk you through, we're going for something a little different.
+This guide is going to be a little different than what I would usually do, typically my guides would focus on a singular component or pattern. This time, it's a broken site we'll be looking at and I'll be showing how to report the issues and/or fix them. Initially, I was going to call this "Learn how to Test a Website's Accessibility", which sort of makes sense, but also indicates I would be the teacher. I'm not going to be teaching anything, I will provide some clues, but I guess the objective is to find what you can and then compare with my findings.
 
 I've built a website for a fictional company and brace yourselves, I have intentionally made it inaccessible. Why would you do that? I hear you say. Well, firstly it's not a new idea, there's quite a few examples around the web, folks make them for various reasons:
 
@@ -24,20 +22,20 @@ I've built a website for a fictional company and brace yourselves, I have intent
 * Create an inaccessible site, with a perfect automated checker score
 * And, finally there are examples out there that fulfil the same purpose of this one
 
-You'd be right in thinking this exercise probably made me feel a little dirty, it goes against everything I have been doing for several years. But it also kinda felt fun, in an odd kind of way, not an evil genius kind of feeling, but more of a "Jeez, people actually get paid to write code like this on actual websites" kind of way. Yeah, that was a thinly veiled dig at devs that do not care, come at me.
+You'd be right in thinking this exercise probably felt wrong, it goes against everything I have been doing for several years. But it also kinda felt fun, in an odd kind of way, not an evil genius kind of feeling, but more of a "Jeez, people actually get paid to write code like this on actual websites" kind of way. Yeah, that was a thinly veiled dig at devs that do not care, come at me.
 
-I honestly found it really difficult to create the site, it messed with my mind a bit, in that I spent a heap of time scratching my head thinking how do people even get this wrong, it's often more work to get it wrong, than get it right.
+I honestly found it really difficult to create the site, it messed with my mind a little, in that I spent a heap of time scratching my head wondering why folk go to all the effort to make something wrong, when often HTML alone will just make it right in a much easier way.
 
 ## So, what it is the purpose?
 
 So at Westminster, we are about to start running some training sessions for a group of colleagues, these colleagues want to learn how to identify WCAG issues, as well as other common accessibility barriers. We could have taken a site that's already in the public domain:
 
 * We'd spend quite some time looking for one that contained enough failures to align with our training plan
-* If we found a site in the wild, obviously we'd have no control over it, there is every chance the site could change, which would make this guide age, pretty quickly
+* If we found a site in the wild, obviously we'd have no control over it, there is every chance the site would change, which would make this guide age, pretty quickly
 * We'd then likely have to build an accessible version of that site, as an example of how it should be when "fixed", because we would encourage participants in the training to take note of the difference with AT, etc
-* We'd have to be super careful about which site we chose, as we could quite easily get our employer in a spot of legal bother and potentially be disciplined for doing so
+* We'd have to be super careful about which site we chose, as we could quite easily get our employer in a spot of legal bother and potentially be disciplined for doing so and that's not a risk we're willing to take
 
-A custom-built small website that contains just enough accessibility issues to start folks off with identifying issues on a site seemed the safest bet. This site won't change, there will be absolutely no changes to the code, whatsoever. This enables us and potentially you, to have an unchanging platform to conduct this training on, in the hope of getting consistent results.
+A custom-built small website that contains just enough accessibility issues to start folks off with identifying issues seemed the safest bet. This site won't change, there will be absolutely no changes to the code, whatsoever. This enables us and potentially you, to have an unchanging platform to conduct this training on, in the hope of getting consistent results.
 
 There is of course a lot of nuance to accessibility testing, in that it is highly unlikely that two auditors given the same platform, will write up exactly the same issues. This is, in part due to interpretation of various success criteria, two people will interpret some of the more ambiguous aspects differently. It is also in part due to their levels of knowledge, the tools they use, their experience and multiple other factors.
 
@@ -47,17 +45,17 @@ One important distinction that can result in two different people having a sligh
 * The folks in the middle of that scale will likely know something is not explicitly a failure due to loopholes or wording and still write the issue up. But they will explain that they are aware the wording of the success criterion "technically" allows this, but the "intent" of the success criterion combined with the obvious accessibility issue does not make this a non-issue and it should be addressed with a suitable level of priority. There is of course some overlap here, in that sometimes it may appear that something fails due to ambiguous wording and these folks may believe it to be a failure and write it up as such.
 * The purists, these are folks that typically understand every bit of nuance, every pitfall and every loophole in the WCAG docs. Their reports will typically follow WCAG to the letter, they will likely write up other defects in advisories or similar
 
-When I first started testing websites, I was definitely at the low end of that scale, I was one of those "Which SC can I fail this against" folks. I believe my intent was pure, I wasn't failing things because the website would be better for me, I was failing them to make the website usable to people with disabilities. But, credibility is a thing, as I learned from highly-experienced others in the field, by reading their comments discussions or posts on various platforms. I began to understand this wasn't actually helping as much as I thought it was. The main concern here was, if I just failed something against a SC criterion just because it seemed the closest fit and I was called out on it, by a vendor, the rest of my report and myself could lose all credibility. [](https://www.youtube.com/watch?v=rBCR66aJZZc)
+When I first started testing websites, I was definitely at the low end of that scale, I was one of those "Which SC can I fail this against" folks. I believe my intent was pure, I wasn't failing things because the website would be better for me, I was failing them to make the website usable to people with disabilities, or so I believed. But, credibility is a thing, as I learned from highly-experienced others in the field, by reading their comments discussions or posts on various platforms. I began to understand this wasn't actually helping as much as I thought it was. The main concern here was, if I just failed something against a SC criterion just because it seemed the closest fit and I was called out on it, by a vendor, the rest of my report and myself could lose all credibility. [](https://www.youtube.com/watch?v=rBCR66aJZZc)
 
-Nowadays, I find myself just past the middle of that scale. We do have "Weaknesses" in our reports, where we put non-WCAG issues. I explain my rationale, the effects on a user and/or their AT and I state that whilst it does not "technically" fail WCAG, it is still an accessibility issue. WCAG is not the be all and end all of accessibility, it's a minimum standard for "compliance", in many territories, not some magical standard that catches every aspect of user needs. Here, though, we will just be using WCAG, as other stuff would perhaps be at more risk of being subjective.
+Nowadays, I find myself in the middle of that scale, I'm by no means as smart as the folk who contribute to WCAG at W3C, but I do often read their lengthy discussions on GitHub, to improve my own knowledge. We do have "Weaknesses" in our reports, where we put non-WCAG issues. I explain my rationale, the effects on a user and/or their AT and I state that whilst it does not "technically" fail WCAG, it is still an accessibility issue. WCAG is not the be all and end all of accessibility, it's a minimum standard for "compliance" in many territories, not some magical standard that that could meet every disabled person's needs. Here, though, we will just be using WCAG, as other stuff would perhaps be at more risk of being subjective.
 
-Anyway, less about me. So the purpose of this test is not so much to determine who interprets what in which way, it's main objective is to simply to provide a decent chunk of accessibility issues, on an unchanging platform to assist with learning or training.
-
-We haven't covered every single possible accessibility failure, because there are an endless of amount of components on the web, but we have provided what we believe to be a good amount.
+Anyway, less about me. So the purpose of this platform is not so much to determine who interprets what in which way, it's main objective is to simply to provide a decent chunk of accessibility issues, on an unchanging platform to assist with learning or training.
 
 ## A word of warning
 
-Unfortunately, as the purpose of the test site is to be inaccessible, it will not play nicely with all assistive technologies, there are barriers that will be difficult or impossible to overcome with some assistive technologies. We have not included any strobe-effect animations, as we know the effect of these could in some cases be fatal or otherwise harmful. By design, the experience will not be great for some assistive technology users, in some parts. That is not to say that you cannot play along or just read along, but it is only fair that we provide this warning.
+Unfortunately, as the purpose of the test site is to be inaccessible, it will not play nicely with all assistive technologies, there are barriers that will be difficult or impossible to overcome with some assistive technologies. We have not included any strobe-effect animations, as we know the effect of these could in some cases be fatal or otherwise physically harmful. By design, the experience will not be great for some assistive technology users, in some parts. That is not to say that you cannot play along or just read along, but it is only fair that we provide this warning.
+
+There are of course some issues on this site that require vision or hearing, there may be sounds or contrast issues and I know that some users will not be able to catch those
 
 ## So, let's dive in
 
@@ -67,7 +65,7 @@ Secondly, there are only two rules, the first being "Thou shalt follow this guid
 
 ### Do I need to find all of the issues?
 
-Nope. This isn't a competition, don't put yourself under pressure, find what you can and then when you cannot find anymore, compare your findings, with ours. This is more applicable if you are just starting out, we all have to start somewhere, we mostly all get stuff wrong and sometimes, we can go down a rabbit hole learning about something we haven't previously encountered.
+Nope. This isn't a competition, don't put yourself under pressure, find what you can and then when you cannot find anything else, compare your findings, with ours. This is more applicable if you are just starting out, we all have to start somewhere, we mostly all get stuff wrong and sometimes, we can go down a rabbit hole learning about something we haven't previously encountered.
 
 ### What do I need?
 
@@ -116,7 +114,7 @@ I will identify which tools or methods I used to find the issue
 
 #### Resources
 
-* [WCAG 2.2 Qucikref, I've filtered this to only show Level A and Level AA](https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_customize&levels=aaa), that's not because AAA isn't important, it's just that in the trenches you will mostly be fighting against Level AA enemy combatants (AKA legal conformance), the AAA stuff is usually the clandestine operatives we don't encounter (sad, but true)
+* [WCAG 2.2 Qucikref, I've filtered this to only show Level A and Level AA](https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_customize&levels=aaa), that's not because AAA isn't important, it's just that in the trenches you will mostly be fighting against Level AA enemy combatants (AKA legal conformance), the AAA stuff is usually snipers in  we don't encounter (sad, but true)
 * I'm not using this, but if you are just starting out, you may find the [A11y project's Accessibility Checklist](https://www.a11yproject.com/checklist/) to be useful to know what to test for
 
 ### Be comfortable with your choices
@@ -134,7 +132,7 @@ That's not a problem. We can link you to some handy guides that will show the ke
 
 #### Full keyboard controls for each screen reader
 
-Take note of the "modifier" key combination, you will need this to, read non-interactive elements, navigate some elements or you may need to manually switch "modes" in JAWS or NVDA (VoiceOver does not have a manual "mode" switch).
+Take note of the "modifier" key combination, you will need this to, read non-interactive elements, navigate some elements or you may need to switch "modes" in JAWS or NVDA (VoiceOver does not have a manual "mode" switch).
 
 * [NVDA - Keyboard shortcuts, Deque](https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts)
 * [JAWS - Keyboard shortcuts, Deque](https://dequeuniversity.com/screenreaders/jaws-keyboard-shortcuts)
@@ -155,7 +153,7 @@ Consume everything, read it in your usual way and then with a screen reader, alw
 * Adjust the browser size, adjust the zoom levels, test again when you have adjusted the sizes (320px width & 256px height is an absolute must), does everything act the way you expect?
 * Can you complete all actions?
 * Use your automated tools, remember they only test a snapshot of how the site is at the moment you run the scan, they cannot open widgets for you, open them manually and test again
-* If you understand HTML and/or ARIA, feel free to examine the DOM, feel free to validate the HTML at [the HTML validator](https://validator.w3.org/), which may highlight some issues
+* If you understand HTML and/or ARIA, feel free to examine the DOM, feel free to validate the HTML at [the HTML validator](https://validator.w3.org/), which may help highlight some issues
 * Don't get too hung up on the tools, they can only get you so far and honestly, they won't get you far at all, here
 * Record your notes, just type them up somewhere, for comparison later, don't even worry too much if you don't know which SC to fail something against, just do what you can
 * We have tonnes of guides on here now, feel free to consult them or indeed, any other accessibility-related websites, if you find a anything that smells funny
@@ -191,7 +189,7 @@ Be as alert as you can be, explore as deeply as you can. There are several issue
 
 ### I'm ready to go, give me the link
 
-I have added a toggle switch, which will fix the issues, using JS and/or CSS, don't test this, it's not part of the site, it's there to learn how some things could be resolved. Ideally, you wouldn't use this until you have tested all pages, as some changes are visual changes and may give the game away. When that switch is toggled to the "fixed" position, it will apply across all pages, I have added a modal which will fire on page load, when the switch is toggled to fixed, it simply asks if you want to continue accessing the fixed site, select "no" and the fixes are gone, select "Yes" and evrything will be in the fixed state. I felt this was a useful addition, as some folks may wish to check the answers after testing each page.
+I have added a toggle switch, which will fix the issues, using JS and/or CSS, don't test this, it's not part of the site, it's there to learn how some things could be resolved. Ideally, you wouldn't use this until you have tested all pages, as some changes are visual changes and may give the game away. When that switch is toggled to the "fixed" position, it will apply across all pages, I have added a modal which will fire on page load, when the switch is toggled to fixed, it simply asks if you want to continue accessing the fixed site, select "no" and the fixes are gone, select "Yes" and everything will be in the fixed state. I felt this was a useful addition, as some folks may wish to check the answers after testing each page or users may simply forget to toggle it back off, I would.
 
 LINK TO MAKING THIS ACCESSIBLE
 
@@ -205,9 +203,12 @@ Each accordion below will include the issues in that specific setion, using our 
         <div class="accordion__panel">
           <div>
 
-\* There is no secondary navigation present, the only method of navigation is the primary navigation in the site's header, this fails SC 2.4.5 Multiple ways (AA). This is something  I would find on "Visual inspection", I would actively look for a secondary navigation as none of the tools I use help me, here. Perhaps paid solutions do, but I'm happy just looking for a secondary naviagtion
+#### There is no secondary navigation present
 
-* The solution I opted for was to add the same links to the footer, this is a quick easy fix, easier than creating a search function and probably on par with adding all of the links to the Home page's main content or creating a site map
+The only method of navigation is the primary navigation in the site's header, this fails SC 2.4.5 Multiple ways (AA). This is something  I would find on "Visual inspection", I would actively look for a secondary navigation as none of the tools I use help me, here. Perhaps paid solutions do, but I'm happy just looking for a secondary naviagtion
+
+The solution I opted for was to add the same links to the footer, this is a quick easy fix, easier than creating a search function and probably on par with adding all of the links to the Home page's main content or creating a site map
+
 * The "H" key was mapped to advance focus to the so-called halp dialog, as "H" was used without requiring a modifier, too, then this fails SC 2.1.4 Character Key Shortcuts (A), this may have been difficult to find, if you had typed a "H" at any point, you probably would have noticed, otherwise, it could have easily been missed. Ordinarily, if a dev team implements shortcuts, then they will at least somewhere mention them in most instances, I have actually found mention of them in comments of the site's HTML, and nowhere else, i have also discovered failures by accident, by typing into form inputs. The issue with this SC is screen readers map use of printable character keys for shortcuts, in this case, "H" would navigate to the next heading
 
   * The solution I opted for was to map the "9" key (commonly used for "Help") with the accesskey attribute, as that requires modifier keys which will depend on operating system and/or browser. Another solution could have just been to do away with the shortcut. What I never did, which I absolutely would in the real world, is tell people that this shortcut exists, otherwise, there's little point in having it, also, that instruction would need to be in visible text, not ARIA, because then it would still exclude the majority of folks
@@ -223,29 +224,5 @@ Each accordion below will include the issues in that specific setion, using our 
 
     o   Popup thing shows at all
     viewports
-
-
-
-
-
-
-
-
-
-
-  * 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    \    </div>
+  * \    </div>
           </div>
