@@ -207,11 +207,83 @@ Each accordion below will include the issues in that specific setion, using our 
 
 The only method of navigation is the primary navigation in the site's header, this fails SC 2.4.5 Multiple ways (AA). This is something  I would find on "Visual inspection", I would actively look for a secondary navigation as none of the tools I use help me, here. Perhaps paid solutions do, but I'm happy just looking for a secondary naviagtion
 
-The solution I opted for was to add the same links to the footer, this is a quick easy fix, easier than creating a search function and probably on par with adding all of the links to the Home page's main content or creating a site map
+##### Solution
 
-* The "H" key was mapped to advance focus to the so-called halp dialog, as "H" was used without requiring a modifier, too, then this fails SC 2.1.4 Character Key Shortcuts (A), this may have been difficult to find, if you had typed a "H" at any point, you probably would have noticed, otherwise, it could have easily been missed. Ordinarily, if a dev team implements shortcuts, then they will at least somewhere mention them in most instances, I have actually found mention of them in comments of the site's HTML, and nowhere else, i have also discovered failures by accident, by typing into form inputs. The issue with this SC is screen readers map use of printable character keys for shortcuts, in this case, "H" would navigate to the next heading
+I Added links to all site pages in the footer. Other solutions could be use of a Sitemap, a Search function or links to all pages available in the body of the Home page. I chose the footer approach as it's much easier than creating a whole search function for just a few pages and ordinarily, I'd create a Site Map, too.
 
-  * The solution I opted for was to map the "9" key (commonly used for "Help") with the accesskey attribute, as that requires modifier keys which will depend on operating system and/or browser. Another solution could have just been to do away with the shortcut. What I never did, which I absolutely would in the real world, is tell people that this shortcut exists, otherwise, there's little point in having it, also, that instruction would need to be in visible text, not ARIA, because then it would still exclude the majority of folks
+#### The focus indicator typically has low contrast
+
+The Focus indicator, which is present sitewide is typically the colour #EE6C4D (orange), against either the #FAFAFA (white), #E0FBFC (light blue) or #98C1D9 (pale blue) backgrounds, which results in a contrast ratio of either 2.92:1 or 2.81:1, and 1.59:1 respectively. The "Minimum" contrast for focus indicators is 3:1, so this fails 1.4.11 Non-text Contrast (AA)
+
+##### Solution
+
+I changed the focus indicator to a mid blue colour (#3F6098), which easily passes against all light backgrounds. Imagine the orange is a brand colour, we may get a bit of push back, here, as "it's our identity", but, sure, use orange, just don't use it to convey information against light backgrounds, as seldom will it pass against light backgrounds
+
+#### Mobile nav button has AccName mismatch
+
+The Hamburger "mobile" viewport button has an accessible name that does not mach the visible label, this fails 2.5.3 Label in Name (A). The control contains an image as the only label with the text "Menu" and the AccName computes to "Site navigation", which creates a visible label & AccName mismatch. Additionally, if you were thinking along the lines of "This is an image of text", I wouldn't fail it against 1.4.5 Images of Text (AA), as there was an image of the hamburger icon in there, which is "significant other visual content", and ubiquitous enough to be universally understood. Additionally, it was a single four character word, inside a button, with said accompanying icon, in the regular place a user would expect to find that control. Had it just been the text, then I would absolutely fail it, but the icon was sufficient visual information to understand the control. I mean, we could have removed the text entirely and it wouldn't have failed anything at all, because the icon is the label and the AccName could have been "Site navigation", but we're not here to find out how to pass something, because that doesn't help people at all
+
+##### Solution
+
+Because I have full control of the source code, I replaced the image of both the text and the icon with just an image of an icon, I then removed the visually-hidden class from the actual text, and used that actual text as the only computable value for the accessible name. So it is now actual text, visible and an exact match for the AccName, which is of course, a best practice.
+
+#### Current page indicator
+
+The current page indicator in the main navigation (thick underline) has colour of `#EE6C4D` and background is `#E0FBFC`, which results in a contrast ratio of 2.81:1, this should be a minimum of 3:1, this fails 1.4.11 Non-text Contrast 
+
+##### Solution
+
+I changed the colour of the current page indicator to 
+
+#### Help button not available at 320px wide viewport
+
+Help button: 1.4.10 Reflow (Help button is not available at 320px screen width), which is a loss of both content and functionality.
+
+##### Solution
+
+I ensured that this "widget" now displays at all viewports, although this success criterion only requires that if it is available at any other viewport size, then it must be available at a viewport size of 320px(W) * 256px(H), which is oddly specific. Another alternative could be Just bin it altogether, which is kind of the nuclear option, but in this instance, one may question what purposes it serves and we could absolutely recommend presenting the contents another way.
+
+#### Instructional text requires sight and colour perception
+
+Within the Useful information" section: There is instructional text that informs a user to "Click the blue button", this fails 1.3.3 Sensory Characteristics, as not all users have vision and not all users that do have vision can perceive colour.
+
+##### Solution
+
+This is a very easy change, it just requires us to rethink about how we provide instructions and avoid using decriptors that are colour, shape, location or indeed any other descriptor that would require a specific sense to identify the element.
+
+I changed thehange to "Click help button, below"
+
+#### Disclaimer text does not resize
+
+The text withing the "Disclaimer" section cannot be resized to 200%, which fails 1.4.4 Resize Text. this is due to the usage of vw unitts in CSS. I made this intentionally difficult to find, in that it nearly doubles in size, but not quite. 
+
+##### Solution
+
+I replaced the `vw` units with `rem` units so now everything will resize correctly
+
+
+
+#### Facebook link icon has no contextual AccName
+
+The Facebook link icon: 2.4.4 Link Purpose (In context) (Link does not have programmatically determinable purpose, it contains an icon, but the icon's alt text is ".")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The "H" key was mapped to advance focus to the so-called halp dialog, as "H" was used without requiring a modifier, too, then this fails SC 2.1.4 Character Key Shortcuts (A), this may have been difficult to find, if you had typed a "H" at any point, you probably would have noticed, otherwise, it could have easily been missed. Ordinarily, if a dev team implements shortcuts, then they will at least somewhere mention them in most instances, I have actually found mention of them in comments of the site's HTML, and nowhere else, i have also discovered failures by accident, by typing into form inputs. The issue with this SC is screen readers map use of printable character keys for shortcuts, in this case, "H" would navigate to the next heading
+
+* The solution I opted for was to map the "9" key (commonly used for "Help") with the accesskey attribute, as that requires modifier keys which will depend on operating system and/or browser. Another solution could have just been to do away with the shortcut. What I never did, which I absolutely would in the real world, is tell people that this shortcut exists, otherwise, there's little point in having it, also, that instruction would need to be in visible text, not ARIA, because then it would still exclude the majority of folks
 * The colour of the focus indicator fails contrast requirements on all pages. This colour was selected as it is close to the 3:1 minimum, but close is not a pass and the threshold requires a contrast of at least 3:1 in order to pass 1.4.11 Non-text Contrast (AA). I would find this by using a combination of visual inspection and a tool to validate my suspicions, such as Color Contrast Analyzer. I would test the colour against every background it featured on
 * Mobile button: 2.5.3 Label in Name (contains image with text “Menu”, accessible name calculates to “Site navigation"
 
