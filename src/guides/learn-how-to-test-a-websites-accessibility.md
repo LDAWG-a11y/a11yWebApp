@@ -265,13 +265,47 @@ I replaced the `vw` units with `rem` units so now everything will resize correct
 
 #### Facebook link icon has no contextual AccName
 
-The Facebook link icon: 2.4.4 Link Purpose (In context) (Link does not have programmatically determinable purpose, it contains an icon, but the icon's alt text is ".")
+The Facebook link icon, which is in the footer has no useful accessible name, which fails 2.4.4 Link Purpose (In context) (Link does not have programmatically determinable purpose, it contains an icon, but the icon's alt text is "."). I intentionally put the full stop in the alt text's value, as having a link with no AccName would trigger an error with semi-automated tools, but having any old value in there, sadly sails through
+
+##### Solution
+
+Nice easy one here, simply replace the full stop (or period) with the text "Facebook" and now it will make sense to users that cannot see the icon
 
 
 
+#### Facebook and Twitter icons have a small click area
+
+Facebook icon & X/Twitter icon: 2.5.8 Target Size (Minimum) (Target size is 22px, there is no target offset between these sibling elements, the TikTok icon is also 22px, but has a left margin of 2px, which passes)  
+
+##### Solution
+
+I changed the size of each icon to 1.5rem, which is equivalent to the 24px minimum (which I feel is still a bit small) and I also added a right margin of .125rem (2px) to each link to create an offset (both size and offset are not required, only one is). This is one of those cases where it's enough to pass, but could be a lot better. This is where looking at 2.5.5 Target Size (Enhanced) should be our first port of call, it would require a minimum click/tap area of 44px, this is what we did on this site. ibelieve Apple, Microsoft and Google have developer guidelines for user interface components and they all recommend values that are around about the 44px size, give or take. so in this case, yes, i have made it pass, but no, it's not great and we should do better.
+
+#### Accessibility link in footer becomes obscured
+
+Within the footer, in the "Useful information" and section on a larger screen, the Accessibility link is wholly obscured by the pointless popup widget, so this fails 2.4.11 Focus not Obscured.        
+
+##### Solution
+
+I changed the element static, in the CSS, so now it cannot obscure other elements and the accessibility link is fully visible    
+
+#### Accessibility link has no focus indicator
+
+The same Accessibility link that we have just made visible, from the previous issue doesn't have a focus indicator, perhaps that's why they hid it? Ooops, that was me, wasn't it?
+
+##### Solution
+
+I actually moved the element into the list of links close by (as that's where it actually should have been, before I started my skullduggery making things horrible) i added a class the same as its sibling links, to ensure styles match and now the focus indicator is applied. Super useful things for keyboard users they are, imagine how much usable a system is when folk can actually be sure where their focus is before pressing a button to activate the control.
 
 
 
+#### Chatbot's heading does not describe the topic or purpose
+
+The chatbot isn't a chatbot at all, is it? It's just a bunch of FAQs and we can't ask it anything, so the heading is misleading, isn't it? This fails 2.4.6 Headings and Labels, because it's just wrong. Sure, to many it will be a minor annoyance, but to others it could be hugely frustrating. I have to say, I do not know if this SC had this particular scenario in mind, but let's take a blind screen reader user: They open the popup and discover the heading says there is a chatbot, only they cannot find a chatbot, do they realise that it's just a rubbish heading, or do they think they are being excluded from using it, as it is completely inaccessible? Could they spend lots of time searching for something that isn't actually there?
+
+##### Solution
+
+I changed the text content of the heading to "our FAQs", which is what it is. I would still request this be binned off, though, as FAQs could live on a page of their own, there is no need to add complexity with modals for something like this
 
 
 
