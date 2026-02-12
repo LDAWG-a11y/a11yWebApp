@@ -261,8 +261,6 @@ The text withing the "Disclaimer" section cannot be resized to 200%, which fails
 
 I replaced the `vw` units with `rem` units so now everything will resize correctly
 
-
-
 #### Facebook link icon has no contextual AccName
 
 The Facebook link icon, which is in the footer has no useful accessible name, which fails 2.4.4 Link Purpose (In context) (Link does not have programmatically determinable purpose, it contains an icon, but the icon's alt text is "."). I intentionally put the full stop in the alt text's value, as having a link with no AccName would trigger an error with semi-automated tools, but having any old value in there, sadly sails through
@@ -270,8 +268,6 @@ The Facebook link icon, which is in the footer has no useful accessible name, wh
 ##### Solution
 
 Nice easy one here, simply replace the full stop (or period) with the text "Facebook" and now it will make sense to users that cannot see the icon
-
-
 
 #### Facebook and Twitter icons have a small click area
 
@@ -297,8 +293,6 @@ The same Accessibility link that we have just made visible, from the previous is
 
 I actually moved the element into the list of links close by (as that's where it actually should have been, before I started my skullduggery making things horrible) i added a class the same as its sibling links, to ensure styles match and now the focus indicator is applied. Super useful things for keyboard users they are, imagine how much usable a system is when folk can actually be sure where their focus is before pressing a button to activate the control.
 
-
-
 #### Chatbot's heading does not describe the topic or purpose
 
 The chatbot isn't a chatbot at all, is it? It's just a bunch of FAQs and we can't ask it anything, so the heading is misleading, isn't it? This fails 2.4.6 Headings and Labels, because it's just wrong. Sure, to many it will be a minor annoyance, but to others it could be hugely frustrating. I have to say, I do not know if this SC had this particular scenario in mind, but let's take a blind screen reader user: They open the popup and discover the heading says there is a chatbot, only they cannot find a chatbot, do they realise that it's just a rubbish heading, or do they think they are being excluded from using it, as it is completely inaccessible? Could they spend lots of time searching for something that isn't actually there?
@@ -307,13 +301,48 @@ The chatbot isn't a chatbot at all, is it? It's just a bunch of FAQs and we can'
 
 I changed the text content of the heading to "our FAQs", which is what it is. I would still request this be binned off, though, as FAQs could live on a page of their own, there is no need to add complexity with modals for something like this
 
+</div>
+
+</div>
+
+<h3 class="accordion">Home page issues</h3>
+        <div class="accordion__panel">
+          <div>
+
+##### 
+Image lacks alt attribute or alternative
+
+The circular image on the home page (which is just some rubbish blue graphic with some laptops in the circle, looking kinda techy) lacks an `alt` attribute, so fails  1.1.1 Text Alternatives         
+
+##### Solution
+
+There is no doubt about it, this image is decorative, it serves on informative purpose, so I have added a null `alt` attribute `alt=""`. We could of course have also used `aria-hidden="true"`, but I like to stick to using `alt` on images. Irrespective of whether an image is decorative or informational, we should make sure it is exposed correctly or not at all, as some screen readers will just read out the filename, and often filenames mean nothing, especially after being ran through various processing steps where an image may end up being called "jggasd763737bdjwjy6u9.png"
+
+#### Heading becomes cropped at 200% zoom
+
+The primary heading escapes the viewport when the viewport is zoomed to 200%. This fails 1.4.4 Resize Text and occurs when the viewport is roughly between 35em and 55em.
+
+##### Solution
+
+I reduced the `font-size` at the `35em` viewport, in the CSS, which is a nice easy win. 
 
 
 
+#### About us link uses colour alone to communicate information
+
+The About us link in the "What we do" section uses colour alone to communivcate something, and that something is that it is a link, so it fails 1.4.1 Use of Color. As there is no underline or any other distinguishing feature, other that a subtle change in hue (`#110054`) from the surrounding body text (`#1A1A1A`), this of course would be difficult to identify by some users, especially those with vision disabilities. The contrast between body text and this link is just 1.04:1
+
+##### Solution
+
+I added an underline to the link, as that seems the best way to indicate a link within some text is actually a link? Maybe that will catch on, one day, huh? I also changed the colour, slightly, although this would not be strictly necessary, as Use of color cannot apply if there is something other than colour, and our underline. Whilst I do have artistic license here, I could easily have made the link significantly more perceivable, but I'm trying to pretend I'm working with clients that will push back on Best Practices, the links on this site have a number of visual identifiers, including higher contrast, bold text and a thicker, brighter underline, which will certainly help most users identify them
 
 
 
+#### Visual heading :How we Excel" not marked up as a heading
 
+Heading "How we excel" 1.3.1 Info and Relationships heading is not marked up with a suitable heading tag <code>`<h2>`</code> and uses a paragraph <code><p></code> tag, instead          <ul>            <li>            Changed element to <code><h2></code>            </li>          </ul>        </li>        <li>Tech list: 1.3.1 info and Relationships (items are visually shown as a list, but marked up with paragraph tags)          <ul>            <li>Changed to <code><ul></code> and `<li>` elements</li>          </ul>        </li>        <li>Site name "Problematically" 1.4.3 Contrast (Minimum): (Last 4 characters use the colour #EE6C4D against a background of #FAFAFA, which results in a contrast of 2.92:1 and it should be 3:1, minimum)          <ul>            <li>Darkened orange colour</li>          </ul>        </li>        <li>List bullets 1.4.11 Non-text Contrast: (The bullet colour is #EE6C4D against a background of #FAFAFA, which results in a contrast of 2.92:1 and it should be 3:1, minimum)          <ul>            <li>Darkened orange colour</li>          </ul>
+          </div>
+        </div>
 
 The "H" key was mapped to advance focus to the so-called halp dialog, as "H" was used without requiring a modifier, too, then this fails SC 2.1.4 Character Key Shortcuts (A), this may have been difficult to find, if you had typed a "H" at any point, you probably would have noticed, otherwise, it could have easily been missed. Ordinarily, if a dev team implements shortcuts, then they will at least somewhere mention them in most instances, I have actually found mention of them in comments of the site's HTML, and nowhere else, i have also discovered failures by accident, by typing into form inputs. The issue with this SC is screen readers map use of printable character keys for shortcuts, in this case, "H" would navigate to the next heading
 
