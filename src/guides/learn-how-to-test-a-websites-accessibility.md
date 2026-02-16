@@ -309,8 +309,7 @@ I changed the text content of the heading to "our FAQs", which is what it is. I 
         <div class="accordion__panel">
           <div>
 
-##### 
-Image lacks alt attribute or alternative
+#### Image lacks alt attribute or alternative
 
 The circular image on the home page (which is just some rubbish blue graphic with some laptops in the circle, looking kinda techy) lacks an `alt` attribute, so fails  1.1.1 Text Alternatives         
 
@@ -320,13 +319,11 @@ There is no doubt about it, this image is decorative, it serves on informative p
 
 #### Heading becomes cropped at 200% zoom
 
-The primary heading escapes the viewport when the viewport is zoomed to 200%. This fails 1.4.4 Resize Text and occurs when the viewport is roughly between 35em and 55em.
+The primary heading escapes the viewport when the viewport is zoomed to 200%. This fails 1.4.4 Resize Text and occurs when the viewport is between `35em` and `55em`.
 
 ##### Solution
 
-I reduced the `font-size` at the `35em` viewport, in the CSS, which is a nice easy win. 
-
-
+I reduced the `font-size` at the `35em` to 55em breakpoint, in the CSS, which is a nice easy win. 
 
 #### About us link uses colour alone to communicate information
 
@@ -336,11 +333,41 @@ The About us link in the "What we do" section uses colour alone to communivcate 
 
 I added an underline to the link, as that seems the best way to indicate a link within some text is actually a link? Maybe that will catch on, one day, huh? I also changed the colour, slightly, although this would not be strictly necessary, as Use of color cannot apply if there is something other than colour, and our underline. Whilst I do have artistic license here, I could easily have made the link significantly more perceivable, but I'm trying to pretend I'm working with clients that will push back on Best Practices, the links on this site have a number of visual identifiers, including higher contrast, bold text and a thicker, brighter underline, which will certainly help most users identify them
 
+#### Visual heading "How we Excel" not marked up as a heading
+
+The heading "How we excel"  is not marked up with a heading tag, it uses a paragraph <code><p></code> tag, instead, so this fails 1.3.1 Info and Relationships. Just a point, this SC doesn't require the heading to be the correct level, however, when we write it up for not using a heading tag, we can absolutely tell them what it should be.
+
+##### Solution
+
+I changed the paragraph element to `<h2>` element, as that would be the correct heading level in this situation.          
+
+#### Visual list not programmatically determinible
+
+The visual list, in the "What tech do we use" section is visually formatted as a list, but is not programmatically a list. This fails 1.3.1 info and Relationships 
+
+##### Solution
+
+I changed to the `<div>` tags to an outer `<ul>` and each item to a `<li>` element. A screen reader user now navigating by lists would be able to find that, also when a screen reader user is navigating with their virtual cursor, it will be announced as a list and emumerated, so "List, 5 items...".
+
+#### Primary heading contains inadequate contrast
+
+The site name "Problematically" uses two colours for stylistic purposes, the last four characters "a11y" (the numeronym for accessibility is orange `#EE6C4D` and that orange has a contrast of 2.92:1 against the page background `#FAFAFA`. This qualifies as large text, as it is both bold and greater than 18.66px or is larger than 24px, so the contrast only needs to be 3:1 to meet this SC. Just a note, here, when I was making the test site, I considered intentionally making the font not meet the bold and/or size requirements on "mobile", as sometimes we may find a "large" font that passes on a large viewport, against the 3:1 requirement, but then we shrink the viewport and suddenly it fails against the now required 4.5:1, as the font is smaller than required. This is something to bear in mind when testing, if something passes the 3:1 on a "desktop" does it also pass on "mobile"?
+
+##### Solution
+
+For this, it's as simple as making the orange colour darker. I went with `#ec5b36`, which gives us a "conforming" contrast of 3.28:1, but remember, contrast values aren't the goal, they're a minimum conforming level and it will help more people if we made it even darker. Just a note, throughout this site I used CSS custom properties (variables), so I'm not actually changing every single thing, I often make a change to the variable's value and it fixes many things
+
+#### List bullets lack adequate contrast
+
+Another contrast issue, here. the little bullets for the list lack a minimum contrast of 3:1. I could imagine a world where somebody argued they don't matter, other factors make it clearly a list. Sure, indentation, spacing, short sentences without full stops and on new lines are a good indicator, but HTML's default bullets were accessible to start with, they exist for a reason, both in printed media and digital media, so, if they are in some way visible, then they need to have adequte contrast, which is 3:1. This of course does not apply for lists that have the bullets removed completely, such as nav menus, etc, as this SC can only apply if the contrast is too low, not if something isn't there.
+
+##### Solution
+
+As with all these other contrast issues, we simply increase the contrast to something more perceivable.
 
 
-#### Visual heading :How we Excel" not marked up as a heading
 
-Heading "How we excel" 1.3.1 Info and Relationships heading is not marked up with a suitable heading tag <code>`<h2>`</code> and uses a paragraph <code><p></code> tag, instead          <ul>            <li>            Changed element to <code><h2></code>            </li>          </ul>        </li>        <li>Tech list: 1.3.1 info and Relationships (items are visually shown as a list, but marked up with paragraph tags)          <ul>            <li>Changed to <code><ul></code> and `<li>` elements</li>          </ul>        </li>        <li>Site name "Problematically" 1.4.3 Contrast (Minimum): (Last 4 characters use the colour #EE6C4D against a background of #FAFAFA, which results in a contrast of 2.92:1 and it should be 3:1, minimum)          <ul>            <li>Darkened orange colour</li>          </ul>        </li>        <li>List bullets 1.4.11 Non-text Contrast: (The bullet colour is #EE6C4D against a background of #FAFAFA, which results in a contrast of 2.92:1 and it should be 3:1, minimum)          <ul>            <li>Darkened orange colour</li>          </ul>
+List bullets 1.4.11 Non-text Contrast: (The bullet colour is #EE6C4D against a background of #FAFAFA, which results in a contrast of 2.92:1 and it should be 3:1, minimum)          <ul>            <li>Darkened orange colour</li>          </ul>
           </div>
         </div>
 
