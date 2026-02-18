@@ -363,13 +363,37 @@ Another contrast issue, here. the little bullets for the list lack a minimum con
 
 ##### Solution
 
-As with all these other contrast issues, we simply increase the contrast to something more perceivable.
+As with all these other contrast issues, we simply increase the contrast to something more perceivable, I used the same colour `#ec5b36` as I did previously for the "A11y" part of the Problematically page title, as this was a variable I had used.
 
+</div>
 
+</div>
 
-List bullets 1.4.11 Non-text Contrast: (The bullet colour is #EE6C4D against a background of #FAFAFA, which results in a contrast of 2.92:1 and it should be 3:1, minimum)          <ul>            <li>Darkened orange colour</li>          </ul>
-          </div>
+<h3 class="accordion">Services page answers</h3>
+        <div class="accordion__panel">
+          <div>
+            #### The page language is not set to English
+
+The content of the page is English, yet the value of the `lang` attribute is set to `es` (Spanish), so does not accurately inform assistive tech of the correct language. This can cause some screen readers to use the wrong accents or language packs, etc. this fails SC 3.1.1 Language of Page (A). This is not something I recall ever encountering, I have found instances where some pages omit the lang attrivute, altogether, but given we all make typos, it is possible to find a stray page with a typo in the value.
+
+##### Solution
+
+A nice easy fix, here. We just change the value of the lang attribute to en, which is of course, English. 
+
+#### Help modal not consistenly identified
+
+The modal's trigger is called "help" on other pages, however, here it is called "just holla at us" and is therefore not consistently identifable, despite serving the exact same purpose. this fails SC 3.2.4 Consistent identification (AA). Consistency is key to help users build an understanding of how to operate sites, what to expect when they interact with controls and also to help them locate information or functionality, easily. Mixing names for controls that do the exact same thing could cause confusion and increase the cognitive load for users.
+
+#### Solution
+
+Simply change the text label to match what it is on other pages. This is where it can be useful to revist our earlier notes, as we don't want to say "Change the accessible name to 'help' so it matches other pages", as earlier, we recommended that is be changed to "Our FAQs", so naturally, we want to recommend this is also changed to "Our FAQs".
+
+#### The voucher code is an image of text
+
+\    </div>
         </div>
+
+<li>Voucher code, 1.4.5 Images of text: (There is no reason this image cannot be text)          <ul>            <li>Changed to very similar text element</li>          </ul>        </li>        <li>Voucher code, 1.4.3 Contrast Minimum: (Code color is #EE6C4D against a background of #FAFAFA, which results in a contrast of 2.92:1 and it should be 3:1, minimum, applies to images of text \[text size 22px and bold])          <ul>            <li>Darkened orange colour</li>          </ul>        </li>      </ul>    </div>  </div>
 
 The "H" key was mapped to advance focus to the so-called halp dialog, as "H" was used without requiring a modifier, too, then this fails SC 2.1.4 Character Key Shortcuts (A), this may have been difficult to find, if you had typed a "H" at any point, you probably would have noticed, otherwise, it could have easily been missed. Ordinarily, if a dev team implements shortcuts, then they will at least somewhere mention them in most instances, I have actually found mention of them in comments of the site's HTML, and nowhere else, i have also discovered failures by accident, by typing into form inputs. The issue with this SC is screen readers map use of printable character keys for shortcuts, in this case, "H" would navigate to the next heading
 
