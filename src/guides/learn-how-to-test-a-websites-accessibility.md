@@ -390,10 +390,81 @@ Simply change the text label to match what it is on other pages. This is where i
 
 #### The voucher code is an image of text
 
-\    </div>
-        </div>
+There is no reason this image cannot be text, it's a regular font and something that a user would potentially want to copy to their clipboard. This fails SC 1.4.5 Images of text (AA).
 
-<li>Voucher code, 1.4.5 Images of text: (There is no reason this image cannot be text)          <ul>            <li>Changed to very similar text element</li>          </ul>        </li>        <li>Voucher code, 1.4.3 Contrast Minimum: (Code color is #EE6C4D against a background of #FAFAFA, which results in a contrast of 2.92:1 and it should be 3:1, minimum, applies to images of text \[text size 22px and bold])          <ul>            <li>Darkened orange colour</li>          </ul>        </li>      </ul>    </div>  </div>
+##### Solution
+
+I just changed this to a regular text node, I used a `<span>`, but it could be any other node that holds text.
+
+#### Voucher code has low contrast
+
+Another instance of low contrast, here. The voucher code has a contrast of 2.92:1 and as with most of the contrast issues, here, I'm solving it by simply changing a variable. This SC does also apply to images of text, there is of course nuance, in that it obviously doesn't apply to images of text that are photos of text the developers, etc, have no control over, but in this instance, it applies, because somebody made this image for this site.
+
+##### Solution
+
+This text is "large" text and when I changed the variable, I ended up with 3.28:1, which passes, but remember, that's not the goal, the goal is to make it usable for as many folk as possible, so having more contrast will be better.
+
+#### Note
+
+Some of you may have been tempted to fail the incredibly small text, in the disclaimer section, you'd be right in saying it's inaccessible to many, but it doesn't actually fail anything. This is where we tend to use a Weakness or Advisory to communicate to the devs and designers that this is problematic and some users will struggle to read it, whilst others may not be able to make it out at all.
+
+</div>
+
+</div>
+
+<h3 class="accordion">About page answers</h3>
+  <div class="accordion__panel">
+    <div>
+#### Incorrect alt text for Brad and Chad
+
+The alt text is mixed up for both Brad and Chad, or the images are. We don't really have any way of knowing for sure which one is actually Brad and which is Chad. What we do know is that in the container about Brad, the image has an alt attribute with a value of "Chad", so something is wrong, Either the image is wrong or the alt is, in which case it fails 1.1.1 Non-text Content (A) or could it be that the image and alt are actually correct but the whole thing is just in the wrong container? If that were the case, it wouldn't "technically" fail 1.1.1, as the image and alt would be correct, so what would it fail? I'd fail it on 1.1.1 regardless, but I would say I do not know who is who, so to me as an auditor, the alt and/or the image is wrong. If both are wrong, then 1.3.2 Meaningful Sequence (A) would apply, as visually, we have a distinct container for each "bro", their names are in the containers and a bit about them, so if we have an image of Chad (with correct alt) in Brad's container, then sequentially, it doesn't belong there. I honestly wouldn't go to that effort of justifying why it would fail 1.3.2, as in all probability, the image would be correct, but the alt would be wrong, so 1.1.1 would almost certainly be the correct call.
+
+##### Solution
+
+It was just incorrect alt, so I swapped the alt values around. How do I know? Well, I had to email Brad for clarification, sometimes it's easier to ask than to go down rabbit holes.
+
+#### The heading in each container has inadequate contrast
+
+We have again encountered the orange that fails colour contrast every time we encounter it. Each "bros" name appears in that orange colour and is text of a "large" size, so must have a minimum contrast of 3:1
+
+##### Solution
+
+A darker colour is required, I just increased my variable's value to get "compliant" contrast.
+
+#### The dialog does not trap focus
+
+It's the same dialog that has been used on other pages, I know and I also know that it would be pretty rare for it to be a non-modal dialog on one page and modal on most or all of the others. Eventually your state of surprise is replaced by internal screams and audible sighs, as in reality, this would not even feature in the top billion oddest accessibility issues. As focus isn't trapped here, this fails SC 2.4.3 Focus Order (A), as a user can tab out of the dialog and their focus becomes lost under the the blurred dialog backdrop.
+
+##### Solution
+
+In layman's terms the solution is to simply trap focus within and make this dialog modal. As I was the one responsible for this monstrosity, I simply used the inbuilt JS method `showModal(),` which automatically makes the HTML `<dialog>` element a modal.
+
+#### Closing dialog doesn't return focus to invoking element
+
+Another issue with that pesky dialog. This time closing it with a keyboard does not send focus back to the button that opened it, which is a failure of SC 2.4.3 Focus Order (A). Again, this is something that impacts keyboard and screen reader users, as in a typical site with many links, it may take a lot of effort to get back to where their focus should be.
+
+##### Solution
+
+Solving this depends on how the dialog was implemented, if it is the HTML `<dialog>` element, then what has happened is somebody has intentionally or accidentally broken the default behaviour, as that stuff comes for free. If it was a hand rolled dialog, then they have forgot to send focus back to the trigger button. Ours is a native <dialog> and I broke that behaviour on purpose, so I just removed the JS that butchered it and focus now handles as expected.
+
+#### Dialog close button lacks AccName
+
+There are two close buttons on the dialog, one at the top and the other at the bottom, the top one lacks an accessible name, on this page, meh. This of course fails SC 4.1.2 Name, Role, Value (A) as all user interface components must have an accessible name, as it tends to provide a nice clue to screen reader users about what the thing does. It also benefits voice input users, in that those users can instruct their software to "Click, \[name of button]", as opposed to forcing them to faff around with grids and numbers, etc. This is less of an issue for voice users, here, as there are two buttons that serve the same purpose, which would both have the same AccName. A screen reader user may well be confused about what that button could do and if they were to chance it, it would close, and that could well be not what they wanted. 
+
+##### Solution
+
+As this is an icon button (no text), we simply add the text "Close" to a `visually-hidden` node, I'd actually left that node in, but empty and I did so on purpose.
+
+#### Dialog close button activates on down event
+
+This one can be hard to find and as far as I know can only be found by manual methods, no tool I know of will find this. So when we click the bottom Close button, as soon as the `mousedown` event fires, the dialog closes and that should only happen on the `mouseup` event. This fails SC 2.5.2 Pointer Cancellation (A). Why does this matter? Well users that have motility issues could click it by accident and giving them an escape hatch of pulling the cursor away from the control allows them to cancel the activation of that control. Users with cognitive disabilities may suddenly remember they need to do one more thing before pressing the button, moving the cursor away from the control before releasing the mouse button would ordinarily allow them to do that.
+
+##### Solution
+
+This is another instance of me breaking something by using less "conventional" code. For a button when we target it with JS, it's much more practical to use the `click()` method, as this handles mouse clicks on the up event and also the correct. I used `mousedown` on the broken page, when elsewhere I used the `click()` method. To fix it, I simply used the `click()` method across all pages
+
+</div>
+        </div>
 
 The "H" key was mapped to advance focus to the so-called halp dialog, as "H" was used without requiring a modifier, too, then this fails SC 2.1.4 Character Key Shortcuts (A), this may have been difficult to find, if you had typed a "H" at any point, you probably would have noticed, otherwise, it could have easily been missed. Ordinarily, if a dev team implements shortcuts, then they will at least somewhere mention them in most instances, I have actually found mention of them in comments of the site's HTML, and nowhere else, i have also discovered failures by accident, by typing into form inputs. The issue with this SC is screen readers map use of printable character keys for shortcuts, in this case, "H" would navigate to the next heading
 
