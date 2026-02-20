@@ -301,6 +301,14 @@ The chatbot isn't a chatbot at all, is it? It's just a bunch of FAQs and we can'
 
 I changed the text content of the heading to "our FAQs", which is what it is. I would still request this be binned off, though, as FAQs could live on a page of their own, there is no need to add complexity with modals for something like this
 
+#### Character key shortcut present
+
+The "h" key was mapped to advance focus to the so-called halp dialog, as "h" was used without requiring a modifier, too, then this fails SC 2.1.4 Character Key Shortcuts (A), this may have been difficult to find, if you had typed a "h" at any point, you probably would have noticed, otherwise, it could have easily been missed. Ordinarily, if a dev team implements shortcuts, then they will at least somewhere mention them in most instances, I have actually found mention of them in comments of the site's HTML, and nowhere else, i have also discovered failures by accident, by typing into form inputs. The issue with this SC is screen readers map use of printable character keys for shortcuts, in this case, "h" would navigate to the next heading. this will obviously cause huge amounts of frustration, arguably more so if you were to attempt to fill in a form and you happened to have a "h" anywhere in your personal details.
+
+##### Solution
+
+The solution I opted for was to map the "9" key (commonly used for "Help") with the accesskey attribute, as that requires modifier keys which will depend on operating system and/or browser. Another solution could have just been to do away with the shortcut. What I never did, which I absolutely would in the real world, is tell people that this shortcut exists, otherwise, there's little point in having it, also, that instruction would need to be in visible text, not ARIA, because then it would still exclude the majority of folks.
+
 </div>
 
 </div>
@@ -466,9 +474,38 @@ This is another instance of me breaking something by using less "conventional" c
 </div>
         </div>
 
-The "H" key was mapped to advance focus to the so-called halp dialog, as "H" was used without requiring a modifier, too, then this fails SC 2.1.4 Character Key Shortcuts (A), this may have been difficult to find, if you had typed a "H" at any point, you probably would have noticed, otherwise, it could have easily been missed. Ordinarily, if a dev team implements shortcuts, then they will at least somewhere mention them in most instances, I have actually found mention of them in comments of the site's HTML, and nowhere else, i have also discovered failures by accident, by typing into form inputs. The issue with this SC is screen readers map use of printable character keys for shortcuts, in this case, "H" would navigate to the next heading
+<h3 class="accordion">Contact page answers</h3>
+        <div class="accordion__panel">
+          <div>
+            #### Text cannot be resized to 200%
 
-* The solution I opted for was to map the "9" key (commonly used for "Help") with the accesskey attribute, as that requires modifier keys which will depend on operating system and/or browser. Another solution could have just been to do away with the shortcut. What I never did, which I absolutely would in the real world, is tell people that this shortcut exists, otherwise, there's little point in having it, also, that instruction would need to be in visible text, not ARIA, because then it would still exclude the majority of folks
+Quite devious here, on my behalf, but I limited the maximum scale to 1.99, for page zoom. In reality the required minimum of 2.0 would have likely have no noticeable difference over 1.99, but I chose this value as WCAG has a threshold and thresholds are absolute, so this fails 1.4.4 Resize Text (A). Some browsers do actually override this setting, however, others, particularly on mobile require the user to find a somewhat obscure setting to force that override.
+
+##### Solution
+
+I just removed the maximimum-scale attribute, from the meta tag. Technically, 2.0 would have been enough to pass, however, it's more accessible to just leave it out completely, or set the value to 5.0, which enables users to pinch-zoom to five times the default. Leaving it out completely doesn't allow zooming to infinity or anything, I don't know the browsers' maximum values, but I believe it is somewhere around 5.0, although don't quote me on that.
+
+#### Skip link does not bypass repeated content
+
+Did you notice the Skip Link is not functioning as it is supposed to, here? It advances focus to the first link in the navigation, which is of course naff. So, in this instance, a user has to press two keys to get to the first link, whereas if the Skip link weren't present, it would only take one keypress, so this Skip Link actually creates more effort for our users. That's kind of moot, anyway, as the repeated block of links cannot be skipped, so this fails 2.4.1 Bypass Blocks (A).
+
+##### Solution
+
+Like on the other pages we have looked at, the solution is simply direct the Skip Link's href to be the value of the main container's id, which of course will bypass all of the stuff in the header and actually save our users from having to tab through repeated elements.
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+*
 * The colour of the focus indicator fails contrast requirements on all pages. This colour was selected as it is close to the 3:1 minimum, but close is not a pass and the threshold requires a contrast of at least 3:1 in order to pass 1.4.11 Non-text Contrast (AA). I would find this by using a combination of visual inspection and a tool to validate my suspicions, such as Color Contrast Analyzer. I would test the colour against every background it featured on
 * Mobile button: 2.5.3 Label in Name (contains image with text “Menu”, accessible name calculates to “Site navigation"
 
