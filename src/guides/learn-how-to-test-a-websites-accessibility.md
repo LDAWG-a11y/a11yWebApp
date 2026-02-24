@@ -35,7 +35,7 @@ So at Westminster, we are about to start running some training sessions for a gr
 * We'd then likely have to build an accessible version of that site, as an example of how it should be when "fixed", because we would encourage participants in the training to take note of the difference with AT, etc
 * We'd have to be super careful about which site we chose, as we could quite easily get our employer in a spot of legal bother and potentially be disciplined for doing so and that's not a risk we're willing to take
 
-A custom-built small website that contains just enough accessibility issues to start folks off with identifying issues seemed the safest bet. This site won't change, there will be absolutely no changes to the code, whatsoever. This enables us and potentially you, to have an unchanging platform to conduct this training on, in the hope of getting consistent results.
+A custom-built small website that contains just enough accessibility issues to start folks off with identifying issues seemed the safest bet. This site won't change (after a period of Beat testing), there will be absolutely no changes to the code, whatsoever. This enables us and potentially you, to have an unchanging platform to conduct this training on, in the hope of getting consistent results.
 
 There is of course a lot of nuance to accessibility testing, in that it is highly unlikely that two auditors given the same platform, will write up exactly the same issues. This is, in part due to interpretation of various success criteria, two people will interpret some of the more ambiguous aspects differently. It is also in part due to their levels of knowledge, the tools they use, their experience and multiple other factors.
 
@@ -45,23 +45,23 @@ One important distinction that can result in two different people having a sligh
 * The folks in the middle of that scale will likely know something is not explicitly a failure due to loopholes or wording and still write the issue up. But they will explain that they are aware the wording of the success criterion "technically" allows this, but the "intent" of the success criterion combined with the obvious accessibility issue does not make this a non-issue and it should be addressed with a suitable level of priority. There is of course some overlap here, in that sometimes it may appear that something fails due to ambiguous wording and these folks may believe it to be a failure and write it up as such.
 * The purists, these are folks that typically understand every bit of nuance, every pitfall and every loophole in the WCAG docs. Their reports will typically follow WCAG to the letter, they will likely write up other defects in advisories or similar
 
-When I first started testing websites, I was definitely at the low end of that scale, I was one of those "Which SC can I fail this against" folks. I believe my intent was pure, I wasn't failing things because the website would be better for me, I was failing them to make the website usable to people with disabilities, or so I believed. But, credibility is a thing, as I learned from highly-experienced others in the field, by reading their comments discussions or posts on various platforms. I began to understand this wasn't actually helping as much as I thought it was. The main concern here was, if I just failed something against a SC criterion just because it seemed the closest fit and I was called out on it, by a vendor, the rest of my report and myself could lose all credibility. [](https://www.youtube.com/watch?v=rBCR66aJZZc)
+When I first started testing websites, I was definitely at the lower end of that scale, I was one of those "Which SC can I fail this against" folks. I believe my intent was pure, I wasn't failing things because the website would be better for me, I was failing them to make the website usable to people with disabilities, or so I believed. But, credibility is a thing, as I learned from highly-experienced others in the field, by reading their comments discussions or posts on various platforms. I began to understand this wasn't actually helping as much as I thought it was. The main concern here was, if I just failed something against a SC criterion just because it seemed the closest fit and I was called out on it, by a vendor, the rest of my report and myself could lose all credibility and the risk would be that nothing gets fixed, which is more harmful.[](https://www.youtube.com/watch?v=rBCR66aJZZc)
 
-Nowadays, I find myself in the middle of that scale, I'm by no means as smart as the folk who contribute to WCAG at W3C, but I do often read their lengthy discussions on GitHub, to improve my own knowledge. We do have "Weaknesses" in our reports, where we put non-WCAG issues. I explain my rationale, the effects on a user and/or their AT and I state that whilst it does not "technically" fail WCAG, it is still an accessibility issue. WCAG is not the be all and end all of accessibility, it's a minimum standard for "compliance" in many territories, not some magical standard that that could meet every disabled person's needs. Here, though, we will just be using WCAG, as other stuff would perhaps be at more risk of being subjective.
+Nowadays, I find myself somewhere in the middle of that scale, I'm by no means as smart as the folk who contribute to WCAG at W3C, but I do often read their lengthy discussions on GitHub, to improve my own knowledge. We do have "Weaknesses" in our reports, where we put non-WCAG issues. I explain my rationale, the effects on a user and/or their AT and I state that whilst it does not "technically" fail WCAG, it is still an accessibility issue. WCAG is not the be all and end all of accessibility, it's a minimum standard for "compliance" in many territories, not some magical standard that that could meet every disabled person's needs. Here, though, we will just be using WCAG, as other stuff would perhaps be at more risk of being subjective.
 
 Anyway, less about me. So the purpose of this platform is not so much to determine who interprets what in which way, it's main objective is to simply to provide a decent chunk of accessibility issues, on an unchanging platform to assist with learning or training.
 
 ## A word of warning
 
-Unfortunately, as the purpose of the test site is to be inaccessible, it will not play nicely with all assistive technologies, there are barriers that will be difficult or impossible to overcome with some assistive technologies. We have not included any strobe-effect animations, as we know the effect of these could in some cases be fatal or otherwise physically harmful. By design, the experience will not be great for some assistive technology users, in some parts. That is not to say that you cannot play along or just read along, but it is only fair that we provide this warning.
+Unfortunately, as the purpose of the test site is to be inaccessible, it will not play nicely with all assistive technologies, there are barriers that will be difficult or impossible to overcome with some assistive technologies. we have not included any strobe-effect animations, as we know the effect of these could in some cases be fatal or otherwise physically harmful. By design, the experience will not be great for some assistive technology users, in some parts. That is not to say that you cannot play along or just read along, but it is only fair that we provide this warning.
 
-There are of course some issues on this site that require vision or hearing, there may be sounds or contrast issues and I know that some users will not be able to catch those
+There are of course some issues on this site that require use of senses that not all users will have, there may be sounds, contrast issues or instances that require touch and I know that some users will not be able to catch those. I can only apologise for that, I genuinely feel uncomfortable putting something out there that isn't inclusive for all, but the only way we can do this is by having actual issues and because they are are issues, by their very definition, they're going to be problematic to some folk.
 
 ## So, let's dive in
 
-Firstly, this isn't a test, as such. Please don't submit your report to us, we won't be marking or providing feedback on anything, as we do not have the time. If you find one of our interpretations are wrong, we will of course fix that and provide that information on the guide.
+Firstly, this isn't a test, as such. Please don't submit your report to us, we won't be marking or providing feedback on anything, as we do not have the time.
 
-Secondly, there are only two rules, the first being "Thou shalt follow this guide in order" and the second being "There are no other rules". You are free to test with whatever tools, assistive technologies and manual methods you see fit. If you find one tool that finds every single issue, awesome, use that and please do share it with us. I jest, you won't find a single tool to get you through this, that's just wishful thinking.
+Secondly, there are only two rules, the first being "Thou shalt follow this guide in order" and the second being "There are no other rules". You are free to test with whatever tools, assistive technologies and manual methods you see fit. If you find one tool that finds every single issue, awesome, use that and please do share it with us. I jest, you won't find a single tool to get you through this, that's just wishful thinking. 
 
 ### Do I need to find all of the issues?
 
@@ -71,8 +71,8 @@ Nope. This isn't a competition, don't put yourself under pressure, find what you
 
 There's quite a bit of flexibility here:
 
-* Firstly, and most importantly, a desktop or laptop, I wouldn't advise using just phone or tablet for this, although you can of course use them in addition to an actual computer 
-* A keyboard or an alternative input device that uses the keyboard API (Voice input software, switches  etc)
+* Firstly, and most importantly, a desktop or laptop, I wouldn't advise using just phone or tablet for this, although you can of course use them in addition to an actual desktop or laptop 
+* A keyboard or an alternative input device that uses the keyboard API (Voice input software, switches, etc)
 * A semi-automated or automated testing tool can help
 * A browser
 * A screen reader that works best with your chosen browser
@@ -107,7 +107,7 @@ For the most part, you can use whatever browser you want, as long as it is a cur
 #### Tools
 
 * Axe DevTools
-* Chrome DevTools (this is accessed by either pressing F12 on a webpage or right-clicking and selecting "Inspect"), the process is the same for other browsers, however, they may have an slightly different wording in the context menus. I provided install guides in the previously linked guides, if you are unsure.
+* Chrome DevTools (this is accessed by either pressing F12 on a webpage or right-clicking and selecting "Inspect"), the process is the same for other browsers, however, they may have slightly different wording in the context menus. I provided install guides in the previously linked guides, if you are unsure.
 * [Colour Contrast Analyser,](https://www.tpgi.com/color-contrast-checker/) this is an installable tool, if you cannot install software on your work machine (like me), then you can use either a colour contrast checker extension, from your chosen browser's extensions store or better still, the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/), which is web-based
 
 I will identify which tools or methods I used to find the issue
@@ -138,7 +138,7 @@ Take note of the "modifier" key combination, you will need this to, read non-int
 * [JAWS - Keyboard shortcuts, Deque](https://dequeuniversity.com/screenreaders/jaws-keyboard-shortcuts)
 * [VoiceOver - Keyboard shortcuts, Deque](https://dequeuniversity.com/screenreaders/voiceover-keyboard-shortcuts)
 
-<div class="callout__tip"><span class="callout__icon"><strong class="visually-hidden">Tip: </strong></span><span class="callout__text">For some reason it is necessary to enable "Tab key navigation" on a Mac, so if you haven't already done this, then click the Apple icon > System settings > Keyboard and then toggle "Keyboard navigation" switch, to the On position. If that doesn't work, your browser may have a control switched Off</span></div>
+<div class="callout__tip"><span class="callout__icon"><strong class="visually-hidden">Tip: </strong></span><span class="callout__text">For some reason it is necessary to enable "Tab key navigation" on a Mac, so if you haven't already done this, then click the Apple icon > System settings > Keyboard and then toggle "Keyboard navigation" switch, to the On position. If that doesn't work, your browser may have a control switched Off, so enter the Settings for that browser and locate the toggle switch that will have a name similar to "Press tab to highlight an element in a webpage", that is available in Settings > Advanced in Safari</span></div>
 
 ### So, we good to go?
 
@@ -167,7 +167,7 @@ There are a multitude of formats that accessibility professionals use to write a
 * Site wide
 
   * Anything that is in the <head> section that appears on more than one page (I say this, as there's a clue in there, somewhere)
-  * Anything in the `<header>` and/or primary `<nav>` (if it appears on more thanone page)
+  * Anything in the `<header>` and/or primary `<nav>` (if it appears on more than one page)
   * Anything in the `<footer>` (if it appears on more than one page)
   * Anything to do with the site structure (if it appears on more than one page)
   * The theme, if a particular colour is used throughout the site and for whatever reason this colour often fails contrast requirements (if it appears on more than one page)
@@ -175,13 +175,11 @@ There are a multitude of formats that accessibility professionals use to write a
   * Header
 * Pages
 
-  * For each page create a section, that section should be the name of each page and would list all of the issues that are specific to that page. So, if you were to find something between the <head> and <footer> on a given page, record that there, equally, if you find something outside of the <header> and <footer> that is only present on that specific page, also record that there
+  * For each page create a section, that section should be the name of each page and would list all of the issues that are specific to that page. So, if you were to find something between the `<head>` and `<footer>` on a given page, record that there, equally, if you find something outside of the `<header>` and <footer> that is only present on that specific page, also record that there
 
-Please don't get too hung up structuring your findings, if you record something in a different section, that's not necessarily wrong, I'm sure many accessibility professionals record things in different ways, using different structures. The structure isn't as important as finding issues. Sometimes I end up with something recurring across several pages that could have been in the sitewide issues, I try to keep them in our format, but sometimes testing can lead you down rabbit holes and we're all human, sometimes we can forget we had encountered an issue on a previous page, especially when the site has lots of issues and pages, etc.
+Please don't get too hung up structuring your findings, if you record something in a different section, that's not wrong, I'm sure many accessibility professionals record things in different ways, using different structures. The structure isn't as important as finding issues. Sometimes I end up with something recurring across several pages that could have been in the sitewide issues, I try to keep them in our format, but sometimes testing can lead you down rabbit holes and we're all human, sometimes we can forget we had encountered an issue on a previous page, especially when the site has lots of issues and pages, etc.
 
-We use a word document, just because that's our preference. You can write it on paper if you so wish, the only thing you should follow is the structure, just to make comparing a little more logical.
-
-I will include a report that I have written for testing the site, just for you to compare
+We use a Word document, just because that's our preference. You can write it on paper if you so wish, the only thing you should follow is the structure, just to make comparing a little more logical.
 
 ### One final word of warning
 
@@ -189,7 +187,7 @@ Be as alert as you can be, explore as deeply as you can. There are several issue
 
 ### I'm ready to go, give me the link
 
-I have added a toggle switch, which will fix the issues, using JS and/or CSS, don't test this, it's not part of the site, it's there to learn how some things could be resolved. Ideally, you wouldn't use this until you have tested all pages, as some changes are visual changes and may give the game away. When that switch is toggled to the "fixed" position, it will apply across all pages, I have added a modal which will fire on page load, when the switch is toggled to fixed, it simply asks if you want to continue accessing the fixed site, select "no" and the fixes are gone, select "Yes" and everything will be in the fixed state. I felt this was a useful addition, as some folks may wish to check the answers after testing each page or users may simply forget to toggle it back off, I would.
+I have added a toggle switch, which will fix the issues, using JS and/or CSS, don't test this, it's not part of the site (it's not inaccessible, anyway), it's there to learn how some things could be resolved. Ideally, you wouldn't use this until you have tested all pages, as some changes are visual changes and may give the game away. When that switch is toggled to the "fixed" position, it will apply across all pages, I have added a modal which will fire on page load, when the switch is toggled to fixed, it simply asks if you want to continue accessing the fixed site, select "no" and the fixes are gone, select "Yes" and everything will be in the fixed state. I felt this was a useful addition, as some folks may wish to check the answers after testing each page or users may simply forget to toggle it back off, I would.
 
 LINK TO MAKING THIS ACCESSIBLE
 
@@ -205,7 +203,11 @@ Each accordion below will include the issues in that specific setion, using our 
 
 #### There is no secondary navigation present
 
-The only method of navigation is the primary navigation in the site's header, this fails SC 2.4.5 Multiple ways (AA). This is something  I would find on "Visual inspection", I would actively look for a secondary navigation as none of the tools I use help me, here. Perhaps paid solutions do, but I'm happy just looking for a secondary naviagtion
+The only method of navigation is the primary navigation in the site's header, this fails SC 2.4.5 Multiple ways (AA). 
+
+##### How to find
+
+This is something  I would find on "Visual inspection", I would actively look for a secondary navigation as none of the tools I use help me, here. Perhaps paid solutions do, but I'm happy just looking for a secondary naviagtion.
 
 ##### Solution
 
@@ -215,6 +217,10 @@ I Added links to all site pages in the footer. Other solutions could be use of a
 
 The Focus indicator, which is present sitewide is typically the colour #EE6C4D (orange), against either the #FAFAFA (white), #E0FBFC (light blue) or #98C1D9 (pale blue) backgrounds, which results in a contrast ratio of either 2.92:1 or 2.81:1, and 1.59:1 respectively. The "Minimum" contrast for focus indicators is 3:1, so this fails 1.4.11 Non-text Contrast (AA)
 
+##### How to find
+
+I use a combination of visual inspection, the DevTools and a contrast checker. If focus indicators are very dark on a very light background I know they are fine, but seldom is this the case. I will Inspect Element and then in Chrome in the `:hov` tab within the Styles panel, I will force the element to have `:focus-visible` and `:focus`, I will then use Color Contrast Analyser's eyedropper tool to get the background of the element and or its adjacent colours and also the focus indicator's colour itself. The tool will then give me the calculation. Sometimes, the DevTools will display the contrast calculation against the background.
+
 ##### Solution
 
 I changed the focus indicator to a mid blue colour (#3F6098), which easily passes against all light backgrounds. Imagine the orange is a brand colour, we may get a bit of push back, here, as "it's our identity", but, sure, use orange, just don't use it to convey information against light backgrounds, as seldom will it pass against light backgrounds
@@ -223,6 +229,10 @@ I changed the focus indicator to a mid blue colour (#3F6098), which easily passe
 
 The Hamburger "mobile" viewport button has an accessible name that does not mach the visible label, this fails 2.5.3 Label in Name (A). The control contains an image as the only label with the text "Menu" and the AccName computes to "Site navigation", which creates a visible label & AccName mismatch. Additionally, if you were thinking along the lines of "This is an image of text", I wouldn't fail it against 1.4.5 Images of Text (AA), as there was an image of the hamburger icon in there, which is "significant other visual content", and ubiquitous enough to be universally understood. Additionally, it was a single four character word, inside a button, with said accompanying icon, in the regular place a user would expect to find that control. Had it just been the text, then I would absolutely fail it, but the icon was sufficient visual information to understand the control. I mean, we could have removed the text entirely and it wouldn't have failed anything at all, because the icon is the label and the AccName could have been "Site navigation", but we're not here to find out how to pass something, because that doesn't help people at all
 
+##### How to find
+
+I use the Accessibility pane, in the DevTools, the Element Inspector (also in the DevTools), read the HTML or use a screen reader to identify mismatches. I have to use visual inspection with each of these, as I need to be able to read what is visually presented and then determine what is actually computed to find a mismatch. 
+
 ##### Solution
 
 Because I have full control of the source code, I replaced the image of both the text and the icon with just an image of an icon, I then removed the visually-hidden class from the actual text, and used that actual text as the only computable value for the accessible name. So it is now actual text, visible and an exact match for the AccName, which is of course, a best practice.
@@ -230,6 +240,10 @@ Because I have full control of the source code, I replaced the image of both the
 #### Current page indicator
 
 The current page indicator in the main navigation (thick underline) has colour of `#EE6C4D` and background is `#E0FBFC`, which results in a contrast ratio of 2.81:1, this should be a minimum of 3:1, this fails 1.4.11 Non-text Contrast 
+
+##### How to find
+
+I would typicall use Color Contrast Analyser to get both the background and foreground colours of the indicator, very similar to how I would get the contrast of the focus indicator, but obviously I wouldn't have to force a state on the element as the indicator would be persistent.
 
 ##### Solution
 
@@ -307,7 +321,7 @@ The "h" key was mapped to advance focus to the so-called halp dialog, as "h" was
 
 ##### Solution
 
-The solution I opted for was to map the "9" key (commonly used for "Help") with the accesskey attribute, as that requires modifier keys which will depend on operating system and/or browser. Another solution could have just been to do away with the shortcut. What I never did, which I absolutely would in the real world, is tell people that this shortcut exists, otherwise, there's little point in having it, also, that instruction would need to be in visible text, not ARIA, because then it would still exclude the majority of folks.
+The solution I opted for was to map the "9" key (commonly used for "Help") with the `accesskey` attribute, as that requires modifier keys which will depend on operating system and/or browser. Another solution could have just been to do away with the shortcut. What I never did, which I absolutely would in the real world, is tell people that this shortcut exists, otherwise, there's little point in having it, also, that instruction would need to be in visible text, not ARIA, because then it would still exclude the majority of folks.
 
 </div>
 
@@ -483,7 +497,7 @@ Quite devious here, on my behalf, but I limited the maximum scale to 1.99, for p
 
 ##### Solution
 
-I just removed the maximimum-scale attribute, from the meta tag. Technically, 2.0 would have been enough to pass, however, it's more accessible to just leave it out completely, or set the value to 5.0, which enables users to pinch-zoom to five times the default. Leaving it out completely doesn't allow zooming to infinity or anything, I don't know the browsers' maximum values, but I believe it is somewhere around 5.0, although don't quote me on that.
+I just removed the `maximimum-scale` attribute, from the meta tag. Technically, 2.0 would have been enough to pass, however, it's more accessible to just leave it out completely, or set the value to 5.0, which enables users to pinch-zoom to five times the default. Leaving it out completely doesn't allow zooming to infinity or anything, I don't know the browsers' maximum values, but I believe it is somewhere around 5.0, although don't quote me on that.
 
 #### Skip link does not bypass repeated content
 
@@ -491,7 +505,11 @@ Did you notice the Skip Link is not functioning as it is supposed to, here? It a
 
 ##### Solution
 
-Like on the other pages we have looked at, the solution is simply direct the Skip Link's href to be the value of the main container's id, which of course will bypass all of the stuff in the header and actually save our users from having to tab through repeated elements.
+Like on the other pages we have looked at, the solution is simply direct the Skip Link's `href` to be the value of the main container's id, which of course will bypass all of the stuff in the header and actually save our users from having to tab through repeated elements.
+
+#### Fields lack autocomplete values
+
+None of the fields that collect personal information have an autocomplete attribute with a vaiid value
           </div>
         </div>
 
