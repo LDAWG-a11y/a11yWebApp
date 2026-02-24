@@ -253,6 +253,10 @@ I changed the colour of the current page indicator to
 
 Help button: 1.4.10 Reflow (Help button is not available at 320px screen width), which is a loss of both content and functionality.
 
+##### How to find
+
+This one is visual inspection only, as far as I know. It does require shrinking the screen down or accessing on a smaller device and comparing. If something is present on a larger display, but then missing on the 320px display, I would need to see that difference, as none of my tools help me with that.
+
 ##### Solution
 
 I ensured that this "widget" now displays at all viewports, although this success criterion only requires that if it is available at any other viewport size, then it must be available at a viewport size of 320px(W) * 256px(H), which is oddly specific. Another alternative could be Just bin it altogether, which is kind of the nuclear option, but in this instance, one may question what purposes it serves and we could absolutely recommend presenting the contents another way.
@@ -261,15 +265,21 @@ I ensured that this "widget" now displays at all viewports, although this succes
 
 Within the Useful information" section: There is instructional text that informs a user to "Click the blue button", this fails 1.3.3 Sensory Characteristics, as not all users have vision and not all users that do have vision can perceive colour.
 
+##### How to find
+
+Reading the entire page content or listening with a screen reader is necessary for this one. Anything that provides some form of instruction, that requires vision or hearing to locate or otherwise understand for the operation of the site is what I would be looking out for.
+
 ##### Solution
 
-This is a very easy change, it just requires us to rethink about how we provide instructions and avoid using decriptors that are colour, shape, location or indeed any other descriptor that would require a specific sense to identify the element.
-
-I changed thehange to "Click help button, below"
+This is a very easy change, it just requires us to rethink about how we provide instructions and avoid using decriptors that are colour, shape, location or indeed any other descriptor that would require a specific sense to identify the element. I changed thehange to "Click help button, below". Does "below" require sight? No, it doesn't and that is because we have a right to left and top to bottom language. In the contexts of the web, the HTML document is structured in such a way that "below" typically just means after and "above" just means before. I wouldn't advocate use of "left" and "right" for adjacent elements, as it's worth shrinking the screen down, at that point, to see if the adjacent element is still adjacent on the horizontal axis, as more often than not, it will be positioned above or below on the vertical axis, to make use of the reduced viewport width. I wouldn't fail an image that said "from left to right" and then listed the names of everyone in the image, as that is a reasonable way to explain an image. If it were controls or other elements, then of course, we need to write that up. I don't have a great deal of experience with internationalisation, if you're working on a multi-national site, that has lots of languages, then using "above" or "below" probably wouldn't be the best call, as some languages read from bottom right to top left, so bear that in mind.
 
 #### Disclaimer text does not resize
 
-The text withing the "Disclaimer" section cannot be resized to 200%, which fails 1.4.4 Resize Text. this is due to the usage of vw unitts in CSS. I made this intentionally difficult to find, in that it nearly doubles in size, but not quite. 
+The text within the "Disclaimer" section cannot be resized to 200%, which fails 1.4.4 Resize Text. this is due to the usage of vw units in CSS. I made this intentionally difficult to find, in that it nearly doubles in size, but not quite.
+
+##### How to find
+
+I tend to zoom the page in way beyond the required 200% and then look for things that have not scaled correctly with the other content. Should I find something that stops scaling at a certain point, I then inspect the CSS whilst resizing or altering the zoom level, to find the correct style for that breakpoint. I then determine if our item of interest fails, by reviewing the CSS and checking wether the styles prevent scaling lower than 200%. This one applies at any viewport, so if the element does not resize to at least 200% at any given viewport, then that is an failure.
 
 ##### Solution
 
@@ -279,13 +289,23 @@ I replaced the `vw` units with `rem` units so now everything will resize correct
 
 The Facebook link icon, which is in the footer has no useful accessible name, which fails 2.4.4 Link Purpose (In context) (Link does not have programmatically determinable purpose, it contains an icon, but the icon's alt text is "."). I intentionally put the full stop in the alt text's value, as having a link with no AccName would trigger an error with semi-automated tools, but having any old value in there, sadly sails through
 
+##### How to find
+
+ordinarily, Axe or whatever would flag an issue with a link having no AccName, however, as there is a single character in the alt's value (full stop), this actually fools Axe into ignoring the issue. I'd likely pick this up on a screen reader, unless I was looking at the HTML for something else close by and spotted it.
+
 ##### Solution
 
 Nice easy one here, simply replace the full stop (or period) with the text "Facebook" and now it will make sense to users that cannot see the icon
 
 #### Facebook and Twitter icons have a small click area
 
-Facebook icon & X/Twitter icon: 2.5.8 Target Size (Minimum) (Target size is 22px, there is no target offset between these sibling elements, the TikTok icon is also 22px, but has a left margin of 2px, which passes)  
+Facebook icon & X/Twitter icon: 2.5.8 Target Size (Minimum) (Target size is 22px, there is no target offset between these sibling elements, the TikTok icon is also 22px, but has a left margin of 2px, which passes) .
+
+##### How to find
+
+There are several ways to find this one. One way I often use is to look at things I "think" are small, I will then Inspect the element and look at the box sizing model, in the CSS pane. Once I have established the size of the element, I'll check for any margins or gaps, etc.
+
+Another way is to use [Adrian Roselli's 24x24 pixel cursor bookmarklet](https://adrianroselli.com/2022/05/24x24-pixel-cursor-bookmarklet.html), which is super nifty. I do use it myself, but sometimes I forget and do it the manual way. I highly recommend reading Adrian's article, which also tells you how to install it, if you are unfamiliar with bookmarklets.
 
 ##### Solution
 
@@ -293,7 +313,11 @@ I changed the size of each icon to 1.5rem, which is equivalent to the 24px minim
 
 #### Accessibility link in footer becomes obscured
 
-Within the footer, in the "Useful information" and section on a larger screen, the Accessibility link is wholly obscured by the pointless popup widget, so this fails 2.4.11 Focus not Obscured.        
+Within the footer, in the "Useful information" and section on a larger screen, the Accessibility link is wholly obscured by the pointless popup widget, so this fails 2.4.11 Focus not Obscured.
+
+##### How to find
+
+There are a few ways to catch this, perhaps the easiest is to simply <kbd>Tab</kbd> through the page, when focus seemingly disappears and my Spidey-senses start to tingle, I will then expolore further. My preferred method is to then Inspect element on the pop up and find its outermost container in the HTML. I will then right click that line of HTML and select "Delete element" from the context menu and then I can visually identify what is underneath. If there is anything interactive underneath, then we fail it against this (if, the item is "wholly" obscured).
 
 ##### Solution
 
@@ -303,6 +327,10 @@ I changed the element static, in the CSS, so now it cannot obscure other element
 
 The same Accessibility link that we have just made visible, from the previous issue doesn't have a focus indicator, perhaps that's why they hid it? Ooops, that was me, wasn't it?
 
+##### How to find
+
+Visual inspection is likely the only way to find this, although we could also force the :focus and :focus-visible states on the element and inspect the CSS. We would then find a an outline is set to the :focus-visible pseudo selector and notice that it has an outline, with a four character hex code. That fourth character is the alpha channel and zero means transparent. So, technically it has a focus indicator, but it's just invisible and this requirement requires that indicator to be visible. Visible to who is a whole other debate, as vision differs from person to person.
+
 ##### Solution
 
 I actually moved the element into the list of links close by (as that's where it actually should have been, before I started my skullduggery making things horrible) i added a class the same as its sibling links, to ensure styles match and now the focus indicator is applied. Super useful things for keyboard users they are, imagine how much usable a system is when folk can actually be sure where their focus is before pressing a button to activate the control.
@@ -311,6 +339,10 @@ I actually moved the element into the list of links close by (as that's where it
 
 The chatbot isn't a chatbot at all, is it? It's just a bunch of FAQs and we can't ask it anything, so the heading is misleading, isn't it? This fails 2.4.6 Headings and Labels, because it's just wrong. Sure, to many it will be a minor annoyance, but to others it could be hugely frustrating. I have to say, I do not know if this SC had this particular scenario in mind, but let's take a blind screen reader user: They open the popup and discover the heading says there is a chatbot, only they cannot find a chatbot, do they realise that it's just a rubbish heading, or do they think they are being excluded from using it, as it is completely inaccessible? Could they spend lots of time searching for something that isn't actually there?
 
+##### How to find
+
+Open it up, read the heading, determine what the contents are and make a judgement call. I say make a judgement call as there will be instances where the heading may be a little vague or not the best choice of words, that will likely require your discretion as to how misleading that is. In this case, it's not ambiguous, there is no chatbot. Pretty much every clickbait daily rag (newspaper) would fail this SC, as the headline barely ever accurately summarises what actually happened, but gotta keep that ad revenue coming in, I guess.
+
 ##### Solution
 
 I changed the text content of the heading to "our FAQs", which is what it is. I would still request this be binned off, though, as FAQs could live on a page of their own, there is no need to add complexity with modals for something like this
@@ -318,6 +350,10 @@ I changed the text content of the heading to "our FAQs", which is what it is. I 
 #### Character key shortcut present
 
 The "h" key was mapped to advance focus to the so-called halp dialog, as "h" was used without requiring a modifier, too, then this fails SC 2.1.4 Character Key Shortcuts (A), this may have been difficult to find, if you had typed a "h" at any point, you probably would have noticed, otherwise, it could have easily been missed. Ordinarily, if a dev team implements shortcuts, then they will at least somewhere mention them in most instances, I have actually found mention of them in comments of the site's HTML, and nowhere else, i have also discovered failures by accident, by typing into form inputs. The issue with this SC is screen readers map use of printable character keys for shortcuts, in this case, "h" would navigate to the next heading. this will obviously cause huge amounts of frustration, arguably more so if you were to attempt to fill in a form and you happened to have a "h" anywhere in your personal details.
+
+##### How to find
+
+Honestly, this one is hard and I will throw my hands up, I may well have missed it, before. The only way I know how to check is by pressing keys.
 
 ##### Solution
 
@@ -512,16 +548,6 @@ Like on the other pages we have looked at, the solution is simply direct the Ski
 None of the fields that collect personal information have an autocomplete attribute with a vaiid value
           </div>
         </div>
-
-
-
-
-
-
-
-
-
-
 
 *
 * The colour of the focus indicator fails contrast requirements on all pages. This colour was selected as it is close to the 3:1 minimum, but close is not a pass and the threshold requires a contrast of at least 3:1 in order to pass 1.4.11 Non-text Contrast (AA). I would find this by using a combination of visual inspection and a tool to validate my suspicions, such as Color Contrast Analyzer. I would test the colour against every background it featured on
