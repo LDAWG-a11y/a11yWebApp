@@ -349,15 +349,19 @@ I changed the text content of the heading to "our FAQs", which is what it is. I 
 
 #### Character key shortcut present
 
-The "h" key was mapped to advance focus to the so-called halp dialog, as "h" was used without requiring a modifier, too, then this fails SC 2.1.4 Character Key Shortcuts (A), this may have been difficult to find, if you had typed a "h" at any point, you probably would have noticed, otherwise, it could have easily been missed. Ordinarily, if a dev team implements shortcuts, then they will at least somewhere mention them in most instances, I have actually found mention of them in comments of the site's HTML, and nowhere else, i have also discovered failures by accident, by typing into form inputs. The issue with this SC is screen readers map use of printable character keys for shortcuts, in this case, "h" would navigate to the next heading. this will obviously cause huge amounts of frustration, arguably more so if you were to attempt to fill in a form and you happened to have a "h" anywhere in your personal details.
+The "h" key was mapped to advance focus to the so-called halp dialog, as "h" was used without requiring a modifier, too, then this fails SC 2.1.4 Character Key Shortcuts (A), this may have been difficult to find, if you had typed a "h" at any point, you probably would have noticed, otherwise, it could have easily been missed. Ordinarily, if a dev team implements shortcuts, then they will at least somewhere mention them in most instances, I have actually found mention of them in comments of the site's HTML, and nowhere else, I have also discovered failures by accident, by typing into form inputs. The issue with this SC is some to minimise activation of functionality by accidentally pressing or commanding (voice input) "printable" characters into a web page. Without knowingabout that bookmarklet, maybe you missed it because you never used "h" in the form or maybe you got really angry because you did use "h"?
 
 ##### How to find
 
-Honestly, this one is hard and I will throw my hands up, I may well have missed it, before. The only way I know how to check is by pressing keys.
+Honestly, this one is hard and I have my doubts that any single method of testing would be robust enough to test comprehensively. I use a bookmarklet for this, which does run a script that simulates every "printable" character. Every single symbol, letter and all of its variations, every number and each of the "spacing" elements are "printable". This makes it difficult to test, comprehensively, as in reality, we'd need to manually enter every single printable key on every single page. Not only that, but what if certain regions of the page have key events tied to them?
+
+The best I have got is [this bookmarklet](http://3needs.org/en/testing/code/kb-shortcuts.html), which I run on each page, but I do have my doubts.
+
+
 
 ##### Solution
 
-The solution I opted for was to map the "9" key (commonly used for "Help") with the `accesskey` attribute, as that requires modifier keys which will depend on operating system and/or browser. Another solution could have just been to do away with the shortcut. What I never did, which I absolutely would in the real world, is tell people that this shortcut exists, otherwise, there's little point in having it, also, that instruction would need to be in visible text, not ARIA, because then it would still exclude the majority of folks.
+The solution I opted for was to map the "9" key (commonly used for "Help") with the `accesskey` attribute, as that requires defined modifier keys which will depend on operating system and/or browser. Another solution could have just been to do away with the shortcut. What I never did, which I absolutely would in the real world, is tell people that this shortcut exists, otherwise, there's little point in having it, also, that instruction would need to be in visible text, not ARIA, because then it would still exclude the majority of folks.
 
 </div>
 
@@ -369,7 +373,11 @@ The solution I opted for was to map the "9" key (commonly used for "Help") with 
 
 #### Image lacks alt attribute or alternative
 
-The circular image on the home page (which is just some rubbish blue graphic with some laptops in the circle, looking kinda techy) lacks an `alt` attribute, so fails  1.1.1 Text Alternatives         
+The circular image on the home page (which is just some rubbish blue graphic with some laptops in the circle, looking kinda techy) lacks an `alt` attribute, so fails  1.1.1 Text Alternatives.
+
+##### How to find         
+
+Axe actually finds this one, for us. Using a screen reader would also give us a decent clue and the HTML validator is still useful for this, as the `alt` attribute is required on an image, even if it is a null value. I use the [Web Developer extension in Chrome](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm), to quickly send a page to the validator as it finds many HTML violations, some of which are accessibility failures.
 
 ##### Solution
 
@@ -377,11 +385,15 @@ There is no doubt about it, this image is decorative, it serves on informative p
 
 #### Heading becomes cropped at 200% zoom
 
-The primary heading escapes the viewport when the viewport is zoomed to 200%. This fails 1.4.4 Resize Text and occurs when the viewport is between `35em` and `55em`.
+The primary heading escapes the viewport when the viewport is zoomed to 200%. This fails 1.4.4 Resize Text and occurs when the viewport is between `35em` and `55em`. The text is "cropped" because the CSS `overflow-x` property is set to `hidden`.
+
+##### How to find
+
+Manual checks are the best way I know of to find this. I set browser zoom to 200% and then slowly decrease the size of the viewport, looking for any text that becomes truncated, cropped or sor is otherwise rendered unreadable as it overlays other text elements, etc. Not all browsers let you shrink the window down all of the way, so it is necessary to use the Responsive viewer, to get down to a reasonable minimum width. Obviously there becomes a point where a website is unusable at a given width, that size will typically differ from site to site. I don't have a magic answer, but I definitely wouldn't be failing a site that had overflow at 2px width. I rightly or wrongly use discretion, here
 
 ##### Solution
 
-I reduced the `font-size` at the `35em` to 55em breakpoint, in the CSS, which is a nice easy win. 
+I reduced the `font-size` at the `35em` to `55em` breakpoint and removed the `overflow-x` property, in the CSS, which is a nice easy win. 
 
 #### About us link uses colour alone to communicate information
 
