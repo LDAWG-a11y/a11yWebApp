@@ -106,11 +106,12 @@ For the most part, you can use whatever browser you want, as long as it is a cur
 
 #### Tools
 
-* Axe DevTools
+* Axe DevTools (browser extension)
+* Microsoft Accessibility Insights (browser extension)
 * Chrome DevTools (this is accessed by either pressing F12 on a webpage or right-clicking and selecting "Inspect"), the process is the same for other browsers, however, they may have slightly different wording in the context menus. I provided install guides in the previously linked guides, if you are unsure.
 * [Colour Contrast Analyser,](https://www.tpgi.com/color-contrast-checker/) this is an installable tool, if you cannot install software on your work machine (like me), then you can use either a colour contrast checker extension, from your chosen browser's extensions store or better still, the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/), which is web-based
 
-I will identify which tools or methods I used to find the issue
+I will identify which tools or methods I used to find the issue. I will at times use bookmarklets, which are just small scripts that mostly serve a single purpose. To install these, you simply drag (or use the context menu) them into your bookmarks bar and when you want to use them, you just click them. I'll provide a link to each that I use, when I use it the first time.
 
 #### Resources
 
@@ -385,19 +386,25 @@ There is no doubt about it, this image is decorative, it serves on informative p
 
 #### Heading becomes cropped at 200% zoom
 
-The primary heading escapes the viewport when the viewport is zoomed to 200%. This fails 1.4.4 Resize Text and occurs when the viewport is between `35em` and `55em`. The text is "cropped" because the CSS `overflow-x` property is set to `hidden`.
+The primary heading escapes the viewport when the viewport is zoomed to 200% and becomes cropped. This fails 1.4.4 Resize Text and occurs when the viewport is between `35em` and `55em`. The text is "cropped" because the CSS `overflow-x` property is set to `hidden`. This particular SC does not care that the text spills out of the viewport, as long as a user can horizontally scroll the viewport. In our case, the horizontal overflow is hidden, so part of the content is lost.
 
 ##### How to find
 
-Manual checks are the best way I know of to find this. I set browser zoom to 200% and then slowly decrease the size of the viewport, looking for any text that becomes truncated, cropped or sor is otherwise rendered unreadable as it overlays other text elements, etc. Not all browsers let you shrink the window down all of the way, so it is necessary to use the Responsive viewer, to get down to a reasonable minimum width. Obviously there becomes a point where a website is unusable at a given width, that size will typically differ from site to site. I don't have a magic answer, but I definitely wouldn't be failing a site that had overflow at 2px width. I rightly or wrongly use discretion, here
+Manual checks are the best way I know of to find this. I set browser zoom to 200% and then slowly decrease the size of the viewport, looking for any text that becomes truncated, cropped, or is otherwise rendered unreadable as it overlays other text elements, etc. Not all browsers let you shrink the window down all of the way, so it is necessary to use the Responsive viewer, to shrink the viewport down further than resizing the window will allow
 
 ##### Solution
 
-I reduced the `font-size` at the `35em` to `55em` breakpoint and removed the `overflow-x` property, in the CSS, which is a nice easy win. 
+I reduced the `font-size` at the `35em` to `55em` breakpoint and removed the `overflow-x` property, in the CSS, which is a nice easy win. Just removing the overflow property would have been suffice, but
 
 #### About us link uses colour alone to communicate information
 
 The About us link in the "What we do" section uses colour alone to communivcate something, and that something is that it is a link, so it fails 1.4.1 Use of Color. As there is no underline or any other distinguishing feature, other that a subtle change in hue (`#110054`) from the surrounding body text (`#1A1A1A`), this of course would be difficult to identify by some users, especially those with vision disabilities. The contrast between body text and this link is just 1.04:1
+
+##### How to find
+
+Axe has kindly flagged this one for us, which hopefully you may have spotted. Alternative ways are <kbd>Tab</kbd>ing around, discovering a link that didn't look like a link and then testing the contrast of that text and the surrounding body text, if it is below 3:1, then it fails, assuming there are no other distinguishable features. Obviously an underline would pass this SC, so can things like italic, bold, a different font or indeed other stylistic features. Just a note on bold and italic, I feel this one can resquire a little discretion. If for examply in that passage of text there are multiple instances of bold and/or italic, then the problem moves from "surrounding body text" to close by text that is visually identical. If on a page the only use of bold and/or italic is used to indicate something is a link, then this passes, if those same styles have been used to add emphasis to other words that are not links then this probably fails as how would a user know which are links and which are not? There is a gotcha with this, too, if the colour is identical to surrounding text and there are no other distinguishing features, then it cannot fail this, as colour isn't being used to communicate anything. It's dire, but it is what it is, definitely still push for it.
+
+Finally, don't be tempted to fail a bunch of links in a site nav when they don't have underlines, as these are typically "self-contained", their position, layout and even their names typically makes them easy to understand as a site nav. This can of course apply to other similar widgets such as breadcrumbs and some lists, etc.
 
 ##### Solution
 
@@ -407,13 +414,21 @@ I added an underline to the link, as that seems the best way to indicate a link 
 
 The heading "How we excel"  is not marked up with a heading tag, it uses a paragraph <code><p></code> tag, instead, so this fails 1.3.1 Info and Relationships. Just a point, this SC doesn't require the heading to be the correct level, however, when we write it up for not using a heading tag, we can absolutely tell them what it should be.
 
+##### How to find
+
+Accessibility Insights is useful for this, if you click the extension's icon, a small pop out menu appears, it's the "Ad Hoc Tools" option we'r e interested in, here. Click that and toggle the Headings switch and each heading will have a box drawn around it, with the heading level. The "How we excel" heading has no box and is therefore, not a proper heading. Alternatively, I also right click > Inspect Element and look at the HTML to determine wether it's an actual heading or the Web developer extension has a similar function.
+
 ##### Solution
 
 I changed the paragraph element to `<h2>` element, as that would be the correct heading level in this situation.          
 
 #### Visual list not programmatically determinible
 
-The visual list, in the "What tech do we use" section is visually formatted as a list, but is not programmatically a list. This fails 1.3.1 info and Relationships 
+The visual list, in the "What tech do we use" section is visually formatted as a list, but is not programmatically a list. This fails 1.3.1 info and Relationships.
+
+##### How to find
+
+Listening to the page with a screen reader or inpecting the HTML. I don't have a tool I use for this, although I'm sure I once had something that did outline lists.
 
 ##### Solution
 
@@ -423,6 +438,10 @@ I changed to the `<div>` tags to an outer `<ul>` and each item to a `<li>` eleme
 
 The site name "Problematically" uses two colours for stylistic purposes, the last four characters "a11y" (the numeronym for accessibility is orange `#EE6C4D` and that orange has a contrast of 2.92:1 against the page background `#FAFAFA`. This qualifies as large text, as it is both bold and greater than 18.66px or is larger than 24px, so the contrast only needs to be 3:1 to meet this SC. Just a note, here, when I was making the test site, I considered intentionally making the font not meet the bold and/or size requirements on "mobile", as sometimes we may find a "large" font that passes on a large viewport, against the 3:1 requirement, but then we shrink the viewport and suddenly it fails against the now required 4.5:1, as the font is smaller than required. This is something to bear in mind when testing, if something passes the 3:1 on a "desktop" does it also pass on "mobile"?
 
+##### How to find
+
+The tools I use don't appear to help, here. I don't regularly use WAVE, I have it installed but I barely use it. It often catches contrast issues, but this time, it hasn't, nor have any of the other semi-automated tools. Manual checking with a colour contrast analyser is required to catch this. i discussed this process, earlier.
+
 ##### Solution
 
 For this, it's as simple as making the orange colour darker. I went with `#ec5b36`, which gives us a "conforming" contrast of 3.28:1, but remember, contrast values aren't the goal, they're a minimum conforming level and it will help more people if we made it even darker. Just a note, throughout this site I used CSS custom properties (variables), so I'm not actually changing every single thing, I often make a change to the variable's value and it fixes many things
@@ -430,6 +449,10 @@ For this, it's as simple as making the orange colour darker. I went with `#ec5b3
 #### List bullets lack adequate contrast
 
 Another contrast issue, here. the little bullets for the list lack a minimum contrast of 3:1. I could imagine a world where somebody argued they don't matter, other factors make it clearly a list. Sure, indentation, spacing, short sentences without full stops and on new lines are a good indicator, but HTML's default bullets were accessible to start with, they exist for a reason, both in printed media and digital media, so, if they are in some way visible, then they need to have adequte contrast, which is 3:1. This of course does not apply for lists that have the bullets removed completely, such as nav menus, etc, as this SC can only apply if the contrast is too low, not if something isn't there.
+
+##### How to find
+
+Manual checking, again, using a contrast analyser will give ius the answer we need.
 
 ##### Solution
 
@@ -454,6 +477,10 @@ A nice easy fix, here. We just change the value of the lang attribute to en, whi
 
 The modal's trigger is called "help" on other pages, however, here it is called "just holla at us" and is therefore not consistently identifable, despite serving the exact same purpose. this fails SC 3.2.4 Consistent identification (AA). Consistency is key to help users build an understanding of how to operate sites, what to expect when they interact with controls and also to help them locate information or functionality, easily. Mixing names for controls that do the exact same thing could cause confusion and increase the cognitive load for users.
 
+##### How to find
+
+Visual identification. Honestly, don't worry about this too much, it's not like you need to rememeber every element on every page to find this. Sometimes I do quick click thoughs, focussing on a section of the page (header, as an example) and quickly flick through all of the pages to determine wether anything is off and then repeat for other repeated sections. I don't have the best memory, so I just scan chunks that work for me, yours may be smaller or larger, whatvever works best for you.
+
 #### Solution
 
 Simply change the text label to match what it is on other pages. This is where it can be useful to revist our earlier notes, as we don't want to say "Change the accessible name to 'help' so it matches other pages", as earlier, we recommended that is be changed to "Our FAQs", so naturally, we want to recommend this is also changed to "Our FAQs".
@@ -462,6 +489,8 @@ Simply change the text label to match what it is on other pages. This is where i
 
 There is no reason this image cannot be text, it's a regular font and something that a user would potentially want to copy to their clipboard. This fails SC 1.4.5 Images of text (AA).
 
+Manaual checking by Inspect Element and when the HTML opens up and we determine it's an image, we make a call on wether it needs to be an image. Obviously it doesn't, as the font is just a regular font off my system. The Web Developer extension does have a suite of useful tools, in this case, in the Images tab, you could outline or remove all images on a page, etc. I seldom do that, i mostly read the code or pick it up with a screen reader, although, don't rely on a screen reader as that will only help if the item has a role that indicates it's an image, it could be a CSS image or some other skullduggery.
+
 ##### Solution
 
 I just changed this to a regular text node, I used a `<span>`, but it could be any other node that holds text.
@@ -469,6 +498,10 @@ I just changed this to a regular text node, I used a `<span>`, but it could be a
 #### Voucher code has low contrast
 
 Another instance of low contrast, here. The voucher code has a contrast of 2.92:1 and as with most of the contrast issues, here, I'm solving it by simply changing a variable. This SC does also apply to images of text, there is of course nuance, in that it obviously doesn't apply to images of text that are photos of text the developers, etc, have no control over, but in this instance, it applies, because somebody made this image for this site.
+
+##### How to find
+
+Again, I use Color Contrast Analyser for this.
 
 ##### Solution
 
@@ -485,9 +518,15 @@ Some of you may have been tempted to fail the incredibly small text, in the disc
 <h3 class="accordion">About page answers</h3>
   <div class="accordion__panel">
     <div>
-#### Incorrect alt text for Brad and Chad
+
+#### 
+Incorrect alt text for Brad and Chad
 
 The alt text is mixed up for both Brad and Chad, or the images are. We don't really have any way of knowing for sure which one is actually Brad and which is Chad. What we do know is that in the container about Brad, the image has an alt attribute with a value of "Chad", so something is wrong, Either the image is wrong or the alt is, in which case it fails 1.1.1 Non-text Content (A) or could it be that the image and alt are actually correct but the whole thing is just in the wrong container? If that were the case, it wouldn't "technically" fail 1.1.1, as the image and alt would be correct, so what would it fail? I'd fail it on 1.1.1 regardless, but I would say I do not know who is who, so to me as an auditor, the alt and/or the image is wrong. If both are wrong, then 1.3.2 Meaningful Sequence (A) would apply, as visually, we have a distinct container for each "bro", their names are in the containers and a bit about them, so if we have an image of Chad (with correct alt) in Brad's container, then sequentially, it doesn't belong there. I honestly wouldn't go to that effort of justifying why it would fail 1.3.2, as in all probability, the image would be correct, but the alt would be wrong, so 1.1.1 would almost certainly be the correct call.
+
+#### How to find
+
+As these have alt text, visual inspection of the code or listening with a screen reader would be my usual options. You could display all alt text with the Web Developer extension. Each of these only work because there is alt, if there was a decorative image of Brad and one of Chad, only mixed up, how would we know, unless we had previously seen them?
 
 ##### Solution
 
@@ -495,7 +534,9 @@ It was just incorrect alt, so I swapped the alt values around. How do I know? We
 
 #### The heading in each container has inadequate contrast
 
-We have again encountered the orange that fails colour contrast every time we encounter it. Each "bros" name appears in that orange colour and is text of a "large" size, so must have a minimum contrast of 3:1
+We have again encountered the orange that fails colour contrast every time we encounter it. Each "bros" name appears in that orange colour and is text of a "large" size, so must have a minimum contrast of 3:1.
+
+How to find
 
 ##### Solution
 
