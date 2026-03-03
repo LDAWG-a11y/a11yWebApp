@@ -45,7 +45,7 @@ One important distinction that can result in two different people having a sligh
 * The folks in the middle of that scale will likely know something is not explicitly a failure due to loopholes or wording and still write the issue up. But they will explain that they are aware the wording of the success criterion "technically" allows this, but the "intent" of the success criterion combined with the obvious accessibility issue does not make this a non-issue and it should be addressed with a suitable level of priority. There is of course some overlap here, in that sometimes it may appear that something fails due to ambiguous wording and these folks may believe it to be a failure and write it up as such.
 * The purists, these are folks that typically understand every bit of nuance, every pitfall and every loophole in the WCAG docs. Their reports will typically follow WCAG to the letter, they will likely write up other defects in advisories or similar
 
-When I first started testing websites, I was definitely at the lower end of that scale, I was one of those "Which SC can I fail this against" folks. I believe my intent was pure, I wasn't failing things because the website would be better for me, I was failing them to make the website usable to people with disabilities, or so I believed. But, credibility is a thing, as I learned from highly-experienced others in the field, by reading their comments discussions or posts on various platforms. I began to understand this wasn't actually helping as much as I thought it was. The main concern here was, if I just failed something against a SC criterion just because it seemed the closest fit and I was called out on it, by a vendor, the rest of my report and myself could lose all credibility and the risk would be that nothing gets fixed, which is more harmful.[](https://www.youtube.com/watch?v=rBCR66aJZZc)
+When I first started testing websites, I was definitely at the lower end of that scale, I was one of those "Which SC can I fail this against" folks. I believe my intent was pure, I wasn't failing things because the website would be better for me, I was failing them to make the website usable to people with disabilities, or so I believed. But, credibility is a thing, as I learned from highly-experienced others in the field, by reading their comments discussions or posts on various platforms. I began to understand this wasn't actually helping as much as I thought it was. The main concern here was, if I just failed something against a SC criterion just because it seemed the closest fit and I was called out on it, by a vendor, the rest of my report and myself could lose all credibility and the risk would be that nothing gets fixed, which is more harmful.
 
 Nowadays, I find myself somewhere in the middle of that scale, I'm by no means as smart as the folk who contribute to WCAG at W3C, but I do often read their lengthy discussions on GitHub, to improve my own knowledge. We do have "Weaknesses" in our reports, where we put non-WCAG issues. I explain my rationale, the effects on a user and/or their AT and I state that whilst it does not "technically" fail WCAG, it is still an accessibility issue. WCAG is not the be all and end all of accessibility, it's a minimum standard for "compliance" in many territories, not some magical standard that that could meet every disabled person's needs. Here, though, we will just be using WCAG, as other stuff would perhaps be at more risk of being subjective.
 
@@ -232,7 +232,7 @@ The Hamburger "mobile" viewport button has an accessible name that does not mach
 
 ##### How to find
 
-I use the Accessibility pane, in the DevTools, the Element Inspector (also in the DevTools), read the HTML or use a screen reader to identify mismatches. I have to use visual inspection with each of these, as I need to be able to read what is visually presented and then determine what is actually computed to find a mismatch. 
+I use the Accessibility pane, in the DevTools, the Element Inspector (also in the DevTools), read the HTML or use a screen reader to identify mismatches. I have to use visual inspection with each of these, as I need to be able to read what is visually presented and then determine what is actually computed to find a mismatch. An alternative could be Accessibility Insights, in the Ad Hoc tools panel and choose the "Accessible Names" option, which will display the AccName next to all interactive elements. Just remember, you're going to need to shrink the screen down or zoom enough to trigger the "Mobile" breakpoint, to have this displayed.
 
 ##### Solution
 
@@ -358,8 +358,6 @@ Honestly, this one is hard and I have my doubts that any single method of testin
 
 The best I have got is [this bookmarklet](http://3needs.org/en/testing/code/kb-shortcuts.html), which I run on each page, but I do have my doubts.
 
-
-
 ##### Solution
 
 The solution I opted for was to map the "9" key (commonly used for "Help") with the `accesskey` attribute, as that requires defined modifier keys which will depend on operating system and/or browser. Another solution could have just been to do away with the shortcut. What I never did, which I absolutely would in the real world, is tell people that this shortcut exists, otherwise, there's little point in having it, also, that instruction would need to be in visible text, not ARIA, because then it would still exclude the majority of folks.
@@ -376,7 +374,7 @@ The solution I opted for was to map the "9" key (commonly used for "Help") with 
 
 The circular image on the home page (which is just some rubbish blue graphic with some laptops in the circle, looking kinda techy) lacks an `alt` attribute, so fails  1.1.1 Text Alternatives.
 
-##### How to find         
+##### How to find
 
 Axe actually finds this one, for us. Using a screen reader would also give us a decent clue and the HTML validator is still useful for this, as the `alt` attribute is required on an image, even if it is a null value. I use the [Web Developer extension in Chrome](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm), to quickly send a page to the validator as it finds many HTML violations, some of which are accessibility failures.
 
@@ -465,7 +463,10 @@ As with all these other contrast issues, we simply increase the contrast to some
 <h3 class="accordion">Services page answers</h3>
         <div class="accordion__panel">
           <div>
-            #### The page language is not set to English
+
+
+
+#### The page language is not set to English
 
 The content of the page is English, yet the value of the `lang` attribute is set to `es` (Spanish), so does not accurately inform assistive tech of the correct language. This can cause some screen readers to use the wrong accents or language packs, etc. this fails SC 3.1.1 Language of Page (A). This is not something I recall ever encountering, I have found instances where some pages omit the lang attrivute, altogether, but given we all make typos, it is possible to find a stray page with a typo in the value.
 
@@ -519,8 +520,9 @@ Some of you may have been tempted to fail the incredibly small text, in the disc
   <div class="accordion__panel">
     <div>
 
-#### 
-Incorrect alt text for Brad and Chad
+
+
+#### Incorrect alt text for Brad and Chad
 
 The alt text is mixed up for both Brad and Chad, or the images are. We don't really have any way of knowing for sure which one is actually Brad and which is Chad. What we do know is that in the container about Brad, the image has an alt attribute with a value of "Chad", so something is wrong, Either the image is wrong or the alt is, in which case it fails 1.1.1 Non-text Content (A) or could it be that the image and alt are actually correct but the whole thing is just in the wrong container? If that were the case, it wouldn't "technically" fail 1.1.1, as the image and alt would be correct, so what would it fail? I'd fail it on 1.1.1 regardless, but I would say I do not know who is who, so to me as an auditor, the alt and/or the image is wrong. If both are wrong, then 1.3.2 Meaningful Sequence (A) would apply, as visually, we have a distinct container for each "bro", their names are in the containers and a bit about them, so if we have an image of Chad (with correct alt) in Brad's container, then sequentially, it doesn't belong there. I honestly wouldn't go to that effort of justifying why it would fail 1.3.2, as in all probability, the image would be correct, but the alt would be wrong, so 1.1.1 would almost certainly be the correct call.
 
@@ -536,7 +538,9 @@ It was just incorrect alt, so I swapped the alt values around. How do I know? We
 
 We have again encountered the orange that fails colour contrast every time we encounter it. Each "bros" name appears in that orange colour and is text of a "large" size, so must have a minimum contrast of 3:1.
 
-How to find
+##### How to find
+
+Another instance of Color Contrast Analyser or similar for this
 
 ##### Solution
 
@@ -546,21 +550,33 @@ A darker colour is required, I just increased my variable's value to get "compli
 
 It's the same dialog that has been used on other pages, I know and I also know that it would be pretty rare for it to be a non-modal dialog on one page and modal on most or all of the others. Eventually your state of surprise is replaced by internal screams and audible sighs, as in reality, this would not even feature in the top billion oddest accessibility issues. As focus isn't trapped here, this fails SC 2.4.3 Focus Order (A), as a user can tab out of the dialog and their focus becomes lost under the the blurred dialog backdrop.
 
+##### How to find
+
+Manual testing by pressing <kbd>Tab</kbd> to advance focus through the entirety of each page. I tend to do this with keyboard alone, first and then do it with a screen reader, close to the end, and I do so on every page I test.
+
 ##### Solution
 
-In layman's terms the solution is to simply trap focus within and make this dialog modal. As I was the one responsible for this monstrosity, I simply used the inbuilt JS method `showModal(),` which automatically makes the HTML `<dialog>` element a modal.
+In layman's terms the solution is to simply trap focus within and make this dialog modal. As I was the one responsible for this monstrosity, I simply used the inbuilt JS method `showModal()`, which automatically makes the HTML `<dialog>` element a modal.
 
 #### Closing dialog doesn't return focus to invoking element
 
-Another issue with that pesky dialog. This time closing it with a keyboard does not send focus back to the button that opened it, which is a failure of SC 2.4.3 Focus Order (A). Again, this is something that impacts keyboard and screen reader users, as in a typical site with many links, it may take a lot of effort to get back to where their focus should be.
+Another issue with that pesky dialog. This time closing it with a keyboard does not send focus back to the button that opened it, which is a failure of SC 2.4.3 Focus Order (A). Again, this is something that impacts keyboard and screen reader users, as in a typical site with many links, it may take a lot of effort to get back to where they wanted their focus to be, now they would have to <kbd>Tab</kbd> all the way back to where they wanted to pick up from where they left off.
+
+##### How to find
+
+Manual testing by pressing closing disclosure widgets with a keyboard and then determinig where focus moves to. It's not always clear where focus has gone to, as if it is placed on the body element, it's unlikely a focus indicator would be present. A nifty little method is setting a Watch Target in Chrome's DevTools. To do this, open up the DevTools, click the Console tab and there is an eye icon, it's accessible name is "Create live expression". An input then appears in the panel and has the AccName "Expression", simply type or paste the following code snippet into that input `document.activeElement`. Now, each time you have the console open and you Tab around a page, that value will tell you which element has focus, which I find useful for those times it's not obvious where it is.
 
 ##### Solution
 
-Solving this depends on how the dialog was implemented, if it is the HTML `<dialog>` element, then what has happened is somebody has intentionally or accidentally broken the default behaviour, as that stuff comes for free. If it was a hand rolled dialog, then they have forgot to send focus back to the trigger button. Ours is a native <dialog> and I broke that behaviour on purpose, so I just removed the JS that butchered it and focus now handles as expected.
+Solving this depends on how the dialog was implemented, if it is the HTML `<dialog>` element, then what has happened is somebody has intentionally or accidentally broken the default behaviour, as that stuff comes for free. If it was a hand rolled dialog, then they have forgot to send focus back to the trigger button. Ours is a native `<dialog>` and I broke that behaviour on purpose, so I just removed the JS that butchered it and focus now handles as expected.
 
 #### Dialog close button lacks AccName
 
 There are two close buttons on the dialog, one at the top and the other at the bottom, the top one lacks an accessible name, on this page, meh. This of course fails SC 4.1.2 Name, Role, Value (A) as all user interface components must have an accessible name, as it tends to provide a nice clue to screen reader users about what the thing does. It also benefits voice input users, in that those users can instruct their software to "Click, \[name of button]", as opposed to forcing them to faff around with grids and numbers, etc. This is less of an issue for voice users, here, as there are two buttons that serve the same purpose, which would both have the same AccName. A screen reader user may well be confused about what that button could do and if they were to chance it, it would close, and that could well be not what they wanted. 
+
+##### How to find
+
+I have previously discussed the tools I use that are available in the console or indeed using a screen reader. Those are great ways of catching these things. In this instance, Axe can help us out, the reason I want to discuss this is because this element is in a dialog. When the dialog is hidden, it is properly hidden, it is not exposed to the accessibility tree, at all. So, the way Axe and others works is they take a snapshot of the page in its current state only. If any widgets are currently not exposed, then Axe does not snoop inside their code. I did mention this in my intro, but as this is the first time I can demonstrate it, I thought we'd go over that, again. So, for comparison's sake, scan the page with the dialog closed, then open the dialog and scan the page again. On this occasion, we have an issue that was not present before we opened the dialog. this same logic really does apply to any changes on the page. Axe, etc will find issues with things that are only visually hidden, but not programmatically hidden. As an example, if we just nudged our  dialog off the screen, shrank it down and called it good, the tools would find any issues within, as `hidden` (HTML attribute), `visibility: visible;` `aria-hidden="true"` or `display: none;` were not used.
 
 ##### Solution
 
@@ -570,9 +586,15 @@ As this is an icon button (no text), we simply add the text "Close" to a `visual
 
 This one can be hard to find and as far as I know can only be found by manual methods, no tool I know of will find this. So when we click the bottom Close button, as soon as the `mousedown` event fires, the dialog closes and that should only happen on the `mouseup` event. This fails SC 2.5.2 Pointer Cancellation (A). Why does this matter? Well users that have motility issues could click it by accident and giving them an escape hatch of pulling the cursor away from the control allows them to cancel the activation of that control. Users with cognitive disabilities may suddenly remember they need to do one more thing before pressing the button, moving the cursor away from the control before releasing the mouse button would ordinarily allow them to do that.
 
+##### How to find
+
+This one would be exceptionally difficult or cumbersome to test without using a pointing device and having the ability to click and then move the pointer away from the underlying target interactive element that said, it's not impossible. What I do, is find `clicky things`, I then click them in my normal way, but keep the mouse button depressed and move away before releasing the mouse button. If this works, then there is no issue, as clicking the target control by using only the down event didn't actiavate the control. If the event fired before you had chance to start moving the cursor away, then it was the down event that fired it - not good.
+
+To test this without the ability of using a pointing device, Firefox is pretty handy. If you can locate all interactive controls in Firefox's DevTools, then you will be able to locate the element's "Event" badge, in the HTML, this will tell you which events are tied to that control. if there is a `mousedown` event, then it's a failure, `mouseup` and `click` would be fine. There is obviously more nuance, as there are many events in JS and some others would be OK, whereas others would not It is keyboard operable, I used <kbd>Cmd</kbd>, <kbd>Opt</kbd> and <kbd>C</kbd> to open the DevTools, I then had to traverse the whole page to find that element using arrow keys, once I did, I could <kbd>Tab</kbd> to the "Event" button. I can use a keyboard, to an extent, but I'm by no means a power user, I do not know every single shortcut, hopefully there is a way to look at the code that opens it up on the exact element you were looking at? I couldn't find a way, but I did not Google too deeply. If you are using Windows the the shortcut is <kbd>Ctrl</kbd>, <kbd>Shift</kbd> and <kbd>C</kbd>, but again, hopefully there's an easier way.
+
 ##### Solution
 
-This is another instance of me breaking something by using less "conventional" code. For a button when we target it with JS, it's much more practical to use the `click()` method, as this handles mouse clicks on the up event and also the correct. I used `mousedown` on the broken page, when elsewhere I used the `click()` method. To fix it, I simply used the `click()` method across all pages
+This is another instance of me breaking something by using less "conventional" code. For a button when we target it with JS, it's much more practical to use the `click` event, as this handles mouse clicks on the up event and also the correct keyboard presses, typically <kbd>Enter</kbd> and <kbd>Space</kbd> for `<button>` elements. I used `mousedown` on the broken page, when elsewhere I used the `click` event. To fix it, I simply used the `click` event across all pages
 
 </div>
         </div>
@@ -580,9 +602,14 @@ This is another instance of me breaking something by using less "conventional" c
 <h3 class="accordion">Contact page answers</h3>
         <div class="accordion__panel">
           <div>
-            #### Text cannot be resized to 200%
+
+
+
+#### Text cannot be resized to 200%
 
 Quite devious here, on my behalf, but I limited the maximum scale to 1.99, for page zoom. In reality the required minimum of 2.0 would have likely have no noticeable difference over 1.99, but I chose this value as WCAG has a threshold and thresholds are absolute, so this fails 1.4.4 Resize Text (A). Some browsers do actually override this setting, however, others, particularly on mobile require the user to find a somewhat obscure setting to force that override.
+
+##### How to find
 
 ##### Solution
 
