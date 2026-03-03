@@ -605,19 +605,13 @@ This is another instance of me breaking something by using less "conventional" c
 
 
 
-#### Text cannot be resized to 200%
-
-Quite devious here, on my behalf, but I limited the maximum scale to 1.99, for page zoom. In reality the required minimum of 2.0 would have likely have no noticeable difference over 1.99, but I chose this value as WCAG has a threshold and thresholds are absolute, so this fails 1.4.4 Resize Text (A). Some browsers do actually override this setting, however, others, particularly on mobile require the user to find a somewhat obscure setting to force that override.
-
-##### How to find
-
-##### Solution
-
-I just removed the `maximimum-scale` attribute, from the meta tag. Technically, 2.0 would have been enough to pass, however, it's more accessible to just leave it out completely, or set the value to 5.0, which enables users to pinch-zoom to five times the default. Leaving it out completely doesn't allow zooming to infinity or anything, I don't know the browsers' maximum values, but I believe it is somewhere around 5.0, although don't quote me on that.
-
 #### Skip link does not bypass repeated content
 
 Did you notice the Skip Link is not functioning as it is supposed to, here? It advances focus to the first link in the navigation, which is of course naff. So, in this instance, a user has to press two keys to get to the first link, whereas if the Skip link weren't present, it would only take one keypress, so this Skip Link actually creates more effort for our users. That's kind of moot, anyway, as the repeated block of links cannot be skipped, so this fails 2.4.1 Bypass Blocks (A).
+
+##### How to find
+
+Test the Skip Link does what it is supposed to do, on each page. Sometimes the Skip Link's functionality remains unchanged, but on a different page the authors may have used a different `id` on the target element or it may not exist on that specific page. So, just to be sure, click the Skip Link on each page that has repeated content that should be skippable and if something is broken and the Skip Link seemingly does not function as intended, then to investigate the issue, check the Skip Link's `href` value and then find a corresponding element id. If that corresponding id does not exist or it appears before the block of repeated content, then you can explain why it fails on this page.
 
 ##### Solution
 
@@ -626,10 +620,14 @@ Like on the other pages we have looked at, the solution is simply direct the Ski
 #### Fields lack autocomplete values
 
 None of the fields that collect personal information have an autocomplete attribute with a vaiid value
-          </div>
+
+
+
+\    </div>
         </div>
 
-*
+
+
 * The colour of the focus indicator fails contrast requirements on all pages. This colour was selected as it is close to the 3:1 minimum, but close is not a pass and the threshold requires a contrast of at least 3:1 in order to pass 1.4.11 Non-text Contrast (AA). I would find this by using a combination of visual inspection and a tool to validate my suspicions, such as Color Contrast Analyzer. I would test the colour against every background it featured on
 * Mobile button: 2.5.3 Label in Name (contains image with text “Menu”, accessible name calculates to “Site navigation"
 
