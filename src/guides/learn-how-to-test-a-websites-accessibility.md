@@ -619,7 +619,52 @@ Like on the other pages we have looked at, the solution is simply direct the Ski
 
 #### Fields lack autocomplete values
 
-None of the fields that collect personal information have an autocomplete attribute with a vaiid value
+None of the fields that collect personal information have an autocomplete attribute with a vaiid value. Currently this is the only way of meeting this SC, so if a form item that collects personal info about the user and has a specified `autocomplete` value in the [Input purposes for user interface components](https://www.w3.org/TR/WCAG22/#input-purposes) section, it will require an `autocomplete` attribute with its corresponding value. lack of the autocomplete attribute and valid value fails 1.3.5 Identify Input Purpose (AA). The fields are, as follows:
+
+* First name
+* Last name
+* Phone
+* Email
+* Your business name
+* Country of residence
+
+##### How to find
+
+Inspecting the code is how I find this one, I'm unsure of any other reliable way, I have seen the DevTools give warnings about it in the console, but on this occasion, it is not present, perhaps due to other issues?
+
+##### Solution
+
+Just add the following autocomplete name/value pairs to their corresponding inputs:
+
+First name: autocomplete="given-name"
+
+Last name: autocomplete="family-name"
+
+Phone: autocomplete="tel"
+
+Email: autocomplete="email"
+
+Your business name: autocomplete="organization"
+
+Country of residence: autocomplete="country-name"
+
+#### Checkbox not keyboard accessible
+
+The final form field on the page is the confirmation checkbox, which is a required field, it is not possible to check the field using a keyboard, which fails 2.1.1 Keyboard (A). inspecting the code, the problem is quite clear, the dev for this site recreated the wheel and did so badly, as they have created. acheckbox from a `<span>` element and not implemented the correct events.
+
+##### How to find
+
+Manual testing with keyboard or another device that uses the keyboard API, such as switches, sip and puff devices, etc
+
+##### Solution
+
+The correct solution is
+
+
+
+
+
+
 
 
 
