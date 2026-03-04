@@ -667,12 +667,27 @@ This is perhaps a little unfair, as none of us would enter accurate details in t
 
 ##### Solution
 
-* Burn it with fire? Well, firstly the modal and disabling the remaining form elements has to go. There could be several recommendations we could make, here:
+Burn it with fire? Well, firstly the modal and disabling the remaining form elements has to go. There could be several recommendations we could make, here:
+
 * Form validation, at the end of the form, when a user submits, then tell them they are too poor to be considered by these cretins
 * Replace the input with something such as a <select>, checkbox or radio and then provide some form of inline validation
 * Just tell folk that at this moment in time they can only takes applications for projects from rich folk
 
-What I actually do is simply remove the modal and the functionality that disables the remaining form components. That will become clearer, later
+What I actually do is simply remove the modal and the functionality that disables the remaining form components. That will become clearer, later.
+
+#### Required fields are not presented to a user visually
+
+Each of the fields is required, but there is no indication of that, that is presented to a user in text. The information is available programmatically and is read out by screen readers due to usage of the `required` attribute or `aria-required` in the case of the faux checkbox. Given that screen reader users will know the fields are required, and given that this could be problematic for users with other non-visual disabilities, it's something we'd write up, right? 
+
+Now, there is definitely some ambiguity for this one. I personally fail it for 3.3.2 Labels and Instructions (A) and I know that there has been lengthy discussions on WCAG's GitHub pages where folk have differing opinions and some say it is not explicitly required to have some form of visual indicator that fields are required, whilst others say it is. Sometimes, half the fight with accessibility is knowing the difference between something means and what tit actually says and this isn't me, a mere mortal criticising the folk that give up their time to create these guidelines, as half the time, technology changes too fast and it's my understanding that changes to the normative text cannot be made, so here we are.
+
+If a field is required, then that is something a user needs to know to prevent an input failure If there was some text that said "All fields are required", then that isn't a suggestion, that is an instruction and that visual instruction is missing. The SC makes a mention of people with cognitive disabilities, as they may find the lack of instruction problematic. Similarly, folk who use alternative input devices or have other physical disabilities may experience discomfort or even pain when filling out forms, by not providing that instruction they may choose to omit some fields, but then have to endure revisiting the form, before they can actually submit it. A screen reader passes on the presence of the required attribute ro the user, that user will interpret that as an instruction. If we are providing screen reader users with that info, then we should absolutely be providing it to other folk that have disabilities.
+
+The only normative wording on this one is "Labels or instructions are provided when content requires user input.", so visually we have labels, however, we do not have instructions, I'm not particularly fond of the name of this SC, as it uses "or" which indicates one or the other. It's unlikely the intent of this SC was to to simply determine that if a field had a label or instruction, either will be good/ My interpretation is that if it is ambiguous that some or all fields are required, then this SC would require that instructional text to be present. In the GitHub discussions, there were good points made by Patrick Lauke in that there are some situations in which this would not be required, such as a login form. I persoanlly don't see the need for required fields to be presented to a user in text on a login form, because my email or username is me saying who I am, my password is me proving it. It's a given those two fields are both required, that's how it works and that is convention.
+
+##### How to find
+
+
 
 
 
