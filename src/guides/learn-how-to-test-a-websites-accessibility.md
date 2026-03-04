@@ -464,8 +464,6 @@ As with all these other contrast issues, we simply increase the contrast to some
         <div class="accordion__panel">
           <div>
 
-
-
 #### The page language is not set to English
 
 The content of the page is English, yet the value of the `lang` attribute is set to `es` (Spanish), so does not accurately inform assistive tech of the correct language. This can cause some screen readers to use the wrong accents or language packs, etc. this fails SC 3.1.1 Language of Page (A). This is not something I recall ever encountering, I have found instances where some pages omit the lang attrivute, altogether, but given we all make typos, it is possible to find a stray page with a typo in the value.
@@ -519,8 +517,6 @@ Some of you may have been tempted to fail the incredibly small text, in the disc
 <h3 class="accordion">About page answers</h3>
   <div class="accordion__panel">
     <div>
-
-
 
 #### Incorrect alt text for Brad and Chad
 
@@ -603,8 +599,6 @@ This is another instance of me breaking something by using less "conventional" c
         <div class="accordion__panel">
           <div>
 
-
-
 #### Skip link does not bypass repeated content
 
 Did you notice the Skip Link is not functioning as it is supposed to, here? It advances focus to the first link in the navigation, which is of course naff. So, in this instance, a user has to press two keys to get to the first link, whereas if the Skip link weren't present, it would only take one keypress, so this Skip Link actually creates more effort for our users. That's kind of moot, anyway, as the repeated block of links cannot be skipped, so this fails 2.4.1 Bypass Blocks (A).
@@ -630,23 +624,18 @@ None of the fields that collect personal information have an autocomplete attrib
 
 ##### How to find
 
-Inspecting the code is how I find this one, I'm unsure of any other reliable way, I have seen the DevTools give warnings about it in the console, but on this occasion, it is not present, perhaps due to other issues?
+Inspecting the code is how I find this one, I'm unsure of any other reliable way, In the DevTools, there is an "Issues" button, that very button in this case indicates there are 11 issues. Three of those issues are related to form fields with missing autocomplete attributes, but we have six missing attributes. There are other things wrong, so that may influence how the browser knows which fields are issues, but in reality, there is often multiple things wrong, so this is isn't as reliable as code reviewing each input.
 
 ##### Solution
 
-Just add the following autocomplete name/value pairs to their corresponding inputs:
+Just add the following `autocomplete` name/value pairs to their corresponding inputs:
 
-First name: autocomplete="given-name"
-
-Last name: autocomplete="family-name"
-
-Phone: autocomplete="tel"
-
-Email: autocomplete="email"
-
-Your business name: autocomplete="organization"
-
-Country of residence: autocomplete="country-name"
+* First name: `autocomplete="given-name"`
+* Last name: `autocomplete="family-name"`
+* Phone: `autocomplete="tel"`
+* Email: `autocomplete="email"`
+* Your business name: `autocomplete="organization"`
+* Country of residence: `autocomplete="country-name"`
 
 #### Checkbox not keyboard accessible
 
@@ -658,7 +647,32 @@ Manual testing with keyboard or another device that uses the keyboard API, such 
 
 ##### Solution
 
-The correct solution is
+The correct solution is to obviously use the proper HTML element, there is no reason to be creating checkboxes from scratch as that obviously results in issues like this one. What i have done here is certainly not what I would recommend, I have just fixed the broken wheel I reinvented. I'm not going to go into that, as I only did it as it saved me a little effort whilst building the site and writing this companion guide. Just use HTML, though, that's what it's there for and it's much easier.
+
+#### Focussing on First name field causes change of context
+
+If you filled in the "Net worth" field and then pressed <kbd>Tab</kbd> to advance focus, when focus arrived on the adjacent field (First name), you may have noticed something unexpected happened? I trigger a change of content that ultimately only fires if the "Net worth" field has a value of less than 2,000,000, because our pretention tech bros are choosy over who they work for and they wouldn't  want to wast their time working for most of us as we're not rich enough.
+
+What happens is a modal fires (other things happen, too) and focus is hijacked and ultimately sent to the `<body>` element. This fails 3.2.1 On Focus (A), as hijacking focus and moving it elsewhere is a change of context.
+
+We could write the other issues with this awful pattern, but we're not going to, I do often write up multiple failures for a single thing, so in addition to 3.2.1 I would also write up:
+
+* 4.1.3 Status Messages (AA) as when the modal appears it is not announced
+* 2.2.1 Timing Adjustable (A) as there is a limit on reading the contents of the modal, it appears only briefly and there is no way to extend the duration it appears for or indeed make it persist until a user reads it and then manually closes it
+* I would also mention how disabling the entirety of the form on a focus event is unpredictable and unexpected behaviour
+
+##### How to find
+
+This is perhaps a little unfair, as none of us would enter accurate details in that field, so as auditors some of you may do similar to me, which is a random finger dance on my keyboard's numberpad and could easily enter a valuse above 2,000,000, but we could just as easily have entered something less. This could be hard to find, in that nobody expects an auditor to enter a gazillion different values in a form field to determine wether one causes unexpected behaviour. Let's not get too hung up on the value that is required to avoid this monstrosity, it's more about the behaviour, hijacking focus in a completely unexpected way can be found by general keyboard testing, in the case of form inputs, the focus event actually fires on mouse clicks, too, so generally speaking this would be be picked up by just interacting with a page using various input modalities
+
+##### Solution
+
+* Burn it with fire? Well, firstly the modal and disabling the remaining form elements has to go. There could be several recommendations we could make, here:
+* Form validation, at the end of the form, when a user submits, then tell them they are too poor to be considered by these cretins
+* Replace the input with something such as a <select>, checkbox or radio and then provide some form of inline validation
+* Just tell folk that at this moment in time they can only takes applications for projects from rich folk
+
+What I actually do is simply remove the modal and the functionality that disables the remaining form components. That will become clearer, later
 
 
 
@@ -666,12 +680,8 @@ The correct solution is
 
 
 
-
-
-\    </div>
+   </div>
         </div>
-
-
 
 * The colour of the focus indicator fails contrast requirements on all pages. This colour was selected as it is close to the 3:1 minimum, but close is not a pass and the threshold requires a contrast of at least 3:1 in order to pass 1.4.11 Non-text Contrast (AA). I would find this by using a combination of visual inspection and a tool to validate my suspicions, such as Color Contrast Analyzer. I would test the colour against every background it featured on
 * Mobile button: 2.5.3 Label in Name (contains image with text “Menu”, accessible name calculates to “Site navigation"
