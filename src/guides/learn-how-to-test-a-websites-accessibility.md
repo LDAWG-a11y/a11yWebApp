@@ -721,11 +721,40 @@ Axe finds these issues with ease, as will other semi-automated tools. These issu
 
 ##### Solution
 
+Nice and easy fix for this, by simply following the basic instructions of HTML labels, we'll just add a `for=""` attrubute that references the ID of the corresponding field. I will actually do that for each of them, including the monstrosity of the input that references the ID of a label element, just because we're fixing stuff close by, so we may as well hide all evidence of this heinous crime, too.
 
+#### Input errors rely upon colour alone
 
+No error messages are presented to the user, however, the border of the fields does turn red (E52A2A) from the non-error focus indicators which are blue (#3D5A80) and this represents a change in contrast of just 1.57:1, this fails 1.4.1 Use of Color (A)
 
+##### How to find
 
+I typically just attempt submission of an empty form, if there is no feedback presented with text, I will then look for icons and then, ultimately changes in colour and I will detrmine wether that colour meets 3:1 against the background and if it is a colour change, that it is at least 3:1 from its previous colour. This is only focused on colour, though, just getting that colour to pass will not be sufficient to pass other success criteria.
 
+##### Solution
+
+There is absolutely no problem using colour to indicate validation errors, as long as the following are true:
+
+* Other success criteria relating to input validation are met (more on these soon)
+* If an element changes colour in some way, to inform a user of something, like red borders or focus rings, for validation errors, etc, then that colour must have at least a 3:1 contrast against the previous colour (a change of colour alone will never be suffice for inputs, though).
+
+#### Input errors are not presented to a user in text
+
+In the previous issue I stated that colour alone will never be enough to pass, that is because error messages must be presented to a user in text, if they are not, then it will fail 3.3.1 Error Identification (A). This SC doesn't require that error messages are descriptive, just that they are present. As an example, providing some text that says "this field is not valid" is sufficient to pass this SC, it doesn't require that the reason for it being invalid is clearly described and most crucially, it doesn't require a suggestion of how to resolve the issue.
+
+#### Suggestions for input errors are not provided to a user
+
+Suggestions are known by the system for form validation, as in this case and most others, the rules for validation are set by the system. So, when an error suggestion is known (or doesn't compromise security), then that suggestion must be presented to a suer in text. As this does not happen here, it fails 3.3.3 Error Suggestion (AA), which builds upon the aforementioned 3.3.1.
+
+#### Error states are not programmatically determinible
+
+#### Cannot uncheck financial commitment
+
+I feel I had to stretch "Financial commitment" a little, here, as it's just pretend and not actually a financial commitment, so it is for the purposes of this guide a pretend commitment. Perhaps because it is not actually a financial commitment this SC doesn't technically apply, here. I'm not going to make a legally binding commitment to fleece readers out of their money, so we just have to pretend it's legally binding and that is enough to
+
+#### Form success dialog auto closes after brief period of time
+
+#### Form success not announced
 
    </div>
         </div>
