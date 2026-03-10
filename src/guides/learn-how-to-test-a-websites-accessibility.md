@@ -190,6 +190,8 @@ Be as alert as you can be, explore as deeply as you can. There are several issue
 
 I have added a toggle switch, which will fix the issues, using JS and/or CSS, don't test this, it's not part of the site (it's not inaccessible, anyway), it's there to learn how some things could be resolved. Ideally, you wouldn't use this until you have tested all pages, as some changes are visual changes and may give the game away. When that switch is toggled to the "fixed" position, it will apply across all pages, I have added a modal which will fire on page load, when the switch is toggled to fixed, it simply asks if you want to continue accessing the fixed site, select "no" and the fixes are gone, select "Yes" and everything will be in the fixed state. I felt this was a useful addition, as some folks may wish to check the answers after testing each page or users may simply forget to toggle it back off, I would.
 
+<div class="callout__info"><span class="callout__icon"><strong class="visually-hidden">Info: </strong></span><span class="callout__text">This is all pretend, no agreements are legally binding or intended to be.</span></div>
+
 LINK TO MAKING THIS ACCESSIBLE
 
 ### I've finished testing, I'm ready to compare
@@ -709,6 +711,8 @@ So, if every single field is required, I would deem the SC to be met if there wa
 
 We're just going to keep it super simple, here, I don't believe we need to do anything fancy, as we only need to visually present a short instruction, we already have screen reader users covered. i have just simply created a heading 3, with the text "All fields are required" and this appears just before the first field in the form.
 
+Taking note of required fields will come in handy, later.
+
 #### Form fields lack accessible name
 
 Several of the form fields do not have a programmtically determinible AccName, they all have a visible lable, however, that label is just adjacent, not programmatically related, the only two fields that do have AccNames are First name and the faux checkbox. Inspecting the code we may have found there are adjacent label elements for each, which is a start, albeit a half-hearted start as a label can either be implicit (its HTML tags surround the field) or explicit (it has a valid `for=""` attribute, where the value is the ID of the associated input)and these are neither. Whilst most users accessing with sight will unlikely encounter a problem, blind/low vision screen reader users and also voice input users will encounter problems as the name will not be announced or commanding the softawer to click a field won't actually do anything. this fails 4.1.2 Name, Role, Value (A).
@@ -725,11 +729,13 @@ Nice and easy fix for this, by simply following the basic instructions of HTML l
 
 #### Input errors rely upon colour alone
 
-No error messages are presented to the user, however, the border of the fields does turn red (E52A2A) from the non-error focus indicators which are blue (#3D5A80) and this represents a change in contrast of just 1.57:1, this fails 1.4.1 Use of Color (A)
+When input fields are in error the focus otline of the fields does turn red (#cd0000) from the non-error focus indicators which are initially orange (#3D5A80) and this represents a change in contrast of just 1.21:1, this fails 1.4.1 Use of Color (A). Orange and red are of course very similar, I don't think I would necessarily notice this subtle difference, unless I was really paying attention (unlikely), but of course, this requirement doesn't exist for me, it exists for people with visual disabilities 
 
 ##### How to find
 
-I typically just attempt submission of an empty form, if there is no feedback presented with text, I will then look for icons and then, ultimately changes in colour and I will detrmine wether that colour meets 3:1 against the background and if it is a colour change, that it is at least 3:1 from its previous colour. This is only focused on colour, though, just getting that colour to pass will not be sufficient to pass other success criteria.
+I typically just attempt submission of an empty form, if there is no feedback presented with text, I will then look for icons and then, ultimately changes in colour and I will detrmine wether that colour meets 3:1 against from its previous colour. This is only focused on colour, though, just getting that colour to pass will not be sufficient to pass other success criteria.
+
+As a side note, i would separately check the contrast of icons and borders, etc, to ensure they met 1.4.11 Non-text Contrast (AA), but we've just found a change of colour here, so 1.4.3 is applicable.
 
 ##### Solution
 
@@ -738,21 +744,63 @@ There is absolutely no problem using colour to indicate validation errors, as lo
 * Other success criteria relating to input validation are met (more on these soon)
 * If an element changes colour in some way, to inform a user of something, like red borders or focus rings, for validation errors, etc, then that colour must have at least a 3:1 contrast against the previous colour (a change of colour alone will never be suffice for inputs, though).
 
+I'm not going to make a change, here, it fails on its own, but later it won't be relevant.
+
 #### Input errors are not presented to a user in text
 
 In the previous issue I stated that colour alone will never be enough to pass, that is because error messages must be presented to a user in text, if they are not, then it will fail 3.3.1 Error Identification (A). This SC doesn't require that error messages are descriptive, just that they are present. As an example, providing some text that says "this field is not valid" is sufficient to pass this SC, it doesn't require that the reason for it being invalid is clearly described and most crucially, it doesn't require a suggestion of how to resolve the issue.
+
+##### How to find
+
+This is a case of taking notes of required fields when we earlier determined which fields must have an instruction present. Some forms are massive and dynamic, it may not always be possible to even find every single field, as some answers may dynamically change further questions and without knowing each and every possible answer that triggers new questions, etc, we could be testing the same form for eternity. I will typically find every input I can, but then make note that my suggestions and more crucially, the failure apply to all fields that have any kind of validation constraints, etc. Some forms can send you down a path of no return, they can branch out in multiple different paths, so just be aware of this, as when forms are dynamic, it may be hard to find every single input for an unspecified number of paths.
+
+##### Solution
+
+Tell a suer that the fields that do not meet validity are in error, carry on reading, as the next issue does the bulk of the heavy lifting for this.
 
 #### Suggestions for input errors are not provided to a user
 
 Suggestions are known by the system for form validation, as in this case and most others, the rules for validation are set by the system. So, when an error suggestion is known (or doesn't compromise security), then that suggestion must be presented to a suer in text. As this does not happen here, it fails 3.3.3 Error Suggestion (AA), which builds upon the aforementioned 3.3.1.
 
+##### How to find
+
+Some errors are self-explanatory, as in "Name is required" doesn't need to explicitly state "Type your name", but where a field contains something in a particular format or the input data does not meet some other form of validation constraint (think emails, strong poasswords, phone numbers, account numbers, etc), then the system will need to be more explicit than "This field is invalid", because, OK, why is it invalid? would be what a user wants to know.
+
+Folk with cognitive issues may require something that offers a little more clarity, it's all fine and well saying "Sort code is invalid", but tell users why, is it because they included hyphens or omitted them, tell them how to fix it, so they can move on.
+
+##### Solution
+
+I find this one to be a two birds, one stone solution, by meeting this one, we automatically meet the previous 3.3.1 issue, as in order to suggest a fix, it's clear the field is in error, as that is why the suggestion is there, right?
+
+I haven't created a fully functional form, however, I have popped a couple of example validations in, for email and phone, which have unique messages which informs a user of their required format. Just a note, I didn't check international phone number standards, so my very basic requirement is just set on length (min 6 characters), must be a number and can include hyphens. That's it, nothing more.
+
 #### Error states are not programmatically determinible
+
+If a field does not have an association to error text or an error state, then how would a blind user know the field was problematic? They definitely wouldn't be able to see the subtle change in colour we used, whereas some sighted users may be able to spot that change.
+
+We have "arguably" met this, as the error message for each field is referenced via `aria-describedby`, as opposed to it just being unassociated text. This also automatically gets us a 1.3.1 Info and Relationships (A) pass, too, as the relationship between the errored field and its specific error message are programmatically determinible.
+
+There is of course the Value part of 4.1.2 Name, Role, Value (A) which we "could" fail, as the value is a state and we haven't added a state or suitable alternative. 
+
+Sometimes, a form may just provide a list of errors and suggestions at the top, if it is explicit enough, it will meet most other SCs, but on its own, it's kinda naff, as the user would potentially have to remember multiple instructions which could increase their cognitive load, or for folk that cannot scroll back and forth, they'd have to constantly revisit this list, which could be quite far away. Nontheless, this would pass most stuff, but if using a visual cue on each filed, such as red, etc, then a blind user would not know, so an alternative would be to use the `aria-invalid` state.
+
+##### How to find
+
+Code inspection and browser tools or pop on a screen reader, advance focus to each field that is in error and listen (or read the speech viewer) and determine whether the feedback informs you that the field is in error. Programmatic references are pretty much exclusively for screen readers, so users can make sense of things that are clear in a visual manner, so testing with a screen reader can pick up the majority of those issues, if, and only if browsers, screen reader creators and operating systems support the referencing method used. It is, in my experience more accurate to use the DevTools and review the code or the accessibility tree, etc. 
+
+##### Solution
+
+Arguably, we don't need to do anything, here, as error messages are associated and they offer more help than just a state (when done with people in mind), however, aria-invalid exists for a reason, and whilst our previous solutions make it clear which fields are in error, they are just `aria-describedby`references, which may auto-announce after a short delay, or require further interaction from a user, such as a keypress and could be missed, as users typically just want to get on with other stuff. I have added `aria-invalid` to all error fields for completeness
+
+
 
 #### Cannot uncheck financial commitment
 
-I feel I had to stretch "Financial commitment" a little, here, as it's just pretend and not actually a financial commitment, so it is for the purposes of this guide a pretend commitment. Perhaps because it is not actually a financial commitment this SC doesn't technically apply, here. I'm not going to make a legally binding commitment to fleece readers out of their money, so we just have to pretend it's legally binding and that is enough to
+I feel I had to stretch "Financial commitment" a little, here, as it's just pretend and not actually a financial commitment, so for the purposes of this guide a pretend commitment. Perhaps because it is not actually a financial commitment this SC doesn't technically apply, here. Obviously I'm not going to make a legally binding commitment to fleece readers out of their money, so we just have to pretend it's legally binding and that is enough afor this example.
 
 #### Form success dialog auto closes after brief period of time
+
+
 
 #### Form success not announced
 
