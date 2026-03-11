@@ -671,8 +671,8 @@ This is perhaps a little unfair, as none of us would enter accurate details in t
 
 Burn it with fire? Well, firstly the modal and disabling the remaining form elements has to go. There could be several recommendations we could make, here:
 
-* Form validation, at the end of the form, when a user submits, then tell them they are too poor to be considered by these cretins
-* Replace the input with something such as a <select>, checkbox or radio and then provide some form of inline validation
+* Form validation, at the end of the form, when a user submits, then tell them they are too poor to be considered by these cretins, although preventing errors is much a better strategy than
+* Replace the input with something such as a `<select>`, `checkbox` or `radio` and then provide some form of inline validation
 * Just tell folk that at this moment in time they can only takes applications for projects from rich folk
 
 What I actually do is simply remove the modal and the functionality that disables the remaining form components. That will become clearer, later.
@@ -786,17 +786,23 @@ Sometimes, a form may just provide a list of errors and suggestions at the top, 
 
 ##### How to find
 
-Code inspection and browser tools or pop on a screen reader, advance focus to each field that is in error and listen (or read the speech viewer) and determine whether the feedback informs you that the field is in error. Programmatic references are pretty much exclusively for screen readers, so users can make sense of things that are clear in a visual manner, so testing with a screen reader can pick up the majority of those issues, if, and only if browsers, screen reader creators and operating systems support the referencing method used. It is, in my experience more accurate to use the DevTools and review the code or the accessibility tree, etc. 
+Code inspection and browser tools or pop on a screen reader, advance focus to each field that is in error and listen (or read the speech viewer) and determine whether the feedback informs you that the field is in error. Programmatic references are pretty much always exposed by screen readers, so users can make sense of things that are clear in a visual manner, so testing with a screen reader can pick up the majority of those issues, if, and only if browsers, screen reader creators and operating systems support the referencing method used. It is, in my experience more accurate to use the DevTools and review the code or the accessibility tree, etc, as one example being, `aria-controls` is a programmatic reference, but screen reader support is extremely limited for that property. That doesn't matter, here, as that's not the property we'd be looking for. Properties that we would be looking for would be `aria-labelledby` with a valid IDRef to the error text (and the input's AccName), `aria-describedby`, with a valid IDRef to the error text or `aria-invalid` present on the input, as a few of the most common properties. Sometimes the error text will actually be part of the `<label>` element, in which case, no ARIA is needed.
 
 ##### Solution
 
-Arguably, we don't need to do anything, here, as error messages are associated and they offer more help than just a state (when done with people in mind), however, aria-invalid exists for a reason, and whilst our previous solutions make it clear which fields are in error, they are just `aria-describedby`references, which may auto-announce after a short delay, or require further interaction from a user, such as a keypress and could be missed, as users typically just want to get on with other stuff. I have added `aria-invalid` to all error fields for completeness
+Arguably, we don't need to do anything, here, as error messages are associated and they offer more help than just a state (when done with people in mind), however, `aria-invalid` exists for a reason, and whilst our previous solutions make it clear which fields are in error, they are just `aria-describedby` references, which may auto-announce after a short delay, or require further interaction from a user, such as a keypress and could be missed, as users typically just want to get on with other stuff. I have added `aria-invalid` to all error fields for completeness.
 
 
 
 #### Cannot uncheck financial commitment
 
-I feel I had to stretch "Financial commitment" a little, here, as it's just pretend and not actually a financial commitment, so for the purposes of this guide a pretend commitment. Perhaps because it is not actually a financial commitment this SC doesn't technically apply, here. Obviously I'm not going to make a legally binding commitment to fleece readers out of their money, so we just have to pretend it's legally binding and that is enough afor this example.
+I feel I had to stretch "Financial commitment" a little, here, as it's just pretend and not actually a financial commitment, so for the purposes of this guide, I had to fudge a pretend commitment. Perhaps because it is not actually a financial commitment this SC doesn't technically apply, here. Obviously I'm not going to make a legally binding commitment to fleece readers out of their money, so we just have to pretend it's legally binding and that is enough afor this example. In essence, if some form of legal, financial or data input is required, users have the option to modify, edit or confirm. Our system makes that decision for our users and there is no way to uncheck the field on the broken site, so this fails 3.3.4 Error Prevention (Legal, Financial, Data) (AA). I know this example is a bit woolly, but I wanted to create a failure for this and this was the best I could come up with.
+
+##### How to find
+
+Manually fill out forms that make financial or legal commitments, this could be buying something, entering into a contract, selling 
+
+
 
 #### Form success dialog auto closes after brief period of time
 
