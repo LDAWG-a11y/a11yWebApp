@@ -835,8 +835,6 @@ There is some nuance, here (isn't there always?), as auditors, we have to take a
         <div class="accordion__panel">
           <div>
 
-
-
 #### What is that noise?
 
 If you popped a screen reader on, you would undobtedly have been overwhelmed by the review cards, automated carousel thing, as it yells each new card at us, for infinity. This would be an awful experience for any screen reader user and it will make the page unusable, as it will interupt their ability to read anything else. 
@@ -859,8 +857,7 @@ A screen reader is the most robust method of finding this, if you switch one on 
 
 I don't want to go to deeply into a solution, just yet, but obviously having an auto-updating carousel with aria-live is all kinds of bad. I'll just drop this link here, though: [Should I use a carousel?](<>).
 
-#### 
-The page tile does not describe topic or purpose
+#### The page tile does not describe topic or purpose
 
 This is obviously the Testimonials page, which we reached by clicking a link that said "Testimonials" and perhaps unsurprisingly, the `<h1>` also says "Testimonials". The problem here is the page title, which is "Testing the range of my new CyberTruck | Brad's personal site". We can make a guess that Brad isn't great at copy and pasting, he's likely just copied a load of stuff from one site and not checked everything, especially the `<title>` tag. That erroneous title clearly does not drescribe the topic or purpose of the page, so this fails 2.4.2 Page Titled (A). If you don't use a screen reader and like my colleague Steve always have at least 363 browser tabs open, you'd likely be blissfully unaware of the issue, as you wouldn't see the title in the tab, as it would be too squished and just show the favicon placeholder (in our case). If, however, you used a screen reader, you may keep a tab open, for later, but then when you come to find that tab by cycling through your open tabs, you'd be confused, because what even is this, why do I have this open? If like me, you like to keep open tabs down to a minimum, so you can locate the ones you need, easier, you're not going to be helped by a completely inaccurate title, if you have a cognitive disability, this may cause confusion and delay things, which in some cases, could have consequences to the user. If you are a voice input user, you may not necessarily think to instruct your software to open something seemingly random.
 
@@ -885,10 +882,6 @@ I can perceive colour and see well enough to notice yellow on a page, against a 
 ##### Solution
 
 The simplest solution here, is adding a darker border to the stars. Ultimately, I have not made this look super neat, I've just added a `stroke: black;` and `stroke-width: 3px;` attributes to the `<svg>` elements. This of course has a strong contrast against both the background and the the stars. This allows us to keep our gold-like colour, as it is somewhat conventional to do that, but, hey, feel free to break convention and use darker colours for your stars.
-
-
-
-
 
 \    </div>
         </div>
