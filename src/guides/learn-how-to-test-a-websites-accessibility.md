@@ -792,25 +792,105 @@ Code inspection and browser tools or pop on a screen reader, advance focus to ea
 
 Arguably, we don't need to do anything, here, as error messages are associated and they offer more help than just a state (when done with people in mind), however, `aria-invalid` exists for a reason, and whilst our previous solutions make it clear which fields are in error, they are just `aria-describedby` references, which may auto-announce after a short delay, or require further interaction from a user, such as a keypress and could be missed, as users typically just want to get on with other stuff. I have added `aria-invalid` to all error fields for completeness.
 
-
-
 #### Cannot uncheck financial commitment
 
-I feel I had to stretch "Financial commitment" a little, here, as it's just pretend and not actually a financial commitment, so for the purposes of this guide, I had to fudge a pretend commitment. Perhaps because it is not actually a financial commitment this SC doesn't technically apply, here. Obviously I'm not going to make a legally binding commitment to fleece readers out of their money, so we just have to pretend it's legally binding and that is enough afor this example. In essence, if some form of legal, financial or data input is required, users have the option to modify, edit or confirm. Our system makes that decision for our users and there is no way to uncheck the field on the broken site, so this fails 3.3.4 Error Prevention (Legal, Financial, Data) (AA). I know this example is a bit woolly, but I wanted to create a failure for this and this was the best I could come up with.
+I feel I had to stretch "Financial commitment" a little, here, as it's just pretend and not actually a financial commitment, so for the purposes of this guide, I had to fudge a pretend commitment. Perhaps because it is not actually a financial commitment this SC doesn't technically apply, here. Obviously I'm not going to make a legally binding commitment to fleece readers out of their money, so we just have to pretend it's legally binding and that is enough for this example. In essence, if some form of legal, financial or data input is required, users have the option to modify, edit or confirm. Our system makes that decision for our users and there is no way to uncheck the field on the broken site, so this fails 3.3.4 Error Prevention (Legal, Financial, Data) (AA). I know this example is a bit woolly, but I wanted to create a failure for this and this was the best I could come up with.
 
 ##### How to find
 
-Manually fill out forms that make financial or legal commitments, this could be buying something, entering into a contract, selling 
+This is not something a tool will help with, this is something we can only find by going through forms and checking that we can somehow edit, modify or delete that data. In our case, the checkbox is checked, it cannot be unchecked and there is some wording that attempts to make a financial commitment (just pretend, I swear). As we cannot cancel that, then we write that up. Even things like not being able to edit an address or name would fall foul of this SC, as for example, we could buy something and get the address wrong and before you know it your item is in the next town over or something. Anything where the data is important, such as your details that are held for a specific purpose (usually transactional), anything that is legally binding and anything that enters a user into a financial commitment will apply here.
 
+##### Solution
 
+I find as an accessibility specialist that, in many cases I do not agree with certain bits of copy on some sites, like this one (yes, I made it up, but mostly fir fun), and if I were testing this, with no former knowledge, I would be thinking "You can't say that", but, we have to stay in our lanes. We cannot really go telling site owners to not be crappy people, professionally, we cannot judge their content, sure, we can think whatever we want, but we're just there to test accessibility issues and that is it.
+
+Given that is how it is, I have left the awful "contract" commitment stuff in, I have just made the checkbox actually work as its supposed to and I have added a Disagree button, alongside the Submit button. That does satisfy the requirement (if we pretend it actually counted), in that now we can just nope out of the "commitment". We can leave the dodgy wording to be picked up by some other regulatory body.
 
 #### Form success dialog auto closes after brief period of time
 
+A success dialog appears after a successful submission, although it's only for the briefest of times (1.7 seconds), which isn't long enough to actually read the content. It is a timed element, I made it only appear briefly, to demonstrate how problematic this can be. There are other issues with it, but we're just focusing on the timing and as there is no mechanism to extend, turn off or adjust the time limit and no exceptions are present, so this fails 2.2.1 Timing Adjustable (A).
 
+##### How to Find
+
+These are things that are typically discovered whilst testing manually. I often find session timeouts when I return to my desk after lunch, or leave my laptop on, overnight. For elements that appear and disappear, it's typically as a direct result of a user action, so filling in a form or changing a setting, etc. There are of course others elements that do not require user interaction, such as toast messages, other notifications, and slide shows or carousels where there is no manual controls, etc.
+
+##### Solution
+
+I have just turned this into a proper modal, focus moves to the modal and a user must close it, manually. i opted for that as we already had a dialog. Inreality, it doesn't really need to be a dialog, it could have just been some text on the page, but either way, at least it is readable, now.
 
 #### Form success not announced
 
+That dialog for the success message does not announce its presence, also, there is no audible feedback at all for completing the form, so a screen reader user may be wondering if their submission was successful or not. This fails 4.1.3 Status Messages (AA).
+
+##### How to find
+
+Wherever some form of notification or message appears, as a result of some change in the system, be that as a result of a user action or some other form of important information, then that should in most cases be announced. There are extensions and I think there was a bookmarklet that monitors or detects ARIA live regions, but it's much more relaible to use a screen reader.
+
+There is some nuance, here (isn't there always?), as auditors, we have to take a pragmattic approach. Let's take eBay, as an example, if we were bidding in the last moments of an auction, there would be an active timer on the page, every second that passed would be reflected by the timer. It's a change, it's important, however, it's not important enough to yell out every second to a screen reader user, as that would undoubtedly be annoying. The same could be said for some ticker style things (although, there should be a way to pause, stop or hide those), if the content is just repeating for eternity, then nobody wants to be constantly interrupted by "Slide 1, blah, blah, blah", "Slide 2, blah, blah, blah" ad infinitum.
+
    </div>
+        </div>
+
+<h3 class="accordion">Testimonials page answers</h3>
+        <div class="accordion__panel">
+          <div>
+
+
+
+#### What is that noise?
+
+If you popped a screen reader on, you would undobtedly have been overwhelmed by the review cards, automated carousel thing, as it yells each new card at us, for infinity. This would be an awful experience for any screen reader user and it will make the page unusable, as it will interupt their ability to read anything else. 
+
+###### For screen reader users only
+
+If you are a screen reader user, I apologise for this, I just wanted to demonstrate how truly awful this is. Now, because all of that yelling will make the page unbearable, and testing anything else would likely be impossible or you would have to modify a setting in your screen reader to turn off `aria-live` updates. I'm not going to expect you to do that, as if I were a full time screen reader user and I switched that setting off, I'd likely forget to switch it back on and miss stuff on other sites.
+
+Technically, what I am doing here makes previous failures pass, as I am providing a mechanism to at least stop the infinite yelling, but I've added this solely to not exclude screen reader users from participation and it should be ignored for the purposes of testing.
+
+In order to toggle this nonsense off, ensure focus is on the Skip Link press <kbd>Alt</kbd> (Windows)  or <kbd>Opt</kbd> (Mac). Honestly, I didn't know the best way to provide an escape hatch, here, but I couldn't just do nothing, as it's obviously horrendous.
+
+I also added this as the first issue on this page, as now you know how to turn it off and can continue.
+
+##### How to find
+
+A screen reader is the most robust method of finding this, if you switch one on and something constantly yells at you, and you have no control you're likely going to turn it off, but that's not an option for everybody. As I mentioned earlier, there are some extensions that can detect this, too.
+
+##### Solution
+
+I don't want to go to deeply into a solution, just yet, but obviously having an auto-updating carousel with aria-live is all kinds of bad. I'll just drop this link here, though: [Should I use a carousel?](<>).
+
+#### 
+The page tile does not describe topic or purpose
+
+This is obviously the Testimonials page, which we reached by clicking a link that said "Testimonials" and perhaps unsurprisingly, the `<h1>` also says "Testimonials". The problem here is the page title, which is "Testing the range of my new CyberTruck | Brad's personal site". We can make a guess that Brad isn't great at copy and pasting, he's likely just copied a load of stuff from one site and not checked everything, especially the `<title>` tag. That erroneous title clearly does not drescribe the topic or purpose of the page, so this fails 2.4.2 Page Titled (A). If you don't use a screen reader and like my colleague Steve always have at least 363 browser tabs open, you'd likely be blissfully unaware of the issue, as you wouldn't see the title in the tab, as it would be too squished and just show the favicon placeholder (in our case). If, however, you used a screen reader, you may keep a tab open, for later, but then when you come to find that tab by cycling through your open tabs, you'd be confused, because what even is this, why do I have this open? If like me, you like to keep open tabs down to a minimum, so you can locate the ones you need, easier, you're not going to be helped by a completely inaccurate title, if you have a cognitive disability, this may cause confusion and delay things, which in some cases, could have consequences to the user. If you are a voice input user, you may not necessarily think to instruct your software to open something seemingly random.
+
+#### How to find
+
+Manual testing is key, here. We need to open the page, make a judgement call on what the topic or purpose is, by consuming the content and then check the page title.The page title can be accessed by checking the tab in the browser window, or locating the `<title>` tag, inside the page's `<head>` section, through the DevTools.
+
+##### Solution
+
+Nice and simple fix here, we simply just change the page title to "Testimonials - Problematica11y"., we use that format as that is the format used on other pages, so a best practice would of course be consistency.
+
+#### The stars for the customers review lack adequate contrast
+
+This is really common, I can understand the "why" regarding the common failure, in that stars are ubiquitous for rating a place, product or service and I guess having star coloured as yellow is some kind of gold star, thing? In any instance, these present information to the user and of course must meet the minimum 3:1 contrast requirement, they are currently 2.34:1, which fails 1.4.11 Non-text Contrast (AA).
+
+##### How to find
+
+Finding this relies heavily on visual inspection, as tools cannot really help with contrast, unless it is text, as not all icons, etc, are informative, so an automated tool would likely have to report every contrast sub 3:1 on a page, and the majority of those would be decorative elements.
+
+I can perceive colour and see well enough to notice yellow on a page, against a lighter background and immediately know it will fail. I will then grab the colours of the item in question and its background and pop them into Color Contrast Analyser.
+
+##### Solution
+
+The simplest solution here, is adding a darker border to the stars. Ultimately, I have not made this look super neat, I've just added a `stroke: black;` and `stroke-width: 3px;` attributes to the `<svg>` elements. This of course has a strong contrast against both the background and the the stars. This allows us to keep our gold-like colour, as it is somewhat conventional to do that, but, hey, feel free to break convention and use darker colours for your stars.
+
+
+
+
+
+\    </div>
         </div>
 
 * The colour of the focus indicator fails contrast requirements on all pages. This colour was selected as it is close to the 3:1 minimum, but close is not a pass and the threshold requires a contrast of at least 3:1 in order to pass 1.4.11 Non-text Contrast (AA). I would find this by using a combination of visual inspection and a tool to validate my suspicions, such as Color Contrast Analyzer. I would test the colour against every background it featured on
