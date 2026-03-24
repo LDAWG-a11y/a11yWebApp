@@ -847,7 +847,7 @@ There is some nuance, here (isn't there always?), as auditors, we have to take a
 
 If you popped a screen reader on, you would undobtedly have been overwhelmed by the review cards, automated carousel thing, as it yells each new card at us, for infinity. This would be an awful experience for any screen reader user and it will make the page unusable, as it will interupt their ability to read anything else. 
 
-###### For screen reader users only
+##### For screen reader users only
 
 If you are a screen reader user, I apologise for this, I just wanted to demonstrate how truly awful this is. Now, because all of that yelling will make the page unbearable, and testing anything else would likely be impossible or you would have to modify a setting in your screen reader to turn off `aria-live` updates. I'm not going to expect you to do that, as if I were a full time screen reader user and I switched that setting off, I'd likely forget to switch it back on and miss stuff on other sites.
 
@@ -867,7 +867,11 @@ I don't want to go to deeply into a solution, just yet, but obviously having an 
 
 #### Keyboard trap detected
 
-Previously I tried to write this in order, but I had to implement an off ramp, here. The Accessibility link in the footer traps keyboard focus. In all fairness, it's quite rare a standard link would do this and I obviously had to make it do that. I tend to find these on discloure type widgets, sometimes folk attempt to logically trap focus in say a modal, which is to be expected, but they may forget to include the Close button in their focus trapping code or the close button may not be focusable as it isn't a `<button> `at all. Anyway, I have done it on a link, the effect is the same, my implementation is just a little less common, in any case, this fails 2.1.2 No Keyboard Trap (A).
+Previously I tried to write this in order, but I had to implement an off ramp, here. The Accessibility link in the footer traps keyboard focus. In all fairness, it's quite rare a standard link would do this and I obviously had to make it do that. I tend to find these on discloure type widgets, sometimes folk attempt to logically trap focus in say a modal, which is to be expected, but they may forget to include the Close button in their focus trapping code or the close button may not be focusable as it isn't a `<button>` at all. Anyway, I have done it on a link, the effect is the same, my implementation is just a little less common, in any case, this fails 2.1.2 No Keyboard Trap (A).
+
+##### For keyboard users only
+
+As focus became stuck, I felt it only fair to give you a machanism that will allow you to escape the focus trap and gain a bit of freedom. Simply use accesskey and <kbd>8</kbd>. This will advance your focus to an otherwise hidden `<button>` which is also redundant, iot won't do anything other than appear once you use the accesskey shortcut.
 
 ##### How to find
 
@@ -913,7 +917,40 @@ I can perceive colour and see well enough to notice yellow on a page, against a 
 
 The simplest solution here, is adding a darker border to the stars. Ultimately, I have not made this look super neat, I've just added a `stroke: black;` and `stroke-width: 3px;` attributes to the `<svg>` elements. This of course has a strong contrast against both the background and the the stars. This allows us to keep our gold-like colour, as it is somewhat conventional to do that, but, hey, feel free to break convention and use darker colours for your stars.
 
-\    </div>
+#### The carousel infinitely transitions
+
+Animations, videos that auto play and other blinking or moving content can cause users to be distracted, become nauseous or dizzy and perhaps highly frustrated. Any one of those aforementioned symptoms could prevent a user from focussing o the task at hand or indeed, make them physically ill. So when these moving elements have no mechanism to pause, stop or hide that movement/update and it lasts for more than five seconds, then we fail it against 2.2.2 Pause, Stop, Hide (A)
+
+##### How to find
+
+More often than not this will require visual inspection to identify moving, blinking or autoplaying content that lasts more than five seconds. You will undoubtedly find instances where it runs for 4.99 seconds, so the devs of that site don't have to make a button. You could just say you aren't sure how long the movement lasts and ask for clarification. Sometimes you may be able to find animations in CSS and other times it may be JS doing all the shenanigans.
+
+##### Solution
+
+We'll finally address this in the next issue. But typically a Play/Pause button will be sufficient and quite a universally understood control, if using conventional iconography or useful words.
+
+
+
+
+#### The carousel's content cannot be read as there is not enough time
+
+Well, this is awful, isn't it? An autoplaying carousel that doesn't give you enough time to read the slide at your own pace. We discussed this at the beginning of this section, as it was very shouty, which would have been a truly horrific experience for screen reader users, rendering the page all but unusable to them. This particular issue relates to providing users with adequate time to consume content, barely any of us (me included) would have enough time to read any of those slides, as each is only present for 1.6s, which is intentionally ridiculous. Many disabled users would be affected by this kind of carousel, some people simply need more time than others to consume content,
+
+In essence, when the system (or the nasty folks that built it) restrict a user's time to consume information or complete a task (without an exceptionally good reason) and no mechanism exists to turn off, extend or adjust that time limit, as there isn't here, it fails 2.2.1 Timing Adjustable (A).
+
+##### How to find
+
+Look for something that is restricted by time, such as an application session, the speed in which slides play, animations, limits on answering questions (games would of course be an exception) and there isn't an obvious exception and if there isn't a mechanism to allow the user more time, then unless it is a game, auction, banking, financial services or other exceptions, then we write this up. 
+
+Sometimes I write it up as the site doesn't obviously appear to be in the financial services sector and in the UK that's an exception for session time outs, but then I'm told it is. I do ask for proof, as some folk spend an eternity looking for loopholes to get out of doing stuff. Don't be afraid to write it up if you aren't sure if there is a regulatory body of some sorts that restricts session lengths after a period of inactivity. The worst that can happen is they say "well, actually..." and you then reply with, "I wasn't aware, do you have some evidence of that, so I can sign it off, please?" or something.
+
+
+
+##### Solution
+
+We solve multiple issues with that carousel by making it
+
+</div>
         </div>
 
 * The colour of the focus indicator fails contrast requirements on all pages. This colour was selected as it is close to the 3:1 minimum, but close is not a pass and the threshold requires a contrast of at least 3:1 in order to pass 1.4.11 Non-text Contrast (AA). I would find this by using a combination of visual inspection and a tool to validate my suspicions, such as Color Contrast Analyzer. I would test the colour against every background it featured on
