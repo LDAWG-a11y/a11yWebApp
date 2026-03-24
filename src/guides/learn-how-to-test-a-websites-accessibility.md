@@ -53,9 +53,17 @@ Anyway, less about me. So the purpose of this platform is not so much to determi
 
 ## A word of warning
 
-Unfortunately, as the purpose of the test site is to be inaccessible, it will not play nicely with all assistive technologies, there are barriers that will be difficult or impossible to overcome with some assistive technologies. we have not included any strobe-effect animations, as we know the effect of these could in some cases be fatal or otherwise physically harmful. By design, the experience will not be great for some assistive technology users, in some parts. That is not to say that you cannot play along or just read along, but it is only fair that we provide this warning.
+Unfortunately, as the purpose of the test site is to be inaccessible, it will not play nicely with all assistive technologies, there are barriers that will be difficult or impossible to overcome with some assistive technologies. we have not included any strobe-effect animations, as we know the effect of these could in some cases be fatal or otherwise physically harmful. By design, the experience will not be great for some assistive technology users in some parts. That is not to say that you cannot play along or just read along, but it is only fair that we provide this warning.
 
-There are of course some issues on this site that require use of senses that not all users will have, there may be sounds, contrast issues or instances that require touch and I know that some users will not be able to catch those. I can only apologise for that, I genuinely feel uncomfortable putting something out there that isn't inclusive for all, but the only way we can do this is by having actual issues and because they are are issues, by their very definition, they're going to be problematic to some folk.
+There are of course some issues on this site that some users may not be able to perceive, due to their disability, there may be certain noises, colour or contrast issues and other issues that will not be possible to identify to everyone. I can only apologise for that, I genuinely feel uncomfortable putting something out there that isn't inclusive for all, but the only way we can do this is by creating a mixed bag of common issues and because they are are issues, by their very definition, they're going to be problematic to some folk.
+
+There are a couple of instances where I have implemented an off ramp, it's genuinely difficult to not give the game away to folk who don't need these off ramps, whilst still being aware that I need to do something. If you use a non-pointing device, there is one instance where I have used an off ramp, you'll likely know it when you find it, you can either refresh the page, or find the appropriate section and specific issue in this guide and I list a little trick I created.
+
+Similarly, if you a screen reader user, there is one instance that is particularly bad, when you encounter it, find the appropriate section and issue in this guide and I again have implemented a way to allow you to continue.
+
+If anybody discovers these off ramps, by accident, they're not not really part of the guide for learning testing, they're just there for others who may be blocked from participation, so any effect they have should be ignored, just pretend they are not there.
+
+
 
 ## So, let's dive in
 
@@ -856,6 +864,28 @@ A screen reader is the most robust method of finding this, if you switch one on 
 ##### Solution
 
 I don't want to go to deeply into a solution, just yet, but obviously having an auto-updating carousel with aria-live is all kinds of bad. I'll just drop this link here, though: [Should I use a carousel?](<>).
+
+#### Keyboard trap detected
+
+Previously I tried to write this in order, but I had to implement an off ramp, here. The Accessibility link in the footer traps keyboard focus. In all fairness, it's quite rare a standard link would do this and I obviously had to make it do that. I tend to find these on discloure type widgets, sometimes folk attempt to logically trap focus in say a modal, which is to be expected, but they may forget to include the Close button in their focus trapping code or the close button may not be focusable as it isn't a `<button> `at all. Anyway, I have done it on a link, the effect is the same, my implementation is just a little less common, in any case, this fails 2.1.2 No Keyboard Trap (A).
+
+##### How to find
+
+The only way you will reliably find this particular failure is by using a keboard or an alternative input device that uses the keyboard API. Thorough testing with a keyboard, in both directions (forwars and backwards), opening and closing every discloure widget, interacting with every control and any intteractive children they have using a combination of <kbd>Tab</kbd>, <kbd>Shift</kbd> and <kbd>Tab</kbd> or indeed arrow keys (up, down, left and right), as that is still "focus" and if in any case, there is absolutely no way to get out, by closing with a control (such as a `<button>,` close with <kbd>Esc</kbd> or move focus out using conventional or instructed keys such as <kbd>Tab</kbd>, or arrows, etc, then you have found a failure. Don't be tempted to click outside the element, as that's obviously not a sufficient technique, this is wholly about users of a keyboard and the users with alternative input devices that use the keyboard API, such as switches, sip and puff, voice and mouth sticks, etc
+
+##### Solution
+
+It's super easy for me to solve this one as I simply listened for presses of <kbd>Tab</kbd> and then added the `preventDefaultMethod()` in JS, so I just prevent that particular function from firing when the site is fixed. Out in the wild when you find this, it's likely to be as straightforward, once you identify it, try to unpick it a little by doing the following:
+
+* Determining whether there is a way for mouse/touch users to get out
+* If there is a button that works for mouse/touch users, why does it not work for keyboard users? Could it be it's not actually focusable, or is the site's roving tabindex or focus trapping implemented poorly
+* Can you get out with a mouse, by cliking outside and if you can, is that absolutely the only way to exit the element of move focus to another?
+* Are there any errors in the DOM, does that number increase each time you attempt to leave the element?
+* Does focus just become stuck for no obvious reason (like our example)?
+
+Once you have a decent idea of why you cannot close the item or move focus from it, just provide as much info as you can, to the site owners. You don't really have to be explicit as to the why it is happening, just focus on the fact it is happening and tell them why it cannot. Your solution will likely be "Ensure the close button is both focusable and in the focus order when the element is open" or words to that effect for disclousre and/or some composite widgets, whereas for something else, like an item on the main page, it may just be "Ensure that keyboard focus can both advance to the element from its previous interactive sibling and advance focus to its next interactive sibling"
+
+
 
 #### The page tile does not describe topic or purpose
 
