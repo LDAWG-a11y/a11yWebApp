@@ -116,14 +116,14 @@ For the most part, you can use whatever browser you want, as long as it is a cur
 
 * Axe DevTools (browser extension)
 * Microsoft Accessibility Insights (browser extension)
-* Chrome DevTools (this is accessed by either pressing F12 on a webpage or right-clicking and selecting "Inspect"), the process is the same for other browsers, however, they may have slightly different wording in the context menus. I provided install guides in the previously linked guides, if you are unsure.
+* Chrome DevTools (this is accessed by either pressing <kbd>F12</kbd> on a webpage or right-clicking and selecting "Inspect"), the process is the same for other browsers, however, they may have slightly different wording in the context menus. I provided install guides in the previously linked guides, if you are unsure.
 * [Colour Contrast Analyser,](https://www.tpgi.com/color-contrast-checker/) this is an installable tool, if you cannot install software on your work machine (like me), then you can use either a colour contrast checker extension, from your chosen browser's extensions store or better still, the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/), which is web-based
 
 I will identify which tools or methods I used to find the issue. I will at times use bookmarklets, which are just small scripts that mostly serve a single purpose. To install these, you simply drag them (or use the context menu) into your bookmarks bar and when you want to use them, you just click them. I'll provide a link to each that I use, when I use it the first time.
 
 #### Resources
 
-* [WCAG 2.2 Qucikref, I've filtered this to only show Level A and Level AA](https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_customize&levels=aaa), that's not because AAA isn't important, it's just that in the trenches you will mostly be fighting against Level AA enemy combatants (AKA legal conformance), the AAA stuff is a bit like the elite special forces combatants, in that we know they are there, but we barely ever see or encounter them (sad, but true)
+* [WCAG 2.2 Quickref, I've filtered this to only show Level A and Level AA](https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_customize&levels=aaa), that's not because AAA isn't important, it's just that in the trenches you will mostly be fighting against Level AA enemy combatants (AKA legal conformance), the AAA stuff is a bit like the elite special forces combatants, in that we know they are there, but we barely ever see or encounter them (sad, but true)
 * I'm not using this, but if you are just starting out, you may find the [A11y project's Accessibility Checklist](https://www.a11yproject.com/checklist/) to be useful to know what to test for
 
 ### Be comfortable with your choices
@@ -165,7 +165,7 @@ Consume everything, read it in your usual way and then with a screen reader, alw
 * If you understand HTML and/or ARIA, feel free to examine the DOM, feel free to validate the HTML at [the HTML validator](https://validator.w3.org/), which may help highlight some issues
 * Don't get too hung up on the tools, they can only get you so far and honestly, they won't get you far at all, here
 * Record your notes, just type them up somewhere, for comparison later, don't even worry too much if you don't know which SC to fail something against, just do what you can
-* We have tonnes of guides on here now, feel free to consult them or indeed, any other accessibility-related websites, if you find a anything that smells funny
+* If you find anything that smells funny we have tonnes of guides on here, feel free to consult them or indeed, any other accessibility-related websites, to learn a bit about the issue
 * You tested an element on one page, it now appears on another, it looks the same, but is is?
 * Take your time, it's not a race, it's a learning exercise
 
@@ -181,7 +181,6 @@ There are a multitude of formats that accessibility professionals use to write a
   * Anything to do with the site structure (if it appears on more than one page)
   * Ordinarily, we record the theme in sitewide issues, if a particular colour is used throughout the site and for whatever reason this colour often fails contrast requirements (if it appears on more than one page). You absolutely can do that if you want, for the most part, I'm just going to record those issues on a per page basis, as I wanted to provide some flexibility for all users, some users may wish to take this a page at a time, others may only revisit this at the very end
   * Anything that is or should be present on all pages
-  * Header
 * Pages
 
   * For each page create a section, that section should be the name of each page and would list all of the issues that are specific to that page. So, if you were to find something between the `<header>` and `<footer>` on a given page, record that there, equally, if you find something outside of the `<header>` and `<footer>` that is only present on that specific page, also record that there
@@ -845,7 +844,13 @@ There is some nuance, here (isn't there always?), as auditors, we have to take a
 
 #### What is that noise?
 
-If you popped a screen reader on, you would undobtedly have been overwhelmed by the review cards, automated carousel thing, as it yells each new card at us, for infinity. This would be an awful experience for any screen reader user and it will make the page unusable, as it will interupt their ability to read anything else. 
+If you popped a screen reader on, you would undobtedly have been overwhelmed by the review cards, automated carousel thing, as it yells each new card at us, for infinity. This would be an awful experience for any screen reader user and it will make the page unusable, as it will interupt their ability to read anything else. Is this a sympom of another issue, kind of, yes, but it is an entirely different issue to a screen reader user. What I did, which as developers should seldom do (without good reason) is use `aria-live="assertive"` and I made the entire carousel a live region shouting out all updates. I knew what I was doing when I created it, in that I intentionally made the slides appear for a very brief time, knowing full well a screen reader would not really have chance to read out an entire slide before the next one rudely interrupted. Sure, screen reader users typically have the speech rate set very high, but, to the best of my knowledge, that's for scanning content, as opposed to consuming it? (just an assumption based upon the few screen reader users I have met and a couple of others I have watched online).
+
+This does happen and I find it a curious issue, in that "technically" if the page content changes and it isn't announced to a screen reader user, that fails 4.1.3 Status Messages (AA). It does require the content to be important, on a testimonials page I'd say a testimonial is important, wouldn't you? So, we are doing what the SC requires us to do, we are announcing changes in content, but, in doing so, we are making things worse, much worse.
+
+Is it merely a symptom of 2.2.2 Pause, Stop, Hide (A)? In this instance, I'd agree, solving the underlying issue would solve this problem, too. But, what about when devs get a little too generous with their ARIA and start putting on on the `<main>` container, or what if it is a site that regularly updates, such as news, social media, currency exchanges, etc? Looking at the failures of 4.1.3, there is a "future link" which in essence means something the folks at WCAG plan to do and are likely actively working on, but they need to agree on the wording or something. Many of the contributors volunteer in their own time, some are full time employees and others are part of it because ther company wants a say in the standard. I'm not for one moment implying that there might be a minority of folks that object to things as they put their employer's interests first, but, maybe it does make it a little more difficult to get unanimous agreement on some things? I read the GitHub stuff quite regularly and have seen many a debate and not every angle appears to be what I would interpret as in the best interests of disabled folks. I don't know why, but writing standards likely comes with internal politics. Anyway, that future link says "Using `role="alert"` or `aria-live="assertive"` on content which is not important and time-sensitive (future link)". I interpret that as ARIA alert abuse, they just haven't got around to finalising the actual thing. It's there though, so that's enough for me. So, I do fail this on 4.1.3 Status Messages (AA), but also with a nod to 2.2.2 Pause, Stop, Hide (A), if it is a poorly implemented carousel, like this one.
+
+Honestly, I'm not 100% certain I am right on this 2.2.2 is for visual stuff, there is 1.4.2 Audio Control (A), but that is for the website making sounds, which technically, it isn't, text is passed to the accessibility tree and the screen reader makes the sound. I've never had to defend failing a yappy site on this, and in most instances there is also something else wrong with the component that is yapping, so I sometimes group my issues, because "this thing fails all of these things, because" is sometimes a useful technique, at least for me, anyway,
 
 ##### For screen reader users only
 
@@ -853,7 +858,7 @@ If you are a screen reader user, I apologise for this, I just wanted to demonstr
 
 Technically, what I am doing here makes previous failures pass, as I am providing a mechanism to at least stop the infinite yelling, but I've added this solely to not exclude screen reader users from participation and it should be ignored for the purposes of testing.
 
-In order to toggle this nonsense off, ensure focus is on the Skip Link press <kbd>Alt</kbd> (Windows)  or <kbd>Opt</kbd> (Mac). Honestly, I didn't know the best way to provide an escape hatch, here, but I couldn't just do nothing, as it's obviously horrendous.
+In order to toggle this nonsense off, ensure focus is on the Skip Link press <kbd>Shift</kbd>. Honestly, I didn't know the best way to provide an escape hatch, here, but I couldn't just do nothing, as it's obviously horrendous.
 
 I also added this as the first issue on this page, as now you know how to turn it off and can continue.
 
