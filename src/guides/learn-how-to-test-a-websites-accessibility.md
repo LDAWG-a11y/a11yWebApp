@@ -4,7 +4,7 @@ summary: This practical digital accessibility guide will help you learn how to
   test for WCAG failures, using any tools of your choice, as well as manual
   testing. We have created an inaccessible site, to help you along
 author: dlee
-date: 2026-02-06
+date: 2026-03-25
 toc: false
 tags:
   - Testing
@@ -14,7 +14,7 @@ isGuide: true
 ---
 ## Intro
 
-This guide is going to be a little different than what I would usually do, typically my guides would focus on a singular component or pattern. This time, it's a broken site we'll be looking at and I'll be showing how to report the issues and/or fix them. Initially, I was going to call this "Learn how to Test a Website's Accessibility", which sort of makes sense, but also indicates I would be the teacher. I'm not going to be teaching anything, I will provide some clues, but I guess the objective is to find what you can and then compare with my findings.
+This guide is going to be a little different than what I would usually write, typically my guides would focus on a singular component or pattern. This time, it's a broken site we'll be looking at and I'll be showing how to report the issues and make suggestions on how to fix them. Initially, I was going to call this "Learn how to Test a Website's Accessibility", which sort of makes sense, but also indicates I would be the teacher. I'm not going to be teaching anything, I will provide some clues, but I guess the objective is to find what you can and then compare with my findings.
 
 I've built a website for a fictional company and brace yourselves, I have intentionally made it inaccessible. Why would you do that? I hear you say. Well, firstly it's not a new idea, there's quite a few examples around the web, folks make them for various reasons:
 
@@ -22,58 +22,58 @@ I've built a website for a fictional company and brace yourselves, I have intent
 * Create an inaccessible site, with a perfect automated checker score
 * And, finally there are examples out there that fulfil the same purpose of this one
 
-You'd be right in thinking this exercise probably felt wrong, it goes against everything I have been doing for several years. But it also kinda felt fun, in an odd kind of way, not an evil genius kind of feeling, but more of a "Jeez, people actually get paid to write code like this on actual websites" kind of way. Yeah, that was a thinly veiled dig at devs that do not care, come at me.
+You'd be right in thinking this exercise felt all kinds of wrong wrong, because it did. The development part goes against everything I have been doing for several years, which is of course something I strogly believe in and advocate for, sites that work for all. It also kinda felt fun, in an odd kind of way, not an evil genius kind of feeling, but more of a bemusement at how difficult it actually is to get some stuff wrong, when often a simple HTML element is so much simpler. 
 
-I honestly found it really difficult to create the site, it messed with my mind a little, in that I spent a heap of time scratching my head wondering why folk go to all the effort to make something wrong, when often HTML alone will just make it right in a much easier way.
+I honestly found it really difficult to create the site, it messed with my mind a lot, in that I guess due to the field I'm in, my brain has become kind of hardwired into developing stuff with everybody in mind. An analogy could be: it'd be like asking a fire fighter to use candles on their Christmas tree and leave them lit overnight whilst they and their family slept. They know better.
 
 ## So, what it is the purpose?
 
-So at Westminster, we are about to start running some training sessions for a group of colleagues, these colleagues want to learn how to identify WCAG issues, as well as other common accessibility barriers. We could have taken a site that's already in the public domain:
+At Westminster, we are intending to start running some training sessions for a group of colleagues, these colleagues want to learn how to identify WCAG issues, as well as other common accessibility barriers. We could have taken a site that's already in the public domain:
 
 * We'd spend quite some time looking for one that contained enough failures to align with our training plan
 * If we found a site in the wild, obviously we'd have no control over it, there is every chance the site would change, which would make this guide age, pretty quickly
 * We'd then likely have to build an accessible version of that site, as an example of how it should be when "fixed", because we would encourage participants in the training to take note of the difference with AT, etc
 * We'd have to be super careful about which site we chose, as we could quite easily get our employer in a spot of legal bother and potentially be disciplined for doing so and that's not a risk we're willing to take
 
-A custom-built small website that contains just enough accessibility issues to start folks off with identifying issues seemed the safest bet. This site won't change (after a period of Beat testing), there will be absolutely no changes to the code, whatsoever. This enables us and potentially you, to have an unchanging platform to conduct this training on, in the hope of getting consistent results.
+A custom-built small website that contains just enough accessibility issues to start folks off in their testing journey seemed the safest bet. This site won't change (after a period of Beta testing), there will be absolutely no changes to the code, whatsoever. This enables us and potentially you, to have an unchanging platform to conduct this training on, in the hope of getting consistent results.
 
 There is of course a lot of nuance to accessibility testing, in that it is highly unlikely that two auditors given the same platform, will write up exactly the same issues. This is, in part due to interpretation of various success criteria, two people will interpret some of the more ambiguous aspects differently. It is also in part due to their levels of knowledge, the tools they use, their experience and multiple other factors.
 
 One important distinction that can result in two different people having a slightly different results, is where they align themselves on "WCAG purity":
 
-* The folks at the lower end of that scale may just fail everything they believe or know to be an accessibility barrier, irrespective of whether it actually fails a WCAG success criterion (SC)
-* The folks in the middle of that scale will likely know something is not explicitly a failure due to loopholes or wording and still write the issue up. But they will explain that they are aware the wording of the success criterion "technically" allows this, but the "intent" of the success criterion combined with the obvious accessibility issue does not make this a non-issue and it should be addressed with a suitable level of priority. There is of course some overlap here, in that sometimes it may appear that something fails due to ambiguous wording and these folks may believe it to be a failure and write it up as such.
-* The purists, these are folks that typically understand every bit of nuance, every pitfall and every loophole in the WCAG docs. Their reports will typically follow WCAG to the letter, they will likely write up other defects in advisories or similar
+* The folks at the lower end of that scale may just fail everything they believe or know to be an accessibility barrier, irrespective of whether it actually fails a WCAG success criterion (SC). These follks are perhaps just starting out and have the best intentions, but sometimes knowing the difference between what is written and what is meant, in the WCAG standard takes a little time to learn
+* The folks in the middle of that scale will likely know something is not explicitly a failure due to loopholes, wording, ambiguity or other nuances and still write the issue up. But they will explain that they are aware the wording of the success criterion "technically" allows this, but the "intent" of the success criterion combined with the obvious accessibility issue does not make this a non-issue and it should be addressed with a suitable level of priority. There is of course some overlap here, in that sometimes it may appear that something fails due to ambiguous wording and these folks may believe it to be a failure and write it up as such.
+* The purists, these are folks that typically understand every bit of nuance, every pitfall and every loophole in the WCAG docs. Their reports will typically follow WCAG to the letter, they will likely write up other defects in advisories or similar. many of these folks will have contributed to WCAG in some way, they may haved worked or volunteered with W3C or contributed on the WCAG GitHub, etc, or they may just have been in the game forever
 
 When I first started testing websites, I was definitely at the lower end of that scale, I was one of those "Which SC can I fail this against" folks. I believe my intent was pure, I wasn't failing things because the website would be better for me, I was failing them to make the website usable to people with disabilities, or so I believed. But, credibility is a thing, as I learned from highly-experienced others in the field, by reading their comments discussions or posts on various platforms. I began to understand this wasn't actually helping as much as I thought it was. The main concern here was, if I just failed something against a SC criterion just because it seemed the closest fit and I was called out on it, by a vendor, the rest of my report and myself could lose all credibility and the risk would be that nothing gets fixed, which is more harmful.
 
-Nowadays, I find myself somewhere in the middle of that scale, I'm by no means as smart as the folk who contribute to WCAG at W3C, but I do often read their lengthy discussions on GitHub, to improve my own knowledge. We do have "Weaknesses" in our reports, where we put non-WCAG issues. I explain my rationale, the effects on a user and/or their AT and I state that whilst it does not "technically" fail WCAG, it is still an accessibility issue. WCAG is not the be all and end all of accessibility, it's a minimum standard for "compliance" in many territories, not some magical standard that that could meet every disabled person's needs. Here, though, we will just be using WCAG, as other stuff would perhaps be at more risk of being subjective.
+Nowadays, I find myself somewhere in the middle of that scale, I'm by no means as smart as the folk who contribute to WCAG at W3C, but I do often read their lengthy discussions on GitHub, to improve my own knowledge. We do have "Weaknesses" in our reports, where we put non-WCAG issues. I explain my rationale, the effects on a user and/or their AT and I state that whilst it does not "technically" fail WCAG, it is still an accessibility issue. WCAG is not the be all and end all of accessibility, it's a minimum standard for "compliance" in many territories, not some magical standard that could meet every disabled person's needs. Here, though, we will just be using WCAG, as other stuff would obviously be more subjective.
 
 Anyway, less about me. So the purpose of this platform is not so much to determine who interprets what in which way, it's main objective is to simply to provide a decent chunk of accessibility issues, on an unchanging platform to assist with learning or training.
 
 ## A word of warning
 
-Unfortunately, as the purpose of the test site is to be inaccessible, it will not play nicely with all assistive technologies, there are barriers that will be difficult or impossible to overcome with some assistive technologies. we have not included any strobe-effect animations, as we know the effect of these could in some cases be fatal or otherwise physically harmful. By design, the experience will not be great for some assistive technology users in some parts. That is not to say that you cannot play along or just read along, but it is only fair that we provide this warning.
+Unfortunately, as the purpose of the test site is to be inaccessible, it will not play nicely with all assistive technologies, there are barriers that will be difficult or "seemingly" impossible to overcome with some assistive technologies. we have not included any strobe-effect animations, as we know the effect of these could in some cases be fatal or otherwise physically harmful. By design, the experience will not be great for some assistive technology users in some parts. That is not to say that you cannot play along or just read along, but it is only fair that we provide this warning.
 
 There are of course some issues on this site that some users may not be able to perceive, due to their disability, there may be certain noises, colour or contrast issues and other issues that will not be possible to identify to everyone. I can only apologise for that, I genuinely feel uncomfortable putting something out there that isn't inclusive for all, but the only way we can do this is by creating a mixed bag of common issues and because they are are issues, by their very definition, they're going to be problematic to some folk.
 
-There are a couple of instances where I have implemented an off ramp, it's genuinely difficult to not give the game away to folk who don't need these off ramps, whilst still being aware that I need to do something. If you use a non-pointing device, there is one instance where I have used an off ramp, you'll likely know it when you find it, you can either refresh the page, or find the appropriate section and specific issue in this guide and I list a little trick I created.
+There are a couple of instances where I have implemented an off ramp, it's genuinely difficult to not give the game away to folk who don't need these off ramps, whilst still being aware that I need to do something. If you use a non-pointing device, there is one instance where I have used an off ramp, you'll likely know it when you find it, you can either refresh the page, or find the appropriate section and specific issue in this guide and I reveal a little trick I created, it's not perfect, but it's something.
 
-Similarly, if you a screen reader user, there is one instance that is particularly bad, when you encounter it, find the appropriate section and issue in this guide and I again have implemented a way to allow you to continue.
+Similarly, if you are a screen reader user, there is one instance that is particularly bad, when you encounter it, find the appropriate section and issue in this guide and I again have implemented a way to allow you to continue, it will at least allow you to continue and hopefully you will stop sticking pins in the Darren voodoo doll you may have reached for.
 
-If anybody discovers these off ramps, by accident, they're not not really part of the guide for learning testing, they're just there for others who may be blocked from participation, so any effect they have should be ignored, just pretend they are not there.
+If anybody discovers these off ramps, by accident, they're not really part of the guide for learning or testing, they're just there for others who may be blocked from participation, so any effect they have should be ignored, just pretend they are not there.
 
 
 
 ## So, let's dive in
 
-Firstly, this isn't a test, as such. Please don't submit your report to us, we won't be marking or providing feedback on anything, as we do not have the time.
+Firstly, this isn't a test, as such. Please don't submit your report to us, we won't be marking it or providing feedback on anything, as we do not have the time.
 
 Secondly, there are only two rules, the first being "Thou shalt follow this guide in order" and the second being "There are no other rules". You are free to test with whatever tools, assistive technologies and manual methods you see fit. If you find one tool that finds every single issue, awesome, use that and please do share it with us. I jest, you won't find a single tool to get you through this, that's just wishful thinking. 
 
 ### Do I need to find all of the issues?
 
-Nope. This isn't a competition, don't put yourself under pressure, find what you can and then when you cannot find anything else, compare your findings, with ours. This is more applicable if you are just starting out, we all have to start somewhere, we mostly all get stuff wrong and sometimes, we can go down a rabbit hole learning about something we haven't previously encountered.
+Nope. This isn't a competition or even a marked test, don't put yourself under pressure, find what you can and then when you cannot find anything else, compare your findings, with ours. This is more applicable if you are just starting out, we all have to start somewhere, we mostly all get stuff wrong and sometimes, we can go down a rabbit hole learning about something we haven't previously encountered.
 
 ### What do I need?
 
@@ -110,7 +110,7 @@ Primarily, I will be using Chrome, but once I need to fire up a screen reader, I
 * NVDA and Chrome (Windows) (may change again, in the future)
 * JAWS and Chrome (Windows)
 
-For the most part, you can use whatever browser you want, as long as it is a current browser, such as Safari, Firefox, Edge, Chrome etc. You shouldn't dust off your Internet Explorer install, because pretty much everything will be broken, in every conceivable way. But once you are using a screen reader, make sure you are using the advised pairings from above. You only need one screen reader, we're not comparing those.
+For the most part, you can use whatever browser you want, as long as it is a current browser, such as Safari, Firefox, Edge, Chrome etc. You shouldn't dust off your Internet Explorer install, because pretty much everything will be broken in every conceivable way. But once you are using a screen reader, make sure you are using the advised pairings from above. You only need one screen reader, we're not comparing those.
 
 #### Tools
 
@@ -119,11 +119,11 @@ For the most part, you can use whatever browser you want, as long as it is a cur
 * Chrome DevTools (this is accessed by either pressing F12 on a webpage or right-clicking and selecting "Inspect"), the process is the same for other browsers, however, they may have slightly different wording in the context menus. I provided install guides in the previously linked guides, if you are unsure.
 * [Colour Contrast Analyser,](https://www.tpgi.com/color-contrast-checker/) this is an installable tool, if you cannot install software on your work machine (like me), then you can use either a colour contrast checker extension, from your chosen browser's extensions store or better still, the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/), which is web-based
 
-I will identify which tools or methods I used to find the issue. I will at times use bookmarklets, which are just small scripts that mostly serve a single purpose. To install these, you simply drag (or use the context menu) them into your bookmarks bar and when you want to use them, you just click them. I'll provide a link to each that I use, when I use it the first time.
+I will identify which tools or methods I used to find the issue. I will at times use bookmarklets, which are just small scripts that mostly serve a single purpose. To install these, you simply drag them (or use the context menu) into your bookmarks bar and when you want to use them, you just click them. I'll provide a link to each that I use, when I use it the first time.
 
 #### Resources
 
-* [WCAG 2.2 Qucikref, I've filtered this to only show Level A and Level AA](https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_customize&levels=aaa), that's not because AAA isn't important, it's just that in the trenches you will mostly be fighting against Level AA enemy combatants (AKA legal conformance), the AAA stuff is usually snipers in  we don't encounter (sad, but true)
+* [WCAG 2.2 Qucikref, I've filtered this to only show Level A and Level AA](https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_customize&levels=aaa), that's not because AAA isn't important, it's just that in the trenches you will mostly be fighting against Level AA enemy combatants (AKA legal conformance), the AAA stuff is a bit like the elite special forces combatants, in that we know they are there, but we barely ever see or encounter them (sad, but true)
 * I'm not using this, but if you are just starting out, you may find the [A11y project's Accessibility Checklist](https://www.a11yproject.com/checklist/) to be useful to know what to test for
 
 ### Be comfortable with your choices
@@ -134,9 +134,9 @@ It can be overwhelming at first, so many new tools to use all at once and so muc
 
 That's not a problem. We can link you to some handy guides that will show the keyboard strokes for each screen reader. I wouldn't get too wrapped up in all of the shortcuts, at this stage, we will just need the basic navigation commands.
 
-* In all three screen readers and standard keyboard-only navigation the <kbd>Tab</kbd> key will move from one interactive items (links, inputs and buttons, etc), to the next. the "next" item will typically be determined by the DOM order, but can also be manipulated via scripting or even CSS.
+* In all three screen readers and standard keyboard-only navigation the <kbd>Tab</kbd> key will move from one interactive item (links, inputs and buttons, etc), to the next. the "next" item will typically be determined by the DOM order, but can also be manipulated via scripting or even CSS.
 * In order to "reverse" back up the page, the <kbd>Shift</kbd> key should be held down and then pressing <kbd>Tab</kbd> will reverse the direction. This also applies to standard keyboard navigation and all three screen readers
-* <kbd>Enter</kbd> and <kbd>Space</kbd> will fire the "click" event on some interactive itema, a `<button>` will respond to both those keys, a link will only respond to <kbd>Enter</kbd>. Again, this applies to both standard keyboard navigation and all three screen readers
+* <kbd>Enter</kbd> and <kbd>Space</kbd> will fire the "click" event on some interactive items, a `<button>` will respond to both those keys, a link will only respond to <kbd>Enter</kbd>. Again, this applies to both standard keyboard navigation and all three screen readers
 * <kbd>Esc</kbd>, **should**, close items such as modal dialogs and other components that you may encounter, especially those that overlay other content
 
 #### Full keyboard controls for each screen reader
@@ -159,7 +159,7 @@ Consume everything, read it in your usual way and then with a screen reader, alw
 * Pay attention to colours and their contrast
 * Test fully with a keyboard only, does everything work, can you see where you are and does anything odd happen?
 * Test fully with a screen reader, anything to report?
-* Adjust the browser size, adjust the zoom levels, test again when you have adjusted the sizes (320px width & 256px height is an absolute must), does everything act the way you expect?
+* Adjust the browser size, adjust the zoom levels, test again when you have adjusted the sizes (320px width & 256px height is an absolute must), does everything act the way you expect? To achieve these sizes simply set the page 1280px width 1024px height and then set zoom to 400% because 1280 / 4 = 320, etc. If you are unsure how to get precise viewport widths, I open the DevTools before shrinking the window down, this displays a small bit of text showing the current size
 * Can you complete all actions?
 * Use your automated tools, remember they only test a snapshot of how the site is at the moment you run the scan, they cannot open widgets for you, open them manually and test again
 * If you understand HTML and/or ARIA, feel free to examine the DOM, feel free to validate the HTML at [the HTML validator](https://validator.w3.org/), which may help highlight some issues
@@ -171,24 +171,24 @@ Consume everything, read it in your usual way and then with a screen reader, alw
 
 ### How should I structure my findings?
 
-There are a multitude of formats that accessibility professionals use to write a report, some may write a brief description in a spreadsheet, some may write a lengthier one, others may use word processing software such as MS Word or Google Docs, etc, but just use whatever you have access to, or a comfortable with. As I am going to provide the answers in a particular structure, it would likely be most useful if you did the same, here's the structure I'll use:
+There are a multitude of formats that accessibility professionals use to write a report, some may write a brief description in a spreadsheet, some may write a lengthier one, others may use word processing software such as MS Word or Google Docs, etc, but just use whatever you have access to, or are comfortable with. As I am going to provide the answers in a particular structure, it would likely be most useful if you did the same, here's the structure I'll use:
 
 * Site wide
 
-  * Anything that is in the <head> section that appears on more than one page (I say this, as there's a clue in there, somewhere)
+  * Anything that is in the `<head>` section that appears on more than one page (I say this, as there's a clue in there, somewhere)
   * Anything in the `<header>` and/or primary `<nav>` (if it appears on more than one page)
   * Anything in the `<footer>` (if it appears on more than one page)
   * Anything to do with the site structure (if it appears on more than one page)
-  * The theme, if a particular colour is used throughout the site and for whatever reason this colour often fails contrast requirements (if it appears on more than one page)
+  * Ordinarily, we record the theme in sitewide issues, if a particular colour is used throughout the site and for whatever reason this colour often fails contrast requirements (if it appears on more than one page). You absolutely can do that if you want, for the most part, I'm just going to record those issues on a per page basis, as I wanted to provide some flexibility for all users, some users may wish to take this a page at a time, others may only revisit this at the very end
   * Anything that is or should be present on all pages
   * Header
 * Pages
 
-  * For each page create a section, that section should be the name of each page and would list all of the issues that are specific to that page. So, if you were to find something between the `<head>` and `<footer>` on a given page, record that there, equally, if you find something outside of the `<header>` and <footer> that is only present on that specific page, also record that there
+  * For each page create a section, that section should be the name of each page and would list all of the issues that are specific to that page. So, if you were to find something between the `<header>` and `<footer>` on a given page, record that there, equally, if you find something outside of the `<header>` and `<footer>` that is only present on that specific page, also record that there
 
 Please don't get too hung up structuring your findings, if you record something in a different section, that's not wrong, I'm sure many accessibility professionals record things in different ways, using different structures. The structure isn't as important as finding issues. Sometimes I end up with something recurring across several pages that could have been in the sitewide issues, I try to keep them in our format, but sometimes testing can lead you down rabbit holes and we're all human, sometimes we can forget we had encountered an issue on a previous page, especially when the site has lots of issues and pages, etc.
 
-We use a Word document, just because that's our preference. You can write it on paper if you so wish, the only thing you should follow is the structure, just to make comparing a little more logical.
+We use a Word document, just because that's our preference. You can write it on paper if you so wish, the only thing you should aim to follow is the structure, just to make comparing a little more logical.
 
 ### One final word of warning
 
@@ -196,7 +196,7 @@ Be as alert as you can be, explore as deeply as you can. There are several issue
 
 ### I'm ready to go, give me the link
 
-I have added a toggle switch, which will fix the issues, using JS and/or CSS, don't test this, it's not part of the site (it's not inaccessible, anyway), it's there to learn how some things could be resolved. Ideally, you wouldn't use this until you have tested all pages, as some changes are visual changes and may give the game away. When that switch is toggled to the "fixed" position, it will apply across all pages, I have added a modal which will fire on page load, when the switch is toggled to fixed, it simply asks if you want to continue accessing the fixed site, select "no" and the fixes are gone, select "Yes" and everything will be in the fixed state. I felt this was a useful addition, as some folks may wish to check the answers after testing each page or users may simply forget to toggle it back off, I would.
+I have added a toggle switch, which will fix the issues, using JS and/or CSS, don't test this, it's not part of the site (it's not inaccessible, anyway), it's there to learn how some things could be resolved. Ideally, you wouldn't use this until you have tested all pages, as some changes are visual changes and may give the game away. When that switch is toggled to the "fixed" position, it will apply across all pages, I have added a modal which will fire on page load, when the switch is toggled to fixed, it simply asks if you want to continue accessing the fixed site, select "no" and the fixes are gone, select "Yes" and everything will be in the fixed state. I felt this was a useful addition, as some folks may wish to check the answers after testing each page or users may simply forget to toggle it back off, I know would.
 
 <div class="callout__info"><span class="callout__icon"><strong class="visually-hidden">Info: </strong></span><span class="callout__text">This is all pretend, no agreements are legally binding or intended to be.</span></div>
 
@@ -218,7 +218,7 @@ The only method of navigation is the primary navigation in the site's header, th
 
 ##### How to find
 
-This is something  I would find on "Visual inspection", I would actively look for a secondary navigation as none of the tools I use help me, here. Perhaps paid solutions do, but I'm happy just looking for a secondary naviagtion.
+This is something  I would find on "Visual inspection", I would actively look for a secondary navigation as none of the tools I use help me, here. Perhaps paid solutions do, but I'm happy just looking for a secondary naviagtion, it could also be confirmed non-visually, by bringing up the Rotor or elements panel, etc.
 
 ##### Solution
 
@@ -230,15 +230,15 @@ The Focus indicator, which is present sitewide is typically the colour #EE6C4D (
 
 ##### How to find
 
-I use a combination of visual inspection, the DevTools and a contrast checker. If focus indicators are very dark on a very light background I know they are fine, but seldom is this the case. I will Inspect Element and then in Chrome in the `:hov` tab within the Styles panel, I will force the element to have `:focus-visible` and `:focus`, I will then use Color Contrast Analyser's eyedropper tool to get the background of the element and or its adjacent colours and also the focus indicator's colour itself. The tool will then give me the calculation. Sometimes, the DevTools will display the contrast calculation against the background.
+I use a combination of visual inspection, the DevTools and a contrast checker. If focus indicators are very dark on a very light background I know they are fine, but seldom is this the case. I will Inspect Element and then in Chrome in the `:hov` tab within the Styles panel, I will force the element to have `:focus-visible` and `:focus`, I will then use Color Contrast Analyser's eyedropper tool to get the background of the element and or its adjacent colours and also the focus indicator's colour itself. The tool will then give me the calculation. Sometimes, the DevTools will display the contrast calculation against the background.. but oddly, it's a bit temperamental with that.
 
 ##### Solution
 
-I changed the focus indicator to a mid blue colour (#3F6098), which easily passes against all light backgrounds. Imagine the orange is a brand colour, we may get a bit of push back, here, as "it's our identity", but, sure, use orange, just don't use it to convey information against light backgrounds, as seldom will it pass against light backgrounds
+I changed the focus indicator to a mid blue colour (#3F6098), which easily passes against all light backgrounds. Imagine the orange is a brand colour, we may get a bit of push back, here, as "it's our identity", but, sure, use orange, just don't use it to convey information against light backgrounds, as seldom will it pass against light backgrounds. On a personal note, I don't know why, but I tend to struggle with orange and black, but I left it in, as it isn't about me.
 
 #### Mobile nav button has AccName mismatch
 
-The Hamburger "mobile" viewport button has an accessible name that does not mach the visible label, this fails 2.5.3 Label in Name (A). The control contains an image as the only label with the text "Menu" and the AccName computes to "Site navigation", which creates a visible label & AccName mismatch. Additionally, if you were thinking along the lines of "This is an image of text", I wouldn't fail it against 1.4.5 Images of Text (AA), as there was an image of the hamburger icon in there, which is "significant other visual content", and ubiquitous enough to be universally understood. Additionally, it was a single four character word, inside a button, with said accompanying icon, in the regular place a user would expect to find that control. Had it just been the text, then I would absolutely fail it, but the icon was sufficient visual information to understand the control. I mean, we could have removed the text entirely and it wouldn't have failed anything at all, because the icon is the label and the AccName could have been "Site navigation", but we're not here to find out how to pass something, because that doesn't help people at all
+The Hamburger "mobile" viewport button has an accessible name that does not mach the visible label, this fails 2.5.3 Label in Name (A). The control contains an image as the only label with the text "Menu" and the AccName computes to "Site navigation", which creates a visible label & AccName mismatch. Additionally, if you were thinking along the lines of "This is an image of text", I wouldn't fail it against 1.4.5 Images of Text (AA), as there was an image of the hamburger icon in there, which is "significant other visual content", and ubiquitous enough to be universally understood. Additionally, it was a single four character word, inside a button, with said accompanying icon, in the regular place a user would expect to find that control. Had it just been the text, then I would absolutely fail it, but the icon was sufficient visual information to understand the control. I mean, we could have removed the text entirely and it wouldn't have failed anything at all, because the icon is the label and the AccName could have been "Site navigation", but we're not here to find out how to pass something, because that doesn't help people at all.
 
 ##### How to find
 
@@ -254,11 +254,11 @@ The current page indicator in the main navigation (thick underline) has colour o
 
 ##### How to find
 
-I would typicall use Color Contrast Analyser to get both the background and foreground colours of the indicator, very similar to how I would get the contrast of the focus indicator, but obviously I wouldn't have to force a state on the element as the indicator would be persistent.
+I would typically use Color Contrast Analyser to get both the background and foreground colours of the indicator, very similar to how I would get the contrast of the focus indicator, but obviously I wouldn't have to force a state on the element as the indicator would be persistent.
 
 ##### Solution
 
-I changed the colour of the current page indicator to 
+I changed the colour of the current page indicator to a darkish blue (#406098) which gives us a contrast of 5.78:1, which is much more perceivable
 
 #### Help button not available at 320px wide viewport
 
@@ -270,7 +270,7 @@ This one is visual inspection only, as far as I know. It does require shrinking 
 
 ##### Solution
 
-I ensured that this "widget" now displays at all viewports, although this success criterion only requires that if it is available at any other viewport size, then it must be available at a viewport size of 320px(W) * 256px(H), which is oddly specific. Another alternative could be Just bin it altogether, which is kind of the nuclear option, but in this instance, one may question what purposes it serves and we could absolutely recommend presenting the contents another way.
+I ensured that this "widget" now displays at all viewports, although this success criterion only requires that if it is available at any other viewport size, then it must be available at a viewport size of 320px(W) * 256px(H), which is oddly specific. Another alternative could be Just bin it altogether, which is kind of the nuclear option, but in this instance, one may question what purposes it serves and we could absolutely recommend presenting the content another way.
 
 #### Instructional text requires sight and colour perception
 
@@ -282,7 +282,7 @@ Reading the entire page content or listening with a screen reader is necessary f
 
 ##### Solution
 
-This is a very easy change, it just requires us to rethink about how we provide instructions and avoid using decriptors that are colour, shape, location or indeed any other descriptor that would require a specific sense to identify the element. I changed thehange to "Click help button, below". Does "below" require sight? No, it doesn't and that is because we have a right to left and top to bottom language. In the contexts of the web, the HTML document is structured in such a way that "below" typically just means after and "above" just means before. I wouldn't advocate use of "left" and "right" for adjacent elements, as it's worth shrinking the screen down, at that point, to see if the adjacent element is still adjacent on the horizontal axis, as more often than not, it will be positioned above or below on the vertical axis, to make use of the reduced viewport width. I wouldn't fail an image that said "from left to right" and then listed the names of everyone in the image, as that is a reasonable way to explain an image. If it were controls or other elements, then of course, we need to write that up. I don't have a great deal of experience with internationalisation, if you're working on a multi-national site, that has lots of languages, then using "above" or "below" probably wouldn't be the best call, as some languages read from bottom right to top left, so bear that in mind.
+This is a very easy change, it just requires us to rethink about how we provide instructions and avoid using decriptors that are colour, shape, location or indeed any other words that would require a specific sense to identify the element. I changed the text to "Click help button, below". Does "below" require sight? No, it doesn't and that is because we have a right to left and top to bottom language. In the contexts of the web, the HTML document is structured in such a way that "below" typically just means after and "above" just means before. I wouldn't advocate use of "left" and "right" for adjacent elements, as it's worth shrinking the screen down, at that point, to see if the adjacent element is still adjacent on the horizontal axis, as more often than not, it will be positioned above or below on the vertical axis, to make use of the reduced viewport width. I wouldn't fail an image that said "from left to right" and then listed the names of everyone in the image, as that is a reasonable way to explain an image. If it were controls or other elements, then of course, we need to write that up. I don't have a great deal of experience with internationalisation, if you're working on a multi-national site, that has lots of languages, then using "above" or "below" probably wouldn't be the best call, as some languages read from bottom right to top left, so bear that in mind.
 
 #### Disclaimer text does not resize
 
@@ -290,7 +290,7 @@ The text within the "Disclaimer" section cannot be resized to 200%, which fails 
 
 ##### How to find
 
-I tend to zoom the page in way beyond the required 200% and then look for things that have not scaled correctly with the other content. Should I find something that stops scaling at a certain point, I then inspect the CSS whilst resizing or altering the zoom level, to find the correct style for that breakpoint. I then determine if our item of interest fails, by reviewing the CSS and checking wether the styles prevent scaling lower than 200%. This one applies at any viewport, so if the element does not resize to at least 200% at any given viewport, then that is an failure.
+I tend to zoom the page in way beyond the required 200% and then look for things that have not scaled correctly with the other content. Should I find something that stops scaling at a certain point, I then inspect the CSS whilst resizing or altering the zoom level, to find the correct style for that breakpoint. I then determine if our item of interest fails, by reviewing the CSS and checking whether the styles prevent scaling lower than 200%. This one applies at any viewport, so if the element does not resize to at least 200% at any given viewport, then that is an failure.
 
 ##### Solution
 
@@ -424,7 +424,7 @@ The heading "How we excel"  is not marked up with a heading tag, it uses a parag
 
 ##### How to find
 
-Accessibility Insights is useful for this, if you click the extension's icon, a small pop out menu appears, it's the "Ad Hoc Tools" option we'r e interested in, here. Click that and toggle the Headings switch and each heading will have a box drawn around it, with the heading level. The "How we excel" heading has no box and is therefore, not a proper heading. Alternatively, I also right click > Inspect Element and look at the HTML to determine wether it's an actual heading or the Web developer extension has a similar function.
+Accessibility Insights is useful for this, if you click the extension's icon, a small pop out menu appears, it's the "Ad Hoc Tools" option we'r e interested in, here. Click that and toggle the Headings switch and each heading will have a box drawn around it, with the heading level. The "How we excel" heading has no box and is therefore, not a proper heading. Alternatively, I also right click > Inspect Element and look at the HTML to determine whether it's an actual heading or the Web developer extension has a similar function.
 
 ##### Solution
 
@@ -488,7 +488,7 @@ The modal's trigger is called "help" on other pages, however, here it is called 
 
 ##### How to find
 
-Visual identification. Honestly, don't worry about this too much, it's not like you need to rememeber every element on every page to find this. Sometimes I do quick click thoughs, focussing on a section of the page (header, as an example) and quickly flick through all of the pages to determine wether anything is off and then repeat for other repeated sections. I don't have the best memory, so I just scan chunks that work for me, yours may be smaller or larger, whatvever works best for you.
+Visual identification. Honestly, don't worry about this too much, it's not like you need to rememeber every element on every page to find this. Sometimes I do quick click thoughs, focussing on a section of the page (header, as an example) and quickly flick through all of the pages to determine whether anything is off and then repeat for other repeated sections. I don't have the best memory, so I just scan chunks that work for me, yours may be smaller or larger, whatvever works best for you.
 
 #### Solution
 
@@ -498,7 +498,7 @@ Simply change the text label to match what it is on other pages. This is where i
 
 There is no reason this image cannot be text, it's a regular font and something that a user would potentially want to copy to their clipboard. This fails SC 1.4.5 Images of text (AA).
 
-Manaual checking by Inspect Element and when the HTML opens up and we determine it's an image, we make a call on wether it needs to be an image. Obviously it doesn't, as the font is just a regular font off my system. The Web Developer extension does have a suite of useful tools, in this case, in the Images tab, you could outline or remove all images on a page, etc. I seldom do that, i mostly read the code or pick it up with a screen reader, although, don't rely on a screen reader as that will only help if the item has a role that indicates it's an image, it could be a CSS image or some other skullduggery.
+Manaual checking by Inspect Element and when the HTML opens up and we determine it's an image, we make a call on whether it needs to be an image. Obviously it doesn't, as the font is just a regular font off my system. The Web Developer extension does have a suite of useful tools, in this case, in the Images tab, you could outline or remove all images on a page, etc. I seldom do that, i mostly read the code or pick it up with a screen reader, although, don't rely on a screen reader as that will only help if the item has a role that indicates it's an image, it could be a CSS image or some other skullduggery.
 
 ##### Solution
 
@@ -673,7 +673,7 @@ We could write the other issues with this awful pattern, but we're not going to,
 
 ##### How to find
 
-This is perhaps a little unfair, as none of us would enter accurate details in that field, so as auditors some of you may do similar to me, which is a random finger dance on my keyboard's numberpad and could easily enter a valuse above 2,000,000, but we could just as easily have entered something less. This could be hard to find, in that nobody expects an auditor to enter a gazillion different values in a form field to determine wether one causes unexpected behaviour. Let's not get too hung up on the value that is required to avoid this monstrosity, it's more about the behaviour, hijacking focus in a completely unexpected way can be found by general keyboard testing, in the case of form inputs, the focus event actually fires on mouse clicks, too, so generally speaking this would be be picked up by just interacting with a page using various input modalities
+This is perhaps a little unfair, as none of us would enter accurate details in that field, so as auditors some of you may do similar to me, which is a random finger dance on my keyboard's numberpad and could easily enter a valuse above 2,000,000, but we could just as easily have entered something less. This could be hard to find, in that nobody expects an auditor to enter a gazillion different values in a form field to determine whether one causes unexpected behaviour. Let's not get too hung up on the value that is required to avoid this monstrosity, it's more about the behaviour, hijacking focus in a completely unexpected way can be found by general keyboard testing, in the case of form inputs, the focus event actually fires on mouse clicks, too, so generally speaking this would be be picked up by just interacting with a page using various input modalities
 
 ##### Solution
 
@@ -691,7 +691,7 @@ Each of the fields is required, but there is no indication of that, that is pres
 
 Now, there has been some discussions on WCAG's GitHub for this one, with the debate centered around does it fail 3.3.2 Labels or Instructions (A), 2.4.6 Headings and Labels (AA) or is it a failure at all. As is often the case on the WCAG discussions, folk have differing opinions and that often results in me going down a rabbit hole.
 
-The only normative wording on 3.3.2 is "Labels or instructions are provided when content requires user input.", which as far as normative texts go, is quite light on explicit details. There are certainly enough clues in the non-normative text to indicate that some text, somewhere would be necessary to inform users of required fields where it is "ambiguous". In our form, it is ambiguous, how would anybody know wether a field is required or optional without an instruction? It's worth touching upon "ambiguous", here, as not all forms would require some form of text instruction. In the GitHub discussions, there were good points made by Patrick Lauke in that there are some situations in which the instructional text would not be required, such as a login form. A login form is not ambiguous, as they are typically just two fields, both of which are required to login, as an example my email or username is me saying who I am, my password is me proving it. It's a given those two fields are both required, that's how it works and that is convention. So do not record this where it's clear all fields are required and there is no text stating that. Do record this where it could go either way, like on tthe form we are looking at.
+The only normative wording on 3.3.2 is "Labels or instructions are provided when content requires user input.", which as far as normative texts go, is quite light on explicit details. There are certainly enough clues in the non-normative text to indicate that some text, somewhere would be necessary to inform users of required fields where it is "ambiguous". In our form, it is ambiguous, how would anybody know whether a field is required or optional without an instruction? It's worth touching upon "ambiguous", here, as not all forms would require some form of text instruction. In the GitHub discussions, there were good points made by Patrick Lauke in that there are some situations in which the instructional text would not be required, such as a login form. A login form is not ambiguous, as they are typically just two fields, both of which are required to login, as an example my email or username is me saying who I am, my password is me proving it. It's a given those two fields are both required, that's how it works and that is convention. So do not record this where it's clear all fields are required and there is no text stating that. Do record this where it could go either way, like on tthe form we are looking at.
 
 ##### How to find
 
@@ -741,7 +741,7 @@ When input fields are in error the focus otline of the fields does turn red (#cd
 
 ##### How to find
 
-I typically just attempt submission of an empty form, if there is no feedback presented with text, I will then look for icons and then, ultimately changes in colour and I will detrmine wether that colour meets 3:1 against from its previous colour. This is only focused on colour, though, just getting that colour to pass will not be sufficient to pass other success criteria.
+I typically just attempt submission of an empty form, if there is no feedback presented with text, I will then look for icons and then, ultimately changes in colour and I will detrmine whether that colour meets 3:1 against from its previous colour. This is only focused on colour, though, just getting that colour to pass will not be sufficient to pass other success criteria.
 
 As a side note, i would separately check the contrast of icons and borders, etc, to ensure they met 1.4.11 Non-text Contrast (AA), but we've just found a change of colour here, so 1.4.3 is applicable.
 
@@ -891,7 +891,7 @@ Once you have a decent idea of why you cannot close the item or move focus from 
 
 
 
-#### The page tile does not describe topic or purpose
+#### The page title does not describe topic or purpose
 
 This is obviously the Testimonials page, which we reached by clicking a link that said "Testimonials" and perhaps unsurprisingly, the `<h1>` also says "Testimonials". The problem here is the page title, which is "Testing the range of my new CyberTruck | Brad's personal site". We can make a guess that Brad isn't great at copy and pasting, he's likely just copied a load of stuff from one site and not checked everything, especially the `<title>` tag. That erroneous title clearly does not drescribe the topic or purpose of the page, so this fails 2.4.2 Page Titled (A). If you don't use a screen reader and like my colleague Steve always have at least 363 browser tabs open, you'd likely be blissfully unaware of the issue, as you wouldn't see the title in the tab, as it would be too squished and just show the favicon placeholder (in our case). If, however, you used a screen reader, you may keep a tab open, for later, but then when you come to find that tab by cycling through your open tabs, you'd be confused, because what even is this, why do I have this open? If like me, you like to keep open tabs down to a minimum, so you can locate the ones you need, easier, you're not going to be helped by a completely inaccurate title, if you have a cognitive disability, this may cause confusion and delay things, which in some cases, could have consequences to the user. If you are a voice input user, you may not necessarily think to instruct your software to open something seemingly random.
 
@@ -952,18 +952,3 @@ We solve multiple issues with that carousel by making it
 
 </div>
         </div>
-
-* The colour of the focus indicator fails contrast requirements on all pages. This colour was selected as it is close to the 3:1 minimum, but close is not a pass and the threshold requires a contrast of at least 3:1 in order to pass 1.4.11 Non-text Contrast (AA). I would find this by using a combination of visual inspection and a tool to validate my suspicions, such as Color Contrast Analyzer. I would test the colour against every background it featured on
-* Mobile button: 2.5.3 Label in Name (contains image with text “Menu”, accessible name calculates to “Site navigation"
-
-  * o   Changed text to “Menu” to match AccName (You would have a strong argument to get the developer to change the image of text to actual text, under 1.4.5 Images of Text, as it does not need to be an image
-  * Current page indicator: 1.4.11 Non-text Contrast (Indicator has colour of #EE6C4D and background is #E0FBFC, which results in a contrast ratio of 2.81:1, should be 3:1min)
-
-    o   Changed to blue
-  * Help button: 1.4.10 Reflow (Help
-    button is not available at 320px screen width)
-
-    o   Popup thing shows at all
-    viewports
-  * \    </div>
-          </div>
