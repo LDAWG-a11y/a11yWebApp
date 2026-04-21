@@ -22,17 +22,7 @@ Essentially the DiscoverUni widget is an embed, it may appear on course specific
 
 The first thing to take note of is the domain for DiscoverUni, which is a .gov.uk domain, so as this domain is reserved for government and is part of the Office for Students, then it really is on them to make it accessible centrally rather than the responsibility lying with individual universities. Also, as the content is in an iFrame, it can be super difficult to fix the accessibility issues with DOM manipulation, as it exists on another site, but then why would a couple of hundred institutions be required to patch it up with JS, when it could simply be fixed at source and fixed once?
 
-### Public Sector Accessibility Regulations coverage
 
-The reason we decided to look at this widget and document our testing and fix approach is because this has been regularly flagged by the monitoring body under the [Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility Regulations 2018](https://www.legislation.gov.uk/uksi/2018/952/pdfs/uksi_20180952_en.pdf).
-
-The issue here is the competing requirements to present accessible websites while also being required to incorporate the DiscoverUni widget onto course pages.
-
-The initial expectation is that the DiscoverUni widget is out of scope for universities' responsibilities under the [3rd party content exemption](https://www.makethingsaccessible.com/guides/3rd-party-content-responsibilities/) as it is neither funded nor developed by the universities and they have no control to deliver technical fixes to it but must keep it on their website.
-
-If GDS do advise that universities are responsible despite lack of ownership or control,  we would recommend universities consider disproportionate burden claims after having flagged the issue with OfS and documenting the response.
-
-The rest of the guide detailing the problems with the Discover Uni widget including technical details. We hope the guide will provide a consistent answer on this topic which universities can link to from their accessibility statements.
 
 ## The MTA 2023 case study summarised
 
@@ -103,16 +93,16 @@ There are no controls for a user to manually move to the next or previous slide,
 
 ## The new 2026 widget
 
-It's fair to say that the widget has improved, there are now less issues, however, it is evident that there wasn't an accessibility specialist involved in the redesign as there are some issues that would absolutely be flagged or they should have been.
+It's fair to say that the widget has improved a bit, there are now less issues, however, it is evident that there wasn't an accessibility specialist involved in the redesign as there are some issues that would absolutely be flagged or they should have been.
 
 We'll just jump straight in, look at what is wrong, I'll discuss what could have been done and I'll also discuss why I think the issues are there.
 
 ### 1.4.11 Non-text Contrast (AA) or advisory?
 
-* To me, the most glaring visual issue is the choice of yellow for the donut chart. Now technically this does not fail, as the value is in the centre of the donut, so the yellow meter bit isn't required for understanding the data. However, it's still a poor choice of colour for a chart, if you're going to display data or stats in a chart, then making it perceivable to more folk is obviously the right thing to do. The purpose of the chart element is for at-a-glance information, almost a circle = good, less than three quarters = meh, less than half a circle = probably not the best, etc.
+* To me, the most glaring visual issue is the choice of yellow for the donut chart. Now technically this does not fail, as the value is in the centre of the donut, so the yellow meter bit isn't required for understanding the data. However, it's still a poor choice of colour for a chart, if you're going to display data or stats in a chart, then making it perceivable to more folk is obviously the right thing to do. The purpose of the chart element is for at-a-glance information, almost a circle = great, around three quarters = good, less than half a circle = probably not the best, etc.
 * It doesn't fail WCAG, but it's yellow (#FCD833) against the white (#FFF) background, which has a very poor contrast ratio of 1.4:1
 * The filled part of the donut is yellow (#FCD833) whilst the unfilled section is wispy grey (#EDEDED), which has a lower contrast ratio of 1.2:1
-* The wispy grey (#EDEDED) communicates something, right? It's their to tell sighted folk (or at least those with good enough vision to perceive low contrast) that this unfilled part of the donut is where the filled part could have gone, I'm not saying that background is absolutely necessary, but by adding it, they're reinforcing visual information, so I absolutely would write up the track if the number wasn't present. wispy grey is against the white background, which is the lowest contrast of our three tests at 1.17:1
+* The wispy grey (#EDEDED) communicates something, right? It's there to tell sighted folk (or at least those with good enough vision to perceive low contrast) that this unfilled part of the donut is where the filled part could have gone, I'm not saying that background is absolutely necessary, but by adding it, they're reinforcing visual information, so I absolutely would write up the track if the number wasn't present. wispy grey is against the white background, which is the lowest contrast of our three tests at 1.17:1
 
 Like I said, it doesn't fail, but that doesn't mean a great deal, it just means that whoever designed it didn't do so with all people in mind, as the combinations of colours are flaky, at best.
 
@@ -138,11 +128,9 @@ The pips for the slides communicate visual information, that information is not 
 
 There are a number of issues that fail this checkpoint, I'll list them, first:
 
-The pips are not programmatically associated to the main slider
-
-The main slider does not programmatically group the slides
-
-The Previous and Nex buttons are not programmatically related to the slides
+* The pips are not programmatically associated to the main slider
+* The main slider does not programmatically group the slides
+* The Previous and Next buttons are not programmatically related to the slides
 
 ### 1.3.2 Meaningful Sequence (A)
 
@@ -156,9 +144,21 @@ The expectation is that once I am in the "slide" widget, the sequence of reading
 4. Heading level 2 In work or doing further study 15 months after the course
 5. The Data displayed is...
 6. Discover Uni is an official source of information...
-7. discover Uni logo, image
+7. DiscoverUni logo, image
 8. Link, see all course data, see all course data opens in a new window
 9. Previous question, button
 10. Next question, button
 
+This is slightly off, as a screen reader user will likely be navigating with their virtual cursor and each time after they have read the slide, the cursor will then move to the image, text and "See all course data" link, in the side area, which is static
+
 ### 4.1.3 Status Messages (AA)
+
+If a screen reader user were to change the slide, how would they know anything has happened? There is no announcement, just silence.
+
+2.4.1 Bypass Blocks
+
+This one is perhaps debatable. An iFrame requires a title and that is required by WCAG, the previous implementation did indeed have a title, which wasn't great, as it was the same when there were multiple widgets on a single page. This new implementation does not use an `<iFrame>`, it uses an `<embed>`. As a dev, I know they are very similar, as an accessibility specialist I know that WCAG doesn't explicitly state that an <embed> requires a title and it does explicitly require one for an iframe
+
+4.1.2 Name, Role, Value (A)
+
+A carosel or slider is should be contained in an adequate and named grouping element
