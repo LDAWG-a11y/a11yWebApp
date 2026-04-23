@@ -155,10 +155,12 @@ This is slightly off, as a screen reader user will likely be navigating with the
 
 If a screen reader user were to change the slide, how would they know anything has happened? There is no announcement, just silence.
 
-2.4.1 Bypass Blocks
+### 2.4.1 Bypass Blocks (A)
 
-This one is perhaps debatable. An iFrame requires a title and that is required by WCAG, the previous implementation did indeed have a title, which wasn't great, as it was the same when there were multiple widgets on a single page. This new implementation does not use an `<iFrame>`, it uses an `<embed>`. As a dev, I know they are very similar, as an accessibility specialist I know that WCAG doesn't explicitly state that an <embed> requires a title and it does explicitly require one for an iframe
+This one is perhaps debatable. An iFrame requires a title and that is required by WCAG, the previous implementation did indeed have a title, which wasn't great, as it was the same when there were multiple widgets on a single page. This new implementation does not use an `<iFrame>`, it uses an `<embed>`. As a dev, I know they are very similar, as an accessibility specialist I know that WCAG doesn't explicitly state that an `<embed>` requires a `title` and it does explicitly require one for an iframe. There is a title, however, it is on the parent <div> element, so it does not get announced. When there is more than one widget on a page, a screen reader simply announces "Frame 1", "Frame 2", etc, completely ignoring the title and it offers nothing useful.
+
+I can absolutely understand how a WCAG puritan would point out it does not fail, because it is not technically an iframe and <embed> is not explicitly mentioned. VoiceOver calls it a frame, parts of WCAG are old and <embed> was non-standard when parts of WCAG were written. I'd fail it, however, I'd defitely justify my reasoning and it's clear thay have had a stab at adding a title, just to the wrong element
 
 4.1.2 Name, Role, Value (A)
 
-A carosel or slider is should be contained in an adequate and named grouping element
+A carousel or slider needs to communicate what it is, its name and its current state so a user knows what it is and how to interact with it. None of these are present.
