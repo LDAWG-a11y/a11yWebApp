@@ -161,6 +161,6 @@ This one is perhaps debatable. An iFrame requires a title and that is required b
 
 I can absolutely understand how a WCAG puritan would point out it does not fail, because it is not technically an iframe and <embed> is not explicitly mentioned. VoiceOver calls it a frame, parts of WCAG are old and <embed> was non-standard when parts of WCAG were written. I'd fail it, however, I'd defitely justify my reasoning and it's clear thay have had a stab at adding a title, just to the wrong element
 
-4.1.2 Name, Role, Value (A)
+### 4.1.2 Name, Role, Value (A)
 
 A carousel or slider needs to communicate what it is, its name and its current state so a user knows what it is and how to interact with it. None of these are present.
