@@ -22,8 +22,6 @@ Essentially the DiscoverUni widget is an embed, it may appear on course specific
 
 The first thing to take note of is the domain for DiscoverUni, which is a .gov.uk domain, so as this domain is reserved for government and is part of the Office for Students, then it really is on them to make it accessible centrally rather than the responsibility lying with individual universities. Also, as the content is in an iFrame, it can be super difficult to fix the accessibility issues with DOM manipulation, as it exists on another site, but then why would a couple of hundred institutions be required to patch it up with JS, when it could simply be fixed at source and fixed once?
 
-
-
 ## The MTA 2023 case study summarised
 
 ### So what was the widget like?
@@ -120,17 +118,29 @@ We could of course faff around with both the yellow and grey, to get them to hav
 
 The pips for the slides have active and inactive colours, these communicate visual information. The widget I am looking at now has three slides, I can look at the pips as someone with relatively decent sight and determine that I am viewing slide 2 of three. This is a fail as a wispy grey colour (#D5D5DC) has been used for the inactive pips against the white (#FFF) background, and there is a contrast ratio of just 1.46:1. Again, at a minimum this must be 3:1
 
+#### Solution
+
+A darker border with a minimum contrast of 3:1 against both the white background and the wispy grey pip colour will be sufficient. This will create to visually distinctive shapes, a circle for the current slide and rings for the inactive slides.
+
 ### 1.1.1 Non-text Content (A)
 
-The pips for the slides communicate visual information, that information is not available in text or as a text alternative, such as ARIA
+The pips for the slides communicate visual information, that information is not available in text or as a text alternative, such as ARIA.
+
+#### Solution
+
+I would not necessarily expect the pips themselves to have a role and accessible name, as they are not interactive, but they are there, they do communicate something, so the slide number of number of slides should be available somewhere within the slides. We'll pick this up at the end, as most of the issues can be resolved by using an "acceptable" carousle pattern.
 
 ### 1.3.1 Info and Relationships (A)
 
 There are a number of issues that fail this checkpoint, I'll list them, first:
 
-* The pips are not programmatically associated to the main slider
+* The pips are not programmatically associated to the main slider or there is no alternative that communicates the same information
 * The main slider does not programmatically group the slides
 * The Previous and Next buttons are not programmatically related to the slides
+
+#### Solution
+
+We'll pick this up at the end, as most of the issues can be resolved by using an "acceptable" carousel pattern.
 
 ### 1.3.2 Meaningful Sequence (A)
 
@@ -149,18 +159,38 @@ The expectation is that once I am in the "slide" widget, the sequence of reading
 9. Previous question, button
 10. Next question, button
 
-This is slightly off, as a screen reader user will likely be navigating with their virtual cursor and each time after they have read the slide, the cursor will then move to the image, text and "See all course data" link, in the side area, which is static
+This is slightly off, as a screen reader user will likely be navigating with their virtual cursor and each time after they have read the slide, the cursor will then move to the image, text and "See all course data" link, in the side area, which is static; only then will it move to the controls. It's important to remember that a blind screen reader user will not know how much content is present per slide, so will likely be confused that when they have read the content, they have to then move into the side area, before moving to thecontrols. I would imagine that the majority of screen reader users would figure out the problem and press <kbd>Tab</kbd> each time their virtual cursor moved to the image in the side area, but, that doesn't make this pattern correct, it's still wrong.
+
+#### Solution
+
+We'll pick this up at the end, as most of the issues can be resolved by using an "acceptable" carousel pattern.
 
 ### 4.1.3 Status Messages (AA)
 
 If a screen reader user were to change the slide, how would they know anything has happened? There is no announcement, just silence.
 
-### 2.4.1 Bypass Blocks (A)
+#### Solution
 
-This one is perhaps debatable. An iFrame requires a title and that is required by WCAG, the previous implementation did indeed have a title, which wasn't great, as it was the same when there were multiple widgets on a single page. This new implementation does not use an `<iFrame>`, it uses an `<embed>`. As a dev, I know they are very similar, as an accessibility specialist I know that WCAG doesn't explicitly state that an `<embed>` requires a `title` and it does explicitly require one for an iframe. There is a title, however, it is on the parent <div> element, so it does not get announced. When there is more than one widget on a page, a screen reader simply announces "Frame 1", "Frame 2", etc, completely ignoring the title and it offers nothing useful.
-
-I can absolutely understand how a WCAG puritan would point out it does not fail, because it is not technically an iframe and <embed> is not explicitly mentioned. VoiceOver calls it a frame, parts of WCAG are old and <embed> was non-standard when parts of WCAG were written. I'd fail it, however, I'd defitely justify my reasoning and it's clear thay have had a stab at adding a title, just to the wrong element
+We'll pick this up at the end, as most of the issues can be resolved by using an "acceptable" carousel pattern.
 
 ### 4.1.2 Name, Role, Value (A)
 
-A carousel or slider needs to communicate what it is, its name and its current state so a user knows what it is and how to interact with it. None of these are present.
+A carousel or slider needs to communicate what it is, its name and its current state so a user knows what it is, what to expect and how to interact with it. None of this information is present.
+
+#### Solution
+
+We'll pick this up at the end, as most of the issues can be resolved by using an "acceptable" carousel pattern.
+
+### Advisory
+
+The controls for the slides have the AccNames as "Next question" and "Previous question", they're not even questions, they're statements or answers. They were probably questions at one point, but they're explicitly telling us students' responses, so those questions have been answered.
+
+### Solution
+
+Language matters, combined with all the other aspects of accessible information that is lacking from the carousel, it matters that bit more, here. Perhaps I'm being pedantic, but ultimately, they're nbot questions, so something like "Next stat", or words to that effect will be much clearer.
+
+### Carousel solution
+
+Carousels are often unnecessary, I'm not personally 100% against them, there are times when I find them useful, such as on a product card or other listing, so I can slide the images to look at different colours, differernt angles or anything else without having to click the link. carousels do get a hard time and they're mostly rubbish, so this is often warranted. Are they "needed" here? Probably not, why hide important stats behind widget controls? I have a page open for another university, there are eight separate DiscoverUni widgets on this page, each has three slides, I get how having 24 unique facts in 24 separate widgets may take up a vast amount of the page, but, these are showing me eight variations of a course. I know this may sound a little wild, but, perhaps just have a page with each variation of the course and show the relevant widget there? Then just three stats per page, which, in reality, doesn't nedessitate a carousel.
+
+Anyway, they have gone with a carousel, we'll just fix what they have, which isn't difficult.
