@@ -32,7 +32,7 @@ Well, to give you an example, here is a screenshot of the widget in question, ta
 
 This iFrame is not static, on the page I am viewing, there is a transition occurring where the contents fade out and a new statistic is displayed, there are 3 separate statistics, each presented in their own slide and the animation is infinite.
 
-#### What were the WCAG failures
+#### What were the WCAG failures?
 
 Whilst there were some positives, unfortunately there were some issues which should not be present, especially as it was created by/for a public sector organisation.
 
@@ -91,18 +91,36 @@ There are no controls for a user to manually move to the next or previous slide,
 
 ## The new 2026 widget
 
-It's fair to say that the widget has improved a bit, there are now less issues, however, it is evident that there wasn't an accessibility specialist involved in the redesign as there are some issues that would absolutely be flagged or they should have been.
+It's fair to say that the widget has improved a little, there are now less issues, however, it is evident that there wasn't an accessibility specialist involved in the redesign as there are some issues that would absolutely be flagged or they should have been.
 
-We'll just jump straight in, look at what is wrong, I'll discuss what could have been done and I'll also discuss why I think the issues are there.
+### Widget variations
+
+There are some variations of the widget, although they appear very limited when viewing the [configuration docs](https://discoveruni.gov.uk/v2/widget/configurator/guidance). An organisation can choose either "responsive" or "vertical", vertical will always display a carousel, whereas "responsive" may do away with the carousel, although I have nor yet found a site that displays the widget without the carousel.
+
+When the widget is configured in "responsive" layout, if the viewport and the host site allow the widget to display at 1280px and above, then the carousel is no more and each stat appears as a small card, all in a nice row, however, 1280px is something that is seldom displayed.
+
+I have located the widget on several university sites and despite having an ultrawide monitor, I have yet to see the widget display all three stats at once. The reason for this is seldom do sites occupy the full horizontal width, they are often contained in custom site wrappers, which is a technique designers and devs will use to have more control over the layout. Whilst I am sure there are sites out in the wild where the site wrapper does exceed 1280px, the only one I found that did used the "vertical" widget, so it would never display all three stats at once, as that particular layout isn't designed to. Obviously the majority of users are viewing webpages on mobiles and tablets these days, so again, it's less likely a user will get the non-carousel option.Finally, as many of us know, many low vision users will set their page zoom higher than 100%, which of course will prevent the widget displaying the nice little row, even when the site's wrapper exceeds 1280px. So, in essence, the "responsive" layout will only ever display the nice row, in the rareset of circumstances. The Office for Students have zero control over each institution's site wrapper, users' devices or indeed their disabilities, but, it's not difficult to find that information out, better reasearch could have shown the problem.
+
+If I take the <embed>'s source code and pop it in a code editor and look at the result, we get the following:
+
+![Screenshot of the widget, in isolation, showing three stats, all in a column, with no carousel features present](src/guideImg/screenshot-19.png)
+
+The above is much more accessible, as it completely does away with the carousel, but obviously it wouldn't display in a row on a smaller viewport.
+
+It's also important to point out that when an item displays in its entirety on a larger screen, but then uses some form of disclosure pattern or even a carousel for smaller viewports, then they would need a way of changing the pattern to have supporting names, roles and properties when it does start hiding stuff, have they done any of that? Nope.
+
+I do not like being critical, so publicly, however, it's vital to understand that that the majority of higher ed institutions have their own accessibility teams, they are all striving to make the numerous websites their respective institutions have - accessible. Many uni websites are in fact, pretty accessble, as far as I know, so, it stings a little that a government department, that must also legally have accessible and conformant sites, etc, build a widget that institutions are required to display, yet it's not accessible or conformant. I'm not for one moment implying that the DiscoverUni site is also non-compliant with WCAG, despite having an accessibility statement saying they are...
+
+Anyway, let's take a look at what the widget issues are.
 
 ### 1.4.11 Non-text Contrast (AA) or advisory?
 
 * To me, the most glaring visual issue is the choice of yellow for the donut chart. Now technically this does not fail, as the value is in the centre of the donut, so the yellow meter bit isn't required for understanding the data. However, it's still a poor choice of colour for a chart, if you're going to display data or stats in a chart, then making it perceivable to more folk is obviously the right thing to do. The purpose of the chart element is for at-a-glance information, almost a circle = great, around three quarters = good, less than half a circle = probably not the best, etc.
 * It doesn't fail WCAG, but it's yellow (#FCD833) against the white (#FFF) background, which has a very poor contrast ratio of 1.4:1
 * The filled part of the donut is yellow (#FCD833) whilst the unfilled section is wispy grey (#EDEDED), which has a lower contrast ratio of 1.2:1
-* The wispy grey (#EDEDED) communicates something, right? It's there to tell sighted folk (or at least those with good enough vision to perceive low contrast) that this unfilled part of the donut is where the filled part could have gone, I'm not saying that background is absolutely necessary, but by adding it, they're reinforcing visual information, so I absolutely would write up the track if the number wasn't present. wispy grey is against the white background, which is the lowest contrast of our three tests at 1.17:1
+* The wispy grey (#EDEDED) communicates something, right? It's there to tell sighted folk (or at least those with good enough vision to perceive low contrast) that this unfilled part of the donut is where the filled part could have gone, I'm not saying that background is absolutely necessary, but by adding it, they're reinforcing visual information, so I absolutely would write up the track if the number wasn't present. wispy grey against the white background, which is the lowest contrast of our three tests at 1.17:1
 
-Like I said, it doesn't fail, but that doesn't mean a great deal, it just means that whoever designed it didn't do so with all people in mind, as the combinations of colours are flaky, at best.
+Like I said, it doesn't fail, but that doesn't mean a great deal, it just means that whoever designed it didn't do so with all people in mind, as the combinations of colours are flaky, at best and as always, folks, WCAG is the bare minimum, not the gold standard.
 
 #### Solution
 
@@ -161,6 +179,8 @@ The expectation is that once I am in the "slide" widget, the sequence of reading
 
 This is slightly off, as a screen reader user will likely be navigating with their virtual cursor and each time after they have read the slide, the cursor will then move to the image, text and "See all course data" link, in the side area, which is static; only then will it move to the controls. It's important to remember that a blind screen reader user will not know how much content is present per slide, so will likely be confused that when they have read the content, they have to then move into the side area, before moving to thecontrols. I would imagine that the majority of screen reader users would figure out the problem and press <kbd>Tab</kbd> each time their virtual cursor moved to the image in the side area, but, that doesn't make this pattern correct, it's still wrong.
 
+This issue does not appear to be present when opting for the "vertical" widget in the configuration setup.
+
 #### Solution
 
 We'll pick this up at the end, as most of the issues can be resolved by using an "acceptable" carousel pattern.
@@ -191,6 +211,20 @@ Language matters, combined with all the other aspects of accessible information 
 
 ### Carousel solution
 
-Carousels are often unnecessary, I'm not personally 100% against them, there are times when I find them useful, such as on a product card or other listing, so I can slide the images to look at different colours, differernt angles or anything else without having to click the link. carousels do get a hard time and they're mostly rubbish, so this is often warranted. Are they "needed" here? Probably not, why hide important stats behind widget controls? I have a page open for another university, there are eight separate DiscoverUni widgets on this page, each has three slides, I get how having 24 unique facts in 24 separate widgets may take up a vast amount of the page, but, these are showing me eight variations of a course. I know this may sound a little wild, but, perhaps just have a page with each variation of the course and show the relevant widget there? Then just three stats per page, which, in reality, doesn't nedessitate a carousel.
+Carousels are often unnecessary, they do have their uses, at least in my opinion, but that would necessitate them being built accessibly and also being the correct pattern for the job. There are times when I find them useful, such as on a product card or other listing, so I can slide the images to look at different colours, angles or anything else, without having to click the link to the product page. Carousels get a hard time, because they're mostly rubbish, so this is often warranted. Are they "needed" here? Probably not, why hide important stats behind widget controls? I have a page open for another university, there are seven separate DiscoverUni widgets on this page, each has three slides, I get how having 21 unique facts in 21 separate panels may take up a vast amount of the page, but, these are showing me seven variations of a similar course, undergrad, combined masters and everything in between. I know this may sound a little wild, but, perhaps just have a page with each variation of the course and show the relevant stats there? Then just three stats per page, which, in reality, doesn't nedessitate a carousel.
 
-Anyway, they have gone with a carousel, we'll just fix what they have, which isn't difficult.
+There are several solutions, here:
+
+* DiscoverUni could make an additional layout option "Column" (or words to that effect), which would simply do away with the carousel and display each of the three stats in a column for smaller viewports and if the 1280px is ever reached, display them in a row
+* Add or remove the releavant ARIA with JS, depending on the current layout of the widget. If the widget does reach that 1280px when the site loads remove the ARIA, etc, if it does not or the user alters their viewport in some way, shoehorn it back in. There is a little over-engineering involved with that approach, but nothing we haven't done before
+* Redesign the whole thing, it's three stats, do the need to occupy as much space as they do, could they have used sparklines? did they even need to use the (low contrast) meter charts? Could it have just been three rows of text, with a nice prominent number showing the percentage?
+
+I think the column approach would be best, it's not reliant on manipulating the DOM with JS to shoehorn or remove in the required accessibility information, it displays all three stats at all times, without the unnecessary faff of clicking through a pointless carousel, the cards could change shape from squarish on mobile, to wider rectanfles as the viewport gets larger. I'm just going to go with that and rustle up a solution. Disclaimer, I'm just going to use their code and better it. This is my first time doing this, is it even legal? 
+
+* Well, it's on my employer's website, so it's "our" code, right?
+* I'm doing this non-commercially, I am being paid by my employer, but the money is the same as if I were doing something else and my employer does not financially benefit from this
+* I'm acting on the behalf of disabled people, as that is my actual job, I test websites to highlight the accessibility issues, so developers can fix them, to make them more usable for disabled folks
+* I'm doing this for educational purposes and critique
+* DiscoverUni has a .gov.uk domain and is therefore subject to Open Govenment Licensing, which permits me to copy or modify their code and content, as long as neither of those are owned by a thrid party (such as images, etc), as long as I give accreditation
+
+So, here we have it, I am doing all of the above, I have copied the entire <embed> from my employer's (University of Westminster) website, but it is a widget created by the Office for Students, as part of their DiscoverUni site and services, so I attribute them as the code creators.
