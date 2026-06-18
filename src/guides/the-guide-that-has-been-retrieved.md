@@ -18,7 +18,9 @@ isGuide: true
 
 * Make sure Microsoft Word is up-to-date
 * Make sure that Adobe Acrobat Pro is up-to-date
-* [Download PAC 2024 (external website)](https://pac.pdf-accessibility.org/en)
+* Download [PAC 2026 (external website)](https://pac.pdf-accessibility.org/en/download)
+
+Note: The guide was created using PAC 2024 but PAC is now on version PAC 2026.
 
 ## Demo file
 
@@ -756,7 +758,7 @@ The PDF/UA identifier indicates that the file meets the PDF/UA Standard and this
 * [WCAG 3.15 Reading Level (AAA) (external website)](https://www.w3.org/WAI/WCAG22/quickref/?versions=2.1#reading-level)
 * [Creating meaningful alternative text](https://www.makethingsaccessible.com/guides/creating-meaningful-alternative-text/)
 * [Everything you need to know to write effective alt text (external website)](https://support.microsoft.com/en-gb/office/everything-you-need-to-know-to-write-effective-alt-text-df98f884-ca3d-456c-807b-1a1fa82f5dc2)
-* [PAC 2024 (external website)](https://pac.pdf-accessibility.org/en)
+* [PAC 2026 (external website)](https://pac.pdf-accessibility.org/en/download)
 * [Table Accessibility in Word and PowerPoint (external website)](https://accessibility.psu.edu/microsoftoffice/microsofttableheaders/)
 * [Make your Word documents accessible to people with disabilities (external website)](https://support.microsoft.com/en-gb/office/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d)
 * [Creating accessible tables in Microsoft Word (external website)](https://kb.iu.edu/d/aqjl)
