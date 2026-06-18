@@ -35,7 +35,7 @@ isGuide: true
 		<td>Yes</td>
 		<td>Yes</td>
 		<td>Yes​</td>
-		<td>Web version of PAC 2024 (10MB file max), free</td>
+		<td>Web version of PAC 2026 (10MB file max), free</td>
 	</tr>
 	<tr>
 		<th scope="row"><a href="https://www.axes4.com/en/software-services/axespdf">AxesPDF (external website)</a></th>
@@ -108,7 +108,7 @@ isGuide: true
 		<td>Runs in Docker - VM on Windows and Mac, has PDF tools, PDF manipulations like annotation, form-fill, highlight, split, rotate, compress, protect, merge etc. No Accessibility Checker – I’ve raised issue on GitHub</td>
 	</tr>
 	<tr>
-		<th scope="row"><a href="https://pac.pdf-accessibility.org/en">PAC 2024 (external website)</a></th>
+		<th scope="row"><a href="https://pac.pdf-accessibility.org/en/download">PAC 2026 (external website)</a></th>
 		<td>Yes</td>
 		<td>No</td>
 		<td>No</td>
