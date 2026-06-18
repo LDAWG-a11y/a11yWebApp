@@ -19,7 +19,9 @@ isGuide: true
 * Make sure that your version of LibreOffice is Version 7 or above – check by going Help -> About LibreOffice, or if not installed, [download LibreOffice (external website)](https://www.libreoffice.org/download/download-libreoffice/)
 * Older versions may require the tool to be turned on as an Advanced option (“Enable experimental features (may be unstable)”) but it is inbuilt in more recent versions
 * Make sure that Adobe Acrobat Pro is up-to-date
-* Download [PAC 2024 (external website)](https://pac.pdf-accessibility.org/en)
+* Download [PAC 2026 (external website)](https://pac.pdf-accessibility.org/en/download)
+
+Note: The guide was created using PAC 2024 but PAC is now on version PAC 2026.
 
 ## Demo file
 
@@ -480,7 +482,7 @@ Note: to be able to remediate PDFs, Adobe Acrobat Pro or equivalent PDF editing 
 ## Useful links
 
 * [LibreOffice (external website)](https://www.libreoffice.org/download/download-libreoffice/)
-* [PAC 2024 (external website)](https://pac.pdf-accessibility.org/en)
+* [PAC 2026 (external website)](https://pac.pdf-accessibility.org/en/download)
 * [TPGi’s Colour Contrast Analyzer (external website)](https://www.tpgi.com/color-contrast-checker/)
 * [Writing for GOV.UK (external website)](https://www.gov.uk/guidance/content-design/writing-for-gov-uk)
 * [Plain English Campaign (external website)](https://www.plainenglish.co.uk/)
