@@ -21,6 +21,8 @@ isGuide: true
 * Make sure that Adobe Acrobat Pro is up-to-date
 * Download [PAC 2026 (external website)](https://pac.pdf-accessibility.org/en/download)
 
+Note: The guide was created using PAC 2024 but PAC is now on version PAC 2026.
+
 ## Demo file
 
 An example file, [Powerpoint-Example.pptx](/docs/powerpoint-example.pptx) **(PPTX 7MB)**, has been created which has issues that need to be corrected.
@@ -729,7 +731,7 @@ The document has now fully passed PAC 2024.
 * [WCAG 3.15 Reading Level (AAA) (external website)](https://www.w3.org/WAI/WCAG22/quickref/?versions=2.1#reading-level)
 * [Creating meaningful alternative text](https://www.makethingsaccessible.com/guides/creating-meaningful-alternative-text/)
 * [Everything you need to know to write effective alt text (external website)](https://support.microsoft.com/en-gb/office/everything-you-need-to-know-to-write-effective-alt-text-df98f884-ca3d-456c-807b-1a1fa82f5dc2)
-* [PAC 2024 (external website)](https://pac.pdf-accessibility.org/en)
+* [PAC 2026 (external website)](https://pac.pdf-accessibility.org/en/download)
 * [Table Accessibility in Word and PowerPoint (external website)](https://accessibility.psu.edu/microsoftoffice/microsofttableheaders/)
 * [Getting accessible templates for Office (external website)](https://support.microsoft.com/en-gb/office/get-accessible-templates-for-office-ca086caa-2bd2-4ac8-8c12-4cd495bd4d76)
 * [PowerPoint document accessibility (external website)](https://webaccess.msu.edu/tutorials/documents/powerpoint)
