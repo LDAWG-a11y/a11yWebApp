@@ -19,7 +19,7 @@ isGuide: true
 
 * Make sure Microsoft PowerPoint is up-to-date
 * Make sure that Adobe Acrobat Pro is up-to-date
-* Download [PAC 2024 (external website)](https://https://www.makethingsaccessible.com/pac.pdf-accessibility.org/en)
+* Download [PAC 2026 (external website)](https://pac.pdf-accessibility.org/en/download)
 
 ## Demo file
 
