@@ -21,6 +21,8 @@ isGuide: true
 * Make sure that Adobe Acrobat Pro is up-to-date
 * Download [PAC 2026 (external website)](https://pac.pdf-accessibility.org/en/download)
 
+Note: The guide was created using PAC 2024 but PAC is now on version PAC 2026.
+
 ## Demo file
 
 An example file, [Powerpoint-Example.pptx](/docs/powerpoint-example.pptx) **(PPTX 7MB)**, has been created which has issues that need to be corrected.
