@@ -35,7 +35,7 @@ isGuide: true
 		<td>Yes</td>
 		<td>Yes</td>
 		<td>Yes​</td>
-		<td>Web version of PAC 2024 (10MB file max), free</td>
+		<td>Web version of PAC 2026 (10MB file max), free</td>
 	</tr>
 	<tr>
 		<th scope="row"><a href="https://www.axes4.com/en/software-services/axespdf">AxesPDF (external website)</a></th>
