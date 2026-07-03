@@ -35,6 +35,7 @@ The following courses include free and paid for courses on digital accessibility
 * Code Academy - [Learn CSS: Accessibility (external website)](https://www.codecademy.com/learn/learn-css-accessibility) 
 * Piccia Neri - [Accessibility Primer (external website)](https://piccianeri.com/free-accessibility-primer-course/) (with a eye to typography)
 * WebAim - [Introduction to Web Accessibility (external website)](https://webaim.org/intro/index#video) (with a eye to typography)
+* [AODA Online Training (external website)](https://www.aoda.ca/free-online-training/)
 
 ### AHEAD Ireland
 
