@@ -319,7 +319,7 @@ Chatbots have the potential to simplify online interactions but only if they are
 
 ## An example of an accessible chatbot
 
-[My colleage, Darren has created an accessible chatbot example](https://deploy-preview-885--inquisitive-heliotrope-510c6d.netlify.app/guides/how-to-build-an-accessible-chatbot/), which considers many aspects discussed in this article. The guide walks you through the process of creating an accessible chatbot, although the example component is based upon a turn-based application, but further considerations are available for alternative implementations, for your consideration.
+[My colleage, Darren has created an accessible chatbot example](https://www.makethingsaccessible.com/guides/how-to-build-an-accessible-chatbot/), which considers many aspects discussed in this article. The guide walks you through the process of creating an accessible chatbot, although the example component is based upon a turn-based application, but further considerations are available for alternative implementations, for your consideration.
 
 ## References
 
