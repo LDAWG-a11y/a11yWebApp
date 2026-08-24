@@ -36,6 +36,7 @@ The following courses include free and paid for courses on digital accessibility
 * Piccia Neri - [Accessibility Primer (external website)](https://piccianeri.com/free-accessibility-primer-course/) (with a eye to typography)
 * WebAim - [Introduction to Web Accessibility (external website)](https://webaim.org/intro/index#video) (with a eye to typography)
 * Accessibility for Ontarians with Disabilities Act (AODA) Training - [AODA Online Training (external website)](https://www.aoda.ca/free-online-training/)
+* Adobe - [PDF accessibility essentials (external website)](https://experienceleague.adobe.com/en/courses/acr-pdf-accessibility-essentials)
 
 ### AHEAD Ireland
 
