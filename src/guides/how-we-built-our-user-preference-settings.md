@@ -522,3 +522,5 @@ if (localStorage.getItem('data-pref--theme')) {
 We're just checking for the presence of an item in local storage `data-pref--theme` and then adding the correct attribute and value to the `<html>` element. As I stated, I did try looping through the items for all of our preferences here, but it was a little slower and I couldn't cope with not having 4 * 100s in Lighthouse, as it would annoy me.
 
 Well, hopefully this makes sense and demoes that after a little careful planning, it's super simple to add new user preferences whenever there is a useful need for one. I should also point out that it may not be as simple as that if you're working on a legacy code base, as this does relay on CSS custom properties. Also, as is always the case, it's much easier to create something from scratch, on a blank page, than it is to transplant it into an existing system, but it was pretty late in the day we decide to implement it in here and it wasn't overly difficult.
+
+<div class="callout__warn"><span class="callout__icon"><strong class="visually-hidden">Warning: </strong></span><span class="callout__text">Test warning</span></div>
