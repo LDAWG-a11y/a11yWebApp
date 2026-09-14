@@ -7,9 +7,9 @@ layout: collaborators.njk
 permalink: aaa/supporters/
 date: Last Modified
 title: AAA - Our supporters
+aaaSupporters: true
 usesCMS: true
 team: aaa
-aaaSupporters: true
 ---
 
 [](https://www.youtube.com/watch?v=vZP1ubYtuhY&feature=youtu.be)[](https://www.youtube.com/watch?v=vZP1ubYtuhY&feature=youtu.be)
@@ -34,7 +34,7 @@ aaaSupporters: true
 
 <a href="https://www.pocklington.org.uk/" class="supporters__link"><img src="/aaaAssets/TPT_logo.png" alt=""></a>
 
-<a href="https://www.hopwood.ac.uk/" class="supporters__link"><img src="/aaaAssets/hopwood.jpg" alt=""></a>
+<a href="https://www.hopwood.ac.uk/" class="supporters__link"><img src="/aaaAssets/hopwood.jpg" alt="Hopwood"></a>
 
 <a href="https://rmt.org/glasshouse/" class="supporters__link"><img src="/aaaAssets/glasshouse.png" alt=""></a>
 
@@ -44,7 +44,7 @@ aaaSupporters: true
 
 <a href="https://www.capel.ac.uk/" class="supporters__link"><img src="/aaaAssets/capel-manor.png" alt=""></a>
 
-<a href="https://college.sense.org.uk/" class="supporters__link"><img src="/aaaAssets/sense_primary_without_strapline_rgb_png.png" alt=""></a>
+<a href="https://college.sense.org.uk/" class="supporters__link"><img src="/aaaAssets/sense_primary_without_strapline_rgb_png.png" alt="College Sense"></a>
 
 <a href="https://www.midkent.ac.uk/" class="supporters__link"><img src="/aaaAssets/midkent-college.png" alt=""></a>
 
