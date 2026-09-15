@@ -323,14 +323,14 @@ Chatbots have the potential to simplify online interactions but only if they are
 
 ## References
 
-1. [Chatbots: Are They Really Accessible?](https://www.horlix.com/chatbots/#:~:text=One%20of%20the%20main%20problems)
+1. [Chatbots: Are They Really Accessible?](https://www.horlix.com/chatbots/)
 2. [Bureau of Internet Accessibility. Five Key Accessibility Considerations for Chatbots](https://www.boia.org/blog/five-key-accessibility-considerations-for-chatbots)
 3. [Accessibility Audit UK. Accessibility Overlays Don't Work](https://accessibilityaudit.co.uk/accessibility-overlays-dont-work/)
 4. [Overlay Fact Sheet. Understanding Overlay Tools and Their Limitations](https://overlayfactsheet.com/en/)
 5. [Jinraj Jain. Concierge Bot: Handle Multiple Chatbots from One Chat Screen. Chatbots Life](https://chatbotslife.com/concierge-bot-handle-multiple-chatbots-from-one-chat-screen-ff7baae9d597)
 6. [Web Accessibility Team. Messaging Apps: The Good, the Bad, and the Ugly](https://blog.hubspot.com/customers/messaging-apps-good-bad-ugly)
 7. [W3C Web Accessibility Initiative (WAI) ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/)
-8. [Overlay Fact Sheet (n.d.)]("https://overlayfactsheet.com/en/)
-9. [Five Key Accessibility Considerations for Chatbots](href="https://www.boia.org/blog/five-key-accessibility-considerations-for-chatbots)
+8. [Overlay Fact Sheet (n.d.)](https://overlayfactsheet.com/en/)
+9. [Five Key Accessibility Considerations for Chatbots](https://www.boia.org/blog/five-key-accessibility-considerations-for-chatbots)
 10. [BBC News WhatsApp defends 'optional' AI tool that cannot be turned off](https://www.bbc.co.uk/news/articles/cd7vzw78gz9o)
 11. [Trusted Reviews What is Meta AI? The WhatsApp and Facebook AI chatbot explained](https://www.trustedreviews.com/explainer/what-is-meta-ai-facebook-4595670)
