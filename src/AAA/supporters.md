@@ -30,28 +30,28 @@ team: aaa
 
 <a href="https://www.theoaks.ac.uk/" class="supporters__link"><img src="/aaaAssets/the-oaks-logo-block-pink.jpg" alt="The Oaks Specialist College"></a>
 
-<a href="https://www.buckscollegegroup.ac.uk/" class="supporters__link"><img src="/aaaAssets/buckscollegegroup-logo-web.png" alt=""></a>
+<a href="https://www.buckscollegegroup.ac.uk/" class="supporters__link"><img src="/aaaAssets/buckscollegegroup-logo-web.png" alt="Bucks College"></a>
 
-<a href="https://www.pocklington.org.uk/" class="supporters__link"><img src="/aaaAssets/TPT_logo.png" alt=""></a>
+<a href="https://www.pocklington.org.uk/" class="supporters__link"><img src="/aaaAssets/TPT_logo.png" alt="The Pocklington Trust"></a>
 
 <a href="https://www.hopwood.ac.uk/" class="supporters__link"><img src="/aaaAssets/hopwood.jpg" alt="Hopwood"></a>
 
-<a href="https://rmt.org/glasshouse/" class="supporters__link"><img src="/aaaAssets/glasshouse.png" alt=""></a>
+<a href="https://rmt.org/glasshouse/" class="supporters__link"><img src="/aaaAssets/glasshouse.png" alt="Glasshouse College"></a>
 
-<a href="https://nasen.org.uk/" class="supporters__link"><img src="/aaaAssets/nasen.png" alt=""></a>
+<a href="https://nasen.org.uk/" class="supporters__link"><img src="/aaaAssets/nasen.png" alt="National Association for Special Educational Needs"></a>
 
-<a href="https://www.northamptoncollege.ac.uk/" class="supporters__link"><img src="/aaaAssets/northampton-college-logo.jpg" alt=""></a>
+<a href="https://www.northamptoncollege.ac.uk/" class="supporters__link"><img src="/aaaAssets/northampton-college-logo.jpg" alt="Northampton College"></a>
 
-<a href="https://www.capel.ac.uk/" class="supporters__link"><img src="/aaaAssets/capel-manor.png" alt=""></a>
+<a href="https://www.capel.ac.uk/" class="supporters__link"><img src="/aaaAssets/capel-manor.png" alt="Capel manor College"></a>
 
 <a href="https://college.sense.org.uk/" class="supporters__link"><img src="/aaaAssets/sense_primary_without_strapline_rgb_png.png" alt="College Sense"></a>
 
-<a href="https://www.midkent.ac.uk/" class="supporters__link"><img src="/aaaAssets/midkent-college.png" alt=""></a>
+<a href="https://www.midkent.ac.uk/" class="supporters__link"><img src="/aaaAssets/midkent-college.png" alt="MidKent College"></a>
 
-<a href="https://www.nottinghamcollege.ac.uk/" class="supporters__link"><img src="/aaaAssets/nottingham.png" alt=""></a>
+<a href="https://www.nottinghamcollege.ac.uk/" class="supporters__link"><img src="/aaaAssets/nottingham.png" alt="Nottingham College"></a>
 
-<a href="https://shcg.ac.uk/" class="supporters__link"><img src="/aaaAssets/shcg.svg" alt=""></a>
+<a href="https://shcg.ac.uk/" class="supporters__link"><img src="/aaaAssets/shcg.svg" alt="South Hampshire College Group"></a>
 
-<a href="https://www.gloscol.ac.uk/" class="supporters__link"><img src="/aaaAssets/gc.png" alt=""></a>
+<a href="https://www.gloscol.ac.uk/" class="supporters__link"><img src="/aaaAssets/gc.png" alt="Gloucestershire College"></a>
 
-<a href="https://www.stpiers.org.uk/" class="supporters__link"><img src="/aaaAssets/st-piers.png" alt=""></a>
+<a href="https://www.stpiers.org.uk/" class="supporters__link"><img src="/aaaAssets/st-piers.png" alt="St piers College"></a>
