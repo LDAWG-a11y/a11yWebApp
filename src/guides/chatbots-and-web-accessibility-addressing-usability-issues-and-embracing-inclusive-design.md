@@ -323,7 +323,7 @@ Chatbots have the potential to simplify online interactions but only if they are
 
 ## References
 
-1. [Chatbots: Are They Really Accessible?](https://www.horlix.com/chatbots/#:~:text=One%20of%20the%20main%20problems)
+1. [Chatbots: Are They Really Accessible?](https://www.horlix.com/chatbots/)
 2. [Bureau of Internet Accessibility. Five Key Accessibility Considerations for Chatbots](https://www.boia.org/blog/five-key-accessibility-considerations-for-chatbots)
 3. [Accessibility Audit UK. Accessibility Overlays Don't Work](https://accessibilityaudit.co.uk/accessibility-overlays-dont-work/)
 4. [Overlay Fact Sheet. Understanding Overlay Tools and Their Limitations](https://overlayfactsheet.com/en/)
