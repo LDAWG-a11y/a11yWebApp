@@ -25,7 +25,7 @@ Please note that what the UK calls subtitles are called “closed captions” or
 
 We use captions to provide the content of audio (whether audio only or video) to those who are Deaf, and other people who cannot hear audio.
 
-Remember that they can be used by those who can process written information better than they can process audio. This could be someone with dyspraxia or autism. 3Play Media says in an article that [80% of people who use close captions are not hard of hearing (external website)](http://www.3playmedia.com/2014/05/27/ofcom-study-80-people-who-use-closed-captions-are-not-hard-hearing/).
+Remember that they can be used by those who can process written information better than they can process audio. This could be someone with dyspraxia or autism. 3Play Media says in an article that [80% of people who use close captions are not hard of hearing (external website)](https://www.3playmedia.com/accessibility-online-video-stats/).
 
 In the United States, one in eight people have a functional hearing limitation and this will only increase as the average age increases.
 
