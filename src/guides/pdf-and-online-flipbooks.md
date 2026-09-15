@@ -87,7 +87,7 @@ Paperturn also offer an overlay product as part of their "accessibility" tools. 
 
 ### Publitas
 
-Publitas do not list accessibility in their [features list](https://www.publitas.com/features/), and use the same [support portal](https://support.publitas.com/hc/en-us) as Issuu in which again we could not find any relevant articles for the keywords: accessibility, disability, screen reader, JAWS, VoiceOver, or blind.
+Publitas do not list accessibility in their [features list](https://www.publitas.com/features/), and use the same [support portal](https://support.publitas.com/kb-tickets/new) as Issuu in which again we could not find any relevant articles for the keywords: accessibility, disability, screen reader, JAWS, VoiceOver, or blind.
 
 ### Yudu
 
