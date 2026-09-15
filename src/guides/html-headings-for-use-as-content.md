@@ -135,4 +135,4 @@ Hopefully this guide has helped you to understand a bit more of using HTML heade
 ## Useful links
 
 * [WWW Consortium (external website)](https://www.w3.org/WAI/tutorials/page-structure/headings/)
-* [W3Schools (external website)](https://www.w3schools.com/html/html_headings.asp>) 
+* [W3Schools (external website)](https://www.w3schools.com/html/html_headings.asp) 
