@@ -51,7 +51,7 @@ For England, Scotland and Wales, enforcement is carried out by the [Equality and
 
 In Northern Ireland enforcement is carried out by the [Equalities Commission for Northern Ireland](https://www.equalityni.org/Home).
 
-Where a public sector body has failed to engage with GDS and/or failed to fix the majority of non-compliance issues, the EHRC will consider whether it is proportionate to take enforcement action. It does this in accordance with its [litigation and enforcement policy](https://www.equalityhumanrights.com/en/publication-download/our-litigation-and-enforcement-policy-2019-2022).
+Where a public sector body has failed to engage with GDS and/or failed to fix the majority of non-compliance issues, the EHRC will consider whether it is proportionate to take enforcement action. It does this in accordance with its [litigation and enforcement policy](https://www.equalityhumanrights.com/our-work/our-legal-work/our-legal-powers/our-litigation-and-enforcement-policy).
 
 ## Reasons for being monitored
 
