@@ -268,8 +268,8 @@ B Next button
 
 ## Full keystroke list.
 
-NVDA: [Full NVDA Keystroke list](https://www.nvaccess.org/files/nvdaTracAttachments/455/keycommands%20with%20laptop%20keyboard%20layout.html)
+NVDA: [Full NVDA Keystroke list (Deque)](https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts)
 
 JAWS: [Full JAWS Keystroke list](https://www.freedomscientific.com/training/jaws/hotkeys/)
 
-Narrator: [Full Narrator Keystroke list in PDF](https://compass-ssl.microsoft.com/assets/bc/11/bc11e21a-2b99-4292-9f21-7564bec25f30.pdf?n=Complete-guide-to-Narrator_2004.pdf)
+Narrator: [Full Narrator Keystroke (Deque)](https://dequeuniversity.com/screenreaders/narrator-keyboard-shortcuts)
