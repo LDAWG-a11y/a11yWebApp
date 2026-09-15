@@ -24,7 +24,7 @@ isGuide: true
 	</thead>
  <tbody>
     <tr>
-		<th scope="row"><a href="https://www.adobe.com/uk/acrobat/complete-pdf-solution.htm">Adobe Acrobat Pro (external website)</a></th>
+		<th scope="row"><a href="https://www.adobe.com/uk/acrobat/pricing.html">Adobe Acrobat Pro (external website)</a></th>
 		<td>Yes</td>
 		<td>Yes</td>
 		<td>No​</td>
