@@ -106,7 +106,7 @@ Fonts and styles can make a big difference to how accessible your information 
 
 ## 9. Use plain English
 
-Use these [Plain English techniques](https://deploy-preview-200--inquisitive-heliotrope-510c6d.netlify.app/guides/plain-english-tip-sheet/) to help you edit your draft texts and documents. Editing your text into plain English will make it clearer and more concise; this helps everyone quickly understand your message and is especially helpful to assistive technology users and those with dyslexia. 
+Use these [Plain English techniques](https://www.makethingsaccessible.com/guides/plain-english-tip-sheet/) to help you edit your draft texts and documents. Editing your text into plain English will make it clearer and more concise; this helps everyone quickly understand your message and is especially helpful to assistive technology users and those with dyslexia. 
 
 ## 10. Check your work
 
