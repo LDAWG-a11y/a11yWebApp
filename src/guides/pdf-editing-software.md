@@ -24,7 +24,7 @@ isGuide: true
 	</thead>
  <tbody>
     <tr>
-		<th scope="row"><a href="https://www.adobe.com/uk/acrobat/complete-pdf-solution.htm">Adobe Acrobat Pro (external website)</a></th>
+		<th scope="row"><a href="https://www.adobe.com/uk/acrobat/pricing.html">Adobe Acrobat Pro (external website)</a></th>
 		<td>Yes</td>
 		<td>Yes</td>
 		<td>No​</td>
@@ -94,7 +94,7 @@ isGuide: true
 		<td>Used by GrackleDocs to remediate documents commercially for customers</td>
 	</tr>
 	<tr>
-		<th scope="row"><a href="https://inkscape.org/release/inkscape-1.4.2/windows/64-bit/msi/?redirected=1">Inkscape (external website)</a></th>
+		<th scope="row"><a href="https://inkscape.org/release/inkscape-1.4.2/windows/64-bit/exe/dl/">Inkscape (external website)</a></th>
 		<td>Yes</td>
 		<td>No</td>
 		<td>No</td>
