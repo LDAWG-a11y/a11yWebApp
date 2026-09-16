@@ -111,7 +111,7 @@ The following courses include free and paid for courses on digital accessibility
 
 ### British Sign Language
 
-[Introducing British Sign Language](https://www.british-sign.co.uk/learn-online-british-signQ-language-course/) (external website).
+[Introducing British Sign Language](https://www.british-sign.co.uk/enrol) (external website).
 
 ### coursera
 
