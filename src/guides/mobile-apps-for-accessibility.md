@@ -41,17 +41,7 @@ Task manager and to-do list app.
 
 [Download Todoist on the Apple app store](https://apps.apple.com/gb/app/todoist-to-do-list-planner/id572688855?uo=4&mt=8)
 
-[Download Todoist on the Google Play store](https://play.google.com/store/apps/details?id=com.todoist)
-
-### [](<>)[Noisli](https://www.noisli.com/)
-
-High-quality soothing background noises, like rain, ocean, brown noise and white
-
-noise sounds, to help mask loud noises, reduce stress, improve focus and productivity.
-
-[Download Noisli on the Apple app store](https://apps.apple.com/us/app/noisli/id862773459)
-
-[Download Noisli on the Google Play store](https://play.google.com/store/apps/details?id=com.noisli.noisli)
+[Download Todoist on the Google Play store](https://play.google.com/store/apps/details?id=com.todoist)[](<>)
 
 ## [](<>)Hearing
 
