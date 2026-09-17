@@ -19,5 +19,4 @@ isGuide: true
 
 ## Resources
 
-* [Good Practice on Inclusive Curricula in the Mathematical Sciences](https://bit.ly/colorandcontrast)
 * [Colour blindness](https://bit.ly/colour-blindess)
