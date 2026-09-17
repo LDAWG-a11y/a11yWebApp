@@ -287,7 +287,6 @@ Things we read:
 * [Deque – Tips for Inclusive and Accessible Hiring and Recruiting (2021)](https://www.deque.com/blog/tips-for-inclusive-and-accessible-hiring-and-recruiting/)
 * [Genius Within – Neuro-inclusive recruitment](https://geniuswithin.org/our-services/advisory-services/neuro-inclusive-recruitment/)
 * [Gov UK – Recruitment and disabled people](https://www.gov.uk/recruitment-disabled-people)
-* [HRM – 5 easy ways to create an accessible recruitment process (2021)](https://www.hrmonline.com.au/disability-recruitment/5-ways-to-accessible-recruitment-process/)
 * [Includability (Australian Human Rights Commission) – Attracting and recruiting people with disability to your organisation](https://includeability.gov.au/resources-employers/attracting-and-recruiting-people-disability-your-organisation)
 * [Microlink – Why Accessible Recruitment Is Important For Your Organisation (2021)](https://www.microlinkpc.com/blog/why-accessible-recruitment-is-important-for-your-organisation/)
 * [Remploy – Exploring disability confidence and making a commitment to change](https://www.remploy.co.uk/sites/default/files/Documents/Disability%20confident/Level_1_Your_journey_to_becoming_Disability_Confident_Committed_Good_Practice_Guidance.pdf)
