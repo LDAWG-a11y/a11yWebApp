@@ -953,7 +953,11 @@ Sometimes I write it up as the site doesn't obviously appear to be in the financ
 
 ##### Solution
 
-We solve multiple issues with that carousel by making it
+We solve multiple issues with the carousel by making it not a carousel. Sure, in the real world we're unlikely to have that kind of clout, I built this site, so in essence I have full control over everything. I chose not to use a carousel because we have four reviews. Is a carousel worth it for just four reviews? Nope. If we had a property sale site and there were 20, 30 or more images of the house, in all likelihood we're not going to have any luck convincing the site owners to not use a carousel. Carousels naturally get a lot of hate, because they are mostly rubbish, but in some situations a well made accessible carousel may actually be the right call, as it can declutter a page. If you're not interested in seeing 200 images from an event, you can al least skip by the carousel, I suppose. But, then of course, a bad carousel is absolutely never acceptable.
 
 </div>
         </div>
+
+## Wrapping up
+
+Well, that's the end of this exercise, which was hopefully helpful. We have taken an extremely inaccessible experience and made it accessible. Obviously there's a huge element of bias, here, in that I broke it and I then decided how I was going to fix it, without "discussions" from anyone else. In reality, I tend to have more joy getting stakeholders to fix things when I tell them how to make their current UI accessible, than I do when I start saying "Does this really need to be..."
