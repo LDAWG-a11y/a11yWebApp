@@ -26,7 +26,6 @@ isGuide: true
 ## Resources
 
 * [Creating Accessible Tables](https://support.microsoft.com/en-us/office/video-create-accessible-tables-in-word-cb464015-59dc-46a0-ac01-6217c62210e5)
-* [Aston – Accessible Tables](http://lss-elearning.tlc.aston.ac.uk/wp-content/uploads/sites/30/2019/08/Accessible-tables.pdf)
 * [Techniques for tables](https://webaim.org/techniques/tables/)
 * [Accessible Tables – Welsh Government Guide](https://gov.wales/how-create-accessible-word-documents#section-41488)
 * [Alternate Text for STEM Example](https://ccconlineed.instructure.com/courses/6911/pages/alternate-text-for-stem-examples)
