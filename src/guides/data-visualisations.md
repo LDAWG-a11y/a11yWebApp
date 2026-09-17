@@ -18,10 +18,7 @@ isGuide: true
 * Consider the feasibility of providing tactile images;
 * If tactile images are used, carefully consider scale and resolution, and provide adequate labelling that works in all tactile media.
 
-## Resources
+## Resource
 
-* [A Comprehensive Guide to Accessible Data Visualization](https://www.betterment.com/design/accessible-data-visualization) 
-* [More Accessible Data Visualizations](https://www.boisestate.edu/webguide/2021/09/28/creating-more-accessible-data-visualizations-and-dashboards/)
 * [Writing alternative text for data visualisations](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
 * [Alt text from ONS](https://style.ons.gov.uk/accessibility/alt-text/)
-* [Alternate Text for STEM (Science, Technology, Engineering and Maths) Example](https://ccconlineed.instructure.com/courses/6911/pages/alternate-text-for-stem-examples)
