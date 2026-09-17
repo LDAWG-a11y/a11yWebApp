@@ -63,7 +63,7 @@ This section is where you start to get into the specific details of the case you
 
 For example, you might list something like the following:
 
-> “This report outlines the organisation’s assessment of disproportionate burden for the requirement of delivering compliance for the website examplewebsite.gov.uk against all The Regulation requirements including meeting the latest published version of WCAG AA requirements. At time of writing this is WCAG 2.2
+> “This report outlines the organisation’s assessment of disproportionate burden for the requirement of delivering compliance for the website \[Example Website] against all The Regulation requirements including meeting the latest published version of WCAG AA requirements. At time of writing this is WCAG 2.2
 >
 > The website is used by large numbers of the public which includes users with additional access needs. We know that some of the website cannot easily be accessed by users with additional access needs or users of assistive technology. The current website is due to be replaced with a new website by the end of February 2023 which is 3 months from the date of this assessment. The organisation plans to assess the value of attempting to resolve issues with the current website, given the imminent replacement.”
 
