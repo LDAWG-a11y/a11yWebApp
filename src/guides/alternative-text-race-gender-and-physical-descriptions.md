@@ -30,7 +30,7 @@ The following examples will present different contexts where race may play a fac
 
 ### Race in context – race relations example
 
-One of the most commonly shared articles about race and alternative text descriptions is “[The case for describing race in alternative text attributes” by Tolu Adegbite](https://ux.shopify.com/the-case-for-describing-race-in-alternative-text-attributes-a093380634f2?gi=3b247c44574e).
+One of the most commonly shared articles about race and alternative text descriptions is “[The case for describing race in alternative text attributes](https://openresearch.ocadu.ca/id/eprint/4145/1/The%20case%20for%20describing%20race%20in%20alternative%20text%20attributes.pdf)” by Tolu Adegbite.
 
 Tolu makes a case for referring to race within alt text descriptions to break people out of a “white by default” expectation. The number of examples provided in the article show several images of important moments in US race relations and equal rights history. It these examples Tolu correctly points out that the mention of race is of vital importance to the context of the image and presents comparative alt text with and without the mention of race. Here is one such example:
 
