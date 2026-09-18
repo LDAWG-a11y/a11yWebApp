@@ -4,7 +4,7 @@ summary: This practical digital accessibility guide will help you learn how to
   test for WCAG failures, using any tools of your choice, as well as manual
   testing. We have created an inaccessible site, to help you along
 author: dlee
-date: 2026-03-25
+date: 2026-09-18
 toc: false
 tags:
   - Testing
@@ -22,9 +22,9 @@ I've built a website for a fictional company and brace yourselves, I have intent
 * Create an inaccessible site, with a perfect automated checker score
 * And, finally there are examples out there that fulfil the same purpose of this one
 
-You'd be right in thinking this exercise felt all kinds of wrong wrong, because it did. The development part goes against everything I have been doing for several years, which is of course something I strogly believe in and advocate for, sites that work for all. It also kinda felt fun, in an odd kind of way, not an evil genius kind of feeling, but more of a bemusement at how difficult it actually is to get some stuff wrong, when often a simple HTML element is so much simpler. 
+You'd be right in thinking this exercise felt all kinds of wrong, because it did. The development part goes against everything I have been doing for several years, which is of course something I strongly believe in and advocate for, sites that work for all. It also kinda felt fun, in an odd kind of way, not an evil genius kind of feeling, but more of a bemusement at how difficult it actually is to get some stuff wrong, when often a simple HTML element is so much simpler. 
 
-I honestly found it really difficult to create the site, it messed with my mind a lot, in that I guess due to the field I'm in, my brain has become kind of hardwired into developing stuff with everybody in mind. An analogy could be: it'd be like asking a fire fighter to use candles on their Christmas tree and leave them lit overnight whilst they and their family slept. They know better.
+I honestly found it really difficult to create the site, it messed with my mind a lot, in that I guess due to the field I'm in, my brain has become kind of hardwired into developing stuff with everybody in mind. An analogy could be: It'd be like asking a fire fighter to use candles on their Christmas tree and leave them lit overnight whilst they and their family slept. They know better.
 
 ## So, what it is the purpose?
 
@@ -32,20 +32,20 @@ At Westminster, we are intending to start running some training sessions for a g
 
 * We'd spend quite some time looking for one that contained enough failures to align with our training plan
 * If we found a site in the wild, obviously we'd have no control over it, there is every chance the site would change, which would make this guide age, pretty quickly
-* We'd then likely have to build an accessible version of that site, as an example of how it should be when "fixed", because we would encourage participants in the training to take note of the difference with AT, etc
+* We'd then likely have to build an accessible version of that site, as an example of how it should be when "fixed", because we would encourage participants in the training to take note of the differences with AT, etc
 * We'd have to be super careful about which site we chose, as we could quite easily get our employer in a spot of legal bother and potentially be disciplined for doing so and that's not a risk we're willing to take
 
 A custom-built small website that contains just enough accessibility issues to start folks off in their testing journey seemed the safest bet. This site won't change (after a period of Beta testing), there will be absolutely no changes to the code, whatsoever. This enables us and potentially you, to have an unchanging platform to conduct this training on, in the hope of getting consistent results.
 
-There is of course a lot of nuance to accessibility testing, in that it is highly unlikely that two auditors given the same platform, will write up exactly the same issues. This is, in part due to interpretation of various success criteria, two people will interpret some of the more ambiguous aspects differently. It is also in part due to their levels of knowledge, the tools they use, their experience and multiple other factors.
+There is of course a lot of nuance to accessibility testing, in that it is highly unlikely that two auditors given the same platform, will write up exactly the same issues. This is, in part due to interpretation of various success criteria, two people will interpret some of the more ambiguous SCs differently. It is also in part due to their levels of knowledge, the tools they use, their experience and multiple other factors.
 
-One important distinction that can result in two different people having a slightly different results, is where they align themselves on "WCAG purity":
+One important distinction that can result in two different people having slightly different results, is where they align themselves on "WCAG purity":
 
 * The folks at the lower end of that scale may just fail everything they believe or know to be an accessibility barrier, irrespective of whether it actually fails a WCAG success criterion (SC). These follks are perhaps just starting out and have the best intentions, but sometimes knowing the difference between what is written and what is meant, in the WCAG standard takes a little time to learn
 * The folks in the middle of that scale will likely know something is not explicitly a failure due to loopholes, wording, ambiguity or other nuances and still write the issue up. But they will explain that they are aware the wording of the success criterion "technically" allows this, but the "intent" of the success criterion combined with the obvious accessibility issue does not make this a non-issue and it should be addressed with a suitable level of priority. There is of course some overlap here, in that sometimes it may appear that something fails due to ambiguous wording and these folks may believe it to be a failure and write it up as such.
-* The purists, these are folks that typically understand every bit of nuance, every pitfall and every loophole in the WCAG docs. Their reports will typically follow WCAG to the letter, they will likely write up other defects in advisories or similar. many of these folks will have contributed to WCAG in some way, they may haved worked or volunteered with W3C or contributed on the WCAG GitHub, etc, or they may just have been in the game forever
+* The purists, these are folks that typically understand every bit of nuance, every pitfall and every loophole in the WCAG docs. Their reports will typically follow WCAG to the letter, they will likely write up other defects in advisories or similar. many of these folks will have contributed to WCAG in some way, they may haved worked or volunteered with W3C or contributed on the WCAG GitHub, etc, or they may just have been in the game forever.
 
-When I first started testing websites, I was definitely at the lower end of that scale, I was one of those "Which SC can I fail this against" folks. I believe my intent was pure, I wasn't failing things because the website would be better for me, I was failing them to make the website usable to people with disabilities, or so I believed. But, credibility is a thing, as I learned from highly-experienced others in the field, by reading their comments discussions or posts on various platforms. I began to understand this wasn't actually helping as much as I thought it was. The main concern here was, if I just failed something against a SC criterion just because it seemed the closest fit and I was called out on it, by a vendor, the rest of my report and myself could lose all credibility and the risk would be that nothing gets fixed, which is more harmful.
+When I first started testing websites, I was definitely at the lower end of that scale, I was one of those "Which SC can I fail this against" folks. I believe my intent was pure, I wasn't failing things because the website would be better for me, I was failing them to make the website usable to people with disabilities, or so I believed. But, credibility is a thing, as I learned from highly-experienced others in the field, by reading their comments discussions or posts on various platforms. I began to understand this wasn't actually helping as much as I thought it was. The main concern here was, if I just failed something against a SC criterion just because it seemed the closest fit and I was called out on it, by a vendor, the rest of my report and myself could lose all credibility and the risk would be that nothing gets fixed, which is way more harmful to those folk I'm trying to help.
 
 Nowadays, I find myself somewhere in the middle of that scale, I'm by no means as smart as the folk who contribute to WCAG at W3C, but I do often read their lengthy discussions on GitHub, to improve my own knowledge. We do have "Weaknesses" in our reports, where we put non-WCAG issues. I explain my rationale, the effects on a user and/or their AT and I state that whilst it does not "technically" fail WCAG, it is still an accessibility issue. WCAG is not the be all and end all of accessibility, it's a minimum standard for "compliance" in many territories, not some magical standard that could meet every disabled person's needs. Here, though, we will just be using WCAG, as other stuff would obviously be more subjective.
 
@@ -57,13 +57,14 @@ Unfortunately, as the purpose of the test site is to be inaccessible, it will no
 
 There are of course some issues on this site that some users may not be able to perceive, due to their disability, there may be certain noises, colour or contrast issues and other issues that will not be possible to identify to everyone. I can only apologise for that, I genuinely feel uncomfortable putting something out there that isn't inclusive for all, but the only way we can do this is by creating a mixed bag of common issues and because they are are issues, by their very definition, they're going to be problematic to some folk.
 
-There are a couple of instances where I have implemented an off ramp, it's genuinely difficult to not give the game away to folk who don't need these off ramps, whilst still being aware that I need to do something. If you use a non-pointing device, there is one instance where I have used an off ramp, you'll likely know it when you find it, you can either refresh the page, or find the appropriate section and specific issue in this guide and I reveal a little trick I created, it's not perfect, but it's something.
+There are a couple of instances where I have implemented an "off ramp", it's genuinely difficult to not give the game away to folk who don't need these off ramps, whilst still being aware that I need to do something. If you use a non-pointing device, there is one instance where I have used an off ramp, you'll likely know it when you find it, you can either refresh the page, or find the appropriate section and specific issue in this guide and I reveal a little trick I created, it's not perfect, but it's something.
 
-Similarly, if you are a screen reader user, there is one instance that is particularly bad, when you encounter it, find the appropriate section and issue in this guide and I again have implemented a way to allow you to continue, it will at least allow you to continue and hopefully if you have an effigy of me, you won't be burning it, now.
+Similarly, if you are a screen reader user, there is one instance that is particularly bad, when you encounter it, find the appropriate section and issue in this guide and again, I have implemented a way to allow you to continue without the awful mess I created, and hopefully if you have an effigy of me, you won't be burning it, now.
 
 If anybody discovers these off ramps, by accident, they're not really part of the guide for learning or testing, they're just there for others who may be blocked from participation, so any effect they have should be ignored, just pretend they are not there.
 
-
+### Another word of warning
+The site I made is ran by a couple of fictional tech bros, so expect some gentle mockery of that scene, just for funsies. The words on that site in no way reflect the views of anyone involved on this project, they're there just because some (not all) voices in that scene do say those things. don't worry, there's nothing to bad, it can just on occasion use dismissive and patronising language.
 
 ## So, let's dive in
 
@@ -107,17 +108,19 @@ I will obviously test the horrors I have created and record them, so this is wha
 Primarily, I will be using Chrome, but once I need to fire up a screen reader, I will be using Safari, if you are using Windows you can use [NVDA (free)](https://www.nvaccess.org/download/) and Chrome (This can change due to the results of the annual WebAIM Survey, so please do check that is still the recommended pairing, (if you are accessing in 2026 and beyond) or [JAWS (Paid or possible free trial)](https://support.freedomscientific.com/Downloads/JAWS) and Chrome. It's important that you get the "pairings" right, so just to be super clear:
 
 * Safari and VoiceOver (MacOS)
-* NVDA and Chrome (Windows) (may change again, in the future)
+* NVDA and Chrome (Windows) (may change again, in the future. It used to be Firefox, so it is still absolutely worth testing with that pairing)
 * JAWS and Chrome (Windows)
 
 For the most part, you can use whatever browser you want, as long as it is a current browser, such as Safari, Firefox, Edge, Chrome etc. You shouldn't dust off your Internet Explorer install, because pretty much everything will be broken in every conceivable way. But once you are using a screen reader, make sure you are using the advised pairings from above. You only need one screen reader, we're not comparing those.
+
+The [current screen reader/browser pairings are here[(https://webaim.org/projects/screenreadersurvey10/), but these surveys take place every two to three years, in fact, at the time of writing, we are awaiting the next survy to be published, [check all screen reader surveys, here](https://webaim.org/projects/).
 
 #### Tools
 
 * Axe DevTools (browser extension)
 * Microsoft Accessibility Insights (browser extension)
-* Chrome DevTools (this is accessed by either pressing <kbd>F12</kbd> on a webpage or right-clicking and selecting "Inspect"), the process is the same for other browsers, however, they may have slightly different wording in the context menus. I provided install guides in the previously linked guides, if you are unsure.
-* [Colour Contrast Analyser,](https://www.tpgi.com/color-contrast-checker/) this is an installable tool, if you cannot install software on your work machine (like me), then you can use either a colour contrast checker extension, from your chosen browser's extensions store or better still, the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/), which is web-based
+* Chrome DevTools (this is accessed by either pressing <kbd>F12</kbd> on a webpage or right-clicking and selecting "Inspect"), the process is the same for other browsers, however, they may have slightly different wording in the context menus. I provided install guides in the previously linked guides, if you are unsure
+* [Color Contrast Analyser,](https://www.tpgi.com/color-contrast-checker/) this is an installable tool, if you cannot install software on your work machine (like me), then you can use either a colour contrast checker extension, from your chosen browser's extensions store or better still, the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/), which is web-based
 
 I will identify which tools or methods I used to find the issue. I will at times use bookmarklets, which are just small scripts that mostly serve a single purpose. To install these, you simply drag them (or use the context menu) into your bookmarks bar and when you want to use them, you just click them. I'll provide a link to each that I use, when I use it the first time.
 
@@ -134,14 +137,14 @@ It can be overwhelming at first, so many new tools to use all at once and so muc
 
 That's not a problem. We can link you to some handy guides that will show the keyboard strokes for each screen reader. I wouldn't get too wrapped up in all of the shortcuts, at this stage, we will just need the basic navigation commands.
 
-* In all three screen readers and standard keyboard-only navigation the <kbd>Tab</kbd> key will move from one interactive item (links, inputs and buttons, etc), to the next. the "next" item will typically be determined by the DOM order, but can also be manipulated via scripting or even CSS.
+* In all three screen readers and standard keyboard-only navigation the <kbd>Tab</kbd> key will move from one interactive item (links, inputs and buttons, etc), to the next. The "next" item will typically be determined by the DOM order, but can also be manipulated via scripting or even CSS.
 * In order to "reverse" back up the page, the <kbd>Shift</kbd> key should be held down and then pressing <kbd>Tab</kbd> will reverse the direction. This also applies to standard keyboard navigation and all three screen readers
 * <kbd>Enter</kbd> and <kbd>Space</kbd> will fire the "click" event on some interactive items, a `<button>` will respond to both those keys, a link will only respond to <kbd>Enter</kbd>. Again, this applies to both standard keyboard navigation and all three screen readers
 * <kbd>Esc</kbd>, **should**, close items such as modal dialogs and other components that you may encounter, especially those that overlay other content
 
 #### Full keyboard controls for each screen reader
 
-Take note of the "modifier" key combination, you will need this to, read non-interactive elements, navigate some elements or you may need to switch "modes" in JAWS or NVDA (VoiceOver does not have a manual "mode" switch).
+Take note of the "modifier" key combination, you will need this to, to read non-interactive elements, navigate some elements or you may need to switch "modes" in JAWS or NVDA (VoiceOver does not have a manual "mode" switch).
 
 * [NVDA - Keyboard shortcuts, Deque](https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts)
 * [JAWS - Keyboard shortcuts, Deque](https://dequeuniversity.com/screenreaders/jaws-keyboard-shortcuts)
@@ -159,12 +162,12 @@ Consume everything, read it in your usual way and then with a screen reader, alw
 * Pay attention to colours and their contrast
 * Test fully with a keyboard only, does everything work, can you see where you are and does anything odd happen?
 * Test fully with a screen reader, anything to report?
-* Adjust the browser size, adjust the zoom levels, test again when you have adjusted the sizes (320px width & 256px height is an absolute must), does everything act the way you expect? To achieve these sizes simply set the page 1280px width 1024px height and then set zoom to 400% because 1280 / 4 = 320, etc. If you are unsure how to get precise viewport widths, I open the DevTools before shrinking the window down, this displays a small bit of text showing the current size
+* Adjust the browser size, adjust the zoom levels, test again when you have adjusted the sizes (320px width & 256px height is an absolute must), does everything act the way you expect, anything missing? To achieve these sizes simply set the page 1280px width 1024px height and then set zoom to 400% because 1280 / 4 = 320, etc. If you are unsure how to get precise viewport widths, I open the DevTools before shrinking the window down, this displays a small bit of text showing the current size
 * Can you complete all actions?
 * Use your automated tools, remember they only test a snapshot of how the site is at the moment you run the scan, they cannot open widgets for you, open them manually and test again
 * If you understand HTML and/or ARIA, feel free to examine the DOM, feel free to validate the HTML at [the HTML validator](https://validator.w3.org/), which may help highlight some issues
 * Don't get too hung up on the tools, they can only get you so far and honestly, they won't get you far at all, here
-* Record your notes, just type them up somewhere, for comparison later, don't even worry too much if you don't know which SC to fail something against, just do what you can
+* Record your notes, just type them up somewhere, for comparison later, don't even worry too much if you don't know which SC to fail something against, just do what you can, it's a learning exercise, not an initiation test
 * If you find anything that smells funny we have tonnes of guides on here, feel free to consult them or indeed, any other accessibility-related websites, to learn a bit about the issue
 * You tested an element on one page, it now appears on another, it looks the same, but is is?
 * Take your time, it's not a race, it's a learning exercise
@@ -199,7 +202,7 @@ I have added a toggle switch, which will fix the issues, using JS and/or CSS, do
 
 <div class="callout__info"><span class="callout__icon"><strong class="visually-hidden">Info: </strong></span><span class="callout__text">This is all pretend, no agreements are legally binding or intended to be.</span></div>
 
-LINK TO MAKING THIS ACCESSIBLE
+[Our test site, MakingThisAccessible, presents, ProblematicA11y](https://makingthisaccessible.com/), sorry, not sorry.
 
 ### I've finished testing, I'm ready to compare
 
@@ -217,7 +220,7 @@ The only method of navigation is the primary navigation in the site's header, th
 
 ##### How to find
 
-This is something  I would find on "Visual inspection", I would actively look for a secondary navigation as none of the tools I use help me, here. Perhaps paid solutions do, but I'm happy just looking for a secondary naviagtion, it could also be confirmed non-visually, by bringing up the Rotor or elements panel, etc.
+This is something  I would find on "Visual inspection", I would actively look for a secondary navigation as none of the tools I use help me, here. Perhaps paid solutions do, but I'm happy just looking for a secondary naviagtion, it could also be confirmed non-visually, by bringing up the Rotor or Elements Panel, etc.
 
 ##### Solution
 
@@ -229,7 +232,7 @@ The Focus indicator, which is present sitewide is typically the colour #EE6C4D (
 
 ##### How to find
 
-I use a combination of visual inspection, the DevTools and a contrast checker. If focus indicators are very dark on a very light background I know they are fine, but seldom is this the case. I will Inspect Element and then in Chrome in the `:hov` tab within the Styles panel, I will force the element to have `:focus-visible` and `:focus`, I will then use Color Contrast Analyser's eyedropper tool to get the background of the element and or its adjacent colours and also the focus indicator's colour itself. The tool will then give me the calculation. Sometimes, the DevTools will display the contrast calculation against the background.. but oddly, it's a bit temperamental with that.
+I use a combination of visual inspection, the DevTools and a contrast checker. If focus indicators are very dark on a very light background I know they are fine, but seldom is this the case. I will right click, Inspect Element and then in Chrome in the `:hov` tab within the Styles panel, I will force the element to have `:focus-visible` and `:focus`, I will then use Color Contrast Analyser's eyedropper tool to get the background of the element and or its adjacent colours and also the focus indicator's colour itself. The tool will then give me the calculation. Sometimes, the DevTools will display the contrast calculation against the background, but oddly, it's a bit temperamental with that.
 
 ##### Solution
 
@@ -253,7 +256,7 @@ The current page indicator in the main navigation (thick underline) has colour o
 
 ##### How to find
 
-I would typically use Color Contrast Analyser to get both the background and foreground colours of the indicator, very similar to how I would get the contrast of the focus indicator, but obviously I wouldn't have to force a state on the element as the indicator would be persistent.
+I would typically use Color Contrast Analyser to get both the background and foreground colours of the indicator, very similar to how I would get the contrast of the focus indicator, but obviously I wouldn't have to force a state on the element as the indicator would be persistent on the current page.
 
 ##### Solution
 
@@ -265,7 +268,7 @@ Help button: 1.4.10 Reflow (Help button is not available at 320px screen width),
 
 ##### How to find
 
-This one is visual inspection only, as far as I know. It does require shrinking the screen down or accessing on a smaller device and comparing. If something is present on a larger display, but then missing on the 320px display, I would need to see that difference, as none of my tools help me with that.
+This one is visual inspection for me, although using the Rotor, etc, would also work. It does require shrinking the screen down or accessing on a smaller device and comparing. If something is present on a larger display, but then missing on the 320px display, I would typically run both screen sizes side-by-side.
 
 ##### Solution
 
@@ -281,7 +284,7 @@ Reading the entire page content or listening with a screen reader is necessary f
 
 ##### Solution
 
-This is a very easy change, it just requires us to rethink about how we provide instructions and avoid using decriptors that are colour, shape, location or indeed any other words that would require a specific sense to identify the element. I changed the text to "Click help button, below". Does "below" require sight? No, it doesn't and that is because we have a right to left and top to bottom language. In the contexts of the web, the HTML document is structured in such a way that "below" typically just means after and "above" just means before. I wouldn't advocate use of "left" and "right" for adjacent elements, as it's worth shrinking the screen down, at that point, to see if the adjacent element is still adjacent on the horizontal axis, as more often than not, it will be positioned above or below on the vertical axis, to make use of the reduced viewport width. I wouldn't fail an image that said "from left to right" and then listed the names of everyone in the image, as that is a reasonable way to explain an image. If it were controls or other elements, then of course, we need to write that up. I don't have a great deal of experience with internationalisation, if you're working on a multi-national site, that has lots of languages, then using "above" or "below" probably wouldn't be the best call, as some languages read from bottom right to top left, so bear that in mind.
+This is a very easy change, it just requires us to rethink about how we provide instructions and avoid using decriptors that are colour, shape, location or indeed any other words that would require a specific sense to identify the element. I changed the text to "Click help button, below". Does "below" require sight? No, it doesn't and that is because we have a right to left and top to bottom language. In the contexts of the web, the HTML document is structured in such a way that "below" typically just means after and "above" just means before. I wouldn't really advocate use of "left" and "right" for adjacent elements, as more often than not, when the site changes to "mobile" layout, everything ends up in a single column, so "left" or "right" could be anywhere. I wouldn't fail an image that said "from left to right" and then listed the names of everyone in the image, as that is a reasonable way to explain an image. If it were controls or other elements, then of course, we need to write that up. I don't have a great deal of experience with internationalisation, if you're working on a multi-national site, that has lots of languages, then using "above" or "below" probably wouldn't be the best call, as some languages read from bottom right to top left, so bear that in mind (although I know we can script for different languages, etc).
 
 #### Disclaimer text does not resize
 
@@ -297,11 +300,11 @@ I replaced the `vw` units with `rem` units so now everything will resize correct
 
 #### Facebook link icon has no contextual AccName
 
-The Facebook link icon, which is in the footer has no useful accessible name, which fails 2.4.4 Link Purpose (In context) (Link does not have programmatically determinable purpose, it contains an icon, but the icon's alt text is "."). I intentionally put the full stop in the alt text's value, as having a link with no AccName would trigger an error with semi-automated tools, but having any old value in there, sadly sails through
+The Facebook link icon, which is in the footer has no useful accessible name, which fails 2.4.4 Link Purpose (In context) (Link does not have programmatically determinable purpose, it contains an icon, but the icon's alt text is "."). I intentionally put the full stop in the alt text's value, as having a link with no AccName would trigger an error with semi-automated tools, but having any old value in there, sadly sails through.
 
 ##### How to find
 
-ordinarily, Axe or whatever would flag an issue with a link having no AccName, however, as there is a single character in the alt's value (full stop), this actually fools Axe into ignoring the issue. I'd likely pick this up on a screen reader, unless I was looking at the HTML for something else close by and spotted it.
+Ordinarily, Axe or whatever would flag an issue with a link having no AccName, however, as there is a single character in the alt's value (full stop), this actually fools Axe into ignoring the issue. I'd likely pick this up on a screen reader, unless I was looking at the HTML for something else close by and spotted it.
 
 ##### Solution
 
@@ -319,7 +322,7 @@ Another way is to use [Adrian Roselli's 24x24 pixel cursor bookmarklet](https://
 
 ##### Solution
 
-I changed the size of each icon to 1.5rem, which is equivalent to the 24px minimum (which I feel is still a bit small) and I also added a right margin of .125rem (2px) to each link to create an offset (both size and offset are not required, only one is). This is one of those cases where it's enough to pass, but could be a lot better. This is where looking at 2.5.5 Target Size (Enhanced) should be our first port of call, it would require a minimum click/tap area of 44px, this is what we did on this site. ibelieve Apple, Microsoft and Google have developer guidelines for user interface components and they all recommend values that are around about the 44px size, give or take. so in this case, yes, i have made it pass, but no, it's not great and we should do better.
+I changed the size of each icon to 1.5rem, which is equivalent to the 24px minimum (which I feel is still a bit small) and I also added a right margin of .125rem (2px) to each link to create an offset (both size and offset are not required, only one is). This is one of those cases where it's enough to pass, but could be a lot better. This is where looking at 2.5.5 Target Size (Enhanced) should be our first port of call, it would require a minimum click/tap area of 44px, this is what we did on this site. I believe Apple, Microsoft and Google have developer guidelines for user interface components and they all recommend values that are around about the 44px - 48px size, give or take. so in this case, yes, I have made it pass, but no, it's not great and we should do better.
 
 #### Accessibility link in footer becomes obscured
 
@@ -339,11 +342,11 @@ The same Accessibility link that we have just made visible, from the previous is
 
 ##### How to find
 
-Visual inspection is likely the only way to find this, although we could also force the :focus and :focus-visible states on the element and inspect the CSS. We would then find a an outline is set to the :focus-visible pseudo selector and notice that it has an outline, with a four character hex code. That fourth character is the alpha channel and zero means transparent. So, technically it has a focus indicator, but it's just invisible and this requirement requires that indicator to be visible. Visible to who is a whole other debate, as vision differs from person to person.
+Visual inspection is likely the only way to find this, although we could also force the `:focus` and `:focus-visible` states on the element and inspect the CSS. We would then find a an outline is set to the `:focus-visible` pseudo selector and notice that it has an outline, with a four character hex code. That fourth character is the alpha channel and zero means transparent. So, technically it has a focus indicator, but it's just invisible and this requirement requires that indicator to be visible. Visible to who is a whole other debate, as vision differs from person to person.
 
 ##### Solution
 
-I actually moved the element into the list of links close by (as that's where it actually should have been, before I started my skullduggery making things horrible) i added a class the same as its sibling links, to ensure styles match and now the focus indicator is applied. Super useful things for keyboard users they are, imagine how much usable a system is when folk can actually be sure where their focus is before pressing a button to activate the control.
+I actually moved the element into the list of links close by (as that's where it actually should have been, before I started my skullduggery making things horrible) I added a class the same as its sibling links, to ensure styles match and now the focus indicator is applied. Super useful things for keyboard users they are, imagine how much usable a system is when folk can actually be sure where their focus is before pressing a button to activate the control.
 
 #### Chatbot's heading does not describe the topic or purpose
 
@@ -359,7 +362,7 @@ I changed the text content of the heading to "our FAQs", which is what it is. I 
 
 #### Character key shortcut present
 
-The "h" key was mapped to advance focus to the so-called halp dialog, as "h" was used without requiring a modifier, too, then this fails SC 2.1.4 Character Key Shortcuts (A), this may have been difficult to find, if you had typed a "h" at any point, you probably would have noticed, otherwise, it could have easily been missed. Ordinarily, if a dev team implements shortcuts, then they will at least somewhere mention them in most instances, I have actually found mention of them in comments of the site's HTML, and nowhere else, I have also discovered failures by accident, by typing into form inputs. The issue with this SC is some to minimise activation of functionality by accidentally pressing or commanding (voice input) "printable" characters into a web page. Without knowingabout that bookmarklet, maybe you missed it because you never used "h" in the form or maybe you got really angry because you did use "h"?
+The "h" key was mapped to advance focus to the so-called halp dialog, as "h" was used without requiring a modifier, too, then this fails SC 2.1.4 Character Key Shortcuts (A), this may have been difficult to find, if you had typed a "h" at any point, you probably would have noticed, otherwise, it could have easily been missed. Ordinarily, if a dev team implements shortcuts, then they will at least somewhere mention them in most instances, I have actually found mention of them in comments of the site's HTML, and nowhere else, I have also discovered failures by accident, by typing into form inputs. The issue with this SC is some to minimise activation of functionality by accidentally pressing or commanding (voice input) "printable" characters into a web page. Without knowing about that bookmarklet, maybe you missed it because you never used "h" in the form or maybe you got really angry because you did use "h"?
 
 ##### How to find
 
@@ -369,7 +372,7 @@ The best I have got is [this bookmarklet](http://3needs.org/en/testing/code/kb-s
 
 ##### Solution
 
-The solution I opted for was to map the "9" key (commonly used for "Help") with the `accesskey` attribute, as that requires defined modifier keys which will depend on operating system and/or browser. Another solution could have just been to do away with the shortcut. What I never did, which I absolutely would in the real world, is tell people that this shortcut exists, otherwise, there's little point in having it, also, that instruction would need to be in visible text, not ARIA, because then it would still exclude the majority of folks.
+The solution I opted for was to map the "6" key (commonly used for "Help", across Gov UK sites) with the `accesskey` attribute, as that requires defined modifier keys which will depend on operating system and/or browser. Another solution could have just been to do away with the shortcut. What I never did, which I absolutely would in the real world, is tell people that this shortcut exists, otherwise, there's little point in having it, also, that instruction would need to be in visible text, not ARIA, because then it would still exclude the majority of folks.
 
 </div>
 
@@ -397,7 +400,7 @@ The primary heading escapes the viewport when the viewport is zoomed to 200% and
 
 ##### How to find
 
-Manual checks are the best way I know of to find this. I set browser zoom to 200% and then slowly decrease the size of the viewport, looking for any text that becomes truncated, cropped, or is otherwise rendered unreadable as it overlays other text elements, etc. Not all browsers let you shrink the window down all of the way, so it is necessary to use the Responsive viewer, to shrink the viewport down further than resizing the window will allow
+Manual checks are the best way I know of to find this. I set browser zoom to 200% and then slowly decrease the size of the viewport, looking for any text that becomes truncated, cropped, or is otherwise rendered unreadable as it overlays other text elements, etc. Not all browsers let you shrink the window down all of the way, so it is necessary to use the Responsive Viewer, to shrink the viewport down further than resizing the window will allow
 
 ##### Solution
 
@@ -409,13 +412,13 @@ The About us link in the "What we do" section uses colour alone to communivcate 
 
 ##### How to find
 
-Axe has kindly flagged this one for us, which hopefully you may have spotted. Alternative ways are <kbd>Tab</kbd>ing around, discovering a link that didn't look like a link and then testing the contrast of that text and the surrounding body text, if it is below 3:1, then it fails, assuming there are no other distinguishable features. Obviously an underline would pass this SC, so can things like italic, bold, a different font or indeed other stylistic features. Just a note on bold and italic, I feel this one can resquire a little discretion. If for examply in that passage of text there are multiple instances of bold and/or italic, then the problem moves from "surrounding body text" to close by text that is visually identical. If on a page the only use of bold and/or italic is used to indicate something is a link, then this passes, if those same styles have been used to add emphasis to other words that are not links then this probably fails as how would a user know which are links and which are not? There is a gotcha with this, too, if the colour is identical to surrounding text and there are no other distinguishing features, then it cannot fail this, as colour isn't being used to communicate anything. It's dire, but it is what it is, definitely still push for it.
+Axe has kindly flagged this one for us, which hopefully you may have spotted. Alternative ways are <kbd>Tab</kbd>ing around, discovering a link that didn't look like a link and then testing the contrast of that text and the surrounding body text, if it is below 3:1, then it fails, assuming there are no other distinguishable features. Obviously an underline would pass this SC, so can things like italic, bold, a different font or indeed other stylistic features. Just a note on bold and italic, I feel this one can resquire a little discretion. If for examply in that passage of text there are multiple instances of bold and/or italic, then the problem moves from "surrounding body text" to close by text that is visually identical. If on a page the only use of bold and/or italic is used to indicate something is a link, then this passes, if those same styles have been used to add emphasis to other words that are not links then this probably fails as how would a user know which are links and which are not? There is a gotcha with this, too, if the colour is identical to surrounding text and there are no other distinguishing features, then it cannot fail this, as colour isn't being used to communicate anything. It's dire, but it is what it is, definitely still push for it to be changed, because remember, conformance is nver the goal.
 
 Finally, don't be tempted to fail a bunch of links in a site nav when they don't have underlines, as these are typically "self-contained", their position, layout and even their names typically makes them easy to understand as a site nav. This can of course apply to other similar widgets such as breadcrumbs and some lists, etc.
 
 ##### Solution
 
-I added an underline to the link, as that seems the best way to indicate a link within some text is actually a link? Maybe that will catch on, one day, huh? I also changed the colour, slightly, although this would not be strictly necessary, as Use of color cannot apply if there is something other than colour, and our underline. Whilst I do have artistic license here, I could easily have made the link significantly more perceivable, but I'm trying to pretend I'm working with clients that will push back on Best Practices, the links on this site have a number of visual identifiers, including higher contrast, bold text and a thicker, brighter underline, which will certainly help most users identify them
+I added an underline to the link, as that seems the best way to indicate that a link within some text is actually a link? Maybe that will catch on, one day, huh? I also changed the colour, slightly, although this would not be strictly necessary, as Use of Color cannot apply if there is something other than colour, and our underline. Whilst I do have artistic license here, I could easily have made the link significantly more perceivable, but I'm trying to pretend I'm working with clients that will push back on Best Practices, the links on this site have a number of visual identifiers, including higher contrast, bold text and a thicker, brighter underline, which will certainly help most users identify them
 
 #### Visual heading "How we Excel" not marked up as a heading
 
@@ -423,7 +426,7 @@ The heading "How we excel"  is not marked up with a heading tag, it uses a parag
 
 ##### How to find
 
-Accessibility Insights is useful for this, if you click the extension's icon, a small pop out menu appears, it's the "Ad Hoc Tools" option we'r e interested in, here. Click that and toggle the Headings switch and each heading will have a box drawn around it, with the heading level. The "How we excel" heading has no box and is therefore, not a proper heading. Alternatively, I also right click > Inspect Element and look at the HTML to determine whether it's an actual heading or the Web developer extension has a similar function.
+Accessibility Insights is useful for this, if you click the extension's icon, a small pop out menu appears, it's the "Ad Hoc Tools" option we're interested in, here. Click that and toggle the Headings switch and each heading will have a box drawn around it, with the heading level. The "How we excel" heading has no box and is therefore, not a proper heading. Alternatively, I also right click > Inspect Element and look at the HTML to determine whether it's an actual heading or the Web developer extension has a similar function.
 
 ##### Solution
 
@@ -475,7 +478,7 @@ As with all these other contrast issues, we simply increase the contrast to some
 
 #### The page language is not set to English
 
-The content of the page is English, yet the value of the `lang` attribute is set to `es` (Spanish), so does not accurately inform assistive tech of the correct language. This can cause some screen readers to use the wrong accents or language packs, etc. this fails SC 3.1.1 Language of Page (A). This is not something I recall ever encountering, I have found instances where some pages omit the lang attrivute, altogether, but given we all make typos, it is possible to find a stray page with a typo in the value.
+The content of the page is English, yet the value of the `lang` attribute is set to `es` (Spanish), so does not accurately inform assistive tech of the correct language. This can cause some screen readers to use the wrong accents or language packs, etc. this fails SC 3.1.1 Language of Page (A). This is not something I recall ever encountering, I have found instances where some pages omit the lang attribute, altogether, but given we all make typos, it is possible to find a stray page with a typo in the value.
 
 ##### Solution
 
@@ -497,7 +500,7 @@ Simply change the text label to match what it is on other pages. This is where i
 
 There is no reason this image cannot be text, it's a regular font and something that a user would potentially want to copy to their clipboard. This fails SC 1.4.5 Images of text (AA).
 
-Manaual checking by Inspect Element and when the HTML opens up and we determine it's an image, we make a call on whether it needs to be an image. Obviously it doesn't, as the font is just a regular font off my system. The Web Developer extension does have a suite of useful tools, in this case, in the Images tab, you could outline or remove all images on a page, etc. I seldom do that, i mostly read the code or pick it up with a screen reader, although, don't rely on a screen reader as that will only help if the item has a role that indicates it's an image, it could be a CSS image or some other skullduggery.
+Manual checking by Inspect Element and when the HTML opens up and we determine it's an image, we make a call on whether it needs to be an image. Obviously it doesn't, as the font is just a regular font off my system. The Web Developer extension does have a suite of useful tools, in this case, in the Images tab, you could outline or remove all images on a page, etc. I seldom do that, I mostly read the code or pick it up with a screen reader, although, don't rely on a screen reader as that will only help if the item has a role that indicates it's an image, it could be a CSS image or some other skullduggery.
 
 ##### Solution
 
@@ -529,15 +532,15 @@ Some of you may have been tempted to fail the incredibly small text, in the disc
 
 #### Incorrect alt text for Brad and Chad
 
-The alt text is mixed up for both Brad and Chad, or the images are. We don't really have any way of knowing for sure which one is actually Brad and which is Chad. What we do know is that in the container about Brad, the image has an alt attribute with a value of "Chad", so something is wrong, Either the image is wrong or the alt is, in which case it fails 1.1.1 Non-text Content (A) or could it be that the image and alt are actually correct but the whole thing is just in the wrong container? If that were the case, it wouldn't "technically" fail 1.1.1, as the image and alt would be correct, so what would it fail? I'd fail it on 1.1.1 regardless, but I would say I do not know who is who, so to me as an auditor, the alt and/or the image is wrong. If both are wrong, then 1.3.2 Meaningful Sequence (A) would apply, as visually, we have a distinct container for each "bro", their names are in the containers and a bit about them, so if we have an image of Chad (with correct alt) in Brad's container, then sequentially, it doesn't belong there. I honestly wouldn't go to that effort of justifying why it would fail 1.3.2, as in all probability, the image would be correct, but the alt would be wrong, so 1.1.1 would almost certainly be the correct call.
+The alt text is mixed up for both Brad and Chad, or the images are. We don't really have any way of knowing for sure which one is actually Brad and which is Chad. What we do know is that in the container about Brad, the image has an alt attribute with a value of "Chad", so something is wrong, Either the image is wrong or the `alt` is, in which case it fails 1.1.1 Non-text Content (A) or could it be that the image and alt are actually correct but the whole thing is just in the wrong container? If that were the case, it wouldn't "technically" fail 1.1.1, as the image and `alt` would be correct, so what would it fail? I'd fail it on 1.1.1 regardless, but I would say I do not know who is who, so to me as an auditor, the `alt` and/or the image is wrong. If both are wrong, then 1.3.2 Meaningful Sequence (A) would apply, as visually, we have a distinct container for each "bro", their names are in the containers and a bit about them, so if we have an image of Chad (with correct `alt`) in Brad's container, then sequentially, it doesn't belong there. I honestly wouldn't go to that effort of justifying why it would fail 1.3.2, as in all probability, the image would be correct, but the `alt` would be wrong, so 1.1.1 would almost certainly be the correct call.
 
 #### How to find
 
-As these have alt text, visual inspection of the code or listening with a screen reader would be my usual options. You could display all alt text with the Web Developer extension. Each of these only work because there is alt, if there was a decorative image of Brad and one of Chad, only mixed up, how would we know, unless we had previously seen them?
+As these have alt text, visual inspection of the code or listening with a screen reader would be my usual options. You could display all alt text with the Web Developer extension. Each of these only work because there is `alt`, if there was a decorative image of Brad and one of Chad, only mixed up, how would we know, unless we had previously seen them?
 
 ##### Solution
 
-It was just incorrect alt, so I swapped the alt values around. How do I know? Well, I had to email Brad for clarification, sometimes it's easier to ask than to go down rabbit holes.
+It was just incorrect `alt`, so I swapped the `alt` values around. How do I know? Well, I had to email Brad for clarification, sometimes it's easier to ask than to go down rabbit holes.
 
 #### The heading in each container has inadequate contrast
 
@@ -553,11 +556,11 @@ A darker colour is required, I just increased my variable's value to get "compli
 
 #### The dialog does not trap focus
 
-It's the same dialog that has been used on other pages, I know and I also know that it would be pretty rare for it to be a non-modal dialog on one page and modal on most or all of the others. Eventually your state of surprise is replaced by internal screams and audible sighs, as in reality, this would not even feature in the top billion oddest accessibility issues. As focus isn't trapped here, this fails SC 2.4.3 Focus Order (A), as a user can tab out of the dialog and their focus becomes lost under the the blurred dialog backdrop.
+It's the same dialog that has been used on other pages, I know that it would be pretty rare for it to be a non-modal dialog on one page and modal on most or all of the others. Eventually your state of surprise is replaced by internal screams and audible sighs, as in reality, this would not even feature in the top billion oddest accessibility issues. As focus isn't trapped here, this fails SC 2.4.3 Focus Order (A), as a user can tab out of the dialog and their focus becomes lost under the the blurred dialog backdrop.
 
 ##### How to find
 
-Manual testing by pressing <kbd>Tab</kbd> to advance focus through the entirety of each page. I tend to do this with keyboard alone, first and then do it with a screen reader, close to the end, and I do so on every page I test.
+Manual testing by pressing <kbd>Tab</kbd> to advance focus through the entirety of each page. I tend to do this with keyboard alone, first and then do it with a screen reader, closer to the end of my testing, and I do so on every page I test.
 
 ##### Solution
 
@@ -565,11 +568,11 @@ In layman's terms the solution is to simply trap focus within and make this dial
 
 #### Closing dialog doesn't return focus to invoking element
 
-Another issue with that pesky dialog. This time closing it with a keyboard does not send focus back to the button that opened it, which is a failure of SC 2.4.3 Focus Order (A). Again, this is something that impacts keyboard and screen reader users, as in a typical site with many links, it may take a lot of effort to get back to where they wanted their focus to be, now they would have to <kbd>Tab</kbd> all the way back to where they wanted to pick up from where they left off.
+Another issue with that pesky dialog. This time closing it with a keyboard does not send focus back to the button that opened it, which is a failure of SC 2.4.3 Focus Order (A). Again, this is something that impacts keyboard and screen reader users, as in a typical site with many interactive elements, it may take a lot of effort to get back to where they wanted their focus to be, now they would have to <kbd>Tab</kbd> back to where they were, I'm sure the majority of us have been annoyed when we landed on a snake, whilst playing Snakes and Ladders? It's no fun going back to the beginning, when the aim is progression.
 
 ##### How to find
 
-Manual testing by pressing closing disclosure widgets with a keyboard and then determinig where focus moves to. It's not always clear where focus has gone to, as if it is placed on the body element, it's unlikely a focus indicator would be present. A nifty little method is setting a Watch Target in Chrome's DevTools. To do this, open up the DevTools, click the Console tab and there is an eye icon, it's accessible name is "Create live expression". An input then appears in the panel and has the AccName "Expression", simply type or paste the following code snippet into that input `document.activeElement`. Now, each time you have the console open and you Tab around a page, that value will tell you which element has focus, which I find useful for those times it's not obvious where it is.
+Manual testing by closing disclosure widgets with a keyboard and then determinig where focus moves to. It's not always clear where focus has gone to, as if it is placed on the body element, it's unlikely a focus indicator would be present. A nifty little method is setting a Watch Target in Chrome's DevTools. To do this, open up the DevTools, click the Console tab and there is an eye icon, it's accessible name is "Create live expression". An input then appears in the panel and has the AccName "Expression", simply type or paste the following code snippet into that input `document.activeElement`. Now, each time you have the console open and you Tab around a page, that value will tell you which element has focus, which I find useful for those times it's not obvious where it is.
 
 ##### Solution
 
@@ -648,7 +651,7 @@ Just add the following `autocomplete` name/value pairs to their corresponding in
 
 #### Checkbox not keyboard accessible
 
-The final form field on the page is the confirmation checkbox, which is a required field, it is not possible to check the field using a keyboard, which fails 2.1.1 Keyboard (A). inspecting the code, the problem is quite clear, the dev for this site recreated the wheel and did so badly, as they have created. acheckbox from a `<span>` element and not implemented the correct events.
+The final form field on the page is the confirmation checkbox, which is a required field, it is not possible to check the field using a keyboard, which fails 2.1.1 Keyboard (A). Inspecting the code, the problem is quite clear, the dev for this site recreated the wheel and did so badly, as they have created. a checkbox from a `<span>` element and not implemented the correct events.
 
 ##### How to find
 
@@ -656,29 +659,29 @@ Manual testing with keyboard or another device that uses the keyboard API, such 
 
 ##### Solution
 
-The correct solution is to obviously use the proper HTML element, there is no reason to be creating checkboxes from scratch as that obviously results in issues like this one. What i have done here is certainly not what I would recommend, I have just fixed the broken wheel I reinvented. I'm not going to go into that, as I only did it as it saved me a little effort whilst building the site and writing this companion guide. Just use HTML, though, that's what it's there for and it's much easier.
+The correct solution is to obviously use the proper HTML element, there is no reason to be creating checkboxes from scratch as that obviously results in issues like this one. What I have done here is certainly not what I would recommend, I have just fixed the broken wheel I reinvented. I'm not going to go into that, as I only did it as it saved me a little effort whilst building the site and writing this companion guide. Just use HTML, though, that's what it's there for and it's much easier.
 
 #### Focussing on First name field causes change of context
 
-If you filled in the "Net worth" field and then pressed <kbd>Tab</kbd> to advance focus, when focus arrived on the adjacent field (First name), you may have noticed something unexpected happened? I trigger a change of content that ultimately only fires if the "Net worth" field has a value of less than 2,000,000, because our pretention tech bros are choosy over who they work for and they wouldn't  want to wast their time working for most of us as we're not rich enough.
+If you filled in the "Net worth" field and then pressed <kbd>Tab</kbd> to advance focus, when focus arrived on the adjacent field (First name), you may have noticed something unexpected happened? I trigger a change of content that ultimately only fires if the "Net worth" field has a value of less than 2,000,000, because our pretentious tech bros are choosy over who they work for and they wouldn't want to wast their time working for most of us as we're not rich enough.
 
 What happens is a modal fires (other things happen, too) and focus is hijacked and ultimately sent to the `<body>` element. This fails 3.2.1 On Focus (A), as hijacking focus and moving it elsewhere is a change of context.
 
 We could write the other issues with this awful pattern, but we're not going to, I do often write up multiple failures for a single thing, so in addition to 3.2.1 I would also write up:
 
 * 4.1.3 Status Messages (AA) as when the modal appears it is not announced
-* 2.2.1 Timing Adjustable (A) as there is a limit on reading the contents of the modal, it appears only briefly and there is no way to extend the duration it appears for or indeed make it persist until a user reads it and then manually closes it
-* I would also mention how disabling the entirety of the form on a focus event is unpredictable and unexpected behaviour
+* 2.2.1 Timing Adjustable (A) as there is a limit on reading the contents of the modal, it appears only briefly and there is no way to extend the duration it appears for, or indeed make it persist until a user reads it and then manually closes it
+* I would also mention how disabling the entirety of the form on a focus event is unpredictable and unexpected behaviour.
 
 ##### How to find
 
-This is perhaps a little unfair, as none of us would enter accurate details in that field, so as auditors some of you may do similar to me, which is a random finger dance on my keyboard's numberpad and could easily enter a valuse above 2,000,000, but we could just as easily have entered something less. This could be hard to find, in that nobody expects an auditor to enter a gazillion different values in a form field to determine whether one causes unexpected behaviour. Let's not get too hung up on the value that is required to avoid this monstrosity, it's more about the behaviour, hijacking focus in a completely unexpected way can be found by general keyboard testing, in the case of form inputs, the focus event actually fires on mouse clicks, too, so generally speaking this would be be picked up by just interacting with a page using various input modalities
+This is perhaps a little unfair, as none of us would enter accurate details in that field, so as auditors some of you may do similar to me, which is a random finger dance on my keyboard's numberpad and could easily enter a value above 2,000,000, but we could just as easily have entered something less. This could be hard to find, in that nobody expects an auditor to enter a gazillion different values in a form field to determine whether one value causes unexpected behaviour. Let's not get too hung up on the value that is required to avoid this monstrosity, it's more about the behaviour, hijacking focus in a completely unexpected way can be found by general keyboard testing, in the case of form inputs, the focus event actually fires on mouse clicks, too, so generally speaking this would be be picked up by just interacting with a page using various input modalities.
 
 ##### Solution
 
 Burn it with fire? Well, firstly the modal and disabling the remaining form elements has to go. There could be several recommendations we could make, here:
 
-* Form validation, at the end of the form, when a user submits, then tell them they are too poor to be considered by these cretins, although preventing errors is much a better strategy than
+* Form validation, at the end of the form, when a user submits, then tell them they are too poor to be considered by these cretins, although preventing errors is much a better strategy
 * Replace the input with something such as a `<select>`, `checkbox` or `radio` and then provide some form of inline validation
 * Just tell folk that at this moment in time they can only takes applications for projects from rich folk
 
@@ -690,7 +693,7 @@ Each of the fields is required, but there is no indication of that, that is pres
 
 Now, there has been some discussions on WCAG's GitHub for this one, with the debate centered around does it fail 3.3.2 Labels or Instructions (A), 2.4.6 Headings and Labels (AA) or is it a failure at all. As is often the case on the WCAG discussions, folk have differing opinions and that often results in me going down a rabbit hole.
 
-The only normative wording on 3.3.2 is "Labels or instructions are provided when content requires user input.", which as far as normative texts go, is quite light on explicit details. There are certainly enough clues in the non-normative text to indicate that some text, somewhere would be necessary to inform users of required fields where it is "ambiguous". In our form, it is ambiguous, how would anybody know whether a field is required or optional without an instruction? It's worth touching upon "ambiguous", here, as not all forms would require some form of text instruction. In the GitHub discussions, there were good points made by Patrick Lauke in that there are some situations in which the instructional text would not be required, such as a login form. A login form is not ambiguous, as they are typically just two fields, both of which are required to login, as an example my email or username is me saying who I am, my password is me proving it. It's a given those two fields are both required, that's how it works and that is convention. So do not record this where it's clear all fields are required and there is no text stating that. Do record this where it could go either way, like on tthe form we are looking at.
+The only normative wording on 3.3.2 is "Labels or instructions are provided when content requires user input.", which as far as normative texts go, is quite light on explicit details. There are certainly enough clues in the non-normative text to indicate that some text, somewhere would be necessary to inform users of required fields where it is "ambiguous". in our form, it is ambiguous, how would anybody know whether a field is required or optional without an instruction? It's worth touching upon "ambiguous", here, as not all forms would require some form of text instruction. In the GitHub discussions, there were good points made by Patrick Lauke in that there are some situations in which the instructional text would not be required, such as a login form. A login form is not ambiguous, as they are typically just two fields, both of which are required to login, as an example my email or username is me saying who I am, my password is me proving it. It's a given those two fields are both required, that's how it works and that is convention. So do not record this where it's clear all fields are required and there is no text stating that. Do record this where it could go either way, like on tthe form we are looking at.
 
 ##### How to find
 
@@ -714,15 +717,15 @@ In my opinion, a better strategy is just not to have optional fields, if the org
 
 In our example, every field is required, so I could forsee a debate with a designer they say to me "it adds too much visual clutter, dude". and, I have to say I can at least understand that point, but only if every single field is required.
 
-So, if every single field is required, I would deem the SC to be met if there was some supplementary text at the beginning of the form that said "All fields are required" (or words to that effect). As each field at least uses `required` or `aria-required` then we know that a screen reader user will hear that info regardless, so if they just tabbed into the form, as opposed to using their virtual cursor (in reading/browse mode), then they would still hear that information from each field. We could add an aria-describedby on the form that points to the supplementary instruction, but given required and aria-required are announced, anyway, this seems like it would add additional noise for no good reason. It is of course best practice to place static text before the first interactive element in a form, as most screen readers switch to Forms Mode and many users would likely miss text between form fields.
+So, if every single field is required, I would deem the SC to be met if there was some supplementary text at the beginning of the form that said "All fields are required" (or words to that effect). As each field at least uses `required` or `aria-required` then we know that a screen reader user will hear that info regardless, so if they just tabbed into the form, as opposed to using their virtual cursor (in reading/browse mode), then they would still hear that information from each field. We could add an `aria-describedby` on the form that points to the supplementary instruction, but given `required` and `aria-required` are announced, anyway, this seems like it would add additional noise for no good reason. It is of course best practice to place static text before the first interactive element in a form, as most screen readers switch to Forms Mode and many users would likely miss text between form fields.
 
-We're just going to keep it super simple, here, I don't believe we need to do anything fancy, as we only need to visually present a short instruction, we already have screen reader users covered. i have just simply created a heading 3, with the text "All fields are required" and this appears just before the first field in the form.
+We're just going to keep it super simple, here, I don't believe we need to do anything fancy, as we only need to visually present a short instruction, we already have screen reader users covered. I have just simply created a heading 3, with the text "All fields are required" and this appears just before the first field in the form.
 
 Taking note of required fields will come in handy, later.
 
 #### Form fields lack accessible name
 
-Several of the form fields do not have a programmtically determinible AccName, they all have a visible lable, however, that label is just adjacent, not programmatically related, the only two fields that do have AccNames are First name and the faux checkbox. Inspecting the code we may have found there are adjacent label elements for each, which is a start, albeit a half-hearted start as a label can either be implicit (its HTML tags surround the field) or explicit (it has a valid `for=""` attribute, where the value is the ID of the associated input)and these are neither. Whilst most users accessing with sight will unlikely encounter a problem, blind/low vision screen reader users and also voice input users will encounter problems as the name will not be announced or commanding the softawer to click a field won't actually do anything. this fails 4.1.2 Name, Role, Value (A).
+Several of the form fields do not have a programmtically determinible AccName, they all have a visible label, however, that label is just adjacent text, not programmatically related, the only two fields that do have AccNames are First name and the faux checkbox. Inspecting the code we may have found there are adjacent label elements for each, which is a start, albeit a half-hearted start as a label can either be implicit (its HTML tags surround the field) or explicit (it has a valid `for=""` attribute, where the value is the ID of the associated input) and these are neither. Whilst most users accessing with sight will unlikely encounter a problem, blind/low vision screen reader users and also voice input users will encounter problems as the name will not be announced or commanding the software to click a field won't actually do anything. this fails 4.1.2 Name, Role, Value (A).
 
 Why is the First name field different, you may ask? Well, what I did there was quite convuluted, but enough to provide the AccName to the field. I added `aria-labelledby=""` with a value that matches the ID of the field's sibling label. This techically has exactly the same effect as using the `for=""` attribute on the actual `<label>`, however, it's all kinds of gross. I only did this to show how it is not a failure, but it is very unconventional. If using inputs and labels, just using them properly will always be the best strategy. 
 
@@ -736,13 +739,13 @@ Nice and easy fix for this, by simply following the basic instructions of HTML l
 
 #### Input errors rely upon colour alone
 
-When input fields are in error the focus otline of the fields does turn red (#cd0000) from the non-error focus indicators which are initially orange (#3D5A80) and this represents a change in contrast of just 1.21:1, this fails 1.4.1 Use of Color (A). Orange and red are of course very similar, I don't think I would necessarily notice this subtle difference, unless I was really paying attention (unlikely), but of course, this requirement doesn't exist for me, it exists for people with visual disabilities 
+When input fields are in error the focus otline of the fields does turn red (`#cd0000`) from the non-error focus indicators which are initially orange (`#3D5A80`) and this represents a change in contrast of just 1.21:1, this fails 1.4.1 Use of Color (A). Orange and red are of course very similar, I don't think I would necessarily notice this subtle difference, unless I was really paying attention (unlikely), but of course, this requirement doesn't exist for me, it exists for people with visual disabilities 
 
 ##### How to find
 
 I typically just attempt submission of an empty form, if there is no feedback presented with text, I will then look for icons and then, ultimately changes in colour and I will detrmine whether that colour meets 3:1 against from its previous colour. This is only focused on colour, though, just getting that colour to pass will not be sufficient to pass other success criteria.
 
-As a side note, i would separately check the contrast of icons and borders, etc, to ensure they met 1.4.11 Non-text Contrast (AA), but we've just found a change of colour here, so 1.4.3 is applicable.
+As a side note, I would separately check the contrast of icons and borders, etc, to ensure they met 1.4.11 Non-text Contrast (AA), but we've just found a change of colour here, so 1.4.3 is applicable.
 
 ##### Solution
 
@@ -755,19 +758,19 @@ I'm not going to make a change, here, it fails on its own, but later it won't be
 
 #### Input errors are not presented to a user in text
 
-In the previous issue I stated that colour alone will never be enough to pass, that is because error messages must be presented to a user in text, if they are not, then it will fail 3.3.1 Error Identification (A). This SC doesn't require that error messages are descriptive, just that they are present. As an example, providing some text that says "this field is not valid" is sufficient to pass this SC, it doesn't require that the reason for it being invalid is clearly described and most crucially, it doesn't require a suggestion of how to resolve the issue.
+In the previous issue I stated that colour alone will never be enough to pass, that is because error messages must be presented to a user in text, if they are not, then it will fail 3.3.1 Error Identification (A). This SC doesn't require that error messages are descriptive, just that they are present. As an example, providing some text that says "This field is not valid" is sufficient to pass this SC, it doesn't require that the reason for it being invalid is clearly described and most crucially, it doesn't require a suggestion of how to resolve the issue.
 
 ##### How to find
 
-This is a case of taking notes of required fields when we earlier determined which fields must have an instruction present. Some forms are massive and dynamic, it may not always be possible to even find every single field, as some answers may dynamically change further questions and without knowing each and every possible answer that triggers new questions, etc, we could be testing the same form for eternity. I will typically find every input I can, but then make note that my suggestions and more crucially, the failure apply to all fields that have any kind of validation constraints, etc. Some forms can send you down a path of no return, they can branch out in multiple different paths, so just be aware of this, as when forms are dynamic, it may be hard to find every single input for an unspecified number of paths.
+This is a case of taking notes of required fields when we earlier determined which fields must have an instruction present. Some forms are massive and dynamic, it may not always be possible to even find every single field, as some answers may dynamically change/add/remove further questions and without knowing each and every possible answer that triggers new questions, etc, we could be testing the same form for eternity. I will typically find every input I can, but then make note that my suggestions and more crucially, the failure apply to all fields that have any kind of validation constraints, etc. Some forms can send you down a path of no return, they can branch out in multiple different paths, so just be aware of this, as when forms are dynamic, it may be hard to find every single input for an unspecified number of paths.
 
 ##### Solution
 
-Tell a suer that the fields that do not meet validity are in error, carry on reading, as the next issue does the bulk of the heavy lifting for this.
+Tell a user that the fields that do not meet validity are in error, carry on reading, as the next issue does the bulk of the heavy lifting for this.
 
 #### Suggestions for input errors are not provided to a user
 
-Suggestions are known by the system for form validation, as in this case and most others, the rules for validation are set by the system. So, when an error suggestion is known (or doesn't compromise security), then that suggestion must be presented to a suer in text. As this does not happen here, it fails 3.3.3 Error Suggestion (AA), which builds upon the aforementioned 3.3.1.
+Suggestions are known by the system for form validation, as in this case and most others, the rules for validation are set by the system. So, when an error suggestion is known (or doesn't compromise security), then that suggestion must be presented to a user in text. As this does not happen here, it fails 3.3.3 Error Suggestion (AA), which builds upon the aforementioned 3.3.1.
 
 ##### How to find
 
@@ -781,35 +784,34 @@ I find this one to be a two birds, one stone solution, by meeting this one, we a
 
 I haven't created a fully functional form, however, I have popped a couple of example validations in, for email and phone, which have unique messages which informs a user of their required format. Just a note, I didn't check international phone number standards, so my very basic requirement is just set on length (min 6 characters), must be a number and can include hyphens. That's it, nothing more.
 
-#### Error states are not programmatically determinible
+#### Error states are not programmatically determinible (Side note)
 
-If a field does not have an association to error text or an error state, then how would a blind user know the field was problematic? They definitely wouldn't be able to see the subtle change in colour we used, whereas some sighted users may be able to spot that change.
+If a field does not have an association to error text or an error state, then how would a blind user know the field was problematic? They wouldn't be able to see the subtle change in colour we used, whereas some sighted users may be able to spot that change. As the majority of screen reader users would be in Forms Mode, the unassociated text could be missed.
 
-We have "arguably" met this, as the error message for each field is referenced via `aria-describedby`, as opposed to it just being unassociated text. This also automatically gets us a 1.3.1 Info and Relationships (A) pass, too, as the relationship between the errored field and its specific error message are programmatically determinible.
+We didn't actually fail this one, as there were no error messages to associate to invalid fields. I thought I'd throw this in, as it's important that we associate error text with the field in error, using `aria-describedby` with a valid ID ref to the error text, we place that property on the input.
+If we just provided a block of errors at the top of the form, then I'd expect to find `aria-invalid` present on each error field, as it does offer some indication of the field's error, but it cannot alone explain what the issue is.
+If the inputs aren't somehow associated to the error messages, this would fail 1.3.1 Info and Relationships (A)
 
-There is of course the Value part of 4.1.2 Name, Role, Value (A) which we "could" fail, as the value is a state and we haven't added a state or suitable alternative. 
-
-Sometimes, a form may just provide a list of errors and suggestions at the top, if it is explicit enough, it will meet most other SCs, but on its own, it's kinda naff, as the user would potentially have to remember multiple instructions which could increase their cognitive load, or for folk that cannot scroll back and forth, they'd have to constantly revisit this list, which could be quite far away. Nontheless, this would pass most stuff, but if using a visual cue on each filed, such as red, etc, then a blind user would not know, so an alternative would be to use the `aria-invalid` state.
 
 ##### How to find
 
-Code inspection and browser tools or pop on a screen reader, advance focus to each field that is in error and listen (or read the speech viewer) and determine whether the feedback informs you that the field is in error. Programmatic references are pretty much always exposed by screen readers, so users can make sense of things that are clear in a visual manner, so testing with a screen reader can pick up the majority of those issues, if, and only if browsers, screen reader creators and operating systems support the referencing method used. It is, in my experience more accurate to use the DevTools and review the code or the accessibility tree, etc, as one example being, `aria-controls` is a programmatic reference, but screen reader support is extremely limited for that property. That doesn't matter, here, as that's not the property we'd be looking for. Properties that we would be looking for would be `aria-labelledby` with a valid IDRef to the error text (and the input's AccName), `aria-describedby`, with a valid IDRef to the error text or `aria-invalid` present on the input, as a few of the most common properties. Sometimes the error text will actually be part of the `<label>` element, in which case, no ARIA is needed.
+Code inspection and browser tools or pop on a screen reader, advance focus to each field that is in error and listen (or read the speech viewer) and determine whether the feedback informs you that the field is in error. Programmatic references are pretty much always exposed by screen readers, so users can make sense of things that are otherwise conveyed in a visual manner, so testing with a screen reader can pick up the majority of those issues, if, and only if browsers, screen reader creators and operating systems support the referencing method used. It is, in my experience more accurate to use the DevTools and review the code or the accessibility tree, etc, as one example being, `aria-controls` is a programmatic reference, but screen reader support is extremely limited for that property. That doesn't matter, here, as that's not the property we'd be looking for. Properties that we would be looking for would be `aria-labelledby` with a valid IDRef to the error text (and the input's AccName), `aria-describedby`, with a valid IDRef to the error text or `aria-invalid` present on the input, as a few of the most common properties. Sometimes the error text will actually be part of the `<label>` element, in which case, no ARIA is needed.
 
 ##### Solution
 
-Arguably, we don't need to do anything, here, as error messages are associated and they offer more help than just a state (when done with people in mind), however, `aria-invalid` exists for a reason, and whilst our previous solutions make it clear which fields are in error, they are just `aria-describedby` references, which may auto-announce after a short delay, or require further interaction from a user, such as a keypress and could be missed, as users typically just want to get on with other stuff. I have added `aria-invalid` to all error fields for completeness.
+When I introduced the error messages, I added them below the label and used `aria-describedby` to reference the error text, that property is on the related input. I also added `aria-invalid`, as in some screen readers it may require pressing an extra key to hear the description. The field is in error and error is a state, so a `aria-invalid` is the only way to meet the value part of 4.1.2 Name, Role, Value (A).
 
 #### Cannot uncheck financial commitment
 
-I feel I had to stretch "Financial commitment" a little, here, as it's just pretend and not actually a financial commitment, so for the purposes of this guide, I had to fudge a pretend commitment. Perhaps because it is not actually a financial commitment this SC doesn't technically apply, here. Obviously I'm not going to make a legally binding commitment to fleece readers out of their money, so we just have to pretend it's legally binding and that is enough for this example. In essence, if some form of legal, financial or data input is required, users have the option to modify, edit or confirm. Our system makes that decision for our users and there is no way to uncheck the field on the broken site, so this fails 3.3.4 Error Prevention (Legal, Financial, Data) (AA). I know this example is a bit woolly, but I wanted to create a failure for this and this was the best I could come up with.
+I feel I had to stretch "Financial commitment" a little, here, as it's just pretend and not actually a financial commitment, so for the purposes of this guide, I had to fudge a pretend commitment. Perhaps because it is not actually a financial commitment this SC doesn't technically apply, here? Obviously I'm not going to make a legally binding commitment to fleece readers out of their money, so we just have to pretend it's legally binding and that is enough for this example. In essence, if some form of legal, financial or data input is required, users have the option to modify, edit or confirm. Our system makes that decision for our users and there is no way to uncheck the field on the broken site, so this fails 3.3.4 Error Prevention (Legal, Financial, Data) (AA). I know this example is a bit woolly, but I wanted to create a failure for this and this was the best I could come up with.
 
 ##### How to find
 
-This is not something a tool will help with, this is something we can only find by going through forms and checking that we can somehow edit, modify or delete that data. In our case, the checkbox is checked, it cannot be unchecked and there is some wording that attempts to make a financial commitment (just pretend, I swear). As we cannot cancel that, then we write that up. Even things like not being able to edit an address or name would fall foul of this SC, as for example, we could buy something and get the address wrong and before you know it your item is in the next town over or something. Anything where the data is important, such as your details that are held for a specific purpose (usually transactional), anything that is legally binding and anything that enters a user into a financial commitment will apply here.
+This is not something a tool will help with, this is something we can only find by going through forms and checking that we can somehow edit, modify or delete that data. In our case, the checkbox is checked, it cannot be unchecked and there is some wording that attempts to make a financial commitment (It's just pretend, I promise). As we cannot cancel that, then we write that up. Even things like not being able to edit an address or name would fall foul of this SC, as for example, we could buy something and get the address wrong and before you know it your item is in the next town over or something. Anything where the data is important, such as your details that are held for a specific purpose (usually transactional), anything that is legally binding and anything that enters a user into a financial commitment will apply here.
 
 ##### Solution
 
-I find as an accessibility specialist that, in many cases I do not agree with certain bits of copy on some sites, like this one (yes, I made it up, but mostly fir fun), and if I were testing this, with no former knowledge, I would be thinking "You can't say that", but, we have to stay in our lanes. We cannot really go telling site owners to not be crappy people, professionally, we cannot judge their content, sure, we can think whatever we want, but we're just there to test accessibility issues and that is it.
+I find as an accessibility specialist that, in many cases I do not agree with certain bits of copy on some sites, like this one (yes, I made it up, but mostly for fun), and if I were testing this, with no former knowledge, I would be thinking "You can't say that", but, we have to stay in our lanes. We cannot really go telling site owners to not be crappy people, professionally, we cannot judge their content, sure, we can think whatever we want, but we're just there to test accessibility issues and that is it.
 
 Given that is how it is, I have left the awful "contract" commitment stuff in, I have just made the checkbox actually work as its supposed to and I have added a Disagree button, alongside the Submit button. That does satisfy the requirement (if we pretend it actually counted), in that now we can just nope out of the "commitment". We can leave the dodgy wording to be picked up by some other regulatory body.
 
@@ -823,7 +825,7 @@ These are things that are typically discovered whilst testing manually. I often 
 
 ##### Solution
 
-I have just turned this into a proper modal, focus moves to the modal and a user must close it, manually. i opted for that as we already had a dialog. Inreality, it doesn't really need to be a dialog, it could have just been some text on the page, but either way, at least it is readable, now.
+I have just turned this into a proper modal, focus moves to the modal and a user must close it, manually. I opted for that as we already had a dialog. Inreality, it doesn't really need to be a dialog, it could have just been some text on the page, but either way, at least it is readable, now.
 
 #### Form success not announced
 
@@ -848,7 +850,7 @@ If you popped a screen reader on, you would undobtedly have been overwhelmed by 
 
 This does happen and I find it a curious issue, in that "technically" if the page content changes and it isn't announced to a screen reader user, that fails 4.1.3 Status Messages (AA). It does require the content to be important, on a testimonials page I'd say a testimonial is important, wouldn't you? So, we are doing what the SC requires us to do, we are announcing changes in content, but, in doing so, we are making things worse, much worse.
 
-Is it merely a symptom of 2.2.2 Pause, Stop, Hide (A)? In this instance, I'd agree, solving the underlying issue would solve this problem, too. But, what about when devs get a little too generous with their ARIA and start putting on on the `<main>` container, or what if it is a site that regularly updates, such as news, social media, currency exchanges, etc? Looking at the failures of 4.1.3, there is a "future link" which in essence means something the folks at WCAG plan to do and are likely actively working on, but they need to agree on the wording or something. Many of the contributors volunteer in their own time, some are full time employees and others are part of it because ther company wants a say in the standard. I'm not for one moment implying that there might be a minority of folks that object to things as they put their employer's interests first, but, maybe it does make it a little more difficult to get unanimous agreement on some things? I read the GitHub stuff quite regularly and have seen many a debate and not every angle appears to be what I would interpret as in the best interests of disabled folks. I don't know why, but writing standards likely comes with internal politics. Anyway, that future link says "Using `role="alert"` or `aria-live="assertive"` on content which is not important and time-sensitive (future link)". I interpret that as ARIA alert abuse, they just haven't got around to finalising the actual thing. It's there though, so that's enough for me. So, I do fail this on 4.1.3 Status Messages (AA), but also with a nod to 2.2.2 Pause, Stop, Hide (A), if it is a poorly implemented carousel, like this one.
+Is it merely a symptom of 2.2.2 Pause, Stop, Hide (A)? In this instance, I'd agree, solving the underlying issue would solve this problem, too. But, what about when devs get a little too generous with their ARIA and start putting it on on the `<main>` container, or what if it is a site that regularly updates, such as news, social media, currency exchanges, etc? Looking at the failures of 4.1.3, there is a "future link" which in essence means something the folks at WCAG plan to do and are likely actively working on, but they need to agree on the wording or something. Many of the contributors volunteer in their own time, some are full time employees and others are part of it because ther company wants a say in the standard. I'm not for one moment implying that there might be a minority of folks that object to things as they put their employer's interests first, but, maybe it does make it a little more difficult to get unanimous agreement on some things? I read the GitHub stuff quite regularly and have seen many a debate and not every angle appears to be what I would interpret as in the best interests of disabled folks. I don't know why, but writing standards likely comes with internal politics. Anyway, that future link says "Using `role="alert"` or `aria-live="assertive"` on content which is not important and time-sensitive (future link)". I interpret that as ARIA alert abuse, they just haven't got around to finalising the actual thing. It's there though, so that's enough for me. So, I do fail this on 4.1.3 Status Messages (AA), but also with a nod to 2.2.2 Pause, Stop, Hide (A), if it is a poorly implemented carousel, like this one.
 
 Honestly, I'm not 100% certain I am right on this 2.2.2 is for visual stuff, there is 1.4.2 Audio Control (A), but that is for the website making sounds, which technically, it isn't, text is passed to the accessibility tree and the screen reader makes the sound. I've never had to defend failing a yappy site on this, and in most instances there is also something else wrong with the component that is yapping, so I sometimes group my issues, because "this thing fails all of these things, because" is sometimes a useful technique, at least for me, anyway,
 
@@ -876,23 +878,15 @@ Previously I tried to write this in order, but I had to implement an off ramp, h
 
 ##### For keyboard users only
 
-As focus became stuck, I felt it only fair to give you a machanism that will allow you to escape the focus trap and gain a bit of freedom. Simply use accesskey and <kbd>8</kbd>. This will advance your focus to an otherwise hidden `<button>` which is also redundant, iot won't do anything other than appear once you use the accesskey shortcut.
+As focus became stuck, I felt it only fair to give you a machanism that will allow you to escape the focus trap and gain a bit of freedom. Simply use accesskey and <kbd>8</kbd>. This will advance your focus to an otherwise hidden `<button>` which is also redundant, it won't do anything other than appear once you use the accesskey shortcut.
 
 ##### How to find
 
-The only way you will reliably find this particular failure is by using a keboard or an alternative input device that uses the keyboard API. Thorough testing with a keyboard, in both directions (forwars and backwards), opening and closing every discloure widget, interacting with every control and any intteractive children they have using a combination of <kbd>Tab</kbd>, <kbd>Shift</kbd> and <kbd>Tab</kbd> or indeed arrow keys (up, down, left and right), as that is still "focus" and if in any case, there is absolutely no way to get out, by closing with a control (such as a `<button>,` close with <kbd>Esc</kbd> or move focus out using conventional or instructed keys such as <kbd>Tab</kbd>, or arrows, etc, then you have found a failure. Don't be tempted to click outside the element, as that's obviously not a sufficient technique, this is wholly about users of a keyboard and the users with alternative input devices that use the keyboard API, such as switches, sip and puff, voice and mouth sticks, etc
+The only way you will reliably find this particular failure is by using a keyboard or an alternative input device that uses the keyboard API. Thorough testing with a keyboard, in both directions (forwards and backwards), opening and closing every discloure widget, interacting with every control and any interactive children they have using a combination of <kbd>Tab</kbd>, <kbd>Shift</kbd> and <kbd>Tab</kbd> or indeed arrow keys (up, down, left and right), as that is still "focus" and if in any case, there is absolutely no way to get out, by closing with a control (such as a `<button>,` close with <kbd>Esc</kbd> or move focus out using conventional or instructed keys such as <kbd>Tab</kbd>, or arrows, etc, then you have found a failure. Don't be tempted to click outside the element, as that's obviously not a sufficient technique, this is wholly about users of a keyboard and the users with alternative input devices that use the keyboard API, such as switches, sip and puff, voice and mouth sticks, etc
 
 ##### Solution
 
-It's super easy for me to solve this one as I simply listened for presses of <kbd>Tab</kbd> and then added the `preventDefaultMethod()` in JS, so I just prevent that particular function from firing when the site is fixed. Out in the wild when you find this, it's likely to be as straightforward, once you identify it, try to unpick it a little by doing the following:
-
-* Determining whether there is a way for mouse/touch users to get out
-* If there is a button that works for mouse/touch users, why does it not work for keyboard users? Could it be it's not actually focusable, or is the site's roving tabindex or focus trapping implemented poorly
-* Can you get out with a mouse, by cliking outside and if you can, is that absolutely the only way to exit the element of move focus to another?
-* Are there any errors in the DOM, does that number increase each time you attempt to leave the element?
-* Does focus just become stuck for no obvious reason (like our example)?
-
-Once you have a decent idea of why you cannot close the item or move focus from it, just provide as much info as you can, to the site owners. You don't really have to be explicit as to the why it is happening, just focus on the fact it is happening and tell them why it cannot. Your solution will likely be "Ensure the close button is both focusable and in the focus order when the element is open" or words to that effect for disclousre and/or some composite widgets, whereas for something else, like an item on the main page, it may just be "Ensure that keyboard focus can both advance to the element from its previous interactive sibling and advance focus to its next interactive sibling"
+It's super easy for me to solve this one as I simply listened for presses of <kbd>Tab</kbd> and then added the `preventDefaultMethod()` in JS, so I just prevent that particular function from firing when the site is fixed. Out in the wild when you find this, it's unlikely to be as straightforward, it could be all manner of things causing the issue, the most likely suspect is something wrong with the site's JavaScript.
 
 
 
@@ -902,15 +896,15 @@ This is obviously the Testimonials page, which we reached by clicking a link tha
 
 #### How to find
 
-Manual testing is key, here. We need to open the page, make a judgement call on what the topic or purpose is, by consuming the content and then check the page title.The page title can be accessed by checking the tab in the browser window, or locating the `<title>` tag, inside the page's `<head>` section, through the DevTools.
+Manual testing is key, here. We need to open the page, make a judgement call on what the topic or purpose is, by consuming the content and then check the page title. The page title can be accessed by checking the tab in the browser window, or locating the `<title>` tag, inside the page's `<head>` section, through the DevTools.
 
 ##### Solution
 
-Nice and simple fix here, we simply just change the page title to "Testimonials - Problematica11y"., we use that format as that is the format used on other pages, so a best practice would of course be consistency.
+Nice and simple fix here, we simply just change the page title to "Testimonials - Problematica11y", we use that format as that is the format used on other pages, so a best practice would of course be consistency.
 
 #### The stars for the customers review lack adequate contrast
 
-This is really common, I can understand the "why" regarding the common failure, in that stars are ubiquitous for rating a place, product or service and I guess having star coloured as yellow is some kind of gold star, thing? In any instance, these present information to the user and of course must meet the minimum 3:1 contrast requirement, they are currently 2.34:1, which fails 1.4.11 Non-text Contrast (AA).
+This is really common, I can understand the "why" regarding the common failure, in that stars are ubiquitous for rating a place, product or service and I guess having star coloured as yellow represents a gold star. In any instance, these present information to the user and of course must meet the minimum 3:1 contrast requirement, they are currently 2.34:1, which fails 1.4.11 Non-text Contrast (AA).
 
 ##### How to find
 
@@ -928,7 +922,7 @@ Animations, videos that auto play and other blinking or moving content can cause
 
 ##### How to find
 
-More often than not this will require visual inspection to identify moving, blinking or autoplaying content that lasts more than five seconds. You will undoubtedly find instances where it runs for 4.99 seconds, so the devs of that site don't have to make a button. You could just say you aren't sure how long the movement lasts and ask for clarification. Sometimes you may be able to find animations in CSS and other times it may be JS doing all the shenanigans.
+More often than not this will require visual inspection to identify moving, blinking or autoplaying content that lasts more than five seconds. You will undoubtedly find instances where it runs for 4.99 seconds, so the devs of that site don't have to create any functionality to pause, stop or hide it. You could just say you aren't sure how long the movement lasts and ask for clarification. Sometimes you may be able to find animations in CSS and other times it may be JS doing all the shenanigans.
 
 ##### Solution
 
@@ -960,4 +954,8 @@ We solve multiple issues with the carousel by making it not a carousel. Sure, in
 
 ## Wrapping up
 
-Well, that's the end of this exercise, which was hopefully helpful. We have taken an extremely inaccessible experience and made it accessible. Obviously there's a huge element of bias, here, in that I broke it and I then decided how I was going to fix it, without "discussions" from anyone else. In reality, I tend to have more joy getting stakeholders to fix things when I tell them how to make their current UI accessible, than I do when I start saying "Does this really need to be..."
+Well, that's the end of this exercise, which was hopefully helpful. We have taken an extremely inaccessible experience and made it accessible. Obviously there's a huge element of bias, here, in that I broke the site and I then decided how I was going to fix it, without "discussions" from anyone else. In reality, I tend to have more joy getting stakeholders to fix things when I tell them how to make their current UI accessible, than I do when I start saying "Does this really need to be...", but your mileage may vary.
+
+I couldn't add every conceivable issue to this small site, because there are far too many UI elements, too much nuance and too many ways to fail something for me to have that the time to do that. But, that being said, this is just a brief introduction to some common issues, but I also introduce several sneaky and hard to find issues, as a way of demonstrating that we need to be very thorough.
+
+Hopefully you learned something from this, we're currently in a state of Beta, so any errata would be greatly received.
