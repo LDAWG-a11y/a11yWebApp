@@ -105,7 +105,7 @@ isGuide: true
 		<td>Yes</td>
 		<td>Yes</td>
 		<td>No</td>
-		<td>Also available for Android. </td>
+		<td>Also available for Android. Cannot be used to remediate PDFs.</td>
 	</tr>
 	<tr>
 		<th scope="row"><a href="https://github.com/iib0011/omni-tools">Omni Tools (external website)</a></th>
