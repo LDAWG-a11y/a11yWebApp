@@ -154,6 +154,13 @@ isGuide: true
 		<td>Yes</td>
 		<td>Cannot be used for remediation</td>
 	</tr>
+<tr>
+		<th scope="row"><a href="https://www.scribus.net/downloads/">Scribus (external website)</a></th>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td>Not a PDF editor - for precise positioning of text for printing</td>
+	</tr>
 	<tr>
 		<th scope="row"><a href="https://simplepdf.com/">SimplePDF (external website)</a></th>
 		<td>Yes</td>
@@ -162,11 +169,11 @@ isGuide: true
 		<td>Browser based PDF editor, does not have an accessibility checker built in, nor allows editing PDFs at the tag level. These features are not planned at the moment.</td>
 	</tr>
 	<tr>
-		<th scope="row"><a href="https://www.scribus.net/downloads/">Scribus (external website)</a></th>
+		<th scope="row"><a href="https://www.sodapdf.com/">Soda PDF (external website)</a></th>
 		<td>Yes</td>
-		<td>Yes</td>
-		<td>Yes</td>
-		<td>Not a PDF editor - for precise positioning of text for printing</td>
+		<td>No</td>
+		<td>No</td>
+		<td>Online version available too. Waiting for response</td>
 	</tr>
 	<tr>
 		<th scope="row"><a href="https://www.stirlingpdf.com/">Stirling PDF (external website)</a></th>
