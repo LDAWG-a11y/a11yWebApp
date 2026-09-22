@@ -100,6 +100,13 @@ isGuide: true
 		<td>No</td>
 		<td>SVG editor with pdf export capabilities, not a native PDF editor</td>
 	</tr>
+<tr>
+		<th scope="row"><a href="https://mobisystems.com/en-gb/mobipdf">MobiPDF (external website)</a></th>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td>No</td>
+		<td>Also available for Android. </td>
+	</tr>
 	<tr>
 		<th scope="row"><a href="https://github.com/iib0011/omni-tools">Omni Tools (external website)</a></th>
 		<td>Yes</td>
