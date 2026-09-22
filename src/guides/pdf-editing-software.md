@@ -168,6 +168,13 @@ isGuide: true
 		<td>Yes</td>
 		<td>Contacted Stirling but not heard anything yet</td>
 	</tr>
+<tr>
+		<th scope="row"><a href="https://xodo.com/pdf-studio">Xodo PDF Studio (external website)</a></th>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td>Xodo PDF Studio does not include a built-in Accessibility Checker for verifying compliance with standards like PAC 2026. However, it does provide tools to enhance PDF accessibility, such as adding searchable text through OCR, creating bookmarks, and editing document structure. Unfortunately, it does not support editing PDFs at the tag level for full accessibility remediation</td>
+	</tr>
 </table>​
 
 Please contact us if you find any other PDF editing software that is not listed.
