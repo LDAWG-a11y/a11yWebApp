@@ -103,7 +103,7 @@ I have located the widget on several university sites and despite having an ultr
 
 If I take the <embed>'s source code and pop it in a code editor and look at the result, we get the following:
 
-![Screenshot of the widget, in isolation, showing three stats, all in a column, with no carousel features present](src/guideImg/screenshot-19.png)
+![Screenshot of the widget, in isolation, showing three stats, all in a column, with no carousel features present](src/guideImg/dl-du-stats-row.png)
 
 The above is much more accessible, as it completely does away with the carousel, but obviously it wouldn't display in a row on a smaller viewport.
 
@@ -139,6 +139,10 @@ The pips for the slides have active and inactive colours, these communicate visu
 #### Solution
 
 A darker border with a minimum contrast of 3:1 against both the white background and the wispy grey pip colour will be sufficient. This will create to visually distinctive shapes, a circle for the current slide and rings for the inactive slides.
+
+
+
+
 
 ### 1.1.1 Non-text Content (A)
 
@@ -209,7 +213,7 @@ The controls for the slides have the AccNames as "Next question" and "Previous q
 
 Language matters, combined with all the other aspects of accessible information that is lacking from the carousel, it matters that bit more, here. Perhaps I'm being pedantic, but ultimately, they're nbot questions, so something like "Next stat", or words to that effect will be much clearer.
 
-### Carousel solution
+## Solution without carousel
 
 Carousels are often unnecessary, they do have their uses, at least in my opinion, but that would necessitate them being built accessibly and also being the correct pattern for the job. There are times when I find them useful, such as on a product card or other listing, so I can slide the images to look at different colours, angles or anything else, without having to click the link to the product page. Carousels get a hard time, because they're mostly rubbish, so this is often warranted. Are they "needed" here? Probably not, why hide important stats behind widget controls? I have a page open for another university, there are seven separate DiscoverUni widgets on this page, each has three slides, I get how having 21 unique facts in 21 separate panels may take up a vast amount of the page, but, these are showing me seven variations of a similar course, undergrad, combined masters and everything in between. I know this may sound a little wild, but, perhaps just have a page with each variation of the course and show the relevant stats there? Then just three stats per page, which, in reality, doesn't nedessitate a carousel.
 
@@ -219,12 +223,11 @@ There are several solutions, here:
 * Add or remove the releavant ARIA with JS, depending on the current layout of the widget. If the widget does reach that 1280px when the site loads remove the ARIA, etc, if it does not or the user alters their viewport in some way, shoehorn it back in. There is a little over-engineering involved with that approach, but nothing we haven't done before
 * Redesign the whole thing, it's three stats, do the need to occupy as much space as they do, could they have used sparklines? did they even need to use the (low contrast) meter charts? Could it have just been three rows of text, with a nice prominent number showing the percentage?
 
-I think the column approach would be best, it's not reliant on manipulating the DOM with JS to shoehorn or remove in the required accessibility information, it displays all three stats at all times, without the unnecessary faff of clicking through a pointless carousel, the cards could change shape from squarish on mobile, to wider rectanfles as the viewport gets larger. I'm just going to go with that and rustle up a solution. Disclaimer, I'm just going to use their code and better it. This is my first time doing this, is it even legal? 
+I think the column approach would be best, it's not reliant on manipulating the DOM with JS to shoehorn or remove in the required accessibility information, it displays all three stats at all times, without the unnecessary faff of clicking through a pointless carousel, the cards could change shape from squarish on mobile, to wider rectanfles as the viewport gets larger. I'm just going to go with that and rustle up a solution. Disclaimer, I'm just going to use their code and modify it. We did get permission, so we're not going to get in trouble.
 
-* Well, it's on my employer's website, so it's "our" code, right?
-* I'm doing this non-commercially, I am being paid by my employer, but the money is the same as if I were doing something else and my employer does not financially benefit from this
-* I'm acting on the behalf of disabled people, as that is my actual job, I test websites to highlight the accessibility issues, so developers can fix them, to make them more usable for disabled folks
-* I'm doing this for educational purposes and critique
-* DiscoverUni has a .gov.uk domain and is therefore subject to Open Govenment Licensing, which permits me to copy or modify their code and content, as long as neither of those are owned by a thrid party (such as images, etc), as long as I give accreditation
+### Let's dismantle it
 
-So, here we have it, I am doing all of the above, I have copied the entire <embed> from my employer's (University of Westminster) website, but it is a widget created by the Office for Students, as part of their DiscoverUni site and services, so I attribute them as the code creators.
+* Firstly, I remove the JS, we don't need that, anymore
+* Secondly, I remove the element that contains the controls, the buttons and pips
+* Finally, I remove some repetitive HTML. this HTML comprises of the `<h1>\` which doesn't look like a \`<h1>` at the bottom of the widget, the logo, the Discover Uni text and the "See all course data" link. It appears this was likely duplicated because it appears in different places, depending on the viewport size? We don't need duplicated HTML for responsive design in 2026, so be gone with it
+* I removed all related CSS to the controls
