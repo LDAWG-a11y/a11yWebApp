@@ -93,6 +93,9 @@ If this method is to be acceptable:
 * [Juicy Studios Luminosity Colour Contrast Ratio Analyser (external website)](https://juicystudio.com/services/luminositycontrastratio.php)
 * [Monsido Color Contrast Checker (external website)](https://monsido.com/tools/contrast-checker)
 * [Material Color Tool (external website)](https://material.io/resources/color/)
+* [Contrast Finder (external website)](https://app.contrast-finder.org/) - tests the contrast and also suggests new colours with valid contrast ratios
+* [Accessible Color Palette Generator (external website)](https://thisisfranciswu.com/enterprise-ui-palette-generator/) - automates the generation of accessible enterprise UI color palettes
+* [Accessible Brand Colors (external website)](https://abc.useallfive.com/) - shows how ADA compliant your colors are in relation to each other
 
 ### Mobile tools
 
