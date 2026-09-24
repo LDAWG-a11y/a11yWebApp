@@ -10,7 +10,7 @@ isGuide: true
 ---
 ## Intro
 
-I am now writing a new guide in April 2026, following on from the [original guide I wrote in September 2023](https://www.makethingsaccessible.com/guides/discoveruni-widget-accessibility-case-study/). There have been some changes to the widget and the accessibility is better, but is it good enough? As a disclaimer, I have no idea if the folks resposible saw my previous guide, I do know they have not acted upon it, though
+I am now writing a new guide in September 2026, following on from the [original guide I wrote in September 2023](https://www.makethingsaccessible.com/guides/discoveruni-widget-accessibility-case-study/). There have been some changes to the widget and the accessibility is better, but is it good enough? As a disclaimer, I have no idea if the folks responsible saw my previous guide, I do know they have not acted upon it, though
 
 The DiscoverUni widget is an Office for Students (OfS) mandated component Higher Education Institutes in the UK must display on course pages.
 
@@ -140,17 +140,13 @@ The pips for the slides have active and inactive colours, these communicate visu
 
 A darker border with a minimum contrast of 3:1 against both the white background and the wispy grey pip colour will be sufficient. This will create to visually distinctive shapes, a circle for the current slide and rings for the inactive slides.
 
-
-
-
-
 ### 1.1.1 Non-text Content (A)
 
 The pips for the slides communicate visual information, that information is not available in text or as a text alternative, such as ARIA.
 
 #### Solution
 
-I would not necessarily expect the pips themselves to have a role and accessible name, as they are not interactive, but they are there, they do communicate something, so the slide number of number of slides should be available somewhere within the slides. We'll pick this up at the end, as most of the issues can be resolved by using an "acceptable" carousle pattern.
+I would not necessarily expect the pips themselves to have a role and accessible name, as they are not interactive, but they are there, they do communicate something, so the slide number of number of slides should be available somewhere within the slides. We'll pick this up at the end, as most of the issues can be resolved by using an "acceptable" carousel pattern.
 
 ### 1.3.1 Info and Relationships (A)
 
@@ -168,7 +164,7 @@ We'll pick this up at the end, as most of the issues can be resolved by using an
 
 The visual reading order does not match the programmatic reading order. Looking at the main body of the slide, it is visually evident it is a "self-contained" widget, it has a chart, a heading, some text, some pips, some controls and its background is white against a significantly darker background outer container.
 
-The expectation is that once I am in the "slide" widget, the sequence of reading (usingf a screen reader) somewhat matches what is visually presented, it can of course be different, as long as it does not affect the meaning.
+The expectation is that once I am in the "carousel" widget, the sequence of reading (using a screen reader) somewhat matches what is visually presented, it can of course be different, as long as it does not affect the meaning.
 
 1. Navigating with a screen reader, using the virtual cursor the reading order is, as follows:
 2. Heading level 1 "Official student data from DiscoverUni"
@@ -181,7 +177,7 @@ The expectation is that once I am in the "slide" widget, the sequence of reading
 9. Previous question, button
 10. Next question, button
 
-This is slightly off, as a screen reader user will likely be navigating with their virtual cursor and each time after they have read the slide, the cursor will then move to the image, text and "See all course data" link, in the side area, which is static; only then will it move to the controls. It's important to remember that a blind screen reader user will not know how much content is present per slide, so will likely be confused that when they have read the content, they have to then move into the side area, before moving to thecontrols. I would imagine that the majority of screen reader users would figure out the problem and press <kbd>Tab</kbd> each time their virtual cursor moved to the image in the side area, but, that doesn't make this pattern correct, it's still wrong.
+This is slightly off, as a screen reader user will likely be navigating with their virtual cursor and each time after they have read the slide, the cursor will then move to the image, text and "See all course data" link, in the side area, which is static; only then will it move to the controls. It's important to remember that a blind screen reader user will not know how much content is present per slide, so will likely be confused that when they have read the content, they have to then move into the side area, before moving to the controls. I would imagine that the majority of screen reader users would figure out the problem and press <kbd>Tab</kbd> each time their virtual cursor moved to the image in the side area, but, that doesn't make this pattern correct, it's still wrong.
 
 This issue does not appear to be present when opting for the "vertical" widget in the configuration setup.
 
@@ -213,21 +209,56 @@ The controls for the slides have the AccNames as "Next question" and "Previous q
 
 Language matters, combined with all the other aspects of accessible information that is lacking from the carousel, it matters that bit more, here. Perhaps I'm being pedantic, but ultimately, they're nbot questions, so something like "Next stat", or words to that effect will be much clearer.
 
-## Solution without carousel
+## Carousel solution
 
-Carousels are often unnecessary, they do have their uses, at least in my opinion, but that would necessitate them being built accessibly and also being the correct pattern for the job. There are times when I find them useful, such as on a product card or other listing, so I can slide the images to look at different colours, angles or anything else, without having to click the link to the product page. Carousels get a hard time, because they're mostly rubbish, so this is often warranted. Are they "needed" here? Probably not, why hide important stats behind widget controls? I have a page open for another university, there are seven separate DiscoverUni widgets on this page, each has three slides, I get how having 21 unique facts in 21 separate panels may take up a vast amount of the page, but, these are showing me seven variations of a similar course, undergrad, combined masters and everything in between. I know this may sound a little wild, but, perhaps just have a page with each variation of the course and show the relevant stats there? Then just three stats per page, which, in reality, doesn't nedessitate a carousel.
+Initially I was going to demo how to recreate this widget without using a carousel, mostly because in every example I found, there was only ever three slides, so it's pretty easy to redesign the widget to show all three stats at once, irrespective of the size of the embedded iFrame. Carousels aren't really a favoured UI choice, especially in the accessibility community, but most of those complaints appear to be from accessibility auditors and most of the time they're absolutely correct, because they're just poorly made.
 
-There are several solutions, here:
+Maybe I'm going against the grain, a little, but I don't think carousels as a concept should be banished to the graveyard of terrible UI, forever, because sometimes, they make sense. I'm not saying every implementation is the correct call, many appear to be carousels when they don't need to be, just like the DiscoverUni widget, but I don't think an accessible carousel is always a bad thing. Sometimes carousels can heavily reduce page clutter and condense multiple images into a discrete stack, that doesn't require interaction or excessive scrolling to pass. Marketers are real, they may take 14 images of a new phone and request they are put on the product page, to show the phone from various angles and show the various colours, etc. Then it's somebody's job to make all of those promotional images be present on the page in a way that doesn't overwhelm the user, so, we end up with carousels.
 
-* DiscoverUni could make an additional layout option "Column" (or words to that effect), which would simply do away with the carousel and display each of the three stats in a column for smaller viewports and if the 1280px is ever reached, display them in a row
-* Add or remove the releavant ARIA with JS, depending on the current layout of the widget. If the widget does reach that 1280px when the site loads remove the ARIA, etc, if it does not or the user alters their viewport in some way, shoehorn it back in. There is a little over-engineering involved with that approach, but nothing we haven't done before
-* Redesign the whole thing, it's three stats, do the need to occupy as much space as they do, could they have used sparklines? did they even need to use the (low contrast) meter charts? Could it have just been three rows of text, with a nice prominent number showing the percentage?
+We just have to accept carousels aren't going anywhere and not wish them out of existence, but push devs to make them better. Honestly, I feel like a hypocrite every time I ask "Does this need to be a carousel?" and link to [Should I use a carousel?](https://shouldiuseacarousel.com/), because when I'm browsing things on my phone, I actually quite appreciate having the option of viewing the images or not, I'm sure that other users, disabled or otherwise also share a similar view, at least sometimes. I do caveat this with I know there is at least one issue with carousels that makes them a bit more cumbersome for screen reader users and that typically relates to the first slide or image, but we'll look into that, later.
 
-I think the column approach would be best, it's not reliant on manipulating the DOM with JS to shoehorn or remove in the required accessibility information, it displays all three stats at all times, without the unnecessary faff of clicking through a pointless carousel, the cards could change shape from squarish on mobile, to wider rectanfles as the viewport gets larger. I'm just going to go with that and rustle up a solution. Disclaimer, I'm just going to use their code and modify it. We did get permission, so we're not going to get in trouble.
+Ultimately, my role is to explain to devs how to make things accessible, but devs seldom have the clout to just act upon what I say, there's a tonne of other stakeholders behind the scenes that are just going to say "No, the carousel is staying", so I could spend forver asking them nicely to remove it or I could take the path of least resistance by showing them how to make what they already have significantly better. Afterall, a dev isn't going to have to jump through many hoops to add a little ARIA, change a few HTML tags or improve focus order, because these are things that designers and product owners seldom care about as they're mechanics, not cosmetics. If I can produce a report that demonstrates to a developer where accessibilit information needs to be improved and they can just go ahead and fix that, then I may only need to convince a designer to tweak a bit of contrast, here and there, so, I stand a greater chance of getting meaningful progress. 
 
-### Let's dismantle it
+So, I changed my mind, I'm now going to show how to make this carousel "accessible", because I believe the OfS will be significantly more likely to take my recommendations on board than they would if I just went and totally redsigned it.
 
-* Firstly, I remove the JS, we don't need that, anymore
-* Secondly, I remove the element that contains the controls, the buttons and pips
-* Finally, I remove some repetitive HTML. this HTML comprises of the `<h1>\` which doesn't look like a \`<h1>` at the bottom of the widget, the logo, the Discover Uni text and the "See all course data" link. It appears this was likely duplicated because it appears in different places, depending on the viewport size? We don't need duplicated HTML for responsive design in 2026, so be gone with it
-* I removed all related CSS to the controls
+### Updating the code
+
+In the official version, we want to look for a `<div>\` element that has the \`stat__container` class and we'll modify that a little, let's take a look at the original element:
+
+```
+<div class="stat__container">
+```
+
+Just a generic element with a class, not interesting at all for assistive technology, so it'll be ignored, not good. I have chosen this element as it contains the slides, the controls and the second heading 1. We're only interested in the slides and their parent \`.stat__container\`, at this stage, we'll sort the heading out, later. Let's see what changes I make:
+
+```html
+
+
+<section class="stat__container" aria-roledescription="carousel" aria-labelledby="WidgetTitle courseTitle">
+```
+
+I change the `<div>\` to a \`<section>` element, as once we give that an Accname, we have a region
+
+I add \`aria-roledescription\` because there is no ARIA role for a carousel and this attribute allows us provide a custom role, of sorts
+
+I add an \`aria-labelledby\` property which points to two ID Refs, the elements these ID Refs point to already existed, they were both of the `<h1>\` elements, neither had an ID, so I had to add one to each element. Just a note, here, the \`<h1>\` that currently appears at the bottom of the slides is actually duplicated, one appears to the side, the other to the bottom, I'm not going to attempt to fix that, despite it seemingly completely unnecessary, but I just wanted to point out that we should not add an ID to both instances, because IDs must be unique and we don't want to faff around changing the values of \`aria-labelledby\`, on the fly, because, it feels unnecessary. It's OK that the currently hidden \`<h1>\` is hidden with \`display: none;\` and therefore not exposed, as \`aria-labelledby\` ignores that, by design. So just add the ID to whichever you find first, it doesn't matter. For our ID Ref values I just pretended there was a proper heading hierarchy, "Official student data..." is absolutely correct to be a \`<h1>\`, so logic dictates that the course name should be a \`<h2>\`, the order of my \`aria-labelledby` values reflects this.
+
+
+
+On to the next, then we want to add some slides, with decent accessibility info, so let's grab the parent element of each slide and work our magic, the element we want is again, a `<div>\` with no accessible goodness and this one has a class of \`stat-box`, so lets see how that started:
+
+```
+<div class="stat-box active" id="stat_1" data-id="1">
+```
+
+Yep, sigh, nothing to share with the accessibility tree, a whole bunch of nothing, just a generic node, an ID and a data attribute, so let's fix that:
+
+```
+<div class="stat-box small-hidden" id="stat_3" data-id="3" role="group" aria-roledescription="slide" aria-label="">
+```
+
+I add \`role="group"\`, group is often used as it groups elements in the slide together, on a product page, there could be a call to action, controls to change the colour, maybe even a description and group makes sense, there. I'd agree in our case it makes a little less sense, as once we ignore the yellow donut, we're just left with a string of text, but, if everybody uses groups, then that's what we should do, because consistency across platforms helps users to understand widgets and learn what to expect from them
+
+I then add \`aria-roledescription\` here, too, this time I add a value of \`slide\`, which in its basic form, is exactly what it is
+
+Finally, I add an empty \`aria-label\`, not because I intend to leave an incomplete ARIA property there, but because I have to make an assumption. The widget isn't going to work without JS, on smaller viewports, because the buttons won't move the slides along. I had a little look at the config and there isn't any scope on a university's end to build an AccName string, so I just thought I'd do this with JS. In reality, this could be handled with the API call, but for us, we just have JS. I'll show the buildings of that string, later
