@@ -459,6 +459,7 @@ To fix this, select the text and change the text colour.
 ##### Tables with empty cells
 
 * There must never be blank heading cells so add an applicable title to the column heading, even if [WCAG does allow for the first cell A1 to be blank (external website)](https://www.w3.org/WAI/tutorials/tables/) 
+* Chad Chelius says that "There's an ugly bug in NVDA that mis-associates the wrong data cell to the wrong header cell when empty table cells are encountered. For this reason, I prefer to have some type of information in the cell. On a recent project I used an em dash (basically a big hyphen) in the cell. The screen reader doesn't read the character but because it isn't empty it reads appropriately. Using N/A or None also works, it just depends on your preference. You could even put white text in the cell that says N/A or None so that visually it doesn't appear but keep in mind that this will technically cause a color contrast violation in many checkers."
 
   ![Distance added, top row and first column made into Table Heading](src/guideImg/51-distance-added-top-row-first-column-made-into-table-heading.png)
 * Different [screen readers will announce empty cells in different ways (external website)](https://www.accessibilityunraveled.com/pdf-remediation/how-to-handle-blank-data-cells-in-accessible-tables/) so the best solutions are to use “Not applicable” or “No value”
