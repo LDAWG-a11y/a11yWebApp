@@ -223,29 +223,27 @@ So, I changed my mind, I'm now going to show how to make this carousel "accessib
 
 ### Updating the code
 
-In the official version, we want to look for a `<div>\` element that has the \`stat__container` class and we'll modify that a little, let's take a look at the original element:
+In the official version, we want to look for a `<div>` element that has the `stat__container` class and we'll modify that a little, let's take a look at the original element:
 
 ```
 <div class="stat__container">
 ```
 
-Just a generic element with a class, not interesting at all for assistive technology, so it'll be ignored, not good. I have chosen this element as it contains the slides, the controls and the second heading 1. We're only interested in the slides and their parent \`.stat__container\`, at this stage, we'll sort the heading out, later. Let's see what changes I make:
+Just a generic element with a class, not interesting at all for assistive technology, so it'll be ignored, not good. I have chosen this element as it contains the slides, the controls and the second heading 1. We're only interested in the slides and their parent `.stat__container`, at this stage, we'll sort the heading out, later. Let's see what changes I make:
 
 ```html
 
 
-<section class="stat__container" aria-roledescription="carousel" aria-labelledby="WidgetTitle courseTitle">
+<section class="stat__container" aria-roledescription="carousel" aria-labelledby="widgetTitle courseTitle">
 ```
 
-I change the `<div>\` to a \`<section>` element, as once we give that an Accname, we have a region
-
-I add \`aria-roledescription\` because there is no ARIA role for a carousel and this attribute allows us provide a custom role, of sorts
-
-I add an \`aria-labelledby\` property which points to two ID Refs, the elements these ID Refs point to already existed, they were both of the `<h1>\` elements, neither had an ID, so I had to add one to each element. Just a note, here, the \`<h1>\` that currently appears at the bottom of the slides is actually duplicated, one appears to the side, the other to the bottom, I'm not going to attempt to fix that, despite it seemingly completely unnecessary, but I just wanted to point out that we should not add an ID to both instances, because IDs must be unique and we don't want to faff around changing the values of \`aria-labelledby\`, on the fly, because, it feels unnecessary. It's OK that the currently hidden \`<h1>\` is hidden with \`display: none;\` and therefore not exposed, as \`aria-labelledby\` ignores that, by design. So just add the ID to whichever you find first, it doesn't matter. For our ID Ref values I just pretended there was a proper heading hierarchy, "Official student data..." is absolutely correct to be a \`<h1>\`, so logic dictates that the course name should be a \`<h2>\`, the order of my \`aria-labelledby` values reflects this.
+* I change the `<div>` to a `<section>` element, as once we give that an Accname, we have a region
+* I add `aria-roledescription` because there is no ARIA role for a carousel and this attribute allows us provide a custom role, of sorts
+* I add an `aria-labelledby` property which points to two ID Refs, the elements these ID Refs point to already existed, they were both of the `<h1>` elements, neither had an ID, so I had to add one to each element. Just a note, here, the `<h1>` that currently appears at the bottom of the slides is actually duplicated, one appears to the side, the other to the bottom, I'm not going to attempt to fix that, despite it seemingly completely unnecessary, but I just wanted to point out that we should not add an ID to both instances, because IDs must be unique and we don't want to faff around changing the values of `aria-labelledby`, on the fly, because, it feels unnecessary. It's OK that the currently hidden `<h1>` is hidden with `display: none;` and therefore not exposed, as `aria-labelledby` ignores that, by design. So just add the ID to whichever you find first, it doesn't matter. For our ID Ref values I just pretended there was a proper heading hierarchy, "Official student data..." is absolutely correct to be a `<h1>`, so logic dictates that the course name should be a `<h2>`, the order of my `aria-labelledby` values reflects this
 
 
 
-On to the next, then we want to add some slides, with decent accessibility info, so let's grab the parent element of each slide and work our magic, the element we want is again, a `<div>\` with no accessible goodness and this one has a class of \`stat-box`, so lets see how that started:
+On to the next, then we want to add some slides, with decent accessibility info, so let's grab the parent element of each slide and work our magic, the element we want is again, a `<div>` with no accessible goodness and this one has a class of `stat-box`, so lets see how that started:
 
 ```
 <div class="stat-box active" id="stat_1" data-id="1">
@@ -257,8 +255,223 @@ Yep, sigh, nothing to share with the accessibility tree, a whole bunch of nothin
 <div class="stat-box small-hidden" id="stat_3" data-id="3" role="group" aria-roledescription="slide" aria-label="">
 ```
 
-I add \`role="group"\`, group is often used as it groups elements in the slide together, on a product page, there could be a call to action, controls to change the colour, maybe even a description and group makes sense, there. I'd agree in our case it makes a little less sense, as once we ignore the yellow donut, we're just left with a string of text, but, if everybody uses groups, then that's what we should do, because consistency across platforms helps users to understand widgets and learn what to expect from them
+* I add `role="group",` group is often used as it groups elements in the slide together, on a product page, there could be a call to action, controls to change the colour, maybe even a description and group makes sense, there. I'd agree in our case it makes a little less sense, as once we ignore the yellow donut, we're just left with a string of text, but, if everybody uses groups, then that's what we should do, because consistency across platforms helps users to understand widgets and learn what to expect from them
+* I then add `aria-roledescription` here, too, this time I add a value of `slide`, which in its basic form, is exactly what it is
+* Finally, I add an empty `aria-label`, not because I intend to leave an incomplete ARIA property there, but because I have to make an assumption. The widget isn't going to work without JS, on smaller viewports, because the buttons won't move the slides along. I had a little look at the config and there isn't any scope on a university's end to build an AccName string, so I just thought I'd do this with JS. In reality, this could be handled with the API call, but for us, we just have JS. I'll show the buildings of that string, later. Obviously we repeat the above for all three slides
 
-I then add \`aria-roledescription\` here, too, this time I add a value of \`slide\`, which in its basic form, is exactly what it is
 
-Finally, I add an empty \`aria-label\`, not because I intend to leave an incomplete ARIA property there, but because I have to make an assumption. The widget isn't going to work without JS, on smaller viewports, because the buttons won't move the slides along. I had a little look at the config and there isn't any scope on a university's end to build an AccName string, so I just thought I'd do this with JS. In reality, this could be handled with the API call, but for us, we just have JS. I'll show the buildings of that string, later
+
+Somewhere, I add an empty `aria-live` region, as we'll need that, to announce stuff. for what it's worth, I add mine before the closing tag (`ofs_widget`) of the entire widget:
+
+```
+<div class="widget__announcements" aria-live="polite"></div>
+```
+
+Just a class name and the aforementioned ARIA with the assertion level set to `polite`, because we don't need to be interupting anybody. the class is there to both hide it visually and also to use as a hook for injecting messages into it. Standard stuff, really. 
+
+That's all we need to do to the HTML, for now, we'll look at the headings and side content, a little later. So, a few bits of additional JS to make this come alive, everything "functionally works" already, just not accessibly, so we don't need to do a great deal, here:
+
+Firstly I create a global variable for the slides in a node list:
+
+```
+const statBoxes = document.querySelectorAll('.stat-box');
+```
+
+In essence, I'm just putting all elements with a class name of \`stat-box\` in a collection to use, later
+
+Secondly, I create a new function `buildStrings` which like Ronseal fence paint, does exactly what it says on the tin, although my function is useless as a fence paint, but it does build strings:
+
+```
+const buildStrings = () => {
+  statBoxes.forEach((box, idx) => {
+    const slideOf = `Slide ${idx + 1} of ${statBoxes.length}`;
+    box.setAttribute('aria-label', slideOf);
+    const percent = box.querySelector('.progress-value').textContent;
+    const title = box.querySelector('.stat-box__title').textContent;
+    const subtitle = box.querySelector('.stat-box__subtitle').textContent;
+    box.dataset.string = `${percent}, ${title} ${subtitle}, ${slideOf}`;
+  });
+}
+```
+
+I'll go through the function, line by line:
+
+* We create a loop to get each of the slides, our individual element reference is `box` and then we want the index iterator, which I access with `idx`.
+* My first string is `slideOf` which gets the current slide number and the total count of slides and produces a string 'Slide \[n] of \[n]', where \[the first instance of [n] is the current iteration and the second instance being the length of the node list
+* On each `box` we set the `aria-label` (which was previously empty) to that value, so the first slide would be 'Slide 1 of 3', and so on. We needed to give the group a name, in reality, this isn't going to be announced, because our screen reader users shouldn't ever need to leave the Next and Previous buttons
+* The next three lines are just me getting references to the bits of text we need, the percentage, the slide title and the slide subtitle
+* Finally, I build the string using the order percent, title subtitle and then I reuse the `slideOf` variable, to add this to the end (I also add a couple of commas). the reason I add the `slideOf` string to the end, is because it is the only way it's going to be reliably announced. For a screen reader user that cannot see the widget or the wispy grey pips, how else are they going to know which slide they are on? I did mention the pips had no programmatic alternative, earlier, is this enough? I believe so, the pips pattern is ubiquitous enough that folk understand them, if they can see them, so the only users that were denied this info were screen reader users (if we pretend they had decent contrast). We could have made a list and used hidden text, but we'd potentially be repeating the same thing three times for screen reader users navigating with the virtual cursor and I don't believe that adds any value, for non-interactive pips. I'm aware that my approach could be wrong, I cannot speak for screen reader users, I can only tell you to do your own testing with paid users
+* I add those strings to a data attribute on each element, we could just store them in memory, but I think it can be useful to see stuff working in the DOM, the `data-string` attribute is present on the `.stat-box` element, which is of course, the slide
+
+I need to call that function, so I just call it in the window's load listener, which was already present in the JS:
+
+```
+window.addEventListener("load", () => {
+  setDonuts();
+  arrowClicked();
+  // I just added the below functiom call
+  buildStrings();
+})
+```
+
+Nothing else to say, here. I just call the function once the page loads.
+
+Now we need to do something useful with that string of text. In the original JS there is a fucntion called moveSlideAlong, which is pretty self-explanatory, it advances the slide. It has two function parameters which are passed from another function, we only need to concern ourselves with the  `new_active` parameter, as that is the slide element that appears on screen as a result of activating either of the Previous or Next buttons and quite handily, that element already contains the string we built, so we can simply grab it set the text content of our `aria-live` region to that string, like so:
+
+```
+function moveScreenAlong(active, new_active) {
+  // makes next screen visible
+  active.classList.add("small-hidden")
+  active.classList.remove("active")
+  new_active.classList.remove("small-hidden")
+  new_active.classList.add("active")
+  // Read out the new slide for screen readers
+  document.querySelector('.widget__announcements').textContent = new_active.dataset.string;
+}
+```
+
+I have only added the final line in the above snippet, I'm simply getting the value of the data attribute on the new slide and sending it to our announcement node. Now, whenever a screen reader user activates the slide controls, they hear the contents of the slide, without having to leave the buttons, which makes sense for small slides like this, if it were text heavy and contained important semantic info, controls or other stuff, more complex in nature, then it would likely not be the best call.
+
+So, now this works, right? Well, we have a few tweaks to make, but, yeah, it kind of works, but not perfectly:
+
+* We're currently attacking this for all viewports, viewports can change, so we'd need to monitor the viewport size and determine when the slides are displayed all at once, at which stage, we'd need to remove everything we have added, as it would no longer make sense
+* For a screen reader user, the first slide is not initially read out, because our live region is empty, so, our users only really start to hear stuff from slide 2 of 3, which is a little odd. But, that only actually happens if a user is navigating with the <kbd>Tab</kbd> key, as virtual cursor navigation has to pass the slide's contents, before it reaches the controls. Technically, when interacting with a control that updates the content, the newly updated content should come after that control, so we need to shuffle that about, a bit. Whilst we cannot track virtual cursor movements, nor should we, we do get an update to the document's activeElement() (currently focused element) function irrespective of how a user arrived on that control
+* Our Previous and Next controls aren't associated to the carousel and their AccNames don't make a great deal of sense, as they're not questions, they were, once, but not anymore, they're facts that are the result of students having answered questions
+* We also need to change the heading level of the second heading and, in reality, if it;s at the end, it's not really a heading at all, is it? Headings introduce content, not follow it
+* We have a few visual tweaks to make
+
+So, with the above in mind, we could absolutely do better and of course, we will
+
+Firstly let's ensure that our carousel only has the ARIA we added earlier, when it's actually a carousel. At 1280px it stops presenting as a carousel and shows three cards in a row. It's important to note this is in an iFrame, so width does not actually mean the width of the viewport, it's however much width the host site allows the iFrame. In reality, as I mentioned earlier, it's not very often anybody is going to experience the three cards in a row, as I did not find a single site that had a wide enough page wrapper. I'm sure there are definitely some out there, though and we cannot dismiss edge cases, in this game, every user and every case matters. Also, I did check about 20 universities and got bored, there are over 160 universities in the UK and many colleges that can teach degrees and the degrees are awarded from an "official" university, that number can seemingly exceed 300. I'm not looking through 300 education providers, it'll be quicker to just build the thing to accomodate for all scenarios.
+
+Much of what I did above I'm either going to delete or remove. That was an end result, we just need that end result to only apply when the layout/functionality requires it. So let's get a reference to that 1280px media query:
+
+```
+let mq = window.matchMedia("(width < 1280px)");
+const statBoxes = document.querySelectorAll('.stat-box');
+```
+
+We're using the `matchMedia()` method (which monitors the viewport width) and we set a `width` of less than `1280px`, we then store this to an `mq` variable, in the global scope and we just pop that up at the top of our JS along with the `statBoxes` variable we created, earlier.
+
+Then we need to ceate a function that will add and remove all of the ARIA based upon a condition and that condition will be if the viewport is less than 1280px else it is equal to or greater than 1280px
+
+```
+const modifyCarousel = () => {
+  if (mq.matches) {
+    statBoxes.forEach((box, idx) => {
+      box.setAttribute('aria-roledescription', 'slide');
+      box.setAttribute('role', 'group');
+      box.setAttribute('aria-label', `Slide ${idx + 1} of ${statBoxes.length}`);
+    })
+    document.querySelector('.stat__container').setAttribute('aria-roledescription', 'carousel');
+    document.querySelector('.stat__container').setAttribute('aria-labelledby', 'widgetTitle courseTitle');       
+  } else {
+    statBoxes.forEach((box) => {
+      box.removeAttribute('aria-label');
+      box.removeAttribute('aria-roledescription');
+      box.removeAttribute('role');
+    })
+    document.querySelector('.widget__announcements').textContent = '';
+    document.querySelector('.stat__container').removeAttribute('aria-roledescription');
+    document.querySelector('.stat__container').removeAttribute('aria-labelledby');
+  }
+}
+```
+
+Line by line walkthrough:
+
+* We have a function called `modifyCarousel()`
+* A conditional that determines if our stored `mq` variable `matches` the media query, the `matches` property just returns a `true` or `false` value, if `true`, we'll add stuff if `false`, we'll remove it
+* We loop through the slides with our `statBoxes` elements list
+* If it does match the query we add the `aria-roledescription`, `role` and `aria-label` that we had hardcoded in the HTML, earlier, the value of that `aria-label` is exactly the same string as what we previously stored in our `slideOf` variable, earlier. This gets of "slide 1 of 3", etc
+* Ouside of the loop we add the `aria-roledescription` and `aria-labelledby` properties to the `.stat__container`, as we hardcoded those, earlier. Again, the values for the `aria-labelledby` property are pointing at the same two nodes, the first `<h1>` and the second one
+* Then when our `mq` variable does not match, in the `else` block
+* We again loop through our slides
+* We remove the three ARIA properties we added when the condition was `true`
+* Outside of that loop we remove the two ARIA properties from the carousel's `.stat__container` element
+* We empty the live region
+
+Now, where we hardcode the ARIA on the carousels itself and each slide, we'll remove that:
+
+```
+<!-- Carousel element -->
+<section class="stat__container">
+  
+<!-- On e example slide -->
+ <div class="stat-box active" id="stat_1" data-id="1">
+  
+```
+
+On our carousel element we keep the element as a `<section>`, we changed that, earlier, it used to be a `<div>`. A `<div>` and a `<section>` are fundamentally the same, if the `<section>` has no AccName, in that they are both `role="generic"`, it's only when a `<section>` has an AccName it becomes a `region`. So, now, if the hosting page is large enough to display the row of cards, there's no ARIA present at all, which is exactly what we wanted.
+
+Now we need to call our `modifyCarousel()` function:
+
+```
+mq.onchange = (event) => {
+  modifyCarousel();
+};
+
+window.addEventListener("load", () => {
+  setDonuts();
+  arrowClicked();
+  buildStrings();
+  modifyCarousel();
+})
+```
+
+Firstly we listen for an `onchange` event on our media query, which we stored as `mq`. This listens for a change in the truthiness of the media query. The best way I can explain this is when a user somehow changes the iFrame's size, be that through increasing or decreasing zoom or changing the width of the browser window, as the media query is always monitored, it will simply call our `modifyCarousel()` function, only if the change crosses our `width` threshold, in either direction. I'll give a couple of examples. The page allows a full width iFrame in both the scenarios:
+
+* A user loads the page, the total width of the browser is 1200px, the user has a 1920px wide display, they decide to increase the browser window's size to fill their screen. As they are dragging the browser width out, there's a single point where that media query causes a change. That point, when enlarging the viewport is 1280px
+* A user loads the site on their 1920px screen, the browser occupies the full width of the display. The user decides the text is a bit small, so they zoom the page. As they zoom whilst the physical dimensions of their monitor obviously stay the same, the CSS pixels do not. If our user zooms to 200% and their starting point was roughly 1900px, the new width is half of that roughly 950px, because that's how zoom works, CSS and the browser makes the software pixels bigger, so 200% zoom is dividing the number of software pixels by 2. Because in essence, our user is decreasing the viewport's software pixel count, they will eventually hit the magic number or threshold and because it is decreasing, that magic number is actually 1279px, as that is 1px less than 1280px
+
+Imagine that threshold is a tennis net. Only when the ball crosses the net, does a RADAR gun measure the speed of the ball. If I were on one side of the tennis court and I was just trying to learn to juggle with a single tennis ball and probably failing miserably, the ball is still moving, but it's not crossing that threshold (net) so the RADAR gun does not fire. Only when I throw or bat the ball over the net will the gun do its thing. Much like our `onchange`, it'll only actually fire when the viewport width crosses our pixel threshold. Hopefully that makes sense?
+
+That will only call our `modifyCarousel()` function when there's a change, so we also need to call it when the page loads as we will need to add all of the ARIA if the user gets the carousel view:
+
+We simply call the same `modifyCarousel()` function it the `eventListener()` that was already in the JS and runs when the page has completed loading. Now that function will run both on page load and when any chnge to the viewport size crosses our media query threshold.
+
+I modified the buildStrings() function we created, earlier:
+
+```
+const buildStrings = () => {
+  statBoxes.forEach((box, idx) => {
+   statBoxes.forEach((box, idx) => {
+    const percent = box.querySelector('.progress-value').textContent;
+    const title = box.querySelector('.stat-box__title').textContent;
+    const subtitle = box.querySelector('.stat-box__subtitle').textContent;
+    box.dataset.string = `${percent}, ${title} ${subtitle}, Slide ${idx + 1} of ${statBoxes.length}`;    
+  });
+}
+```
+
+In essence, I just removed the `slideOf` variable, which we were using twice, once to update the aria-label on each box and the other to append our data-string attribute. I still add the same text to the data-string, but I do so with a JS template string, as I'm only using it once in here, now. We actually moved that functionality out to put in our `modifyCarousel()` function, which you may have noticed.
+
+The last piece of missing JS to get back to where we were (but responsive) is just the announcement:
+
+```
+function moveScreenAlong(active, new_active) {
+  // makes next screen visible
+  active.classList.add("small-hidden")
+  active.classList.remove("active")
+  new_active.classList.remove("small-hidden")
+  new_active.classList.add("active")
+  // call function to read out the new slide for screen readers
+  announceChange(new_active)
+}
+```
+
+Previously we were just ipdating the live region in the `moveScreenAlong()` function that was already doing the carousel sliding. I removed that bit of logic and just put a function call in, we call `announceChange()` and we pass in that `new_active` element, which is the new slide, just like before.
+
+Now we need a function that for that:
+
+```javascript
+announceChange = (new_active) => {
+  if (mq.matches) {
+    document.querySelector('.widget__announcements').textContent = new_active.dataset.string;
+  }
+}
+```
+
+Firstly, we just check that our media query matches our condition, in that the viewport will display below 1280px. We don't want to faff with the aria-live when it's not displaying the carousel, as there is no need, there's nothing to announce and we want to make sure nothing can go wrong and make the experience annnoying for screen reader users
+
+Then, just the same as before, we grab the data-string attribute's text string and send it to the aria-live and now we have a fully functional carousel, that has the correct ARIA when needed, announces changes when needed and does nothing when no carousel behaviour is present. Magic, huh? Well, not quite
