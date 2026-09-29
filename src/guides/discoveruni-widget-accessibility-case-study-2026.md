@@ -236,8 +236,6 @@ In the official version, we want to look for a `<div>` element that has the `sta
 
 Just a generic element with a class, not interesting at all for assistive technology, so it'll be ignored, not good. We want to add a new `<section>` element below this and we will call it `.stat__wrapper`.
 
-
-
 ```html
 <section class="stat__wrapper" aria-roledescription="carousel" aria-labelledby="widgetTitle courseTitle">
 ```
@@ -500,7 +498,7 @@ Those buttons with the "Next question" AccNames, let's make those make sense:
 
 ```
 <button id="left_button" class="left_button arrow_button" title="Previous slide" tabindex="1" aria-label="Previous slide">
-  <button id="right_button" class="right_button arrow_button" title="Next slide" tabindex="2" aria-label="Next slide">
+<button id="right_button" class="right_button arrow_button" title="Next slide" tabindex="2" aria-label="Next slide">
 ```
 
 Occam's razor, Next slide and previous slide, does exactly what it says on the tin
@@ -607,8 +605,6 @@ We're in a much better place with this, now. Everything at least has some meanin
 The only visual change is the active pip is a little bigger and the inactive pips have a border, so we have taken an existing design, used our knowledge of ARIA patterns, status messages and reading order to make an accessible carousel, whilst only making the tiniest of visual changes. I'll send a link over to the folks at OfS, I can't imagine them putting up a fight, I haven't really changed the appearance and I'm sure they'll be happy to learn how to make their widget accessible.
 
 The full code is available on CodePen, below:
-
-
 
 <p class="codepen" data-height="" data-pen-title="DiscoverUni 2026" data-version="2" data-default-tab="html,result" data-slug-hash="PwpKZLE" data-user="Daz079" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
 
