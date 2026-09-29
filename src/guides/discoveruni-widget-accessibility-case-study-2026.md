@@ -230,7 +230,7 @@ So, I changed my mind, I'm now going to show how to make this carousel "accessib
 
 In the official version, we want to look for a `<div>` element that has the `stat__container` class and we'll modify it.
 
-```
+```html
 <div class="stat__container">
 ```
 
@@ -246,13 +246,13 @@ Just a generic element with a class, not interesting at all for assistive techno
 
 On to the next, then we want to add some slides, with decent accessibility info, so let's grab the parent element of each slide and work our magic, the element we want is again, a `<div>` with no accessible goodness and this one has a class of `stat-box`, so lets see how that started:
 
-```
+```html
 <div class="stat-box active" id="stat_1" data-id="1">
 ```
 
 Yep, sigh, nothing to share with the accessibility tree, a whole bunch of nothing, just a generic node, an ID and a data attribute, so let's fix that:
 
-```
+```html
 <div class="stat-box small-hidden" id="stat_3" data-id="3" role="group" aria-roledescription="slide" aria-label="">
 ```
 
@@ -262,13 +262,13 @@ Yep, sigh, nothing to share with the accessibility tree, a whole bunch of nothin
 
 Somewhere, I add an empty `aria-live` region, as we'll need that, to announce stuff. for what it's worth, I add mine before the closing tag (`ofs_widget`) of the entire widget:
 
-```
+```html
 <div class="widget__announcements" aria-live="polite"></div>
 ```
 
 Just a class name and the aforementioned ARIA with the assertion level set to `polite`, because we don't need to be interupting anybody. the class is there to both hide it visually and also to use as a hook for injecting messages into it. Standard stuff, really. We do want to visually hide this, though:
 
-```
+```css
 .widget__announcements {
   position: absolute;
   left: -9999px;
@@ -293,7 +293,7 @@ In essence, I'm just putting all elements with a class name of `stat-box` in a c
 
 Secondly, I create a new function `buildStrings` which like Ronseal fence paint, does exactly what it says on the tin, although my function is useless as a fence paint, but it does build strings:
 
-```
+```javascript
 const buildStrings = () => {
   statBoxes.forEach((box, idx) => {
     const slideOf = `Slide ${idx + 1} of ${statBoxes.length}`;
@@ -317,7 +317,7 @@ I'll go through the function, line by line:
 
 I need to call that function, so I just call it in the window's load listener, which was already present in the JS:
 
-```
+```javascript
 window.addEventListener("load", () => {
   setDonuts();
   arrowClicked();
@@ -330,7 +330,7 @@ Nothing else to say, here. I just call the function once the page loads.
 
 Now we need to do something useful with that string of text. In the original JS there is a function called `moveSlideAlong`, which is pretty self-explanatory, it advances the slide. It has two function parameters which are passed from another function, we only need to concern ourselves with the  `new_active` parameter, as that is the slide element that appears on screen as a result of activating either of the buttons and as we added a data atribute with a string of text, we can just grab that string and inject it into our live region, like so:
 
-```
+```javascript
 function moveScreenAlong(active, new_active) {
   // makes next screen visible
   active.classList.add("small-hidden")
@@ -358,7 +358,7 @@ Firstly let's ensure that our carousel only has the ARIA we added earlier, when 
 
 Much of what I did above I'm either going to delete or remove. That was an end result, we just need that end result to only apply when the layout/functionality requires it. So let's get a reference to that 1280px media query:
 
-```
+```javascript
 let mq = window.matchMedia("(width < 1280px)");
 const statBoxes = document.querySelectorAll('.stat-box');
 ```
@@ -367,7 +367,7 @@ We're using the `matchMedia()` method (which monitors the viewport width) and we
 
 Then we need to ceate a function that will add and remove all of the ARIA based upon a condition and that condition will be if the viewport is less than 1280px else it is equal to or greater than 1280px
 
-```
+```javascript
 const modifyCarousel = () => {
   if (mq.matches) {
     statBoxes.forEach((box, idx) => {
@@ -418,7 +418,7 @@ On our carousel element we keep the element as a `<section>`, we changed that, e
 
 Now we need to call our `modifyCarousel()` function:
 
-```
+```javascript
 mq.onchange = (event) => {
   modifyCarousel();
 };
@@ -444,7 +444,7 @@ We simply call the same `modifyCarousel()` function it the `eventListener()` tha
 
 I modified the `buildStrings()` function we created, earlier:
 
-```
+```javascript
 const buildStrings = () => {
   statBoxes.forEach((box, idx) => {
    statBoxes.forEach((box, idx) => {
@@ -460,7 +460,7 @@ In essence, I just removed the `slideOf` variable, which we were using twice, on
 
 The last piece of missing JS to get back to where we were (but responsive) is just the announcement:
 
-```
+```javascript
 function moveScreenAlong(active, new_active) {
   // makes next screen visible
   active.classList.add("small-hidden")
@@ -496,7 +496,7 @@ Remember, there's actually two of these, so we need to change both. We've establ
 
 Those buttons with the "Next question" AccNames, let's make those make sense:
 
-```
+```html
 <button id="left_button" class="left_button arrow_button" title="Previous slide" tabindex="1" aria-label="Previous slide">
 <button id="right_button" class="right_button arrow_button" title="Next slide" tabindex="2" aria-label="Next slide">
 ```
@@ -505,7 +505,7 @@ Occam's razor, Next slide and previous slide, does exactly what it says on the t
 
 Let's fix those pips:
 
-```
+```css
 .circle {
   display: inline-block;
   background-color: #D5D5DC;
@@ -541,7 +541,7 @@ I'm not going through the above in any notable detail, but:
 
 I'm going to fix an annoyance in CSS here, too:
 
-```
+```css
 .arrow_button:focus {
   /* outline: none; */
   /* box-shadow: 0 0 0 2px #0A1D42; */
@@ -566,7 +566,7 @@ There are pros and cons to each I guess and it's not a question I can answer bec
 
 I have put the controls first, just because that's the regular pattern. I don't want to break convention, but it's always worth questioning whether something is right. I'll provide a HTML skeleton for what I did:
 
-```
+```html
 <div class="stat__container">
   <section class="stat__wrapper">
     <div class="controls">
@@ -587,7 +587,7 @@ As I stated, I just added the `.controls` to the top of our `<section>`, I left 
 
 We'll add aria-controls to our buttons, it does at least programmatically reinforce that relationship, although, in reality, the buttons and slides are in the same region, so they're siblings, anyway.
 
-```
+```html
 <div class="arrows">
   <button id="left_button" class="left_button arrow_button" aria-controls="carousel" title="Previous slide" aria-label="Previous slide">
   </button>
