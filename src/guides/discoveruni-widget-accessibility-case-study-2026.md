@@ -101,7 +101,7 @@ When the widget is configured in "responsive" layout, if the viewport and the ho
 
 I have located the widget on several university sites and despite having an ultrawide monitor, I have yet to see the widget display all three stats at once. The reason for this is seldom do sites occupy the full horizontal width, they are often contained in custom site wrappers, which is a technique designers and devs will use to have more control over the layout. Whilst I am sure there are sites out in the wild where the site wrapper does exceed 1280px, the only one I found that did used the "vertical" widget, so it would never display all three stats at once, as that particular layout isn't designed to. Obviously the majority of users are viewing webpages on mobiles and tablets these days, so again, it's less likely a user will get the non-carousel option.Finally, as many of us know, many low vision users will set their page zoom higher than 100%, which of course will prevent the widget displaying the nice little row, even when the site's wrapper exceeds 1280px. So, in essence, the "responsive" layout will only ever display the nice row, in the rareset of circumstances. The Office for Students have zero control over each institution's site wrapper, users' devices or indeed their disabilities, but, it's not difficult to find that information out, better reasearch could have shown the problem.
 
-If I take the <embed>'s source code and pop it in a code editor and look at the result, we get the following:
+If I take the `<embed>`'s source code and pop it in a code editor and look at the result, we get the following:
 
 ![Screenshot of the widget, in isolation, showing three stats, all in a column, with no carousel features present](src/guideImg/dl-du-stats-row.png)
 
@@ -115,7 +115,7 @@ Anyway, let's take a look at what the widget issues are.
 
 ### 1.4.11 Non-text Contrast (AA) or advisory?
 
-* To me, the most glaring visual issue is the choice of yellow for the donut chart. Now technically this does not fail, as the value is in the centre of the donut and presented in text, so the yellow meter bit isn't required for understanding the data. However, it's still a poor choice of colour for a chart, if you're going to display data or stats in a chart, then making it perceivable to more folk is obviously the right thing to do. The purpose of the chart element is for at-a-glance information, almost a circle = great, around three quarters = good, less than half a circle = probably not the best, etc.
+* The first thing I noticed was the choice of yellow for the donut chart. Now technically this does not fail, as the value is in the centre of the donut and presented in text, so the yellow meter bit isn't required for understanding the data. However, it's still a poor choice of colour for a chart, if you're going to display data or stats in a chart, then making it perceivable to more folk is obviously the right thing to do. The purpose of the chart element is for at-a-glance information, almost a circle = great, around three quarters = good, less than half a circle = probably not the best, etc.
 * It doesn't fail WCAG, but it's yellow (#FCD833) against the white (#FFF) background, which has a very poor contrast ratio of 1.4:1
 * The filled part of the donut is yellow (#FCD833) whilst the unfilled section is wispy grey (#EDEDED), which has a lower contrast ratio of 1.2:1
 * The wispy grey (#EDEDED) communicates something, right? It's there to tell sighted folk (or at least those with good enough vision to perceive low contrast) that this unfilled part of the donut is where the filled part could have gone, I'm not saying that background is absolutely necessary, but by adding it, they're reinforcing visual information, so I absolutely would write up the track if the number wasn't present. wispy grey against the white background, which is the lowest contrast of our three tests at 1.17:1
@@ -235,8 +235,6 @@ In the official version, we want to look for a `<div>` element that has the `sta
 ```
 
 Just a generic element with a class, not interesting at all for assistive technology, so it'll be ignored, not good. We want to add a new `<section>` element below this and we will call it `.stat__wrapper`.
-
-
 
 ```html
 <section class="stat__wrapper" aria-roledescription="carousel" aria-labelledby="widgetTitle courseTitle">
@@ -407,7 +405,7 @@ Line by line walkthrough:
 
 Now, where we hardcode the ARIA on the carousels itself and each slide, we'll remove that:
 
-```
+```html
 <!-- Carousel element -->
 <section class="stat__container">
   
@@ -500,7 +498,7 @@ Those buttons with the "Next question" AccNames, let's make those make sense:
 
 ```
 <button id="left_button" class="left_button arrow_button" title="Previous slide" tabindex="1" aria-label="Previous slide">
-  <button id="right_button" class="right_button arrow_button" title="Next slide" tabindex="2" aria-label="Next slide">
+<button id="right_button" class="right_button arrow_button" title="Next slide" tabindex="2" aria-label="Next slide">
 ```
 
 Occam's razor, Next slide and previous slide, does exactly what it says on the tin
@@ -607,8 +605,6 @@ We're in a much better place with this, now. Everything at least has some meanin
 The only visual change is the active pip is a little bigger and the inactive pips have a border, so we have taken an existing design, used our knowledge of ARIA patterns, status messages and reading order to make an accessible carousel, whilst only making the tiniest of visual changes. I'll send a link over to the folks at OfS, I can't imagine them putting up a fight, I haven't really changed the appearance and I'm sure they'll be happy to learn how to make their widget accessible.
 
 The full code is available on CodePen, below:
-
-
 
 <p class="codepen" data-height="" data-pen-title="DiscoverUni 2026" data-version="2" data-default-tab="html,result" data-slug-hash="PwpKZLE" data-user="Daz079" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
 
