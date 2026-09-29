@@ -177,9 +177,13 @@ The expectation is that once I am in the "carousel" widget, the sequence of read
 9. Previous question, button
 10. Next question, button
 
-This is slightly off, as a screen reader user will likely be navigating with their virtual cursor and each time after they have read the slide, the cursor will then move to the image, text and "See all course data" link, in the side area, which is static; only then will it move to the controls. It's important to remember that a blind screen reader user will not know how much content is present per slide, so will likely be confused that when they have read the content, they have to then move into the side area, before moving to the controls. I would imagine that the majority of screen reader users would figure out the problem and press <kbd>Tab</kbd> each time their virtual cursor moved to the image in the side area, but, that doesn't make this pattern correct, it's still wrong.
+This is slightly off, as a screen reader user will likely be navigating with their virtual cursor and should they advance a slide and then navigate into it, everything will be a bit odd, as their cursor will then move to the image, text and "See all course data" link, in the side area, which is static; only then will it move to the controls. It's important to remember that a blind screen reader user will not know how much content is present per slide, so may be confused that when they have read the content, they have to then move into the side area, before moving to the controls. We are going to mitigate against that, a bit, with announcements, but it's still wrong.
 
 This issue does not appear to be present when opting for the "vertical" widget in the configuration setup.
+
+Reading the HTML I can see what is causing this issue. There is some duplication of HTML elements, namely the course name and then the logo with the following text and CTA. These appear in different positions, depending on whether the carousel or cards are displaying, but they not only change positions visually, they are in completely different places in the DOM, so when the carousel is displayed the surrounding elements appear before the controls and affect the reading order.
+
+There is no need to do this at all, there was no need to duplicate the elements, there's more than enough layout algorithms in CSS to easily shuffle stuff about. 
 
 #### Solution
 
@@ -203,11 +207,11 @@ We'll pick this up at the end, as most of the issues can be resolved by using an
 
 ### Advisory
 
-The controls for the slides have the AccNames as "Next question" and "Previous question", they're not even questions, they're statements or answers. They were probably questions at one point, but they're explicitly telling us students' responses, so those questions have been answered.
+The controls for the slides have the AccNames as "Next question" and "Previous question", they're not even questions, they're statements or answers. They were undoubtedly questions at one point, but they're explicitly telling us students' responses, so those questions have been answered.
 
 ### Solution
 
-Language matters, combined with all the other aspects of accessible information that is lacking from the carousel, it matters that bit more, here. Perhaps I'm being pedantic, but ultimately, they're nbot questions, so something like "Next stat", or words to that effect will be much clearer.
+Language matters, combined with all the other aspects of accessible information that is lacking from the carousel, it matters that bit more, here. Perhaps I'm being pedantic, but ultimately, they're bot questions, so something like "Next stat", or words to that effect will be much clearer.
 
 ## Carousel solution
 
@@ -223,7 +227,7 @@ So, I changed my mind, I'm now going to show how to make this carousel "accessib
 
 ### Updating the code
 
-In the official version, we want to look for a `<div>` element that has the `stat__container` class and we'll modify that a little, let's take a look at the original element:
+In the official version, we want to look for a `<div>` element that has the `stat__container` class and we'll modify it.
 
 ```
 <div class="stat__container">
@@ -232,12 +236,10 @@ In the official version, we want to look for a `<div>` element that has the `sta
 Just a generic element with a class, not interesting at all for assistive technology, so it'll be ignored, not good. I have chosen this element as it contains the slides, the controls and the second heading 1. We're only interested in the slides and their parent `.stat__container`, at this stage, we'll sort the heading out, later. Let's see what changes I make:
 
 ```html
-
-
-<section class="stat__container" aria-roledescription="carousel" aria-labelledby="widgetTitle courseTitle">
+<section class="stats__inner-wrapper" aria-roledescription="carousel" aria-labelledby="widgetTitle courseTitle">
 ```
 
-* I change the `<div>` to a `<section>` element, as once we give that an Accname, we have a region
+* We use a `<section>` element, as once we give that an AccName, we have a region
 * I add `aria-roledescription` because there is no ARIA role for a carousel and this attribute allows us provide a custom role, of sorts
 * I add an `aria-labelledby` property which points to two ID Refs, the elements these ID Refs point to already existed, they were both of the `<h1>` elements, neither had an ID, so I had to add one to each element. Just a note, here, the `<h1>` that currently appears at the bottom of the slides is actually duplicated, one appears to the side, the other to the bottom, I'm not going to attempt to fix that, despite it seemingly completely unnecessary, but I just wanted to point out that we should not add an ID to both instances, because IDs must be unique and we don't want to faff around changing the values of `aria-labelledby`, on the fly, because, it feels unnecessary. It's OK that the currently hidden `<h1>` is hidden with `display: none;` and therefore not exposed, as `aria-labelledby` ignores that, by design. So just add the ID to whichever you find first, it doesn't matter. For our ID Ref values I just pretended there was a proper heading hierarchy, "Official student data..." is absolutely correct to be a `<h1>`, so logic dictates that the course name should be a `<h2>`, the order of my `aria-labelledby` values reflects this
 
@@ -337,7 +339,7 @@ So, now this works, right? Well, we have a few tweaks to make, but, yeah, it kin
 * We're currently attacking this for all viewports, viewports can change, so we'd need to monitor the viewport size and determine when the slides are displayed all at once, at which stage, we'd need to remove everything we have added, as it would no longer make sense
 * For a screen reader user, the first slide is not initially read out, because our live region is empty, so, our users only really start to hear stuff from slide 2 of 3, which is a little odd. But, that only actually happens if a user is navigating with the <kbd>Tab</kbd> key, as virtual cursor navigation has to pass the slide's contents, before it reaches the controls. Technically, when interacting with a control that updates the content, the newly updated content should come after that control, so we need to shuffle that about, a bit. Whilst we cannot track virtual cursor movements, nor should we, we do get an update to the document's activeElement() (currently focused element) function irrespective of how a user arrived on that control
 * Our Previous and Next controls aren't associated to the carousel and their AccNames don't make a great deal of sense, as they're not questions, they were, once, but not anymore, they're facts that are the result of students having answered questions
-* We also need to change the heading level of the second heading and, in reality, if it;s at the end, it's not really a heading at all, is it? Headings introduce content, not follow it
+* We also need to change the heading level of the second heading, because there's already a `<h1>`
 * We have a few visual tweaks to make
 
 So, with the above in mind, we could absolutely do better and of course, we will
@@ -474,4 +476,84 @@ announceChange = (new_active) => {
 
 Firstly, we just check that our media query matches our condition, in that the viewport will display below 1280px. We don't want to faff with the aria-live when it's not displaying the carousel, as there is no need, there's nothing to announce and we want to make sure nothing can go wrong and make the experience annnoying for screen reader users
 
-Then, just the same as before, we grab the data-string attribute's text string and send it to the aria-live and now we have a fully functional carousel, that has the correct ARIA when needed, announces changes when needed and does nothing when no carousel behaviour is present. Magic, huh? Well, not quite
+Then, just the same as before, we grab the data-string attribute's text string and send it to the aria-live and now we have a fully functional carousel, that has the correct ARIA when needed, announces changes when needed and does nothing when no carousel behaviour is present. Magic, huh? Well, not quite. We'll fix a few of the low lying fruit bits, before we get on to the bit we need to think of. Let's fix that `<h1>` that shouldn't be a `<h1>`:
+
+```
+<h2 class="widget__footer bottom" id="courseTitle">Accounting and Business Management (Full-time), The University of Westminster</h2>
+```
+
+Remember, there's actually two of these, so we need to change both. We've established it's definitely not a heading one, some content does come after it, so we will just change it to a `<h2>`, nice and easy. remember one of those has an ID, we want to keep that.
+
+
+
+Those buttons with the "Next question" AccNames, let's make those make sense:
+
+```
+<button id="left_button" class="left_button arrow_button" title="Previous slide" tabindex="1" aria-label="Previous slide">
+  <button id="right_button" class="right_button arrow_button" title="Next slide" tabindex="2" aria-label="Next slide">
+```
+
+Occam's razor, Next slide and previous slide, does exactly what it says on the tin
+
+Let's fix those pips:
+
+```
+.circle {
+  display: inline-block;
+  background-color: #D5D5DC;
+  border-radius: 100%;
+  height: 10px;
+  width: 10px;
+  /* Changed from 'none' to the following: */
+  border: 2px solid #858585;
+}
+
+.circle.circle-active {
+  background-color: #0a1d42;
+  /* Added the following */
+  border-color: #0a1d42;
+  height: 12px;
+  width: 12px;
+}
+
+/* Added the following, to existing class name */
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+```
+
+I'm not going through the above in any notable detail, but:
+
+* I make a darker border for all pips
+* I change the colour of the border to match the fill colour of the active pip, I also increase the size of just the active pip, to increase perceivability
+* Because everything looked a little misaligned, I got the parent container for the pips and used flex to realign everything
+
+I'm going to fix an annoyance in CSS here, too:
+
+```
+.arrow_button:focus {
+  /* outline: none; */
+  /* box-shadow: 0 0 0 2px #0A1D42; */
+  outline: 2px solid #0A1D42;
+}
+```
+
+They used `outline: none;` and then set a focus indicator using `box-shadow:` Obviously `box-shadow` completely disappears in High Contrast Mode, so I've done away with that and used the same colour for the `outline`. I'm not sure what the issue waas with outline and why they opted for this, but it's visually identical and significantly more robust doing it properly.
+
+We need to sort the reading order out, because it's off enough to be annoying. I did consider just rewriting the whole thing, which would absolutely be the best way, but, I kind of forgot and did all of the other stuff, first, which means I'd have to do a good bit extra rewiring, so to speak. So, I'll just fix it in situ.
+
+As I mentioned earlier, most of this issue is a direct result of components being in the wrong place in the DOM, I can see in the HTML they have mitigated the focus order with positive tabindex values, which is obviously bad practice, but it has zero impact on reading order. In addition to the irregular placement of components in the DOM, some elements are duplicated for certain layouts and there is absolutely zero need to do that. The elements that appear outside of the slides have `.info-box .side` and `.info-box .bottom` for the side/bottom elements and the second heading has `.widget__footer .bottom` and `.widget__footer .side`. None of that business was necessary, there's about a zillion different layout algorithms that can shuffle stuff about in the DOM. 
+
+I'm not going to provide the code for this, it'll be in the Codepen, but in essence, I just had to move stuff about and create a new wrapper element. The controls are now actually inside the carousel, where they were supposed to be and this makes the reading order make sense and it's logical.
+
+I had two choices, here:
+
+* Do I put the controls as the first elements inside the carousel? That makes sense, as typically new stuff should come after the control?
+* Do I put them after the slides, so somebody navigating with the virtual cursor actually navigates through the first slide, therefore, hearing it, before they get to the buttons, whereby the ARIA live will take over after every click?
+
+There are pros and cons to each I guess and it's not a question I can answer because I'm not a screen reader user. Obviously as our slides are announced after pressing a button, the slide that is already showing doesn't get announced, which means a user will have to hear "slide 2 of 1..., slide 3 of 3..." and then click one more time to get to the first slide. Is that odd or is it just trivial? 
+
+I have put the controls first, just because that's the regular pattern. I don't want to break convention, but it's always worth questioning whether something is right.
