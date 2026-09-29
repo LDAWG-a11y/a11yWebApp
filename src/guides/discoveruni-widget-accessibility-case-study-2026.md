@@ -405,7 +405,7 @@ Line by line walkthrough:
 
 Now, where we hardcode the ARIA on the carousels itself and each slide, we'll remove that:
 
-```
+```html
 <!-- Carousel element -->
 <section class="stat__container">
   
