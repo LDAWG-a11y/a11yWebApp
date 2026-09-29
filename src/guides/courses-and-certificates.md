@@ -90,6 +90,7 @@ The following courses include free and paid for courses on digital accessibility
 ### Periodically available
 
 * [CurtinX: Disability and Digital Media: Accessibility, Representation and Inclusion (external website)](https://www.edx.org/learn/dei-diversity-equity-inclusion/curtin-university-disability-and-digital-media-accessibility-representation-and-inclusion) 
+* [Santander Course -  Technology Without Barriers: Introduction to Digital Accessibility (external website)](https://app.santanderopenacademy.com/en/course/technology-without-barriers-introduction-to-digital-accessibility) - this is in Spanish but when accessed in Chrome, Google will translate
 
 ## Paid courses
 
