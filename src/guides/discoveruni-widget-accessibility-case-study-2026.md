@@ -4,7 +4,7 @@ summary: Revisiting the new DiscoverUni widget's accessibility in 2026 to
   determine whether the redesign has addressed all of the issues present in the
   2023 version.
 author: dlee
-date: 2026-04-20
+date: 2026-09-29
 toc: false
 isGuide: true
 ---
@@ -115,7 +115,7 @@ Anyway, let's take a look at what the widget issues are.
 
 ### 1.4.11 Non-text Contrast (AA) or advisory?
 
-* To me, the most glaring visual issue is the choice of yellow for the donut chart. Now technically this does not fail, as the value is in the centre of the donut, so the yellow meter bit isn't required for understanding the data. However, it's still a poor choice of colour for a chart, if you're going to display data or stats in a chart, then making it perceivable to more folk is obviously the right thing to do. The purpose of the chart element is for at-a-glance information, almost a circle = great, around three quarters = good, less than half a circle = probably not the best, etc.
+* To me, the most glaring visual issue is the choice of yellow for the donut chart. Now technically this does not fail, as the value is in the centre of the donut and presented in text, so the yellow meter bit isn't required for understanding the data. However, it's still a poor choice of colour for a chart, if you're going to display data or stats in a chart, then making it perceivable to more folk is obviously the right thing to do. The purpose of the chart element is for at-a-glance information, almost a circle = great, around three quarters = good, less than half a circle = probably not the best, etc.
 * It doesn't fail WCAG, but it's yellow (#FCD833) against the white (#FFF) background, which has a very poor contrast ratio of 1.4:1
 * The filled part of the donut is yellow (#FCD833) whilst the unfilled section is wispy grey (#EDEDED), which has a lower contrast ratio of 1.2:1
 * The wispy grey (#EDEDED) communicates something, right? It's there to tell sighted folk (or at least those with good enough vision to perceive low contrast) that this unfilled part of the donut is where the filled part could have gone, I'm not saying that background is absolutely necessary, but by adding it, they're reinforcing visual information, so I absolutely would write up the track if the number wasn't present. wispy grey against the white background, which is the lowest contrast of our three tests at 1.17:1
@@ -124,17 +124,17 @@ Like I said, it doesn't fail, but that doesn't mean a great deal, it just means 
 
 #### Solution
 
+It doesn't really need a solution and I'm not going to change it on my accessible example, as the text is easy to read. It's more of a niggle than anything and could have been designed to be more inclusive.
+
 Looking at the DiscoverUni website, they appear to have two primary brand colours the previous yellow colour and a dark blue (#012554), they also use other shades of blue throughout the site.
 
-So, how would we approach this? I listed three areas for contrast, although technically, it's two, when done correctly. That's because the whole thing should either have a border with a minimum 3:1 contrast against the adjacent background, or the filled and unfilled parts would both have a contrast of 3:1 against the background. If this were a linear chart, like a progress indicator, then that becomes more important, as where does it start and where does it stop are important aspects that need to be communicated, right? Otherwise, what am I looking at? I've looked at this widget on several universities and when the percentage is perhaps over 75%, it arguably seems clear that is would be a circle. I did find a course at one HE institution that had 35% for one the data points, I would say that's nowhere near enough of a circle for all people to guess the final shape could be a circle. I'm sure there are some data points for some universities where the percentage will be lower than 20%, in which case, without being able to see the track part, what does this random slither of barely perceivable colour mean?
-
-The simplest solution would be to change the color of the filled section to the dark blue, add a border to the unfilled section (the same blue would be fine), then keep the wispy grey or use the yellow in the unfilled section. The colours could be flipped, of corse, but personally, I think the darker more prominent colour should be used for the filled section and the lighter colour for the unfilled, otherwise, it looks like it is in reverse. As long as the border has adequate contrast against the background, then the two colours just need to have an adequate contrast gainst ech other, as the border itself would likely be "subsumed" by the darker colour of the filled in section.
+The simplest solution would be to change the color of the filled section to the a darker colour, not every use of colour has to be brand colours, add a border to the unfilled section, then keep the wispy grey or use the yellow in the unfilled section. The colours could be flipped, of course, but personally, I think the darker more prominent colour should be used for the filled section and the lighter colour for the unfilled, otherwise, it looks like it is in reverse. As long as the border has adequate contrast against the background, then the two colours just need to have an adequate contrast gainst ech other, as the border itself would likely be "subsumed" by the darker colour of the filled in section.
 
 We could of course faff around with both the yellow and grey, to get them to have an adequate contrast against each other, but, I'm not doing that, as firstly, we'd have a designer say "That yellow isn't on brand" and secondly, yellow is always going to be a struggle on light backgrounds and by the time you get something "compliant", it's no longer yellow.
 
 ### 1.4.11 Non-text Contrast (AA)
 
-The pips for the slides have active and inactive colours, these communicate visual information. The widget I am looking at now has three slides, I can look at the pips as someone with relatively decent sight and determine that I am viewing slide 2 of three. This is a fail as a wispy grey colour (#D5D5DC) has been used for the inactive pips against the white (#FFF) background, and there is a contrast ratio of just 1.46:1. Again, at a minimum this must be 3:1
+The pips for the slides have active and inactive colours, these communicate visual information. The widget I am looking at now has three slides, I can look at the pips as someone with relatively decent vision and determine that I am viewing slide 2 of three. This is a fail as a wispy grey colour (#D5D5DC) has been used for the inactive pips against the white (#FFF) background, and there is a contrast ratio of just 1.46:1. Again, at a minimum this must be 3:1
 
 #### Solution
 
@@ -166,22 +166,23 @@ The visual reading order does not match the programmatic reading order. Looking 
 
 The expectation is that once I am in the "carousel" widget, the sequence of reading (using a screen reader) somewhat matches what is visually presented, it can of course be different, as long as it does not affect the meaning.
 
-1. Navigating with a screen reader, using the virtual cursor the reading order is, as follows:
-2. Heading level 1 "Official student data from DiscoverUni"
-3. 82%
-4. Heading level 2 In work or doing further study 15 months after the course
-5. The Data displayed is...
-6. Discover Uni is an official source of information...
-7. DiscoverUni logo, image
-8. Link, see all course data, see all course data opens in a new window
-9. Previous question, button
-10. Next question, button
+Navigating with a screen reader, using the virtual cursor the reading order is, as follows:
 
-This is slightly off, as a screen reader user will likely be navigating with their virtual cursor and should they advance a slide and then navigate into it, everything will be a bit odd, as their cursor will then move to the image, text and "See all course data" link, in the side area, which is static; only then will it move to the controls. It's important to remember that a blind screen reader user will not know how much content is present per slide, so may be confused that when they have read the content, they have to then move into the side area, before moving to the controls. We are going to mitigate against that, a bit, with announcements, but it's still wrong.
+1. Heading level 1 "Official student data from DiscoverUni"
+2. 82%
+3. Heading level 2 In work or doing further study 15 months after the course
+4. The Data displayed is...
+5. Discover Uni is an official source of information...
+6. DiscoverUni logo, image
+7. Link, see all course data, see all course data opens in a new window
+8. Previous question, button
+9. Next question, button
 
-This issue does not appear to be present when opting for the "vertical" widget in the configuration setup.
+This is off, the actual carousel part are the stats, and the controls, the surrounding elements are static and do not change when a user advances a carousel, so, by extension, the controls should be inside the carousel and a user should not have to go through static content in search of those controls. I can imagine a universe where a blind screen user thinks that the static content will change, too, because the controls come after it. That is exacerbated by the fact that there is no accessibility information in the entire carousel, so it's likely super confusing.
 
-Reading the HTML I can see what is causing this issue. There is some duplication of HTML elements, namely the course name and then the logo with the following text and CTA. These appear in different positions, depending on whether the carousel or cards are displaying, but they not only change positions visually, they are in completely different places in the DOM, so when the carousel is displayed the surrounding elements appear before the controls and affect the reading order.
+This issue is not present when opting for the "vertical" widget in the configuration setup.
+
+Reading the HTML I can see what is causing this issue. There is some duplication of HTML elements, namely the course name and then the logo with the following text and CTA. These appear in different positions, depending on whether the carousel or cards are displaying, but they do not only change positions visually, they are in completely different places in the DOM, so when the carousel is displayed the surrounding elements appear before the controls and affect the reading order.
 
 There is no need to do this at all, there was no need to duplicate the elements, there's more than enough layout algorithms in CSS to easily shuffle stuff about. 
 
@@ -199,7 +200,7 @@ We'll pick this up at the end, as most of the issues can be resolved by using an
 
 ### 4.1.2 Name, Role, Value (A)
 
-A carousel or slider needs to communicate what it is, its name and its current state so a user knows what it is, what to expect and how to interact with it. None of this information is present.
+A carousel or slider needs to communicate what it is, its accessible name and the roles and states of its parts so a user knows what it is, what to expect and how to interact with it. None of this information is present.
 
 #### Solution
 
@@ -215,11 +216,11 @@ Language matters, combined with all the other aspects of accessible information 
 
 ## Carousel solution
 
-Initially I was going to demo how to recreate this widget without using a carousel, mostly because in every example I found, there was only ever three slides, so it's pretty easy to redesign the widget to show all three stats at once, irrespective of the size of the embedded iFrame. Carousels aren't really a favoured UI choice, especially in the accessibility community, but most of those complaints appear to be from accessibility auditors and most of the time they're absolutely correct, because they're just poorly made.
+Initially I was going to demo how to recreate this widget without using a carousel, mostly because in every example I found, there was only ever three slides, so it's pretty easy to redesign the widget to show all three stats at once, irrespective of the size of the embedded iFrame. Carousels aren't really a favoured UI choice, especially in the accessibility community, but most of those complaints probably relate to rubbish carousels, which are by far, sadly more common.
 
-Maybe I'm going against the grain, a little, but I don't think carousels as a concept should be banished to the graveyard of terrible UI, forever, because sometimes, they make sense. I'm not saying every implementation is the correct call, many appear to be carousels when they don't need to be, just like the DiscoverUni widget, but I don't think an accessible carousel is always a bad thing. Sometimes carousels can heavily reduce page clutter and condense multiple images into a discrete stack, that doesn't require interaction or excessive scrolling to pass. Marketers are real, they may take 14 images of a new phone and request they are put on the product page, to show the phone from various angles and show the various colours, etc. Then it's somebody's job to make all of those promotional images be present on the page in a way that doesn't overwhelm the user, so, we end up with carousels.
+Maybe I'm going against the grain, a little, but I don't think carousels as a concept should be banished to the graveyard of terrible UI, forever, because sometimes, they make sense. I'm not saying every implementation is the correct call, many appear to be carousels when they don't need to be, just like the DiscoverUni widget, but I don't think an accessible carousel is always a bad thing. Sometimes carousels can heavily reduce page clutter, cognitive load and condense multiple images into a discrete stack that doesn't require interaction or excessive scrolling to pass. Marketers are real, they may take 14 images of a new phone and request they are put on the product page, to show the phone from various angles and show the various colours, etc. Then it's somebody's job to make all of those promotional images be present on the page in a way that doesn't overwhelm the user, so, we end up with carousels.
 
-We just have to accept carousels aren't going anywhere and not wish them out of existence, but push devs to make them better. Honestly, I feel like a hypocrite every time I ask "Does this need to be a carousel?" and link to [Should I use a carousel?](https://shouldiuseacarousel.com/), because when I'm browsing things on my phone, I actually quite appreciate having the option of viewing the images or not, I'm sure that other users, disabled or otherwise also share a similar view, at least sometimes. I do caveat this with I know there is at least one issue with carousels that makes them a bit more cumbersome for screen reader users and that typically relates to the first slide or image, but we'll look into that, later.
+We just have to accept carousels aren't going anywhere and not wish them out of existence, but push devs to make them better. Honestly, I feel like a hypocrite every time I ask "Does this need to be a carousel?" and link to [Should I use a carousel?](https://shouldiuseacarousel.com/), because when I'm browsing things on my phone, I actually quite appreciate having the option of viewing the images or not, I'm sure that other users, disabled or otherwise also share a similar view, at least sometimes. I do caveat this with I know there is at least one issue with carousels that makes them a bit more cumbersome for screen reader users and that typically relates to the first slide or image, but we'll look into that, later. I don't really do that, that often, as most carousels are quite image heavy, but if it is only ever going to be for a few things and those things are important, I'd be inclined to recommend not using it, in our advisory comments.
 
 Ultimately, my role is to explain to devs how to make things accessible, but devs seldom have the clout to just act upon what I say, there's a tonne of other stakeholders behind the scenes that are just going to say "No, the carousel is staying", so I could spend forver asking them nicely to remove it or I could take the path of least resistance by showing them how to make what they already have significantly better. Afterall, a dev isn't going to have to jump through many hoops to add a little ARIA, change a few HTML tags or improve focus order, because these are things that designers and product owners seldom care about as they're mechanics, not cosmetics. If I can produce a report that demonstrates to a developer where accessibilit information needs to be improved and they can just go ahead and fix that, then I may only need to convince a designer to tweak a bit of contrast, here and there, so, I stand a greater chance of getting meaningful progress. 
 
@@ -233,17 +234,17 @@ In the official version, we want to look for a `<div>` element that has the `sta
 <div class="stat__container">
 ```
 
-Just a generic element with a class, not interesting at all for assistive technology, so it'll be ignored, not good. I have chosen this element as it contains the slides, the controls and the second heading 1. We're only interested in the slides and their parent `.stat__container`, at this stage, we'll sort the heading out, later. Let's see what changes I make:
+Just a generic element with a class, not interesting at all for assistive technology, so it'll be ignored, not good. We want to add a new `<section>` element below this and we will call it `.stat__wrapper`.
+
+
 
 ```html
-<section class="stats__inner-wrapper" aria-roledescription="carousel" aria-labelledby="widgetTitle courseTitle">
+<section class="stat__wrapper" aria-roledescription="carousel" aria-labelledby="widgetTitle courseTitle">
 ```
 
 * We use a `<section>` element, as once we give that an AccName, we have a region
 * I add `aria-roledescription` because there is no ARIA role for a carousel and this attribute allows us provide a custom role, of sorts
-* I add an `aria-labelledby` property which points to two ID Refs, the elements these ID Refs point to already existed, they were both of the `<h1>` elements, neither had an ID, so I had to add one to each element. Just a note, here, the `<h1>` that currently appears at the bottom of the slides is actually duplicated, one appears to the side, the other to the bottom, I'm not going to attempt to fix that, despite it seemingly completely unnecessary, but I just wanted to point out that we should not add an ID to both instances, because IDs must be unique and we don't want to faff around changing the values of `aria-labelledby`, on the fly, because, it feels unnecessary. It's OK that the currently hidden `<h1>` is hidden with `display: none;` and therefore not exposed, as `aria-labelledby` ignores that, by design. So just add the ID to whichever you find first, it doesn't matter. For our ID Ref values I just pretended there was a proper heading hierarchy, "Official student data..." is absolutely correct to be a `<h1>`, so logic dictates that the course name should be a `<h2>`, the order of my `aria-labelledby` values reflects this
-
-
+* I add an `aria-labelledby` property which points to two ID Refs, the elements these ID Refs point to already existed, they were both of the `<h1>` elements, neither had an ID, so I had to add one to each element. Just a note, here, the `<h1>` that currently appears at the bottom of the slides is actually duplicated, one appears to the side, the other to the bottom, I'm not going to attempt to fix that, despite it being completely unnecessary, but I just wanted to point out that we should not add an ID to both instances, because IDs must be unique and we don't want to faff around changing the values of `aria-labelledby`, on the fly, because, it feels unnecessary. It's OK that the currently hidden `<h1>` is hidden with `display: none;` and therefore not exposed, as `aria-labelledby` ignores that, by design. So just add the ID to whichever you find first, it doesn't matter. For our ID Ref values I just pretended there was a proper heading hierarchy, "Official student data..." is absolutely correct to be a `<h1>`, so logic dictates that the course name should be a `<h2>`, the order of my `aria-labelledby` values reflects this
 
 On to the next, then we want to add some slides, with decent accessibility info, so let's grab the parent element of each slide and work our magic, the element we want is again, a `<div>` with no accessible goodness and this one has a class of `stat-box`, so lets see how that started:
 
@@ -257,11 +258,9 @@ Yep, sigh, nothing to share with the accessibility tree, a whole bunch of nothin
 <div class="stat-box small-hidden" id="stat_3" data-id="3" role="group" aria-roledescription="slide" aria-label="">
 ```
 
-* I add `role="group",` group is often used as it groups elements in the slide together, on a product page, there could be a call to action, controls to change the colour, maybe even a description and group makes sense, there. I'd agree in our case it makes a little less sense, as once we ignore the yellow donut, we're just left with a string of text, but, if everybody uses groups, then that's what we should do, because consistency across platforms helps users to understand widgets and learn what to expect from them
+* I add `role="group",` group is often used as it groups elements in the slide together, on a product page, there could be a call to action, controls to change the colour of a product, maybe even a description and group makes sense, there. I'd agree in our case it makes a little less sense, as once we ignore the yellow donut, we're just left with a string of text, but, if everybody uses groups, then that's what we should do, because consistency across platforms helps users to understand widgets and learn what to expect from them
 * I then add `aria-roledescription` here, too, this time I add a value of `slide`, which in its basic form, is exactly what it is
 * Finally, I add an empty `aria-label`, not because I intend to leave an incomplete ARIA property there, but because I have to make an assumption. The widget isn't going to work without JS, on smaller viewports, because the buttons won't move the slides along. I had a little look at the config and there isn't any scope on a university's end to build an AccName string, so I just thought I'd do this with JS. In reality, this could be handled with the API call, but for us, we just have JS. I'll show the buildings of that string, later. Obviously we repeat the above for all three slides
-
-
 
 Somewhere, I add an empty `aria-live` region, as we'll need that, to announce stuff. for what it's worth, I add mine before the closing tag (`ofs_widget`) of the entire widget:
 
@@ -269,17 +268,30 @@ Somewhere, I add an empty `aria-live` region, as we'll need that, to announce st
 <div class="widget__announcements" aria-live="polite"></div>
 ```
 
-Just a class name and the aforementioned ARIA with the assertion level set to `polite`, because we don't need to be interupting anybody. the class is there to both hide it visually and also to use as a hook for injecting messages into it. Standard stuff, really. 
+Just a class name and the aforementioned ARIA with the assertion level set to `polite`, because we don't need to be interupting anybody. the class is there to both hide it visually and also to use as a hook for injecting messages into it. Standard stuff, really. We do want to visually hide this, though:
+
+```
+.widget__announcements {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+```
+
+This is similar to what we may use on a visually hidden class.
 
 That's all we need to do to the HTML, for now, we'll look at the headings and side content, a little later. So, a few bits of additional JS to make this come alive, everything "functionally works" already, just not accessibly, so we don't need to do a great deal, here:
 
 Firstly I create a global variable for the slides in a node list:
 
-```
+```javascript
 const statBoxes = document.querySelectorAll('.stat-box');
 ```
 
-In essence, I'm just putting all elements with a class name of \`stat-box\` in a collection to use, later
+In essence, I'm just putting all elements with a class name of `stat-box` in a collection to use, later
 
 Secondly, I create a new function `buildStrings` which like Ronseal fence paint, does exactly what it says on the tin, although my function is useless as a fence paint, but it does build strings:
 
@@ -300,7 +312,7 @@ I'll go through the function, line by line:
 
 * We create a loop to get each of the slides, our individual element reference is `box` and then we want the index iterator, which I access with `idx`.
 * My first string is `slideOf` which gets the current slide number and the total count of slides and produces a string 'Slide \[n] of \[n]', where \[the first instance of [n] is the current iteration and the second instance being the length of the node list
-* On each `box` we set the `aria-label` (which was previously empty) to that value, so the first slide would be 'Slide 1 of 3', and so on. We needed to give the group a name, in reality, this isn't going to be announced, because our screen reader users shouldn't ever need to leave the Next and Previous buttons
+* On each `box` we set the `aria-label` (which was previously empty) to that value, so the first slide would be 'Slide 1 of 3', and so forth. We needed to give the group a name, in reality, this isn't going to be announced, because our screen reader users shouldn't ever need to leave the Next and Previous buttons
 * The next three lines are just me getting references to the bits of text we need, the percentage, the slide title and the slide subtitle
 * Finally, I build the string using the order percent, title subtitle and then I reuse the `slideOf` variable, to add this to the end (I also add a couple of commas). the reason I add the `slideOf` string to the end, is because it is the only way it's going to be reliably announced. For a screen reader user that cannot see the widget or the wispy grey pips, how else are they going to know which slide they are on? I did mention the pips had no programmatic alternative, earlier, is this enough? I believe so, the pips pattern is ubiquitous enough that folk understand them, if they can see them, so the only users that were denied this info were screen reader users (if we pretend they had decent contrast). We could have made a list and used hidden text, but we'd potentially be repeating the same thing three times for screen reader users navigating with the virtual cursor and I don't believe that adds any value, for non-interactive pips. I'm aware that my approach could be wrong, I cannot speak for screen reader users, I can only tell you to do your own testing with paid users
 * I add those strings to a data attribute on each element, we could just store them in memory, but I think it can be useful to see stuff working in the DOM, the `data-string` attribute is present on the `.stat-box` element, which is of course, the slide
@@ -318,7 +330,7 @@ window.addEventListener("load", () => {
 
 Nothing else to say, here. I just call the function once the page loads.
 
-Now we need to do something useful with that string of text. In the original JS there is a fucntion called moveSlideAlong, which is pretty self-explanatory, it advances the slide. It has two function parameters which are passed from another function, we only need to concern ourselves with the  `new_active` parameter, as that is the slide element that appears on screen as a result of activating either of the Previous or Next buttons and quite handily, that element already contains the string we built, so we can simply grab it set the text content of our `aria-live` region to that string, like so:
+Now we need to do something useful with that string of text. In the original JS there is a function called `moveSlideAlong`, which is pretty self-explanatory, it advances the slide. It has two function parameters which are passed from another function, we only need to concern ourselves with the  `new_active` parameter, as that is the slide element that appears on screen as a result of activating either of the buttons and as we added a data atribute with a string of text, we can just grab that string and inject it into our live region, like so:
 
 ```
 function moveScreenAlong(active, new_active) {
@@ -332,15 +344,15 @@ function moveScreenAlong(active, new_active) {
 }
 ```
 
-I have only added the final line in the above snippet, I'm simply getting the value of the data attribute on the new slide and sending it to our announcement node. Now, whenever a screen reader user activates the slide controls, they hear the contents of the slide, without having to leave the buttons, which makes sense for small slides like this, if it were text heavy and contained important semantic info, controls or other stuff, more complex in nature, then it would likely not be the best call.
+I have only added the final line in the above snippet, I'm simply getting the value of the data attribute on the new slide and sending it to our announcement node. Now, whenever a screen reader user activates the slide controls, they hear the contents of the new slide, without having to leave the buttons, which makes sense for small slides like this, if it were text heavy and contained important semantic info, controls or other stuff, more complex in nature, then it would likely not be the best call.
 
 So, now this works, right? Well, we have a few tweaks to make, but, yeah, it kind of works, but not perfectly:
 
 * We're currently attacking this for all viewports, viewports can change, so we'd need to monitor the viewport size and determine when the slides are displayed all at once, at which stage, we'd need to remove everything we have added, as it would no longer make sense
-* For a screen reader user, the first slide is not initially read out, because our live region is empty, so, our users only really start to hear stuff from slide 2 of 3, which is a little odd. But, that only actually happens if a user is navigating with the <kbd>Tab</kbd> key, as virtual cursor navigation has to pass the slide's contents, before it reaches the controls. Technically, when interacting with a control that updates the content, the newly updated content should come after that control, so we need to shuffle that about, a bit. Whilst we cannot track virtual cursor movements, nor should we, we do get an update to the document's activeElement() (currently focused element) function irrespective of how a user arrived on that control
+* The reading order is off
 * Our Previous and Next controls aren't associated to the carousel and their AccNames don't make a great deal of sense, as they're not questions, they were, once, but not anymore, they're facts that are the result of students having answered questions
 * We also need to change the heading level of the second heading, because there's already a `<h1>`
-* We have a few visual tweaks to make
+* The pips lack adequate contrast
 
 So, with the above in mind, we could absolutely do better and of course, we will
 
@@ -365,8 +377,8 @@ const modifyCarousel = () => {
       box.setAttribute('role', 'group');
       box.setAttribute('aria-label', `Slide ${idx + 1} of ${statBoxes.length}`);
     })
-    document.querySelector('.stat__container').setAttribute('aria-roledescription', 'carousel');
-    document.querySelector('.stat__container').setAttribute('aria-labelledby', 'widgetTitle courseTitle');       
+    document.querySelector('.stat__wrapper').setAttribute('aria-roledescription', 'carousel');
+    document.querySelector('.stat__wrapper').setAttribute('aria-labelledby', 'widgetTitle courseTitle');       
   } else {
     statBoxes.forEach((box) => {
       box.removeAttribute('aria-label');
@@ -374,8 +386,8 @@ const modifyCarousel = () => {
       box.removeAttribute('role');
     })
     document.querySelector('.widget__announcements').textContent = '';
-    document.querySelector('.stat__container').removeAttribute('aria-roledescription');
-    document.querySelector('.stat__container').removeAttribute('aria-labelledby');
+    document.querySelector('.stat__wrapper').removeAttribute('aria-roledescription');
+    document.querySelector('.stat__wrapper').removeAttribute('aria-labelledby');
   }
 }
 ```
@@ -385,8 +397,8 @@ Line by line walkthrough:
 * We have a function called `modifyCarousel()`
 * A conditional that determines if our stored `mq` variable `matches` the media query, the `matches` property just returns a `true` or `false` value, if `true`, we'll add stuff if `false`, we'll remove it
 * We loop through the slides with our `statBoxes` elements list
-* If it does match the query we add the `aria-roledescription`, `role` and `aria-label` that we had hardcoded in the HTML, earlier, the value of that `aria-label` is exactly the same string as what we previously stored in our `slideOf` variable, earlier. This gets of "slide 1 of 3", etc
-* Ouside of the loop we add the `aria-roledescription` and `aria-labelledby` properties to the `.stat__container`, as we hardcoded those, earlier. Again, the values for the `aria-labelledby` property are pointing at the same two nodes, the first `<h1>` and the second one
+* If it does match the query we add the `aria-roledescription`, `role` and `aria-label` that we had hardcoded in the HTML, earlier, the value of that `aria-label` is exactly the same string as what we previously stored in our `slideOf` variable. This gets of "slide 1 of 3", etc
+* Ouside of the loop we add the `aria-roledescription` and `aria-labelledby` properties to the `stat__wrapper`, as we hardcoded those, earlier. Again, the values for the `aria-labelledby` property are pointing at the same two nodes, the first `<h1>` and the second one
 * Then when our `mq` variable does not match, in the `else` block
 * We again loop through our slides
 * We remove the three ARIA properties we added when the condition was `true`
@@ -424,7 +436,7 @@ window.addEventListener("load", () => {
 Firstly we listen for an `onchange` event on our media query, which we stored as `mq`. This listens for a change in the truthiness of the media query. The best way I can explain this is when a user somehow changes the iFrame's size, be that through increasing or decreasing zoom or changing the width of the browser window, as the media query is always monitored, it will simply call our `modifyCarousel()` function, only if the change crosses our `width` threshold, in either direction. I'll give a couple of examples. The page allows a full width iFrame in both the scenarios:
 
 * A user loads the page, the total width of the browser is 1200px, the user has a 1920px wide display, they decide to increase the browser window's size to fill their screen. As they are dragging the browser width out, there's a single point where that media query causes a change. That point, when enlarging the viewport is 1280px
-* A user loads the site on their 1920px screen, the browser occupies the full width of the display. The user decides the text is a bit small, so they zoom the page. As they zoom whilst the physical dimensions of their monitor obviously stay the same, the CSS pixels do not. If our user zooms to 200% and their starting point was roughly 1900px, the new width is half of that roughly 950px, because that's how zoom works, CSS and the browser makes the software pixels bigger, so 200% zoom is dividing the number of software pixels by 2. Because in essence, our user is decreasing the viewport's software pixel count, they will eventually hit the magic number or threshold and because it is decreasing, that magic number is actually 1279px, as that is 1px less than 1280px
+* A user loads the site on their 1920px screen, the browser occupies the full width of the display. The user decides the text is a bit small, so they zoom the page. As they zoom whilst the physical dimensions of their monitor obviously stay the same, the CSS pixels do not. If our user zooms to 200% and their starting point was roughly 1900px, the new width is half of that, roughly 950px, because that's how zoom works, CSS and the browser makes the software pixels bigger, so 200% zoom is dividing the number of software pixels by 2. Because in essence, our user is decreasing the viewport's software pixel count, they will eventually hit the magic number or threshold and because it is decreasing, that magic number is actually 1279px, as that is 1px less than 1280px
 
 Imagine that threshold is a tennis net. Only when the ball crosses the net, does a RADAR gun measure the speed of the ball. If I were on one side of the tennis court and I was just trying to learn to juggle with a single tennis ball and probably failing miserably, the ball is still moving, but it's not crossing that threshold (net) so the RADAR gun does not fire. Only when I throw or bat the ball over the net will the gun do its thing. Much like our `onchange`, it'll only actually fire when the viewport width crosses our pixel threshold. Hopefully that makes sense?
 
@@ -432,7 +444,7 @@ That will only call our `modifyCarousel()` function when there's a change, so we
 
 We simply call the same `modifyCarousel()` function it the `eventListener()` that was already in the JS and runs when the page has completed loading. Now that function will run both on page load and when any chnge to the viewport size crosses our media query threshold.
 
-I modified the buildStrings() function we created, earlier:
+I modified the `buildStrings()` function we created, earlier:
 
 ```
 const buildStrings = () => {
@@ -446,7 +458,7 @@ const buildStrings = () => {
 }
 ```
 
-In essence, I just removed the `slideOf` variable, which we were using twice, once to update the aria-label on each box and the other to append our data-string attribute. I still add the same text to the data-string, but I do so with a JS template string, as I'm only using it once in here, now. We actually moved that functionality out to put in our `modifyCarousel()` function, which you may have noticed.
+In essence, I just removed the `slideOf` variable, which we were using twice, once to update the `aria-label` on each box and the other to append our data-string attribute. I still add the same text to the data-string, but I do so with a JS template string, as I'm only using it once in here, now. We actually moved that functionality out to put in our `modifyCarousel()` function, which you may have noticed.
 
 The last piece of missing JS to get back to where we were (but responsive) is just the announcement:
 
@@ -462,7 +474,7 @@ function moveScreenAlong(active, new_active) {
 }
 ```
 
-Previously we were just ipdating the live region in the `moveScreenAlong()` function that was already doing the carousel sliding. I removed that bit of logic and just put a function call in, we call `announceChange()` and we pass in that `new_active` element, which is the new slide, just like before.
+Previously we were just updating the live region in the `moveScreenAlong()` function that was already doing the carousel sliding. I removed that bit of logic and just put a function call in, we call `announceChange()` and we pass in that `new_active` element, which is the new slide, just like before.
 
 Now we need a function that for that:
 
@@ -474,17 +486,15 @@ announceChange = (new_active) => {
 }
 ```
 
-Firstly, we just check that our media query matches our condition, in that the viewport will display below 1280px. We don't want to faff with the aria-live when it's not displaying the carousel, as there is no need, there's nothing to announce and we want to make sure nothing can go wrong and make the experience annnoying for screen reader users
+Firstly, we just check that our media query matches our condition, in that the viewport will display below 1280px. We don't want to faff with the `aria-live` when it's not displaying the carousel, as there is no need, there's nothing to announce and we want to make sure nothing can go wrong and make the experience annnoying for screen reader users
 
-Then, just the same as before, we grab the data-string attribute's text string and send it to the aria-live and now we have a fully functional carousel, that has the correct ARIA when needed, announces changes when needed and does nothing when no carousel behaviour is present. Magic, huh? Well, not quite. We'll fix a few of the low lying fruit bits, before we get on to the bit we need to think of. Let's fix that `<h1>` that shouldn't be a `<h1>`:
+Then, just the same as before, we grab the `data-string` attribute's text string and send it to the `aria-live` and now we have a fully functional carousel, that has the correct ARIA when needed, announces changes when needed and does nothing when no carousel behaviour is present. Magic, huh? Well, not quite. We'll fix a few of the low lying fruit bits, before we get on to the bit we need to think of. Let's fix that `<h1>` that shouldn't be a `<h1>`:
 
-```
+```html
 <h2 class="widget__footer bottom" id="courseTitle">Accounting and Business Management (Full-time), The University of Westminster</h2>
 ```
 
-Remember, there's actually two of these, so we need to change both. We've established it's definitely not a heading one, some content does come after it, so we will just change it to a `<h2>`, nice and easy. remember one of those has an ID, we want to keep that.
-
-
+Remember, there's actually two of these, so we need to change both. We've established it's definitely not a heading one, some content does come after it (The side content or bottom, depending on viewport), so we will just change it to a `<h2>`, nice and easy. remember one of those has an ID, we want to keep that.
 
 Those buttons with the "Next question" AccNames, let's make those make sense:
 
@@ -541,7 +551,7 @@ I'm going to fix an annoyance in CSS here, too:
 }
 ```
 
-They used `outline: none;` and then set a focus indicator using `box-shadow:` Obviously `box-shadow` completely disappears in High Contrast Mode, so I've done away with that and used the same colour for the `outline`. I'm not sure what the issue waas with outline and why they opted for this, but it's visually identical and significantly more robust doing it properly.
+They used `outline: none;` and then set a focus indicator using `box-shadow:` Obviously `box-shadow` completely disappears in High Contrast Mode, so I've done away with that and used the same colour for the `outline`. I'm not sure what their issue was with `outline` and why they opted for this, but it's visually identical and significantly more robust doing it properly.
 
 We need to sort the reading order out, because it's off enough to be annoying. I did consider just rewriting the whole thing, which would absolutely be the best way, but, I kind of forgot and did all of the other stuff, first, which means I'd have to do a good bit extra rewiring, so to speak. So, I'll just fix it in situ.
 
@@ -556,4 +566,56 @@ I had two choices, here:
 
 There are pros and cons to each I guess and it's not a question I can answer because I'm not a screen reader user. Obviously as our slides are announced after pressing a button, the slide that is already showing doesn't get announced, which means a user will have to hear "slide 2 of 1..., slide 3 of 3..." and then click one more time to get to the first slide. Is that odd or is it just trivial? 
 
-I have put the controls first, just because that's the regular pattern. I don't want to break convention, but it's always worth questioning whether something is right.
+I have put the controls first, just because that's the regular pattern. I don't want to break convention, but it's always worth questioning whether something is right. I'll provide a HTML skeleton for what I did:
+
+```
+<div class="stat__container">
+  <section class="stat__wrapper">
+    <div class="controls">
+      <div class="dots"></div>
+      <div class="arrows">
+        <button id="left_button" class="left_button arrow_button" title="Previous slide" aria-label="Previous slide"></button>
+        <button id="right_button" class="right_button arrow_button" title="Next slide" aria-label="Next slide"></button>
+      </div>
+    </div>
+      <div class="stat-box active" id="stat_1" data-id="1"></div>
+      <div class="stat-box small-hidden" id="stat_2" data-id="2"></div>
+      <div class="stat-box small-hidden" id="stat_3" data-id="3"></div>
+  </section>
+</div>
+```
+
+As I stated, I just added the `.controls` to the top of our `<section>`, I left everything else alone.
+
+We'll add aria-controls to our buttons, it does at least programmatically reinforce that relationship, although, in reality, the buttons and slides are in the same region, so they're siblings, anyway.
+
+```
+<div class="arrows">
+  <button id="left_button" class="left_button arrow_button" aria-controls="carousel" title="Previous slide" aria-label="Previous slide">
+  </button>
+  <button id="right_button" class="right_button arrow_button" aria-controls="carousel" title="Next slide" aria-label="Next slide">
+  </button>
+</div>
+```
+
+I also removed all of the positive tabindex values, because we don't have any of those weird DOM order shenanigans going on, so the DOM handles that for us, as it should. I think that's it, we're done. Much quicker than looking through 300 HE provider websites to see if the cards in a row view ever appears.
+
+## Wrapping up
+
+We're in a much better place with this, now. Everything at least has some meaning, changes are announced, we have accounted for different viewports and the reading order makes sense. Overall, this should be much more understandable and usable to people.
+
+The only visual change is the active pip is a little bigger and the inactive pips have a border, so we have taken an existing design, used our knowledge of ARIA patterns, status messages and reading order to make an accessible carousel, whilst only making the tiniest of visual changes. I'll send a link over to the folks at OfS, I can't imagine them putting up a fight, I haven't really changed the appearance and I'm sure they'll be happy to learn how to make their widget accessible.
+
+The full code is available on CodePen, below:
+
+
+
+<p class="codepen" data-height="" data-pen-title="DiscoverUni 2026" data-version="2" data-default-tab="html,result" data-slug-hash="PwpKZLE" data-user="Daz079" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+
+  <span>See the Pen <a href="https://codepen.io/editor/Daz079/pen/01a0ec90-8551-788f-b972-75024d504545">
+
+  DiscoverUni 2026</a> on <a href="https://codepen.io">CodePen</a>.</span>
+
+</p>
+
+<script async src="https://public.codepenassets.com/embed/index.js"></script>
