@@ -64,7 +64,6 @@ We need a way to detect if JS is enabled, so let's do that now:
     </script>
     <title>Carousel example</title>
   </head>
-
 ```
 
 There's only really two points of interest, here. The rest is just the absolute minimum `<head>` stuff, which we would of course add to:
@@ -307,11 +306,22 @@ I had previously been on Can I Use, to check support, but I still wanted to chec
 
 ```
 @supports selector(::scroll-marker-group) {
-  .no-js .carousel__inner-wrap {
+  .carousel__inner-wrap {
     position: relative;
   }
 
   .no-js .carousel__slides {
+    overflow-x: hidden;
+
+    & .carousel__item {
+      width: 100%;
+      height: 100%;
+    }
+
+    & .carousel__item img {
+      min-width: 100%;
+      height: 100%;
+    }
     
     &::scroll-button(*) {
       position: absolute;
@@ -346,15 +356,15 @@ I had previously been on Can I Use, to check support, but I still wanted to chec
       right: 1rem;
     }
   }
-
-  
 }
 ```
 
 I'll give you a brief rundown of the above CSS before I discuss a glaring issue:
 
-* For every declaration, we're using out .no-js class, as we don't want any of this to apply if someone on Edge or whatever has JS enabled
-* We set `position: relative;` on a wrapper that is constrained to the viewport, I knew this particular element would come in handy for something, I could almost fool someone into thinking I can see the future. We use this element as a static plot that we can place absolutely positioned elements within and be sure we'll know they are placed exactly where we want them to be
+* For every declaration, we're using out `.no-js` class, as we don't want any of this to apply if someone on Edge or whatever has JS enabled
+* We set `position: relative;` on the wrapper that is constrained to the viewport, I knew this particular element would come in handy for something, I could almost fool someone into thinking I can see the future. We use this element as a static plot that we can place absolutely positioned elements within and be sure we'll know they are placed exactly where we want them to be
+* We hide overflow, as we're going for the traditional one image in view at any given time carousel
+* We adjust the sizes in the next two blocks, so the full width of the viewport is used by a single slide
 * Next we have the styles that are shared between the laft and right buttons, where I have passed in the global selector, the asterisk, I could have specified `left` or `right` and I could of course have seperated those declarations with a comma, to share those styles. Because my buttons are floating in the bottom corners and I cannot possibly know what images this will contain, I know that I have to ensure the buttons are perceivable. I just use a white arrow against a puple background which gives us a contrast of 10.1:1. It's just the arrow that needs to be perceivable, it doesn't technically matter if the purple background clashed with an image below, however, affordance is a thing and users tend to benefit from it a lot, so I also add a 1px border around the buttons, which is also white, this prevents the image from bleeding into the background, as there is a small moat around it, it's actually a border, but moat sounded cooler, like we're keeping enemy contrast at bay.
 * Next i wanted to ensure focus styles were decent, I inverted the backfround and arrow colours, this cannot fail, because those colours already passed and had a strong contrast. I then just added an outline-offset: 4px; which pushes the browser's default focus ring out 4px from the actual button. In Chrome, which is what i'm using, that is a dual colour ring, so under most circumstances, either the blue ring or the whte ring will be perceivable. I just added this as an extra, I'm not wholly reliant on it as I know it can fall down against some backgrounds
 * The next two declarations I access each button by name, as this is unique styles and AccNames that is unique to each button. I simply set an arrow as the content that points in the correct direction ([Thanks Adam Argylle](https://developer.chrome.com/blog/carousels-with-css)), I then add alt text, in CSS, which feels a little alien, but also useful. I then just add enough space for breathing room, I'm on MacOS so my scrollbar occupies different space than Windows scrollbars, but we're somewhere in the right ballpark and no, I have not tested, because we're just exploring the features
@@ -376,4 +386,10 @@ Focus management, not great. When I was using the Next slide button and I eventu
 
 ### CSS carousel final thoughts
 
-We didn't go to the lengths that sara did, because we were only interested in the buttons, we didn't want the pips, which actually change the semantics of everything into tabs, etc, we just wanted a way to davance slides with a button and enough info to be present that it makes sense. The buttons are seemingle redundant, at least using Chrome and VoiceOver, which I know isn't ideal, but I can't test this on Safari. I found the focus being forced on to the body quite jarring, this carousel could be anywhere on a page, a regular keyboard user/voice user or anyone that uses most other keyboard navigation API AT, with the exception of screen reader users is could have a hard time getting back to where they were. A screen reader user could at least get back using their Rotor/Elements panel, but even then, why should they have to do that?
+We didn't go to the lengths that Sara did, because we were only interested in the buttons, we didn't want the pips, which actually change the semantics of everything into tabs, etc, we just wanted a way to advance slides with buttons and enough accessibility info to be present that it makes sense. The buttons are seemingly redundant, at least using Chrome and VoiceOver, which I know isn't ideal, but I can't test this on Safari. I found the focus being forced on to the body quite jarring, this carousel could be anywhere on a page, a regular keyboard user/voice user or anyone that uses most other keyboard navigation API AT, with the exception of screen reader users is could have a hard time getting back to where they were. A screen reader user could at least get back using their Rotor/Elements panel, but even then, why should they have to do that?
+
+The buttons seem redundant for a screen reader user. Perhaps it's technically impossible to have the current slide read out when using them when relying on the browser alone? There is of course a much better option in that a screen reader user can at least navigate with their virtual cursor and have each slide read out and displayed correctly.
+
+I think it's quite good, in its current implementation, but the focus management is enough to put me off using it, as that would be annoying for users. Even if at this stage we had JS at our disposal, we couldn't fix it, as we can't access pseudo elements with JS, so capturing the click event and sending focus to somewhere logical isn't possible. But, at that stage, we may as well just roll our own, I guess.
+
+I'm going to try to see if I can reach out to somebody, to determine if this could be considered, i don't know if it's possible, but given the <dialog> has focus steps, I guess this could be provided with them, too?
