@@ -40,7 +40,7 @@ I'm not going to use any fancy image processing, so each image will just have a 
 
 First we'll get the non-carousel stuff out of the way, as the likelihood is I'll be using CSS on some of that, so for completeness, I'll include it:
 
-```
+```html
 <main>
   <h1 class="main__title">ACME homepage</h1>
   <p class="main__subtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis libero in.</p>
@@ -52,7 +52,7 @@ Just a `<main>` landmark, a `<h1>` and a little bit of placeholder text in a `<p
 
 We need a way to detect if JS is enabled, so let's do that now:
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
@@ -273,7 +273,7 @@ I've added brief comments to each block, as I can't go through all of this, as t
 
 We're using scroll snapping so each image snaps into view and we ensure that no image can exceed the width of the viewport. Scroll snapping does work by dragging the scrollbar, swiping on a touch display or using arrow keys on the keyboard, so we always get that snapping behaviour, where an image is always aligned to the viewport.
 
-I haven't considered landscape or all these folding devices, there's lots I haven't considered, well, I did consider them, but accounting for eavery device type would take a good chunk of time. I chose 15rem as the height to lazily account for Reflow, in that 15rem = 240px, which is less than the vertical 256px requirement. In practice on a small smartphone, that may still require vertical scrolling to view the full image, as there may be an address bar or other browser controls, additionally, the smartphone would have a wider viewport than 320px in landscape, so whilst this technically passes, as a single image does fit in a 320 x 256 viewport, that isn't going to be great on devices that actual people use. So, I'm not forgetting to account for that, we're mostly building a prototype that would definitely require more robust media queries.
+I haven't considered landscape or all these folding devices, there's lots I haven't considered, well, I did consider them, but accounting for eavery device type would take a good chunk of time. I chose 15rem as the height to lazily account for Reflow, in that 15rem = 240px, which is less than the vertical 256px requirement. In practice on a small smartphone, that may still require vertical scrolling to view the full image, as there may be an address bar or other browser controls, additionally, the smartphone would have a wider viewport than 320px in landscape, which would increase the image size, due to our media queries, so whilst this technically passes, as a single image does fit in a 320 x 256 viewport, that isn't going to be great on devices that actual people use (It wouldn't actually fail, anyway, as we disabled JS, but we don't care about pass or fail, we just care about accessible, right?) So, I'm not forgetting to account for that, we're mostly building a prototype that would definitely require more robust media queries.
 
 Just as it's nice to have receipts, the following image shows what I have done so far and I have set the browser width to 1280px, height to 1024px and then zoomed 400%, as required by Reflow. This demonstrates that the image ddoes at least pass that checkpoint.
 
@@ -282,3 +282,98 @@ Just as it's nice to have receipts, the following image shows what I have done s
 The next image simply shows what a user will be presented with if they have no JS and their broswer does not support the CSS carousel features, a scrollable region that contains all of the images in a scrollable row.
 
 ![](src/guideImg/dl-carousel-scrollable.png "Screenshot showing scrollable container we have just made, one image is in full view on a smaller viewport, the second image is partially visible, but will snap into view")
+
+## Attempting the CSS carousel
+
+I say attempting, not because it is beyond me, just I'm genuinely going into this having only read sara's article, I've never attempted this and if I'm not satisfied with the accessibility, then we won't use it, everybody who doesn't get the JavaScript will simply get the scrollable gallery and we will then only add any carousel functionality solely with JS. No matter what, I'll leave this in, even if it doesn't work out, because sometimes it can be useful to see people make mistakes and errors of judgement, which you'd see numerous times each day if I livestreamed my life haha.
+
+After a little faffing trying to detect only when the browser supports the CSS carousel, I finally got that working, I'll just add the snippet now, so we can discuss and move on:
+
+```
+@supports selector(::scroll-marker-group) {
+  .carousel__item {
+    background-color: red;
+  }
+}
+```
+
+I used the `@supports` at-rule and it took me a good bit of trial and error to find something that works. In essence, through some form of browser wizardry, this rule checks whether a named feature is supported. I don't know the mechanics, but I assume somewhere in the browser engine is a list of supported features, this at-rule queries those features at lightning speed and if it appears in that list or whatever, it'll apply the rendering logic inside, if not, it'll just ignore the blocks within and move on?
+
+I initially attampted to see if the `::scroll-button()` selector could be used for role detection, it didn't work, I tried multiple variations of that, just in case. Finally I discovered that `::scroll-marker-group` works, now, that's not exactly what we are going to be using, so there is an element of hit and hope, here, it's just the buttons we want, Sara's main gripes were the pips, which would be children of the `::scroll-marker-group`, so I have no intent of using those. But these properties are so closely linked, that they're almost certainly going to be introduced into the straggler browsers at excatly the same time. Notice I said almost certainly, this isn't a caousel for production environments, it's just me taking a stab at gradually adding features where they are available and discussing a process. It may well be we decide to just omit these shiny new things altogther. Anyway, I temporarily added a red background to the `<li>` elements, this was just a visual cue for me, so I could load it up in all three browsers and check which showed the red background.
+
+I had previously been on Can I Use, to check support, but I still wanted to check my at-rule actually worked. It did, as expected, I saw the red background on Chrome and the background was the deafault black colour in both Safari and Firefox. Now, when we add anything for our next step, we simply add it in this at-rule and for now, it only applies in Chromium browsers, if Safari or Firefox release it next month, it will automatically apply there, too. In essence, we're just saying "Stargglers, we're ready for you" and when they rock up with the goods, it'll just work. We wouldn't remove the at-rule when support is universal, though, as not everybody is using the latest version, so we'll just keep it as is, unless we can ever pass in the `::scroll-button()` selector, for additional peace of mind.
+
+### The relevant CSS carousel styles
+
+```
+@supports selector(::scroll-marker-group) {
+  .no-js .carousel__inner-wrap {
+    position: relative;
+  }
+
+  .no-js .carousel__slides {
+    
+    &::scroll-button(*) {
+      position: absolute;
+      bottom: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      padding: .5rem;
+      height: 2.5rem;
+      width: 2.5rem;
+      font-size: 1.75rem;
+      background-color: #50366B;
+      color: #fff;
+      z-index: 10;
+    }
+
+    &::scroll-button(*):focus-visible {
+      background-color: #fff;
+      color: #50366B;
+      outline-offset: 4px;
+    }
+
+    &::scroll-button(left) {
+      content: "⬅" / "Previous slide";
+      left: 1rem;
+    }
+    
+    &::scroll-button(right) {
+      content: "⮕" / "Next slide";
+      right: 1rem;
+    }
+  }
+
+  
+}
+```
+
+I'll give you a brief rundown of the above CSS before I discuss a glaring issue:
+
+* For every declaration, we're using out .no-js class, as we don't want any of this to apply if someone on Edge or whatever has JS enabled
+* We set `position: relative;` on a wrapper that is constrained to the viewport, I knew this particular element would come in handy for something, I could almost fool someone into thinking I can see the future. We use this element as a static plot that we can place absolutely positioned elements within and be sure we'll know they are placed exactly where we want them to be
+* Next we have the styles that are shared between the laft and right buttons, where I have passed in the global selector, the asterisk, I could have specified `left` or `right` and I could of course have seperated those declarations with a comma, to share those styles. Because my buttons are floating in the bottom corners and I cannot possibly know what images this will contain, I know that I have to ensure the buttons are perceivable. I just use a white arrow against a puple background which gives us a contrast of 10.1:1. It's just the arrow that needs to be perceivable, it doesn't technically matter if the purple background clashed with an image below, however, affordance is a thing and users tend to benefit from it a lot, so I also add a 1px border around the buttons, which is also white, this prevents the image from bleeding into the background, as there is a small moat around it, it's actually a border, but moat sounded cooler, like we're keeping enemy contrast at bay.
+* Next i wanted to ensure focus styles were decent, I inverted the backfround and arrow colours, this cannot fail, because those colours already passed and had a strong contrast. I then just added an outline-offset: 4px; which pushes the browser's default focus ring out 4px from the actual button. In Chrome, which is what i'm using, that is a dual colour ring, so under most circumstances, either the blue ring or the whte ring will be perceivable. I just added this as an extra, I'm not wholly reliant on it as I know it can fall down against some backgrounds
+* The next two declarations I access each button by name, as this is unique styles and AccNames that is unique to each button. I simply set an arrow as the content that points in the correct direction ([Thanks Adam Argylle](https://developer.chrome.com/blog/carousels-with-css)), I then add alt text, in CSS, which feels a little alien, but also useful. I then just add enough space for breathing room, I'm on MacOS so my scrollbar occupies different space than Windows scrollbars, but we're somewhere in the right ballpark and no, I have not tested, because we're just exploring the features
+
+### CSS Carousel: The good bits
+
+Technically we have just added some functional buttons with some new CSS features, what did we want as a bare minimum:
+
+* We absolutely needed the role to be that of a button, Sara showed this was the case and it is still the case today, that's great
+* All controls must have an AccName, again, Sara demoed this perfectly, these were my two minimum requirements and what gave me a glimmer of hope. The fallback alt text in the `content:` property works as it should, at least in this case
+* The button that controls the slides becomes `disabled` when we reach the last slide in that direction, it's not a infinite carousel, so the button becomes pointless at the end or beginning, that's quite useful
+* If I sequentially navigate with my virtual cursor within the carousel, I can change the slides and when a new slide is displayed, it's read out, as that is where my virtual focus is, of course. It's good that it tracks that automagically and both reads out and shows the slide just from the virtual cursor. At no point was I able to access the alt of any slide that was not displayed
+
+### CSS Carousels: Could be better
+
+I don't think any of us reasonably expected anything to be announced, I don't think that screen reader users who choose to disable JS expect that, either, as we would need JS to do that. It's perhaps safe to say, that a screen reader user who disables JS knows they are disabling the majority of dynamic changes? As the buttons say "Next slide" this may provide some form of clue, as to what they are for? We didn't explicitly call it a carousel, we could not, because the scrollable region isn't a carousel and that means a user could potentially wonder where the carousel controls are? In my limited testing if I use <kbd>Tab</kbd> and <kbd>Enter</kbd> on the buttons, I hear nothing, which is what we expected, I guess. But, that ultimately means the buttons aren't very useful for screen reader users, as it would be a case of advance a slide, go off with the virtual cursor to have slide read, go back to button, repeat ad infinitum
+
+Focus management, not great. When I was using the Next slide button and I eventually reached the end of the images, the button became `disabled`, which was cool. But, here's where it gets ugly, a disabled button cannot maintain keyboard focus, so it has to be sent somewhere. In this example, it is sent to the `<body>` element, now, it's worth pointing out we have a parent element that does have a `tabindex` attribute, we also have a Previos button that cannot be `disabled` at the same time, so focus being hijacked and sent to the `<body>` isn't good, as on a real site, we could have a tonne of tabstops before that carousel, which would obviously be a huge PITA for any user that does not use a pointing device. The browser did not scroll to the top when I added 1000 words of Lorem Ipsum, so focus was untracked. that may be good or bad, depending on the individual. It's early days, perhaps they could handle focus a bit more intuitively, like the native `<dialog>` element, that has its own unique focus steps? 
+
+### CSS carousel final thoughts
+
+We didn't go to the lengths that sara did, because we were only interested in the buttons, we didn't want the pips, which actually change the semantics of everything into tabs, etc, we just wanted a way to davance slides with a button and enough info to be present that it makes sense. The buttons are seemingle redundant, at least using Chrome and VoiceOver, which I know isn't ideal, but I can't test this on Safari. I found the focus being forced on to the body quite jarring, this carousel could be anywhere on a page, a regular keyboard user/voice user or anyone that uses most other keyboard navigation API AT, with the exception of screen reader users is could have a hard time getting back to where they were. A screen reader user could at least get back using their Rotor/Elements panel, but even then, why should they have to do that?
