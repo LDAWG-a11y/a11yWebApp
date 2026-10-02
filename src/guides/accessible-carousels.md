@@ -26,7 +26,7 @@ But the above being said, carousels have a place when done correctly, if we were
 
 So, I'm just going to build a few carousel types, we will have an auto-rotating type, but I'll intentionally make that a slower transition, I'll also provide ways to pause, stop or hide that carousel and well start with progressive enhancement and also we'll add in a couple of other features to increase the usability for as many people as we can, so let's get stuck in:
 
-## Our accessible base
+## Our accessible base HTML
 
 As always, we'll just start from some base HTML, which will be a bunch of images and a heading, which we'll then style it a little, so it's available if for whatever reason, JS isn't available.
 
@@ -72,24 +72,26 @@ There's only really two points of interest, here. The rest is just the absolute 
 * We have a `.no-js` class on the `<html>` element, as this serves as the default classname we can use as a hook
 * We have a small `<script>` in the `<head>` where we get the `<html>` element with `document.documentElement` and then access that element's `classList`, we then `remove` the `.no-js` class and then `add` `.has-js`
 
-The above can only run when JS is avilable, so we have a convenint hook for our functionality and CSS.
+The above can only run when JS is avilable, so we have a convenient hook for our functionality and CSS.
 
 What we will do now is is add as much of the base HTML as we can. Much of that won't be used when JS is unavailable, sure, we could add it with JS, but for simplicity's sake and reducing the size of our JS file, we'll take a few extra bytes of redundant HTML and ARIA, as long as it has zero effect on the non-JS version or we can hide it.
 
-As I mentioned earlier, a primary use-case for using a carousel is to not occupy too much valuable screen "real estate". We only have five images, but let's assume we're working for an estate agents (Realator? in the US) and we're tasked with building this widget. We get the brief and it states it can contain one or more images. I don't personally know if there is an upper limit, but my modest little house would have 10 - 20, tops, depending on how trigger happy the estate agent was with their camera. If we were selling a massive stately home, full of history, maybe that listing could contain 60 or more images? I did just have a quick look and the most I could find was 46 images of a single property, I'm sure there will be more for some properties.
+As I mentioned earlier, a primary use-case for using a carousel is to not occupy too much valuable screen "real estate". We only have five images, but let's assume we're working for an estate agents (Realtor, in the US) and we're tasked with building this widget. We get the brief and it states it can contain one or more images. I don't personally know if there is an upper limit, but my modest little house would have 10 - 20, tops, depending on how trigger happy the estate agent was with their camera. If we were selling a massive stately home, full of history, maybe that listing could contain 60 or more images? I did just have a quick look and the most I could find was 46 images of a single property, I'm sure there will be more for some properties.
 
-That's a lot of images. Do we really want to just chuck them all on the page? That wouldn't be great for anyone, especially as we'd obviously add alt text to each. On a mobile that would be a hell of a lot of scrolling just to pass the images. Naturally, a carousel makes sense, so we can efficiently use space by stacking those images and offering a user choice. look at them by operating the controls or just scroll by.
+That's a lot of images. Do we really want to just chuck them all on the page? That wouldn't be great for anyone, especially as we'd obviously add alt text to each. On a mobile that would be a hell of a lot of scrolling just to pass the images. Naturally, a carousel makes sense, so we can efficiently use space by stacking those images and offering a user choice to either look at them by operating the controls or just scroll by.
 
-That does provide us with a slightly awkward base, in that if we don't have JS enabled, what options do we actually have to reduce the collection of images into something a little more manageable?
+That does provide us with a slightly awkward base, in that if we don't have JS enabled, what options do we actually have to reduce the collection of images into something a little more manageable? 
 
-We do now have some of that functionality available in CSS, of all things. Scroll buttons that require zero JS. These are quite new, having only been available without flags for a year or so. As is always par for the course, when something is released, there are usually a couple of stragglers in the adoption process and yup, they're Firefox and Safari. Because we can do this with CSS alone, on Chromium based and Opera browser, we can take a look at using it, we can't support it where it isn't available, we can just use it where it is supported.
+We do now have some of that functionality available in CSS, of all things. Scroll buttons that require zero JS. These are quite new, having only been available without flags for a year or so. As is always par for the course, when something is released, there are usually a couple of stragglers in the adoption process and yup, they're Firefox and Safari. Because we can do this with CSS alone, but only on on Chromium based browsers, we can take a look at using it, we can't support it where it isn't available, we can just use it where it is supported.
+
+Where it is both not supported and there is no JS we can make it a scrollable region, then it's only going to occupy a similar amount of vertical space as a functional carousel.
 
 Before we go down that rabbit hole, [Sara Soueidan wrote a great in-depth article where she evaluated the accessibility of the CSS only carousel pattern](https://www.sarasoueidan.com/blog/css-carousels-accessibility/). It's very informative, so I highly recommend giving it a read.
 
-The main takeaway from Sara's article is they're not great, some parts are done well, others not so well. That's cool because Sara's article was last updated over a year ago, so maybe there have been bug fixes and the final result is better now, but also, we're only actually using a part of the pattern and we're only ever going to use it where there is no JavaScript, presuming the browser supports it. That's not to say that folks who access sites without JS shouldn't get an accessible experience, they absolutely should, hence why I always start these guides with progressive enhancement in mind, everybody matters. I genuinely don't know how accessible the bits I want to use are, at this moment in time, Sara's article does lead me to believe that the bits I want should be. If they're not, I'll take a different approach, it's not a great deal of CSS and our HTML doesn't need to change, so perhaps this could be a little discovery for us all? Anyway, let's write some HTML and I'll talk you through it:
+The main takeaway from Sara's article is they're not great, some parts are done well, others not so well. That's cool because Sara's article was last updated over a year ago, so maybe there have been bug fixes and the final result is better now? Also, we're only actually using a part of the pattern and we're only ever going to use it where there is no JavaScript, presuming the browser supports it. That's not to say that folks who access sites without JS shouldn't get an accessible experience, they absolutely should, hence why I always start these guides with progressive enhancement in mind, everybody matters. I genuinely don't know how accessible the bits I want to use are, at this moment in time, Sara's article does lead me to believe that the bits I want should be. If they're not, I'll take a different approach, it's not a great deal of CSS and our HTML doesn't need to change, so perhaps this could be a little discovery for us all? Anyway, let's write some HTML and I'll talk you through it:
 
 ```
-<section class="carousel" id="carousel" aria-labelledby="carouselTitle">
+<section class="carousel" id="carousel" aria-labelledby="carouselTitle" tabindex="0">
   <h2 class="carousel__title" id="carouselTitle">Interesting animals</h2>
   <div class="carousel__inner-wrap">
     <div class="carousel__controls" hidden>
@@ -138,10 +140,9 @@ The main takeaway from Sara's article is they're not great, some parts are done 
 
 A quick run through of our base markup:
 
-* We'll start with a `<section>` element, we can add an accessible name to this to make a `role="region"`, which we'll just point at the `<h2>` element. We could have done that with JS, well we could have just added the AccName to make it a region landmark, but these images are important for some reason and having them in a named region makes sense, even if that region can't be a carousel for everybody
-* We have a heading, with an appropriate level
+* We'll start with a `<section>` element, we can add an accessible name to this to make a `role="region"`, which we'll just point at the `<h2>` element. Let's say these images are likely very important for some reason and having them in a named region makes sense, even if that region can't be a true carousel for everybody. I have added a `tabindex="0"`, because if JS is unavailable and the user's browser does not support the new CSS carousel features, then they will have a scrollable region. I'll explain my rationale in more depth after this list, but we obviously need that `tabindex` for when our gallery is scrollable, as the elements within aren't interactive
 * A `.carousel__inner-wrap`, I have added this as we have a heading outside of it, so this enables me to use any positional or layout properties without deducting the height of the heading. I haven't wrote a single line of CSS, yet, so I think I'm planning ahead
-* We have a `.carousel__controls` container, which contains a play/pause toggle button and Previous and Next buttons. Each of those buttons contains two elements, one for visually hidden text (the AccName), the other for an icon. Obviously when JS isn't available we don't want to show this at all, so I have just popped a `hidden` attribute on container. Now I know I could just create and destroy all of that, with JS, but I explained earlier, that it's just easier to write these guides without repeatedly showing the same code snippets, as they can get quite lengthy. You may have noticed there's an empty `.carousel__pips` container, in there? I've left that empty as we'll just generate them, based upon the number of slides, we could also do that in the backend, but we don't have one
+* We have a `.carousel__controls` container, which contains a play/pause toggle button along with our Previous and Next buttons. Each of those buttons contains two elements, one for visually hidden text (the AccName), the other for an icon. Obviously when JS isn't available we don't want to show this at all, so I have just popped a `hidden` attribute on container. Now I know I could just create and destroy all of that, with JS, but I explained earlier, that it's just easier to write these guides without repeatedly showing the same code snippets, as they can get quite lengthy. You may have noticed there's an empty `.carousel__pips` container, in there? I've left that empty as we'll just generate them, based upon the number of slides, we could also do that in the backend, but we don't have one
 * We'll have a parent that contains the slides `.carousel_-slides`, we're using a `<ul>`, as it is a set of related things and by extension, we're adding an `<li>` wrapper for each image. I've removed the `alt` value for each image, only for this code snippet, definitely don't do this in production, it's just because it will make code blocks have an excessive horizontal scroll, the actual `alt` will be in the CodePen
 * Finally, there's a `.carousel__footer`, which at present just contains a single button for toggling a full screen view
 
@@ -150,8 +151,15 @@ A few other notes
 * Where a control controls the slides, I use `aria-controls="carouselSlides"`, which points to the `<ul>` that contains the slides only
 * Where I have added the full screen button, I point to the whole carousel, as this will of course open up a lightbox, of sorts and will contain the slides and controls
 * I have some data attributes, some are just a number for each slide and then we have one for the pause/play button, these are just convenient hooks for the JS
+* We're not going to use everything I have put in, at all times. There are going to be times where I remove the hidden attribute and times where I put it back
 
-I should really plan these out, but I just go all in, so let's add some boilerplate CSS:
+### My rational on using tabindex
+
+Using `tabindex` on our region does come with the caveat that I can only remove that attribute when JS is available, so it will be present as a tab stop on the CSS carousel. Most browsers automatically make a scrollable region a tab stop, apart from Safari, so we can't rely on browsers to add this, I'm afraid. It's one additional tab stop, it's a small trade off I'm willing to make, as I'm trying to do my best for everybody taking a balanced approach. Placing the images in a scrollable region where I have no useful CSS or JS features could be appreciated, especially if there were lots of images in that region, as it could make accessing other non-graphic information significantly easier and it could reduce both effort and cognitive load.
+
+[According to Gov.UK, only 0.2% of users have JS disabled or use a browser that doesn't support it](https://gds.blog.gov.uk/2013/10/21/how-many-people-are-missing-out-on-javascript-enhancement/), so how many of those will be using a non-pointing device? How many of those will be using a browser that supports the CSS carousel features? How many of those will actually visit our site? I'm not trying to dismiss this small number of users, I'm not making anything inherrently inaccessible, I'm simply adding an extra tab stop for a handful of users, so some other users don't have to scroll vertically through an unknown number of images, they may not care about. The linked article does go on to say that a further 0.9% of users will access a site where the JS didn't load, for a technical reason, that article is over 13 years old and it was localised to testing in the UK only. I have no idea what the true number is, there are numbers banded about that go up to 2% (for both choice and technical reasons), in any instance, I don't care if it's just one user that visits a site I build who disables their JS, I'll make it work for them, too. In this case, yes there is going to be a tab stop where there doesn't really need to be for a small number users, but as we all know, the majority of sites are literal hellscapes for disabled folks, we're just introducing what at worst could only be a minor annoyance. When Safari and Firefox catch up to Chromium, we may well be able to do away with that annoyance. I wanted to justify my reasoning as I honestly don't even like to intentionally introduce a minor annoyance for anyone. That's not to say I don't make the odd bad decision or get something wrong, I just do my best and I'm always striving to improve.
+
+## Some boilerplate CSS
 
 ```
 *,
@@ -168,8 +176,12 @@ body {
   display: flex;
   justify-content: center;
   line-height: 1.5;
-  
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+main {
+ font-size: 1.25rem;
 }
 
 img, picture, video, canvas, svg {
@@ -194,4 +206,79 @@ h1, h2, h3, h4, h5, h6 {
 }
 ```
 
-I've just taken what I need from [Josh W Comeau's Modern CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/), I'm not explaining any of this, but feels free to read Josh's post. I have added some stuff, such as `flex` and `font-family` on the `<body>` element
+I've just taken what I need from [Josh W Comeau's Modern CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/), I'm not explaining any of this, but feel free to read Josh's post. As I'm writing this without actually planning it out (as always), there's every chance I'll be adding bits to this as I go along. 
+
+## CSS for scrollable region
+
+This will be a combination of CSS that applies in all situations and also the situation where a scrollable region is present:
+
+```
+/* Basic styling for page title */
+.main__title {
+  font-size: 2.75rem;
+  text-align: center;
+}
+
+/* Display as a row, add a gap, fill the viewport, remove list bullets and padding, add overflow and scroll snap */
+.carousel__slides {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  width: 100%;
+  padding-inline-start: 0;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+/* Center the image in the slide, if needed, set the scroll snap area and add a background */
+.carousel__item {
+  flex: 0 0 auto;
+  height: 15rem;
+  background-color: #0a0a0a;
+  scroll-snap-align: start;
+}
+
+/* Set the image dimensions */
+.carousel__item img {
+  width: auto;
+  height: 100%;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+}
+
+/* Make the region larger as the viewport size increases */
+@media (min-width: 36em) {
+  .carousel__item {
+    height: 20rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .carousel__item {
+    height: 27.5rem;
+  }
+}
+
+@media (min-width: 62em) {
+  .carousel__item {
+    height: 35rem;
+  }
+}
+```
+
+I've added brief comments to each block, as I can't go through all of this, as the CSS file will eventually be quite lengthy. I personally hate working with images of different sizes or seeing them in carousels, because it's extra faff and they look so much nicer when the images are all the same size. As I wasn't building this to show off a fancy carousel, just a functional one, I just added black backgrounds which appear around images that are short of either height or width to meet the aspect ratio (3/2) I chose.
+
+We're using scroll snapping so each image snaps into view and we ensure that no image can exceed the width of the viewport. Scroll snapping does work by dragging the scrollbar, swiping on a touch display or using arrow keys on the keyboard, so we always get that snapping behaviour, where an image is always aligned to the viewport.
+
+I haven't considered landscape or all these folding devices, there's lots I haven't considered, well, I did consider them, but accounting for eavery device type would take a good chunk of time. I chose 15rem as the height to lazily account for Reflow, in that 15rem = 240px, which is less than the vertical 256px requirement. In practice on a small smartphone, that may still require vertical scrolling to view the full image, as there may be an address bar or other browser controls, additionally, the smartphone would have a wider viewport than 320px in landscape, so whilst this technically passes, as a single image does fit in a 320 x 256 viewport, that isn't going to be great on devices that actual people use. So, I'm not forgetting to account for that, we're mostly building a prototype that would definitely require more robust media queries.
+
+Just as it's nice to have receipts, the following image shows what I have done so far and I have set the browser width to 1280px, height to 1024px and then zoomed 400%, as required by Reflow. This demonstrates that the image ddoes at least pass that checkpoint.
+
+![Screenshot of the viewport in Reflow, 320 x 256px, demonstrating the image does fit in the viewport](src/guideImg/dl-carousel-reflow.png)
+
+The next image simply shows what a user will be presented with if they have no JS and their broswer does not support the CSS carousel features, a scrollable region that contains all of the images in a scrollable row.
+
+![](src/guideImg/dl-carousel-scrollable.png "Screenshot showing scrollable container we have just made, one image is in full view on a smaller viewport, the second image is partially visible, but will snap into view")
