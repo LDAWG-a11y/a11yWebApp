@@ -48,7 +48,7 @@ First we'll get the non-carousel stuff out of the way, as the likelihood is I'll
 </main>
 ```
 
-Just a `<main>` landmark, a `<h1>` and a little bit of placeholder text in a `<p>` tag.
+Just a `<main>` landmark, a `<h1>` and a little bit of page text in a `<p>` tag.
 
 We need a way to detect if JS is enabled, so let's do that now:
 
@@ -94,23 +94,20 @@ The main takeaway from Sara's article is they're not great, some parts are done 
   <h2 class="carousel__title" id="carouselTitle">Interesting animals</h2>
   <div class="carousel__inner-wrap">
     <div class="carousel__controls" hidden>
-      <button class="carousel__autoplay-toggle" aria-controls="carouselSlides" >
-        <span class="visually-hidden" data-play-state="play">Pause</span>
-        <span class="carousel__toggle-icon"></span>
+      <button class="carousel__autoplay-toggle" aria-controls="carouselSlides" data-play-state="play">
+        <span class="visually-hidden">Pause</span>
       </button>
       <div class="carousel__pips"></div>
       <div class="carousel__btns">
         <button class="carousel__prev-btn" aria-controls="carouselSlides">
           <span class="visually-hidden">Previous slide</span>
-          <span class="carousel__prev-icon"></span>
         </button>
         <button class="carousel__next-btn" aria-controls="carouselSlides">
           <span class="visually-hidden">Next slide</span>
-          <span class="carousel__next-icon"></span>
         </button>
       </div>
     </div>
-    <ul class="carousel__slides" id="carouselSlides">
+    <ul class="carousel__slides" id="carouselSlides" aria-live="off">
       <li class="carousel__item" data-slide-num="1">
         <img src="carousel-images/sloth.jpg" alt="">
       </li>
@@ -129,10 +126,7 @@ The main takeaway from Sara's article is they're not great, some parts are done 
     </ul>
   </div>
   <div class="carousel__footer" hidden>
-    <button class="carousel__size-btn" aria-controls="carousel" aria-pressed="false">
-      <span class="visually-hidden">Full screen</span>
-      <span class="carousel__size-icon"></span>
-    </button>
+    <div class="carousel__count" id="carouselCount"></div>
   </div>
 </section>
 ```
@@ -141,9 +135,9 @@ A quick run through of our base markup:
 
 * We'll start with a `<section>` element, we can add an accessible name to this to make a `role="region"`, which we'll just point at the `<h2>` element. Let's say these images are likely very important for some reason and having them in a named region makes sense, even if that region can't be a true carousel for everybody. I have added a `tabindex="0"`, because if JS is unavailable and the user's browser does not support the new CSS carousel features, then they will have a scrollable region. I'll explain my rationale in more depth after this list, but we obviously need that `tabindex` for when our gallery is scrollable, as the elements within aren't interactive
 * A `.carousel__inner-wrap`, I have added this as we have a heading outside of it, so this enables me to use any positional or layout properties without deducting the height of the heading. I haven't wrote a single line of CSS, yet, so I think I'm planning ahead
-* We have a `.carousel__controls` container, which contains a play/pause toggle button along with our Previous and Next buttons. Each of those buttons contains two elements, one for visually hidden text (the AccName), the other for an icon. Obviously when JS isn't available we don't want to show this at all, so I have just popped a `hidden` attribute on container. Now I know I could just create and destroy all of that, with JS, but I explained earlier, that it's just easier to write these guides without repeatedly showing the same code snippets, as they can get quite lengthy. You may have noticed there's an empty `.carousel__pips` container, in there? I've left that empty as we'll just generate them, based upon the number of slides, we could also do that in the backend, but we don't have one
-* We'll have a parent that contains the slides `.carousel_-slides`, we're using a `<ul>`, as it is a set of related things and by extension, we're adding an `<li>` wrapper for each image. I've removed the `alt` value for each image, only for this code snippet, definitely don't do this in production, it's just because it will make code blocks have an excessive horizontal scroll, the actual `alt` will be in the CodePen
-* Finally, there's a `.carousel__footer`, which at present just contains a single button for toggling a full screen view
+* We have a `.carousel__controls` container, which contains a play/pause toggle button along with our Previous and Next buttons. Each of those buttons contains a visually hidden text  node for the AccName. Obviously when JS isn't available we don't want to show this at all, so I have just popped a `hidden` attribute on container. Now I know I could just create and destroy all of that, with JS, but I explained earlier, that it's just easier to write these guides without repeatedly showing the same code snippets, as they can get quite lengthy. You may have noticed there's an empty `.carousel__pips` container, in there? I've left that empty as we'll just generate them, based upon the number of slides, we could also do that in the backend, but we don't have one
+* We'll have a parent that contains the slides `.carousel__slides`, we're using a `<ul>`, as it is a set of related things and by extension, we're adding an `<li>` wrapper for each image. I've removed the `alt` value for each image, only for this code snippet, definitely don't do this in production, it's just because it will make code blocks have an excessive horizontal scroll, the actual `alt` will be in the CodePen. I have added an `aria-live` region to this, however, the value is set to `off`, that's for later
+* Finally, there's a `.carousel__footer`, which at present just contains `.carousel__count` element, where we'll display the current slide number out of total slides, when we need to
 
 A few other notes
 
@@ -152,7 +146,7 @@ A few other notes
 * I have some data attributes, some are just a number for each slide and then we have one for the pause/play button, these are just convenient hooks for the JS
 * We're not going to use everything I have put in, at all times. There are going to be times where I remove the hidden attribute and times where I put it back
 
-### My rational on using tabindex
+### My rationale on using tabindex
 
 Using `tabindex` on our region does come with the caveat that I can only remove that attribute when JS is available, so it will be present as a tab stop on the CSS carousel. Most browsers automatically make a scrollable region a tab stop, apart from Safari, so we can't rely on browsers to add this, I'm afraid. It's one additional tab stop, it's a small trade off I'm willing to make, as I'm trying to do my best for everybody taking a balanced approach. Placing the images in a scrollable region where I have no useful CSS or JS features could be appreciated, especially if there were lots of images in that region, as it could make accessing other non-graphic information significantly easier and it could reduce both effort and cognitive load.
 
@@ -306,19 +300,19 @@ I had previously been on Can I Use, to check support, but I still wanted to chec
 
 ```
 @supports selector(::scroll-marker-group) {
-  .carousel__inner-wrap {
+  .no-js .carousel__inner-wrap {
     position: relative;
   }
 
   .no-js .carousel__slides {
     overflow-x: hidden;
 
-    & .carousel__item {
+    .carousel__item {
       width: 100%;
       height: 100%;
     }
 
-    & .carousel__item img {
+    .carousel__item img {
       min-width: 100%;
       height: 100%;
     }
@@ -359,7 +353,7 @@ I had previously been on Can I Use, to check support, but I still wanted to chec
 }
 ```
 
-I'll give you a brief rundown of the above CSS before I discuss a glaring issue:
+I'll give you a brief rundown of the above CSS above:
 
 * For every declaration, we're using out `.no-js` class, as we don't want any of this to apply if someone on Edge or whatever has JS enabled
 * We set `position: relative;` on the wrapper that is constrained to the viewport, I knew this particular element would come in handy for something, I could almost fool someone into thinking I can see the future. We use this element as a static plot that we can place absolutely positioned elements within and be sure we'll know they are placed exactly where we want them to be
@@ -376,20 +370,224 @@ Technically we have just added some functional buttons with some new CSS feature
 * We absolutely needed the role to be that of a button, Sara showed this was the case and it is still the case today, that's great
 * All controls must have an AccName, again, Sara demoed this perfectly, these were my two minimum requirements and what gave me a glimmer of hope. The fallback alt text in the `content:` property works as it should, at least in this case
 * The button that controls the slides becomes `disabled` when we reach the last slide in that direction, it's not a infinite carousel, so the button becomes pointless at the end or beginning, that's quite useful
-* If I sequentially navigate with my virtual cursor within the carousel, I can change the slides and when a new slide is displayed, it's read out, as that is where my virtual focus is, of course. It's good that it tracks that automagically and both reads out and shows the slide just from the virtual cursor. At no point was I able to access the alt of any slide that was not displayed
+* If I sequentially navigate with my virtual cursor within the carousel, I can change the slides and when a new slide is displayed, it's read out, as that is where my virtual focus is, of course. Is it good that it does that? 
 
 ### CSS Carousels: Could be better
 
-I don't think any of us reasonably expected anything to be announced, I don't think that screen reader users who choose to disable JS expect that, either, as we would need JS to do that. It's perhaps safe to say, that a screen reader user who disables JS knows they are disabling the majority of dynamic changes? As the buttons say "Next slide" this may provide some form of clue, as to what they are for? We didn't explicitly call it a carousel, we could not, because the scrollable region isn't a carousel and that means a user could potentially wonder where the carousel controls are? In my limited testing if I use <kbd>Tab</kbd> and <kbd>Enter</kbd> on the buttons, I hear nothing, which is what we expected, I guess. But, that ultimately means the buttons aren't very useful for screen reader users, as it would be a case of advance a slide, go off with the virtual cursor to have slide read, go back to button, repeat ad infinitum
-
-Focus management, not great. When I was using the Next slide button and I eventually reached the end of the images, the button became `disabled`, which was cool. But, here's where it gets ugly, a disabled button cannot maintain keyboard focus, so it has to be sent somewhere. In this example, it is sent to the `<body>` element, now, it's worth pointing out we have a parent element that does have a `tabindex` attribute, we also have a Previos button that cannot be `disabled` at the same time, so focus being hijacked and sent to the `<body>` isn't good, as on a real site, we could have a tonne of tabstops before that carousel, which would obviously be a huge PITA for any user that does not use a pointing device. The browser did not scroll to the top when I added 1000 words of Lorem Ipsum, so focus was untracked. that may be good or bad, depending on the individual. It's early days, perhaps they could handle focus a bit more intuitively, like the native `<dialog>` element, that has its own unique focus steps? 
+* I don't think any of us reasonably expected anything to be announced, I don't think that screen reader users who choose to disable JS expect that, either, as we would need JS to do that. It's perhaps safe to say, that a screen reader user who disables JS knows they are disabling the majority of dynamic changes? As the buttons say "Next slide" this may provide some form of clue, as to what they are for? We didn't explicitly call it a carousel, we could not, because the scrollable region isn't a carousel and that means a user could potentially wonder where the carousel controls are? In my limited testing if I use <kbd>Tab</kbd> and <kbd>Enter</kbd> on the buttons, I hear nothing, which is what we expected, I guess. But, that ultimately means the buttons aren't very useful for screen reader users, as it would be a case of advance a slide, go off with the virtual cursor to have slide read, go back to button, repeat ad infinitum
+* Focus management, not great. When I was using the Next slide button and I eventually reached the end of the images, the button became `disabled`, which was cool. But, here's where it gets ugly, a disabled button cannot maintain keyboard focus, so it has to be sent somewhere. In this example, it is sent to the `<body>` element, now, it's worth pointing out we have a parent element that does have a `tabindex` attribute, we also have a Previos button that cannot be `disabled` at the same time, so focus being hijacked and sent to the `<body>` isn't good, as on a real site, we could have a tonne of tabstops before that carousel, which would obviously be a huge PITA for any user that does not use a pointing device. The browser did not scroll to the top when I added 1000 words of Lorem Ipsum, so focus was untracked. that may be good or bad, depending on the individual. It's early days, perhaps they could handle focus a bit more intuitively, like the native `<dialog>` element, that has its own unique focus steps? 
+* Technically, there's no relationship between the buttons and the slides. Ordinarily, we would use `aria-controls`. which obviously has very little support, but it is still an explicit relationship
+* It's only because we used a named region that our thing will make some sense. In reality, this is just going to be `<div>` soup out in the wild, becuse that's what the majority of folks do
 
 ### CSS carousel final thoughts
 
-We didn't go to the lengths that Sara did, because we were only interested in the buttons, we didn't want the pips, which actually change the semantics of everything into tabs, etc, we just wanted a way to advance slides with buttons and enough accessibility info to be present that it makes sense. The buttons are seemingly redundant, at least using Chrome and VoiceOver, which I know isn't ideal, but I can't test this on Safari. I found the focus being forced on to the body quite jarring, this carousel could be anywhere on a page, a regular keyboard user/voice user or anyone that uses most other keyboard navigation API AT, with the exception of screen reader users is could have a hard time getting back to where they were. A screen reader user could at least get back using their Rotor/Elements panel, but even then, why should they have to do that?
+We didn't go to the lengths that Sara did, because we were only interested in the buttons, we didn't want the pips, which actually change the semantics of everything into tabs, etc. We just wanted a way to advance slides with buttons and enough accessibility info to be present that it makes sense. The buttons are seemingly redundant for a screen reader user, at least using Chrome and VoiceOver, which I know isn't ideal, but I can't test this on Safari. I found the focus being forced on to the body quite jarring, this carousel could be anywhere on a page, a regular keyboard user/voice user or anyone that uses most other keyboard navigation API AT, with the exception of screen reader users is could have a hard time getting back to where they were. A screen reader user could at least get back using their Rotor/Elements panel, but even then, why should they have to do that? Although, given the buttons seem much inferior to just advancing slides with arrows, I think it's safe to assume a screen reader user would likely prefer the arrows approach, if they figured it out.
 
-The buttons seem redundant for a screen reader user. Perhaps it's technically impossible to have the current slide read out when using them when relying on the browser alone? There is of course a much better option in that a screen reader user can at least navigate with their virtual cursor and have each slide read out and displayed correctly.
+I can't speak for screen reader users, I can make observations, though. A regular carousel doesn't advance slides with arrows, if done correctly, as slides that aren't visible are accessibly hidden. That means using arrow keys would move through all of what is visually present, the slides and controls, etc, then exit the carousel. This time it's still operating like our scrollable region, in that each slide will be read, sequentially, without ever having to use the buttons. This could be a good thing or a bad thing, but the question is, how does a screen reader user know that this is a CSS carousel, as opposed to a regular one?
 
-I think it's quite good, in its current implementation, but the focus management is enough to put me off using it, as that would be annoying for users. Even if at this stage we had JS at our disposal, we couldn't fix it, as we can't access pseudo elements with JS, so capturing the click event and sending focus to somewhere logical isn't possible. But, at that stage, we may as well just roll our own, I guess.
+In its current implementation, the focus management alone is enough to put me off using it, as that would be annoying for users. Even if at this stage we had JS at our disposal, we couldn't fix it, as we can't access pseudo elements with JS, so capturing the click event and sending focus to somewhere logical isn't possible. But, at that stage, we may as well just roll our own, I guess.
 
-I'm going to try to see if I can reach out to somebody, to determine if this could be considered, i don't know if it's possible, but given the <dialog> has focus steps, I guess this could be provided with them, too?
+We're not going to use it, I don't think it's particularly great. It has some good parts, but CSS is very limited, accessibility-wise and I honestly don't think it's the correct tool for the job. It's simple enough to implement, but it feels lacking in places and that's perhaps a limitation of CSS? I'm not fully sure why we have it, how we got here and why it exists, but it's here, albeit experimental, for now and I definitely would not use it. That being said, I'm leaving it in, as my plan is to have two CodePens, the first will be all of the code we have been writing, then the second will be a more polished version.
+
+## Let's build an actual carousel
+
+We're at that stage now where we can use JS to manipulate the DOM, we don't need to fudge a carousel with CSS and most importantly, we have full control over all accessibility information and the widget's behaviour. We're not going for anything fancy looking, at this stage, because we just want to get it working, in an accessible way. Once we do that, i'll go off and build something nicer and just pop a link to the CodePen at the end of this guide.
+
+We don't need to change any HTML, we will need to add some CSS and it's likely that some of that CSS will be the same as we have already written in the CSS-only carousel, but don't worry, as we'd just delete the CSS carousel if we were going live with this.
+
+### CSS for JS enabled carousel
+
+```
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.has-js {
+  .carousel__inner-wrap {
+    position: relative;
+  }
+
+  .carousel__slides {
+    overflow-x: hidden;
+
+    .carousel__item {
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel__item img {
+      min-width: 100%;
+      height: 100%;
+    }
+  }
+
+  .carousel__autoplay-toggle,
+  .carousel__prev-btn,
+  .carousel__next-btn  {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    border: 2px solid #000;
+    border-radius: 50%;
+    padding: .5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.6rem;
+    background-color: #ffff00;
+    color: black;
+    cursor: pointer;
+
+    &:focus-visible {
+      border-color: #ffff00;
+      background-color: #000;
+      color: #ffff00;
+      outline-color: transparent;
+    }
+
+    &:focus-visible::after {
+      content: "";
+      position: absolute;
+      inset: -5px;
+      border: 3px solid #000;
+      border-radius: 50%;
+    }
+  }
+
+  .carousel__autoplay-toggle {
+    top: 1rem;
+    left: 1rem;
+
+    &[data-play-state="play"]::before {
+      content: "⏸" / "";
+    }
+
+    &[data-play-state="pause"]::before {
+      margin-top: 2px;
+      margin-left: 3px;
+      content: "▶" / "";
+    }
+  }
+
+  .carousel__prev-btn {
+    bottom: 1rem;
+    left: 1rem;
+
+    &::before {
+      content: "⬅" / "";
+      margin-top: 2px;
+    }
+  }
+
+  .carousel__next-btn {
+    bottom: 1rem;
+    right: 1rem;
+
+    &::before {
+      content: "⮕" / "";
+      margin-top: 2px;
+    }
+  }
+
+  .carousel__item[aria-hidden="true"] {
+    display: none;
+  }
+}
+```
+
+I'll just summarise some of this:
+
+* A `.visually-hidden` class, which will hide things from view
+* Everything we do now will be nested inside the `.has-js` class, as we only won't this to apply when JS is available
+* We're just setting the slides to take up full width of the viewport, like we did in our CSS only effort
+* We're now styling the buttons, of which we have three. They share a huge amount of styles, so we'll do those all in the same block. I have actually changed the button colours, here, I have used yellow and black, when any receives focus, the colours invert, as before and as opposed to using an `outline` (I set that as `transparent`), I add an additional "border" using the CSS `::after` pseudo element, this border is black and 3px and the actual  2px border on the buttons changes to yellow. I have done this so we have a double border effect. I cannot guarantee that the inner border won't clash with parts of the image, and whilst it would not fail, I wanted to make that focussed state more perceivable.
+* Oddly, I had to do some adjustments to move these icons to the center of the buttons, I used margin-\[position] for this, which is pretty hacky and awful. Confession time, I have nver in my life used these alt icons before and can't see me doing so again as they didn't position perfectly.
+* I had to add null alt attributes to each alt icon, as "Black right facing triangle, play" sounded quite naff
+* Finally, I add a `display: none;` to any `.carousel-item` that is not the currently displayed item, which is any item with `aria-hidden="true"`, we could have done this using an `.active` class and then targetting the slides without it, but it makes no difference
+
+### JS for our carousel
+
+```
+const carousel = document.querySelector('.carousel');
+const carouselSlides = carousel.querySelector('.carousel__slides');
+const carouselItems = carousel.querySelectorAll('.carousel__item');
+const carouselBtns = carousel.querySelector('.carousel__btns');
+const carouselNextBtn = carousel.querySelector('.carousel__next-btn');
+const carouselPrevBtn = carousel.querySelector('.carousel__prev-btn');
+const carouselAutoplayToggle = carousel.querySelector('.carousel__autoplay-toggle');
+const carouselPips = carousel.querySelector('.carousel__pips');
+const slidesCount = carouselItems.length;
+const carouselCount = carousel.querySelector('.carousel__count');
+let autoplayInterval = null;
+```
+
+Firstly we're just getting references to the elements we'll use throughout
+
+```
+const disableAutoplay = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+carouselCount.textContent = `1 of ${slidesCount}`;
+carousel.querySelector('.carousel__controls').hidden = false;
+carouselCount.parentElement.hidden = false;
+carousel.removeAttribute('tabindex');
+carousel.querySelector('.carousel__slides').setAttribute('role', 'presentation');
+carousel.setAttribute('aria-roledescription', 'carousel');
+disableAutoplay ? document.documentElement.dataset.carouselMotion = 'none' : document.documentElement.dataset.carouselMotion = 'play';
+```
+
+* Then we want to check if our user has set reduced motion in their operating system, as we will of course, honour that
+* We get a slide count, we set it at 1 of \[n], because when the page loads it will always start from one
+* We remove `hidden` from any element that previously had it
+* We remove `tabindex` from the region
+* We set the `<ul>` element as `role="presentation"`, as we no longer want the list semantics
+* We add `aria-roledescription="carousel"`, which acts as complimentary role, of sorts
+* If our user has set prefers reduced motion, we add a data attribute `data-carousel-motion="none"`, and later we use this to prevent autoplay on page load. The user can of course still use the autoplay feature if they choose, it's page load we care about
+
+```
+carouselItems.forEach((slide, idx) => {
+  slide.setAttribute('aria-roledescription', 'slide');
+  slide.setAttribute('role', 'group');
+  slide.setAttribute('aria-labelledby', `carouselCount`);
+  idx === 0 ? slide.setAttribute('aria-hidden', 'false') : slide.setAttribute('aria-hidden', 'true');
+});
+```
+
+We loop through each slide and and add the following:
+
+* An `aria-roledescription="slide"` property to give that custom/complimentary role
+* We're adding an actual role="group", which would absolutely make sense if we had more than one item in our slide, but at this moment, we don't, so in its current state, it's arguably not the best role, but if this were products there may be a CTA link, so we're prepared for that
+* Each slide has a name, we're just pointing to the counter we made, so each slide gets the name of that, which will be a very basic \[n] of \[n]
+* When the page first loads, we set all but the first slide to have `aria-hidden="true"`, this also prevents the slide being visible as we tied that to `display: none;` in our CSS
+
+```
+carouselBtns.addEventListener('click', (event) => {
+  const currentSlide = carousel.querySelector('.carousel__item[aria-hidden="false"]');
+
+  if (event.target === carouselNextBtn) {
+    changeSlide((parseInt(currentSlide.dataset.slideNum) % slidesCount) + 1);
+  } else if (event.target === carouselPrevBtn) {
+    changeSlide((parseInt(currentSlide.dataset.slideNum) - 2 + slidesCount) % slidesCount + 1);
+  }
+  stopAutoplay();
+});
+```
+
+We add an eventListener to the container that holds just the Previous and Next buttons, we will of course then check which button is clicked and execute some code based upon that
+
+We need a referernce to the `currentSlide`, at this stage, it could be any slide from the carousel
+
+Then we determine wheich slide it is with a simple if/else if conditional, by determining the `target` of the click, if it's the `carouselNextBtn` or the `CarouselPrevBtn`
+
+We're then using the data-slide-num data attribute and turning the string value (the number) into an actual number
+
+We then use the JS wrap around trick, with the modulo operator (`%`), in essence, if the slide is the last slide (moving forwards) we want to move back to the first slide, so we have an infinite loop of sorts, the inverse is true for click the Previous button when on the first slide. Unlike our CSS-only carousel, these slides will continue to cycle through, there is no hard stop. This is all passed into a `changeSlide()` function
+
+Finally, we call a `stopAutoplay()` function. I will explain this a little more when we get to that function
