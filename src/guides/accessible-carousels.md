@@ -4,7 +4,7 @@ summary: Let's look at how we can build accessible carousels, to be as usable as
   possible, using the correct ARIA and HTML, whilst also baking in additional
   usability features
 author: dlee
-date: 2026-09-30
+date: 2026-10-08
 toc: true
 tags:
   - HTML
@@ -128,6 +128,7 @@ The main takeaway from Sara's article is they're not great, some parts are done 
   <div class="carousel__footer" hidden>
     <div class="carousel__count" id="carouselCount"></div>
   </div>
+  <div class="announcements visually-hidden" aria-live="off"></div>
 </section>
 ```
 
@@ -138,6 +139,7 @@ A quick run through of our base markup:
 * We have a `.carousel__controls` container, which contains a play/pause toggle button along with our Previous and Next buttons. Each of those buttons contains a visually hidden text  node for the AccName. Obviously when JS isn't available we don't want to show this at all, so I have just popped a `hidden` attribute on container. Now I know I could just create and destroy all of that, with JS, but I explained earlier, that it's just easier to write these guides without repeatedly showing the same code snippets, as they can get quite lengthy. You may have noticed there's an empty `.carousel__pips` container, in there? I've left that empty as we'll just generate them, based upon the number of slides, we could also do that in the backend, but we don't have one
 * We'll have a parent that contains the slides `.carousel__slides`, we're using a `<ul>`, as it is a set of related things and by extension, we're adding an `<li>` wrapper for each image. I've removed the `alt` value for each image, only for this code snippet, definitely don't do this in production, it's just because it will make code blocks have an excessive horizontal scroll, the actual `alt` will be in the CodePen. I have added an `aria-live` region to this, however, the value is set to `off`, that's for later
 * Finally, there's a `.carousel__footer`, which at present just contains `.carousel__count` element, where we'll display the current slide number out of total slides, when we need to
+* We'll add a live region, for later, we'll set it as `off`, for now
 
 A few other notes
 
@@ -218,8 +220,9 @@ This will be a combination of CSS that applies in all situations and also the si
   align-items: flex-start;
   flex-wrap: nowrap;
   gap: 1rem;
-  width: 100%;
+  border: 1px solid #000;
   padding-inline-start: 0;
+  width: 100%;
   list-style: none;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -527,6 +530,7 @@ const carouselAutoplayToggle = carousel.querySelector('.carousel__autoplay-toggl
 const carouselPips = carousel.querySelector('.carousel__pips');
 const slidesCount = carouselItems.length;
 const carouselCount = carousel.querySelector('.carousel__count');
+const carouselAnnouncements = carousel.querySelector('.announcements');
 let autoplayInterval = null;
 ```
 
@@ -570,7 +574,8 @@ We loop through each slide and and add the following:
 ```
 carouselBtns.addEventListener('click', (event) => {
   const currentSlide = carousel.querySelector('.carousel__item[aria-hidden="false"]');
-
+  let nextSlide = null;
+  
   if (event.target === carouselNextBtn) {
     changeSlide((parseInt(currentSlide.dataset.slideNum) % slidesCount) + 1);
   } else if (event.target === carouselPrevBtn) {
@@ -580,14 +585,142 @@ carouselBtns.addEventListener('click', (event) => {
 });
 ```
 
-We add an eventListener to the container that holds just the Previous and Next buttons, we will of course then check which button is clicked and execute some code based upon that
+* We add an event listener to the container that holds just the Previous and Next buttons, we will of course then check which button is clicked and execute some code based upon that
+* We use our refererence to the `currentSlide`, at this stage, it could be any slide from the carousel
+* We get a reference to the `nextSlide`, which will be updated as required
+* Then we determine wheich slide it is with a simple if/else if conditional, by determining the `target` of the click, if it's the `carouselNextBtn` or the `CarouselPrevBtn`
+* We're then using the `data-slide-num` data attribute and turning the string value (the number) into an actual number
+* We then use the JS wrap around trick, with the modulo operator (`%`), in essence, if the slide is the last slide (moving forwards) we want to move back to the first slide, so we have an infinite loop of sorts, the inverse is true for click the Previous button when on the first slide. Unlike our CSS-only carousel, these slides will continue to cycle through, there is no hard stop. This is all passed into a `changeSlide()` function
+* We use a similar trick to get the next slide, which could of course be in any direction, so we do it for both the Previous and Next buttons
+* We then check if the target of the click was either button and set `aria-live="polite"` to our live region
+* Then, we call a `stopAutoplay()` function. I will explain this a little more when we get to that function
+* Finally, we have an `announceSlide()` function
 
-We need a referernce to the `currentSlide`, at this stage, it could be any slide from the carousel
+```
+const changeSlide = (slideNum) => {
+  const currentSlide = carousel.querySelector('.carousel__item[aria-hidden="false"]');
+  const nextSlide = carouselItems[slideNum - 1];
+  currentSlide.setAttribute('aria-hidden', 'true');
+  nextSlide.setAttribute('aria-hidden', 'false');
+  carouselCount.textContent = `${nextSlide.dataset.slideNum} of ${slidesCount}`;
+};
+```
 
-Then we determine wheich slide it is with a simple if/else if conditional, by determining the `target` of the click, if it's the `carouselNextBtn` or the `CarouselPrevBtn`
+We then have our `changeSlide()` function, which receives the current slide:
 
-We're then using the data-slide-num data attribute and turning the string value (the number) into an actual number
+* We need a local reference to the `currentSlide`
+* Our logic for what the `nextSlide` is was actually added in the previous function with the wraparound technique, so we just need to deduct 1 from that
+* Hide the current slide
+* Show the next slide
+* Update the counter
 
-We then use the JS wrap around trick, with the modulo operator (`%`), in essence, if the slide is the last slide (moving forwards) we want to move back to the first slide, so we have an infinite loop of sorts, the inverse is true for click the Previous button when on the first slide. Unlike our CSS-only carousel, these slides will continue to cycle through, there is no hard stop. This is all passed into a `changeSlide()` function
+```
+const setAutoplayState = (isPlaying) => {
+  document.documentElement.dataset.carouselMotion = isPlaying ? 'play' : 'none';
+  carouselAutoplayToggle.dataset.playState = isPlaying ? 'play' : 'pause';
+  carouselAutoplayToggle.querySelector('.visually-hidden').textContent = isPlaying ? 'Pause' : 'Play';
+};
+```
 
-Finally, we call a `stopAutoplay()` function. I will explain this a little more when we get to that function
+* We create a `setAutoplayState()` function which accepts a boolean
+* We change the data attribute `data-carousel-motion` on our `<html>` element, to reflect the state, we added that attribute that earlier for users that prefer reduced motion
+* We use the `data-play-state` attribute on the Play/Pause button to set a current value of either play or pause, this value is the state of autoplay, if it's playing it will be `play` as the caurrent value
+* We then set the AccName of the Play/Pause button, which is always the opposite of the `data-play-state`, as it is of course the next state, should that button be clicked
+
+```
+const startAutoplay = () => {
+  clearInterval(autoplayInterval);
+  setAutoplayState(true);
+  carouselAnnouncements.setAttribute('aria-live', 'off');
+  autoplayInterval = setInterval(() => {
+    const currentSlide = carousel.querySelector('.carousel__item[aria-hidden="false"]');
+    changeSlide((parseInt(currentSlide.dataset.slideNum, 10) % slidesCount) + 1);
+  }, 5000);
+};
+
+const stopAutoplay = () => {
+  clearInterval(autoplayInterval);
+  autoplayInterval = null;
+  setAutoplayState(false);
+};
+```
+
+We have two functions to start and stop autoplay:
+
+In the `startAutoplay()` function:
+
+* We clear any existing interval
+* We pass `true` to the `setAutoplayState()` function
+* We set our ARIA live region to `off`
+* We may aswell empty the text from that live region, by setting `textContent` to an empty string
+* we set a new interval of 5 seconds
+* We get a local reference to the current slide
+
+We do similar to what we did earlier with the modulo operator, but this time we only need to concern ourselves with going forward
+
+In the `stopAutoplay()` function we:
+
+* Clear any existing intervals and set it to null
+* We pass false to the `setAutoplayState()` function
+
+```
+carouselAutoplayToggle.addEventListener('click', () => {
+  const isPlaying = carouselAutoplayToggle.dataset.playState === 'play';
+
+  isPlaying ? stopAutoplay() : startAutoplay();
+});
+```
+
+We listen for a click event on our Play/Pause button with carouselAutoplayToggle()
+
+* We set a conditional variable `isPlaying` that determines whether the `data-play-state` attribute is set to `play`
+* We then have a little logic will call `startAutoPlay()` if the carousel `isPlaying`, after the `click`
+* Then we invert that, in our `else` block and we start autoplay if it's not playing
+
+The live region announces the slide content, which is currently
+
+```
+if (!disableAutoplay) {
+  startAutoplay();
+} else {
+  carouselAutoplayToggle.dataset.playState = 'pause';
+  carouselAutoplayToggle.querySelector('.visually-hidden').textContent = 'Play';
+}
+```
+
+When the page loads we're checking whether to autoplay or not, we created the `disableAutoplay` value at the beginning:
+
+If a user does not have reduced motion set, we run our `startAutoPlay()` function
+
+If they do we just need to updaye the Play/Pause button's icon and its AccName
+
+```
+const announceNewSlide = (slide) => {
+  const imgAlt = slide.querySelector('img').alt;
+  carouselAnnouncements.textContent = `Slide ${slide.dataset.slideNum} of ${slidesCount}: ${imgAlt}`;
+}
+```
+
+Finally (for now), we have our `announceNewSlide()` function, where we accept the `nextSlide` we passed in, earlier
+
+We did want to make our slides versatile, in that we have each slide in a group and we half expect content other than images will be present, that could be snippets of text, data viz, CTAs, anything, really. We're not going down that rabbit hole, we would have write some logic that not only announced the alt of each image, but built a string from other elements and output it in rational and understandable order. I don't think that would be a particularly easy task. After this final (for now) block of code I'll discuss my live region strategy and the rationale behind it
+
+* Anyway, nice and simple, here, we just grab the `alt` from the slide's image, we then get the `carouselAnnouncements` container and set its `textContent` to a useful string
+* We build that string to include the word Slide and then we want the slide number and the number of slides, we then append the `alt`
+
+That's it, for this pattern, although you may have noticed there is something missing? We haven't used the pips, have we? We set a variable for them and we even have a HTML element for them, but we never used them. That's because I wanted to look into those, separately, as I personally feel like they have some limitations, also, the pattern for slides is a little different, so we'd need a little additional logic. 
+
+I actually want to discuss my approach to live regions, though"
+
+### Our live region explained
+
+When I build something, I do often have to go off and look for several other implementations to determine how they all behave, etc. I don't copy the code or anything, but I just test them to get an understanding and I do have a look into the DOM to see what's going on, under the hood. I guess you could call this research.
+
+Whilst researching, I looked at the [W3C's APG Carousel (with buttons for slide control)](<const announceNewSlide = (slide) => {
+  const imgAlt = slide.querySelector('img').alt;
+  carouselAnnouncements.textContent = `Slide ${slide.dataset.slideNum} of ${slidesCount}: ${imgAlt}`;
+}>), it's usually a good place to start to see if they have a pattern for a given widget and to make sure I understand the interaction pattern, etc.
+
+Most of the mechanics of this one were pretty straightforward, in essence, we are just toggling display properties of elements based upon button presses, the hardest bit (which I did have to Google) was the wrap around logic. I could have made the carousel have a hard stop when it reached the end and `disabled` the Next button (much like the CSS only carousel), but I see a niggle with that, which I mentioned earlier.  At the point a user clicks the Next button, whichever slide is currently playing will not be announced, neither will the ones that precede it. So, our screen reader user could start on slide 4, our gallery may contain 20 slides, they then have to click Next until they get to the end and then they cannot advance any further. Perhaps they made a mental note of which slide it started from, 4 in this hypothetical. Now they have to locate the Previou s button and go all the way back to the beginning, to consume the first three slides. That seems quite naff, to me.
+
+Each slide has the slide number, I frontloaded that info in the announcement, when a user gets to the end in our implementation using the same hypothetical 20 slides as before, they can just advance to slide 1, continue advancing to slide 3 and they have then consumed everything they needed to with much less faff, thanks to the wraparound logic.
