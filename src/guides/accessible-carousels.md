@@ -14,21 +14,17 @@ isGuide: true
 ---
 ## Intro
 
-I was recently tasked with creating a guide that offered a solution to a small inaccessible carousel. The carousel in question was a small slider, each of the three slides presented a single statistic about a degree course. This widget was created by the Office for Students and it must be displayed on course pages for all higher education degree courses. As it wasn't accessible, that means that hundreds of academic institutions are hosting the widget embed across thousands of courses. In fact, it is said that there are around 750,000 HE applicants each year, in the UK. That's a lot of interactions, especially as some courses may have variations and a widget has to be displayed for each variation, and then it's likely students will not just look at one course, they will look at many, so the true number of times these widgets are encountered could easily be several million. It can be quite disheartening when you work in a sector that legally has to have accessible websites and apps, etc, more so when you're lucky enough to work for an employer that actually cares more about the needs of students and colleagues than the laws themselves, then you're also legally obliged to display the inaccessible content a governmental department created.
+I was recently tasked with creating a guide that offered a solution to a small inaccessible carousel. The carousel in question was a small slider, each of the three slides presented a single statistic about a degree course. This widget was created by the Office for Students and it must be displayed on course pages for all higher education degree courses in the UK. As it wasn't accessible, that means that hundreds of academic institutions are hosting the widget embed across thousands of courses. In fact, it is said that there are around 750,000 HE applicants each year, in the UK. That's a lot of interactions, especially as some courses may have course variations and a widget has to be displayed for each course variation, and then it's likely students will not just look at one course, they will look at many. The true number of times these widgets are encountered could easily be several million.
 
 Whilst I was writing the aforementioned guide and building out the very basic implementation of a carousel, I thought it would be useful to finally delve deeper into building a fully fledged carousel and exploring a couple of options. This is something I've been meaning to do for a while, but never managed to get around to it. Part of the reason why I never got around to it is carousels are almost universally hated in the accessibility community and in many parts of the UX community, too. Whilst a lot of that discourse is warranted, a lot of it appears to stem from inaccessible carousels, overuse of carousels and of course misuse of carousels:
 
-* Most carousels are inaccessible, let's face it, we're always going be up against that, but the same can be true of any other component, it's just that carousels are more complex than nav menus, etc
-* Often carousels are carousels can be overused, they're used in multiple places on the same page or site where it may make accessing the info they contain become a laborious chore, a frustrating treasure hunt for snippets of info and that frustration is exacerbated if the carousel was inaccessible in the first place
-* Carousel misuse, oftentimes I encounter a carousel that didn't really need to be a carousel, it didn't warrant the finicky mechanics to stack just a few snippets of info or imagery into such a widget and an alternative component could have been used to display that info front and centre, especially when that content is vital for understanding something
+But the above being said, carousels have a place when done correctly, if we were to bring up a property search website to look for a new home to rent or buy, we'd almost  certainly encounter a carousel, as it's a convenient way of stacking a bunch of images into the same discrete component. The images are related to the home, showing 20, 30 or more images on a single page may be overwhelming for some, especially if they just want to find the property details, before they waste time deciding where they're going to be put their TV in a house they'll never live in, as there may be something in the particulars that makes it unsuitable for them.
 
-But the above being said, carousels have a place when done correctly, if we were to bring up a property search website to look for a new home to rent or buy, we'd almost  certainly encounter a carousel, as it's a convenient way of stacking a bunch of images into the same discrete component. They are related to the home, showing 20, 30 or more images on a single page may be overwhelming for some, especially if they just want to find the property details, before they waste time deciding where they're going to be put their TV in a house they'll never live in, as there may be something in the particulars that makes it unsuitable for them.
-
-So, I'm just going to build a few carousel types, we will have an auto-rotating type, but I'll intentionally make that a slower transition, I'll also provide ways to pause, stop or hide that carousel and well start with progressive enhancement and also we'll add in a couple of other features to increase the usability for as many people as we can, so let's get stuck in:
+So, I'm just going to build a few carousel types, we will have an auto-rotating type, but I'll intentionally make that a slower transition, I'll also provide ways to pause, stop or hide that carousel and we'll start with progressive enhancement, as always.
 
 ## Our accessible base HTML
 
-As always, we'll just start from some base HTML, which will be a bunch of images and a heading, which we'll then style it a little, so it's available if for whatever reason, JS isn't available.
+As always, we'll just start from some base HTML, which will be a bunch of images and a heading, which we'll then style it a little, this will only be seen when JS isn't available.
 
 Once we have done that, we'll wraggle the DOM with JS to add in the carousel functionality and any associated behaviours and options.
 
@@ -128,18 +124,16 @@ The main takeaway from Sara's article is they're not great, some parts are done 
   <div class="carousel__footer" hidden>
     <div class="carousel__count" id="carouselCount"></div>
   </div>
-  <div class="announcements visually-hidden" aria-live="off"></div>
 </section>
 ```
 
 A quick run through of our base markup:
 
-* We'll start with a `<section>` element, we can add an accessible name to this to make a `role="region"`, which we'll just point at the `<h2>` element. Let's say these images are likely very important for some reason and having them in a named region makes sense, even if that region can't be a true carousel for everybody. I have added a `tabindex="0"`, because if JS is unavailable and the user's browser does not support the new CSS carousel features, then they will have a scrollable region. I'll explain my rationale in more depth after this list, but we obviously need that `tabindex` for when our gallery is scrollable, as the elements within aren't interactive
+* We'll start with a `<section>` element, we can add an accessible name to this to make a `role="region"`, which we'll just point at the `<h2>` element. Let's say these images are likely very important for some reason and having them in a named region makes sense, even if that region can't be a true carousel for everybody. I have added a `tabindex="0"`, because if JS is unavailable and the user's browser does not support the new CSS carousel features, then they will have a scrollable region. I'll explain my rationale in more depth after this list, but we obviously need that `tabindex` for when our gallery is scrollable, as the elements within aren't interactive. We also add `aria-live="off"`, we can't do anything with that without JS, but it's for later
 * A `.carousel__inner-wrap`, I have added this as we have a heading outside of it, so this enables me to use any positional or layout properties without deducting the height of the heading. I haven't wrote a single line of CSS, yet, so I think I'm planning ahead
 * We have a `.carousel__controls` container, which contains a play/pause toggle button along with our Previous and Next buttons. Each of those buttons contains a visually hidden text  node for the AccName. Obviously when JS isn't available we don't want to show this at all, so I have just popped a `hidden` attribute on container. Now I know I could just create and destroy all of that, with JS, but I explained earlier, that it's just easier to write these guides without repeatedly showing the same code snippets, as they can get quite lengthy. You may have noticed there's an empty `.carousel__pips` container, in there? I've left that empty as we'll just generate them, based upon the number of slides, we could also do that in the backend, but we don't have one
 * We'll have a parent that contains the slides `.carousel__slides`, we're using a `<ul>`, as it is a set of related things and by extension, we're adding an `<li>` wrapper for each image. I've removed the `alt` value for each image, only for this code snippet, definitely don't do this in production, it's just because it will make code blocks have an excessive horizontal scroll, the actual `alt` will be in the CodePen. I have added an `aria-live` region to this, however, the value is set to `off`, that's for later
 * Finally, there's a `.carousel__footer`, which at present just contains `.carousel__count` element, where we'll display the current slide number out of total slides, when we need to
-* We'll add a live region, for later, we'll set it as `off`, for now
 
 A few other notes
 
@@ -523,14 +517,12 @@ I'll just summarise some of this:
 const carousel = document.querySelector('.carousel');
 const carouselSlides = carousel.querySelector('.carousel__slides');
 const carouselItems = carousel.querySelectorAll('.carousel__item');
-const carouselBtns = carousel.querySelector('.carousel__btns');
 const carouselNextBtn = carousel.querySelector('.carousel__next-btn');
 const carouselPrevBtn = carousel.querySelector('.carousel__prev-btn');
 const carouselAutoplayToggle = carousel.querySelector('.carousel__autoplay-toggle');
 const carouselPips = carousel.querySelector('.carousel__pips');
 const slidesCount = carouselItems.length;
 const carouselCount = carousel.querySelector('.carousel__count');
-const carouselAnnouncements = carousel.querySelector('.announcements');
 let autoplayInterval = null;
 ```
 
@@ -547,13 +539,13 @@ carousel.setAttribute('aria-roledescription', 'carousel');
 disableAutoplay ? document.documentElement.dataset.carouselMotion = 'none' : document.documentElement.dataset.carouselMotion = 'play';
 ```
 
-* Then we want to check if our user has set reduced motion in their operating system, as we will of course, honour that
+* We want to check if our user has set reduced motion in their operating system, as we will of course, honour that
 * We get a slide count, we set it at 1 of \[n], because when the page loads it will always start from one
 * We remove `hidden` from any element that previously had it
 * We remove `tabindex` from the region
 * We set the `<ul>` element as `role="presentation"`, as we no longer want the list semantics
 * We add `aria-roledescription="carousel"`, which acts as complimentary role, of sorts
-* If our user has set prefers reduced motion, we add a data attribute `data-carousel-motion="none"`, and later we use this to prevent autoplay on page load. The user can of course still use the autoplay feature if they choose, it's page load we care about
+* If our user has set `prefers-reduced-motion`, we add a data attribute `data-carousel-motion="none"`, and later we use this to prevent autoplay on page load. The user can of course still use the autoplay feature if they choose, it's page load we care about
 
 ```
 carouselItems.forEach((slide, idx) => {
@@ -567,34 +559,35 @@ carouselItems.forEach((slide, idx) => {
 We loop through each slide and and add the following:
 
 * An `aria-roledescription="slide"` property to give that custom/complimentary role
-* We're adding an actual role="group", which would absolutely make sense if we had more than one item in our slide, but at this moment, we don't, so in its current state, it's arguably not the best role, but if this were products there may be a CTA link, so we're prepared for that
+* We're adding an actual `role="group"`, which would absolutely make sense if we had more than one item in our slide, but at this moment, we don't, so in its current state, it's arguably not the best role, but if this were products there may be a CTA link, so we're prepared for that
 * Each slide has a name, we're just pointing to the counter we made, so each slide gets the name of that, which will be a very basic \[n] of \[n]
 * When the page first loads, we set all but the first slide to have `aria-hidden="true"`, this also prevents the slide being visible as we tied that to `display: none;` in our CSS
 
 ```
-carouselBtns.addEventListener('click', (event) => {
-  const currentSlide = carousel.querySelector('.carousel__item[aria-hidden="false"]');
-  let nextSlide = null;
-  
-  if (event.target === carouselNextBtn) {
-    changeSlide((parseInt(currentSlide.dataset.slideNum) % slidesCount) + 1);
-  } else if (event.target === carouselPrevBtn) {
-    changeSlide((parseInt(currentSlide.dataset.slideNum) - 2 + slidesCount) % slidesCount + 1);
-  }
+carouselNextBtn.addEventListener('click', () => {
   stopAutoplay();
+  setTimeout(() => {
+    const currentSlide = carousel.querySelector('.carousel__item[aria-hidden="false"]');
+    changeSlide((parseInt(currentSlide.dataset.slideNum) % slidesCount) + 1);
+  }, 0)
+});
+
+carouselPrevBtn.addEventListener('click', () => {
+  stopAutoplay();
+  setTimeout(() => {
+    const currentSlide = carousel.querySelector('.carousel__item[aria-hidden="false"]');
+    changeSlide((parseInt(currentSlide.dataset.slideNum) - 2 + slidesCount) % slidesCount + 1);
+  }, 0)
 });
 ```
 
-* We add an event listener to the container that holds just the Previous and Next buttons, we will of course then check which button is clicked and execute some code based upon that
-* We use our refererence to the `currentSlide`, at this stage, it could be any slide from the carousel
-* We get a reference to the `nextSlide`, which will be updated as required
-* Then we determine wheich slide it is with a simple if/else if conditional, by determining the `target` of the click, if it's the `carouselNextBtn` or the `CarouselPrevBtn`
+* We add an event listener each of the Previous and Next buttons
+* We call `stopAutoplay()`, which crucially stops autoplay but as will be seen later, will change the `aria-live` property of `polite`
+* I had to add a zero delay timeout, here. In essence, what was happening on the finished carousel was `aria-live` was being toggled from `off` to `polite`, but almost instantaneously the new slide had its display/hidden properties changed and that happened a little too fast for the next slide to be announced. In essence, this was a race condition and the change to the live region was actually losing that race. I couldn't accept that one slide of silence as that could be alls it would take for a screen reader user to think it is completely broken. The zero delay just ensures the preceding function call finished execution
+* We use our refererence to the `currentSlide`, at this stage
 * We're then using the `data-slide-num` data attribute and turning the string value (the number) into an actual number
 * We then use the JS wrap around trick, with the modulo operator (`%`), in essence, if the slide is the last slide (moving forwards) we want to move back to the first slide, so we have an infinite loop of sorts, the inverse is true for click the Previous button when on the first slide. Unlike our CSS-only carousel, these slides will continue to cycle through, there is no hard stop. This is all passed into a `changeSlide()` function
-* We use a similar trick to get the next slide, which could of course be in any direction, so we do it for both the Previous and Next buttons
-* We then check if the target of the click was either button and set `aria-live="polite"` to our live region
-* Then, we call a `stopAutoplay()` function. I will explain this a little more when we get to that function
-* Finally, we have an `announceSlide()` function
+* We of course do similar for both buttons, one will wrap forwards the other in reverse
 
 ```
 const changeSlide = (slideNum) => {
@@ -629,9 +622,10 @@ const setAutoplayState = (isPlaying) => {
 
 ```
 const startAutoplay = () => {
+  carouselAnnouncements.setAttribute('aria-live', 'off');
+  carouselAnnoucements.textContent = '';
   clearInterval(autoplayInterval);
   setAutoplayState(true);
-  carouselAnnouncements.setAttribute('aria-live', 'off');
   autoplayInterval = setInterval(() => {
     const currentSlide = carousel.querySelector('.carousel__item[aria-hidden="false"]');
     changeSlide((parseInt(currentSlide.dataset.slideNum, 10) % slidesCount) + 1);
@@ -639,6 +633,7 @@ const startAutoplay = () => {
 };
 
 const stopAutoplay = () => {
+  carouselSlides.setAttribute('aria-live', 'polite');
   clearInterval(autoplayInterval);
   autoplayInterval = null;
   setAutoplayState(false);
@@ -649,22 +644,25 @@ We have two functions to start and stop autoplay:
 
 In the `startAutoplay()` function:
 
-* We clear any existing interval
-* We pass `true` to the `setAutoplayState()` function
 * We set our ARIA live region to `off`
 * We may aswell empty the text from that live region, by setting `textContent` to an empty string
+* We clear any existing interval
+* We pass `true` to the `setAutoplayState()` function
 * we set a new interval of 5 seconds
 * We get a local reference to the current slide
+* We use the wrap around logic to advance forwards, as autoplay will always be forwards
 
-We do similar to what we did earlier with the modulo operator, but this time we only need to concern ourselves with going forward
+
 
 In the `stopAutoplay()` function we:
 
+* Change the `aria-live` region to `polite`, in readiness for any manual changes
 * Clear any existing intervals and set it to null
 * We pass false to the `setAutoplayState()` function
 
 ```
 carouselAutoplayToggle.addEventListener('click', () => {
+  carouselSlides.setAttribute('aria-live', 'polite');
   const isPlaying = carouselAutoplayToggle.dataset.playState === 'play';
 
   isPlaying ? stopAutoplay() : startAutoplay();
@@ -692,41 +690,12 @@ When the page loads we're checking whether to autoplay or not, we created the `d
 
 If a user does not have reduced motion set, we run our `startAutoPlay()` function
 
-If they do we just need to updaye the Play/Pause button's icon and its AccName
+If they do we just need to update the Play/Pause button's icon and its AccName to be play button, as opposed to a pause button
 
-```
-const announceNewSlide = (slide) => {
-  const imgAlt = slide.querySelector('img').alt;
-  carouselAnnouncements.textContent = `Slide ${slide.dataset.slideNum} of ${slidesCount}: ${imgAlt}`;
-}
-```
 
-Finally (for now), we have our `announceNewSlide()` function, where we accept the `nextSlide` we passed in, earlier
-
-We did want to make our slides versatile, in that we have each slide in a group and we half expect content other than images will be present, that could be snippets of text, data viz, CTAs, anything, really. We're not going down that rabbit hole, we would have write some logic that not only announced the alt of each image, but built a string from other elements and output it in rational and understandable order. I don't think that would be a particularly easy task. After this final (for now) block of code I'll discuss my live region strategy and the rationale behind it
-
-* Anyway, nice and simple, here, we just grab the `alt` from the slide's image, we then get the `carouselAnnouncements` container and set its `textContent` to a useful string
-* We build that string to include the word Slide and then we want the slide number and the number of slides, we then append the `alt`
-
-That's it, for this pattern, although you may have noticed there is something missing? We haven't used the pips, have we? We set a variable for them and we even have a HTML element for them, but we never used them. That's because I wanted to look into those, separately, as I personally feel like they have some limitations, also, the pattern for slides is a little different, so we'd need a little additional logic. 
-
-I actually want to discuss my approach to live regions, though"
 
 ### Our live region explained
 
-When I build something, I do often have to go off and look for several other implementations to determine how they all behave, etc. I don't copy the code or anything, but I just test them to get an understanding and I do have a look into the DOM to see what's going on, under the hood. I guess you could call this research.
+I tried and tested a couple of different approaches to this:
 
-Whilst researching, I looked at the [W3C's APG Carousel (with buttons for slide control)](<const announceNewSlide = (slide) => {
-  const imgAlt = slide.querySelector('img').alt;
-  carouselAnnouncements.textContent = `Slide ${slide.dataset.slideNum} of ${slidesCount}: ${imgAlt}`;
-}>), it's usually a good place to start to see if they have a pattern for a given widget and to make sure I understand the interaction pattern, etc.
-
-Most of the mechanics of this one were pretty straightforward, in essence, we are just toggling display properties of elements based upon button presses, the hardest bit (which I did have to Google) was the wrap around logic. I could have made the carousel have a hard stop when it reached the end and `disabled` the Next button (much like the CSS only carousel), but I see a niggle with that, which I mentioned earlier.  At the point a user clicks the Next button, whichever slide is currently playing will not be announced, neither will the ones that precede it. So, our screen reader user could start on slide 4, our gallery may contain 20 slides, they then have to click Next until they get to the end and then they cannot advance any further. Perhaps they made a mental note of which slide it started from, 4 in this hypothetical. Now they have to locate the Previou s button and go all the way back to the beginning, to consume the first three slides. That seems quite naff, to me.
-
-Each slide has the slide number, I frontloaded that info in the announcement, when a user gets to the end in our implementation using the same hypothetical 20 slides as before, they can just advance to slide 1, continue advancing to slide 3 and they have then consumed everything they needed to with much less faff, thanks to the wraparound logic.
-
-All of that would be useless, without a live region, though, wouldn't it? Advance a slide, cursor within, reverse back to the control, click it, repeat, repeat, repeat. So, it makes sense we simplify the interaction by limiting discoverability. If we provide our screen reader user with an announcement that announces all of the content for each slide, then in theory, they only need to leave the Next or Previous button when they are done. We have simplified that interaction. It works the same as it would for a sighted keyboard user, in that they just keep pressing <kbd>Space</kbd> or <kbd>Enter</kbd>. One user sees the slide, the other hears the slide.
-
-We do have a limitation, though, not an insurmountable one, but our logic is only accounting for alt and some prepended slide info. It would not work if the Site admin placed some additional content in there, such as the date for an event, so it it's not flexible to content at all.
-
-You may ask why I didn't add the live region to the <ul> element, so every change of the display property to block, would be announced. W3C do that, right? Well, it doesn't work in Safari at all, nothing is announced at all. This is just one reason why we should not just go copying their code, right? I mean, they do warn us it's not production ready, I'd still kind of expect it to work in Safari, though, but hey ho.
+Firstly I tried the same method as the [W3C APG carousel pattern](https://www.w3.org/WAI/ARIA/apg/patterns/carousel/examples/carousel-1-prev-next/).
