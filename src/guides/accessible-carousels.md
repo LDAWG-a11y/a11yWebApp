@@ -1127,7 +1127,7 @@ Over the coming weeks, I'll pick up Part 2 of this. We'll probably not include a
 
 ## The CodePen
 
-<p class="codepen" data-height="300" data-pen-title="Accessible carousel (Part 1) next &amp;amp; prev buttons" data-default-tab="html,result" data-slug-hash="gbmKomX" data-user="Daz079" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"></p>
+<p class="codepen" data-height="300" data-pen-title="Accessible carousel (Part 1) next &amp;amp; prev buttons" data-preview="true" data-default-tab="html,result" data-slug-hash="gbmKomX" data-user="Daz079" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"></p>
 
 <script async src="https://public.codepenassets.com/embed/index.js"></script>
 
