@@ -225,7 +225,7 @@ I've just taken what I need from [Josh W Comeau's Modern CSS Reset](https://www.
 
 This will be a combination of CSS that applies in all situations and also the situation where a scrollable region is present:
 
-```
+```css
 /* Base styles */
 
 .main__title {
