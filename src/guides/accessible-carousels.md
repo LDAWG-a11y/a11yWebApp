@@ -75,7 +75,7 @@ Before we go down that rabbit hole, [Sara Soueidan wrote a great in-depth articl
 
 The main takeaway from Sara's article is they're not great, some parts are done well, others not so well. That's cool because Sara's article was last updated over a year ago, so maybe there have been bug fixes and the final result is better now? Also, we're only actually using a part of the pattern and we're only ever going to use it where there is no JavaScript, presuming the browser supports it. That's not to say that folks who access sites without JS shouldn't get an accessible experience, they absolutely should, hence why I always start these guides with progressive enhancement in mind, everybody matters. I genuinely don't know how accessible the bits I want to use are, at this moment in time, Sara's article does lead me to believe that the bits I want should be. If they're not, I'll take a different approach, it's not a great deal of CSS and our HTML doesn't need to change, so perhaps this could be a little discovery for us all? Anyway, let's write some HTML and I'll talk you through it:
 
-```
+```html
 <main>
   <h1 class="main__title">Example carousel</h1>
   
@@ -152,7 +152,7 @@ Using `tabindex` on our region does come with the caveat that I can only remove 
 
 ## Some boilerplate CSS
 
-```
+```css
  /* Resets, normalisation and vars */
 :root {
   --colour-interactive: #a5e9ce;
@@ -372,7 +372,7 @@ Whilst you could absolutely learn everything you need to know, fram Sara's artic
 
 ### The relevant CSS carousel styles
 
-```
+```css
 /* CSS carousel */
 
 @supports selector(::scroll-marker-group) {
@@ -481,7 +481,7 @@ We don't need to change any HTML, we will need to add some CSS and it's likely t
 
 ### CSS for JS enabled carousel
 
-```
+```css
 .has-js {
   .carousel__inner-wrap {
     position: relative;
@@ -765,7 +765,7 @@ I'll just summarise some of this:
 
 ### JS for our carousel
 
-```
+```javascript
   const carousel = document.querySelector('.carousel');
   const carouselInner = carousel.querySelector('.carousel__inner-wrap');
   const carouselSlides = carousel.querySelector('.carousel__slides');
@@ -779,7 +779,7 @@ I'll just summarise some of this:
 
 Firstly we're just getting references to many of the elements we'll use throughout.
 
-```
+```javascript
   const disableAutoplay = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   carousel.querySelector('.carousel__controls').hidden = false;
   carousel.removeAttribute('tabindex');
@@ -793,7 +793,7 @@ Firstly we're just getting references to many of the elements we'll use througho
 * We set the `<ul>` element as `role="presentation"`, as we no longer want the list semantics. each slide is of course numbered manually
 * We add `aria-roledescription="carousel"`, which acts as complimentary role, of sorts
 
-```
+```javascript
 // A small state object, for determing what to do under certain conditions, such as hover, focus within and when the carousel is manually paused
 let carouselState = {
   isFocusWithin: false,
@@ -832,7 +832,7 @@ We loop through each slide and and add the following:
 * When the page first loads, we set all but the first slide to have `.next-stage`, and the current slide to `.active`
 * We have a function we use throughout, that we pass true or false to, so we can ensure that thePlay/Pause button has an accurate icon and AccName. We don't want to show a pause button on an already paused carousel, do we?
 
-```
+```javascript
 const navigateToSlide = (idx, direction = 'left') => {
   const currentSlide = carouselItems[currSlide];
   let nextIndex = (idx + carouselItems.length) % carouselItems.length;
@@ -896,8 +896,7 @@ Confession time: Firefox nearly broke me, here. I had this working well on other
 * If the carousel is manually paused, we need to construct an announcement, more on that later and thanks, Safari, for being the outlier
 
 
-
-```
+```javascript
 // Toggle classes and states when autoplay starts
 const startAutoplay = () => {
   setAutoplayState(true);
@@ -951,7 +950,7 @@ A few functions that handle various aspects of autoplay:
 
 
 
-```
+```javascript
 const constructAnnouncement = (curr) => {  
   announcements.textContent = '';
   const knownString = `${curr.querySelector('.carousel__counter').textContent}, ${curr.querySelector('img').alt}. `;
@@ -1000,7 +999,7 @@ We could have added "link" to the end of the link's label and hid it, visually, 
 
 
 
-```
+```javascript
 // Listen for clicks on the Play/pause button, flip the isManuallyPause boolean, and either paly or stop
 carouselAutoplayToggle.addEventListener('click', (btn) => {
   carouselState.isManuallyPaused = !carouselState.isManuallyPaused;
