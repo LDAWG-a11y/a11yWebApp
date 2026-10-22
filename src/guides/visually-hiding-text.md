@@ -162,7 +162,7 @@ You may be familiar with this pattern which is commonly used in "Skip links" in 
   }
 </style>
 
-<a href="#main" class="skip visually-hidden" tabindex=""-1>Skip to content</a>
+<a href="#main" class="skip visually-hidden">Skip to content</a>
 ```
 
 In the above example, we are essentially telling CSS to only hide this element visually, when it does not have :focus and it is not :active, using the "negation pseudo class" `:not()`. I added a second class where I would add some styles I'd want to display when the element does have focus, depending how many times you use this CSS, it may be doable without the additional class, but this is just an example.
