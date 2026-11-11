@@ -97,3 +97,5 @@ This has been fun, I did my best to combine two disciplines whilst still trying 
 the advent does of course support prefers-forced-colors, perfers-reduced-motion and even prefers-reduced-transparency (To change the frosted glass modal backdrop to a solid colour). Naturally, things will look a little different inforced colours mode, shadows aren't available and that's by design, so the illusions of depth aren't there, but everything is fully functional.
 
 If you celebrate Christmas, Merry Christmas, if you don't, then Happy New Year.
+
+Here's the link to the advent calendar.
