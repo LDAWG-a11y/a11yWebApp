@@ -8,6 +8,7 @@ date: 2026-11-11
 toc: false
 tags:
   - Fun
+  - Advent
 isGuide: true
 ---
 ## Intro
