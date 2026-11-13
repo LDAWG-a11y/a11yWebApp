@@ -92,10 +92,14 @@ Any of those above options can be combined, mix and match them, use them all, do
 
 I absolutely wanted to level the playing field and hopefully, what we thought of does just that? If there is absolutely anything I could have done better or an accessibility preference that would help, just let me know, I'll definitely include it next year, although depending on complexity and my availability, I'll try to squeeze it in straight away. You also only ever have to set any of those prefs once, your prefs are stored securely in your browser, using the local storage API, no cookies, they're for Santa.
 
+The advent does of course support `forced-colors`, `prefers-reduced-motion` and even `prefers-reduced-transparency` (To change the frosted glass modal backdrop to a solid colour). Naturally, things will look a little different in Forced Colors mode, shadows aren't available and that's by design, so the illusions of depth aren't there, but everything is fully functional.
+
+With respect to Forced Colors mode, I fully understand the purpose of this feature and know that users who do use it do so for the additional contrast and visibility. I took the decision to auto-enlarge the door labels, because the design did not fully reflect a Forced Colours interface. It can of course be turned off, it's just auto-set to on. Hopefully this was the correct call?
+
 ## Wrapping up
 
 This has been fun, I did my best to combine two disciplines whilst still trying to preserve the fun aspect of an advent calendar and whilst I know that my difficult to see labels do "technically" pass WCAG, they're still not accessible for many people. That's the nature of a mass-produced advent calendar, the hunt is part of the fun, but this is the web, I can provide options for folk that need them and that;s what I have done. I believe I have mitigated all of the things that could make playing along difficult, by making the visuals and interactivity customisable.
 
-The advent does of course support `prefers-forced-colors`, `prefers-reduced-motion` and even `prefers-reduced-transparency` (To change the frosted glass modal backdrop to a solid colour). Naturally, things will look a little different in forced colours mode, shadows aren't available and that's by design, so the illusions of depth aren't there, but everything is fully functional.
+
 
 Here's the link to the advent calendar.
