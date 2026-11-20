@@ -1,0 +1,373 @@
+---
+permalink: '/adventCalendars/2026'
+date: Last Modified
+layout: adventLayout.njk
+title: Accessible Advent Calendar 2026
+summary: Our first accessible and interactive advent calendar promoting different contributors in the digital accessibility space.
+isAdvent: true
+adventYear: 2026
+---
+<header class="advent__header">
+  <nav class="advent__nav">
+    <ul class="advent__nav-list">
+      <li class="advent__nav-item"><a href="/" class="advent__nav-link">Home</a></li>
+      <li class="advent__nav-item"><a href="/adventCalendars/" class="advent__nav-link">Advent Calendars</a></li>
+    </ul>
+  </nav>
+  <img src="/img/mta-light.webp" alt="Make Things Accessible logo" class="advent__mta-logo">
+</header>
+<main>
+  <h1>Accessibility advent calendar 2026</h1>
+  <section class="a11y__controls" aria-labelledby="acc1">
+    <h2 class="accordion__heading" data-no-accent>
+      <button class="accordion__btn" aria-expanded="false" aria-controls="accPanel1" id="acc1" accesskey="6">Accessibility options<span class="accordion__badge"></span></button>
+    </h2>
+    <div class="accordion__panel" id="accPanel1">
+      <div class="accordion__panel-inner">
+        <h3 class="accordion__subheading">Settings you may find useful:</h3>
+        <p>You can use an Accesskey shortcut, at any time to return to this accordion.</p>
+        <ul>
+          <li>Chrome, Opera and Edge, Windows: Alt + 6</li>
+          <li>Firefox on Windows: Shift + Alt + 6</li>
+          <li>Chrome, Safari and Edge, MacOS Control + Option + 6</li>
+          <li>Firefox, MacOS: Control + Option + 6 or Control + Alt + 6  </li>
+          <li>Opera, MacOS: Control + Alt + 6</li>
+        </ul>
+
+        <p>Advent calendars are like a treasure hunt, by design - the doors are out of sequence and the door labels are intentionally difficult to find. But, that won't work for everyone, so I added some accessibility settings so it does work for everyone:</p>
+        <ul>
+          <li>If you wish the grid to be displayed in ascending numerical order, to make discovery or tabbing easier for you, you can flip that switch</li>
+          <li>If you're struggling to find the labels, you can increase the label visibility</li>
+          <li>Should the background image make discovery too challenging, you can dim it</li>
+          <li>Each door and modal animation lasts for 1.5s, you can switch that off, if you wish</li>
+          <li>You can disable already opened doors, to reduce the tab stops</li>
+        </ul>
+  
+        <div class="toggles__wrapper">
+          <div class="input__group">
+            <button class="toggle__switch" aria-pressed="false" id="numericalOrder" data-pref="numerical">
+              <span class="toggle__thumb"></span>
+            </button>
+            <label for="numericalOrder" class="toggle__label">Show advent in numerical order</label>
+          </div>
+          <div class="input__group">
+            <button class="toggle__switch" aria-pressed="false" id="visibility" data-pref="visibility">
+              <span class="toggle__thumb"></span>
+            </button>
+            <label for="visibility" class="toggle__label">Increase label visibility</label>
+          </div>
+          <div class="input__group">
+            <button class="toggle__switch" aria-pressed="false" id="dimBG" data-pref="dim">
+              <span class="toggle__thumb"></span>
+            </button>
+            <label for="dimBG" class="toggle__label">Dim background image</label>
+          </div>
+          <div class="input__group">
+            <button class="toggle__switch" aria-pressed="false" id="animations" data-pref="motion">
+              <span class="toggle__thumb"></span>
+            </button>
+            <label for="animations" class="toggle__label">Animations off</label>
+          </div>
+          <div class="input__group">
+            <button class="toggle__switch" aria-pressed="false" id="disableOpen" data-pref="disable">
+              <span class="toggle__thumb"></span>
+            </button>
+            <label for="disableOpen" class="toggle__label">Disable opened doors (fewer tab stops)</label>
+          </div>
+        </div>
+        <div class="input__group">
+          <button class="reset__switch--prefs"  id="prefsReset">Reset accessibility options</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <div class="advent__header">
+    <a href="#" id="skipToDoor" class="skip-link">Skip to first available door</a>
+    <button class="reset__switch--advent" id="adventReset">Reset advent</button>
+  </div>
+
+  <section class="instructions">
+    <h2 class="instructions__title">Welcome to the MTA advent, 2026</h2>
+    <p>We were keen to have a little fun, this year, so we have jumped on the seasonal advent calendar trend with our own twist. Every effort has been made to ensure the advent retains the style of a traditional advent, the door labels are intentionally difficult to see (although still oddly WCAG compliant), the doors are in a randomised order and each door has an opening animation, but most importantly there are goodies within.
+      We found 25 links, one to hide behind each door, each link points to a digital accessibility resource, on another site, for you to explore and learn from.
+    </p>
+    <p>Creating an accessible advent calendar was a fun challenge and something we will continue with, each year, but, most importantly, we made every effort to mitigate against the accessibility barriers that advent calendars typically associated with advent calendars. If you need to find the accessibility controls, take a look in the accordion, above, use as many as you want, mix and match or don't use any. Your choices will be remembered for each visit, to help you have the best experience possible.</p>
+    <p>Now, I'm not saying I don't trust our readers to only open doors only the correct day, but, they're locked and will only open when the correct day arrives. So, please do come back each day of advent (1st December 2026 - 25th December 2026) and open a door each day, to receive your fun little surprises and learn from other folks in the Digital Accessibility Space. If you're unable to visit each day, don't worry, the doors will unlock in the background for you to open at your convenience and of course, if stumble across the advent after the 25th, everything will be unlocked for you to explore. As you open each door, the gifts you receive each day (yes, plural) will be conveniently stored in a table below the calendar, your own trasure trove of accessible goodness.</p>
+    <p>I wrote a short article on creating an accessible advent calendar and mitigating the common accessibility barriers associated with traditional advent calendars. You can read it to gain further insights and tips on making festive content more inclusive for everyone. <a href="/guides/the-accessible-accessibility-advent-calendar-2026.html">Building The accessible accessibility advent calendar 2026</a></p>
+  </section>
+
+  <div class="advent" id="advent" role="group" aria-roledescription="Advent calendar" aria-labelledby="adventTitle" tabindex="-1">
+    <h2 class="visually-hidden" aria-hidden="true" id="adventTitle">Advent calendar doors container</h2>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="test link, this one is quite long, to test the table becoming scrollable, blah, blah, blah" id="action-6">
+        <span class="advent__day-label">6</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/baubles.png" data-short-name="A pair of baubles" alt="A pair of Christmas baubles, one yellow and one orange">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-4">
+        <span class="advent__day-label">4</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/xmas-tree.png" data-short-name="A Christmas tree" alt="A Christmas tree with a large gold sphere on the top, a couple of baubles and strands of tinsel decorate the body.">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-9">
+        <span class="advent__day-label">9</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/reindeer.png" data-short-name="A reindeer" alt="A reindeer, with large antlers">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-19">
+        <span class="advent__day-label">19</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/sleigh.png" data-short-name="A sleigh" alt="A bright red sleigh with a huge green sack full of presents">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-5">
+        <span class="advent__day-label">5</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/lollipop.png" data-short-name="A lollipop" alt="A lollipop, it has a red and yellow spiral on it's front, probably 2 different flavours">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-13">
+        <span class="advent__day-label">13</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/snowglobe.png" data-short-name="A snow globe" alt="A snow globe, it has a small Christmas tree inside">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-10">
+        <span class="advent__day-label">10</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/elf.png" data-short-name="An elf" alt="An elf, it has a green hat and big pointy ears">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-15">
+        <span class="advent__day-label">15</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/present.png" data-short-name="A present" alt="A present, wrapped in red paper, yellow ribbon and a large green bow">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-12">
+        <span class="advent__day-label">12</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/snowman.png" data-short-name="A snowman" alt="A snowman with a red hat and green scarf">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-14">
+        <span class="advent__day-label">14</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/nutcracker.png" data-short-name="A nutcracker" alt="A nutcracker soldier with a red cap and huge mustache">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-8">
+        <span class="advent__day-label">8</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/bell.png" data-short-name="A bell" alt="A gold bell with a bright red bow at the top.">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-25">
+        <span class="advent__day-label">25</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/calendar-25.png" data-short-name="The 25th on a calendar" alt="A calendar displaying the number 25, for Christmas Day">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-3">
+        <span class="advent__day-label">3</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/party-popper.png" data-short-name="A party popper" alt="A party popper, firing confetti and streamers into the air">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-11">
+        <span class="advent__day-label">11</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/cocoa.png" data-short-name="A cup of cocoa" alt="A green cup with a yellow star on it, it has steam coming from the top, so I'm guessing it's cocoa">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-23">
+        <span class="advent__day-label">23</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+      <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/rocking-horse.png" data-short-name="A rocking horse" alt="A bright red rocking horse with a yellow tail and mane">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-16">
+        <span class="advent__day-label">16</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/candy-cane.png" data-short-name="A candy cane" alt="A red and white striped candy cane">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-22">
+        <span class="advent__day-label">22</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/xmas-light.png" data-short-name="A Christmas light" alt="A Christmas light, it's a bright red color">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-18">
+        <span class="advent__day-label">18</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/santa.png" data-short-name="Santa" alt="The big fella, Santa Claus, wearing his traditional red hat and he has a white beard">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-17">
+        <span class="advent__day-label">17</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/snowflake.png" data-short-name="A snowflake" alt="A snowflake with a blue and white color scheme">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-20">
+        <span class="advent__day-label">20</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/snowy-rooftop.png" data-short-name="A snowy rooftop" alt="A snowy rooftop and chimney, perhaps waiting for Santa's arrival">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-7">
+        <span class="advent__day-label">7</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/stocking.png" data-short-name="A stocking" alt="A Christmas stocking, with a yellow toe and heal and a matching zig-zag stripe running across the anke. A white fluffy trim is present at the top.">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-2">
+        <span class="advent__day-label">2</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/gingerbread.png" data-short-name="A gingerbread man" alt="A gingerbread man, his arms outstretched, complete with a big bright smile, eyes and buttons on his torso.">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-21">
+        <span class="advent__day-label">21</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/xmas-bear.png" data-short-name="Teddy bear in Santa hat" alt="A teddy bear wearing a Santa hat">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-1">
+        <span class="advent__day-label">1</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" draggable="false" src="/advents/xmas-icons/santa-hat.png" data-short-name="A Santa hat" alt="A bright red santa hat, with a fluffy white bobble and trim.">
+      </button>
+    </div>
+    <div class="advent__grid-item">
+      <span class="advent__door"></span>
+      <button class="advent__action-btn" aria-disabled="true" data-a11y-link="#" data-a11y-link-text="Test" id="action-24">
+        <span class="advent__day-label">24</span>
+        <span class="advent__day-status visually-hidden">Locked</span>
+        <img class="advent__img-gift" aria-hidden="true" src="/advents/xmas-icons/cookie.png" data-short-name="A choc chip cookie" alt="A choc chip cookie, with a few bites taken out of it, perhaps this was santa's?">
+      </button>
+    </div>
+  </div>
+
+  <section class="advent__gift-collection" hidden>
+    <h2 class="advent__gifts-title" id="collectionTitle">Your gifts so far</h2>
+    <article class="table__scroll-container">
+      <table class="table">
+        <caption class="visually-hidden">Your collected gifts</caption>
+        <thead>
+          <tr class="table__header-row">
+            <th class="table__header" scope="col">Day</th>
+            <th class="table__header" scope="col">Gift</th>
+            <th class="table__header" scope="col">Link</th>
+          </tr>
+        </thead>
+        <tbody class="table__body">
+
+        </tbody>
+      </table>
+    </article>
+  </section>
+<div class="attribution">
+  <h2 class="attribution__title">Image Attribution</h2>
+  <ul class="attribution__list">
+    <li>
+      <a href="https://unsplash.com/photos/angel-topiary-lights-a8x39Eo35bE" class="attribution__link">Jamie Davies - Unsplash, Angel Topiary Lights</a>
+    </li>
+    <li>
+      <a href="https://speckyboy.com/free-christmas-icon-bundle/" class="attribution__link">Speckyboy, Free Christmas Icon Bundle</a>
+    </li>
+  </ul>
+</div>
+</main>
+<footer class="advent__footer">
+  <ul class="advent__footer-list">
+      <li class="advent__footer-item"><a href="/" class="advent__footer-link">Home</a></li>
+      <li class="advent__footer-item"><a href="/adventCalendars/" class="advent__footer-link">Advent Calendars</a></li>
+    </ul>
+    <div class="advent__footer-contact">
+      <h2 class="advent__footer-contact-title">Contact</h2>
+      <a class="advent__footer-link" href="mailto:info@makethingsaccessible.com">info@makethingsaccessible.com</a>
+    </div>
+</footer>
+
+ <dialog class="advent__modal" aria-labelledby="modalDesc">
+  <h1 class="advent__modal-title" tabindex="-1" autofocus></h1>
+    <p id="modalDesc" class="visually-hidden" aria-hidden="true">Today's advent gifts</p>
+    <img class="advent__modal-decor" src="/advents/xmas-icons/holly.png" alt="A Holly decoration in the upper left corner, this dialog is styled like a letter to Santa, it has a red and white candy cane border and the close button in the upper right is where the stamp is supposes to be placed">
+    <button class="advent__modal-close"><span class="visually-hidden">Close</span></button>
+    <div class="modal__content">
+      <strong class="advent__modal-sleeps"></strong>
+      <h2 class="advent__modal-subtitle">Today's gift is…</h2>
+      <figure class="advent__modal-figure">
+        <img src="" alt="" class="advent__modal-gift">
+        <figcaption class="advent__modal-caption"></figcaption>
+      </figure>
+      <p class="advent__modal-text">Today's Accessibility article is <a href="" class="advent__modal-link"></a>.</p>
+    </div>
+  </dialog>
+  <svg width="0" height="0" style="position: absolute;" aria-hidden="true">
+  <defs>
+    <filter id="recessed-effect" x="-20%" y="-20%" width="140%" height="140%">
+      <feOffset dx="3" dy="3" />
+      <feGaussianBlur stdDeviation="3" result="offset-blur" />
+      <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse" />
+      <feFlood flood-color="#1a1a1a" flood-opacity="0.85" result="color" />
+      <feComposite operator="in" in="color" in2="inverse" result="shadow" />
+      <feComposite operator="over" in="shadow" in2="SourceGraphic" />
+    </filter>
+  </defs>
+</svg>
+<p id="announcements" class="visually-hidden" aria-live="polite"></p>

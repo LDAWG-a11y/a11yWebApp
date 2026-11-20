@@ -1,7 +1,7 @@
 {% include "_head.njk" %}
 <body {%- if extraWide %} class="extra-width" {%- endif %}>
   {% include "_header.njk" %}
-  <main class="main {%- if usesCMS %} cms{%- endif %}">
+  <main class="main {%- if usesCMS %} cms{%- endif %}{%- if home %} home{%- endif %}">
     {%- if hasCards %}
       <div style="display: none;">
         {% include '../svg/MTA-logo-only.svg' %}

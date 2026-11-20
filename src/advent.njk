@@ -1,0 +1,29 @@
+---
+permalink: /adventCalendars/
+date: Last Modified
+layout: base.njk
+title: Advent Calendars
+summary: The Make Things Accessible collection of accessible advent calendars, starting in 2026
+team: mta
+---
+
+<p>Just for fun and to also promote other contributors in the Digital Accessibility space, we're jumping aboard the advent calendar trend. Each year, starting in 2026, we'll feature a new accessible advent calendar highlighting different contributors in the field.</p>
+
+<p>We wanted to build a fun and engaging advent calendar experience, retaining the spirit and treasure-hunt style of a traditional advent calendar, whilst fully understanding the limitations and challenges a traditional advent calendar presents. We considered various design approaches and accessibility best practices to ensure that our advent calendar is enjoyable and accessible to all users.</p>
+
+<p>Our goal is to create an inclusive experience that celebrates the achievements and contributions of individuals and organisations in the accessibility community, while also offering practical guidance for improving digital accessibility across various platforms and technologies.</p>
+
+<p>At this stage, in 2026, none of the Sitewide accessibility options will follow you through to an advent calendar and the page it appears on will be a little different from the rest of the site, each will live its own unique page. So as one example, there is no toggle for Dark Mode and the calendar itself hasn't been built with dark mode in mind, yet. We do of course support Forced Colours and Prefers Reduced Motion. The calendar itself does have a number of unique accessibility features, which will hopefully help users navigate and enjoy the experience regardless of their individual needs and preferences.</p>
+
+<p>In future versions, we'll absolutely look to improve the experience and bring at least some of the Sitewide accessibility options over to the calendars, ensuring a more consistent and accessible experience across the entire site. That being said, check them out, we don't think you'll be disappointed with the additional accessibility features, but as always, we welcome feedback and suggestions for further improvements.</p>
+
+<section class="advent__years">
+  {% for advent in advents | sort(true, false, 'year') %}
+    <article class="mini-card">
+      <h2 class="mini-card__title" data-no-accent><a href="{{ advent.url }}" class="mini-card__link">{{ advent.title }}</a></h2>
+      <img src="" alt="">
+      <img src="" alt="">
+    </article>
+  {% endfor %}
+</section>
+
