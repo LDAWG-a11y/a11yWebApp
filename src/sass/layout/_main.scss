@@ -35,4 +35,9 @@ body[modal-open] {
   @include mq.mq($until:md) {
     padding: 0 $space-abs-sm;
   }
+
+  &.home {
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -1,0 +1,27 @@
+.advent-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  gap: $space-rel-md;
+  padding: $space-rel-xl;
+  inline-size: 100%;
+  max-inline-size: 45rem;
+  font-size: $large-paragraph-size;
+  text-align: center;
+
+  &__heading {
+    font-size: 2rem;
+    margin-bottom: $space-rel-md;
+    
+  }
+
+  &__intro {
+    margin-bottom: $space-rel-md;
+  }
+
+  &__link {
+    text-decoration: underline;
+  }
+}

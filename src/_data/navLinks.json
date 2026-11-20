@@ -9,5 +9,6 @@
   {"text": "Sitemap", "url": "/sitemapNav/"},
   {"text": "Code of Conduct", "url": "/codeOfConduct"},
   {"text": "Contributing", "url": "/contributing"},
-  {"text": "Admin", "url": "/admin"}
+  {"text": "Admin", "url": "/admin"},
+  {"text": "Advent Calendars", "url": "/adventCalendars/"}
 ]
