@@ -13,8 +13,6 @@ const tableContainer = document.querySelector('.table__scroll-container');
 const table = document.querySelector('.table');
 const announcements = document.querySelector('#announcements');
 const skipToDoor = document.querySelector('#skipToDoor');
-// ---- Dev/testing override ----
-// For testing, to spoof a day in Dec 26, add ?day=14 to the URL, e.g.index.html?day=14
 const dayParam = parseInt(new URLSearchParams(location.search).get('day'), 10);
 const DEV_DAY = (!Number.isNaN(dayParam) && dayParam >= 1 && dayParam <= 25) ? dayParam : null;
 let now, currentDay, currentMonth, currentYear, currentDate, unlockedDays;
@@ -79,7 +77,7 @@ const populateModal = (btn) => {
   })
   modalGift.src = btn.querySelector('img').src;
   modalGift.alt = btn.querySelector('img').alt;
-  modalCaption.textContent = btn.querySelector('img').alt;
+  modalCaption.textContent = btn.querySelector('img').dataset.shortName;
   modalLink.href = btn.dataset.a11yLink
   modalLink.textContent = btn.dataset.a11yLinkText;
   if (Number(day) && currentMonth === 11 && currentYear === 2026 && Number(day) !== 25) {
@@ -348,13 +346,12 @@ actionBtns.forEach(btn => {
       return;
     } else {
       if (!btn.parentElement.querySelector('.advent__door-lock-img')) {
-        btn.parentElement.insertAdjacentHTML('beforeend', '<img src="advents/xmas-icons/locked.png" alt="" class="advent__door-lock-img">');
+        btn.parentElement.insertAdjacentHTML('beforeend', '<img src="/advents/xmas-icons/locked.png" alt="" class="advent__door-lock-img">');
         announcements.textContent = `This door is locked, come back on the ${getOrdinals(btn.id.split('-')[1])}.`;
         setTimeout(() => {
         document.querySelector('.advent__door-lock-img').remove();
       }, 5000);
       }
-      
     }
   })
 })
