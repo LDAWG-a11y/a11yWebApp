@@ -727,9 +727,15 @@
 .table {
   border-collapse: collapse;
   inline-size: 100%;
+  color: var(--colour-text);
 
   @media (width >= 768px) {
     max-inline-size: 100%;
+  }
+
+  @media (forced-colors: active) {
+    border-collapse: unset;
+    border-color: currentColor;
   }
 }
 
@@ -755,6 +761,10 @@
   border: 1px solid black;
   padding: .5rem;
   text-align: left;
+
+  @media (forced-colors: active) {
+    border-color: currentColor;
+  }
 }
 
 .table__img-container {
@@ -774,13 +784,12 @@
   border: 1px solid black;
   padding: .5rem;
   max-inline-size: 88vw;
-}
 
-@media (forced-colors: active) {
-  .table, th, td {
-    border: 1px solid currentColor;
+  @media (forced-colors: active) {
+    border-color: currentColor;
   }
 }
+
 
 .a11y__controls {
   margin-bottom: 1.55rem;
