@@ -202,18 +202,24 @@
   top: 0;
   left: .125rem;
   display: inline-block;
+  border: 2px solid var(--button-colour);
   padding: .375rem .75rem;
   line-height: 1;
   font-size: 1.25rem;
-  background-color: var(--button-colour);
-  color: var(--bg-colour);
+  background-color: var(--bg-colour);
+  color: var(--button-colour); 
   transform: scaleY(1);
   transition: transform .3s ease-in-out;
   transform-origin: top;
 
   &:focus {
-    outline: 2px solid var(--button-colour);
+    outline: 2px solid var(--bg-colour);
     outline-offset: 2px;
+  }
+
+  @media (width >= 768px) {
+    background-color: var(--button-colour);
+    color: var(--bg-colour); 
   }
 }
 
@@ -914,7 +920,7 @@ tr:not(.table__header-row):nth-child(even) {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: .75rem .225rem;
+  padding: .75rem .5rem;
 
   &:nth-of-type(odd) {
     background-color: #cbecfa;
@@ -976,6 +982,9 @@ tr:not(.table__header-row):nth-child(even) {
   }
 
   &:focus-visible {
+    outline: 3px solid var(--button-colour);
+    outline-offset: 1px;  
+
     + .toggle__label {
       background-size: 100% 100%;
     }
