@@ -1,12 +1,12 @@
 :root {
     --grid-space: .5rem;
-    --label-font-size: .75rem;
+    --label-font-size: .875rem;
     --label-colour-bg: #ACD9E6;
     --button-colour: #72278E;
     --warning-colour: #C03025;
     --cardboard-colour: #B0916E;
     --bg-colour: #fff5f5;
-    --label-colour-text: #595A5A;
+    --label-colour-text: #4d4d4d;
     --colour-text: #1c1c1c;
     --colour-success: #96e46c;
     --grid-rows: 5;
@@ -73,9 +73,11 @@
 
   .advent__nav,
   .advent__footer {
+    border: 1px solid var(--button-colour);
     padding: 1rem .5rem;
     inline-size: 100%;
     background-color: var(--button-colour);
+    
 
     @media (width >= 768px) {
       border-radius: .375rem;
@@ -132,6 +134,11 @@
   .advent__mta-logo {
     inline-size: 35rem;
     max-inline-size: 92%;
+
+    @media (forced-colors: active) {
+      forced-color-adjust: none;
+      background-color: #C7C7C7;
+    }
   }
 
   .advent__footer {
@@ -716,6 +723,7 @@
   }
 }
 
+
 .table {
   border-collapse: collapse;
   inline-size: 100%;
@@ -729,7 +737,7 @@
   background-color: var(--label-colour-bg);
 
   th:last-of-type {
-    min-inline-size: 86vw;
+    min-inline-size: 50vw;
 
     @media (width >= 768px) {
       min-inline-size: auto;
@@ -738,8 +746,8 @@
 
   th:nth-of-type(2) {
     @media (width < 768px) {
-    min-inline-size: 50vw;
-  }
+      min-inline-size: 50vw;
+    }
   }
 }
 
@@ -766,6 +774,12 @@
   border: 1px solid black;
   padding: .5rem;
   max-inline-size: 88vw;
+}
+
+@media (forced-colors: active) {
+  .table, th, td {
+    border: 1px solid currentColor;
+  }
 }
 
 .a11y__controls {
@@ -1090,3 +1104,5 @@ tr:not(.table__header-row):nth-child(even) {
 /* TODO: Xmas decs on Advent and Home pages */
 /* TODO: test live */
 /* reload after day, clear local storage */
+/* reset buttons disable whn nothing */
+/* HCM table borders, logo, borders header and footer */
