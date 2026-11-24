@@ -76,7 +76,8 @@ adventYear: 2026
             <label for="disableOpen" class="toggle__label">Disable opened doors (fewer tab stops)</label>
           </div>
         </div>
-        <div class="input__group">
+        <div class="input__group prefs__reset-wrapper">
+          <span class="reset__status--prefs" aria-live="polite"></span>
           <button class="reset__switch--prefs"  id="prefsReset">Reset accessibility options</button>
         </div>
       </div>
@@ -85,7 +86,7 @@ adventYear: 2026
 
   <section class="instructions">
     <h2 class="instructions__title">Welcome to the MTA advent, 2026</h2>
-    <p>We were keen to have a little fun, this year, so we have jumped on the seasonal advent calendar trend with our own twist. Every effort has been made to ensure the advent calendar retains the style of a traditional advent, the door labels are intentionally difficult to see (although still oddly WCAG compliant), the doors are in a randomised order, each door has an opening animation, but most importantly there are goodies within.
+    <p>We were keen to have a little fun, this year, so we have jumped on the seasonal advent calendar trend with our own twist. Every effort has been made to ensure the advent calendar retains the style of a traditional advent, the door labels can be difficult to see, againt the busy background, the doors are in a randomised order, each door has an opening animation, but most importantly there are goodies within.
       We found 25 links, one to hide behind each door, each link points to a digital accessibility resource, on another site for you to explore and learn from.
     </p>
     <p>Creating an accessible advent calendar was a fun challenge and something we will continue with, each year and we made every effort to mitigate against the accessibility barriers that are typically associated with advent calendars. Hopefully the accessibility options we created give you the option to enjoy this calendar in a way that works for you.</p>
@@ -95,6 +96,7 @@ adventYear: 2026
   </section>
 
   <div class="advent__reset-wrapper">
+    <span class="reset__status--advent" aria-live="polite"></span>
     <button class="reset__switch--advent" id="adventReset">Reset advent</button>
   </div>
 

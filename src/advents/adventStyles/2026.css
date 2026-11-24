@@ -6,9 +6,11 @@
     --warning-colour: #C03025;
     --cardboard-colour: #B0916E;
     --bg-colour: #fff5f5;
-    --label-colour-text: #4d4d4d;
+    --label-colour-text: #434343;
     --colour-text: #1c1c1c;
+    --colour-dulled: #707070;
     --colour-success: #96e46c;
+    --colour-alert: #ffff7e;
     --grid-rows: 5;
     --grid-cols: 5;
     --bg-image: url(/advents/xmas-icons/london-xmas_resized.webp);
@@ -333,8 +335,8 @@
 
       [data-visibility="true"] & {
         background-color: var(--colour-text);
-        color: #ffff7e;
-        border-color: #ffff7e;
+        color: var(--colour-alert);
+        border-color: var(--colour-alert);
       }
     }
 
@@ -440,7 +442,7 @@
     --label-font-size: 1.125rem;
     border: 1px solid var(--colour-text);
     font-weight: bold;
-    background-color: #ffff7e;
+    background-color: var(--colour-alert);
     color: var(--colour-text);
 
     @media (width < 768px) {
@@ -1043,11 +1045,26 @@ tr:not(.table__header-row):nth-child(even) {
   }
 }
 
+.advent__reset-wrapper,
+.prefs__reset-wrapper {
+  position: relative;
+  display: flex;
+  gap: .375rem;
+  flex-direction: column;
+}
+
 .advent__reset-wrapper {
   position: relative;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
   padding: 1rem 0;
+}
+
+.prefs__reset-wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
 }
 
 
@@ -1065,14 +1082,47 @@ tr:not(.table__header-row):nth-child(even) {
     outline: 3px solid var(--warning-colour);
     outline-offset: 2px;
   }
+
+  &[aria-disabled="true"] {
+    background-color: var(--colour-dulled);
+    border-color: var(--colour-dulled);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    cursor: not-allowed;
+
+    &:focus-visible {
+      outline-color: var(--colour-dulled);
+    }
+  }
+}
+
+.reset__status--prefs,
+.reset__status--advent {
+  position: absolute;
+  font-weight: bold;
+  color: var(--colour-text);
+  background-color: var(--colour-alert);
+}
+
+.reset__status--prefs {
+  left: .5rem;
+  top: -1rem;
+  padding-inline: .75rem;
+}
+
+.reset__status--advent {
+  right: .5rem;
+  top: -0.875rem;
+  padding-inline: .5rem;
 }
 
 .reset__switch--prefs {
-  margin-left: .125rem;
+  margin-right: .125rem;
 }
 
 .reset__switch--advent {
   align-self: flex-end;
+  margin-right: .25rem;
 }
 
 .attribution {

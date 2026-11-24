@@ -4,6 +4,7 @@ const modal = document.querySelector('.advent__modal');
 const modalCloseBtn = modal.querySelector('.advent__modal-close');
 const accordion = document.querySelector('.accordion__btn');
 const toggles = document.querySelectorAll('.toggle__switch');
+const togglesWrapper = document.querySelector('.toggles__wrapper');
 const mqMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const adventReset = document.querySelector('#adventReset');
 const prefsReset = document.querySelector('#prefsReset');
@@ -12,6 +13,8 @@ const originalButtons = gridItems.map((slot) => slot.querySelector('.advent__act
 const tableContainer = document.querySelector('.table__scroll-container');
 const table = document.querySelector('.table');
 const announcements = document.querySelector('#announcements');
+const prefsAnnouncement = document.querySelector('.reset__status--prefs');
+const adventAnnouncement = document.querySelector('.reset__status--advent');
 const skipToDoor = document.querySelector('#skipToDoor');
 const dayParam = parseInt(new URLSearchParams(location.search).get('day'), 10);
 const DEV_DAY = (!Number.isNaN(dayParam) && dayParam >= 1 && dayParam <= 25) ? dayParam : null;
@@ -140,6 +143,7 @@ const checkPrefs = () => {
     : keys.includes('allow-motion') ? false
     : mqMotion.matches;
   applyMotionPref(reduceMotion);
+  disableEnableResets();
 }
 
 const setLocalStorage = (day, pref) => {
@@ -243,6 +247,7 @@ const resetAdvent = () => {
   document.querySelector('.advent__gift-collection').setAttribute('hidden', '');
   tBody.replaceChildren();
   addSkipURL();
+  disableEnableResets();
 }
 
 const disableOpened = () => {
@@ -328,6 +333,7 @@ actionBtns.forEach(btn => {
       btn.parentElement.classList.add('opening');
       populateModal(evt.currentTarget);
       setLocalStorage(btn.id.split('-')[1]);
+      disableEnableResets();
       if (!btn.parentElement.classList.contains('opened')) {
         populateTable(btn);
       }
@@ -337,6 +343,7 @@ actionBtns.forEach(btn => {
         btn.parentElement.classList.add('opened');
         btn.querySelector('.advent__day-status').textContent = 'open';
         addSkipURL();
+        disableEnableResets();
         if (modalRevealCancelled) {
           modalRevealCancelled = false;
           applyDisablePref(btn);
@@ -420,31 +427,54 @@ toggles.forEach(btn => {
       if (evt.currentTarget.id === 'numericalOrder') reorderBtns(false);
       removePref(btn.dataset.pref);
     }
+    disableEnableResets();
     setBadge();
   })
 })
 
-adventReset.addEventListener('click', (evt) => {
-  if (window.confirm("Are you sure you want to reset the Advent Calendar")) {
-    localStorage.removeItem("openedDoors");
-    resetAdvent();
+adventReset.addEventListener('click', () => {
+  if (adventReset.getAttribute('aria-disabled') === 'true') {
+    adventAnnouncement.textContent = 'No doors are open';
+  } else {
+    if (window.confirm("Are you sure you want to reset the Advent Calendar")) {
+      localStorage.removeItem("openedDoors");
+      resetAdvent();
+    }
   }
 })
 
-prefsReset.addEventListener('click', (evt) => {
-  if (window.confirm("Are you sure you want to reset your accessibility preferences")) {
-    localStorage.removeItem("pref");
-  [...document.documentElement.attributes].forEach((attr) => {
-    if (attr.name.startsWith('data-')) {
-      document.documentElement.removeAttribute(attr.name);
+prefsReset.addEventListener('click', () => {
+  if (prefsReset.getAttribute('aria-disabled') === 'true') {
+    prefsAnnouncement.textContent = 'No preferences are set';
+  } else {
+    if (window.confirm("Are you sure you want to reset your accessibility preferences")) {
+      localStorage.removeItem("pref");
+      [...document.documentElement.attributes].forEach((attr) => {
+        if (attr.name.startsWith('data-')) {
+          document.documentElement.removeAttribute(attr.name);
+        }
+      });
+      const toggles = document.querySelectorAll('[data-pref]');
+      toggles.forEach(btn => btn.setAttribute('aria-pressed', 'false'));
+      reorderBtns(false);
+      enableOpened();
+      modalDelay = 1500;
+      applyMotionPref(mqMotion.matches);
+      disableEnableResets();
+      setBadge();
     }
-  });
-    const toggles = document.querySelectorAll('[data-pref]');
-    toggles.forEach(btn => btn.setAttribute('aria-pressed', 'false'));
-    reorderBtns(false);
-    enableOpened();
-    applyMotionPref(mqMotion.matches);
-    setBadge();
+  }
+});
+
+document.addEventListener('focusin', (evt) => {
+  if (!prefsReset.contains(evt.target) && prefsAnnouncement.textContent !== '') {
+    prefsAnnouncement.textContent = '';
+  }
+});
+
+document.addEventListener('focusin', (evt) => {
+  if (!adventReset.contains(evt.target) && adventAnnouncement.textContent !== '') {
+    adventAnnouncement.textContent = '';
   }
 });
 
@@ -452,6 +482,7 @@ mqMotion.addEventListener('change', (evt) => {
   removePref('allow-motion');
   const storedPrefs = JSON.parse(localStorage.getItem('pref')) || [];
   applyMotionPref(evt.matches || storedPrefs.includes('motion'));
+  disableEnableResets();
   setBadge();
 })
 
@@ -462,6 +493,20 @@ const tableResizeObserver = new ResizeObserver(() => {
 if (tableContainer && table) {
   tableResizeObserver.observe(tableContainer);
   tableResizeObserver.observe(table);
+}
+
+const disableEnableResets = () => {
+  if (togglesWrapper.querySelectorAll('[aria-pressed="true"]').length > 0) {
+    prefsReset.removeAttribute('aria-disabled');
+  } else {
+    prefsReset.setAttribute('aria-disabled', 'true');
+  }
+
+  if (document.querySelectorAll('.advent__grid-item.opened').length > 0) {
+    adventReset.removeAttribute('aria-disabled');
+  } else {
+    adventReset.setAttribute('aria-disabled', 'true');
+  }
 }
 
 // ---- Init ----
@@ -482,6 +527,7 @@ const initialise = () => {
     }
   })
   setBadge();
+  disableEnableResets();
   addSkipURL();
 }
 
