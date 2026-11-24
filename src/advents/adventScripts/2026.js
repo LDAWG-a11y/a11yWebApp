@@ -82,10 +82,8 @@ const populateModal = (btn) => {
   modalGift.alt = btn.querySelector('img').alt;
   modalCaption.textContent = btn.querySelector('img').dataset.shortName;
   modalLink.href = btn.dataset.a11yLink;
-  if (document.documentElement.dataset.newTab === 'true') {
-    modalLink.setAttribute('target', '_blank');
-  }
   modalLink.textContent = btn.dataset.a11yLinkText;
+  setLinkNewTab(modalLink, document.documentElement.dataset.newTab === 'true');
   if (Number(day) && currentMonth === 11 && currentYear === 2026 && Number(day) !== 25) {
     sleepsLeft.textContent = `Only ${25 - Number(day)} sleep${25 - Number(day) === 1 ? '' : 's'} left until Christmas!`;
   } else if (Number(day) && currentMonth === 11 && currentYear === 2026 && Number(day) === 25) {
@@ -142,6 +140,10 @@ const checkPrefs = () => {
     disableOpened();
   }
 
+  if (keys.includes('newTab')) {
+    openLinksInNewTabs();
+  }
+
   const reduceMotion = keys.includes('motion') ? true
     : keys.includes('allow-motion') ? false
     : mqMotion.matches;
@@ -188,8 +190,8 @@ const populateTable = (btn) => {
   const dayText = btn.querySelector('.advent__day-label').textContent.trim();
   const newDay = Number(dayText);
 
-  const rowHTML = `
-    <tr>
+  const row = document.createElement('tr');
+  row.innerHTML = `
       <td class="table__cell">${dayText}</td>
       <td class="table__cell">
         <span class="table__img-container">
@@ -197,9 +199,9 @@ const populateTable = (btn) => {
           <span>${btn.querySelector('img').dataset.shortName}</span>
         </span>
       </td>
-      <td class="table__cell"><a href="${btn.dataset.a11yLink}" class="advent__modal-link" ${document.documentElement.dataset.newTab === 'true' ? 'target="_blank"' : ''}>${btn.dataset.a11yLinkText}</a></td>
-    </tr>
+      <td class="table__cell"><a href="${btn.dataset.a11yLink}" class="advent__modal-link">${btn.dataset.a11yLinkText}</a></td>
   `;
+  setLinkNewTab(row.querySelector('a'), document.documentElement.dataset.newTab === 'true');
 
   const existingRows = Array.from(tBody.querySelectorAll('tr'));
   const nextRow = existingRows.find(row => {
@@ -207,7 +209,7 @@ const populateTable = (btn) => {
     return rowDay > newDay;
   });
 
-  nextRow ? nextRow.insertAdjacentHTML('beforebegin', rowHTML) : tBody.insertAdjacentHTML('beforeend', rowHTML);
+  tBody.insertBefore(row, nextRow || null);
 };
 
 const detectWhenTableIsScrollable = () => {
@@ -262,14 +264,29 @@ const disableOpened = () => {
   })
 }
 
+const setLinkNewTab = (link, enabled) => {
+  const indicator = link.querySelector('.new-tab-indicator');
+  if (enabled) {
+    link.setAttribute('target', '_blank');
+    if (!indicator) {
+      link.insertAdjacentHTML('beforeend', '<span class="new-tab-indicator"> (opens in a new tab)</span>');
+    }
+  } else {
+    link.removeAttribute('target');
+    if (indicator) indicator.remove();
+  }
+};
+
 const openLinksInNewTabs = () => {
   document.documentElement.dataset.newTab = 'true';
-  table.querySelectorAll('a').forEach(link => link.setAttribute('target', '_blank'));
+  table.querySelectorAll('a').forEach(link => setLinkNewTab(link, true));
+  setLinkNewTab(modal.querySelector('.advent__modal-link'), true);
 };
 
 const removeNewTabs = () => {
-  document.documentElement.dataset.newTab = 'false';
-  document.querySelectorAll('a').forEach(link => link.removeAttribute('target'));
+  delete document.documentElement.dataset.newTab;
+  table.querySelectorAll('a').forEach(link => setLinkNewTab(link, false));
+  setLinkNewTab(modal.querySelector('.advent__modal-link'), false);
 };
 
 const enableOpened = () => {
@@ -464,6 +481,7 @@ prefsReset.addEventListener('click', () => {
   } else {
     if (window.confirm("Are you sure you want to reset your accessibility preferences")) {
       localStorage.removeItem("pref");
+      removeNewTabs();
       [...document.documentElement.attributes].forEach((attr) => {
         if (attr.name.startsWith('data-')) {
           document.documentElement.removeAttribute(attr.name);
