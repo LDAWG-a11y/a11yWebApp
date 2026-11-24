@@ -81,7 +81,10 @@ const populateModal = (btn) => {
   modalGift.src = btn.querySelector('img').src;
   modalGift.alt = btn.querySelector('img').alt;
   modalCaption.textContent = btn.querySelector('img').dataset.shortName;
-  modalLink.href = btn.dataset.a11yLink
+  modalLink.href = btn.dataset.a11yLink;
+  if (document.documentElement.dataset.newTab === 'true') {
+    modalLink.setAttribute('target', '_blank');
+  }
   modalLink.textContent = btn.dataset.a11yLinkText;
   if (Number(day) && currentMonth === 11 && currentYear === 2026 && Number(day) !== 25) {
     sleepsLeft.textContent = `Only ${25 - Number(day)} sleep${25 - Number(day) === 1 ? '' : 's'} left until Christmas!`;
@@ -194,7 +197,7 @@ const populateTable = (btn) => {
           <span>${btn.querySelector('img').dataset.shortName}</span>
         </span>
       </td>
-      <td class="table__cell"><a href="${btn.dataset.a11yLink}" class="advent__modal-link">${btn.dataset.a11yLinkText}</a></td>
+      <td class="table__cell"><a href="${btn.dataset.a11yLink}" class="advent__modal-link" ${document.documentElement.dataset.newTab === 'true' ? 'target="_blank"' : ''}>${btn.dataset.a11yLinkText}</a></td>
     </tr>
   `;
 
@@ -258,6 +261,16 @@ const disableOpened = () => {
     }
   })
 }
+
+const openLinksInNewTabs = () => {
+  document.documentElement.dataset.newTab = 'true';
+  table.querySelectorAll('a').forEach(link => link.setAttribute('target', '_blank'));
+};
+
+const removeNewTabs = () => {
+  document.documentElement.dataset.newTab = 'false';
+  document.querySelectorAll('a').forEach(link => link.removeAttribute('target'));
+};
 
 const enableOpened = () => {
   actionBtns.forEach(btn => {
@@ -413,6 +426,7 @@ toggles.forEach(btn => {
         modalDelay = 500;
         removePref('allow-motion');
       }
+      if (evt.currentTarget.id === 'newTabs') openLinksInNewTabs();
       if (evt.currentTarget.id === 'disableOpen' ) disableOpened();
       if (evt.currentTarget.id === 'numericalOrder') reorderBtns(true);
       setLocalStorage(null, btn.dataset.pref);
@@ -425,6 +439,7 @@ toggles.forEach(btn => {
       }
       if (evt.currentTarget.id === 'disableOpen' ) enableOpened();
       if (evt.currentTarget.id === 'numericalOrder') reorderBtns(false);
+      if (evt.currentTarget.id === 'newTabs') removeNewTabs();
       removePref(btn.dataset.pref);
     }
     disableEnableResets();
