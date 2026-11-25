@@ -16,6 +16,7 @@ const announcements = document.querySelector('#announcements');
 const prefsAnnouncement = document.querySelector('.reset__status--prefs');
 const adventAnnouncement = document.querySelector('.reset__status--advent');
 const skipToDoor = document.querySelector('#skipToDoor');
+const skipToTable = document.querySelector('#skipToTable');
 const dayParam = parseInt(new URLSearchParams(location.search).get('day'), 10);
 const DEV_DAY = (!Number.isNaN(dayParam) && dayParam >= 1 && dayParam <= 25) ? dayParam : null;
 let now, currentDay, currentMonth, currentYear, currentDate, unlockedDays;
@@ -186,6 +187,7 @@ const unlockDoors = (btn, hasBeenOpened ) => {
 
 const populateTable = (btn) => {
   document.querySelector('.advent__gift-collection').removeAttribute('hidden');
+  skipToTable.parentElement.removeAttribute('hidden');
   const tBody = document.querySelector('.table__body');
   const dayText = btn.querySelector('.advent__day-label').textContent.trim();
   const newDay = Number(dayText);
@@ -241,6 +243,7 @@ const setBadge = () => {
 
 const resetAdvent = () => {
   const tBody = document.querySelector('.table__body');
+  skipToTable.parentElement.setAttribute('hidden', '');
   gridItems.forEach(el => {
     if (el.classList.contains('opened')) {
       el.classList.remove('opened');
@@ -265,15 +268,10 @@ const disableOpened = () => {
 }
 
 const setLinkNewTab = (link, enabled) => {
-  const indicator = link.querySelector('.new-tab-indicator');
   if (enabled) {
     link.setAttribute('target', '_blank');
-    if (!indicator) {
-      link.insertAdjacentHTML('beforeend', '<span class="new-tab-indicator"> (opens in a new tab)</span>');
-    }
   } else {
     link.removeAttribute('target');
-    if (indicator) indicator.remove();
   }
 };
 

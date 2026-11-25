@@ -21,7 +21,7 @@ adventYear: 2026
   <h1>Accessibility advent calendar 2026</h1>
   <section class="a11y__controls" aria-labelledby="acc1">
     <h2 class="accordion__heading" data-no-accent>
-      <button class="accordion__btn" aria-expanded="false" aria-controls="accPanel1" id="acc1" accesskey="6">Accessibility options<span class="accordion__badge"></span></button>
+      <button class="accordion__btn" aria-expanded="false" aria-controls="accPanel1" id="acc1" accesskey="6">Accessibility & user settings<span class="accordion__badge"></span></button>
     </h2>
     <div class="accordion__panel" id="accPanel1">
       <div class="accordion__panel-inner">
@@ -35,13 +35,14 @@ adventYear: 2026
           <li>Opera, MacOS: Control + Alt + 6</li>
         </ul>
 
-        <p>Advent calendars are like a treasure hunt, by design - the doors are out of sequence and the door labels are intentionally difficult to find. But, that won't work for everyone, so I added some accessibility settings so it does work for everyone:</p>
+        <p>Advent calendars are like a treasure hunt, by design - the doors are out of sequence and the door labels are intentionally difficult to find. But, we know that won't work for everyone, so we built some customisations to help:</p>
         <ul>
           <li>If you wish the grid to be displayed in ascending numerical order, to make discovery or tabbing easier for you, you can flip that switch</li>
           <li>If you're struggling to find the labels, you can increase the label visibility</li>
           <li>Should the background image make discovery too challenging, you can dim it</li>
           <li>Each door and modal animation lasts for 1.5s, you can switch that off, if you wish</li>
           <li>You can disable already opened doors, to reduce the tab stops</li>
+          <li>You can choose to open links in a new tab, should that be useful for you</li>
         </ul>
   
         <div class="toggles__wrapper">
@@ -81,6 +82,9 @@ adventYear: 2026
             </button>
             <label for="newTabs" class="toggle__label">Open links in new tabs</label>
           </div>
+          <div class="input__group" hidden>
+            <a href="#collectionTitle" id="skipToTable" class="skip__to-table">Skip to your gifts table</a>
+          </div>
         </div>
         <div class="input__group prefs__reset-wrapper">
           <span class="reset__status--prefs" aria-live="polite"></span>
@@ -92,11 +96,11 @@ adventYear: 2026
 
   <section class="instructions">
     <h2 class="instructions__title">Welcome to the MTA advent, 2026</h2>
-    <p>We were keen to have a little fun, this year, so we have jumped on the seasonal advent calendar trend with our own twist. Every effort has been made to ensure the advent calendar retains the style of a traditional advent, the door labels can be difficult to see, againt the busy background, the doors are in a randomised order, each door has an opening animation, but most importantly there are goodies within.
+    <p>We were keen to have a little fun, this year, so we have jumped on the seasonal advent calendar trend with our own twist. Every effort has been made to ensure the advent calendar retains the style of a traditional advent, the door labels can be difficult to see againt the busy background, the doors are in a randomised order, each door has an opening animation, but most importantly there are goodies within.
       We found 25 links, one to hide behind each door, each link points to a digital accessibility resource, on another site for you to explore and learn from.
     </p>
     <p>Creating an accessible advent calendar was a fun challenge and something we will continue with, each year and we made every effort to mitigate against the accessibility barriers that are typically associated with advent calendars. Hopefully the accessibility options we created give you the option to enjoy this calendar in a way that works for you.</p>
-    <p>Throughout the advent period (1st - 25th December 2026), each day a new door will unlock for you to open and collect the gifts within. Your gifts will be added to a table below the calendar, so you can revisit, at any time to view and enjoy them again.</p>
+    <p>Throughout the advent period (1st - 25th December 2026), each day a new door will unlock for you to open and collect the gifts within. Your gifts will be added to a table below the calendar, so you can revisit, at any time, to view and enjoy them again.</p>
     <p>I wrote a short article on creating an accessible advent calendar and what thought processes went into the Accessibility Options: <a href="/guides/the-accessible-accessibility-advent-calendar-2026.html">Building The accessible accessibility advent calendar 2026</a></p>
     <p>Finally, because there doesn't really seem an appropriate place to put the alt text for the background image, the scene is Regent Street in London, decorated for the Christmas season with festive lights, many in the shape of winged angels and connecting each side of the street, a red London bus drives along the road and the street is busy with people, black cabs and other traffic. Each time you open a door, that door removes a little square of the background image, to show your gifts underneath.</p>
   </section>
@@ -312,7 +316,7 @@ adventYear: 2026
   </div>
 
   <section class="advent__gift-collection" hidden>
-    <h2 class="advent__gifts-title" id="collectionTitle">Your gifts so far</h2>
+    <h2 class="advent__gifts-title" id="collectionTitle" tabindex="-1">Your gifts so far</h2>
     <article class="table__scroll-container">
       <table class="table">
         <caption class="visually-hidden">Your collected gifts</caption>

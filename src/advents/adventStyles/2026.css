@@ -232,10 +232,29 @@
   }
 }
 
+.skip__to-table {
+  display: inline-block;
+  /* padding: .25rem .125rem; */
+  text-decoration: underline;
+  font-weight: bold;
+  color: var(--button-colour);
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--button-colour);
+    outline-offset: 2px;
+  }
+}
+
 .instructions {
   margin-block: 2rem;
   padding: 1rem 0;
   background-color: var(--bg-colour);
+  text-wrap: pretty;
 
   p {
     margin-block-end: 1rem;
@@ -714,6 +733,11 @@
 
 .advent__gifts-title {
   margin-bottom: 1.5rem;
+
+  &:focus-visible {
+    outline: 3px solid var(--button-colour);
+    outline-offset: -2px;
+  }
 }
 
 .table__scroll-container {
@@ -721,7 +745,7 @@
 
   &:focus-visible {
     outline: 3px solid var(--button-colour);
-    outline-offset: 3px;
+    outline-offset: 2px;
   }
 }
 
@@ -955,6 +979,10 @@ tr:not(.table__header-row):nth-child(even) {
     outline: 3px solid var(--button-colour);
     outline-offset: -3px;
   }
+
+  &[hidden] {
+    display: none;
+  }
 }
 
 .toggle__switch {
@@ -1163,5 +1191,3 @@ tr:not(.table__header-row):nth-child(even) {
 /* TODO: Xmas decs on Advent and Home pages */
 /* TODO: test live */
 /* reload after day, clear local storage */
-/* reset buttons disable whn nothing */
-/* HCM table borders, logo, borders header and footer */
