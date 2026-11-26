@@ -33,6 +33,9 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('src/svg');
   eleventyConfig.addPassthroughCopy('src/fonts');
   eleventyConfig.addPassthroughCopy('src/admin');
+  eleventyConfig.addPassthroughCopy('src/advents/adventStyles');
+  eleventyConfig.addPassthroughCopy('src/advents/adventScripts');
+  eleventyConfig.addPassthroughCopy('src/advents/xmas-icons');
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginTOC, {
     tags: ['h2', 'h3'],

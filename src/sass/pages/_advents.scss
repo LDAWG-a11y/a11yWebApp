@@ -1,0 +1,80 @@
+.advent__years {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem .5rem;
+}
+
+
+.mini-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border: 3px solid var(--v2--color-bg--light);
+  border-radius: $radius-xxl;
+  padding: $space-rel-lg;
+  inline-size: 20rem;
+  block-size: 20rem;
+  aspect-ratio: 1 / 1;
+  max-inline-size: 100%;
+  background-color: var($--v2--color-bg--light);
+  transition: border-color 300ms ease;
+
+
+  &__title {
+    position: static;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    
+
+    &::before,
+    &::after {
+      content: '';
+      display: none;
+    }
+  }
+
+  &__link {
+    text-underline-offset: .2em;
+    text-decoration-thickness: 3px;
+    transition: background-color 300ms ease, color 300ms ease, text-decoration-color 300ms ease, text-underline-offset 200ms ease;
+
+    [data-pref--underline] & {
+      text-decoration: underline;
+    }
+
+    &:not(:focus-visible),
+    &:not(:hover) {
+      text-decoration: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+    }
+    
+
+    &:hover,
+    &:focus-visible {
+      color: var(--v2--color-interactive);
+      text-decoration: underline;
+    }
+  }
+
+  &:has(.mini-card__link:focus-visible) {
+    border-color: var(--v2--color-interactive);
+  }
+}
+
+.mini-card__link,
+.mini-card__link:visited,
+.mini-card__author-link,
+.mini-card__author-link:visited, {
+  color: var(--v2--color-interactive);
+}
