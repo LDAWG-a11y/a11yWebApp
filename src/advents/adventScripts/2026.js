@@ -17,7 +17,7 @@ const prefsAnnouncement = document.querySelector('.reset__status--prefs');
 const adventAnnouncement = document.querySelector('.reset__status--advent');
 const skipToDoor = document.querySelector('#skipToDoor');
 const skipToTable = document.querySelector('#skipToTable');
-const dayParam = parseInt(new URLSearchParams(location.search).get('day'), 10);
+const dayParam = parseInt(new URLSearchParams(location.search).get('magicKey'), 10);
 const DEV_DAY = (!Number.isNaN(dayParam) && dayParam >= 1 && dayParam <= 25) ? dayParam : null;
 let now, currentDay, currentMonth, currentYear, currentDate, unlockedDays;
 
