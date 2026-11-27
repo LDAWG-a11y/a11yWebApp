@@ -6,6 +6,8 @@ summary: Revisiting the new DiscoverUni widget's accessibility in 2026 to
 author: dlee
 date: 2026-09-29
 toc: false
+tags:
+  - Case study
 isGuide: true
 ---
 ## Intro
